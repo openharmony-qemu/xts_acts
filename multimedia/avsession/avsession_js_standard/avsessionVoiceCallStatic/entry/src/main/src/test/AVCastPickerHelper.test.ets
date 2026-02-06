@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -61,7 +61,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions);
                 console.info(`${TAG}: avCastPicker select successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -93,7 +93,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -130,7 +130,7 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -153,7 +153,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -176,7 +176,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -199,7 +199,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -220,7 +220,7 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }

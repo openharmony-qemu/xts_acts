@@ -84,21 +84,22 @@ export default function RdbErrorCode14800016() {
       try{
         await store.execute(CREATE_TABLE_TEST);
         await attachBatchInsert(store, "test1");
-      } catch(e: BusinessError){
+      } catch(e){
         console.log("testRdbStoreAttach0009: execute failed1, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
       }
       try {
         let num = await store.attach(context!, STORE_CONFIG1, 'attachDB');
         expect(1).assertEqual(num);
-      } catch(e: BusinessError) {
+      } catch(e) {
         console.log("testRdbStoreAttach0009: attachOne failed1, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
       }
       try {
         await store.attach(context!, STORE_CONFIG1, 'attachDB');
         expect().assertFail();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.log("testRdbStoreAttach0009: attachTne  failed2, err: code=" + e.code + " message=" + e.message);
         expect(14800016).assertEqual(e.code);
       }

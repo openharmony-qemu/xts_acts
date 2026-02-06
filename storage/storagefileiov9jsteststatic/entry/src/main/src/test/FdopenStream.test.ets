@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,8 @@ export default function fileIOFdopenStream() {
           expect(fpr.readSync(new ArrayBuffer(4096)) == FILE_CONTENT.length).assertTrue();
           fpr.writeSync(FILE_CONTENT);
           expect(false).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           fpr.closeSync();
           fs.unlinkSync(fpath);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_000 has failed for ' + e.message + ', code: ' + e.code);
@@ -70,7 +71,8 @@ export default function fileIOFdopenStream() {
       try {
         fs.fdopenStreamSync(-1, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_001 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -99,7 +101,7 @@ export default function fileIOFdopenStream() {
         expect(fpr.writeSync(FILE_CONTENT, { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         fpr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_002 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -117,7 +119,8 @@ export default function fileIOFdopenStream() {
       try {
         fs.fdopenStreamSync(-1, 'r+');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_003 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -142,7 +145,8 @@ export default function fileIOFdopenStream() {
         expect(res).assertTrue();
         fs.fdopenStreamSync(file.fd, 'ohos');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_004 has failed for ' + e.message + ', code: ' + e.code);
@@ -167,7 +171,8 @@ export default function fileIOFdopenStream() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.fdopenStreamSync(file.fd, "");
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_005 has failed for ' + e.message + ', code: ' + e.code);
@@ -197,7 +202,8 @@ export default function fileIOFdopenStream() {
         expect(fpw.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         fpw.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fpw.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_006 has failed for ' + e.message + ', code: ' + e.code);
@@ -232,7 +238,7 @@ export default function fileIOFdopenStream() {
         expect(fpr.readSync(new ArrayBuffer(4096)) == FILE_CONTENT.length).assertTrue();
         fpr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_007 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -261,7 +267,7 @@ export default function fileIOFdopenStream() {
         expect(fpw.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         fpw.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_008 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -294,7 +300,7 @@ export default function fileIOFdopenStream() {
         expect(fpr.readSync(new ArrayBuffer(4096)) == Number(FILE_CONTENT.length * 2)).assertTrue();
         fpr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_009 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -322,7 +328,8 @@ export default function fileIOFdopenStream() {
         expect(fpa.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         fpa.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fpa.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_010 has failed for ' + e.message + ', code: ' + e.code);
@@ -353,7 +360,7 @@ export default function fileIOFdopenStream() {
         expect(fpa.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length * 2).assertTrue();
         fpa.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_011 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -379,7 +386,8 @@ export default function fileIOFdopenStream() {
         fs.closeSync(file.fd);
         fs.fdopenStreamSync(file.fd, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_sync_static_012 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -408,7 +416,8 @@ export default function fileIOFdopenStream() {
         expect(fpr.readSync(new ArrayBuffer(4096)) == FILE_CONTENT.length).assertTrue();
         fpr.writeSync(FILE_CONTENT);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fpr.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_000 has failed for ' + e.message + ', code: ' + e.code);
@@ -455,7 +464,7 @@ export default function fileIOFdopenStream() {
             }
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_001 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -474,7 +483,8 @@ export default function fileIOFdopenStream() {
       try {
         await fs.fdopenStream(-1, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_002 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -497,7 +507,7 @@ export default function fileIOFdopenStream() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_003 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -527,7 +537,7 @@ export default function fileIOFdopenStream() {
         fpr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_004 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -562,7 +572,7 @@ export default function fileIOFdopenStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_005 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -587,7 +597,8 @@ export default function fileIOFdopenStream() {
         expect(res).assertTrue();
         await fs.fdopenStream(file.fd, 'ohos');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_006 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -612,7 +623,8 @@ export default function fileIOFdopenStream() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await fs.fdopenStream(file.fd, "");
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_007 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -642,7 +654,8 @@ export default function fileIOFdopenStream() {
         expect(fpw.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         fpw.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fpw.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_008 has failed for ' + e.message + ', code: ' + e.code);
@@ -689,7 +702,7 @@ export default function fileIOFdopenStream() {
             }
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_009 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -721,7 +734,7 @@ export default function fileIOFdopenStream() {
         fpr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_010 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -751,7 +764,7 @@ export default function fileIOFdopenStream() {
         fpw.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_011 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -786,7 +799,7 @@ export default function fileIOFdopenStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_012 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -818,7 +831,7 @@ export default function fileIOFdopenStream() {
         fpr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_013 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -846,7 +859,8 @@ export default function fileIOFdopenStream() {
         expect(fpa.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         fpa.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fpa.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_014 has failed for ' + e.message + ', code: ' + e.code);
@@ -893,7 +907,7 @@ export default function fileIOFdopenStream() {
             }
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_015 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -923,7 +937,7 @@ export default function fileIOFdopenStream() {
         fpa.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_016 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -958,7 +972,7 @@ export default function fileIOFdopenStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_017 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -984,7 +998,8 @@ export default function fileIOFdopenStream() {
         fs.closeSync(file.fd);
         await fs.fdopenStream(file.fd, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_018 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -1017,7 +1032,7 @@ export default function fileIOFdopenStream() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_019 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1045,7 +1060,8 @@ export default function fileIOFdopenStream() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdopenstream_async_static_020 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }

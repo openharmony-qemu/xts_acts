@@ -202,7 +202,7 @@ export default function WindowFocusTest() {
             }
             try {
                 mainWin!.onTouchOutside(callback);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(msgStr + 'window on touchOutside failed');
                 expect(true).assertFail();
                 done();
@@ -211,7 +211,7 @@ export default function WindowFocusTest() {
             try {
                 mainWin!.offTouchOutside(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(msgStr + 'window off touchOutside failed');
                 expect(true).assertFail();
                 done();
@@ -239,7 +239,8 @@ export default function WindowFocusTest() {
                 console.info(msgStr + 'Succeeded in calling on screenshotAppEvent.');
                 expect(true).assertFail();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -269,7 +270,8 @@ export default function WindowFocusTest() {
                 console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
                 expect(true).assertFail();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300002)
                 expect(exception.message!=null).assertTrue();
@@ -295,7 +297,7 @@ export default function WindowFocusTest() {
                 (win as window.Window).onDialogTargetTouch(() => {
                     console.info(msgStr + 'touch dialog target');
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
                 expect(true).assertFail();
@@ -303,7 +305,7 @@ export default function WindowFocusTest() {
             }
             try {
                 (win as window.Window).offDialogTargetTouch();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
                 expect(true).assertFail();
@@ -313,7 +315,7 @@ export default function WindowFocusTest() {
                 (win as window.Window).offDialogTargetTouch();
                 await (win as window.Window).destroyWindow();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
                 expect(true).assertFail();
@@ -338,7 +340,8 @@ export default function WindowFocusTest() {
                 await Utils.msSleep(200);
                 expect(true).assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002)
                 expect(err.message != null).assertTrue();

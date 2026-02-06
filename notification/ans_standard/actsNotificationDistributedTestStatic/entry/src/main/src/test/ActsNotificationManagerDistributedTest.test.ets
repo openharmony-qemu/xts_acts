@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function ActsNotificationManagerDistributedTest() {
             done()
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(`${TAG} isDistributedEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -91,7 +91,7 @@ export default function ActsNotificationManagerDistributedTest() {
         let notificationenable: boolean = notificationManager.isNotificationEnabledSync()
         expect(notificationenable).assertFalse()
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()

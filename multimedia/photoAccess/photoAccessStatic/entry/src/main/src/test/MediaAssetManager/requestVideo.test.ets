@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -124,7 +124,7 @@ export default function requestVideoTest() {
           done();
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`getMovingPhotoTest::${testNum}:: failed to createMovingPhoto::${err.code}, ${err.message} !`);
         expect(false).assertTrue();
         done();
@@ -145,7 +145,7 @@ export default function requestVideoTest() {
           const handler = new MediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -184,7 +184,7 @@ export default function requestVideoTest() {
           let flag = await isHdr(testNum, uri)
           expect(flag).assertEqual(0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -203,7 +203,8 @@ export default function requestVideoTest() {
           const handler = new MediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -225,7 +226,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -244,7 +246,8 @@ export default function requestVideoTest() {
           const handler = new EMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -267,7 +270,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -291,7 +295,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -313,7 +318,8 @@ export default function requestVideoTest() {
           const handler = new EMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           console.error(`Type of error.code: ${typeof error.code}`);
           console.error(`Type of errCode: ${typeof errCode}`);
@@ -401,7 +407,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -432,7 +439,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -464,7 +472,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -521,7 +530,7 @@ export default function requestVideoTest() {
           expect(flag).assertEqual(0);
           expect(status).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           done();
         }

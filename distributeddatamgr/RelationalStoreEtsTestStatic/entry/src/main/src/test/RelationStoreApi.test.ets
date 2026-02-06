@@ -754,6 +754,32 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0005 end *************');
     })
 
+    /**
+     * @tc.name       testRsultSetgoTo0006
+     * @tc.number     testRsultSetgoTo0006
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0006 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goTo(1)
+          hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0006 res *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoTo0006 err *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoTo0006 end *************');
+      })
 
     /**
      * @tc.name       testRsultSetgoToRow0001
@@ -875,6 +901,33 @@ export default function RelationStoreRdbStoreTest() {
       }
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0005 end *************');
     })
+    /**
+     * @tc.name       testRsultSetgoToRow0006
+     * @tc.number     testRsultSetgoToRow0006
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToRow0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0006 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goToRow(-1);
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToRow0006 resultSet *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToRow0006 err *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToRow0006 end *************');
+      })
 
     /**
      * @tc.name       testRsultSetgoToFirstRow0001
@@ -901,6 +954,33 @@ export default function RelationStoreRdbStoreTest() {
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0001 end *************');
     })
     /**
+     * @tc.name       testRsultSetgoToFirstRow0002
+     * @tc.number     testRsultSetgoToFirstRow0002
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToFirstRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0002 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goToFirstRow();
+          hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0002 end *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToFirstRow0002 end *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToFirstRow0002 end *************');
+      })
+
+    /**
      * @tc.name       testRsultSetgoToLastRow0001
      * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3200
      * @tc.desc       getColumnIndex normal test
@@ -924,6 +1004,32 @@ export default function RelationStoreRdbStoreTest() {
       }
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToLastRow0001 end *************');
     })
+    /**
+     * @tc.name       testRsultSetgoToLastRow0002
+     * @tc.number     testRsultSetgoToLastRow0002
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToLastRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToLastRow0002 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goToLastRow();
+          hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToLastRow0002 end *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToLastRow0002 end *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToLastRow0002 end *************');
+      })
 
     /**
      * @tc.name       testRsultSetgoToNextRow0001
@@ -949,6 +1055,33 @@ export default function RelationStoreRdbStoreTest() {
       }
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0001 end *************');
     })
+    /**
+     * @tc.name       testRsultSetgoToNextRow0002
+     * @tc.number     testRsultSetgoToNextRow0002
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToNextRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0002 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goToNextRow();
+          hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0002 end *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToNextRow0002 end *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToNextRow0002 end *************');
+      })
+
     /**
      * @tc.name       testRsultSetgoToPreviousRow0001
      * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_3400
@@ -998,6 +1131,61 @@ export default function RelationStoreRdbStoreTest() {
       }
       hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0002 end *************');
     })
+    /**
+     * @tc.name       testRsultSetgoToPreviousRow0003
+     * @tc.number     testRsultSetgoToPreviousRow0003
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToPreviousRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0003 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.close();
+        try {
+          let res = resultSet.goToPreviousRow();
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToPreviousRow0003 resultSet *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToPreviousRow0003 err *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0003 end *************');
+      })
+    /**
+     * @tc.name       testRsultSetgoToPreviousRow0004
+     * @tc.number     testRsultSetgoToPreviousRow0004
+     * @tc.desc       getColumnIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRsultSetgoToPreviousRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0004 start *************');
+        let resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        resultSet.goTo(resultSet.rowCount);
+        resultSet.close();
+        try {
+          let res = resultSet.goToPreviousRow();
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToPreviousRow0004 resultSet *************' + res);
+          expect(res).assertEqual(false);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, '%{public}s',
+            '************* testRsultSetgoToPreviousRow0004 err *************' + err.code + err.message);
+          expect(true).assertFail();
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', '************* testRsultSetgoToPreviousRow0004 end *************');
+      })
 
     /**
      * @tc.name       testRsultSetgetColumnIndex0001

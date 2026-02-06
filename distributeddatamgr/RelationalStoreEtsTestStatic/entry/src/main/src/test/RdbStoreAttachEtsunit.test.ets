@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,7 @@ export default function rdbStoreAttachEtsunitTest() {
                 await attachStore.executeSql(CREATE_TABLE_TEST1);
                 let attachStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG2);
                 await attachStore1.executeSql(CREATE_TABLE_TEST1);
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.info(tag + 'beforeEach STORE_CONFIG1 error, err: code=' + e.code + ' message=' + e.message);
             }
 
@@ -196,7 +196,7 @@ export default function rdbStoreAttachEtsunitTest() {
             hilog.info(domain, tag, 'RA0191 ');
             try {
                 await attachInsert(store, "test");
-            } catch (err:BusinessError){
+            } catch (err){
                 hilog.error(domain, tag, 'RA0198 err:' + JSON.stringify(err));
             }
 
@@ -212,6 +212,90 @@ export default function rdbStoreAttachEtsunitTest() {
             expect(0).assertEqual(await store.detach("attachDB"))
             hilog.info(domain, tag, 'RA0203 ');
             console.log(tag + "************* testRdbStoreAttach0001 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0002
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0020
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0002 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach("fullPath", "attachName", 0);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0002 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0002 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0003
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0030
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0003 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach("fullPath", "attachName", 301);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0002 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0003 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0004
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0040
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0004 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach(context!, STORE_CONFIG1, "attachName", 0);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0004 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0004 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0005
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0050
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0005 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach(context!, STORE_CONFIG1, "attachName", 301);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0005 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0005 end *************");
         })
 
         console.log(tag + "*************Ets Test End*************");

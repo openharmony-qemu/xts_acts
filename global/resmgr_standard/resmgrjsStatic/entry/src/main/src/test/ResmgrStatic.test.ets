@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -995,7 +995,8 @@ export default function ResmgrTest() {
         expect(value !== null).assertTrue();
         console.log('getStringByNameSync_test_static_001 ' + value);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getStringByNameSync_test_static_001 err.code' + e.code);
         console.log('getStringByNameSync_test_static_001 err.message' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -1060,7 +1061,8 @@ export default function ResmgrTest() {
             done();
           }
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getRawFileList_test_static_0100 e.code' + e.code);
         console.log('getRawFileList_test_static_0100 e.message' + e.message);
       }
@@ -1087,7 +1089,8 @@ export default function ResmgrTest() {
           }
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getRawFileList_test_static_0110 e.code' + e.code);
         console.log('getRawFileList_test_static_0110 e.message' + e.message);
         done();
@@ -1236,7 +1239,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001001).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0110 error.code' + error.code);
           console.log('getColor_test_static_0110 error.message' + error.message);
         }
@@ -1258,7 +1261,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001001).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0120 error.code' + error.code);
           console.log('getColor_test_static_0120 error.message' + error.message);
         }
@@ -1280,7 +1283,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001002).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0130 error.code' + error.code);
           console.log('getColor_test_static_0130 error.message' + error.message);
         }
@@ -1302,7 +1305,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001006).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0140 error.code' + error.code);
           console.log('getColor_test_static_0140 error.message' + error.message);
         }
@@ -1324,7 +1327,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001006).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0150 error.code' + error.code);
           console.log('getColor_test_static_0150 error.message' + error.message);
         }
@@ -1347,7 +1350,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001001).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0210 error.code' + error.code);
           console.log('getColor_test_static_0210 error.message' + error.message);
       }
@@ -1371,7 +1374,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001002).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0220 error.code' + error.code);
           console.log('getColor_test_static_0220 error.message' + error.message);
       }
@@ -1395,7 +1398,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001002).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0230 error.code' + error.code);
           console.log('getColor_test_static_0230 error.message' + error.message);
       }
@@ -1419,7 +1422,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001006).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0240 error.code' + error.code);
           console.log('getColor_test_static_0240 error.message' + error.message);
       }
@@ -1576,7 +1579,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('Invalid resource name');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0120 error.code' + error.code);
           console.log('getColorByName_test_static_0120 error.message' + error.message);
         }
@@ -1598,7 +1601,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001003).assertTrue();
             done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0130 error.code' + error.code);
           console.log('getColorByName_test_static_0130 error.message' + error.message);
       }
@@ -1621,7 +1624,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('No matching resource is found based on the resource name');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0140 error.code' + error.code);
           console.log('getColorByName_test_static_0140 error.message' + error.message);
         }
@@ -1644,7 +1647,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('The resource is referenced cyclically');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0150 error.code' + error.code);
           console.log('getColorByName_test_static_0150 error.message' + error.message);
         }
@@ -1741,7 +1744,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001003).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0210 error.code' + error.code);
           console.log('getColorByName_test_static_0210 error.message' + error.message);
       }
@@ -1765,7 +1768,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001003).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0220 error.code' + error.code);
           console.log('getColorByName_test_static_0220 error.message' + error.message);
       }
@@ -1789,7 +1792,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001004).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0230 error.code' + error.code);
           console.log('getColorByName_test_static_0230 error.message' + error.message);
       }
@@ -1813,7 +1816,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001006).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0240 error.code' + error.code);
           console.log('getColorByName_test_static_0240 error.message' + error.message);
       }
@@ -2308,7 +2311,8 @@ export default function ResmgrTest() {
           try {
             resMgr.getStringByNameSync('test_stringTwentyFour', "format string", "format", "1.5", "string");
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log('resourceManager_test_getStringByNameSync_0280' + error?.code + error?.message);
             expect(error?.code).assertEqual(9001008);
             done();
@@ -2464,7 +2468,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x01234567);
           console.log('getDrawableDescriptor_test_static_0600 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0600 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0600 ' + error.message);
           expect(error.code == 9001001).assertTrue();
@@ -2485,7 +2490,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x01000038);
           console.log('getDrawableDescriptor_test_static_0700 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0700 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0700 ' + error.message);
           expect(error.code == 9001002).assertTrue();
@@ -2506,7 +2512,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x200001D, 130);
           console.log('getDrawableDescriptor_test_static_0800 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0800 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0800 ' + error.message);
           expect(error.code == 401).assertTrue();
@@ -2527,7 +2534,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x200001D, 0);
           console.log('getDrawableDescriptor_test_1000 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1000 ' + error.code);
           console.log('getDrawableDescriptor_test_1000 ' + error.message);
         }
@@ -2547,7 +2554,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon');
           console.log('getDrawableDescriptor_test_1100 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1100 ' + error.code);
           console.log('getDrawableDescriptor_test_1100 ' + error.message);
         }
@@ -2567,7 +2574,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon', undefined);
           console.log('getDrawableDescriptor_test_1120 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1120 ' + error.code);
           console.log('getDrawableDescriptor_test_1120 ' + error.message);
         }
@@ -2587,7 +2594,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('foreground', undefined);
           console.log('getDrawableDescriptor_test_1140 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1140 ' + error.code);
           console.log('getDrawableDescriptor_test_1140 ' + error.message);
         }
@@ -2607,7 +2614,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon', 120);
           console.log('getDrawableDescriptor_test_1200 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1200 ' + error.code);
           console.log('getDrawableDescriptor_test_1200 ' + error.message);
         }
@@ -2627,7 +2634,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify');
           console.log('getDrawableDescriptor_test_1300 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1300 ' + error.code);
           console.log('getDrawableDescriptor_test_1300 ' + error.message);
         }
@@ -2647,7 +2654,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 240);
           console.log('getDrawableDescriptor_test_1400 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1400 ' + error.code);
           console.log('getDrawableDescriptor_test_1400 ' + error.message);
         }
@@ -2668,7 +2675,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify1');
           console.log('getDrawableDescriptor_test_1600 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_1600 ' + error.code);
           console.log('getDrawableDescriptor_test_1600 ' + error.message);
           expect(error.code == 9001003).assertTrue();
@@ -2689,7 +2697,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 130);
           console.log('getDrawableDescriptor_test_1800 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1800 ' + error.code);
           console.log('getDrawableDescriptor_test_1800 ' + error.message);
           expect(error.code == 401).assertTrue();
@@ -2710,7 +2718,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 0);
           console.log('getDrawableDescriptor_test_2000 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_2000 ' + error.code);
           console.log('getDrawableDescriptor_test_2000 ' + error.message);
         }

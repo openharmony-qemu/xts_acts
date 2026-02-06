@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,37 +48,37 @@ export default function audioLoudnessGainTest() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let audioStreamInfo: audio.AudioStreamInfo = {
-            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-            channels: audio.AudioChannel.CHANNEL_2,
-            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-        };
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
 
-        let audioRendererInfo: audio.AudioRendererInfo = {
-          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-          rendererFlags: 0
-        };
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      };
 
-        let audioRendererOptions: audio.AudioRendererOptions = {
-          streamInfo: audioStreamInfo,
-          rendererInfo: audioRendererInfo
-        };
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
 
-        let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
-        let loudnessGainFloatTen = -90.0;
-        if (audioRenderer) {
-          try {
-            await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
-            let loudnessGain = audioRenderer!.getLoudnessGain();
-            console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-            expect(Math.abs(loudnessGain - (-90.0)) < 1).assertTrue();
-          } catch (error) {
-            console.error('createAudioRenderer Fail!');
-          }
-          done();
+      let loudnessGainFloatTen = -90.0;
+      if (audioRenderer) {
+        try {
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          expect(Math.abs(loudnessGain - (-90.0)) < 1).assertTrue();
+        } catch (error) {
+          console.error('createAudioRenderer Fail!');
         }
+        done();
+      }
     })
 
     /**
@@ -91,10 +91,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -114,9 +114,9 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - (-89.9)) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error('createAudioRenderer Fail!');
         }
         done();
@@ -133,10 +133,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -156,9 +156,9 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error('createAudioRenderer Fail!');
         }
         done();
@@ -175,10 +175,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -198,9 +198,9 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 23.9) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error('createAudioRenderer Fail!');
         }
         done();
@@ -217,10 +217,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -240,14 +240,15 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
-          console.error(TAG,`setLoudnessGain Fail: ${error.code}`);
+        } catch (error) {
+          error = error as BusinessError;
+          console.error(TAG, `setLoudnessGain Fail: ${error.code}`);
           expect(6800101 == error.code).assertTrue();
         }
       } else {
-          console.error('createAudioRenderer Fail');
+        console.error('createAudioRenderer Fail');
       }
       done();
     })
@@ -262,10 +263,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -285,14 +286,15 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
-          console.error(TAG,`setLoudnessGain Fail: ${error.code}`);
+        } catch (error) {
+          error = error as BusinessError;
+          console.error(TAG, `setLoudnessGain Fail: ${error.code}`);
           expect(6800101 == error.code).assertTrue();
         }
       } else {
-          console.error('createAudioRenderer Fail');
+        console.error('createAudioRenderer Fail');
       }
       done();
     })
@@ -307,10 +309,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -330,9 +332,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -351,10 +354,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -374,9 +377,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -395,10 +399,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -418,9 +422,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -439,10 +444,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -462,9 +467,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -483,10 +489,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -506,9 +512,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -527,10 +534,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -550,9 +557,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -571,10 +579,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -594,9 +602,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -615,10 +624,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -638,9 +647,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {
@@ -659,10 +669,10 @@ export default function audioLoudnessGainTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-          channels: audio.AudioChannel.CHANNEL_2,
-          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
@@ -682,9 +692,10 @@ export default function audioLoudnessGainTest() {
         try {
           await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
           let loudnessGain = audioRenderer!.getLoudnessGain();
-          console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
+          console.info(TAG, `setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
           expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(6800104 == error.code).assertTrue();
         }
       } else {

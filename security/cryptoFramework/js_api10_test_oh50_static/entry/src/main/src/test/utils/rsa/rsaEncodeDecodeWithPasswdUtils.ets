@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ async function getPriKeyWithPasswd(algName: string, format: string,
     let priKeyPem: string = keyPair.priKey.getEncodedPem(format, option);
 
     return priKeyPem;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('getPriKeyWithPasswd, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -61,7 +61,7 @@ async function convertKeyPairWithPasswdPromise(algName: string, pubKey: string|n
     let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(pubKey, priKey, passWd);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('convertKeyPairWithPasswdPromise, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -74,7 +74,7 @@ function convertKeyPairWithPasswdSync(algName: string, pubKey: string|null,
     let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(pubKey, priKey, passWd);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('convertKeyPairWithPasswdSync, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -102,7 +102,7 @@ async function rsaEncodedBySpecTest(algName: string, cipherName: string, format:
     let priKeyPem: string = keyPair.priKey.getEncodedPem(format, option);
 
     return priKeyPem ? true : false
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('rsaEncodedBySpecTest, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -132,7 +132,7 @@ async function rsaDecodedBySpecPromiseTest(algName: string, cipherName: string, 
     let convertGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     let convertKeyPair: cryptoFramework.KeyPair = await convertGenerator.convertPemKey(pubKeyPem, priKeyPem, option.password);
     return convertKeyPair ? true : false
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('rsaDecodedBySpecPromiseTest, ' + error.code + " errorMsg " + error.message);
     return false;
   }
@@ -162,7 +162,7 @@ async function rsaDecodedBySpecSyncTest(algName: string, cipherName: string, for
     let convertGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     let convertKeyPair: cryptoFramework.KeyPair = convertGenerator.convertPemKeySync(pubKeyPem, priKeyPem, option.password);
     return convertKeyPair ? true : false
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('rsaDecodedBySpecPromiseTest, ' + error.code + " errorMsg " + error.message);
     return false;
   }

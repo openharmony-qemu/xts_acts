@@ -204,7 +204,7 @@ export default function actsStageContextTestStatic() {
         expect(`${count1}`).assertEqual('2');
         expect(`${count2}`).assertEqual('1');
         expect(`${count3}`).assertEqual('2');
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, `${itName} error code: ${err.code}, msg: ${err.message}`);
       }
       done();

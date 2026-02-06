@@ -1,6 +1,6 @@
 
 /**
- * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -137,7 +137,7 @@ export default function settingUiJsunit() {
         console.info("[settings_set_value_119] value is: " + value);
         expect(value).assertEqual(defaultValue);
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.error("[settings_set_value_119] error = " + err);
         expect().assertFail();
         done();
@@ -163,7 +163,7 @@ export default function settingUiJsunit() {
           expect().assertFail();
         })
         done();
-      } catch(err: Error){
+      } catch(err){
         console.info("[settings_get_value_033] error is: " + String(err));
         expect(err.message).assertEqual("Permission denied");
         done();
@@ -190,7 +190,7 @@ export default function settingUiJsunit() {
           expect().assertFail();
         })
         done();
-      } catch(err: Error){
+      } catch(err){
         console.info("[settings_get_value_034] error is: " + String(err));
         expect(err.message).assertEqual("Permission denied");
         done();
@@ -213,7 +213,7 @@ export default function settingUiJsunit() {
         let value = settings.setValueSync(abilityContext!, name, defaultValue, domainName);
         expect().assertFail();
         done();
-      }catch (err: Error) {
+      }catch (err) {
         console.error("[settings_set_value_127] error = " + err);
         expect(err.message).assertEqual("Permission denied");
         done();
@@ -1510,7 +1510,7 @@ export default function settingUiJsunit() {
         let value2 = settings.unregisterKeyObserver(abilityContext!, name, domainName);
         expect(value2).assertTrue();
         done();
-      }catch (err: Error) {
+      }catch (err) {
         console.error("[settings_set_value_122] error = " + err);
         expect().assertFail();
         done();

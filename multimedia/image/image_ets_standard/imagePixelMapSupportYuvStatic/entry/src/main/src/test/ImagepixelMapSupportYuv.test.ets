@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -232,7 +232,7 @@ export default function imagepixelMapSupportYuv() {
         try {
           await imagePackerApi.packToData(pixelMap, packOpts);
           checkResult = true
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
           checkResult = false
         }
@@ -244,7 +244,7 @@ export default function imagepixelMapSupportYuv() {
           try {
             await imagePackerApi.packToFile(pixelMap, file.fd as int, packOpts);
             checkResult = true
-          } catch (error:BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
             checkResult = false
           }

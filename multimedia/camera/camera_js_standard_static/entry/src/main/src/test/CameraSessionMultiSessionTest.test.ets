@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,7 +104,7 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           firstSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 first session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();
@@ -118,7 +118,7 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           secondSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 second session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();

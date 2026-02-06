@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -115,7 +115,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -162,7 +162,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             expect(ret).assertTrue();
             console.info(`ChaCha20 ${msgLen}字节数据测试通过`);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0300 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -206,7 +206,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0400 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -281,7 +281,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0500 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -344,7 +344,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             expect(ret).assertTrue();
             console.info(`ChaCha20-Poly1305 AAD长度${aadLen}字节测试通过`);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0600 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -399,7 +399,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0700 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -468,7 +468,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
               });
             });
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0800 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
           done();
@@ -517,7 +517,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_0900 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -571,8 +571,8 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           //   await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, poly1305Params);
           //   await decCipher.doFinal(cipherText);
           //   expect(null).assertFail();
-          // } catch (error: BusinessError) {
-          //   expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          // } catch (error) {
+          //   expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           // }
           /* 测试2: 使用错误的AAD解密 */
           try {
@@ -584,7 +584,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             let plainText: cryptoFramework.DataBlob = await update(decCipher, cipherText);
             let ret: boolean = commonUtils.compareDataBlob(plainText, message);
             expect(ret).assertTrue();
-          } catch (error: BusinessError) {
+          } catch (error) {
             expect(null).assertFail();
           }
           /* 测试3: 正常解密验证 */
@@ -596,7 +596,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1000 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -625,7 +625,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let keyBlob: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = commonUtils.compareDataBlob(keyBlob, dataBlob);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -654,7 +654,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let keyBlob: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = commonUtils.compareDataBlob(keyBlob, dataBlob);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -687,7 +687,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
               expect(ret).assertTrue();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -741,7 +741,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -807,7 +807,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -862,7 +862,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -928,7 +928,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -982,7 +982,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1048,7 +1048,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_1900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1092,7 +1092,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1148,7 +1148,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1192,7 +1192,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1248,7 +1248,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1319,7 +1319,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             ret = ret && commonUtils.compareDataBlob(cipherTexts[index-1], cipherTexts[index]);
           }
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1363,16 +1363,16 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherName);
           try {
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
           try {
             poly1305Params.iv = iv_lt;
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1407,16 +1407,16 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
           try {
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
           try {
             poly1305Params.iv = iv_lt;
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1472,9 +1472,9 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, poly1305Params);
           await decCipher.doFinal(cipherText);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1534,9 +1534,9 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, poly1305Params);
           await decCipher.doFinal(cipherText);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2800 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1556,7 +1556,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let algName: string = "ChaCha20|CBC";
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
           expect(encCipher.algName.split("|")[0]).assertEqual(expectAlgName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_2900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1583,9 +1583,9 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
             generate.convertKeySync(dataBlob);
             expect(null).assertFail();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`convertKeySync “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
             let keyLen: int = 33;
@@ -1593,11 +1593,11 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             let dataBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
             await generate.convertKey(dataBlob);
             expect(null).assertFail();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`convertKeySync “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_3000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1656,7 +1656,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           ret = commonUtils.compareDataBlob(plainText, {data:new Uint8Array(plainData)});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_3100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1744,7 +1744,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           ret = commonUtils.compareDataBlob(plainText, {data:new Uint8Array(plainData)});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_3200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1800,7 +1800,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           /* 比较解密后的明文是否和原消息一致 */
           let ret: boolean = commonUtils.compareDataBlob(plainText, message);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`ChaCha20_Func_3300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }

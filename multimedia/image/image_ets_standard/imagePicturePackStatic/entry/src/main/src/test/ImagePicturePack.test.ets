@@ -83,7 +83,7 @@ export default function imagePicturePack() {
             console.info("file not exists");
             isSupportHdr = false;
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       };
@@ -361,7 +361,7 @@ export default function imagePicturePack() {
             picture.release();
             waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
@@ -378,7 +378,7 @@ export default function imagePicturePack() {
             picture.release();
             waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();

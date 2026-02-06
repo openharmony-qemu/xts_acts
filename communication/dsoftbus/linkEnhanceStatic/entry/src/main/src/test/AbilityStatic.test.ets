@@ -172,7 +172,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("","demo");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 error.message is " + error.message);
@@ -202,7 +203,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("", "demo");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0200 error.message is " + error.message);
@@ -232,7 +234,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("", "demo");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0300 error.message is " + error.message);
@@ -262,7 +265,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0400 error.message is " + error.message);
@@ -292,7 +296,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0500 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0500 error.code is " + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0500 error.message is " + error.message);
@@ -487,7 +492,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", name);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connect_0400 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connect_0400 createConnection error.code is:" + error.code);
         expect(error.code === 32390300).assertTrue();
         expect(error.message != null).assertTrue();
@@ -512,7 +518,8 @@ export default function LinkEnhanceAPI() {
       try {
         let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", name);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connect_0500 is" + connection);
-      }catch (error: BusinessError) {
+      }catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connect_0500 createConnection error.code is: " + error.code);
           expect(error.code === 32390206).assertTrue();
           expect(error.message != null).assertTrue();
@@ -539,7 +546,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100 sendData start");
           connection.sendData(arraybuffer);
-        }catch (error: BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100 error.code is " + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100 error.message is " + error.message);
@@ -554,7 +562,8 @@ export default function LinkEnhanceAPI() {
           connection.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0100 createConnection error.code is:" + error.code);
         expect(error.message == null).assertTrue();
       }
@@ -581,7 +590,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200 sendData start");
           connection.sendData(arraybuffer);
-        }catch (error: BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200 error.code is " + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200 error.message is " + error.message);
@@ -596,7 +606,8 @@ export default function LinkEnhanceAPI() {
           connection.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_sendData_0200 createConnection error.code is:" + error.code);
         expect(error.message == null).assertTrue();
       }
@@ -621,7 +632,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 disconnect  start");
           connection.disconnect();
-        }catch (error: BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 error.code is " + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 error.message is " + error.message);
@@ -634,7 +646,8 @@ export default function LinkEnhanceAPI() {
           connection.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_disconnect_0100 createConnection error.code is:" + error.code);
         expect(error.message == null).assertTrue();
       }
@@ -657,7 +670,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 getPeerDeviceId  start");
           let deviceid = connection.getPeerDeviceId();
-        }catch (error: BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 error.code is " + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 error.message is " + error.message);
@@ -669,7 +683,8 @@ export default function LinkEnhanceAPI() {
           connection.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_getPeerDeviceId_0100 createConnection error.code is:" + error.code);
       }
@@ -692,7 +707,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_close_0100 close start");
           connection.close();
-        }catch (error: BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_close_0100 error.code is " + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_close_0100 error.message is " + error.message);
@@ -703,7 +719,8 @@ export default function LinkEnhanceAPI() {
           expect(flag == false).assertTrue();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_close_0100 createConnection error.code is:" + error.code);
         }
@@ -726,7 +743,8 @@ export default function LinkEnhanceAPI() {
         try {
           let server1: linkEnhance.Server = linkEnhance.createServer("demo");
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100 server1 is" + server1);
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100 error.code is:" + error.code);
           expect(error.code === 32390203).assertTrue();
@@ -739,7 +757,8 @@ export default function LinkEnhanceAPI() {
           server.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0100 createServer error.code is:" + error.code);
       }
@@ -759,7 +778,8 @@ export default function LinkEnhanceAPI() {
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0200 server is" + server);
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0200 error.code is:" + error.code);
           expect(error.code === 32390206).assertTrue();
@@ -787,7 +807,8 @@ export default function LinkEnhanceAPI() {
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0300 server is" + server);
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0300 error.code is:" + error.code);
           expect(error.code === 32390206).assertTrue();
@@ -815,7 +836,8 @@ export default function LinkEnhanceAPI() {
       try {
         let server: linkEnhance.Server = linkEnhance.createServer("");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400 server is" + server);
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400 error.code is:" + error.code);
           expect(error.code === 32390206).assertTrue();
@@ -887,7 +909,8 @@ export default function LinkEnhanceAPI() {
           server10.start();
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 server11.start");
           server11.start();
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.code is:" + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.message is:" + error.message);
@@ -911,7 +934,8 @@ export default function LinkEnhanceAPI() {
           server11.close();
           hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.code is:" + error.code);
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.message is:" + error.message);
         expect(error.message == null).assertTrue();
@@ -936,7 +960,8 @@ export default function LinkEnhanceAPI() {
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200 server is" + server);
         try {
           server.start();
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
          flag = true;
          hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200 error.code is:" + error.code);
         }finally {
@@ -944,7 +969,8 @@ export default function LinkEnhanceAPI() {
         expect(flag == false).assertTrue();
         hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError){
+      }catch (error){
+        error = error as BusinessError;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.code is:" + error.code);
       }
       hilog.info(domain, tag, "----------end SUB_DSoftbus_Trans_linkEnhance_API_server_start_0200----------------");
@@ -965,7 +991,8 @@ export default function LinkEnhanceAPI() {
         "abcdefghijklmnopqistuvwxyzabcdefghijklmnopqistuvwxyzabcdefghijklmnopqistuvwxyzabcdefghijklmnopqistuvwxyzabcdef" + 
         "ghijklmnopqistuvwxyzabcdefghijklmnopqistuvwxyzabcdefghijklmnopqistuvwxyzabcdefghijklmnopqistuv");
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0300 server is" + server);
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         flag = true;
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0300 error.code is:" + error.code);
         expect(error.code === 32390206).assertTrue();
@@ -996,7 +1023,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 server.stop is start");
           server.stop();
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 error.code is:" + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_stop_0100 error.message is:" + error.message);
@@ -1008,7 +1036,8 @@ export default function LinkEnhanceAPI() {
         server.close();
         hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_start_0100 error.code is:" + error.code); 
       }
@@ -1031,7 +1060,8 @@ export default function LinkEnhanceAPI() {
         try {
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 server.close is start");
           server.close();
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 error.code is:" + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 error.message is:" + error.message);
@@ -1042,7 +1072,8 @@ export default function LinkEnhanceAPI() {
         expect(flag == false).assertTrue();
         hilog.info(domain, tag, "reclaim done");
         }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_server_close_0100 error.code is:" + error.code); 
       }
@@ -1080,7 +1111,8 @@ export default function LinkEnhanceAPI() {
           expect(success == false).assertTrue();
           expect(reason === 32390200||reason === 32390300).assertTrue();
           expect(deviceId == "00:11:22:33:44:55").assertTrue();
-        }catch (error: BusinessError) {
+        }catch (error) {
+        error = error as BusinessError;
           flag = true;
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 error.code is:" + error.code);
           hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 error.message is:" + error.message);
@@ -1089,7 +1121,8 @@ export default function LinkEnhanceAPI() {
           hilog.info(domain, tag, "reclaim done");
           connection.close();
           }
-      }catch (error: BusinessError) {
+      }catch (error) {
+        error = error as BusinessError;
         expect(error.message == null).assertTrue();
         hilog.info(domain, tag, "SUB_DSoftbus_Trans_linkEnhance_API_connectResult_0100 createConnection error.code is:" + error.code); 
         }

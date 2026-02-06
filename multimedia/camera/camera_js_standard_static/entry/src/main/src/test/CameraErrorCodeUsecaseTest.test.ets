@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -264,7 +264,7 @@ export default function cameraErrorCodeUsecaseTest() {
     console.info(TAG + 'Enter createCameraSessionInstance');
     try {
       mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-    } catch(error:BusinessError) {
+    } catch(error) {
       console.info(TAG + 'createCaptureSession FAILED');
     }
     if (isEmpty04(mCameraSession!)) {
@@ -439,7 +439,8 @@ export default function cameraErrorCodeUsecaseTest() {
       } else {
         try {
           let camerainput = mCameraManager!.createCameraInput(mCameraDevicesArray[0]);
-        } catch (error:BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CREATE_CAMERA_INPUT_STATIC_0100 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
           expect(error.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
@@ -480,7 +481,7 @@ export default function cameraErrorCodeUsecaseTest() {
           }
 
         })
-      } catch(err:BusinessError) {
+      } catch(err) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200 FAILED: " +
             err.message);
       }
@@ -507,7 +508,8 @@ export default function cameraErrorCodeUsecaseTest() {
       await mCameraSession!.start();
       try {
         await mPhotoOutput!.capture(captureSettingNull);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0400 FAILED");
         console.info(TAG + "ERRORCODE: " + err.code);
         expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
@@ -553,7 +555,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
       try {
         await mCameraSession!.commitConfig()
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_COMMITCONFIG_STATIC_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + err.code);
         expect(err.code == cameraObj.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
@@ -575,7 +578,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
       try {
         mCameraSession!.addInput(mCameraInput!);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_INPUT_STATIC_0300 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
@@ -597,7 +601,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
       try {
         mCameraSession!.removeInput(mCameraInput!);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_INPUT_STATIC_0300 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
@@ -620,7 +625,8 @@ export default function cameraErrorCodeUsecaseTest() {
       createOutput(0);
       try {
         mCameraSession!.addOutput(mPreviewOutput!);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_ADD_OUTPUT_STATIC_0300 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.OPERATION_NOT_ALLOWED).assertTrue();
@@ -643,7 +649,8 @@ export default function cameraErrorCodeUsecaseTest() {
       createOutput(0);
       try {
         mCameraSession!.removeOutput(mPreviewOutput!);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_REMOVE_OUTPUT_STATIC_0300 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         //console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0200 FAILED: " + error.message);
@@ -670,7 +677,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         await mCameraSession!.start()
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_START_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + err.code);
         console.info(TAG + "cameraObj.CameraErrorCode.SESSION_NOT_CONFIG: " +
@@ -761,7 +769,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let isFlash: boolean = mCameraSession!.hasFlash();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_HASFLASH_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         console.info(TAG + "cameraObj.CameraErrorCode.SESSION_NOT_CONFIG: " +
@@ -791,7 +800,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(mPhotoOutput!);
         try {
           let isFlashmodesupported: boolean = mCameraSession!.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_AUTO);
-        } catch (error: BusinessError) {
+        } catch (error) {
+        error = error as BusinessError;
           console.info(TAG +
             "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFLASHMODESUPPORTED_STATIC_0100 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -819,7 +829,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let flashmode: cameraObj.FlashMode = mCameraSession!.getFlashMode();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFLASHMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -846,7 +857,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         mCameraSession!.setFlashMode(cameraObj.FlashMode.FLASH_MODE_AUTO);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFLASHMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -874,7 +886,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(mPhotoOutput!);
         try {
           let issupported: boolean = mCameraSession!.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
-        } catch (error: BusinessError) {
+        } catch (error) {
+        error = error as BusinessError;
           console.info(TAG +
             "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISEXPOSUREMODESUPPORTED_STATIC_0100 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -902,7 +915,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let exposure: cameraObj.ExposureMode = mCameraSession!.getExposureMode();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -929,7 +943,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         mCameraSession!.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -956,7 +971,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let point: cameraObj.Point = mCameraSession!.getMeteringPoint();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETMETERINGPOINT_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -987,7 +1003,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.setMeteringPoint({
           x: (1.0) as number, y: (1.0) as number
         } as cameraObj.Point);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0100 SUCCESS");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1018,7 +1035,7 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.setMeteringPoint({
           x: (-1.0) as number, y: (-1) as number
         } as cameraObj.Point);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETMETERINGPOINT_STATIC_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code != cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1046,7 +1063,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(mPhotoOutput!);
         try {
           let rangeArray: Array<number> = mCameraSession!.getExposureBiasRange();
-        } catch (error: BusinessError) {
+        } catch (error) {
+        error = error as BusinessError;
           console.info(TAG +
             "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREBIASRANGE_STATIC_0100 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -1075,7 +1093,8 @@ export default function cameraErrorCodeUsecaseTest() {
       try {
         let range: Array<number> = mCameraSession!.getExposureBiasRange();
         mCameraSession!.setExposureBias(range[0]);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1102,7 +1121,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         await mPhotoOutput!.capture();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0500 FAILED");
         console.info(TAG + "ERRORCODE: " + err.code);
         expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
@@ -1131,7 +1151,8 @@ export default function cameraErrorCodeUsecaseTest() {
       try {
         let range: Array<number> = mCameraSession!.getExposureBiasRange();
         mCameraSession!.setExposureBias(-101);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETEXPOSUREBIAS_STATIC_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code != cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1158,7 +1179,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let value: number = mCameraSession!.getExposureValue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETEXPOSUREVALUE_STATIC_0100 ERRORCODE");
@@ -1187,7 +1209,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(mPhotoOutput!);
         try {
           let issupported: boolean = mCameraSession!.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_AUTO);
-        } catch (error: BusinessError) {
+        } catch (error) {
+        error = error as BusinessError;
           console.info(TAG +
             "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISFOCUSMODESUPPORTED_STATIC_0100 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -1215,7 +1238,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let focusmode: cameraObj.FocusMode = mCameraSession!.getFocusMode();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1242,7 +1266,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         mCameraSession!.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_MANUAL);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1271,7 +1296,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.setFocusPoint({
           x: (1.0) as number, y: (1.0) as number
         } as cameraObj.Point);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1301,7 +1327,7 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.setFocusPoint({
           x: (-1.0) as number, y: (-1.0) as number
         } as cameraObj.Point);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETFOCUSPOINT_STATIC_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code != cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1331,7 +1357,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let point: cameraObj.Point = mCameraSession!.getFocusPoint();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSPOINT_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1358,7 +1385,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let length: number = mCameraSession!.getFocalLength();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETFOCUSLENGTH_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1385,7 +1413,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let zoomratiorange: Array<number> = mCameraSession!.getZoomRatioRange();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIORANG_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1412,7 +1441,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let zoomratio: number = mCameraSession!.getZoomRatio();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_GETZOOMRATIO_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1440,7 +1470,8 @@ export default function cameraErrorCodeUsecaseTest() {
       try {
         let zoomratiorange: Array<number> = mCameraSession!.getZoomRatioRange();
         mCameraSession!.setZoomRatio(zoomratiorange[0]);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code != null).assertTrue();
@@ -1469,7 +1500,8 @@ export default function cameraErrorCodeUsecaseTest() {
       try {
         let zoomratiorange: Array<number> = mCameraSession!.getZoomRatioRange();
         mCameraSession!.setZoomRatio(-101);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETZOOMRATIO_STATIC_0200 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code != cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1496,7 +1528,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let isVSMS: boolean = mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.LOW);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_ISVSMS_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1523,7 +1556,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         let avstmode: cameraObj.VideoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_AVSTMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1550,7 +1584,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.LOW);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_CAPTURESESSION_SETVSTMODE_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1627,7 +1662,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(videoOutput!);
         try {
           await videoOutput!.start()
-        } catch(err: BusinessError) {
+        } catch(err) {
+        err = err as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_VIDEO_START_STATIC_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + err.code);
           expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1687,7 +1723,8 @@ export default function cameraErrorCodeUsecaseTest() {
         mCameraSession!.addOutput(metadataOutput!);
         try {
           await metadataOutput!.start()
-        } catch(err: BusinessError) {
+        } catch(err) {
+        err = err as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_METADATAOUTPUT_START_STATIC_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + err.code);
           expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
@@ -1773,7 +1810,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.addOutput(mPhotoOutput!);
       try {
         await mPhotoOutput!.capture(captureSetting);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_PHOTOOUTPUT_CAPTURE_STATIC_0800 FAILED");
         console.info(TAG + "ERRORCODE: " + err.code);
         expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
@@ -1796,7 +1834,8 @@ export default function cameraErrorCodeUsecaseTest() {
       mCameraSession!.beginConfig();
       try {
         mCameraSession!.beginConfig();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_BEGINCONFIG_STATIC_0100 FAILED");
         console.info(TAG + "ERRORCODE: " + error.code);
         expect(error.code == cameraObj.CameraErrorCode.SESSION_CONFIG_LOCKED).assertTrue();
@@ -1832,7 +1871,7 @@ export default function cameraErrorCodeUsecaseTest() {
       try {
         let devices = mCameraManager!.getCameraDevices(validPos, validTypes, validConn);
         expect().assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         console.info(TAG + "SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100 Invalid Position Code: " + error.code);
         expect(String(error.code)).assertEqual('7400201');
       }

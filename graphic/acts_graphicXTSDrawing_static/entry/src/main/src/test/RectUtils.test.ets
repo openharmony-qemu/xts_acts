@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2025-2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils getHeight successed height: ' + height);
         expect(width).assertEqual(0);
         expect(height).assertEqual(0);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils getWidth width  height errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -94,7 +94,7 @@ export default function rectUtilsTest() {
           console.info(msg + ' RectUtils getHeight successed height: ' + height);
           expect(width).assertEqual(0);
           expect(height).assertEqual(0);
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg +
             `RectUtils getWidth width  height error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
@@ -120,7 +120,7 @@ export default function rectUtilsTest() {
         // console.info(msg + ' RectUtils intersect 1 successed rect: ' + JSON.stringify(rect));
         expect(rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == 0).assertEqual(true);
         expect(isIntersect).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils intersect 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -153,7 +153,7 @@ export default function rectUtilsTest() {
         let isEmpty = drawing.RectUtils.isEmpty(rect);
         console.info(msg + ' RectUtils isEmpty isEmpty successed isEmpty： ' + isEmpty);
         expect(isEmpty).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEmpty isEmpty errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -163,7 +163,7 @@ export default function rectUtilsTest() {
         let isEmpty2 = drawing.RectUtils.isEmpty(rect);
         console.info(msg + ' RectUtils isEmpty isEmpty2 successed isEmpty2： '+ isEmpty2);
         expect(isEmpty2).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEmpty isEmpty2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -173,7 +173,7 @@ export default function rectUtilsTest() {
         let isEmpty3 = drawing.RectUtils.isEmpty(rect);
         console.info(msg + ' RectUtils isEmpty isEmpty3 successed isEmpty3: ' + isEmpty3);
         expect(isEmpty3).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEmpty isEmpty3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -183,7 +183,7 @@ export default function rectUtilsTest() {
         let isEmpty4 = drawing.RectUtils.isEmpty(rect);
         console.info(msg + ' RectUtils isEmpty isEmpty4 successed isEmpty4: ' + isEmpty4);
         expect(isEmpty4).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEmpty isEmpty4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -209,7 +209,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils offset 1 successed rect.right: ' + rect.right);
         console.info(msg + ' RectUtils offset 1 successed rect.bottom: ' + rect.bottom);
         expect(rect.left == 10 && rect.top == 20 && rect.right == 10 && rect.bottom == 20).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils offset 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -224,7 +224,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils offset 2 successed rect.right: ' + rect.right);
         console.info(msg + ' RectUtils offset 2 successed rect.bottom: ' + rect.bottom);
         expect(rect.left == 20.100000381469727 && rect.top == 40.20000076293945 && rect.right == 30.100000381469727 && rect.bottom == 40.20000076293945).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils offset 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -239,7 +239,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils offset 3 successed rect.right: ' + rect.right);
         console.info(msg + ' RectUtils offset 3 successed rect.bottom: ' + rect.bottom);
         expect(rect.left == 5 && rect.top == 4.900000095367432 && rect.right == 5 && rect.bottom == 14.899999618530273).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils offset 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -254,7 +254,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils offset 4 successed rect.right: ' + rect.right);
         console.info(msg + ' RectUtils offset 4 successed rect.bottom: ' + rect.bottom);
         expect(rect.left == 10 && rect.top == 15.100000381469727 && rect.right == 10 && rect.bottom == 15.100000381469727).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils offset 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -275,7 +275,7 @@ export default function rectUtilsTest() {
         try {
           drawing.RectUtils.offset(rect, Math.random() *100, Math.random() *20);
           console.info(msg + `RectUtils.offset success step: ` + i);
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `RectUtils offset error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
@@ -298,7 +298,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils sort 1 successed');
         // console.info(msg + ' RectUtils sort 1 successed rect: ' + JSON.stringify(rect));
         expect(rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == 0).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils sort 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -309,7 +309,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils sort 2 successed');
         // console.info(msg + ' RectUtils sort 2 successed rect: ' + JSON.stringify(rect));
         expect(rect.left == 10 && rect.top == 20 && rect.right == 20 && rect.bottom == 20).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils sort 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -320,7 +320,7 @@ export default function rectUtilsTest() {
         console.info(msg + ' RectUtils sort 3 successed');
         // console.info(msg + ' RectUtils sort 3 successed rect: ' + JSON.stringify(rect));
         expect(rect.left == 10 && rect.top == 10 && rect.right == 10 && rect.bottom == 20).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils sort 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -330,7 +330,7 @@ export default function rectUtilsTest() {
         drawing.RectUtils.sort(rect);
         console.info(msg + ' RectUtils sort 9 successed');
         // console.info(msg + ' RectUtils sort 9 successed rect: ' + JSON.stringify(rect));
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils sort 9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -352,7 +352,7 @@ export default function rectUtilsTest() {
         let isEqual: boolean = drawing.RectUtils.isEqual(rect, rect2);
         console.info(msg + ' RectUtils isEqual 1 successed');
         expect(isEqual).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEqual 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -362,7 +362,7 @@ export default function rectUtilsTest() {
         let isEqual2: boolean = drawing.RectUtils.isEqual(rect, rect2);
         console.info(msg + ' RectUtils isEqual2  successed');
         expect(isEqual2).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` RectUtils isEqual2  errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -385,7 +385,7 @@ export default function rectUtilsTest() {
           let isEqual: boolean = drawing.RectUtils.isEqual(rect, rect2);
           console.info(msg + `RectUtils.isEqual success step: ` + i);
           expect(isEqual).assertEqual(false);
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `RectUtils isEqual error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
@@ -409,7 +409,7 @@ export default function rectUtilsTest() {
         expect(isContains1).assertEqual(true);
         let isContains2 = drawing.RectUtils.contains(other, rect);
         expect(isContains2).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -432,7 +432,7 @@ export default function rectUtilsTest() {
           let isContains = drawing.RectUtils.contains(rect, other);
           console.info(msg + `isContains = ` + isContains);
           expect(isContains).assertEqual(true);
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
         }
@@ -460,7 +460,7 @@ export default function rectUtilsTest() {
         expect(rect.top + '').assertEqual('20');
         expect(rect.right + '').assertEqual('70');
         expect(rect.bottom + '').assertEqual('60');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -488,7 +488,7 @@ export default function rectUtilsTest() {
           expect(rect.top + '').assertEqual('20');
           expect(rect.right + '').assertEqual('70');
           expect(rect.bottom + '').assertEqual('60');
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
         }

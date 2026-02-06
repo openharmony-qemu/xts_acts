@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -157,7 +157,7 @@ export default function objectStoreTestV9() {
         let g_object1 = distributedObject.create(context1!, source);
         try {
           await g_object1.setSessionId("session1");
-        } catch (err: Error) {
+        } catch (err) {
           console.info(TAG + 'setSessionId failed' + err.code + err.message);
           expect(err.code).assertEqual(15400001);
         }
@@ -447,7 +447,7 @@ export default function objectStoreTestV9() {
           g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -473,7 +473,7 @@ export default function objectStoreTestV9() {
           g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -499,7 +499,7 @@ export default function objectStoreTestV9() {
           g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -525,7 +525,7 @@ export default function objectStoreTestV9() {
           g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -611,7 +611,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore010 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -784,7 +784,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore020 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -870,7 +870,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore030 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -914,7 +914,7 @@ export default function objectStoreTestV9() {
             console.info(TAG + error);
           });
           g_object["attachment"] = {};
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect(error.code === 401).assertEqual(true);
         }

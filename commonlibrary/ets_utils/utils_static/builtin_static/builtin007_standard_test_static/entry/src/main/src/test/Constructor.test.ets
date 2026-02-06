@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,8 @@ export default function constructorTest() {
         let instance1 = NullValue.INSTANCE;
         let instance2 = NullValue.INSTANCE;
         expect(instance1 === instance2).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -73,7 +74,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0002";
       try {
         expect(NullValue.INSTANCE.getType()).assertEqual(NullType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -91,7 +93,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0003";
       try {
         expect(NullValue.INSTANCE.toString()).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -110,7 +113,8 @@ export default function constructorTest() {
       try {
         let instance = NullValue.INSTANCE;
         expect(instance.toLocaleString()).assertEqual(instance.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -128,7 +132,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0005";
       try {
         expect(NullValue.INSTANCE.toPrint(0)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -149,7 +154,8 @@ export default function constructorTest() {
         expect(instance.toPrint(0)).assertEqual("null");
         expect(instance.toPrint(1)).assertEqual("null");
         expect(instance.toPrint(2)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -169,7 +175,8 @@ export default function constructorTest() {
         let instance1 = UndefinedValue.INSTANCE;
         let instance2 = UndefinedValue.INSTANCE;
         expect(instance1 === instance2).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -187,7 +194,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0002";
       try {
         expect(UndefinedValue.INSTANCE.getType()).assertEqual(UndefinedType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -205,7 +213,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0003";
       try {
         expect(UndefinedValue.INSTANCE.toString()).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -224,7 +233,8 @@ export default function constructorTest() {
       try {
         let instance = UndefinedValue.INSTANCE;
         expect(instance.toLocaleString()).assertEqual(instance.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -242,7 +252,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0005";
       try {
         expect(UndefinedValue.INSTANCE.toPrint(0)).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -263,7 +274,8 @@ export default function constructorTest() {
         expect(instance.toPrint(0)).assertEqual("undefined");
         expect(instance.toPrint(1)).assertEqual("undefined");
         expect(instance.toPrint(2)).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -284,6 +296,7 @@ export default function constructorTest() {
         const instance2 = VoidValue.INSTANCE;
         expect(instance1 === instance2).assertTrue();
       } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -302,7 +315,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.getType().toString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -321,7 +335,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -340,7 +355,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toLocaleString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -359,7 +375,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toPrint(0)).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -398,7 +415,8 @@ export default function constructorTest() {
         let instance2 = new VoidValue();
         expect(instance1 instanceof VoidValue).assertTrue();
         expect(instance2 instanceof VoidValue).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} error msg: ${err}`);
         expect().assertFail();
       }
@@ -423,7 +441,8 @@ export default function constructorTest() {
         }
         const boolObj = new Boolean(result);
         expect(boolObj.valueOf()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -447,7 +466,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(123);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -471,7 +491,8 @@ export default function constructorTest() {
           return;
         }
         expect(result as string).assertEqual("Hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -491,7 +512,8 @@ export default function constructorTest() {
         let nullValue = NullValue.INSTANCE;
         let result = nullValue.getData();
         expect(result === null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -511,7 +533,8 @@ export default function constructorTest() {
         let undefinedValue = UndefinedValue.INSTANCE;
         let result = undefinedValue.getData();
         expect(result === undefined).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -535,7 +558,8 @@ export default function constructorTest() {
           return;
         }
         expect(Byte.valueOf(result)).assertEqual(127);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -559,7 +583,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(127);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -583,7 +608,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(2147483647);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -607,7 +633,8 @@ export default function constructorTest() {
           return;
         }
         expect(Math.abs(Number(result) - 3.14) < 0.0001).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -626,7 +653,8 @@ export default function constructorTest() {
       try {
         let value = new BooleanValue(BooleanType.REF, true);
         expect(value.getType()).assertEqual(BooleanType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -645,7 +673,8 @@ export default function constructorTest() {
       try {
         let value = new IntValue(IntType.REF, 123);
         expect(value.getType()).assertEqual(IntType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -664,7 +693,8 @@ export default function constructorTest() {
       try {
         let value = new FloatValue(FloatType.REF, 3.14 as float);
         expect(value.getType()).assertEqual(FloatType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -683,7 +713,8 @@ export default function constructorTest() {
       try {
         let value = new StringValue(StringType.REF, "test");
         expect(value.getType()).assertEqual(StringType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -703,7 +734,8 @@ export default function constructorTest() {
         let arr: FixedArray<boolean> = [true, false];
         let value = reflect.Value.of(arr);
         expect(value.getType()).assertEqual(ArrayType.BOOLEAN_VAL);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -723,7 +755,8 @@ export default function constructorTest() {
         let value = NullValue.INSTANCE;
         const typeName = value.getType().toString();
         expect(typeName === "NullType" || typeName === "null").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -743,7 +776,8 @@ export default function constructorTest() {
         let value = UndefinedValue.INSTANCE;
         const typeName = value.getType().toString();
         expect(typeName === "UndefinedType" || typeName === "undefined").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -763,7 +797,8 @@ export default function constructorTest() {
         let arr: FixedArray<int> = [1, 2, 3];
         let value = reflect.Value.of(arr);
         expect(value.getType()).assertEqual(ArrayType.INT_VAL);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -782,7 +817,8 @@ export default function constructorTest() {
       try {
         let value = NullValue.INSTANCE;
         expect(value.toPrint(0)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -801,7 +837,8 @@ export default function constructorTest() {
       try {
         let value = new BooleanValue(BooleanType.REF, true);
         expect(value.toPrint(0)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -820,7 +857,8 @@ export default function constructorTest() {
       try {
         let value = new IntValue(IntType.REF, 123);
         expect(value.toPrint(0)).assertEqual("123");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -839,7 +877,8 @@ export default function constructorTest() {
       try {
         let value = new FloatValue(FloatType.REF, 3.14 as float);
         expect(value.toPrint(0)).assertEqual("3.14");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }

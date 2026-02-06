@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       try {
         collection = await crlFunc.createCollection([], [1], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -76,7 +76,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       try {
         collection = await crlFunc.createCollection([], [1], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -96,7 +96,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 2).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -119,7 +119,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 2).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -142,7 +142,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -165,7 +165,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -187,7 +187,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
@@ -195,7 +195,8 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -217,7 +218,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
@@ -225,7 +226,8 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
@@ -246,7 +248,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -267,7 +269,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -287,7 +289,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         x509Cert = await certFunc.createPEMCustomizedX509CertPromise(CRL_CERT_DATA_02[0]);
         expect(x509Cert != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -299,7 +301,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -319,7 +321,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         x509Cert = await certFunc.createPEMCustomizedX509CertPromise(CRL_CERT_DATA_01[0]);
         expect(x509Cert != null).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       const param: cert.X509CRLMatchParameters = {
@@ -331,7 +333,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.createX509CrlInstancePromise("der");
         await certCallback.createX509CrlInstanceCallback("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -57,7 +57,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.createX509CrlInstancePromise("pem");
         await certCallback.createX509CrlInstanceCallback("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -80,7 +80,7 @@ export default function CertificateCrlJsunit() {
         crlInstance = await certPromise.createX509CrlInstancePromise("pem");
         let result2: boolean = await certCallback.checkIsRevokedX509CrlCallback(crlInstance, "normal");
         expect(result2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -100,7 +100,7 @@ export default function CertificateCrlJsunit() {
         let crlInstance: cert.X509CRL = await certPromise.createX509CrlInstancePromise("pem");
         let result: boolean = await certPromise.checkIsRevokedX509CrlPromise(crlInstance, "error");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -120,15 +120,15 @@ export default function CertificateCrlJsunit() {
         let crlInstance: cert.X509CRL = await certPromise.createX509CrlInstancePromise("pem");
         await certPromise.checkIsRevokedX509CrlPromise(crlInstance, "NULL");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
       }
       try {
         let crlInstance: cert.X509CRL = await certPromise.createX509CrlInstancePromise("pem");
         await certPromise.checkIsRevokedX509CrlPromise(crlInstance, "000");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
       }
       done();
     });
@@ -145,7 +145,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getType");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -164,7 +164,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.checkGetEncodedX509CrlPromise("pem");
         await certCallback.checkGetEncodedX509CrlCallback("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -182,7 +182,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getVersion");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -200,7 +200,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getIssuerName");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -218,7 +218,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getLastUpdate");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -236,7 +236,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getNextUpdate");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -255,7 +255,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certCallback.checkGetRevokedCertX509CrlCallback("pem");
         await certPromise.checkGetRevokedCertX509CrlPromise("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -278,7 +278,7 @@ export default function CertificateCrlJsunit() {
         let crlInstance2: cert.X509CRL = await certPromise.createX509CrlInstancePromise("pem")
         let result2: cert.X509CRLEntry = await certCallback.checkGetRevokedCertWithCertX509CrlCallback(crlInstance2, "normal");
         expect(result2 != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -298,7 +298,7 @@ export default function CertificateCrlJsunit() {
         let data: string = await certCallback.checkGetRevokedCertsX509CrlCallback("pem");
         expect(data).assertEqual("get revoked certs success");
         await certPromise.checkGetRevokedCertsX509CrlPromise("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -317,7 +317,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getTbsInfo");
         await certCallback.getX509CrlInfoCallback("pem", "getTbsInfo");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -335,7 +335,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getSignature");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -353,7 +353,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getSignatureAlgName");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -371,7 +371,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getSignatureAlgOid");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -389,7 +389,7 @@ export default function CertificateCrlJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CrlInfoPromise("pem", "getSignatureAlgParams");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -409,7 +409,7 @@ export default function CertificateCrlJsunit() {
         let data: string = await certCallback.checkGetRevokedCertX509CrlCallback("pem");
         expect(data).assertEqual("check revoked success");
         await certPromise.checkGetRevokedCertX509CrlPromise("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -429,7 +429,7 @@ export default function CertificateCrlJsunit() {
         let data: string = await certCallback.checkGetRevokedCertX509CrlCallback("der");
         expect(data).assertEqual("check revoked success");
         await certPromise.checkGetRevokedCertX509CrlPromise("der")
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -448,7 +448,7 @@ export default function CertificateCrlJsunit() {
         let data: string = await certCallback.checkGetRevokedCertX509CrlCallback("pem");
         expect(data).assertEqual("check revoked success");
         await certPromise.checkGetRevokedCertX509CrlPromise("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -467,7 +467,7 @@ export default function CertificateCrlJsunit() {
         let data: string = await certCallback.checkGetRevokedCertX509CrlCallback("der");
         expect(data).assertEqual("check revoked success");
         await certPromise.checkGetRevokedCertX509CrlPromise("pem")
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -485,7 +485,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.verifyX509CrlPromise("pem");
         await certCallback.verifyX509CrlCallback("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -503,7 +503,7 @@ export default function CertificateCrlJsunit() {
       try {
         await certPromise.verifyX509CrlPromise("der");
         await certCallback.verifyX509CrlCallback("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();

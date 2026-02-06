@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -577,7 +577,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -629,7 +629,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -679,7 +679,7 @@ export default function cameraSessionCameraRotationTest() {
         }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 ends here");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();

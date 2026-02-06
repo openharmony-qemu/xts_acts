@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ export default function audioManagerTest() {
         console.info(`isVolumeUnadjustable SUCCESS, is ${bol}`);
         expect(bol).assertEqual(false);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`isVolumeUnadjustable error: ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();

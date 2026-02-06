@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ async function CreateCorruptDb() {
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.info(TAG, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(TAG, `quit create corrupt store`);
@@ -117,7 +117,7 @@ export default function RelationalStoreSyncApiTest() {
         let result = rdbStore!.insertSync("test", valueBucket);
         expect(result).assertEqual(1);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect().assertFail();
       }
       await rdbStore!.execute("DELETE FROM test");

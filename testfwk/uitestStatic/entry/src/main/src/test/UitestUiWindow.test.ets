@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -198,10 +198,11 @@ export default function uitestUiWindowTest() {
             }
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.message == 'this device can not support this action') {
           expect(window1 != null).assertTrue();
-          expect(err.code).assertEqual(DeviceErrorCode);
+          expect((err as BusinessError).code).assertEqual(DeviceErrorCode);
         } else {
           expect(false).assertTrue();
         }
@@ -229,7 +230,8 @@ export default function uitestUiWindowTest() {
           await window.resume();
           await driver!.delayMs(waitUiReadyMs);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testResume_static resume error, ${JSON.stringify(err)}`);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();
@@ -309,7 +311,8 @@ export default function uitestUiWindowTest() {
             }
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testWindowResizeA_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();
@@ -361,7 +364,8 @@ export default function uitestUiWindowTest() {
             expect(bounds1 != bounds2).assertTrue();
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testWindowMoveTo_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(err.code).assertEqual(DeviceErrorCode);
@@ -398,7 +402,8 @@ export default function uitestUiWindowTest() {
           hilog.info(domain, tag, `testWindowMinimize_static window1, ${JSON.stringify(window1)} `);
           expect(window1 == null).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testWindowMinimize_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();
@@ -449,7 +454,8 @@ export default function uitestUiWindowTest() {
           expect(mode == WindowMode.FULLSCREEN).assertTrue();
         }
         await stopApplication('com.uitestScene.acts')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testWindowMaximize_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();
@@ -635,7 +641,8 @@ export default function uitestUiWindowTest() {
             }
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testGetWindowMode_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window1 != null).assertTrue()
@@ -708,7 +715,8 @@ export default function uitestUiWindowTest() {
         let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
         hilog.info(domain, tag, `testWindowClose_static window1, ${JSON.stringify(window1)} `);
         expect(window1 == null).assertTrue()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();

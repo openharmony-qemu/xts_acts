@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1379,7 +1379,8 @@ export default function getBundleInfoForSelf() {
         expect(data!.hapModulesInfo[0].abilitiesInfo[2].launchType).assertEqual(bundle.LaunchType.SPECIFIED);
         hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getBundleInfoForSelfApplicationPromise  ====> err', JSON.stringify(err));
         expect(err).assertFail();
         done();

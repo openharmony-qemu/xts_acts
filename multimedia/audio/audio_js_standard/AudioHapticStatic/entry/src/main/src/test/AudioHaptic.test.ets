@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -650,8 +650,9 @@ export default function AudioHapticTest() {
         console.log(`${tag} AudioHapticPlayer release success`);
         expect(true).assertTrue();
         done();
-      } catch(err: BusinessError) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+      } catch(err) {
+        err = err as BusinessError;
+        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
           done();
@@ -659,10 +660,6 @@ export default function AudioHapticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
-        expect(false).assertTrue();
-        done()
       }
     })
     /**
@@ -689,19 +686,21 @@ export default function AudioHapticTest() {
         flag = true;
         expect(flag).assertTrue();
         done();
-      } catch(err: BusinessError) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
-        if (err.code === 5400106) {
-          expect(true).assertTrue();
-          done();
+      } catch(err) {
+        if (err instanceof Error) {
+          console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+          if (err.code === 5400106) {
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
         } else {
+          console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
           expect(false).assertTrue();
-          done();
+          done()
         }
-      } catch (err) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
-        expect(false).assertTrue();
-        done()
       }
     })
     /**
@@ -1640,12 +1639,13 @@ export default function AudioHapticTest() {
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           done();

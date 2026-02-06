@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -141,18 +141,18 @@ export default function abilityTest() {
                 session = await avSession.createAVSession(context!, tag, 'voice_call')
                 console.info(`${TAG}: avSession create success`);
                 console.info(`${session!.sessionType}`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate()
                 console.info(`${TAG}: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`${TAG}: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -165,7 +165,7 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -175,7 +175,7 @@ export default function abilityTest() {
                 try{
                     await controller!.destroy()
                     console.info(`${TAG}: Controller destroy success`);
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -210,7 +210,7 @@ export default function abilityTest() {
             try{
                 await session!.setCallMetadata(callMetadata0)
                 console.info(`${TAG}: setCallMetadata set avatar successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setCallMetadata set avatar error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -227,7 +227,7 @@ export default function abilityTest() {
                     done();
                 }
                 pixMap = data.avatar as image.PixelMap;
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getCallMetadata set avatar error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -265,7 +265,7 @@ export default function abilityTest() {
                 await session!.setCallMetadata(callMetadata5)
                 console.info(`${TAG}: setCallMetadata without avsession test fail, set successful!`);
                 expect(false).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err){
                 if (err.code == 6600102) {
                     console.info(`${TAG}: setCallMetadata without avsession test success, error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertTrue();
@@ -293,7 +293,7 @@ export default function abilityTest() {
             try{
                 await session!.setCallMetadata(callMetadata6)
                 console.info(`${TAG}: setCallMetadata set name successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setCallMetadata set name error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -309,7 +309,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: name is: ${data.name}`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -332,7 +332,7 @@ export default function abilityTest() {
             try{
                 await session!.setCallMetadata(callMetadata7)
                 console.info(`${TAG}: setCallMetadata set phoneNumber successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setCallMetadata set phoneNumber error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -348,7 +348,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: phoneNumber is: ${data.phoneNumber}`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getCallMetadata get phoneNumber error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -375,7 +375,7 @@ export default function abilityTest() {
             try{
                 await session!.setCallMetadata(callMetadata8)
                 console.info(`${TAG}: setCallMetadata set avatar successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setCallMetadata set avatar error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -384,7 +384,7 @@ export default function abilityTest() {
             try{
                 data = await controller!.getCallMetadata()
                 pixMap = data.avatar as image.PixelMap;
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getCallMetadata set avatar error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -461,7 +461,7 @@ export default function abilityTest() {
             try{
                 await session!.setCallMetadata(callMetadata1)
                 console.info(`${TAG}: setCallMetadata successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setCallMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -470,7 +470,7 @@ export default function abilityTest() {
                 await controller!.getCallMetadata()
                 console.info(`${TAG}: getCallMetadata without controller test fail, get successful!`);
                 expect(false).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err){
                 if (err.code) {
                     if (err.code == 6600103) {
                         console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
@@ -548,7 +548,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -587,7 +587,7 @@ export default function abilityTest() {
 
                     done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -625,14 +625,14 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }
                             done();
-                        }catch(err: BusinessError){
+                        }catch(err){
                             console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
                             expect(false).assertTrue();
                             done();
                         };
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -670,14 +670,14 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             }
                             done();
-                        }catch(err: BusinessError){
+                        }catch(err){
                             console.info(`${TAG}: getCallMetadata get phoneNumber error: code: ${err.code}, message: ${err.message}`);
                             expect(false).assertTrue();
                             done();
                         };
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -734,7 +734,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -768,7 +768,7 @@ export default function abilityTest() {
                     session = null;
                     done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -803,7 +803,7 @@ export default function abilityTest() {
 
                     done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -827,7 +827,7 @@ export default function abilityTest() {
             try{
                 await session!.setAVCallState(avCallState0)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -841,7 +841,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -865,7 +865,7 @@ export default function abilityTest() {
             try{
                 await session!.setAVCallState(avCallState1)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -879,7 +879,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -903,7 +903,7 @@ export default function abilityTest() {
             try{
             await session!.setAVCallState(avCallState2)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -917,7 +917,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -941,7 +941,7 @@ export default function abilityTest() {
             try{
                 await session!.setAVCallState(avCallState3)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -955,7 +955,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -979,7 +979,7 @@ export default function abilityTest() {
             try{
                 await session!.setAVCallState(avCallState4)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -993,7 +993,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1017,7 +1017,7 @@ export default function abilityTest() {
             try{
             await session!.setAVCallState(avCallState5)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1031,7 +1031,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1055,7 +1055,7 @@ export default function abilityTest() {
             try{
                 await session!.setAVCallState(avCallState6)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1069,7 +1069,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1093,7 +1093,7 @@ export default function abilityTest() {
             try{
             await session!.setAVCallState(avCallState7)
                 console.info(`${TAG}: setAVCallState successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1107,7 +1107,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: getAVCallState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1133,7 +1133,7 @@ export default function abilityTest() {
                 await session!.setAVCallState(avCallState12)
                 console.info(`${TAG}: setAVCallState without avsession test fail, set successful!`);
                 expect(false).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err){
                 if (err.code == 6600102) {
                     console.info(`${TAG}: setAVCallState without avsession test success, error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertTrue();
@@ -1180,7 +1180,7 @@ export default function abilityTest() {
                 });
                 session = null;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1205,7 +1205,7 @@ export default function abilityTest() {
                 try{
                     await session!.setAVCallState(avCallState1)
                     console.info(`${TAG}: setAVCallState successfully`);
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 };
@@ -1214,7 +1214,7 @@ export default function abilityTest() {
                     await controller!.getAVCallState()
                     console.info(`${TAG}: getAVCallState without controller test fail, get successful!`);
                     expect(false).assertTrue();
-                }catch(err: BusinessError){
+                }catch(err){
                     if (err.code == 6600103) {
                         console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
                         expect(true).assertTrue();
@@ -1225,7 +1225,7 @@ export default function abilityTest() {
                 };
 
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1269,7 +1269,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1313,7 +1313,7 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1357,7 +1357,7 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1401,7 +1401,7 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1445,7 +1445,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1489,7 +1489,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1533,7 +1533,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1577,7 +1577,7 @@ export default function abilityTest() {
                         })
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1616,7 +1616,7 @@ export default function abilityTest() {
 
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1650,7 +1650,7 @@ export default function abilityTest() {
                 session = null;
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1684,7 +1684,7 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1719,7 +1719,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setCallMetadata(callMetadata);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1753,7 +1753,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setCallMetadata(callMetadata);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1791,7 +1791,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1818,7 +1818,7 @@ export default function abilityTest() {
                 controller!.onCallMetadataChange(metadata, callMetadataChangeCallback2);
                 try {
                     await session!.setCallMetadata(callMetadata)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setCallMetadata failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -1835,7 +1835,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 controller!.offCallMetadataChange();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1863,7 +1863,7 @@ export default function abilityTest() {
                 controller!.offCallMetadataChange(callMetadataChangeCallback1);
                 try {
                     await session!.setCallMetadata(callMetadata)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setCallMetadata failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -1880,7 +1880,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 controller!.offCallMetadataChange();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1908,7 +1908,7 @@ export default function abilityTest() {
                 controller!.offCallMetadataChange();
                 try {
                     await session!.setCallMetadata(callMetadata)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setCallMetadata failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -1924,7 +1924,7 @@ export default function abilityTest() {
                 receivedCallback1 = false;
                 receivedCallback2 = false;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1959,7 +1959,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setCallMetadata(callMetadata);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -1984,7 +1984,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: on callMetadataChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2012,7 +2013,8 @@ export default function abilityTest() {
                 expect(false).assertTrue();
                 done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: on callMetadataChange with error metadata test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2037,7 +2039,8 @@ export default function abilityTest() {
             await controller!.destroy();
             try {
                 controller!.offCallMetadataChange();
-            } catch (error: BusinessError) {
+            } catch(error) {
+                error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: off callMetadataChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2075,7 +2078,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setAVCallState(AVCallState);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2108,7 +2111,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setAVCallState(AVCallState);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2146,7 +2149,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2172,7 +2175,7 @@ export default function abilityTest() {
                 controller!.onCallStateChangeAll(callStateChangeCallback1);
                 try {
                     await session!.setAVCallState(AVCallState)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setAVCallState failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2189,7 +2192,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 controller!.offCallStateChange();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2216,7 +2219,7 @@ export default function abilityTest() {
                 controller!.offCallStateChange(callStateChangeCallback2);
                 try {
                     await session!.setAVCallState(AVCallState)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setAVCallState failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2233,7 +2236,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 controller!.offCallStateChange();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2260,7 +2263,7 @@ export default function abilityTest() {
                 controller!.offCallStateChange();
                 try {
                     await session!.setAVCallState(AVCallState)
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: setAVCallState failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2276,7 +2279,7 @@ export default function abilityTest() {
                 receivedCallback1 = false;
                 receivedCallback2 = false;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2310,7 +2313,7 @@ export default function abilityTest() {
                     done();
                 });
                 await session!.setAVCallState(AVCallState);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2335,7 +2338,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: on callStateChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2363,7 +2367,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: on callStateChange with error param test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2388,7 +2393,8 @@ export default function abilityTest() {
             await controller!.destroy();
             try {
                 controller!.offCallStateChange();
-            } catch (error: BusinessError) {
+            } catch(error) {
+                error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: off callStateChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2420,7 +2426,7 @@ export default function abilityTest() {
                     done();
                 });
                 await controller!.sendControlCommand(command);
-            } catch (error: BusinessError) {
+            } catch(error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2457,7 +2463,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2482,7 +2488,7 @@ export default function abilityTest() {
                 session!.onAnswer(answerCallback2);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2499,7 +2505,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offAnswer();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2525,7 +2531,7 @@ export default function abilityTest() {
                 session!.offAnswer(answerCallback1);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2542,7 +2548,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offAnswer();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2568,7 +2574,7 @@ export default function abilityTest() {
                 session!.offAnswer();
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2584,7 +2590,7 @@ export default function abilityTest() {
                 receivedCallback1 = false;
                 receivedCallback2 = false;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2608,7 +2614,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on answer test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2634,7 +2641,8 @@ export default function abilityTest() {
             await session!.destroy();
             try {
                 session!.offAnswer();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off answer test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2666,7 +2674,7 @@ export default function abilityTest() {
                     done();
                 });
                 await controller!.sendControlCommand(command);
-            } catch (error: BusinessError) {
+            } catch(error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2703,7 +2711,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2728,7 +2736,7 @@ export default function abilityTest() {
                 session!.onHangUp(hangUpCallback2);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2745,7 +2753,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offHangUp();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2771,7 +2779,7 @@ export default function abilityTest() {
                 session!.offHangUp(hangUpCallback2);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2788,7 +2796,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offHangUp();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2814,7 +2822,7 @@ export default function abilityTest() {
                 session!.offHangUp();
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2830,7 +2838,7 @@ export default function abilityTest() {
                 receivedCallback1 = false;
                 receivedCallback2 = false;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2854,7 +2862,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on hangUp without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2879,7 +2888,8 @@ export default function abilityTest() {
             await session!.destroy();
             try {
                 session!.offHangUp();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off hangUp without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -2912,7 +2922,7 @@ export default function abilityTest() {
                     done();
                 });
                 await controller!.sendControlCommand(command);
-            } catch (error: BusinessError) {
+            } catch(error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2949,7 +2959,7 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -2974,7 +2984,7 @@ export default function abilityTest() {
                 session!.onToggleCallMute(toggleCallMuteCallback2);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -2991,7 +3001,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offToggleCallMute();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3017,7 +3027,7 @@ export default function abilityTest() {
                 session!.offToggleCallMute(toggleCallMuteCallback2);
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -3034,7 +3044,7 @@ export default function abilityTest() {
                 receivedCallback2 = false;
                 session!.offToggleCallMute();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3060,7 +3070,7 @@ export default function abilityTest() {
                 session!.offToggleCallMute();
                 try {
                     await controller!.sendControlCommand(command)
-                }catch(err: BusinessError){
+                } catch(err) {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -3076,7 +3086,7 @@ export default function abilityTest() {
                 receivedCallback1 = false;
                 receivedCallback2 = false;
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3100,7 +3110,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on toggleCallMute without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -3126,7 +3137,8 @@ export default function abilityTest() {
             await session!.destroy();
             try {
                 session!.offToggleCallMute();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off toggleCallMute without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                 } else {
@@ -3157,7 +3169,7 @@ export default function abilityTest() {
                     done();
                 });
                 await controller!.sendControlCommand(command)
-            } catch (error: BusinessError) {
+            } catch(error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3197,7 +3209,7 @@ export default function abilityTest() {
                 assetId2 = '';
                 session!.offPlayWithAssetId();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3220,7 +3232,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -3265,7 +3278,7 @@ export default function abilityTest() {
                     console.info(`${TAG}: playWithAssetId off`);
                     expect(true).assertTrue();
                 }
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3306,7 +3319,7 @@ export default function abilityTest() {
                 assetId2 = '';
                 session!.offPlayWithAssetId();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3336,7 +3349,7 @@ export default function abilityTest() {
                     done();
                 });
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3354,7 +3367,8 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             try {
                 session!.offPlayWithAssetId();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: off playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -3378,7 +3392,8 @@ export default function abilityTest() {
             await session!.destroy();
             try {
                 session!.offPlayWithAssetId()
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
                     expect(true).assertTrue();
@@ -3411,7 +3426,7 @@ export default function abilityTest() {
                     done();
                 });
                 await controller!.sendControlCommand(command);
-            } catch (error: BusinessError) {
+            } catch(error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3443,7 +3458,7 @@ export default function abilityTest() {
                     expect(err.code).assertEqual(401);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3474,7 +3489,7 @@ export default function abilityTest() {
                     expect(err.code).assertEqual(401);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3506,7 +3521,7 @@ export default function abilityTest() {
                     expect(err.code).assertEqual(401);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3538,7 +3553,7 @@ export default function abilityTest() {
                     expect(err.code).assertEqual(401);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3573,7 +3588,7 @@ export default function abilityTest() {
                         console.info('SendControlCommand successfully');
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3608,7 +3623,7 @@ export default function abilityTest() {
                         console.info('SendControlCommand successfully');
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3642,7 +3657,7 @@ export default function abilityTest() {
                         console.info('SendControlCommand successfully');
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3677,7 +3692,7 @@ export default function abilityTest() {
                         console.info('SendControlCommand successfully');
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -3712,7 +3727,7 @@ export default function abilityTest() {
                         console.info('SendControlCommand successfully');
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,7 +111,8 @@ export default function RdbPredicatesEtsTest() {
         expect(row["total"]).assertEqual(7000);
         resultSet.close();
         console.log(TAG + " testHaving001 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving001 having failed" + e);
         expect(true).assertFail();
       }
@@ -151,7 +152,8 @@ export default function RdbPredicatesEtsTest() {
         expect(row["total"]).assertEqual(7000);
         resultSet.close();
         console.log(TAG + " testHaving002 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving002 having failed" + e);
         expect(true).assertFail();
       }
@@ -191,7 +193,8 @@ export default function RdbPredicatesEtsTest() {
         expect(row["total"]).assertEqual(7000);
         resultSet.close();
         console.log(TAG + " testHaving003 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving003 having failed" + e);
         expect(true).assertFail();
       }
@@ -231,7 +234,8 @@ export default function RdbPredicatesEtsTest() {
         expect(row["total"]).assertEqual(7000);
         resultSet.close();
         console.log(TAG + " testHaving004 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving004 having failed" + e);
         expect(true).assertFail();
       }
@@ -256,7 +260,8 @@ export default function RdbPredicatesEtsTest() {
         predicates.having("");
         console.log(TAG + " testHaving005 having success");
         expect(true).assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving005 having failed" + e);
         expect(e.code == 14800001).assertTrue();
       }
@@ -285,7 +290,8 @@ export default function RdbPredicatesEtsTest() {
         console.log(TAG + " testHaving006 having success");
         resultSet.close();
         expect(true).assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving006 having failed. " + e.message + e.code);
         expect(e.code == 14800021).assertTrue();
       }
@@ -313,7 +319,8 @@ export default function RdbPredicatesEtsTest() {
         expect(0).assertEqual(resultSet.rowCount);
         resultSet.close();
         console.log(TAG + " testHaving007 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving007 having failed " + e);
         expect(true).assertFail();
       }
@@ -336,7 +343,8 @@ export default function RdbPredicatesEtsTest() {
         predicates.having("total > ? AND count >= ?", [5000 as long, 3 as long]);
         console.log(TAG + " testHaving008 having success");
         expect(true).assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving008 having failed" + e);
         expect(e.code == 14800001).assertTrue();
       }
@@ -376,7 +384,8 @@ export default function RdbPredicatesEtsTest() {
         expect(row["total"]).assertEqual(7000);
         resultSet.close();
         console.log(TAG + " testHaving009 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving009 having failed" + e);
         expect(true).assertFail();
       }
@@ -417,7 +426,8 @@ export default function RdbPredicatesEtsTest() {
           }
         }
         console.log(TAG + " testHaving010 having success");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + " testHaving010 having failed: " + e);
         expect().assertFail();
       }

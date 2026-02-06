@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ export async function doUpdate(cipher: cryptoFramework.Cipher,
         }
       })
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('doUpdate, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -46,7 +46,7 @@ export async function doFinal(cipher: cryptoFramework.Cipher,
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('doFinal, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -61,7 +61,7 @@ export function doFinalSync(cipher: cryptoFramework.Cipher,
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('doFinalSync, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -76,7 +76,7 @@ export async function update(cipher: cryptoFramework.Cipher,
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('update, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -91,7 +91,7 @@ export function updateSync(cipher: cryptoFramework.Cipher,
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('updateSync, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ function checkDevice(): boolean {
       hilog.error(domain, TAG, '%{public}s', `Failed! getPortList, did not return an array: ${typeof portList}`);
       haveDevice = false;
     }
-  } catch (error : BusinessError) {
+  } catch (error) {
     hilog.error(domain, TAG, '%{public}s', `Failed! getPortList, error code: ${error}`);
     haveDevice = false;
   }
@@ -62,14 +62,14 @@ export default function SerialTest() {
             try {
               let hasRight: boolean = await futureRes;
               hilog.info(domain, TAG, 'getPermission isAgree: ', hasRight);
-            } catch (err : BusinessError) {
+            } catch (err) {
               hilog.error(domain, TAG, 'getPermission catch err name: ', err.name, ', message: ', err.message);
             }
           }
         } else {
           hilog.error(domain, TAG, 'no device');
         }
-      } catch(error : BusinessError){
+      } catch(error){
         hilog.info(domain, TAG, 'beforeAll error: ', JSON.stringify(error));
       }
     })
@@ -107,7 +107,7 @@ export default function SerialTest() {
           expect(serialManager.getAttribute(openPortId).dataBits).assertEqual(serialManager.DataBits.DATABIT_8);
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testSetAttribute001 catch err code: ', error.code, ', message: ', error.message);
           expect().assertFail();
         }
@@ -137,9 +137,9 @@ export default function SerialTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testSetAttribute002 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         }
       }
@@ -169,9 +169,9 @@ export default function SerialTest() {
           let invalidInput: int = -1;
           serialManager.setAttribute(invalidInput, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testSetAttribute003 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         }
       }
@@ -201,9 +201,9 @@ export default function SerialTest() {
           let invalidInput: int = 100;
           serialManager.setAttribute(invalidInput, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testSetAttribute004 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         }
       }
@@ -235,7 +235,7 @@ export default function SerialTest() {
           expect(serialManager.getAttribute(openPortId).stopBits).assertEqual(serialManager.StopBits.STOPBIT_2);
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testGetAttribute001 catch err code: ', error.code, ', message: ', error.message);
           expect().assertFail();
         }
@@ -259,9 +259,9 @@ export default function SerialTest() {
         try {
           serialManager.getAttribute(openPortId);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testGetAttribute002 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         }
       }
@@ -285,9 +285,9 @@ export default function SerialTest() {
           let invalidInput: int = -1;
           serialManager.getAttribute(invalidInput);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testGetAttribute003 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         }
       }
@@ -311,9 +311,9 @@ export default function SerialTest() {
           let invalidInput: int = 100;
           serialManager.getAttribute(invalidInput);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testGetAttribute004 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         }
       }
@@ -340,7 +340,7 @@ export default function SerialTest() {
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWriteSync001 catch err code: ', error.code, ', message: ', error.message);
           expect().assertFail();
         }
@@ -365,9 +365,9 @@ export default function SerialTest() {
           let writeSyncBuffer: Uint8Array = new Uint8Array(100).fill(1);
           serialManager.writeSync(openPortId, writeSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWriteSync002 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         }
       }
@@ -392,9 +392,9 @@ export default function SerialTest() {
           let writeSyncBuffer: Uint8Array = new Uint8Array(100).fill(1);
           serialManager.writeSync(invalidInput, writeSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWriteSync003 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         }
       }
@@ -419,9 +419,9 @@ export default function SerialTest() {
           let writeSyncBuffer: Uint8Array = new Uint8Array(100).fill(1);
           serialManager.writeSync(invalidInput, writeSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWriteSync004 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         }
       }
@@ -448,7 +448,7 @@ export default function SerialTest() {
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWrite001 catch err name: ', error.name, ', message: ', error.message);
           expect().assertFail();
         }
@@ -473,9 +473,9 @@ export default function SerialTest() {
           let writeBuffer: Uint8Array = new Uint8Array(100).fill(1);
           let invalidInput: int = -1;
           await serialManager.write(invalidInput, writeBuffer, 500);
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWrite002 catch err name: ', error.name, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         };
       }
@@ -499,9 +499,9 @@ export default function SerialTest() {
           let writeBuffer: Uint8Array = new Uint8Array(100).fill(1);
           await serialManager.write(openPortId, writeBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWrite003 catch err name: ', error);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         };
       }
@@ -526,9 +526,9 @@ export default function SerialTest() {
           let writeBuffer: Uint8Array = new Uint8Array(100).fill(1);
           await serialManager.write(invalidport, writeBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testWrite004 catch err name: ', error);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         };
       }
@@ -557,7 +557,7 @@ export default function SerialTest() {
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testReadSync002 catch err code: ', error.code, ', message: ', error.message);
           expect().assertFail();
         }
@@ -583,9 +583,9 @@ export default function SerialTest() {
           let readSyncBuffer: Uint8Array = new Uint8Array(8192);
           serialManager.readSync(openPortId, readSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testReadSync003 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         }
       }
@@ -610,9 +610,9 @@ export default function SerialTest() {
           let readSyncBuffer: Uint8Array = new Uint8Array(8192);
           let length: int = serialManager.readSync(invalid, readSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testReadSync004 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         }
       }
@@ -637,9 +637,9 @@ export default function SerialTest() {
           let readSyncBuffer: Uint8Array = new Uint8Array(8192);
           let length: int = serialManager.readSync(invalid, readSyncBuffer, 500);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testReadSync005 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         }
       }
@@ -667,7 +667,7 @@ export default function SerialTest() {
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testRead002 catch err name: ', error.name, ', message: ', error.message);
           expect().assertFail();
         }
@@ -693,9 +693,9 @@ export default function SerialTest() {
           let readBuffer: Uint8Array = new Uint8Array(8192);
           await serialManager.read(openPortId, readBuffer, 1000);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testRead003 catch err name: ', error);
-          expect(error.code).assertEqual(31400005);
+          expect((error as BusinessError).code).assertEqual(31400005);
           done();
         }
       }
@@ -719,9 +719,9 @@ export default function SerialTest() {
           let readBuffer: Uint8Array = new Uint8Array(8192);
           let invalid: int = -1;
           await serialManager.read(invalid, readBuffer, 10);
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testRead004 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
           done();
         }
       }
@@ -746,9 +746,9 @@ export default function SerialTest() {
           let invalid: int = 100;
           await serialManager.read(invalid, readBuffer, 1000)
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testRead005 catch err name: ', error);
-          expect(error.code).assertEqual(31400003);
+          expect((error as BusinessError).code).assertEqual(31400003);
           done();
         }
       }

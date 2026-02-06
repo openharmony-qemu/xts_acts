@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -539,7 +539,7 @@ export default function preferenceTest() {
       hilog.info(domain, tag, '%{public}s', "000000000000 .");
       try {
         mPreferences = dataPreferences.getPreferencesSync(context!, Options);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, '%{public}s', "BusinessError: " + err.message);
       }
       mPreferences!.clearSync();
@@ -944,7 +944,7 @@ export default function preferenceTest() {
 
         await Utils.msSleep(1000);
         mPreferences!.offChange(testObserver);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -974,7 +974,7 @@ export default function preferenceTest() {
         await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "abc");
         await mPreferences!.flush();
         await Utils.msSleep(1000);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1006,7 +1006,7 @@ export default function preferenceTest() {
 
         await Utils.msSleep(100);
         mPreferences!.offMultiProcessChange(testObserver);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1036,7 +1036,7 @@ export default function preferenceTest() {
         await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences!.flushSync();
         await Utils.msSleep(1000);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1068,7 +1068,7 @@ export default function preferenceTest() {
         mPreferences!.flushSync();
         await Utils.msSleep(100);
         mPreferences!.offDataChange(keys, testObserver);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1099,7 +1099,7 @@ export default function preferenceTest() {
         await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences!.flushSync();
         await Utils.msSleep(1000);
-      } catch (err : BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 :" + err.code + err.message );
         expect(err.code).assertEqual(15500019);
       } finally {
@@ -1123,7 +1123,7 @@ export default function preferenceTest() {
         let ret = await mPreferences!.get(MAX_KEY_LENGTH, "default");
         expect("abc").assertEqual(ret);
         done();
-      } catch(err : BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
         expect().assertFail();
         done();
@@ -1177,7 +1177,7 @@ export default function preferenceTest() {
         expect("lisi").assertEqual(users[1].getElement("name").asString());
         expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
         done();
-      } catch(err : BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGet :" + err.code + err.message );
         expect().assertFail();
         done();
@@ -1226,7 +1226,7 @@ export default function preferenceTest() {
           done();
         })
         done();
-      } catch(err : BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGetAll :" + err.code + err.message );
         expect().assertFail();
         done();
@@ -1524,7 +1524,7 @@ export default function preferenceTest() {
           hilog.info(domain, tag, '%{public}s', "testPreferenceClearErrTest0100 end");
           done();
         });
-      } catch (err : BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', "trycatch err =" + err + ", code =" + err.code + ", message =" + err.message);
         expect(false).assertTrue();
       }
@@ -1553,7 +1553,8 @@ export default function preferenceTest() {
         mPreferences!.putSync(KEY_TEST_STRING_ELEMENT, 'abc');
         await mPreferences!.flush();
         await Utils.msSleep(100);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "clear err =" + err + ", code =" + err.code + ", message =" + err.message);
         expect('401').assertEqual(err.code);
       } finally {
@@ -1668,7 +1669,7 @@ export default function preferenceTest() {
 
         await Utils.msSleep(100);
         mPreferences!.offChange(testObserver);
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1764,7 +1765,7 @@ export default function preferenceTest() {
         }).catch((err) => {
           expect(null).assertFail();
         })
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1790,7 +1791,7 @@ export default function preferenceTest() {
         for (let i = 0; i < nArrObj.length; i++) {
           expect(nArrObj[i]).assertEqual(numberArr[i]);
         }
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1816,7 +1817,7 @@ export default function preferenceTest() {
         for (let i = 0; i < nArrObj.length; i++) {
           expect(nArrObj[i]).assertEqual(longArr[i]);
         }
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
@@ -1842,7 +1843,7 @@ export default function preferenceTest() {
         for (let i = 0; i < nArrObj.length; i++) {
           expect(nArrObj[i]).assertEqual(boolArr[i]);
         }
-      } catch (err : BusinessError) {
+      } catch (err) {
         expect().assertFail();
       } finally {
         done();
