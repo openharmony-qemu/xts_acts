@@ -270,9 +270,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_deleteProp_null_001] END');
       } catch (err) {
         console.error('[PersistentStorage_deleteProp_null_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_deleteProp_null_001] Error handled as expected');
       }
     });
 
@@ -294,9 +292,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_deleteProp_undefined_001] END');
       } catch (err) {
         console.error('[PersistentStorage_deleteProp_undefined_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_deleteProp_undefined_001] Error handled as expected');
       }
     });
 
@@ -318,9 +314,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_deleteProp_emptyString_001] END');
       } catch (err) {
         console.error('[PersistentStorage_deleteProp_emptyString_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_deleteProp_emptyString_001] Error handled as expected');
       }
     });
 
@@ -347,9 +341,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_DeleteProp_null_001] END');
       } catch (err) {
         console.error('[PersistentStorage_DeleteProp_null_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_DeleteProp_null_001] Error handled as expected');
       }
     });
 
@@ -372,9 +364,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_DeleteProp_undefined_001] END');
       } catch (err) {
         console.error('[PersistentStorage_DeleteProp_undefined_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_DeleteProp_undefined_001] Error handled as expected');
       }
     });
 
@@ -397,9 +387,7 @@ export default function stateManagementNullUndefinedTest() {
         console.info('[PersistentStorage_DeleteProp_emptyString_001] END');
       } catch (err) {
         console.error('[PersistentStorage_DeleteProp_emptyString_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_DeleteProp_emptyString_001] Error handled as expected');
       }
     });
 
@@ -454,13 +442,16 @@ export default function stateManagementNullUndefinedTest() {
         // persistProps with empty string key
         const props: PersistPropsOptions[] = [{ key: propName, defaultValue: 'testValue' }];
         PersistentStorage.persistProps(props);
+
+        // Clean up if property was created
+        if (AppStorage.has(propName)) {
+          PersistentStorage.deleteProp(propName);
+        }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_persistProps_emptyKey_001] END');
       } catch (err) {
         console.error('[PersistentStorage_persistProps_emptyKey_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_persistProps_emptyKey_001] Error handled as expected');
       }
     });
 
@@ -484,13 +475,16 @@ export default function stateManagementNullUndefinedTest() {
         const propName: string = '';
         // PersistProps with empty string key (deprecated API)
         PersistentStorage.PersistProps([{ key: propName, defaultValue: 'testValue' }]);
+
+        // Clean up if property was created
+        if (AppStorage.has(propName)) {
+          PersistentStorage.deleteProp(propName);
+        }
         // If no exception is thrown, the test passes
         console.info('[PersistentStorage_PersistProps_emptyKey_001] END');
       } catch (err) {
         console.error('[PersistentStorage_PersistProps_emptyKey_001] Error: ' + JSON.stringify(err));
-        // Expected: may throw error or handle gracefully
         expect().assertFail();
-        console.info('[PersistentStorage_PersistProps_emptyKey_001] Error handled as expected');
       }
     });
 
@@ -518,6 +512,9 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | null | undefined = storage.get<string | null>(propName);
         expect(getValue).assertEqual(null);
 
+        // Clean up - AbstractProperty has no aboutToBeDeleted, use storage.delete instead
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndRef_null_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndRef_null_001] Error: ' + JSON.stringify(err));
@@ -545,6 +542,9 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | undefined | null = storage.get<string | undefined>(propName);
         expect(getValue).assertEqual(undefined);
 
+        // Clean up - AbstractProperty has no aboutToBeDeleted, use storage.delete instead
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndRef_undefined_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndRef_undefined_001] Error: ' + JSON.stringify(err));
@@ -572,6 +572,9 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | null | undefined = storage.get<string>(propName);
         expect(getValue).assertEqual('');
 
+        // Clean up - AbstractProperty has no aboutToBeDeleted, use storage.delete instead
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndRef_emptyString_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndRef_emptyString_001] Error: ' + JSON.stringify(err));
@@ -596,11 +599,16 @@ export default function stateManagementNullUndefinedTest() {
         const prop: AbstractProperty<string> | undefined = storage.setAndRef<string>(propName, defaultValue);
         // setAndRef with null propName should return undefined
         expect(prop?.get()).assertEqual(defaultValue);
+
+        // Clean up if property was created - AbstractProperty has no aboutToBeDeleted, use storage.delete instead
+        if (prop !== undefined && propName !== null) {
+          const deleteResult: boolean = storage.delete(propName);
+          expect(deleteResult).assertTrue();
+        }
         console.info('[LocalStorage_setAndRef_nullPropName_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndRef_nullPropName_001] Error: ' + JSON.stringify(err));
-        // Expected behavior: may throw error or return undefined
-        console.info('[LocalStorage_setAndRef_nullPropName_001] Error handled as expected');
+        expect().assertFail();
       }
     });
 
@@ -621,11 +629,16 @@ export default function stateManagementNullUndefinedTest() {
         const prop: AbstractProperty<string> | undefined = storage.setAndRef<string>(propName, defaultValue);
         // setAndRef with undefined propName should return undefined
         expect(prop?.get()).assertEqual(defaultValue);
+
+        // Clean up if property was created - AbstractProperty has no aboutToBeDeleted, use storage.delete instead
+        if (prop !== undefined && propName !== undefined) {
+          const deleteResult: boolean = storage.delete(propName);
+          expect(deleteResult).assertTrue();
+        }
         console.info('[LocalStorage_setAndRef_undefinedPropName_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndRef_undefinedPropName_001] Error: ' + JSON.stringify(err));
-        // Expected behavior: may throw error or return undefined
-        console.info('[LocalStorage_setAndRef_undefinedPropName_001] Error handled as expected');
+        expect().assertFail();
       }
     });
 
@@ -649,11 +662,17 @@ export default function stateManagementNullUndefinedTest() {
         const prop: SubscribedAbstractProperty<string> | undefined = storage.prop<string>(propName);
         // prop with null propName should return undefined
         expect(prop).assertEqual(undefined);
+
+        // Clean up if property was created
+        if (prop !== undefined && propName !== null) {
+          prop.aboutToBeDeleted();
+          const deleteResult: boolean = storage.delete(propName);
+          expect(deleteResult).assertTrue();
+        }
         console.info('[LocalStorage_prop_null_001] END');
       } catch (err) {
         console.error('[LocalStorage_prop_null_001] Error: ' + JSON.stringify(err));
-        // Expected behavior: may throw error or return undefined
-        console.info('[LocalStorage_prop_null_001] Error handled as expected');
+        expect().assertFail();
       }
     });
 
@@ -673,11 +692,17 @@ export default function stateManagementNullUndefinedTest() {
         const prop: SubscribedAbstractProperty<string> | undefined = storage.prop<string>(propName);
         // prop with undefined propName should return undefined
         expect(prop).assertEqual(undefined);
+
+        // Clean up if property was created
+        if (prop !== undefined && propName !== undefined) {
+          prop.aboutToBeDeleted();
+          const deleteResult: boolean = storage.delete(propName);
+          expect(deleteResult).assertTrue();
+        }
         console.info('[LocalStorage_prop_undefined_001] END');
       } catch (err) {
         console.error('[LocalStorage_prop_undefined_001] Error: ' + JSON.stringify(err));
-        // Expected behavior: may throw error or return undefined
-        console.info('[LocalStorage_prop_undefined_001] Error handled as expected');
+        expect().assertFail();
       }
     });
 
@@ -697,11 +722,17 @@ export default function stateManagementNullUndefinedTest() {
         const prop: SubscribedAbstractProperty<string> | undefined = storage.prop<string>(propName);
         // prop with empty string propName should return undefined
         expect(prop).assertEqual(undefined);
+
+        // Clean up if property was created
+        if (prop !== undefined) {
+          prop.aboutToBeDeleted();
+          const deleteResult: boolean = storage.delete(propName);
+          expect(deleteResult).assertTrue();
+        }
         console.info('[LocalStorage_prop_emptyString_001] END');
       } catch (err) {
         console.error('[LocalStorage_prop_emptyString_001] Error: ' + JSON.stringify(err));
-        // Expected behavior: may throw error or return undefined
-        console.info('[LocalStorage_prop_emptyString_001] Error handled as expected');
+        expect().assertFail();
       }
     });
 
@@ -729,8 +760,10 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | null | undefined = storage.get<string | null>(propName);
         expect(getValue).assertEqual(null);
 
-        // Clean up
+        // Clean up - call aboutToBeDeleted first, then delete from storage
         prop.aboutToBeDeleted();
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndProp_null_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndProp_null_001] Error: ' + JSON.stringify(err));
@@ -758,8 +791,10 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | undefined | null = storage.get<string | undefined>(propName);
         expect(getValue).assertEqual(undefined);
 
-        // Clean up
+        // Clean up - call aboutToBeDeleted first, then delete from storage
         prop.aboutToBeDeleted();
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndProp_undefined_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndProp_undefined_001] Error: ' + JSON.stringify(err));
@@ -787,8 +822,10 @@ export default function stateManagementNullUndefinedTest() {
         const getValue: string | null | undefined = storage.get<string>(propName);
         expect(getValue).assertEqual('');
 
-        // Clean up
+        // Clean up - call aboutToBeDeleted first, then delete from storage
         prop.aboutToBeDeleted();
+        const deleteResult: boolean = storage.delete(propName);
+        expect(deleteResult).assertTrue();
         console.info('[LocalStorage_setAndProp_emptyString_001] END');
       } catch (err) {
         console.error('[LocalStorage_setAndProp_emptyString_001] Error: ' + JSON.stringify(err));
