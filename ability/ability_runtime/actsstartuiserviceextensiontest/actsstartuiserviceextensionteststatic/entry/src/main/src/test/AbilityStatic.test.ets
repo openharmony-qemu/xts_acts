@@ -293,5 +293,67 @@ export default function abilitystaticTest() {
         }
       }
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0400
+     * @tc.desc   Test the third-party application with permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+      let bundleName = "com.ohos.application";
+      try {
+        appManager.killProcessesByBundleName(bundleName, true).then(() => {
+          hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_AppManager_Static_0400 killProcessesByBundleName success.');
+          expect().assertFail();
+          done();
+        }).catch((err): void => {
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0400 killProcessesByBundleName fail, code is ${err.code}`);
+          expect(err.code).assertEqual(16000050);
+          done();
+        });
+      } catch (paramError) {
+        if (paramError instanceof BusinessError) {
+          let code = paramError.code;
+          let message = paramError.message;
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0400 [appManager] error: ${code}, ${message}`);
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0500
+     * @tc.desc   Test the third-party application with permission call killProcessesByBundleName will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+      let bundleName = "";
+      try {
+        appManager.killProcessesByBundleName(bundleName, false).then(() => {
+          hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_AppManager_Static_0500 killProcessesByBundleName success.');
+          expect().assertFail();
+          done();
+        }).catch((err): void => {
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0500 killProcessesByBundleName fail, code is ${err.code}`);
+          expect(err.code).assertEqual(16000050);
+          done();
+        });
+      } catch (paramError) {
+        if (paramError instanceof BusinessError) {
+          let code = paramError.code;
+          let message = paramError.message;
+          hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0500 [appManager] error: ${code}, ${message}`);
+          expect().assertFail();
+          done();
+        }
+      }
+    });
   })
 }

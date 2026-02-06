@@ -983,5 +983,83 @@ export default function AbilityDelegatorStageStaticTest() {
           }
         }
       })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg).then(() => {
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+
+            }
+          })
+        } catch (err) {
+          if(err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg, (err: BusinessError<void> | null) => {
+            hilog.info(domain, tag, `${itName} print error code: ${err?.code} msg: ${err?.message}`);
+            if (err?.code) {
+              hilog.info(domain, tag, `${itName} print fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          });
+        } catch (err) {
+          if (err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
   })
 }
