@@ -22,12 +22,6 @@
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avformat.h>
-#include <hilog/log.h>
-
-#undef LOG_DOMAIN
-#undef LOG_TAG
-#define LOG_DOMAIN 0x0000
-#define LOG_TAG "H263swDecoderTest12"
 
 #ifdef SUPPORT_DRM
 #include "native_mediakeysession.h"
@@ -71,10 +65,8 @@ void InitH263Capability()
 
 int VideoDecodeSyncSw263Func0010Test()
 {
-    OH_LOG_INFO(LOG_APP, "[0010] Test start");
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[0010] g_cap263 is nullptr");
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -85,49 +77,33 @@ int VideoDecodeSyncSw263Func0010Test()
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     
-    OH_LOG_INFO(LOG_APP, "[0010] CreateVideoDecoder");
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0010] CreateVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0010] ConfigureVideoDecoder");
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0010] ConfigureVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0010] StartSyncVideoDecoder");
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0010] StartSyncVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0010] WaitForEOS");
     vDecSample->WaitForEOS();
     
-    OH_LOG_INFO(LOG_APP, "[0010] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
-        vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE90);
-    
     if (vDecSample->errCount != 0) {
-        OH_LOG_ERROR(LOG_APP, "[0010] errCount != 0");
         return -1;
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        OH_LOG_ERROR(LOG_APP, "[0010] outFrameCount mismatch");
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[0010] Test PASS");
     return 0;
 }
 
 int VideoDecodeSyncSw263Func0020Test()
 {
-    OH_LOG_INFO(LOG_APP, "[0020] Test start");
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[0020] g_cap263 is nullptr");
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -138,49 +114,33 @@ int VideoDecodeSyncSw263Func0020Test()
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
     
-    OH_LOG_INFO(LOG_APP, "[0020] CreateVideoDecoder");
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0020] CreateVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0020] ConfigureVideoDecoder");
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0020] ConfigureVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0020] StartSyncVideoDecoder");
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0020] StartSyncVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0020] WaitForEOS");
     vDecSample->WaitForEOS();
     
-    OH_LOG_INFO(LOG_APP, "[0020] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
-        vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE90);
-    
     if (vDecSample->errCount != 0) {
-        OH_LOG_ERROR(LOG_APP, "[0020] errCount != 0");
         return -1;
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        OH_LOG_ERROR(LOG_APP, "[0020] outFrameCount mismatch");
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[0020] Test PASS");
     return 0;
 }
 
 int VideoDecodeSyncSw263Func0040Test()
 {
-    OH_LOG_INFO(LOG_APP, "[0040] Test start");
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[0040] g_cap263 is nullptr");
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -191,49 +151,33 @@ int VideoDecodeSyncSw263Func0040Test()
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     
-    OH_LOG_INFO(LOG_APP, "[0040] CreateVideoDecoder");
     if (vDecSample->CreateVideoDecoder(g_codecName263) != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0040] CreateVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0040] ConfigureVideoDecoder");
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0040] ConfigureVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0040] StartSyncVideoDecoder");
     if (vDecSample->StartSyncVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[0040] StartSyncVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[0040] WaitForEOS");
     vDecSample->WaitForEOS();
     
-    OH_LOG_INFO(LOG_APP, "[0040] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
-        vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE90);
-    
     if (vDecSample->errCount != 0) {
-        OH_LOG_ERROR(LOG_APP, "[0040] errCount != 0");
         return -1;
     }
     if (vDecSample->outFrameCount != FRAMESIZE90) {
-        OH_LOG_ERROR(LOG_APP, "[0040] outFrameCount mismatch");
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[0040] Test PASS");
     return 0;
 }
 
 int VideoDecodeSw263BlankFrame0010Test()
 {
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] Test start");
     InitH263Capability();
     if (g_cap263 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] g_cap263 is nullptr");
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -243,46 +187,29 @@ int VideoDecodeSw263BlankFrame0010Test()
     vDecSample->defaultFrameRate = VIDEO_FRAME_RATE_30;
     vDecSample->enbleBlankFrame = 1;
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] CreateVideoDecoder");
     if (vDecSample->CreateVideoDecoder("OH.Media.Codec.Decoder.Video.H263") != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] CreateVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] ConfigureVideoDecoder");
     if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] ConfigureVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] SetVideoDecoderCallback");
     if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] SetVideoDecoderCallback failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] StartVideoDecoder");
     if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] StartVideoDecoder failed");
         return -1;
     }
     
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] WaitForEOS");
     vDecSample->WaitForEOS();
     
-    OH_LOG_INFO(LOG_APP,
-                "[BlankFrame] Check results: errCount=%{public}d, outFrameCount=%{public}d, expected=%{public}d",
-                vDecSample->errCount, vDecSample->outFrameCount, FRAMESIZE75);
-    
     if (vDecSample->errCount != 0) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] errCount != 0");
         return -1;
     }
     if (vDecSample->outFrameCount != FRAMESIZE75) {
-        OH_LOG_ERROR(LOG_APP, "[BlankFrame] outFrameCount mismatch");
         return -1;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[BlankFrame] Test PASS");
     return 0;
 }
