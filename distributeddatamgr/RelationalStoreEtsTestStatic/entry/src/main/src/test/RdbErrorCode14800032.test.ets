@@ -16,7 +16,7 @@ const TAG = "[RdbErrorCode14800032]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 INTEGER, " + "data3 INTEGER," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
-const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
+const DROP_TABLE_TEST_STA = "DROP TABLE IF EXISTS test_sta";
 
 const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
 
@@ -222,7 +222,6 @@ export default function RdbErrorCode14800032() {
         resultSet?.close();
         done();
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeSyncErrcode0100" + err.code + err.message);
         expect(err.code == 14800032).assertTrue();
         done();
@@ -281,7 +280,6 @@ export default function RdbErrorCode14800032() {
         resultSet?.close();
         done();
       } catch (err) {
-        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeErrcode0100" + err.code + err.message);
         expect(err.code == 14800032).assertTrue();
         done();
@@ -371,7 +369,6 @@ export default function RdbErrorCode14800032() {
         let num = await rdbStore!.attach(context!, STORE_CONFIG1, "attachDB");
         expect(1).assertEqual(num);
       } catch(e) {
-        e = e as BusinessError;
         console.log("testRdbStoreAttach0016 : failed, err: code=" + e.code + " message=" + e.message);
         expect('14800032').assertEqual(e.code);
         done();
@@ -397,9 +394,8 @@ export default function RdbErrorCode14800032() {
       try {
         console.log(TAG + "************* testRdbStoreAttach0018 attach start *************");
         let dataBaseDir = context!.databaseDir + "/rdb/";
-        let num = await rdbStore!.attach(dataBaseDir + "store1.db", "attachDB");
+        let num = await rdbStore!.attach(dataBaseDir + "RdbErrorCode14800032_2.db", "attachDB");
       } catch(e) {
-        e = e as BusinessError;
         console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         done();
@@ -429,7 +425,6 @@ export default function RdbErrorCode14800032() {
         rdbStore!.insertSync("employee",valueBucket);
         expect().assertFail();
       }catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest001 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -457,7 +452,6 @@ export default function RdbErrorCode14800032() {
         rdbStore!.insertSync("employee",valueBucket,relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         expect().assertFail();
       }catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest002 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -486,7 +480,6 @@ export default function RdbErrorCode14800032() {
         rdbStore!.batchInsertSync("employee",values);
         console.info(TAG + "relationalStoreTest003 success ");
       }catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -515,7 +508,6 @@ export default function RdbErrorCode14800032() {
         await rdbStore!.batchInsert("employee",values);
         console.info(TAG + "relationalStoreTest004 success ");
       }catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest004 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -544,7 +536,6 @@ export default function RdbErrorCode14800032() {
         rdbStore!.updateSync(valueBucket,predicates);
         console.info(TAG + `relationalStoreTest006 updateSync is successful`);
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest006 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -568,7 +559,6 @@ export default function RdbErrorCode14800032() {
         rdbStore!.deleteSync(predicates);
         console.info(TAG + "deleteSync success ");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest012 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -592,7 +582,6 @@ export default function RdbErrorCode14800032() {
         let PRIKey:	relationalStore.PRIKeyType[] = [1 as long, 4 as long, 2 as long];
         await rdbStore!.getModifyTime("employee", "id", PRIKey);
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest015 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -616,7 +605,6 @@ export default function RdbErrorCode14800032() {
       try{
         await rdbStore!.cleanDirtyData('employee');
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest016 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -657,7 +645,6 @@ export default function RdbErrorCode14800032() {
       try{
         await rdbStore!.backup("backup.db");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest032 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -678,7 +665,6 @@ export default function RdbErrorCode14800032() {
       try{
         await rdbStore!.restore("backup2.db");
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest033 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -701,7 +687,6 @@ export default function RdbErrorCode14800032() {
         resultSet.close();
         done();
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPIgetRowsTest_0200 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -724,7 +709,6 @@ export default function RdbErrorCode14800032() {
         predicates.equalTo("id", "1");
         await rdbStore!.lockRow(predicates);
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "testRdbStoreLockRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -748,7 +732,6 @@ export default function RdbErrorCode14800032() {
         predicates.equalTo("name", "Jim");
         await rdbStore!.queryLockedRow(predicates,[]);
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "testRdbStoreQueryLockedRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
       }
@@ -772,7 +755,6 @@ export default function RdbErrorCode14800032() {
         predicates.equalTo("name", "Jim");
         await rdbStore!.unlockRow(predicates);
       } catch (e) {
-        e = e as BusinessError;
         console.error(TAG + "testRdbStoreUnLockRow0003 fail code is "+e.code + " message is "+ e.message);
         expect(14800032).assertEqual(e.code);
         done();
@@ -782,13 +764,13 @@ export default function RdbErrorCode14800032() {
     });
 
     /**
-      * @tc.name   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
-      * @tc.number   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
-      * @tc.desc   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
+     * @tc.name   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
+     * @tc.number   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
+     * @tc.desc   testRdbBatchInsertWithConflictResolutionInTransaction14800032_022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbBatchInsertWithConflictResolutionInTransaction14800032_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbBatchInsertWithConflictResolutionInTransaction14800032_022 start *************");
       await rdbStore!.execute(CREATE_TABLE_TEST4);
@@ -819,7 +801,6 @@ export default function RdbErrorCode14800032() {
         console.log(TAG + "testbatchInsertWithConflictResolutionInTransaction0700 failed num " + num);
         expect(null).assertFail();
       } catch (err) {
-        err = err as BusinessError;
         console.info(TAG, ` testbatchInsertWithConflictResolutionInTransaction0700 failed, errCode:${err.code}, message:${err.message}`);
         expect(14800032).assertEqual(err.code);
         await transaction.rollback();
@@ -854,7 +835,6 @@ export default function RdbErrorCode14800032() {
           relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.log(TAG + "testbatchInsertWithConflictResolutionSyncInTransaction1200 insert num " + num);
       } catch (err) {
-        err = err as BusinessError;
         console.info(TAG, `testbatchInsertWithConflictResolutionSyncInTransaction1200 failed, errCode:${err.code}, message:${err.message}`);
         expect(14800032).assertEqual(err.code);
         await transaction.rollback();
@@ -873,11 +853,11 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbInsertReadOnly14800032_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbInsertReadOnly14800032_024 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
-        await rdbStore!.insert("test", valueBucket1);
+        await rdbStore!.insert("test_sta", valueBucket1);
         console.info(TAG + "testRdbInsertReadOnly14800032_024 insert success");
         expect(null).assertFail();
         done();
@@ -898,11 +878,11 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbInsertWithConflictReadOnly14800032_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbInsertWithConflictReadOnly14800032_025 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
-        await rdbStore!.insert("test", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        await rdbStore!.insert("test_sta", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(TAG + "testRdbInsertWithConflictReadOnly14800032_025 insert success");
         expect(null).assertFail();
         done();
@@ -923,11 +903,11 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbInsertSyncReadOnly14800032_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbInsertSyncReadOnly14800032_026 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
-        rdbStore!.insertSync("test", valueBucket1);
+        rdbStore!.insertSync("test_sta", valueBucket1);
         console.info(TAG + "testRdbInsertSyncReadOnly14800032_026 insert success");
         expect(null).assertFail();
         done();
@@ -948,11 +928,11 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbInsertSyncWithConflictReadOnly14800032_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbInsertSyncWithConflictReadOnly14800032_027 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
-        rdbStore!.insertSync("test", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        rdbStore!.insertSync("test_sta", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(TAG + "testRdbInsertSyncWithConflictReadOnly14800032_027 insert success");
         expect(null).assertFail();
         done();
@@ -973,17 +953,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbDeleteReadOnly14800032_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbDeleteReadOnly14800032_028 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE DELETE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = await rdbStore!.delete(predicates);
@@ -1007,17 +987,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbDeleteSyncReadOnly14800032_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbDeleteSyncReadOnly14800032_029 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE DELETE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = rdbStore!.deleteSync(predicates);
@@ -1041,17 +1021,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbUpdateReadOnly14800032_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbUpdateReadOnly14800032_030 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = await rdbStore!.update(valueBucket0, predicates);
@@ -1075,17 +1055,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbUpdateSyncReadOnly14800032_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbUpdateSyncReadOnly14800032_031 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
-      await rdbStore!.insert("test", valueBucket2);
+      await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = rdbStore!.updateSync(valueBucket0, predicates);
@@ -1109,17 +1089,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbUpdateWithConflictReadOnly14800032_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbUpdateWithConflictReadOnly14800032_032 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
-      await rdbStore!.insert("test", valueBucket2);
+      await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = await rdbStore!.update(valueBucket0, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1143,17 +1123,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbUpdateSyncWithConflictReadOnly14800032_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbUpdateSyncWithConflictReadOnly14800032_033 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
         let rows: long = rdbStore!.updateSync(valueBucket0, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1177,20 +1157,20 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbExecuteReadOnly14800032_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbExecuteReadOnly14800032_034 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
-        let rows = await rdbStore!.execute("UPDATE test SET name = '王五'");
+        let rows = await rdbStore!.execute("UPDATE test_sta SET data1 = '王五'");
         console.info(TAG + "testRdbExecuteReadOnly14800032_034 rows: " + rows);
         expect(rows == 1).assertFail();
         done();
@@ -1211,17 +1191,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnDeleteSyncReadOnly14800032_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnDeleteSyncReadOnly14800032_035 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE DELETE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1249,17 +1229,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnInsertSyncWithConflictReadOnly14800032_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnInsertSyncWithConflictReadOnly14800032_036 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1287,17 +1267,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnInsertSyncReadOnly14800032_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnInsertSyncReadOnly14800032_037 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1325,17 +1305,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnInsertReadOnly14800032_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnInsertReadOnly14800032_038 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1363,17 +1343,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnInsertWithConflictReadOnly14800032_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnInsertWithConflictReadOnly14800032_039 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1401,17 +1381,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnUpdateReadOnly14800032_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnUpdateReadOnly14800032_040 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1439,17 +1419,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnUpdateWithConflictReadOnly14800032_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnUpdateWithConflictReadOnly14800032_041 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1477,17 +1457,17 @@ export default function RdbErrorCode14800032() {
      */
     it('testRdbTxnUpdateSyncReadOnly14800032_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + "************* testRdbTxnUpdateSyncReadOnly14800032_042 start *************");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST_STA);
       await rdbStore!.execute(CREATE_TABLE_TEST_STA);
       const valueBucket2: relationalStore.ValuesBucket = {
-        "name": "hello",
-        "age": 10 as long,
-        "salary": 1.0,
-        "blobType": new Uint8Array([1, 2, 3]),
+        "data1": "hello",
+        "data2": 10 as long,
+        "data3": 1.0,
+        "data4": new Uint8Array([1, 2, 3]),
       }
       await rdbStore!.insert("test_sta", valueBucket2);
       let predicates = new relationalStore.RdbPredicates("test_sta");
-      predicates.equalTo("name", "hello");
+      predicates.equalTo("data1", "hello");
       let trans = await rdbStore!.createTransaction();
       await rdbStore!.execute("CREATE TRIGGER prevent_insert_example BEFORE UPDATE ON test_sta BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
       try {
@@ -1505,4 +1485,5 @@ export default function RdbErrorCode14800032() {
       console.info(TAG + "************* testRdbTxnUpdateSyncReadOnly14800032_042 end *************");
     })
   })
+
 }

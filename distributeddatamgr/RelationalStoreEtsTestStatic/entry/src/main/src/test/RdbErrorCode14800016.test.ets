@@ -13,10 +13,10 @@ let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegato
 
 const TAG = "[RdbErrorCode14800016]"
 
-const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
 
-const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test2 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
@@ -77,7 +77,7 @@ export default function RdbErrorCode14800016() {
       let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       try{
         await store.execute(CREATE_TABLE_TEST);
-        await attachBatchInsert(store, "test");
+        await attachBatchInsert(store, "test1");
       } catch(e){
         console.log("attachBatchInsert failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();

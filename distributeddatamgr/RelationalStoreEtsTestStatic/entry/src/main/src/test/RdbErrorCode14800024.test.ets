@@ -12,6 +12,7 @@ import fs from '@ohos.file.fs';
 
 let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let name = "a".repeat(10);
 
 const TAG = "[RdbErrorCode14800024]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -79,8 +80,6 @@ const CREATE_TABLE_TEST_TXN24 = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGE
   "data7 float32Array," + "data8 UNLIMITED INT" + ")";
 
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
-
-let name = "a".repeat(10);
 
 let options: relationalStore.TransactionOptions = {
   transactionType: relationalStore.TransactionType.DEFERRED

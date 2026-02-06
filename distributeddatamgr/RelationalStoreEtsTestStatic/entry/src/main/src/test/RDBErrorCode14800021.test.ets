@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+* Copyright (c) 2024 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ const CREATE_TABLE_TEST_CORRUPT = "CREATE TABLE IF NOT EXISTS test (" + "id INTE
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 float32Array," + "data8 UNLIMITED INT" + ")";
 
-const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
+const DROP_TABLE_TEST_CORRUPT = "DROP TABLE IF EXISTS test";
 
 // 新增：CreateCorruptDb函数（从源文件复制）
 const dbName = "RdbErrorCode14800021_corrupt.db"
@@ -106,6 +106,7 @@ vbs[0] = valueBucket2
 vbs[1] = valueBucket3
 
 let rdbStore: relationalStore.RdbStore | undefined;
+let rdbStore_2: relationalStore.RdbStore | undefined;
 
 export default function RDBErrorCode14800021() {
   describe('RDBErrorCode14800021', (): void => {
@@ -119,15 +120,17 @@ export default function RDBErrorCode14800021() {
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
       rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      rdbStore_2 = await relationalStore.getRdbStore(context!, STORE_CONFIG_CORRUPT);
       console.info(TAG + "create rdb store success")
       await rdbStore!.executeSql(CREATE_TABLE_EMPLOYEE);
-      await rdbStore!.execute(DROP_TABLE_TEST);
-      await rdbStore!.execute(CREATE_TABLE_TEST_CORRUPT);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
+      await rdbStore_2!.execute(CREATE_TABLE_TEST_CORRUPT);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
       await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG_CORRUPT);
     })
 
     afterAll(async (): Promise<void> => {
@@ -162,7 +165,6 @@ export default function RDBErrorCode14800021() {
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolution failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -198,7 +200,6 @@ export default function RDBErrorCode14800021() {
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolutionSync failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -231,9 +232,8 @@ export default function RDBErrorCode14800021() {
           vbs.push(valueBucket);
           let num = transaction.batchInsertWithConflictResolutionSync("test", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
-          console.log(TAG + "testbatchInsertWithConflictResolutionInTransaction1200 insert num " + num);
+          console.log(TAG + "testRdbBatchInsertWithConflictResolutionInTransaction14800021_003 insert num " + num);
         } catch (e) {
-          e = e as BusinessError;
           console.log(TAG + e + " code: " + e.code);
           expect(e.code).assertEqual(14800021);
         }
@@ -269,9 +269,8 @@ export default function RDBErrorCode14800021() {
           await transaction.batchInsertWithConflictResolution("test1", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail()
-          console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0300 error");
+          console.log(TAG + "testRdbTransactionBatchInsertWithConflictResolution14800021_004 error");
         } catch (err) {
-          err = err as BusinessError;
           console.log(TAG + err + " code: " + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -306,7 +305,6 @@ export default function RDBErrorCode14800021() {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
@@ -333,7 +331,6 @@ export default function RDBErrorCode14800021() {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -345,7 +342,6 @@ export default function RDBErrorCode14800021() {
             console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         const dbPath = context!.databaseDir + "/rdb/TransactionTest.db";
@@ -356,7 +352,6 @@ export default function RDBErrorCode14800021() {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore!.executeSql("DROP TABLE IF EXISTS test1");
@@ -394,7 +389,6 @@ export default function RDBErrorCode14800021() {
             console.error(`Lock failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -405,7 +399,6 @@ export default function RDBErrorCode14800021() {
             console.error(`Unlock failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -420,7 +413,6 @@ export default function RDBErrorCode14800021() {
               console.error(`Query failed, code is ${err.code},message is ${err.message}`);
             })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         let predicates1 = new relationalStore.RdbPredicates("test1");
@@ -429,7 +421,6 @@ export default function RDBErrorCode14800021() {
         try {
           await resultSet.getRows(resultSet.columnCount);
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
@@ -466,7 +457,6 @@ export default function RDBErrorCode14800021() {
             rdbTrans.rollback();
           })
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -475,7 +465,6 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.insertSync("test1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -487,7 +476,6 @@ export default function RDBErrorCode14800021() {
             rdbTrans.rollback();
           })
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -497,7 +485,6 @@ export default function RDBErrorCode14800021() {
           rdbTrans.batchInsertSync("test1", valueBuckets)
           rdbTrans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -529,7 +516,6 @@ export default function RDBErrorCode14800021() {
         try {
           await rdbTrans.delete(predicates);
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -538,7 +524,6 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.deleteSync(predicates);
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -566,7 +551,6 @@ export default function RDBErrorCode14800021() {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -576,7 +560,6 @@ export default function RDBErrorCode14800021() {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -586,7 +569,6 @@ export default function RDBErrorCode14800021() {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
         } catch (err) {
-          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore!.executeSql("DROP TABLE IF EXISTS test1");
@@ -630,7 +612,6 @@ export default function RDBErrorCode14800021() {
           rdbTrans.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(() => {
           })
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800021)
         }
@@ -638,7 +619,6 @@ export default function RDBErrorCode14800021() {
           rdbTrans.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           rdbTrans.rollback();
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -684,7 +664,6 @@ export default function RDBErrorCode14800021() {
             rdbTrans.rollback();
           })
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021);
@@ -692,7 +671,6 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.querySqlSync("SELECT * FROM test1");
         } catch (err) {
-          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -720,7 +698,6 @@ export default function RDBErrorCode14800021() {
             transaction.commit();
             console.info(`delete result: ${data}`);
           } catch (err) {
-          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -739,7 +716,6 @@ export default function RDBErrorCode14800021() {
               console.error(`delete failed, code is ${e.code}, message is ${e.message}`);
             });
           } catch (err) {
-          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -770,342 +746,11 @@ export default function RDBErrorCode14800021() {
         rdbStore!.insertSync("employ", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect().assertFail();
       }catch(err){
-          err = err as BusinessError;
         console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
         expect(err.code).assertEqual(14800021);
       }
       done();
       console.info(TAG + "************* testRdbInsertSync14800021_014 end *************");
-    })
-
-    /**
-     * @tc.name        testRdbInsert14800021_015
-     * @tc.number      testRdbInsert14800021_015
-     * @tc.desc        testRdbInsert14800021_015
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbInsert14800021_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbInsert14800021_015 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let num = await rdbStore!.insert("test", valueBucket3);
-        console.info(TAG + '************* testRdbInsert14800021_015 ************* num ' + num);
-        expect(num != 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbInsert14800021_015 ************* err ' + err.code);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbInsert14800021_015 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbInsert14800021_016
-     * @tc.number      testRdbInsert14800021_016
-     * @tc.desc        testRdbInsert14800021_016
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbInsert14800021_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbInsert14800021_016 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let num = await rdbStore!.insert("test", valueBucket3);
-        console.info(TAG + '************* testRdbInsert14800021_016 ************* num ' + num);
-        expect(num != 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbInsert14800021_016 ************* err ' + err.code);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbInsert14800021_016 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbInsert14800021_017
-     * @tc.number      testRdbInsert14800021_017
-     * @tc.desc        testRdbInsert14800021_017
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbInsert14800021_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbInsert14800021_017 start *************');
-      let path = context!.databaseDir;
-      console.info('testErrorCode14800027Test0001' + path);
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let num = await rdbStore!.insert("test", valueBucket3, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
-        console.info(TAG + '************* testRdbInsert14800021_017 ************* num ' + num);
-        expect(num != 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbInsert14800021_017 ************* err ' + err.code);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbInsert14800021_017 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbInsertSync14800021_018
-     * @tc.number      testRdbInsertSync14800021_018
-     * @tc.desc        testRdbInsertSync14800021_018
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbInsertSync14800021_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbInsertSync14800021_018 start *************');
-      let path = context!.databaseDir;
-      console.info('testErrorCode14800027Test0001' + path);
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let num = rdbStore!.insertSync("test", valueBucket3, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
-        console.info(TAG + '************* testRdbInsertSync14800021_018 ************* num ' + num);
-        expect(num != 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbInsertSync14800021_018 ************* err ' + err.code);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbInsertSync14800021_018 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbInsertSync14800021_019
-     * @tc.number      testRdbInsertSync14800021_019
-     * @tc.desc        testRdbInsertSync14800021_019
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbInsertSync14800021_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbInsertSync14800021_019 start *************');
-      let path = context!.databaseDir;
-      console.info('testErrorCode14800027Test0001' + path);
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let num = rdbStore!.insertSync("test", valueBucket3);
-        console.info(TAG + '************* testRdbInsertSync14800021_019 ************* num ' + num);
-        expect(num != 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbInsertSync14800021_019 ************* err ' + err.code);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbInsertSync14800021_019 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbUpdate14800021_020
-     * @tc.number      testRdbUpdate14800021_020
-     * @tc.desc        testRdbUpdate14800021_020
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbUpdate14800021_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbUpdate14800021_020 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let predicates = new relationalStore.RdbPredicates("test");
-      predicates.equalTo("data1", "hello");
-      await CreateCorruptDb();
-      try {
-        let rows: number = await rdbStore!.update(valueBucket3, predicates);
-        console.info(TAG + '************* testRdbUpdate14800021_020 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbUpdate14800021_020 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbUpdate14800021_020 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbUpdateSync14800021_021
-     * @tc.number      testRdbUpdateSync14800021_021
-     * @tc.desc        testRdbUpdateSync14800021_021
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbUpdateSync14800021_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbUpdateSync14800021_021 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let predicates = new relationalStore.RdbPredicates("test");
-      predicates.equalTo("data1", "hello");
-      await CreateCorruptDb();
-      try {
-        let rows: number = rdbStore!.updateSync(valueBucket3, predicates);
-        console.info(TAG + '************* testRdbUpdateSync14800021_021 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbUpdateSync14800021_021 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbUpdateSync14800021_021 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbUpdate14800021_022
-     * @tc.number      testRdbUpdate14800021_022
-     * @tc.desc        testRdbUpdate14800021_022
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbUpdate14800021_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbUpdate14800021_022 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let predicates = new relationalStore.RdbPredicates("test");
-      predicates.equalTo("data1", "hello");
-      await CreateCorruptDb();
-      try {
-        let rows:number = await rdbStore!.update(valueBucket3, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
-        console.info(TAG + '************* testRdbUpdate14800021_022 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbUpdate14800021_022 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbUpdate14800021_022 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbUpdateSync14800021_023
-     * @tc.number      testRdbUpdateSync14800021_023
-     * @tc.desc        testRdbUpdateSync14800021_023
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbUpdateSync14800021_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbUpdateSync14800021_023 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let predicates = new relationalStore.RdbPredicates("test");
-      predicates.equalTo("data1", "hello");
-      await CreateCorruptDb();
-      try {
-        let rows:number = rdbStore!.updateSync(valueBucket3, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
-        console.info(TAG + '************* testRdbUpdateSync14800021_023 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbUpdateSync14800021_023 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbUpdateSync14800021_023 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbDelete14800021_024
-     * @tc.number      testRdbDelete14800021_024
-     * @tc.desc        testRdbDelete14800021_024
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbDelete14800021_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbDelete14800021_024 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      let predicates = new relationalStore.RdbPredicates("test");
-      try {
-        let rows = await rdbStore!.delete(predicates);
-        console.info(TAG + '************* testRdbDelete14800021_024 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbDelete14800021_024 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbDelete14800021_024 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbDeleteSync14800021_025
-     * @tc.number      testRdbDeleteSync14800021_025
-     * @tc.desc        testRdbDeleteSync14800021_025
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbDeleteSync14800021_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbDeleteSync14800021_025 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      let predicates = new relationalStore.RdbPredicates("test");
-      try {
-        let rows = rdbStore!.deleteSync(predicates);
-        console.info(TAG + '************* testRdbDeleteSync14800021_025 *************' + rows);
-        expect(rows == 1).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbDeleteSync14800021_025 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbDeleteSync14800021_025 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbExecute14800021_026
-     * @tc.number      testRdbExecute14800021_026
-     * @tc.desc        testRdbExecute14800021_026
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbExecute14800021_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbExecute14800021_026 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      await CreateCorruptDb();
-      try {
-        let rows = await rdbStore!.execute("INSERT INTO test (data1, data2, data3)  VALUES  ('name',10,1.0)");
-        console.info(TAG + '************* testRdbExecute14800021_026 *************' + rows);
-        expect(rows == "ok").assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbExecute14800021_026 *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      done();
-      console.info(TAG + '************* testRdbExecute14800021_026 end *************');
-    })
-
-    /**
-     * @tc.name        testRdbTransInsert14800021_027
-     * @tc.number      testRdbTransInsert14800021_027
-     * @tc.desc        testRdbTransInsert14800021_027
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('testRdbTransInsert14800021_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
-      console.info(TAG + '************* testRdbTransInsert14800021_027 start *************');
-      let num = await rdbStore!.batchInsert("test", vbs);
-      let trans = await rdbStore!.createTransaction();
-      await CreateCorruptDb();
-      try {
-        let rows = await trans.insert("test", valueBucket3);
-        console.info(TAG + '************* testRdbTransInsert14800021_027 rows *************' + rows);
-        expect(rows).assertFail();
-      } catch (err) {
-        console.info(TAG + '************* testRdbTransInsert14800021_027 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
-      }
-      trans.rollback();
-      done();
-      console.info(TAG + '************* testRdbTransInsert14800021_027 end *************');
     })
 
     /**
@@ -1118,8 +763,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransInsert14800021_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransInsert14800021_028 start *************');
-      let num = await rdbStore!.batchInsert("test", vbs);
-      let trans = await rdbStore!.createTransaction();
+      let num = await rdbStore_2!.batchInsert("test", vbs);
+      let trans = await rdbStore_2!.createTransaction();
       await CreateCorruptDb();
       try {
         let rows = await trans.insert("test", valueBucket3, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
@@ -1127,7 +772,7 @@ export default function RDBErrorCode14800021() {
         expect(rows).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransInsert14800021_028 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1144,15 +789,15 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransInsertSync14800021_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransInsertSync14800021_029 start *************');
-      let num = await rdbStore!.batchInsert("test", vbs);
-      let trans = await rdbStore!.createTransaction();
+      let num = await rdbStore_2!.batchInsert("test", vbs);
+      let trans = await rdbStore_2!.createTransaction();
       await CreateCorruptDb();
       try {
         let rows = trans.insertSync("test", valueBucket3);
         console.info(TAG + '************* testRdbTransInsertSync14800021_029 rows *************' + rows);
       } catch (err) {
         console.info(TAG + '************* testRdbTransInsertSync14800021_029 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1169,8 +814,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransInsertSync14800021_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransInsertSync14800021_030 start *************');
-      let num = await rdbStore!.batchInsert("test", vbs);
-      let trans = await rdbStore!.createTransaction();
+      let num = await rdbStore_2!.batchInsert("test", vbs);
+      let trans = await rdbStore_2!.createTransaction();
       await CreateCorruptDb();
       try {
         let rows = trans.insertSync("test", valueBucket3, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
@@ -1178,7 +823,7 @@ export default function RDBErrorCode14800021() {
         expect(rows).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransInsertSync14800021_030 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1196,17 +841,17 @@ export default function RDBErrorCode14800021() {
     it('testRdbTransUpdate14800021_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(TAG + '************* testRdbTransUpdate14800021_031 start *************');
-        await rdbStore!.insert("test", valueBucket2);
-        let trans = await rdbStore!.createTransaction();
+        await rdbStore_2!.insert("test", valueBucket2);
+        let trans = await rdbStore_2!.createTransaction();
         let predicates = new relationalStore.RdbPredicates("test");
-        await rdbStore!.execute(DROP_TABLE_TEST);
+        await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
         try {
           let rows: number = await trans.update(valueBucket3, predicates);
           console.info(TAG + '************* testRdbTransUpdate14800021_031 rows *************' + rows);
           expect(rows == 1).assertFail();
         } catch (err) {
           console.info(TAG + '************* testRdbTransUpdate14800021_031 err *************' + err);
-          expect(err.code == 14800021).assertEqual(true);
+          expect(err.code).assertEqual(14800021);
         }
         trans.rollback();
         done();
@@ -1223,17 +868,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransUpdate14800021_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransUpdate14800021_032 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows:number = await trans.update(valueBucket3, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(TAG + '************* testRdbTransUpdate14800021_032 rows *************' + rows);
         expect(rows == 1).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransUpdate14800021_032 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1250,17 +895,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransUpdateSync14800021_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransUpdateSync14800021_033 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows: number = trans.updateSync(valueBucket3, predicates);
         console.info(TAG + '************* testRdbTransUpdateSync14800021_033 rows *************' + rows);
         expect(rows == 1).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransUpdateSync14800021_033 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1277,17 +922,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransUpdateSync14800021_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransUpdateSync14800021_034 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows:number = trans.updateSync(valueBucket3, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(TAG + '************* testRdbTransUpdateSync14800021_034 rows *************' + rows);
         expect(rows == 1).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransUpdateSync14800021_034 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1304,17 +949,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransDeleteSync14800021_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransDeleteSync14800021_035 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows: number = trans.deleteSync(predicates);
         console.info(TAG + '************* testRdbTransDeleteSync14800021_035 rows *************' + rows);
         expect(rows == 1).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransDeleteSync14800021_035 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1331,17 +976,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransBatchInsertSync14800021_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransBatchInsertSync14800021_036 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows: number = trans.batchInsertSync("test", vbs);
         console.info(TAG + '************* testRdbTransBatchInsertSync14800021_036 rows *************' + rows);
         expect(rows == 1).assertFail();
       } catch (err) {
         console.info(TAG + '************* testRdbTransBatchInsertSync14800021_036 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1358,17 +1003,17 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbTransBatchInsert14800021_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbTransBatchInsert14800021_037 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let trans = await rdbStore!.createTransaction();
+      await rdbStore_2!.insert("test", valueBucket2);
+      let trans = await rdbStore_2!.createTransaction();
       let predicates = new relationalStore.RdbPredicates("test");
-      await rdbStore!.execute(DROP_TABLE_TEST);
+      await rdbStore_2!.execute(DROP_TABLE_TEST_CORRUPT);
       try {
         let rows:number = await trans.batchInsert("test", vbs);
         console.info(TAG + '************* testRdbTransBatchInsert14800021_037 rows *************' + rows);
         expect(rows == 3).assertFail();
       } catch(err) {
         console.info(TAG + '************* testRdbTransBatchInsert14800021_037 err *************' + err);
-        expect(err.code == 14800021).assertEqual(true);
+        expect(err.code).assertEqual(14800021);
       }
       trans.rollback();
       done();
@@ -1385,8 +1030,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_038 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goTo(resultSet.getColumnIndex("data7"))
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_038 res *************' + res);
@@ -1409,8 +1054,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_039 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goToRow(-1);
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_039 *************' + res);
@@ -1433,8 +1078,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_040 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goToFirstRow();
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_040 *************' + res);
@@ -1457,8 +1102,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_041 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try{
         let res = resultSet.goToLastRow();
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_041 *************' +res);
@@ -1481,8 +1126,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_042 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goToNextRow();
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_042 *************' + res);
@@ -1505,8 +1150,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_043 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goToPreviousRow();
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_043 *************' + res);
@@ -1529,8 +1174,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGoToRow14800021_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGoToRow14800021_044 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.goToPreviousRow();
         console.info(TAG + '************* testRdbResultSetGoToRow14800021_044 *************' + res);
@@ -1552,8 +1197,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGetColumnIndex14800021_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGetColumnIndex14800021_045 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.getColumnIndex("data1");
         console.info(TAG + '************* testRdbResultSetGetColumnIndex14800021_045 *************' + res);
@@ -1576,8 +1221,8 @@ export default function RDBErrorCode14800021() {
      */
     it('testRdbResultSetGetColumnName14800021_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       console.info(TAG + '************* testRdbResultSetGetColumnName14800021_046 start *************');
-      await rdbStore!.insert("test", valueBucket2);
-      let resultSet = await rdbStore!.querySql("SELECT * FROM test1 where data3 = 20.0");
+      await rdbStore_2!.insert("test", valueBucket2);
+      let resultSet = await rdbStore_2!.querySql("SELECT * FROM test1 where data3 = 20.0");
       try {
         let res = resultSet.getColumnName(0);
         console.info(TAG + '************* testRdbResultSetGetColumnName14800021_046 *************' + res);
