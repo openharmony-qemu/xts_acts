@@ -39,7 +39,17 @@ struct Index {
   ];
 
   build() {
-    Column () {
+    Flex () {
+      Button('显示软键盘')
+        .width('80%')
+        .height(60)
+        .fontSize(20)
+        .margin(20)
+        .onClick(() => {
+          // 显示软键盘
+          this.hideKeyboard();
+        })
+        .id('hideBtn')
       Select(this.selectOptions)
         .value('1111')
         .id('select01')
@@ -89,6 +99,18 @@ struct Index {
       })
     } catch (err) {
       console.error('Fail to attach')
+    }
+  }
+  async hideKeyboard() {
+    try {
+      // 隐藏软键盘
+      //await this.inputController.hide();
+
+      // 可选：断开输入法连接以完全释放资源
+      await this.inputController.detach();
+
+    } catch (err) {
+      console.error('Fail to hide keyboard: ' + JSON.stringify(err));
     }
   }
 }
