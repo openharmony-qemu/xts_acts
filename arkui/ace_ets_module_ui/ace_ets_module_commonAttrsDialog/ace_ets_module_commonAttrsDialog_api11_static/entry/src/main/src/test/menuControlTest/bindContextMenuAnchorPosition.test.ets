@@ -78,7 +78,7 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      // driver?.click(20, 20);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -93,7 +93,7 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
       expect(textPositionX).assertLess(menuPositionX)
       expect(textPositionY).assertLess(menuPositionY)
-
+      driver?.click(20, 20);
       await CommonFunc.sleep(1000);
       await driver.click(200, 200);
       await CommonFunc.sleep(2000);
@@ -117,7 +117,7 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      // driver?.click(20, 20);
       await CommonFunc.sleep(2000);
 
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
@@ -132,6 +132,7 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       let text4 = await driver.findComponent(ON.id('textPositionY2'));
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
       expect(textPositionY).assertLess(menuPositionY)
+      driver?.click(20, 20);
 
       await CommonFunc.sleep(1000);
       await driver.click(200, 200);
@@ -156,7 +157,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      // driver?.click(20, 20);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -171,6 +172,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
       expect(menuPositionX).assertLess(textPositionX)
       expect(textPositionY).assertLess(menuPositionY)
+      driver?.click(20, 20);
 
       await CommonFunc.sleep(1000);
       await driver.click(200, 200);
