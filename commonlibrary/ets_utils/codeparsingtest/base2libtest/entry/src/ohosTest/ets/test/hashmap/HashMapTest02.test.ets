@@ -242,7 +242,7 @@ export default function HashMapTest02Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0200
-     * @tc.name      testHashMap00101
+     * @tc.name      testHashMap0101
      * @tc.desc      String type data is passed into  '\\' check item
      * @tc.size      MediumTest
      * @tc.type      Function

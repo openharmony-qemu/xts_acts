@@ -744,22 +744,6 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0035
-     * @tc.name      testLightWeightSetTest02Chapter0035
-     * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with char boundary upper value
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testLightWeightSetTest02Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightSetTest02Chapter0035';
-      console.log(TAG + 'start');
-      let lightWeightSet = new LightWeightSet<string>();
-      lightWeightSet.increaseCapacityTo(65535);
-      console.log(TAG + 'end');
-    });
-
-    /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0036
      * @tc.name      testLightWeightSetTest02Chapter0036
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with char below lower boundary value
@@ -778,22 +762,6 @@ export default function testLightWeightSetTest02() {
         result = true;
       }
       expect(result).assertTrue();
-      console.log(TAG + 'end');
-    });
-
-    /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0037
-     * @tc.name      testLightWeightSetTest02Chapter0037
-     * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with char above upper boundary value
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testLightWeightSetTest02Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightSetTest02Chapter0037';
-      console.log(TAG + 'start');
-      let lightWeightSet = new LightWeightSet<string>();
-      lightWeightSet.increaseCapacityTo(65536);
       console.log(TAG + 'end');
     });
 

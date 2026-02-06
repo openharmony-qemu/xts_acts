@@ -28,7 +28,7 @@ export default function vectorTest04() {
     /**
      * @tc.number    SUB_VECTOR_TEST04_0100
      * @tc.name      testVector04Chapter0001
-     * @tc.desc      insert number(Number能表示的最大安全整数（2^53 - 1）) test
+     * @tc.desc      insert number(Number Max Value（2^53 - 1）) test
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

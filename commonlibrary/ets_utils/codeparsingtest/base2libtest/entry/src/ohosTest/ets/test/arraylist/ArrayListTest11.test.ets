@@ -1209,7 +1209,7 @@ export default function ArrayList11Test() {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_SYMBOL_ITERATOR06_0100
+     * @tc.number    SUB_ARRAYLIST_SYMBOL_ITERATOR11_0100
      * @tc.name      testArrayList06SymbolIterator0010
      * @tc.desc      Test multiple independent iterators
      * @tc.size      MediumTest

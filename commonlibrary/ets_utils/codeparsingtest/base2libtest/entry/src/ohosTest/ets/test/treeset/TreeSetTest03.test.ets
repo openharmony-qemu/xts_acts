@@ -1377,7 +1377,7 @@ export default function TreeSet03Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testTreeSet03Chapter007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTreeSet03Chapter0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testTreeSet03Chapter0074';
       console.log(TAG + ' start');
       const treeSet = new TreeSet<boolean>();

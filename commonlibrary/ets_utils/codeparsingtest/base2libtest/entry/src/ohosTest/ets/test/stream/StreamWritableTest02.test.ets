@@ -1014,8 +1014,8 @@ export default function StreamWritable02Test() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStreamWritable02Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable02Chapter0029';
+    it("testStreamWritable02Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable02Chapter0028';
       console.log(TAG + ' start');
 
       let called = false;

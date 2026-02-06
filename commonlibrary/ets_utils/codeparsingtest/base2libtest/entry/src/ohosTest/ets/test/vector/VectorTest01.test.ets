@@ -294,7 +294,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     *  */
+     */
     it("testVector01Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0019';
       const vector1 = new Vector<"\a">()
@@ -320,7 +320,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0020'
       // 初始化Int8Array类型Vector
@@ -337,7 +337,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0021'
       // 初始化Int8Array类型Vector
@@ -354,7 +354,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0022'
       // 初始化Int8Array类型Vector
@@ -371,7 +371,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0023'
       let vector = new Vector<Int8Array>();
@@ -388,7 +388,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0024'
       let vector = new Vector<Int8Array>();
@@ -405,7 +405,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0025'
       let vector = new Vector<Int8Array>();
@@ -422,7 +422,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0026'
       let vector = new Vector<Int8Array>();
@@ -439,7 +439,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0027'
       let vector = new Vector<Int8Array>();
@@ -456,7 +456,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0028'
       let vector = new Vector<Uint8Array>();
@@ -473,7 +473,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0029'
       let vector = new Vector<Uint8Array>();
@@ -490,7 +490,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0030'
       let vector = new Vector<Uint8Array>();
@@ -507,7 +507,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0031'
       let vector = new Vector<Uint8Array>();
@@ -524,7 +524,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0032'
       let vector = new Vector<Uint8Array>();
@@ -541,7 +541,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0033'
       let vector = new Vector<Uint8Array>();
@@ -558,7 +558,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0034'
 
@@ -577,7 +577,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0035'
       let vector = new Vector<Uint8ClampedArray>();
@@ -594,7 +594,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0036'
       let vector = new Vector<Uint8ClampedArray>();
@@ -611,7 +611,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0037'
       let vector = new Vector<Uint8ClampedArray>();
@@ -628,7 +628,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0038'
       let vector = new Vector<Uint8ClampedArray>();
@@ -645,7 +645,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0039'
       let vector = new Vector<Uint8ClampedArray>();
@@ -662,7 +662,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0040'
       let vector = new Vector<Uint8ClampedArray>();
@@ -679,7 +679,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0041'
       let vector = new Vector<Uint8ClampedArray>();
@@ -696,7 +696,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0042'
       let vector = new Vector<Int16Array>();
@@ -713,7 +713,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0043'
       let vector = new Vector<Int16Array>();
@@ -730,7 +730,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0044'
       let vector = new Vector<Int16Array>();
@@ -747,7 +747,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0045'
       let vector = new Vector<Int16Array>();
@@ -764,7 +764,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0046'
       let vector = new Vector<Int16Array>();
@@ -781,7 +781,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0047'
       let vector = new Vector<Int16Array>();
@@ -798,7 +798,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0048'
       let vector = new Vector<Int16Array>();
@@ -815,7 +815,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0049'
       let vector = new Vector<Uint16Array>();
@@ -832,7 +832,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0050'
       let vector = new Vector<Uint16Array>();
@@ -849,7 +849,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0051'
       let vector = new Vector<Uint16Array>();
@@ -866,7 +866,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0052'
       let vector = new Vector<Uint16Array>();
@@ -883,7 +883,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0053'
       let vector = new Vector<Uint16Array>();
@@ -900,7 +900,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0054'
       let vector = new Vector<Uint16Array>();
@@ -917,7 +917,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0055'
       let vector = new Vector<Uint16Array>();
@@ -934,7 +934,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0056'
       let vector = new Vector<Int32Array>();
@@ -951,7 +951,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0057'
       let vector = new Vector<Int32Array>();
@@ -968,7 +968,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0058'
       let vector = new Vector<Int32Array>();
@@ -985,7 +985,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0059'
       let vector = new Vector<Int32Array>();
@@ -1002,7 +1002,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0060'
       let vector = new Vector<Int32Array>();
@@ -1019,7 +1019,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0061'
       let vector = new Vector<Int32Array>();
@@ -1036,7 +1036,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0062'
       let vector = new Vector<Int32Array>();
@@ -1053,7 +1053,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0063'
       let vector = new Vector<Uint32Array>();
@@ -1070,7 +1070,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0064'
       let vector = new Vector<Uint32Array>();
@@ -1087,7 +1087,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0065'
       let vector = new Vector<Uint32Array>();
@@ -1104,7 +1104,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0066'
       let vector = new Vector<Uint32Array>();
@@ -1121,7 +1121,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0067'
       let vector = new Vector<Uint32Array>();
@@ -1138,7 +1138,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0068'
       let vector = new Vector<Uint32Array>();
@@ -1155,7 +1155,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0069'
       let vector = new Vector<Uint32Array>();
@@ -1172,7 +1172,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0070'
       let vector = new Vector<Float32Array>();
@@ -1189,7 +1189,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0071'
       let vector = new Vector<Float32Array>();
@@ -1206,7 +1206,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0072'
       let vector = new Vector<Float32Array>();
@@ -1222,7 +1222,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0073'
       let vector = new Vector<Float32Array>();
@@ -1238,7 +1238,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0074'
       let vector = new Vector<Float32Array>();
@@ -1254,7 +1254,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0075'
       let vector = new Vector<Float32Array>();
@@ -1270,7 +1270,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0076'
       let vector = new Vector<Float32Array>();
@@ -1286,7 +1286,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0077'
       let vector = new Vector<Float64Array>();
@@ -1303,7 +1303,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0078'
       let vector = new Vector<Float64Array>();
@@ -1320,7 +1320,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0079'
       let vector = new Vector<Float64Array>();
@@ -1336,7 +1336,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0080'
       let vector = new Vector<Float64Array>();
@@ -1352,7 +1352,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0081'
       let vector = new Vector<Float64Array>();
@@ -1368,7 +1368,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0082'
       let vector = new Vector<BigInt64Array>();
@@ -1385,7 +1385,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0083'
       let vector = new Vector<BigInt64Array>();
@@ -1402,7 +1402,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0084'
       let vector = new Vector<BigInt64Array>();
@@ -1418,7 +1418,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0085'
       let vector = new Vector<BigInt64Array>();
@@ -1434,7 +1434,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0086'
       let vector = new Vector<BigUint64Array>();
@@ -1451,7 +1451,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0087'
       let vector = new Vector<BigUint64Array>();
@@ -1468,7 +1468,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0088'
       let vector = new Vector<BigUint64Array>();
@@ -1484,7 +1484,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0089'
       let vector = new Vector<BigUint64Array>();
@@ -1500,7 +1500,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0090'
       let vector = new Vector<string>();
@@ -1515,7 +1515,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0091'
       let vector = new Vector<string>();
@@ -1530,7 +1530,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0092'
       let vector = new Vector<string>();
@@ -1545,7 +1545,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0093'
       let vector = new Vector<string>();
@@ -1560,7 +1560,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0094'
       let vector = new Vector<string>();
@@ -1576,7 +1576,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0095'
       let vector = new Vector<string>();
@@ -1591,7 +1591,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0096'
       let vector = new Vector<string>();
@@ -1606,7 +1606,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0097'
       let vector = new Vector<string>();
@@ -1622,7 +1622,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0098'
       let vector = new Vector<string>();
@@ -1638,7 +1638,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0099'
       let vector = new Vector<string>();
@@ -1654,7 +1654,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0100'
       let vector = new Vector<string>();
@@ -1670,7 +1670,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0101'
       let vector = new Vector<string>();
@@ -1686,7 +1686,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0102'
       let vector = new Vector<string>();
@@ -1702,7 +1702,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0103'
       let vector = new Vector<string>();
@@ -1718,7 +1718,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0104'
       let vector = new Vector<string>();
@@ -1734,7 +1734,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0105'
       let vector = new Vector<string>();
@@ -1750,7 +1750,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0106'
       let vector = new Vector<string>();
@@ -1766,7 +1766,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0107'
       let vector = new Vector<string>();
@@ -1782,7 +1782,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0108'
       let vector = new Vector<string>();
@@ -1802,7 +1802,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0109'
       let vector = new Vector<string>();
@@ -1820,7 +1820,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0110'
       let vector = new Vector<string>();
@@ -1836,7 +1836,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0111'
       let vector = new Vector<string>();
@@ -1852,7 +1852,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0112'
       let vector = new Vector<string>();
@@ -1868,7 +1868,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0113'
       let vector = new Vector<string>();
@@ -1884,7 +1884,7 @@ export default function vectorTest01() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     * */
+     */
     it("testVector01Chapter0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector01Chapter0114'
       let vector = new Vector<string>();

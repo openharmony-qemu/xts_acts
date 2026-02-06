@@ -714,7 +714,7 @@ export default function Deque06Test() {
 
     /**
      * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0300
-     * @tc.name      testPopLast0003
+     * @tc.name      testDeque06PopLast0003
      * @tc.desc      Test popLast with Uint8Array boundary values
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1025,11 +1025,7 @@ export default function Deque06Test() {
         deque.insertEnd(undefined);
         expect(deque.length).assertEqual(7);
         let result: FalsyValue = deque.popLast();
-        if (result === undefined) {
-          expect(true).assertTrue();
-        } else {
-          expect(false).assertTrue();
-        }
+		expect(result).assertEqual(undefined);
         expect(typeof result === 'undefined').assertTrue();
       } catch (error) {
         expect(false).assertTrue();

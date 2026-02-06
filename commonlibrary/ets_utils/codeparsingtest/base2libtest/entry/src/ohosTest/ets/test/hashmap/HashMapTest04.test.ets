@@ -1405,7 +1405,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0440
-     * @tc.name      testHashMap341
+     * @tc.name      testHashMap0341
      * @tc.desc      Verify the differentiated handling of null values and undefined values stored in a HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1493,7 +1493,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0443
-     * @tc.name      testHashMap344
+     * @tc.name      testHashMap0344
      * @tc.desc      Check the synchronization of attribute modifications involving NaN values stored in a HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1586,7 +1586,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0446
-     * @tc.name      testHashMap347
+     * @tc.name      testHashMap0347
      * @tc.desc      Verify the integrity of attributes containing Infinity stored in HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -1613,7 +1613,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0447
-     * @tc.name      testHashMap348
+     * @tc.name      testHashMap0348
      * @tc.desc      Verify the arithmetic property of Infinity for the Infinity attribute
      *               stored in HashMap: Infinity + any number = Infinity
      * @tc.size      MediumTest
@@ -1642,7 +1642,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0448
-     * @tc.name      testHashMap349
+     * @tc.name      testHashMap0349
      * @tc.desc      Verify the synchronization of modifying Infinity value attributes stored in a HashMap
      *               that contain Infinity attributes
      * @tc.size      MediumTest
@@ -1672,7 +1672,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0449
-     * @tc.name      testHashMap350
+     * @tc.name      testHashMap0350
      * @tc.desc      Verify the distinction between Infinity and other special values for attributes containing
      *               Infinity stored in HashMap
      * @tc.size      MediumTest
@@ -1733,7 +1733,7 @@ export default function HashMapTest04Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0451
-     * @tc.name      testHashMap352
+     * @tc.name      testHashMap0352
      * @tc.desc      Verify the integrity of TypedArray objects stored as attribute values
      *               (data access/type recognition) in HashMap
      * @tc.size      MediumTest

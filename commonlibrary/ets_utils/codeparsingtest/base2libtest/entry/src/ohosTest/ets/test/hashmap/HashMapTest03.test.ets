@@ -45,7 +45,7 @@ export default function HashMapTest03Test() {
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0294
-     * @tc.name      testHashMap00195
+     * @tc.name      testHashMap0195
      * @tc.desc      String type data is passed into  '\\\\' check item
      * @tc.size      MediumTest
      * @tc.type      Function

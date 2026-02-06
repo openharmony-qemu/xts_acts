@@ -1161,7 +1161,7 @@ export default function testLightWeightSetTest01() {
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0055
-     * @tc.name      testLightWeightSETTest01Chapter0055
+     * @tc.name      testLightWeightSetTest01Chapter0055
      * @tc.desc      Verify LightWeightSet can store object with NaN and Infinity
      * @tc.size      MediumTest
      * @tc.type      Function
