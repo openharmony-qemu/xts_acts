@@ -495,5 +495,296 @@ export default function effectKitCTest() {
       })
     })
 
+    /**
+     * @tc.name   getPixelMapEnum001
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_004
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getPixelMapEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'getPixelMap4';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info('www data getPixelMapEnum001 pixelMap isEditable ', pixelMap.isEditable);
+        console.info('www data getPixelMapEnum001 pixelMap isEditable ', pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertFalse();
+        let headFilter = effectKit.createEffect(pixelMap);
+        if (headFilter == null) {
+          console.log(msgStr + "createEffect failed");
+          expect(true).assertFail();
+          done();
+          return;
+        }
+        let resultPixel = headFilter.blur(10).getPixelMap();
+        expect(resultPixel != null).assertTrue();
+
+        // 验证 isEditable 属性
+        let isEditable = resultPixel.isEditable;
+        console.info(msgStr + "isEditable = " + isEditable);
+        expect(typeof isEditable === 'boolean').assertTrue();
+        expect(isEditable).assertTrue();
+
+        // 验证 isStrideAlignment 属性
+        let isStrideAlignment = resultPixel.isStrideAlignment;
+        console.info(msgStr + "isStrideAlignment = " + isStrideAlignment);
+        expect(typeof isStrideAlignment === 'boolean').assertTrue();
+        expect(isStrideAlignment).assertFalse();
+        done();
+      }).catch((ex: BusinessError) => {
+        console.error(msgStr + "error=" + ex.toString());
+        expect(true).assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   getPixelMapEnum002
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_005
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getPixelMapEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color = new ArrayBuffer(96);
+        let opts : image.InitializationOptions = {
+          editable: false,
+          pixelFormat: 3,
+          size: {
+            height: 4,
+            width: 6
+          }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info('www data pixelMap getPixelMapEnum002 isEditable 111 ', pixelMap.isEditable)
+          console.info('www data pixelMap getPixelMapEnum002 isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let pixel = effectKit.createEffect(pixelMap).getPixelMap();
+          console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixel.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixel.isStrideAlignment)
+          expect(pixel.isEditable).assertTrue();
+          expect(pixel.isStrideAlignment).assertFalse();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   getPixelMapEnum003
+     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_006
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getPixelMapEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        let pixel2 = effectKit.createEffect(pixelMap).getPixelMap();
+        console.info('getPixelBytesNumber = ', pixel2.getPixelBytesNumber());
+        console.info('www data pixelMap isEditable ', pixel2.isEditable)
+        console.info('www data pixelMap isStrideAlignment ', pixel2.isStrideAlignment)
+        expect(pixel2.isEditable).assertTrue();
+        expect(pixel2.isStrideAlignment).assertFalse();
+        done();
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnum001
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_001
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createEffect(pixelMap).getEffectPixelMap().then((pixelMap)=>{
+          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixelMap.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info('www data error ', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnum002
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_002
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createEffect(pixelMap).getEffectPixelMap(true).then((pixelMap)=>{
+          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixelMap.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info('www data error ', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnum003
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_003
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createEffect(pixelMap).getEffectPixelMap(false).then((pixelMap)=>{
+          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixelMap.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info('www data error ', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnum004
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_004
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+
+        const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4。
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertTrue();
+        effectKit.createEffect(pixelMap).getEffectPixelMap(true).then((pixelMap)=>{
+          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixelMap.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info('www data error ', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   getEffectPixelMapEnum005
+     * @tc.number EFFECT_KIT_GETEFFECTPIXELMAP_JSAPI_005
+     * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getEffectPixelMapEnum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const color = new ArrayBuffer(96);
+        let opts : image.InitializationOptions = {
+          editable: true,
+          pixelFormat: 3,
+          size: {
+            height: 4,
+            width: 6
+          }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info('www data pixelMap getPixelMapEnum002 isEditable 111 ', pixelMap.isEditable)
+          console.info('www data pixelMap getPixelMapEnum002 isEditable 222 ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          let pixel = effectKit.createEffect(pixelMap).getPixelMap();
+          console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
+          console.info('www data pixelMap isEditable ', pixel.isEditable)
+          console.info('www data pixelMap isStrideAlignment ', pixel.isStrideAlignment)
+          expect(pixel.isEditable).assertTrue();
+          expect(pixel.isStrideAlignment).assertFalse();
+          done();
+        })
+      })
+      
   })
 }
