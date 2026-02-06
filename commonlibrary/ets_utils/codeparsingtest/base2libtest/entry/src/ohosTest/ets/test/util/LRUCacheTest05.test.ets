@@ -1970,5 +1970,93 @@ export default function LRUCache05Test() {
 
       console.log(TAG + " end");
     });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6800
+     * @tc.name      testLRUCacheSymbol05_0068
+     * @tc.desc      Verify iterator behavior with Capacity 1 (overwrite).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheSymbol05_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0068";
+      console.log(TAG + " start");
+
+      let pro = new util.LRUCache<number, string>(1);
+      pro.put(1, "A");
+
+      let res1: Array<[number, string]> = [];
+      for (let v of pro) res1.push(v);
+      expect(res1[0][0]).assertEqual(1);
+
+      pro.put(2, "B"); // Evicts 1
+
+      let res2: Array<[number, string]> = [];
+      for (let v of pro) res2.push(v);
+
+      expect(res2.length).assertEqual(1);
+      expect(res2[0][0]).assertEqual(2);
+      expect(res2[0][1]).assertEqual("B");
+
+      console.log(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_6900
+     * @tc.name      testLRUCacheSymbol05_0069
+     * @tc.desc      Verify iterator with large volume (Stress).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheSymbol05_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0069";
+      console.log(TAG + " start");
+
+      let pro = new util.LRUCache<number, number>(100);
+      for(let i=0; i<100; i++) {
+        pro.put(i, i);
+      }
+
+      let result: Array<[number, number]> = [];
+      for (let value of pro) {
+        result.push(value);
+      }
+
+      expect(result.length).assertEqual(100);
+      expect(result[0][0]).assertEqual(0); // Oldest
+      expect(result[99][0]).assertEqual(99); // Newest
+
+      console.log(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_LRU_CACHE05_7000
+     * @tc.name      testLRUCacheSymbol05_0070
+     * @tc.desc      Verify iterator with Mixed Types (string keys and number values).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheSymbol05_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheSymbol05_0070";
+      console.log(TAG + " start");
+
+      let pro = new util.LRUCache<string, number>();
+      pro.put("A", 1);
+      pro.put("B", 2);
+
+      let result: Array<[string, number]> = [];
+      for (let value of pro) {
+        result.push(value);
+      }
+
+      expect(result.length).assertEqual(2);
+      expect(result[0][0]).assertEqual("A");
+      expect(result[1][0]).assertEqual("B");
+
+      console.log(TAG + " end");
+    });
   });
 }

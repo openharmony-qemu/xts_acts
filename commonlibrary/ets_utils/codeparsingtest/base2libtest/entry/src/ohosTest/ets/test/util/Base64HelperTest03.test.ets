@@ -530,15 +530,15 @@ export default function Base64Helper03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0100
-     * @tc.name      testBase64HelperConstructDefault
-     * @tc.desc      [Basic] Verify default constructor (no args) creates a valid instance.
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2200
+     * @tc.name      testBase64HelperConstruct03_0022
+     * @tc.desc      Verify default constructor (no args) creates a valid instance.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructDefault", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructDefault";
+    it("testBase64HelperConstruct03_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0022";
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
@@ -551,18 +551,17 @@ export default function Base64Helper03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0200
-     * @tc.name      testBase64HelperConstructExplicitCall1
-     * @tc.desc      [Basic] Verify constructor consistency (Repeated check 1).
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2300
+     * @tc.name      testBase64HelperConstruct03_0023
+     * @tc.desc      Verify constructor consistency (Repeated check 1).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructExplicitCall1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructExplicitCall1";
+    it("testBase64HelperConstruct03_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0023";
       console.info(TAG + " start");
       try {
-        // [Fix]: Removed argument util.Type.BASIC
         let helper = new util.Base64Helper();
         expect(helper instanceof util.Base64Helper).assertTrue();
       } catch (e) {
@@ -573,18 +572,17 @@ export default function Base64Helper03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0300
-     * @tc.name      testBase64HelperConstructExplicitCall2
-     * @tc.desc      [Basic] Verify constructor consistency (Repeated check 2).
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2400
+     * @tc.name      testBase64HelperConstruct03_0024
+     * @tc.desc      Verify constructor consistency (Repeated check 2).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructExplicitCall2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructExplicitCall2";
+    it("testBase64HelperConstruct03_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0024";
       console.info(TAG + " start");
       try {
-        // [Fix]: Removed argument util.Type.MIME
         let helper = new util.Base64Helper();
         expect(helper instanceof util.Base64Helper).assertTrue();
       } catch (e) {
@@ -595,18 +593,17 @@ export default function Base64Helper03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0400
-     * @tc.name      testBase64HelperConstructExplicitCall3
-     * @tc.desc      [Basic] Verify constructor consistency (Repeated check 3).
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2500
+     * @tc.name      testBase64HelperConstruct03_0025
+     * @tc.desc      Verify constructor consistency (Repeated check 3).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructExplicitCall3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructExplicitCall3";
+    it("testBase64HelperConstruct03_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0025";
       console.info(TAG + " start");
       try {
-        // [Fix]: Removed argument util.Type.URL_SAFE
         let helper = new util.Base64Helper();
         expect(helper instanceof util.Base64Helper).assertTrue();
       } catch (e) {
@@ -616,160 +613,149 @@ export default function Base64Helper03Test() {
       console.info(TAG + " end");
     });
 
-    // ==========================================
-    // 第二部分：功能验证 (Behavior Verification)
-    // ==========================================
-
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0500
-     * @tc.name      testBase64HelperStandardBehaviorCheck
-     * @tc.desc      [Behavior] Verify instance behaves as Standard Base64 (since we cannot set URL_SAFE).
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2600
+     * @tc.name      testBase64HelperConstruct03_0026
+     * @tc.desc      Verify instance behaves as Standard Base64.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperStandardBehaviorCheck", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperStandardBehaviorCheck";
-      console.info(TAG + " start");
-
-      // [Fix]: Removed args. Default is Standard.
-      let helper = new util.Base64Helper();
-
-      // Input 251 (0xFB) -> Standard: "+w=="
-      // (If it were URL_SAFE, it would be "-w==")
-      let input = new Uint8Array([251]);
-      let result = helper.encodeToStringSync(input);
-
-      // Since we can't set URL_SAFE in constructor anymore, we expect Standard '+'
-      expect(result).assertEqual("+w==");
-      console.info(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0600
-     * @tc.name      testBase64HelperStandardSlashCheck
-     * @tc.desc      [Behavior] Verify instance uses Standard '/' character.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testBase64HelperStandardSlashCheck", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperStandardSlashCheck";
-      console.info(TAG + " start");
-
-      // [Fix]: Removed args
-      let helper = new util.Base64Helper();
-
-      // Input 255 (0xFF) -> Standard: "/w=="
-      let input = new Uint8Array([255]);
-      let result = helper.encodeToStringSync(input);
-
-      expect(result).assertEqual("/w==");
-      console.info(TAG + " end");
-    });
-
-    /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0700
-     * @tc.name      testBase64HelperMultipleInstances
-     * @tc.desc      [Logic] Verify multiple instances work independently and consistently.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testBase64HelperMultipleInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperMultipleInstances";
-      console.info(TAG + " start");
-
-      // [Fix]: Removed args. Both are now standard helpers.
-      let helper1 = new util.Base64Helper();
-      let helper2 = new util.Base64Helper();
-
-      let input = new Uint8Array([255]); // 11111111
-
-      let res1 = helper1.encodeToStringSync(input); // "/w=="
-      let res2 = helper2.encodeToStringSync(input); // "/w=="
-
-      expect(res1).assertEqual("/w==");
-      expect(res2).assertEqual("/w==");
-      // Ensure they produce consistent results
-      expect(res1).assertEqual(res2);
-
-      console.info(TAG + " end");
-    });
-
-    // ==========================================
-    // 第三部分：健壮性与边界测试 (Robustness)
-    // ==========================================
-
-    /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0800
-     * @tc.name      testBase64HelperConstructNoArgsCheck
-     * @tc.desc      [Robustness] Verify strictly no arguments are passed (Manual check logic).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testBase64HelperConstructNoArgsCheck", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructNoArgsCheck";
+    it("testBase64HelperConstruct03_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0026";
       console.info(TAG + " start");
       try {
-        // [Fix]: Correct usage
         let helper = new util.Base64Helper();
         let input = new Uint8Array([251]);
         let result = helper.encodeToStringSync(input);
         expect(result).assertEqual("+w==");
       } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
       }
       console.info(TAG + " end");
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_0900
-     * @tc.name      testBase64HelperConstructIsolation
-     * @tc.desc      [Robustness] Verify new instance does not reuse previous state (Stateless check).
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2700
+     * @tc.name      testBase64HelperConstruct03_0027
+     * @tc.desc      Verify instance uses Standard slash character.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructIsolation", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructIsolation";
+    it("testBase64HelperConstruct03_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0027";
       console.info(TAG + " start");
       try {
-        // [Fix]: Removed invalid number arg (99)
+        let helper = new util.Base64Helper();
+        let input = new Uint8Array([255]);
+        let result = helper.encodeToStringSync(input);
+        expect(result).assertEqual("/w==");
+      } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
+        expect(false).assertTrue();
+      }
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2800
+     * @tc.name      testBase64HelperConstruct03_0028
+     * @tc.desc      Verify multiple instances work independently and consistently.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperConstruct03_0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0028";
+      console.info(TAG + " start");
+      try {
         let helper1 = new util.Base64Helper();
-        // Use helper1
+        let helper2 = new util.Base64Helper();
+
+        let input = new Uint8Array([255]);
+
+        let res1 = helper1.encodeToStringSync(input);
+        let res2 = helper2.encodeToStringSync(input);
+
+        expect(res1).assertEqual("/w==");
+        expect(res2).assertEqual("/w==");
+        expect(res1).assertEqual(res2);
+      } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
+        expect(false).assertTrue();
+      }
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER03_2900
+     * @tc.name      testBase64HelperConstruct03_0029
+     * @tc.desc      Verify strictly no arguments are passed.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperConstruct03_0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0029";
+      console.info(TAG + " start");
+      try {
+        let helper = new util.Base64Helper();
+        let input = new Uint8Array([251]);
+        let result = helper.encodeToStringSync(input);
+        expect(result).assertEqual("+w==");
+      } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
+        expect(false).assertTrue();
+      }
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER03_3000
+     * @tc.name      testBase64HelperConstruct03_0030
+     * @tc.desc      Verify new instance does not reuse previous state.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperConstruct03_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0030";
+      console.info(TAG + " start");
+      try {
+        let helper1 = new util.Base64Helper();
         helper1.encodeToStringSync(new Uint8Array([65]));
 
-        // Create helper2
         let helper2 = new util.Base64Helper();
         let res = helper2.encodeToStringSync(new Uint8Array([66]));
 
         expect(res).assertEqual("Qg==");
       } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
       }
       console.info(TAG + " end");
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64_CONSTRUCT_1000
-     * @tc.name      testBase64HelperConstructStress
-     * @tc.desc      [Performance] Verify rapid creation of multiple instances.
+     * @tc.number    SUB_UTIL_BASE64HELPER03_3100
+     * @tc.name      testBase64HelperConstruct03_0031
+     * @tc.desc      Verify rapid creation of multiple instances.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testBase64HelperConstructStress", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testBase64HelperConstructStress";
+    it("testBase64HelperConstruct03_0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testBase64HelperConstruct03_0031";
       console.info(TAG + " start");
       try {
         for (let i = 0; i < 100; i++) {
-          // [Fix]: Removed argument
           let helper = new util.Base64Helper();
           expect(helper instanceof util.Base64Helper).assertTrue();
         }
       } catch (e) {
+        console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
       }
       console.info(TAG + " end");
