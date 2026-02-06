@@ -229,7 +229,11 @@ async function savePhoto() {
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       }
     ];
-    let result: string[] = await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig);
+    let result: string[] = [];
+    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris)=>{
+      result = uris;
+      console.log(`savePhoto result = ${JSON.stringify(uris)}`);
+    })
     await CommonFunc.sleep(3000);
     await driveFn(); 
     readWriteFile(uri, result[0]);
