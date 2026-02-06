@@ -886,7 +886,12 @@ export default function taskPoolCoverageTest() {
         const task = new taskpool.Task(simpleFunc, []);
         taskpool.executePeriodically(100, task);
         setTimeout(() => {
-          taskpool.cancel(task);
+          try {
+            taskpool.cancel(task);
+          } catch (e) {
+            console.log(`test catch: ${e}`)
+            expect().assertFail();
+          }
           done();
         }, 200);
       });
@@ -904,8 +909,12 @@ export default function taskPoolCoverageTest() {
         const task = new taskpool.Task(multiArgFunc, [1, 2, 3]);
         taskpool.executePeriodically(100, task);
         setTimeout(() => {
-          taskpool.cancel(task);
-
+          try {
+            taskpool.cancel(task);
+          } catch (e) {
+            console.log(`test catch: ${e}`)
+            expect().assertFail();
+          }
           done();
         }, 200);
       });
@@ -922,7 +931,12 @@ export default function taskPoolCoverageTest() {
       const task = new taskpool.Task('', noArgFunc);
       taskpool.executePeriodically(100, task);
       setTimeout(() => {
-        taskpool.cancel(task);
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+          console.log(`test catch: ${e}`)
+          expect().assertFail();
+        }
         done();
       }, 200);
     });
@@ -939,7 +953,12 @@ export default function taskPoolCoverageTest() {
       const task = new taskpool.Task(noArgFunc);
       taskpool.executePeriodically(100, task, taskpool.Priority.IDLE);
       setTimeout(() => {
-        taskpool.cancel(task);
+        try {
+          taskpool.cancel(task);
+        } catch (e) {
+          console.log(`test catch: ${e}`)
+          expect().assertFail();
+        }
         done();
       }, 200);
     });
