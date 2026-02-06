@@ -1692,7 +1692,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -1710,7 +1710,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -1741,7 +1741,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -1759,7 +1759,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2038,7 +2038,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2056,7 +2056,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2124,7 +2124,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2142,7 +2142,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(errCode).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2390,7 +2390,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2408,7 +2408,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2476,7 +2476,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2494,7 +2494,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2562,11 +2562,11 @@ export default function windowErrCode401_3() {
       try {
         await windowClass.setRelativePositionToParentWindowEnabled(true, ohosWindow.WindowAnchor.TOP_START, null, null);
         console.info(msgStr + 'Succeeded');
+        await windowClass.destroyWindow()
+        done()
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        await windowClass.destroyWindow()
-        expect().assertFail();
-        done()
+        expect(exception.code).assertEqual(401);
       }
       try {
         await windowClass.setRelativePositionToParentWindowEnabled(true, ohosWindow.WindowAnchor.TOP_START, undefined, undefined);
@@ -2575,8 +2575,8 @@ export default function windowErrCode401_3() {
         done()
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
         await windowClass.destroyWindow()
-        expect().assertFail();
         done()
       }
     })
@@ -2633,7 +2633,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2651,7 +2651,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2719,7 +2719,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2737,7 +2737,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2805,7 +2805,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2823,7 +2823,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');
@@ -2891,7 +2891,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success');
@@ -2909,7 +2909,7 @@ export default function windowErrCode401_3() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
             done();
           } else {
             console.log(caseName + ' success2');

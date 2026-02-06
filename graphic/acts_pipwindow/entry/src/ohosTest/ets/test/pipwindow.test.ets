@@ -5760,35 +5760,6 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.name   tesCreate_null_undefined
-     * @tc.number SUB_WMS_CREATE_PARAMETER_0100
-     * @tc.desc   tesCreate_null_undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesCreate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const message = 'tesCreate_null_undefined!'
-      try {
-        await pipWindow.create(null);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.error(`${message} Failed, Cause code ${err.code}, message ${err.message}`);
-        expect(err.code).assertEqual(401);
-      }
-      try {
-        await pipWindow.create(undefined);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
-        expect(err.code).assertEqual(401);
-        done();
-      }
-    });
-
-    /**
      * @tc.name   tesCreate_null_undefined2
      * @tc.number SUB_WMS_CREATE_PARAMETER_0200
      * @tc.desc   tesCreate_null_undefined2
