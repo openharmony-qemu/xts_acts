@@ -316,7 +316,7 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsVeryBig, Function | 
                 bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
                 height_ = OH_Drawing_BitmapGetHeight(bitmap);
                 width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                EXPECT_EQ(height_,  );
+                EXPECT_EQ(height_, height);
                 EXPECT_EQ(width_, width);
                 // 4. Free memory
                 OH_Drawing_BitmapDestroy(bitmap);
