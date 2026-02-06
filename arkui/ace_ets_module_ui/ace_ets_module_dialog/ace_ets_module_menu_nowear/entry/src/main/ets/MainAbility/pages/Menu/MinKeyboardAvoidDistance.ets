@@ -50,7 +50,7 @@ struct MinKeyboardAvoidDistance {
           }, 2000)
         })
     }
-    .position({bottom:20})
+    .position({bottom:100})
     .height('40%')
     .width('100%')
 
