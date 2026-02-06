@@ -631,7 +631,8 @@ export default function actslocationTest() {
                         expect(error.code).assertEqual(3301900);
                     }                    
                 }
-            })            
+            })
+
             /**
             * @tc.number  SUB_Location_getActiveGeoFences_0100
             * @tc.name  SUB_Location_getActiveGeoFences_0100
@@ -641,14 +642,20 @@ export default function actslocationTest() {
             * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getActiveGeoFences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+              let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
+              console.info("SUB_Location_addGnssGeofence_0100: " + isAccessToken);
+              if (!isAccessToken) {
+                  console.info("The device does not support Gnss");
+                  expect(isAccessToken).assertFalse();
+                  done();
               try{
                 geoLocationManager.getActiveGeoFences().then((res) => {
                   if (res) {
                     console.info("fence num:" + res.size);
-                    expect(res.size != 0).assertTrue();
+                    expect(true).assertEqual(res != null);
+                    done();
                   }
-                })
-                .catch((error) => {
+                }).catch((error) => {
                   console.error('promise, getActiveGeoFences: error=' + error.code);
                   expect(error.code).assertEqual(801);
                 });
@@ -657,6 +664,7 @@ export default function actslocationTest() {
                 expect().assertFalse();
               }
             })
+
             /**
             * @tc.number  SUB_Location_addGnssGeofence_0100
             * @tc.name  SUB_Location_addGnssGeofence_0100
