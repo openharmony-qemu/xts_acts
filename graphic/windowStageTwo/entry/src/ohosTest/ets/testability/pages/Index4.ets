@@ -67,7 +67,7 @@ export struct V1ContentComponent {
               AppStorage.setOrCreate('navigationIndicatorPX', this.windowAvoidAreaInfoPX.navigationIndicator);
             }
           })
-          Button(subWindowKeyBoard监听)
+          Button('subWindowKeyBoard监听')
           .id('index4Btn2')
           .onClick(()=>{
             let windowClass = AppStorage.get('windowClass2') as window.Window;
