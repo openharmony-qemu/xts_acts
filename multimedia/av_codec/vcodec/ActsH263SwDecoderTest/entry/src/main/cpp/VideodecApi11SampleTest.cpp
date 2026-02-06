@@ -555,7 +555,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
         bufferSize = static_cast<uint32_t>(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) |
             ((ch[two] & 0xFF) << SIXTEEN) | ((ch[three] & 0xFF) << TWENTY_FOUR));
     }
-    if (bufferSize >= defaultWidth * defaultHeight * THREE >> 1) {
+    if (bufferSize >= (defaultWidth * defaultHeight * THREE >> 1)) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
     }
     return SendData(bufferSize, index, buffer);
@@ -817,7 +817,7 @@ int32_t VDecAPI11Sample::SyncOutputFuncEos(OH_AVCodecBufferAttr attr, uint32_t i
 void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index, int32_t size)
 {
     if (!sfOutput) {
-        if (size >= defaultWidth * defaultHeight * THREE >> 1) {
+        if (size >= (defaultWidth * defaultHeight * THREE >> 1)) {
             uint8_t *cropBuffer = new uint8_t[size];
             if (SecureMemcpy(cropBuffer, size, OH_AVBuffer_GetAddr(buffer),
                 defaultWidth * defaultHeight) != EOK) {
