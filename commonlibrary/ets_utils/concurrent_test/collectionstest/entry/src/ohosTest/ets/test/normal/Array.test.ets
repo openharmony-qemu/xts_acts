@@ -1,7 +1,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
-import { sleep } from '../TestUtils';
+import { sleep } from '../../testability/TestUtils';
 
 @Sendable
 export class ImplISendableClass implements lang.ISendable {

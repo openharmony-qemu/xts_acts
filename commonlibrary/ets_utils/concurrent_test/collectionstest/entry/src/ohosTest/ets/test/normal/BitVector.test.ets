@@ -1,7 +1,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
-import { sleep } from '../TestUtils';
+import { sleep } from '../../testability/TestUtils';
 
 export default function BitVectorTest() {
   describe('BitVectorTest', () => {
