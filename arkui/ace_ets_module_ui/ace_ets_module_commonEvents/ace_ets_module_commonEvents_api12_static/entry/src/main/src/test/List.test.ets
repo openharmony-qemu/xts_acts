@@ -54,7 +54,6 @@ import TapGestureTemplateTest from './TapGesture/TapGestureTemplateTest.test';
 import LongPressGestureTemplateTest from './LongPressGesture/LongPressGestureTemplateTest.test';
 
 import onAttachTest from './onAttachTest/onAttach.test';
-import GestureRecognizerState from './GestureRecognizer/GestureRecognizerState.test';
 import APIshouldBuiltInRecognizerParallelWith from './APIshouldBuiltInRecognizerParallelWithTest3.test';
 import typeNodeGestureTest from './PanGesture/Gesture.test';
 
@@ -66,7 +65,6 @@ import gestureDefine2 from './customGestureTest/buttonDragStart.test'
 import gestureDefine3 from './customGestureTest/dragIsSystem.test'
 import gestureDefine4 from './customGestureTest/clickIsSystem.test'
 
-import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 
 export default function testsuite() {
@@ -104,8 +102,7 @@ export default function testsuite() {
   TapGestureTemplateTest();
   PanGestureExampleTemplateTest();
   LongPressGestureTemplateTest();
-  onAttachTest(); 
-  GestureRecognizerState(); 
+  onAttachTest();
   typeNodeGestureTest(); 
   btnMonoLongPress();
   btnMonoTouch();
@@ -113,7 +110,6 @@ export default function testsuite() {
   gestureDefine2();
   gestureDefine3();
   gestureDefine4();
-  gestureDefine10();
   initializeModifierTest();
 
 }

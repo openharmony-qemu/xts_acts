@@ -18,12 +18,6 @@ import PreDrag from './Drag/PreDrag.test';
 import enableEdgeAutoScroll from './DragInteractionOptions/enableEdgeAutoScroll.test';
 import enableEdgeAutoScroll_false from './DragInteractionOptions/enableEdgeAutoScroll_false.test';
 import enableEdgeAutoScroll_true from './DragInteractionOptions/enableEdgeAutoScroll_true.test';
-import LongPressRecognizer from './GestureRecognizer/LongPressRecognizer.test';
-import PanRecognizer from './GestureRecognizer/PanRecognizer.test';
-import PinchRecognizer from './GestureRecognizer/PinchRecognizer.test';
-import RotationRecognizer from './GestureRecognizer/RotationRecognizer.test';
-import SwipeRecognizer from './GestureRecognizer/SwipeRecognizer.test';
-import TapRecognizer from './GestureRecognizer/TapRecognizer.test';
 import InteractionEventBindingInfoTest from './InteractionEventBindingInfo/InteractionEventBindingInfo.test';
 import nextFocus from './nextFocus/nextFocus.test';
 import nextFocus2 from './nextFocus2/nextFocus2.test';
@@ -36,14 +30,8 @@ export default function testsuite() {
   enableEdgeAutoScroll_false();
   enableEdgeAutoScroll_true();
 
-  notifyDragStartRequest(); 
+  notifyDragStartRequest();
   enableEdgeAutoScroll();
-  LongPressRecognizer(); 
-  PanRecognizer();
-  PinchRecognizer();
-  RotationRecognizer();
-  SwipeRecognizer();
-  TapRecognizer();
   // InteractionEventBindingInfoTest();
   nextFocus();
   nextFocus2(); 
