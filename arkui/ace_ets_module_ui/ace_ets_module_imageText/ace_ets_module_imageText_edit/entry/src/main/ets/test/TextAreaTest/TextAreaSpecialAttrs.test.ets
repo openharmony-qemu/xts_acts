@@ -22,7 +22,7 @@ export default function TextAreaSpecialAttrsTest() {
     beforeEach(async (done: Function) => {
       console.info("DataPanelCloseEffectTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/textArea/TextAreaSpecialAttrs',
+        url: 'MainAbility/pages/TextArea/TextAreaSpecialAttrs',
       }
       try {
         router.clear();
