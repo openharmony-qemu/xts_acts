@@ -40,6 +40,8 @@ import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhot
 import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
 import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
+import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
+import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
 
 
 export default function testsuite() {
@@ -84,4 +86,6 @@ export default function testsuite() {
   CameraManagerCreateVideoOutputTest();
   CameraManagerGetSupportedOutputCapabilityTest();
   createCameraInput();
+  CameraSessionSetWhiteBalanceModeTest();
+  CameraGetActiveProfileTest();
 }
