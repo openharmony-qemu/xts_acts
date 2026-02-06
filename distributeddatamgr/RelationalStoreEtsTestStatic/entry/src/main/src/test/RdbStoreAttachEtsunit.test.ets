@@ -214,6 +214,90 @@ export default function rdbStoreAttachEtsunitTest() {
             console.log(tag + "************* testRdbStoreAttach0001 end *************");
         })
 
+        /**
+         * @tc.name   testRdbStoreAttach0002
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0020
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0002 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach("fullPath", "attachName", 0);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0002 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0002 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0003
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0030
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0003 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach("fullPath", "attachName", 301);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0002 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0003 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0004
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0040
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0004 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach(context!, STORE_CONFIG1, "attachName", 0);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0004 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0004 end *************");
+        })
+
+        /**
+         * @tc.name   testRdbStoreAttach0005
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_0050
+         * @tc.desc   non encrypted database attach non encrypted database
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testRdbStoreAttach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttach0005 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                await store.attach(context!, STORE_CONFIG1, "attachName", 301);
+                expect(true).assertFail();
+            } catch (err){
+                hilog.error(domain, tag, 'testRdbStoreAttach0005 err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(401);
+            }
+            console.log(tag + "************* testRdbStoreAttach0005 end *************");
+        })
+
         console.log(tag + "*************Ets Test End*************");
         })
 }
