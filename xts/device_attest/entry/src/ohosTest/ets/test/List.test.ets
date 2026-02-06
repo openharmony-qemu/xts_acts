@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import deviceAttestInfoAdditionalTest from './deviceAttestInfoAdditional.test'
+import deviceAttestInfoAdditionalTest from './DeviceAttestInfoAdditional.test'
 import { window } from '@kit.ArkUI';
 
 export default function testsuite(context: Context, windowStage: window.WindowStage,

@@ -36,14 +36,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_PROMISE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_PROMISE_001
+     * @tc.name   testGetAttestStatusParamPromise0100
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_PROMISE_0100
      * @tc.desc   Test getAttestStatus with Promise mode - verify return structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_PROMISE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusParamPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatus Promise mode - return structure begin');
       try {
         deviceAttest.getAttestStatus().then((attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -78,14 +78,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_CALLBACK_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_CALLBACK_001
+     * @tc.name   testGetAttestStatusParamCallback0200
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_CALLBACK_0200
      * @tc.desc   Test getAttestStatus with callback mode - verify return structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_PARAM_CALLBACK_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusParamCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatus callback mode - return structure begin');
       try {
         deviceAttest.getAttestStatus((err: BusinessError, attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -120,14 +120,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_SYNC_PARAM_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_SYNC_PARAM_001
+     * @tc.name   testGetAttestStatusSyncParam0300
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_SYNC_PARAM_0300
      * @tc.desc   Test getAttestStatusSync - verify return structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_SYNC_PARAM_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusSyncParam0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatusSync - return structure begin');
       try {
         let attestResultInfo: deviceAttest.AttestResultInfo = deviceAttest.getAttestStatusSync();
@@ -157,14 +157,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_AUTHRESULT_VALUE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_AUTHRESULT_VALUE_001
+     * @tc.name   testAuthResultValue0400
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_AUTHRESULT_VALUE_0400
      * @tc.desc   Test authResult valid values - Promise mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_AUTHRESULT_VALUE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testAuthResultValue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test authResult valid values begin');
       try {
         deviceAttest.getAttestStatus().then((attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -194,14 +194,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULT_VALUE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULT_VALUE_001
+     * @tc.name   testSoftwareResultValue0500
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULT_VALUE_0500
      * @tc.desc   Test softwareResult valid values - callback mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULT_VALUE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSoftwareResultValue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test softwareResult valid values begin');
       try {
         deviceAttest.getAttestStatus((err: BusinessError, attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -231,14 +231,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULTDETAIL_STRUCTURE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULTDETAIL_STRUCTURE_001
+     * @tc.name   testSoftwareResultDetailStructure0600
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULTDETAIL_STRUCTURE_0600
      * @tc.desc   Test softwareResultDetail structure - Sync mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_SOFTWARERESULTDETAIL_STRUCTURE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSoftwareResultDetailStructure0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test softwareResultDetail structure begin');
       try {
         let attestResultInfo: deviceAttest.AttestResultInfo = deviceAttest.getAttestStatusSync();
@@ -278,14 +278,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_TICKET_VALUE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_TICKET_VALUE_001
+     * @tc.name   testTicketValue0700
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_TICKET_VALUE_0700
      * @tc.desc   Test ticket value - Promise mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_TICKET_VALUE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testTicketValue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test ticket value begin');
       try {
         deviceAttest.getAttestStatus().then((attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -319,14 +319,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_MULTIPLE_CALL_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_MULTIPLE_CALL_001
+     * @tc.name   testMultipleCall0800
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_MULTIPLE_CALL_0800
      * @tc.desc   Test calling getAttestStatus multiple times - reliability test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_MULTIPLE_CALL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testMultipleCall0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('test multiple getAttestStatus calls begin');
       let callCount: number = 0;
       const maxCalls: number = 3;
@@ -362,14 +362,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_SYNC_PERFORMANCE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SYNC_PERFORMANCE_001
+     * @tc.name   testSyncPerformance0900
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_SYNC_PERFORMANCE_0900
      * @tc.desc   Test getAttestStatusSync performance - should return quickly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_SYNC_PERFORMANCE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSyncPerformance0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('test getAttestStatusSync performance begin');
       const startTime: number = Date.now();
 
@@ -393,14 +393,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_PROMISE_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_PROMISE_001
+     * @tc.name   testError401Promise1000
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_PROMISE_1000
      * @tc.desc   Test getAttestStatus error handling - no 401 error (invalid parameter) - Promise mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_PROMISE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testError401Promise1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test getAttestStatus error 401 (Promise) begin');
       try {
         deviceAttest.getAttestStatus().then((attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -422,14 +422,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_CALLBACK_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_CALLBACK_001
+     * @tc.name   testError401Callback1100
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_CALLBACK_1100
      * @tc.desc   Test getAttestStatus error handling - no 401 error (invalid parameter) - callback mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_CALLBACK_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testError401Callback1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test getAttestStatus error 401 (Callback) begin');
       try {
         deviceAttest.getAttestStatus((err: BusinessError, attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -451,14 +451,14 @@ export default function deviceAttestSystemApiTest(context: Context, windowStage:
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_SYNC_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_SYNC_001
+     * @tc.name   testError401Sync1200
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_SYNC_1200
      * @tc.desc   Test getAttestStatusSync error handling - no 401 error (invalid parameter)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_ERROR_401_SYNC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testError401Sync1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('test getAttestStatusSync error 401 begin');
       try {
         let attestResultInfo: deviceAttest.AttestResultInfo = deviceAttest.getAttestStatusSync();

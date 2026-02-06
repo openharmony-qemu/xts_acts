@@ -36,14 +36,14 @@ export default function deviceAttestInfoAdditionalTest(context: Context, windowS
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_001
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_001
+     * @tc.name   testGetAttestStatusError202Promise0100
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_0100
      * @tc.desc   Test getAttestStatus permission verification failed (202) - Promise mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusError202Promise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatus permission verification failed (Promise) begin');
       try {
         deviceAttest.getAttestStatus().then((attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -65,14 +65,14 @@ export default function deviceAttestInfoAdditionalTest(context: Context, windowS
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_002
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_002
+     * @tc.name   testGetAttestStatusError202Callback0200
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_0200
      * @tc.desc   Test getAttestStatus permission verification failed (202) - callback mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusError202Callback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatus permission verification failed (Callback) begin');
       try {
         deviceAttest.getAttestStatus((err: BusinessError, attestResultInfo: deviceAttest.AttestResultInfo) => {
@@ -95,14 +95,14 @@ export default function deviceAttestInfoAdditionalTest(context: Context, windowS
     })
 
     /**
-     * @tc.name   SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_003
-     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_003
+     * @tc.name   testGetAttestStatusError202Sync0300
+     * @tc.number SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_0300
      * @tc.desc   Test getAttestStatusSync permission verification failed (202)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_DEVICEATTEST_DEVICEATTEST_GETATTTESTSTATUS_ERROR_202_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testGetAttestStatusError202Sync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('test getAttestStatusSync permission verification failed begin');
       try {
         let attestResultInfo: deviceAttest.AttestResultInfo = deviceAttest.getAttestStatusSync();
