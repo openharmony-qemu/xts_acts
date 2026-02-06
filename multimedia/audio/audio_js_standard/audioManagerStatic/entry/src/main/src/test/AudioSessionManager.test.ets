@@ -81,7 +81,7 @@ export default function audioSessionManagerTest() {
         console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0100. Code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       }
@@ -106,7 +106,7 @@ export default function audioSessionManagerTest() {
         console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(false);
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TagFrmwk}: Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0200. Code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       }
@@ -131,7 +131,8 @@ export default function audioSessionManagerTest() {
         console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
         expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
       }
@@ -155,7 +156,8 @@ export default function audioSessionManagerTest() {
         console.info(`${TagFrmwk}: activateAudioSession succeed`);
         sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
         expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
       }

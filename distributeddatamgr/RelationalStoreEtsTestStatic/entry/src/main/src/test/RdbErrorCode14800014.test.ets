@@ -172,7 +172,7 @@ export default function RdbErrorCode14800014() {
           "data1": null,
         };
         await rdbStore!.insert("test", valueBucket);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeSync0300 insert failed " + err);
       }
       try {
@@ -184,7 +184,7 @@ export default function RdbErrorCode14800014() {
         console.error(TAG + "testgetColumnTypeSync0300 getColumnTypeSync success");
         expect(true).assertFail();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeSync0300 getColumnTypeSync failed. " + err);
         expect(14800014).assertEqual(err.code);
         done();
@@ -220,7 +220,7 @@ export default function RdbErrorCode14800014() {
             data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect(null).assertFail()
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + err + "batchInsertWithConflictResolution failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
@@ -257,7 +257,7 @@ export default function RdbErrorCode14800014() {
             data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect(null).assertFail()
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0100 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
@@ -284,7 +284,7 @@ export default function RdbErrorCode14800014() {
     //     rdbStore!.off('perfStat', observer);
     //     expect().assertFail();
     //     done();
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log(TAG + "err:" + err.code + err.message);
     //     expect(14800014).assertEqual(err.code);
     //     done();
@@ -310,7 +310,7 @@ export default function RdbErrorCode14800014() {
     //     rdbStore!.on('perfStat', observer);
     //     expect().assertFail();
     //     done();
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log(TAG + "err" + err.code + err.message)
     //     expect(14800014).assertEqual(err.code);
     //     done();
@@ -337,7 +337,7 @@ export default function RdbErrorCode14800014() {
     //         expect().assertFail();
     //         done();
     //       });
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //       expect(14800014).assertEqual(err.code);
     //       console.log(TAG + `error is failed code:${err.code},message:${err.message}`);
     //       done();
@@ -359,7 +359,7 @@ export default function RdbErrorCode14800014() {
       try {
         await rdbStore!.setDistributedTables(["employee"], data_relationalStore.DistributedType.DISTRIBUTED_CLOUD,
           { autoSync: true } as data_relationalStore.DistributedConfig)
-      } catch (err: Error) {
+      } catch (err) {
         console.info(TAG + "setDistributed002 failed" + `, error code is ${err.code}, message is ${err.message}`);
         expect(err.code == 14800014).assertTrue()
       }
@@ -383,13 +383,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
           await rdbStore!.detach("attachDB");
           expect().assertFail();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -416,7 +416,7 @@ export default function RdbErrorCode14800014() {
           "data1": "zhangsan",
         };
         await rdbStore!.insert("test", valueBucket);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeJsTest1700 insert failed " + err);
       }
       let resultSet = await rdbStore!.querySql("SELECT data1 FROM test");
@@ -426,7 +426,7 @@ export default function RdbErrorCode14800014() {
       resultSet!.close();
       try {
         await resultSet!.getColumnType(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeJsTest1700 success " + err.code + err.message);
         expect(14800014).assertEqual(err.code);
       }
@@ -470,7 +470,7 @@ export default function RdbErrorCode14800014() {
         try {
           await resultSet.getRows(1);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code);
         }
@@ -495,7 +495,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -508,7 +508,7 @@ export default function RdbErrorCode14800014() {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
             expect(14800014).assertEqual(err.code);
           })
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -529,14 +529,14 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         const dbPath = context!.databaseDir + "/rdb/Rst14.db";
         try {
           await rdbStore!.attach(context!, STORE_CONFIG3, "attachDB");
           expect().assertFail();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -558,14 +558,14 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           rdbStore!.emit('storeObserver');
           expect().assertFail();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -590,7 +590,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -598,7 +598,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.offAutoSyncProgress((progressDetail: data_relationalStore.ProgressDetails) => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -625,7 +625,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -634,7 +634,7 @@ export default function RdbErrorCode14800014() {
             (devices: Array<string>) => {
               expect().assertFail();
             })
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -659,7 +659,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -668,7 +668,7 @@ export default function RdbErrorCode14800014() {
             (devices: Array<data_relationalStore.ChangeInfo>) => {
               expect().assertFail();
             });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -694,7 +694,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -702,7 +702,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.offStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -728,7 +728,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -736,7 +736,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.offStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -762,7 +762,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -770,7 +770,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.onAutoSyncProgress((progressDetail: data_relationalStore.ProgressDetails) => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -796,7 +796,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -805,7 +805,7 @@ export default function RdbErrorCode14800014() {
             (devices: Array<string>) => {
               expect().assertFail();
             })
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -832,7 +832,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -841,7 +841,7 @@ export default function RdbErrorCode14800014() {
             (devices: Array<data_relationalStore.ChangeInfo>) => {
               expect().assertFail();
             });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -868,7 +868,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -876,7 +876,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.onStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -901,7 +901,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -909,7 +909,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.on('storeObserver', false, () => {
             expect().assertFail();
           });
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + "err.code:" + err.code);
           expect(14800014).assertEqual(err.code);
         }
@@ -934,13 +934,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           await rdbStore!.backup("TransactionTest.db")
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -966,7 +966,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -978,7 +978,7 @@ export default function RdbErrorCode14800014() {
             console.log(TAG + "err.code:" + err.code);
             expect(14800014).assertEqual(err.code)
           })
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1004,7 +1004,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1016,7 +1016,7 @@ export default function RdbErrorCode14800014() {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
             expect(14800014).assertEqual(err.code)
           })
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1048,14 +1048,14 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           rdbStore!.batchInsertSync("test1", [valueBucket, valueBucket]);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1089,7 +1089,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1097,7 +1097,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.insertSync("test1", valueBucket, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect().assertFail();
           ;
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1130,14 +1130,14 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           rdbStore!.batchInsertSync("test1", [valueBucket, valueBucket]);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1174,7 +1174,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1182,7 +1182,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.cleanDirtyData('test1', 10).then(() => {
             expect().assertFail();
           })
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1217,7 +1217,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         let PRIKey: Array<data_relationalStore.PRIKeyType> = [1 as long, 4 as long, 2 as long, 3 as long];
@@ -1231,7 +1231,7 @@ export default function RdbErrorCode14800014() {
               console.log(TAG + "err.code:" + err.code);
               expect(14800014).assertEqual(err.code);
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1256,7 +1256,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1265,7 +1265,7 @@ export default function RdbErrorCode14800014() {
         predicates.inDevices(deviceIds);
         try {
           rdbStore!.sync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, predicates)
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code);
         }
@@ -1290,7 +1290,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1300,7 +1300,7 @@ export default function RdbErrorCode14800014() {
               console.info(`progress: ${progressDetail}`);
               expect().assertFail();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1324,7 +1324,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
@@ -1333,7 +1333,7 @@ export default function RdbErrorCode14800014() {
               console.info(`progress: ${progressDetail}`);
               expect().assertFail();
             });
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1361,13 +1361,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2400 close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2400 close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           await rdbStore!.obtainDistributedTableName("", "EMPLOYEE");
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code);
           done();
@@ -1397,7 +1397,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1408,7 +1408,7 @@ export default function RdbErrorCode14800014() {
           hilog.info(domain, tag, '%{public}s',
             "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200 remoteQuery start *************");
           await rdbStore!.remoteQuery("", "test1", predicates, ["id", "name", "age", "salary", "blobType"]);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200 e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1434,7 +1434,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         let deviceIds: Array<string> = [];
@@ -1442,7 +1442,7 @@ export default function RdbErrorCode14800014() {
         predicates.inDevices(deviceIds);
         try {
           await rdbStore!.sync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, predicates);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1476,7 +1476,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1484,7 +1484,7 @@ export default function RdbErrorCode14800014() {
           let rows: Number = rdbStore!.deleteSync(predicates)
           console.info(`Delete rows: ${rows}`);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1516,12 +1516,12 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
           rdbStore!.executeSync("select * from test1")
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1553,13 +1553,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           await rdbStore!.execute("DELETE FROM TEST1 WHERE age = ? OR age = ?", ["18", "20"]);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1592,13 +1592,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           rdbStore!.executeSync("select * from test1",)
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1633,12 +1633,12 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
         try {
           await rdbStore!.lockRow(predicates);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1673,13 +1673,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           await rdbStore!.queryLockedRow(predicates, ["id", "name", "age", "salary", "blobType"]);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1713,13 +1713,13 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
         try {
           await rdbStore!.unlockRow(predicates);
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1765,7 +1765,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbTrans.update(valueBucket1, predicates);
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1775,7 +1775,7 @@ export default function RdbErrorCode14800014() {
           rdbTrans.querySqlSync("SELECT * FROM test1");
           rdbTrans.rollback();
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1822,7 +1822,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbTrans.update(valueBucket1, predicates);
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1832,7 +1832,7 @@ export default function RdbErrorCode14800014() {
           rdbTrans.querySqlSync("SELECT * FROM test1");
           rdbTrans.rollback();
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1879,7 +1879,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbTrans.update(valueBucket1, predicates);
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1889,7 +1889,7 @@ export default function RdbErrorCode14800014() {
           rdbTrans.updateSync(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           rdbTrans.rollback();
           console.log(`${TAG} close failed, code is00000000000000000000000000000000`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800014)
@@ -1925,7 +1925,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -1933,7 +1933,7 @@ export default function RdbErrorCode14800014() {
           let rows: Number = rdbStore!.deleteSync(predicates)
           console.info(`Delete rows: ${rows}`);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }
@@ -1971,7 +1971,7 @@ export default function RdbErrorCode14800014() {
             data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect(null).assertFail()
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionErrcode0300 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
@@ -2008,7 +2008,7 @@ export default function RdbErrorCode14800014() {
           rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + err + "testRdbStoreBatchInsertWithConflictResolutionSyncErrcode01200 failed" + err.code);
           expect(err.code == 14800014).assertTrue()
           done();
@@ -2049,7 +2049,7 @@ export default function RdbErrorCode14800014() {
         try {
           await rdbStore!.close();
           console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
@@ -2058,7 +2058,7 @@ export default function RdbErrorCode14800014() {
             rdbStore!.updateSync(valueBucket1, predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           console.info(`Updated row count: ${rows}`);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log(TAG + "e.code:" + e.code);
           expect(14800014).assertEqual(e.code)
         }

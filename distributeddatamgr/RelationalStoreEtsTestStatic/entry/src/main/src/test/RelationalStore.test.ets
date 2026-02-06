@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -164,7 +164,7 @@ export default function relationalStoreTest() {
           resultSet?.close();
           expect(rows.length).assertEqual(2)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + err + "relationalStoreTest007 failed" + err.code);
           expect().assertFail()
           done();
@@ -199,7 +199,7 @@ export default function relationalStoreTest() {
           expect(resultSet.rowCount).assertEqual(1)
           resultSet.close();
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "Query failed," + err.code + err.message)
           expect().assertFail()
           done()
@@ -231,7 +231,7 @@ export default function relationalStoreTest() {
           console.log(tag + "query success" + data);
           expect(data).assertEqual(1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -263,7 +263,7 @@ export default function relationalStoreTest() {
           console.log(tag + "resultSet.rowCount" + resultSet.rowCount)
           expect(resultSet.rowCount).assertEqual(1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -292,7 +292,7 @@ export default function relationalStoreTest() {
           console.log(tag + "resultSet.rowCount" + resultSet.rowCount)
           expect(resultSet.rowCount).assertEqual(1)
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -327,7 +327,7 @@ export default function relationalStoreTest() {
           expect(String(valueNum)).assertEqual(str);
           console.log(tag + "str:" + str);
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -363,7 +363,7 @@ export default function relationalStoreTest() {
           console.log(tag + "valueNum:" + valueNum);
           expect(valueNum < Number.MIN_SAFE_INTEGER).assertTrue()
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -398,7 +398,7 @@ export default function relationalStoreTest() {
           expect(String(valueNum)).assertEqual(str);
           console.log(tag + "str:" + str);
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -433,7 +433,7 @@ export default function relationalStoreTest() {
           console.log(tag + "valueNum:" + valueNum);
           expect(valueNum > Number.MIN_SAFE_INTEGER).assertTrue()
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -468,7 +468,7 @@ export default function relationalStoreTest() {
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -503,7 +503,7 @@ export default function relationalStoreTest() {
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "query failed" + err.code + err.message);
           expect().assertFail()
           done()
@@ -531,7 +531,8 @@ export default function relationalStoreTest() {
           console.log(tag + "name:" + name);
           expect(null).assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -559,7 +560,8 @@ export default function relationalStoreTest() {
           console.log(tag + "name:" + name);
           expect(null).assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -587,7 +589,8 @@ export default function relationalStoreTest() {
           console.log(tag + "name:" + name);
           expect(null).assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -615,7 +618,8 @@ export default function relationalStoreTest() {
           console.log(tag + "name:" + name);
           expect(null).assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err" + err.code + err.message);
           expect(err.code == 14800012).assertTrue();
           done();
@@ -727,7 +731,7 @@ export default function relationalStoreTest() {
           rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver9);
           rdbStore2?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver10);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err.code" + err.code + err.message);
           expect(null).assertFail();
           done();
@@ -835,7 +839,7 @@ export default function relationalStoreTest() {
           rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver4);
           rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver5);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err.code" + err.code + err.message);
           expect(null).assertFail();
           done();
@@ -943,7 +947,7 @@ export default function relationalStoreTest() {
           rdbStore2?.off('event', true, storeObserver9);
           rdbStore2?.off('event', true, storeObserver10);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err.code" + err.code + err.message);
           expect(null).assertFail();
           done();
@@ -1045,7 +1049,7 @@ export default function relationalStoreTest() {
         rdbStore?.off('event', true, storeObserver4);
         rdbStore?.off('event', true, storeObserver5);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(tag + "err.code" + err.code + err.message);
         expect(null).assertFail();
         done();
@@ -1157,7 +1161,7 @@ export default function relationalStoreTest() {
           rdbStore2?.offStatistics(storeObserver9);
           rdbStore2?.offStatistics(storeObserver10);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err.code" + err.code + err.message);
           expect(null).assertFail();
           done();
@@ -1263,7 +1267,7 @@ export default function relationalStoreTest() {
           rdbStore?.offStatistics(storeObserver4);
           rdbStore?.offStatistics(storeObserver5);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err.code" + err.code + err.message);
           expect(null).assertFail();
           done();
@@ -1296,7 +1300,7 @@ export default function relationalStoreTest() {
           console.log(tag + res + "[][][]Array:" + Array1);
           console.log(tag + "Array1:" + Array1.length);
           expect(Array1.length).assertEqual(1);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err" + err.code + err.message);
           expect().assertFail();
         }
@@ -1326,7 +1330,7 @@ export default function relationalStoreTest() {
           console.log(tag + "Insert is successful" + rowId);
           expect(rowId).assertEqual(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           await transaction.rollback();
           console.log(tag + "err" + err.code + err.message);
           expect().assertFail();
@@ -1351,7 +1355,7 @@ export default function relationalStoreTest() {
           console.log(tag + "ICU tokenizer supported on current platform:" + customTypeSupported);
           expect(customTypeSupported).assertEqual(true);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err" + err.code + err.message);
           expect().assertFail();
           done();
@@ -1381,7 +1385,7 @@ export default function relationalStoreTest() {
             expect(customTypeSupported).assertEqual(true);
             done();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + "err" + err.code + err.message);
           expect().assertFail();
           done();

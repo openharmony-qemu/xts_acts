@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ struct OnVisibleAreaChangePage {
       this.buttonHeight = routerParamOptions.view.buttonHeight
       this.componentWidth = routerParamOptions.view.componentWidth
       this.componentHeight = routerParamOptions.view.componentHeight
-  } catch (error: Error) {
+  } catch (error) {
     console.log(' routerParamOptions error ' + error);
   }
   }

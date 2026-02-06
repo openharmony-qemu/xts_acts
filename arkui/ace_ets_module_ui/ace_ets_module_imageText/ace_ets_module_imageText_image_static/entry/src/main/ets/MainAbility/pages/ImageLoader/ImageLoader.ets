@@ -70,7 +70,7 @@ struct DrawableLoad {
                 this.loadSyncText = 'imageWidth:' + result.imageWidth + ',imageHeight:' +
                 result.imageHeight
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('loadSync catch error：' + e.message);
             }
           })
@@ -99,7 +99,7 @@ struct DrawableLoad {
                 result.imageHeight);
                 this.loadSyncText = 'imageWidth:' + result.imageWidth + ',imageHeight:' +
                 result.imageHeight
-            } catch (e: Error) {
+            } catch (e) {
               console.log('load catch error：' + e.code);
               this.loadSyncError = JSON.stringify(e.code)
             }

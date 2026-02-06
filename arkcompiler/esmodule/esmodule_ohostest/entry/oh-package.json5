@@ -15,7 +15,6 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/ohosTest/cpp/types/libentry"
   },
   "author": "",
   "name": "entry",
@@ -23,6 +22,7 @@
   "main": "",
   "version": "1.0.0",
   "dependencies": {
-    "har": "file:../har"
+    "har": "file:../har",
+    "libentry.so": "file:./src/ohosTest/cpp/types/libentry"
   }
 }

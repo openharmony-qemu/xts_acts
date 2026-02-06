@@ -240,7 +240,8 @@ export default function nfcCardEmulationTest() {
         hceService.onHceCmd((data)=> {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 apduCallback data is :  ' + data);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.code === 201) {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 Permission denied. ' + err + " - " + err.code);
           expect(201).assertEqual(err.code);
@@ -261,7 +262,8 @@ export default function nfcCardEmulationTest() {
         hceService.offHceCmd(()=> {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 apduCallback err is :  ');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.code === 201) {
           hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0600 Permission denied. ' + err + " - " + err.code);
           expect(201).assertEqual(err.code);

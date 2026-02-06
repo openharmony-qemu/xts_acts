@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -129,7 +129,7 @@ struct getStylesDemo {
           try {
             let styles = this.mutableStyledString.getStyles(20, 100)
           }
-          catch (e:Error) {
+          catch (e) {
             this.text = e.code + '';
           }
 
@@ -142,7 +142,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.subStyledString(20, 100)
           }
-          catch (e:Error) {
+          catch (e) {
             this.text2 = e.code + '';
           }
         })

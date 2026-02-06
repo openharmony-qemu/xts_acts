@@ -77,7 +77,8 @@ export default function RdbErrorCode1480011() {
       try {
         await store.attach("/path/errPath/attach.db", "attachDB");
         expect().assertFail();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', `testRdbStoreAttach00013 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }
@@ -102,7 +103,8 @@ export default function RdbErrorCode1480011() {
       try {
         await store.attach(context!, STORE_CONFIG1, "");
         expect().assertFail();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', `testRdbStoreAttach00012 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }
@@ -128,7 +130,8 @@ export default function RdbErrorCode1480011() {
         await store.backup(DATABASE_BACKUP_NAME);
         await store.restore(DATABASE_BACKUP_NAME1);
         expect().assertFail();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', `RdbBackupRestoreTest_0110 + ${e.code} + ${e.message}`);
         expect(14800010).assertEqual(e.code);
       }

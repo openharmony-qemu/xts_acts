@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       try {
         certChain0 = await certChainFunc.createX509CertChainPromise("pem", 0);
         expect(certChain0 != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("createX509CertChain(inStream: EncodingBlob) error", err);
         expect(null).assertFail();
       }
@@ -60,7 +60,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(rootCaCert0 != null).assertTrue();
         expect(leafCert != null).assertTrue();
         expect(otherCert != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("createX509Cert error", err);
         expect(null).assertFail();
       }
@@ -95,7 +95,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber().toString() == '6333067948887798706277381429131909282')
           .assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -128,7 +128,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -161,7 +162,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -196,7 +198,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CERT_SIGNATURE_FAILURE);
         done();
@@ -229,7 +232,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION);
         done();
@@ -262,7 +266,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       try {
         await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
@@ -296,7 +301,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -330,7 +336,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         done();
@@ -362,7 +369,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION);
         done();
@@ -394,7 +402,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain0!.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -428,7 +437,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -462,7 +472,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -496,7 +507,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -529,7 +541,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -565,7 +578,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber().toString() == '6333067948887798706277381429131909282')
           .assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -602,7 +615,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber().toString() == '6333067948887798706277381429131909282')
           .assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -639,7 +652,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
         expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -669,7 +682,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         done();
@@ -702,7 +716,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -742,7 +757,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber().toString() == '6333067948887798706277381429131909282')
           .assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -785,7 +800,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
         expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -827,7 +842,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -869,7 +885,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
         expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -908,7 +924,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber().toString() == '6333067948887798706277381429131909282')
           .assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -949,7 +965,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
@@ -979,7 +996,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -1009,7 +1027,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
@@ -1039,7 +1058,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
         expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
         done();
@@ -1073,7 +1092,8 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         await certChain1.validate(param);
         expect(null).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();

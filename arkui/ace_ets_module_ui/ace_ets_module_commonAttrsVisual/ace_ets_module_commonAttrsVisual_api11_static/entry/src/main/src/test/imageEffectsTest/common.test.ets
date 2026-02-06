@@ -272,7 +272,7 @@ it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promis
         console.info("testCommonArea0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('areaText', 10, "")));
         await Utils.sleep(2000);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testCommonArea0001 on click err : " + JSON.stringify(err));
       }
       done();

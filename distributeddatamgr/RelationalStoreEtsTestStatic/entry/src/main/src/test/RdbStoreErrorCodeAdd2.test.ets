@@ -90,7 +90,8 @@ async function checkResultSetForNormalGet(resultSet : relationalStore.LiteResult
     expect(data4[1]).assertEqual(2);
     expect(data4[2]).assertEqual(3);
     resultSet?.close();
-  } catch(e:BusinessError) {
+  } catch(e) {
+    e = e as BusinessError;
     hilog.error(domain, tag, '%{public}s','checkResultSetForNormalGet failed, code is' + e.code + e.message);
 
     console.error(`checkResultSetForNormalGet failed message:'%{public}s', code:'%{public}d',`);
@@ -184,7 +185,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         if (resultSet) {
           checkResultSetForNormalGet(resultSet!);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0001 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -195,7 +197,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         let data1 = resultSet!.getString(resultSet!.getColumnIndex("data1"));
         expect(data1).assertEqual('zhangsan');
         resultSet?.close();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0001 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -222,7 +225,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         if (resultSet) {
           checkResultSetForNormalGet(resultSet!);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -235,7 +239,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
           let data1 = resultSet!.getString(0);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
         expect(e.code === 14800021).assertTrue();
       }
@@ -250,7 +255,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           expect(data1).assertEqual('zhangsan');
           resultSet!.close();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -273,7 +279,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0003 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -304,7 +311,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           checkResultSetForNormalGet(resultSet!);
           resultSet!.close();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -320,7 +328,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           expect("lisi").assertEqual(data1);
           resultSet!.close();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -336,7 +345,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           expect(18).assertEqual(data2);
           resultSet!.close();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
         expect().assertFail();
       }
@@ -370,7 +380,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let data2 = resultSet!.getLong(resultSet!.getColumnIndex("data2"));
         }
         expect().assertFail();
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0005 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -383,7 +394,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore!.querySqlWithoutRowCount("");
           expect().assertFail();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0005 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -409,7 +421,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore!.querySqlWithoutRowCount(sql);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0006 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -440,7 +453,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -458,7 +472,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -471,7 +486,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -488,7 +504,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -528,7 +545,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.goToNextRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0008 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -564,7 +582,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("");
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -580,7 +599,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -596,7 +616,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data5");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -613,7 +634,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data1")
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -626,7 +648,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data1")
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-5 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -643,7 +666,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_00096 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -683,7 +707,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0010 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -720,7 +745,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -737,7 +763,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(-1 as int);
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -753,7 +780,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -770,7 +798,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -783,7 +812,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-5 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -800,7 +830,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-6 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -840,7 +871,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnName(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0012 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -891,7 +923,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
             }
           }
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0013 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -924,7 +957,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -940,7 +974,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(-1 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -956,7 +991,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2  as int, -1 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -972,7 +1008,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2  as int, 3 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-4 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -990,7 +1027,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-5 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1003,7 +1041,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-6 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1020,7 +1059,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-7 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1052,7 +1092,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1068,7 +1109,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1086,7 +1128,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-3 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1099,7 +1142,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-4 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1116,7 +1160,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getRow();
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-5 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1156,7 +1201,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           }
           resultSet!.close();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0016 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1189,7 +1235,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1205,7 +1252,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1222,7 +1270,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1239,7 +1288,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-4 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1257,7 +1307,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-5 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1270,7 +1321,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-6 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1287,7 +1339,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.isColumnNull(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-7 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1319,7 +1372,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getLong(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1336,7 +1390,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getLong(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1353,7 +1408,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getLong(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1371,7 +1427,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getLong(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1400,7 +1457,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getString(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1417,7 +1475,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getString(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1434,7 +1493,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getString(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1452,7 +1512,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getString(1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1481,7 +1542,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getDouble(3);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1498,7 +1560,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getDouble(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1516,7 +1579,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getDouble(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1534,7 +1598,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getDouble(3);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1563,7 +1628,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getBlob(4);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1580,7 +1646,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1597,7 +1664,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1615,7 +1683,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(4);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1644,7 +1713,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getValue(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-1 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1661,7 +1731,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1678,7 +1749,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1696,7 +1768,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1725,7 +1798,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getBlob(4);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-1, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1742,7 +1816,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1759,7 +1834,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1777,7 +1853,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getBlob(4);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1806,7 +1883,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           let id = resultSet!.getValue(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1823,7 +1901,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(-1);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1840,7 +1919,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1858,7 +1938,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getValue(0);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024-4 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -1907,7 +1988,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           type = await resultSet!.getColumnType("data4");
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0025 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1955,7 +2037,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           type = await resultSet!.getColumnType("data4");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0026 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -1987,7 +2070,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("id")
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2004,7 +2088,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType(-1 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2021,7 +2106,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2037,7 +2123,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("id")
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-4 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2053,7 +2140,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType(0)
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-5 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2070,7 +2158,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-6 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2087,7 +2176,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-7 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -2100,7 +2190,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-8 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2117,7 +2208,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           await resultSet!.getColumnType("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-9 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2170,7 +2262,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           type = resultSet!.getColumnTypeSync("data4");
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0028 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2214,7 +2307,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           type = resultSet!.getColumnTypeSync("data4");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0029 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2246,7 +2340,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("id")
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2263,7 +2358,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync(-1 as int);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-2 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2280,7 +2376,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-3 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2296,7 +2393,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("id")
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-4 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2312,7 +2410,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync(0)
         }
         expect().assertFail();
-      } catch (e:BusinessError){
+      } catch (e){
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-5 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2329,7 +2428,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync(5);
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-6 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2346,7 +2446,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-7 failed, code is' + e.code + e.message);
         expect(e.code === 14800014).assertTrue()
       }
@@ -2359,7 +2460,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-8 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();
@@ -2376,7 +2478,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-9 failed, code is' + e.code + e.message);
         if (resultSet) {
           resultSet!.close();

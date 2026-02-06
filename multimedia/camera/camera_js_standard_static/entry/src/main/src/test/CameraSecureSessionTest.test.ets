@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -209,7 +209,7 @@ export default function cameraSecureSessionTest() {
 
     try {
       mCameraSession = mCameraManager!.createSession<cameraObj.SecureSession>(cameraObj.SceneMode.SECURE_PHOTO);
-    } catch (error:BusinessError) {
+    } catch (error) {
       console.info('createSecureSessionInstance FAILED');
     }
     isCameraSessionCreated = true;
@@ -470,7 +470,7 @@ export default function cameraSecureSessionTest() {
         try {
           mCameraSession!.addSecureOutput(mPreviewOutput!);
           console.info(TAG + "Success to addSecureOutput mPreviewOutput");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Failed to addSecureOutput mPreviewOutput, error code: " + err.code);
           expect().assertFail()
         }

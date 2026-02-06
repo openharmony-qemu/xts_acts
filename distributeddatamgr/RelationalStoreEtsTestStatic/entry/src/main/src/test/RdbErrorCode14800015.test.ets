@@ -114,7 +114,8 @@ export default function RdbErrorCode14800015() {
         await store.attach(dataBaseDir + "myRdbErrorCode14800015.db", "attachDB");
         expect().assertFail();
       } catch(e) {
-        console.log("testRdbAttach14800015_001 err: failed, err: code=" + e.code + " message=" + e.message);
+        e = e as BusinessError;
+        console.log("testRdbStoreAttach0008 err: failed, err: code=" + e.code + " message=" + e.message);
         expect(14800015).assertEqual(e.code);
       }
       done();

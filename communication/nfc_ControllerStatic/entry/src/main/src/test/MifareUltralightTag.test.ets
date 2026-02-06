@@ -52,7 +52,8 @@ export default function nfcMifareUltralightTagTest() {
     beforeAll(() => {
       try {
         nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -89,7 +90,8 @@ export default function nfcMifareUltralightTagTest() {
             await nfcmifareUltralightTag.readMultiplePages(pageIndex).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0100 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0100 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -127,7 +129,8 @@ export default function nfcMifareUltralightTagTest() {
           }
           try {
             nfcmifareUltralightTag.readMultiplePages(pageIndex, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0200 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -165,7 +168,8 @@ export default function nfcMifareUltralightTagTest() {
             await nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0300 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0300 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -205,7 +209,8 @@ export default function nfcMifareUltralightTagTest() {
           }
           try {
             nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0400 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -239,7 +244,8 @@ export default function nfcMifareUltralightTagTest() {
       if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
         try {
           let getType: tag.MifareUltralightType = nfcmifareUltralightTag.getType();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0500 getType error is ' + error.code + " - " + error);
           expect().assertFail();
         }

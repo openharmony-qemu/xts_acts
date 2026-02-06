@@ -98,7 +98,7 @@ export default function RdbErrorCode801() {
           try {
             (rdbStore as data_relationalStore.RdbStore).cleanDirtyData('test_table', 100);
             console.info(TAG + 'clean dirty data succeeded');
-          } catch (err: Error) {
+          } catch (err) {
             console.error(TAG + 'Failed to cleanDirtyData.Code: ' + err.code + ',message:' + err.message);
             expect(err.code).assertEqual('801');
           }
@@ -125,7 +125,7 @@ export default function RdbErrorCode801() {
     //     console.log(TAG + "errcode022 error");
     //     expect(data_relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST == 6).assertTrue();
     //     done();
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log(TAG + "err.code" + err.code + "err.message" + err.message);
     //     expect(801).assertEqual(err.code);
     //     done();
@@ -179,7 +179,7 @@ export default function RdbErrorCode801() {
           try {
             (rdbStore as data_relationalStore.RdbStore).emit('storeObserver');
             console.info(TAG + 'emit success.');
-          } catch (err: Error) {
+          } catch (err) {
             console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
             expect(err.code).assertEqual('801');
           }
@@ -210,13 +210,13 @@ export default function RdbErrorCode801() {
           try {
             let PRIKey: Array<data_relationalStore.PRIKeyType> = ["test_key1", "test_key2"];
             await rdbStore!.getModifyTime("cloud_text", "num", PRIKey);
-          } catch (err: Error) {
+          } catch (err) {
             console.log(TAG + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
             if (err.code == 801) {
               expect(err.code).assertEqual('801');
             }
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.log(TAG + `get modify time, err code is ${err.code}, message is ${err.message}.`);
           expect(err.code).assertEqual('801');
         }
@@ -243,7 +243,7 @@ export default function RdbErrorCode801() {
           dmInstance = distributedDeviceManager.createDeviceManager("com.example.appdatamgrverify");
           let devices = dmInstance.getAvailableDeviceListSync();
           deviceId = devices[0].networkId;
-        } catch (err: Error) {
+        } catch (err) {
           let code = err.code;
           let message = err.message
           console.error(TAG + "createDeviceManager errCode:" + code + ",errMessage:" + message);
@@ -290,7 +290,7 @@ export default function RdbErrorCode801() {
               storeObserver);
             console.info(TAG + 'off success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801')
         }
@@ -321,7 +321,7 @@ export default function RdbErrorCode801() {
             (rdbStore as data_relationalStore.RdbStore).offDataChange(
               data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE, storeObserver);
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801');
         }
@@ -349,7 +349,7 @@ export default function RdbErrorCode801() {
             (rdbStore1 as data_relationalStore.RdbStore).off('storeObserver', false, storeObserver);
             console.info(TAG + 'off success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801');
         }
@@ -376,7 +376,7 @@ export default function RdbErrorCode801() {
             (rdbStore1 as data_relationalStore.RdbStore).offAutoSyncProgress(progressDetail);
             console.info(TAG + 'off success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801');
         }
@@ -400,7 +400,7 @@ export default function RdbErrorCode801() {
             (rdbStore as data_relationalStore.RdbStore).offStatistics();
             console.info(TAG + 'off success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801');
         }
@@ -427,7 +427,7 @@ export default function RdbErrorCode801() {
             (rdbStore1 as data_relationalStore.RdbStore).onAutoSyncProgress(progressDetail);
             console.info(TAG + 'on success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual(801)
         }
@@ -460,7 +460,7 @@ export default function RdbErrorCode801() {
               storeObserver);
             console.info(TAG + 'on success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801')
         }
@@ -492,7 +492,7 @@ export default function RdbErrorCode801() {
               data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801')
         }
@@ -524,7 +524,7 @@ export default function RdbErrorCode801() {
             (rdbStore as data_relationalStore.RdbStore).onStatistics(sqlExecutionInfo);
             console.info(TAG + 'on success.');
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801')
         }
@@ -551,7 +551,7 @@ export default function RdbErrorCode801() {
             (rdbStore1 as data_relationalStore.RdbStore).on('storeObserver', false, storeObserver);
             console.info(TAG + 'on success.')
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual('801')
         }
@@ -578,7 +578,7 @@ export default function RdbErrorCode801() {
           if (deviceId != undefined) {
             deviceId = devices[0].networkId;
           }
-        } catch (err: Error) {
+        } catch (err) {
           let code = err.code;
           let message = err.message;
           console.error(TAG + "createDeviceManager errCode:" + code + ",errMessage:" + message);
@@ -613,7 +613,7 @@ export default function RdbErrorCode801() {
         await (rdbStore1 as data_relationalStore.RdbStore).setDistributedTables(["test"]);
         expect(null).assertFail();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("setDistributedTables catch err: failed, err: code=" + err.code + " message=" + err.message)
         expect(err.code).assertEqual(801);
         done();
@@ -638,7 +638,7 @@ export default function RdbErrorCode801() {
           predicates);
         expect(null).assertFail();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log("sync catch err: failed, err: code=" + err.code + " message=" + err.message)
         expect(err.code).assertEqual(801);
         done();
@@ -672,7 +672,7 @@ export default function RdbErrorCode801() {
         expect(resultSet.rowCount == 0).assertTrue();
         resultSet.close();
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.log(TAG + "err.code" + err.code + "err.message" + err.message)
         expect(err.code == 801).assertTrue()
         done()
@@ -706,7 +706,7 @@ export default function RdbErrorCode801() {
         expect(resultSet.rowCount == 0).assertTrue()
         resultSet.close();
         done()
-      } catch (err: Error) {
+      } catch (err) {
         console.log(TAG + "err.code" + err.code + "err.message" + err.message)
         expect(err.code == 801).assertTrue()
         done()

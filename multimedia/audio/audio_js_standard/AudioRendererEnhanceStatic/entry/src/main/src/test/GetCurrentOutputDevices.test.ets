@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,10 +83,10 @@ export default function audioRendererTest() {
           Object.keys(data!));
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info('audioRendererEnhanceTest: AudioRender Created : ERROR : ' + err.message);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info('audioRendererEnhanceTest: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -178,7 +178,8 @@ export default function audioRendererTest() {
           expect(false).assertTrue();
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
         if (error.code === 5400106) {
           expect(true).assertTrue();
@@ -220,7 +221,8 @@ export default function audioRendererTest() {
           }).catch((err: Error) => {
             console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("${TagFrmwkRender}: getCurrentOutputDevices : error = " + error);
           if (error.code === 6800301) {
             console.log("${TagFrmwkRender}: getCurrentOutputDevices : error.code = " + error.code);

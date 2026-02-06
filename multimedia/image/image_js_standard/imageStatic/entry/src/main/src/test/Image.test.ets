@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -249,7 +249,7 @@ export default function imageJsTest() {
           expect(res).assertTrue();
           done();
         }
-      } catch(error: Error) {
+      } catch(error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -307,7 +307,7 @@ export default function imageJsTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -1340,7 +1340,7 @@ export default function imageJsTest() {
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 failed');
                         done();
                     }
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 error: ' + error);
                     expect().assertFail();
                     done();
@@ -1728,7 +1728,7 @@ export default function imageJsTest() {
                     await imageSourceApi.release();
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 success');
                     done();
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 error: ' + error);
                     expect().assertFail();
                     done();
@@ -1793,7 +1793,7 @@ export default function imageJsTest() {
                     await imageSourceApi.release()
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 success');
                     done();
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 error: ' + error);
                     expect().assertFail();
                     done();

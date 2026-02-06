@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -237,7 +237,7 @@ export default function lifecycleStaticTest() {
             expect().assertFail();
           })
           await Utils.msSleep(2000);
-        } catch(err: Error) {
+        } catch(err) {
           hilog.info(domain, tag, `${itName} error error: ${JSON.stringify(err)}`)
           hilog.info(domain, tag, `${itName} error code: ${err?.code}, msg: ${err?.message}`);
           expect().assertFail();

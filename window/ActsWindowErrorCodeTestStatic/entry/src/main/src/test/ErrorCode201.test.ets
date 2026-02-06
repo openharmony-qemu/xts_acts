@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ async function terminateAbility(caseName: string) {
         }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
         hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -134,7 +134,7 @@ export default function ErrorCode201() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -167,7 +167,8 @@ export default function ErrorCode201() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -200,7 +201,8 @@ export default function ErrorCode201() {
                     expect(err.code).assertEqual(201);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -237,7 +239,8 @@ export default function ErrorCode201() {
                     expect().assertFail();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -385,7 +388,7 @@ export default function ErrorCode201() {
                         done()
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -409,7 +412,8 @@ export default function ErrorCode201() {
                 await terminateAbility(caseName);
                 expect(false).assertTrue()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if (isPCStatus == '') {

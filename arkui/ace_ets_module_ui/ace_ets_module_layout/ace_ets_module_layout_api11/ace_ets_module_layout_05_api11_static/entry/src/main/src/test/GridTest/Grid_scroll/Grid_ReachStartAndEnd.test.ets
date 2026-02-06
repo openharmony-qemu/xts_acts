@@ -90,9 +90,9 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
       let driver = Driver.create()
       driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
+        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`)).toInt(),
+        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -106,7 +106,7 @@ it('Grid_ReachStartAndEnd_static_0100', Level.LEVEL0, async (done: () => void): 
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
+        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -136,11 +136,11 @@ it('Grid_ReachStartAndEnd_static_0600', Level.LEVEL0, async (done: () => void): 
       let driver = Driver.create()
       driver.fling({
         x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt()
+        y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt()
       },
         {
           x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)).toInt()
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt()
         }, 5, 4000);
       await CommonFunc.sleep(2000);
 

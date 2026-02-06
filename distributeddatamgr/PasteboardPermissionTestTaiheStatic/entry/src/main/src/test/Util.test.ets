@@ -50,7 +50,7 @@ let tag: string = 'btUtilsTestTag'; //日志标识字符串,作为tag标识当�
           hilog.info(domain, tag, 'clickRequestPermission end');
         }
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
       hilog.info(domain, tag, 'clickRequestPermission get err:' + err);
     }
   }

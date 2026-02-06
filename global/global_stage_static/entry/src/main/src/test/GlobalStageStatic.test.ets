@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -102,7 +102,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -127,7 +127,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -212,7 +212,8 @@ export default function globalStageTest() {
     it('getMediaByNameSync_stagetest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
         res!.getMediaByNameSync('invalidName', 0);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('getMediaByNameSync_stagetest_static_0200 error code:' + error.code);
         expect(error.code).assertEqual(9001003);
         done();
@@ -700,7 +701,8 @@ export default function globalStageTest() {
       let resMgr = res!;
       try {
         resMgr.getStringSync(0x0100002a);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0230' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -719,7 +721,8 @@ export default function globalStageTest() {
       let resMgr = res!;
       try {
         resMgr.getStringSync(0x01000028, "format string", "format", "1.5", "string");
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0260' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -738,7 +741,8 @@ export default function globalStageTest() {
       let resMgr = res!;
       try {
         resMgr.getStringSync(0x01000027);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0290' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -807,7 +811,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getSymbol(0x01000002);
         console.log('resourceManager_test_getSymbol_static_0050:' + value);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0050_errorCode' + error.code);
         console.log('resourceManager_test_getSymbol_static_0050_errorMessage' + error.message);
         expect(error.code == 9001002).assertTrue();
@@ -826,7 +831,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getSymbol(0x0100003e);
         console.log('resourceManager_test_getSymbol_static_0060:' + value);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0060' + error.code);
         console.log('resourceManager_test_getSymbol_0060_errorMessage' + error.message);
         expect(error.code == 9001006).assertTrue();
@@ -874,7 +880,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getSymbolByName('invalidName');
         console.log('resourceManager_test_getSymbol_static_0160:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0160_errorCode' + e.code);
         console.log('resourceManager_test_getSymbol_static_0160_errorMessage' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -893,7 +900,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getSymbolByName('symbolTestB');
         console.log('resourceManager_test_getSymbol_static_0180:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0180_errorCode' + e.code);
         console.log('resourceManager_test_getSymbol_static_0180_errorMessage' + e.message);
         expect(e.code == 9001006).assertTrue();
@@ -975,7 +983,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getRawFdSync('error_path.xml');
         console.log('resourceManager_test_getRawFdSync_static_0050:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getRawFdSync_static_0050_errorCode' + e.code);
         console.log('resourceManager_test_getRawFdSync_static_0050_errorMessage' + e.message);
         expect(e.code == 9001005).assertTrue();
@@ -1022,7 +1031,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getRawFileContentSync('error_path.xml');
         hilog.info(0x0000, 'testTag', '%{public}s', 'resourceManager_test_getRawFileContentSync_static_0190:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getRawFileContentSync_static_0190_errorCode' + e.code);
         hilog.info(0x0000, 'testTag', '%{public}s',
@@ -1057,7 +1067,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getRawFileListSync('error_path');
         console.log('resourceManager_test_getRawFileListSync_static_0140:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getRawFileListSync_static_0140_errorCode' + e.code);
         console.log('resourceManager_test_getRawFileListSync_static_0140_errorMessage' + e.message);
         expect(e.code == 9001005).assertTrue();
@@ -1166,7 +1177,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getStringArrayValue resId callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1191,7 +1202,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getStringArrayValue resId callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1301,7 +1312,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent density callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1367,7 +1378,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent density callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1510,7 +1521,8 @@ export default function globalStageTest() {
     it('getMediaContent_stage_test_static_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContent(0x01000005)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1528,7 +1540,8 @@ export default function globalStageTest() {
     it('getMediaContent_stage_test_static_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContent(0x01234567, 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2300 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1546,7 +1559,8 @@ export default function globalStageTest() {
     it('getMediaContent_stage_test_static_2400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContent(0x01000005, 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2400 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1614,7 +1628,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1639,7 +1653,7 @@ export default function globalStageTest() {
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1723,7 +1737,8 @@ export default function globalStageTest() {
     it('getMediaContentBase64_stage_test_static_2100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContentBase64(0x01234567)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2100 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1741,7 +1756,8 @@ export default function globalStageTest() {
     it('getMediaContentBase64_stage_test_static_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContentBase64(0x01000031)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1759,7 +1775,8 @@ export default function globalStageTest() {
     it('getMediaContentBase64_stage_test_static_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContentBase64(0x01234567, 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2300 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1777,7 +1794,8 @@ export default function globalStageTest() {
     it('getMediaContentBase64_stage_test_static_2400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let data = await res!.getMediaContentBase64(0x01000031, 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2400 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1911,7 +1929,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0100', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01000034)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -1928,7 +1947,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0200', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01000019)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -1945,7 +1965,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0300', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01000034, 'test', 1)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -1962,7 +1983,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0400', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01000012, 'test', 1)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0400 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -1979,7 +2001,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0500', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x0100002a, 'test', 1)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0500 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001007');
       }
@@ -1996,7 +2019,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0600', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01234567)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0600 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2013,7 +2037,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_0700', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x01234567, 'aaa', 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0700 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2030,7 +2055,8 @@ export default function globalStageTest() {
     it('getStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getStringByNameSync('test_stringLoopB')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringByNameSync_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2065,7 +2091,8 @@ export default function globalStageTest() {
     it('getStringByNameSync_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getStringByNameSync('test_stringLoopB', 'aaa', 1)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringByNameSync_test_static_0400 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2173,7 +2200,8 @@ export default function globalStageTest() {
     it('getInt_test_static_0100', Level.LEVEL3, () => {
       try {
         res!.getInt(0x01234567)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2190,7 +2218,8 @@ export default function globalStageTest() {
     it('getDouble_test_static_0100', Level.LEVEL3, () => {
       try {
         res!.getDouble(0x01234567)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2207,7 +2236,8 @@ export default function globalStageTest() {
     it('getInt_test_static_0200', Level.LEVEL3, () => {
       try {
         res!.getInt(0x01000034)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -2224,7 +2254,8 @@ export default function globalStageTest() {
     it('getDouble_test_static_0200', Level.LEVEL3, () => {
       try {
         res!.getDouble(0x01000034)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -2241,7 +2272,8 @@ export default function globalStageTest() {
     it('getInt_test_static_0300', Level.LEVEL3, () => {
       try {
         res!.getInt(0x01000004)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -2258,7 +2290,8 @@ export default function globalStageTest() {
     it('getDouble_test_static_0300', Level.LEVEL3, () => {
       try {
         res!.getDouble(0x0100003b)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -2381,7 +2414,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01234567)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2398,7 +2432,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01000035)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0300 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2415,7 +2450,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01234567, 0)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0400 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2432,7 +2468,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01000035, 0)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2450,7 +2487,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0600', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01234567, 0, 1)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0600 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2467,7 +2505,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptor_stage_test_static_0700', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptor(0x01000035, 0, 1)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0700 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2484,7 +2523,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptorByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptorByName('test_stringLoopA', 0, 1)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptorByName_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001003);
       }
@@ -2502,7 +2542,8 @@ export default function globalStageTest() {
     it('getDrawableDescriptorByName_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getDrawableDescriptorByName('', 0)
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptorByName_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001003);
       }
@@ -2555,7 +2596,8 @@ export default function globalStageTest() {
     it('getRawFileContentSync_test_static_0100', Level.LEVEL3, () => {
       try {
         res!.getRawFileContentSync('notExist')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContentSync_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001005');
       }
@@ -2590,7 +2632,8 @@ export default function globalStageTest() {
     it('getMediaContentSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getMediaContentSync(0x0100000c)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentSync_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2653,7 +2696,8 @@ export default function globalStageTest() {
     it('getMediaContentBase64Sync_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getMediaContentBase64Sync(0x01000005);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64Sync_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2689,7 +2733,8 @@ export default function globalStageTest() {
     it('getStringArrayValueSync_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getStringArrayValueSync(0x01000005);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayValueSync_test_static_0300 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2706,7 +2751,8 @@ export default function globalStageTest() {
     it('getStringArrayValueSync_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getStringArrayValueSync(0x0100002e);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayValueSync_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2805,7 +2851,8 @@ export default function globalStageTest() {
     it('getStringArrayByNameSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.getStringArrayByNameSync('sizeListThree');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayByNameSync_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2836,7 +2883,8 @@ export default function globalStageTest() {
     it('getStringSync_test_static_1400', Level.LEVEL3, () => {
       try {
         res!.getStringSync(0x0100002a, 'test', 0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_1400 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001007');
       }
@@ -3164,7 +3212,8 @@ export default function globalStageTest() {
       let resMgr = res!;
       try {
         resMgr.getStringByNameSync('test_stringTwentyThree');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getStringByNameSync_static_0250' + error.code + error.message);
         expect(error.code).assertEqual(9001008);
       }
@@ -3183,7 +3232,8 @@ export default function globalStageTest() {
       let resMgr = res!;
       try {
         resMgr.getStringByNameSync('test_stringTwentyFive');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getStringByNameSync_static_0310' + error.code + error.message);
         expect(error.code).assertEqual(9001008);
       }
@@ -3201,7 +3251,8 @@ export default function globalStageTest() {
       try {
         let value = res!.getDrawableDescriptorByName('symbolTest2');
         console.log('resourceManager_test_getDrawable_static_0900:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getDrawable_static_0900_errorCode' + e.code);
         console.log('resourceManager_test_getDrawable_static_0900_errorMessage' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -3219,7 +3270,8 @@ export default function globalStageTest() {
     it('closeRawFdSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
         res!.closeRawFdSync('notExist')
-       } catch (err:BusinessError) {
+       } catch (err) {
+        err = err as BusinessError;
         console.log('closeRawFdSync_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001005);
       }

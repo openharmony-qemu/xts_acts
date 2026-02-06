@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -125,12 +125,14 @@ export default function imageModifyProperty() {
               expect(data[item as string] == props[item as string]).assertTrue();
             })
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log("getImageProperties failed error: " + error.code);
             expect(error.code == ERROR_CODE3).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           logger.log("modifyImageProperties failed error: " + error.code);
           expect(error.code == ERROR_CODE1 || error.code == ERROR_CODE2 || error.code == ERROR_CODE3).assertTrue();
           try {
@@ -139,7 +141,8 @@ export default function imageModifyProperty() {
               logger.log("getImageProperties data: " + data[checkKey[i] as string]);
             }
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log("getImageProperties failed error: " + error.code);
             expect(error.code == ERROR_CODE3).assertTrue();
             done();
@@ -187,12 +190,12 @@ export default function imageModifyProperty() {
               logger.log('create image source failed');
             }
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             logger.log("getImageProperty failed error: " + error.code);
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           logger.log("modifyImageProperty failed error: " + error.code);
           expect(false).assertTrue();
           done();
@@ -233,7 +236,8 @@ export default function imageModifyProperty() {
           await imageSourceApi.modifyImageProperty(key, value);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           console.info(`${testNum} message: ` + error);
           expect(error.code == 62980146).assertTrue();
           expect(error.message == "The EXIF data failed to be written to the file.").assertTrue();
@@ -276,7 +280,8 @@ export default function imageModifyProperty() {
             console.log(`${testNum} modify GIF_LOOP_COUNT success.`);
             expect().assertFail();
             done()
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log(`${testNum} error: ` + error);
             console.log(`${testNum} error.code: ` + error.code);
             expect(error.code == 62980146).assertTrue();
@@ -288,7 +293,8 @@ export default function imageModifyProperty() {
             console.log(`${testNum} modify GIF_LOOP_COUNT success.`);
             expect().assertFail();
             done()
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log(`${testNum} error: ` + error);
             console.log(`${testNum} error.code: ` + error.code);
             expect(error.code == 62980146).assertTrue();

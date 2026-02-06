@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -2545,7 +2545,8 @@ export default function relationalStorePredicatesTest() {
         let result = await rdbStore!.query(predicates);
         expect(result?.rowCount == -1).assertTrue();
         result.close();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual("401");
       }
       done();
@@ -2568,7 +2569,8 @@ export default function relationalStorePredicatesTest() {
         let result = await rdbStore!.query(predicates);
         expect(result?.rowCount == -1).assertTrue();
         result.close();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err != undefined).assertFalse();
       }
       done();
@@ -2592,7 +2594,8 @@ export default function relationalStorePredicatesTest() {
         console.info(tag + "result?.rowCount = " + result?.rowCount);
         expect(3).assertEqual(result?.rowCount);
         result.close();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(tag + "err = " + err);
         expect(err != undefined).assertFalse();
       }
@@ -2617,7 +2620,8 @@ export default function relationalStorePredicatesTest() {
         console.info(tag + "result?.rowCount = " + result?.rowCount);
         expect(3).assertEqual(result?.rowCount);
         result.close();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(tag + "err = " + err);
         expect(err != undefined).assertFalse();
       }

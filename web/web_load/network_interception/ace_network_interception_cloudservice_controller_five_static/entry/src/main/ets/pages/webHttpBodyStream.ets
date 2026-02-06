@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -74,7 +74,7 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -85,7 +85,7 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -96,7 +96,7 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -107,7 +107,7 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -118,7 +118,7 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -160,7 +160,7 @@ struct WebHttpBodyStream {
                 } else {
                   console.log("[schemeHandler] onRequestStart has no http body stream")
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
 
@@ -172,7 +172,7 @@ struct WebHttpBodyStream {
             });
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,7 +81,8 @@ export default function WindowTitleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage!.getMainWindow, tempWnd: ' + tempWnd);
                 expect(true).assertTrue()
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
                 if (exception.code == 801 || exception.code == 1300002) {
                     expect(true).assertTrue()
@@ -116,7 +117,7 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
                         if(e!.code == 1300002){
                             done();
@@ -159,7 +160,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
                         expect(e.code).assertEqual(1300002);
                         done()
@@ -190,7 +192,8 @@ export default function WindowTitleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr+ `Succeeded in setting the height of window decor`);
                 expect(true).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
                 if(exception.code = 801){
                     done();

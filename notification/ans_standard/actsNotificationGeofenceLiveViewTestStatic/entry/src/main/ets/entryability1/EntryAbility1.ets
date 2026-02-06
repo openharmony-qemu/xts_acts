@@ -21,7 +21,7 @@ export class EntryAbility1 extends UIAbility {
         }
         hilog.info(0x0000, 'testTag', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + e.message);
     }
   }

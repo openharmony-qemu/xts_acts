@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -235,14 +235,14 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 }
               })
-            } catch (err:BusinessError) {
+            } catch (err) {
               console.info(TAG+`subscribe_1 failed, code is ${err.code}, message is ${err.message}`)
               expect(false).assertTrue()
             }
             done()
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -639,7 +639,7 @@ export default function ActsCommonEventManagerTest() {
           });
         }, 1000);
 
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1700 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -781,7 +781,7 @@ export default function ActsCommonEventManagerTest() {
             }
           });
         }, 1000);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()

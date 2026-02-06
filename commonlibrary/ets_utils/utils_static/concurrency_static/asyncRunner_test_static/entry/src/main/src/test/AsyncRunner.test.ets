@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ export default function asyncRunnerTest() {
           new taskpool.AsyncRunner(0);
           console.log('TaskPoolTestClass207============1')
           expect('should throw').assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log('TaskPoolTestClass207============', e.message)
           // expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, RunningCapacity must be greater than zero.');
           const msg = e.toString();
@@ -113,7 +113,7 @@ export default function asyncRunnerTest() {
         try {
           new taskpool.AsyncRunner("async207", 5, -1);
           expect('should throw').assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           console.log('TaskPoolTestClass207============2', e.message)
           // expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, WaitingCapacity must be greater than or equal zero.');
           const msg = e.toString();
@@ -226,7 +226,7 @@ export default function asyncRunnerTest() {
         try {
           await asyncRunner.execute(task);
           expect().assertFail();
-        } catch (e: Error) {
+        } catch (e) {
           // expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunner cannot execute seqRunnerTask or executedTask.');
           expect(e.toString()).assertContain('asyncRunner cannot execute');
         }

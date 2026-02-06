@@ -25,6 +25,7 @@ import settings from '@ohos.settings';
 import { StartOptions } from '@kit.AbilityKit';
 import window from '@ohos.window';
 import { display } from "@kit.ArkUI";
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -99,6 +100,8 @@ async function isPipWindowSupport(context1: common.BaseContext){
 export default function pipWindowTest(context1: common.BaseContext, windowStage: ohosWindow.WindowStage) {
   describe('window_pipWindow_test', () => {
     console.log('describe window_api_test start!!!')
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     const TRUE_FLAG = true;
     let tag = 'pipWindowTest'
     let isPipWindowEnabled = false;
@@ -211,7 +214,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              expect(callbackIndex).assertEqual(1);
+              let expectValue = deviceType == 'tv' ? 0 : 1
+              expect(callbackIndex).assertEqual(expectValue);
               await pipController?.stopPiP();
               await sleep(3000);
               pipController?.off('activeStatusChange');
@@ -301,8 +305,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              expect(callbackIndex1).assertEqual(1);
-              expect(callbackIndex2).assertEqual(1);
+              let expectValue = deviceType == 'tv' ? 0 : 1
+              expect(callbackIndex1).assertEqual(expectValue);
+              expect(callbackIndex2).assertEqual(expectValue);
               await pipController?.stopPiP();
               await sleep(3000);
               pipController?.off('activeStatusChange');

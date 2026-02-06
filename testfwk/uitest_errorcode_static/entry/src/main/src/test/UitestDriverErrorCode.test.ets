@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,9 +59,9 @@ export default function uitestDriverErrorTest() {
         await driver.delayMs(waitUiReadyMs);
         await driver.assertComponentExist(ON.text('NotTest'));
         await driver.delayMs(waitUiReadyMs);
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_assertComponentExist_17000003_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000003);
+        expect((e as BusinessError).code).assertEqual(17000003);
       }
       await sleep(1000);
       console.log(`${TestTag}, test_assertComponentExist_17000003_static end`);
@@ -82,9 +82,9 @@ export default function uitestDriverErrorTest() {
         await driver.inputText({x:100, y:100}, '123456', {
           paste: false
         });
-      }catch (e: BusinessError) {
+      }catch (e) {
         hilog.info(domain, tag, `test_driver_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(CapabilityCode);
+        expect((e as BusinessError).code).assertEqual(CapabilityCode);
       }
       hilog.info(domain, tag, `test_driver_inputTextMode_801_static end`);
     })
@@ -103,9 +103,9 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.pressBack(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 end`);
     })
@@ -124,9 +124,9 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.getDisplaySize(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
     })
@@ -145,9 +145,9 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.pressHome(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, `test_driver_pressHome_static error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       hilog.info(domain, tag, `test_driver_pressHome_static end`);
     })

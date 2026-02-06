@@ -89,7 +89,7 @@ export default function RdbErrorCode14800013() {
           "data1": null,
         };
         await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG + "testgetColumnTypeSync0500 insert failed " + err);
       }
       let resultSet:data_relationalStore.ResultSet;
@@ -103,7 +103,8 @@ export default function RdbErrorCode14800013() {
         console.error(TAG + "testgetColumnTypeSync0500 getColumnType success ");
         expect(true).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(14800013).assertEqual(err.code);
         resultSet?.close();
         done()
@@ -141,7 +142,8 @@ export default function RdbErrorCode14800013() {
         console.error(TAG + "testgetColumnTypeJsTest0500 getColumnType success ");
         expect(true).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "testgetColumnTypeJsTest0500 getColumnType failed " + err.code + err.message);
         expect(14800013).assertEqual(err.code);
         resultSet?.close();
@@ -183,7 +185,8 @@ export default function RdbErrorCode14800013() {
         expect(resultSet.rowCount == 1).assertTrue();
         resultSet.close()
         done()
-      }catch(err: BusinessError){
+      }catch(err){
+        err = err as BusinessError;
         console.log(TAG+"err.code"+err.code + "err.message"+err.message)
         expect(err.code == 14800013).assertTrue()
         done()

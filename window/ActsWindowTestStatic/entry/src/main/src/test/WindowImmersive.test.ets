@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -131,7 +131,8 @@ export default function WindowImmersiveTest() {
                 let avoidArea:window.AvoidArea = win.getWindowAvoidArea(type);
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to getWindowAvoidArea. Cause: '+exception.code+'  ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done()
@@ -161,13 +162,13 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.bottomRect != null).assertTrue();
                     expect(avoidArea.leftRect != null).assertTrue();
                     done();
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
                     expect(false).assertTrue();
                     done();
                 }
                 ;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
             }
             ;
@@ -197,14 +198,14 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.bottomRect != null).assertTrue();
                     expect(avoidArea.leftRect != null).assertTrue();
                     done();
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
                     expect(false).assertTrue();
                     done();
                 }
                 ;
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
             }
             ;
@@ -233,13 +234,13 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.bottomRect != null).assertTrue();
                     expect(avoidArea.leftRect != null).assertTrue();
                     done();
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
                     expect(false).assertTrue();
                     done();
                 }
                 ;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
             }
             ;
@@ -268,13 +269,13 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.bottomRect != null).assertTrue();
                     expect(avoidArea.leftRect != null).assertTrue();
                     done();
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the area. Cause:' + JSON.stringify(exception));
                     expect(false).assertTrue();
                     done();
                 }
                 ;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'try catch Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
             }
             ;
@@ -299,7 +300,7 @@ export default function WindowImmersiveTest() {
                 expect(avoidArea.bottomRect !== null).assertTrue();
                 expect(avoidArea.leftRect !== null).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -328,7 +329,7 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.leftRect !== null).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -357,7 +358,7 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.leftRect !== null).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -386,7 +387,7 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.leftRect !== null).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -415,7 +416,7 @@ export default function WindowImmersiveTest() {
                     expect(avoidArea.leftRect !== null).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -445,7 +446,7 @@ export default function WindowImmersiveTest() {
                     windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -468,7 +469,7 @@ export default function WindowImmersiveTest() {
                 expect(window.MaximizePresentation.ENTER_IMMERSIVE).assertEqual(2);
                 // expect(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER).assertEqual(3);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to MaximizePresentation' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -557,7 +558,8 @@ export default function WindowImmersiveTest() {
                     expect(err.code).assertEqual(1300002)
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -636,7 +638,7 @@ export default function WindowImmersiveTest() {
                         expect(err.code).assertEqual(1300002);
                     });
                     done()
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setSpecificSystemBarEnabled. Cause:' +
                     JSON.stringify(exception));
                     expect(false).assertTrue();
@@ -673,7 +675,8 @@ export default function WindowImmersiveTest() {
                         hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling setImmersiveModeEnabledState.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call setImmersiveModeEnabledState. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -709,7 +712,7 @@ export default function WindowImmersiveTest() {
             try {
                 win = await window.createWindow(windowConfig);
                 expect(!!win).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]', msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
@@ -720,7 +723,8 @@ export default function WindowImmersiveTest() {
                 expect(false).assertTrue();
                 await (win! as window.Window).destroyWindow();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set the call setImmersiveModeEnabledState. Cause:' +
                 JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300004);
@@ -749,21 +753,21 @@ export default function WindowImmersiveTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for system avoid area changes. type:' +
                     JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for system avoid area changes. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
 
             }
             try {
                 (win as window.Window).offAvoidAreaChange();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
             }
             try {
                 (win as window.Window).offAvoidAreaChange();
                 await (win as window.Window).destroyWindow();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
                 expect(false).assertTrue();
@@ -1040,7 +1044,8 @@ export default function WindowImmersiveTest() {
                 console.log(`${caseName} isImmersiveLayout: ${res}.`);
                 expect(res).assertEqual(false);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(`${caseName} Failed. Cause code: ${exception.code}, message: ${exception.message}`);
                 if (exception.code === 801) {
                     expect(exception.message != null).assertTrue();
@@ -1102,7 +1107,7 @@ export default function WindowImmersiveTest() {
                     await terminateAbility(caseName);
                     done();
                 }
-            } catch (err: BusinessError){
+            } catch (err){
                 console.error(caseName + ' failed, err: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 expect(true).assertFail();

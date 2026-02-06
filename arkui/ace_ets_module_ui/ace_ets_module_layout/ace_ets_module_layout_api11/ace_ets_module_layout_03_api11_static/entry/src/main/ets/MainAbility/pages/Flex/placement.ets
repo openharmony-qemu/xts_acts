@@ -171,7 +171,7 @@ struct PlacementExample {
             }
             console.info("button3 start to emit action state")
             events_emitter.emit(backEventThree, backDataThree)
-          }catch(err:Error){
+          }catch(err){
             console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

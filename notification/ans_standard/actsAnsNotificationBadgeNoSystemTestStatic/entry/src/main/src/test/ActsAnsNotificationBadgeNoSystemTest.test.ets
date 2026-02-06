@@ -64,7 +64,8 @@ export default function ActsAnsNotificationBadgeNoSystemTest() {
         await Utils.msSleep(1000)
         try{
           notificationManager.offBadgeNumberQuery();
-        } catch(err: BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.error(TEST_SUITE_NAME + TAG + `OffBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
           expect(err.code).assertEqual(202);
           done();

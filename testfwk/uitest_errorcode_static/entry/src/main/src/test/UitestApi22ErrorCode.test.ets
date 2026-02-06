@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,18 +69,18 @@ export default function uitestDriverErrorTest() {
           timeout: 3000
         } , callback);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static ComponentEventType = undefined error is: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
           timeout: -1
         } , callback);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static timeout = -1 error is: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static end`);
     })
@@ -109,18 +109,18 @@ export default function uitestDriverErrorTest() {
           timeout: 3000,
         } , callback);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static WindowChangeType = undefined is: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         observer.onceWindowChange(WindowChangeType.WINDOW_ADDED, {
           timeout: -1,
         } , callback);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static timeout = -1 is: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static end`);
@@ -142,9 +142,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         })
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static error point.x = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenLongClick(ON.enabled(true), {
@@ -152,9 +152,9 @@ export default function uitestDriverErrorTest() {
           y: -1
         })
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static error point.y = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenLongClick(ON.enabled(true), {
@@ -163,9 +163,9 @@ export default function uitestDriverErrorTest() {
           displayId: -1
         })
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static error point.displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenLongClick(ON.enabled(true), {
@@ -173,9 +173,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, 1499)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static error duration = 1499: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static end`);
@@ -198,9 +198,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error from.x = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -208,9 +208,9 @@ export default function uitestDriverErrorTest() {
           y: -1
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error from.y = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -219,9 +219,9 @@ export default function uitestDriverErrorTest() {
           displayId: -1
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error from.y = -displayId: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -229,9 +229,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: -1, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error to.x = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -239,9 +239,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: -1})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error to.y = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -249,9 +249,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100, displayId: -1 })
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error to.displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -260,9 +260,9 @@ export default function uitestDriverErrorTest() {
           displayId: 0
         }, {x: 100, y: 100, displayId: 1})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error diff.displayId: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -270,9 +270,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100}, -1)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error speed = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
@@ -280,9 +280,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100}, 3000, 1499)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error duration = 1499: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static end`);
@@ -304,9 +304,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error from.x = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -314,9 +314,9 @@ export default function uitestDriverErrorTest() {
           y: -1
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error from.y = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -325,9 +325,9 @@ export default function uitestDriverErrorTest() {
           displayId: -1
         }, {x: 100, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error from.displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -335,9 +335,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: -1, y: 100})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error to.x = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -345,9 +345,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: -1})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error to.y = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -355,9 +355,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100, displayId: -1})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error to.displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -366,9 +366,9 @@ export default function uitestDriverErrorTest() {
           displayId: 0
         }, {x: 100, y: 100, displayId: 1})
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error diff.displayId: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
         await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
@@ -376,9 +376,9 @@ export default function uitestDriverErrorTest() {
           y: 100
         }, {x: 100, y: 100}, -1)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error speed = -1: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static end`);
@@ -397,51 +397,51 @@ export default function uitestDriverErrorTest() {
       try {
         await driver!.knuckleKnock([{x: -1, y: 100}],  2)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static error x = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: -1}],  2)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static y = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: 100, displayId: -1}],  2)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 2}],  2)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static error displayId = 2: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: 100, displayId: 0}],  0)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static error times = 0: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: 100, displayId: 0}],  3)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static error times = 3: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.knuckleKnock([{x: 100, y: 100, displayId: 0}],  -1)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007_static error times = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testKnuckleKnock_17000007_static end`);
     })
@@ -459,37 +459,37 @@ export default function uitestDriverErrorTest() {
       try {
         await driver!.touchPadTwoFingersScroll({x: -1, y: 100}, UiDirection.UP, 2);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error x = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.touchPadTwoFingersScroll({x: 100, y: -1}, UiDirection.UP, 2);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static y = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.touchPadTwoFingersScroll({x: 100, y: 100, displayId: -1}, UiDirection.UP, 2);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, -1);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error d = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       try {
         await driver!.touchPadTwoFingersScroll({x: 100, y: 100,}, UiDirection.UP, 10, -1);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error speed = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static end`);
     })
@@ -509,9 +509,9 @@ export default function uitestDriverErrorTest() {
         pointers.setPoint(0,0, {x: 100, y:100});
         await driver!.injectKnucklePointerAction(pointers, -1);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static error s= -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static end`);
     })

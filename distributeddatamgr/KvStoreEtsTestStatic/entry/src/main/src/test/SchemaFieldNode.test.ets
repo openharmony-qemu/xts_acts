@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -160,7 +160,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0100 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -223,7 +223,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0200 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -286,7 +286,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0300 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -350,7 +350,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0400 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -413,7 +413,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0500 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -476,7 +476,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0600 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -535,7 +535,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0700 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -594,7 +594,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0800 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -640,7 +640,7 @@ export default function SchemaFieldNode(){
         });
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_STRING_0900 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -702,7 +702,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_DOUBLE_0100 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -749,7 +749,7 @@ export default function SchemaFieldNode(){
         });
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_DOUBLE_0200 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -796,7 +796,7 @@ export default function SchemaFieldNode(){
         });
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_DOUBLE_0300 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -841,7 +841,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_DOUBLE_0400 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -886,7 +886,7 @@ export default function SchemaFieldNode(){
         });
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_DOUBLE_0500 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -950,7 +950,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0100 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1013,7 +1013,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0101 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1056,7 +1056,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0102 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1099,7 +1099,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0103 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1142,7 +1142,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0200 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1185,7 +1185,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0300 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1228,7 +1228,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0400 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1271,7 +1271,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0500 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1332,7 +1332,7 @@ export default function SchemaFieldNode(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + 'SUB_SchemaFieldNode_Long_0100 catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();

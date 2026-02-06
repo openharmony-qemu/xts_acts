@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -734,7 +734,7 @@ export default function cameraSessionZoomRatioTest() {
             let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession!.getSupportedColorSpaces();
             console.info(TAG + "Entering get Supported Color Spaces type: " + colorSpaces);
             console.info(TAG + "Entering get Supported Color Spaces array length: " + colorSpaces.length);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
             expect().assertFail();
           }
@@ -778,7 +778,7 @@ export default function cameraSessionZoomRatioTest() {
               } else {
                 console.info(TAG + "No supported color spaces available for camera[" + i + "]");
               }
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
               expect().assertFail();
             }
@@ -826,7 +826,7 @@ export default function cameraSessionZoomRatioTest() {
               } else {
                 console.info(TAG + "No supported color spaces available for camera[" + i + "]");
               }
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
               expect().assertFail();
             }
@@ -862,7 +862,7 @@ export default function cameraSessionZoomRatioTest() {
           try {
             isSupported = mCameraSession!.isAutoDeviceSwitchSupported();
             console.info(TAG + "Entering Auto Device Switch Supported Bool: " + isSupported);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error("The isAutoDeviceSwitchSupported call failed. error code: "+error.code);
             expect().assertFail();
           }
@@ -905,7 +905,7 @@ export default function cameraSessionZoomRatioTest() {
               continue;
             }
             mCameraSession!.enableAutoDeviceSwitch(isEnable);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error("The enableAutoDeviceSwitch call failed. error code: "+error.code);
             expect().assertFail();
           }

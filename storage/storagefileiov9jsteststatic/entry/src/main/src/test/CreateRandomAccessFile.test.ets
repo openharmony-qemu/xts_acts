@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,7 +67,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(res).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_000 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -93,7 +93,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(randomaccessfile.filePointer == 5).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_001 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -118,7 +118,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_002 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -145,7 +145,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_003 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -165,7 +165,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         fs.createRandomAccessFileSync(fpath, fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_004 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == "No such file or directory").assertTrue();
       }
@@ -183,7 +184,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         fs.createRandomAccessFileSync("", fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_005 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == "No such file or directory").assertTrue();
       }
@@ -209,7 +211,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(randomaccessfile.filePointer == 5).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_006 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -235,7 +237,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(randomaccessfile.filePointer == 5).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_007 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -259,7 +261,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(res).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_008 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -280,7 +282,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         fs.createRandomAccessFileSync(fpath, -1);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_009 end error' + JSON.stringify(err));
         fs.unlinkSync(fpath);
         expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
@@ -305,7 +308,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(num == 0).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_010 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -333,7 +336,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(readLength == length + FILE_CONTENT.length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_011 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -354,7 +357,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         fs.createRandomAccessFileSync(fpath, fs.OpenMode.DIR | fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_012 end error' + JSON.stringify(err));
         expect(err.code == 13900018 && err.message == "Not a directory").assertTrue();
         fs.unlinkSync(fpath);
@@ -379,7 +383,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(res).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_013 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -403,7 +407,7 @@ export default function fileIOCreateRandomAccessFile() {
         expect(res).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_014 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -424,7 +428,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         fs.createRandomAccessFileSync(dpath, fs.OpenMode.DIR | fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_015 end error' + JSON.stringify(err));
         expect(err.code == 13900019 && err.message == "Is a directory").assertTrue();
         fs.rmdirSync(dpath);
@@ -474,7 +479,7 @@ export default function fileIOCreateRandomAccessFile() {
        rs.close();
        ws.close();
        done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_016 has failed for ' + err);
         expect(false).assertTrue();
         done();
@@ -524,7 +529,7 @@ export default function fileIOCreateRandomAccessFile() {
         rs.close();
         ws.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_017 has failed for ' + err);
         expect(false).assertTrue();
         done();
@@ -573,7 +578,7 @@ export default function fileIOCreateRandomAccessFile() {
         rs.close();
         ws.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 has failed for ' + err);
         expect(false).assertTrue();
         done();
@@ -599,7 +604,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_000 end error' + JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -627,7 +632,7 @@ export default function fileIOCreateRandomAccessFile() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_001 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -653,7 +658,7 @@ export default function fileIOCreateRandomAccessFile() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_002 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -681,7 +686,7 @@ export default function fileIOCreateRandomAccessFile() {
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_003 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -701,7 +706,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         await fs.createRandomAccessFile(fpath, fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_004 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == "No such file or directory").assertTrue();
         done();
@@ -720,7 +726,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         await fs.createRandomAccessFile("", fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_005 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == "No such file or directory").assertTrue();
         done();
@@ -746,7 +753,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_006 end error' + JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -773,7 +780,7 @@ export default function fileIOCreateRandomAccessFile() {
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_007 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -819,7 +826,8 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         await fs.createRandomAccessFile(fpath, -1);
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_009 end error' + JSON.stringify(err));
         expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
         fs.unlinkSync(fpath);
@@ -846,7 +854,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_010 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -875,7 +883,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_011 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -895,7 +903,8 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         await fs.createRandomAccessFile(fpath, fs.OpenMode.DIR | fs.OpenMode.READ_WRITE);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_012 end error' + JSON.stringify(err));
         expect(err.code == 13900018 && err.message == "Not a directory").assertTrue();
         fs.unlinkSync(fpath);
@@ -922,7 +931,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_013 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -947,7 +956,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_014 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -967,7 +976,8 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         await fs.createRandomAccessFile(dpath, fs.OpenMode.DIR | fs.OpenMode.READ_WRITE);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_015 end error' + JSON.stringify(err));
         fs.rmdirSync(dpath);
         expect(err.code == 13900019 && err.message == "Is a directory").assertTrue();
@@ -1016,7 +1026,7 @@ export default function fileIOCreateRandomAccessFile() {
         rs.close();
         ws.close();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info('fileIO_create_randomaccessfile_async_static_016 has failed for ' + err);
         expect(false).assertTrue();
         done();
@@ -1042,7 +1052,7 @@ export default function fileIOCreateRandomAccessFile() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_017 end error' + JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -1066,7 +1076,7 @@ export default function fileIOCreateRandomAccessFile() {
           }
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_018 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1089,7 +1099,7 @@ export default function fileIOCreateRandomAccessFile() {
           }
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_019 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }

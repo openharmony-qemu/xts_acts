@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,7 +104,7 @@ export default function cameraNoPermissionErrorCodeTest() {
     console.info('Enter createCameraSessionInstance' + sceneMode);
     try {
       mCameraSession = mCameraManager!.createSession<camera.PhotoSession>(sceneMode);
-    } catch (error:BusinessError) {
+    } catch (error) {
       console.info('createCaptureSession FAILED');
     }
     if (isEmpty03(mCameraSession!)) {
@@ -126,7 +126,7 @@ export default function cameraNoPermissionErrorCodeTest() {
 
     try {
       mVideoSession = mCameraManager!.createSession<camera.VideoSession>(camera.SceneMode.NORMAL_VIDEO);
-    } catch (error:BusinessError) {
+    } catch (error) {
       console.info('createVideoSession FAILED');
     }
 
@@ -182,7 +182,7 @@ export default function cameraNoPermissionErrorCodeTest() {
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200 SUCCESS");
         let canPreconfig = mCameraSession!.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
         done();
-      } catch (error:BusinessError) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200 ERRORCODE: " + err.code);
         expect(err.code == 7400201).assertTrue();
@@ -205,7 +205,7 @@ export default function cameraNoPermissionErrorCodeTest() {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200 SUCCESS");
         mCameraSession!.preconfig(camera.PreconfigType.PRECONFIG_720P);
         done();
-      } catch (error:BusinessError) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200 ERRORCODE: " + err.code);
         expect(err.code == 7400201).assertTrue();
@@ -228,7 +228,7 @@ export default function cameraNoPermissionErrorCodeTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100 SUCCESS");
           mVideoSession!.preconfig(camera.PreconfigType.PRECONFIG_720P);
           done();
-        } catch (error:BusinessError) {
+        } catch (error) {
           let err = error as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100 ERRORCODE: " + err.code);
           expect(err.code == 7400201).assertTrue();
@@ -251,7 +251,7 @@ export default function cameraNoPermissionErrorCodeTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100 SUCCESS");
           mVideoSession!.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
           done();
-        } catch (error:BusinessError) {
+        } catch (error) {
           let err = error as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100 ERRORCODE: " + err.code);
           expect(err.code == 7400201).assertTrue();

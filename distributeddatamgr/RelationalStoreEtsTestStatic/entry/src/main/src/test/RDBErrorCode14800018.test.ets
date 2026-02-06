@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -99,6 +99,7 @@ export default function RDBErrorCode14800018() {
         rdbStore!.unlockRow(predicates);
         expect(resultSet.rowCount == 1).assertTrue()
       } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err.code" + err.code + "err.message" + err.message)
         expect(err.code).assertEqual(14800018)
       }

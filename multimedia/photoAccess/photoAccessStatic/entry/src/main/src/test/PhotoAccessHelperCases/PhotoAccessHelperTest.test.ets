@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -190,7 +190,7 @@ export default function PhotoAccessHelperTest() {
         fetchOptions.fetchColumns = columns.map<string>(key => key.toString());
         getAssetsAndReleaseCallback(photoHelper, fetchOptions, done)
         console.info(`${tag} excute pass`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${tag} getAssets failed , catch err is ` + err.message);
         expect(false).assertTrue();
         done();
@@ -203,7 +203,7 @@ export default function PhotoAccessHelperTest() {
         fetchOptions.fetchColumns = columns.map<string>(key => key.toString());
         getAssetsAndReleasePromise(photoHelper, fetchOptions, done)
         console.info(`${tag} excute pass`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${tag} getAssets failed , catch err is ` + err.message);
         expect(false).assertTrue();
         done();
@@ -389,7 +389,7 @@ export default function PhotoAccessHelperTest() {
             if (photoAsset != undefined) {
               getPhotoAssetAttrs(photoAsset)
             }
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.error('getFirstObject fail, err is: ' + err.message);
             expect(false).assertTrue();
             done();
@@ -1042,7 +1042,7 @@ export default function PhotoAccessHelperTest() {
           let photoHelper: photoAccessHelper.PhotoAccessHelper | null = getPhotoHelper
           releaseHelperCallback!(photoHelper, done)
           console.info('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100 excute pass');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error('getPhotoAccessHelper failed , catch err is  ' + err.message);
           expect(false).assertTrue();
           done()
@@ -1063,7 +1063,7 @@ export default function PhotoAccessHelperTest() {
         let photoHelper: photoAccessHelper.PhotoAccessHelper | null = getPhotoHelper
         try {
           getAssetsAndReleaseCallback(photoHelper, fetchOptions, done)
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error('getPhotoAccessHelper 0200 getAssets failed , catch err is  ' + err.message);
           expect(false).assertTrue();
           done();
@@ -1085,7 +1085,7 @@ export default function PhotoAccessHelperTest() {
         let photoHelper: photoAccessHelper.PhotoAccessHelper | null = getPhotoHelper
         try {
           getAssetsAndReleasePromise(photoHelper, fetchOptions, done)
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error('getPhotoAccessHelper 0210 getAssets failed , catch err is  ' + err.message);
           expect(false).assertTrue();
           done();

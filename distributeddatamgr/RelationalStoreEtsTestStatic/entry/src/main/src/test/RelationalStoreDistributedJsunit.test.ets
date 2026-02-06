@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -426,7 +426,8 @@ export default function relationalStoreDistributedTest() {
         try {
           await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
           expect(true).assertFail();
-        } catch(err:BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
           expect(err.code).assertEqual(14800000);
         }

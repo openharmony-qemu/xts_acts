@@ -169,12 +169,14 @@ export default function RdbErrorCode14800024() {
       try {
         await rdbStore!.backup("dbBackup002.db");
       } catch (e) {
+        e = e as BusinessError;
         expect(e.code).assertEqual(14800024);
       }
 
       try {
         await rdbStore!.attach(context!, STORE_CONFIG, "attachDB");
-      } catch (e) {
+      } catch(e) {
+        e = e as BusinessError;
         if (e.code == 14800024) {
           expect(14800024).assertEqual(e.code);
         }

@@ -645,7 +645,8 @@ export default function drawingTsMatrixTest() {
         let matrix = new drawing.Matrix();
         matrix.getValue(9);
         console.info(msg + ' SetAndGetMatrix 4 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,9 +80,9 @@ export default function uitestDriverTestApi22() {
           timeout: 9000,
           on: on1
         } , callback)
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.click()
@@ -131,9 +131,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
           timeout: 9000,
         } , callback)
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.click()
@@ -181,9 +181,9 @@ export default function uitestDriverTestApi22() {
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, { } , callback)
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.click()
@@ -221,9 +221,9 @@ export default function uitestDriverTestApi22() {
           timeout: 9000,
           on: on1
         } , callback)
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.click()
@@ -273,9 +273,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED,{
           on: ON.type('Button').text('')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.longClick();
@@ -325,9 +325,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED,{
           timeout: 9000
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.longClick();
@@ -375,9 +375,9 @@ export default function uitestDriverTestApi22() {
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED, {}, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.longClick();
@@ -413,9 +413,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED, {
           on: ON.type('Button').text('toast')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await btn.longClick();
@@ -467,9 +467,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {
           on: ON.type('Scroll').id('parentScroll')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -523,9 +523,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {
           timeout: 6000
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -578,9 +578,9 @@ export default function uitestDriverTestApi22() {
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {}, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -619,9 +619,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {
           on: ON.type('Scroll').id('NotParentScroll')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -676,9 +676,9 @@ export default function uitestDriverTestApi22() {
           timeout: 15000,
           on: ON.type('Scroll').id('parentScroll')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -732,9 +732,9 @@ export default function uitestDriverTestApi22() {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_END, {
           timeout: 15000,
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -787,9 +787,9 @@ export default function uitestDriverTestApi22() {
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_END, {}, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -829,9 +829,9 @@ export default function uitestDriverTestApi22() {
           timeout: 15000,
           on: ON.type('Scroll').id('parentScrollNot')
         }, callback);
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
@@ -888,9 +888,9 @@ export default function uitestDriverTestApi22() {
           observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED,{
             on: ON.id('changContext')
           }, callback);
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static onceComponentEventOccur,${JSON.stringify(error)}`);
-          expect(error.code).assertEqual(17000005);
+          expect((error as BusinessError).code).assertEqual(17000005);
         }
 
         let changTest = await driver!.findComponent(ON.id('changContext'));
@@ -949,9 +949,9 @@ export default function uitestDriverTestApi22() {
           observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {
             on: ON.id('changContext')
           }, callback);
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-          expect(error.code).assertEqual(17000005);
+          expect((error as BusinessError).code).assertEqual(17000005);
         }
 
         let changTest = await driver!.findComponent(ON.id('changContext'));
@@ -1009,9 +1009,9 @@ export default function uitestDriverTestApi22() {
         await driver!.delayMs(waitUiReadyMs);
         try {
           observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {}, callback);
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
-          expect(error.code).assertEqual(17000005);
+          expect((error as BusinessError).code).assertEqual(17000005);
         }
 
         let changTest = await driver!.findComponent(ON.id('changContext'));
@@ -1057,9 +1057,9 @@ export default function uitestDriverTestApi22() {
           observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {
             on: ON.id('changContextNot')
           }, callback);
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
-          expect(error.code).assertEqual(17000005);
+          expect((error as BusinessError).code).assertEqual(17000005);
         }
 
         let changTest = await driver!.findComponent(ON.id('changContext'));
@@ -1116,9 +1116,9 @@ export default function uitestDriverTestApi22() {
           timeout: 3000,
           on: ON.isBefore(ON.text('next page')).type('Button')
         } , callback)
-      } catch(error: BusinessError) {
+      } catch(error) {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static onceComponentEventOccur,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       if (btn) {
         await driver!.delayMs(5000);
@@ -1429,9 +1429,9 @@ export default function uitestDriverTestApi22() {
         await driver!.delayMs(waitUiReadyMs * 2)
         let screenPng = await driver!.findComponent(ON.id('SCREENSHOT_PICTURE_PREVIEWER_IMAGE'));
         expect(screenPng != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, tesKnuckleKnockSingle_static error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       console.log(`${TestTag}, tesKnuckleKnockSingle_static end`);
     })
@@ -1462,9 +1462,9 @@ export default function uitestDriverTestApi22() {
         expect(screenPng != null).assertTrue();
         await driver!.knuckleKnock(points, 2);
         await driver!.delayMs(waitUiReadyMs);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, tesKnuckleKnockDouble_static error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       console.log(`${TestTag}, tesKnuckleKnockDouble_static end`);
     })
@@ -1534,10 +1534,10 @@ export default function uitestDriverTestApi22() {
         await driver!.pressBack();
         await Utils.msSleep(2000)
         await stopApplication('com.uitestScene.acts')        
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, tesKnuckleKnockS_static error, ${JSON.stringify(error)}`);
         await stopApplication('com.uitestScene.acts')
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       await Utils.msSleep(3000)
       console.log(`${TestTag}, tesKnuckleKnockS_static end`);
@@ -1585,10 +1585,10 @@ export default function uitestDriverTestApi22() {
         expect(isTantWindow != null).assertTrue();
         await stopApplication('com.huawei.hmos.vassistant');
         await Utils.msSleep(2000)
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, tesKnuckleKnockRect_static error, ${JSON.stringify(error)}`);
         await stopApplication('com.huawei.hmos.vassistant');
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       await Utils.msSleep(3000)
       console.log(`${TestTag}, tesKnuckleKnockRect_static end`);
@@ -1624,9 +1624,9 @@ export default function uitestDriverTestApi22() {
           await driver!.delayMs(waitUiReadyMs);
           expect(text1 != null).assertTrue()
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, teTouchPadTwoFingersScrollVer_Static error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, teTouchPadTwoFingersScrollVer_Static end`);
@@ -1672,9 +1672,9 @@ export default function uitestDriverTestApi22() {
           await driver!.delayMs(waitUiReadyMs);
           expect(scroll111 != null).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(17000005);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static end`);

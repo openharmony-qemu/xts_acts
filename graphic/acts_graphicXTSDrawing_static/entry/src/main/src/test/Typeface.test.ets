@@ -122,7 +122,7 @@ export default function typefaceTest() {
         mytypeface = drawing.Typeface.makeFromFile("");
         expect(mytypeface == undefined).assertTrue();
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -144,7 +144,7 @@ export default function typefaceTest() {
           const mytypeface = drawing.Typeface.makeFromFile(str);
         }
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -162,14 +162,14 @@ export default function typefaceTest() {
       try {
         const mytypeface = drawing.Typeface.makeFromFile("hello_world");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
       try {
         const mytypeface = drawing.Typeface.makeFromFile("/system/fonts/FakePath.ttf");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }

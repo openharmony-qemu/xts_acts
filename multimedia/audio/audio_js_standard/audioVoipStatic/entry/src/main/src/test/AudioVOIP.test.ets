@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -174,7 +174,7 @@ export default function audioVoip() {
             try {
                 audioRen = await audio.createAudioRenderer(AudioRendererOptions);
                 console.info(`${TagRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`${TagRender}: AudioRender Created : ERROR : ${err.message}`);
                 resultFlag = false;
                 return resultFlag;
@@ -294,7 +294,7 @@ export default function audioVoip() {
             try {
                 audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
                 console.info(`${TagRec}: AudioCapturer Created : Success : Stream Type: SUCCESS`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`${TagRec}: AudioCapturer Created : ERROR : ${err.message}`);
                 resultFlag = false;
                 return resultFlag;
