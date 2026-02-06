@@ -2823,6 +2823,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertLarger(0);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange');
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -2904,6 +2905,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -3003,6 +3005,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         await windowClass.setWindowBrightness(-1);
         await sleep(100);
         display.off('brightnessInfoChange');
