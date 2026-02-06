@@ -133,13 +133,6 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsNormal, Function | S
             EXPECT_EQ(height_, height);
             EXPECT_EQ(width_, width);
             EXPECT_EQ(colorFormat_, colorFormat);
-            // 3. OH_Drawing_BitmapCreateFromPixels
-            int rowBytes2 = width * 4 + 1;
-            bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
-            height_ = OH_Drawing_BitmapGetHeight(bitmap);
-            width_ = OH_Drawing_BitmapGetWidth(bitmap);
-            EXPECT_EQ(height_, height);
-            EXPECT_EQ(width_, width);
             // 4. Free memory
             OH_Drawing_BitmapDestroy(bitmap);
         }
@@ -229,10 +222,18 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsMismatch, Function |
     uint8_t *pixels3 = new uint8_t[width * height * 4];
     OH_Drawing_Bitmap *bitmap3 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels3, rowBytes);
     EXPECT_EQ(bitmap3, nullptr);
+    // 4. OH_Drawing_BitmapCreateFromPixels
+    rowBytes = width * 4 + 1;
+    OH_Drawing_Bitmap *bitmap4 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+    int height_ = OH_Drawing_BitmapGetHeight(bitmap4);
+    int width_ = OH_Drawing_BitmapGetWidth(bitmap4);
+    EXPECT_EQ(height_, 0);
+    EXPECT_EQ(width_, 0);
     // 4. Free memory
     OH_Drawing_BitmapDestroy(bitmap1);
     OH_Drawing_BitmapDestroy(bitmap2);
     OH_Drawing_BitmapDestroy(bitmap3);
+    OH_Drawing_BitmapDestroy(bitmap4);
     delete[] pixels;
     delete[] pixels1;
     delete[] pixels2;
@@ -315,7 +316,7 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsVeryBig, Function | 
                 bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
                 height_ = OH_Drawing_BitmapGetHeight(bitmap);
                 width_ = OH_Drawing_BitmapGetWidth(bitmap);
-                EXPECT_EQ(height_, height);
+                EXPECT_EQ(height_,  );
                 EXPECT_EQ(width_, width);
                 // 4. Free memory
                 OH_Drawing_BitmapDestroy(bitmap);
@@ -355,13 +356,6 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapCreateFromPixelsBoundary, Function |
             EXPECT_EQ(height_, height);
             EXPECT_EQ(width_, width);
             EXPECT_EQ(colorFormat_, colorFormat);
-            // 3. OH_Drawing_BitmapCreateFromPixels
-            int rowBytes2 = width * 4 + 1;
-            bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes2);
-            height_ = OH_Drawing_BitmapGetHeight(bitmap);
-            width_ = OH_Drawing_BitmapGetWidth(bitmap);
-            EXPECT_EQ(height_, height);
-            EXPECT_EQ(width_, width);
             // 4. Free memory
             OH_Drawing_BitmapDestroy(bitmap);
         }
