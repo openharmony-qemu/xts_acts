@@ -1631,7 +1631,7 @@ export default function windowErrCode401_4() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        await windowStage.setSupportedWindowModes(null);
+        await windowStage.setSupportedWindowModes([null]);
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
         done();
@@ -1641,7 +1641,7 @@ export default function windowErrCode401_4() {
         expect(exception.message!=null).assertTrue();
       }
       try {
-        await windowStage.setSupportedWindowModes(undefined);
+        await windowStage.setSupportedWindowModes([undefined]);
         console.info(msgStr + 'Succeeded2.');
         expect().assertFail();
         done();
