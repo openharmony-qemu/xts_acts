@@ -64,7 +64,6 @@ export default function selectKeyboardAvoidMode() {
      await Utils.sleep(1000);
      await btn1.click();
      await Utils.sleep(1000);
-     console.info(hideBtn+'-------qqqqqq---------')
      await hideBtn.click();
      console.log('selectKeyboardAvoidMode_001 END')
      done();
