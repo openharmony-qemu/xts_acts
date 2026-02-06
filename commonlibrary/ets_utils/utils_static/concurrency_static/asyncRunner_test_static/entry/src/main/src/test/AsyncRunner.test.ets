@@ -118,7 +118,7 @@ export default function asyncRunnerTest() {
           // expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, WaitingCapacity must be greater than or equal zero.');
           const msg = e.toString();
           // expect(msg.includes('WaitingCapacity must be greater than or equal zero')).assertTrue();
-          expect(msg).assertContain('watingCapacity');
+          expect(msg).assertContain('waitingCapacity');
           expect(msg).assertContain('non-negative number');
         }
         done();
