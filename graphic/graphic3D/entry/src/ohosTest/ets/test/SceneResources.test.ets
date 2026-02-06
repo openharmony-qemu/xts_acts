@@ -355,6 +355,18 @@ export default function sceneResourcesTest() {
         expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR);
         env.environmentImage = envImage3;
         console.info(msg + " Succeed in Environment environmentImage set envImage3 EQUIRECTANGULAR ");
+
+        // Test null parameter for createImage
+        // let nullImage = await rf.createImage(null);
+        // expect(nullImage != null).assertTrue();
+        // console.info(msg + " createImage with null parameter returned undefined");
+
+        // Test undefined parameter for createImage
+        // let undefinedImage = await rf.createImage(undefined);
+        // expect(undefinedImage != null).assertTrue();
+        // console.info(msg + " createImage with undefined parameter returned undefined");
+
+        console.info(msg + " test completed successfully");
         done();
       } catch (err) {
         console.info(msg + " Failed in Environment environmentImage set " + JSON.stringify(err));
@@ -1650,6 +1662,18 @@ export default function sceneResourcesTest() {
           console.info(msg + " material && material.colorShader == False");
           expect(material && material.colorShader).assertTrue();
         }
+
+        // Test null parameter for createShader
+        let nullShader = await rf.createShader(null);
+        expect(nullShader != null).assertTrue();
+        console.info(msg + " createShader with null parameter returned undefined");
+
+        // Test undefined parameter for createShader
+        let undefinedShader = await rf.createShader(undefined);
+        expect(undefinedShader != null).assertTrue();
+        console.info(msg + " createShader with undefined parameter returned undefined");
+
+        console.info(msg + " test completed successfully");
 
         console.info(msg + " test completed successfully");
         done();

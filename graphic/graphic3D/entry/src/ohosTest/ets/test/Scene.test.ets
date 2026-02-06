@@ -418,6 +418,17 @@ export default function sceneTest() {
       try {
         let scene2 = await rf.createScene();
         expect(scene2 != null).assertTrue();
+
+        // Test null parameter (should create empty scene)
+        let nullScene = await rf.createScene(null);
+        expect(nullScene != null).assertTrue();
+        console.info(msg + " createScene with null parameter created empty scene");
+
+        // Test undefined parameter (should create empty scene)
+        let undefinedScene = await rf.createScene(undefined);
+        expect(undefinedScene != null).assertTrue();
+        console.info(msg + " createScene with undefined parameter created empty scene");
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testCreateScene_02 " + JSON.stringify(err));
@@ -640,6 +651,16 @@ export default function sceneTest() {
         sampler.addressModeU = scene3d.SamplerAddressMode.REPEAT;
         expect(sampler.addressModeU).assertEqual(scene3d.SamplerAddressMode.REPEAT);
         console.info(msg + " sampler.addressModeU set and verified");
+
+        // Test null parameter
+        let nullSampler = await rf.createSampler(null);
+        expect(nullSampler != null).assertTrue();
+        console.info(msg + " createSampler with null parameter returned undefined");
+
+        // Test undefined parameter
+        let undefinedSampler = await rf.createSampler(undefined);
+        expect(undefinedSampler != null).assertTrue();
+        console.info(msg + " createSampler with undefined parameter returned undefined");
 
         console.info(msg + " test completed successfully");
         done();

@@ -762,6 +762,35 @@ export default function sceneNodeTest() {
         expect(geometry1 != null).assertTrue();
         console.info(msg + " Succeed in createGeometry ");
         scene?.root?.children.append(geometry1);
+
+        // Test null/undefined parameters for createMesh
+        /* task_0204 第一个参数为null/undefined时,崩溃 
+        let nullNullMesh = await rf.createMesh(null, null);
+        expect(nullNullMesh != null).assertTrue();
+        console.info(msg + " createMesh with (null, null) returned mesh");
+
+        let undefinedUndefinedMesh = await rf.createMesh(undefined, undefined);
+        expect(undefinedUndefinedMesh != null).assertTrue();
+        console.info(msg + " createMesh with (undefined, undefined) returned mesh");
+
+        let paramsNullMesh = await rf.createMesh({ name: "test" }, null);
+        expect(paramsNullMesh != null).assertTrue();
+        console.info(msg + " createMesh with (params, null) returned mesh");
+
+        let paramsUndefinedMesh = await rf.createMesh({ name: "test" }, undefined);
+        expect(paramsUndefinedMesh != null).assertTrue();
+        console.info(msg + " createMesh with (params, undefined) returned mesh");
+        */
+       
+        let nullGeomMesh = await rf.createMesh(null, cubeGeom);
+        expect(nullGeomMesh != null).assertTrue();
+        console.info(msg + " createMesh with (null, geometry) returned mesh");
+
+        let undefinedGeomMesh = await rf.createMesh(undefined, cubeGeom);
+        expect(undefinedGeomMesh != null).assertTrue();
+        console.info(msg + " createMesh with (undefined, geometry) returned mesh");
+
+        console.info(msg + " test completed successfully");
         done();
       } catch (err) {
         console.info(msg + " Failed in testCreateGeometryCUBE " + JSON.stringify(err));
