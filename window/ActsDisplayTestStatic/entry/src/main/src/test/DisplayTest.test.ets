@@ -2487,9 +2487,13 @@ export default function DisplayTest() {
                     let options: StartOptions = {
                         displayId: displayId
                     }
+                    console.log(caseName + 'startAbility start.. ');
                     let windowStageStart = await startAbility(caseName, context!, options);
+                    console.log(caseName + 'getMainWindowSync start.. ');
                     let windowClass:window.Window = windowStageStart.getMainWindowSync();
+                    console.log(caseName + 'getMainWindowSync ssuccess: '+windowClass);
                     await windowClass.setWindowFocusable(true);
+                    console.log(caseName + 'setWindowFocusable true ssuccess');
                     await terminateAbility(caseName);
                     done();
                 }).catch(async (err: Error) => {
