@@ -34,7 +34,7 @@ constexpr int32_t DEFAULT_ANGLE = 90;
 constexpr uint32_t MILLION = 1000000;
 SHA512_CTX g_c;
 unsigned char g_md[SHA512_DIGEST_LENGTH];
-VDecAPI11Sample *dec_sample = nullptr;
+VDecAPI11Sample *g_decSample = nullptr;
 int32_t g_strideSurface = 0;
 int32_t g_sliceSurface = 0;
 bool g_yuvSurface = false;
@@ -102,10 +102,10 @@ VDecAPI11Sample::~VDecAPI11Sample()
 void VdecAPI11Error(OH_AVCodec *codec, int32_t errorCode, void *userData)
 {
     if (errorCode == AV_ERR_UNKNOWN) {
-        dec_sample->isRunning_.store(false);
-        dec_sample->signal_->inCond_.notify_all();
-        dec_sample->signal_->outCond_.notify_all();
-        dec_sample->isonError = true;
+        g_decSample->isRunning_.store(false);
+        g_decSample->signal_->inCond_.notify_all();
+        g_decSample->signal_->outCond_.notify_all();
+        g_decSample->isonError = true;
     }
     cout << "Error errorCode=" << errorCode << endl;
 }
@@ -120,31 +120,31 @@ void VdecAPI11FormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *userDa
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_HEIGHT, &currentHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_STRIDE, &stride);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_SLICE_HEIGHT, &sliceHeight);
-    dec_sample->DEFAULT_WIDTH = currentWidth;
-    dec_sample->DEFAULT_HEIGHT = currentHeight;
+    g_decSample->defaultWidth = currentWidth;
+    g_decSample->defaultHeight = currentHeight;
     g_strideSurface = stride;
     g_sliceSurface = sliceHeight;
     if (stride <= 0 || sliceHeight <= 0) {
-        dec_sample->errCount++;
+        g_decSample->errCount++;
     }
 }
 
 void VdecAPI11InputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *data, void *userData)
 {
-    if (dec_sample->inputCallbackFlush && dec_sample->outCount > 1) {
+    if (g_decSample->inputCallbackFlush && g_decSample->outCount > 1) {
         OH_VideoDecoder_Flush(codec);
         cout << "OH_VideoDecoder_Flush end" << endl;
-        dec_sample->isRunning_.store(false);
-        dec_sample->signal_->inCond_.notify_all();
-        dec_sample->signal_->outCond_.notify_all();
+        g_decSample->isRunning_.store(false);
+        g_decSample->signal_->inCond_.notify_all();
+        g_decSample->signal_->outCond_.notify_all();
         return;
     }
-    if (dec_sample->inputCallbackStop && dec_sample->outCount > 1) {
+    if (g_decSample->inputCallbackStop && g_decSample->outCount > 1) {
         OH_VideoDecoder_Stop(codec);
         cout << "OH_VideoDecoder_Stop end" << endl;
-        dec_sample->isRunning_.store(false);
-        dec_sample->signal_->inCond_.notify_all();
-        dec_sample->signal_->outCond_.notify_all();
+        g_decSample->isRunning_.store(false);
+        g_decSample->signal_->inCond_.notify_all();
+        g_decSample->signal_->outCond_.notify_all();
         return;
     }
     VDecAPI11Signal *signal = static_cast<VDecAPI11Signal *>(userData);
@@ -156,20 +156,20 @@ void VdecAPI11InputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *dat
 
 void VdecAPI11OutputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *data, void *userData)
 {
-    if (dec_sample->outputCallbackFlush && dec_sample->outCount > 1) {
+    if (g_decSample->outputCallbackFlush && g_decSample->outCount > 1) {
         OH_VideoDecoder_Flush(codec);
         cout << "OH_VideoDecoder_Flush end" << endl;
-        dec_sample->isRunning_.store(false);
-        dec_sample->signal_->inCond_.notify_all();
-        dec_sample->signal_->outCond_.notify_all();
+        g_decSample->isRunning_.store(false);
+        g_decSample->signal_->inCond_.notify_all();
+        g_decSample->signal_->outCond_.notify_all();
         return;
     }
-    if (dec_sample->outputCallbackStop && dec_sample->outCount > 1) {
+    if (g_decSample->outputCallbackStop && g_decSample->outCount > 1) {
         OH_VideoDecoder_Stop(codec);
         cout << "OH_VideoDecoder_Stop end" << endl;
-        dec_sample->isRunning_.store(false);
-        dec_sample->signal_->inCond_.notify_all();
-        dec_sample->signal_->outCond_.notify_all();
+        g_decSample->isRunning_.store(false);
+        g_decSample->signal_->inCond_.notify_all();
+        g_decSample->signal_->outCond_.notify_all();
         return;
     }
     VDecAPI11Signal *signal = static_cast<VDecAPI11Signal *>(userData);
@@ -179,7 +179,7 @@ void VdecAPI11OutputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *da
     signal->outCond_.notify_all();
 }
 
-void VDecAPI11Sample::Flush_buffer()
+void VDecAPI11Sample::FlushBuffer()
 {
     unique_lock<mutex> inLock(signal_->inMutex_);
     clearIntqueue(signal_->inIdxQueue_);
@@ -226,14 +226,14 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
     if (maxInputSize > 0) {
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_MAX_INPUT_SIZE, maxInputSize);
     }
-    originalWidth = DEFAULT_WIDTH;
-    originalHeight = DEFAULT_HEIGHT;
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    originalWidth = defaultWidth;
+    originalHeight = defaultHeight;
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, defaultWidth);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, defualtPixelFormat);
-    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     if (useHDRSource) {
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, DEFAULT_PROFILE);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, defaultProfile);
     }
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, enbleSyncMode);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_BLANK_FRAME_ON_SHUTDOWN, enbleBlankFrame);
@@ -244,82 +244,16 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
 
 void VDecAPI11Sample::CreateSurface()
 {
-    // Surface functionality not used in current tests
-    /*
-    cs[0] = Surface::CreateSurfaceAsConsumer();
-    if (cs[0] == nullptr) {
-        cout << "Create the surface consummer fail" << endl;
-        return;
-    }
-    GSError err = cs[0]->SetDefaultUsage(BUFFER_USAGE_MEM_DMA | BUFFER_USAGE_VIDEO_DECODER | BUFFER_USAGE_CPU_READ);
-    if (err == GSERROR_OK) {
-        cout << "set consumer usage succ" << endl;
-    } else {
-        cout << "set consumer usage failed" << endl;
-    }
-    sptr<IBufferConsumerListener> listener = new ConsumerListenerBuffer(cs[0], OUT_DIR);
-    cs[0]->RegisterConsumerListener(listener);
-    auto p = cs[0]->GetProducer();
-    ps[0] = Surface::CreateSurfaceAsProducer(p);
-    nativeWindow[0] = CreateNativeWindowFromSurface(&ps[0]);
-    if (autoSwitchSurface)  {
-        cs[1] = Surface::CreateSurfaceAsConsumer();
-        sptr<IBufferConsumerListener> listener2 = new ConsumerListenerBuffer(cs[1], OUT_DIR2);
-        cs[1]->RegisterConsumerListener(listener2);
-        auto p2 = cs[1]->GetProducer();
-        ps[1] = Surface::CreateSurfaceAsProducer(p2);
-        nativeWindow[1] = CreateNativeWindowFromSurface(&ps[1]);
-    }
-    */
 }
 
-int32_t VDecAPI11Sample::RunVideoDec_Surface(string codeName)
+int32_t VDecAPI11Sample::RunVideoDecSurface(string codeName)
 {
-    // Surface functionality not used in current tests
     return AV_ERR_UNSUPPORT;
-    /*
-    SF_OUTPUT = true;
-    int err = AV_ERR_OK;
-    CreateSurface();
-    if (!nativeWindow[0]) {
-        cout << "Failed to create surface" << endl;
-        return AV_ERR_UNKNOWN;
-    }
-    err = CreateVideoDecoder(codeName);
-    if (err != AV_ERR_OK) {
-        cout << "Failed to create video decoder" << endl;
-        return err;
-    }
-    err = SetVideoDecoderCallback();
-    if (err != AV_ERR_OK) {
-        cout << "Failed to setCallback" << endl;
-        Release();
-        return err;
-    }
-    err = ConfigureVideoDecoder();
-    if (err != AV_ERR_OK) {
-        cout << "Failed to configure video decoder" << endl;
-        Release();
-        return err;
-    }
-    err = OH_VideoDecoder_SetSurface(vdec_, nativeWindow[0]);
-    if (err != AV_ERR_OK) {
-        cout << "Failed to set surface" << endl;
-        return err;
-    }
-    err = StartVideoDecoder();
-    if (err != AV_ERR_OK) {
-        cout << "Failed to start video decoder" << endl;
-        Release();
-        return err;
-    }
-    return err;
-    */
 }
 
 int32_t VDecAPI11Sample::RunVideoDec(string codeName)
 {
-    SF_OUTPUT = false;
+    sfOutput = false;
     int err = CreateVideoDecoder(codeName);
     if (err != AV_ERR_OK) {
         cout << "Failed to create video decoder" << endl;
@@ -392,7 +326,7 @@ void VDecAPI11Sample::StopInloop()
 int32_t VDecAPI11Sample::CreateVideoDecoder(string codeName)
 {
     vdec_ = OH_VideoDecoder_CreateByName(codeName.c_str());
-    dec_sample = this;
+    g_decSample = this;
     return vdec_ == nullptr ? AV_ERR_UNKNOWN : AV_ERR_OK;
 }
 
@@ -413,9 +347,9 @@ int32_t VDecAPI11Sample::StartVideoDecoder()
         (void)OH_VideoDecoder_Stop(vdec_);
         return AV_ERR_UNKNOWN;
     }
-    inFile_->open(INP_DIR, ios::in | ios::binary);
+    inFile_->open(inpDir, ios::in | ios::binary);
     if (!inFile_->is_open()) {
-        cout << "failed open file " << INP_DIR << endl;
+        cout << "failed open file " << inpDir << endl;
         isRunning_.store(false);
         (void)OH_VideoDecoder_Stop(vdec_);
         inFile_->close();
@@ -462,9 +396,9 @@ int32_t VDecAPI11Sample::StartSyncVideoDecoder()
         (void)OH_VideoDecoder_Stop(vdec_);
         return AV_ERR_UNKNOWN;
     }
-    inFile_->open(INP_DIR, ios::in | ios::binary);
+    inFile_->open(inpDir, ios::in | ios::binary);
     if (!inFile_->is_open()) {
-        cout << "failed open file " << INP_DIR << endl;
+        cout << "failed open file " << inpDir << endl;
         isRunning_.store(false);
         (void)OH_VideoDecoder_Stop(vdec_);
         inFile_->close();
@@ -495,13 +429,13 @@ int32_t VDecAPI11Sample::StartSyncVideoDecoder()
     return AV_ERR_OK;
 }
 
-void VDecAPI11Sample::testAPI()
+void VDecAPI11Sample::TestApi()
 {
 }
 
 void VDecAPI11Sample::WaitForEOS()
 {
-    if (!AFTER_EOS_DESTORY_CODEC && inputLoop_ && inputLoop_->joinable()) {
+    if (!afterEosDestoryCodec && inputLoop_ && inputLoop_->joinable()) {
         inputLoop_->join();
     }
 
@@ -546,7 +480,7 @@ void VDecAPI11Sample::InputFuncTest()
             }
         }
         if (sleepOnFPS) {
-            usleep(MICRO_IN_SECOND / static_cast<int32_t>(DEFAULT_FRAME_RATE));
+            usleep(MICRO_IN_SECOND / static_cast<int32_t>(defaultFrameRate));
         }
     }
 }
@@ -580,7 +514,7 @@ void VDecAPI11Sample::SyncInputFunc()
             }
         }
         if (sleepOnFPS) {
-            usleep(MICRO_IN_SECOND / static_cast<int32_t>(DEFAULT_FRAME_RATE));
+            usleep(MICRO_IN_SECOND / static_cast<int32_t>(defaultFrameRate));
         }
     }
 }
@@ -588,23 +522,23 @@ void VDecAPI11Sample::SyncInputFunc()
 int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
 {
     OH_AVCodecBufferAttr attr;
-    if (BEFORE_EOS_INPUT && frameCount_ > TEN) {
+    if (beforeEosInput && frameCount_ > TEN) {
         SetEOS(index, buffer);
         return 1;
     }
-    if (BEFORE_EOS_INPUT_INPUT && frameCount_ > TEN) {
+    if (beforeEosInputInput && frameCount_ > TEN) {
         SecureMemset(&attr, sizeof(OH_AVCodecBufferAttr), 0, sizeof(OH_AVCodecBufferAttr));
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
-        BEFORE_EOS_INPUT_INPUT = false;
+        beforeEosInputInput = false;
     }
     char ch[4] = {};
     (void)inFile_->read(ch, START_CODE_SIZE);
     if (repeatRun && inFile_->eof()) {
-        static uint32_t repeat_count = 0;
+        static uint32_t repeatCount = 0;
         inFile_->clear();
         inFile_->seekg(0, ios::beg);
-        cout << "repeat run " << repeat_count << endl;
-        repeat_count++;
+        cout << "repeat run " << repeatCount << endl;
+        repeatCount++;
         return 0;
     }
     if (inFile_->eof()) {
@@ -621,7 +555,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer *buffer)
         bufferSize = static_cast<uint32_t>(((ch[zero] & 0xFF)) | ((ch[one] & 0xFF) << EIGHT) |
             ((ch[two] & 0xFF) << SIXTEEN) | ((ch[three] & 0xFF) << TWENTY_FOUR));
     }
-    if (bufferSize >= DEFAULT_WIDTH * DEFAULT_HEIGHT * THREE >> 1) {
+    if (bufferSize >= defaultWidth * defaultHeight * THREE >> 1) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
     }
     return SendData(bufferSize, index, buffer);
@@ -686,7 +620,7 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
         OH_VideoDecoder_PushInputBuffer(vdec_, index) == AV_ERR_OK ? (0) : (errCount++);
         frameCount_ = frameCount_ + 1;
         outCount = outCount + 1;
-        if (autoSwitchSurface && (frameCount_ % static_cast<int32_t>(DEFAULT_FRAME_RATE) == 0)) {
+        if (autoSwitchSurface && (frameCount_ % static_cast<int32_t>(defaultFrameRate) == 0)) {
             switchSurfaceFlag = (switchSurfaceFlag == 1) ? 0 : 1;
             OH_VideoDecoder_SetSurface(vdec_, nativeWindow[switchSurfaceFlag]) == AV_ERR_OK ? (0) : (errCount++);
         }
@@ -770,7 +704,7 @@ void VDecAPI11Sample::OutputFuncTest()
 {
     FILE *outFile = nullptr;
     if (outputYuvFlag) {
-        outFile = fopen(OUT_DIR, "wb");
+        outFile = fopen(outDir, "wb");
     }
     SHA512_Init(&g_c);
     bool flag = true;
@@ -821,7 +755,7 @@ void VDecAPI11Sample::SyncOutputFunc()
 {
     FILE *outFile = nullptr;
     if (outputYuvFlag) {
-        outFile = fopen(OUT_DIR, "wb");
+        outFile = fopen(outDir, "wb");
     }
     SHA512_Init(&g_c);
     bool flag = true;
@@ -882,17 +816,17 @@ int32_t VDecAPI11Sample::SyncOutputFuncEos(OH_AVCodecBufferAttr attr, uint32_t i
 
 void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index, int32_t size)
 {
-    if (!SF_OUTPUT) {
-        if (size >= DEFAULT_WIDTH * DEFAULT_HEIGHT * THREE >> 1) {
+    if (!sfOutput) {
+        if (size >= defaultWidth * defaultHeight * THREE >> 1) {
             uint8_t *cropBuffer = new uint8_t[size];
             if (SecureMemcpy(cropBuffer, size, OH_AVBuffer_GetAddr(buffer),
-                DEFAULT_WIDTH * DEFAULT_HEIGHT) != EOK) {
+                defaultWidth * defaultHeight) != EOK) {
                 cout << "Fatal: memory copy failed Y" << endl;
             }
             // copy UV
-            uint32_t uvSize = size - DEFAULT_WIDTH * DEFAULT_HEIGHT;
-            if (SecureMemcpy(cropBuffer + DEFAULT_WIDTH * DEFAULT_HEIGHT, uvSize,
-                OH_AVBuffer_GetAddr(buffer) + DEFAULT_WIDTH * DEFAULT_HEIGHT, uvSize) != EOK) {
+            uint32_t uvSize = size - defaultWidth * defaultHeight;
+            if (SecureMemcpy(cropBuffer + defaultWidth * defaultHeight, uvSize,
+                OH_AVBuffer_GetAddr(buffer) + defaultWidth * defaultHeight, uvSize) != EOK) {
                 cout << "Fatal: memory copy failed UV" << endl;
             }
             SHA512_Update(&g_c, cropBuffer, size);
@@ -909,7 +843,7 @@ void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index, int
             if (renderTimestampNs == 0) {
                 renderTimestampNs = GetSystemTimeUs() * usTimeNum;
             }
-            renderTimestampNs = renderTimestampNs + (usTimeNum / DEFAULT_FRAME_RATE * msTimeNum);
+            renderTimestampNs = renderTimestampNs + (usTimeNum / defaultFrameRate * msTimeNum);
             if (OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, index, renderTimestampNs) != AV_ERR_OK) {
                 cout << "Fatal: RenderOutputBufferAtTime fail" << endl;
                 errCount = errCount + 1;
@@ -923,7 +857,7 @@ void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index, int
     }
 }
 
-int32_t VDecAPI11Sample::state_EOS()
+int32_t VDecAPI11Sample::StateEos()
 {
     uint32_t index;
     unique_lock<mutex> lock(signal_->inMutex_);
@@ -1029,7 +963,7 @@ int32_t VDecAPI11Sample::SwitchSurface()
 
 int32_t VDecAPI11Sample::RepeatCallSetSurface()
 {
-    for (int i = 0; i < REPEAT_CALL_TIME; i++) {
+    for (int i = 0; i < repeatCallTime; i++) {
         switchSurfaceFlag = (switchSurfaceFlag == 1) ? 0 : 1;
         int32_t ret = OH_VideoDecoder_SetSurface(vdec_, nativeWindow[switchSurfaceFlag]);
         if (ret != AV_ERR_OK && ret != AV_ERR_OPERATE_NOT_PERMIT && ret != AV_ERR_INVALID_STATE) {

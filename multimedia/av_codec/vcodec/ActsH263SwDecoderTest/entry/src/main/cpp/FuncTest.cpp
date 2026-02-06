@@ -78,10 +78,10 @@ int VideoDecodeSyncSw263Func0010Test()
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
-    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
-    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
+    vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
+    vDecSample->defaultWidth = VIDEO_WIDTH_128;
+    vDecSample->defaultHeight = VIDEO_HEIGHT_96;
+    vDecSample->defaultFrameRate = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
     
@@ -131,10 +131,10 @@ int VideoDecodeSyncSw263Func0020Test()
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
-    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
-    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
+    vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
+    vDecSample->defaultWidth = VIDEO_WIDTH_128;
+    vDecSample->defaultHeight = VIDEO_HEIGHT_96;
+    vDecSample->defaultFrameRate = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
     
@@ -184,10 +184,10 @@ int VideoDecodeSyncSw263Func0040Test()
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
-    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_128;
-    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_96;
-    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
+    vDecSample->inpDir = "/data/storage/el2/base/files/media/profile0_level10_I_128x96.h263";
+    vDecSample->defaultWidth = VIDEO_WIDTH_128;
+    vDecSample->defaultHeight = VIDEO_HEIGHT_96;
+    vDecSample->defaultFrameRate = VIDEO_FRAME_RATE_30;
     vDecSample->enbleSyncMode = 1;
     vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_RGBA;
     
@@ -237,10 +237,10 @@ int VideoDecodeSw263BlankFrame0010Test()
         return 0;
     }
     auto vDecSample = make_shared<VDecAPI11Sample>();
-    vDecSample->INP_DIR = "/data/storage/el2/base/files/media/20x20.h263";
-    vDecSample->DEFAULT_WIDTH = VIDEO_WIDTH_20;
-    vDecSample->DEFAULT_HEIGHT = VIDEO_HEIGHT_20;
-    vDecSample->DEFAULT_FRAME_RATE = VIDEO_FRAME_RATE_30;
+    vDecSample->inpDir = "/data/storage/el2/base/files/media/20x20.h263";
+    vDecSample->defaultWidth = VIDEO_WIDTH_20;
+    vDecSample->defaultHeight = VIDEO_HEIGHT_20;
+    vDecSample->defaultFrameRate = VIDEO_FRAME_RATE_30;
     vDecSample->enbleBlankFrame = 1;
     
     OH_LOG_INFO(LOG_APP, "[BlankFrame] CreateVideoDecoder");
