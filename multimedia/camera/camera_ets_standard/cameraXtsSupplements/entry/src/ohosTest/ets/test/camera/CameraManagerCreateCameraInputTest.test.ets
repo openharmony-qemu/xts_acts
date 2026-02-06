@@ -1031,7 +1031,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1064,7 +1064,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1097,7 +1097,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1162,7 +1162,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1195,7 +1195,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1228,7 +1228,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1261,7 +1261,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1294,7 +1294,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1327,7 +1327,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1360,7 +1360,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1393,7 +1393,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1426,7 +1426,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1459,7 +1459,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1492,7 +1492,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1554,7 +1554,7 @@ export default function createCameraInput() {
             if ("" == mCameraDeviceArray[i].hostDeviceName) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_PHOTO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1635,7 +1635,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1668,7 +1668,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1701,7 +1701,7 @@ export default function createCameraInput() {
             if (position == mCameraDeviceArray[i].cameraPosition) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1766,7 +1766,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1799,7 +1799,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1832,7 +1832,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1865,7 +1865,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1898,7 +1898,7 @@ export default function createCameraInput() {
             if (type == mCameraDeviceArray[i].cameraType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1931,7 +1931,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1964,7 +1964,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -1997,7 +1997,7 @@ export default function createCameraInput() {
             if (connectType == mCameraDeviceArray[i].connectionType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -2030,7 +2030,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -2063,7 +2063,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -2096,7 +2096,7 @@ export default function createCameraInput() {
             if (hostType == mCameraDeviceArray[i].hostDeviceType) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -2158,7 +2158,7 @@ export default function createCameraInput() {
             if ("" == mCameraDeviceArray[i].hostDeviceName) {
               let cameraOutputCapability =
                 mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i], camera.SceneMode.NORMAL_VIDEO);
-              console.info(TAG, testName, "getSupportedOutputCapability ok:");
+              console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
               expect(cameraOutputCapability != null).assertTrue();
               break;
             } else {
@@ -2221,58 +2221,6 @@ export default function createCameraInput() {
         }
       })
     /**
-     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039
-     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039
-     * @tc.desc   getSupportedOutputCapability cameraOutputCapability previewProfiles format
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_039';
-        try {
-          console.info(TAG,testName,"start :");
-          if(mCameraDeviceArray.length > 0) {
-            let cameraOutputCapability =
-              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
-            expect(cameraOutputCapability.previewProfiles[0].format != null).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
-          done();
-        }
-      })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040
-     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040
-     * @tc.desc   getSupportedOutputCapability cameraOutputCapability previewProfiles size
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_040';
-        try {
-          console.info(TAG,testName,"start :");
-          if(mCameraDeviceArray.length > 0) {
-            let cameraOutputCapability =
-              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
-            expect(cameraOutputCapability.previewProfiles[0].size != null).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
-          done();
-        }
-      })
-    /**
      * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_041
      * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_041
      * @tc.desc   getSupportedOutputCapability cameraOutputCapability photoProfiles format
@@ -2288,7 +2236,7 @@ export default function createCameraInput() {
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
             expect(cameraOutputCapability.photoProfiles[0].format != null).assertTrue();
           }
           done();
@@ -2314,7 +2262,7 @@ export default function createCameraInput() {
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
             expect(cameraOutputCapability.photoProfiles[0].size != null).assertTrue();
           }
           done();
@@ -2340,7 +2288,7 @@ export default function createCameraInput() {
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
             expect(cameraOutputCapability.videoProfiles[0].frameRateRange != null).assertTrue();
             console.info(TAG, testName, "done ok:");
           }
@@ -2367,7 +2315,7 @@ export default function createCameraInput() {
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
             expect(cameraOutputCapability.videoProfiles[0].format != null).assertTrue();
           }
           done();
@@ -2393,7 +2341,7 @@ export default function createCameraInput() {
           if(mCameraDeviceArray.length > 0) {
             let cameraOutputCapability =
               mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
-            console.info(TAG, testName, "getSupportedOutputCapability ok:");
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
             expect(cameraOutputCapability.videoProfiles[0].size != null).assertTrue();
           }
           done();
@@ -2454,47 +2402,6 @@ export default function createCameraInput() {
         }
       })
     /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003
-     * @tc.number SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003
-     * @tc.desc   createPreviewOutput surfaceId ""
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003', Level.LEVEL2,
-      async (done: Function) => {
-        const testName = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_003';
-        try {
-          console.info(TAG, testName, "start :");
-          if(mCameraDeviceArray.length > 0) {
-            await getVideoSurfaceId();
-            let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-            let haveValidDevice = false;
-            for (const device of mCameraDeviceArray) {
-              mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-              if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-                useDevice = device;
-                haveValidDevice = true;
-                break;
-              }
-            }
-            if (!haveValidDevice) {
-              return;
-            }
-            let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
-            let previewProfile = cameraOutputCap.previewProfiles[0];
-            mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, "");
-            console.info(TAG, testName, "end :");
-            expect(mPreviewOutput).assertUndefined()
-          }
-          done();
-        } catch (error) {
-          console.error(TAG, testName, "fail,errorCode :", error.code);
-          expect().assertFail();
-          done();
-        }
-      })
-    /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_004
      * @tc.number SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_004
      * @tc.desc   createPreviewOutput Parameter missing
@@ -2509,20 +2416,8 @@ export default function createCameraInput() {
           console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
-            let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-            let haveValidDevice = false;
-            for (const device of mCameraDeviceArray) {
-              mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-              if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-                useDevice = device;
-                haveValidDevice = true;
-                break;
-              }
-            }
-            if (!haveValidDevice) {
-              return;
-            }
-            let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
+            let cameraOutputCap =
+              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
             let previewProfile = cameraOutputCap.previewProfiles[0];
             mCameraManager.createPreviewOutput(previewProfile, null);
             expect().assertFail();
@@ -2549,20 +2444,8 @@ export default function createCameraInput() {
           console.info(TAG, testName, "start :");
           if(mCameraDeviceArray.length > 0) {
             await getVideoSurfaceId();
-            let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-            let haveValidDevice = false;
-            for (const device of mCameraDeviceArray) {
-              mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-              if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-                useDevice = device;
-                haveValidDevice = true;
-                break;
-              }
-            }
-            if (!haveValidDevice) {
-              return;
-            }
-            let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
+            let cameraOutputCap =
+              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
             let previewProfile = cameraOutputCap.previewProfiles[0];
             mCameraManager.createPreviewOutput(previewProfile, undefined);
             expect().assertFail();
