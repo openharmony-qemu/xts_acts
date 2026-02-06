@@ -184,7 +184,7 @@ struct openCustomDialogWithCtrMode {
   }
   @State uiContext: UIContext = this.getUIContext();
   promptAction: PromptAction = this.uiContext.getPromptAction();
-  contentNode: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(customDialogDemo));
+  contentNode: ComponentContent<Object> = new ComponentContent<Object>(this.uiContext, wrapBuilder(customDialogDemo));
   private dialogWithController: promptAction.DialogController = new promptAction.DialogController()
 
   aboutToAppear() {
