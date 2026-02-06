@@ -833,7 +833,7 @@ export default function RelationalStoreEnumTest(){
         err = err as BusinessError;
         console.info(tag, `RelationalStoreEnumerateTest0021 err.code ${err.code}, err.message ${err.message}`)
       }
-      (store as data_relationalStore.RdbStore).close();
+      await (store as data_relationalStore.RdbStore).close();
       store = undefined;
       try{
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
@@ -945,7 +945,7 @@ export default function RelationalStoreEnumTest(){
         err = err as BusinessError;
         console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
       }
-      (store as data_relationalStore.RdbStore).close();
+      await (store as data_relationalStore.RdbStore).close();
       store = undefined;
       try{
         store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
