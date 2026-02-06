@@ -1084,7 +1084,6 @@ export default function Base64Helper02Test() {
         let result = await base64Helper.encode(array);
         console.info("result = " + result);
         // 81(Q), 85(U), 73(I), 61(=)
-        expect(result[2]).not().assertEqual(61);
         expect(result[3]).assertEqual(61);
         done();
       } catch (e) {

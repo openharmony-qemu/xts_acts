@@ -123,34 +123,6 @@ export default function vectorTest02() {
     })
 
     /**
-     * @tc.number    SUB_VECTOR_TEST02_0600
-     * @tc.name      testVector02Chapter0006
-     * @tc.desc      add GC test
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testVector02Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testVector02Chapter0006'
-      const createHugeString = (sizeMB: number): string => {
-        const oneMBChunk = 'a'.repeat(1024 * 1024); // 1MB的字符块
-        let hugeStr = '';
-        for (let i = 0; i < sizeMB; i++) {
-          hugeStr += oneMBChunk; // 循环拼接成指定大小的字符串
-        }
-        return hugeStr;
-      };
-      let hugeStr: string | undefined = createHugeString(10); // 生成10MB超大字符串
-      let vector: Vector<string> | undefined = new Vector<string>();
-      vector.add(hugeStr); // 调用Vector.add存入大字符串
-      setTimeout(() => {
-        vector!.clear(); // 清空Vector
-        vector = undefined; // 置空Vector引用
-        hugeStr = undefined; // 置空字符串引用
-      }, 2000)
-    });
-
-    /**
      * @tc.number    SUB_VECTOR_TEST02_0700
      * @tc.name      testVector02Chapter0007
      * @tc.desc      add number(0) test

@@ -484,7 +484,7 @@ export default function TextDecoder02Test() {
         const res = decoder.decodeWithStream(undefined, { stream: false });
         expect(res).assertUndefined();
       } catch (e) {
-        expect(true).assertTrue();
+        expect().assertFalse();
       }
     });
 

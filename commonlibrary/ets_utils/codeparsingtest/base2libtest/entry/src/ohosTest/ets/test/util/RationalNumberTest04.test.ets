@@ -32,7 +32,7 @@ export default function RationalNumber04Test() {
     const consistencyRational: util.RationalNumber = new util.RationalNumber(3, 4);
 
 
-    /*
+    /**
      * @tc.number    SUB_UTIL_RATIONALNUMBER04_0100
      * @tc.name      testRationalNumberIsNaN04_0001
      * @tc.desc      [Consistency] Verify isZero/isNaN logic consistency on normal objects.

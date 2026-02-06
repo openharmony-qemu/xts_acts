@@ -1007,15 +1007,15 @@ export default function StreamWritable02Test() {
 
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST02_2800
-     * @tc.name      testStreamWritable02Chapter0028
+     * @tc.number    SUB_STREAM_WRITABLE_TEST02_2900
+     * @tc.name      testStreamWritable02Chapter0029
      * @tc.desc      Test end method with gb2312 encoding
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStreamWritable02Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable02Chapter0028';
+    it("testStreamWritable02Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStreamWritable02Chapter0029';
       console.log(TAG + ' start');
 
       let called = false;
