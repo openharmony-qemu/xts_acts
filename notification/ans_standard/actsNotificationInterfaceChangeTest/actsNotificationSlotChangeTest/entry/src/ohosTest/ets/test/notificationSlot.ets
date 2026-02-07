@@ -34,7 +34,6 @@ export default function notificationSlotTest() {
             done();
           } else {
             console.info(`${TAG} removeAllSlots success`);
-            expect(true).assertTrue();
             done();
           }
         })
