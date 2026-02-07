@@ -21,6 +21,7 @@ import audio from '@ohos.multimedia.audio';
 
 let sessionManager: audio.AudioSessionManager;
 let audioManager: audio.AudioManager;
+let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
 const isDone: boolean = true;
 
 // 创建音频会话管理器
