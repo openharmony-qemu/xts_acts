@@ -564,7 +564,7 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600 START`)
   
         let subscriber
-        const count = 0
+        let count = 0
         let subscribeInfo = {
           events: ["event06"]
         }
@@ -598,7 +598,7 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 START`)
   
         let subscriber
-        const count = 0
+        let count = 0
         let subscribeInfo = {
           events: ["event07"]
         }
