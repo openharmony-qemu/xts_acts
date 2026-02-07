@@ -40,7 +40,6 @@ struct ForegroundBlurStyleDemo {
         .foregroundBlurStyle(BlurStyle.Thin,
           { colorMode: ThemeColorMode.LIGHT, adaptiveColor: AdaptiveColor.DEFAULT, scale: 1.0 })
         .mouseResponseRegion(undefined)
-        .background(undefined)
         .renderGroup(false)
         .renderFit(RenderFit.BOTTOM)
         .sphericalEffect(0.5)

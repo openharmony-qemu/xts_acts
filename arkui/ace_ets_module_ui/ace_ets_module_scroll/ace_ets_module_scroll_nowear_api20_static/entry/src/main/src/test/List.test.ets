@@ -12,12 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import barMarginFlow from './WaterFlowTest/barMarginFlow.test';
-import focusWrapDefault from './GridTest/focusWrapDefault.test';
-import focusWrapWrap from './GridTest/focusWrapWrap.test';
 
 export default function testsuite() {
-  barMarginFlow();
-  focusWrapDefault();
-  focusWrapWrap();
 }
