@@ -4488,6 +4488,163 @@ export default function audioFramework() {
       })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_STATECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_STATECHANGE_0100
+     * @tc.desc   on_off_stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_STATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+        channels: audio.AudioChannel.CHANNEL_2, // 通道。
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0 // 音频采集器标志。
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+      let flag: boolean = false;
+
+      try {
+        audioCapturer.off('stateChange');
+
+        let stateChangeCallback = (state: audio.AudioState) => {
+          if (state == 1) {
+            console.info('audio capturer state is: STATE_PREPARED');
+          }
+          if (state == 2) {
+            console.info('audio capturer state is: STATE_RUNNING');
+          }
+        };
+
+        audioCapturer.on('stateChange', stateChangeCallback);
+
+        audioCapturer.off('stateChange', stateChangeCallback);
+        await audioCapturer.release();
+        flag = true;
+      } catch(error){
+        console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_STATECHANGE_0100 error : ${error.message}, Code:${error.code}`);
+        expect(false).assertTrue();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_0100
+     * @tc.desc   on_off_inputDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+        channels: audio.AudioChannel.CHANNEL_2, // 通道。
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0 // 音频采集器标志。
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+      let flag: boolean = false;
+
+      try {
+        audioCapturer.off('inputDeviceChange');
+
+        let inputDeviceChangeCallback = (deviceChangeInfo: audio.AudioDeviceDescriptors) => {
+          console.info(`inputDevice id: ${deviceChangeInfo[0].id}`);
+          console.info(`inputDevice deviceRole: ${deviceChangeInfo[0].deviceRole}`);
+          console.info(`inputDevice deviceType: ${deviceChangeInfo[0].deviceType}`);
+        };
+
+        audioCapturer.on('inputDeviceChange', inputDeviceChangeCallback);
+
+        audioCapturer.off('inputDeviceChange', inputDeviceChangeCallback);
+        await audioCapturer.release();
+        flag = true;
+      } catch(error){
+        console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_INPUTDEVICECHANGE_0100 error : ${error.message}, Code:${error.code}`);
+        expect(false).assertTrue();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_READDATA_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_READDATA_0100
+     * @tc.desc   on_off_readData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_READDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+        channels: audio.AudioChannel.CHANNEL_2, // 通道。
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0 // 音频采集器标志。
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+      let flag: boolean = false;
+
+      try {
+        audioCapturer.off('readData');
+
+        let readDataCallback = (data: ArrayBuffer) => {
+            console.info(`read data: ${data}`);
+        };
+
+        audioCapturer.on('readData', readDataCallback);
+
+        audioCapturer.off('readData', readDataCallback);
+        await audioCapturer.release();
+        flag = true;
+      } catch(error){
+        console.log(`SUB_MULTIMEDIA_AUDIOCAPTURER_ON_OFF_READDATA_0100 error : ${error.message}, Code:${error.code}`);
+        expect(false).assertTrue();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.desc   isActive - Media - Promise - When stream is NOT playing
@@ -6646,6 +6803,43 @@ export default function audioFramework() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ON_DEVICECHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ON_DEVICECHANGE_0200
+     * @tc.desc   on_off_DeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ON_DEVICECHANGE_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioManager.off('deviceChange');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let deviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info(`device change type : ${deviceChanged.type} `);
+          console.info(`device descriptor size : ${deviceChanged.deviceDescriptors.length} `);
+          console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceRole} `);
+          console.info(`device change descriptor : ${deviceChanged.deviceDescriptors[0].deviceType} `);
+        };
+
+        audioManager.on('deviceChange', deviceChangeCallback);
+
+        audioManager.off('deviceChange', deviceChangeCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ON_DEVICECHANGE_0200 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0100
@@ -6822,6 +7016,41 @@ export default function audioFramework() {
       }
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0600
+     * @tc.desc   on/off AudioRoutingManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioRoutingManager.off('deviceChange');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let deviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+
+        audioRoutingManager.on('deviceChange', audio.DeviceFlag.OUTPUT_DEVICES_FLAG, deviceChangeCallback);
+
+        audioRoutingManager.off('deviceChange', deviceChangeCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_0600 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100
      * @tc.desc   AudioRendererChange - ON_AUDIOCAPTURERCHANGE 401
@@ -6889,6 +7118,76 @@ export default function audioFramework() {
         console.info(`off('volumeChange') Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(Number(error.code)).assertEqual(6800101);
         flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OFF_VOLUMECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OFF_VOLUMECHANGE_0100
+     * @tc.desc   ON_OFF_VOLUMECHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OFF_VOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioVolumeManager.off('volumeChange');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let volumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+          console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
+          console.info(`Volume level: ${volumeEvent.volume} `);
+          console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+        };
+
+        audioVolumeManager.on('volumeChange', volumeChangeCallback);
+
+        audioVolumeManager.off('volumeChange', volumeChangeCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ON_OFF_VOLUMECHANGE_0100 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OFF_STREAMVOLUMECHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OFF_STREAMVOLUMECHANGE_0100
+     * @tc.desc   ON_OFF_STREAMVOLUMECHANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ON_OFF_STREAMVOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let audioVolumeManager = audio.getAudioManager().getVolumeManager();
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioVolumeManager.off('streamVolumeChange');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let streamVolumeChangeCallback = (streamVolumeEvent: audio.StreamVolumeEvent) => {
+          console.info(`StreamUsage of stream: ${streamVolumeEvent.streamUsage} `);
+          console.info(`Volume level: ${streamVolumeEvent.volume} `);
+          console.info(`Whether to updateUI: ${streamVolumeEvent.updateUi} `);
+        };
+
+        audioVolumeManager.on('streamVolumeChange', audio.StreamUsage.STREAM_USAGE_MUSIC, streamVolumeChangeCallback);
+
+        audioVolumeManager.off('streamVolumeChange', streamVolumeChangeCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ON_OFF_STREAMVOLUMECHANGE_0100 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
       }
       expect(flag).assertTrue();
       done();
@@ -6964,6 +7263,39 @@ export default function audioFramework() {
         console.info(`on_off('spatializationEnabledChangeForCurrentDevice') Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(Number(error.code)).assertEqual(6800101);
         flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SPATIALIZATION_MANAGER_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SPATIALIZATION_MANAGER_0300
+     * @tc.desc   on_off_spatializationEnabledChangeForCurrentDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SPATIALIZATION_MANAGER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let audioSpatializationManager: audio.AudioSpatializationManager = audio.getAudioManager().getSpatializationManager();
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioSpatializationManager.off('spatializationEnabledChangeForCurrentDevice');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let spatializationEnabledChangeForCurrentDeviceCallback = (isSpatializationEnabledForCurrentDevice: boolean) => {
+          console.info(`isSpatializationEnabledForCurrentDevice: ${isSpatializationEnabledForCurrentDevice}`);
+        };
+
+        audioSpatializationManager.on('spatializationEnabledChangeForCurrentDevice', spatializationEnabledChangeForCurrentDeviceCallback);
+
+        audioSpatializationManager.off('spatializationEnabledChangeForCurrentDevice', spatializationEnabledChangeForCurrentDeviceCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_SPATIALIZATION_MANAGER_0300 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
       }
       expect(flag).assertTrue();
       done();
