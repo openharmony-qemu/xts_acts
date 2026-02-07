@@ -129,7 +129,6 @@ async function initConfigAndPreparedCallback(sourceType: media.AudioSourceType, 
         reject();
       } else {
         console.info(TAG, 'initConfigAndPreparedCallback  Succeeded in preparing');
-        expect(true).assertTrue();
         resolve();
       }
       done();
@@ -923,7 +922,6 @@ async function getInputSurfaceCallbackNormal() {
         expect().assertFalse();
       } else {
         console.info(TAG, 'Succeeded in doing getInputSurface, surfaceId =' + surfaceId);
-        expect(true).assertTrue();
       }
     });
   } else {
@@ -937,7 +935,6 @@ async function getInputSurfacePromiseNormal() {
     console.info(TAG, 'getInputSurfacePromiseNormal mAvRecord state =' + mAvRecord.state);
     mAvRecord.getInputSurface().then((surfaceId: string) => {
       console.info(TAG, 'Succeeded in getting InputSurface,surfaceID =' + surfaceId);
-      expect(true).assertTrue();
     }).catch((err: BusinessError) => {
       console.error(TAG, ' Failed to get InputSurface and catch error is ' + JSON.stringify(err));
       expect().assertFail();
@@ -957,7 +954,6 @@ function getInputSurfaceCallbackAbnormal(done: Function) {
         expect(err?.code).assertEqual(MediaErrorCode.OPERATE_NOT_PERMIT);
       } else {
         console.info(TAG, 'Succeeded in doing getInputSurface, surfaceId =' + surfaceId);
-        expect(true).assertTrue();
       }
       done();
     });
@@ -972,7 +968,6 @@ async function getInputSurfacePromiseAbnormal(done: Function) {
   if (mAvRecord != null) {
     mAvRecord.getInputSurface().then((surfaceId: string) => {
       console.info(TAG, 'Succeeded in getting getInputSurfacePromiseAbnormal surfaceId =' + surfaceId);
-      expect(true).assertTrue();
     }).catch((err: BusinessError) => {
       console.error(TAG, 'Failed to getInputSurfacePromiseAbnormal and catch error is ' + JSON.stringify(err));
       expect(err?.code).assertEqual(MediaErrorCode.OPERATE_NOT_PERMIT);
@@ -1021,7 +1016,6 @@ async function updateRotationPromiseNormal(rotation: number, done: Function) {
   if (mAvRecord) {
     await mAvRecord.updateRotation(rotation).then(() => {
       console.info(TAG, 'Succeeded in updateRotation');
-      expect(true).assertTrue();
     }).catch((err: BusinessError) => {
       console.error(TAG, 'Failed to updateRotation and catch error is error' + err + JSON.stringify(err));
       expect().assertFail();

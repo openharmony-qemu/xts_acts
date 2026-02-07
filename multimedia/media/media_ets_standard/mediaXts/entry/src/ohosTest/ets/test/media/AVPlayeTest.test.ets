@@ -804,7 +804,6 @@ async function setMediaMutedPromise(src: string | media.AVFileDescriptor, avPlay
     } else {
       console.info(TAG, testName + ' succeed to cancel mute playback.');
     }
-    expect(true).assertTrue();
   }).catch(mediaTestBase.catchCallback);
   done();
 }
@@ -829,7 +828,6 @@ async function setMediaMutedPromiseAbnormal(src: string | media.AVFileDescriptor
     } else {
       console.info(TAG, testName + ' succeed to cancel mute playback.');
     }
-    expect(true).assertTrue();
   }).catch((error: BusinessError) => {
     console.error(TAG, testName + ' Failed to set MediaMuted, code: ' + error.code + ', msg: ' + error.message);
     expect(error.code).assertEqual(MediaErrorCode.PARAMETER_ERROR);
@@ -926,7 +924,6 @@ async function setSuperResolutionPromise(src: string | media.AVFileDescriptor, a
         expect(avPlayer.state).assertEqual(INITIALIZED);
         await avPlayer?.setPlaybackStrategy(strategy).then(() => {
           console.info(TAG, testName + ' succeed to set PlaybackStrategy');
-          expect(true).assertTrue();
         }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         console.info(TAG, testName + ' set PlaybackStrategy end');
         await avPlayer?.prepare();
@@ -1014,7 +1011,6 @@ async function setVideoWindowSizePromise(src: string | media.AVFileDescriptor, a
         expect(avPlayer.state).assertEqual(INITIALIZED);
         await avPlayer?.setPlaybackStrategy(strategy).then(() => {
           console.info(TAG, testName + ' succeed to set PlaybackStrategy');
-          expect(true).assertTrue();
         }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         console.info(TAG, testName + ' set PlaybackStrategy end');
         await avPlayer?.prepare();

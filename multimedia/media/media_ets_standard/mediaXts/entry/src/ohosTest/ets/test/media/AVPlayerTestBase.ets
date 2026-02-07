@@ -570,7 +570,6 @@ export async function idle(src: string | media.AVFileDescriptor, avPlayer: media
     if (typeof (video) != 'undefined') {
       console.info(TAG, testName + ' case createAVPlayer success');
       avPlayer = video;
-      expect(true).assertTrue();
     } else {
       console.error(TAG, testName + ' case createAVPlayer failed');
       expect().assertFail();

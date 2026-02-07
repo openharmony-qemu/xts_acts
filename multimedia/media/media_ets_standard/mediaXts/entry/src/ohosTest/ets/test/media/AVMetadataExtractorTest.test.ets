@@ -43,7 +43,6 @@ function createAVMetadataExtractorCallback(done: Function, testName: string, des
       console.info(TAG,
         testName + ' Succeeded in creating AVMetadataExtractor, fd: ' + mMetadataExtractor.fdSrc.fd + ', offset: ' +
         mMetadataExtractor.fdSrc.offset + ', length: ' + mMetadataExtractor.fdSrc.length);
-      expect(true).assertTrue();
     } else {
       console.error(TAG,
         testName + ' Failed to create AVMetadataExtractor, code: ' + error.code + ', msg: ' + error.message);
@@ -62,7 +61,6 @@ async function createAVMetadataExtractorPromise(done: Function, testName: string
       console.info(TAG,
         testName + ' Succeeded in creating AVMetadataExtractor, fd: ' + mMetadataExtractor.fdSrc.fd + ', offset: ' +
         mMetadataExtractor.fdSrc.offset + ', length: ' + mMetadataExtractor.fdSrc.length);
-      expect(true).assertTrue();
     } else {
       console.info(TAG, testName + ' extractor is undefined.');
       expect().assertFail();
@@ -286,7 +284,6 @@ async function releaseCallback(done: Function, testName: string, descriptor: med
       } else {
         console.info(TAG, testName + ' release AVMetadataExtractor success.');
         mMetadataExtractor = undefined;
-        expect(true).assertTrue();
       }
     });
   }
@@ -302,7 +299,6 @@ async function releasePromise(done: Function, testName: string, descriptor: medi
     await mMetadataExtractor.release().then(() => {
       console.info(TAG, testName + ' release AVMetadataExtractor success.');
       mMetadataExtractor = undefined;
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG,
         testName + ' Failed to release AVMetadataExtractor, code: ' + error.code + ', msg: ' + error.message);
@@ -327,7 +323,6 @@ async function releaseCallbackNoFdSrc(done: Function, testName: string) {
       } else {
         console.info(TAG, testName + ' release AVMetadataExtractor success.');
         mMetadataExtractor = undefined;
-        expect(true).assertTrue();
       }
     });
   }
@@ -342,7 +337,6 @@ async function releasePromiseNoFdSrc(done: Function, testName: string) {
     await mMetadataExtractor.release().then(() => {
       console.info(TAG, testName + ' release AVMetadataExtractor success.');
       mMetadataExtractor = undefined;
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG,
         testName + ' Failed to release AVMetadataExtractor, code: ' + error.code + ', msg: ' + error.message);

@@ -80,7 +80,6 @@ export default function AVPlayerDrmTest() {
       }
       let avPlayer: media.AVPlayer = await media.createAVPlayer();
       avPlayer.setDecryptionConfig(session!, false);
-      expect(true).assertTrue();
       session!.destroy();
       drmMediaKeySystem!.destroy();
       done();

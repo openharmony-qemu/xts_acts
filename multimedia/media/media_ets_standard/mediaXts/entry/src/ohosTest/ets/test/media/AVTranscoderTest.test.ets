@@ -54,7 +54,6 @@ async function createAVTranscoder(done: Function, context: common.UIAbilityConte
       mTranscoder.fdDst = await getFd('output.mp4');
       console.info(TAG, testName + ' Succeeded in creating AVTranscoder, fd: ' + mTranscoder.fdSrc.fd + ', offset: ' +
       mTranscoder.fdSrc.offset + ', length: ' + mTranscoder.fdSrc.length + ', fdDst: ' + mTranscoder.fdDst);
-      expect(true).assertTrue();
     } else {
       console.error(TAG, testName + ' transcoder is undefined.');
       expect().assertFail();
@@ -75,7 +74,6 @@ async function prepareAVTranscoder(done: Function, testName: string) {
   if (mTranscoder !== undefined) {
     await mTranscoder.prepare(avTranscoderConfig).then(() => {
       console.info(TAG, testName + ' prepare success.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect().assertFail();
@@ -93,7 +91,6 @@ async function startAVTranscoder(done: Function, testName: string) {
   if (mTranscoder !== undefined) {
     await mTranscoder.start().then(() => {
       console.info(TAG, testName + ' start AVTranscoder success.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to start AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect(error.code == MediaErrorCode.OPERATE_NOT_PERMIT).assertTrue();
@@ -110,7 +107,6 @@ async function pauseAVTranscoder(done: Function, testName: string) {
   if (mTranscoder !== undefined) {
     await mTranscoder.pause().then(() => {
       console.info(TAG, testName + ' pause AVTranscoder success.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to pause AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect(error.code == MediaErrorCode.OPERATE_NOT_PERMIT).assertTrue();
@@ -127,7 +123,6 @@ async function resumeAVTranscoder(done: Function, testName: string) {
   if (mTranscoder !== undefined) {
     await mTranscoder.resume().then(() => {
       console.info(TAG, testName + ' resume AVTranscoder success.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to resume AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect(error.code == MediaErrorCode.OPERATE_NOT_PERMIT).assertTrue();
@@ -144,7 +139,6 @@ async function cancelAVTranscoder(done: Function, testName: string) {
   if (mTranscoder !== undefined) {
     await mTranscoder.cancel().then(() => {
       console.info(TAG, testName + ' cancel AVTranscoder success.');
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to cancel AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect(error.code == MediaErrorCode.OPERATE_NOT_PERMIT).assertTrue();
@@ -162,7 +156,6 @@ async function releaseAVTranscoder(done: Function, testName: string) {
     await mTranscoder.release().then(() => {
       console.info(TAG, testName + ' release AVTranscoder success.');
       mTranscoder = undefined;
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to release AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect(error.code == MediaErrorCode.OPERATE_NOT_PERMIT).assertTrue();
@@ -219,7 +212,6 @@ async function completeListen(done: Function, testName: string) {
         mTranscoder!.off('complete');
         mTranscoder!.off('progressUpdate');
         await releaseAVTranscoder(done, testName);
-        expect(true).assertTrue();
       });
       mTranscoder.on('error', async (error: BusinessError) => {
         console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
@@ -247,7 +239,6 @@ async function errorListen(done: Function, testName: string, context: common.UIA
     if (mTranscoder !== undefined) {
       mTranscoder.on('error', async (error: BusinessError) => {
         console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
-        expect(true).assertTrue();
       });
       // await createAVTranscoder(done, context, testName);
       mTranscoder.start();

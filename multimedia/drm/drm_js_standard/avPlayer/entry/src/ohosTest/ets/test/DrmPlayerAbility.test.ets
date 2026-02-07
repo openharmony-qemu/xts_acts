@@ -153,7 +153,6 @@ export default function abilityTest() {
             }
             let avPlayer = await media.createAVPlayer();
             avPlayer.setDecryptionConfig(session!, false);
-            expect(1).assertEqual(1);
             session!.destroy();
             drmMediaKeySystem!.destroy();
             done();
@@ -2417,6 +2416,51 @@ export default function abilityTest() {
             console.log("XX DRM_AVPLAYER_2800 uuid is ", drmUuid);
             expect(drmUuid).not().assertUndefined();
             done();
+        });
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2900
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2900
+         * @tc.desc   获取插件name以及uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_2900', Level.LEVEL0, (done:Function) => {
+            try {
+                let drmUuid = drm.getMediaKeySystemUuid('');
+            } catch (err) {
+                console.log("XX DRM_AVPLAYER_2900 failed", err.code);
+                expect(err.code).assertEqual(24700201);
+        });
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_3000
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_3000
+         * @tc.desc   获取插件name以及uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_3000', Level.LEVEL0, (done:Function) => {
+            try {
+                let drmUuid = drm.getMediaKeySystemUuid(null);
+            } catch (err) {
+                console.log("XX DRM_AVPLAYER_3000 failed", err.code);
+                expect(err.code).assertEqual(401);
+        });
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_3100
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_3100
+         * @tc.desc   获取插件name以及uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_3100', Level.LEVEL0, (done:Function) => {
+            try {
+                let drmUuid = drm.getMediaKeySystemUuid(undefined);
+            } catch (err) {
+                console.log("XX DRM_AVPLAYER_3100 failed", err.code);
+                expect(err.code).assertEqual(401);
         });
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100

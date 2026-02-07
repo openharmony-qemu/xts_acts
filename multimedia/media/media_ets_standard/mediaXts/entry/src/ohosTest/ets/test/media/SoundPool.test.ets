@@ -50,7 +50,6 @@ function createSoundPoolCallbackNormal(usage: audio.StreamUsage, maxStreams: num
     } else {
       console.info(TAG, `Succeeded in creating SoundPool callback.`);
       soundPool = soundPool_;
-      expect(true).assertTrue();
     }
     done();
   });
@@ -79,7 +78,6 @@ async function createSoundPoolPromiseNormal(usage: audio.StreamUsage, maxStreams
     if (soundPool_ != null) {
       console.info(TAG, 'Succeeded in creating SoundPool promise.');
       soundPool = soundPool_;
-      expect(true).assertTrue();
     } else {
       console.error(TAG, 'Failed to create SoundPool promise.');
       expect().assertFail();
@@ -102,7 +100,6 @@ async function createSoundPoolPromiseAbnormal(usage: audio.StreamUsage, maxStrea
       expect().assertFail();
     } else {
       console.error(TAG, 'Failed to create SoundPool promise.');
-      expect(true).assertTrue();
     }
     done();
   }, (error: BusinessError) => {
@@ -134,7 +131,6 @@ function loadSoundPoolCallback(usage: audio.StreamUsage, maxStreams: number, don
           expect().assertFail();
         } else {
           console.info(TAG, `Succeeded in loading soundPool` + JSON.stringify(soundId_));
-          expect(true).assertTrue();
         }
         done();
       });
@@ -157,7 +153,6 @@ async function loadSoundPoolPromise(usage: audio.StreamUsage, maxStreams: number
       console.info(TAG, 'uri: ' + uri);
       await soundPool.load(uri).then(async (soundId: number) => {
         console.info(TAG, 'Succeeded in loading uri, soundID is ' + soundId);
-        expect(true).assertTrue();
       }, (err: BusinessError) => {
         console.error(TAG, `Failed to load soundPool errCode is ${err?.code}, errMessage is ${err?.message}`);
         expect().assertFail();
@@ -193,7 +188,6 @@ async function loadSoundPoolWithFdCallback(usage: audio.StreamUsage, maxStreams:
           expect().assertFail();
         } else {
           console.info(TAG, 'Succeeded in loading soundId:' + soundId_);
-          expect(true).assertTrue();
         }
         done();
       });
@@ -223,7 +217,6 @@ async function loadSoundPoolWithFdPromise(usage: audio.StreamUsage, maxStreams: 
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       await soundPool.load(rawFileDescriptor.fd, 0, rawFileDescriptor.length).then(async (soundId: number) => {
         console.info(TAG, 'Succeeded in loading soundPool, soundId is ' + soundId);
-        expect(true).assertTrue();
       }, (err: BusinessError) => {
         console.error(TAG, 'Failed to load soundpool and catch error is ' + err.message);
         expect().assertFail();
@@ -257,7 +250,6 @@ async function playSoundPoolWithParamsPromise(usage: audio.StreamUsage, maxStrea
           console.info(TAG, 'Succeeded in loadComplete, soundId：' + soundId);
           await soundPool?.play(soundId, playParameters).then((streamId: number) => {
             console.info(TAG, 'Succeeded in playing soundPool ,streamId =' + streamId);
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -303,7 +295,6 @@ async function playSoundPoolWithParamsCallback(usage: audio.StreamUsage, maxStre
               reject();
             } else {
               console.info(TAG, 'Succeeded in playing soundPool, streamId:' + streamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -346,7 +337,6 @@ async function playSoundPoolWithoutParamsCallback(usage: audio.StreamUsage, maxS
               reject();
             } else {
               console.info(TAG, 'Succeeded in playing soundPool, streamId:' + streamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -392,7 +382,6 @@ async function stopSoundPoolCallback(usage: audio.StreamUsage, maxStreams: numbe
               reject();
             } else {
               console.info(TAG, 'Succeeded in stopping soundPool');
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -432,7 +421,6 @@ async function stopSoundPoolPromise(usage: audio.StreamUsage, maxStreams: number
           await sleep(SLEEP_TIME_2000);
           await soundPool!.stop(streamId).then(() => {
             console.info(TAG, 'Succeeded in stopping soundPool');
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -479,7 +467,6 @@ async function setLoopNormalCallback(usage: audio.StreamUsage, maxStreams: numbe
               reject();
             } else {
               console.info(TAG, 'Succeeded in setLooping soundPool, streamID:' + streamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -518,7 +505,6 @@ async function setLoopNormalPromise(usage: audio.StreamUsage, maxStreams: number
           await sleep(SLEEP_TIME_2000);
           await soundPool!.setLoop(streamId, 1).then(() => {
             console.info(TAG, 'Succeeded in setLooping soundPool, streamID:' + streamId);
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -566,7 +552,6 @@ async function setPriorityNormalCallback(usage: audio.StreamUsage, maxStreams: n
               reject();
             } else {
               console.info(TAG, 'Succeeded in setPriority soundPool, streamID:' + playStreamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -605,7 +590,6 @@ async function setPriorityNormalPromise(usage: audio.StreamUsage, maxStreams: nu
           await sleep(SLEEP_TIME_2000);
           await soundPool!.setPriority(playStreamId, 1).then(() => {
             console.info(TAG, 'Succeeded in setPriority  soundPool, streamID:' + playStreamId);
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -654,7 +638,6 @@ async function setRateNormalCallback(usage: audio.StreamUsage, maxStreams: numbe
               reject();
             } else {
               console.info(TAG, 'Succeeded in setRate soundPool, streamID:' + playStreamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -694,7 +677,6 @@ async function setRateNormalPromise(usage: audio.StreamUsage, maxStreams: number
           let selectedAudioRendererRate: audio.AudioRendererRate = audio.AudioRendererRate.RENDER_RATE_NORMAL;
           await soundPool!.setRate(playStreamId, selectedAudioRendererRate).then(() => {
             console.info(TAG, 'Succeeded in setRate soundPool, streamID:' + playStreamId);
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -743,7 +725,6 @@ async function setVolumeNormalCallback(usage: audio.StreamUsage, maxStreams: num
               reject();
             } else {
               console.info(TAG, 'Succeeded in setVolume soundPool, streamID:' + streamId);
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -783,7 +764,6 @@ async function setVolumeNormalPromise(usage: audio.StreamUsage, maxStreams: numb
           await sleep(SLEEP_TIME_2000);
           await soundPool!.setVolume(streamId, leftVolume, rightVolume).then(() => {
             console.info(TAG, 'Succeeded in setVolume soundPool, streamID:' + streamId);
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -830,7 +810,6 @@ function unloadSoundPoolCallback(usage: audio.StreamUsage, maxStreams: number, d
               reject();
             } else {
               console.info(TAG, 'Succeeded in unload soundPool');
-              expect(true).assertTrue();
               resolve();
             }
             soundPool?.off('loadComplete');
@@ -868,7 +847,6 @@ async function unloadSoundPoolPromise(usage: audio.StreamUsage, maxStreams: numb
           await sleep(SLEEP_TIME_2000);
           await soundPool!.unload(soundId).then(() => {
             console.info(TAG, 'Succeeded in unload soundPool');
-            expect(true).assertTrue();
             soundPool?.off('loadComplete');
             resolve();
             done();
@@ -914,7 +892,6 @@ async function unloadSoundPoolWithFdCallback(usage: audio.StreamUsage, maxStream
             reject();
           } else {
             console.info(TAG, 'Succeeded in loading soundId:' + soundId_);
-            expect(true).assertTrue();
             resolve();
           }
           done();
@@ -948,7 +925,6 @@ async function unloadSoundPoolWithFdPromise(usage: audio.StreamUsage, maxStreams
         console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
         await soundPool.load(rawFileDescriptor.fd, 0, rawFileDescriptor.length).then(async (soundId: number) => {
           console.info(TAG, 'Succeeded in loading soundPool, soundId is ' + soundId);
-          expect(true).assertTrue();
           resolve();
           done();
         }, (err: BusinessError) => {
@@ -989,7 +965,6 @@ async function releaseSoundPoolCallback(usage: audio.StreamUsage, maxStreams: nu
             reject();
           } else {
             console.info(TAG, 'Succeeded in releasing soundPool');
-            expect(true).assertTrue();
             resolve();
           }
           done();
@@ -1021,7 +996,6 @@ async function releaseSoundPoolPromise(usage: audio.StreamUsage, maxStreams: num
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       await soundPool.release().then(() => {
         console.info(TAG, 'Succeeded in releasing soundPool');
-        expect(true).assertTrue();
       }, (err: BusinessError) => {
         console.error(TAG, 'Failed to release SoundPool and catch error is ' + err.message);
         expect().assertFail();
@@ -1122,7 +1096,6 @@ async function playFinishedListen(usage: audio.StreamUsage, maxStreams: number, 
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       soundPool.on('playFinished', () => {
         console.info(TAG, 'Succeeded in playFinished');
-        expect(true).assertTrue();
       });
       loadSoundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
       await sleep(SLEEP_TIME_500);
@@ -1159,7 +1132,6 @@ async function errorListen(usage: audio.StreamUsage, maxStreams: number, uri: st
       });
       soundPool.load(uri).then((soundId: number) => {
         console.info(TAG, 'Succeeded in loading uri, soundID is ' + soundId);
-        expect(true).assertTrue();
       }).catch((err: BusinessError) => {
         console.error(TAG, `Failed to load soundPool errCode is ${err?.code}, errMessage is ${err?.message}`);
         // expect(err.code == media.AVErrorCode.AVERR_UNSUPPORT_FORMAT).assertTrue();
