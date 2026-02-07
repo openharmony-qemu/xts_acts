@@ -40,6 +40,11 @@ export default function ActsNotificationManagerPublishTest() {
         })
       }
     }
+    afterEach(async function (done) {
+      console.info(`${TAG} afterEach START`)
+      await Utils.sleep(500);
+      console.info(`${TAG} afterEach END`)
+    })
 
 
     /**
