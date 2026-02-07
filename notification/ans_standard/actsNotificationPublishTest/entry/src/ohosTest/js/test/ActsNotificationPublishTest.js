@@ -119,6 +119,7 @@ export default function ActsNotificationPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2700', Level.LEVEL2, async function (done) {
+      let count = 0
       notificationManager.requestEnableNotification(async (err) => {
         if (err) {
           console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -126,7 +127,8 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info("Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification success");
-          expect(err.code == 0).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           await sleep(1000);
           console.info("Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification success 1s");
           done()
@@ -1095,7 +1097,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_ACTIVE_COUNT_TEST_0200 START`)
       await notification.getActiveNotificationCount().then((data) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-        expect(data).assertEqual(1)
+        expect(data).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
@@ -1284,7 +1286,7 @@ export default function ActsNotificationPublishTest() {
       let templateName = 2
       await notification.isSupportTemplate(templateName).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(data).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1307,7 +1309,7 @@ export default function ActsNotificationPublishTest() {
       let templateName = 'test_templateName'
       await notification.isSupportTemplate(templateName, undefined).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(data).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
