@@ -18,6 +18,9 @@ ohos_js_app_suite("ActsBundleMgrStageEtsTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBundleMgrStageEtsTest"
+    deps = [
+    "../sceneProject/bmssceneone:bmsJstest1",
+  ]
   subsystem_name = "bundlemanager"
   part_name = "bundle_framework"
 }

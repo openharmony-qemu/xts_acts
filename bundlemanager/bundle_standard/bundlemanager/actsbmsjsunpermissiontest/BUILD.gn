@@ -18,6 +18,7 @@ ohos_js_hap_suite("ActsBmsJsUnPermissionTest") {
   deps = [
     ":hjs_demo_js_assets",
     ":hjs_demo_resources",
+    "../sceneProject/bmssceneone:bmsJstest1",
   ]
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBmsJsUnPermissionTest"

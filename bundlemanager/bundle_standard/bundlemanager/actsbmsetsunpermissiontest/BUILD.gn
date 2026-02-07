@@ -19,6 +19,7 @@ ohos_js_hap_suite("ActsBmsEtsUnPermissionTest") {
     ":bms_ets_assets",
     ":bms_ets_resources",
     ":bms_ets_test_assets",
+    "../sceneProject/bmssceneone:bmsJstest1",
   ]
   ets2abc = true
   certificate_profile = "./signature/openharmony_sx.p7b"
