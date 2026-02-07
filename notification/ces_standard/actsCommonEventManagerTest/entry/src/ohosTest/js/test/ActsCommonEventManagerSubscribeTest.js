@@ -53,7 +53,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
           } else {
             console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1900 createSubscriber success ${commonEventSubscriber}`)
             subscriber = commonEventSubscriber
-            expect(true).assertTrue()
 
             subscriber.isStickyCommonEvent((err, isSticky) => {
               if (err) {
@@ -83,7 +82,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
                       done()
                     } else {
                       console.info(`abortCommonEvent_9 success`)
-                      expect(true).assertTrue()
+                      expect(err.code).assertEqual(0)
                     }
                   })
                 }
@@ -110,8 +109,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 expect(false).assertTrue()
                 done()
               } else {
+                expect(err.code).assertEqual(0)
                 console.info(`clearAbortCommonEvent_9 success`)
-                expect(true).assertTrue()
               }
             })
 
@@ -122,7 +121,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 done()
               } else {
                 console.info(`finishCommonEvent_1 success `)
-                expect(true).assertTrue()
+
+                expect(err.code).assertEqual(0)
                 done()
               }
             })
@@ -192,7 +192,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
             await subscriber.abortCommonEvent().then(() => {
               console.info(`abortCommonEvent_10 success`)
-              expect(true).assertTrue()
             }).catch((err) => {
               console.info(`abortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
@@ -222,7 +221,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
             await subscriber.finishCommonEvent().then(() => {
               console.info(`finishCommonEvent_10 success `)
-              expect(true).assertTrue()
               done()
             }).catch((err) => {
               console.info(`finishCommonEvent_10 err, error code: ${err.code}, message: ${err.message}`)
@@ -305,8 +303,10 @@ export default function ActsCommonEventManagerSubscribeTest() {
               expect(info.userId).assertEqual(-3)
 
               await subscriber.finishCommonEvent().then(() => {
+                const count = 0
                 console.info(`finishCommonEvent_12 success `)
-                expect(true).assertTrue()
+                count++
+                expect(count).assertEqual(1)
                 done()
               }).catch((err) => {
                 console.info(`finishCommonEvent_12 err, error code: ${err.code}, message: ${err.message}`)
@@ -447,13 +447,15 @@ export default function ActsCommonEventManagerSubscribeTest() {
           console.info(`getAbortCommonEventSync_11 isaborted ${isaborted}`)
           subscriber.clearAbortCommonEventSync()
           subscriber.finishCommonEvent((err) => {
+            count = 0
             if (err) {
               console.info(`finishCommonEvent_11 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             } else {
               console.info(`finishCommonEvent_11 success `)
-              expect(true).assertTrue()
+              count++
+              expect(count).assertEqual(1)
               done()
             }
           })
@@ -482,4 +484,3 @@ export default function ActsCommonEventManagerSubscribeTest() {
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST END`)
   })
 }
-
