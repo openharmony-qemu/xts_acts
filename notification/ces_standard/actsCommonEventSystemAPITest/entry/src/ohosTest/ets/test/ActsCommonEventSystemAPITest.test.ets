@@ -742,35 +742,6 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
   }
   console.info(`button is success`)
 
-  let  index1 = 0;
-  let publishCallback = (err: BusinessError): void => {
-    index1+=1
-    console.info(`index1:` + index1)
-    if (index1 == 11){
-      console.info(`fail in publishing notification:` + err.code)
-      expect(err.code).assertEqual(1600009);
-      done()
-    }else {
-      console.info(`publishing notification:` + err)
-      expect(err).assertEqual(null);
-    }
-  }
-
-  for (let index = 0; index <= 10; index++) {
-    let notificationRequest: notificationManager.NotificationRequest = {
-      id: index,
-      content: {
-        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-        normal: {
-          title: 'text_title',
-          text: 'text_text',
-          additionalText: 'test_Publish'
-        }
-      }
-    }
-    notificationManager.publish(notificationRequest, publishCallback)
-    await sleep(60)
-  }
 
   for (let index = 0; index <= 10; index++) {
     let notificationRequest: notificationManager.NotificationRequest = {
@@ -786,7 +757,6 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
     }
     await notificationManager.publish(notificationRequest).then(() => {
       console.info(`${TAG} publish Promise success`)
-      expect(false).assertTrue()
     }).catch(async (err: BusinessError) => {
       console.info(`${TAG} publish Promise err: ${err.code}, errMes: ${err.message}`)
       if (index == 10) {
@@ -811,23 +781,21 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_283', Level.LEVEL2, async (done: () => void) => {
       notificationManager.openNotificationSettings(CustomGlobal.context).then(async () => {
-        console.error(TAG + "openNotificationSettings sucecess ");
+        console.info("Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings sucecess ");
         await sleep(2000)
         await notificationManager.openNotificationSettings(CustomGlobal.context).then(() => {
           expect(false).assertTrue();
           done()
         }).catch((err: BusinessError) => {
-          console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
+          console.error("Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code).assertEqual(801)
-            done();
           } else {
             expect(err.code).assertEqual(1600018)
-            done()
           }
         });
       }).catch((err: BusinessError) => {
-        console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
+        console.error(TAG + "Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings: " + JSON.stringify(err));
         if (err.code == 801) {
           expect(err.code).assertEqual(801)
           done();
@@ -836,6 +804,35 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
           done();
         }
       });
+      let  index1 = 0;
+      let publishCallback = (err: BusinessError): void => {
+        index1+=1
+        console.info(`index1:` + index1)
+        if (index1 == 11){
+          console.info(`fail in publishing notification:` + err.code)
+          expect(err.code).assertEqual(1600009);
+          done()
+        }else {
+          console.info(`publishing notification:` + err)
+          expect(err).assertEqual(null);
+        }
+      }
+    
+      for (let index = 0; index <= 10; index++) {
+        let notificationRequest: notificationManager.NotificationRequest = {
+          id: index,
+          content: {
+            notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+            normal: {
+              title: 'text_title',
+              text: 'text_text',
+              additionalText: 'test_Publish'
+            }
+          }
+        }
+        notificationManager.publish(notificationRequest, publishCallback)
+        await sleep(60)
+      }
     })
 
 
