@@ -107,7 +107,6 @@ export default function ActsNotificationPublishTest() {
           done()
         }
       })
-      await sleep(500);
       console.info(`${TAG} afterEach END`)
     })
 
