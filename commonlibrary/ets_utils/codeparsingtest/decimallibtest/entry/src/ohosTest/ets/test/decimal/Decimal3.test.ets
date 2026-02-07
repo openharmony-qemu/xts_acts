@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2026 Huawei Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -35,10 +35,9 @@ export default function Decimal3Test() {
       done();
     })
 
-    // ==================== add 参数类型测试 ====================
     /**
      * @tc.name   testAddWithNumber
-     * @tc.number SUB_DECIMAL_ADD_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0100
      * @tc.desc   Testing add with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -61,24 +60,24 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testAddWithString
-     * @tc.number SUB_DECIMAL_ADD_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0200
      * @tc.desc   Testing add with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it('testAddWithString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-        let a: Decimal = new Decimal(10);
-        let result = a.add("5.5");
-        expect(result.toString()).assertEqual("16");
-        expect(result.d.toString()).assertEqual("16");
-        expect(result.e).assertEqual(1);
-        expect(result.s).assertEqual(1);
+      let a: Decimal = new Decimal(10);
+      let result = a.add("5.5");
+      expect(result.toString()).assertEqual("16");
+      expect(result.d.toString()).assertEqual("16");
+      expect(result.e).assertEqual(1);
+      expect(result.s).assertEqual(1);
     })
 
     /**
      * @tc.name   testAddWithDecimal
-     * @tc.number SUB_DECIMAL_ADD_DECIMAL_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0300
      * @tc.desc   Testing add with Decimal parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -102,7 +101,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSubWithNumber
-     * @tc.number SUB_DECIMAL_SUB_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0400
      * @tc.desc   Testing sub with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -125,7 +124,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSubWithString
-     * @tc.number SUB_DECIMAL_SUB_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0500
      * @tc.desc   Testing sub with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -148,7 +147,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMulWithNumber
-     * @tc.number SUB_DECIMAL_MUL_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0600
      * @tc.desc   Testing mul with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -171,7 +170,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMulWithString
-     * @tc.number SUB_DECIMAL_MUL_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0700
      * @tc.desc   Testing mul with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -194,7 +193,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testDivWithNumber
-     * @tc.number SUB_DECIMAL_DIV_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0800
      * @tc.desc   Testing div with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -212,7 +211,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testDivByZero
-     * @tc.number SUB_DECIMAL_DIV_ZERO_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_0900
      * @tc.desc   Testing div by zero
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -222,11 +221,14 @@ export default function Decimal3Test() {
       TAG = "testDivByZero";
       let a: Decimal = new Decimal(10);
       let result = a.div(0);
+      expect(result.d).assertNull();
+      expect(result.s).assertEqual(1);
+      expect(result.e).assertNaN();
     })
 
     /**
      * @tc.name   testModWithNumber
-     * @tc.number SUB_DECIMAL_MOD_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1000
      * @tc.desc   Testing mod with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -249,7 +251,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testModNegative
-     * @tc.number SUB_DECIMAL_MOD_NEGATIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1100
      * @tc.desc   Testing mod with negative number
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -267,7 +269,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testPowWithInteger
-     * @tc.number SUB_DECIMAL_POW_INT_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1200
      * @tc.desc   Testing pow with integer exponent
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -290,7 +292,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testPowWithFraction
-     * @tc.number SUB_DECIMAL_POW_FRACTION_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1300
      * @tc.desc   Testing pow with fractional exponent
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -313,7 +315,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testDividedToIntegerBy
-     * @tc.number SUB_DECIMAL_DIV_TO_INT_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1400
      * @tc.desc   Testing dividedToIntegerBy
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -336,7 +338,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testClampWithinRange
-     * @tc.number SUB_DECIMAL_CLAMP_WITHIN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1500
      * @tc.desc   Testing clamp with value within range
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -359,7 +361,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testClampBelowMin
-     * @tc.number SUB_DECIMAL_CLAMP_BELOW_MIN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1600
      * @tc.desc   Testing clamp with value below minimum
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -382,7 +384,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testClampAboveMax
-     * @tc.number SUB_DECIMAL_CLAMP_ABOVE_MAX_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1700
      * @tc.desc   Testing clamp with value above maximum
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -405,7 +407,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSumWithNumbers
-     * @tc.number SUB_DECIMAL_SUM_NUMBERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1800
      * @tc.desc   Testing static sum with number parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -424,7 +426,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSumWithStrings
-     * @tc.number SUB_DECIMAL_SUM_STRINGS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_1900
      * @tc.desc   Testing static sum with string parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -441,7 +443,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSumWithDecimals
-     * @tc.number SUB_DECIMAL_SUM_DECIMALS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2000
      * @tc.desc   Testing static sum with Decimal parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -463,7 +465,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSumSingleParameter
-     * @tc.number SUB_DECIMAL_SUM_SINGLE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2100
      * @tc.desc   Testing static sum with single parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -482,7 +484,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testSumMixedTypes
-     * @tc.number SUB_DECIMAL_SUM_MIXED_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2200
      * @tc.desc   Testing static sum with mixed type parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -502,7 +504,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxWithNumbers
-     * @tc.number SUB_DECIMAL_MAX_NUMBERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2300
      * @tc.desc   Testing static max with number parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -521,7 +523,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxWithStrings
-     * @tc.number SUB_DECIMAL_MAX_STRINGS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2400
      * @tc.desc   Testing static max with string parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -538,7 +540,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxWithDecimals
-     * @tc.number SUB_DECIMAL_MAX_DECIMALS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2500
      * @tc.desc   Testing static max with Decimal parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -560,7 +562,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxSingleParameter
-     * @tc.number SUB_DECIMAL_MAX_SINGLE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2600
      * @tc.desc   Testing static max with single parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -578,7 +580,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxNegativeNumbers
-     * @tc.number SUB_DECIMAL_MAX_NEGATIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2700
      * @tc.desc   Testing static max with negative numbers
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -597,7 +599,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMaxMixedTypes
-     * @tc.number SUB_DECIMAL_MAX_MIXED_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2800
      * @tc.desc   Testing static max with mixed type parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -617,7 +619,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinWithNumbers
-     * @tc.number SUB_DECIMAL_MIN_NUMBERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_2900
      * @tc.desc   Testing static min with number parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -636,7 +638,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinWithStrings
-     * @tc.number SUB_DECIMAL_MIN_STRINGS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3000
      * @tc.desc   Testing static min with string parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -655,7 +657,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinWithDecimals
-     * @tc.number SUB_DECIMAL_MIN_DECIMALS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3100
      * @tc.desc   Testing static min with Decimal parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -677,7 +679,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinSingleParameter
-     * @tc.number SUB_DECIMAL_MIN_SINGLE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3200
      * @tc.desc   Testing static min with single parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -694,7 +696,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinNegativeNumbers
-     * @tc.number SUB_DECIMAL_MIN_NEGATIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3300
      * @tc.desc   Testing static min with negative numbers
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -711,7 +713,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testMinMixedTypes
-     * @tc.number SUB_DECIMAL_MIN_MIXED_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3400
      * @tc.desc   Testing static min with mixed type parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -729,7 +731,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLogWithNumber
-     * @tc.number SUB_DECIMAL_LOG_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3500
      * @tc.desc   Testing log with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -749,7 +751,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLogWithString
-     * @tc.number SUB_DECIMAL_LOG_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3600
      * @tc.desc   Testing log with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -769,7 +771,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLogOfOne
-     * @tc.number SUB_DECIMAL_LOG_ONE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3700
      * @tc.desc   Testing log of 1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -789,7 +791,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLog2WithNumber
-     * @tc.number SUB_DECIMAL_LOG2_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3800
      * @tc.desc   Testing static log2 with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -808,7 +810,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLog2WithString
-     * @tc.number SUB_DECIMAL_LOG2_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_3900
      * @tc.desc   Testing static log2 with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -827,7 +829,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLog10WithNumber
-     * @tc.number SUB_DECIMAL_LOG10_NUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4000
      * @tc.desc   Testing static log10 with number parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -846,7 +848,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testLog10WithString
-     * @tc.number SUB_DECIMAL_LOG10_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4100
      * @tc.desc   Testing static log10 with string parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -865,7 +867,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testAtan2WithNumbers
-     * @tc.number SUB_DECIMAL_ATAN2_NUMBERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4200
      * @tc.desc   Testing static atan2 with number parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -881,7 +883,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testAtan2WithStrings
-     * @tc.number SUB_DECIMAL_ATAN2_STRINGS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4300
      * @tc.desc   Testing static atan2 with string parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -897,7 +899,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testHypotWithNumbers
-     * @tc.number SUB_DECIMAL_HYPOT_NUMBERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4400
      * @tc.desc   Testing static hypot with number parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -916,7 +918,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testHypotWithStrings
-     * @tc.number SUB_DECIMAL_HYPOT_STRINGS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4500
      * @tc.desc   Testing static hypot with string parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -935,7 +937,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testHypotWithDecimals
-     * @tc.number SUB_DECIMAL_HYPOT_DECIMALS_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4600
      * @tc.desc   Testing static hypot with Decimal parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -956,7 +958,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testHypotSingleParameter
-     * @tc.number SUB_DECIMAL_HYPOT_SINGLE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4700
      * @tc.desc   Testing static hypot with single parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -975,7 +977,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testHypotMultipleParameters
-     * @tc.number SUB_DECIMAL_HYPOT_MULTIPLE_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4800
      * @tc.desc   Testing static hypot with multiple parameters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -991,7 +993,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundUp
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_4900
      * @tc.desc   Testing toDecimalPlaces with ROUND_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1011,7 +1013,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundDown
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_DOWN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5000
      * @tc.desc   Testing toDecimalPlaces with ROUND_DOWN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1030,7 +1032,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundCeiling
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_CEILING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5100
      * @tc.desc   Testing toDecimalPlaces with ROUND_CEILING mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1050,7 +1052,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundCeilingNegative
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_CEILING_NEG_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5200
      * @tc.desc   Testing toDecimalPlaces with ROUND_CEILING mode on negative number
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1070,7 +1072,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundFloor
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_FLOOR_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5300
      * @tc.desc   Testing toDecimalPlaces with ROUND_FLOOR mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1090,7 +1092,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundFloorNegative
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_FLOOR_NEG_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5400
      * @tc.desc   Testing toDecimalPlaces with ROUND_FLOOR mode on negative number
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1110,7 +1112,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundHalfUp
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_HALF_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5500
      * @tc.desc   Testing toDecimalPlaces with ROUND_HALF_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1130,7 +1132,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundHalfDown
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_HALF_DOWN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5600
      * @tc.desc   Testing toDecimalPlaces with ROUND_HALF_DOWN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1150,7 +1152,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundHalfEven
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_HALF_EVEN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5700
      * @tc.desc   Testing toDecimalPlaces with ROUND_HALF_EVEN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1170,7 +1172,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundHalfCeiling
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_HALF_CEILING_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5800
      * @tc.desc   Testing toDecimalPlaces with ROUND_HALF_CEILING mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1190,7 +1192,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesRoundHalfFloor
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_ROUND_HALF_FLOOR_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_5900
      * @tc.desc   Testing toDecimalPlaces with ROUND_HALF_FLOOR mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1210,7 +1212,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToDecimalPlacesEuclidean
-     * @tc.number SUB_DECIMAL_TO_DECIMAL_PLACES_EUCLIDEAN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6000
      * @tc.desc   Testing toDecimalPlaces with EUCLIDEAN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1230,7 +1232,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToSignificantDigitsRoundUp
-     * @tc.number SUB_DECIMAL_TO_SIG_DIGITS_ROUND_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6100
      * @tc.desc   Testing toSignificantDigits with ROUND_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1250,7 +1252,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToSignificantDigitsRoundDown
-     * @tc.number SUB_DECIMAL_TO_SIG_DIGITS_ROUND_DOWN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6200
      * @tc.desc   Testing toSignificantDigits with ROUND_DOWN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1270,7 +1272,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToSignificantDigitsRoundHalfUp
-     * @tc.number SUB_DECIMAL_TO_SIG_DIGITS_ROUND_HALF_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6300
      * @tc.desc   Testing toSignificantDigits with ROUND_HALF_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1290,7 +1292,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToNearestRoundUp
-     * @tc.number SUB_DECIMAL_TO_NEAREST_ROUND_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6400
      * @tc.desc   Testing toNearest with ROUND_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1310,7 +1312,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToNearestRoundDown
-     * @tc.number SUB_DECIMAL_TO_NEAREST_ROUND_DOWN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6500
      * @tc.desc   Testing toNearest with ROUND_DOWN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1330,7 +1332,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToNearestRoundHalfUp
-     * @tc.number SUB_DECIMAL_TO_NEAREST_ROUND_HALF_UP_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6600
      * @tc.desc   Testing toNearest with ROUND_HALF_UP mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1350,7 +1352,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToNearestRoundHalfDown
-     * @tc.number SUB_DECIMAL_TO_NEAREST_ROUND_HALF_DOWN_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6700
      * @tc.desc   Testing toNearest with ROUND_HALF_DOWN mode
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1368,7 +1370,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToFractionValid
-     * @tc.number SUB_DECIMAL_TO_FRACTION_VALID_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6800
      * @tc.desc   Testing toFraction with valid parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1393,7 +1395,7 @@ export default function Decimal3Test() {
 
     /**
      * @tc.name   testToFractionEmptyString
-     * @tc.number SUB_DECIMAL_TO_FRACTION_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_6900
      * @tc.desc   Testing toFraction with empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
