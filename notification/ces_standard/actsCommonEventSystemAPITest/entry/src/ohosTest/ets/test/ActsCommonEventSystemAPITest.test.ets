@@ -32,7 +32,11 @@ export default function ActsCommonEventSystemAPITest() {
 describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
-
+    afterEach(async (done: Function) => {
+      console.info(`${TAG} afterEach START`)
+      await sleep(1000)
+      console.info(`${TAG} afterEach END`)
+    })
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_5000
      * @tc.number Sub_Notification_Ans_Publish_Publish_5000
