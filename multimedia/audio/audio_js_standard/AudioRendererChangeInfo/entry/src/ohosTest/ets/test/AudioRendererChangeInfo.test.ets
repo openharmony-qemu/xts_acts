@@ -3710,7 +3710,7 @@ export default function audioRendererChange() {
       try {
         audioRenderer.off('stateChange');
 
-        let stateChangeCallback = (state: audio.AudioState) => {
+        let stateChangeCallback = (state: ESObject) => {
           if (state == 1) {
             console.info('audio renderer state is: STATE_PREPARED');
           }

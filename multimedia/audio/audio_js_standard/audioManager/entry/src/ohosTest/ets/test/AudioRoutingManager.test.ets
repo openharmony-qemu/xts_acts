@@ -739,14 +739,14 @@ export default function audioRoutingManager() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
-     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
      * @tc.desc   On/Off prefer output device
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_ON_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
       let flag: boolean = false;
       try {
@@ -765,7 +765,7 @@ export default function audioRoutingManager() {
         audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo', preferOutputDeviceChangeForRendererInfoCallback);
         flag = true;
       } catch (e) {
-        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400 FAIL: ${e.message},Code:${e.code}`);
+        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400 FAIL: ${e.message},Code:${e.code}`);
         expect(false).assertTrue();
         done();
       }
