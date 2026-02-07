@@ -80,7 +80,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_3850', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
-        let count :numner = 0
+        let count :number = 0
         let ctx: common.UIAbilityContext | undefined = AppStorage.get('ctx');
         notificationManager.requestEnableNotification(ctx).then(() => {
          let basicContent: notificationManager.NotificationBasicContent = {
@@ -145,7 +145,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_3950', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
-        let count :numner = 0
+        let count :number = 0
         let longContentText: notificationManager.NotificationLongTextContent = {
             title: "test_title",
             text: "test_text",
@@ -197,7 +197,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4050', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
-        let count :numner = 0
+        let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -246,7 +246,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4150', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
-        let count :numner = 0
+        let count :number = 0
         let multiLineContent: notificationManager.NotificationMultiLineContent = {
             title: "test_title",
             text: "test_text",
@@ -297,7 +297,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4250', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
-        let count :numner = 0
+        let count :number = 0
         let agentInfo: wantagent.WantAgentInfo = {
             wants: [
                 {
@@ -373,7 +373,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4350', Level.LEVEL1, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
-        let count :numner = 0
+        let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -431,7 +431,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4450', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
-        let count :numner = 0
+        let count :number = 0
         let options: notificationManager.DistributedOptions = {
             isDistributed: false,
             supportDisplayDevices: ["0"],
@@ -486,7 +486,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4550', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
-        let count :numner = 0
+        let count :number = 0
         let picture_opts: image.InitializationOptions  = {
             size: {
             height: 25,
