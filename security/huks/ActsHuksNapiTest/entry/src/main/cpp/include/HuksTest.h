@@ -16,8 +16,8 @@
 #ifndef ACTSHUKSNAPITEST_HUKS_TEST_H
 #define ACTSHUKSNAPITEST_HUKS_TEST_H
 
-#include "napi/native_api.h"
 #include <functional>
+#include "napi/native_api.h"
 
 constexpr int ARG_INDEX = 0;
 constexpr int DEFAULT_ARG = -1;
@@ -43,7 +43,7 @@ inline bool TryGetInt32Value(napi_env env, napi_value arg, int32_t* result)
     if (status != napi_ok || valuetype != napi_number) {
         return false;
     }
-    
+
     status = napi_get_value_int32(env, arg, result);
     return (status == napi_ok);
 }
@@ -57,7 +57,7 @@ inline int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, 
     if (status != napi_ok || argc <= index) {
         return defaultValue;
     }
-    
+
     int32_t value;
     return TryGetInt32Value(env, args[index], &value) ? value : defaultValue;
 }
