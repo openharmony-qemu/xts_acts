@@ -210,51 +210,69 @@ static void HksFree(void* ptr)
     }
 }
 
+// State structure for SM2 update loop
+struct Sm2UpdateLoopState {
+    struct OH_Huks_Blob* inDataSeg;
+    uint8_t* lastPtr;
+    struct OH_Huks_Blob* outData;
+    uint8_t** cur;
+    bool* isFinished;
+};
+
 // Helper function: Process SM2 update loop
 static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
                                            const struct OH_Huks_ParamSet* paramSet,
                                            uint32_t purpose,
-                                           struct OH_Huks_Blob* inDataSeg,
-                                           uint8_t* lastPtr,
-                                           struct OH_Huks_Blob* outData,
-                                           uint8_t** cur,
-                                           bool* isFinished)
+                                           struct Sm2UpdateLoopState* state)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
     struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
 
-    while (inDataSeg->data <= lastPtr) {
-        if (inDataSeg->data + MAX_UPDATE_SIZE <= lastPtr) {
-            outDataSeg.size = MAX_OUTDATA_SIZE;
-            if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-                outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
-                if (outDataSeg.data == nullptr) {
-                    ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                    return ret;
-                }
-            }
-            ret = OH_Huks_UpdateSession(handle, paramSet, inDataSeg, &outDataSeg);
-            if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-                HksFree(outDataSeg.data);
-                return ret;
-            }
-            if (outDataSeg.size > 0 && *cur != nullptr) {
-                if (memcpy_s(*cur, outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
-                    HksFree(outDataSeg.data);
-                    ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                    return ret;
-                }
-                *cur += outDataSeg.size;
-                outData->size += outDataSeg.size;
-            }
-            HksFree(outDataSeg.data);
-            inDataSeg->data += MAX_UPDATE_SIZE;
-        } else {
-            *isFinished = true;
-            inDataSeg->size = lastPtr - inDataSeg->data + 1;
+    while (state->inDataSeg->data <= state->lastPtr) {
+        // 早退出：检查是否到达最后一段
+        if (state->inDataSeg->data + MAX_UPDATE_SIZE > state->lastPtr) {
+            *(state->isFinished) = true;
+            state->inDataSeg->size = state->lastPtr - state->inDataSeg->data + 1;
             break;
         }
+
+        // 正常处理逻辑
+        outDataSeg.size = MAX_OUTDATA_SIZE;
+        bool needEncryptDecrypt = (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT);
+
+        if (needEncryptDecrypt) {
+            outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
+            if (outDataSeg.data == nullptr) {
+                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+                return ret;
+            }
+        }
+
+        ret = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &outDataSeg);
+        if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            HksFree(outDataSeg.data);
+            return ret;
+        }
+
+        // 早退出：如果没有数据则跳过复制
+        if (outDataSeg.size == 0 || *(state->cur) == nullptr) {
+            HksFree(outDataSeg.data);
+            state->inDataSeg->data += MAX_UPDATE_SIZE;
+            continue;
+        }
+
+        // 提取 memcpy_s 调用到更浅的层次
+        if (memcpy_s(*(state->cur), state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
+            HksFree(outDataSeg.data);
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+
+        *(state->cur) += outDataSeg.size;
+        state->outData->size += outDataSeg.size;
+        HksFree(outDataSeg.data);
+        state->inDataSeg->data += MAX_UPDATE_SIZE;
     }
 
     return ret;
@@ -325,7 +343,10 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
     inDataSeg.size = MAX_UPDATE_SIZE;
     bool isFinished = false;
 
-    ret = ProcessSm2UpdateLoop(handle, paramSet, purpose, &inDataSeg, lastPtr, outData, &cur, &isFinished);
+    struct Sm2UpdateLoopState state = {
+        .inDataSeg = &inDataSeg, .lastPtr = lastPtr, .outData = outData, .cur = &cur, .isFinished = &isFinished
+    };
+    ret = ProcessSm2UpdateLoop(handle, paramSet, purpose, &state);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }

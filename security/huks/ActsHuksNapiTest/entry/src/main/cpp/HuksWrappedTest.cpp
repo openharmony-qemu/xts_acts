@@ -37,6 +37,7 @@ static uint8_t NONCE[NONCE_SIZE] = "hahahahahah";
 
 static const uint32_t AEAD_TAG_SIZE = 16;
 static const uint32_t X25519_256_SIZE = 256;
+static const uint32_t BITS_PER_BYTE = 8; // Bits per byte constant for key size conversion
 
 // Structure definition
 struct HksImportWrappedKeyTestParams {
@@ -197,7 +198,7 @@ static inline void HUKS_FREE_BLOB(struct OH_Huks_Blob& blob)
 // Helper function: Convert key size from bits to bytes (G.PRE.02-CPP)
 static inline uint32_t OH_HUKS_KEY_BYTES(uint32_t keySize)
 {
-    return (keySize + 7) / 8;
+    return (keySize + BITS_PER_BYTE - 1) / BITS_PER_BYTE;
 }
 
 static OH_Huks_Result

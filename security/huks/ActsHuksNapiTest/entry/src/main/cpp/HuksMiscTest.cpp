@@ -252,19 +252,11 @@ static void* HksMalloc(size_t size)
     return malloc(size);
 }
 
-// ==================== 测试函数 ====================
+// ==================== 常量验证辅助函数 ====================
 
-/**
- * @tc.name   SecurityHuksNapiMisc0100
- * @tc.number Security_HUKS_NAPI_Misc_0100
- * @tc.desc   misc test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-int SecurityHuksNapiMisc0100()
+// Helper function: Verify digest algorithm constants
+static int VerifyDigestConstants()
 {
-    // Verify digest constants
     if (((uint32_t)OH_HUKS_DIGEST_NONE != DIGEST_NONE_VALUE) || ((uint32_t)OH_HUKS_DIGEST_MD5 != DIGEST_MD5_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SM3 != DIGEST_SM3_VALUE) || ((uint32_t)OH_HUKS_DIGEST_SHA1 != DIGEST_SHA1_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SHA224 != DIGEST_SHA224_VALUE) ||
@@ -273,8 +265,13 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_DIGEST_SHA512 != DIGEST_SHA512_VALUE)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify padding constants
+// Helper function: Verify padding and mode constants
+static int VerifyPaddingAndModeConstants()
+{
+    // Padding constants
     if (((uint32_t)OH_HUKS_PADDING_NONE != PADDING_NONE_VALUE) ||
         ((uint32_t)OH_HUKS_PADDING_OAEP != PADDING_OAEP_VALUE) ||
         ((uint32_t)OH_HUKS_PADDING_PSS != PADDING_PSS_VALUE) ||
@@ -284,14 +281,19 @@ int SecurityHuksNapiMisc0100()
         return -1;
     }
 
-    // Verify mode constants
+    // Mode constants
     if (((uint32_t)OH_HUKS_MODE_ECB != MODE_ECB_VALUE) || ((uint32_t)OH_HUKS_MODE_CBC != MODE_CBC_VALUE) ||
         ((uint32_t)OH_HUKS_MODE_CTR != MODE_CTR_VALUE) || ((uint32_t)OH_HUKS_MODE_OFB != MODE_OFB_VALUE) ||
         ((uint32_t)OH_HUKS_MODE_CCM != MODE_CCM_VALUE) || ((uint32_t)OH_HUKS_MODE_GCM != MODE_GCM_VALUE)) {
         return -1;
     }
 
-    // Verify key purpose constants
+    return 0;
+}
+
+// Helper function: Verify key purpose constants
+static int VerifyKeyPurposeConstants()
+{
     if (((uint32_t)OH_HUKS_KEY_PURPOSE_ENCRYPT != KEY_PURPOSE_ENCRYPT_VALUE) ||
         ((uint32_t)OH_HUKS_KEY_PURPOSE_DECRYPT != KEY_PURPOSE_DECRYPT_VALUE) ||
         ((uint32_t)OH_HUKS_KEY_PURPOSE_SIGN != KEY_PURPOSE_SIGN_VALUE) ||
@@ -303,8 +305,12 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_KEY_PURPOSE_AGREE != KEY_PURPOSE_AGREE_VALUE)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify key size constants (RSA, ECC, AES, DH, SM2/SM4)
+// Helper function: Verify key size constants
+static int VerifyKeySizeConstants()
+{
     if (((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != RSA_KEY_SIZE_512) ||
         ((uint32_t)OH_HUKS_RSA_KEY_SIZE_768 != RSA_KEY_SIZE_768) ||
         ((uint32_t)OH_HUKS_RSA_KEY_SIZE_1024 != RSA_KEY_SIZE_1024) ||
@@ -326,8 +332,12 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_SM4_KEY_SIZE_128 != SM4_KEY_SIZE_128)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify algorithm constants
+// Helper function: Verify algorithm constants
+static int VerifyAlgorithmConstants()
+{
     if (((uint32_t)OH_HUKS_ALG_RSA != ALG_RSA_VALUE) || ((uint32_t)OH_HUKS_ALG_ECC != ALG_ECC_VALUE) ||
         ((uint32_t)OH_HUKS_ALG_DSA != ALG_DSA_VALUE) || ((uint32_t)OH_HUKS_ALG_AES != ALG_AES_VALUE) ||
         ((uint32_t)OH_HUKS_ALG_HMAC != ALG_HMAC_VALUE) || ((uint32_t)OH_HUKS_ALG_HKDF != ALG_HKDF_VALUE) ||
@@ -337,8 +347,12 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_ALG_SM3 != ALG_SM3_VALUE) || ((uint32_t)OH_HUKS_ALG_SM4 != ALG_SM4_VALUE)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify other enum constants (unwrap, key generate type, key flag, storage, key type)
+// Helper function: Verify other enum constants
+static int VerifyOtherEnumConstants()
+{
     if (((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING !=
          UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING_VALUE) ||
         ((uint32_t)OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING != UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_VALUE) ||
@@ -356,8 +370,12 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_KEY_TYPE_KEY_PAIR != KEY_TYPE_KEY_PAIR_VALUE)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify error code, tag type, user auth, challenge, and secure sign constants
+// Helper function: Verify error code and tag type constants
+static int VerifyErrorCodeConstants()
+{
     if (((uint32_t)OH_HUKS_SUCCESS != SUCCESS_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_PERMISSION_FAIL != ERR_CODE_PERMISSION_FAIL_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT != ERR_CODE_ILLEGAL_ARGUMENT_VALUE) ||
@@ -397,8 +415,12 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE)) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify tag constants (basic tags, attestation tags, key management tags)
+// Helper function: Verify tag constants
+static int VerifyTagConstants()
+{
     if (((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | TAG_ALGORITHM_ID)) ||
         ((uint32_t)OH_HUKS_TAG_PURPOSE != (OH_HUKS_TAG_TYPE_UINT | TAG_PURPOSE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_SIZE_ID)) ||
@@ -456,8 +478,12 @@ int SecurityHuksNapiMisc0100()
          (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID))) {
         return -1;
     }
+    return 0;
+}
 
-    // Verify struct field sizes
+// Helper function: Verify struct field sizes
+static int VerifyStructSizes()
+{
     struct OH_Huks_Result result;
     struct OH_Huks_Blob blob;
     struct OH_Huks_Param param;
@@ -504,6 +530,49 @@ int SecurityHuksNapiMisc0100()
         (sizeof(keyMaterial25519.pubKeySize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterial25519.priKeySize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterial25519.reserved) != sizeof(uint32_t))) {
+        return -1;
+    }
+
+    return 0;
+}
+
+// ==================== 测试函数 ====================
+
+/**
+ * @tc.name   SecurityHuksNapiMisc0100
+ * @tc.number Security_HUKS_NAPI_Misc_0100
+ * @tc.desc   misc test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SecurityHuksNapiMisc0100()
+{
+    if (VerifyDigestConstants() != 0) {
+        return -1;
+    }
+    if (VerifyPaddingAndModeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyKeyPurposeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyKeySizeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyAlgorithmConstants() != 0) {
+        return -1;
+    }
+    if (VerifyOtherEnumConstants() != 0) {
+        return -1;
+    }
+    if (VerifyErrorCodeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyStructSizes() != 0) {
         return -1;
     }
 

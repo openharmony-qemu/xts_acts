@@ -33,6 +33,8 @@ namespace Acts {
 namespace Huks {
 
 // Constants and test data
+static const uint32_t ATTESTATION_COMMON_PARAM_COUNT = 5; // Attestation parameter count
+
 #define SEC_INFO_DATA "hi_security_level_info"
 #define CHALLENGE_DATA "hi_challenge_data"
 #define VERSION_DATA "hi_os_version_data"
@@ -361,7 +363,7 @@ static int InitAttestationDataAndGenerateKey(struct OH_Huks_Blob* g_secInfo,
     OH_LOG_INFO(LOG_APP, "[Step 1] TestGenerateKey SUCCEEDED");
 
     // Step 2: Generate ParamSet
-    ret = GenerateParamSet(paramSet, g_commonParams, 5);
+    ret = GenerateParamSet(paramSet, g_commonParams, ATTESTATION_COMMON_PARAM_COUNT);
     OH_LOG_INFO(LOG_APP, "[Step 2] GenerateParamSet result: errorCode=%{public}d", ret.errorCode);
 
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -479,7 +481,7 @@ int SecurityHuksNapiAttest0100()
         static struct OH_Huks_Blob g_version;
         static const struct OH_Huks_Blob g_keyAlias = { sizeof(ALIAS),
                                                         reinterpret_cast<uint8_t*>(const_cast<char*>(ALIAS)) };
-        static struct OH_Huks_Param g_commonParams[5];
+        static struct OH_Huks_Param g_commonParams[ATTESTATION_COMMON_PARAM_COUNT];
 
         struct OH_Huks_ParamSet* paramSet = nullptr;
         if (InitAttestationDataAndGenerateKey(
