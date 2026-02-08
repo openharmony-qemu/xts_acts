@@ -55,6 +55,7 @@
 #define PARAM_DURATION_F2 (-2)
 #define PARAM_DURATION 10000
 #define PARAM_DURATION_10000 10000
+#define PARAM_DURATION_100 100
 #define PARAM_DURATION_33333333 33333333
 #define PARAM_0666 0666
 #define PARAM_0666 0666
@@ -2756,8 +2757,8 @@ void seekAvPlayerStateTest(OH_AVPlayer *player, AVPlayerSeekMode seekMode, OH_AV
     }
 
     std::this_thread::sleep_for(std::chrono::milliseconds(g_gPlaytime));
-    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_10000, seekMode);
-    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_10000, ret);
+    ret = OH_AVPlayer_Seek(player, PARAM_DURATION_100, seekMode);
+    LOG("call OH_AVPlayer_Seek value:%{public}d  mode:AV_SEEK_CLOSEST  ret:%{public}d", PARAM_DURATION_100, ret);
     if (ret != errorCode) {
         napi_throw_error((screenCaptureEnv), nullptr, "error : expect OH_AVPlayer_Seek is 3");
     }
