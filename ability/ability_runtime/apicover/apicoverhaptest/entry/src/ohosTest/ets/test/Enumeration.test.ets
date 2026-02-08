@@ -883,27 +883,27 @@ export default function ApiCoverTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2000
-     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2000
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2600
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2600
      * @tc.desc   Test abilityConstant PrepareTermination.TERMINATE_IMMEDIATELY.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_AbilityConstant_2000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_AbilityConstant_2600', Level.LEVEL0, async (done: Function) => {
       expect(0).assertEqual(abilityConstant.PrepareTermination.TERMINATE_IMMEDIATELY);
       done();
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2100
-     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2100
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2700
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2700
      * @tc.desc   Test abilityConstant PrepareTermination.CANCEL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_AbilityConstant_2100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_AbilityConstant_2700', Level.LEVEL0, async (done: Function) => {
       expect(1).assertEqual(abilityConstant.PrepareTermination.CANCEL);
       done();
     })
