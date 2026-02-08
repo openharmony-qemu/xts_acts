@@ -278,48 +278,53 @@ static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
     return ret;
 }
 
+// Structure to encapsulate SM2 finish session state
+struct Sm2FinishSessionState {
+    uint32_t purpose;
+    const struct OH_Huks_Blob* inDataSeg;
+    struct OH_Huks_Blob* outData;
+    uint8_t* cur;
+};
+
 // Helper function: Process SM2 finish session
 static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
                                               const struct OH_Huks_ParamSet* paramSet,
-                                              uint32_t purpose,
-                                              const struct OH_Huks_Blob* inDataSeg,
-                                              struct OH_Huks_Blob* outData,
-                                              uint8_t* cur)
+                                              struct Sm2FinishSessionState* state)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
     struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
 
-    if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
+    if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
         if (outDataSeg.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
     } else {
-        outDataSeg.data = cur;
+        outDataSeg.data = state->cur;
     }
 
-    ret = OH_Huks_FinishSession(handle, paramSet, inDataSeg, &outDataSeg);
+    ret = OH_Huks_FinishSession(handle, paramSet, state->inDataSeg, &outDataSeg);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
+        if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
             HksFree(outDataSeg.data);
         }
         return ret;
     }
 
-    if (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-        if (outDataSeg.size > 0 && cur != nullptr) {
-            if (memcpy_s(cur, outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
+    if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
+        if (outDataSeg.size > 0 && state->cur != nullptr) {
+            if (memcpy_s(state->cur, state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
                 HksFree(outDataSeg.data);
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }
-            outData->size += outDataSeg.size;
+            state->outData->size += outDataSeg.size;
         }
         HksFree(outDataSeg.data);
     } else {
-        outData->size += outDataSeg.size;
+        state->outData->size += outDataSeg.size;
     }
 
     return ret;
@@ -351,7 +356,11 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
         return ret;
     }
 
-    ret = ProcessSm2FinishSession(handle, paramSet, purpose, &inDataSeg, outData, cur);
+    struct Sm2FinishSessionState finishState = {
+        .purpose = purpose, .inDataSeg = &inDataSeg, .outData = outData, .cur = cur
+    };
+
+    ret = ProcessSm2FinishSession(handle, paramSet, &finishState);
     return ret;
 }
 
@@ -464,30 +473,35 @@ static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob* keyAlias,
     return ret;
 }
 
+// Structure to hold export and import key parameters
+struct ExportImportKeyParams {
+    const struct OH_Huks_Blob* keyAlias;
+    const struct OH_Huks_Blob* importKeyAlias;
+    struct OH_Huks_ParamSet* genParamSet;
+    uint32_t verifyIndex;
+    struct OH_Huks_Blob* publicKey;
+    struct OH_Huks_ParamSet** verifyParamSet;
+};
+
 // Helper function: Export public key and import for verify
-static OH_Huks_Result ExportAndImportKeyForVerify(const struct OH_Huks_Blob* keyAlias,
-                                                  const struct OH_Huks_Blob* importKeyAlias,
-                                                  struct OH_Huks_ParamSet* genParamSet,
-                                                  const uint32_t verifyIndex,
-                                                  struct OH_Huks_Blob* publicKey,
-                                                  struct OH_Huks_ParamSet** verifyParamSet)
+static OH_Huks_Result ExportAndImportKeyForVerify(const struct ExportImportKeyParams* params)
 {
-    OH_Huks_Result ret = OH_Huks_ExportPublicKeyItem(keyAlias, genParamSet, publicKey);
+    OH_Huks_Result ret = OH_Huks_ExportPublicKeyItem(params->keyAlias, params->genParamSet, params->publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    ret = InitParamSet(verifyParamSet,
-                       g_verifyParamsTest[verifyIndex].params,
-                       sizeof(g_verifyParamsTest[verifyIndex].params) / sizeof(OH_Huks_Param));
+    ret = InitParamSet(params->verifyParamSet,
+                       g_verifyParamsTest[params->verifyIndex].params,
+                       sizeof(g_verifyParamsTest[params->verifyIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    ret = OH_Huks_ImportKeyItem(importKeyAlias, *verifyParamSet, publicKey);
+    ret = OH_Huks_ImportKeyItem(params->importKeyAlias, *params->verifyParamSet, params->publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        ret.errorCode =
-            ((ret.errorCode == g_verifyParamsTest[verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
+        ret.errorCode = ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
+                                                                                           : ret.errorCode);
     }
     return ret;
 }
@@ -569,8 +583,14 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
         }
 
         /* 3. Export Public Key and Import for Verify */
-        ret = ExportAndImportKeyForVerify(
-            keyAlias, &importKeyAlias, genParamSet, verifyIndex, &publicKey, &verifyParamSet);
+        struct ExportImportKeyParams exportImportParams = { .keyAlias = keyAlias,
+                                                            .importKeyAlias = &importKeyAlias,
+                                                            .genParamSet = genParamSet,
+                                                            .verifyIndex = verifyIndex,
+                                                            .publicKey = &publicKey,
+                                                            .verifyParamSet = &verifyParamSet };
+
+        ret = ExportAndImportKeyForVerify(&exportImportParams);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             break;
         }

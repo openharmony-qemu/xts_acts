@@ -332,23 +332,28 @@ static bool CheckUseSoftware()
     return false;
 }
 
+// Structure to encapsulate attestation data blobs
+struct AttestationDataBlobs {
+    struct OH_Huks_Blob* secInfo;
+    struct OH_Huks_Blob* challenge;
+    struct OH_Huks_Blob* version;
+};
+
 // Helper function: Initialize attestation data and generate key
-static int InitAttestationDataAndGenerateKey(struct OH_Huks_Blob* g_secInfo,
-                                             struct OH_Huks_Blob* g_challenge,
-                                             struct OH_Huks_Blob* g_version,
+static int InitAttestationDataAndGenerateKey(struct AttestationDataBlobs* dataBlobs,
                                              const struct OH_Huks_Blob* g_keyAlias,
                                              struct OH_Huks_Param* g_commonParams,
                                              struct OH_Huks_ParamSet** paramSet)
 {
     // Initialize static blobs
-    *g_secInfo = { sizeof(SEC_INFO_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(SEC_INFO_DATA)) };
-    *g_challenge = { sizeof(CHALLENGE_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(CHALLENGE_DATA)) };
-    *g_version = { sizeof(VERSION_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(VERSION_DATA)) };
+    *dataBlobs->secInfo = { sizeof(SEC_INFO_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(SEC_INFO_DATA)) };
+    *dataBlobs->challenge = { sizeof(CHALLENGE_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(CHALLENGE_DATA)) };
+    *dataBlobs->version = { sizeof(VERSION_DATA), reinterpret_cast<uint8_t*>(const_cast<char*>(VERSION_DATA)) };
 
     // Initialize common params array
-    g_commonParams[0] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO, .blob = *g_secInfo };
-    g_commonParams[1] = { .tag = OH_HUKS_TAG_ATTESTATION_CHALLENGE, .blob = *g_challenge };
-    g_commonParams[2] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO, .blob = *g_version };
+    g_commonParams[0] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO, .blob = *dataBlobs->secInfo };
+    g_commonParams[1] = { .tag = OH_HUKS_TAG_ATTESTATION_CHALLENGE, .blob = *dataBlobs->challenge };
+    g_commonParams[2] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO, .blob = *dataBlobs->version };
     g_commonParams[3] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_ALIAS, .blob = *g_keyAlias };
     g_commonParams[4] = { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE };
 
@@ -484,8 +489,11 @@ int SecurityHuksNapiAttest0100()
         static struct OH_Huks_Param g_commonParams[ATTESTATION_COMMON_PARAM_COUNT];
 
         struct OH_Huks_ParamSet* paramSet = nullptr;
-        if (InitAttestationDataAndGenerateKey(
-                &g_secInfo, &g_challenge, &g_version, &g_keyAlias, g_commonParams, &paramSet) != 0) {
+        struct AttestationDataBlobs dataBlobs = { .secInfo = &g_secInfo,
+                                                  .challenge = &g_challenge,
+                                                  .version = &g_version };
+
+        if (InitAttestationDataAndGenerateKey(&dataBlobs, &g_keyAlias, g_commonParams, &paramSet) != 0) {
             return -1;
         }
 

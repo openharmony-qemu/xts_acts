@@ -331,23 +331,32 @@ static int PerformEcdhKeyAgreement(const struct EcdhKeyAgreementParams* params)
     return 0;
 }
 
+// Structure to encapsulate ECDH cleanup resources
+struct EcdhCleanupResources {
+    const struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* initParamSet01;
+    struct OH_Huks_ParamSet* finishParamSet01;
+    struct OH_Huks_ParamSet* initParamSet02;
+    struct OH_Huks_ParamSet* finishParamSet02;
+    struct OH_Huks_Blob* publicKey01;
+    struct OH_Huks_Blob* publicKey02;
+    struct OH_Huks_Blob* outData01;
+    struct OH_Huks_Blob* outData02;
+};
+
 // Helper function: Cleanup ECDH resources
-static void CleanupEcdhResources(const struct OH_Huks_ParamSet* genParamSet,
-                                 struct OH_Huks_ParamSet* initParamSet01,
-                                 struct OH_Huks_ParamSet* finishParamSet01,
-                                 struct OH_Huks_ParamSet* initParamSet02,
-                                 struct OH_Huks_ParamSet* finishParamSet02,
-                                 struct OH_Huks_Blob* publicKey01,
-                                 struct OH_Huks_Blob* publicKey02,
-                                 struct OH_Huks_Blob* outData01,
-                                 struct OH_Huks_Blob* outData02)
+static void CleanupEcdhResources(const struct EcdhCleanupResources* resources)
 {
-    OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
-    OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
-    OH_Huks_DeleteKeyItem(&g_keyAliasFinal1001, finishParamSet01);
-    OH_Huks_DeleteKeyItem(&g_keyAliasFinal2001, finishParamSet02);
-    HksEcdhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
-    HksEcdhAgreeFreeBlob(publicKey01, publicKey02, outData01, outData02);
+    OH_Huks_DeleteKeyItem(&g_keyAlias01001, resources->genParamSet);
+    OH_Huks_DeleteKeyItem(&g_keyAlias02001, resources->genParamSet);
+    OH_Huks_DeleteKeyItem(&g_keyAliasFinal1001, resources->finishParamSet01);
+    OH_Huks_DeleteKeyItem(&g_keyAliasFinal2001, resources->finishParamSet02);
+    HksEcdhAgreeFreeParamSet(resources->genParamSet,
+                             resources->initParamSet01,
+                             resources->finishParamSet01,
+                             resources->initParamSet02,
+                             resources->finishParamSet02);
+    HksEcdhAgreeFreeBlob(resources->publicKey01, resources->publicKey02, resources->outData01, resources->outData02);
 }
 
 /**
@@ -408,15 +417,17 @@ int SecurityHuksNapiAgreeEcdh0100()
     }
 
     // 清理资源
-    CleanupEcdhResources(genParamSet,
-                         initParamSet01,
-                         finishParamSet01,
-                         initParamSet02,
-                         finishParamSet02,
-                         &publicKey01,
-                         &publicKey02,
-                         &outData01,
-                         &outData02);
+    struct EcdhCleanupResources cleanupRes = { .genParamSet = genParamSet,
+                                               .initParamSet01 = initParamSet01,
+                                               .finishParamSet01 = finishParamSet01,
+                                               .initParamSet02 = initParamSet02,
+                                               .finishParamSet02 = finishParamSet02,
+                                               .publicKey01 = &publicKey01,
+                                               .publicKey02 = &publicKey02,
+                                               .outData01 = &outData01,
+                                               .outData02 = &outData02 };
+
+    CleanupEcdhResources(&cleanupRes);
 
     return 0;
 }

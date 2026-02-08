@@ -67,20 +67,25 @@ static OH_Huks_Result
     return ret;
 }
 
+// Structure to hold SM4 update loop state
+struct Sm4UpdateLoopState {
+    const struct OH_Huks_Blob* handle;
+    const struct OH_Huks_ParamSet* paramSet;
+    struct OH_Huks_Blob* inDataSeg;
+    uint8_t* lastPtr;
+    struct OH_Huks_Blob* outData;
+    uint8_t** cur;
+    bool* isFinished;
+};
+
 // Helper function: Process update loop
-static OH_Huks_Result ProcessUpdateLoop(const struct OH_Huks_Blob* handle,
-                                        const struct OH_Huks_ParamSet* paramSet,
-                                        struct OH_Huks_Blob* inDataSeg,
-                                        uint8_t* lastPtr,
-                                        struct OH_Huks_Blob* outData,
-                                        uint8_t** cur,
-                                        bool* isFinished)
+static OH_Huks_Result ProcessUpdateLoop(const struct Sm4UpdateLoopState* state)
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
 
-    while (inDataSeg->data <= lastPtr) {
-        if (inDataSeg->data + MAX_UPDATE_SIZE <= lastPtr) {
+    while (state->inDataSeg->data <= state->lastPtr) {
+        if (state->inDataSeg->data + MAX_UPDATE_SIZE <= state->lastPtr) {
             struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
             outDataSeg.data = (uint8_t*)malloc(outDataSeg.size);
             if (outDataSeg.data == nullptr) {
@@ -88,24 +93,27 @@ static OH_Huks_Result ProcessUpdateLoop(const struct OH_Huks_Blob* handle,
                 return ret;
             }
 
-            ret = OH_Huks_UpdateSession(handle, paramSet, inDataSeg, &outDataSeg);
+            ret = OH_Huks_UpdateSession(state->handle, state->paramSet, state->inDataSeg, &outDataSeg);
             if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
                 free(outDataSeg.data);
                 return ret;
             }
 
-            if (memcpy_s(*cur, SM4_COMMON_SIZE - (*cur - outData->data), outDataSeg.data, outDataSeg.size) != EOK) {
+            if (memcpy_s(*state->cur,
+                         SM4_COMMON_SIZE - (*state->cur - state->outData->data),
+                         outDataSeg.data,
+                         outDataSeg.size) != EOK) {
                 free(outDataSeg.data);
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }
-            *cur += outDataSeg.size;
-            outData->size += outDataSeg.size;
+            *state->cur += outDataSeg.size;
+            state->outData->size += outDataSeg.size;
             free(outDataSeg.data);
-            inDataSeg->data += MAX_UPDATE_SIZE;
+            state->inDataSeg->data += MAX_UPDATE_SIZE;
         } else {
-            *isFinished = true;
-            inDataSeg->size = lastPtr - inDataSeg->data + 1;
+            *state->isFinished = true;
+            state->inDataSeg->size = state->lastPtr - state->inDataSeg->data + 1;
             break;
         }
     }
@@ -113,39 +121,47 @@ static OH_Huks_Result ProcessUpdateLoop(const struct OH_Huks_Blob* handle,
     return ret;
 }
 
+// Structure to hold SM4 final update state
+struct Sm4FinalUpdateState {
+    const struct OH_Huks_Blob* handle;
+    const struct OH_Huks_ParamSet* paramSet;
+    struct OH_Huks_Blob* inDataSeg;
+    uint32_t inDataSize;
+    struct OH_Huks_Blob* outData;
+    uint8_t** cur;
+    bool isFinished;
+};
+
 // Helper function: Process final update
-static OH_Huks_Result ProcessFinalUpdate(const struct OH_Huks_Blob* handle,
-                                         const struct OH_Huks_ParamSet* paramSet,
-                                         struct OH_Huks_Blob* inDataSeg,
-                                         uint32_t inDataSize,
-                                         struct OH_Huks_Blob* outData,
-                                         uint8_t** cur,
-                                         bool isFinished)
+static OH_Huks_Result ProcessFinalUpdate(const struct Sm4FinalUpdateState* state)
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
 
-    if (!isFinished) {
-        struct OH_Huks_Blob outDataFinish = { inDataSize * DOUBLE_SIZE, nullptr };
+    if (!state->isFinished) {
+        struct OH_Huks_Blob outDataFinish = { state->inDataSize * DOUBLE_SIZE, nullptr };
         outDataFinish.data = (uint8_t*)malloc(outDataFinish.size);
         if (outDataFinish.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
 
-        ret = OH_Huks_UpdateSession(handle, paramSet, inDataSeg, &outDataFinish);
+        ret = OH_Huks_UpdateSession(state->handle, state->paramSet, state->inDataSeg, &outDataFinish);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             free(outDataFinish.data);
             return ret;
         }
 
-        if (memcpy_s(*cur, SM4_COMMON_SIZE - (*cur - outData->data), outDataFinish.data, outDataFinish.size) != EOK) {
+        if (memcpy_s(*state->cur,
+                     SM4_COMMON_SIZE - (*state->cur - state->outData->data),
+                     outDataFinish.data,
+                     outDataFinish.size) != EOK) {
             free(outDataFinish.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
-        *cur += outDataFinish.size;
-        outData->size += outDataFinish.size;
+        *state->cur += outDataFinish.size;
+        state->outData->size += outDataFinish.size;
         free(outDataFinish.data);
     }
 
@@ -213,13 +229,29 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob* handle,
     bool isFinished = false;
 
     // Process update loop
-    ret = ProcessUpdateLoop(handle, paramSet, &inDataSeg, lastPtr, outData, &cur, &isFinished);
+    struct Sm4UpdateLoopState updateLoopState = { .handle = handle,
+                                                  .paramSet = paramSet,
+                                                  .inDataSeg = &inDataSeg,
+                                                  .lastPtr = lastPtr,
+                                                  .outData = outData,
+                                                  .cur = &cur,
+                                                  .isFinished = &isFinished };
+
+    ret = ProcessUpdateLoop(&updateLoopState);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
     // Process final update if not finished
-    ret = ProcessFinalUpdate(handle, paramSet, &inDataSeg, inData->size, outData, &cur, isFinished);
+    struct Sm4FinalUpdateState finalUpdateState = { .handle = handle,
+                                                    .paramSet = paramSet,
+                                                    .inDataSeg = &inDataSeg,
+                                                    .inDataSize = inData->size,
+                                                    .outData = outData,
+                                                    .cur = &cur,
+                                                    .isFinished = isFinished };
+
+    ret = ProcessFinalUpdate(&finalUpdateState);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
@@ -333,36 +365,35 @@ static OH_Huks_Result HksSm4CipherTestCaseOther(const struct OH_Huks_Blob* keyAl
 }
 
 // Helper function: Initialize all parameter sets
-static int InitAllParamSets(const struct OH_Huks_Param* genParams,
-                            uint32_t genParamCount,
-                            const struct OH_Huks_Param* encryptParams,
-                            uint32_t encryptParamCount,
-                            const struct OH_Huks_Param* decryptParams,
-                            uint32_t decryptParamCount,
-                            struct OH_Huks_ParamSet** genParamSet,
-                            struct OH_Huks_ParamSet** encryptParamSet,
-                            struct OH_Huks_ParamSet** decryptParamSet)
+static int InitAllParamSets(const struct Sm4CipherTestParams* params, const struct Sm4ParamSetOutput* output)
 {
-    OH_Huks_Result ret = InitParamSet(genParamSet, genParams, genParamCount);
+    OH_Huks_Result ret = InitParamSet(output->genParamSet, params->genParams, params->genParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    ret = InitParamSet(encryptParamSet, encryptParams, encryptParamCount);
+    ret = InitParamSet(output->encryptParamSet, params->encryptParams, params->encryptParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genParamSet);
+        OH_Huks_FreeParamSet(output->genParamSet);
         return -1;
     }
 
-    ret = InitParamSet(decryptParamSet, decryptParams, decryptParamCount);
+    ret = InitParamSet(output->decryptParamSet, params->decryptParams, params->decryptParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genParamSet);
-        OH_Huks_FreeParamSet(encryptParamSet);
+        OH_Huks_FreeParamSet(output->genParamSet);
+        OH_Huks_FreeParamSet(output->encryptParamSet);
         return -1;
     }
 
     return 0;
 }
+
+// Structure to hold SM4 parameter set output
+struct Sm4ParamSetOutput {
+    struct OH_Huks_ParamSet** genParamSet;
+    struct OH_Huks_ParamSet** encryptParamSet;
+    struct OH_Huks_ParamSet** decryptParamSet;
+};
 
 // Parameter structure for SM4 cipher test
 struct Sm4CipherTestParams {
@@ -383,15 +414,11 @@ static int ExecuteSm4CipherTestWithCleanup(const struct OH_Huks_Blob* keyAlias,
     struct OH_Huks_ParamSet* decryptParamSet = nullptr;
 
     // Initialize all parameter sets
-    if (InitAllParamSets(params->genParams,
-                         params->genParamCount,
-                         params->encryptParams,
-                         params->encryptParamCount,
-                         params->decryptParams,
-                         params->decryptParamCount,
-                         &genParamSet,
-                         &encryptParamSet,
-                         &decryptParamSet) != 0) {
+    struct Sm4ParamSetOutput paramOutput = { .genParamSet = &genParamSet,
+                                             .encryptParamSet = &encryptParamSet,
+                                             .decryptParamSet = &decryptParamSet };
+
+    if (InitAllParamSets(params, &paramOutput) != 0) {
         return -1;
     }
 

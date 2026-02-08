@@ -372,9 +372,8 @@ static int VerifyOtherEnumConstants()
     }
     return 0;
 }
-
-// Helper function: Verify error code and tag type constants
-static int VerifyErrorCodeConstants()
+// Helper function: Verify basic error code constants
+static int VerifyBasicErrorCodes()
 {
     if (((uint32_t)OH_HUKS_SUCCESS != SUCCESS_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_PERMISSION_FAIL != ERR_CODE_PERMISSION_FAIL_VALUE) ||
@@ -393,26 +392,90 @@ static int VerifyErrorCodeConstants()
         ((uint32_t)OH_HUKS_ERR_CODE_SESSION_LIMIT != ERR_CODE_SESSION_LIMIT_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_ITEM_NOT_EXIST != ERR_CODE_ITEM_NOT_EXIST_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR != ERR_CODE_INTERNAL_ERROR_VALUE) ||
-        ((uint32_t)OH_HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST != ERR_CODE_CREDENTIAL_NOT_EXIST_VALUE) ||
-        ((uint32_t)OH_HUKS_TAG_TYPE_INVALID != (TAG_TYPE_INVALID_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
+        ((uint32_t)OH_HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST != ERR_CODE_CREDENTIAL_NOT_EXIST_VALUE)) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify tag type constants
+static int VerifyTagTypeConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_TYPE_INVALID != (TAG_TYPE_INVALID_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
         ((uint32_t)OH_HUKS_TAG_TYPE_INT != (TAG_TYPE_INT_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
         ((uint32_t)OH_HUKS_TAG_TYPE_UINT != (TAG_TYPE_UINT_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
         ((uint32_t)OH_HUKS_TAG_TYPE_ULONG != (TAG_TYPE_ULONG_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
         ((uint32_t)OH_HUKS_TAG_TYPE_BOOL != (TAG_TYPE_BOOL_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
-        ((uint32_t)OH_HUKS_TAG_TYPE_BYTES != (TAG_TYPE_BYTES_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
-        ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FINGERPRINT != (1 << USER_AUTH_TYPE_FINGERPRINT_BIT)) ||
+        ((uint32_t)OH_HUKS_TAG_TYPE_BYTES != (TAG_TYPE_BYTES_SHIFT << TAG_TYPE_SHIFT_BITS))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify user authentication type constants
+static int VerifyUserAuthTypeConstants()
+{
+    if (((uint32_t)OH_HUKS_USER_AUTH_TYPE_FINGERPRINT != (1 << USER_AUTH_TYPE_FINGERPRINT_BIT)) ||
         ((uint32_t)OH_HUKS_USER_AUTH_TYPE_FACE != (1 << USER_AUTH_TYPE_FACE_BIT)) ||
-        ((uint32_t)OH_HUKS_USER_AUTH_TYPE_PIN != (1 << USER_AUTH_TYPE_PIN_BIT)) ||
-        ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD != (1 << AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT)) ||
-        ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL != (1 << AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT)) ||
-        ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NORMAL != CHALLENGE_TYPE_NORMAL_VALUE) ||
+        ((uint32_t)OH_HUKS_USER_AUTH_TYPE_PIN != (1 << USER_AUTH_TYPE_PIN_BIT))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify authentication access invalid constants
+static int VerifyAuthAccessInvalidConstants()
+{
+    if (((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD != (1 << AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT)) ||
+        ((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL != (1 << AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify challenge constants
+static int VerifyChallengeConstants()
+{
+    if (((uint32_t)OH_HUKS_CHALLENGE_TYPE_NORMAL != CHALLENGE_TYPE_NORMAL_VALUE) ||
         ((uint32_t)OH_HUKS_CHALLENGE_TYPE_CUSTOM != CHALLENGE_TYPE_CUSTOM_VALUE) ||
         ((uint32_t)OH_HUKS_CHALLENGE_TYPE_NONE != CHALLENGE_TYPE_NONE_VALUE) ||
         ((uint32_t)OH_HUKS_CHALLENGE_POS_0 != CHALLENGE_POS_0_VALUE) ||
         ((uint32_t)OH_HUKS_CHALLENGE_POS_1 != CHALLENGE_POS_1_VALUE) ||
         ((uint32_t)OH_HUKS_CHALLENGE_POS_2 != CHALLENGE_POS_2_VALUE) ||
-        ((uint32_t)OH_HUKS_CHALLENGE_POS_3 != CHALLENGE_POS_3_VALUE) ||
-        ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE)) {
+        ((uint32_t)OH_HUKS_CHALLENGE_POS_3 != CHALLENGE_POS_3_VALUE)) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify secure sign constants
+static int VerifySecureSignConstants()
+{
+    if ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify error code and tag type constants
+static int VerifyErrorCodeConstants()
+{
+    if (VerifyBasicErrorCodes() != 0) {
+        return -1;
+    }
+    if (VerifyTagTypeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyUserAuthTypeConstants() != 0) {
+        return -1;
+    }
+    if (VerifyAuthAccessInvalidConstants() != 0) {
+        return -1;
+    }
+    if (VerifyChallengeConstants() != 0) {
+        return -1;
+    }
+    if (VerifySecureSignConstants() != 0) {
         return -1;
     }
     return 0;
@@ -545,43 +608,79 @@ static int VerifyTagConstants()
     return 0;
 }
 
-// Helper function: Verify struct field sizes
-static int VerifyStructSizes()
+// Helper function: Verify basic struct field sizes
+static int VerifyBasicStructSizes()
 {
     struct OH_Huks_Result result;
     struct OH_Huks_Blob blob;
-    struct OH_Huks_Param param;
-    struct OH_Huks_ParamSet paramset;
-    struct OH_Huks_CertChain certChain;
-    struct OH_Huks_KeyInfo keyInfo;
-    struct OH_Huks_PubKeyInfo pubKeyInfo;
-    struct OH_Huks_KeyMaterialRsa keyMaterialRsa;
-    struct OH_Huks_KeyMaterialEcc keyMaterialEcc;
-    struct OH_Huks_KeyMaterialDsa keyMaterialDsa;
-    struct OH_Huks_KeyMaterialDh keyMaterialDh;
-    struct OH_Huks_KeyMaterial25519 keyMaterial25519;
 
     if ((sizeof(result.errorCode) != sizeof(int32_t)) || (sizeof(result.errorMsg) != sizeof(const char*)) ||
         (sizeof(result.data) != sizeof(uint8_t*)) || (sizeof(blob.size) != sizeof(uint32_t)) ||
-        (sizeof(blob.data) != sizeof(uint8_t*)) || (sizeof(param.tag) != sizeof(uint32_t)) ||
-        (sizeof(param.boolParam) != sizeof(bool)) || (sizeof(param.int32Param) != sizeof(int32_t)) ||
-        (sizeof(param.uint32Param) != sizeof(uint32_t)) || (sizeof(param.uint64Param) != sizeof(uint64_t)) ||
-        (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) || (sizeof(paramset.paramSetSize) != sizeof(uint32_t)) ||
-        (sizeof(paramset.paramsCnt) != sizeof(uint32_t)) ||
-        (sizeof(paramset.params[0]) != sizeof(struct OH_Huks_Param)) ||
-        (sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) ||
+        (sizeof(blob.data) != sizeof(uint8_t*))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify param struct field sizes
+static int VerifyParamStructSizes()
+{
+    struct OH_Huks_Param param;
+    struct OH_Huks_ParamSet paramset;
+
+    if ((sizeof(param.tag) != sizeof(uint32_t)) || (sizeof(param.boolParam) != sizeof(bool)) ||
+        (sizeof(param.int32Param) != sizeof(int32_t)) || (sizeof(param.uint32Param) != sizeof(uint32_t)) ||
+        (sizeof(param.uint64Param) != sizeof(uint64_t)) || (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) ||
+        (sizeof(paramset.paramSetSize) != sizeof(uint32_t)) || (sizeof(paramset.paramsCnt) != sizeof(uint32_t)) ||
+        (sizeof(paramset.params[0]) != sizeof(struct OH_Huks_Param))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify certificate and key info struct field sizes
+static int VerifyCertAndKeyInfoSizes()
+{
+    struct OH_Huks_CertChain certChain;
+    struct OH_Huks_KeyInfo keyInfo;
+    struct OH_Huks_PubKeyInfo pubKeyInfo;
+
+    if ((sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) ||
         (sizeof(certChain.certsCount) != sizeof(uint32_t)) || (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
         (sizeof(keyInfo.paramSet) != sizeof(struct OH_Huks_ParamSet*)) ||
         (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(pubKeyInfo.keySize) != sizeof(uint32_t)) ||
         (sizeof(pubKeyInfo.nOrXSize) != sizeof(uint32_t)) || (sizeof(pubKeyInfo.eOrYSize) != sizeof(uint32_t)) ||
-        (sizeof(pubKeyInfo.placeHolder) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
+        (sizeof(pubKeyInfo.placeHolder) != sizeof(uint32_t))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify RSA and ECC key material struct field sizes
+static int VerifyRsaAndEccMaterialSizes()
+{
+    struct OH_Huks_KeyMaterialRsa keyMaterialRsa;
+    struct OH_Huks_KeyMaterialEcc keyMaterialEcc;
+
+    if ((sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
         (sizeof(keyMaterialRsa.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.nSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialRsa.eSize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.dSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
         (sizeof(keyMaterialEcc.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.xSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialEcc.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.zSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialDsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
+        (sizeof(keyMaterialEcc.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.zSize) != sizeof(uint32_t))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify DSA, DH and X25519 key material struct field sizes
+static int VerifyDsaDhAndX25519MaterialSizes()
+{
+    struct OH_Huks_KeyMaterialDsa keyMaterialDsa;
+    struct OH_Huks_KeyMaterialDh keyMaterialDh;
+    struct OH_Huks_KeyMaterial25519 keyMaterial25519;
+
+    if ((sizeof(keyMaterialDsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
         (sizeof(keyMaterialDsa.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.xSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDsa.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.pSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDsa.qSize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.gSize) != sizeof(uint32_t)) ||
@@ -596,7 +695,27 @@ static int VerifyStructSizes()
         (sizeof(keyMaterial25519.reserved) != sizeof(uint32_t))) {
         return -1;
     }
+    return 0;
+}
 
+// Helper function: Verify struct field sizes
+static int VerifyStructSizes()
+{
+    if (VerifyBasicStructSizes() != 0) {
+        return -1;
+    }
+    if (VerifyParamStructSizes() != 0) {
+        return -1;
+    }
+    if (VerifyCertAndKeyInfoSizes() != 0) {
+        return -1;
+    }
+    if (VerifyRsaAndEccMaterialSizes() != 0) {
+        return -1;
+    }
+    if (VerifyDsaDhAndX25519MaterialSizes() != 0) {
+        return -1;
+    }
     return 0;
 }
 

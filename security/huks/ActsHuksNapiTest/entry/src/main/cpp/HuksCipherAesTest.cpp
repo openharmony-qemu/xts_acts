@@ -381,30 +381,35 @@ static OH_Huks_Result HksAesCipherTestCaseOther(const struct OH_Huks_Blob* keyAl
     return ret;
 }
 
+// Structure to encapsulate AES cipher test parameters
+struct AesCipherTestParams {
+    const struct OH_Huks_Param* genParams;
+    uint32_t genParamCount;
+    const struct OH_Huks_Param* encryptParams;
+    uint32_t encryptParamCount;
+    const struct OH_Huks_Param* decryptParams;
+    uint32_t decryptParamCount;
+};
+
 // Helper function: Execute AES cipher test with cleanup
 static int ExecuteAesCipherTestWithCleanup(const struct OH_Huks_Blob* keyAlias,
-                                           const struct OH_Huks_Param* genParams,
-                                           uint32_t genParamCount,
-                                           const struct OH_Huks_Param* encryptParams,
-                                           uint32_t encryptParamCount,
-                                           const struct OH_Huks_Param* decryptParams,
-                                           uint32_t decryptParamCount)
+                                           const struct AesCipherTestParams* params)
 {
     struct OH_Huks_ParamSet* genParamSet = nullptr;
-    OH_Huks_Result ret = InitParamSet(&genParamSet, genParams, genParamCount);
+    OH_Huks_Result ret = InitParamSet(&genParamSet, params->genParams, params->genParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
     struct OH_Huks_ParamSet* encryptParamSet = nullptr;
-    ret = InitParamSet(&encryptParamSet, encryptParams, encryptParamCount);
+    ret = InitParamSet(&encryptParamSet, params->encryptParams, params->encryptParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         return -1;
     }
 
     struct OH_Huks_ParamSet* decryptParamSet = nullptr;
-    ret = InitParamSet(&decryptParamSet, decryptParams, decryptParamCount);
+    ret = InitParamSet(&decryptParamSet, params->decryptParams, params->decryptParamCount);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         OH_Huks_FreeParamSet(&encryptParamSet);
@@ -473,13 +478,14 @@ int SecurityHuksNapiCipherAes0100()
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 
-    return ExecuteAesCipherTestWithCleanup(&keyAlias,
-                                           g_genParams015,
-                                           sizeof(g_genParams015) / sizeof(OH_Huks_Param),
-                                           g_encryptParams015,
-                                           sizeof(g_encryptParams015) / sizeof(OH_Huks_Param),
-                                           g_decryptParams015,
-                                           sizeof(g_decryptParams015) / sizeof(OH_Huks_Param));
+    struct AesCipherTestParams params = { .genParams = g_genParams015,
+                                          .genParamCount = sizeof(g_genParams015) / sizeof(OH_Huks_Param),
+                                          .encryptParams = g_encryptParams015,
+                                          .encryptParamCount = sizeof(g_encryptParams015) / sizeof(OH_Huks_Param),
+                                          .decryptParams = g_decryptParams015,
+                                          .decryptParamCount = sizeof(g_decryptParams015) / sizeof(OH_Huks_Param) };
+
+    return ExecuteAesCipherTestWithCleanup(&keyAlias, &params);
 }
 
 } // namespace Huks

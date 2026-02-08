@@ -545,49 +545,60 @@ static void HksClearKeysForWrappedKeyTest(const struct HksImportWrappedKeyTestPa
     (void)OH_Huks_DeleteKeyItem(params->importedKeyAlias, params->importWrappedKeyParamSet);
 }
 
-static OH_Huks_Result InitAllWrappedKeyParamSets(struct OH_Huks_ParamSet** genX25519KeyParamSet,
-                                                 struct OH_Huks_ParamSet** genCallerKeyParamSet,
-                                                 struct OH_Huks_ParamSet** callerImportParamsKek,
-                                                 struct OH_Huks_ParamSet** agreeParamSet,
-                                                 struct OH_Huks_ParamSet** importPlainKeyParams,
-                                                 const struct OH_Huks_Param* importedKeyParamSetArray,
-                                                 uint32_t arraySize)
+// Structure to hold wrapped key parameter set output
+struct WrappedKeyParamSetOutput {
+    struct OH_Huks_ParamSet** genX25519KeyParamSet;
+    struct OH_Huks_ParamSet** genCallerKeyParamSet;
+    struct OH_Huks_ParamSet** callerImportParamsKek;
+    struct OH_Huks_ParamSet** agreeParamSet;
+    struct OH_Huks_ParamSet** importPlainKeyParams;
+};
+
+// Structure to hold wrapped key input parameters
+struct WrappedKeyInputParams {
+    const struct OH_Huks_Param* importedKeyParamSetArray;
+    uint32_t arraySize;
+};
+
+static OH_Huks_Result InitAllWrappedKeyParamSets(const struct WrappedKeyParamSetOutput* output,
+                                                 const struct WrappedKeyInputParams* input)
 {
     OH_Huks_Result ret = InitParamSet(
-        genX25519KeyParamSet, g_genWrappingKeyParams, sizeof(g_genWrappingKeyParams) / sizeof(OH_Huks_Param));
+        output->genX25519KeyParamSet, g_genWrappingKeyParams, sizeof(g_genWrappingKeyParams) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
     ret = InitParamSet(
-        genCallerKeyParamSet, g_genCallerX25519Params, sizeof(g_genCallerX25519Params) / sizeof(OH_Huks_Param));
+        output->genCallerKeyParamSet, g_genCallerX25519Params, sizeof(g_genCallerX25519Params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genX25519KeyParamSet);
+        OH_Huks_FreeParamSet(output->genX25519KeyParamSet);
         return ret;
     }
 
-    ret = InitParamSet(
-        callerImportParamsKek, g_importParamsCallerKek, sizeof(g_importParamsCallerKek) / sizeof(OH_Huks_Param));
+    ret = InitParamSet(output->callerImportParamsKek,
+                       g_importParamsCallerKek,
+                       sizeof(g_importParamsCallerKek) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genX25519KeyParamSet);
-        OH_Huks_FreeParamSet(genCallerKeyParamSet);
+        OH_Huks_FreeParamSet(output->genX25519KeyParamSet);
+        OH_Huks_FreeParamSet(output->genCallerKeyParamSet);
         return ret;
     }
 
-    ret = InitParamSet(agreeParamSet, g_callerAgreeParams, sizeof(g_callerAgreeParams) / sizeof(OH_Huks_Param));
+    ret = InitParamSet(output->agreeParamSet, g_callerAgreeParams, sizeof(g_callerAgreeParams) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genX25519KeyParamSet);
-        OH_Huks_FreeParamSet(genCallerKeyParamSet);
-        OH_Huks_FreeParamSet(callerImportParamsKek);
+        OH_Huks_FreeParamSet(output->genX25519KeyParamSet);
+        OH_Huks_FreeParamSet(output->genCallerKeyParamSet);
+        OH_Huks_FreeParamSet(output->callerImportParamsKek);
         return ret;
     }
 
-    ret = InitParamSet(importPlainKeyParams, importedKeyParamSetArray, arraySize);
+    ret = InitParamSet(output->importPlainKeyParams, input->importedKeyParamSetArray, input->arraySize);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(genX25519KeyParamSet);
-        OH_Huks_FreeParamSet(genCallerKeyParamSet);
-        OH_Huks_FreeParamSet(callerImportParamsKek);
-        OH_Huks_FreeParamSet(agreeParamSet);
+        OH_Huks_FreeParamSet(output->genX25519KeyParamSet);
+        OH_Huks_FreeParamSet(output->genCallerKeyParamSet);
+        OH_Huks_FreeParamSet(output->callerImportParamsKek);
+        OH_Huks_FreeParamSet(output->agreeParamSet);
         return ret;
     }
 
@@ -620,13 +631,16 @@ static void InitCommonTestParamsAndDoImport(struct HksImportWrappedKeyTestParams
     struct OH_Huks_ParamSet* agreeParamSet = nullptr;
     struct OH_Huks_ParamSet* importPlainKeyParams = nullptr;
 
-    OH_Huks_Result ret = InitAllWrappedKeyParamSets(&genX25519KeyParamSet,
-                                                    &genCallerKeyParamSet,
-                                                    &callerImportParamsKek,
-                                                    &agreeParamSet,
-                                                    &importPlainKeyParams,
-                                                    importedKeyParamSetArray,
-                                                    arraySize);
+    struct WrappedKeyParamSetOutput paramOutput = { .genX25519KeyParamSet = &genX25519KeyParamSet,
+                                                    .genCallerKeyParamSet = &genCallerKeyParamSet,
+                                                    .callerImportParamsKek = &callerImportParamsKek,
+                                                    .agreeParamSet = &agreeParamSet,
+                                                    .importPlainKeyParams = &importPlainKeyParams };
+
+    struct WrappedKeyInputParams inputParams = { .importedKeyParamSetArray = importedKeyParamSetArray,
+                                                 .arraySize = arraySize };
+
+    OH_Huks_Result ret = InitAllWrappedKeyParamSets(&paramOutput, &inputParams);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return;
     }
