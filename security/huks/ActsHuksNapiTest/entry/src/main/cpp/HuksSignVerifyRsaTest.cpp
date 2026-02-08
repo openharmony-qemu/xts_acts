@@ -66,8 +66,10 @@ static struct OH_Huks_Param g_verifyParamsTest071[] = {
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result
-    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
+static OH_Huks_Result InitParamSet(
+    struct OH_Huks_ParamSet** paramSet, 
+    const struct OH_Huks_Param* params, 
+    uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
