@@ -502,20 +502,24 @@ static int HksImportWrappedKeyTestCommonCase(const struct HksImportWrappedKeyTes
     int result = 0;
     do {
         result = GenerateAndExportHuksPublicKey(params, &huksPublicKey);
-        if (result != 0)
+        if (result != 0) {
             break;
+        }
 
         result = GenerateAndExportCallerPublicKey(params, &callerSelfPublicKey);
-        if (result != 0)
+        if (result != 0) {
             break;
+        }
 
         result = ImportKekAndAgreeSharedSecret(params, &huksPublicKey, &outSharedKey);
-        if (result != 0)
+        if (result != 0) {
             break;
+        }
 
         result = EncryptImportedPlainKeyAndKek(params, &plainCipherText, &kekCipherText);
-        if (result != 0)
+        if (result != 0) {
             break;
+        }
 
         result = ImportWrappedKey(params, &plainCipherText, &kekCipherText, &callerSelfPublicKey, &wrappedKeyData);
     } while (0);

@@ -350,23 +350,32 @@ static int PerformX25519KeyAgreement(const struct X25519KeyAgreementParams* para
     return 0;
 }
 
+// Structure to hold X25519 cleanup resources
+struct X25519CleanupResources {
+    const struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* initParamSet01;
+    struct OH_Huks_ParamSet* finishParamSet01;
+    struct OH_Huks_ParamSet* initParamSet02;
+    struct OH_Huks_ParamSet* finishParamSet02;
+    struct OH_Huks_Blob* publicKey01;
+    struct OH_Huks_Blob* publicKey02;
+    struct OH_Huks_Blob* outData01;
+    struct OH_Huks_Blob* outData02;
+};
+
 // Helper function: Cleanup X25519 resources
-static void CleanupX25519Resources(const struct OH_Huks_ParamSet* genParamSet,
-                                   struct OH_Huks_ParamSet* initParamSet01,
-                                   struct OH_Huks_ParamSet* finishParamSet01,
-                                   struct OH_Huks_ParamSet* initParamSet02,
-                                   struct OH_Huks_ParamSet* finishParamSet02,
-                                   struct OH_Huks_Blob* publicKey01,
-                                   struct OH_Huks_Blob* publicKey02,
-                                   struct OH_Huks_Blob* outData01,
-                                   struct OH_Huks_Blob* outData02)
+static void CleanupX25519Resources(const struct X25519CleanupResources* resources)
 {
-    OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
-    OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
-    OH_Huks_DeleteKeyItem(&g_keyAliasFinal1001, finishParamSet01);
-    OH_Huks_DeleteKeyItem(&g_keyAliasFinal2001, finishParamSet02);
-    HksX25519AgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
-    HksX25519AgreeFreeBlob(publicKey01, publicKey02, outData01, outData02);
+    OH_Huks_DeleteKeyItem(&g_keyAlias01001, resources->genParamSet);
+    OH_Huks_DeleteKeyItem(&g_keyAlias02001, resources->genParamSet);
+    OH_Huks_DeleteKeyItem(&g_keyAliasFinal1001, resources->finishParamSet01);
+    OH_Huks_DeleteKeyItem(&g_keyAliasFinal2001, resources->finishParamSet02);
+    HksX25519AgreeFreeParamSet(resources->genParamSet,
+                               resources->initParamSet01,
+                               resources->finishParamSet01,
+                               resources->initParamSet02,
+                               resources->finishParamSet02);
+    HksX25519AgreeFreeBlob(resources->publicKey01, resources->publicKey02, resources->outData01, resources->outData02);
 }
 
 /**
@@ -427,15 +436,10 @@ int SecurityHuksNapiAgreeX255190100()
     }
 
     // 清理资源
-    CleanupX25519Resources(genParamSet,
-                           initParamSet01,
-                           finishParamSet01,
-                           initParamSet02,
-                           finishParamSet02,
-                           &publicKey01,
-                           &publicKey02,
-                           &outData01,
-                           &outData02);
+    struct X25519CleanupResources cleanupRes = { genParamSet,    initParamSet01,   finishParamSet01,
+                                                 initParamSet02, finishParamSet02, &publicKey01,
+                                                 &publicKey02,   &outData01,       &outData02 };
+    CleanupX25519Resources(&cleanupRes);
 
     return 0;
 }

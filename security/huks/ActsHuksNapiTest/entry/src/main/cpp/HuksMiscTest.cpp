@@ -418,8 +418,8 @@ static int VerifyErrorCodeConstants()
     return 0;
 }
 
-// Helper function: Verify tag constants
-static int VerifyTagConstants()
+// Helper function: Verify basic tag constants
+static int VerifyBasicTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | TAG_ALGORITHM_ID)) ||
         ((uint32_t)OH_HUKS_TAG_PURPOSE != (OH_HUKS_TAG_TYPE_UINT | TAG_PURPOSE_ID)) ||
@@ -427,14 +427,30 @@ static int VerifyTagConstants()
         ((uint32_t)OH_HUKS_TAG_DIGEST != (OH_HUKS_TAG_TYPE_UINT | TAG_DIGEST_ID)) ||
         ((uint32_t)OH_HUKS_TAG_PADDING != (OH_HUKS_TAG_TYPE_UINT | TAG_PADDING_ID)) ||
         ((uint32_t)OH_HUKS_TAG_BLOCK_MODE != (OH_HUKS_TAG_TYPE_UINT | TAG_BLOCK_MODE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_TYPE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ASSOCIATED_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASSOCIATED_DATA_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_TYPE_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify data tag constants
+static int VerifyDataTagConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_ASSOCIATED_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASSOCIATED_DATA_ID)) ||
         ((uint32_t)OH_HUKS_TAG_NONCE != (OH_HUKS_TAG_TYPE_BYTES | TAG_NONCE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_IV != (OH_HUKS_TAG_TYPE_BYTES | TAG_IV_ID)) ||
         ((uint32_t)OH_HUKS_TAG_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_INFO_ID)) ||
         ((uint32_t)OH_HUKS_TAG_SALT != (OH_HUKS_TAG_TYPE_BYTES | TAG_SALT_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ITERATION != (OH_HUKS_TAG_TYPE_UINT | TAG_ITERATION_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_GENERATE_TYPE_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_ITERATION != (OH_HUKS_TAG_TYPE_UINT | TAG_ITERATION_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify key agreement tag constants
+static int VerifyKeyAgreementTagConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_GENERATE_TYPE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AGREE_ALG != (OH_HUKS_TAG_TYPE_UINT | TAG_AGREE_ALG_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS !=
          (OH_HUKS_TAG_TYPE_BOOL | TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS_ID)) ||
@@ -443,16 +459,32 @@ static int VerifyTagConstants()
         ((uint32_t)OH_HUKS_TAG_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_KEY_ALIAS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_DERIVE_KEY_SIZE != (OH_HUKS_TAG_TYPE_UINT | TAG_DERIVE_KEY_SIZE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_IMPORT_KEY_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_IMPORT_KEY_TYPE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_UNWRAP_ALGORITHM_SUITE != (OH_HUKS_TAG_TYPE_UINT | TAG_UNWRAP_ALGORITHM_SUITE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ALL_USERS != (OH_HUKS_TAG_TYPE_BOOL | TAG_ALL_USERS_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_UNWRAP_ALGORITHM_SUITE != (OH_HUKS_TAG_TYPE_UINT | TAG_UNWRAP_ALGORITHM_SUITE_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify authentication tag constants
+static int VerifyAuthTagConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_ALL_USERS != (OH_HUKS_TAG_TYPE_BOOL | TAG_ALL_USERS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_USER_ID != (OH_HUKS_TAG_TYPE_UINT | TAG_USER_ID_ID)) ||
         ((uint32_t)OH_HUKS_TAG_NO_AUTH_REQUIRED != (OH_HUKS_TAG_TYPE_BOOL | TAG_NO_AUTH_REQUIRED_ID)) ||
         ((uint32_t)OH_HUKS_TAG_USER_AUTH_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_USER_AUTH_TYPE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AUTH_TIMEOUT != (OH_HUKS_TAG_TYPE_UINT | TAG_AUTH_TIMEOUT_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AUTH_TOKEN != (OH_HUKS_TAG_TYPE_BYTES | TAG_AUTH_TOKEN_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_AUTH_ACCESS_TYPE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_SECURE_SIGN_TYPE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_TYPE_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_KEY_SECURE_SIGN_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_SECURE_SIGN_TYPE_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify attestation tag constants
+static int VerifyAttestationTagConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_TYPE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_CHALLENGE_POS != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_POS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_CHALLENGE != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_CHALLENGE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_APPLICATION_ID !=
@@ -461,8 +493,16 @@ static int VerifyTagConstants()
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO !=
          (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_SEC_LEVEL_INFO_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_VERSION_INFO_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_KEY_ALIAS_ID)) ||
+         (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_VERSION_INFO_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify key management tag constants
+static int VerifyKeyManagementTagConstants()
+{
+    if (((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_KEY_ALIAS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_STORAGE_FLAG != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_STORAGE_FLAG_ID)) ||
         ((uint32_t)OH_HUKS_TAG_IS_ALLOWED_WRAP != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_ALLOWED_WRAP_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_WRAP_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_WRAP_TYPE_ID)) ||
@@ -476,6 +516,30 @@ static int VerifyTagConstants()
          (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PUBLIC_KEY_DATA_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA !=
          (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify tag constants
+static int VerifyTagConstants()
+{
+    if (VerifyBasicTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyDataTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyKeyAgreementTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyAuthTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyAttestationTagConstants() != 0) {
+        return -1;
+    }
+    if (VerifyKeyManagementTagConstants() != 0) {
         return -1;
     }
     return 0;

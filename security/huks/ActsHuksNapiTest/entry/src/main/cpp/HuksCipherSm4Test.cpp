@@ -152,36 +152,44 @@ static OH_Huks_Result ProcessFinalUpdate(const struct OH_Huks_Blob* handle,
     return ret;
 }
 
+// Structure to hold SM4 finish session state
+struct Sm4FinishSessionState {
+    const struct OH_Huks_Blob* handle;
+    const struct OH_Huks_ParamSet* paramSet;
+    const struct OH_Huks_Blob* inDataSeg;
+    uint32_t inDataSize;
+    struct OH_Huks_Blob* outData;
+    uint8_t* cur;
+};
+
 // Helper function: Process finish session
-static OH_Huks_Result ProcessFinishSession(const struct OH_Huks_Blob* handle,
-                                           const struct OH_Huks_ParamSet* paramSet,
-                                           const struct OH_Huks_Blob* inDataSeg,
-                                           uint32_t inDataSize,
-                                           struct OH_Huks_Blob* outData,
-                                           uint8_t* cur)
+static OH_Huks_Result ProcessFinishSession(const struct Sm4FinishSessionState* state)
 {
     struct OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
 
-    struct OH_Huks_Blob outDataFinish = { inDataSize * DOUBLE_SIZE, nullptr };
+    struct OH_Huks_Blob outDataFinish = { state->inDataSize * DOUBLE_SIZE, nullptr };
     outDataFinish.data = (uint8_t*)malloc(outDataFinish.size);
     if (outDataFinish.data == nullptr) {
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
 
-    ret = OH_Huks_FinishSession(handle, paramSet, inDataSeg, &outDataFinish);
+    ret = OH_Huks_FinishSession(state->handle, state->paramSet, state->inDataSeg, &outDataFinish);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         free(outDataFinish.data);
         return ret;
     }
 
-    if (memcpy_s(cur, SM4_COMMON_SIZE - (cur - outData->data), outDataFinish.data, outDataFinish.size) != EOK) {
+    if (memcpy_s(state->cur,
+                 SM4_COMMON_SIZE - (state->cur - state->outData->data),
+                 outDataFinish.data,
+                 outDataFinish.size) != EOK) {
         free(outDataFinish.data);
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
-    outData->size += outDataFinish.size;
+    state->outData->size += outDataFinish.size;
     free(outDataFinish.data);
 
     return ret;
@@ -217,7 +225,8 @@ static OH_Huks_Result TestUpdateLoopFinish(const struct OH_Huks_Blob* handle,
     }
 
     // Process finish session
-    ret = ProcessFinishSession(handle, paramSet, &inDataSeg, inData->size, outData, cur);
+    struct Sm4FinishSessionState finishState = { handle, paramSet, &inDataSeg, inData->size, outData, cur };
+    ret = ProcessFinishSession(&finishState);
     return ret;
 }
 
