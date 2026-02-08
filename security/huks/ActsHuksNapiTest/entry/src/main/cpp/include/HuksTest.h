@@ -36,7 +36,7 @@ inline napi_value NapiTry(napi_env env, std::function<napi_value()> func)
 }
 
 // Helper function to extract int32 value from napi_value
-static inline bool TryGetInt32Value(napi_env env, napi_value arg, int32_t* result)
+inline bool TryGetInt32Value(napi_env env, napi_value arg, int32_t* result)
 {
     napi_valuetype valuetype;
     napi_status status = napi_typeof(env, arg, &valuetype);

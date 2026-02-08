@@ -14,15 +14,18 @@
  */
 
 #include "include/HuksMiscTest.h"
+#include <huks/native_huks_api.h>
+#include  <huks/native_huks_param.h>
+#include <huks/native_huks_type.h>
 #include <cstddef>
 #include <cstdint>
-#include <huks/native_huks_api.h>
-#include <huks/native_huks_param.h>
-#include <huks/native_huks_type.h>
 
 namespace Acts {
 namespace Huks {
 
+// ==================== 常量定义区域 ====================
+
+// TAG 基础 ID - 通用 TAG (与 TAG_TYPE 位运算使用)
 const uint32_t TAG_ALGORITHM_ID = 1;
 const uint32_t TAG_PURPOSE_ID = 2;
 const uint32_t TAG_KEY_SIZE_ID = 3;
@@ -235,7 +238,7 @@ const uint32_t AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT = 0;
 const uint32_t AUTH_ACCESS_INVALID_NEW_BIO_ENROLL_BIT = 1;
 
 // 内存分配上限常量
-static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // size_t 最大值的一半，防止整数溢出
+static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2;  // size_t 最大值的一半，防止整数溢出
 
 // ==================== 辅助函数 ====================
 
@@ -262,15 +265,17 @@ static void* HksMalloc(size_t size)
 int SecurityHuksNapiMisc0100()
 {
     // Verify digest constants
-    if (((uint32_t)OH_HUKS_DIGEST_NONE != DIGEST_NONE_VALUE) || ((uint32_t)OH_HUKS_DIGEST_MD5 != DIGEST_MD5_VALUE) ||
-        ((uint32_t)OH_HUKS_DIGEST_SM3 != DIGEST_SM3_VALUE) || ((uint32_t)OH_HUKS_DIGEST_SHA1 != DIGEST_SHA1_VALUE) ||
+    if (((uint32_t)OH_HUKS_DIGEST_NONE != DIGEST_NONE_VALUE) ||
+        ((uint32_t)OH_HUKS_DIGEST_MD5 != DIGEST_MD5_VALUE) ||
+        ((uint32_t)OH_HUKS_DIGEST_SM3 != DIGEST_SM3_VALUE) ||
+        ((uint32_t)OH_HUKS_DIGEST_SHA1 != DIGEST_SHA1_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SHA224 != DIGEST_SHA224_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SHA256 != DIGEST_SHA256_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SHA384 != DIGEST_SHA384_VALUE) ||
         ((uint32_t)OH_HUKS_DIGEST_SHA512 != DIGEST_SHA512_VALUE)) {
         return -1;
     }
-
+    
     // Verify padding constants
     if (((uint32_t)OH_HUKS_PADDING_NONE != PADDING_NONE_VALUE) ||
         ((uint32_t)OH_HUKS_PADDING_OAEP != PADDING_OAEP_VALUE) ||
@@ -280,14 +285,17 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_PADDING_PKCS7 != PADDING_PKCS7_VALUE)) {
         return -1;
     }
-
+    
     // Verify mode constants
-    if (((uint32_t)OH_HUKS_MODE_ECB != MODE_ECB_VALUE) || ((uint32_t)OH_HUKS_MODE_CBC != MODE_CBC_VALUE) ||
-        ((uint32_t)OH_HUKS_MODE_CTR != MODE_CTR_VALUE) || ((uint32_t)OH_HUKS_MODE_OFB != MODE_OFB_VALUE) ||
-        ((uint32_t)OH_HUKS_MODE_CCM != MODE_CCM_VALUE) || ((uint32_t)OH_HUKS_MODE_GCM != MODE_GCM_VALUE)) {
+    if (((uint32_t)OH_HUKS_MODE_ECB != MODE_ECB_VALUE) ||
+        ((uint32_t)OH_HUKS_MODE_CBC != MODE_CBC_VALUE) ||
+        ((uint32_t)OH_HUKS_MODE_CTR != MODE_CTR_VALUE) ||
+        ((uint32_t)OH_HUKS_MODE_OFB != MODE_OFB_VALUE) ||
+        ((uint32_t)OH_HUKS_MODE_CCM != MODE_CCM_VALUE) ||
+        ((uint32_t)OH_HUKS_MODE_GCM != MODE_GCM_VALUE)) {
         return -1;
     }
-
+    
     // Verify key purpose constants
     if (((uint32_t)OH_HUKS_KEY_PURPOSE_ENCRYPT != KEY_PURPOSE_ENCRYPT_VALUE) ||
         ((uint32_t)OH_HUKS_KEY_PURPOSE_DECRYPT != KEY_PURPOSE_DECRYPT_VALUE) ||
@@ -300,7 +308,7 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_KEY_PURPOSE_AGREE != KEY_PURPOSE_AGREE_VALUE)) {
         return -1;
     }
-
+    
     // Verify key size constants (RSA, ECC, AES, DH, SM2/SM4)
     if (((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != RSA_KEY_SIZE_512) ||
         ((uint32_t)OH_HUKS_RSA_KEY_SIZE_768 != RSA_KEY_SIZE_768) ||
@@ -323,21 +331,27 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_SM4_KEY_SIZE_128 != SM4_KEY_SIZE_128)) {
         return -1;
     }
-
+    
     // Verify algorithm constants
-    if (((uint32_t)OH_HUKS_ALG_RSA != ALG_RSA_VALUE) || ((uint32_t)OH_HUKS_ALG_ECC != ALG_ECC_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_DSA != ALG_DSA_VALUE) || ((uint32_t)OH_HUKS_ALG_AES != ALG_AES_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_HMAC != ALG_HMAC_VALUE) || ((uint32_t)OH_HUKS_ALG_HKDF != ALG_HKDF_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_PBKDF2 != ALG_PBKDF2_VALUE) || ((uint32_t)OH_HUKS_ALG_ECDH != ALG_ECDH_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_X25519 != ALG_X25519_VALUE) || ((uint32_t)OH_HUKS_ALG_ED25519 != ALG_ED25519_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_DH != ALG_DH_VALUE) || ((uint32_t)OH_HUKS_ALG_SM2 != ALG_SM2_VALUE) ||
-        ((uint32_t)OH_HUKS_ALG_SM3 != ALG_SM3_VALUE) || ((uint32_t)OH_HUKS_ALG_SM4 != ALG_SM4_VALUE)) {
+    if (((uint32_t)OH_HUKS_ALG_RSA != ALG_RSA_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_ECC != ALG_ECC_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_DSA != ALG_DSA_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_AES != ALG_AES_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_HMAC != ALG_HMAC_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_HKDF != ALG_HKDF_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_PBKDF2 != ALG_PBKDF2_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_ECDH != ALG_ECDH_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_X25519 != ALG_X25519_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_ED25519 != ALG_ED25519_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_DH != ALG_DH_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_SM2 != ALG_SM2_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_SM3 != ALG_SM3_VALUE) ||
+        ((uint32_t)OH_HUKS_ALG_SM4 != ALG_SM4_VALUE)) {
         return -1;
     }
-
+    
     // Verify other enum constants (unwrap, key generate type, key flag, storage, key type)
-    if (((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING !=
-         UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING_VALUE) ||
+    if (((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING != UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING_VALUE) ||
         ((uint32_t)OH_HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING != UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING_VALUE) ||
         ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DEFAULT != KEY_GENERATE_TYPE_DEFAULT_VALUE) ||
         ((uint32_t)OH_HUKS_KEY_GENERATE_TYPE_DERIVE != KEY_GENERATE_TYPE_DERIVE_VALUE) ||
@@ -353,7 +367,7 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_KEY_TYPE_KEY_PAIR != KEY_TYPE_KEY_PAIR_VALUE)) {
         return -1;
     }
-
+    
     // Verify error code, tag type, user auth, challenge, and secure sign constants
     if (((uint32_t)OH_HUKS_SUCCESS != SUCCESS_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_PERMISSION_FAIL != ERR_CODE_PERMISSION_FAIL_VALUE) ||
@@ -365,8 +379,7 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_ERR_CODE_FILE_OPERATION_FAIL != ERR_CODE_FILE_OPERATION_FAIL_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_COMMUNICATION_FAIL != ERR_CODE_COMMUNICATION_FAIL_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_CRYPTO_FAIL != ERR_CODE_CRYPTO_FAIL_VALUE) ||
-        ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED !=
-         ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED_VALUE) ||
+        ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED != ERR_CODE_KEY_AUTH_PERMANENTLY_INVALIDATED_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_VERIFY_FAILED != ERR_CODE_KEY_AUTH_VERIFY_FAILED_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_KEY_AUTH_TIME_OUT != ERR_CODE_KEY_AUTH_TIME_OUT_VALUE) ||
         ((uint32_t)OH_HUKS_ERR_CODE_SESSION_LIMIT != ERR_CODE_SESSION_LIMIT_VALUE) ||
@@ -394,7 +407,7 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE)) {
         return -1;
     }
-
+    
     // Verify tag constants (basic tags, attestation tags, key management tags)
     if (((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | TAG_ALGORITHM_ID)) ||
         ((uint32_t)OH_HUKS_TAG_PURPOSE != (OH_HUKS_TAG_TYPE_UINT | TAG_PURPOSE_ID)) ||
@@ -411,8 +424,7 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_TAG_ITERATION != (OH_HUKS_TAG_TYPE_UINT | TAG_ITERATION_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_GENERATE_TYPE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AGREE_ALG != (OH_HUKS_TAG_TYPE_UINT | TAG_AGREE_ALG_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS !=
-         (OH_HUKS_TAG_TYPE_BOOL | TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AGREE_PRIVATE_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_AGREE_PRIVATE_KEY_ALIAS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_AGREE_PUBLIC_KEY != (OH_HUKS_TAG_TYPE_BYTES | TAG_AGREE_PUBLIC_KEY_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_KEY_ALIAS_ID)) ||
@@ -430,13 +442,10 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_TYPE_ID)) ||
         ((uint32_t)OH_HUKS_TAG_CHALLENGE_POS != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_POS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_CHALLENGE != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_CHALLENGE_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ATTESTATION_APPLICATION_ID !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_APPLICATION_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_ATTESTATION_APPLICATION_ID != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_APPLICATION_ID)) ||
         ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_ALIAS != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_ALIAS_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_SEC_LEVEL_INFO_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_VERSION_INFO_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_SEC_LEVEL_INFO_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO != (OH_HUKS_TAG_TYPE_BYTES | TAG_ATTESTATION_ID_VERSION_INFO_ID)) ||
         ((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_KEY_ALIAS_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_STORAGE_FLAG != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_STORAGE_FLAG_ID)) ||
         ((uint32_t)OH_HUKS_TAG_IS_ALLOWED_WRAP != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_ALLOWED_WRAP_ID)) ||
@@ -447,13 +456,11 @@ int SecurityHuksNapiMisc0100()
         ((uint32_t)OH_HUKS_TAG_IS_ASYNCHRONIZED != (OH_HUKS_TAG_TYPE_UINT | TAG_IS_ASYNCHRONIZED_ID)) ||
         ((uint32_t)OH_HUKS_TAG_KEY_DOMAIN != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_DOMAIN_ID)) ||
         ((uint32_t)OH_HUKS_TAG_SYMMETRIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_SYMMETRIC_KEY_DATA_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PUBLIC_KEY_DATA_ID)) ||
-        ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA !=
-         (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID))) {
+        ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PUBLIC_KEY_DATA_ID)) ||
+        ((uint32_t)OH_HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASYMMETRIC_PRIVATE_KEY_DATA_ID))) {
         return -1;
     }
-
+    
     // Verify struct field sizes
     struct OH_Huks_Result result;
     struct OH_Huks_Blob blob;
@@ -467,33 +474,50 @@ int SecurityHuksNapiMisc0100()
     struct OH_Huks_KeyMaterialDsa keyMaterialDsa;
     struct OH_Huks_KeyMaterialDh keyMaterialDh;
     struct OH_Huks_KeyMaterial25519 keyMaterial25519;
-
-    if ((sizeof(result.errorCode) != sizeof(int32_t)) || (sizeof(result.errorMsg) != sizeof(const char*)) ||
-        (sizeof(result.data) != sizeof(uint8_t*)) || (sizeof(blob.size) != sizeof(uint32_t)) ||
-        (sizeof(blob.data) != sizeof(uint8_t*)) || (sizeof(param.tag) != sizeof(uint32_t)) ||
-        (sizeof(param.boolParam) != sizeof(bool)) || (sizeof(param.int32Param) != sizeof(int32_t)) ||
-        (sizeof(param.uint32Param) != sizeof(uint32_t)) || (sizeof(param.uint64Param) != sizeof(uint64_t)) ||
-        (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) || (sizeof(paramset.paramSetSize) != sizeof(uint32_t)) ||
+    
+    if ((sizeof(result.errorCode) != sizeof(int32_t)) ||
+        (sizeof(result.errorMsg) != sizeof(const char *)) ||
+        (sizeof(result.data) != sizeof(uint8_t *)) ||
+        (sizeof(blob.size) != sizeof(uint32_t)) ||
+        (sizeof(blob.data) != sizeof(uint8_t *)) ||
+        (sizeof(param.tag) != sizeof(uint32_t)) ||
+        (sizeof(param.boolParam) != sizeof(bool)) ||
+        (sizeof(param.int32Param) != sizeof(int32_t)) ||
+        (sizeof(param.uint32Param) != sizeof(uint32_t)) ||
+        (sizeof(param.uint64Param) != sizeof(uint64_t)) ||
+        (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) ||
+        (sizeof(paramset.paramSetSize) != sizeof(uint32_t)) ||
         (sizeof(paramset.paramsCnt) != sizeof(uint32_t)) ||
         (sizeof(paramset.params[0]) != sizeof(struct OH_Huks_Param)) ||
-        (sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) ||
-        (sizeof(certChain.certsCount) != sizeof(uint32_t)) || (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
-        (sizeof(keyInfo.paramSet) != sizeof(struct OH_Huks_ParamSet*)) ||
-        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(pubKeyInfo.keySize) != sizeof(uint32_t)) ||
-        (sizeof(pubKeyInfo.nOrXSize) != sizeof(uint32_t)) || (sizeof(pubKeyInfo.eOrYSize) != sizeof(uint32_t)) ||
+        (sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob *)) ||
+        (sizeof(certChain.certsCount) != sizeof(uint32_t)) ||
+        (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
+        (sizeof(keyInfo.paramSet) != sizeof(struct OH_Huks_ParamSet *)) ||
+        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
+        (sizeof(pubKeyInfo.keySize) != sizeof(uint32_t)) ||
+        (sizeof(pubKeyInfo.nOrXSize) != sizeof(uint32_t)) ||
+        (sizeof(pubKeyInfo.eOrYSize) != sizeof(uint32_t)) ||
         (sizeof(pubKeyInfo.placeHolder) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialRsa.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.nSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialRsa.eSize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.dSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialRsa.keySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialRsa.nSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialRsa.eSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialRsa.dSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialEcc.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.xSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialEcc.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.zSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialEcc.keySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialEcc.xSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialEcc.ySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialEcc.zSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialDsa.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.xSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialDsa.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.pSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialDsa.qSize) != sizeof(uint32_t)) || (sizeof(keyMaterialDsa.gSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.keySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.xSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.ySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.pSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.qSize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDsa.gSize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDh.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialDh.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialDh.pubKeySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDh.keySize) != sizeof(uint32_t)) ||
+        (sizeof(keyMaterialDh.pubKeySize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDh.priKeySize) != sizeof(uint32_t)) ||
         (sizeof(keyMaterialDh.reserved) != sizeof(uint32_t)) ||
         (sizeof(keyMaterial25519.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
@@ -503,7 +527,7 @@ int SecurityHuksNapiMisc0100()
         (sizeof(keyMaterial25519.reserved) != sizeof(uint32_t))) {
         return -1;
     }
-
+    
     return 0;
 }
 
