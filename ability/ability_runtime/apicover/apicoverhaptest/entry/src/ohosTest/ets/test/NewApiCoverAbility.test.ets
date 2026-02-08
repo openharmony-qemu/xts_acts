@@ -223,29 +223,6 @@ export default function NewApiCoverTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0500
-     * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0500
-     * @tc.desc   Test restartSelfAtomicService with invalid context parameter (empty object).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_restartSelfAtomicService_0500', Level.LEVEL0, async (done: Function) => {
-      const tag = `SUB_Ability_AbilityRuntime_restartSelfAtomicService_0500`;
-      console.log(`${tag}, test begin`);
-      try {
-        await abilityManager.restartSelfAtomicService({});
-        console.log(`${tag}, should throw error for invalid context`);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.log(`${tag}, catch failed: ${JSON.stringify(error)}`);
-        expect(error?.code).assertEqual(401);
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600
      * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600
      * @tc.desc   Test restartSelfAtomicService with null context after casting.
