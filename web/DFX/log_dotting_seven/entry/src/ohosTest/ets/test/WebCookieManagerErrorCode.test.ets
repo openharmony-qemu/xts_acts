@@ -104,7 +104,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testFetchCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testFetchCookieSyncIncognitoError001", '17100002', 123210, done);
+      Utils.registerEvent("testFetchCookieSyncIncognitoError001", '17100002URL error. No valid cookie found for the specified URL.', 123210, done);
       Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -118,7 +118,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testConfigCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testConfigCookieSyncIncognitoError001", '17100002', 123220, done);
+      Utils.registerEvent("testConfigCookieSyncIncognitoError001", '17100002URL error. No valid cookie found for the specified URL.', 123220, done);
       Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
