@@ -1152,7 +1152,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Sync_Access_With_Flag_003 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
