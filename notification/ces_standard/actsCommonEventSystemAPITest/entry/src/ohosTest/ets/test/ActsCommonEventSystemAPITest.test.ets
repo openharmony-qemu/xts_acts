@@ -32,11 +32,12 @@ export default function ActsCommonEventSystemAPITest() {
 describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
+    
     afterEach(async () => {
-      console.info(`${TAG} afterEach START`)
+      console.info(`${TAG} afterEach START`) 
       await sleep(500)
       console.info(`${TAG} afterEach END`)
-    })
+      })
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_5000
      * @tc.number Sub_Notification_Ans_Publish_Publish_5000
@@ -746,6 +747,35 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
   }
   console.info(`button is success`)
 
+  let  index1 = 0;
+  let publishCallback = (err: BusinessError): void => {
+    index1+=1
+    console.info(`index1:` + index1)
+    if (index1 == 11){
+      console.info(`fail in publishing notification:` + err.code)
+      expect(err.code).assertEqual(1600009);
+      done()
+    }else {
+      console.info(`publishing notification:` + err)
+      expect(err).assertEqual(null);
+    }
+  }
+
+  for (let index = 0; index <= 10; index++) {
+    let notificationRequest: notificationManager.NotificationRequest = {
+      id: index,
+      content: {
+        notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+        normal: {
+          title: 'text_title',
+          text: 'text_text',
+          additionalText: 'test_Publish'
+        }
+      }
+    }
+    notificationManager.publish(notificationRequest, publishCallback)
+    await sleep(60)
+  }
 
   for (let index = 0; index <= 10; index++) {
     let notificationRequest: notificationManager.NotificationRequest = {
@@ -785,60 +815,32 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_283', Level.LEVEL2, async (done: () => void) => {
       notificationManager.openNotificationSettings(CustomGlobal.context).then(async () => {
-        console.info("Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings sucecess ");
+      console.info(TAG + "openNotificationSettings success " );
         await sleep(2000)
         await notificationManager.openNotificationSettings(CustomGlobal.context).then(() => {
           expect(false).assertTrue();
           done()
         }).catch((err: BusinessError) => {
-          console.error("Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings: " + JSON.stringify(err));
+          console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(err.code).assertEqual(801)
+            expect(err.code).assertEqual(801);
+            done();
           } else {
             expect(err.code).assertEqual(1600018)
+            done()
           }
         });
       }).catch((err: BusinessError) => {
-        console.error(TAG + "Sub_Notification_Ces_Publish_CommonEvent_7900_283 openNotificationSettings: " + JSON.stringify(err));
+        console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
         if (err.code == 801) {
-          expect(err.code).assertEqual(801)
+          expect(err.code).assertEqual(801);
           done();
         } else {
           expect(err.code).assertEqual(1600001)
           done();
         }
       });
-      let  index1 = 0;
-      let publishCallback = (err: BusinessError): void => {
-        index1+=1
-        console.info(`index1:` + index1)
-        if (index1 == 11){
-          console.info(`fail in publishing notification:` + err.code)
-          expect(err.code).assertEqual(1600009);
-          done()
-        }else {
-          console.info(`publishing notification:` + err)
-          expect(err).assertEqual(null);
-        }
-      }
-    
-      for (let index = 0; index <= 10; index++) {
-        let notificationRequest: notificationManager.NotificationRequest = {
-          id: index,
-          content: {
-            notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-            normal: {
-              title: 'text_title',
-              text: 'text_text',
-              additionalText: 'test_Publish'
-            }
-          }
-        }
-        notificationManager.publish(notificationRequest, publishCallback)
-        await sleep(60)
-      }
     })
-
 
     /**
      * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_287
