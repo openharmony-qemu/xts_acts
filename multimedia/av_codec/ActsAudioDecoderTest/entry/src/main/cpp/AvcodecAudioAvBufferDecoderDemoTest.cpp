@@ -402,18 +402,13 @@ uint32_t ADecBufferDemo::GetInputIndex()
 
 uint32_t ADecBufferDemo::GetOutputIndex()
 {
-    int32_t sleepTime = 0;
-    uint32_t index;
-    while (signal_->outQueue_.empty() && sleepTime < 5) { // time 5
-        sleep(1);
-        sleepTime++;
+    std::unique_lock<std::mutex> lock(signal_->outMutex_);
+    bool ok = signal_->outCond_.wait_for(lock, std::chrono::seconds(5), [&] { return !signal_->outQueue_.empty(); });
+    if (!ok) {
+        return UINT32_MAX; // Return a specific invalid value if signature cannot be changed
     }
-    if (sleepTime >= 5) { // time 5
-        return 0;
-    } else {
-        index = signal_->outQueue_.front();
-        signal_->outQueue_.pop();
-    }
+    uint32_t index = signal_->outQueue_.front();
+    signal_->outQueue_.pop();
     return index;
 }
 
