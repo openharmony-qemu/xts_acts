@@ -799,6 +799,199 @@ export default function sceneNodeTest() {
       }
     })
     /**
+     * @tc.name   testCreateGeometryNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1029
+     * @tc.desc   Test createGeometry with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateGeometryNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateGeometryNull";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        let cubeGeom = new scene3d.CubeGeometry();
+        cubeGeom.size = {x: 1, y: 1, z: 1};
+        let meshRes = await rf.createMesh({ name: "MeshName" }, cubeGeom);
+        expect(meshRes != null).assertTrue();
+        console.info(msg + " mesh created successfully");
+
+        // Test null parameter for createGeometry 1
+        try {
+          let nullGeometry = await rf.createGeometry(null, meshRes);
+          expect(nullGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (null, meshRes) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (null, meshRes) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createGeometry 1
+        try {
+          let undefinedGeometry = await rf.createGeometry(undefined, meshRes);
+          expect(undefinedGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (undefined, meshRes) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (undefined, meshRes) threw error: " + JSON.stringify(err));
+        }
+
+        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
+        // Test null parameter for createGeometry 2
+        try {
+          let nullGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, null);
+          expect(nullGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createGeometry 2
+        try {
+          let undefinedGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, undefined);
+          expect(undefinedGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createGeometry
+        try {
+          let nullGeometry = await rf.createGeometry(null, null);
+          expect(nullGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (null, null) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createGeometry
+        try {
+          let undefinedGeometry = await rf.createGeometry(undefined, undefined);
+          expect(undefinedGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (undefined, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+        */
+
+        // Test empty path for createGeometry
+        try {
+          let emptyPathGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, meshRes);
+          expect(emptyPathGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with empty path returned successfully");
+        } catch (err) {
+          console.info(msg + " createGeometry with empty path threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateGeometryNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateLightNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1028
+     * @tc.desc   Test createLight with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateLightNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateLightNull";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createLight 1
+        try {
+          let nullLight = await rf.createLight(null, LightType.DIRECTIONAL);
+          expect(nullLight != null).assertTrue();
+          console.info(msg + " createLight with (null, LightType.DIRECTIONAL) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (null, LightType.DIRECTIONAL) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight 1
+        try {
+          let undefinedLight = await rf.createLight(undefined, LightType.DIRECTIONAL);
+          expect(undefinedLight != null).assertTrue();
+          console.info(msg + " createLight with (undefined, LightType.DIRECTIONAL) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (undefined, LightType.DIRECTIONAL) threw error: " + JSON.stringify(err));
+        }
+
+        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
+        // Test null parameter for createLight 2
+        try {
+          let nullLight = await rf.createLight({ name: "Light", path: "" }, null);
+          expect(nullLight != null).assertTrue();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight 2
+        try {
+          let undefinedLight = await rf.createLight({ name: "Light", path: "" }, undefined);
+          expect(undefinedLight != null).assertTrue();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createLight
+        try {
+          let nullLight = await rf.createLight(null, null);
+          expect(nullLight != null).assertTrue();
+          console.info(msg + " createLight with (null, null) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight
+        try {
+          let undefinedLight = await rf.createLight(undefined, undefined);
+          expect(undefinedLight != null).assertTrue();
+          console.info(msg + " createLight with (undefined, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+          */
+
+        // Test empty path for createLight
+        try {
+          let emptyPathLight = await rf.createLight({ name: "Light", path: "" }, LightType.DIRECTIONAL);
+          expect(emptyPathLight != null).assertTrue();
+          console.info(msg + " createLight with empty path returned successfully");
+        } catch (err) {
+          console.info(msg + " createLight with empty path threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateLightNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testCreateGeometryPLANE
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0590
      * @tc.desc   Used to create a plane

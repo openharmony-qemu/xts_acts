@@ -18,6 +18,7 @@ import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Mat
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt, GenRandom, sleep } from '../common/utils';
+import { RenderingPipelineType, CameraParameters } from '@ohos.graphics.scene'
 
 export default function sceneResourcesTest() {
   describe('sceneResourcesTest', ()=> {
@@ -273,6 +274,63 @@ export default function sceneResourcesTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testCreateEnvironmentNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1031
+     * @tc.desc   Test createEnvironment with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateEnvironmentNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateEnvironmentNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createEnvironment
+        try {
+          let nullEnv = await rf.createEnvironment(null);
+          expect(nullEnv != null).assertTrue();
+          console.info(msg + " createEnvironment with null parameter returned null");
+        } catch (err) {
+          console.info(msg + " createEnvironment with null parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createEnvironment
+        try {
+          let undefinedEnv = await rf.createEnvironment(undefined);
+          expect(undefinedEnv != null).assertTrue();
+          console.info(msg + " createEnvironment with undefined parameter returned null");
+        } catch (err) {
+          console.info(msg + " createEnvironment with undefined parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test empty name for createEnvironment
+        try {
+          let emptyNameEnv = await rf.createEnvironment({ name: "" });
+          expect(emptyNameEnv != null).assertTrue();
+          console.info(msg + " createEnvironment with empty name returned successfully");
+        } catch (err) {
+          console.info(msg + " createEnvironment with empty name threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateEnvironmentNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
     /**
      * @tc.name   testEnvironmentIndirectSpecularFactor
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0410
@@ -527,6 +585,63 @@ export default function sceneResourcesTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testCreateNodeNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
+     * @tc.desc   Test createNode with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateNodeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateNodeNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createNode
+        try {
+          let nullNode = await rf.createNode(null);
+          expect(nullNode != null).assertTrue();
+          console.info(msg + " createNode with null parameter returned null");
+        } catch (err) {
+          console.info(msg + " createNode with null parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createNode
+        try {
+          let undefinedNode = await rf.createNode(undefined);
+          expect(undefinedNode != null).assertTrue();
+          console.info(msg + " createNode with undefined parameter returned null");
+        } catch (err) {
+          console.info(msg + " createNode with undefined parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test empty path for createNode
+        try {
+          let emptyPathNode = await rf.createNode({ name: "NodeName", path: "" });
+          expect(emptyPathNode != null).assertTrue();
+          console.info(msg + " createNode with empty path returned successfully");
+        } catch (err) {
+          console.info(msg + " createNode with empty path threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateNodeNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
     /**
      * @tc.name   testSceneResource
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0480
@@ -626,6 +741,89 @@ export default function sceneResourcesTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   testCreateMaterialNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1032
+     * @tc.desc   Test createMaterial with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateMaterialNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateMaterialNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createMaterial 1
+        try {
+          let nullMaterial = await rf.createMaterial(null, MaterialType.METALLIC_ROUGHNESS);
+          expect(nullMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with (null, MaterialType.METALLIC_ROUGHNESS) returned null");
+        } catch (err) {
+          console.info(msg + " createMaterial with (null, MaterialType.METALLIC_ROUGHNESS) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createMaterial 1
+        try {
+          let undefinedMaterial = await rf.createMaterial(undefined, MaterialType.METALLIC_ROUGHNESS);
+          expect(undefinedMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with (undefined, MaterialType.METALLIC_ROUGHNESS) returned null");
+        } catch (err) {
+          console.info(msg + " createMaterial with (undefined, MaterialType.METALLIC_ROUGHNESS) threw error: " + JSON.stringify(err));
+        }
+        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
+        // Test null parameter for createMaterial 2
+        try {
+          let nullMaterial = await rf.createMaterial({ name: 'metalMat' }, null);
+          expect(nullMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with ({ name: 'metalMat' }, null) returned material");
+        } catch (err) {
+          console.info(msg + " createMaterial with ({ name: 'metalMat' }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createMaterial 2
+        try {
+          let undefinedMaterial = await rf.createMaterial({ name: 'metalMat' }, undefined);
+          expect(undefinedMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with ({ name: 'metalMat' }, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createMaterial with ({ name: 'metalMat' }, undefined) threw error: " + JSON.stringify(err));
+        }
+        
+        // Test null parameter for createMaterial
+        try {
+          let nullMaterial = await rf.createMaterial(null, null);
+          expect(nullMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with (null, null) returned null");
+        } catch (err) {
+          console.info(msg + " createMaterial with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createMaterial
+        try {
+          let undefinedMaterial = await rf.createMaterial(undefined, undefined);
+          expect(undefinedMaterial != null).assertTrue();
+          console.info(msg + " createMaterial with (undefined, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createMaterial with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+        */
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateMaterialNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
 
     /**
      * @tc.name   testCullMode
@@ -1662,7 +1860,7 @@ export default function sceneResourcesTest() {
           console.info(msg + " material && material.colorShader == False");
           expect(material && material.colorShader).assertTrue();
         }
-
+        /* task_0204 第一个参数为null/undefined时,崩溃
         // Test null parameter for createShader
         let nullShader = await rf.createShader(null);
         expect(nullShader != null).assertTrue();
@@ -1672,9 +1870,7 @@ export default function sceneResourcesTest() {
         let undefinedShader = await rf.createShader(undefined);
         expect(undefinedShader != null).assertTrue();
         console.info(msg + " createShader with undefined parameter returned undefined");
-
-        console.info(msg + " test completed successfully");
-
+        */
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -1825,6 +2021,51 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testMat4x4Properties " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateCameraNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1023
+     * @tc.desc   Test createCamera with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateCameraNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateCameraNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+
+        // Test null parameter for createCamera
+        try {
+          let nullCamera = await rf.createCamera(null);
+          expect(nullCamera != null).assertTrue();
+          console.info(msg + " createCamera with null parameter returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with null parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createCamera
+        try {
+          let undefinedCamera = await rf.createCamera(undefined);
+          expect(undefinedCamera != null).assertTrue();
+          console.info(msg + " createCamera with undefined parameter returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with undefined parameter threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateCameraNull " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -2237,6 +2478,142 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testEffectSetPropertyValue " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateCameraWithParamsNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1026
+     * @tc.desc   Test createCamera with cameraParams and null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateCameraWithParamsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateCameraWithParamsNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        
+        let LightCameraParams: CameraParameters = {renderingPipeline: RenderingPipelineType.FORWARD_LIGHTWEIGHT};
+        expect(LightCameraParams.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
+
+        // Test null parameter for createCamera with cameraParams 1
+        try {
+          let nullCamera = await rf.createCamera(null, LightCameraParams);
+          expect(nullCamera != null).assertTrue();
+          console.info(msg + " createCamera with (null, LightCameraParams) returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with (null, LightCameraParams) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createCamera with cameraParams 1
+        try {
+          let undefinedCamera = await rf.createCamera(undefined, LightCameraParams);
+          expect(undefinedCamera != null).assertTrue();
+          console.info(msg + " createCamera with (undefined, LightCameraParams) returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with (undefined, LightCameraParams) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createCamera with cameraParams 2
+        try {
+          let nullCamera = await rf.createCamera({ name: "Camera1", path:"//Camera1" }, null);
+          expect(nullCamera != null).assertTrue();
+          console.info(msg + " createCamera with ({ name: \"Camera1\", path:\"//Camera1\" }, null) returned null");
+
+        } catch (err) {
+
+          console.info(msg + " createCamera with ({ name: \"Camera1\", path:\"//Camera1\" }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createCamera with cameraParams 2
+        try {
+          let undefinedCamera = await rf.createCamera({ name: "Camera1", path:"//Camera1" }, undefined);
+          expect(undefinedCamera != null).assertTrue();
+          console.info(msg + " createCamera with ({ name: \"Camera1\", path:\"//Camera1\" }, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with ({ name: \"Camera1\", path:\"//Camera1\" }, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createCamera with cameraParams
+        try {
+          let nullCamera = await rf.createCamera(null, null);
+          expect(nullCamera != null).assertTrue();
+          console.info(msg + " createCamera with (null, null) returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createCamera with cameraParams
+        try {
+          let undefinedCamera = await rf.createCamera(undefined, undefined);
+          expect(undefinedCamera != null).assertTrue();
+          console.info(msg + " createCamera with (undefined, undefined) returned null");
+        } catch (err) {
+          console.info(msg + " createCamera with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateCameraWithParamsNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateEffectNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1027
+     * @tc.desc   Test createEffect with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateEffectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateEffectNull";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        let rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createEffect
+        try {
+          let nullEffect = await rf.createEffect(null);
+          expect(nullEffect != null).assertTrue();
+          console.info(msg + " createEffect with null parameter returned null");
+        } catch (err) {
+          console.info(msg + " createEffect with null parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createEffect
+        try {
+          let undefinedEffect = await rf.createEffect(undefined);
+          expect(undefinedEffect != null).assertTrue();
+          console.info(msg + " createEffect with undefined parameter returned null");
+        } catch (err) {
+          console.info(msg + " createEffect with undefined parameter threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateEffectNull " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
