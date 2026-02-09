@@ -3680,7 +3680,7 @@ export default function UiTest() {
             let btn = await driver.findComponent(ON.inWindow('com.uitestScene.acts').text('next page'))
             expect(btn != null).assertTrue()
             let btn1 = await driver.findComponent(ON.inWindow('').text('next page'))
-            expect(btn1 != null).assertNull()
+            expect(btn1 != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 

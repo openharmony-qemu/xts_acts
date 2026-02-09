@@ -417,6 +417,7 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi8_UiComponent_inputText_5 start`);
       let driver = UiDriver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)      
       try {
         let input = await driver.findComponent(BY.type('TextInput'))
         if (input == null) {
@@ -457,6 +458,7 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi8_UiComponent_scrollSearch_5 start`);
       let driver = UiDriver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let scroll = await driver.findComponent(BY.type('Scroll')) 
         await scroll.scrollSearch(null);
@@ -1319,8 +1321,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_inputText_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_inputText_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000) 
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.inputText(null);
@@ -1351,8 +1354,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_inputTextMode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_inputTextMode_401 start`);
+      let driver = Driver.create()   
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      let driver = Driver.create()      
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.inputText(null, {paste: false});
@@ -1383,8 +1387,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_scrollToTop_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_inputTextMode_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.scrollToTop(null);
@@ -1421,8 +1426,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_scrollToBottom_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.scrollToBottom(null);
@@ -1459,8 +1465,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_dragTo_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_dragTo_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.dragTo(null);
@@ -1491,8 +1498,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_pinchOut_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_pinchOut_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.pinchOut(null);
@@ -1523,8 +1531,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_pinchIn_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_pinchIn_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.pinchIn(null);
@@ -1555,8 +1564,9 @@ export default function abilityTest() {
      */
     it('testApi9_Component_scrollSearch_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, testApi9_Component_scrollSearch_401 start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       let driver = Driver.create()
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(1000)
       try {
         let input1 = await driver.findComponent(ON.text('MainPage'))        
         await input1.scrollSearch(null, false, 100);
