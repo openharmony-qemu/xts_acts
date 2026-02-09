@@ -315,7 +315,7 @@ export default function executeDelayedTaskErrorTest() {
         }
       }
 
-      while (num < 20||count<10||||count2<10) {
+      while (num < 20||count<10||count2<10) {
         await sleep(100);
       }
 
