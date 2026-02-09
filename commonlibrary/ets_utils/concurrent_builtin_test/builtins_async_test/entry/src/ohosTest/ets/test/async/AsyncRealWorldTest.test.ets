@@ -331,22 +331,22 @@ export default function asyncRealWorldTest() {
      * @tc.level  LEVEL2
      */
     it('asyncRealWorldTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const eventLog: string[] = [];
+      const sequence: string[] = [];
 
       const handleEvent = async (eventName: string, data: string): Promise<void> => {
-        eventLog.push(`start-${eventName}`);
+        sequence.push(`start-${eventName}`);
         await sleep(1);
-        eventLog.push(`process-${data}`);
+        sequence.push(`process-${data}`);
         await sleep(1);
-        eventLog.push(`end-${eventName}`);
+        sequence.push(`end-${eventName}`);
       };
 
       await handleEvent('click', 'button1');
       await handleEvent('submit', 'form1');
 
-      expect(eventLog.length).assertEqual(6);
-      expect(eventLog[0]).assertEqual('start-click');
-      expect(eventLog[1]).assertEqual('process-button1');
+      expect(sequence.length).assertEqual(6);
+      expect(sequence[0]).assertEqual('start-click');
+      expect(sequence[1]).assertEqual('process-button1');
     });
 
     /**
