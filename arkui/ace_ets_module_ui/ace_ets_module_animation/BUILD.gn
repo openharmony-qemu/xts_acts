@@ -30,6 +30,7 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_module_animation_api20_static:ActsAceEtsModuleAnimationApi20StaticTest",
       "ace_ets_module_animation_api11_static:ActsAceEtsModuleAnimationApi11StaticTest",
       "ace_ets_module_animation_api12_static:ActsAceEtsModuleAnimationApi12StaticTest",
+      "ace_ets_module_tabs_undefined_static:ActsAceEtsModuleTabsUndefinedStaticTest",
 
     ]
   } else {
@@ -48,6 +49,7 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_module_animation_api20_static:ActsAceEtsModuleAnimationApi20StaticTest",
       "ace_ets_module_animation_api11_static:ActsAceEtsModuleAnimationApi11StaticTest",
       "ace_ets_module_animation_api12_static:ActsAceEtsModuleAnimationApi12StaticTest",
+      "ace_ets_module_tabs_undefined_static:ActsAceEtsModuleTabsUndefinedStaticTest",
 
     ]
   }
