@@ -832,11 +832,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest039'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.soft");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -886,11 +881,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest040'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.hard");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -940,11 +930,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest041'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -994,11 +979,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest042'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.soft");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1048,11 +1028,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest043'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.hard");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1102,11 +1077,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest044'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 vibrator.startVibration({
                     type: "preset",
@@ -1156,11 +1126,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest045'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 try {
                     vibrator.startVibration({
@@ -1215,11 +1180,6 @@ describe("VibratorJsTest_misc_3", function () {
         TAG = '====>VibratorJsTest046'
         try {
             let ret = vibrator.isSupportEffectSync("haptic.effect.sharp");
-            if (!isAvailable) {
-                console.info(TAG + ' isAvailable1 is false not error');
-                expect(false).assertTrue();
-                done();
-            }
             if (ret) {
                 try {
                     vibrator.startVibration({

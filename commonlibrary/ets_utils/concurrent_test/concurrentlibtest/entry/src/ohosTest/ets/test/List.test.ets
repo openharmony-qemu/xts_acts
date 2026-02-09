@@ -17,17 +17,21 @@
 import arkTSUtilsTest from './arkTSUtils/ArkTSUtils.test';
 import TaskPoolTest from './taskpool/TaskPool.test';
 import TaskPoolErrorCodeTest from './taskpool/TaskpoolErrorCode.test';
+import TaskPoolCoverageTest from './taskpool/TaskPoolCoverage.test';
 import workerTest from './worker/Worker.test';
 import workerAddTest from './worker/WorkerAdd.test';
 import workerErrorCodeTest from './worker/WorkerErrorCode.test';
+import WorkerCoverageTest from './worker/WorkerCoverage.test';
 import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
 
 export default function testsuite() {
   arkTSUtilsTest();
   TaskPoolTest();
-  workerTest();
   TaskPoolErrorCodeTest();
+  TaskPoolCoverageTest();
+  workerTest();
   workerAddTest();
-  workerErrorCodeTest()
-  concurrencyReturnCoveredTest()
+  workerErrorCodeTest();
+  WorkerCoverageTest();
+  concurrencyReturnCoveredTest();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -100,7 +100,7 @@ struct WebViewControllerPart3 {
                 let historyItem = list.getItemAtIndex(list.currentIndex);
                 console.log('testRestoreWebState001 result is :' + historyItem.title);
                 Utils.emitEvent(historyItem.title, 100083)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

@@ -26,7 +26,6 @@
     "MainAbility/pages/nodeeventtypetest/AccessibilitycallbackTest",
     "MainAbility/pages/AnimatorTest/AnimatorTest",
     "MainAbility/pages/ArkUIKeyEventTest/ArkUIKeyEventTypeTest",
-    "MainAbility/pages/ArkUIKeyEventTest/ArkUIKeyIntensionTest",
     "MainAbility/pages/ArkUIKeyEventTest/ArkUIKeySourceTypeTest",
     "MainAbility/pages/NativeGestureTest/NativeGestureTest1",
     "MainAbility/pages/NativeGestureTest/NativeGestureTest2",

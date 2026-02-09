@@ -18,9 +18,9 @@ export default function getBundleInfo() {
      * @tc.desc   test errCode 17700001 when call getBundleInfo with userID
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoTestWithUserIdCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoTestWithUserIdCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100, (err: BusinessError<void> | null, data : BundleInfo | undefined) => {
           hilog.info(domain, tag,

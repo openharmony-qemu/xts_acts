@@ -31,6 +31,7 @@ import DeviceKvStoreReturnValue from './DeviceKvStoreReturnValue.test';
 import SingleKvStoreReturnValue from './SingleKvStoreReturnValue.test';
 import KVStoreResultSetReturnValue from './KVStoreResultSetReturnValue.test';
 import SchemaFieldNode from './SchemaFieldNode.test';
+import DistributedDataCoverageAdd from './DistributedDataCoverageAdd.test';
 
 export default function testsuite() {
   deviceKvStoreCallbackTest();
@@ -51,5 +52,5 @@ export default function testsuite() {
   SingleKvStoreReturnValue();
   KVStoreResultSetReturnValue();
   SchemaFieldNode();
-
+  DistributedDataCoverageAdd();
 }

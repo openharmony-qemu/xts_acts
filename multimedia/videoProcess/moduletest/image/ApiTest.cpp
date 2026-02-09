@@ -41,6 +41,23 @@ void VpeImageApiTest::SetUpTestCase() {}
 void VpeImageApiTest::TearDownTestCase() {}
 void VpeImageApiTest::SetUp() {}
 void VpeImageApiTest::TearDown() {}
+const ImageProcessing_ColorSpaceInfo CSC_SRC_INFO = {HDR_METADATA_TYPE_NONE,
+                                                     SRGB,
+                                                     PIXEL_FORMAT_RGBA_8888};
+const ImageProcessing_ColorSpaceInfo CSC_DST_INFO = {HDR_METADATA_TYPE_NONE,
+                                                     DISPLAY_P3,
+                                                     PIXEL_FORMAT_RGBA_8888};
+
+const ImageProcessing_ColorSpaceInfo COMPOSE_SRC_INFO = {HDR_METADATA_TYPE_BASE,
+                                                         SRGB,
+                                                         PIXEL_FORMAT_RGBA_8888};
+
+const ImageProcessing_ColorSpaceInfo COMPOSE_SRC_GAIN_INFO = {HDR_METADATA_TYPE_GAINMAP,
+                                                              SRGB,
+                                                              PIXEL_FORMAT_RGBA_8888};
+const ImageProcessing_ColorSpaceInfo COMPOSE_DST_INFO = {HDR_METADATA_TYPE_ALTERNATE,
+                                                         BT2020_HLG,
+                                                         PIXEL_FORMAT_RGBA_1010102};
 }
 
 void CreateEmptyPixelmap(OH_PixelmapNative **pixelMap, int32_t width, int32_t height, int format)
@@ -85,13 +102,17 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0010, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0020, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
-    OH_ImageProcessing_Destroy(instance);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
+        OH_ImageProcessing_Destroy(instance);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    }
 }
 
 /**
@@ -104,17 +125,21 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0020, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0030, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
-    OH_ImageProcessing_Destroy(instance);
-    OH_PixelmapNative_Destroy(&srcImg);
-    OH_PixelmapNative_Destroy(&dstImg);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
+        OH_ImageProcessing_Destroy(instance);
+        OH_PixelmapNative_Destroy(&srcImg);
+        OH_PixelmapNative_Destroy(&dstImg);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    }
 }
 
 /**
@@ -127,23 +152,27 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0030, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0040, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
-    CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
-    OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT601_EBU);
-    OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
-    OH_NativeColorSpaceManager_Destroy(srcColorspace);
-    OH_NativeColorSpaceManager_Destroy(dstColorspace);
-    OH_ImageProcessing_Destroy(instance);
-    OH_PixelmapNative_Destroy(&srcImg);
-    OH_PixelmapNative_Destroy(&dstImg);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    if (OH_ImageProcessing_IsColorSpaceConversionSupported(&CSC_SRC_INFO, &CSC_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
+        CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
+        OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT601_EBU);
+        OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
+        OH_NativeColorSpaceManager_Destroy(srcColorspace);
+        OH_NativeColorSpaceManager_Destroy(dstColorspace);
+        OH_ImageProcessing_Destroy(instance);
+        OH_PixelmapNative_Destroy(&srcImg);
+        OH_PixelmapNative_Destroy(&dstImg);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    }
 }
 
 /**
@@ -170,27 +199,31 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0050, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0060, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *srcGainmap = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
-    CreateEmptyPixelmap(&srcGainmap, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_PixelmapNative_SetColorSpaceNative(srcGainmap, srcColorspace);
-    CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COMPOSITION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
-    OH_NativeColorSpaceManager_Destroy(srcColorspace);
-    OH_NativeColorSpaceManager_Destroy(dstColorspace);
-    OH_ImageProcessing_Destroy(instance);
-    OH_PixelmapNative_Destroy(&srcImg);
-    OH_PixelmapNative_Destroy(&srcGainmap);
-    OH_PixelmapNative_Destroy(&dstImg);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *srcGainmap = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
+        CreateEmptyPixelmap(&srcGainmap, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_PixelmapNative_SetColorSpaceNative(srcGainmap, srcColorspace);
+        CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_COMPOSITION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
+        OH_NativeColorSpaceManager_Destroy(srcColorspace);
+        OH_NativeColorSpaceManager_Destroy(dstColorspace);
+        OH_ImageProcessing_Destroy(instance);
+        OH_PixelmapNative_Destroy(&srcImg);
+        OH_PixelmapNative_Destroy(&srcGainmap);
+        OH_PixelmapNative_Destroy(&dstImg);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    }
 }
 
 /**
@@ -203,27 +236,30 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0060, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0070, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *srcGainmap = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
-    CreateEmptyPixelmap(&srcGainmap, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_PixelmapNative_SetColorSpaceNative(srcGainmap, srcColorspace);
-    CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
-    OH_NativeColorSpaceManager_Destroy(srcColorspace);
-    OH_NativeColorSpaceManager_Destroy(dstColorspace);
-    OH_ImageProcessing_Destroy(instance);
-    OH_PixelmapNative_Destroy(&srcImg);
-    OH_PixelmapNative_Destroy(&srcGainmap);
-    OH_PixelmapNative_Destroy(&dstImg);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *srcGainmap = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
+        CreateEmptyPixelmap(&srcGainmap, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_PixelmapNative_SetColorSpaceNative(srcGainmap, srcColorspace);
+        CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *dstColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(dstImg, dstColorspace);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
+        OH_NativeColorSpaceManager_Destroy(srcColorspace);
+        OH_NativeColorSpaceManager_Destroy(dstColorspace);
+        OH_ImageProcessing_Destroy(instance);
+        OH_PixelmapNative_Destroy(&srcImg);
+        OH_PixelmapNative_Destroy(&srcGainmap);
+        OH_PixelmapNative_Destroy(&dstImg);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    }
 }
 
 /**
@@ -236,17 +272,21 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0070, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0080, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
-    OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
-    OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
-    OH_NativeColorSpaceManager_Destroy(srcColorspace);
-    OH_ImageProcessing_Destroy(instance);
-    OH_PixelmapNative_Destroy(&srcImg);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    if (OH_ImageProcessing_IsMetadataGenerationSupported(&COMPOSE_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
+        OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
+        OH_PixelmapNative_SetColorSpaceNative(srcImg, srcColorspace);
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
+        OH_NativeColorSpaceManager_Destroy(srcColorspace);
+        OH_ImageProcessing_Destroy(instance);
+        OH_PixelmapNative_Destroy(&srcImg);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
+    }
 }
 
 /**
@@ -259,14 +299,17 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0080, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0090, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *srcGainmap = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COMPOSITION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
-    OH_ImageProcessing_Destroy(instance);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    if (OH_ImageProcessing_IsCompositionSupported(&COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO, &COMPOSE_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *srcGainmap = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COMPOSITION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_Compose(instance, srcImg, srcGainmap, dstImg);
+        OH_ImageProcessing_Destroy(instance);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    }
 }
 
 /**
@@ -279,14 +322,17 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0090, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0100, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_PixelmapNative *srcGainmap = nullptr;
-    OH_PixelmapNative *dstImg = nullptr;
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
-    OH_ImageProcessing_Destroy(instance);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    if (OH_ImageProcessing_IsDecompositionSupported(&COMPOSE_DST_INFO, &COMPOSE_SRC_INFO, &COMPOSE_SRC_GAIN_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        OH_PixelmapNative *srcGainmap = nullptr;
+        OH_PixelmapNative *dstImg = nullptr;
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DECOMPOSITION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_Decompose(instance, srcImg, srcGainmap, dstImg);
+        OH_ImageProcessing_Destroy(instance);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    }
 }
 
 /**
@@ -299,12 +345,16 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0100, TestSize.Level0)
  */
 HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0110, TestSize.Level0)
 {
-    OH_ImageProcessing *instance = nullptr;
-    OH_PixelmapNative *srcImg = nullptr;
-    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
-    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
-    OH_ImageProcessing_Destroy(instance);
-    ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    if (OH_ImageProcessing_IsMetadataGenerationSupported(&COMPOSE_DST_INFO)) {
+        OH_ImageProcessing *instance = nullptr;
+        OH_PixelmapNative *srcImg = nullptr;
+        ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance,
+            IMAGE_PROCESSING_TYPE_METADATA_GENERATION);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+        ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
+        OH_ImageProcessing_Destroy(instance);
+        ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
+    }
 }
 
 /**

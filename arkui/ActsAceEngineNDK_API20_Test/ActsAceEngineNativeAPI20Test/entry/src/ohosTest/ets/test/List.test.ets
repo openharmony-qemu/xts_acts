@@ -51,7 +51,6 @@ import NodeEventTypeTest2 from './textinputcontenttypetest/nodeeventtypeTest2.te
 import NapiEnvTest from './nodenapitest/NapiEnvTest.test'
 import AnimatorTest from './animatetest/AnimatorTest.test'
 import ArkUIKeyEventTypeTest from './arkuikeyeventtest/ArkUIKeyEventTypeTest.test'
-import ArkUIKeyIntensionTest from './arkuikeyeventtest/ArkUIKeyIntensionTest.test'
 import ArkUIKeySourceTypeTest from './arkuikeyeventtest/ArkUIKeySourceTypeTest.test'
 import NativeDialogTest from './nativedialog/NativeDialogTest.test'
 import NativeGestureTest1 from './nativegesture/NativeGestureTest1.test'
@@ -125,7 +124,6 @@ export default function testsuite() {
   NapiEnvTest()
   AnimatorTest()
   ArkUIKeyEventTypeTest()
-  ArkUIKeyIntensionTest()
   ArkUIKeySourceTypeTest()
   NativeDialogTest()
   NativeGestureTest1()

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ class TestHandler implements photoAccessHelper.MediaAssetProgressHandler {
 let globalDone: () => void;
 
 class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(`MediaHandler succeed`);
     expect(data).assertTrue();
     globalDone();
@@ -47,21 +47,21 @@ class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
 }
 
 class FMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(` failed`);
     expect(data).assertTrue();
   }
 }
 
 class EMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(`EMediaHandler GET false failed`);
     expect(false).assertTrue();
   }
 }
 
 class ESMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(`ESMediaHandler succeed`);
     expect(false).assertTrue();
   }
@@ -70,7 +70,7 @@ class ESMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean>
 let status = false;
 
 class SMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(`SMediaHandler succeed`);
     status = true;
   }
@@ -79,7 +79,7 @@ class SMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> 
 let count: number = 0;
 
 class CMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean, map: Map<String, String> | undefined) {
+  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
     console.info(` succeed`);
     count++;
   }
@@ -108,23 +108,23 @@ export default function requestVideoTest() {
         let createOption: photoAccessHelper.PhotoCreateOptions = {
           subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
         };
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
           photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
         let photoUri =
           "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.jpg";
         let videoUri =
           "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.mp4";
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
-        await helper.applyChanges(assetChangeRequest);
-        let assertUri: string = assetChangeRequest.getAsset().uri;
+        (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
+        (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+        await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
+        let assertUri: string = ((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset() as photoAccessHelper.PhotoAsset).uri;
         if (assertUri == undefined || assertUri == "") {
           console.error(`${testNum}::createMovingPhoto :: failed to create moving Photo !`);
           expect(false).assertTrue();
           done();
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`getMovingPhotoTest::${testNum}:: failed to createMovingPhoto::${err.code}, ${err.message} !`);
         expect(false).assertTrue();
         done();
@@ -136,7 +136,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
 
@@ -145,7 +145,7 @@ export default function requestVideoTest() {
           const handler = new MediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -173,7 +173,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
 
@@ -184,7 +184,7 @@ export default function requestVideoTest() {
           let flag = await isHdr(testNum, uri)
           expect(flag).assertEqual(0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -196,14 +196,15 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
 
           const handler = new MediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -215,7 +216,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
 
@@ -225,7 +226,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -244,7 +246,8 @@ export default function requestVideoTest() {
           const handler = new EMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -267,7 +270,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -291,7 +295,8 @@ export default function requestVideoTest() {
           let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
           expect(flag).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual('401');
           done();
@@ -303,7 +308,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
 
           let requestOptions: photoAccessHelper.RequestOptions = {
@@ -313,7 +318,8 @@ export default function requestVideoTest() {
           const handler = new EMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           console.error(`Type of error.code: ${typeof error.code}`);
           console.error(`Type of errCode: ${typeof errCode}`);
@@ -390,7 +396,7 @@ export default function requestVideoTest() {
         let testNum = 'request_video_photoAsset_static_imageAsset';
         try {
           let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_image.jpg");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri = createSandboxFileUri(testContext, 'mp4');
 
@@ -401,7 +407,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -421,7 +428,7 @@ export default function requestVideoTest() {
         let testNum = 'request_video_fileUri_static_image';
         try {
           let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri = createSandboxFileUri(testContext, 'jpg');
 
@@ -432,7 +439,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -453,7 +461,7 @@ export default function requestVideoTest() {
         let testNum = 'request_video_fileUri_imageUri_photoAsset_static_imageAsset';
         try {
           let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_image.jpg");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri = createSandboxFileUri(testContext, 'jpg');
 
@@ -464,7 +472,8 @@ export default function requestVideoTest() {
           const handler = new ESMediaHandler();
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -502,7 +511,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "test_hdr_1.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
           status = false;
@@ -521,7 +530,7 @@ export default function requestVideoTest() {
           expect(flag).assertEqual(0);
           expect(status).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           done();
         }
@@ -542,7 +551,7 @@ export default function requestVideoTest() {
         try {
           let fetchOps: photoAccessHelper.FetchOptions =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "test_hdr_1.mp4");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let destUri: string = createSandboxFileUri(testContext, 'mp4');
           count = 0;

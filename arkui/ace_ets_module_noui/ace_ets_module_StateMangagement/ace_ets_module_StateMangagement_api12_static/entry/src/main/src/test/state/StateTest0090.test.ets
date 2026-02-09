@@ -64,7 +64,8 @@ export default function StateTest0090() {
         if (!("State0090" == pages.name)) {
           console.info("get StateTest0090 pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
+          console.info("get StateTest0090 pages.name:" + JSON.stringify(routerInstance.getState().name));
           await CommonFunc.sleep(2000);
 
         }

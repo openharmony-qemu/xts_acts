@@ -33,6 +33,12 @@
       },
       {
         "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.MANAGE_WIFI_CONNECTION"
       }
     ],
     "abilities": [

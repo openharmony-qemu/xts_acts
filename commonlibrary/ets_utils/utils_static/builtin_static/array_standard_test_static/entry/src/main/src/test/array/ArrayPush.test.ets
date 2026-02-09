@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1726,7 +1726,7 @@ export default function ArrayPushTest() {
     it('testArrayPush0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Obj93[] = [];
       arr.push({ val: 3 }, { val: 1 }, { val: 2 });
-      arr.sort((a, b) => a.val - b.val);
+      arr.sort((a, b) => (a.val - b.val).toInt());
       expect(JSON.stringify(arr.map<number>(e => e.val))).assertEqual(JSON.stringify([1, 2, 3]));
     });
 

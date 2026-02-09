@@ -275,7 +275,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_001
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_001
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -298,7 +298,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_002
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_002
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -321,7 +321,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_003
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_003
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -344,7 +344,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_004
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_004
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -367,7 +367,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_005
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_005
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -390,7 +390,7 @@ export default function CameraManagerCreateMetadataOutputTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_006
      * @tc.number SUB_CAMERA_MANAGER_CREATE_METADATA_OUTPUT_006
-     * @tc.desc   createMetadataOutput
+     * @tc.desc   createMetadataOutput Parameter missing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

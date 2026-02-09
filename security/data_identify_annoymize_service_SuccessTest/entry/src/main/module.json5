@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 {
   "module": {
     "name": "entry",
@@ -22,6 +21,39 @@
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
-    "pages": "$profile:main_pages"
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "srcEntrance": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ts",
+        "name": "com.example.myapplication.EnterpriseAdminAbility",
+        "icon": "$media:icon",
+        "srcLanguage": "ets",
+        "description": "$string:phone_entry_main",
+        "type": "enterpriseAdmin",
+        "exported": true
+      }
+    ],
   }
 }

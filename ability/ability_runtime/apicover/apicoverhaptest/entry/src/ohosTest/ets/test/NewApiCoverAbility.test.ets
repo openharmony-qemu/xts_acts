@@ -177,6 +177,76 @@ export default function NewApiCoverTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0300
+     * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0300
+     * @tc.desc   Test restartSelfAtomicService with null context parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_restartSelfAtomicService_0300', Level.LEVEL0, async (done: Function) => {
+      const tag = `SUB_Ability_AbilityRuntime_restartSelfAtomicService_0300`;
+      console.log(`${tag}, test begin`);
+      try {
+        await abilityManager.restartSelfAtomicService(null);
+        console.log(`${tag}, should throw error for null context`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.log(`${tag}, catch failed: ${JSON.stringify(error)}`);
+        expect(error?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0400
+     * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0400
+     * @tc.desc   Test restartSelfAtomicService with undefined context parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_restartSelfAtomicService_0400', Level.LEVEL0, async (done: Function) => {
+      const tag = `SUB_Ability_AbilityRuntime_restartSelfAtomicService_0400`;
+      console.log(`${tag}, test begin`);
+      try {
+        await abilityManager.restartSelfAtomicService(undefined);
+        console.log(`${tag}, should throw error for undefined context`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.log(`${tag}, catch failed: ${JSON.stringify(error)}`);
+        expect(error?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600
+     * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600
+     * @tc.desc   Test restartSelfAtomicService with null context after casting.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600', Level.LEVEL0, async (done: Function) => {
+      const tag = `SUB_Ability_AbilityRuntime_restartSelfAtomicService_0600`;
+      let nullContext: common.UIAbilityContext | null = null;
+      console.log(`${tag}, test begin`);
+      try {
+        await abilityManager.restartSelfAtomicService(nullContext);
+        console.log(`${tag}, should throw error for null context variable`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.log(`${tag}, catch failed: ${JSON.stringify(error)}`);
+        expect(error?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
      * @tc.number SUB_Ability_AbilityRuntime_restartSelfAtomicService_0200
      * @tc.desc   Bundle Type cannot use restartSelfAtomicService.

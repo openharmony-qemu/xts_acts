@@ -24,7 +24,7 @@ const libUtil: LibUtil = new LibUtil();
 export default function SliderTest() {
 
   describe('SliderTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

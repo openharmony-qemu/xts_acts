@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -199,7 +199,8 @@ struct ImageExample {
             this.udKey = (event as DragEvent).startDataLoading(options) as String ?? '';
             console.log('udkey:', this.udKey);
             this.res = this.udKey
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info('startDataLoading error:', e);
           }
         }, { disableDataPrefetch: this.disableDataPrefetch } as DropOptions)
@@ -212,7 +213,8 @@ struct ImageExample {
         .onClick((e: ClickEvent) => {
           try {
             this.getUIContext().getDragController().cancelDataLoading(this.udKey);
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             this.cancelResult = e.code;
             console.info('cancelDataLoading error:', e.code);
           }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,7 +67,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -113,7 +113,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -162,7 +162,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -208,7 +208,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -256,7 +256,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -307,7 +307,7 @@ export default function certFrameworkCertCmsTestUnit() {
           let cipherText = await cms.getEncryptedContentData();
           expect(cipherText.length).not().assertEqual(0);
         };
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -354,15 +354,15 @@ export default function certFrameworkCertCmsTestUnit() {
         }
         try {
           await cms.addRecipientInfo(recipientInfoKtri);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           await cms.addRecipientInfo(recipientInfoKari);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -390,10 +390,10 @@ export default function certFrameworkCertCmsTestUnit() {
         };
         try {
           await cms.addRecipientInfo(recipientInfoKari);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_0900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -420,10 +420,10 @@ export default function certFrameworkCertCmsTestUnit() {
         };
         try {
           await cms.addRecipientInfo(recipientInfoKtri);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1000 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -454,7 +454,7 @@ export default function certFrameworkCertCmsTestUnit() {
         }
         let cipherText = await cms.getEncryptedContentData();
         expect(cipherText.length).not().assertEqual(0);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -479,9 +479,9 @@ export default function certFrameworkCertCmsTestUnit() {
         cms.setRecipientEncryptionAlgorithm(cert.CmsRecipientEncryptionAlgorithm.AES_128_GCM);
         await cms.doFinal(plainText, option);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1300 ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -500,9 +500,9 @@ export default function certFrameworkCertCmsTestUnit() {
         cms.setRecipientEncryptionAlgorithm(cert.CmsRecipientEncryptionAlgorithm.AES_128_GCM);
         await cms.getEncryptedContentData()
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1400 ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -525,10 +525,10 @@ export default function certFrameworkCertCmsTestUnit() {
         }; // 接收者信息为空
         try {
           await cms.addRecipientInfo(recipientInfo);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -554,15 +554,15 @@ export default function certFrameworkCertCmsTestUnit() {
         };
         try {
           cms.setRecipientEncryptionAlgorithm(cert.CmsRecipientEncryptionAlgorithm.AES_128_GCM);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           await cms.addRecipientInfo(recipientInfo);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -600,7 +600,7 @@ export default function certFrameworkCertCmsTestUnit() {
         }
         let cipherText = await cms.getEncryptedContentData();
         expect(cipherText.length).not().assertEqual(0);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -639,7 +639,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFalse();
         };
         console.info("[XTS] doFinal success:" + signData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -674,7 +674,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFalse();
         };
         console.info("[XTS] doFinal success:" + signData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_1900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -715,7 +715,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFalse();
         };
         console.info("[XTS] doFinal success:" + signData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2000 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -754,7 +754,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFalse();
         };
         console.info("[XTS] doFinal success:" + signData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -789,7 +789,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFalse();
         };
         console.info("[XTS] doFinal success:" + signData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -833,11 +833,11 @@ export default function certFrameworkCertCmsTestUnit() {
         try {
           await cms.getEncryptedContentData();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -864,9 +864,9 @@ export default function certFrameworkCertCmsTestUnit() {
         }
         cms.addSigner(x509CertEc, keyEcInfo, signerConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2400 ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -893,7 +893,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFail();
         }
         console.info("[XTS] doFinal success:" + rawData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -922,7 +922,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFail();
         }
         console.info("[XTS] doFinal success:" + rawData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -949,7 +949,7 @@ export default function certFrameworkCertCmsTestUnit() {
           expect(null).assertFail();
         }
         console.info("[XTS] doFinal success:" + rawData);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -988,7 +988,7 @@ export default function certFrameworkCertCmsTestUnit() {
           }
           console.info("[XTS] doFinal success:" + rawData);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XTS] Cms_Func_2800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry,Component,$r,Column,ColumnOptions,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,
-  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
   CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition,BlankAttribute,
   Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {

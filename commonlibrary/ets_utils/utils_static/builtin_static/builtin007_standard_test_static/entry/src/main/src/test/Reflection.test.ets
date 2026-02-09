@@ -308,7 +308,7 @@ export default function reflectionTest() {
 
    const shortDomain: number = 0xFF01;
    const shortTag: string = "ShortValueTest";
-   const getValidShortType = (): ShortType => {
+   const getValidShortType = () => {
    };
 
     const tag: string = "NullValueTest";
@@ -439,7 +439,7 @@ export default function reflectionTest() {
       console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
     });
 
-    const getValidLongType = (): LongType => {
+    const getValidLongType = () => {
     };
 
     /**
@@ -466,14 +466,14 @@ export default function reflectionTest() {
         console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_ConstructorParams_0006');
       });
 
-    const getValidFloatType = (): FloatType => {
+    const getValidFloatType = () => {
     };
 
 
-    const getValidClassType = (): ClassType => {
+    const getValidClassType = () => {
     };
 
-     const getValidCharType = (): CharType => {
+     const getValidCharType = () => {
      };
 
   const getValidByteType = (): ByteType => {

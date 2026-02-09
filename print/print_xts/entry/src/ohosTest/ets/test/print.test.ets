@@ -805,6 +805,22 @@ export default function printTest() {
         print.DefaultPrinterType.DEFAULT_PRINTER_TYPE_LAST_USED_PRINTER
       ];
       console.log('defaultPrinterTypes: ' + JSON.stringify(defaultPrinterTypes));
+      
+      let printDocumentFormats: print.PrintDocumentFormat[] = [
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_AUTO,
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_JPEG,
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_PDF,
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_POSTSCRIPT,
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_TEXT,
+        print.PrintDocumentFormat.DOCUMENT_FORMAT_RAW
+      ];
+      console.log('printDocumentFormats: ' + JSON.stringify(printDocumentFormats));
+      
+      let docFlavors: print.DocFlavor[] = [
+        print.DocFlavor.FILE_DESCRIPTOR,
+        print.DocFlavor.BYTES
+      ];
+      console.log('docFlavors: ' + JSON.stringify(docFlavors));
     })
 
     /**
@@ -1056,6 +1072,53 @@ export default function printTest() {
         done();
       }).catch((err: BusinessError) => {
         console.log('print_function_1501 expect failed by required real printer');
+        expect(err).assertEqual(13100005);
+        done();
+      })
+    })
+    
+    /**
+     * @tc.name   print_function_1600
+     * @tc.number print_function_1600
+     * @tc.desc   check success of startPrint function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('print_function_1600', Level.LEVEL1, async (done: Function) => {
+      let printJobData : print.PrintJobData = {
+        printerId : '123',
+        jobName : 'testJobName',
+        documentFormat : print.PrintDocumentFormat.DOCUMENT_FORMAT_AUTO,
+        docFlavor : print.DocFlavor.FILE_DESCRIPTOR,
+        copyNumber : 1,
+        isLandscape : false,
+        colorMode : print.PrintColorMode.COLOR_MODE_MONOCHROME,
+        duplexMode : print.PrintDuplexMode.DUPLEX_MODE_NONE,
+        pageSize : {
+          id : 'idTest',
+          name : 'nameTest',
+          width : 1,
+          height : 2,
+        },
+        jobId : '123',
+        fdList : [1, 2, 3],
+        binaryData : new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2d, 0x31, 0x2e, 0x34]),
+        printQuality : print.PrintQuality.QUALITY_DRAFT,
+        mediaType : 'testMediaType',
+        isBorderless : false,
+        isAutoRotate : false,
+        isReverse : false,
+        isCollate : false,
+        isSequential : false,
+        options : '{"key": "value", "debug": true}'
+      };
+      // Permissions required: ohos.permission.PRINT
+      await print.startPrint(printJobData).then((data:void) => {
+        expect(false).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        console.log('print_function_1600 expect failed by required real printer');
         expect(err).assertEqual(13100005);
         done();
       })

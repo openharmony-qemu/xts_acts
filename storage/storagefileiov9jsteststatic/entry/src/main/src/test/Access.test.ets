@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function fileIOAccess() {
         let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -62,13 +62,13 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ():void => {
       let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_000');
 
       try {
         let ret = fs.accessSync(fpath);
         expect(ret === false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -96,7 +96,7 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -124,7 +124,7 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -152,7 +152,7 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -180,7 +180,7 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -208,8 +208,95 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_007 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_Static_008
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0800
+     * @tc.desc   Test accessSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_Static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_008');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = fs.accessSync(fpath, fs.AccessModeType.WRITE, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_008 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_Static_009
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0900
+     * @tc.desc   Test accessSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_Static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_009');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = fs.accessSync(fpath, fs.AccessModeType.READ, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_009 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_Static_010
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_1000
+     * @tc.desc   Test accessSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_Static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_010');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = fs.accessSync(fpath, fs.AccessModeType.READ_WRITE, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });
@@ -237,7 +324,7 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -268,7 +355,7 @@ export default function fileIOAccess() {
           fs.unlinkSync(fpath);
         });
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -289,7 +376,7 @@ export default function fileIOAccess() {
         let ret = await fs.access(fpath);
         expect(ret === false).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -311,7 +398,7 @@ export default function fileIOAccess() {
           expect(ret === false).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -340,7 +427,7 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -369,7 +456,7 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -398,7 +485,7 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -427,7 +514,7 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -455,8 +542,95 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_010 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_Static_011
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1100
+     * @tc.desc   Test access() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_Static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_011');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = await fs.access(fpath, fs.AccessModeType.WRITE, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_011 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_Static_012
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1200
+     * @tc.desc   Test access() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_Static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_012');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = await fs.access(fpath, fs.AccessModeType.READ, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_012 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_Static_013
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1300
+     * @tc.desc   Test access() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_Static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_013');
+      await Utils.prepareFile(fpath, FILE_CONTENT);
+
+      try {
+        let ret = await fs.access(fpath, fs.AccessModeType.READ_WRITE, fs.AccessFlagType.LOCAL);
+        expect(ret == true).assertTrue();
+        let file = fs.openSync(fpath);
+        let res = await Utils.isIntNum(file.fd);
+        expect(res).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == FILE_CONTENT.length).assertTrue();
+        fs.closeSync(file);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_013 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });

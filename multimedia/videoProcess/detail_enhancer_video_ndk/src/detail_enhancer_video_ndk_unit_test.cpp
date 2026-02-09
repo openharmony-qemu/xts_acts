@@ -109,6 +109,8 @@ TestConsumerListener::~TestConsumerListener() {}
 
 void TestConsumerListener::OnBufferAvailable() {}
 
+static VideoProcessing_State g_state = VIDEO_PROCESSING_STATE_STOPPED;
+
 void OnErrorEmptyCallback(OH_VideoProcessing* handle, VideoProcessing_ErrorCode errorCode, void* userData)
 {
 }
@@ -119,6 +121,7 @@ void OnError(OH_VideoProcessing* handle, VideoProcessing_ErrorCode errorCode, vo
 
 void OnState(OH_VideoProcessing* instance, VideoProcessing_State state, void* userData)
 {
+    g_state = state;
 }
 
 void OnNewOutputBuffer(OH_VideoProcessing* instance, uint32_t index, void* userData)
@@ -188,6 +191,12 @@ uint32_t DetailEnhancerVideoNdkUnitTest::FlushSurf(OHNativeWindowBuffer* ohNativ
  */
 HWTEST_F(DetailEnhancerVideoNdkUnitTest, vpeVideoNdk_01, TestSize.Level1)
 {
+    ASSERT_EQ(SRC_INFO.metadataType, OH_VIDEO_HDR_HDR10);
+    ASSERT_EQ(SRC_INFO.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
+    ASSERT_EQ(SRC_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP);
+    ASSERT_EQ(DST_INFO.metadataType, OH_VIDEO_HDR_HLG);
+    ASSERT_EQ(DST_INFO.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
+    ASSERT_EQ(DST_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP);
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
     OH_VideoProcessing* instance = nullptr;
     ret = OH_VideoProcessing_Create(&instance, CREATE_TYPE);
@@ -1620,8 +1629,10 @@ HWTEST_F(DetailEnhancerVideoNdkUnitTest, vpeVideoNdk_36, TestSize.Level1)
     OH_VideoProcessing* instance = nullptr;
     OH_VideoProcessing_Create(&instance, CREATE_TYPE);
     auto callback = std::make_shared<VideoProcessingEngine::VideoProcessingCallbackNative>();
+    callback->BindOnState(OnState);
     callback->OnError(instance, VIDEO_PROCESSING_SUCCESS, nullptr);
     callback->OnState(instance, VIDEO_PROCESSING_STATE_RUNNING, nullptr);
+    ASSERT_EQ(g_state, VIDEO_PROCESSING_STATE_RUNNING);
     callback->OnNewOutputBuffer(instance, 0, nullptr);
 }
 

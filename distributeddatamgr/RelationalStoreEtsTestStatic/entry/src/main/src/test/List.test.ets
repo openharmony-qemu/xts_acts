@@ -46,16 +46,11 @@ import RelationalStoreSyncApiTest from "./RelationalStoreSyncApiTest.test";
 import RelationStoreRdbStoreTest from "./RelationStoreApi.test";
 import RelationalStoreEnumTest from "./RelationStoreEnumApi.test";
 import RelationStoreError00Test from "./RelationStoreError00Api.test";
-import RelationStoreError10Test from "./RelationStoreError10Api.test";
-import RelationStoreError11Test from "./RelationStoreError11Api.test";
-import RelationStoreError12Test from "./RelationStoreError12Api.test";
-import RelationStoreError14Test from "./RelationStoreError14Api.test";
 import RelationStoreError17Test from "./RelationStoreError17Api.test";
 import RelationStoreError21Test from "./RelationStoreError21Api.test";
 import RelationStoreError24Test from "./RelationStoreError24Api.test";
 import RelationStoreError30Test from "./RelationStoreError30Api.test";
 import RelationStoreError32Test from "./RelationStoreError32Api.test";
-import RelationStoreError801Test from "./RelationStoreError801Api.test";
 import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
 import VectorStore from "./VectorStore.test";
 import RdbStoreSqliteErrorOccurredTest from  "./RdbOnErrorLog.test";
@@ -71,22 +66,21 @@ import RelationalStoreBatchInsert from "./RelationalStoreBatchInsert.test"
 import RdbBatchInsertTransaction from "./RdbBatchInsertTransaction.test"
 import RdbLockRow from "./RdbLockRow.test"
 
+import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
+import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
+import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
+
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
   RdbResultSetTest();
   RelationStoreError00Test();
-  RelationStoreError10Test();
-  RelationStoreError11Test();
-  RelationStoreError12Test();
-  RelationStoreError14Test();
 
   RelationStoreError21Test();
   RelationStoreError24Test();
   RelationStoreError30Test();
   RelationStoreError32Test();
   RelationStoreError17Test();
-  RelationStoreError801Test();
 
   RelationalStoreSyncApiTest();
   RelationalStoreCloudSync();
@@ -140,4 +134,8 @@ export default function testsuite() {
   RelationalStoreBatchInsert();
   RdbBatchInsertTransaction();
   RdbLockRow();
+
+  RdbStoreDuplicateColumnsTest();
+  RdbStoreErrorCodeAddTest();
+  RdbStoreErrorCodeAdd2Test();
 }

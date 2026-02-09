@@ -1316,7 +1316,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         let promise = (windowClass as ohosWindow.Window).setSpecificSystemBarEnabled(specificSystemBar, false);
         promise.then(() => {
           console.log(msgStr + 'Succeeded in setting the system bar to be invisible.');
-          expect(true).assertTrue();
           done();
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to set the system bar to be invisible. Cause:' + JSON.stringify(error));
@@ -1347,7 +1346,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         let promise = (windowClass as ohosWindow.Window).setSpecificSystemBarEnabled(specificSystemBar, true);
         promise.then(() => {
           console.log(msgStr + 'Succeeded in setting the system bar to be invisible.');
-          expect(true).assertTrue();
           done();
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to set the system bar to be invisible. Cause:' + JSON.stringify(error));
@@ -1561,7 +1559,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         let promise = ohosWindow.shiftAppWindowFocus(sourceWindowId, targetWindowId);
         promise.then(() => {
           console.log(msgStr + 'Succeeded in shifting app window focus');
-          expect(true).assertTrue();
           done();
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to shift app window focus1. Cause:' + JSON.stringify(error));
@@ -1779,7 +1776,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         let promise = windowClass.setWindowLimits(WindowLimits);
         promise.then((data) => {
           console.log(tag + 'Succeeded in setWindowLimits. Cause:' + JSON.stringify(data));
-          expect(true).assertTrue();
           done();
         }).catch((error: BusinessError) => {
           console.log(tag + 'www data Failed to setWindowLimits. Cause: ' + JSON.stringify(error));

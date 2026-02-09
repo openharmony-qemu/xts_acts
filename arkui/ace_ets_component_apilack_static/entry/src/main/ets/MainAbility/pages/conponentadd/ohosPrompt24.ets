@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,13 +17,13 @@ import prompt from '@ohos.prompt';
 import promptAction from '@ohos.promptAction';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -237,7 +237,7 @@ struct promptExample {
               }
               console.info('showDialog success callback, click button: ' + data?.index);
             });
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`showDialog args error code is ${(error as Error)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -270,7 +270,7 @@ struct promptExample {
               .catch((err: Error) => {
                 console.info('showActionMenu error: ' + err);
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -305,7 +305,7 @@ struct promptExample {
               .catch((err: Error) => {
                 console.info('showActionMenu error: ' + err);
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`showActionMenu args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;

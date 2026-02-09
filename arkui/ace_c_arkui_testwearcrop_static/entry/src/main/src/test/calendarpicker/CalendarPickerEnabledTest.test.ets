@@ -28,7 +28,7 @@ export default function calendarPickerEnabledTest() {
 
     let PAGE_TAG = 'CalendarPickerEnabledTest';
 
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, false);

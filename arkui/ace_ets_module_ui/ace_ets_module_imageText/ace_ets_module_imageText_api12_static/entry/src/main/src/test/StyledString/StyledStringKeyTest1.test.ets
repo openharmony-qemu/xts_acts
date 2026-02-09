@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ export default function StyledStringKeyTest1() {
       try{
         let btn = await driver.findComponent(ON.id('StyledStringKeyTest1_btn'));
         await (btn?.click() as Promise<void>);
-      }catch(e: Error){}
+      }catch(e){}
       await CommonFunc.sleep(1000);
       console.info("[StyledStringKeyTest1_text] btn click");
 

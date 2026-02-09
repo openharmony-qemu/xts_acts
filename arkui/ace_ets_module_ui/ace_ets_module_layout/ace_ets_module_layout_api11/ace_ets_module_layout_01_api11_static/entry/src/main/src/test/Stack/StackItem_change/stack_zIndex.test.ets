@@ -49,15 +49,15 @@ function imageComparisonAssert(left: double, top: double) {
     // let winTop = window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext'));
     const uiContext = AppStorage.get<UIContext>('uiContext');
     let windowClass: window.Window | undefined = undefined;
-    windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-    let properties: window.WindowProperties = windowClass.getWindowProperties();
+    waitForCompletion(async ()=>{ windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext); })
+    let properties: window.WindowProperties = windowClass!.getWindowProperties();
     theWinTop = properties.windowRect.top + top as long
     theWinLeft = properties.windowRect.left + left + uiContext!.vp2px(10) as long
     console.log("===================================== theWinTop " + theWinTop + " theWinLeft " + theWinLeft)
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
   }
-  await CommonFunc.sleep(3000);
+  waitForCompletion(async ()=>{ await CommonFunc.sleep(3000); })
   let screenshotOptions: screenshot.ScreenshotOptions = {
     "screenRect": {
       "left": theWinLeft,
@@ -105,7 +105,7 @@ function imageComparisonAssert(left: double, top: double) {
     isTrue = false;
   }
   ;
-  await CommonFunc.sleep(5000);
+  waitForCompletion(async ()=>{ await CommonFunc.sleep(5000); })
   return isTrue;
 }
 

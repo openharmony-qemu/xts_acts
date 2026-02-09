@@ -36,7 +36,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 const TAG = "[RDB_STORE_DATACHANGE_TEST]";
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL)";
@@ -46,7 +46,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function RdbStoreDataChangeTestEts() {
@@ -59,13 +59,13 @@ export default function RdbStoreDataChangeTestEts() {
     })
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore != undefined).assertTrue();
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
     })
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
@@ -92,7 +92,7 @@ export default function RdbStoreDataChangeTestEts() {
         console.info(TAG + " storeObserver2 into");
         status2 = 1;
       };
-      let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       rdbStore?.onPerfStat(storeObserver1);
       rdbStore2?.onPerfStat(storeObserver2);
@@ -101,7 +101,7 @@ export default function RdbStoreDataChangeTestEts() {
         'age': 18 as long,
         'salary': 25000 as long,
       };
-      await rdbStore.insert("test", valueBucket);
+      await rdbStore!.insert("test", valueBucket);
       await Utils.msSleep(500);
       expect(status1).assertEqual(1);
       expect(status2).assertEqual(1);
@@ -132,7 +132,7 @@ export default function RdbStoreDataChangeTestEts() {
         console.info(TAG + " storeObserver2 into");
         status2 = 1;
       };
-      let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore2:relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore2 != undefined).assertTrue();
       rdbStore?.onPerfStat(storeObserver1);
       rdbStore2?.onPerfStat(storeObserver2);
@@ -142,7 +142,7 @@ export default function RdbStoreDataChangeTestEts() {
         'age': 18 as long,
         'salary': 25000 as long,
       };
-      await rdbStore.insert("test", valueBucket);
+      await rdbStore!.insert("test", valueBucket);
       await Utils.msSleep(500);
       expect(status1).assertEqual(1);
       expect(status2).assertEqual(1);

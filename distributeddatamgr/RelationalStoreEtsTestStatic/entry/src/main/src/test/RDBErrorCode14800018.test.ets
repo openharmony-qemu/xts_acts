@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
 let num = "a".repeat((1024) * (1024) * 30);
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -49,7 +49,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RDBErrorCode14800018() {
   describe('RDBErrorCode14800018', (): void => {
@@ -59,19 +59,19 @@ export default function RDBErrorCode14800018() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       console.info(TAG + "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_EMPLOYEE);
+      await rdbStore!.executeSql(CREATE_TABLE_EMPLOYEE);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     afterAll(async (): Promise<void> => {
@@ -97,13 +97,14 @@ export default function RDBErrorCode14800018() {
       let predicates = new relationalStore.RdbPredicates("employee");
       predicates.equalTo("age", 30 as long);
       try {
-        await rdbStore.insert("employee", record);
-        let resultSet = await rdbStore.query(predicates);
+        await rdbStore!.insert("employee", record);
+        let resultSet = await rdbStore!.query(predicates);
         console.log(TAG + "resultSet.rowCount" + resultSet.rowCount);
-        rdbStore.lockRow(predicates);
-        rdbStore.unlockRow(predicates);
+        rdbStore!.lockRow(predicates);
+        rdbStore!.unlockRow(predicates);
         expect(resultSet.rowCount == 1).assertTrue()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(TAG + "err.code" + err.code + "err.message" + err.message)
         expect(err.code).assertEqual(14800018)
       }

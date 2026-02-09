@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function queryTest(){
         }
         expect("").assertEqual(query.getSqlLike());
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("simply calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -85,7 +85,7 @@ export default function queryTest(){
         expect("").assertEqual(query.getSqlLike());
         console.info("sql after  reset: " + query.getSqlLike());
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -113,7 +113,7 @@ export default function queryTest(){
         query.reset().equalTo("key", "value");
         console.info("query is " + query.getSqlLike());
         expect(sql === query.getSqlLike()).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -140,7 +140,7 @@ export default function queryTest(){
         query.equalTo("key3", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -164,7 +164,7 @@ export default function queryTest(){
         query.equalTo("key1", 1 as long).equalTo("key2", 2 as long).equalTo("key3", 3 as long);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -214,7 +214,7 @@ export default function queryTest(){
         query.notEqualTo("key4", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -240,7 +240,7 @@ export default function queryTest(){
         query.notEqualTo("key0", 5 as long).equalTo("key1", 5 as long).notEqualTo("key2", "str").notEqualTo("key3", false);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -290,7 +290,7 @@ export default function queryTest(){
         query.greaterThan("key4", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -316,7 +316,7 @@ export default function queryTest(){
         query.greaterThan("key0", 5 as long).greaterThan("key1", "v5").greaterThan("key3", false);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -366,7 +366,7 @@ export default function queryTest(){
         query.lessThan("key4", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
       }
       query = null;
@@ -392,7 +392,7 @@ export default function queryTest(){
         query.lessThan("key0", 5 as long).lessThan("key1", "v5")
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertTrue();
       }
@@ -440,7 +440,7 @@ export default function queryTest(){
         query.greaterThanOrEqualTo("key4", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -468,7 +468,7 @@ export default function queryTest(){
           //.greaterThanOrEqualTo("key3", false);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -491,7 +491,7 @@ export default function queryTest(){
         expect("").assertEqual(query.getSqlLike());
         query.greaterThanOrEqualTo("key2", NaN);
         expect(query.getSqlLike() !== "").assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`failed, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -518,7 +518,7 @@ export default function queryTest(){
         query.lessThanOrEqualTo("key4", "string");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -545,7 +545,7 @@ export default function queryTest(){
         query.lessThanOrEqualTo("key0", 5 as long).lessThanOrEqualTo("key1", "v5")
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -592,7 +592,7 @@ export default function queryTest(){
         query.isNull("key2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -616,7 +616,7 @@ export default function queryTest(){
         query.isNull("key").notEqualTo("key1", 4 as long).isNull("key2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -669,7 +669,7 @@ export default function queryTest(){
         query.reset().inNumber("key", Array.from(f64));
         console.info("inNumber(Float64Array([-21,31])  => " + query.getSqlLike());
         query.reset();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -697,7 +697,7 @@ export default function queryTest(){
         inNumber("key2", [0b10101] as double[]);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -736,7 +736,7 @@ export default function queryTest(){
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
         query.reset();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -761,7 +761,7 @@ export default function queryTest(){
         query.inString("key2", ["AAA" ]);
         console.info("query is " + query.getSqlLike());
         expect(query.getSqlLike() !== "").assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -787,7 +787,7 @@ export default function queryTest(){
           .inString("key2", ["AAA", "AAABBB","CCCAAA" ]);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -812,7 +812,7 @@ export default function queryTest(){
         query.notInNumber("key", [1000]);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -836,7 +836,7 @@ export default function queryTest(){
         query.notInNumber("key", [1, 2, 3] as long[]).notInNumber("key", [1, 7, 8] as long[]).notEqualTo("kkk", 5 as long);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -861,7 +861,7 @@ export default function queryTest(){
         query.notInString("key", ["v1", "NaN"]);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -885,7 +885,7 @@ export default function queryTest(){
         query.notInString("key", ["v1", "v2", "v3"]).notEqualTo("kkk", "v3");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -910,7 +910,7 @@ export default function queryTest(){
         query.like("key2", "v2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -934,7 +934,7 @@ export default function queryTest(){
         query.like("key", "v1").like("key", "v3").like("key", "v2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -958,7 +958,7 @@ export default function queryTest(){
         query.unlike("key", "v1");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -982,7 +982,7 @@ export default function queryTest(){
         query.unlike("key", "v1").unlike("key", "v3").unlike("key", "v2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1008,7 +1008,7 @@ export default function queryTest(){
         query.notEqualTo("key", "v1");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1032,7 +1032,7 @@ export default function queryTest(){
         query.equalTo("key1", 0 as long).and().equalTo("key2", "v1");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1082,7 +1082,7 @@ export default function queryTest(){
         query.notEqualTo("key", "v1");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1107,7 +1107,7 @@ export default function queryTest(){
         expect(query.getSqlLike() !== "").assertTrue();
         query.reset();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1133,7 +1133,7 @@ export default function queryTest(){
         expect(query.getSqlLike() !== "").assertTrue();
         query.reset();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("throw exception is ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1158,7 +1158,7 @@ export default function queryTest(){
         query.orderByAsc("sortbykey");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1182,7 +1182,7 @@ export default function queryTest(){
         query.notEqualTo("key", "V0").orderByAsc("sortbykey1").orderByAsc("sortbykey2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1207,7 +1207,7 @@ export default function queryTest(){
         query.orderByDesc("sortbykey");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1231,7 +1231,7 @@ export default function queryTest(){
         query.notEqualTo("key", "V0").orderByDesc("sortbykey1").orderByDesc("sortbykey2");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1257,7 +1257,7 @@ export default function queryTest(){
         query.limit(10, 2);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1282,7 +1282,7 @@ export default function queryTest(){
           .equalTo("key2", 2 as long).limit(10, 2);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1306,7 +1306,7 @@ export default function queryTest(){
         query.isNotNull("key");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1330,7 +1330,7 @@ export default function queryTest(){
         query.isNotNull("key1").and().notEqualTo("key1", 123 as long);
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1356,7 +1356,7 @@ export default function queryTest(){
         query.endGroup();
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1384,7 +1384,7 @@ export default function queryTest(){
         query.beginGroup();
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1554,7 +1554,7 @@ export default function queryTest(){
         query.deviceId("0");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1578,7 +1578,7 @@ export default function queryTest(){
         query.deviceId("kxx").equalTo("key2", "v1");
         expect(query.getSqlLike() !== "").assertTrue();
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1604,7 +1604,7 @@ export default function queryTest(){
         let sql2 = query.getSqlLike();
         expect(sql1).assertEqual(sql2);
         console.info("query is " + query.getSqlLike());
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("dumplicated calls should be ok : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1634,7 +1634,7 @@ export default function queryTest(){
         console.info("testGetSqlLike002 sql=" + sql2);
         console.info("query is " + query.getSqlLike());
         expect(sql1 !== sql2).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error("should be ok on Method Chaining : " + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }

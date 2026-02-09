@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function Array_Sort_Stable_Test_static() {
         const caseName = 'Array_Sort_Stable_Test_static_0100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<number> = [];
-        sort_stable(arr, 0, 0, (a: number, b: number): number => a - b);
+        sort_stable(arr, 0, 0, (a: number, b: number): int => (a - b).toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -79,7 +79,7 @@ export default function Array_Sort_Stable_Test_static() {
         const caseName = 'Array_Sort_Stable_Test_static_0200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<int> = [42];
-        sort_stable(arr, 0, 0, (a: int, b: int): number => a - b);
+        sort_stable(arr, 0, 0, (a: int, b: int): int => (a - b).toInt());
         const expected: FixedArray<int> = [42];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
@@ -101,7 +101,7 @@ export default function Array_Sort_Stable_Test_static() {
         const caseName = 'Array_Sort_Stable_Test_static_0300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<string> = ['apple', 'orange', 'banana', 'pear'];
-        sort_stable(arr, 0, 4, (a: string, b: string): number => a.localeCompare(b));
+        sort_stable(arr, 0, 4, (a: string, b: string): int => a.localeCompare(b).toInt());
         const expected: FixedArray<string> = ['apple', 'banana', 'orange', 'pear'];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
@@ -126,7 +126,7 @@ export default function Array_Sort_Stable_Test_static() {
         const caseName = 'Array_Sort_Stable_Test_static_0400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<string> = ['happiness', 'hi', 'hope', 'hello', 'house'];
-        sort_stable(arr, 1, 4, (a: string, b: string): number => a.localeCompare(b));
+        sort_stable(arr, 1, 4, (a: string, b: string): int => a.localeCompare(b).toInt());
         const expected: FixedArray<string> = ['happiness', 'hello', 'hi', 'hope', 'house'];
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(expected[0]);

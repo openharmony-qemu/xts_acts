@@ -14,9 +14,9 @@
  */
 
 class Point {
-  x: int;
-  y: int;
-  getRadius: (p: Point) => double = (p: Point) => Math.sqrt(p.x * p.x + p.y * p.y);
+  public x: int;
+  public y: int;
+  public getRadius: (p: Point) => double = (p: Point) => Math.sqrt(p.x * p.x + p.y * p.y);
 }
 
 class ExtendedPoint extends Point {
@@ -26,7 +26,7 @@ class ExtendedPoint extends Point {
 class Vector {
   private p1: Point | ExtendedPoint | null = null;
   private p2: Point | ExtendedPoint | null = null;
-  readonly length: number;
+  public readonly length: number;
 }
 
 interface IFigure {
@@ -35,8 +35,8 @@ interface IFigure {
 }
 
 class Circle implements IFigure {
-  points: ExtendedPoint[] = [];
-  vectors: Vector[] = [];
+  public points: ExtendedPoint[] = [];
+  public vectors: Vector[] = [];
   protected radius: Vector = new Vector();
   protected center: Point | ExtendedPoint = new Point();
 }
@@ -44,23 +44,23 @@ class Circle implements IFigure {
 class Sphere extends Circle {}
 
 class Space {
-  objects: [Circle, Sphere, Vector, ExtendedPoint, Point];
-  internal dimension: int;
+  public objects: [Circle, Sphere, Vector, ExtendedPoint, Point];
+  public dimension: int;
   constructor(objects: [Circle, Sphere, Vector, ExtendedPoint, Point]) {
     this.objects = objects
   }
-  name?: string;
+  public name?: string;
 }
 
 class UniversalFigureHandler {
-  figure: Partial<IFigure>;
+  public figure: Partial<IFigure>;
   constructor(figure: Partial<IFigure>) {
     this.figure = figure;
   }
 }
 
 class NamedSpaceHandler {
-  space: Required<Space>;
+  public space: Required<Space>;
   constructor(space: Required<Space>) {
     this.space = space;
   }

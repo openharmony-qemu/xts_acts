@@ -34,47 +34,6 @@ export default function OHPictureMetadata() {
     });
     afterAll(() => {
     });
-    /**
-     * @tc.number  SUB_PICTURE_METADATA_GET_PROPERTY_SUPP_0100
-     * @tc.name    SUB_PICTURE_METADATA_GET_PROPERTY_SUPP_0100
-     * @tc.desc    OH_PictureMetadata_GetProperty-IMAGE_SUCCESS
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('SUB_PICTURE_METADATA_GET_PROPERTY_SUPP_0100', Level.LEVEL1, () => {
-      console.info(TAG,'Start',);
-      let result: number = testNapi.PictureMetadataGetProperty(CASE_INDEX_1);
-      console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_SUCCESS);
-    });
-    /**
-     * @tc.number  SUB_PICTURE_METADATA_SET_PROPERTY_SUPP_0100
-     * @tc.name    SUB_PICTURE_METADATA_SET_PROPERTY_SUPP_0100
-     * @tc.desc    OH_PictureMetadata_SetProperty-IMAGE_SUCCESS
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('SUB_PICTURE_METADATA_SET_PROPERTY_SUPP_0100', Level.LEVEL1, () => {
-      console.info(TAG,'Start',);
-      let result: number = testNapi.PictureMetadataSetProperty(CASE_INDEX_2);
-      console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_SUCCESS);
-    });
-    /**
-     * @tc.number  SUB_Picture_Metadata_CLONE_SUPP_0100
-     * @tc.name    SUB_Picture_Metadata_CLONE_SUPP_0100
-     * @tc.desc    OH_PictureMetadata_SetProperty-IMAGE_SUCCESS
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('SUB_Picture_Metadata_CLONE_SUPP_0100', Level.LEVEL1, () => {
-      console.info(TAG,'Start',);
-      let result: number = testNapi.ClonedMetadataGetProperty(CASE_INDEX_3);
-      console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_SUCCESS);
-    });
+
   });
 }

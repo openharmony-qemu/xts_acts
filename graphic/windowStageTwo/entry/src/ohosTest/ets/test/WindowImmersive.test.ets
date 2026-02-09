@@ -4319,6 +4319,7 @@ export default function windowImmersiveTest() {
           console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
           windowClass = await windowStage.createSubWindow('testEnvSystemPropertiesWindowAvoidAreawithSubWindow');
           await windowClass.resize(mainWindow.getWindowProperties().windowRect.width, mainWindow.getWindowProperties().windowRect.height);
+          AppStorage.setOrCreate('windowClass2', windowClass);
           await windowClass.setUIContent('testability/pages/Index4');
           await windowClass.showWindow();
           await sleep(1000);
@@ -4328,10 +4329,10 @@ export default function windowImmersiveTest() {
           let avoidAreaAreaNavH = 0;
           let avoidAreaKeyboard: window.AvoidArea = {
             visible: false,
-            leftRect: {left: 0, top: 0, width: 0, height: 0},
-            bottomRect: {left: 0, top: 0, width: 0, height: 0},
-            rightRect: {left: 0, top: 0, width: 0, height: 0},
-            topRect: {left: 0, top: 0, width: 0, height: 0},
+            leftRect: { left: 0, top: 0, width: 0, height: 0 },
+            bottomRect: { left: 0, top: 0, width: 0, height: 0 },
+            rightRect: { left: 0, top: 0, width: 0, height: 0 },
+            topRect: { left: 0, top: 0, width: 0, height: 0 },
           }
           const callback = (res: window.AvoidAreaOptions) => {
             console.info(caseName + ' callback result: ' + JSON.stringify(res));
@@ -4415,21 +4416,22 @@ export default function windowImmersiveTest() {
           await sleep(1000)
           await btnClick.click();
           await sleep(1000);
-          let statusBarVP:window.UIEnvAvoidAreaVP = AppStorage.get('statusBarVP') as window.UIEnvAvoidAreaVP;
+          let statusBarVP: window.UIEnvAvoidAreaVP = AppStorage.get('statusBarVP') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP statusBarVP: ' + JSON.stringify(statusBarVP))
-          let cutoutVP:window.UIEnvAvoidAreaVP = AppStorage.get('cutoutVP') as window.UIEnvAvoidAreaVP;
+          let cutoutVP: window.UIEnvAvoidAreaVP = AppStorage.get('cutoutVP') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP cutoutVP: ' + JSON.stringify(cutoutVP))
 
-          let navigationIndicatorVP:window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorVP') as window.UIEnvAvoidAreaVP;
+          let navigationIndicatorVP: window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorVP') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP navigationIndicatorVP: ' + JSON.stringify(navigationIndicatorVP))
 
-          let statusBarPX:window.UIEnvAvoidAreaVP = AppStorage.get('statusBarPX') as window.UIEnvAvoidAreaVP;
+          let statusBarPX: window.UIEnvAvoidAreaVP = AppStorage.get('statusBarPX') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP statusBarPX: ' + JSON.stringify(statusBarPX))
-          let cutoutPX:window.UIEnvAvoidAreaVP = AppStorage.get('cutoutPX') as window.UIEnvAvoidAreaVP;
+          let cutoutPX: window.UIEnvAvoidAreaVP = AppStorage.get('cutoutPX') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP cutoutPX: ' + JSON.stringify(cutoutPX))
 
-          let navigationIndicatorPX:window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorPX') as window.UIEnvAvoidAreaVP;
+          let navigationIndicatorPX: window.UIEnvAvoidAreaVP = AppStorage.get('navigationIndicatorPX') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP navigationIndicatorPX: ' + JSON.stringify(navigationIndicatorPX))
+
 
           await sleep(1000)
           expect(statusBarPX.topRect.width).assertEqual(avoidAreaAreaStatusW);
@@ -4468,19 +4470,21 @@ export default function windowImmersiveTest() {
           expect(cutoutVP.topRect.width).assertLargerOrEqual(0);
           expect(cutoutVP.topRect.height).assertLargerOrEqual(0);
 
+          let btn = await driver.findComponent(ON.id('index4Btn2'));
+          console.info(caseName + ' btn: ' + JSON.stringify(btn));
+          await sleep(1000);
+          await btn.click();
+          await sleep(1000);
+
           let input = await driver.findComponent(ON.id('textInput'));
           console.info(caseName + ' input: ' + JSON.stringify(input));
           await sleep(1000);
           await input.click();
-          await sleep(1000);
-          let btnClick2 = await driver.findComponent(ON.id('index4Btn'))
-          await sleep(1000)
-          await btnClick2.click();
-          await sleep(1000);
+          await sleep(3000);
 
-          let keyboardVP:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardVP') as window.UIEnvAvoidAreaVP;
+          let keyboardVP: window.UIEnvAvoidAreaVP = AppStorage.get('keyboardVP2') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP keyboardVP: ' + JSON.stringify(keyboardVP))
-          let keyboardPX:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardPX') as window.UIEnvAvoidAreaVP;
+          let keyboardPX: window.UIEnvAvoidAreaVP = AppStorage.get('keyboardPX2') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP keyboardPX: ' + JSON.stringify(keyboardPX))
 
           console.info(caseName + ' avoidAreaKeyboard: ' + JSON.stringify(avoidAreaKeyboard));

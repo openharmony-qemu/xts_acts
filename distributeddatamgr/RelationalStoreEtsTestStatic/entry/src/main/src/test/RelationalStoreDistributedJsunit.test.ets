@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const ERRCODE = 801;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let sqlStatement = "CREATE TABLE IF NOT EXISTS employee (" +
   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -45,7 +45,7 @@ sqlStatement = "CREATE TABLE IF NOT EXISTS product (" +
   "vendor INTEGER," + "describe TEXT)"
 const TAG = "testTag"
 const STORE_NAME = "distributed_rdb.db"
-let rdbStore: data_Rdb.RdbStore;
+let rdbStore: data_Rdb.RdbStore | undefined;
 let config: data_Rdb.StoreConfig = {
   "name": STORE_NAME,
   securityLevel: data_Rdb.SecurityLevel.S1
@@ -127,16 +127,16 @@ export default function relationalStoreDistributedTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await data_Rdb.getRdbStore(context, config);
+      rdbStore = await data_Rdb.getRdbStore(context!, config);
       console.info(TAG + "create RelationalStore store success");
-      await executeSql1(rdbStore);
-      await executeSql2(rdbStore);
-      await executeSql3(rdbStore);
+      await executeSql1(rdbStore!);
+      await executeSql2(rdbStore!);
+      await executeSql3(rdbStore!);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach')
-      await data_Rdb.deleteRdbStore(context, config);
+      await data_Rdb.deleteRdbStore(context!, config);
     })
 
     afterAll(async (): Promise<void> => {
@@ -426,7 +426,8 @@ export default function relationalStoreDistributedTest() {
         try {
           await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
           expect(true).assertFail();
-        } catch(err:BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
           expect(err.code).assertEqual(14800000);
         }

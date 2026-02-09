@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -311,7 +311,8 @@ export default function imagePackToFile() {
           expect(false).assertTrue();
           console.info(`${testNum} packToFile test`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           fileio.closeSync(fd);
           console.log(`${testNum} packToFile error: ` + JSON.stringify(error));
           console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);

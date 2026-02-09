@@ -51,7 +51,6 @@ import image from '@ohos.multimedia.image'
 import { LengthMetrics } from '@ohos.arkui.node';
 import drawing from '@ohos.graphics.drawing';
 import image from '@ohos.multimedia.image'
-import { LengthMetrics } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 class MyCustomSpan extends CustomSpan {
 
@@ -120,14 +119,20 @@ struct styled_string_demo1 {
   }
 
   private getPixmapFromMedia(resource: Resource) {
-    let unit8Array = await this.getUIContext()!.getHostContext()!.resourceManager.getMediaContent(resource.id);
-    let imageSource = image.createImageSource(unit8Array.buffer.slice(0, unit8Array.buffer.byteLength));
-    let createPixelMap: image.PixelMap = await imageSource!.createPixelMap({
-      desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
-      desiredSize: { width: 50, height: 50 }
-    }) as image.PixelMap;
-    await imageSource!.release();
-    return createPixelMap;
+    let unit8Array: Uint8Array|undefined;
+    waitForCompletion(async ()=>{
+      unit8Array = await this.getUIContext()!.getHostContext()!.resourceManager.getMediaContent(resource.id);
+    })
+    let imageSource = 
+      image.createImageSource((unit8Array as Uint8Array).buffer.slice(0, (unit8Array as Uint8Array).buffer.byteLength));
+    let createPixelMap: image.PixelMap|undefined;
+    waitForCompletion(async ()=>{ await imageSource!.createPixelMap({
+        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+        desiredSize: { width: 50, height: 50 }
+      }) as image.PixelMap; 
+    })
+    waitForCompletion(async ()=>{ await imageSource!.release(); })
+    return createPixelMap as image.PixelMap;
   }
 
   onPageShow() {

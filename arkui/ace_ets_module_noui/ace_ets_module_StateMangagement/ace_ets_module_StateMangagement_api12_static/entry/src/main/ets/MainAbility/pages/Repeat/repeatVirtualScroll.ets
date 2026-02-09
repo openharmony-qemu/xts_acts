@@ -102,9 +102,6 @@ export struct displayRepeat {
                 Text((r.index! + ':' + r.item + 'ReuseChange' + (this.temporaryValue)).toString())
                   .id(`text${r.index}`)
                   .height('20%')
-                  .onClick((e:ClickEvent) => {
-                    this.temporaryValue = 666
-                  })
               }
             }, { cachedCount: 4 })
             .each((r) => {
@@ -132,6 +129,7 @@ export struct displayRepeat {
               let rect = this.scroller.getItemRect(this.start); // 获取子组件的大小位置
               this.scroller.scrollToIndex(5); // 滑动到指定index
               this.scroller.scrollBy(0, -rect.y); // 滑动指定距离
+              this.temporaryValue = 666;
             })
           Button('滚至索引7')
             .id('scroll_data2')

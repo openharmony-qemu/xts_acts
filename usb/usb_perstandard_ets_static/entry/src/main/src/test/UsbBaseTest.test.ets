@@ -639,7 +639,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400008);
@@ -677,7 +677,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400001);
@@ -713,7 +713,7 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400013);
@@ -741,7 +741,7 @@ export default function UsbBaseTest() {
           };
           let descriptor = UsbMgr.getRawDescriptor(gPipe);
           hilog.info(domain, tag, 'usb case testGetRawDescriptor002 ret: ' + JSON.stringify(descriptor));
-        } catch(error:BusinessError){
+        } catch(error){
           const err = error as BusinessError;
           console.info(domain, 'getRawDescriptor failed: ' + err);
           expect(err.code).assertEqual(14400001);

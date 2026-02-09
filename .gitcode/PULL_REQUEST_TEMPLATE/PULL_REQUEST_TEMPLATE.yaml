@@ -199,3 +199,10 @@ body:
     id: attachments
     attributes:
       placeholder: 请在此附上测试报告、评审结论或其余备注信息
+
+  - type: markdown
+    attributes:
+      value: |
+        # Review 工具辅助
+        - **任务**：基于 Review 工具完成 PR 自检
+        - **详细操作**：https://gitcode.com/openharmony/xts_acts/wiki/AI_Review_%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C.md

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function certFrameworkRootCaCertTestUnit() {
         }
         const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
         expect(validationRes.trustAnchor.CACert).not().assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RootCA_Func_0100 1.1 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -94,7 +94,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0200 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -123,7 +123,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0300 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -169,7 +169,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0400 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -231,7 +231,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0500 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -278,7 +278,7 @@ export default function certFrameworkRootCaCertTestUnit() {
             });
           });
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0600 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -316,7 +316,7 @@ export default function certFrameworkRootCaCertTestUnit() {
               });
             });
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0700 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -371,7 +371,7 @@ export default function certFrameworkRootCaCertTestUnit() {
               });
             });
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0800 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -442,7 +442,7 @@ export default function certFrameworkRootCaCertTestUnit() {
               });
             });
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_0900 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -471,9 +471,9 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1000 1.1 ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
@@ -500,9 +500,9 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1100 1.1 ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
@@ -538,7 +538,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1200 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -578,7 +578,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1300 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -641,7 +641,7 @@ export default function certFrameworkRootCaCertTestUnit() {
               });
             });
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1400 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -679,7 +679,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1500 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -717,7 +717,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1600 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -755,7 +755,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1700 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -784,7 +784,7 @@ export default function certFrameworkRootCaCertTestUnit() {
           }
           const validationRes: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(validationRes.trustAnchor.CACert).not().assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RootCA_Func_1800 1.1 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }

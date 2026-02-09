@@ -5,7 +5,7 @@
         "test-timeout": "600000",
         "shell-timeout": "600000",
         "bundle-name": "com.example.acts_drawing_native",
-        "module-name": "entry"
+        "module-name": "drawing_native_test"
     },
     "kits": [
         {

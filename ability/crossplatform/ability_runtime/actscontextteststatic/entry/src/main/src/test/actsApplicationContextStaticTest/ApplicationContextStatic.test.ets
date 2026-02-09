@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let abilityContext: common.UIAbilityContext
+let abilityContext: common.UIAbilityContext | undefined;
 
 export default function ApplicationContextStatic() {
   describe("ApplicationContextStatic", () => {
@@ -58,7 +58,7 @@ export default function ApplicationContextStatic() {
      */
     it('testGetRunningProcessInformationStaticPromise001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let appContext: common.ApplicationContext = abilityContext.getApplicationContext();
+        let appContext: common.ApplicationContext = abilityContext!.getApplicationContext();
         expect(appContext != null).assertTrue();
 
         appContext.getRunningProcessInformation().then((data: Array<ProcessInformation>) => {
@@ -94,7 +94,7 @@ export default function ApplicationContextStatic() {
      */
     it('testGetRunningProcessInformationStaticCb001', Level.LEVEL2,async (done: () => void): Promise<void> => {
       try {
-        let appContext: common.ApplicationContext = abilityContext.getApplicationContext();
+        let appContext: common.ApplicationContext = abilityContext!.getApplicationContext();
         expect(appContext != null).assertTrue();
 
         appContext.getRunningProcessInformation((err: BusinessError | null, data: Array<ProcessInformation> | undefined) => {

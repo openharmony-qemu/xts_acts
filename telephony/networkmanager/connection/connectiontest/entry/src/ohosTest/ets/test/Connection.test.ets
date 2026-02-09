@@ -541,6 +541,7 @@ export default function ConnectionTest() {
       const caseName: string = 'testConnectionFindProxyForUrl0100';
       console.info(`${caseName}---Start`);
       try {
+        connection.setPacFileUrl('');
         let urlNoExit: string = "https://www.zhuhu.com";
         const result = connection.findProxyForUrl(urlNoExit); 
         console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
@@ -659,6 +660,7 @@ export default function ConnectionTest() {
     const caseName: string = 'testConnectionFindProxyForUrl0200';
     console.info(`${caseName}---Start`);
     try {
+      connection.setPacFileUrl('');
       const result = connection.findProxyForUrl(undefined); 
       console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
       ExpectFail();
@@ -682,6 +684,7 @@ export default function ConnectionTest() {
     const caseName: string = 'testConnectionFindProxyForUrl0400';
     console.info(`${caseName}---Start`);
     try {
+      connection.setPacFileUrl('');
       const result = connection.findProxyForUrl(""); 
       console.info(`${caseName} findProxyForUrl success, result: ${JSON.stringify(result)}`);
       ExpectTrue(result == "");

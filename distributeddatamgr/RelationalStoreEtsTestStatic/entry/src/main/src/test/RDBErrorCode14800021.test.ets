@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
 let num = "a".repeat((1024) * (1024) * 30);
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -55,7 +55,7 @@ const STORE_CONFIG1: relationalStore.StoreConfig = {
   name: "TransactionTest.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RDBErrorCode14800021() {
   describe('RDBErrorCode14800021', (): void => {
@@ -65,19 +65,19 @@ export default function RDBErrorCode14800021() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(7000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       console.info(TAG + "create rdb store success")
-      await rdbStore.executeSql(CREATE_TABLE_EMPLOYEE);
+      await rdbStore!.executeSql(CREATE_TABLE_EMPLOYEE);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     afterAll(async (): Promise<void> => {
@@ -108,10 +108,11 @@ export default function RDBErrorCode14800021() {
           vbs.push(valueBucket);
         }
         try {
-          await rdbStore.batchInsertWithConflictResolution("test1", vbs,
+          await rdbStore!.batchInsertWithConflictResolution("test1", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolution failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -143,10 +144,11 @@ export default function RDBErrorCode14800021() {
           vbs.push(valueBucket);
         }
         try {
-          rdbStore.batchInsertWithConflictResolutionSync("test1", vbs,
+          rdbStore!.batchInsertWithConflictResolutionSync("test1", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + "batchInsertWithConflictResolutionSync failed" + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -167,7 +169,7 @@ export default function RDBErrorCode14800021() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1200 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": null,
@@ -180,7 +182,8 @@ export default function RDBErrorCode14800021() {
           let num = transaction.batchInsertWithConflictResolutionSync("test", vbs,
             relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
           console.log(TAG + "testbatchInsertWithConflictResolutionInTransaction1200 insert num " + num);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.log(TAG + e + " code: " + e.code);
           expect(e.code).assertEqual(14800021);
         }
@@ -201,7 +204,7 @@ export default function RDBErrorCode14800021() {
         console.log(TAG +
           "************* testTransactionBatchInsertWithConflictResolutionErrcode0300 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -217,7 +220,8 @@ export default function RDBErrorCode14800021() {
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           expect().assertFail()
           console.log(TAG + "testTransactionBatchInsertWithConflictResolutionErrcode0300 error");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(TAG + err + " code: " + err.code);
           expect(err.code).assertEqual(14800021);
         }
@@ -235,7 +239,7 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
@@ -251,10 +255,11 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -268,7 +273,7 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         try {
           let promiseBackup = rdbStore.backup("TransactionTest.db");
@@ -277,7 +282,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Backup failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -288,21 +294,23 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
-        const dbPath = context.databaseDir + "/rdb/TransactionTest.db";
+        const dbPath = context!.databaseDir + "/rdb/TransactionTest.db";
         try {
           rdbStore.attach(dbPath, "attachDB").then((number: int) => {
             console.info('attach succeeded');
           }).catch((err: Error) => {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -316,7 +324,7 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
@@ -335,7 +343,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Lock failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -345,7 +354,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`Unlock failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
 
@@ -359,7 +369,8 @@ export default function RDBErrorCode14800021() {
             .catch((err: Error) => {
               console.error(`Query failed, code is ${err.code},message is ${err.message}`);
             })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         let predicates1 = new relationalStore.RdbPredicates("test1");
@@ -367,10 +378,11 @@ export default function RDBErrorCode14800021() {
 
         try {
           await resultSet.getRows(resultSet.columnCount);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -384,8 +396,8 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -397,13 +409,14 @@ export default function RDBErrorCode14800021() {
         let options: relationalStore.TransactionOptions = {
           transactionType: relationalStore.TransactionType.EXCLUSIVE
         }
-        const rdbTrans = await rdbStore.createTransaction(options);
+        const rdbTrans = await rdbStore!.createTransaction(options);
 
         try {
           rdbTrans.insert("test1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -411,7 +424,8 @@ export default function RDBErrorCode14800021() {
 
         try {
           rdbTrans.insertSync("test1", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -422,7 +436,8 @@ export default function RDBErrorCode14800021() {
           rdbTrans.batchInsert("test1", valueBuckets).then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
@@ -431,14 +446,15 @@ export default function RDBErrorCode14800021() {
         try {
           rdbTrans.batchInsertSync("test1", valueBuckets)
           rdbTrans.rollback();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await rdbStore.close();
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await rdbStore!.executeSql("DROP TABLE IF EXISTS test1");
+        await rdbStore!.close();
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -452,30 +468,32 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
+        rdbStore != await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        await rdbStore!.executeSql("DROP TABLE IF EXISTS test1");
         let options: relationalStore.TransactionOptions = {
           transactionType: relationalStore.TransactionType.EXCLUSIVE
         }
-        let rdbTrans = await rdbStore.createTransaction(options);
+        let rdbTrans = await rdbStore!.createTransaction(options);
         let predicates = new relationalStore.RdbPredicates('test1');
         predicates.equalTo("NAME", "lisi");
         try {
           await rdbTrans.delete(predicates);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        rdbTrans = await rdbStore.createTransaction(options);
+        rdbTrans = await rdbStore!.createTransaction(options);
         try {
           rdbTrans.deleteSync(predicates);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -489,15 +507,16 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        let rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         await rdbStore.executeSql(CREATE_TABLE_TEST1);
         try {
-          rdbStore.attach(context, STORE_CONFIG1, "attachDB").then((number: int) => {
+          rdbStore.attach(context!, STORE_CONFIG1, "attachDB").then((number: int) => {
             console.info(`attach succeeded, number is ${number}`);
           }).catch((err: Error) => {
             console.error(`attach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -506,7 +525,8 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         try {
@@ -515,11 +535,12 @@ export default function RDBErrorCode14800021() {
           }).catch((err: Error) => {
             console.error(`detach failed, code is ${err.code},message is ${err.message}`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(14800021);
         }
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -533,8 +554,8 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -548,30 +569,32 @@ export default function RDBErrorCode14800021() {
           "salary": 100.5,
           "blobType": u8,
         };
-        await rdbStore.insert("test1", valueBucket);
+        await rdbStore!.insert("test1", valueBucket);
         let options: relationalStore.TransactionOptions = {
           transactionType: relationalStore.TransactionType.IMMEDIATE
         }
-        const rdbTrans = await rdbStore.createTransaction(options);
+        const rdbTrans = await rdbStore!.createTransaction(options);
         let predicates = new relationalStore.RdbPredicates('test1');
         predicates.equalTo("NAME", "lisi");
         try {
           rdbTrans.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(() => {
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800021)
         }
         try {
           rdbTrans.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           rdbTrans.rollback();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-        done();
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+        done!();
       })
 
     /**
@@ -584,8 +607,8 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -599,30 +622,32 @@ export default function RDBErrorCode14800021() {
           "salary": 100.5,
           "blobType": u8,
         };
-        await rdbStore.insert("test1", valueBucket);
+        await rdbStore!.insert("test1", valueBucket);
         let options: relationalStore.TransactionOptions = {
           transactionType: relationalStore.TransactionType.IMMEDIATE
         }
-        const rdbTrans = await rdbStore.createTransaction(options);
+        const rdbTrans = await rdbStore!.createTransaction(options);
         let predicates = new relationalStore.RdbPredicates('test1');
         predicates.equalTo("NAME", "lisi");
         try {
           rdbTrans.querySql("SELECT * FROM test1").then(() => {
             rdbTrans.rollback();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021);
         }
         try {
           rdbTrans.querySqlSync("SELECT * FROM test1");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
           rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -636,15 +661,16 @@ export default function RDBErrorCode14800021() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         const SQL_DELETE_TABLE = 'DELETE FROM test1';
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
-        rdbStore.createTransaction().then((transaction: relationalStore.Transaction) => {
+        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
+        rdbStore!.createTransaction().then((transaction: relationalStore.Transaction) => {
           try {
             let data = transaction.executeSync(SQL_DELETE_TABLE);
             transaction.commit();
             console.info(`delete result: ${data}`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -652,8 +678,8 @@ export default function RDBErrorCode14800021() {
         }).catch((err: Error) => {
           console.error(`createTransaction failed, code is ${err.code},message is ${err.message}`);
         })
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
-        rdbStore.createTransaction().then((transaction: relationalStore.Transaction) => {
+        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
+        rdbStore!.createTransaction().then((transaction: relationalStore.Transaction) => {
           try {
             transaction.execute(SQL_DELETE_TABLE).then((data) => {
               transaction.commit();
@@ -662,7 +688,8 @@ export default function RDBErrorCode14800021() {
               transaction.rollback();
               console.error(`delete failed, code is ${e.code}, message is ${e.message}`);
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
+          err = err as BusinessError;
             transaction.rollback();
             console.error(`delete failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(14800021)
@@ -670,8 +697,8 @@ export default function RDBErrorCode14800021() {
         }).catch((err: Error) => {
           console.error(`createTransaction failed, code is ${err.code},message is ${err.message}`);
         });
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await rdbStore!.executeSql("DROP TABLE IF EXISTS test1");
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       })
 
@@ -690,9 +717,10 @@ export default function RDBErrorCode14800021() {
         "age": 18 as long,
       }
       try{
-        rdbStore.insertSync("employ", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        rdbStore!.insertSync("employ", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect().assertFail();
-      }catch(err: BusinessError){
+      }catch(err){
+          err = err as BusinessError;
         console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
         expect(err.code).assertEqual(14800021);
       }

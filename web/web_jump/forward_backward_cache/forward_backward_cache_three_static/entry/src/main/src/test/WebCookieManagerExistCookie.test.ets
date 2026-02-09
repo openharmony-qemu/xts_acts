@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function webCookieManagerExistCookie() {
         abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.forwardbackwardcachethreetest.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`beforeAll error: ${JSON.stringify(error)}`)
       }
     });
@@ -58,15 +58,15 @@ export default function webCookieManagerExistCookie() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_0200
-    * @tc.name       : testExistCookie002
-    * @tc.desc       : test existCookie
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testExistCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name        testExistCookie002
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_0200
+     * @tc.desc        test existCookie
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testExistCookie002", 10)

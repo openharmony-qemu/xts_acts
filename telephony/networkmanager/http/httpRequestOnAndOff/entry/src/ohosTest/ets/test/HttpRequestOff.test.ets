@@ -42,7 +42,7 @@ function sleep(time:number):Promise<string> {
 
 export default function HttpRequestOffTest() {
   describe('HttpRequestOffTest', () => {
-    let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
+    let XTS_TEST_HTTP_URL: string = 'https://www.baidu.com/';
     let XTS_TEST_STREAM_HTTPS_URL: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
     /**
      * @tc.name   testNetworkMgrHttpHttpRequestOff0100

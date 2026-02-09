@@ -2032,6 +2032,8 @@ export default function webgl2_texture() {
             let result = new Uint8Array(2 * 2 * 4);
             gl.readPixels(0, 0, 2, 2, gl.RGBA, gl.UNSIGNED_BYTE, result);
             console.info("webgltest ", result);
+            console.info("www data webgltest ", 
+                result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7]);
             expect(result[0]).assertEqual(255);
             expect(result[1]).assertEqual(0);
             expect(result[2]).assertEqual(0);
