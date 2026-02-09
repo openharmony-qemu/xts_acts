@@ -162,16 +162,13 @@ export default function sequenceRunnerTaskTest() {
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1: number = 0
         let count2: number = 0
-        let lock1 = new Mutex();
 
         for (let i = 0; i < 10; i++) {
           try {
             let task1: taskpool.Task = new taskpool.Task(printArgs4, 1.0);
             task1.onEnqueued((): void => {
               try {
-                lock1.lock()
                 count1 += 1
-                lock1.unlock()
                 throw Error(`${Tag}--error`)
               } catch (e) {
                 e = e as BusinessError;
@@ -190,9 +187,7 @@ export default function sequenceRunnerTaskTest() {
             let task2: taskpool.Task = new taskpool.Task(printArgs4, 1.0);
             try {
               task2.onEnqueued((): never => {
-                lock1.lock()
                 count2 = count2 + 1
-                lock1.unlock()
                 throw Error(`${Tag}--error`)
               });
             } catch (e) {
@@ -232,16 +227,13 @@ export default function sequenceRunnerTaskTest() {
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1: number = 0
         let count2: number = 0
-        let lock1 = new Mutex();
 
         for (let i = 0; i < 10; i++) {
           try {
             let task1: taskpool.Task = new taskpool.Task(printArgs4, 1.0);
             try {
               task1.onExecutionFailed((): void => {
-                lock1.lock();
                 count1 += 1
-                lock1.unlock();
                 throw Error(`${Tag}--error`)
               });
             } catch (e) {
@@ -260,9 +252,7 @@ export default function sequenceRunnerTaskTest() {
             let task2: taskpool.Task = new taskpool.Task(printArgs4, 1.0);
             try {
               task2.onExecutionFailed((): void => {
-                lock1.lock();
                 count2 += 1
-                lock1.unlock();
                 throw Error(`${Tag}--error`)
               });
             } catch (e) {
@@ -304,16 +294,13 @@ export default function sequenceRunnerTaskTest() {
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1: number = 0
         let count2: number = 0
-        let lock1 = new Mutex();
 
         for (let i = 0; i < 10; i++) {
           try {
             let task1: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
             try {
               task1.onExecutionSucceeded((): void => {
-                lock1.lock();
                 count1 += 1
-                lock1.unlock();
                 throw Error(`${Tag}--error`)
               });
             } catch (e) {
@@ -331,9 +318,7 @@ export default function sequenceRunnerTaskTest() {
             let task2: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
             try {
               task2.onExecutionSucceeded((): void => {
-                lock1.lock();
                 count2 = count2 + 1
-                lock1.unlock();
                 throw Error(`${Tag}--error`)
               });
             } catch (e) {

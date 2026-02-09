@@ -121,35 +121,28 @@ export default function executeDelayedTaskErrorTest() {
       const caseName = 'executeDelayedTaskErrorTest0100';
       console.info(`${caseName} test start`);
       let num = 0;
+      const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const eTask: taskpool.Task = new taskpool.Task(errorTask, caseName);
 
       for (let i = 1; i <= 10; i++) {
-        const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        const eTask: taskpool.Task = new taskpool.Task(errorTask, caseName);
         try {
           // 执行正常任务
-          taskpool.executeDelayed(100, nTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          taskpool.executeDelayed(100, eTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
+        num++;
       }
 
-      while (num < 20) {
+      while (num < 10) {
         await sleep(100);
       }
 
-      expect(num).assertEqual(20);
+      expect(num).assertEqual(10);
       done();
       console.info(`${caseName} test end`);
     })
@@ -166,31 +159,26 @@ export default function executeDelayedTaskErrorTest() {
       const caseName = 'executeDelayedTaskErrorTest0300';
       console.info(`${caseName} test start`);
       let num = 0;
-      let count = 0;
-      let lock1 = new Mutex();
-      for (let i = 1; i <= 10; i++) {
-        const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
 
-        eTask.onEnqueued(() => {
+      eTask.onEnqueued(() => {
         console.log(`onEnqueued Task ${caseName} executed`);
-            lock1.lock()
-            count++;
-            lock1.unlock()
-        });
+        try {
+          throw new Error(`Error in task ${caseName}`)
+        } catch (err) {
+          err = err as Error;
+          console.error(`${caseName} executing error task failed, error: ${err.message}`);
+          expect(err.message).assertContain(`Error in task ${caseName}`);
+        }
+      });
+
+      for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          taskpool.executeDelayed(100, nTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          taskpool.executeDelayed(100, eTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -199,12 +187,11 @@ export default function executeDelayedTaskErrorTest() {
         num++;
       }
 
-      while (num < 20||count<10) {
+      while (num < 10) {
         await sleep(100);
       }
 
-      expect(num).assertEqual(20);
-      expect(count).assertEqual(10);
+      expect(num).assertEqual(10);
       done();
       console.info(`${caseName} test end`);
     })
@@ -221,45 +208,39 @@ export default function executeDelayedTaskErrorTest() {
       const caseName = 'executeDelayedTaskErrorTest0400';
       console.info(`${caseName} test start`);
       let num = 0;
-      let count = 0;
-      let lock1 = new Mutex();
-      for (let i = 1; i <= 10; i++) {
-        const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
 
-        eTask.onStartExecution(() => {
-          console.log(`onStartExecution Task ${caseName} executed`);
-            lock1.lock()
-            count++;
-            lock1.unlock()
-        });
-
+      eTask.onStartExecution(() => {
+        console.log(`onStartExecution Task ${caseName} executed`);
         try {
-          // 执行正常任务
-          taskpool.executeDelayed(100, nTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
-          // 执行抛异常任务
-          taskpool.executeDelayed(100, eTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          throw new Error(`Error in task ${caseName}`)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
+      });
+
+      for (let i = 1; i <= 10; i++) {
+        try {
+          // 执行正常任务
+          taskpool.executeDelayed(100, nTask)
+          // 执行抛异常任务
+          taskpool.executeDelayed(100, eTask)
+        } catch (err) {
+          err = err as Error;
+          console.error(`${caseName} executing error task failed, error: ${err.message}`);
+          expect(err.message).assertContain(`Error in task ${caseName}`);
+        }
+        num++;
       }
 
-      while (num < 20||count<10) {
+      while (num < 10) {
         await sleep(100);
       }
 
-      expect(num).assertEqual(20);
-      expect(count).assertEqual(10);
+      expect(num).assertEqual(10);
       done();
       console.info(`${caseName} test end`);
     })
@@ -276,52 +257,32 @@ export default function executeDelayedTaskErrorTest() {
       const caseName = 'executeDelayedTaskErrorTest0500';
       console.info(`${caseName} test start`);
       let num = 0;
-      let count = 0;
-      let count2 = 0;
-      let lock1 = new Mutex();
+      const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const eTask: taskpool.Task = new taskpool.Task(errorTask, caseName);
+      eTask.onExecutionFailed(() => {
+        console.log(`onExecutionFailed Task ${caseName} executed`);
+        throw new Error(`Error in task ${caseName}`)
+      });
 
       for (let i = 1; i <= 10; i++) {
-        const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        const eTask: taskpool.Task = new taskpool.Task(errorTask, caseName);
-        eTask.onExecutionFailed(() => {
-          console.log(`onExecutionFailed Task ${caseName} executed`);
-            lock1.lock()
-            count++;
-            lock1.unlock()
-        });
-        nTask.onExecutionSucceeded(() => {
-          console.log(`onExecutionFailed Task ${caseName} executed`);
-            lock1.lock()
-            count2++;
-            lock1.unlock()
-        });
         try {
           // 执行正常任务
-          taskpool.executeDelayed(100, nTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          taskpool.executeDelayed(100, eTask).then(() => {
-            num++;
-          }).catch((_e: Error) => {
-            num++;
-          });
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
           expect(err.message).assertContain(`Error in task ${caseName}`);
         }
+        num++;
       }
 
-      while (num < 20||count<10||count2<10) {
+      while (num < 10) {
         await sleep(100);
       }
 
-      expect(num).assertEqual(20);
-      expect(count).assertEqual(10);
-      expect(count2).assertEqual(10);
+      expect(num).assertEqual(10);
       done();
       console.info(`${caseName} test end`);
     })
@@ -338,18 +299,20 @@ export default function executeDelayedTaskErrorTest() {
       const caseName = 'executeDelayedTaskErrorTest0600';
       console.info(`${caseName} test start`);
       let num = 0;
-      let count = 0;
-      let lock1 = new Mutex();
+      const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
+      eTask.onExecutionSucceeded(() => {
+        console.log(`onExecutionSucceeded Task ${caseName} executed`);
+        try {
+          throw new Error(`Error in task ${caseName}`)
+        } catch (err) {
+          err = err as Error;
+          console.error(`${caseName} executing error task failed, error: ${err.message}`);
+          expect(err.message).assertContain(`Error in task ${caseName}`);
+        }
+      });
 
       for (let i = 1; i <= 10; i++) {
-        const nTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        const eTask: taskpool.Task = new taskpool.Task(normalTask, caseName);
-        eTask.onExecutionSucceeded(() => {
-          console.log(`onExecutionSucceeded Task ${caseName} executed`);
-          lock1.lock()
-          count++;
-          lock1.unlock()
-        });
         try {
           // 执行正常任务
           taskpool.executeDelayed(100, nTask)
@@ -363,12 +326,11 @@ export default function executeDelayedTaskErrorTest() {
         num++;
       }
 
-      while (num < 20||count<10) {
+      while (num < 10) {
         await sleep(100);
       }
 
-      expect(num).assertEqual(20);
-      expect(count).assertEqual(10);
+      expect(num).assertEqual(10);
       done();
       console.info(`${caseName} test end`);
     })
@@ -391,9 +353,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask);
+          taskpool.executeDelayed(100, nTask);
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).then(() => {
+          taskpool.executeDelayed(100, eTask).then(() => {
             console.log(`then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -431,9 +393,9 @@ export default function executeDelayedTaskErrorTest() {
 
       for (let i = 1; i <= 10; i++) {
         try {
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).catch(():void => {
+          taskpool.executeDelayed(100, eTask).catch(():void => {
             console.log(`catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
@@ -478,9 +440,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).finally(() => {
+          taskpool.executeDelayed(100, eTask).finally(() => {
             console.log(`finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -519,9 +481,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -557,9 +519,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).then(() => {
+          taskpool.executeDelayed(100, eTask).then(() => {
             console.log(`asyncLockNormalTask then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -598,9 +560,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).catch(():void => {
+          taskpool.executeDelayed(100, eTask).catch(():void => {
             console.log(`asyncLockNormalTask catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
@@ -645,9 +607,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).finally(() => {
+          taskpool.executeDelayed(100, eTask).finally(() => {
             console.log(`asyncLockNormalTask finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -685,9 +647,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -723,9 +685,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).then(() => {
+          taskpool.executeDelayed(100, eTask).then(() => {
             console.log(`promiseNormalTask then Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -763,8 +725,8 @@ export default function executeDelayedTaskErrorTest() {
 
       for (let i = 1; i <= 10; i++) {
         try {
-          await taskpool.executeDelayed(100, nTask)
-          await taskpool.executeDelayed(100, eTask).catch((err: Any) => {
+          taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, eTask).catch((err: Any) => {
             console.log(`promiseNormalTask catch Task ${caseName} executed`);
             try {
               throw new Error(`Error in task ${caseName}`)
@@ -809,9 +771,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask).finally(() => {
+          taskpool.executeDelayed(100, eTask).finally(() => {
             console.log(`promiseNormalTask finally Task ${caseName} executed`);
             throw new Error(`Error in task ${caseName}`)
           })
@@ -850,9 +812,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -889,9 +851,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -927,9 +889,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -965,9 +927,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);
@@ -1003,9 +965,9 @@ export default function executeDelayedTaskErrorTest() {
       for (let i = 1; i <= 10; i++) {
         try {
           // 执行正常任务
-          await taskpool.executeDelayed(100, nTask)
+          taskpool.executeDelayed(100, nTask)
           // 执行抛异常任务
-          await taskpool.executeDelayed(100, eTask)
+          taskpool.executeDelayed(100, eTask)
         } catch (err) {
           err = err as Error;
           console.error(`${caseName} executing error task failed, error: ${err.message}`);

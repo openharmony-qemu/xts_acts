@@ -475,20 +475,15 @@ export default function taskPoolAsyncRunnerExecute() {
         let count2: number = 0;
         let count3: number = 0;
         let count4: number = 0;
-        let lock1 = new Mutex();
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1.0, 50.0);
           task.onEnqueued(() => {
-            lock1.lock()
             count++;
-            lock1.unlock()
           });
           task2.onEnqueued(() => {
-            lock1.lock()
             count2++;
-            lock1.unlock()
           });
           runner.execute(task).then(() => {
             count3++;

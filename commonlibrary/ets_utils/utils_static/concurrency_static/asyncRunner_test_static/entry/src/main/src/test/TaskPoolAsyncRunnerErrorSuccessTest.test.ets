@@ -493,15 +493,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
         let count2: number = 0;
         let Count3: number = 0;
         let Count4: number = 0;
-        let lock1 = new Mutex();
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1, 50);
           task.onEnqueued(() => {
-            lock1.lock()
             count++;
-            lock1.unlock()
             console.info('=========rcj',count)
           });
           task2.onEnqueued(() => {
@@ -509,9 +506,7 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
               let s: string[] = [];
               s[0].split('')[1].toString();
             } catch (e) {
-              lock1.lock()
               count2++;
-              lock1.unlock()
             }
           });
           asyncRunner.execute(task).then(() => {

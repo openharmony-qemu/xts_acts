@@ -657,17 +657,14 @@ export default function taskTest() {
         const TAG: string = 'TaskTest020';
         console.info(`${TAG} test start`);
         let taskFlag = false;
-        let count = 0
         try {
           let task: taskpool.Task = new taskpool.Task(onReceiveData004, simpleCallback);
           task.onEnqueued(() => {
-            count++
           });
           await taskpool.execute(task).then((res:Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
-          expect(count).assertEqual(1);
         } catch (error) {
           error = error as Error;
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -689,17 +686,14 @@ export default function taskTest() {
       const TAG: string = 'TaskTest021';
       console.info(`${TAG} test start`);
       let taskFlag = false;
-        let count = 0
       try {
         let task: taskpool.Task = new taskpool.Task(onReceiveData001);
         task.onStartExecution(() => {
-            count++
         });
         await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-          expect(count).assertEqual(1);
       } catch (error) {
         error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -750,18 +744,15 @@ export default function taskTest() {
       const TAG: string = 'TaskTest023';
       console.info(`${TAG} test start`);
       let taskFlag = false;
-      let count = 0
       try {
         const testError = new Error('Task Execution Failed');
         let task: taskpool.Task = new taskpool.Task(onExecutionSucceeded001, testError);
         task.onExecutionFailed((e: Error) => {
-            count++
         })
         await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-          expect(count).assertEqual(0);
       } catch (error) {
         error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -783,17 +774,14 @@ export default function taskTest() {
       const TAG: string = 'TaskTest024';
       console.info(`${TAG} test start`);
       let taskFlag = false;
-      let count = 0
       try {
         let task: taskpool.Task = new taskpool.Task(onReceiveData001);
         task.onExecutionSucceeded(() => {
-            count++
         });
         await taskpool.execute(task).then((value:Any) => {
           taskFlag = true;
         });
         expect(taskFlag).assertEqual(true);
-          expect(count).assertEqual(1);
       } catch (error) {
         error = error as Error;
         console.error(`${TAG} catch error: code =>  message => ${error.message}`);

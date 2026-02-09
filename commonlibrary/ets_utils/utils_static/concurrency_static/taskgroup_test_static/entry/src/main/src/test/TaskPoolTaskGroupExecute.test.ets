@@ -319,17 +319,12 @@ export default function taskPoolTaskGroupExecuteTest() {
         let count2: Number = 0.0
         Count1.count = 0.0
         Count2.count = 0.0
-        let lock1 = new Mutex();
 
         task.onEnqueued(() => {
-          lock1.lock()
           count++
-          lock1.unlock()
         });
         task2.onEnqueued(() => {
-          lock1.lock()
           count2++
-          lock1.unlock()
         });
 
         taskpool.execute(taskGroup).then((num: Array<Any>) => {
@@ -371,16 +366,13 @@ export default function taskPoolTaskGroupExecuteTest() {
 
         Count1.count = 0.0
         Count2.count = 0.0
-        let lock1 = new Mutex();
 
         task.onEnqueued(() => {
           try {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-            lock1.lock()
             Count1.count++
-            lock1.unlock()
           }
         })
 
@@ -389,9 +381,7 @@ export default function taskPoolTaskGroupExecuteTest() {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-            lock1.lock()
             Count2.count++
-            lock1.unlock()
           }
         })
 
@@ -432,17 +422,12 @@ export default function taskPoolTaskGroupExecuteTest() {
         let count2: Number = 0.0
         Count1.count = 0.0
         Count2.count = 0.0
-        let lock = new Mutex();
 
         task.onStartExecution(() => {
-          lock.lock();
           count++
-          lock.unlock();
         });
         task2.onStartExecution(() => {
-          lock.lock();
           count2++
-          lock.unlock();
         });
         taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
@@ -484,16 +469,13 @@ export default function taskPoolTaskGroupExecuteTest() {
         let count2: Number = 0.0
         Count1.count = 0.0
         Count2.count = 0.0
-        let lock = new Mutex();
 
         task.onStartExecution(() => {
           try {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-            lock.lock();
             count++
-            lock.unlock();
           }
         })
 
@@ -502,9 +484,7 @@ export default function taskPoolTaskGroupExecuteTest() {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-            lock.lock();
             count2++
-            lock.unlock();
           }
         })
 
@@ -546,17 +526,12 @@ export default function taskPoolTaskGroupExecuteTest() {
         taskGroup.addTask(task2);
         let count: Number = 0.0
         let count2: Number = 0.0
-        let lock1 = new Mutex();
 
         task.onExecutionSucceeded(() => {
-              lock1.lock();
-              count++
-              lock1.unlock();
+          count++
         });
         task2.onExecutionSucceeded(() => {
-              lock1.lock();
-              count2++
-              lock1.unlock();
+          count2++
         })
 
         taskpool.execute(taskGroup).then((num: Array<Any>) => {
@@ -591,16 +566,13 @@ export default function taskPoolTaskGroupExecuteTest() {
         taskGroup.addTask(task2);
         let count: Number = 0.0
         let count2: Number = 0.0
-        let lock1 = new Mutex();
 
         task.onExecutionSucceeded(() => {
           try {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-              lock1.lock();
-              count++
-              lock1.unlock();
+            count++
           }
         })
 
@@ -609,9 +581,7 @@ export default function taskPoolTaskGroupExecuteTest() {
             let s: string[] = []
             s[0].split('')[1].toString()
           } catch (e) {
-              lock1.lock();
-              count2++
-              lock1.unlock();
+            count2++
           }
         })
 

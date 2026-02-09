@@ -121,13 +121,10 @@ export default function taskPoolErrorSuccessTest() {
       taskGroup.addTask(task2)
       let count: Number = 0.0
       let count2: Number = 0.0
-      let lock1 = new Mutex();
 
       task.onExecutionSucceeded(() => {
         console.info("====onExecutionSucceeded: execute task success")
-              lock1.lock();
-              count++
-              lock1.unlock();
+        count++
       });
       task2.onExecutionSucceeded(() => {
         console.info("====onExecutionSucceeded2: execute task success")
@@ -135,9 +132,7 @@ export default function taskPoolErrorSuccessTest() {
           let s: string[] = []
           s[0].split('')[1].toString()
         } catch (e) {
-              lock1.lock();
-              count2 += 1
-              lock1.unlock();
+          count2 += 1
         }
       })
 
@@ -339,21 +334,16 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
       Count1.count = 0
       Count2.count = 0
-      let lock1 = new Mutex();
 
       task.onEnqueued(() => {
-        lock1.lock()
         count++
-        lock1.unlock()
       });
       task2.onEnqueued(() => {
         try {
           let s: string[] = []
           s[0].split('')[1].toString()
         } catch (e) {
-          lock1.lock()
           count2++
-          lock1.unlock()
         }
       });
 
