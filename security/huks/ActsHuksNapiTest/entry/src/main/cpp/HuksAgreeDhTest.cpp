@@ -84,7 +84,7 @@ static struct OH_Huks_Param g_agreeParams02Finish001[] = {
 
 // Helper functions
 static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params, 
+    const struct OH_Huks_Param* params,
     uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);

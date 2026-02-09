@@ -454,9 +454,9 @@ static int ImportWrappedKey(const struct HksImportWrappedKeyTestParams* params,
 
     uint8_t agreeKeyTagBuf[tagSize] = { 0 };
     struct OH_Huks_Blob agreeKeyTag = { .size = tagSize, .data = agreeKeyTagBuf };
-    if (memcpy_s(
-            agreeKeyTagBuf, sizeof(agreeKeyTagBuf), kekCipherText->data + (kekCipherText->size - tagSize), tagSize) !=
-        EOK) {
+    if (memcpy_s(agreeKeyTagBuf, sizeof(agreeKeyTagBuf),
+            kekCipherText->data + (kekCipherText->size - tagSize),
+            tagSize) != EOK) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
     kekCipherText->size -= tagSize;
