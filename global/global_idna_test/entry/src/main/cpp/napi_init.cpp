@@ -3053,7 +3053,7 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     TimeZoneRuleQuery *query = new TimeZoneRuleQuery{0.0, PREV_RAW_OFFSET, 0, false, 0.0};
     errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, query);
     napi_value nValue;
-    int queryResult = static_cast<int>(query->result);
+    int queryResult = static_cast<int64_t>(query->result);
     std::string resultStr = std::to_string(queryResult) + "," + std::to_string((int)errCode);
     napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
     delete query;
@@ -3068,7 +3068,7 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     TimeZoneRuleQuery *query = new TimeZoneRuleQuery{0.0, PREV_RAW_OFFSET, 0, false, 0.0};
     errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, query);
     napi_value nValue;
-    int queryResult = static_cast<int>(query->result);
+    int queryResult = static_cast<int64_t>(query->result);
     std::string resultStr = std::to_string(queryResult) + "," + std::to_string((int)errCode);
     napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
     delete query;
