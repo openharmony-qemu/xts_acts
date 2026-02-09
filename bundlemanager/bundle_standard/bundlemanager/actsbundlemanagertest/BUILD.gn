@@ -18,12 +18,6 @@ ohos_js_hap_suite("ActsBundleManagerTest") {
   deps = [
     ":hjs_demo_js_assets",
     ":hjs_demo_resources",
-    "../sceneProject/bmsscenefive:bmsJstest5",
-    "../sceneProject/bmsscenefour:bmsJstest4",
-    "../sceneProject/bmssceneone:bmsJstest1",
-    "../sceneProject/bmsscenesix:bmsJstest6",
-    "../sceneProject/bmsscenethree:bmsJstest3",
-    "../sceneProject/bmsscenetwo:bmsJstest2",
   ]
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBundleManagerTest"

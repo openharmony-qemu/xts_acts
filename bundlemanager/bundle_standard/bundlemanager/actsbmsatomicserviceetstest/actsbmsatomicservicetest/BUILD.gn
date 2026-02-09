@@ -18,8 +18,6 @@ ohos_js_hap_suite("ActsBmsAtomicServiceTest") {
   deps = [
     ":actsbmsatomicservicetest_js_assets",
     ":actsbmsatomicservicetest_resources",
-    "../bmsatomicserviceone:BmsAtomicService1",
-    "../bmsatomicserviceshared:BmsAtomicServiceShared",
   ]
   ets2abc = true
   certificate_profile = "signature/openharmony_sx.p7b"

@@ -18,15 +18,6 @@ ohos_js_hap_suite("ActsBmsGetInfosTest") {
   deps = [
     ":hjs_demo_js_assets",
     ":hjs_demo_resources",
-    "../sceneProject/bmsgetinfosscenesystem:bmsSystemBundleTest1",
-    "../sceneProject/bmsgetinfosscenevendor:bmsVendorBundleTest1",
-    "../sceneProject/bmsgetinfosfirstscene:bmsThirdBundleTest1",
-    "../sceneProject/bmsgetinfossecondscene:bmsThirdBundleTest2",
-    "../sceneProject/bmsgetinfosthirdscene:bmsThirdBundleTest3",
-    "../sceneProject/bmsgetinfosfourthscene:bmsThirdBundleTest4",
-    "../sceneProject/bmsgetinfosfifthscene:bmsThirdBundleTest5",
-    "../sceneProject/bmsgetinfossixthscene:bmsThirdBundleTest6",
-    "../sceneProject/bmsgetinfosscenesystemtwo:bmsSystemBundleTest2",
   ]
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBmsGetInfosTest"

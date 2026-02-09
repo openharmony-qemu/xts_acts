@@ -18,13 +18,6 @@ ohos_js_hap_suite("ActsBmsMetaDataTest") {
   deps = [
     ":hjs_demo_js_assets",
     ":hjs_demo_resources",
-    "../sceneProject/bmsgetinfosscenesystem:bmsSystemBundleTest1",
-    "../sceneProject/bmsgetinfosscenevendor:bmsVendorBundleTest1",
-    "../sceneProject/bmsgetinfosfirstscene:bmsThirdBundleTest1",
-    "../sceneProject/bmsgetinfosfirstsceneupdate:bmsThirdBundleTestA1",
-    "../sceneProject/bmsgetinfosfifthscene:bmsThirdBundleTest5",
-    "../sceneProject/bmsfirstright:first_right",
-    "../sceneProject/bmssecondright:second_right",
   ]
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBmsMetaDataTest"
