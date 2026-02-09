@@ -56,7 +56,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       } else {
         throw new Error("=========>>>>>>> WLAN Network Error");
       }
-      if (data.chload >= 800 || data.rssi <= -80) {
+      if (data.chload >= 900 || data.rssi <= -80) {
         throw new Error("=========>>>>>>> WLAN Network Error (speed)");
       }
     })
