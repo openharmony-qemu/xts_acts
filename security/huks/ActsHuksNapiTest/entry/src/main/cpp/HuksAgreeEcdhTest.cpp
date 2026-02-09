@@ -86,10 +86,7 @@ static struct OH_Huks_Param g_agreeParams02Finish001[] = {
 };
 
 // Helper functions
-static OH_Huks_Result InitParamSet(
-    struct OH_Huks_ParamSet** paramSet, 
-    const struct OH_Huks_Param* params, 
-    uint32_t paramcount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -361,6 +358,42 @@ static void CleanupEcdhResources(const struct EcdhCleanupResources* resources)
     HksEcdhAgreeFreeBlob(resources->publicKey01, resources->publicKey02, resources->outData01, resources->outData02);
 }
 
+// Helper function: Export public keys with error handling
+static int ExportEcdhPublicKeysWithCleanup(struct OH_Huks_Blob* publicKey01,
+                                           struct OH_Huks_Blob* publicKey02,
+                                           const struct OH_Huks_ParamSet* genParamSet,
+                                           struct OH_Huks_ParamSet* initParamSet01,
+                                           struct OH_Huks_ParamSet* finishParamSet01,
+                                           struct OH_Huks_ParamSet* initParamSet02,
+                                           struct OH_Huks_ParamSet* finishParamSet02)
+{
+    if (AllocateAndExportEcdhPublicKeys(publicKey01, publicKey02, genParamSet) != 0) {
+        OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
+        OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
+        HksEcdhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Perform key agreement with error handling
+static int PerformEcdhKeyAgreementWithCleanup(const struct EcdhKeyAgreementParams* agreementParams,
+                                              const struct OH_Huks_ParamSet* genParamSet,
+                                              struct OH_Huks_ParamSet* initParamSet01,
+                                              struct OH_Huks_ParamSet* finishParamSet01,
+                                              struct OH_Huks_ParamSet* initParamSet02,
+                                              struct OH_Huks_ParamSet* finishParamSet02)
+{
+    if (PerformEcdhKeyAgreement(agreementParams) != 0) {
+        HksEcdhAgreeFreeBlob(agreementParams->publicKey01, agreementParams->publicKey02, nullptr, nullptr);
+        OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
+        OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
+        HksEcdhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
+        return -1;
+    }
+    return 0;
+}
+
 /**
  * @tc.name   SecurityHuksNapiAgreeEcdh0100
  * @tc.number Security_HUKS_NAPI_Agree_ECDH_0100
@@ -392,10 +425,13 @@ int SecurityHuksNapiAgreeEcdh0100()
     // 导出公钥
     struct OH_Huks_Blob publicKey01 = { .size = OH_HUKS_ECC_KEY_SIZE_256, .data = nullptr };
     struct OH_Huks_Blob publicKey02 = { .size = OH_HUKS_ECC_KEY_SIZE_256, .data = nullptr };
-    if (AllocateAndExportEcdhPublicKeys(&publicKey01, &publicKey02, genParamSet) != 0) {
-        OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
-        OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
-        HksEcdhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
+    if (ExportEcdhPublicKeysWithCleanup(&publicKey01,
+                                        &publicKey02,
+                                        genParamSet,
+                                        initParamSet01,
+                                        finishParamSet01,
+                                        initParamSet02,
+                                        finishParamSet02) != 0) {
         return -1;
     }
 
@@ -410,11 +446,8 @@ int SecurityHuksNapiAgreeEcdh0100()
                                                       .finishParamSet02 = finishParamSet02,
                                                       .outData01 = &outData01,
                                                       .outData02 = &outData02 };
-    if (PerformEcdhKeyAgreement(&agreementParams) != 0) {
-        HksEcdhAgreeFreeBlob(&publicKey01, &publicKey02, nullptr, nullptr);
-        OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
-        OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
-        HksEcdhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
+    if (PerformEcdhKeyAgreementWithCleanup(
+            &agreementParams, genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02) != 0) {
         return -1;
     }
 
@@ -428,7 +461,6 @@ int SecurityHuksNapiAgreeEcdh0100()
                                                .publicKey02 = &publicKey02,
                                                .outData01 = &outData01,
                                                .outData02 = &outData02 };
-
     CleanupEcdhResources(&cleanupRes);
 
     return 0;

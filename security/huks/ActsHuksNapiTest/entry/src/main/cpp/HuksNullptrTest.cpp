@@ -86,8 +86,7 @@ static int TestParamAndSdkOperations(struct OH_Huks_Blob* blob)
 }
 
 // Helper function: Test key operations
-static int
-    TestKeyOperations(struct OH_Huks_Blob* blob, struct OH_Huks_ParamSet* paramSet, struct OH_Huks_CertChain* certChain)
+static int TestKeyOperations(struct OH_Huks_Blob* blob, struct OH_Huks_ParamSet* paramSet, struct OH_Huks_CertChain* certChain)
 {
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(blob, paramSet, paramSet);
     if (ret.errorCode == OH_HUKS_SUCCESS) {
