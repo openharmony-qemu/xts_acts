@@ -14,11 +14,11 @@
  */
 
 #include "include/HuksSignVerifyEccTest.h"
+#include <cstring>
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#include <cstring>
 
 namespace Acts {
 namespace Huks {
@@ -30,29 +30,32 @@ static const std::string g_inData =
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
 
 static struct OH_Huks_Param g_genParamsTest001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 static struct OH_Huks_Param g_signParamsTest001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 static struct OH_Huks_Param g_verifyParamsTest001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_ECC },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_ECC_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
-    const struct OH_Huks_Param *params,
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
     uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
@@ -76,17 +79,19 @@ static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
 }
 
 // Helper function: TestUpdateFinish
-static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet,
-                                      uint32_t purpose, const struct OH_Huks_Blob *inData, 
-                                      struct OH_Huks_Blob *outData)
+static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
+                                       const struct OH_Huks_ParamSet* paramSet,
+                                       uint32_t purpose,
+                                       const struct OH_Huks_Blob* inData,
+                                       struct OH_Huks_Blob* outData)
 {
-    struct OH_Huks_Blob outDataUpdate = {0, nullptr};
+    struct OH_Huks_Blob outDataUpdate = { 0, nullptr };
     OH_Huks_Result ret = OH_Huks_UpdateSession(handle, paramSet, inData, &outDataUpdate);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    struct OH_Huks_Blob inDataFinish = {0, nullptr};
+    struct OH_Huks_Blob inDataFinish = { 0, nullptr };
     if (purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
         ret = OH_Huks_FinishSession(handle, paramSet, outData, &inDataFinish);
     } else {
@@ -97,17 +102,20 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
 }
 
 // Helper function: Sign or Verify operation
-static OH_Huks_Result HksTestSignVerify(struct OH_Huks_Blob *keyAlias, struct OH_Huks_ParamSet *paramSet,
-                                       const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData, bool isSign)
+static OH_Huks_Result HksTestSignVerify(struct OH_Huks_Blob* keyAlias,
+                                        struct OH_Huks_ParamSet* paramSet,
+                                        const struct OH_Huks_Blob* inData,
+                                        struct OH_Huks_Blob* outData,
+                                        bool isSign)
 {
-    uint8_t tmpHandle[sizeof(uint64_t)] = {0};
-    struct OH_Huks_Blob handle = {sizeof(uint64_t), tmpHandle};
+    uint8_t tmpHandle[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handle = { sizeof(uint64_t), tmpHandle };
     OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, paramSet, &handle, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    struct OH_Huks_Param *tmpParam = nullptr;
+    struct OH_Huks_Param* tmpParam = nullptr;
     ret = OH_Huks_GetParam(paramSet, OH_HUKS_TAG_PURPOSE, &tmpParam);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -122,13 +130,13 @@ static OH_Huks_Result HksTestSignVerify(struct OH_Huks_Blob *keyAlias, struct OH
 }
 
 // Main test case helper
-static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlias, 
-                                                     struct OH_Huks_ParamSet *genParamSet,
-                                                     struct OH_Huks_ParamSet *signParamSet,
-                                                     struct OH_Huks_ParamSet *verifyParamSet)
+static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlias,
+                                                     struct OH_Huks_ParamSet* genParamSet,
+                                                     struct OH_Huks_ParamSet* signParamSet,
+                                                     struct OH_Huks_ParamSet* verifyParamSet)
 {
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), (uint8_t *)g_inData.c_str()};
-    
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
+
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -136,16 +144,16 @@ static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
     }
 
     /* 2. Sign Three Stage */
-    uint8_t outDataS[ECC_COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outDataSign = {ECC_COMMON_SIZE, outDataS};
+    uint8_t outDataS[ECC_COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outDataSign = { ECC_COMMON_SIZE, outDataS };
     ret = HksTestSignVerify(&keyAlias, signParamSet, &inData, &outDataSign, true);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
     /* 3. Export Public Key */
-    uint8_t pubKey[OH_HUKS_ECC_KEY_SIZE_521] = {0};
-    struct OH_Huks_Blob publicKey = {OH_HUKS_ECC_KEY_SIZE_521, pubKey};
+    uint8_t pubKey[OH_HUKS_ECC_KEY_SIZE_521] = { 0 };
+    struct OH_Huks_Blob publicKey = { OH_HUKS_ECC_KEY_SIZE_521, pubKey };
     ret = OH_Huks_ExportPublicKeyItem(&keyAlias, genParamSet, &publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -153,7 +161,7 @@ static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
 
     /* 4. Import Key */
     char newKey[] = "ECC_Sign_Verify_Import_KeyAlias";
-    struct OH_Huks_Blob newKeyAlias = {.size = static_cast<uint32_t>(strlen(newKey)), .data = (uint8_t *)newKey};
+    struct OH_Huks_Blob newKeyAlias = { .size = static_cast<uint32_t>(strlen(newKey)), .data = (uint8_t*)newKey };
     ret = OH_Huks_ImportKeyItem(&newKeyAlias, verifyParamSet, &publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -184,33 +192,31 @@ static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
  */
 int SecurityHuksNapiSignVerifyEcc0100()
 {
-    const char *keyAliasString = "HksECCSignVerifyKeyAliasTest001";
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
-    struct OH_Huks_ParamSet *signParamSet = nullptr;
-    struct OH_Huks_ParamSet *verifyParamSet = nullptr;
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t *)keyAliasString};
+    const char* keyAliasString = "HksECCSignVerifyKeyAliasTest001";
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
+    struct OH_Huks_ParamSet* signParamSet = nullptr;
+    struct OH_Huks_ParamSet* verifyParamSet = nullptr;
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t*)keyAliasString };
 
-    OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParamsTest001, 
-                                      sizeof(g_genParamsTest001) / sizeof(OH_Huks_Param));
+    OH_Huks_Result ret =
+        InitParamSet(&genParamSet, g_genParamsTest001, sizeof(g_genParamsTest001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
-    
-    ret = InitParamSet(&signParamSet, g_signParamsTest001, 
-                      sizeof(g_signParamsTest001) / sizeof(OH_Huks_Param));
+
+    ret = InitParamSet(&signParamSet, g_signParamsTest001, sizeof(g_signParamsTest001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         return -1;
     }
-    
-    ret = InitParamSet(&verifyParamSet, g_verifyParamsTest001, 
-                      sizeof(g_verifyParamsTest001) / sizeof(OH_Huks_Param));
+
+    ret = InitParamSet(&verifyParamSet, g_verifyParamsTest001, sizeof(g_verifyParamsTest001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         OH_Huks_FreeParamSet(&signParamSet);
         return -1;
     }
-    
+
     if ((genParamSet != nullptr) || (signParamSet != nullptr) || (verifyParamSet != nullptr)) {
         ret = HksEccSignVerifyTestNormalCase(keyAlias, genParamSet, signParamSet, verifyParamSet);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -234,7 +240,7 @@ int SecurityHuksNapiSignVerifyEcc0100()
     OH_Huks_FreeParamSet(&genParamSet);
     OH_Huks_FreeParamSet(&signParamSet);
     OH_Huks_FreeParamSet(&verifyParamSet);
-    
+
     return 0;
 }
 

@@ -14,12 +14,12 @@
  */
 
 #include "include/HuksDeriveHkdfTest.h"
+#include <cstdlib>
+#include <cstring>
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#include <cstring>
-#include <cstdlib>
 
 namespace Acts {
 namespace Huks {
@@ -34,9 +34,9 @@ static const std::string g_inData =
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
 
 // Helper function: Initialize parameter set
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
-                                   const struct OH_Huks_Param *params,
-                                   uint32_t paramCount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
+    uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -60,11 +60,11 @@ static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet,
 
 // Helper function: HKDF Derive Test Normal Case
 static OH_Huks_Result HksHkdfDeriveTestNormalCase(const struct OH_Huks_Blob keyAlias,
-                                                   const struct OH_Huks_ParamSet *genParamSet,
-                                                   struct OH_Huks_ParamSet *deriveParamSet,
-                                                   struct OH_Huks_ParamSet *deriveFinalParamsSet)
+                                                  const struct OH_Huks_ParamSet* genParamSet,
+                                                  struct OH_Huks_ParamSet* deriveParamSet,
+                                                  struct OH_Huks_ParamSet* deriveFinalParamsSet)
 {
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), (uint8_t *)g_inData.c_str()};
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
@@ -74,24 +74,24 @@ static OH_Huks_Result HksHkdfDeriveTestNormalCase(const struct OH_Huks_Blob keyA
 
     /* 2. Derive Three Stage */
     // Init
-    uint8_t handleD[sizeof(uint64_t)] = {0};
-    struct OH_Huks_Blob handleDerive = {sizeof(uint64_t), handleD};
+    uint8_t handleD[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handleDerive = { sizeof(uint64_t), handleD };
     ret = OH_Huks_InitSession(&keyAlias, deriveParamSet, &handleDerive, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
-    
+
     // Update
-    uint8_t tmpOut[COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outData = {COMMON_SIZE, tmpOut};
+    uint8_t tmpOut[COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outData = { COMMON_SIZE, tmpOut };
     ret = OH_Huks_UpdateSession(&handleDerive, deriveParamSet, &inData, &outData);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
-    
+
     // Finish
-    uint8_t outDataD[COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outDataDerive = {COMMON_SIZE, outDataD};
+    uint8_t outDataD[COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outDataDerive = { COMMON_SIZE, outDataD };
     ret = OH_Huks_FinishSession(&handleDerive, deriveFinalParamsSet, &inData, &outDataDerive);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -102,28 +102,32 @@ static OH_Huks_Result HksHkdfDeriveTestNormalCase(const struct OH_Huks_Blob keyA
 
 // Test parameters
 static struct OH_Huks_Param g_genParams001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 static struct OH_Huks_Param g_hkdfParams001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HKDF},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_DERIVE_KEY_SIZE, .uint32Param = DERIVE_KEY_SIZE_32},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_HKDF },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_DERIVE_KEY_SIZE, .uint32Param = DERIVE_KEY_SIZE_32 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 static struct OH_Huks_Param g_hkdfFinishParams001[] = {
-    {.tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT},
-    {.tag = OH_HUKS_TAG_KEY_ALIAS,
-     .blob = {static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasFinalTest001")), (uint8_t *)"HksHKDFDeriveKeyAliasFinalTest001"}},
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = 256},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT },
+    { .tag = OH_HUKS_TAG_KEY_ALIAS,
+      .blob = { static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasFinalTest001")),
+                (uint8_t*)"HksHKDFDeriveKeyAliasFinalTest001" } },
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = 256 },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 /**
  * @tc.name   SecurityHuksNapiDeriveHkdf0100
@@ -135,26 +139,28 @@ static struct OH_Huks_Param g_hkdfFinishParams001[] = {
  */
 int SecurityHuksNapiDeriveHkdf0100()
 {
-    struct OH_Huks_Blob keyAlias = {static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasTest001")), (uint8_t *)"HksHKDFDeriveKeyAliasTest001"};
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasTest001")),
+                                     (uint8_t*)"HksHKDFDeriveKeyAliasTest001" };
 
     /* 1. Generate Key */
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
     OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams001, sizeof(g_genParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
     /* 2. HKDF Three Stage */
-    struct OH_Huks_ParamSet *hkdfParamSet = nullptr;
-    struct OH_Huks_ParamSet *hkdfFinishParamSet = nullptr;
+    struct OH_Huks_ParamSet* hkdfParamSet = nullptr;
+    struct OH_Huks_ParamSet* hkdfFinishParamSet = nullptr;
     ret = InitParamSet(&hkdfParamSet, g_hkdfParams001, sizeof(g_hkdfParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         return -1;
     }
-    
+
     // finish paramset
-    ret = InitParamSet(&hkdfFinishParamSet, g_hkdfFinishParams001, sizeof(g_hkdfFinishParams001) / sizeof(OH_Huks_Param));
+    ret =
+        InitParamSet(&hkdfFinishParamSet, g_hkdfFinishParams001, sizeof(g_hkdfFinishParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
         OH_Huks_FreeParamSet(&hkdfParamSet);
@@ -169,7 +175,7 @@ int SecurityHuksNapiDeriveHkdf0100()
         OH_Huks_FreeParamSet(&hkdfFinishParamSet);
         return -1;
     }
-    
+
     /* 3. Delete Key */
     ret = OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -178,9 +184,9 @@ int SecurityHuksNapiDeriveHkdf0100()
         OH_Huks_FreeParamSet(&hkdfFinishParamSet);
         return -1;
     }
-    
-    struct OH_Huks_Blob deleteKeyAlias = {.size = static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasFinalTest001")),
-                                          .data = (uint8_t *)"HksHKDFDeriveKeyAliasFinalTest001"};
+
+    struct OH_Huks_Blob deleteKeyAlias = { .size = static_cast<uint32_t>(strlen("HksHKDFDeriveKeyAliasFinalTest001")),
+                                           .data = (uint8_t*)"HksHKDFDeriveKeyAliasFinalTest001" };
     ret = OH_Huks_DeleteKeyItem(&deleteKeyAlias, hkdfFinishParamSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&genParamSet);
@@ -192,7 +198,7 @@ int SecurityHuksNapiDeriveHkdf0100()
     OH_Huks_FreeParamSet(&genParamSet);
     OH_Huks_FreeParamSet(&hkdfParamSet);
     OH_Huks_FreeParamSet(&hkdfFinishParamSet);
-    
+
     return 0;
 }
 
