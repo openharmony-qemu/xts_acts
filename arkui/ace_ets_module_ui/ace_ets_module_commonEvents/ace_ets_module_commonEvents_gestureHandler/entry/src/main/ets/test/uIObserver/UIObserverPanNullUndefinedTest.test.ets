@@ -14,26 +14,36 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { sleep, startPage } from '../uiutils/commonUtils';
 import { Driver, ON } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function uIObserverPanNullUndefinedTest() {
   describe('UIObserverPanNullUndefinedTest', () => {
-    let driver: Driver;
-
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/uIObserver/UIObserverClickPage');
-      await sleep(2000);
-      driver = await Driver.create();
-      await sleep(1000);
+    beforeEach(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/uIObserver/UIObserverPanPage',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get UIObserverEventTest state pages: " + JSON.stringify(pages));
+        if (!("UIObserverEventTest" == pages.name)) {
+          console.info("get UIObserverEventTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push UIObserverEventTest success: " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push UIObserverEventTest page error: " + err);
+        expect().assertFail();
+      }
+      done();
     });
 
-    beforeEach(() => {
-      console.info("[UIObserverPanNullUndefinedTest] beforeEach called");
-    });
-
-    afterEach(() => {
-      console.info("[UIObserverPanNullUndefinedTest] afterEach called");
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("UIObserverEventTest after each called");
     });
 
     /**
@@ -47,11 +57,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanStart_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanStart_on_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_on_null'));
       console.info('[UIObserver_beforePanStart_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -69,11 +80,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanStart_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanStart_on_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_on_undefined'));
       console.info('[UIObserver_beforePanStart_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -91,11 +103,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanStart_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanStart_off_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_off_null'));
       console.info('[UIObserver_beforePanStart_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -113,11 +126,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanStart_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanStart_off_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_off_undefined'));
       console.info('[UIObserver_beforePanStart_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -135,11 +149,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanEnd_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanEnd_on_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_on_null'));
       console.info('[UIObserver_beforePanEnd_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -157,11 +172,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanEnd_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanEnd_on_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_on_undefined'));
       console.info('[UIObserver_beforePanEnd_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -179,11 +195,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanEnd_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanEnd_off_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_off_null'));
       console.info('[UIObserver_beforePanEnd_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -201,11 +218,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_beforePanEnd_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_beforePanEnd_off_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_off_undefined'));
       console.info('[UIObserver_beforePanEnd_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -223,11 +241,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanStart_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanStart_on_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_on_null'));
       console.info('[UIObserver_afterPanStart_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -245,11 +264,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanStart_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanStart_on_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_on_undefined'));
       console.info('[UIObserver_afterPanStart_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -267,11 +287,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanStart_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanStart_off_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_off_null'));
       console.info('[UIObserver_afterPanStart_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -289,11 +310,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanStart_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanStart_off_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_off_undefined'));
       console.info('[UIObserver_afterPanStart_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -311,11 +333,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanEnd_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanEnd_on_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_on_null'));
       console.info('[UIObserver_afterPanEnd_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -333,11 +356,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanEnd_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanEnd_on_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_on_undefined'));
       console.info('[UIObserver_afterPanEnd_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -355,11 +379,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanEnd_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanEnd_off_null_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_off_null'));
       console.info('[UIObserver_afterPanEnd_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -377,11 +402,12 @@ export default function uIObserverPanNullUndefinedTest() {
     it('UIObserver_afterPanEnd_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_afterPanEnd_off_undefined_001] START');
       // 模拟用户拖动区域触发 UIObserver 回调
+      let driver = Driver.create();
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
       await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_off_undefined'));
       console.info('[UIObserver_afterPanEnd_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');

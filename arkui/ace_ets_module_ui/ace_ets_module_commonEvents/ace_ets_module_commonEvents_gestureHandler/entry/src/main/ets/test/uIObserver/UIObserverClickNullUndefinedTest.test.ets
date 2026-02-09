@@ -14,26 +14,38 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { sleep, startPage } from '../uiutils/commonUtils';
 import { Driver, ON } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function uIObserverClickNullUndefinedTest() {
   describe('UIObserverClickNullUndefinedTest', () => {
-    let driver: Driver;
 
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/uIObserver/UIObserverClickPage');
-      await sleep(2000);
-      driver = await Driver.create();
-      await sleep(1000);
+    beforeEach(async (done: Function) => {
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/uIObserver/UIObserverClickPage',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get UIObserverEventTest state pages: " + JSON.stringify(pages));
+        if (!("UIObserverEventTest" == pages.name)) {
+          console.info("get UIObserverEventTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push UIObserverEventTest success: " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push UIObserverEventTest page error: " + err);
+        expect().assertFail();
+      }
+      done();
     });
 
-    beforeEach(() => {
-      console.info("[UIObserverClickNullUndefinedTest] beforeEach called");
-    });
-
-    afterEach(() => {
-      console.info("[UIObserverClickNullUndefinedTest] afterEach called");
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("UIObserverEventTest after each called");
     });
 
     /**
@@ -47,9 +59,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_on_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500); // 等待回调执行完成
+      await CommonFunc.sleep(500); // 等待回调执行完成
 
       let result = JSON.stringify(AppStorage.get('willClick_gesture_on_null'));
       console.info('[UIObserver_willClick_on_null_001] result: ' + JSON.stringify(result));
@@ -68,9 +81,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_on_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_gesture_on_undefined'));
       console.info('[UIObserver_willClick_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -88,9 +102,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_off_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_gesture_off_null'));
       console.info('[UIObserver_willClick_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -108,9 +123,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_off_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_gesture_off_undefined'));
       console.info('[UIObserver_willClick_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -128,9 +144,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_on_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_gesture_on_null'));
       console.info('[UIObserver_didClick_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -148,9 +165,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_on_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_gesture_on_undefined'));
       console.info('[UIObserver_didClick_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -168,9 +186,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_off_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_gesture_off_null'));
       console.info('[UIObserver_didClick_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -188,9 +207,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_off_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_gesture_off_undefined'));
       console.info('[UIObserver_didClick_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -208,9 +228,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_click_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_click_on_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_click_on_null'));
       console.info('[UIObserver_willClick_click_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -228,9 +249,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_click_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_click_on_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_click_on_undefined'));
       console.info('[UIObserver_willClick_click_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -248,9 +270,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_click_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_click_off_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_click_off_null'));
       console.info('[UIObserver_willClick_click_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -268,9 +291,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_willClick_click_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_willClick_click_off_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('willClick_click_off_undefined'));
       console.info('[UIObserver_willClick_click_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -288,9 +312,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_click_on_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_click_on_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_click_on_null'));
       console.info('[UIObserver_didClick_click_on_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -308,9 +333,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_click_on_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_click_on_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_click_on_undefined'));
       console.info('[UIObserver_didClick_click_on_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -328,9 +354,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_click_off_null_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_click_off_null_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_click_off_null'));
       console.info('[UIObserver_didClick_click_off_null_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
@@ -348,9 +375,10 @@ export default function uIObserverClickNullUndefinedTest() {
     it('UIObserver_didClick_click_off_undefined_001', Level.LEVEL2, async () => {
       console.info('[UIObserver_didClick_click_off_undefined_001] START');
       // 模拟用户点击按钮触发 UIObserver 回调
+      let driver = Driver.create();
       let button = await driver.findComponent(ON.id('test_button'));
       await button.click();
-      await sleep(500);
+      await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('didClick_click_off_undefined'));
       console.info('[UIObserver_didClick_click_off_undefined_001] result: ' + JSON.stringify(result));
       expect(result).assertEqual('"success"');
