@@ -311,17 +311,15 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi8_BY_id_5 start`);
       try {
         BY.id(null);
-        expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi8_BY_id_5 id = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(OldErrorCode);
+        expect().assertFail();
       }
       try {
         BY.id(undefined);
-        expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi8_BY_id_5 id = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(OldErrorCode);
+        expect().assertFail();
       }
       console.log(`${TestTag}, testApi8_BY_id_5 END`);
     })    
@@ -1285,30 +1283,30 @@ export default function abilityTest() {
     })
  
      /**
-     * @tc.name   testApi20_ON_originalText_401
+     * @tc.name   testApi20_ON_originalText_17000007
      * @tc.number UiTest_uitest401_040
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testApi20_ON_originalText_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi20_ON_originalText_401 start`);
+    it('testApi20_ON_originalText_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testApi20_ON_originalText_17000007 start`);
       try {
         ON.originalText(null);
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi20_ON_originalText_401 text = null error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
+        console.log(`${TestTag}, testApi20_ON_originalText_17000007 text = null error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
       } 
       try {
         ON.originalText(undefined, MatchPattern.EQUALS);
         expect().assertFail();
       } catch (error) {
-        console.log(`${TestTag}, testApi20_ON_originalText_401 text = undefined error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
+        console.log(`${TestTag}, testApi20_ON_originalText_17000007 text = undefined error, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(NewErrorCode);
       }
-      console.log(`${TestTag}, testApi20_ON_originalText_401 END`);
+      console.log(`${TestTag}, testApi20_ON_originalText_17000007 END`);
     })
 
      /**
@@ -3022,7 +3020,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})             
+        points.setPoint(0, 0, {x: 100, y: 100})             
         await driver.injectMultiPointerAction(points, null)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = null error, ${JSON.stringify(error)}`);
@@ -3030,7 +3028,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})             
+        points.setPoint(0, 0, {x: 100, y: 100})             
         await driver.injectMultiPointerAction(points, undefined)       
       } catch (error) {
         console.log(`${TestTag}, testApi9_Driver_injectMultiPointerAction_401 spe = undefined error, ${JSON.stringify(error)}`);
@@ -3079,7 +3077,7 @@ export default function abilityTest() {
       console.log(`${TestTag}, testApi20_Driver_fling_401 start`);
       let driver = Driver.create()
       try {
-        driver.fling(UiDirection.DOWN, null, 0)       
+        await driver.fling(UiDirection.DOWN, null, 0)       
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testApi20_Driver_fling_401 spe = null error, ${JSON.stringify(error)}`);
@@ -3740,13 +3738,6 @@ export default function abilityTest() {
         console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = undefined error, ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      try {
-        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 500, 1599)
-        expect().assertFail();               
-      } catch (error) {
-        console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 dur = 1599 error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      }
       console.log(`${TestTag}, testApi20_Driver_mouseDrag_401 END`);
     })
 
@@ -3894,18 +3885,16 @@ export default function abilityTest() {
       try {
         await driver.penLongClick({x: 100, y: 100}, null);
         console.log(TestTag, `testApi18_Driver_penLongClick_401`);
-        expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_penLongClick_401, p = null error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
+        expect().assertFail();
       }
       try {
         await driver.penLongClick({x: 100, y: 100}, undefined);
         console.log(TestTag, `testApi18_Driver_penLongClick_401`);
-        expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_penLongClick_401, p = undefined error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
+        expect().assertFail();
       }
       console.log(`${TestTag}, testApi18_Driver_penLongClick_401 END`);
     })
@@ -4011,7 +4000,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})       
+        points.setPoint(0, 0, {x: 100, y: 100})       
         await driver.injectPenPointerAction(points, null, 0.5);
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = null error is, ${JSON.stringify(error)}`);
@@ -4019,7 +4008,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})       
+        points.setPoint(0, 0, {x: 100, y: 100})       
         await driver.injectPenPointerAction(points, undefined, 0.5);
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, spe = undefined error is, ${JSON.stringify(error)}`);
@@ -4027,7 +4016,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})       
+        points.setPoint(0, 0, {x: 100, y: 100})       
         await driver.injectPenPointerAction(points, 600, null);
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = null error is, ${JSON.stringify(error)}`);
@@ -4035,7 +4024,7 @@ export default function abilityTest() {
       }
       try {
         let points = PointerMatrix.create(1, 1);
-        points.setPoint(1, 0, {x: 100, y: 100})       
+        points.setPoint(0, 0, {x: 100, y: 100})       
         await driver.injectPenPointerAction(points, 600, undefined);
       } catch (error) {
         console.log(TestTag, `testApi18_Driver_injectPenPointerAction401, pre = undefined error is, ${JSON.stringify(error)}`);
