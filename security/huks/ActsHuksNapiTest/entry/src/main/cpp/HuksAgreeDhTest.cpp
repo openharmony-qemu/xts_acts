@@ -14,11 +14,11 @@
  */
 
 #include "include/HuksAgreeDhTest.h"
+#include <cstring>
 #include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
+#include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#include <cstring>
 
 namespace Acts {
 namespace Huks {
@@ -31,55 +31,61 @@ static const std::string g_inData =
 static const uint32_t DH_COMMON_SIZE = 2048;
 static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
 
-static struct OH_Huks_Blob g_keyAlias01001 = {static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_1")),
-                                              (uint8_t *)"HksDHAgreeKeyAliasTest001_1"};
-static struct OH_Huks_Blob g_keyAlias02001 = {static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_2")),
-                                              (uint8_t *)"HksDHAgreeKeyAliasTest001_2"};
-static struct OH_Huks_Blob g_keyAliasFinal1001 = {static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_1_final")),
-                                                  (uint8_t *)"HksDHAgreeKeyAliasTest001_1_final"};
-static struct OH_Huks_Blob g_keyAliasFinal2001 = {static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_2_final")),
-                                                  (uint8_t *)"HksDHAgreeKeyAliasTest001_2_final"};
+static struct OH_Huks_Blob g_keyAlias01001 = { static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_1")),
+                                               (uint8_t*)"HksDHAgreeKeyAliasTest001_1" };
+static struct OH_Huks_Blob g_keyAlias02001 = { static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_2")),
+                                               (uint8_t*)"HksDHAgreeKeyAliasTest001_2" };
+static struct OH_Huks_Blob g_keyAliasFinal1001 = { static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_1_final")),
+                                                   (uint8_t*)"HksDHAgreeKeyAliasTest001_1_final" };
+static struct OH_Huks_Blob g_keyAliasFinal2001 = { static_cast<uint32_t>(strlen("HksDHAgreeKeyAliasTest001_2_final")),
+                                                   (uint8_t*)"HksDHAgreeKeyAliasTest001_2_final" };
 static struct OH_Huks_Param g_genParams001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_DH_KEY_SIZE_2048},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_DH_KEY_SIZE_2048 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 static struct OH_Huks_Param g_agreeParams01Init001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 static struct OH_Huks_Param g_agreeParams01Finish001[] = {
-    {.tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT},
-    {.tag = OH_HUKS_TAG_IS_KEY_ALIAS, .boolParam = true},
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_KEY_ALIAS, .blob = g_keyAliasFinal1001},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT },
+    { .tag = OH_HUKS_TAG_IS_KEY_ALIAS, .boolParam = true },
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_KEY_ALIAS, .blob = g_keyAliasFinal1001 },
+    { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
+    { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 static struct OH_Huks_Param g_agreeParams02Init001[] = {
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DH },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_AGREE },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 static struct OH_Huks_Param g_agreeParams02Finish001[] = {
-    {.tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT},
-    {.tag = OH_HUKS_TAG_IS_KEY_ALIAS, .boolParam = true},
-    {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES},
-    {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256},
-    {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE},
-    {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256},
-    {.tag = OH_HUKS_TAG_KEY_ALIAS, .blob = g_keyAliasFinal2001},
-    {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-    {.tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC},
-    {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}};
+    { .tag = OH_HUKS_TAG_KEY_STORAGE_FLAG, .uint32Param = OH_HUKS_STORAGE_PERSISTENT },
+    { .tag = OH_HUKS_TAG_IS_KEY_ALIAS, .boolParam = true },
+    { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_AES },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_256 },
+    { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DERIVE },
+    { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256 },
+    { .tag = OH_HUKS_TAG_KEY_ALIAS, .blob = g_keyAliasFinal2001 },
+    { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
+    { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+};
 
 // Helper functions
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const struct OH_Huks_Param *params,
-                                   uint32_t paramcount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params, 
+    uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -101,46 +107,48 @@ static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const str
     return ret;
 }
 
-static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t blobSize)
+static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const uint32_t blobSize)
 {
     OH_Huks_Result ret;
     ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
-    
+
     // G.MEM.01：内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
         ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
         return ret;
     }
-    
-    blob->data = (uint8_t *)malloc(blobSize);
+
+    blob->data = (uint8_t*)malloc(blobSize);
     if (blob->data == nullptr) {
         ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR;
     }
     return ret;
 }
 
-static void HksFree(void *ptr)
+static void HksFree(void* ptr)
 {
     if (ptr != nullptr) {
         free(ptr);
     }
 }
 
-static OH_Huks_Result HksDhAgreeFinish(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_Blob *publicKey,
-                                       const struct OH_Huks_ParamSet *initParamSet,
-                                       const struct OH_Huks_ParamSet *finishParamSet, struct OH_Huks_Blob *outData)
+static OH_Huks_Result HksDhAgreeFinish(const struct OH_Huks_Blob* keyAlias,
+                                       const struct OH_Huks_Blob* publicKey,
+                                       const struct OH_Huks_ParamSet* initParamSet,
+                                       const struct OH_Huks_ParamSet* finishParamSet,
+                                       struct OH_Huks_Blob* outData)
 {
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), (uint8_t *)g_inData.c_str()};
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
 
-    uint8_t handleU[sizeof(uint64_t)] = {0};
-    struct OH_Huks_Blob handle = {sizeof(uint64_t), handleU};
+    uint8_t handleU[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handle = { sizeof(uint64_t), handleU };
     OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, initParamSet, &handle, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    uint8_t outDataU[DH_COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outDataUpdate = {DH_COMMON_SIZE, outDataU};
+    uint8_t outDataU[DH_COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outDataUpdate = { DH_COMMON_SIZE, outDataU };
     ret = OH_Huks_UpdateSession(&handle, initParamSet, publicKey, &outDataUpdate);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -153,9 +161,11 @@ static OH_Huks_Result HksDhAgreeFinish(const struct OH_Huks_Blob *keyAlias, cons
     return ret;
 }
 
-static OH_Huks_Result HksDhAgreeExport(const struct OH_Huks_Blob *keyAlias1, const struct OH_Huks_Blob *keyAlias2,
-                                       struct OH_Huks_Blob *publicKey1, struct OH_Huks_Blob *publicKey2,
-                                       const struct OH_Huks_ParamSet *genParamSet)
+static OH_Huks_Result HksDhAgreeExport(const struct OH_Huks_Blob* keyAlias1,
+                                       const struct OH_Huks_Blob* keyAlias2,
+                                       struct OH_Huks_Blob* publicKey1,
+                                       struct OH_Huks_Blob* publicKey2,
+                                       const struct OH_Huks_ParamSet* genParamSet)
 {
     OH_Huks_Result ret = OH_Huks_ExportPublicKeyItem(keyAlias1, genParamSet, publicKey1);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -168,9 +178,11 @@ static OH_Huks_Result HksDhAgreeExport(const struct OH_Huks_Blob *keyAlias1, con
     return ret;
 }
 
-static void HksDhAgreeFreeParamSet(struct OH_Huks_ParamSet *paramSet1, struct OH_Huks_ParamSet *paramSet2,
-                                   struct OH_Huks_ParamSet *paramSet3, struct OH_Huks_ParamSet *paramSet4,
-                                   struct OH_Huks_ParamSet *paramSet5)
+static void HksDhAgreeFreeParamSet(struct OH_Huks_ParamSet* paramSet1,
+                                   struct OH_Huks_ParamSet* paramSet2,
+                                   struct OH_Huks_ParamSet* paramSet3,
+                                   struct OH_Huks_ParamSet* paramSet4,
+                                   struct OH_Huks_ParamSet* paramSet5)
 {
     OH_Huks_FreeParamSet(&paramSet1);
     OH_Huks_FreeParamSet(&paramSet2);
@@ -179,8 +191,10 @@ static void HksDhAgreeFreeParamSet(struct OH_Huks_ParamSet *paramSet1, struct OH
     OH_Huks_FreeParamSet(&paramSet5);
 }
 
-static void HksDhAgreeFreeBlob(struct OH_Huks_Blob *blob1, struct OH_Huks_Blob *blob2, struct OH_Huks_Blob *blob3,
-                               struct OH_Huks_Blob *blob4)
+static void HksDhAgreeFreeBlob(struct OH_Huks_Blob* blob1,
+                               struct OH_Huks_Blob* blob2,
+                               struct OH_Huks_Blob* blob3,
+                               struct OH_Huks_Blob* blob4)
 {
     HksFree(blob1->data);
     HksFree(blob2->data);
@@ -189,69 +203,67 @@ static void HksDhAgreeFreeBlob(struct OH_Huks_Blob *blob1, struct OH_Huks_Blob *
 }
 
 // Helper function: Initialize all DH parameter sets
-static int InitAllDhParamSets(
-    struct OH_Huks_ParamSet **genParamSet,
-    struct OH_Huks_ParamSet **initParamSet01,
-    struct OH_Huks_ParamSet **finishParamSet01,
-    struct OH_Huks_ParamSet **initParamSet02,
-    struct OH_Huks_ParamSet **finishParamSet02)
+static int InitAllDhParamSets(struct OH_Huks_ParamSet** genParamSet,
+                              struct OH_Huks_ParamSet** initParamSet01,
+                              struct OH_Huks_ParamSet** finishParamSet01,
+                              struct OH_Huks_ParamSet** initParamSet02,
+                              struct OH_Huks_ParamSet** finishParamSet02)
 {
     OH_Huks_Result ret = InitParamSet(genParamSet, g_genParams001, sizeof(g_genParams001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
-    
+
     ret = InitParamSet(initParamSet01, g_agreeParams01Init001, sizeof(g_agreeParams01Init001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeParamSet(*genParamSet, nullptr, nullptr, nullptr, nullptr);
         return -1;
     }
-    
-    ret = InitParamSet(finishParamSet01, g_agreeParams01Finish001,
-                       sizeof(g_agreeParams01Finish001) / sizeof(OH_Huks_Param));
+
+    ret = InitParamSet(
+        finishParamSet01, g_agreeParams01Finish001, sizeof(g_agreeParams01Finish001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeParamSet(*genParamSet, *initParamSet01, nullptr, nullptr, nullptr);
         return -1;
     }
-    
+
     ret = InitParamSet(initParamSet02, g_agreeParams02Init001, sizeof(g_agreeParams02Init001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeParamSet(*genParamSet, *initParamSet01, *finishParamSet01, nullptr, nullptr);
         return -1;
     }
-    
-    ret = InitParamSet(finishParamSet02, g_agreeParams02Finish001,
-                       sizeof(g_agreeParams02Finish001) / sizeof(OH_Huks_Param));
+
+    ret = InitParamSet(
+        finishParamSet02, g_agreeParams02Finish001, sizeof(g_agreeParams02Finish001) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeParamSet(*genParamSet, *initParamSet01, *finishParamSet01, *initParamSet02, nullptr);
         return -1;
     }
-    
+
     return 0;
 }
 
 // Helper function: Generate DH key pairs
-static int GenerateDhKeyPairs(const struct OH_Huks_ParamSet *genParamSet)
+static int GenerateDhKeyPairs(const struct OH_Huks_ParamSet* genParamSet)
 {
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&g_keyAlias01001, genParamSet, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
-    
+
     ret = OH_Huks_GenerateKeyItem(&g_keyAlias02001, genParamSet, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
         return -1;
     }
-    
+
     return 0;
 }
 
 // Helper function: Allocate and export DH public keys
-static int AllocateAndExportDhPublicKeys(
-    struct OH_Huks_Blob *publicKey01,
-    struct OH_Huks_Blob *publicKey02,
-    const struct OH_Huks_ParamSet *genParamSet)
+static int AllocateAndExportDhPublicKeys(struct OH_Huks_Blob* publicKey01,
+                                         struct OH_Huks_Blob* publicKey02,
+                                         const struct OH_Huks_ParamSet* genParamSet)
 {
     OH_Huks_Result ret = MallocAndCheckBlobData(publicKey01, publicKey01->size);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -259,7 +271,7 @@ static int AllocateAndExportDhPublicKeys(
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
         return -1;
     }
-    
+
     ret = MallocAndCheckBlobData(publicKey02, publicKey02->size);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksFree(publicKey01->data);
@@ -267,7 +279,7 @@ static int AllocateAndExportDhPublicKeys(
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
         return -1;
     }
-    
+
     ret = HksDhAgreeExport(&g_keyAlias01001, &g_keyAlias02001, publicKey01, publicKey02, genParamSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeBlob(publicKey01, publicKey02, nullptr, nullptr);
@@ -275,24 +287,24 @@ static int AllocateAndExportDhPublicKeys(
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);
         return -1;
     }
-    
+
     return 0;
 }
 
 // Structure to encapsulate DH key agreement parameters
 struct DhKeyAgreementParams {
-    const struct OH_Huks_Blob *publicKey01;
-    const struct OH_Huks_Blob *publicKey02;
-    const struct OH_Huks_ParamSet *initParamSet01;
-    const struct OH_Huks_ParamSet *finishParamSet01;
-    const struct OH_Huks_ParamSet *initParamSet02;
-    const struct OH_Huks_ParamSet *finishParamSet02;
-    struct OH_Huks_Blob *outData01;
-    struct OH_Huks_Blob *outData02;
+    const struct OH_Huks_Blob* publicKey01;
+    const struct OH_Huks_Blob* publicKey02;
+    const struct OH_Huks_ParamSet* initParamSet01;
+    const struct OH_Huks_ParamSet* finishParamSet01;
+    const struct OH_Huks_ParamSet* initParamSet02;
+    const struct OH_Huks_ParamSet* finishParamSet02;
+    struct OH_Huks_Blob* outData01;
+    struct OH_Huks_Blob* outData02;
 };
 
 // Helper function: Perform DH key agreement
-static int PerformDhKeyAgreement(const struct DhKeyAgreementParams *params)
+static int PerformDhKeyAgreement(const struct DhKeyAgreementParams* params)
 {
     OH_Huks_Result ret = MallocAndCheckBlobData(params->outData01, params->outData01->size);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -301,7 +313,7 @@ static int PerformDhKeyAgreement(const struct DhKeyAgreementParams *params)
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, nullptr);
         return -1;
     }
-    
+
     ret = MallocAndCheckBlobData(params->outData02, params->outData02->size);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksFree(params->outData01->data);
@@ -310,16 +322,18 @@ static int PerformDhKeyAgreement(const struct DhKeyAgreementParams *params)
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, nullptr);
         return -1;
     }
-    
-    ret = HksDhAgreeFinish(&g_keyAlias01001, params->publicKey02, params->initParamSet01, params->finishParamSet01, params->outData01);
+
+    ret = HksDhAgreeFinish(
+        &g_keyAlias01001, params->publicKey02, params->initParamSet01, params->finishParamSet01, params->outData01);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeBlob(params->publicKey01, params->publicKey02, params->outData01, params->outData02);
         OH_Huks_DeleteKeyItem(&g_keyAlias01001, nullptr);
         OH_Huks_DeleteKeyItem(&g_keyAlias02001, nullptr);
         return -1;
     }
-    
-    ret = HksDhAgreeFinish(&g_keyAlias02001, params->publicKey01, params->initParamSet02, params->finishParamSet02, params->outData02);
+
+    ret = HksDhAgreeFinish(
+        &g_keyAlias02001, params->publicKey01, params->initParamSet02, params->finishParamSet02, params->outData02);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         HksDhAgreeFreeBlob(params->publicKey01, params->publicKey02, params->outData01, params->outData02);
         OH_Huks_DeleteKeyItem(&g_keyAlias01001, nullptr);
@@ -327,7 +341,7 @@ static int PerformDhKeyAgreement(const struct DhKeyAgreementParams *params)
         OH_Huks_DeleteKeyItem(&g_keyAliasFinal1001, params->finishParamSet01);
         return -1;
     }
-    
+
     return 0;
 }
 
@@ -341,47 +355,45 @@ static int PerformDhKeyAgreement(const struct DhKeyAgreementParams *params)
  */
 int SecurityHuksNapiAgreeDh0100()
 {
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
-    struct OH_Huks_ParamSet *initParamSet01 = nullptr;
-    struct OH_Huks_ParamSet *finishParamSet01 = nullptr;
-    struct OH_Huks_ParamSet *initParamSet02 = nullptr;
-    struct OH_Huks_ParamSet *finishParamSet02 = nullptr;
-    
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
+    struct OH_Huks_ParamSet* initParamSet01 = nullptr;
+    struct OH_Huks_ParamSet* finishParamSet01 = nullptr;
+    struct OH_Huks_ParamSet* initParamSet02 = nullptr;
+    struct OH_Huks_ParamSet* finishParamSet02 = nullptr;
+
     if (InitAllDhParamSets(&genParamSet, &initParamSet01, &finishParamSet01, &initParamSet02, &finishParamSet02) != 0) {
         return -1;
     }
-    
+
     if (GenerateDhKeyPairs(genParamSet) != 0) {
         HksDhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
         return -1;
     }
-    
-    struct OH_Huks_Blob publicKey01 = {.size = OH_HUKS_DH_KEY_SIZE_4096, .data = nullptr};
-    struct OH_Huks_Blob publicKey02 = {.size = OH_HUKS_DH_KEY_SIZE_4096, .data = nullptr};
+
+    struct OH_Huks_Blob publicKey01 = { .size = OH_HUKS_DH_KEY_SIZE_4096, .data = nullptr };
+    struct OH_Huks_Blob publicKey02 = { .size = OH_HUKS_DH_KEY_SIZE_4096, .data = nullptr };
     if (AllocateAndExportDhPublicKeys(&publicKey01, &publicKey02, genParamSet) != 0) {
         HksDhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
         return -1;
     }
-    
-    struct OH_Huks_Blob outData01 = {.size = DH_COMMON_SIZE, .data = nullptr};
-    struct OH_Huks_Blob outData02 = {.size = DH_COMMON_SIZE, .data = nullptr};
-    struct DhKeyAgreementParams agreementParams = {
-        .publicKey01 = &publicKey01,
-        .publicKey02 = &publicKey02,
-        .initParamSet01 = initParamSet01,
-        .finishParamSet01 = finishParamSet01,
-        .initParamSet02 = initParamSet02,
-        .finishParamSet02 = finishParamSet02,
-        .outData01 = &outData01,
-        .outData02 = &outData02
-    };
+
+    struct OH_Huks_Blob outData01 = { .size = DH_COMMON_SIZE, .data = nullptr };
+    struct OH_Huks_Blob outData02 = { .size = DH_COMMON_SIZE, .data = nullptr };
+    struct DhKeyAgreementParams agreementParams = { .publicKey01 = &publicKey01,
+                                                    .publicKey02 = &publicKey02,
+                                                    .initParamSet01 = initParamSet01,
+                                                    .finishParamSet01 = finishParamSet01,
+                                                    .initParamSet02 = initParamSet02,
+                                                    .finishParamSet02 = finishParamSet02,
+                                                    .outData01 = &outData01,
+                                                    .outData02 = &outData02 };
 
     if (PerformDhKeyAgreement(&agreementParams) != 0) {
         HksDhAgreeFreeBlob(&publicKey01, &publicKey02, nullptr, nullptr);
         HksDhAgreeFreeParamSet(genParamSet, initParamSet01, finishParamSet01, initParamSet02, finishParamSet02);
         return -1;
     }
-    
+
     // Clean up
     OH_Huks_DeleteKeyItem(&g_keyAlias01001, genParamSet);
     OH_Huks_DeleteKeyItem(&g_keyAlias02001, genParamSet);

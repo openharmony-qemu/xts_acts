@@ -14,13 +14,13 @@
  */
 
 #include "include/HuksSignVerifySm2Test.h"
-#include <huks/native_huks_api.h>
-#include  <huks/native_huks_param.h>
-#include <huks/native_huks_type.h>
-#include <string>
-#include <cstring>
-#include <securec.h>
 #include <cstdint>
+#include <cstring>
+#include <huks/native_huks_api.h>
+#include <huks/native_huks_param.h>
+#include <huks/native_huks_type.h>
+#include <securec.h>
+#include <string>
 
 namespace Acts {
 namespace Huks {
@@ -29,7 +29,7 @@ static const uint32_t SM2_COMMON_SIZE = 1024;
 static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = 256;
 static const uint32_t SUCCESS_RETURN_INDEX = 0;
-static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2;  // size_t 最大值的一半，防止整数溢出
+static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // size_t 最大值的一半，防止整数溢出
 
 static const std::string g_inData =
     "Hks_SM2_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
@@ -46,41 +46,41 @@ static const struct GenerateKeyCaseParam g_genParamsTest[] = {
     {
         0,
         OH_HUKS_SUCCESS,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         1,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         2,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         3,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 };
 
@@ -88,41 +88,41 @@ static const struct GenerateKeyCaseParam g_signParamsTest[] = {
     {
         0,
         OH_HUKS_SUCCESS,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         1,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         2,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         3,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 };
 
@@ -130,47 +130,48 @@ static const struct GenerateKeyCaseParam g_verifyParamsTest[] = {
     {
         0,
         OH_HUKS_SUCCESS,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         1,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_AES_KEY_SIZE_512 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         2,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA1 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 
     {
         3,
         OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT,
-        {{.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2},
-         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256},
-         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT},
-         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3},
-         {.tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE}},
+        { { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_SM2 },
+          { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM2_KEY_SIZE_256 },
+          { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT },
+          { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SM3 },
+          { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE } },
     },
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const struct OH_Huks_Param *params,
-                                   uint32_t paramcount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
+    uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -193,7 +194,7 @@ static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const str
 }
 
 // Helper function: HksMalloc
-static void *HksMalloc(size_t size)
+static void* HksMalloc(size_t size)
 {
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
     if (size == 0 || size > MAX_ALLOC_SIZE) {
@@ -203,7 +204,7 @@ static void *HksMalloc(size_t size)
 }
 
 // Helper function: HksFree
-static void HksFree(void *ptr)
+static void HksFree(void* ptr)
 {
     if (ptr != nullptr) {
         free(ptr);
@@ -212,23 +213,23 @@ static void HksFree(void *ptr)
 
 // State structure for SM2 update loop
 struct Sm2UpdateLoopState {
-    struct OH_Huks_Blob *inDataSeg;
-    uint8_t *lastPtr;
-    struct OH_Huks_Blob *outData;
-    uint8_t **cur;
-    bool *isFinished;
+    struct OH_Huks_Blob* inDataSeg;
+    uint8_t* lastPtr;
+    struct OH_Huks_Blob* outData;
+    uint8_t** cur;
+    bool* isFinished;
 };
 
 // Helper function: Process SM2 update loop
-static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob *handle,
-                                          const struct OH_Huks_ParamSet *paramSet,
-                                          uint32_t purpose,
-                                          struct Sm2UpdateLoopState *state)
+static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
+                                           const struct OH_Huks_ParamSet* paramSet,
+                                           uint32_t purpose,
+                                           struct Sm2UpdateLoopState* state)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-    struct OH_Huks_Blob outDataSeg = {MAX_OUTDATA_SIZE, nullptr};
-    
+    struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
+
     while (state->inDataSeg->data <= state->lastPtr) {
         // 早退出：检查是否到达最后一段
         if (state->inDataSeg->data + MAX_UPDATE_SIZE > state->lastPtr) {
@@ -236,68 +237,67 @@ static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob *handle,
             state->inDataSeg->size = state->lastPtr - state->inDataSeg->data + 1;
             break;
         }
-        
+
         // 正常处理逻辑
         outDataSeg.size = MAX_OUTDATA_SIZE;
         bool needEncryptDecrypt = (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT);
-        
+
         if (needEncryptDecrypt) {
-            outDataSeg.data = static_cast<uint8_t *>(HksMalloc(outDataSeg.size));
+            outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
             if (outDataSeg.data == nullptr) {
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }
         }
-        
+
         ret = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &outDataSeg);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             HksFree(outDataSeg.data);
             return ret;
         }
-        
+
         // 早退出：如果没有数据则跳过复制
         if (outDataSeg.size == 0 || *(state->cur) == nullptr) {
             HksFree(outDataSeg.data);
             state->inDataSeg->data += MAX_UPDATE_SIZE;
             continue;
         }
-        
+
         // 提取 memcpy_s 调用到更浅的层次
-        if (memcpy_s(*(state->cur), state->outData->size + outDataSeg.size, 
-                    outDataSeg.data, outDataSeg.size) != EOK) {
+        if (memcpy_s(*(state->cur), state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
             HksFree(outDataSeg.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
-        
+
         *(state->cur) += outDataSeg.size;
         state->outData->size += outDataSeg.size;
         HksFree(outDataSeg.data);
         state->inDataSeg->data += MAX_UPDATE_SIZE;
     }
-    
+
     return ret;
 }
 
 // Structure to encapsulate SM2 finish session state
 struct Sm2FinishSessionState {
     uint32_t purpose;
-    const struct OH_Huks_Blob *inDataSeg;
-    struct OH_Huks_Blob *outData;
-    uint8_t *cur;
+    const struct OH_Huks_Blob* inDataSeg;
+    struct OH_Huks_Blob* outData;
+    uint8_t* cur;
 };
 
 // Helper function: Process SM2 finish session
-static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob *handle,
-                                             const struct OH_Huks_ParamSet *paramSet,
-                                             struct Sm2FinishSessionState *state)
+static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
+                                              const struct OH_Huks_ParamSet* paramSet,
+                                              struct Sm2FinishSessionState* state)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-    struct OH_Huks_Blob outDataSeg = {MAX_OUTDATA_SIZE, nullptr};
-    
+    struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
+
     if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-        outDataSeg.data = static_cast<uint8_t *>(HksMalloc(outDataSeg.size));
+        outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
         if (outDataSeg.data == nullptr) {
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
@@ -305,7 +305,7 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob *handle,
     } else {
         outDataSeg.data = state->cur;
     }
-    
+
     ret = OH_Huks_FinishSession(handle, paramSet, state->inDataSeg, &outDataSeg);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
@@ -313,7 +313,7 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob *handle,
         }
         return ret;
     }
-    
+
     if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         if (outDataSeg.size > 0 && state->cur != nullptr) {
             if (memcpy_s(state->cur, state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
@@ -327,31 +327,30 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob *handle,
     } else {
         state->outData->size += outDataSeg.size;
     }
-    
+
     return ret;
 }
 
 // Helper function: TestUpdateFinish
-static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const struct OH_Huks_ParamSet *paramSet,
-                                      uint32_t purpose, const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
+static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
+                                       const struct OH_Huks_ParamSet* paramSet,
+                                       uint32_t purpose,
+                                       const struct OH_Huks_Blob* inData,
+                                       struct OH_Huks_Blob* outData)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
 
     struct OH_Huks_Blob inDataSeg = *inData;
-    uint8_t *lastPtr = inData->data + inData->size - 1;
-    uint8_t *cur = outData->data;
+    uint8_t* lastPtr = inData->data + inData->size - 1;
+    uint8_t* cur = outData->data;
     outData->size = 0;
 
     inDataSeg.size = MAX_UPDATE_SIZE;
     bool isFinished = false;
 
     struct Sm2UpdateLoopState state = {
-        .inDataSeg = &inDataSeg,
-        .lastPtr = lastPtr,
-        .outData = outData,
-        .cur = &cur,
-        .isFinished = &isFinished
+        .inDataSeg = &inDataSeg, .lastPtr = lastPtr, .outData = outData, .cur = &cur, .isFinished = &isFinished
     };
     ret = ProcessSm2UpdateLoop(handle, paramSet, purpose, &state);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -359,21 +358,20 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob *handle, const 
     }
 
     struct Sm2FinishSessionState finishState = {
-        .purpose = purpose,
-        .inDataSeg = &inDataSeg,
-        .outData = outData,
-        .cur = cur
+        .purpose = purpose, .inDataSeg = &inDataSeg, .outData = outData, .cur = cur
     };
 
     ret = ProcessSm2FinishSession(handle, paramSet, &finishState);
     return ret;
 }
 
-static OH_Huks_Result HksTestSignVerify(const struct OH_Huks_Blob *keyAlias, const struct OH_Huks_ParamSet *paramSet,
-                                        const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outData)
+static OH_Huks_Result HksTestSignVerify(const struct OH_Huks_Blob* keyAlias,
+                                        const struct OH_Huks_ParamSet* paramSet,
+                                        const struct OH_Huks_Blob* inData,
+                                        struct OH_Huks_Blob* outData)
 {
-    uint8_t tmpHandle[sizeof(uint64_t)] = {0};
-    struct OH_Huks_Blob handle = {sizeof(uint64_t), tmpHandle};
+    uint8_t tmpHandle[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handle = { sizeof(uint64_t), tmpHandle };
     OH_Huks_Result ret;
 
     do {
@@ -382,7 +380,7 @@ static OH_Huks_Result HksTestSignVerify(const struct OH_Huks_Blob *keyAlias, con
             break;
         }
 
-        struct OH_Huks_Param *tmpParam = nullptr;
+        struct OH_Huks_Param* tmpParam = nullptr;
         ret = OH_Huks_GetParam(paramSet, OH_HUKS_TAG_PURPOSE, &tmpParam);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             break;
@@ -399,13 +397,13 @@ static OH_Huks_Result HksTestSignVerify(const struct OH_Huks_Blob *keyAlias, con
     return ret;
 }
 
-static OH_Huks_Result CreateImportKeyAlias(struct OH_Huks_Blob *importKeyAlias, const struct OH_Huks_Blob *keyAlias)
+static OH_Huks_Result CreateImportKeyAlias(struct OH_Huks_Blob* importKeyAlias, const struct OH_Huks_Blob* keyAlias)
 {
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
-    const char *tmp = "new";
+    const char* tmp = "new";
     importKeyAlias->size = keyAlias->size + strlen(tmp);
-    importKeyAlias->data = static_cast<uint8_t *>(HksMalloc(importKeyAlias->size));
+    importKeyAlias->data = static_cast<uint8_t*>(HksMalloc(importKeyAlias->size));
     if (importKeyAlias->data == nullptr) {
         ret.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
@@ -427,10 +425,12 @@ static OH_Huks_Result CreateImportKeyAlias(struct OH_Huks_Blob *importKeyAlias, 
 }
 
 // Helper function: Generate key and check existence
-static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob *keyAlias, const uint32_t genIndex,
-                                         struct OH_Huks_ParamSet **genParamSet)
+static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob* keyAlias,
+                                         const uint32_t genIndex,
+                                         struct OH_Huks_ParamSet** genParamSet)
 {
-    OH_Huks_Result ret = InitParamSet(genParamSet, g_genParamsTest[genIndex].params,
+    OH_Huks_Result ret = InitParamSet(genParamSet,
+                                      g_genParamsTest[genIndex].params,
                                       sizeof(g_genParamsTest[genIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -453,11 +453,14 @@ static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob *keyAlias, co
 }
 
 // Helper function: Perform sign operation
-static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob *keyAlias, const uint32_t signIndex,
-                                          const struct OH_Huks_Blob *inData, struct OH_Huks_Blob *outDataSign,
-                                          struct OH_Huks_ParamSet **signParamSet)
+static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob* keyAlias,
+                                           const uint32_t signIndex,
+                                           const struct OH_Huks_Blob* inData,
+                                           struct OH_Huks_Blob* outDataSign,
+                                           struct OH_Huks_ParamSet** signParamSet)
 {
-    OH_Huks_Result ret = InitParamSet(signParamSet, g_signParamsTest[signIndex].params,
+    OH_Huks_Result ret = InitParamSet(signParamSet,
+                                      g_signParamsTest[signIndex].params,
                                       sizeof(g_signParamsTest[signIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -473,23 +476,24 @@ static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob *keyAlias, 
 
 // Structure to hold export and import key parameters
 struct ExportImportKeyParams {
-    const struct OH_Huks_Blob *keyAlias;
-    const struct OH_Huks_Blob *importKeyAlias;
-    struct OH_Huks_ParamSet *genParamSet;
+    const struct OH_Huks_Blob* keyAlias;
+    const struct OH_Huks_Blob* importKeyAlias;
+    struct OH_Huks_ParamSet* genParamSet;
     uint32_t verifyIndex;
-    struct OH_Huks_Blob *publicKey;
-    struct OH_Huks_ParamSet **verifyParamSet;
+    struct OH_Huks_Blob* publicKey;
+    struct OH_Huks_ParamSet** verifyParamSet;
 };
 
 // Helper function: Export public key and import for verify
-static OH_Huks_Result ExportAndImportKeyForVerify(const struct ExportImportKeyParams *params)
+static OH_Huks_Result ExportAndImportKeyForVerify(const struct ExportImportKeyParams* params)
 {
     OH_Huks_Result ret = OH_Huks_ExportPublicKeyItem(params->keyAlias, params->genParamSet, params->publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    ret = InitParamSet(params->verifyParamSet, g_verifyParamsTest[params->verifyIndex].params,
+    ret = InitParamSet(params->verifyParamSet,
+                       g_verifyParamsTest[params->verifyIndex].params,
                        sizeof(g_verifyParamsTest[params->verifyIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
@@ -497,42 +501,43 @@ static OH_Huks_Result ExportAndImportKeyForVerify(const struct ExportImportKeyPa
 
     ret = OH_Huks_ImportKeyItem(params->importKeyAlias, *params->verifyParamSet, params->publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        ret.errorCode =
-            ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
+        ret.errorCode = ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
+                                                                                           : ret.errorCode);
     }
     return ret;
 }
 
 // Parameter structure for verify operation
 struct VerifyOperationParams {
-    const struct OH_Huks_Blob *importKeyAlias;
-    struct OH_Huks_ParamSet *verifyParamSet;
-    const struct OH_Huks_Blob *inData;
-    struct OH_Huks_Blob *outDataSign;
+    const struct OH_Huks_Blob* importKeyAlias;
+    struct OH_Huks_ParamSet* verifyParamSet;
+    const struct OH_Huks_Blob* inData;
+    struct OH_Huks_Blob* outDataSign;
     uint32_t verifyIndex;
     bool isTestSignData;
 };
 
 // Helper function: Perform verify operation
-static OH_Huks_Result PerformVerifyOperation(const struct VerifyOperationParams *params)
+static OH_Huks_Result PerformVerifyOperation(const struct VerifyOperationParams* params)
 {
     if (params->isTestSignData) {
         (void)memset_s(params->outDataSign->data, params->outDataSign->size, 0, params->outDataSign->size);
     }
 
-    OH_Huks_Result ret = HksTestSignVerify(params->importKeyAlias, params->verifyParamSet, 
-                                           params->inData, params->outDataSign);
+    OH_Huks_Result ret =
+        HksTestSignVerify(params->importKeyAlias, params->verifyParamSet, params->inData, params->outDataSign);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        ret.errorCode =
-            ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? 
-             (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
+        ret.errorCode = ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
+                                                                                           : ret.errorCode);
     }
     return ret;
 }
 
-static void FreeBuffAndDeleteKey(struct OH_Huks_ParamSet **paramSet1, struct OH_Huks_ParamSet **paramSet2,
-                                 struct OH_Huks_ParamSet **paramSet3, const struct OH_Huks_Blob *keyAlias1,
-                                 const struct OH_Huks_Blob *keyAlias2)
+static void FreeBuffAndDeleteKey(struct OH_Huks_ParamSet** paramSet1,
+                                 struct OH_Huks_ParamSet** paramSet2,
+                                 struct OH_Huks_ParamSet** paramSet3,
+                                 const struct OH_Huks_Blob* keyAlias1,
+                                 const struct OH_Huks_Blob* keyAlias2)
 {
     (void)OH_Huks_DeleteKeyItem(keyAlias1, *paramSet1);
     (void)OH_Huks_DeleteKeyItem(keyAlias2, *paramSet1);
@@ -541,20 +546,23 @@ static void FreeBuffAndDeleteKey(struct OH_Huks_ParamSet **paramSet1, struct OH_
     OH_Huks_FreeParamSet(paramSet3);
 }
 
-static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob *keyAlias, const uint32_t genIndex,
-                                              const uint32_t signIndex, const uint32_t verifyIndex,
+static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlias,
+                                              const uint32_t genIndex,
+                                              const uint32_t signIndex,
+                                              const uint32_t verifyIndex,
                                               const bool isTestSignData)
 {
-    struct OH_Huks_ParamSet *genParamSet = nullptr;
-    struct OH_Huks_ParamSet *signParamSet = nullptr;
-    struct OH_Huks_ParamSet *verifyParamSet = nullptr;
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
+    struct OH_Huks_ParamSet* signParamSet = nullptr;
+    struct OH_Huks_ParamSet* verifyParamSet = nullptr;
 
-    struct OH_Huks_Blob inData = {static_cast<uint32_t>(g_inData.length()), static_cast<uint8_t *>(const_cast<char *>(g_inData.c_str()))};
-    uint8_t outDataS[SM2_COMMON_SIZE] = {0};
-    struct OH_Huks_Blob outDataSign = {SM2_COMMON_SIZE, outDataS};
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()),
+                                   static_cast<uint8_t*>(const_cast<char*>(g_inData.c_str())) };
+    uint8_t outDataS[SM2_COMMON_SIZE] = { 0 };
+    struct OH_Huks_Blob outDataSign = { SM2_COMMON_SIZE, outDataS };
 
-    uint8_t pubKey[OH_HUKS_MAX_KEY_SIZE] = {0};
-    struct OH_Huks_Blob publicKey = {OH_HUKS_MAX_KEY_SIZE, pubKey};
+    uint8_t pubKey[OH_HUKS_MAX_KEY_SIZE] = { 0 };
+    struct OH_Huks_Blob publicKey = { OH_HUKS_MAX_KEY_SIZE, pubKey };
 
     struct OH_Huks_Blob importKeyAlias;
     OH_Huks_Result ret = CreateImportKeyAlias(&importKeyAlias, keyAlias);
@@ -576,29 +584,25 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob *keyAlia
         }
 
         /* 3. Export Public Key and Import for Verify */
-        struct ExportImportKeyParams exportImportParams = {
-            .keyAlias = keyAlias,
-            .importKeyAlias = &importKeyAlias,
-            .genParamSet = genParamSet,
-            .verifyIndex = verifyIndex,
-            .publicKey = &publicKey,
-            .verifyParamSet = &verifyParamSet
-        };
-        
+        struct ExportImportKeyParams exportImportParams = { .keyAlias = keyAlias,
+                                                            .importKeyAlias = &importKeyAlias,
+                                                            .genParamSet = genParamSet,
+                                                            .verifyIndex = verifyIndex,
+                                                            .publicKey = &publicKey,
+                                                            .verifyParamSet = &verifyParamSet };
+
         ret = ExportAndImportKeyForVerify(&exportImportParams);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             break;
         }
 
         /* 4. Verify Three Stage */
-        struct VerifyOperationParams verifyParams = {
-            .importKeyAlias = &importKeyAlias,
-            .verifyParamSet = verifyParamSet,
-            .inData = &inData,
-            .outDataSign = &outDataSign,
-            .verifyIndex = verifyIndex,
-            .isTestSignData = isTestSignData
-        };
+        struct VerifyOperationParams verifyParams = { .importKeyAlias = &importKeyAlias,
+                                                      .verifyParamSet = verifyParamSet,
+                                                      .inData = &inData,
+                                                      .outDataSign = &outDataSign,
+                                                      .verifyIndex = verifyIndex,
+                                                      .isTestSignData = isTestSignData };
         ret = PerformVerifyOperation(&verifyParams);
     } while (0);
 
