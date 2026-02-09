@@ -2174,6 +2174,37 @@ export default function audioManagerApi9() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0600
+     * @tc.desc   micStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
+      let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+      let flag: boolean = false;
+      try {
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let micStateChangeCallback = (micStateChange: audio.MicStateChangeEvent) => {
+          console.info(`Current microphone status is: ${micStateChange.mute} `);
+        };
+
+        audioVolumeGroupManager.on('micStateChange', micStateChangeCallback);
+
+        audioVolumeGroupManager.off('micStateChange');
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICSTATECHANGE_0600 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_MUTE_2900
      * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_MUTE_2900
      * @tc.desc   mute - ALARM - Promise - Enable mute -SetVolume
@@ -2800,6 +2831,44 @@ export default function audioManagerApi9() {
         done();
       } catch (error) {
         console.info(`ON_MICSTATECHANGE error ${error.message}, code ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_0300
+     * @tc.number SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_0300
+     * @tc.desc   OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let interAudioInterrupt: audio.AudioInterrupt = {
+        streamUsage:2,
+        contentType:0,
+        pauseWhenDucked:true
+      };
+      // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+      let interruptCallback = (interruptAction: audio.InterruptAction) => {
+        if (interruptAction.actionType === 0) {
+          console.info('An event to gain the audio focus starts.');
+          console.info(`Focus gain event: ${interruptAction} `);
+        }
+        if (interruptAction.actionType === 1) {
+          console.info('An audio interruption event starts.');
+          console.info(`Audio interruption event: ${interruptAction} `);
+        }
+      };
+      try {
+        let audioSpatializationManager: audio.AudioSpatializationManager = audioManager.getSpatializationManager();
+        audioManager.on('interrupt', interAudioInterrupt, interruptCallback);
+        audioManager.off('interrupt', interAudioInterrupt);
+        done();
+      } catch (error) {
+        console.info(`SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_0300 error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
       }

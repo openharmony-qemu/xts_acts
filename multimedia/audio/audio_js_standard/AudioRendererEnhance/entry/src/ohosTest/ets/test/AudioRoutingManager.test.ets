@@ -492,6 +492,38 @@ export default function AudioRoutingManagerTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600
+     * @tc.desc   on - off - availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+
+        audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, availableDeviceChangeCallback);
+
+        audioRoutingManager.off('availableDeviceChange');
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_0100
      * @tc.desc   on -off- micBlockStatusChanged

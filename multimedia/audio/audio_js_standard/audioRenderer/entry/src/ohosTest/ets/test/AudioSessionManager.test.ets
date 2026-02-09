@@ -359,6 +359,34 @@ export default function audioSessionManagerTest() {
       done();
     })
     /**
+     * @tc.name   SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_002
+     * @tc.number SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_002
+     * @tc.desc   on_off audioSessionDeactivated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let audioSessionDeactivatedCallback = (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+          console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+        };
+
+        audioSessionManager.on('audioSessionDeactivated', audioSessionDeactivatedCallback);
+
+        audioSessionManager.off('audioSessionDeactivated');
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_002 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+    /**
      * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_11
      * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_11
      * @tc.desc   test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
@@ -674,6 +702,37 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0200
+     * @tc.desc   on_off_availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+
+        audioSessionManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_INPUT_DEVICES, availableDeviceChangeCallback);
+
+        audioSessionManager.off('availableDeviceChange');
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0200 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_0100
      * @tc.desc   setDefaultOutputDevice -6800101
@@ -813,6 +872,35 @@ export default function audioSessionManagerTest() {
         flag = true;
       } catch (error) {
         console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0200 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0300
+     * @tc.desc   on/offcurrentInputDeviceChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
+          console.info(`reason of currentInputDeviceChanged: ${currentInputDeviceChangedEvent.changeReason} `);
+        };
+
+        audioSessionManager.on('currentInputDeviceChanged', currentInputDeviceChangedCallback);
+
+        audioSessionManager.off('currentInputDeviceChanged');
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0300 FAIL: ${error.message},Code:${error.code}`);
         expect(false).assertTrue();
         done();
       }
