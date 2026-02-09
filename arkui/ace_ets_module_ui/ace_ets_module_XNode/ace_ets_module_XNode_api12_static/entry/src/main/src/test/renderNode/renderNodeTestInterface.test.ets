@@ -101,7 +101,7 @@ it('renderNodeGetInterfaceTest_static_0200', Level.LEVEL0, async (done: () => vo
       let strJson: string = inspector.getInspectorByKey('bColor');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[renderNodeGetInterfaceTest_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('bColor:4278255598');//master22 bColor:-16711698 equals bColor:4278255598
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('bColor:' + 0xFF00FFEE.toInt());
       console.info('[renderNodeGetInterfaceTest_0200] END');
       done();
     });
