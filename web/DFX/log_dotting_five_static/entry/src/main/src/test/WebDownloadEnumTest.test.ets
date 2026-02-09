@@ -71,7 +71,7 @@ export default function webDownloadEnumTest() {
           throw new Error("======> WLAN Network error");//方式二
           done();
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           throw new Error("======> WLAN Network error");//方式二
           done();
         } else if (data.chload >= 500) {

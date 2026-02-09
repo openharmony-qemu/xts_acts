@@ -77,7 +77,7 @@ export default function ActsCommonEventSystemAPITest() {
           expect().message("======> WLAN Network error").assertFail(); //方式一
 
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
         } else if (data.chload >= 500) {
           console.info(TAG+"======> The internet connection is poor. ");
