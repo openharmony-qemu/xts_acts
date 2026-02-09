@@ -42,6 +42,11 @@
         "MainAbility/pages/StepsCurveComponent",
         "MainAbility/pages/CurvesSpringMotion",
         "MainAbility/pages/Animation/AnimatorEase",
-        "MainAbility/pages/ExcludeFromRenderGroupDemo"
+        "MainAbility/pages/ExcludeFromRenderGroupDemo",
+        "MainAbility/pages/animator/DurationNullUndefined",
+        "MainAbilitypages/animator/DelayNullUndefined",
+        "MainAbilitypages/animator/FillNullUndefined",
+        "MainAbilitypages/animator/DirectionNullUndefined",
+        "MainAbilitypages/animator/IterationsNullUndefined"
     ]
 }
