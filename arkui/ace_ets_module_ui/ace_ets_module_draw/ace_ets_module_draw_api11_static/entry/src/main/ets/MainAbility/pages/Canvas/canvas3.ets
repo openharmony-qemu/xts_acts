@@ -438,7 +438,7 @@ struct CanvasExample {
 
   getImageData() {
     let imageData = this.context.getImageData(10, 10, 80, 80);
-    let data = imageData.data;
+    let data = imageData.data!;
     console.info("[canvas] get image data-----" + JSON.stringify(data));
   }
 
@@ -456,11 +456,11 @@ struct CanvasExample {
 
   putImageData() {
     let imageData = this.context.createImageData(80, 80);
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255;
-      imageData.data[i + 1] = 0;
-      imageData.data[i + 2] = 255;
-      imageData.data[i + 3] = 255;
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255;
+      imageData.data![i + 1] = 0;
+      imageData.data![i + 2] = 255;
+      imageData.data![i + 3] = 255;
     }
     this.context.putImageData(imageData, 250, 1660);
   }
