@@ -256,12 +256,15 @@ export default function TaskPoolSequenceRunnerTest() {
       Count2.count = 0
       let count1: number = 0
       let count2: number = 0
+      let lock1 = new Mutex();
 
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(printArgs1, Count1.count)
         let task2: taskpool.Task = new taskpool.Task(printArgs2, Count2.count)
         task1.onEnqueued((): void => {
+          lock1.lock()
           count1++
+          lock1.unlock()
           console.info('taskpool: onEnqueued' + count1)
         });
         sequenceRunner.execute(task1).then((): void => {
@@ -270,7 +273,9 @@ export default function TaskPoolSequenceRunnerTest() {
         })
 
         task2.onEnqueued((): void => {
+          lock1.lock()
           count2++
+          lock1.unlock()
           console.info('taskpool: onEnqueued' + count2)
         });
         sequenceRunner.execute(task2).then((): void => {
@@ -305,12 +310,15 @@ export default function TaskPoolSequenceRunnerTest() {
       Count4.count = 0
       let count1: number = 0
       let count2: number = 0
+      let lock1 = new Mutex();
 
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(printArgs3, Count3.count)
         let task2: taskpool.Task = new taskpool.Task(printArgs4, Count4.count)
         task1.onEnqueued((): void => {
+          lock1.lock()
           Count1.count++
+          lock1.unlock()
           console.info('taskpool: onEnqueued' + count1)
         });
         sequenceRunner.execute(task1).then((): void => {
@@ -321,7 +329,9 @@ export default function TaskPoolSequenceRunnerTest() {
         })
 
         task2.onEnqueued((): void => {
+          lock1.lock()
           Count2.count++
+          lock1.unlock()
           console.info('taskpool: onEnqueued' + count2)
         });
         sequenceRunner.execute(task2).then((): void => {
@@ -360,12 +370,15 @@ export default function TaskPoolSequenceRunnerTest() {
       let count2: number = 0
       Count1.count = 0
       Count2.count = 0
+      let lock = new Mutex();
 
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(printArgs1, Count1.count)
         let task2: taskpool.Task = new taskpool.Task(printArgs2, Count2.count)
         task1.onStartExecution((): void => {
+          lock.lock();
           count1++
+          lock.unlock();
           console.info('taskpool: onStartExecution')
         });
         sequenceRunner.execute(task1).then((): void => {
@@ -373,7 +386,9 @@ export default function TaskPoolSequenceRunnerTest() {
         })
 
         task2.onStartExecution((): void => {
+          lock.lock();
           count2++
+          lock.unlock();
           console.info('taskpool: onStartExecution' + count2)
         });
         sequenceRunner.execute(task2).then((): void => {
@@ -404,12 +419,15 @@ export default function TaskPoolSequenceRunnerTest() {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
       let count1: number = 0
       let count2: number = 0
+        let lock1 = new Mutex();
 
       for (let i = 0; i < 10; i++) {
         let task1: taskpool.Task = new taskpool.Task(printArgs3, 1)
         let task2: taskpool.Task = new taskpool.Task(printArgs4, 1)
         task1.onExecutionFailed((e: Error) => {
-          count1++
+              lock1.lock();
+              count1++
+              lock1.unlock();
           console.info('task1.count1:' + count1)
           console.info('taskpool: onExecutionFailed error is ' + e);
         })
@@ -418,7 +436,9 @@ export default function TaskPoolSequenceRunnerTest() {
         })
 
         task2.onExecutionFailed((e: Error) => {
-          count2++
+              lock1.lock();
+              count2++
+              lock1.unlock();
           console.info('task2.count2:' + count2)
           console.info('taskpool: onExecutionFailed error is ' + e);
         })

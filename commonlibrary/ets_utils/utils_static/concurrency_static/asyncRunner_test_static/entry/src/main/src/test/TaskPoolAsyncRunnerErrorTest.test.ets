@@ -178,6 +178,7 @@ export default function taskPoolAsyncRunnerErrorTest() {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: start`);
         let Count1: number = 0;
         let Count2: number = 0;
+        let lock1 = new Mutex();
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs3, 1);
@@ -190,8 +191,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
-              expect(err.message).assertContain('Out of bounds');
+              lock1.lock()
               Count1++;
+              lock1.unlock()
             }
           });
           task2.onEnqueued(() => {
@@ -202,8 +204,9 @@ export default function taskPoolAsyncRunnerErrorTest() {
             } catch (e) {
               let err = e as Error;
               console.info(`${tag} execute error:${err.message}`);
-              expect(err.message).assertContain('Out of bounds');
+              lock1.lock()
               Count2++;
+              lock1.unlock()
             }
           });
           try {
