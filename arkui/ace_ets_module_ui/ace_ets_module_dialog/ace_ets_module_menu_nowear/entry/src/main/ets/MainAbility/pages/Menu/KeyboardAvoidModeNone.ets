@@ -44,10 +44,6 @@ struct KeyboardAvoidModeNone {
               })
               .id('hideBtn')
       Button('Click Show Menu')
-        // .alignRules({
-        //   center: { anchor: '__container__', align: VerticalAlign.Center },
-        //   middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        // })
         .bindMenu(this.MyMenu, {
           keyboardAvoidMode: MenuKeyboardAvoidMode.NONE,
           minKeyboardAvoidDistance: undefined
