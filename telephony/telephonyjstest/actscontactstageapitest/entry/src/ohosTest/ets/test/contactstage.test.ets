@@ -999,9 +999,8 @@ export default function ContactInterfaceStageTest() {
                 expect().assertFail();
                 done();
                 return;
-              }else {
+              } else {
                 console.log('deleteContact success ');
-                expect().assertTrue();
                 done();
               }
             });

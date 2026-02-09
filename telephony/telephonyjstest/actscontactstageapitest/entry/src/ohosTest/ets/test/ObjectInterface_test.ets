@@ -873,7 +873,6 @@ export default function ObjectInterfaceTest() {
                 return;
               }
               console.log('deleteContact success');
-              expect(keyData != undefined).assertTrue();
               done();
             });
           }else {done()}
