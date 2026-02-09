@@ -1001,6 +1001,7 @@ export default function ContactInterfaceStageTest() {
                 return;
               } else {
                 console.log('deleteContact success ');
+                expect(keyData != undefined).assertTrue();
                 done();
               }
             });
