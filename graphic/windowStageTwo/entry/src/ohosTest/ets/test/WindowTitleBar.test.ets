@@ -1507,7 +1507,7 @@ export default function windowTitleBarTest() {
             if(err.code == 801){
               done();
             }else {
-              expect(false).assertTrue();
+              expect(err.code).assertEqual(1300002);
               done();
             }
           });
