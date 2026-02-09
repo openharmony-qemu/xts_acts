@@ -19,7 +19,7 @@ import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
   
-  let simState: sim.SimState = sim.getSimStateSync(0);
+  let simState = sim.getSimStateSync(0);
 
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
     CallManagerTest();
