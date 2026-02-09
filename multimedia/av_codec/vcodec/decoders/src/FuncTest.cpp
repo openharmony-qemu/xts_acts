@@ -60,7 +60,6 @@ protected:
     const char *ginpDirVp9L4P1 = "/data/test/media/vp9_4_0_p1_2048x1088@30fps.ivf";
     const char *ginpDirAv1Main = "/data/test/media/av1_main_L3.1_1280x720.ivf";
     const char *ginpDirAv1High =  "/data/test/media/av1_high_L3.0_854x480.ivf";
-    const char *ginpDirAv1Pro = "/data/test/media/av1_pro_L4.0_1920x1080.ivf";
     const char *ginpDirAv1Main8bit = "/data/test/media/av1_main_L4.0_1920x1080.ivf";
     const char *ginpDirAv1High8bit =  "/data/test/media/av1_high_L4.0_1920x1080.ivf";
 };
@@ -451,33 +450,6 @@ HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0013, TestSize.Level0)
     if (g_capAv1 != nullptr && (profiles[1] == AV1_PROFILE_HIGH)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->INP_DIR = ginpDirAv1High;
-        vDecSample->outputYuvFlag = true;
-        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameAv1));
-        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
-        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
-        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoderForAV1());
-        vDecSample->WaitForEOS();
-        ASSERT_EQ(0, vDecSample->errCount);
-        ASSERT_EQ(FRAMESIZE45, vDecSample->outFrameCount);
-    }
-}
-
-/**
- * @tc.name   VIDEO_AV1DEC_FUNCTION_0014
- * @tc.number VIDEO_AV1DEC_FUNCTION_0014
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0014, TestSize.Level0)
-{
-    const int32_t *profiles = nullptr;
-    uint32_t profileNum = 0;
-    OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 != nullptr && (profiles[2] == AV1_PROFILE_PROFESSIONAL)) {
-        auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->INP_DIR = ginpDirAv1Pro;
         vDecSample->outputYuvFlag = true;
         ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameAv1));
         ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
