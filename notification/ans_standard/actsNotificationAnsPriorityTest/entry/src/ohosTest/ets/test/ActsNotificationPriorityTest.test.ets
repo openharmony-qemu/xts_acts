@@ -3,6 +3,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import notificationManager from '@ohos.notificationManager';
 import { common } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import image from '@ohos.multimedia.image';
 
 let ctx = getContext(this) as common.UIAbilityContext;
 let TAG: string = 'Notification';
