@@ -47,8 +47,16 @@ export default function actsNotificationPriorityTest() {
      */
     it('Sub_Notification_Ans_Priority_Notification_0100', Level.LEVEL2, async  (done : Function) => {
       let TAG = "Sub_Notification_Ans_Priority_Notification_0100"
+      const color = new ArrayBuffer(96);
+      let opts: image.InitializationOptions = {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {
+          height: 4, width: 6
+        }
+      };
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 7,
+        overlayIcon: pixelMap,
         priorityNotificationType: 'OTHER' as notificationManager.PriorityNotificationType,
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
