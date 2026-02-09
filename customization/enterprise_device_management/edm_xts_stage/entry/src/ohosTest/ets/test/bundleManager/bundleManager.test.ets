@@ -2897,7 +2897,7 @@ export default function bundleManagerTest() {
      * @tc.size    MediumTest
      */
     it("test_get_installed_bundle_list_015", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
         await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID, bundleInfoGetFlag);
