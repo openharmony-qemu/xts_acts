@@ -28,7 +28,7 @@ export default function TextAreaTypeTest() {
         router.clear();
         let pages = router.getState();
         console.info("get TextAreaTypeTest state pages: " + JSON.stringify(pages));
-        if (!("TextAreaStyle" == pages.name)) {
+        if (!("TextAreaType" == pages.name)) {
           console.info("get TextAreaTypeTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);

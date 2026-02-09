@@ -56,7 +56,7 @@ export default function TextAreaStyleTest() {
 
     /**
      * @tc.name   textAreaStyle_0100
-     * @tc.number SUB_ARKUI_TEXTAREA_STYLE_PARAM_0100
+     * @tc.number textAreaStyle_0100
      * @tc.desc   Test TextArea style property with null value - should revert to default value TextContentStyle.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -64,7 +64,7 @@ export default function TextAreaStyleTest() {
      */
     it('textAreaStyle_0100', Level.LEVEL0, async () => {
       console.info('[textAreaStyle_0100] START');
-      await sleep(500);
+      await CommonFunc.sleep(500);
 
       let strJson: string = getInspectorByKey('key_textArea_style_null');
       console.info('[textAreaStyle_0100] strJson: ' + strJson);
@@ -82,7 +82,7 @@ export default function TextAreaStyleTest() {
 
     /**
      * @tc.name   textAreaStyle_0200
-     * @tc.number SUB_ARKUI_TEXTAREA_STYLE_PARAM_0200
+     * @tc.number textAreaStyle_0200
      * @tc.desc   Test TextArea style property with undefined value - should revert to default value TextContentStyle.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -90,7 +90,7 @@ export default function TextAreaStyleTest() {
      */
     it('textAreaStyle_0200', Level.LEVEL0, async () => {
       console.info('[textAreaStyle_0200] START');
-      await sleep(500);
+      await CommonFunc.sleep(500);
 
       let strJson: string = getInspectorByKey('key_textArea_style_undefined');
       console.info('[textAreaStyle_0200] strJson: ' + strJson);

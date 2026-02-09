@@ -109,6 +109,7 @@ import TextTextDirectionTest from './TextTest/TextTextDirection.test';
 import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
 import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
 import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
+import TextDataDetectorDateTimeTest from './TextTest/TextDataDetectorDateTime.test';
 
 
 export default function testsuite() {
@@ -209,4 +210,5 @@ export default function testsuite() {
   SelectedDragPreviewStyle();
   TextMarqueeOptionsTest();
   TextSpecialAttributesTest();
+  TextDataDetectorDateTimeTest();
 }

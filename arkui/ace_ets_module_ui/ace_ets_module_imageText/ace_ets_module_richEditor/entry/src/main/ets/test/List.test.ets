@@ -198,6 +198,7 @@ import RichEditorCompressLeadingPunctuationTest from './RichEditorApi23Test/Rich
 import RichEditorParagraphStyleTest from './RichEditorApi23Test/RichEditorParagraphStyle.test';
 import RichEditorSingleLineTest from './RichEditorApi23Test/RichEditorSingleLine.test';
 import RichEditorTextStyleTest from './RichEditorApi23Test/RichEditorTextStyle.test';
+import RichEditorDataDetectorDateTimeTest from './RichEditor/RichEditorDataDetectorDateTime.test';
 
 
 export default function testsuite() {
@@ -387,4 +388,5 @@ export default function testsuite() {
   RichEditorParagraphStyleTest()
   RichEditorSingleLineTest()
   RichEditorTextStyleTest()
+  RichEditorDataDetectorDateTimeTest()
 }

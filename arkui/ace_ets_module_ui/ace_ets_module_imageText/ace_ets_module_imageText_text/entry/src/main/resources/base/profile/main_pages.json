@@ -96,6 +96,7 @@
         "MainAbility/pages/Text/TextTextDirection",
         "MainAbility/pages/SelectedDragPreviewStyle/SelectedDragPreviewStyle",
         "MainAbility/pages/Text/TextMarqueeOptionsTest",
-        "MainAbility/pages/Text/TextSpecialAttributes"
+        "MainAbility/pages/Text/TextSpecialAttributes",
+        "MainAbility/pages/Text/TextDataDetectorDateTime"
     ]
 }
