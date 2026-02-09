@@ -17,10 +17,36 @@ import arcScrollBar from './ArcScrollBar/arcScrollBar.test';
 import ArcList from './ArcList/ArcList.test'
 import childrenSizeArcList from './ArcList/childrenSizeArcList.test';
 import swipeActionArcList from './ArcList/swipeActionArcList.test';
+import digitalCrownSensitivityNullUndefinedTest from './arcListDefault/digitalCrownSensitivityNullUndefined.test';
+import scrollBarNullUndefinedTest from './arcListDefault/scrollBarNullUndefined.test';
+import scrollBarColorNullUndefinedTest from './arcListDefault/scrollBarColorNullUndefined.test';
+import scrollBarWidthNullUndefinedTest from './arcListDefault/scrollBarWidthNullUndefined.test';
+import chainAnimationNullUndefinedTest from './arcListDefault/chainAnimationNullUndefined.test';
+import childrenMainSizeNullUndefinedTest from './arcListDefault/childrenMainSizeNullUndefined.test';
+import enableScrollInteractionNullUndefinedTest from './arcListDefault/enableScrollInteractionNullUndefined.test';
+import fadingEdgeNullUndefinedTest from './arcListDefault/fadingEdgeNullUndefined.test';
+import frictionNullUndefinedTest from './arcListDefault/frictionNullUndefined.test';
+import flingSpeedLimitNullUndefinedTest from './arcListDefault/flingSpeedLimitNullUndefined.test';
+import onScrollIndexNullUndefinedTest from './arcListDefault/onScrollIndexNullUndefined.test';
+import autoScaleNullUndefinedTest from './arcListDefaultitem/autoScaleNullUndefined.test';
+import swipeActionNullUndefinedTest from './arcListDefaultitem/swipeActionNullUndefined.test';
 
 export default function testsuite() {
   arcScrollBar()
   ArcList()
   childrenSizeArcList()
   swipeActionArcList()
+  digitalCrownSensitivityNullUndefinedTest();
+  scrollBarNullUndefinedTest();
+  scrollBarColorNullUndefinedTest();
+  scrollBarWidthNullUndefinedTest();
+  chainAnimationNullUndefinedTest();
+  childrenMainSizeNullUndefinedTest();
+  enableScrollInteractionNullUndefinedTest();
+  fadingEdgeNullUndefinedTest();
+  frictionNullUndefinedTest();
+  flingSpeedLimitNullUndefinedTest();
+  onScrollIndexNullUndefinedTest();
+  autoScaleNullUndefinedTest();
+  swipeActionNullUndefinedTest();
 }
