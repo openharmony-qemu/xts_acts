@@ -17,6 +17,8 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
+import eventBus from '../lib/EventBus';
+
 export default class EntryAbility1 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility1 onCreate');
@@ -25,6 +27,7 @@ export default class EntryAbility1 extends UIAbility {
 
   onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility1 onDestroy');
+    eventBus.emit('EntryAbility1_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
@@ -47,10 +50,12 @@ export default class EntryAbility1 extends UIAbility {
   onForeground() {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility1 onForeground');
+    eventBus.emit('EntryAbility1_onForeground');
   }
 
   onBackground() {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility1 onBackground');
+    eventBus.emit('EntryAbility1_onBackground');
   }
 }
