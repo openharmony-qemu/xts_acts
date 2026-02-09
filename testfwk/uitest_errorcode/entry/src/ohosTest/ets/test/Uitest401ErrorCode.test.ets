@@ -14,8 +14,8 @@
  */
 
 import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
-import { startAbility, stopApplication } from './Utils.test.ets';
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@ohos.UiTest'
+import { startAbility, stopApplication } from './Utils.test';
 
 const TestTag = 'testTag';
 const ErrorCode = 401;
