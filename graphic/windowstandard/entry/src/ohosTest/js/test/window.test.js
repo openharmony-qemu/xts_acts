@@ -3909,7 +3909,6 @@ export default function window_test() {
         let tag = 'isFoldable_Test_001 '
         try {
             display.isFoldable();
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.log(tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
@@ -3994,7 +3993,6 @@ export default function window_test() {
                 done()
             } else {
                 console.log(tag + "region : " + JSON.stringify(region))
-                expect(true).assertTrue();
                 done();
             }
         } catch (err) {

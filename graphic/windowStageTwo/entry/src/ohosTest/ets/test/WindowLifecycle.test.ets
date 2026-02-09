@@ -3439,6 +3439,49 @@ export default function WindowLifecycle() {
         done();
       }
     });
+    /**
+    * @tc.name testcreateWindowCallback1300002_0100
+    * @tc.number testcreateWindowCallback1300002_0100
+    * @tc.desc testcreateWindowCallback1300002_0100
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
+    it("testcreateWindowCallback1300002_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testcreateWindowCallback1300002_0100";
+      console.log(caseName + " begin");
+      let windowConfig: window.Configuration = {
+        name: "testcreateWindowCallback1300002_0100",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context,
+      };
+      try {
+        window.createWindow(windowConfig, async (err, data) => {
+          const errCode: number = err!.code;
+          if (errCode) {
+            console.log(caseName + 'Failed to call createWindow. Cause:' + JSON.stringify(err));
+            if (err!.code === 1300002) {
+              done();
+            } else if (err!.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            console.log(caseName + 'Succeeded in calling createWindow.');
+            expect(!!data).assertTrue();
+            await data.destroyWindow();
+            done();
+          }
+
+        });
+      } catch (exception) {
+        console.error(caseName + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+        expect(false).assertTrue();
+        done()
+      }
+    });
 
   })
 
