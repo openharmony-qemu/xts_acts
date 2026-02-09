@@ -116,6 +116,18 @@ export default function sceneResourcesTest() {
         expect().assertFail();
         done();
       }
+      // Test null parameter for seek
+      try {
+        anim.seek(null);
+      } catch (err) {
+        console.info(msg + " seek with null error: " + JSON.stringify(err));
+      }
+      // Test undefined parameter for seek
+      try {
+        anim.seek(undefined);
+      } catch (err) {
+        console.info(msg + " seek with undefined error: " + JSON.stringify(err));
+      }
     })
     /**
      * @tc.name   testAnimationRestart
@@ -1871,6 +1883,23 @@ export default function sceneResourcesTest() {
         expect(undefinedShader != null).assertTrue();
         console.info(msg + " createShader with undefined parameter returned undefined");
         */
+        // Test null parameter for setShaderInputs
+        try {
+          if (material && material.colorShader) {
+            material.colorShader.setShaderInputs(null);
+          }
+        } catch (err) {
+          console.info(msg + " setShaderInputs with null error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for setShaderInputs
+        try {
+          if (material && material.colorShader) {
+            material.colorShader.setShaderInputs(undefined);
+          }
+        } catch (err) {
+          console.info(msg + " setShaderInputs with undefined error: " + JSON.stringify(err));
+        }
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -2405,6 +2434,18 @@ export default function sceneResourcesTest() {
         expect(undefinedValue).assertUndefined();
         console.info(msg + " undefined property returns undefined as expected");
 
+        // Test 5: Get null property value (should return undefined)
+        let nullValue = effect.getPropertyValue(null);
+        console.info(msg + " nullValue: " + JSON.stringify(nullValue));
+        expect(nullValue).assertUndefined();
+        console.info(msg + " null property returns undefined as expected");
+
+        // Test 6: Get empty string property value (should return null)
+        let emptyStringValue = effect.getPropertyValue('');
+        console.info(msg + " emptyStringValue: " + JSON.stringify(emptyStringValue));
+        expect(emptyStringValue).assertNull();
+        console.info(msg + " empty string property returns null as expected");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -2473,6 +2514,32 @@ export default function sceneResourcesTest() {
         let thresholdSoftWithUndefineValue = effect.getPropertyValue('thresholdSoft');
         console.info(msg + " thresholdSoftValue with undefined after set: " + JSON.stringify(thresholdSoftWithUndefineValue));
         expect(thresholdSoftWithUndefineValue).assertEqual(1);
+
+        // Test 4: Set 'thresholdSoft' property value with null (should return false)
+        let result4 = effect.setPropertyValue('thresholdSoft', null);
+        console.info(msg + " set thresholdSoft with null result: " + result4);
+        expect(result4).assertFalse();
+        console.info(msg + " thresholdSoft property with null set successfully");
+
+        /* task_0204 第1个参数为 null/undefined 时,返回 undefined
+        // Test 5: Set null property name (should return false)
+        let result5 = effect.setPropertyValue(null, 1);
+        console.info(msg + " set with null propertyName result: " + result5);
+        expect(result5).assertFalse();
+        console.info(msg + " null propertyName test completed");
+
+        // Test 6: Set undefined property name (should return false)
+        let result6 = effect.setPropertyValue(undefined, 1);
+        console.info(msg + " set with undefined propertyName result: " + result6);
+        expect(result6).assertFalse();
+        console.info(msg + " undefined propertyName test completed");
+        */
+
+        // Test 7: Set empty string property name (should return false)
+        let result7 = effect.setPropertyValue('', 1);
+        console.info(msg + " set with empty string propertyName result: " + result7);
+        expect(result7).assertFalse();
+        console.info(msg + " empty string propertyName test completed");
 
         console.info(msg + " test completed successfully");
         done();
