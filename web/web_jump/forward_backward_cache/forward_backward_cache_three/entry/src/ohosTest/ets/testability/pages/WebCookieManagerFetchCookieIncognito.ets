@@ -134,7 +134,7 @@ struct WebCookieManagerFetchCookieIncognito {
                   resultValue = error.code + error.message
                 }
 
-                let check = (v1: number, v2: number): boolean => {
+                let check = (v1: string, v2: string): boolean => {
                   return v1 === v2 ? true : false;
                 }
                 await waitForAssert(() => resultValue, check, '17100002URL error. No valid cookie found for the specified URL.', 136730, this.str);
