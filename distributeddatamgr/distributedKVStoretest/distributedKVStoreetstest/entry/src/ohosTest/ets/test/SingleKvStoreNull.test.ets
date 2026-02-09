@@ -17,7 +17,6 @@ import factory from '@ohos.data.distributedKVStore';
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { constant } from '@kit.NearLinkKit';
 
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
