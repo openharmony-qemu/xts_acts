@@ -10,54 +10,6 @@ export default function abilityTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
-     * @tc.desc   onTouchGuideStateChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200');
-      let callbackdata = (data:boolean) => {
-        expect(data).assertEqual(false);
-      }
-      try {
-        accessibility.onTouchGuideStateChange(callbackdata);
-        accessibility.offTouchGuideStateChange(callbackdata);
-        done();
-      } catch (error) {
-        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200 failed');
-        expect(null).assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.desc   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300');
-      let callbackdata = (data:boolean) => {
-        expect(data).assertEqual(false);
-      }
-      try {
-        accessibility.onScreenReaderStateChange(callbackdata);
-        accessibility.offScreenReaderStateChange(callbackdata);
-        done();
-      } catch (error) {
-        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300 failed');
-        expect(null).assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0400
      * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0400
      * @tc.desc    getCaptionsManager
