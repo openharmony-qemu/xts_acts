@@ -663,6 +663,7 @@ export default function actslocationTest() {
                 console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
               }
+             }
             })
 
             /**
