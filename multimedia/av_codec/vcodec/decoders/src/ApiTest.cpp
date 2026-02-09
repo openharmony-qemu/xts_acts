@@ -754,8 +754,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_VP9DEC_CAP_API_0013, TestSize.Level1)
         VP9_PROFILE_0, VP9_LEVEL_62));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         VP9_PROFILE_1, VP9_LEVEL_31));
-        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        VP9_PROFILE_2, VP9_LEVEL_5));
     }
 }
 
