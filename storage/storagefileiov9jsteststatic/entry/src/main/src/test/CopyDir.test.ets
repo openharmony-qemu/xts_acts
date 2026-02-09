@@ -497,7 +497,7 @@ export default function fileIOCopyDir() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_010 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
       }
     });
@@ -527,7 +527,7 @@ export default function fileIOCopyDir() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_011 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
       }
     });
@@ -1249,7 +1249,7 @@ export default function fileIOCopyDir() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_019 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
         done();
       }
@@ -1279,7 +1279,7 @@ export default function fileIOCopyDir() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_020 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
         done();
       }

@@ -316,7 +316,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_011 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -335,7 +335,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_012 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -354,7 +354,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_013 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -373,7 +373,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_014 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -392,7 +392,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_015 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -745,7 +745,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_014 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -764,7 +764,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_015 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -783,7 +783,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_016 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -802,7 +802,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_017 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -821,7 +821,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_018 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -837,7 +837,7 @@ export default function fileIOAccess() {
       try {
         fs.access('', (err: BusinessError | null, ret: boolean | undefined) => {
           if (err) {
-            expect(err.code == 13900020).assertTrue();
+            expect(err.code === 13900020).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -931,7 +931,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Async_Access_With_Flag_000 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -950,7 +950,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Async_Access_With_Flag_001 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -969,7 +969,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Async_Access_With_Flag_002 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -988,7 +988,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Async_Access_With_Flag_003 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -1095,7 +1095,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Sync_Access_With_Flag_000 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -1114,7 +1114,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Sync_Access_With_Flag_001 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 
@@ -1133,7 +1133,7 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Sync_Access_With_Flag_002 error code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
       }
     });
 

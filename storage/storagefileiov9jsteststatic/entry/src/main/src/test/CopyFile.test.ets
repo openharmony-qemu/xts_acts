@@ -949,7 +949,7 @@ export default function fileIOCopyfile() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_023 end error' + JSON.stringify(e));
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -973,7 +973,7 @@ export default function fileIOCopyfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_024 end error' + JSON.stringify(e));
         fs.unlinkSync(fpath);
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1020,7 +1020,7 @@ export default function fileIOCopyfile() {
         fs.copyFile("", fpathTarget, 0, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_026 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -1048,7 +1048,7 @@ export default function fileIOCopyfile() {
           if (err?.code != 0) {
             fs.unlinkSync(fpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_027 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -1074,7 +1074,7 @@ export default function fileIOCopyfile() {
         fs.copyFile("", fpathTarget, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_029 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -1103,7 +1103,7 @@ export default function fileIOCopyfile() {
           if (err?.code != 0) {
             fs.unlinkSync(fpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_030 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });

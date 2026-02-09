@@ -491,7 +491,7 @@ export default function fileIOCopy() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_019 end error' + JSON.stringify(e));
-        expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+        expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
         done();
       }
     });
@@ -515,7 +515,7 @@ export default function fileIOCopy() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_020 end error' + JSON.stringify(e));
-        expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+        expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
         fs.unlinkSync(fpath);
         done();
       }
@@ -567,7 +567,7 @@ export default function fileIOCopy() {
         fs.copy('', dstDirUri, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_023 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
             done();
           }
         });
@@ -595,7 +595,7 @@ export default function fileIOCopy() {
         fs.copy(srcDirUri, '', (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_024 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
             fs.unlinkSync(fpath);
             done();
           }
@@ -630,7 +630,7 @@ export default function fileIOCopy() {
         fs.copy('', dstDirUri, options, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_025 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
             done();
           }
         });
@@ -665,7 +665,7 @@ export default function fileIOCopy() {
         fs.copy(srcDirUri, '', options, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_026 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
             fs.unlinkSync(fpath);
             done();
           }
