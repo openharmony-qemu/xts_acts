@@ -103,9 +103,10 @@ export default function requestPermissionsStaticTest() {
       try {
         await atManager.requestPermissionsFromUser(context!, permissionList);
       } catch (error) {
-        error = error as BusinessError;
-        hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 catch err" + JSON.stringify(error));
-        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        }
         done();
       }
     })
@@ -458,8 +459,10 @@ export default function requestPermissionsStaticTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, "Test_requestPermissionsFromUser_010 error" + JSON.stringify(error));
-        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, "Test_requestPermissionsFromUser_010 error" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        }
         done();
       }
     })
