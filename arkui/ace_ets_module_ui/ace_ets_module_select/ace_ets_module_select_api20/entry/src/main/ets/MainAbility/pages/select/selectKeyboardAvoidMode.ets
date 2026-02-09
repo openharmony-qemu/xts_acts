@@ -34,6 +34,26 @@ struct Index {
       value: 'ddd',
     }
   ];
+  @State private selectOptions1: SelectOption[] = [
+    {
+      value: 'bbb',
+    },
+    {
+      value: 'ccc',
+    },
+    {
+      value: 'bbb',
+    },
+    {
+      value: 'ccc',
+    },
+    {
+      value: 'bbb',
+    },
+    {
+      value: 'ddd',
+    }
+  ];
 
   build() {
     Flex () {
@@ -68,7 +88,7 @@ struct Index {
             this.attachAndListener()
           }, 2000)
         })
-      Select(this.selectOptions)
+      Select(this.selectOptions1)
         .value('Click Show Options')
         .selected(17)
         .id('select03')
