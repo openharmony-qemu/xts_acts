@@ -484,7 +484,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testConnectDeviceInputPara ret: ' + JSON.stringify(ret));
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testConnectDeviceInputPara fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testConnectDeviceInputPara fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -508,7 +508,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testConnectDeviceInputPara001 ret: ' + JSON.stringify(ret));
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testConnectDeviceInputPara001 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testConnectDeviceInputPara001 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -532,7 +532,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testConnectDeviceInputPara002 ret: ' + JSON.stringify(ret));
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testConnectDeviceInputPara002 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testConnectDeviceInputPara002 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -556,7 +556,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testConnectDeviceInputPara003 ret: ' + JSON.stringify(ret));
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testConnectDeviceInputPara003 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testConnectDeviceInputPara003 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -580,7 +580,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testConnectDeviceInputPara004 ret: ' + JSON.stringify(ret));
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testConnectDeviceInputPara004 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testConnectDeviceInputPara004 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -935,7 +935,7 @@ export default function UsbRetValueTest() {
           UsbMgr.usbCancelTransfer(transferParams);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testUsbTransferInputPara fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testUsbTransferInputPara fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -970,7 +970,7 @@ export default function UsbRetValueTest() {
           UsbMgr.usbCancelTransfer(transferParams);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testUsbTransferInputPara001 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testUsbTransferInputPara001 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -1005,7 +1005,7 @@ export default function UsbRetValueTest() {
           UsbMgr.usbCancelTransfer(transferParams);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testUsbTransferInputPara002 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testUsbTransferInputPara002 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -1040,7 +1040,7 @@ export default function UsbRetValueTest() {
           UsbMgr.usbCancelTransfer(transferParams);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testUsbTransferInputPara003 fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testUsbTransferInputPara003 fail:' + err);
           expect(err.code).assertEqual(14400001);
           done();
         }
@@ -1132,7 +1132,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testRequestAccessoryRightInputPara ret: ' + ret);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testRequestAccessoryRightInputPara fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testRequestAccessoryRightInputPara fail:' + err);
           expect(err.code).assertEqual(14401001);
           done();
         }
@@ -1154,7 +1154,7 @@ export default function UsbRetValueTest() {
           UsbMgr.cancelAccessoryRight(accessInfoTest);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testCancelAccessoryRightInputPara fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testCancelAccessoryRightInputPara fail:' + err);
           expect(err.code).assertEqual(14401001);
           done();
         }
@@ -1177,7 +1177,7 @@ export default function UsbRetValueTest() {
           hilog.info(domain, tag, 'usb testOpenAccessoryInputPara ret: ' + ret);
           done();
         } catch (err) {
-          hilog.info(domain, tag, 'usb testOpenAccessoryInputPara fail:' + JSON.stringify(err));
+          hilog.info(domain, tag, 'usb testOpenAccessoryInputPara fail:' + err);
           expect(err.code).assertEqual(14401001);
           done();
         }
