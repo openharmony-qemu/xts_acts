@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 export default function PostOnIdleTest(){
 
   describe('PostOnIdleTest', (): void  => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api20.static", "EntryAbility")
       console.info("[ui] beforeAll end");
