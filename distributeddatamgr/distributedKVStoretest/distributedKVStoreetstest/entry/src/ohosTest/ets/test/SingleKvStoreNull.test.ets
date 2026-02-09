@@ -3582,7 +3582,7 @@ export default function SingleKvStoreNull(){
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_move_0102
-     * @tc.name SUB_DDM_SKV_Null_move_0100
+     * @tc.name SUB_DDM_SKV_Null_move_0102
      * @tc.type FUNC
      * @tc.size MediumTest
      * @tc.level Level 2
@@ -3676,7 +3676,7 @@ export default function SingleKvStoreNull(){
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvNull_moveToPosition_0102
-     * @tc.name SUB_DDM_SKV_Null_moveToPosition_0100
+     * @tc.name SUB_DDM_SKV_Null_moveToPosition_0102
      * @tc.type FUNC
      * @tc.size MediumTest
      * @tc.level Level 2
