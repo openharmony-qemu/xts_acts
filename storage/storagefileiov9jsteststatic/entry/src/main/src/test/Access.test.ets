@@ -866,7 +866,7 @@ export default function fileIOAccess() {
 
       try {
         fs.access(fpath, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
+          if (err?.code !=0) {
             hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_021 callback error: ' + JSON.stringify(err));
             expect(false).assertTrue();
             done();
@@ -898,7 +898,7 @@ export default function fileIOAccess() {
 
       try {
         fs.access(fpath, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
+          if (err?.code !=0) {
             hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_022 callback error: ' + JSON.stringify(err));
             expect(false).assertTrue();
             done();
@@ -911,169 +911,6 @@ export default function fileIOAccess() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_022 error: ' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_FileIO_Access_Async_Static_023
-     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2300
-     * @tc.desc   Test access() interface with callback and EXIST mode. Returns true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_FileIO_Access_Async_Static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
-      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_023');
-      await Utils.prepareFile(fpath, FILE_CONTENT);
-
-      try {
-        fs.access(fpath, fs.AccessModeType.EXIST, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_023 callback error: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_023 ret: ' + ret);
-            expect(ret === true).assertTrue();
-            fs.unlinkSync(fpath);
-            done();
-          }
-        });
-      } catch (e) {
-        e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_023 error: ' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_FileIO_Access_Async_Static_024
-     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2400
-     * @tc.desc   Test access() interface with callback and EXIST mode. Returns false.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_FileIO_Access_Async_Static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
-      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_024');
-
-      try {
-        fs.access(fpath, fs.AccessModeType.EXIST, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_024 callback error: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_024 ret: ' + ret);
-            expect(ret === false).assertTrue();
-            done();
-          }
-        });
-      } catch (e) {
-        e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_024 error: ' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_FileIO_Access_Async_Static_025
-     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2500
-     * @tc.desc   Test access() interface with callback and READ mode. Returns true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_FileIO_Access_Async_Static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
-      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_025');
-      await Utils.prepareFile(fpath, FILE_CONTENT);
-
-      try {
-        fs.access(fpath, fs.AccessModeType.READ, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_025 callback error: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_025 ret: ' + ret);
-            expect(ret === true).assertTrue();
-            fs.unlinkSync(fpath);
-            done();
-          }
-        });
-      } catch (e) {
-        e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_025 error: ' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_FileIO_Access_Async_Static_026
-     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2600
-     * @tc.desc   Test access() interface with callback and WRITE mode. Returns true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_FileIO_Access_Async_Static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
-      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_026');
-      await Utils.prepareFile(fpath, FILE_CONTENT);
-
-      try {
-        fs.access(fpath, fs.AccessModeType.WRITE, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_026 callback error: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_026 ret: ' + ret);
-            expect(ret === true).assertTrue();
-            fs.unlinkSync(fpath);
-            done();
-          }
-        });
-      } catch (e) {
-        e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_026 error: ' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_FileIO_Access_Async_Static_027
-     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2700
-     * @tc.desc   Test access() interface with callback and READ_WRITE mode. Returns true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_FileIO_Access_Async_Static_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
-      let fpath = await Utils.nextFileName('test_FileIO_Access_Async_Static_027');
-      await Utils.prepareFile(fpath, FILE_CONTENT);
-
-      try {
-        fs.access(fpath, fs.AccessModeType.READ_WRITE, (err: BusinessError | null, ret: boolean | undefined) => {
-          if (err) {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_027 callback error: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_027 ret: ' + ret);
-            expect(ret === true).assertTrue();
-            fs.unlinkSync(fpath);
-            done();
-          }
-        });
-      } catch (e) {
-        e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_027 error: ' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
       }

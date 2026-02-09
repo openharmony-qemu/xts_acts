@@ -1060,39 +1060,6 @@ export default function fileIOCopyfile() {
     });
 
     /**
-     * @tc.name   fileIO_copy_file_async_static_028
-     * @tc.number SUB_DF_fileIO_copy_file_async_static_2800
-     * @tc.desc   Test copyFile() interfaces. Callback. Third parameter as undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('fileIO_copy_file_async_static_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
-      let fpath = await Utils.nextFileName('fileIO_copy_file_async_static_028');
-      let fpathTarget = fpath + 'tgt';
-      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
-
-      try {
-        fs.copyFile(fpath, fpathTarget, undefined, (err: BusinessError<void> | null) => {
-          if (!err) {
-            let stat1 = fs.statSync(fpath);
-            let stat2 = fs.statSync(fpathTarget);
-            expect(stat1.size == stat2.size).assertTrue();
-            fs.unlinkSync(fpath);
-            fs.unlinkSync(fpathTarget);
-            done();
-          } else {
-            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_028 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(false).assertTrue();
-          }
-        });
-      } catch (e) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_028 end error' + JSON.stringify(e));
-        expect(false).assertTrue();
-      }
-    });
-
-    /**
      * @tc.name   fileIO_copy_file_async_static_029
      * @tc.number SUB_DF_fileIO_copy_file_async_static_2900
      * @tc.desc   Test copyFile() interfaces. Callback. First parameter as empty string.

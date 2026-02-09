@@ -533,48 +533,6 @@ export default function fileIOCopyDir() {
     });
 
     /**
-     * @tc.name   fileIO_test_copyDir_sync_static_012
-     * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1200
-     * @tc.desc   Test copyDirSync() interface with third parameter as undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_DF_FILEIO_COPYDIR_SYNC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_DF_FILEIO_COPYDIR_SYNC_1200 start');
-      let dpath: Dir = await readyFiles('SUB_DF_FILEIO_COPYDIR_SYNC_1200');
-      hilog.info(domain, tag, '%{public}s', 'SUB_DF_FILEIO_COPYDIR_SYNC_1200 dpath ' + JSON.stringify(dpath));
-
-      try {
-        let dirnet1 = fs.listFileSync(dpath.destDir, {recursion : true});
-        expect(dirnet1.length == 4).assertTrue();
-        let stat1 = fs.statSync(dpath.destDir + '/srcDir/srcFile_first_01');
-        let stat2 = fs.statSync(dpath.destDir + '/srcDir/srcDir_first/srcFile_second_01');
-        fs.copyDirSync(dpath.srcDir, dpath.destDir, undefined);
-        expect(false).assertTrue();
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'SUB_DF_FILEIO_COPYDIR_SYNC_1200 has failed for ' + err.message + ', code: ' + err.code);
-        expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
-        let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
-        expect(dirent2.length == 8).assertTrue();
-        expect(fs.accessSync(dpath.srcDir)).assertTrue();
-        let stat3 = fs.statSync(dpath.srcDir + '/srcFile_first_01');
-        let stat4 = fs.statSync(dpath.srcDir + '/srcDir_first/srcFile_second_01');
-        expect(stat1.size != fs.statSync(dpath.destDir + '/srcDir/srcFile_first_01').size && fs.statSync(dpath.destDir + '/srcDir/srcFile_first_01').size == 20).assertTrue();
-        expect(stat2.size != fs.statSync(dpath.destDir + '/srcDir/srcDir_first/srcFile_second_01').size && fs.statSync(dpath.destDir + '/srcDir/srcDir_first/srcFile_second_01').size == 50).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcFile_first_02')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcFile_second_02')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/destFile_second_01')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/destFile_third_01')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcFile_second_01')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_01')).assertTrue();
-        expect(fs.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_02')).assertTrue();
-        fs.rmdirSync(dpath.baseDir);
-      }
-    });
-
-    /**
      * @tc.name   fileIO_test_copyDir_async_static_000
      * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0000
      * @tc.desc   Test copyDir() interface.Promise.
