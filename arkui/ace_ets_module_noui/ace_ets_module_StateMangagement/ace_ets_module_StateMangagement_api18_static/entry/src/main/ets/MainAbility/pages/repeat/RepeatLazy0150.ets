@@ -54,7 +54,8 @@ struct RepeatLazy0150 {
         .onClick(() :void => {
           this.scroller.scrollToIndex(0); // Slide to the specified index
         })
-      List({ scroller: this.scroller, initialIndex: 80 }) {
+        // List({ scroller: this.scroller, initialIndex: 80 }) { // RangeError，ArkTS1.2当前不支持稀疏数组
+ 	      List({ scroller: this.scroller }) {
         Repeat<string>(this.dataArr)
           .each((ri) => {
             ListItem() {

@@ -41,7 +41,7 @@ struct ColorMetricsTest {
         .onClick((e:ClickEvent) => {
           let sourceColor: ColorMetrics = ColorMetrics.resourceColor(Color.Red);
           try {
-            // sourceColor.blendColor(null);   //这行编译不过
+            sourceColor.blendColor(ColorMetrics.resourceColor(''));   
           } catch (e) {
             this.errorStr401 = (e as BusinessError).code + '';
           }
