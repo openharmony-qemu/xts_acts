@@ -28,8 +28,8 @@ import fadingEdgeNullUndefinedTest from './arcListDefault/fadingEdgeNullUndefine
 import frictionNullUndefinedTest from './arcListDefault/frictionNullUndefined.test';
 import flingSpeedLimitNullUndefinedTest from './arcListDefault/flingSpeedLimitNullUndefined.test';
 import onScrollIndexNullUndefinedTest from './arcListDefault/onScrollIndexNullUndefined.test';
-import autoScaleNullUndefinedTest from './arcListDefaultitem/autoScaleNullUndefined.test';
-import swipeActionNullUndefinedTest from './arcListDefaultitem/swipeActionNullUndefined.test';
+import autoScaleNullUndefinedTest from './arcListItemDefault/autoScaleNullUndefined.test';
+import swipeActionNullUndefinedTest from './arcListItemDefault/swipeActionNullUndefined.test';
 
 export default function testsuite() {
   arcScrollBar()
