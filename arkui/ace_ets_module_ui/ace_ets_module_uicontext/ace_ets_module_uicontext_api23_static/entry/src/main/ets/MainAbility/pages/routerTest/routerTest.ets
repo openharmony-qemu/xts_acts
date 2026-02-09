@@ -21,7 +21,8 @@ import {
   Button,
   Text,
   Entry,
-  Component
+  Component,
+  FlexAlign
 } from '@ohos.arkui.component';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -41,11 +42,13 @@ struct routerTest {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test Router - clear')
+    Column({ space: 6 } as ColumnOptions) {
+      Button('Clear')
         .id('btnRouterClear')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '42%' })
+        .fontSize(10)
         .onClick(() => {
           try {
             let router = AppStorage.get<Router>('router');
@@ -58,10 +61,12 @@ struct routerTest {
           }
         })
 
-      Button('Test Router - getStackSize')
+      Button('stack')
         .id('btnRouterGetStackSize')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '42%' })
+        .fontSize(10)
         .onClick(() => {
           try {
             let router = AppStorage.get<Router>('router');
@@ -81,6 +86,7 @@ struct routerTest {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

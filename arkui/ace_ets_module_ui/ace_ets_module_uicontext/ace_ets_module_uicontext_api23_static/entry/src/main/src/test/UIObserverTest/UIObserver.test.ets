@@ -37,15 +37,15 @@ export default function UIObserverTest() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] UIObserverTest beforeEach start');
+      console.info("[ARKUI_NEW] UIObserverTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uiObserver/uiObserver',
       };
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
+        const routerInstance = AppStorage.get<Router>("router") as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('[ARKUI_NEW] UIObserverTest state pages: ' + JSON.stringify(pages));
+        console.info("[ARKUI_NEW] UIObserverTest state pages: " + JSON.stringify(pages));
         if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
@@ -54,13 +54,13 @@ export default function UIObserverTest() {
         // Extra delay for page and inspector to stabilize (reduce SIGSEGV race)
         await Utils.sleep(ROUTER_STABILIZE_MS);
       } catch (err) {
-        console.error('[ARKUI_NEW] UIObserverTest replaceUrl error: ' + err);
+        console.error("[ARKUI_NEW] UIObserverTest replaceUrl error: " + err);
         expect().assertFail();
       }
     });
 
     afterEach(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] UIObserverTest afterEach start');
+      console.info("[ARKUI_NEW] UIObserverTest afterEach start");
       // Delay after test before cleanup to avoid tight race with next beforeEach
       await Utils.sleep(DELAY_AFTER_TEST_MS);
       // Clean up AppStorage result keys
@@ -113,7 +113,7 @@ export default function UIObserverTest() {
         AppStorage.delete('uiObserverOffNavDestinationSizeChangeByUniqueId');
       }
       await Utils.sleep(SLEEP_TIME);
-      console.info('[ARKUI_NEW] UIObserverTest afterEach end');
+      console.info("[ARKUI_NEW] UIObserverTest afterEach end");
     });
 
     /**

@@ -18,6 +18,7 @@
 import {
   Entry,
   Column,
+  TextAlign,
   Builder,
   Component,
   Flex,
@@ -31,7 +32,6 @@ import {
   Placement,
   PopupStateChangeParam,
   DismissReason,
-  ColumnOptions,
   $r,
   Row,
   ClickEvent,
@@ -43,7 +43,8 @@ import {
   Direction,
   ButtonRole,
   Color,
-  FontStyle
+  FontStyle,
+  TextOverflow
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -65,31 +66,43 @@ struct PopupIndex {
   @Builder
   popupBuilder() {
     Column(){
-      Text('popupBuilder')
-        .fontSize(28)
-        .width('300')
-        .height('100')
+      Text('PopB')
+        .fontSize(12)
+        .width('100%')
+        .textAlign(TextAlign.Center)
     }
+    .height(48)
   }
 
   build() {
-    Column() {
-      Text('Popup Test')
-        .fontSize(30)
-        .margin({ top: 40, bottom: 40 })
+    Column({ space: 4 } as ColumnOptions) {
+      Text('Pop')
+        .fontSize(10)
+        .width('100%')
+        .textAlign(TextAlign.Center)
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
 
       Text(this.actionResult)
         .key('actionResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onCloseResult)
         .key('onCloseResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '10%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
-      Button('Show Popup by bindPopup')
+      Button('bindPop')
         .id('btnShowPopupByBindPopup')
+        .width('100%')
+        .layoutWeight(1)
+        .fontSize(9)
         .bindPopup(this.showBindPopup,
           {
             builder:this.popupBuilder
@@ -128,7 +141,7 @@ struct PopupIndex {
         buttons: [
           {
             text: 'PopupButtonOptions_text_test_value',
-            fontSize: 18,
+            fontSize: 11,
             fontColor: Color.Blue,
             action: () => {
               console.info('button clicked');
@@ -148,6 +161,8 @@ struct PopupIndex {
     }
     .width('100%')
     .height('100%')
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
     .backgroundColor(Color.White)
   }
 }
