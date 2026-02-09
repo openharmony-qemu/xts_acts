@@ -673,6 +673,40 @@ static int VerifyRsaAndEccMaterialSizes()
     return 0;
 }
 
+// Helper function: Verify DSA key material field sizes
+static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* material)
+{
+    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
+        (sizeof(material->xSize) != sizeof(uint32_t)) || (sizeof(material->ySize) != sizeof(uint32_t)) ||
+        (sizeof(material->pSize) != sizeof(uint32_t)) || (sizeof(material->qSize) != sizeof(uint32_t)) ||
+        (sizeof(material->gSize) != sizeof(uint32_t))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify DH key material field sizes
+static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* material)
+{
+    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
+        (sizeof(material->pubKeySize) != sizeof(uint32_t)) || (sizeof(material->priKeySize) != sizeof(uint32_t)) ||
+        (sizeof(material->reserved) != sizeof(uint32_t))) {
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function: Verify X25519 key material field sizes
+static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* material)
+{
+    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
+        (sizeof(material->pubKeySize) != sizeof(uint32_t)) || (sizeof(material->priKeySize) != sizeof(uint32_t)) ||
+        (sizeof(material->reserved) != sizeof(uint32_t))) {
+        return -1;
+    }
+    return 0;
+}
+
 // Helper function: Verify DSA, DH and X25519 key material struct field sizes
 static int VerifyDsaDhAndX25519MaterialSizes()
 {
@@ -680,19 +714,18 @@ static int VerifyDsaDhAndX25519MaterialSizes()
     struct OH_Huks_KeyMaterialDh dhMaterial;
     struct OH_Huks_KeyMaterial25519 x25519Material;
 
-    if ((sizeof(dsaMaterial.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(dsaMaterial.keySize) != sizeof(uint32_t)) ||
-        (sizeof(dsaMaterial.xSize) != sizeof(uint32_t)) || (sizeof(dsaMaterial.ySize) != sizeof(uint32_t)) ||
-        (sizeof(dsaMaterial.pSize) != sizeof(uint32_t)) || (sizeof(dsaMaterial.qSize) != sizeof(uint32_t)) ||
-        (sizeof(dsaMaterial.gSize) != sizeof(uint32_t)) || (sizeof(dhMaterial.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(dhMaterial.keySize) != sizeof(uint32_t)) || (sizeof(dhMaterial.pubKeySize) != sizeof(uint32_t)) ||
-        (sizeof(dhMaterial.priKeySize) != sizeof(uint32_t)) || (sizeof(dhMaterial.reserved) != sizeof(uint32_t)) ||
-        (sizeof(x25519Material.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(x25519Material.keySize) != sizeof(uint32_t)) ||
-        (sizeof(x25519Material.pubKeySize) != sizeof(uint32_t)) ||
-        (sizeof(x25519Material.priKeySize) != sizeof(uint32_t)) ||
-        (sizeof(x25519Material.reserved) != sizeof(uint32_t))) {
+    if (VerifyDsaMaterialSizes(&dsaMaterial) != 0) {
         return -1;
     }
+
+    if (VerifyDhMaterialSizes(&dhMaterial) != 0) {
+        return -1;
+    }
+
+    if (VerifyX25519MaterialSizes(&x25519Material) != 0) {
+        return -1;
+    }
+
     return 0;
 }
 
