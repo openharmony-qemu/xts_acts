@@ -90,12 +90,12 @@ export default function btAccessTest() {
     describe('btAccessTest', () => {
 
         beforeAll(async (done : Function) =>  {
-            console.info('beforeAll called')
+            console.info('beforeAll called');
             await clickRequestPermission(PERMISSION_TEXT);
             done();
         })
         beforeEach(async (done : Function) =>  {
-            console.info('beforeEach called')
+            console.info('beforeEach called');
             let state = bluetooth.getState();
             console.info('[bluetooth_js] bluetooth state ='+ JSON.stringify(state));
             if(state != bluetooth.BluetoothState.STATE_ON) {
@@ -108,12 +108,12 @@ export default function btAccessTest() {
             done();
         })
         afterEach(() => {
-            console.info('afterEach called')
+            console.info('afterEach called');
         })
         afterAll(async (done : Function) => {
-            console.info('afterAll called')
             await tryToEnableBt();
-            console.info('afterAll called')
+            console.info('afterAll called');
+            done();
         })
 
         /**
