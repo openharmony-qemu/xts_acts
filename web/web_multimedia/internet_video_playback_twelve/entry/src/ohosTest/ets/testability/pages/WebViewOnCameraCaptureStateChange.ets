@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
-import { ON,Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import business_error, { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
 const driver = Driver.create();
@@ -28,7 +28,6 @@ struct webViewController {
   uiContext: UIContext = this.getUIContext();
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
-  @State flag:number = 1;
   @State str:string = ""
   @State newState:number = 3;
   @State CameraCaptureStateArr:CameraCaptureState[] = [CameraCaptureState.NONE,CameraCaptureState.PAUSED,CameraCaptureState.ACTIVE]
@@ -69,27 +68,6 @@ struct webViewController {
           switch (this.str) {
             case "emitOnCameraCaptureStateChange001": {
               try {
-                this.flag = 1;
-                let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-                try {
-                  let context: Context = getContext(this) as common.UIAbilityContext;
-                  atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'],
-                    (err: BusinessError, data: PermissionRequestResult) => {
-                      console.info('data:' + JSON.stringify(data));
-                      console.info('data permissions:' + data.permissions);
-                      console.info('data authResults:' + data.authResults);
-                    })
-                } catch (error) {
-                  let e: business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                }
-                let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
-                await buttonThree.click();
-                let buttonOne = await driver.waitForComponent(ON.text('开启摄像头'),10000);
-                await buttonOne.click();
-                let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
-                await buttonTwo.click();
-                await Utils.sleep(1000)
                 setTimeout(() => {
                   Utils.emitEvent(true, 20260201);
                 },1000)
