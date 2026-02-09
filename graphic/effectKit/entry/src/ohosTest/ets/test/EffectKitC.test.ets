@@ -834,7 +834,7 @@ export default function effectKitCTest() {
 
     /**
      * @tc.name   createColorPicker_undefined_002
-     * @tc.number ACTS_ABILITY_CREATECOLORPICKER_002
+     * @tc.number ACTS_ABILITY_CREATECOLORPICKER_003
      * @tc.desc   Test createColorPicker with null pixelMap parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
