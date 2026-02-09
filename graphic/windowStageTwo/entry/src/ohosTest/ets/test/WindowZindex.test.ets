@@ -92,7 +92,7 @@ export default function windowZindexTest() {
           if (errCode) {
             console.error(msgStr+` Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
             if(errCode == 1300009){
-              expect(true).assertTrue();
+              
               done();
             }else if(errCode == 801){
               done();
@@ -813,7 +813,7 @@ export default function windowZindexTest() {
             if(err.code == 801){
               done();
             }else if(err.code == 1300002){
-              expect(true).assertTrue();
+              
               done();
             } else{
               expect().assertFail();
@@ -877,7 +877,7 @@ export default function windowZindexTest() {
             if(err.code == 801){
               done();
             }else if(err.code == 1300004){
-              expect(true).assertTrue();
+              
               done();
             } else{
               expect().assertFail();
@@ -932,7 +932,7 @@ export default function windowZindexTest() {
           promise2.then(async () => {
             console.info(caseName+ ' Succeeded in shifting app window pointer event');
             await subWindowClass.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to shift app window pointer event. Cause code: ${err.code}, message: ${err.message}`);
@@ -1210,7 +1210,7 @@ export default function windowZindexTest() {
       try{
         windowClass.setWindowDelayRaiseOnDrag(true);
         console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
-        expect(true).assertTrue();
+        
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
@@ -1237,7 +1237,7 @@ export default function windowZindexTest() {
       try{
         windowClass.setWindowDelayRaiseOnDrag(false);
         console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
-        expect(true).assertTrue();
+        
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
@@ -2110,7 +2110,7 @@ export default function windowZindexTest() {
         promise.then(async () => {
           console.info(caseName+ ' Succeeded in setting sub window zLevel');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
@@ -2147,7 +2147,7 @@ export default function windowZindexTest() {
         promise.then(async () => {
           console.info(caseName+ ' Succeeded in setting sub window zLevel');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);

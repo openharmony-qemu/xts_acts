@@ -189,7 +189,7 @@ export default function windowModalTest() {
           console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
           data.setSubWindowModal(true).then(() => {
             console.info(msgStr + 'Succeeded in setting subwindow modal true');
-            expect(true).assertTrue();
+            
             data.destroyWindow();
             done();
           }).catch((err: BusinessError) => {
@@ -200,7 +200,7 @@ export default function windowModalTest() {
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
-            expect(true).assertTrue();
+            
             done();
           } else {
             expect().assertFail();
@@ -241,7 +241,7 @@ export default function windowModalTest() {
           console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
           data.setSubWindowModal(false).then(() => {
             console.info(msgStr + 'Succeeded in setting subwindow modal true');
-            expect(true).assertTrue();
+            
             data.destroyWindow();
             done();
           }).catch((err: BusinessError) => {
@@ -252,7 +252,7 @@ export default function windowModalTest() {
         }).catch((error: BusinessError) => {
           console.log(msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
-            expect(true).assertTrue();
+            
             done();
           } else {
             expect().assertFail();
@@ -336,7 +336,7 @@ export default function windowModalTest() {
                 num++;
                 console.log(msgStr + 'The num1 is :' + num);
                 windowClass.off('noInteractionDetected');
-                expect(true).assertTrue();
+                
               });
               subWindowClass.on('noInteractionDetected', 5, () => {
                 num--;
@@ -360,7 +360,7 @@ export default function windowModalTest() {
               subWindowClass.destroyWindow();
               if (err.code == 801) {
                 console.log(msgStr + 'The device not support setSubWindowModal');
-                expect(true).assertTrue();
+                
                 done();
               } else {
                 expect(false).assertTrue();
@@ -448,7 +448,7 @@ export default function windowModalTest() {
               subWindowClass.destroyWindow();
               if (err.code == 801) {
                 console.log(msgStr + 'The device not support setSubWindowModal');
-                expect(true).assertTrue();
+                
                 done();
               } else {
                 expect(false).assertTrue();
@@ -514,7 +514,7 @@ export default function windowModalTest() {
               console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
               if (err.code == 801) {
                 console.log(msgStr + 'The device not support setSubWindowModal');
-                expect(true).assertTrue();
+                
                 done();
               } else {
                 expect(false).assertTrue();
@@ -829,7 +829,7 @@ export default function windowModalTest() {
               console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
               if (err.code == 1300002) {
                 console.log(msgStr + 'The SubWindow is destroyed');
-                expect(true).assertTrue();
+                
                 done();
               } else {
                 expect(false).assertTrue();
@@ -873,7 +873,7 @@ export default function windowModalTest() {
           console.error(msgStr + `Failed to setSubWindowModal. Cause code: ${err.code}, message: ${err.message}`);
           if (err.code == 1300004) {
             console.log(msgStr + 'The mainWindow not support setSubWindowModal');
-            expect(true).assertTrue();
+            
             done();
           } else {
             expect(false).assertTrue();
@@ -1026,7 +1026,7 @@ export default function windowModalTest() {
             windowClass = data;
             console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
             windowClass.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           })
           .catch((error: BusinessError) => {
@@ -1076,7 +1076,7 @@ export default function windowModalTest() {
             windowClass = data;
             console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
             windowClass.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           })
           .catch((error: BusinessError) => {

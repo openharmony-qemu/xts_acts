@@ -404,7 +404,7 @@ export default function windowPropertiesTest2() {
       await windowClass.setUIContent('testability/pages/First/index2');
       try {
         windowClass!.setWindowBackgroundColor(ColorMetrics.numeric(0x112233))
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowBackgroundColor.');
         done()
       } catch (exception) {
@@ -435,7 +435,7 @@ export default function windowPropertiesTest2() {
       await sleep(1000);
       try {
         subWindowClass!.setWindowBackgroundColor(ColorMetrics.numeric(0x112233))
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowBackgroundColor.');
         await subWindowClass.destroyWindow();
         done()
@@ -591,7 +591,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(0)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -631,7 +631,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(4)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -671,7 +671,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(10000)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -714,7 +714,7 @@ export default function windowPropertiesTest2() {
           await sleep(1000);
           expect(!!windowClass).assertTrue();
           await windowClass!.setWindowShadowRadius(0)
-          expect(true).assertTrue();
+          
           console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
           await windowClass!.destroyWindow();
           done()
@@ -769,7 +769,7 @@ export default function windowPropertiesTest2() {
           await sleep(1000);
           expect(!!windowClass).assertTrue();
           await windowClass!.setWindowShadowRadius(4)
-          expect(true).assertTrue();
+          
           console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
           await windowClass!.destroyWindow();
           done()
@@ -1876,13 +1876,11 @@ export default function windowPropertiesTest2() {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.setWindowShadowEnabled(true).then(() => {
           console.info(`${caseName} Succeeded in calling setWindowShadowEnabled.`);
-          expect(true).assertTrue()
           done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           if (err.code === 801) {
             expect(err.message!=null).assertTrue();
-            expect(true).assertTrue()
             done();
           } else {
             expect().assertFail();
@@ -1920,7 +1918,6 @@ export default function windowPropertiesTest2() {
           await windowClass.destroyWindow()
           expect(err.message!=null).assertTrue();
           if (err.code === 801) {
-            expect(true).assertTrue()
             done();
           } else {
             expect(err.code).assertEqual(1300004);
@@ -1959,7 +1956,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2006,7 +2003,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2053,7 +2050,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2100,7 +2097,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2166,17 +2163,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(2);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(2);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(2);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2247,17 +2244,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(1);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(1);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(1);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2328,17 +2325,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(1);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(1);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(1);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2475,7 +2472,7 @@ export default function windowPropertiesTest2() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
+          
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -2513,7 +2510,7 @@ export default function windowPropertiesTest2() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
+          
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -2616,7 +2613,7 @@ export default function windowPropertiesTest2() {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass.destroyWindow();
         if (err.code == 801) {
-          expect(true).assertTrue();
+          
           done();
         } else {
           expect().assertFail()
@@ -2659,7 +2656,7 @@ export default function windowPropertiesTest2() {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass.destroyWindow();
         if (err.code == 801) {
-          expect(true).assertTrue();
+          
           done();
         } else {
           expect().assertFail()
