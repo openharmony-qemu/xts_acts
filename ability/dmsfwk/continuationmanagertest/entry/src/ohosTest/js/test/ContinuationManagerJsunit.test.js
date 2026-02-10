@@ -3989,7 +3989,7 @@ export default function continuationManagerTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        it('testupdateContinuationState0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testupdateContinuationState0001 start----------------------");
             try {
                 continuationManager.updateContinuationState(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err) => {
@@ -4356,7 +4356,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("startContinuationDeviceManager catch error is" + error.code);
-                expect(error.code == 401).assertTrue()
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0004 end----------------------");
@@ -4406,7 +4406,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("startContinuationDeviceManager catch error is" + error);
-                expect(error.code == 16600002).assertTrue();
+                expect(error.code).assertEqual(16600002)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0006 end----------------------");
