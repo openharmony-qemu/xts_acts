@@ -18,110 +18,114 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import AbilityLifecycleCallback from '@ohos.app.ability.AbilityLifecycleCallback';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class MainAbility3 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log("[Demo] MainAbility3 onCreate")
+    console.log('[Demo] MainAbility3 onCreate');
     globalThis.abilityWant3 = want;
 
-    console.log("[Demo] MainAbility3 context: " + JSON.stringify(this.context));
+    console.log('[Demo] MainAbility3 context: ' + JSON.stringify(this.context));
     globalThis.list3 = [];
     let AbilityLifecycleCallback: AbilityLifecycleCallback = {
       onAbilityCreate(ability) {
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityCreate ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityCreate ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityCreate abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityCreate abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onAbilityCreate");
-        globalThis.list3.push(abilityname + " onAbilityCreate");
-        console.log("[Demo] 1listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onAbilityCreate');
+        globalThis.list3.push(abilityname + ' onAbilityCreate');
+        console.log('[Demo] 1listKey3:' + JSON.stringify(globalThis.list3));
       },
       onWindowStageCreate(ability, windowStage) {
-        console.log("[Demo] AbilityLifecycleCallback3 onWindowStageCreate ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onWindowStageCreate ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onWindowStageCreate abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onWindowStageCreate abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onWindowStageCreate");
-        globalThis.list3.push(abilityname + " onWindowStageCreate");
-        console.log("[Demo] 2listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onWindowStageCreate');
+        globalThis.list3.push(abilityname + ' onWindowStageCreate');
+        console.log('[Demo] 2listKey3:' + JSON.stringify(globalThis.list3));
       },
       onWindowStageActive(ability, windowStage) {
         let abilityname = ability.context.abilityInfo.name;
-        console.log(abilityname + " onWindowStageActive")
+        console.log(abilityname + ' onWindowStageActive')
       },
       onWindowStageInactive(ability, windowStage) {
         let abilityname = ability.context.abilityInfo.name;
-        console.log(abilityname + " onWindowStageInactive")
+        console.log(abilityname + ' onWindowStageInactive')
       },
       onWindowStageDestroy(ability, windowStage) {
-        console.log("[Demo] AbilityLifecycleCallback3 onWindowStageDestroy ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onWindowStageDestroy ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onWindowStageDestroy abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onWindowStageDestroy abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onWindowStageDestroy");
-        globalThis.list3.push(abilityname + " onWindowStageDestroy");
-        console.log("[Demo] 3listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onWindowStageDestroy');
+        globalThis.list3.push(abilityname + ' onWindowStageDestroy');
+        console.log('[Demo] 3listKey3:' + JSON.stringify(globalThis.list3));
       },
       onAbilityDestroy(ability) {
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityDestroy ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityDestroy ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityDestroy abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityDestroy abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onAbilityDestroy");
-        globalThis.list3.push(abilityname + " onAbilityDestroy");
-        console.log("[Demo] 4listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onAbilityDestroy');
+        globalThis.list3.push(abilityname + ' onAbilityDestroy');
+        console.log('[Demo] 4listKey3:' + JSON.stringify(globalThis.list3));
+        commonEventManager.publish(`${abilityname}In3_onAbilityDestroy`, (err, data) => {
+          console.log(`${abilityname}In3 onAbilityDestroy publish succeed` + JSON.stringify(err) + JSON.stringify(data));
+        });
       },
       onAbilityForeground(ability) {
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityForeground ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityForeground ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityForeground abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityForeground abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onAbilityForeground");
-        globalThis.list3.push(abilityname + " onAbilityForeground");
-        console.log("[Demo] 5listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onAbilityForeground');
+        globalThis.list3.push(abilityname + ' onAbilityForeground');
+        console.log('[Demo] 5listKey3:' + JSON.stringify(globalThis.list3));
       },
       onAbilityBackground(ability) {
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityBackground ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityBackground ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityBackground abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityBackground abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onAbilityBackground");
-        globalThis.list3.push(abilityname + " onAbilityBackground");
-        console.log("[Demo] 6listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onAbilityBackground');
+        globalThis.list3.push(abilityname + ' onAbilityBackground');
+        console.log('[Demo] 6listKey3:' + JSON.stringify(globalThis.list3));
       },
       onAbilityContinue(ability) {
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityContinue ability:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityContinue ability:'
           + JSON.stringify(ability));
         let abilityname = ability.context.abilityInfo.name;
-        console.log("[Demo] AbilityLifecycleCallback3 onAbilityContinue abilityname:"
+        console.log('[Demo] AbilityLifecycleCallback3 onAbilityContinue abilityname:'
           + JSON.stringify(abilityname));
-        console.log("[Demo] " + abilityname + " onAbilityContinue");
-        globalThis.list3.push(abilityname + " onAbilityContinue");
-        console.log("[Demo] 7listKey3:" + JSON.stringify(globalThis.list3));
+        console.log('[Demo] ' + abilityname + ' onAbilityContinue');
+        globalThis.list3.push(abilityname + ' onAbilityContinue');
+        console.log('[Demo] 7listKey3:' + JSON.stringify(globalThis.list3));
       }
     }
     globalThis.applicationContext3 = this.context.getApplicationContext();
     let lifecycleid = globalThis.applicationContext3.on('abilityLifecycle', AbilityLifecycleCallback);
     globalThis.callbackid3 = lifecycleid;
-    console.log("[Demo] registerAbilityLifecycleCallback3 number: " + JSON.stringify(lifecycleid));
+    console.log('[Demo] registerAbilityLifecycleCallback3 number: ' + JSON.stringify(lifecycleid));
   }
 
-  onDestroy() {
-    console.log("[Demo] MainAbility3 onDestroy")
-    setTimeout(() => {
-      globalThis.testEvent.push('MainAbility3onDestroy');
-    }, 800);
+  async onDestroy():Promise<void> {
+    console.log('[Demo] MainAbility3 onDestroy');
+    commonEventManager.publish('MainAbility3_onDestroy', (err, data) => {
+      console.log('MainAbility3 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility3 onWindowStageCreate")
+    console.log('[Demo] MainAbility3 onWindowStageCreate');
     globalThis.ability3 = this.context
 
     windowStage.loadContent('TestAbility/pages/index3', (err: BusinessError) => {
@@ -135,19 +139,19 @@ export default class MainAbility3 extends Ability {
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility3 onWindowStageDestroy")
+    console.log('[Demo] MainAbility3 onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("[Demo] MainAbility onForeground")
-    setTimeout(() => {
-      globalThis.testEvent.push('MainAbility3onForeground');
-    }, 800);
+    console.log('[Demo] MainAbility onForeground');
+    commonEventManager.publish('MainAbility3_onForeground', (err, data) => {
+      console.log('MainAbility3 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("[Demo] MainAbility onBackground")
+    console.log('[Demo] MainAbility onBackground');
   }
 };

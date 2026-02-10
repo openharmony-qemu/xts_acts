@@ -16,20 +16,24 @@ import Ability from '@ohos.app.ability.UIAbility'
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import { BusinessError } from '@ohos.base';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class MainAbility14 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log("[Demo] MainAbility14 onCreate")
+    console.log('[Demo] MainAbility14 onCreate');
     globalThis.abilityWant14 = want;
   }
 
-  onDestroy() {
-    console.log("[Demo] MainAbility14 onDestroy")
+  async onDestroy():Promise<void> {
+    console.log('[Demo] MainAbility14 onDestroy');
+    commonEventManager.publish('MainAbility14_onDestroy', (err, data) => {
+      console.log('MainAbility14 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onWindowStageCreate(windowStage) {
     // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility14 onWindowStageCreate")
+    console.log('[Demo] MainAbility14 onWindowStageCreate');
     globalThis.ability14 = this.context;
     windowStage.loadContent('TestAbility/pages/index2', (err: BusinessError) => {
       if (err.code) {
@@ -42,16 +46,19 @@ export default class MainAbility14 extends Ability {
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility14 onWindowStageDestroy");
+    console.log('[Demo] MainAbility14 onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("[Demo] MainAbility14 onForeground");
+    console.log('[Demo] MainAbility14 onForeground');
+    commonEventManager.publish('MainAbility14_onForeground', (err, data) => {
+      console.log('MainAbility14 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("[Demo] MainAbility14 onBackground");
+    console.log('[Demo] MainAbility14 onBackground');
   }
 };
