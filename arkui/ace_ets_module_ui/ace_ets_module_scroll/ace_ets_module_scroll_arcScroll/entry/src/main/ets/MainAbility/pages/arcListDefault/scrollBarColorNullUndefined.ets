@@ -36,6 +36,7 @@ struct ArcListScrollBarColorNullUndefined {
             }
           }, (item: number) => `scrollBarColor_default_${item}`)
         }
+        .scrollBar(BarState.On)
         .id('arclist_scrollBarColor_default')
         .width('60%')
         .height('30%')
@@ -51,6 +52,7 @@ struct ArcListScrollBarColorNullUndefined {
             }
           }, (item: number) => `scrollBarColor_null_${item}`)
         }
+        .scrollBar(BarState.On)
         .scrollBarColor(null)
         .id('arclist_scrollBarColor_null')
         .width('60%')
@@ -67,6 +69,7 @@ struct ArcListScrollBarColorNullUndefined {
             }
           }, (item: number) => `scrollBarColor_undefined_${item}`)
         }
+        .scrollBar(BarState.On)
         .scrollBarColor(undefined)
         .id('arclist_scrollBarColor_undefined')
         .width('60%')

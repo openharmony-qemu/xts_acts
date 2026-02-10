@@ -36,6 +36,7 @@ struct ArcListScrollBarWidthNullUndefined {
             }
           }, (item: number) => `scrollBarWidth_default_${item}`)
         }
+        .scrollBar(BarState.On)
         .id('arclist_scrollBarWidth_default')
         .width('60%')
         .height('30%')
@@ -51,6 +52,7 @@ struct ArcListScrollBarWidthNullUndefined {
             }
           }, (item: number) => `scrollBarWidth_null_${item}`)
         }
+        .scrollBar(BarState.On)
         .scrollBarWidth(null)
         .id('arclist_scrollBarWidth_null')
         .width('60%')
@@ -67,6 +69,7 @@ struct ArcListScrollBarWidthNullUndefined {
             }
           }, (item: number) => `scrollBarWidth_undefined_${item}`)
         }
+        .scrollBar(BarState.On)
         .scrollBarWidth(undefined)
         .id('arclist_scrollBarWidth_undefined')
         .width('60%')
