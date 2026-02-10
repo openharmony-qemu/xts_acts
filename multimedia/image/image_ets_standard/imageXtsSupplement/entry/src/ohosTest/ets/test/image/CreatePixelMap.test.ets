@@ -361,9 +361,10 @@ export default function CreatePixelMapSupp() {
       let imageSourceApi: image.ImageSource | null = null;
       try{
         imageSourceApi = await getImageSource('test_exif_v2.jpg');
-        const pixelMap = await imageSourceApi.createPixelMap(null);
+        const pixelMap = await imageSourceApi.createPixelMap(null as ESObject);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -388,6 +389,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap(undefined);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -412,6 +414,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap();
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -441,6 +444,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -743,9 +747,10 @@ export default function CreatePixelMapSupp() {
       let imageSourceApi: image.ImageSource | null = null;
       try{
         imageSourceApi = await getImageSource('test_exif_v2.png');
-        const pixelMap = await imageSourceApi.createPixelMap(null);
+        const pixelMap = await imageSourceApi.createPixelMap(null as ESObject);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -770,6 +775,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap(undefined);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -794,6 +800,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap();
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -823,6 +830,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -1124,9 +1132,10 @@ export default function CreatePixelMapSupp() {
       let imageSourceApi: image.ImageSource | null = null;
       try{
         imageSourceApi = await getImageSource('test_exif_v2.webp');
-        const pixelMap = await imageSourceApi.createPixelMap(null);
+        const pixelMap = await imageSourceApi.createPixelMap(null as ESObject);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -1151,6 +1160,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap(undefined);
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -1175,6 +1185,7 @@ export default function CreatePixelMapSupp() {
         const pixelMap = await imageSourceApi.createPixelMap();
         console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -1204,6 +1215,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertFalse();
+        await pixelMap?.release();
       }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
@@ -1227,8 +1239,10 @@ export default function CreatePixelMapSupp() {
       console.info(TAG, testName, `pixelmap创建成功`);
       try{
         const imageInfo = await pixelMap.getImageInfo();
-        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
-        expect(imageInfo.size != undefined).assertTrue();
+        console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+        console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+        expect(imageInfo.size.height).assertEqual(226);
+        expect(imageInfo.size.width).assertEqual(472);
       }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
@@ -1252,8 +1266,10 @@ export default function CreatePixelMapSupp() {
       console.info(TAG, testName, `pixelmap创建成功`);
       try{
         const imageInfo = await pixelMap.getImageInfo();
-        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
-        expect(imageInfo.size != undefined).assertTrue();
+        console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+        console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+        expect(imageInfo.size.height).assertEqual(75);
+        expect(imageInfo.size.width).assertEqual(472);
       }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
@@ -1277,8 +1293,10 @@ export default function CreatePixelMapSupp() {
       console.info(TAG, testName, `pixelmap创建成功`);
       try{
         const imageInfo = await pixelMap.getImageInfo();
-        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
-        expect(imageInfo.size != undefined).assertTrue();
+        console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+        console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+        expect(imageInfo.size.height).assertEqual(221);
+        expect(imageInfo.size.width).assertEqual(286);
       }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
@@ -1307,9 +1325,10 @@ export default function CreatePixelMapSupp() {
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              JSON.stringify(imageInfo.size));
-            expect(imageInfo.size != undefined).assertTrue();
+            console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+            console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+            expect(imageInfo.size.height).assertEqual(226);
+            expect(imageInfo.size.width).assertEqual(472);
           }
         })
       } catch (error) {
@@ -1340,9 +1359,10 @@ export default function CreatePixelMapSupp() {
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              JSON.stringify(imageInfo.size));
-            expect(imageInfo.size != undefined).assertTrue();
+            console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+            console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+            expect(imageInfo.size.height).assertEqual(75);
+            expect(imageInfo.size.width).assertEqual(472);
           }
         })
       } catch (error) {
@@ -1373,9 +1393,10 @@ export default function CreatePixelMapSupp() {
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              JSON.stringify(imageInfo.size));
-            expect(imageInfo.size != undefined).assertTrue();
+            console.info(TAG, testName, `imageInfo.size.height: `+ imageInfo.size.height);
+            console.info(TAG, testName, `imageInfo.size.weidth: `+ imageInfo.size.width);
+            expect(imageInfo.size.height).assertEqual(221);
+            expect(imageInfo.size.width).assertEqual(286);
           }
         })
       } catch (error) {
