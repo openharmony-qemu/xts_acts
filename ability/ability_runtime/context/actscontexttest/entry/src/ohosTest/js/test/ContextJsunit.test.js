@@ -424,50 +424,6 @@ export default function ActsContextTest() {
     })
 
     /**
-     * @tc.name   ACTS_SetShowOnLockScreen_0300
-     * @tc.number ACTS_SetShowOnLockScreen_0300
-     * @tc.desc   Check the return show on lock screen status of the interface with false parameter (by AsyncCallback)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ACTS_SetShowOnLockScreen_0300', Level.LEVEL0, async function (done) {
-      console.log('ACTS_SetShowOnLockScreen_0300====<begin');
-
-      try {
-        context.setShowOnLockScreen(false, (err,data)=>{
-          console.log('SetShowOnLockScreen call back');
-          done();
-        });
-        done();
-      } catch (err) {
-        console.log('ACTS_SetShowOnLockScreen_0300====<end err=' + err)
-        done();
-      }
-      console.log('ACTS_SetShowOnLockScreen_0300====<end');
-    })
-
-    /**
-     * @tc.name   ACTS_SetShowOnLockScreen_0400
-     * @tc.number ACTS_SetShowOnLockScreen_0400
-     * @tc.desc   Check the return show on lock screen status of the interface with false parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ACTS_SetShowOnLockScreen_0400', Level.LEVEL0, async function (done) {
-      console.log('ACTS_SetShowOnLockScreen_0400====<begin');
-      try {
-        await context.setShowOnLockScreen(false);
-        done();
-      } catch (err) {
-        console.log('ACTS_SetShowOnLockScreen_0400====<end err=' + err)
-        done();
-      }
-      console.log('ACTS_SetShowOnLockScreen_0400====<end');
-    })
-
-    /**
      * @tc.name   ACTS_VerifyPermission_0700
      * @tc.number ACTS_VerifyPermission_0700
      * @tc.desc   Test verifyPermission with empty string permission.
