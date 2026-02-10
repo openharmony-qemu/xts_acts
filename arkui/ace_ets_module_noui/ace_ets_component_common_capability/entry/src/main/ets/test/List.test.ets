@@ -31,4 +31,6 @@ export default function testsuite() {
   enumTest();
   LayoutChildrenTest();
   drawChildrenTest();
+  xComponentNodeChangeRenderTypeNullUndefinedTest();
+  xComponentNodeOnCreateNullUndefinedTest();
 }
