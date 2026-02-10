@@ -183,9 +183,11 @@ export default function connectNativeParameterTest() {
             return;  // 跳过测试，不失败
           }
           // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
-          let validErrorCodes = [webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR,
-                                  webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY];
-          expect(validErrorCodes.includes(code)).assertTrue();
+          // 将 code 转换为数字以确保类型匹配
+          let errorCode = Number(code);
+          let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+          expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
 
@@ -238,9 +240,11 @@ export default function connectNativeParameterTest() {
             return;  // 跳过测试，不失败
           }
           // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
-          let validErrorCodes = [webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR,
-                                  webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY];
-          expect(validErrorCodes.includes(code)).assertTrue();
+          // 将 code 转换为数字以确保类型匹配
+          let errorCode = Number(code);
+          let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+          expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
 
@@ -303,9 +307,11 @@ export default function connectNativeParameterTest() {
             return;  // 跳过测试，不失败
           }
           // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
-          let validErrorCodes = [webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR,
-                                  webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY];
-          expect(validErrorCodes.includes(code)).assertTrue();
+          // 将 code 转换为数字以确保类型匹配
+          let errorCode = Number(code);
+          let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+          expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
 
