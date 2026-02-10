@@ -21,7 +21,6 @@ import audio from '@ohos.multimedia.audio';
 
 let sessionManager: audio.AudioSessionManager;
 let audioManager: audio.AudioManager;
-let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
 const isDone: boolean = true;
 
 // 创建音频会话管理器
@@ -338,6 +337,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         audioSessionManager.off('audioSessionDeactivated');
 
@@ -368,6 +369,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_AUDIO_ON_OFF_AUDIOSESSIONDEACTIVATED_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
         let audioSessionDeactivatedCallback = (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
@@ -678,6 +681,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         audioSessionManager.off('availableDeviceChange');
 
@@ -711,6 +716,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
           console.info('device change type : ' + deviceChanged.type);
@@ -857,6 +864,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         // 取消该事件的所有监听。
         audioSessionManager.off('currentInputDeviceChanged');
@@ -889,6 +898,8 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
         let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
