@@ -102,11 +102,11 @@ export default function RichEditorSetStyledString005() {
       await CommonFunc.sleep(500);
       const contentStr = contentText.slice(contentText.indexOf('{'), contentText.lastIndexOf('}') + 1);
       const contentElement = JSON.parseJsonElement(contentStr)
-      expect(contentText).assertContain('verticalAlign:1;objectFit:0');
-      expect(contentElement.getString("topLeft")).assertEqual("10.00vp");
-      expect(contentElement.getString("topRight")).assertEqual("10.00vp");
-      expect(contentElement.getString("bottomLeft")).assertEqual("10.00vp");
-      expect(contentElement.getString("bottomRight")).assertEqual("10.00vp");
+      expect(contentText).assertContain('verticalAlign:1;objectFit:1');
+      expect(contentElement.getDouble("topLeft")).assertEqual(10);
+      expect(contentElement.getDouble("topRight")).assertEqual(10);
+      expect(contentElement.getDouble("bottomLeft")).assertEqual(10);
+      expect(contentElement.getDouble("bottomRight")).assertEqual(10);
       done();
     });
 
