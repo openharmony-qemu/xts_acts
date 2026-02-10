@@ -675,46 +675,38 @@ static int VerifyRsaAndEccMaterialSizes()
     return 0;
 }
 
-// Inline function: Check if two type sizes do not match
-// Returns true if sizes mismatch (error condition), false if they match
-inline bool SizeMismatch(size_t actualSize, size_t expectedSize)
-{
-    return actualSize != expectedSize;
-}
-
 // Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
 // Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
 // Returns 0 on success, -1 if any field size is incorrect
 static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMaterial)
 {
     // Verify algorithm type field
-    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg))) {
+    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg)) {
         return -1;
     }
 
     // Verify key size field
-    if (SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->keySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA parameter sizes: x (private exponent), y (public key)
-    if (SizeMismatch(sizeof(keyMaterial->xSize), UINT32_SIZE) ||
-        SizeMismatch(sizeof(keyMaterial->ySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->xSize) != UINT32_SIZE || sizeof(keyMaterial->ySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA domain parameter: p (prime modulus)
-    if (SizeMismatch(sizeof(keyMaterial->pSize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->pSize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA domain parameter: q (subgroup order)
-    if (SizeMismatch(sizeof(keyMaterial->qSize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->qSize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA domain parameter: g (generator)
-    if (SizeMismatch(sizeof(keyMaterial->gSize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->gSize) != UINT32_SIZE) {
         return -1;
     }
 
@@ -727,19 +719,17 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
 static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
-        SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || sizeof(keyMaterial->keySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DH key component sizes: public key and private key
-    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), UINT32_SIZE) ||
-        SizeMismatch(sizeof(keyMaterial->priKeySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->pubKeySize) != UINT32_SIZE || sizeof(keyMaterial->priKeySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify reserved field
-    if (SizeMismatch(sizeof(keyMaterial->reserved), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->reserved) != UINT32_SIZE) {
         return -1;
     }
 
@@ -752,19 +742,17 @@ static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial
 static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
-        SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || sizeof(keyMaterial->keySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify X25519 key component sizes: public key and private key
-    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), UINT32_SIZE) ||
-        SizeMismatch(sizeof(keyMaterial->priKeySize), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->pubKeySize) != UINT32_SIZE || sizeof(keyMaterial->priKeySize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify reserved field
-    if (SizeMismatch(sizeof(keyMaterial->reserved), UINT32_SIZE)) {
+    if (sizeof(keyMaterial->reserved) != UINT32_SIZE) {
         return -1;
     }
 
