@@ -11,7 +11,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-group("AbilityActsAbilityRuntime") {
+group("abilityactsabilityruntime") {
 deps = [
       "actsabilityruntimetest:actsabilityruntimetest"
     ]
