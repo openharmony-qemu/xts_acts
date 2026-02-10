@@ -673,8 +673,12 @@ static int VerifyRsaAndEccMaterialSizes()
     return 0;
 }
 
-// Macro: Verify struct field size matches expected type size
-#define VERIFY_FIELD_SIZE(field, expectedType) (sizeof(field) != sizeof(expectedType))
+// Inline function: Check if two type sizes do not match
+// Returns true if sizes mismatch (error condition), false if they match
+inline bool SizeMismatch(size_t actualSize, size_t expectedSize)
+{
+    return actualSize != expectedSize;
+}
 
 // Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
 // Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
@@ -682,23 +686,25 @@ static int VerifyRsaAndEccMaterialSizes()
 static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMaterial)
 {
     // Verify algorithm type field
-    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg)) {
+    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg))) {
         return -1;
     }
 
     // Verify key size field
-    if (VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify DSA parameter sizes: x (private exponent), y (public key)
-    if (VERIFY_FIELD_SIZE(keyMaterial->xSize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->ySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->xSize), sizeof(uint32_t)) ||
+        SizeMismatch(sizeof(keyMaterial->ySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify DSA domain parameter sizes: p (prime modulus), q (subgroup order), g (generator)
-    if (VERIFY_FIELD_SIZE(keyMaterial->pSize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->qSize, uint32_t) ||
-        VERIFY_FIELD_SIZE(keyMaterial->gSize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->pSize), sizeof(uint32_t)) ||
+        SizeMismatch(sizeof(keyMaterial->qSize), sizeof(uint32_t)) ||
+        SizeMismatch(sizeof(keyMaterial->gSize), sizeof(uint32_t))) {
         return -1;
     }
 
@@ -711,17 +717,19 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
 static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg) || VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
+        SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify DH key component sizes: public key and private key
-    if (VERIFY_FIELD_SIZE(keyMaterial->pubKeySize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->priKeySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), sizeof(uint32_t)) ||
+        SizeMismatch(sizeof(keyMaterial->priKeySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify reserved field
-    if (VERIFY_FIELD_SIZE(keyMaterial->reserved, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->reserved), sizeof(uint32_t))) {
         return -1;
     }
 
@@ -734,17 +742,19 @@ static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial
 static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg) || VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
+        SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify X25519 key component sizes: public key and private key
-    if (VERIFY_FIELD_SIZE(keyMaterial->pubKeySize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->priKeySize, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), sizeof(uint32_t)) ||
+        SizeMismatch(sizeof(keyMaterial->priKeySize), sizeof(uint32_t))) {
         return -1;
     }
 
     // Verify reserved field
-    if (VERIFY_FIELD_SIZE(keyMaterial->reserved, uint32_t)) {
+    if (SizeMismatch(sizeof(keyMaterial->reserved), sizeof(uint32_t))) {
         return -1;
     }
 
