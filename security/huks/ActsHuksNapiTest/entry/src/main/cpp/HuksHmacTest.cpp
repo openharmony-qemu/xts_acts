@@ -30,7 +30,7 @@ static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * 4;
 static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
 
-static const std::string gInData =
+static const std::string IN_DATA =
     "Hks_HMAC_Test_000000000000000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -63,9 +63,8 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 }
 
 // Helper function: Initialize parameter set
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -227,7 +226,7 @@ static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob* keyAlias,
                                       struct OH_Huks_ParamSet* genParamSet,
                                       struct OH_Huks_ParamSet* hmacParamSet)
 {
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()), (uint8_t*)IN_DATA.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);

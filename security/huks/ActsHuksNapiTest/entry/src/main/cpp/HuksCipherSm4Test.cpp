@@ -32,7 +32,7 @@ static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * 2;
 static const uint32_t DOUBLE_SIZE = 2; // 用于计算输出缓冲区大小的倍数因子
 
-static const std::string gInData =
+static const std::string IN_DATA =
     "Hks_SM4_Cipher_Test_000000000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -44,9 +44,8 @@ static int32_t HksMemCmp(const void* ptr1, const void* ptr2, uint32_t size)
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -323,7 +322,7 @@ static OH_Huks_Result HksSm4CipherTestCaseOther(const struct OH_Huks_Blob* keyAl
                                                 struct OH_Huks_ParamSet* decryptParamSet)
 {
     char tmpInData[] = "SM4_ECB_INDATA_1";
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()), (uint8_t*)IN_DATA.c_str() };
 
     struct OH_Huks_Param* modeParam = nullptr;
     OH_Huks_GetParam(genParamSet, OH_HUKS_TAG_BLOCK_MODE, &modeParam);

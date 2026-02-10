@@ -24,7 +24,7 @@ namespace Acts {
 namespace Huks {
 
 // Test data and constants
-static const std::string gInData =
+static const std::string IN_DATA =
     "Hks_X25519_Agree_Test_0000000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -91,9 +91,8 @@ static void HksFree(uint8_t* data)
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -141,7 +140,7 @@ static OH_Huks_Result HksX25519AgreeFinish(const struct OH_Huks_Blob* keyAlias,
                                            const struct OH_Huks_ParamSet* finishParamSet,
                                            struct OH_Huks_Blob* outData)
 {
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()), (uint8_t*)IN_DATA.c_str() };
 
     uint8_t handleU[sizeof(uint64_t)] = { 0 };
     struct OH_Huks_Blob handle = { sizeof(uint64_t), handleU };

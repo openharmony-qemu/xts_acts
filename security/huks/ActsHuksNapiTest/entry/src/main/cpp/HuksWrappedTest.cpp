@@ -108,7 +108,7 @@ static char g_agreeKeyAlgName[] = "X25519";
 static struct OH_Huks_Blob g_agreeKeyAlgNameBlob = { .size = sizeof(g_agreeKeyAlgName),
                                                      .data = (uint8_t*)g_agreeKeyAlgName };
 
-static const uint32_t g_x25519PubKeySize = 32;
+static const uint32_t X25519_PUB_KEY_SIZE = 32;
 
 static struct OH_Huks_Param g_genWrappingKeyParams[] = {
     { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_X25519 },
@@ -201,9 +201,8 @@ static inline uint32_t OH_HUKS_KEY_BYTES(uint32_t keySize)
     return (keySize + BITS_PER_BYTE - 1) / BITS_PER_BYTE;
 }
 
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramcount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -624,7 +623,7 @@ static void InitCommonTestParamsAndDoImport(struct HksImportWrappedKeyTestParams
                                             uint32_t arraySize)
 {
     importWrappedKeyTestParams->agreeKeyAlgName = &g_agreeKeyAlgNameBlob;
-    importWrappedKeyTestParams->publicKeySize = g_x25519PubKeySize;
+    importWrappedKeyTestParams->publicKeySize = X25519_PUB_KEY_SIZE;
 
     struct OH_Huks_ParamSet* genX25519KeyParamSet = nullptr;
     struct OH_Huks_ParamSet* genCallerKeyParamSet = nullptr;

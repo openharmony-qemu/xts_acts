@@ -33,7 +33,7 @@ static const uint32_t RSA_COMMON_SIZE = 1024;
 static const uint32_t MAX_UPDATE_SIZE = 102400;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE;
 
-static const std::string gInData =
+static const std::string IN_DATA =
     "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -66,9 +66,8 @@ static struct OH_Huks_Param g_verifyParamsTest071[] = {
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramcount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -266,8 +265,8 @@ static OH_Huks_Result HksRsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
 {
     OH_LOG_INFO(LOG_APP, "HksRsaSignVerifyTestNormalCase: Started");
 
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()),
-                                   reinterpret_cast<uint8_t*>(const_cast<char*>(gInData.c_str())) };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()),
+                                   reinterpret_cast<uint8_t*>(const_cast<char*>(IN_DATA.c_str())) };
     uint8_t tmpIn[] = "tempIn";
     struct OH_Huks_Blob finishInData = { 0, tmpIn };
 

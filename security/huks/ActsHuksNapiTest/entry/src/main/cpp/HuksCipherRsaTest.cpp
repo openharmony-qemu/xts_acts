@@ -33,7 +33,7 @@ static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * TIMES;
 static const uint32_t DOUBLE_SIZE_MULTIPLIER = 2;
 static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
 
-static const std::string g_inData32 = "RSA_32_ttttttttttttttttttttttttt";
+static const std::string IN_DATA_32 = "RSA_32_ttttttttttttttttttttttttt";
 
 // Helper function: Memory comparison
 static int32_t HksMemCmp(const void* ptr1, const void* ptr2, uint32_t size)
@@ -69,9 +69,8 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {

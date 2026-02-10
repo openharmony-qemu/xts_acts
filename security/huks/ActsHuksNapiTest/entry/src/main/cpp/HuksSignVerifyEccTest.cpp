@@ -24,7 +24,7 @@ namespace Acts {
 namespace Huks {
 
 static const uint32_t ECC_COMMON_SIZE = 1024;
-static const std::string gInData =
+static const std::string IN_DATA =
     "Hks_ECC_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -54,9 +54,8 @@ static struct OH_Huks_Param g_verifyParamsTest001[] = {
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramcount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -135,7 +134,7 @@ static OH_Huks_Result HksEccSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
                                                      struct OH_Huks_ParamSet* signParamSet,
                                                      struct OH_Huks_ParamSet* verifyParamSet)
 {
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()), (uint8_t*)IN_DATA.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);

@@ -43,17 +43,17 @@ static const uint32_t ATTESTATION_COMMON_PARAM_COUNT = 5; // Attestation paramet
 #define SN_DATA "hi_sn_data"
 #define DEVICE_ID "test_device_id"
 
-static const uint32_t g_size = 4096;
+static const uint32_t G_SIZE = 4096;
 static const uint32_t CERT_COUNT = 4;
-static const uint32_t g_paramCountInKeyAttest = 4;
-static const uint32_t g_paramCountInIdAttest = 7;
-static const uint32_t g_index0 = 0;
-static const uint32_t g_index1 = 1;
-static const uint32_t g_index2 = 2;
-static const uint32_t g_index3 = 3;
-static const uint32_t g_index4 = 4;
-static const uint32_t g_index5 = 5;
-static const uint32_t g_index6 = 6;
+static const uint32_t G_PARAM_COUNT_IN_KEY_ATTEST = 4;
+static const uint32_t G_PARAM_COUNT_IN_ID_ATTEST = 7;
+static const uint32_t G_INDEX0 = 0;
+static const uint32_t G_INDEX1 = 1;
+static const uint32_t G_INDEX2 = 2;
+static const uint32_t G_INDEX3 = 3;
+static const uint32_t G_INDEX4 = 4;
+static const uint32_t G_INDEX5 = 5;
+static const uint32_t G_INDEX6 = 6;
 
 enum ParamType {
     IDS_PARAM,
@@ -197,9 +197,8 @@ static int32_t ConstructDataToCertChain(struct OH_Huks_CertChain** certChain,
 }
 
 // Helper function: Generate parameter set
-static OH_Huks_Result GenerateParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param tmpParams[],
-    uint32_t paramCount)
+static OH_Huks_Result
+    GenerateParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param tmpParams[], uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -230,16 +229,16 @@ static int32_t ValidataAndCompareCertInfo(ParamType type,
     // Note: HksValidateCertChain is not available in NDK, skip validation
     int32_t ret = OH_HUKS_SUCCESS;
     if (ret == OH_HUKS_SUCCESS) {
-        ret |= strcmp(SEC_INFO_DATA, reinterpret_cast<char*>(paramSet->params[g_index0].blob.data));
-        ret |= strcmp(CHALLENGE_DATA, reinterpret_cast<char*>(paramSet->params[g_index1].blob.data));
-        ret |= strcmp(VERSION_DATA, reinterpret_cast<char*>(paramSet->params[g_index2].blob.data));
-        ret |= strcmp(ALIAS, reinterpret_cast<char*>(paramSet->params[g_index3].blob.data));
+        ret |= strcmp(SEC_INFO_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX0].blob.data));
+        ret |= strcmp(CHALLENGE_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX1].blob.data));
+        ret |= strcmp(VERSION_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX2].blob.data));
+        ret |= strcmp(ALIAS, reinterpret_cast<char*>(paramSet->params[G_INDEX3].blob.data));
     }
     if (type == IDS_PARAM) {
         if (ret == OH_HUKS_SUCCESS) {
-            ret |= strcmp(UDID_DATA, reinterpret_cast<char*>(paramSet->params[g_index4].blob.data));
-            ret |= strcmp(SN_DATA, reinterpret_cast<char*>(paramSet->params[g_index5].blob.data));
-            ret |= strcmp(DEVICE_ID, reinterpret_cast<char*>(paramSet->params[g_index6].blob.data));
+            ret |= strcmp(UDID_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX4].blob.data));
+            ret |= strcmp(SN_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX5].blob.data));
+            ret |= strcmp(DEVICE_ID, reinterpret_cast<char*>(paramSet->params[G_INDEX6].blob.data));
         }
     }
     return ret;
@@ -259,9 +258,9 @@ static OH_Huks_Result ValidateCertChainTest(const struct OH_Huks_CertChain* cert
         }
         uint32_t paramCount = 0;
         if (type == IDS_PARAM) {
-            paramCount = g_paramCountInIdAttest;
+            paramCount = G_PARAM_COUNT_IN_ID_ATTEST;
         } else if (type == NON_IDS_PARAM) {
-            paramCount = g_paramCountInKeyAttest;
+            paramCount = G_PARAM_COUNT_IN_KEY_ATTEST;
         }
         ret = OH_Huks_AddParams(paramSet, tmpParam, paramCount);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -342,7 +341,7 @@ struct AttestationDataBlobs {
 
 // Helper function: Initialize attestation data and generate key
 static int InitAttestationDataAndGenerateKey(struct AttestationDataBlobs* dataBlobs,
-                                             const struct OH_Huks_Blob* g_keyAlias,
+                                             const struct OH_Huks_Blob* gKeyAlias,
                                              struct OH_Huks_Param* gCommonParams,
                                              struct OH_Huks_ParamSet** paramSet)
 {
@@ -355,11 +354,11 @@ static int InitAttestationDataAndGenerateKey(struct AttestationDataBlobs* dataBl
     gCommonParams[0] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO, .blob = *dataBlobs->secInfo };
     gCommonParams[1] = { .tag = OH_HUKS_TAG_ATTESTATION_CHALLENGE, .blob = *dataBlobs->challenge };
     gCommonParams[2] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_VERSION_INFO, .blob = *dataBlobs->version };
-    gCommonParams[3] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_ALIAS, .blob = *g_keyAlias };
+    gCommonParams[3] = { .tag = OH_HUKS_TAG_ATTESTATION_ID_ALIAS, .blob = *gKeyAlias };
     gCommonParams[4] = { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE };
 
     // Step 1: Generate Key
-    OH_Huks_Result ret = TestGenerateKey(g_keyAlias);
+    OH_Huks_Result ret = TestGenerateKey(gKeyAlias);
     OH_LOG_INFO(LOG_APP, "[Step 1] TestGenerateKey result: errorCode=%{public}d", ret.errorCode);
 
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -376,7 +375,7 @@ static int InitAttestationDataAndGenerateKey(struct AttestationDataBlobs* dataBl
         OH_LOG_ERROR(LOG_APP,
                      "[Step 2] GenerateParamSet FAILED with errorCode=%{public}d, cleaning up and returning -1",
                      ret.errorCode);
-        OH_Huks_DeleteKeyItem(g_keyAlias, nullptr);
+        OH_Huks_DeleteKeyItem(gKeyAlias, nullptr);
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[Step 2] GenerateParamSet SUCCEEDED");
@@ -385,13 +384,13 @@ static int InitAttestationDataAndGenerateKey(struct AttestationDataBlobs* dataBl
 }
 
 // Helper function: Perform attestation and validate
-static int PerformAttestationAndValidate(const struct OH_Huks_Blob* g_keyAlias,
+static int PerformAttestationAndValidate(const struct OH_Huks_Blob* gKeyAlias,
                                          struct OH_Huks_ParamSet* paramSet,
                                          const struct OH_Huks_Param* gCommonParams,
                                          OH_Huks_CertChain** certChain)
 {
     // Step 3: Construct CertChain
-    const struct HksTestCertChain certParam = { true, true, true, g_size };
+    const struct HksTestCertChain certParam = { true, true, true, G_SIZE };
     int32_t constructRet = ConstructDataToCertChain(certChain, &certParam);
     OH_LOG_INFO(LOG_APP, "[Step 3] ConstructDataToCertChain result: %{public}d", constructRet);
 
@@ -400,13 +399,13 @@ static int PerformAttestationAndValidate(const struct OH_Huks_Blob* g_keyAlias,
                      "[Step 3] ConstructDataToCertChain FAILED with code=%{public}d, cleaning up and returning -1",
                      constructRet);
         OH_Huks_FreeParamSet(&paramSet);
-        OH_Huks_DeleteKeyItem(g_keyAlias, nullptr);
+        OH_Huks_DeleteKeyItem(gKeyAlias, nullptr);
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[Step 3] ConstructDataToCertChain SUCCEEDED");
 
     // Step 4: AttestKeyItem (expected to fail in software mode)
-    OH_Huks_Result ret = OH_Huks_AttestKeyItem(g_keyAlias, paramSet, *certChain);
+    OH_Huks_Result ret = OH_Huks_AttestKeyItem(gKeyAlias, paramSet, *certChain);
     OH_LOG_INFO(LOG_APP,
                 "[Step 4] AttestKeyItem result: errorCode=%{public}d (EXPECTED to FAIL in software mode)",
                 ret.errorCode);
@@ -416,7 +415,7 @@ static int PerformAttestationAndValidate(const struct OH_Huks_Blob* g_keyAlias,
                      "[Step 4] AttestKeyItem unexpectedly SUCCEEDED in software mode (should fail!), returning -1");
         FreeCertChain(certChain, (*certChain)->certsCount);
         OH_Huks_FreeParamSet(&paramSet);
-        OH_Huks_DeleteKeyItem(g_keyAlias, nullptr);
+        OH_Huks_DeleteKeyItem(gKeyAlias, nullptr);
         return -1;
     }
     OH_LOG_INFO(
@@ -440,14 +439,14 @@ static int PerformAttestationAndValidate(const struct OH_Huks_Blob* g_keyAlias,
 // Helper function: Cleanup attestation resources
 static void CleanupAttestationResources(OH_Huks_CertChain** certChain,
                                         struct OH_Huks_ParamSet** paramSet,
-                                        const struct OH_Huks_Blob* g_keyAlias)
+                                        const struct OH_Huks_Blob* gKeyAlias)
 {
     // Step 6: Cleanup cert chain
     FreeCertChain(certChain, (*certChain)->certsCount);
     OH_LOG_INFO(LOG_APP, "[Step 6] Certificate chain freed");
 
     // Step 7: DeleteKeyItem (may fail if key doesn't exist)
-    OH_Huks_Result ret = OH_Huks_DeleteKeyItem(g_keyAlias, *paramSet);
+    OH_Huks_Result ret = OH_Huks_DeleteKeyItem(gKeyAlias, *paramSet);
     OH_LOG_INFO(LOG_APP, "[Step 7] DeleteKeyItem result: errorCode=%{public}d", ret.errorCode);
     OH_Huks_FreeParamSet(paramSet);
 
@@ -485,8 +484,8 @@ int SecurityHuksNapiAttest0100()
         static struct OH_Huks_Blob g_secInfo;
         static struct OH_Huks_Blob g_challenge;
         static struct OH_Huks_Blob g_version;
-        static const struct OH_Huks_Blob g_keyAlias = { sizeof(ALIAS),
-                                                        reinterpret_cast<uint8_t*>(const_cast<char*>(ALIAS)) };
+        static const struct OH_Huks_Blob gKeyAlias = { sizeof(ALIAS),
+                                                       reinterpret_cast<uint8_t*>(const_cast<char*>(ALIAS)) };
         static struct OH_Huks_Param gCommonParams[ATTESTATION_COMMON_PARAM_COUNT];
 
         struct OH_Huks_ParamSet* paramSet = nullptr;
@@ -494,17 +493,17 @@ int SecurityHuksNapiAttest0100()
                                                   .challenge = &g_challenge,
                                                   .version = &g_version };
 
-        if (InitAttestationDataAndGenerateKey(&dataBlobs, &g_keyAlias, gCommonParams, &paramSet) != 0) {
+        if (InitAttestationDataAndGenerateKey(&dataBlobs, &gKeyAlias, gCommonParams, &paramSet) != 0) {
             return -1;
         }
 
         OH_Huks_CertChain* certChain = nullptr;
-        if (PerformAttestationAndValidate(&g_keyAlias, paramSet, gCommonParams, &certChain) != 0) {
+        if (PerformAttestationAndValidate(&gKeyAlias, paramSet, gCommonParams, &certChain) != 0) {
             OH_Huks_FreeParamSet(&paramSet);
             return -1;
         }
 
-        CleanupAttestationResources(&certChain, &paramSet, &g_keyAlias);
+        CleanupAttestationResources(&certChain, &paramSet, &gKeyAlias);
         OH_LOG_INFO(LOG_APP, "========== Software mode branch completed successfully ==========");
     } else {
         OH_LOG_INFO(LOG_APP, "========== NOT using software mode (hardware TEE detected) ==========");
