@@ -90,6 +90,7 @@ export default function btAccessTest() {
             await clickRequestPermission(OPEN_BT_TEXT);
             await sleep(3000);
             console.info('[bluetooth_js] bluetooth enable state ='+ JSON.stringify(bluetooth.getState()));
+            done();
         })
 
         /**
