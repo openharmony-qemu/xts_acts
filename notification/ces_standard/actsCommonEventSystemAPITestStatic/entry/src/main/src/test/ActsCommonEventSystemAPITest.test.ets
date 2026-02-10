@@ -587,7 +587,7 @@ export default function ActsCommonEventSystemAPITest() {
             } as notificationManager.NotificationContent,
           }
           notificationManager.publish(notificationRequest, publishCallback)
-          //await Utils.msSleep(60)
+          await Utils.msSleep(60)
         }
       })
 
