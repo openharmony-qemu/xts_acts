@@ -33,7 +33,7 @@ static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * TIMES;
 static const uint32_t DOUBLE_SIZE_MULTIPLIER = 2;
 static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
 
-static const std::string g_inData_32 = "RSA_32_ttttttttttttttttttttttttt";
+static const std::string g_inData32 = "RSA_32_ttttttttttttttttttttttttt";
 
 // Helper function: Memory comparison
 static int32_t HksMemCmp(const void* ptr1, const void* ptr2, uint32_t size)

@@ -31,7 +31,7 @@ static const uint32_t MAX_OUTDATA_SIZE = 256;
 static const uint32_t SUCCESS_RETURN_INDEX = 0;
 static const size_t MAX_ALLOC_SIZE = SIZE_MAX / 2; // size_t 最大值的一半，防止整数溢出
 
-static const std::string g_inData =
+static const std::string gInData =
     "Hks_SM2_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -556,8 +556,8 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
     struct OH_Huks_ParamSet* signParamSet = nullptr;
     struct OH_Huks_ParamSet* verifyParamSet = nullptr;
 
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()),
-                                   static_cast<uint8_t*>(const_cast<char*>(g_inData.c_str())) };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()),
+                                   static_cast<uint8_t*>(const_cast<char*>(gInData.c_str())) };
     uint8_t outDataS[SM2_COMMON_SIZE] = { 0 };
     struct OH_Huks_Blob outDataSign = { SM2_COMMON_SIZE, outDataS };
 

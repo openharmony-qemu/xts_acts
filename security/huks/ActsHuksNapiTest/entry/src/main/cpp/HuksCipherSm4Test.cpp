@@ -32,7 +32,7 @@ static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * 2;
 static const uint32_t DOUBLE_SIZE = 2; // 用于计算输出缓冲区大小的倍数因子
 
-static const std::string g_inData =
+static const std::string gInData =
     "Hks_SM4_Cipher_Test_000000000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -323,7 +323,7 @@ static OH_Huks_Result HksSm4CipherTestCaseOther(const struct OH_Huks_Blob* keyAl
                                                 struct OH_Huks_ParamSet* decryptParamSet)
 {
     char tmpInData[] = "SM4_ECB_INDATA_1";
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
 
     struct OH_Huks_Param* modeParam = nullptr;
     OH_Huks_GetParam(genParamSet, OH_HUKS_TAG_BLOCK_MODE, &modeParam);

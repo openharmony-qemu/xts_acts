@@ -28,7 +28,7 @@ namespace Huks {
 static const uint32_t COMMON_SIZE = 2048;
 static const uint32_t DERIVE_KEY_SIZE_32 = 32;
 
-static const std::string g_inData =
+static const std::string gInData =
     "Hks_HKDF_Derive_Test_00000000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -64,7 +64,7 @@ static OH_Huks_Result HksHkdfDeriveTestNormalCase(const struct OH_Huks_Blob keyA
                                                   struct OH_Huks_ParamSet* deriveParamSet,
                                                   struct OH_Huks_ParamSet* deriveFinalParamsSet)
 {
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);

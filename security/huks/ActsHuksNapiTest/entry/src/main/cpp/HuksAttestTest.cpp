@@ -227,6 +227,7 @@ static int32_t ValidataAndCompareCertInfo(ParamType type,
     if (certChain == nullptr || paramSet == nullptr) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
+    // Note: HksValidateCertChain is not available in NDK, skip validation
     int32_t ret = OH_HUKS_SUCCESS;
     if (ret == OH_HUKS_SUCCESS) {
         ret |= strcmp(SEC_INFO_DATA, reinterpret_cast<char*>(paramSet->params[g_index0].blob.data));

@@ -24,7 +24,7 @@ namespace Acts {
 namespace Huks {
 
 static const uint32_t DSA_COMMON_SIZE = 1024;
-static const std::string g_inData =
+static const std::string gInData =
     "Hks_DSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -134,7 +134,7 @@ static OH_Huks_Result HksDsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
                                                      struct OH_Huks_ParamSet* signParamSet,
                                                      struct OH_Huks_ParamSet* verifyParamSet)
 {
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()), (uint8_t*)g_inData.c_str() };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()), (uint8_t*)gInData.c_str() };
 
     /* 1. Generate Key */
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);

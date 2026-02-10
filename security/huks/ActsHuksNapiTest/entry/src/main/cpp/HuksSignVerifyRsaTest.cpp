@@ -33,7 +33,7 @@ static const uint32_t RSA_COMMON_SIZE = 1024;
 static const uint32_t MAX_UPDATE_SIZE = 102400;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE;
 
-static const std::string g_inData =
+static const std::string gInData =
     "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000"
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
     "0000000000000000000000000000000000000000000000000000000000000000000000000_string";
@@ -266,8 +266,8 @@ static OH_Huks_Result HksRsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
 {
     OH_LOG_INFO(LOG_APP, "HksRsaSignVerifyTestNormalCase: Started");
 
-    struct OH_Huks_Blob inData = { static_cast<uint32_t>(g_inData.length()),
-                                   reinterpret_cast<uint8_t*>(const_cast<char*>(g_inData.c_str())) };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(gInData.length()),
+                                   reinterpret_cast<uint8_t*>(const_cast<char*>(gInData.c_str())) };
     uint8_t tmpIn[] = "tempIn";
     struct OH_Huks_Blob finishInData = { 0, tmpIn };
 

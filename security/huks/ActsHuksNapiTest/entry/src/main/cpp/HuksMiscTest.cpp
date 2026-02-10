@@ -253,6 +253,8 @@ static void* HksMalloc(size_t size)
 }
 
 // ==================== 常量验证辅助函数 ====================
+
+// Helper function: Verify digest algorithm constants
 static int VerifyDigestConstants()
 {
     if (((uint32_t)OH_HUKS_DIGEST_NONE != DIGEST_NONE_VALUE) || ((uint32_t)OH_HUKS_DIGEST_MD5 != DIGEST_MD5_VALUE) ||
@@ -266,8 +268,10 @@ static int VerifyDigestConstants()
     return 0;
 }
 
+// Helper function: Verify padding and mode constants
 static int VerifyPaddingAndModeConstants()
 {
+    // Padding constants
     if (((uint32_t)OH_HUKS_PADDING_NONE != PADDING_NONE_VALUE) ||
         ((uint32_t)OH_HUKS_PADDING_OAEP != PADDING_OAEP_VALUE) ||
         ((uint32_t)OH_HUKS_PADDING_PSS != PADDING_PSS_VALUE) ||
@@ -276,6 +280,8 @@ static int VerifyPaddingAndModeConstants()
         ((uint32_t)OH_HUKS_PADDING_PKCS7 != PADDING_PKCS7_VALUE)) {
         return -1;
     }
+
+    // Mode constants
     if (((uint32_t)OH_HUKS_MODE_ECB != MODE_ECB_VALUE) || ((uint32_t)OH_HUKS_MODE_CBC != MODE_CBC_VALUE) ||
         ((uint32_t)OH_HUKS_MODE_CTR != MODE_CTR_VALUE) || ((uint32_t)OH_HUKS_MODE_OFB != MODE_OFB_VALUE) ||
         ((uint32_t)OH_HUKS_MODE_CCM != MODE_CCM_VALUE) || ((uint32_t)OH_HUKS_MODE_GCM != MODE_GCM_VALUE)) {
@@ -285,6 +291,7 @@ static int VerifyPaddingAndModeConstants()
     return 0;
 }
 
+// Helper function: Verify key purpose constants
 static int VerifyKeyPurposeConstants()
 {
     if (((uint32_t)OH_HUKS_KEY_PURPOSE_ENCRYPT != KEY_PURPOSE_ENCRYPT_VALUE) ||
@@ -301,6 +308,7 @@ static int VerifyKeyPurposeConstants()
     return 0;
 }
 
+// Helper function: Verify key size constants
 static int VerifyKeySizeConstants()
 {
     if (((uint32_t)OH_HUKS_RSA_KEY_SIZE_512 != RSA_KEY_SIZE_512) ||
@@ -327,6 +335,7 @@ static int VerifyKeySizeConstants()
     return 0;
 }
 
+// Helper function: Verify algorithm constants
 static int VerifyAlgorithmConstants()
 {
     if (((uint32_t)OH_HUKS_ALG_RSA != ALG_RSA_VALUE) || ((uint32_t)OH_HUKS_ALG_ECC != ALG_ECC_VALUE) ||
@@ -341,6 +350,7 @@ static int VerifyAlgorithmConstants()
     return 0;
 }
 
+// Helper function: Verify other enum constants
 static int VerifyOtherEnumConstants()
 {
     if (((uint32_t)OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING !=
@@ -362,6 +372,7 @@ static int VerifyOtherEnumConstants()
     }
     return 0;
 }
+// Helper function: Verify basic error code constants
 static int VerifyBasicErrorCodes()
 {
     if (((uint32_t)OH_HUKS_SUCCESS != SUCCESS_VALUE) ||
@@ -387,6 +398,7 @@ static int VerifyBasicErrorCodes()
     return 0;
 }
 
+// Helper function: Verify tag type constants
 static int VerifyTagTypeConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_TYPE_INVALID != (TAG_TYPE_INVALID_SHIFT << TAG_TYPE_SHIFT_BITS)) ||
@@ -400,6 +412,7 @@ static int VerifyTagTypeConstants()
     return 0;
 }
 
+// Helper function: Verify user authentication type constants
 static int VerifyUserAuthTypeConstants()
 {
     if (((uint32_t)OH_HUKS_USER_AUTH_TYPE_FINGERPRINT != (1 << USER_AUTH_TYPE_FINGERPRINT_BIT)) ||
@@ -410,6 +423,7 @@ static int VerifyUserAuthTypeConstants()
     return 0;
 }
 
+// Helper function: Verify authentication access invalid constants
 static int VerifyAuthAccessInvalidConstants()
 {
     if (((uint32_t)OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD != (1 << AUTH_ACCESS_INVALID_CLEAR_PASSWORD_BIT)) ||
@@ -419,6 +433,7 @@ static int VerifyAuthAccessInvalidConstants()
     return 0;
 }
 
+// Helper function: Verify challenge constants
 static int VerifyChallengeConstants()
 {
     if (((uint32_t)OH_HUKS_CHALLENGE_TYPE_NORMAL != CHALLENGE_TYPE_NORMAL_VALUE) ||
@@ -433,6 +448,7 @@ static int VerifyChallengeConstants()
     return 0;
 }
 
+// Helper function: Verify secure sign constants
 static int VerifySecureSignConstants()
 {
     if ((uint32_t)OH_HUKS_SECURE_SIGN_WITH_AUTHINFO != SECURE_SIGN_WITH_AUTHINFO_VALUE) {
@@ -441,6 +457,7 @@ static int VerifySecureSignConstants()
     return 0;
 }
 
+// Helper function: Verify error code and tag type constants
 static int VerifyErrorCodeConstants()
 {
     if (VerifyBasicErrorCodes() != 0) {
@@ -464,6 +481,7 @@ static int VerifyErrorCodeConstants()
     return 0;
 }
 
+// Helper function: Verify basic tag constants
 static int VerifyBasicTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_ALGORITHM != (OH_HUKS_TAG_TYPE_UINT | TAG_ALGORITHM_ID)) ||
@@ -478,6 +496,7 @@ static int VerifyBasicTagConstants()
     return 0;
 }
 
+// Helper function: Verify data tag constants
 static int VerifyDataTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_ASSOCIATED_DATA != (OH_HUKS_TAG_TYPE_BYTES | TAG_ASSOCIATED_DATA_ID)) ||
@@ -491,6 +510,7 @@ static int VerifyDataTagConstants()
     return 0;
 }
 
+// Helper function: Verify key agreement tag constants
 static int VerifyKeyAgreementTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_KEY_GENERATE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_KEY_GENERATE_TYPE_ID)) ||
@@ -508,6 +528,7 @@ static int VerifyKeyAgreementTagConstants()
     return 0;
 }
 
+// Helper function: Verify authentication tag constants
 static int VerifyAuthTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_ALL_USERS != (OH_HUKS_TAG_TYPE_BOOL | TAG_ALL_USERS_ID)) ||
@@ -523,6 +544,7 @@ static int VerifyAuthTagConstants()
     return 0;
 }
 
+// Helper function: Verify attestation tag constants
 static int VerifyAttestationTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_CHALLENGE_TYPE != (OH_HUKS_TAG_TYPE_UINT | TAG_CHALLENGE_TYPE_ID)) ||
@@ -539,6 +561,8 @@ static int VerifyAttestationTagConstants()
     }
     return 0;
 }
+
+// Helper function: Verify key management tag constants
 static int VerifyKeyManagementTagConstants()
 {
     if (((uint32_t)OH_HUKS_TAG_IS_KEY_ALIAS != (OH_HUKS_TAG_TYPE_BOOL | TAG_IS_KEY_ALIAS_ID)) ||
@@ -560,6 +584,7 @@ static int VerifyKeyManagementTagConstants()
     return 0;
 }
 
+// Helper function: Verify tag constants
 static int VerifyTagConstants()
 {
     if (VerifyBasicTagConstants() != 0) {
@@ -583,6 +608,7 @@ static int VerifyTagConstants()
     return 0;
 }
 
+// Helper function: Verify basic struct field sizes
 static int VerifyBasicStructSizes()
 {
     struct OH_Huks_Result result;
@@ -596,6 +622,7 @@ static int VerifyBasicStructSizes()
     return 0;
 }
 
+// Helper function: Verify param struct field sizes
 static int VerifyParamStructSizes()
 {
     struct OH_Huks_Param param;
@@ -611,6 +638,7 @@ static int VerifyParamStructSizes()
     return 0;
 }
 
+// Helper function: Verify certificate and key info struct field sizes
 static int VerifyCertAndKeyInfoSizes()
 {
     struct OH_Huks_CertChain certChain;
@@ -628,6 +656,7 @@ static int VerifyCertAndKeyInfoSizes()
     return 0;
 }
 
+// Helper function: Verify RSA and ECC key material struct field sizes
 static int VerifyRsaAndEccMaterialSizes()
 {
     struct OH_Huks_KeyMaterialRsa keyMaterialRsa;
@@ -642,21 +671,36 @@ static int VerifyRsaAndEccMaterialSizes()
     }
     return 0;
 }
+
+// Inline helper: Check if a field has uint32_t size
+// Returns true if the field size matches uint32_t, false otherwise
+// This is a standard type validation pattern used in C/C++ for runtime size checks
 inline bool IsUint32Field(size_t fieldSize)
 {
     return fieldSize == sizeof(uint32_t);
 }
+
+// Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
 static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMaterial)
 {
+    // Verify algorithm type field
     if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg)) {
         return -1;
     }
+
+    // Verify key size field
     if (!IsUint32Field(sizeof(keyMaterial->keySize))) {
         return -1;
     }
+
+    // Verify DSA parameter sizes: x (private exponent), y (public key)
     if (!IsUint32Field(sizeof(keyMaterial->xSize)) || !IsUint32Field(sizeof(keyMaterial->ySize))) {
         return -1;
     }
+
+    // Verify DSA domain parameter: p (prime modulus)
     if (!IsUint32Field(sizeof(keyMaterial->pSize))) {
         return -1;
     }
@@ -674,14 +718,22 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
     return 0;
 }
 
+// Helper function: Verify DH (Diffie-Hellman) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterialDh has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
 static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial)
 {
+    // Verify algorithm type and key size fields
     if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Field(sizeof(keyMaterial->keySize))) {
         return -1;
     }
+
+    // Verify DH key component sizes: public key and private key
     if (!IsUint32Field(sizeof(keyMaterial->pubKeySize)) || !IsUint32Field(sizeof(keyMaterial->priKeySize))) {
         return -1;
     }
+
+    // Verify reserved field
     if (!IsUint32Field(sizeof(keyMaterial->reserved))) {
         return -1;
     }
@@ -689,14 +741,22 @@ static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial
     return 0;
 }
 
+// Helper function: Verify X25519 (Curve25519) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterial25519 has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
 static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyMaterial)
 {
+    // Verify algorithm type and key size fields
     if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Field(sizeof(keyMaterial->keySize))) {
         return -1;
     }
+
+    // Verify X25519 key component sizes: public key and private key
     if (!IsUint32Field(sizeof(keyMaterial->pubKeySize)) || !IsUint32Field(sizeof(keyMaterial->priKeySize))) {
         return -1;
     }
+
+    // Verify reserved field
     if (!IsUint32Field(sizeof(keyMaterial->reserved))) {
         return -1;
     }
@@ -704,6 +764,7 @@ static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyM
     return 0;
 }
 
+// Helper function: Verify DSA, DH and X25519 key material struct field sizes
 static int VerifyDsaDhAndX25519MaterialSizes()
 {
     struct OH_Huks_KeyMaterialDsa dsaMaterial;
@@ -725,6 +786,7 @@ static int VerifyDsaDhAndX25519MaterialSizes()
     return 0;
 }
 
+// Helper function: Verify struct field sizes
 static int VerifyStructSizes()
 {
     if (VerifyBasicStructSizes() != 0) {
