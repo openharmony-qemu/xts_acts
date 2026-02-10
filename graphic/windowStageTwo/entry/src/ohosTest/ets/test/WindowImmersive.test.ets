@@ -4310,6 +4310,7 @@ export default function windowImmersiveTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowStageStart = await startAbility4(caseName, context);
       let windowClass = windowStageStart.getMainWindowSync();
+      AppStorage.setOrCreate('windowClass3',windowClass);
       await windowClass.setUIContent('testability/pages/Index4');
       await windowClass.showWindow();
       await sleep(1000);
@@ -4467,19 +4468,21 @@ export default function windowImmersiveTest() {
           expect(cutoutVP.topRect.width).assertLargerOrEqual(0);
           expect(cutoutVP.topRect.height).assertLargerOrEqual(0);
 
+          let btnClick2 = await driver.findComponent(ON.id('index4Btn3'))
+          await sleep(1000)
+          await btnClick2.click();
+          await sleep(1000);
+
           let input = await driver.findComponent(ON.id('textInput'));
           console.info(caseName + ' input: ' + JSON.stringify(input));
           await sleep(1000);
           await input.click();
           await sleep(1000);
-          let btnClick2 = await driver.findComponent(ON.id('index4Btn'))
-          await sleep(1000)
-          await btnClick2.click();
-          await sleep(1000);
 
-          let keyboardVP:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardVP') as window.UIEnvAvoidAreaVP;
+
+          let keyboardVP:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardVP2') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP keyboardVP: ' + JSON.stringify(keyboardVP))
-          let keyboardPX:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardPX') as window.UIEnvAvoidAreaVP;
+          let keyboardPX:window.UIEnvAvoidAreaVP = AppStorage.get('keyboardPX2') as window.UIEnvAvoidAreaVP;
           console.log(caseName + ' windowAvoidAreaInfoVP keyboardPX: ' + JSON.stringify(keyboardPX))
 
           console.info(caseName + ' avoidAreaKeyboard: ' + JSON.stringify(avoidAreaKeyboard));
@@ -4535,6 +4538,10 @@ export default function windowImmersiveTest() {
           expect(keyboardVP.topRect.width).assertEqual(px2vp(avoidAreaKeyboard?.topRect.width));
           console.log(caseName + ' px2vp(avoidAreaKeyboard?.topRect.height): ' + px2vp(avoidAreaKeyboard?.topRect.height))
           expect(keyboardVP.topRect.height).assertEqual(px2vp(avoidAreaKeyboard?.topRect.height));
+
+          windowClass.off('avoidAreaChange');
+          await sleep(300);
+
           await terminateAbility4(caseName);
           done();
         } else {

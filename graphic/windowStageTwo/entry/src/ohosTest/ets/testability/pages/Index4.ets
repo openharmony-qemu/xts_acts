@@ -36,6 +36,10 @@ export struct V1ContentComponent {
   @Env(SystemProperties.WINDOW_AVOID_AREA) windowAvoidAreaInfoVP: window.UIEnvWindowAvoidAreaInfoVP;
   @Env(SystemProperties.WINDOW_AVOID_AREA_PX) windowAvoidAreaInfoPX: window.UIEnvWindowAvoidAreaInfoPX;
   private caseName: string = 'testEnvSystemPropertiesWindowAvoidAreawithMainWindow|testEnvSystemPropertiesWindowAvoidAreawithSubWindow';
+  private keyboardCallback = (res: window.AvoidAreaOptions) => {
+    console.log(this.caseName + ' callback res: ' + JSON.stringify(res))
+  }
+
   build() {
     Row() {
       Column() {
@@ -68,6 +72,12 @@ export struct V1ContentComponent {
             this.text = value
           })
           .id('textInput')
+        Button('Ö÷´°keyBoard¼àÌý')
+          .id('index4Btn3')
+          .onClick(()=>{
+            let windowClass = AppStorage.get('windowClass3') as window.Window;
+            windowClass.on('avoidAreaChange', this.keyboardCallback);
+          })
       }
       .width('100%')
     }
