@@ -1524,7 +1524,69 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: Function, LoudnessGa
     }
   })
 }
-
+async function testGetCurrentPresentationTimestamp(src: string | media.AVFileDescriptor, done: Function){
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      getCurrentPresentationTimestamp(avPlayer, done);
+      setSource(avPlayer, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+function getCurrentPresentationTimestamp(avPlayer: media.AVPlayer | null, done: Function) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        avPlayer?.getCurrentPresentationTimestamp();
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -2383,5 +2445,24 @@ export default function AVPlayerLocalTest() {
       }
     });
 
+    /**
+      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_ON_0100
+      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_ON_0100
+      * @tc.desc   Local Video getCurrentPresentationTimestamp control test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_ON_0100', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testGetCurrentPresentationTimestamp(fileDescriptor, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }
