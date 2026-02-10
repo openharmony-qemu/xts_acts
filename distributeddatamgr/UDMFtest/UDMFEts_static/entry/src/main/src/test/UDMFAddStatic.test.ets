@@ -49,15 +49,15 @@ export default function UDMFAddApiStaticTest() {
     })
 
     /**
-         * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100
-         * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100
+         * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100
+         * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100
          * @tc.desc   insertData insertData callback test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-    it('SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag, `SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100 start`);
+    it('SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(tag, `SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100 start`);
       let unifiedData = new unifiedDataChannel.UnifiedData()
       try {
         let result = unifiedData.hasType('');
@@ -67,7 +67,7 @@ export default function UDMFAddApiStaticTest() {
         console.error(tag, `Failed. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
-      console.log(tag, `SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100 end`);
+      console.log(tag, `SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100 end`);
     })
 
     /**
@@ -154,8 +154,8 @@ export default function UDMFAddApiStaticTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0100 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0100 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -185,7 +185,7 @@ export default function UDMFAddApiStaticTest() {
         unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate, (err) => {
           expect(err).assertEqual(null);
           console.log(tag, 'Succeeded in updating data.');
-          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0100 end');
+          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0100 end');
           done();
         });
       } catch (e) {
@@ -199,13 +199,13 @@ export default function UDMFAddApiStaticTest() {
     /**
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0200
        * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0200
-       * @tc.desc   insertData insertData callback test
+       * @tc.desc   insertData updateData callback test
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0200 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0200 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -236,7 +236,7 @@ export default function UDMFAddApiStaticTest() {
             let error = err as BusinessError;
             console.log(tag, `err code is ${error.code}, message is ${error.message}`);
             expect(error.code).assertEqual(401);
-            console.log(tag, "SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_0200 end");
+            console.log(tag, "SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0200 end");
             done();
           }
         })
@@ -251,13 +251,13 @@ export default function UDMFAddApiStaticTest() {
     /**
        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0300
        * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0300
-       * @tc.desc   insertData insertData callback test
+       * @tc.desc   insertData updateData callback test
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0300 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0300 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -287,7 +287,7 @@ export default function UDMFAddApiStaticTest() {
         unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate, (err) => {
           expect(err).assertEqual(null);
           console.log(tag, 'Succeeded in updating data.');
-          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0300 end');
+          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0300 end');
           done();
         })
       } catch (e) {
@@ -306,8 +306,8 @@ export default function UDMFAddApiStaticTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0400 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0400 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -336,7 +336,7 @@ export default function UDMFAddApiStaticTest() {
         unifiedDataChannel.updateData(updateOptions, unifiedDataUpdate, (err) => {
           expect(err).assertEqual(null);
           console.log(tag, 'Succeeded in updating data.');
-          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0400 end');
+          console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0400 end');
           done();
         })
       } catch (e) {
@@ -355,8 +355,8 @@ export default function UDMFAddApiStaticTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0500 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0500 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -389,7 +389,7 @@ export default function UDMFAddApiStaticTest() {
         console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0500 end');
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0500 end');
     })
 
     /**
@@ -400,8 +400,8 @@ export default function UDMFAddApiStaticTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0600 start');
+    it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0600 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -434,7 +434,7 @@ export default function UDMFAddApiStaticTest() {
         console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0600 end');
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0600 end');
     })
 
     /**
@@ -446,7 +446,7 @@ export default function UDMFAddApiStaticTest() {
        * @tc.level  LEVEL3
        */
     it('SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0700 start');
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0700 start');
       let plainText: uniformDataStruct.PlainText = {
         uniformDataType: 'general.plain-text',
         textContent: 'This is a plain text example',
@@ -479,7 +479,7 @@ export default function UDMFAddApiStaticTest() {
         console.error(tag, `Update data throws an exception. code is ${error.code}, message is ${error.message} `);
         expect().assertFail();
       }
-      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdatetDataStaticTest_0700 end');
+      console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFUpdateDataStaticTest_0700 end');
     })
 
     /**
@@ -1394,37 +1394,15 @@ export default function UDMFAddApiStaticTest() {
     });
 
     /**
-        * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100
-        * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100
-        * @tc.desc   unifiedDataChannel hasType interface test.
-        * @tc.type   FUNCTION
-        * @tc.size   MEDIUMTEST
-        * @tc.level  LEVEL3
-        */
-    it('SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100 start');
-      let unifiedData = new unifiedDataChannel.UnifiedData();
-      try {
-        let hasType = unifiedData.hasType('');
-        expect(hasType).assertEqual(false);
-      } catch (e) {
-        let error: BusinessError = e as BusinessError;
-        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect().assertFail();
-      }
-      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFHasTypeTest_0100 end');
-    })
-
-    /**
-    * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFDataTypeTest_0100
-    * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFDataTypeTest_0100
+    * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100
+    * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100
     * @tc.desc   unifiedDataChannel data type interface test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL3
     */
     it('SUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFDataTypeTest_0100 start');
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100 start');
       let text_0 = new unifiedDataChannel.Text();
       let textDetails: Record<string, string> = {
         "title": 'MyTitle',
@@ -1525,7 +1503,7 @@ export default function UDMFAddApiStaticTest() {
       expect(sdr.details!['title']).assertEqual('recordTitle');
       expect(sdr.details!['version']).assertEqual(1);
       expect(JSON.stringify(sdr.details!['content'])).assertEqual(JSON.stringify(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])));
-      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFDataTypeTest_0100 end');
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100 end');
     })
   });
 }
