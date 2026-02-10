@@ -2868,26 +2868,26 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testOffdeviceSelected0020
-         * @tc.number testOffdeviceSelected0020
+         * @tc.name   testOffdeviceSelected0002
+         * @tc.number testOffdeviceSelected0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testOffdeviceSelected0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testOffdeviceSelected0020 start----------------------");
+        it('testOffdeviceSelected0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testOffdeviceSelected0002 start----------------------");
             let token = 1;
             try {
                 continuationManager.off(undefined, token);
                 expect().assertFail()
                 done();
             } catch (error) {
-                console.info("testOffdeviceSelected0020 catch error is" + error.code);
+                console.info("testOffdeviceSelected0002 catch error is" + error.code);
                 expect(error.code == 401).assertTrue();
                 done();
             }
-            console.info("----------------------testOffdeviceSelected0020 end----------------------");
+            console.info("----------------------testOffdeviceSelected0002 end----------------------");
         })
 
         /**
@@ -2935,25 +2935,25 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testOndeviceUnselected0010
-         * @tc.number testOndeviceUnselected0010
+         * @tc.name   testOndeviceUnselected0001
+         * @tc.number testOndeviceUnselected0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testOndeviceUnselected0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.log("----------------------testOndeviceUnselected0010 start----------------------");
+        it('testOndeviceUnselected0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testOndeviceUnselected0001 start----------------------");
             try {
                 continuationManager.on("deviceUnselected", null, (data) => {
-                    console.log('testOndeviceUnselected0010 onDeviceSelected len: ' + data.length);
+                    console.log('testOndeviceUnselected0001 onDeviceSelected len: ' + data.length);
                     expect().assertFail()
                 });
             } catch (error) {
                 console.log("testOndeviceUnselected0010 continuationManager.on catch error is" + error.code);
                 expect(error.code == 401).assertTrue();
             }
-            console.log("----------------------testOndeviceUnselected0010 end----------------------");
+            console.log("----------------------testOndeviceUnselected0001 end----------------------");
             done();
         })
 
@@ -3159,50 +3159,50 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testRegister001
-         * @tc.number testRegister001
+         * @tc.name   testRegister0001
+         * @tc.number testRegister0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testRegister001 start----------------------");
+        it('testRegister0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister0001 start----------------------");
             try {
                 continuationManager.register(undefined, (err, data) => {
                     if (err.code != 0) {
-                        console.log('testRegister001 get register is faild' + err.code)
+                        console.log('testRegister0001 get register is faild' + err.code)
                         expect().assertFail()
                     }
-                    console.log('testRegister001 get register is success' + data)
+                    console.log('testRegister0001 get register is success' + data)
                     expect().assertFail()
                 })
                 done();
             } catch (error) {
-                console.info("testRegister001 catch error is" + error.code);
+                console.info("testRegister0001 catch error is" + error.code);
                 expect(error.code == 401).assertTrue();
                 done();
             }
-            console.info("----------------------testRegister001 end----------------------");
+            console.info("----------------------testRegister0001 end----------------------");
         })
 
         /**
-         * @tc.name   testRegister002
-         * @tc.number testRegister002
+         * @tc.name   testRegister0002
+         * @tc.number testRegister0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testRegister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testRegister002 start----------------------");
+        it('testRegister0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister0002 start----------------------");
             try {
                 continuationManager.register(null, (err, data) => {
                     if (err.code != 0) {
-                        console.log('testRegister002 get register is faild' + err.code)
+                        console.log('testRegister0002 get register is faild' + err.code)
                         expect().assertFail()
                     }
-                    console.log('testRegister002 get register is success' + data)
+                    console.log('testRegister0002 get register is success' + data)
                     expect().assertFail()
                 })
                 done();
@@ -3211,19 +3211,19 @@ export default function continuationManagerTest() {
                 expect(error.code == 401).assertTrue();
                 done();
             }
-            console.info("----------------------testRegister002 end----------------------");
+            console.info("----------------------testRegister0002 end----------------------");
         })
 
         /**
-         * @tc.name   testRegister003
-         * @tc.number testRegister003
+         * @tc.name   testRegister0003
+         * @tc.number testRegister0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testRegister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testRegister003 start----------------------");
+        it('testRegister0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister0003 start----------------------");
             await continuationManager.register(undefined).then((data) => {
                 console.info('register finished, ' + JSON.stringify(data));
                 expect(data != -1).assertTrue();
@@ -3231,20 +3231,20 @@ export default function continuationManagerTest() {
                 console.error('register failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             })
-            console.info("----------------------testRegister003 end----------------------");
+            console.info("----------------------testRegister0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testRegister004
-         * @tc.number testRegister004
+         * @tc.name   testRegister0004
+         * @tc.number testRegister0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testRegister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testRegister004 start----------------------");
+        it('testRegister0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegister0004 start----------------------");
             await continuationManager.register(null).then((data) => {
                 console.info('register finished, ' + JSON.stringify(data));
                 expect(data != -1).assertTrue();
@@ -3252,64 +3252,64 @@ export default function continuationManagerTest() {
                 console.error('register failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             })
-            console.info("----------------------testRegister004 end----------------------");
+            console.info("----------------------testRegister0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testunregister001
-         * @tc.number testunregister001
+         * @tc.name   testunregister0001
+         * @tc.number testunregister0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testunregister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testunregister001 start----------------------");
+        it('testunregister0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister0001 start----------------------");
             continuationManager.unregister(undefined, (err, data) => {
                 if (err.code != 0) {
-                    console.log('testunregister001 get unregister is faild' + err.code)
+                    console.log('testunregister0001 get unregister is faild' + err.code)
                     expect(err.code == -1).assertTrue()
                 }
-                console.log('testunregister001 get unregister is success' + data)
+                console.log('testunregister0001 get unregister is success' + data)
                 expect(data == undefined).assertTrue()
             })
-            console.info("----------------------testunregister001 end----------------------");
+            console.info("----------------------testunregister0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testunregister002
-         * @tc.number testunregister002
+         * @tc.name   testunregister0002
+         * @tc.number testunregister0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testunregister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testunregister002 start----------------------");
+        it('testunregister0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister0002 start----------------------");
             continuationManager.unregister(null, (err, data) => {
                 if (err.code != 0) {
-                    console.log('testunregister002 get unregister is faild' + err.code)
+                    console.log('testunregister0002 get unregister is faild' + err.code)
                     expect(err.code == -1).assertTrue()
                 }
-                console.log('testunregister002 get unregister is success' + data)
+                console.log('testunregister0002 get unregister is success' + data)
                 expect(data == undefined).assertTrue()
             })
             done();
-            console.info("----------------------testunregister002 end----------------------");
+            console.info("----------------------testunregister0002 end----------------------");
         })
 
         /**
-         * @tc.name   testunregister003
-         * @tc.number testunregister003
+         * @tc.name   testunregister0003
+         * @tc.number testunregister0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testunregister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testunregister003 start----------------------");
+        it('testunregister0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister0003 start----------------------");
             continuationManager.unregister(undefined).then((data) => {
                 console.info('unregister finished, ' + JSON.stringify(data));
                 expect(data == undefined).assertTrue()
@@ -3317,20 +3317,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect(err.code == -1).assertTrue()
             })
-            console.info("----------------------testunregister003 end----------------------");
+            console.info("----------------------testunregister0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testunregister004
-         * @tc.number testunregister004
+         * @tc.name   testunregister0004
+         * @tc.number testunregister0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testunregister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testunregister004 start----------------------");
+        it('testunregister0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testunregister0004 start----------------------");
             continuationManager.unregister(null).then((data) => {
                 console.info('unregister finished, ' + JSON.stringify(data));
                 expect(data == undefined).assertTrue()
@@ -3338,20 +3338,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect(err.code == -1).assertTrue()
             })
-            console.info("----------------------testunregister004 end----------------------");
+            console.info("----------------------testunregister0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus001
-         * @tc.number testupdateConnectStatus001
+         * @tc.name   testupdateConnectStatus0001
+         * @tc.number testupdateConnectStatus0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus001 start----------------------");
+        it('testupdateConnectStatus0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0001 start----------------------");
             try {
                 continuationManager.updateConnectStatus(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err, data) => {
                     if (err.code != 0) {
@@ -3363,20 +3363,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testupdateConnectStatus001 end----------------------");
+            console.info("----------------------testupdateConnectStatus0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus002
-         * @tc.number testupdateConnectStatus002
+         * @tc.name   testupdateConnectStatus0002
+         * @tc.number testupdateConnectStatus0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus002 start----------------------");
+        it('testupdateConnectStatus0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0002 start----------------------");
             try {
                 continuationManager.updateConnectStatus(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTING, (err) => {
                     if (err.code != 0) {
@@ -3389,20 +3389,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testupdateConnectStatus002 end----------------------");
+            console.info("----------------------testupdateConnectStatus0002 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus003
-         * @tc.number testupdateConnectStatus003
+         * @tc.name   testupdateConnectStatus0003
+         * @tc.number testupdateConnectStatus0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus003 start----------------------");
+        it('testupdateConnectStatus0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0003 start----------------------");
             let token = 1;
             try {
                 continuationManager.updateConnectStatus(token, '', continuationManager.DeviceConnectState.CONNECTED, (err) => {
@@ -3416,20 +3416,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testupdateConnectStatus003 end----------------------");
+            console.info("----------------------testupdateConnectStatus0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus004
-         * @tc.number testupdateConnectStatus004
+         * @tc.name   testupdateConnectStatus0004
+         * @tc.number testupdateConnectStatus0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus004 start----------------------");
+        it('testupdateConnectStatus0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0004 start----------------------");
             let token = 1;
             try {
                 continuationManager.updateConnectStatus(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
@@ -3443,20 +3443,20 @@ export default function continuationManagerTest() {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testupdateConnectStatus004 end----------------------");
+            console.info("----------------------testupdateConnectStatus0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus005
-         * @tc.number testupdateConnectStatus005
+         * @tc.name   testupdateConnectStatus0005
+         * @tc.number testupdateConnectStatus0005
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus005 start----------------------");
+        it('testupdateConnectStatus0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0005 start----------------------");
             let token = 1;
             try {
                 continuationManager.updateConnectStatus(token, null, continuationManager.DeviceConnectState.CONNECTED, (err) => {
@@ -3470,128 +3470,128 @@ export default function continuationManagerTest() {
                 console.error('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testupdateConnectStatus005 end----------------------");
+            console.info("----------------------testupdateConnectStatus0005 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus006
-         * @tc.number testupdateConnectStatus006
+         * @tc.name   testupdateConnectStatus0006
+         * @tc.number testupdateConnectStatus0006
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus006 start----------------------");
+        it('testupdateConnectStatus0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0006 start----------------------");
             await continuationManager.updateConnectStatus(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTED).then(() => {
-                console.info('testupdateConnectStatus006 updateConnectStatus finished');
+                console.info('testupdateConnectStatus0006 updateConnectStatus finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------testupdateConnectStatus006 end----------------------");
+            console.info("----------------------testupdateConnectStatus0006 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus007
-         * @tc.number testupdateConnectStatus007
+         * @tc.name   testupdateConnectStatus0007
+         * @tc.number testupdateConnectStatus0007
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus007 start----------------------");
+        it('testupdateConnectStatus0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0007 start----------------------");
             await continuationManager.updateConnectStatus(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTED).then(() => {
-                console.info('testupdateConnectStatus007 updateConnectStatus finished');
+                console.info('testupdateConnectStatus0007 updateConnectStatus finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------testupdateConnectStatus007 end----------------------");
+            console.info("----------------------testupdateConnectStatus0007 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus008
-         * @tc.number testupdateConnectStatus008
+         * @tc.name   testupdateConnectStatus0008
+         * @tc.number testupdateConnectStatus0008
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus008 start----------------------");
+        it('testupdateConnectStatus0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0008 start----------------------");
             let token = 1;
             await continuationManager.updateConnectStatus(token, '', continuationManager.DeviceConnectState.CONNECTED).then(() => {
-                console.info('testupdateConnectStatus008 updateConnectStatus finished');
+                console.info('testupdateConnectStatus0008 updateConnectStatus finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 7).assertTrue();
             })
-            console.info("----------------------testupdateConnectStatus008 end----------------------");
+            console.info("----------------------testupdateConnectStatus0008 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus009
-         * @tc.number testupdateConnectStatus009
+         * @tc.name   testupdateConnectStatus0009
+         * @tc.number testupdateConnectStatus0009
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus009 start----------------------");
+        it('testupdateConnectStatus0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0009 start----------------------");
             let token = 1;
             await continuationManager.updateConnectStatus(token, undefined, continuationManager.DeviceConnectState.CONNECTED).then(() => {
-                console.info('testupdateConnectStatus009 updateConnectStatus finished');
+                console.info('testupdateConnectStatus0009 updateConnectStatus finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------testupdateConnectStatus009 end----------------------");
+            console.info("----------------------testupdateConnectStatus0009 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateConnectStatus010
-         * @tc.number testupdateConnectStatus010
+         * @tc.name   testupdateConnectStatus0100
+         * @tc.number testupdateConnectStatus0100
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateConnectStatus010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateConnectStatus010 start----------------------");
+        it('testupdateConnectStatus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateConnectStatus0100 start----------------------");
             let token = 1;
             await continuationManager.updateConnectStatus(token, null, continuationManager.DeviceConnectState.CONNECTED).then(() => {
-                console.info('testupdateConnectStatus010 updateConnectStatus finished');
+                console.info('testupdateConnectStatus0100 updateConnectStatus finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------testupdateConnectStatus010 end----------------------");
+            console.info("----------------------testupdateConnectStatus0100 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager001
-         * @tc.number teststartDeviceManager001
+         * @tc.name   teststartDeviceManager0001
+         * @tc.number teststartDeviceManager0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager001 start----------------------");
+        it('teststartDeviceManager0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0001 start----------------------");
             try {
                 continuationManager.startDeviceManager(undefined, (err) => {
                     if (err.code != 0) {
@@ -3604,20 +3604,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager001 end----------------------");
+            console.info("----------------------teststartDeviceManager0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager002
-         * @tc.number teststartDeviceManager002
+         * @tc.name   teststartDeviceManager0002
+         * @tc.number teststartDeviceManager0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager002 start----------------------");
+        it('teststartDeviceManager0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0002 start----------------------");
             try {
                 continuationManager.startDeviceManager(null, (err) => {
                     if (err.code != 0) {
@@ -3630,20 +3630,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager002 end----------------------");
+            console.info("----------------------teststartDeviceManager0002 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager003
-         * @tc.number teststartDeviceManager003
+         * @tc.name   teststartDeviceManager0003
+         * @tc.number teststartDeviceManager0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager003 start----------------------");
+        it('teststartDeviceManager0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0003 start----------------------");
             let token = 1;
             try {
                 continuationManager.startDeviceManager(token, undefined, (err) => {
@@ -3657,20 +3657,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager003 end----------------------");
+            console.info("----------------------teststartDeviceManager0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager004
-         * @tc.number teststartDeviceManager004
+         * @tc.name   teststartDeviceManager0004
+         * @tc.number teststartDeviceManager0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager004 start----------------------");
+        it('teststartDeviceManager0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0004 start----------------------");
             let token = 1;
             try {
                 continuationManager.startDeviceManager(token, null, (err) => {
@@ -3684,20 +3684,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager004 end----------------------");
+            console.info("----------------------teststartDeviceManager0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager005
-         * @tc.number teststartDeviceManager005
+         * @tc.name   teststartDeviceManager0005
+         * @tc.number teststartDeviceManager0005
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager005 start----------------------");
+        it('teststartDeviceManager0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0005 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -3717,20 +3717,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager005 end----------------------");
+            console.info("----------------------teststartDeviceManager0005 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager006
-         * @tc.number teststartDeviceManager006
+         * @tc.name   teststartDeviceManager0006
+         * @tc.number teststartDeviceManager0006
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager006 start----------------------");
+        it('teststartDeviceManager0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0006 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -3750,20 +3750,20 @@ export default function continuationManagerTest() {
                 console.error('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------teststartDeviceManager006 end----------------------");
+            console.info("----------------------teststartDeviceManager0006 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager007
-         * @tc.number teststartDeviceManager007
+         * @tc.name   teststartDeviceManager0007
+         * @tc.number teststartDeviceManager0007
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager007 start----------------------");
+        it('teststartDeviceManager0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0007 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -3772,26 +3772,26 @@ export default function continuationManagerTest() {
                 authInfo: { "name": "authInfo", "length": 8 }
             };
             await continuationManager.startDeviceManager(undefined, continuationExtraParams).then(() => {
-                console.info('teststartDeviceManager007 startDeviceManager finished');
+                console.info('teststartDeviceManager0007 startDeviceManager finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------teststartDeviceManager007 end----------------------");
+            console.info("----------------------teststartDeviceManager0007 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager008
-         * @tc.number teststartDeviceManager008
+         * @tc.name   teststartDeviceManager0008
+         * @tc.number teststartDeviceManager0008
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager008 start----------------------");
+        it('teststartDeviceManager0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0008 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -3800,35 +3800,35 @@ export default function continuationManagerTest() {
                 authInfo: { "name": "authInfo", "length": 8 }
             };
             await continuationManager.startDeviceManager(null, continuationExtraParams).then(() => {
-                console.info('teststartDeviceManager008 startDeviceManager finished');
+                console.info('teststartDeviceManager0008 startDeviceManager finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == -1).assertTrue();
             })
-            console.info("----------------------teststartDeviceManager008 end----------------------");
+            console.info("----------------------teststartDeviceManager0008 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   teststartDeviceManager009
-         * @tc.number teststartDeviceManager009
+         * @tc.name   teststartDeviceManager0009
+         * @tc.number teststartDeviceManager0009
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('teststartDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------teststartDeviceManager009 start----------------------");
+        it('teststartDeviceManager0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------teststartDeviceManager0009 start----------------------");
             let token = 1;
             await continuationManager.startDeviceManager(token, undefined).then(() => {
-                console.info('teststartDeviceManager009 startDeviceManager finished');
+                console.info('teststartDeviceManager0009 startDeviceManager finished');
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 29360208).assertTrue();
             })
-            console.info("----------------------teststartDeviceManager009 end----------------------");
+            console.info("----------------------teststartDeviceManager0009 end----------------------");
             done();
         })
 
@@ -3876,15 +3876,15 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testregisterContinuation001
-         * @tc.number testregisterContinuation001
+         * @tc.name   testregisterContinuation0001
+         * @tc.number testregisterContinuation0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testregisterContinuation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testregisterContinuation001 start----------------------");
+        it('testregisterContinuation0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation0001 start----------------------");
             try {
                 continuationManager.registerContinuation(undefined, (err) => {
                     if (err.code != 0) {
@@ -3898,20 +3898,20 @@ export default function continuationManagerTest() {
                 console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testregisterContinuation001 end----------------------");
+            console.info("----------------------testregisterContinuation0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testregisterContinuation002
-         * @tc.number testregisterContinuation002
+         * @tc.name   testregisterContinuation0002
+         * @tc.number testregisterContinuation0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testregisterContinuation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testregisterContinuation002 start----------------------");
+        it('testregisterContinuation0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation0002 start----------------------");
             try {
                 continuationManager.registerContinuation(null, (err) => {
                     if (err.code != 0) {
@@ -3925,23 +3925,23 @@ export default function continuationManagerTest() {
                 console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testregisterContinuation002 end----------------------");
+            console.info("----------------------testregisterContinuation0002 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testregisterContinuation003
-         * @tc.number testregisterContinuation003
+         * @tc.name   testregisterContinuation0003
+         * @tc.number testregisterContinuation0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testregisterContinuation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testregisterContinuation003 start----------------------");
+        it('testregisterContinuation0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation0003 start----------------------");
             try {
                 await continuationManager.registerContinuation(undefined).then((data) => {
-                    console.info('testregisterContinuation003 registerContinuation finished' + data);
+                    console.info('testregisterContinuation0003 registerContinuation finished' + data);
                     expect(data != -1).assertTrue()
                 }).catch((error) => {
                     console.info('registerContinuation failed, cause: ' + JSON.stringify(error.code));
@@ -3951,20 +3951,20 @@ export default function continuationManagerTest() {
                 console.info('registerContinuation catch failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testregisterContinuation003 end----------------------");
+            console.info("----------------------testregisterContinuation0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testregisterContinuation004
-         * @tc.number testregisterContinuation004
+         * @tc.name   testregisterContinuation0004
+         * @tc.number testregisterContinuation0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testregisterContinuation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testregisterContinuation004 start----------------------");
+        it('testregisterContinuation0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testregisterContinuation0004 start----------------------");
             try {
                 await continuationManager.registerContinuation(null).then((data) => {
                     console.info('registerContinuation finished' + data);
@@ -3977,20 +3977,20 @@ export default function continuationManagerTest() {
                 console.info('registerContinuation catch failed, cause: ' + JSON.stringify(error.code));
                 expect().assertFail()
             }
-            console.info("----------------------testregisterContinuation004 end----------------------");
+            console.info("----------------------testregisterContinuation0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState001
-         * @tc.number testupdateContinuationState001
+         * @tc.name   testupdateContinuationState0001
+         * @tc.number testupdateContinuationState0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('testupdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState001 start----------------------");
+            console.info("----------------------testupdateContinuationState0001 start----------------------");
             try {
                 continuationManager.updateContinuationState(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err) => {
                     if (err.code != 0) {
@@ -4004,20 +4004,20 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState001 end----------------------");
+            console.info("----------------------testupdateContinuationState0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState002
-         * @tc.number testupdateContinuationState002
+         * @tc.name   testupdateContinuationState0002
+         * @tc.number testupdateContinuationState0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateContinuationState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState002 start----------------------");
+        it('testupdateContinuationState0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState0002 start----------------------");
             try {
                 continuationManager.updateContinuationState(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTING, (err) => {
                     if (err.code != 0) {
@@ -4031,20 +4031,20 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState002 end----------------------");
+            console.info("----------------------testupdateContinuationState0002 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState003
-         * @tc.number testupdateContinuationState003
+         * @tc.name   testupdateContinuationState0003
+         * @tc.number testupdateContinuationState0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateContinuationState003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState003 start----------------------");
+        it('testupdateContinuationState0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState0003 start----------------------");
             try {
                 continuationManager.updateContinuationState(token, '', continuationManager.DeviceConnectState.CONNECTED, (err) => {
                     if (err.code != 0) {
@@ -4058,20 +4058,20 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState003 end----------------------");
+            console.info("----------------------testupdateContinuationState0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState004
-         * @tc.number testupdateContinuationState004
+         * @tc.name   testupdateContinuationState0004
+         * @tc.number testupdateContinuationState0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateContinuationState004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState004 start----------------------");
+        it('testupdateContinuationState0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState0004 start----------------------");
             try {
                 continuationManager.updateContinuationState(token, null, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
                     if (err.code != 0) {
@@ -4085,20 +4085,20 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState004 end----------------------");
+            console.info("----------------------testupdateContinuationState0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState005
-         * @tc.number testupdateContinuationState005
+         * @tc.name   testupdateContinuationState0005
+         * @tc.number testupdateContinuationState0005
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateContinuationState005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState005 start----------------------");
+        it('testupdateContinuationState0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState0005 start----------------------");
             try {
                 continuationManager.updateContinuationState(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
                     if (err.code != 0) {
@@ -4112,20 +4112,20 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState005 end----------------------");
+            console.info("----------------------testupdateContinuationState0005 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testupdateContinuationState006
-         * @tc.number testupdateContinuationState006
+         * @tc.name   testupdateContinuationState0006
+         * @tc.number testupdateContinuationState0006
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testupdateContinuationState006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testupdateContinuationState006 start----------------------");
+        it('testupdateContinuationState0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testupdateContinuationState0006 start----------------------");
             try {
                 await continuationManager.updateContinuationState(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.DISCONNECTING).then(() => {
                     console.info('updateContinuationState finished');
@@ -4138,7 +4138,7 @@ export default function continuationManagerTest() {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testupdateContinuationState006 end----------------------");
+            console.info("----------------------testupdateContinuationState0006 end----------------------");
             done();
         })
 
@@ -4248,61 +4248,61 @@ export default function continuationManagerTest() {
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager001
-         * @tc.number testStartContinuationDeviceManager001
+         * @tc.name   testStartContinuationDeviceManager0001
+         * @tc.number testStartContinuationDeviceManager0001
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager001 start----------------------");
+        it('testStartContinuationDeviceManager0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0001 start----------------------");
             try {
                 continuationManager.startContinuationDeviceManager(undefined, (err, data) => {
-                    console.info("testStartContinuationDeviceManager001 data is" + data);
+                    console.info("testStartContinuationDeviceManager0001 data is" + data);
                     expect().assertFail()
                 });
             } catch (error) {
-                console.info("testStartContinuationDeviceManager001 catch error is" + error.code);
+                console.info("testStartContinuationDeviceManager0001 catch error is" + error.code);
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testStartContinuationDeviceManager001 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0001 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager002
-         * @tc.number testStartContinuationDeviceManager002
+         * @tc.name   testStartContinuationDeviceManager0002
+         * @tc.number testStartContinuationDeviceManager0002
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager002 start----------------------");
+        it('testStartContinuationDeviceManager0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0002 start----------------------");
             try {
                 continuationManager.startContinuationDeviceManager(null, (err, data) => {
                     console.info("startContinuationDeviceManager data is" + data + err.code);
                     expect().assertFail()
                 });
             } catch (error) {
-                console.info("testStartContinuationDeviceManager002 catch error is" + error.code);
+                console.info("testStartContinuationDeviceManager0002 catch error is" + error.code);
                 expect(error.code == 401).assertTrue();
             }
-            console.info("----------------------testStartContinuationDeviceManager002 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0002 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager003
-         * @tc.number testStartContinuationDeviceManager003
+         * @tc.name   testStartContinuationDeviceManager0003
+         * @tc.number testStartContinuationDeviceManager0003
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager003 start----------------------");
+        it('testStartContinuationDeviceManager0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0003 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -4324,20 +4324,20 @@ export default function continuationManagerTest() {
                 expect(error.code == 401).assertTrue()
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager003 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0003 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager004
-         * @tc.number testStartContinuationDeviceManager004
+         * @tc.name   testStartContinuationDeviceManager0004
+         * @tc.number testStartContinuationDeviceManager0004
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager004 start----------------------");
+        it('testStartContinuationDeviceManager0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0004 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -4359,20 +4359,20 @@ export default function continuationManagerTest() {
                 expect(error.code == 401).assertTrue()
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager004 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0004 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager005
-         * @tc.number testStartContinuationDeviceManager005
+         * @tc.name   testStartContinuationDeviceManager0005
+         * @tc.number testStartContinuationDeviceManager0005
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager005 start----------------------");
+        it('testStartContinuationDeviceManager0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0005 start----------------------");
             try {
                 continuationManager.startContinuationDeviceManager(token, undefined, (err, data) => {
                     console.info("startContinuationDeviceManager data is" + data + err.code);
@@ -4384,20 +4384,20 @@ export default function continuationManagerTest() {
                 expect(error.code == 16600002).assertTrue();
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager005 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0005 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager006
-         * @tc.number testStartContinuationDeviceManager006
+         * @tc.name   testStartContinuationDeviceManager0006
+         * @tc.number testStartContinuationDeviceManager0006
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager006 start----------------------");
+        it('testStartContinuationDeviceManager0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0006 start----------------------");
             try {
                 continuationManager.startContinuationDeviceManager(token, null, (err, data) => {
                     console.info("startContinuationDeviceManager data is" + data + err.code);
@@ -4409,20 +4409,20 @@ export default function continuationManagerTest() {
                 expect(error.code == 16600002).assertTrue();
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager006 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0006 end----------------------");
             done();
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager0070
-         * @tc.number testStartContinuationDeviceManager0070
+         * @tc.name   testStartContinuationDeviceManager0007
+         * @tc.number testStartContinuationDeviceManager0007
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager0070 start----------------------");
+        it('testStartContinuationDeviceManager0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0007 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -4446,19 +4446,19 @@ export default function continuationManagerTest() {
                 expect(error.code == 401).assertTrue();
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager0070 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0007 end----------------------");
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager0080
-         * @tc.number testStartContinuationDeviceManager0080
+         * @tc.name   testStartContinuationDeviceManager0008
+         * @tc.number testStartContinuationDeviceManager0008
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager0080 start----------------------");
+        it('testStartContinuationDeviceManager0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0008 start----------------------");
             let continuationExtraParams = {
                 deviceType: ["00E"],
                 description: "description",
@@ -4469,42 +4469,42 @@ export default function continuationManagerTest() {
 
             try {
                 await continuationManager.startContinuationDeviceManager(null, continuationExtraParams).then((data) => {
-                    console.log('testStartContinuationDeviceManager0080 data is' + data);
+                    console.log('testStartContinuationDeviceManager0008 data is' + data);
                     expect().assertFail();
                     done();
                 }).catch((error) => {
-                    console.log('testStartContinuationDeviceManager0080 err code is' + error.code);
+                    console.log('testStartContinuationDeviceManager0008 err code is' + error.code);
                     expect().assertFail();
                     done();
                 });
             } catch (error) {
-                console.log('testStartContinuationDeviceManager0080 catch err code is' + error.code);
+                console.log('testStartContinuationDeviceManager0008 catch err code is' + error.code);
                 expect(error.code == 401).assertTrue();
                 done();
             }
-            console.info("----------------------testStartContinuationDeviceManager0080 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0008 end----------------------");
         })
 
         /**
-         * @tc.name   testStartContinuationDeviceManager009
-         * @tc.number testStartContinuationDeviceManager009
+         * @tc.name   testStartContinuationDeviceManager0009
+         * @tc.number testStartContinuationDeviceManager0009
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testStartContinuationDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("----------------------testStartContinuationDeviceManager009 start----------------------");
+        it('testStartContinuationDeviceManager0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testStartContinuationDeviceManager0009 start----------------------");
             await continuationManager.startContinuationDeviceManager(token, undefined).then((data) => {
-                console.log('testStartContinuationDeviceManager009 data is' + data);
+                console.log('testStartContinuationDeviceManager0009 data is' + data);
                 expect().assertFail();
                 done();
             }).catch((error) => {
-                console.log('testStartContinuationDeviceManager009 err code is' + error.code);
+                console.log('testStartContinuationDeviceManager0009 err code is' + error.code);
                 expect(error.code == 16600002).assertTrue();
                 done();
             });
-            console.info("----------------------testStartContinuationDeviceManager009 end----------------------");
+            console.info("----------------------testStartContinuationDeviceManager0009 end----------------------");
         })
 
         /**
