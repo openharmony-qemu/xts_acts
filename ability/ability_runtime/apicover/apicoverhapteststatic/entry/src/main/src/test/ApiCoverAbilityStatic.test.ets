@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ class ConnectOptions implements common.ConnectOptions {
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 let array: string[] = new Array<string>();
 
 export default function ApiCoverStaticTest() {
@@ -232,7 +232,7 @@ export default function ApiCoverStaticTest() {
           const want: Want = {};
           const options = new ConnectOptions();
           hilog.info(domain, tag, `${itName} connect`);
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
 
@@ -267,7 +267,7 @@ export default function ApiCoverStaticTest() {
           };
           const options = new ConnectOptions();
           hilog.info(domain, tag, `${itName} connect`);
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
 
@@ -302,7 +302,7 @@ export default function ApiCoverStaticTest() {
           };
           const options = new ConnectOptions();
           hilog.info(domain, tag, `${itName} connect`);
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
 
@@ -332,7 +332,7 @@ export default function ApiCoverStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} disconnect`);
-          context.disconnectServiceExtensionAbility(-1).then(() => {
+          context?.disconnectServiceExtensionAbility(-1).then(() => {
             hilog.info(domain, tag, `${itName} disconnect success`);
             expect().assertFail();
             done();
@@ -366,13 +366,14 @@ export default function ApiCoverStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} disconnect`);
-          context.disconnectServiceExtensionAbility(-1, (err: BusinessError<void> | null) => {
+          context?.disconnectServiceExtensionAbility(-1, (err: BusinessError<void> | null) => {
             hilog.info(domain, tag, `${itName} disconnect err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('16000050');
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch(err: BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -399,7 +400,7 @@ export default function ApiCoverStaticTest() {
           };
           const options = new ConnectOptions();
           hilog.info(domain, tag, `${itName} connect`);
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
@@ -430,13 +431,13 @@ export default function ApiCoverStaticTest() {
             abilityName: 'ServiceExt'
           };
           const options = new ConnectOptions();
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context!.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
           expect(options.isConnect).assertTrue();
 
           hilog.info(domain, tag, `${itName} disconnect`);
-          context.disconnectServiceExtensionAbility(connectId).then(() => {
+          context?.disconnectServiceExtensionAbility(connectId).then(() => {
             hilog.info(domain, tag, `${itName} disconnect success`);
             hilog.info(domain, tag, `${itName} options isDisConnect: ${options.isDisConnect}`);
             expect(options.isDisConnect).assertTrue();
@@ -475,13 +476,13 @@ export default function ApiCoverStaticTest() {
             abilityName: 'ServiceExt'
           };
           const options = new ConnectOptions();
-          const connectId = context.connectServiceExtensionAbility(want, options);
+          const connectId = context!.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
           await Utils.msSleep(2000);
           expect(options.isConnect).assertTrue();
 
           hilog.info(domain, tag, `${itName} disconnect`);
-          context.disconnectServiceExtensionAbility(connectId, (err: BusinessError<void> | null): void => {
+          context?.disconnectServiceExtensionAbility(connectId, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} disconnect err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('0');
             hilog.info(domain, tag, `${itName} options isDisConnect: ${options.isDisConnect}`);

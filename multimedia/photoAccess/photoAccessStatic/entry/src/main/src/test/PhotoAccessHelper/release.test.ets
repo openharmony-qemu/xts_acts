@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,7 @@ export default function releaseTest() {
             }
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()
@@ -77,7 +77,7 @@ export default function releaseTest() {
           let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
           await (helper as photoAccessHelper.PhotoAccessHelper).release()
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()

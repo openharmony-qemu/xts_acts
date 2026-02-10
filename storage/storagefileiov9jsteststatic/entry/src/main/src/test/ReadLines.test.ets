@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +81,7 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -101,7 +101,8 @@ export default function fileIOReadLines() {
         let fpath = await Utils.nextFileName('fileIO_test_readLines_sync_static_004');
         fs.readLinesSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -128,7 +129,7 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -152,7 +153,8 @@ export default function fileIOReadLines() {
           encoding: 'utf-16'
         });
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_007 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -181,7 +183,7 @@ export default function fileIOReadLines() {
           expect(it.done == false).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -211,7 +213,7 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -241,7 +243,7 @@ export default function fileIOReadLines() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -272,7 +274,7 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -304,7 +306,7 @@ export default function fileIOReadLines() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -339,7 +341,7 @@ export default function fileIOReadLines() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 error: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -367,7 +369,7 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_006 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }

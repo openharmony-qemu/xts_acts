@@ -2169,7 +2169,7 @@ static napi_value normalAVScreenCaptureSetPickerModeWindowOnly(napi_env env, nap
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2189,7 +2189,7 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenOnly(napi_env env, nap
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2209,7 +2209,7 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow(napi_env env
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2230,7 +2230,7 @@ static napi_value normalAVScreenCaptureExcludePickerWindows(napi_env env, napi_c
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;

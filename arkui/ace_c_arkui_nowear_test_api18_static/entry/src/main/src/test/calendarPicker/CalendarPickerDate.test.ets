@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test'
 export default function calendarPickerDateTest(){
 
   describe('CalendarPickerDateTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

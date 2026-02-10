@@ -59,6 +59,7 @@
         "MainAbility/pages/TextAreaApi22/TextAreaSetStyledPlaceholder",
         "MainAbility/pages/TextAreaApi22/TextAreaOnWillAttachIME",
         "MainAbility/pages/TextAreaApi23/TextAreaTextDirection",
+        "MainAbility/pages/TextArea/TextAreaSpecialAttrs",
 
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",

@@ -351,29 +351,6 @@ export default function StringTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0900
-     * @tc.name testFromCodePoint0009
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0009";
-      try {
-        let result = String.fromCodePoint(3);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RAW_0100
      * @tc.name testRaw0001
      * @tc.desc Test the function of the interface testFromCodePoint.

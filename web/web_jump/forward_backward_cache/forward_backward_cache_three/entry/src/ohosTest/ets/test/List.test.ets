@@ -21,6 +21,7 @@ import webCookieManagerFetchCookieThree from './WebCookieManagerFetchCookieThree
 import webCookieManagerExistCookie from './WebCookieManagerExistCookie.test'
 import webCookieManagerFetchCookieIncognito from './WebCookieManagerFetchCookieIncognito.test'
 import webCookieManagerConfigCookie from './WebCookieManagerConfigCookie.test'
+import webCookieManagerConfigCookieSync from './WebCookieManagerConfigCookieSync.test'
 import WebHttpCookies from './WebHttpCookies.test'
 
 
@@ -33,5 +34,6 @@ export default function testsuite() {
   webCookieManagerExistCookie()
   webCookieManagerFetchCookieIncognito()
   webCookieManagerConfigCookie()
+  webCookieManagerConfigCookieSync()
   WebHttpCookies()
 }

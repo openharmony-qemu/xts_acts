@@ -95,6 +95,7 @@
         "MainAbility/pages/Text/TextFontWeightTest",
         "MainAbility/pages/Text/TextTextDirection",
         "MainAbility/pages/SelectedDragPreviewStyle/SelectedDragPreviewStyle",
-        "MainAbility/pages/Text/TextMarqueeOptionsTest"
+        "MainAbility/pages/Text/TextMarqueeOptionsTest",
+        "MainAbility/pages/Text/TextSpecialAttributes"
     ]
 }

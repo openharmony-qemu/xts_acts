@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               try {
                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
                Utils.emitEvent(true, 30040)
-              } catch (error: Error) {
+              } catch (error) {
                console.info('key==>error' )
               }
               break;
@@ -83,7 +83,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     Utils.emitEvent(false, 30045)
                   }
                 }, 2000)
-              } catch (e: BusinessError) {
+              } catch (e) {
+                e = e as BusinessError;
                 console.error('==>' + JSON.stringify(e))
                 Utils.emitEvent(e.code, 30045)
               }
@@ -96,7 +97,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 setTimeout(() => {
                   Utils.emitEvent(result, 30046)
                 }, 2000)
-              } catch (e: BusinessError) {
+              } catch (e) {
+                e = e as BusinessError;
                 console.info('==>' + JSON.stringify(e))
                 Utils.emitEvent(e.code, 30046)
               }
@@ -111,7 +113,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     Utils.emitEvent(result, 30050)
                   }, 2000)
                 }, 2000)
-              } catch (e: BusinessError) {
+              } catch (e) {
+                e = e as BusinessError;
                 console.info('==>' + JSON.stringify(e))
                 Utils.emitEvent(e.code, 30050)
               }

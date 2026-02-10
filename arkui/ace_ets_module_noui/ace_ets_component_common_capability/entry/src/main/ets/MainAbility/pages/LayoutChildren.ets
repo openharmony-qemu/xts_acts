@@ -12,33 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { inspector } from '@kit.ArkUI';
- 
+
 @Entry
 @Component
 struct ImageExample {
   @State onLayoutText: string = 'off'
   @State imageWidth: number = 20;
+  listenerForRootByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
   listenerForRow: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver('ROW_ID')
-  listenerForColumn: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver('Column_ID')
-  listenerForText: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver('Text_ID')
-  listenerForRowByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(8)
-  listenerForRootByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(6)
-  listenerForTextByID: inspector.ComponentObserver = this.getUIContext().getUIInspector().createComponentObserver(9)
   @State ll: Resource | null = $r('app.media.icon');
   @State textString: string = ''
- 
   @State layoutChildrenState: string = 'init'
- 
-  onLayoutChildrenCompleteByID() {
-    console.log("lll onLayoutChildrenCompleteByID");
-    let log='onLayoutChildrenByID'
-    return log
+  @State layoutChildrenState1: string = 'init1'
+  @State layoutChildrenState2: string = 'init2'
+
+  onLayoutChildrenCompleteByID: () => void = (): void =>  {
+    this.layoutChildrenState1 = this.layoutChildrenState1 +"1"
+    console.log('lll onLayoutChildrenComplete')
   }
- 
+
+  onLayoutChildrenCompleteByID1: () => void = (): void =>  {
+    this.layoutChildrenState2 = this.layoutChildrenState2 +"1"
+    console.log('lll onLayoutChildrenComplete1')
+  }
+
   build() {
     Column() {
+      Text(this.layoutChildrenState).id('initid1')
+      Text(this.layoutChildrenState1).id('initid2')
+      Text(this.layoutChildrenState2).id('initid3')
       Column() {
         Row() {
           Row({ space: 5 }) {
@@ -50,31 +54,29 @@ struct ImageExample {
               .width(this.imageWidth)
           }.id('ROW_ID')
         }.width('100%')
- 
+
         Column() {
-          Text(this.layoutChildrenState).id('layoutChildrenStateid')
           Button("onLayoutChildrenByID").id("Button1").onClick((event: ClickEvent) => {
-            this.listenerForRootByID.onLayoutChildren(this.onLayoutChildrenCompleteByID);
-            this.layoutChildrenState=this.onLayoutChildrenCompleteByID()
-            AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
+            this.listenerForRow.onLayoutChildren(this.onLayoutChildrenCompleteByID);
           })
-          Button("offLayoutChildrenByID").id("Button2").onClick((event: ClickEvent) => {
-            this.listenerForRootByID.offLayoutChildren(this.onLayoutChildrenCompleteByID);
+          Button("onLayoutChildrenByID1").id("Button2").onClick((event: ClickEvent) => {
+            this.listenerForRow.onLayoutChildren(this.onLayoutChildrenCompleteByID1);
+          })
+          Button("offLayoutChildrenByID").id("Button3").onClick((event: ClickEvent) => {
+            this.listenerForRow.offLayoutChildren(this.onLayoutChildrenCompleteByID);
             this.layoutChildrenState = 'offLayoutChildrenByID';
-            AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
             console.info("layoutChildrenState:offLayoutChildrenByID");
           })
           Button("offLayoutChildren()").id("Button4").onClick((event: ClickEvent) => {
             this.listenerForRow.offLayoutChildren();
             this.layoutChildrenState = 'offLayoutChildrencomplete';
-            AppStorage.SetOrCreate('layoutChildrenState', this.layoutChildrenState);
           })
-          Button("change").id("Button3").onClick((event: ClickEvent) => {
+          Button("change").id("Button5").onClick((event: ClickEvent) => {
             this.textString = this.textString + '1'
             this.imageWidth += 10;
           })
         }.padding({ top: 30 })
- 
+
       }.padding({ right: 10, top: 10 }).id('Column_ID')
     }.width('100%')
   }
@@ -85,6 +87,6 @@ struct ImageExample {
     }catch (e) {
       console.log(`eee {e}` + e)
     }
- 
+
   }
 }

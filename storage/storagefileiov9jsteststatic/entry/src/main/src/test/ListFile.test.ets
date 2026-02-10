@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function fileIOListfile() {
         let dirents = fs.listFileSync(dpath);
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_000 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -82,7 +82,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_001 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -123,7 +123,7 @@ export default function fileIOListfile() {
         let dirents = fs.listFileSync(dpath, option);
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_002 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -162,7 +162,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_003 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -220,7 +220,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 6).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_004 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -263,7 +263,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_005 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -301,7 +301,8 @@ export default function fileIOListfile() {
           filter: filter
         });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_006 end error' + JSON.stringify(err));
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
@@ -341,7 +342,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 0).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_007 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -382,8 +383,168 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_008 end error' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_009
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_0900
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_009');
+      let fpath1 = dpath + '/listfile_sync_009.txt';
+      let fpath2 = dpath + '/listfile_sync_009.doc';
+      let fpath3 = dpath + '/listfile_sync_009.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        fs.rmdirSync(dpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_009 end error' + JSON.stringify(err));
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_010
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1000
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_010');
+      let fpath1 = dpath + '/listfile_sync_010.txt';
+      let fpath2 = dpath + '/listfile_sync_010.doc';
+      let fpath3 = dpath + '/listfile_sync_010.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        fs.rmdirSync(dpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_010 end error' + JSON.stringify(err));
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_011
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1100
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_011');
+      let fpath1 = dpath + '/listfile_sync_011.txt';
+      let fpath2 = dpath + '/listfile_sync_011.doc';
+      let fpath3 = dpath + '/listfile_sync_011.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          displayName: [],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        fs.rmdirSync(dpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_011 end error' + JSON.stringify(err));
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_012
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1200
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_012');
+      let fpath1 = dpath + '/listfile_sync_012.txt';
+      let fpath2 = dpath + '/listfile_sync_012.doc';
+      let fpath3 = dpath + '/listfile_sync_012.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          displayName: [""],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        let dirents = fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 0).assertTrue();
+        fs.rmdirSync(dpath);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_012 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
     });
@@ -422,7 +583,7 @@ export default function fileIOListfile() {
         });
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_013 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -445,7 +606,8 @@ export default function fileIOListfile() {
           recursion: false
         });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_014 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
       }
@@ -469,7 +631,8 @@ export default function fileIOListfile() {
           recursion: false
         });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_015 end error' + JSON.stringify(err));
         expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
       }
@@ -498,9 +661,182 @@ export default function fileIOListfile() {
           filter: filter,
         });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_016 end error' + JSON.stringify(err));
         expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_017
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1700
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_017');
+      let fpath1 = dpath + '/listfile_sync_017.txt';
+      let fpath2 = dpath + '/listfile_sync_017.doc';
+      let fpath3 = dpath + '/listfile_sync_017.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          mimeType: [],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        let dirents = fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 1).assertTrue();
+        fs.rmdirSync(dpath);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_017 end error' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_018
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1800
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_018');
+      let fpath1 = dpath + '/listfile_sync_018.txt';
+      let fpath2 = dpath + '/listfile_sync_018.doc';
+      let fpath3 = dpath + '/listfile_sync_018.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          mimeType: [""],
+          fileSizeOver: 0,
+          lastModifiedAfter: time -3
+        };
+        let dirents = fs.listFileSync(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 1).assertTrue();
+        fs.rmdirSync(dpath);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_018 end error' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_019
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_1900
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_019');
+      let fpath1 = dpath + '/listfile_sync_019.txt';
+      let fpath2 = dpath + '/listfile_sync_019.doc';
+      let fpath3 = dpath + '/listfile_sync_019.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3,
+          excludeMedia: true
+        };
+        let dirents = fs.listFileSync(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 3).assertTrue();
+        fs.rmdirSync(dpath);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_019 end error' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_020
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2000
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      try {
+        fs.listFileSync("", {
+          listNum: 2,
+          recursion: false
+        });
+        expect(false).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_020 end error ' + err.message);
+        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_sync_static_021
+     * @tc.number SUB_DF_FILEIO_LISTFILE_SYNC_2100
+     * @tc.desc   Test listFileSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_sync_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_sync_static_021');
+      let fpath1 = dpath + '/listfile_sync_021.txt';
+      let fpath2 = dpath + '/listfile_sync_021.doc';
+      let fpath3 = dpath + '/listfile_sync_021.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let dirents = fs.listFileSync(dpath, undefined);
+        expect(dirents.length == 3).assertTrue();
+        fs.rmdirSync(dpath);
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_sync_static_021 end error' + JSON.stringify(err));
+        expect(false).assertTrue();
       }
     });
 
@@ -527,7 +863,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 3).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -556,7 +892,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_001 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -588,7 +924,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 2).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -620,7 +956,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_003 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -659,7 +995,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 3).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -698,7 +1034,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_005 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -737,7 +1073,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 3).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -776,7 +1112,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_007 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -834,7 +1170,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 6).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -892,7 +1228,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 6).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_009 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -934,7 +1270,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 2).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -976,7 +1312,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_011 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1021,7 +1357,7 @@ export default function fileIOListfile() {
             fs.rmdirSync(dpath);
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_012 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1061,7 +1397,8 @@ export default function fileIOListfile() {
           filter: filter
         });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_013 end error' + JSON.stringify(err));
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
@@ -1102,7 +1439,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 0).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_014 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1142,7 +1479,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 0).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_015 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1184,7 +1521,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 2).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_016 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1226,9 +1563,53 @@ export default function fileIOListfile() {
         expect(dirents.length == 2).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_017 end error' + JSON.stringify(err));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_018
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_1800
+     * @tc.desc   Test listFile() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_018');
+      let fapth1 = dpath + '/listfile_async_018.txt';
+      let fapth2 = dpath + '/listfile_async_018.doc';
+      let fapth3 = dpath + '/listfile_async_018.png';
+      let fapth4 = dpath + '/trespass.txt';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fapth1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fapth2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fapth3, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fapth4, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [],
+          displayName: ["*listfile*", "*trespass*"],
+          fileSizeOver: 5,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_018 end error' + JSON.stringify(err));
+        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        fs.rmdirSync(dpath);
+        done();
       }
     });
 
@@ -1270,7 +1651,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 4).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_022 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1305,7 +1686,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 4).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_023 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1346,7 +1727,7 @@ export default function fileIOListfile() {
           expect(dirents?.length == 3).assertTrue();
           fs.rmdirSync(dpath);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_024 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1387,7 +1768,7 @@ export default function fileIOListfile() {
         expect(dirents.length == 3).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_025 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -1411,7 +1792,7 @@ export default function fileIOListfile() {
             expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_026 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1431,7 +1812,8 @@ export default function fileIOListfile() {
       try {
         await fs.listFile(dpath);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_027 end error' + JSON.stringify(err));
         expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
       }
@@ -1452,7 +1834,8 @@ export default function fileIOListfile() {
       try {
         await fs.listFile(dpath);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_028 end error' + JSON.stringify(err));
         expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
       }
@@ -1477,7 +1860,7 @@ export default function fileIOListfile() {
             expect(err?.code == 13900018 && err?.message == 'Not a directory').assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_029 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

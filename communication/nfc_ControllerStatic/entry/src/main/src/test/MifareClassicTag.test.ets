@@ -52,7 +52,8 @@ export default function nfcMifareClassicTagTest() {
       console.info('beforeAll called')
       try{
         nfcmifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -91,7 +92,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.authenticateSector(sectorIndex, key, true).then(() => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100 data is ');
             });
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -131,7 +133,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.authenticateSector(sectorIndex, key, true, AsyncCallback);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0200 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -169,7 +172,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.readSingleBlock(blockIndex).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300 data is ');
             });
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0300 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -208,7 +212,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.readSingleBlock(blockIndex, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0400 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -246,7 +251,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.writeSingleBlock(blockIndex, rawData).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0500 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0500 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -285,7 +291,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.writeSingleBlock(blockIndex, rawData, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0600 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -323,7 +330,8 @@ export default function nfcMifareClassicTagTest() {
               await nfcmifareClassicTag.incrementBlock(blockIndex, value).then((data) => {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700 data ');
               });
-            } catch (error: BusinessError){
+            } catch (error){
+            error = error as BusinessError;
               if (error.code === 201) {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0700 error is ' + error.code + " - " + error);
                 expect(201).assertEqual(error.code)
@@ -363,7 +371,8 @@ export default function nfcMifareClassicTagTest() {
             }
             try {
               nfcmifareClassicTag.incrementBlock(blockIndex, value, AsyncCallback);
-            } catch (error: BusinessError){
+            } catch (error){
+            error = error as BusinessError;
               if (error.code === 201) {
                 hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0800 error is ' + error.code + " - " + error);
                 expect(201).assertEqual(error.code)
@@ -401,7 +410,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.decrementBlock(blockIndex, value).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0900 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_0900 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -441,7 +451,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.decrementBlock(blockIndex, value, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1000 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -478,7 +489,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.transferToBlock(blockIndex).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1100 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1100 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -516,7 +528,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.transferToBlock(blockIndex, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1200 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -553,7 +566,8 @@ export default function nfcMifareClassicTagTest() {
             await nfcmifareClassicTag.restoreFromBlock(blockIndex).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1300 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1300 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -591,7 +605,8 @@ export default function nfcMifareClassicTagTest() {
           }
           try {
             nfcmifareClassicTag.restoreFromBlock(blockIndex, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1400 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -625,7 +640,8 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let sectorCount:int = nfcmifareClassicTag.getSectorCount();
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500 getSectorCount error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -649,7 +665,8 @@ export default function nfcMifareClassicTagTest() {
         let sectorIndex: int = 1;
         try{
           let blockCountInSector: int = nfcmifareClassicTag.getBlockCountInSector(sectorIndex);
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1600 getBlockCountInSector error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -672,7 +689,8 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let getType: tag.MifareClassicType = nfcmifareClassicTag.getType();
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1700 getType error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -695,7 +713,8 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let tagSize: int = nfcmifareClassicTag.getTagSize();
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1800 getTagSize error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -718,7 +737,8 @@ export default function nfcMifareClassicTagTest() {
       if (nfcmifareClassicTag != null && nfcmifareClassicTag != undefined) {
         try{
           let isEmulatedTagstate: boolean = nfcmifareClassicTag.isEmulatedTag();
-        } catch (error: BusinessError) {
+        } catch (error) {
+            error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_1900 isEmulatedTag error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -742,7 +762,8 @@ export default function nfcMifareClassicTagTest() {
         try{
           let sectorIndex: int = 1;
           let blockIndex: int = nfcmifareClassicTag.getBlockIndex(sectorIndex);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_2000 getBlockIndex error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -766,7 +787,8 @@ export default function nfcMifareClassicTagTest() {
         try{
           let blockIndex: int = 1;
           let sectorIndex: int = nfcmifareClassicTag.getSectorIndex(blockIndex);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareClassicTag_static_2100 getSectorIndex error is ' + error.code + " - " + error);
           expect().assertFail();
         }

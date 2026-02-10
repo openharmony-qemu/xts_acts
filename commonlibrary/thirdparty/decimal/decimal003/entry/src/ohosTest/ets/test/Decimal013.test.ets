@@ -37,12 +37,16 @@ function test_mul_005 (multiplicand: string, multiplier: string, expected: strin
     expect(expected).assertEqual(Decimal.mul(multiplicand, multiplier).valueOf());
     expect(expected).assertEqual(new Decimal(multiplicand).mul(multiplier).valueOf());
 }
+function sleep(ms: number) {
+    return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function DecimalTest013() {
   describe("DecimalTest013", () => {
     beforeAll(() => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+        await sleep(20);
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -83,7 +83,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -101,20 +101,20 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       const param: cert.X509CRLMatchParameters = {
         updateDateTime: ''
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -136,7 +136,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 2).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -159,7 +159,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -177,20 +177,20 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       const param: cert.X509CRLMatchParameters = {
         maxCRL: BigInt(-1)
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -212,7 +212,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -235,7 +235,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(crls != null).assertTrue();
         expect(crls.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -253,20 +253,20 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       const param: cert.X509CRLMatchParameters = {
         minCRL: BigInt(-1)
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -284,20 +284,20 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         minCRL: BigInt(3),
         maxCRL: BigInt(1)
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });

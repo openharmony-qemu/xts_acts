@@ -15,11 +15,14 @@
 
 import buffer1Test from './buffer/Buffer1.test';
 import buffer2Test from './buffer/Buffer2.test';
+import buffer3Test from './buffer/Buffer3.test';
 import fastbufferBase1Test from './fastbuffer/FastBufferBase1.test';
 import fastbufferBase2Test from './fastbuffer/FastBufferBase2.test';
 import processTest from './process/Process.test';
 import uriTest from './uri/Uri.test';
+import uri2Test from './uri/Uri2.test';
 import urlTest from './url/Url.test';
+import url2Test from './url/Url2.test';
 import UtilTypeTest from './util/UtilType.test';
 import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
@@ -50,20 +53,24 @@ import specialChar from './specialchar/SpecialChar.test';
 import consoleTest from './console/Console.test';
 import LRUCacheTest from './LRUCache/LRUCache.test';
 import ActsUrlParameterTest from './url/UrlParameter.test'
-import emojiFastBufferTest from './fastbuffer/Emoji_FastBuffer.test.ets';
-import escapeFastBufferTest from './fastbuffer/Escape_FastBuffer.test.ets';
-import fastBuffer1Test from './fastbuffer/FastBuffer1.test.ets';
-import fastBuffer2Test from './fastbuffer/FastBuffer2.test.ets';
-import fastBuffer3Test from './fastbuffer/FastBuffer3.test.ets';
+import emojiFastBufferTest from './fastbuffer/Emoji_FastBuffer.test';
+import escapeFastBufferTest from './fastbuffer/Escape_FastBuffer.test';
+import fastBuffer1Test from './fastbuffer/FastBuffer1.test';
+import fastBuffer2Test from './fastbuffer/FastBuffer2.test';
+import fastBuffer3Test from './fastbuffer/FastBuffer3.test';
+import fastBuffer4Test from './fastbuffer/FastBuffer4.test';
 
 export default function testsuite() {
   buffer1Test();
   buffer2Test();
+  buffer3Test();
   fastbufferBase1Test();
   fastbufferBase2Test();
   processTest();
   uriTest();
+  uri2Test();
   urlTest();
+  url2Test();
   utilTest();
   util2Test();
   UtilTypeTest();
@@ -99,5 +106,6 @@ export default function testsuite() {
   fastBuffer1Test();
   fastBuffer2Test();
   fastBuffer3Test();
+  fastBuffer4Test();
   ActsUrlParameterTest();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function fileIOSetxattr() {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -76,7 +76,7 @@ export default function fileIOSetxattr() {
           expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -100,7 +100,7 @@ export default function fileIOSetxattr() {
         let getValue = fs.getxattrSync(fpath, attrKey);
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_003 the value is: ' + getValue);
         expect(getValue).assertEqual(attrValue);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -121,7 +121,8 @@ export default function fileIOSetxattr() {
       try {
         fs.setxattrSync(fpath, attrKey, attrValue);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }

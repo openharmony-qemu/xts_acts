@@ -123,7 +123,10 @@ int32_t VideoSample::InitVideoSample(VideoProcessParam param)
 {
     OH_VideoProcessing_InitializeEnvironment();
     param_ = param;
-    OH_VideoProcessing_Create(&videoProcessor_, VIDEO_PROCESSING_TYPE_DETAIL_ENHANCER);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor_, VIDEO_PROCESSING_TYPE_DETAIL_ENHANCER);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return ret;
+    }
     cs_ = Surface::CreateSurfaceAsConsumer();
     sptr<IBufferConsumerListener> listener = new TestConsumerListener(this);
     cs_->RegisterConsumerListener(listener);

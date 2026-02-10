@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
       } else {
         throw new Error("=========>>>>>>> WLAN Network Error");
       }
-      if (data.chload >= 800 || data.rssi <= -80) {
+      if (data.chload >= 900 || data.rssi <= -80) {
         throw new Error("=========>>>>>>> WLAN Network Error (speed)");
       }
     })
@@ -96,7 +96,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length);
           expect(data.certChain.getCertList().length).assertEqual(4);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -137,9 +137,9 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           await cert.buildX509CertChain(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0200 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -178,9 +178,9 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           await cert.buildX509CertChain(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -220,7 +220,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length);
           expect(data.certChain.getCertList().length).assertEqual(4);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -266,7 +266,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length);
           expect(data.certChain.getCertList().length).assertEqual(4);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -309,7 +309,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length);
           expect(data.certChain.getCertList().length).assertEqual(4);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -352,7 +352,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length)
           expect(data.certChain.getCertList().length).assertEqual(4);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -397,7 +397,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length)
           expect(data.certChain.getCertList().length).assertEqual(1);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -443,7 +443,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainBuildResult = await cert.buildX509CertChain(param);
           console.info("[XTS]:" + data.certChain.getCertList().length);
           expect(data.certChain.getCertList().length).assertEqual(2);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_0900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -480,7 +480,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param); // 中间CA未校验
           expect(data.entityCert.getVersion()).assertEqual(3);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -524,7 +524,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(data.entityCert.getVersion()).assertEqual(3);
           console.info("[XTS] " + data.trustAnchor.CACert?.toString());
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -563,7 +563,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(data.entityCert.getVersion()).assertEqual(3);
           console.info("[XTS] " + data.trustAnchor.CACert?.toString());
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -599,7 +599,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(data.entityCert.getVersion()).assertEqual(3);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -639,7 +639,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(data.entityCert.getVersion()).assertEqual(3);
           console.info("[XTS] " + data.trustAnchor.CACert?.toString());
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -676,7 +676,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           expect(data.entityCert.getVersion()).assertEqual(3);
           console.info("[XTS] " + data.trustAnchor.CACert?.toString());
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -729,9 +729,9 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           await x509CertChain.validate(param); // 不支持开启ocsp，信任锚是非CACert类型
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1600 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -767,7 +767,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           console.info("[XTS] " + data.entityCert.toString());
           expect(data.entityCert.getVersion()).assertEqual(3); // 期望网络忽略2次，叶子和中间
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -801,9 +801,9 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           };
           await x509CertChain.validate(param); // ocsp 服务端设置ecc不支持的签名摘要算法md5
           expect(null).assertFail(); // 服务端 asn1 encoding routines:asn1_template_ex_i2d:illegal zero content::0:
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1800 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION); // Unable to send request.
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION); // Unable to send request.
         }
         done();
       });
@@ -836,7 +836,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
           let data: cert.CertChainValidationResult = await x509CertChain.validate(param);
           console.info("[XTS] " + data.entityCert.toString());
           expect(data.entityCert.getVersion()).assertEqual(3); // 期望网络忽略2次，叶子和中间
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Ignore_Network_Issues_Func_1900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }

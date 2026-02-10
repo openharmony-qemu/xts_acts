@@ -47,9 +47,9 @@ export default function wholeWebPageDrawing() {
      * @tc.desc   test wholeWebPageDrawing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("wholeWebPageDrawing0100", 10)
         await Utils.msSleep(4000);

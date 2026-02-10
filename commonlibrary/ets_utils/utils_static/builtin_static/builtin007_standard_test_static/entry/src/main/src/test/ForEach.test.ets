@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -82,7 +82,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -109,7 +109,7 @@ export default function ForEachTest() {
         for (let i = 0; i < expected.length; i++) {
           expect(results[i]).assertEqual(expected[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -132,7 +132,7 @@ export default function ForEachTest() {
           count++;
         });
         expect(count).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -155,7 +155,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -187,7 +187,7 @@ export default function ForEachTest() {
         expect(results[1]).assertEqual(Number.MAX_VALUE);
         expect(results[2]).assertEqual(Number.POSITIVE_INFINITY);
         expect(results[3]).assertEqual(Number.NEGATIVE_INFINITY);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -210,7 +210,7 @@ export default function ForEachTest() {
           sum += value;
         });
         expect(sum).assertClose(6.6, 0.0001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -233,7 +233,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -259,7 +259,7 @@ export default function ForEachTest() {
         expect(results[0]).assertClose(0.3, 0.0000001);
         expect(results[1]).assertClose(0.333333, 0.000001);
         expect(results[2]).assertClose(3.141593, 0.000001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -282,7 +282,7 @@ export default function ForEachTest() {
           sum = (sum + value) as float;
         });
         expect(Math.abs(sum - 7.5) < 0.0001).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -305,7 +305,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -328,7 +328,7 @@ export default function ForEachTest() {
           sum += value as number;
         });
         expect(sum).assertClose(7.5, 0.000001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -351,7 +351,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -374,7 +374,7 @@ export default function ForEachTest() {
           sum += value;
         });
         expect(sum as number).assertClose(4.5, 0.000001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -397,7 +397,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -420,7 +420,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -443,7 +443,7 @@ export default function ForEachTest() {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -466,7 +466,7 @@ export default function ForEachTest() {
           sum += value;
         });
         expect(sum).assertEqual(-600);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -489,7 +489,7 @@ export default function ForEachTest() {
           sum += value;
         });
         expect(sum).assertEqual(6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -512,7 +512,7 @@ export default function ForEachTest() {
           count++;
         });
         expect(count).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -535,7 +535,7 @@ export default function ForEachTest() {
           sum += value;
         });
         expect(sum).assertEqual(-6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }

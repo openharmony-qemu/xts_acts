@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ async function doScryptKdfPromiseStub(keySize: int, n: int, r: int, p: int): Pro
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       // });
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doScryptKdfPromiseStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -115,7 +115,7 @@ async function doScryptKdfSyncStub(keySize: int, n: int, r: int, p: int): Promis
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
 
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doScryptKdfSyncStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -158,7 +158,7 @@ async function doScryptKdfCallbackStub(keySize: int, n: int, r: int, p: int): Pr
         }, intervalTime)
       })//.then(undefined, (error: Object) => {});
 
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doScryptKdfCallbackStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -207,7 +207,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -245,7 +245,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         // taskpool.cancel(taskGroup);
         let end_time = new Date().getTime() // 毫秒
         console.info("#################### time:" + (end_time - start_time))
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -281,7 +281,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -317,7 +317,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -353,7 +353,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -389,7 +389,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -425,7 +425,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -461,7 +461,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -497,7 +497,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -532,7 +532,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -567,7 +567,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -602,7 +602,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -637,7 +637,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -672,7 +672,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -707,7 +707,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -742,7 +742,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -777,7 +777,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -812,7 +812,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -847,7 +847,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -882,7 +882,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -917,7 +917,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -952,7 +952,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -987,7 +987,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1022,7 +1022,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1057,7 +1057,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1092,7 +1092,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1127,7 +1127,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1162,7 +1162,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           }
         });
         // taskpool.cancel(taskGroup);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700 “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1201,7 +1201,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           });
           // taskpool.cancel(taskGroup);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

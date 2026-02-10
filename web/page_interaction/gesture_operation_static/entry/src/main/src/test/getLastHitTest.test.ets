@@ -65,9 +65,9 @@ export default function HitTest() {
      * @tc.desc   test getLastHitTest001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getLastHitTestStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('getLastHitTestStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("getLastHitTest001", 10)

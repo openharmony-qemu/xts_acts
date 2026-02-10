@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function AudioRoutingManagerTest() {
 
     beforeAll(async (): Promise<void> => {
       try {
-        console.info(' beforeAll start');
+        console.info('beforeAll start');
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -50,12 +50,12 @@ export default function AudioRoutingManagerTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
     })
 
@@ -94,7 +94,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -124,7 +124,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -149,7 +149,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[1].deviceType > 0).assertTrue();
         expect(devices[1].displayName != "").assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -175,7 +175,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -204,7 +204,7 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -229,7 +229,7 @@ export default function AudioRoutingManagerTest() {
           expect(devices[i].displayName != "").assertTrue();
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -253,7 +253,7 @@ export default function AudioRoutingManagerTest() {
         });
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -275,7 +275,7 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.offAvailableDeviceChange();
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -289,7 +289,7 @@ export default function AudioRoutingManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
         let micBlockStatusCallback = (micBlockStatusChanged: audio.DeviceBlockStatusInfo) => {
@@ -309,7 +309,7 @@ export default function AudioRoutingManagerTest() {
           audioRoutingManager.offMicBlockStatusChanged(micBlockStatusCallback)
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }
@@ -324,7 +324,7 @@ export default function AudioRoutingManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
         if (blockMic == true) {
@@ -345,7 +345,7 @@ export default function AudioRoutingManagerTest() {
           audioRoutingManager.offMicBlockStatusChanged()
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }

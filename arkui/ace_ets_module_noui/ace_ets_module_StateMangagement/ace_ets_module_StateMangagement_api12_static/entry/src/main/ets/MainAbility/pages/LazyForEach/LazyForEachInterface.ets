@@ -226,14 +226,18 @@ struct ChildViewShow {
   aboutToReuse(params: ReuseObject) {
     console.info('aboutToReuse Child')
     console.log("================================== " + JSON.stringify(params));
-    this.childInfo = 'aboutToReuse'
-    this.message = String (params['message'])
-  }
+    setTimeout(() => {
+ 	  	this.childInfo = 'aboutToReuse'
+ 	  }, 0);
+ 	  	this.message = String (params['message'])
+ 	}
 
   aboutToRecycle(): void {
-    console.info('Recycle Child')
-    this.childInfo = 'aboutToRecycle'
-  }
+ 	  console.info('Recycle Child')
+ 	  setTimeout(() => {
+ 	  	this.childInfo = 'aboutToRecycle'
+ 	  }, 0);
+ 	}
 
   build() {
     Column() {

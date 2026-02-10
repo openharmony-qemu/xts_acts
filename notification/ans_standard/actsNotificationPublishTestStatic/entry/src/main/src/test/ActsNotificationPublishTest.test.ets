@@ -63,7 +63,7 @@ export default function ActsNotificationPublishTest() {
   describe('ActsNotificationPublishTest', () => {
     let TAG:string = 'SUB_NOTIFICATION_ANS_Publish_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST START')
-    let testAbilityContext:common.UIAbilityContext;
+    let testAbilityContext:common.UIAbilityContext | undefined;
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
@@ -115,7 +115,7 @@ export default function ActsNotificationPublishTest() {
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
         count = 0;
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           if (err) {
             console.info(`Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
             expect(false).assertTrue()
@@ -164,7 +164,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2800 START`)
         await Utils.msSleep(2000);
         console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 2s`)
-        await notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        await notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${TAG} requestEnableNotification Promise success`)
           count++;
           expect(count).assertEqual(1);

@@ -1066,6 +1066,7 @@ void VDecAPI11Sample::SyncOutputFunc()
         if (ret == AV_ERR_STREAM_CHANGED) {
             GetStride();
             cout << "stream changed" << ret << endl;
+            changeCount ++;
             continue;
         }
         if (ret != AV_ERR_OK) {

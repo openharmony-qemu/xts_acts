@@ -56,7 +56,7 @@ export default function createModuleContextEventHubTest() {
 
       if ( context == undefined ) {
         hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} context is undefined`);
-        expect.assertFail();
+        expect().assertFail();
         done();
       } else {
         let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
@@ -92,7 +92,7 @@ export default function createModuleContextEventHubTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} begin`);
       if ( context == undefined ) {
         hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} context is undefined`);
-        expect.assertFail();
+        expect().assertFail();
         done();
       } else {
         let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
@@ -132,7 +132,7 @@ export default function createModuleContextEventHubTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} begin`);
       if ( context == undefined ) {
         hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} context is undefined`);
-        expect.assertFail();
+        expect().assertFail();
         done();
       } else {
         let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
@@ -174,7 +174,7 @@ export default function createModuleContextEventHubTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} begin`);
       if ( context == undefined ) {
         hilog.info(0x0000, 'testTag', '%{public}s', `${caseName} context is undefined`);
-        expect.assertFail();
+        expect().assertFail();
         done();
       } else {
         let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');

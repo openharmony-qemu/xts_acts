@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,7 +66,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -99,7 +99,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -134,7 +134,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -169,7 +169,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -212,7 +212,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             }
           }          
         }();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();
@@ -271,7 +271,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
               }
             }
         }();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();
@@ -330,7 +330,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
               }
             }
         }();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();

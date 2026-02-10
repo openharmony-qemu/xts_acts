@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function fileIOClose() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -66,7 +66,7 @@ export default function fileIOClose() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_sync_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -90,7 +90,7 @@ export default function fileIOClose() {
         fs.closeSync(file);
         fs.closeSync(fd);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_sync_static_002 end error: ' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -110,7 +110,7 @@ export default function fileIOClose() {
       try {
         fs.closeSync(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_sync_static_005 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -134,7 +134,7 @@ export default function fileIOClose() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -158,7 +158,7 @@ export default function fileIOClose() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -181,7 +181,7 @@ export default function fileIOClose() {
         await fs.close(file.fd);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -204,7 +204,7 @@ export default function fileIOClose() {
         await fs.close(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -228,7 +228,8 @@ export default function fileIOClose() {
         await fs.close(file);
         await fs.close(fd);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -249,7 +250,8 @@ export default function fileIOClose() {
       try {
         await fs.close(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_007 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -284,7 +286,7 @@ export default function fileIOClose() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_close_async_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ let localDeviceId = '';
 const USED_DEVICE_IDS =  ['A12C1F9261528B21F95778D2FDC0B2E33943E6251AC5487F4473D005758905DB'];
 const UNUSED_DEVICE_IDS: string[] =  [];  /* add you test device-ids here */
 let syncDeviceIds = USED_DEVICE_IDS.concat(UNUSED_DEVICE_IDS);
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(count:int) : Promise<int> {
@@ -90,7 +90,7 @@ export default function deviceKvStorePromiseTest(){
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
@@ -98,7 +98,7 @@ export default function deviceKvStorePromiseTest(){
 
       const config: factory.KVManagerConfig = {
         bundleName : TEST_BUNDLE_NAME,
-        context:context
+        context: context!
       }
       console.info('beforeAll config:'+ JSON.stringify(config));
       kvManager = factory.createKVManager(config);
@@ -203,7 +203,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0200 put error' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -228,7 +228,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0300 put error' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -264,7 +264,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTSTRING_PROMISE_0400 put error' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DEVICEKVSTORE_PUTSTRING_PROMISE_0400 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -296,7 +296,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0100 put error' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -320,7 +320,7 @@ export default function deviceKvStorePromiseTest(){
         }).catch((err: Error) => {
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0200 get fail ' + `, error code is ${err.code}, message is ${err.message}`);
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETSTRING_PROMISE_0200 get e ' + `, error code is ${e.code}, message is ${e.message}`);
       }
       done();
@@ -344,7 +344,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -377,7 +377,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0200 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -410,7 +410,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0300 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -443,7 +443,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0400 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTINT_PROMISE_0400 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -475,7 +475,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETINT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETINT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -500,7 +500,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBOOLEAN_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBOOLEAN_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -533,7 +533,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETBOOLEAN_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETBOOLEAN_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -558,7 +558,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTFLOAT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTFLOAT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -591,7 +591,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -624,7 +624,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0200 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -657,7 +657,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0300 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETFLOAT_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -690,7 +690,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -726,7 +726,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0200 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -751,7 +751,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0300 delete fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETESTRING_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -783,7 +783,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEINT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEINT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -815,7 +815,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEFLOAT_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEFLOAT_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -847,7 +847,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBOOLEAN_PROMISE_0100 put fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBOOLEAN_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -875,7 +875,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0100 put fail ' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -903,7 +903,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0200 put fail ' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -931,7 +931,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0300 put fail ' + `, error code is ${error.code}, message is ${error.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONCHANGE_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -963,10 +963,10 @@ export default function deviceKvStorePromiseTest(){
           let mode = factory.SyncMode.PULL_ONLY;
           console.info('kvStore.sync to ' + JSON.stringify(syncDeviceIds));
           kvStore!.sync(syncDeviceIds, mode);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0100 sync no peer device :e:' + `, error code is ${e.code}, message is ${e.message}`);
         }
-      } catch(e: Error) {
+      } catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -998,10 +998,10 @@ export default function deviceKvStorePromiseTest(){
           let mode = factory.SyncMode.PUSH_ONLY;
           console.info('kvStore.sync to ' + JSON.stringify(syncDeviceIds));
           kvStore!.sync(syncDeviceIds, mode);
-        } catch(error: Error) {
+        } catch(error) {
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0200 no peer device :e:' + `, error code is ${error.code}, message is ${error.message}`);
         }
-      } catch(e: Error) {
+      } catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1033,10 +1033,10 @@ export default function deviceKvStorePromiseTest(){
           let mode = factory.SyncMode.PUSH_PULL;
           console.info('kvStore.sync to ' + JSON.stringify(syncDeviceIds));
           kvStore!.sync(syncDeviceIds, mode);
-        } catch(error: Error) {
+        } catch(error) {
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0300 no peer device :e:' + `, error code is ${error.code}, message is ${error.message}`);
         }
-      } catch(e: Error) {
+      } catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ONSYNCCOMPLETE_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1059,7 +1059,7 @@ export default function deviceKvStorePromiseTest(){
         };
         kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func);
         kvStore!.offDataChange(func);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFCHANGE_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1088,7 +1088,7 @@ export default function deviceKvStorePromiseTest(){
 
         kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func1);
         kvStore!.offDataChange(func);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFCHANGE_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1118,7 +1118,7 @@ export default function deviceKvStorePromiseTest(){
         kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func1);
         kvStore!.offDataChange(func);
         kvStore!.offDataChange(func1);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFCHANGE_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1142,7 +1142,7 @@ export default function deviceKvStorePromiseTest(){
 
         kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func);
         kvStore!.offDataChange();
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFCHANGE_PROMISE_0400 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1165,7 +1165,7 @@ export default function deviceKvStorePromiseTest(){
         };
         kvStore!.onSyncComplete(func);
         kvStore!.offSyncComplete(func);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0100 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1192,7 +1192,7 @@ export default function deviceKvStorePromiseTest(){
         kvStore!.onSyncComplete(func);
         kvStore!.onSyncComplete(func1);
         kvStore!.offSyncComplete(func);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0200 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1220,7 +1220,7 @@ export default function deviceKvStorePromiseTest(){
         kvStore!.onSyncComplete(func1);
         kvStore!.offSyncComplete(func);
         kvStore!.offSyncComplete(func1);
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0300 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1243,7 +1243,7 @@ export default function deviceKvStorePromiseTest(){
         };
         kvStore!.onSyncComplete(func);
         kvStore!.offSyncComplete();
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0400 put e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1270,7 +1270,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0100 delete fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1297,7 +1297,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0200 delete fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1324,7 +1324,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0300 delete fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_SETSYNCRANGE_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1363,7 +1363,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0100 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1409,7 +1409,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0200 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1455,7 +1455,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0300 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1501,7 +1501,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0400 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0400 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1548,7 +1548,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0500 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0500 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1595,7 +1595,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0600 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_PUTBATCH_PROMISE_0600 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1643,7 +1643,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0100 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1668,7 +1668,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0200 deleteBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1713,7 +1713,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0300 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_DELETEBATCH_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1770,7 +1770,7 @@ export default function deviceKvStorePromiseTest(){
         });
         await sleep(500);
         expect(count == 1).assertTrue();
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_STARTTRANSACTION_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1827,7 +1827,7 @@ export default function deviceKvStorePromiseTest(){
         });
         await sleep(500);
         expect(count == 0).assertTrue();
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_STARTTRANSACTION_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1852,7 +1852,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ENABLESYNC_PROMISE_0100 enableSync fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ENABLESYNC_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1877,7 +1877,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_ENABLESYNC_PROMISE_0200 enableSync fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_ENABLESYNC_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1916,7 +1916,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100 get fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -1940,7 +1940,7 @@ export default function deviceKvStorePromiseTest(){
         }).catch((err: Error) => {
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_REMOVEDEVICEDATA_PROMISE_0300 removeDeviceData fail ' + `, error code is ${err.code}, message is ${err.message}`);
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_REMOVEDEVICEDATA_PROMISE_0300 e ' + `, error code is ${e.code}, message is ${e.message}`);
       }
       done();
@@ -1992,7 +1992,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0100 closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2026,7 +2026,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0200 closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2083,7 +2083,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0500 closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0500 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2141,7 +2141,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0600 closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0600 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2188,7 +2188,7 @@ export default function deviceKvStorePromiseTest(){
             })
           });
         });
-      } catch(e: Error) {
+      } catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0700 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2222,7 +2222,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_CLOSERESULTSET_PROMISE_0200 closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_CLOSERESULTSET_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2269,7 +2269,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSIZE_PROMISE_0100 getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSIZE_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2315,7 +2315,7 @@ export default function deviceKvStorePromiseTest(){
           console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSIZE_PROMISE_0200 getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
           expect(null).assertFail();
         });
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSIZE_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -2373,7 +2373,7 @@ export default function deviceKvStorePromiseTest(){
           done();
         });
 
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2430,7 +2430,7 @@ export default function deviceKvStorePromiseTest(){
           done();
         });
 
-      }catch(e: Error) {
+      }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();

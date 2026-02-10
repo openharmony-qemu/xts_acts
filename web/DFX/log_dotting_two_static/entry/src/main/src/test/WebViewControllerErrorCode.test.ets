@@ -36,9 +36,9 @@ export default function webViewControllerErrorCode() {
      * @tc.desc   test pageUp error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPageUpError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testPageUpError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(4000);
       Utils.emitEvent("testPageUpError001", 10)

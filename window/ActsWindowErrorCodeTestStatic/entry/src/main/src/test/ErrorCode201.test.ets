@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ async function terminateAbility(caseName: string) {
         }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
         hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -79,9 +79,9 @@ export default function ErrorCode201() {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         let isPCStatus: string = '';
         beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
@@ -96,7 +96,7 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
                 hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
-                isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+                isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
                 //isPCStatus == '' 非PC设备
                 //isPCStatus == '1' PC设备状态栏dock未融合
                 //isPCStatus == '0' PC设备状态栏dock融合
@@ -122,7 +122,7 @@ export default function ErrorCode201() {
             let caseName :string = "testSetWindowPrivacyModePromiseErrCode201_static_0100";
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let win: window.Window = windowStage.getMainWindowSync();
+            let win: window.Window = windowStage!.getMainWindowSync();
             try {
                 win!.setWindowPrivacyMode(true).then(async () => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowPrivacyMode.');
@@ -134,7 +134,7 @@ export default function ErrorCode201() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -152,7 +152,7 @@ export default function ErrorCode201() {
             let caseName :string = "testSetWindowPrivacyModeCallbackErrCode201_static_0200";
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let win: window.Window = windowStage.getMainWindowSync();
+            let win: window.Window = windowStage!.getMainWindowSync();
             try {
                 win!.setWindowPrivacyMode(false,(err: BusinessError<void>|null):void => {
                     const errCode: number = err!.code;
@@ -167,7 +167,8 @@ export default function ErrorCode201() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -188,7 +189,7 @@ export default function ErrorCode201() {
             let windowConfig: window.Configuration = {
                 name: "testCreateFloatWindowPermission_Promise_static_0100",
                 windowType: window.WindowType.TYPE_FLOAT,
-                ctx: context,
+                ctx: context!,
             };
             try {
                  window.createWindow(windowConfig).then((data:window.Window) => {
@@ -200,7 +201,8 @@ export default function ErrorCode201() {
                     expect(err.code).assertEqual(201);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -222,7 +224,7 @@ export default function ErrorCode201() {
             let windowConfig: window.Configuration = {
                 name: "testCreateFloatWindowPermission_Callback_static_0100",
                 windowType: window.WindowType.TYPE_FLOAT,
-                ctx: context,
+                ctx: context!,
             };
             try {
                 window.createWindow(windowConfig, (err: BusinessError<void>|null, data:window.Window|undefined):void => {
@@ -237,7 +239,8 @@ export default function ErrorCode201() {
                     expect().assertFail();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -254,7 +257,7 @@ export default function ErrorCode201() {
         it('testSetWindowTopmost201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowTopmost201_static';
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
@@ -370,7 +373,7 @@ export default function ErrorCode201() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 windowClass.setWindowShadowEnabled(true).then(() => {
                     hilog.info(domain, tag,`${caseName} Succeeded in calling setWindowShadowEnabled.`);
                     expect(false).assertTrue();
@@ -385,7 +388,7 @@ export default function ErrorCode201() {
                         done()
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -402,14 +405,15 @@ export default function ErrorCode201() {
         it('testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart = await startAbility(caseName, context);
+            let windowStageStart = await startAbility(caseName, context!);
             try {
                 let windowClass = windowStageStart.getMainWindowSync();
                 windowClass.setWindowContainerColor("#0099FF","#CCCCCC");
                 await terminateAbility(caseName);
                 expect(false).assertTrue()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if (isPCStatus == '') {

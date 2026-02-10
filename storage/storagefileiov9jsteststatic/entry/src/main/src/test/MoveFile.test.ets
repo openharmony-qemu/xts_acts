@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function fileIOMoveFile() {
         let stat = fs.statSync(ffpath);
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -77,7 +77,8 @@ export default function fileIOMoveFile() {
         fs.copyFileSync(fpath, ffpath);
         fs.moveFileSync(fpath, ffpath, 1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
@@ -103,7 +104,8 @@ export default function fileIOMoveFile() {
       try {
         fs.moveFileSync(fpath, ffpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
@@ -126,7 +128,8 @@ export default function fileIOMoveFile() {
       try {
         fs.moveFileSync(dpath, ddpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -157,7 +160,7 @@ export default function fileIOMoveFile() {
         let stat = fs.statSync(ffpath);
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -185,7 +188,7 @@ export default function fileIOMoveFile() {
         let stat = fs.statSync(ffpath);
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_sync_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -214,7 +217,7 @@ export default function fileIOMoveFile() {
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -244,7 +247,7 @@ export default function fileIOMoveFile() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -271,7 +274,8 @@ export default function fileIOMoveFile() {
         fs.copyFileSync(fpath, ffpath);
         await fs.moveFile(fpath, ffpath, 1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900015 && e.message == 'File exists').assertTrue();
@@ -306,7 +310,7 @@ export default function fileIOMoveFile() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -331,7 +335,8 @@ export default function fileIOMoveFile() {
       try {
         await fs.moveFile(fpath, ffpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
@@ -364,7 +369,7 @@ export default function fileIOMoveFile() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
@@ -387,7 +392,8 @@ export default function fileIOMoveFile() {
       try {
         await fs.moveFile(dpath, ddpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_006 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -417,7 +423,7 @@ export default function fileIOMoveFile() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
@@ -448,7 +454,7 @@ export default function fileIOMoveFile() {
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -479,7 +485,7 @@ export default function fileIOMoveFile() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -509,7 +515,7 @@ export default function fileIOMoveFile() {
         expect(stat.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_011 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

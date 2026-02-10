@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let g_code: number = 0;
 
 class AbilityStartCallbackExt implements common.AbilityStartCallback {
@@ -69,9 +69,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1200`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -92,7 +92,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options, (err: BusinessError | null) => {
+        context?.startAbility(want, options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000050);
@@ -103,7 +103,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -116,9 +117,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   To verify StartAbility with option ErrorCode.Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_StartAbilityError_static_1700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -130,7 +131,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options, (err: BusinessError | null) => {
+        context?.startAbility(want, options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000004);
@@ -141,7 +142,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -154,9 +156,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1800`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -168,7 +170,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -190,9 +192,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_1900`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -213,7 +215,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -235,9 +237,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityBase_ErrorCode_static_2000`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -249,7 +251,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -271,9 +273,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_ErrorCode_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_ErrorCode_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0017`;
       hilog.info(domain, tag, `it begin`);
       let Fd: Record<String,Object> = {
@@ -294,7 +296,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -316,9 +318,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_2600`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -330,7 +332,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
       };
       try {
-        context.startAbility(want,options, (err: BusinessError | null) => {
+        context?.startAbility(want,options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             if(err?.code==801) {
               done()
@@ -343,7 +345,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -356,9 +359,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   SUB_Ability_AbilityBase_StartAbilityError_static_2700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -370,7 +373,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -388,7 +391,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           }
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -401,9 +405,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_1700`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -415,7 +419,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options, (err: BusinessError | null) => {
+        context?.startAbility(want, options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000005);
@@ -426,7 +430,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -439,9 +444,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_1900`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -449,7 +454,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         abilityName: 'EntryAbility2'
       };
       try {
-        context.startAbility(want, (err: BusinessError | null) => {
+        context?.startAbility(want, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(16000005);
@@ -460,7 +465,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -473,9 +479,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise).Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2000`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -487,7 +493,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -496,7 +502,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(16000005);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -509,9 +516,9 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise).Expect: 16000005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2100`;
       hilog.info(domain, tag, `it begin`);
       let want: Want = {
@@ -519,7 +526,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         abilityName: 'EntryAbility2'
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -528,7 +535,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(16000005);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -541,12 +549,12 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(promise) Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
       .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -559,7 +567,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         abilityName: 'EntryAbility'
       };
       try {
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -568,7 +576,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -581,12 +590,12 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise) Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
       .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -603,7 +612,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options).then(() => {
+        context?.startAbility(want, options).then(() => {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
@@ -612,7 +621,8 @@ export default function UiAbilityContextStartAbilityStatic() {
           expect(err.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + err);
         expect().assertFail();
         done();
@@ -625,12 +635,12 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback), Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
       .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -647,7 +657,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         windowTop: 20
       };
       try {
-        context.startAbility(want, options, (err: BusinessError | null) => {
+        context?.startAbility(want, options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(201);
@@ -658,7 +668,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -671,12 +682,12 @@ export default function UiAbilityContextStartAbilityStatic() {
      * @tc.desc   Call UIAbilityContext startAbility failed.(callback), Expect: 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityBase_StartAbilityError_static_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityBase_StartAbilityError_static_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
-      context.moveAbilityToBackground()
+      context?.moveAbilityToBackground()
       .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
@@ -689,7 +700,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         abilityName: 'EntryAbility'
       };
       try {
-        context.startAbility(want, (err: BusinessError | null) => {
+        context?.startAbility(want, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             expect(err?.code).assertEqual(201);
@@ -700,7 +711,8 @@ export default function UiAbilityContextStartAbilityStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -724,7 +736,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           "sceneType": 1,
           'time': '2023-10-23 20:45'
         };
-        context.startAbilityByType("shareerror", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
+        context?.startAbilityByType("shareerror", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
           if (err != null && err?.code != 0) {
             hilog.info(0x0000, tag, TAG + "startAbilityByType001 err, err:" + JSON.stringify(err));
             return;
@@ -735,7 +747,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(500);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
@@ -759,7 +772,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           "sceneType": 1,
           'time': '2023-10-23 20:45'
         };
-        context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
+        context?.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
@@ -767,7 +780,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(500);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();

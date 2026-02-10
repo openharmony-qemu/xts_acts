@@ -10,14 +10,14 @@ let tag: string = 'ConnectionTestTag'; //日志标识字符串,作为tag标识�
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
     hilog.info(domain, tag, '%{public}s', 'test failed');
   }
 }
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
-  } catch (err: BusinessError) {
+  } catch (err) {
     hilog.info(domain, tag, '%{public}s', 'test failed');
   }
 }
@@ -52,7 +52,7 @@ export default function ConnectionWithoutNetTest() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catcherror is '+JSON.stringify(err));
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -84,7 +84,7 @@ export default function ConnectionWithoutNetTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catcherror is '+JSON.stringify(err));
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -108,7 +108,7 @@ export default function ConnectionWithoutNetTest() {
         ExpectTrue(netHandle.netId == 0);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catcherror is '+JSON.stringify(err));
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

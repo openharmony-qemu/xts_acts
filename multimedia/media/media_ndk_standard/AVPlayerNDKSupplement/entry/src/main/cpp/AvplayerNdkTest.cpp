@@ -2493,12 +2493,16 @@ static napi_value NAPI_AVLoadingRequestError(napi_env env, napi_callback_info in
     int32_t denied = 4;
     int32_t timeout = 5;
     int32_t failed = 6;
+    int32_t success = 0;
+    int32_t notReady = 1;
     int32_t res = 1;
     if (AVLoadingRequestError::AV_LOADING_ERROR_NO_RESOURCE == resource &&
         AVLoadingRequestError::AV_LOADING_ERROR_INVALID_HANDLE == handle &&
         AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_DENIED == denied &&
         AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_TIMEOUT == timeout &&
-        AVLoadingRequestError::AV_LOADING_ERROR_AUTHORIZE_FAILED == failed) {
+        AVLoadingRequestError::AV_LOADING_ERROR_AUTHORIZE_FAILED == failed &&
+        AVLoadingRequestError::AV_LOADING_ERROR_SUCCESS == success &&
+        AVLoadingRequestError::AV_LOADING_ERROR_NOT_READY == notReady) {
         res = 0;
     }
     napi_create_int32(env, res, &result);

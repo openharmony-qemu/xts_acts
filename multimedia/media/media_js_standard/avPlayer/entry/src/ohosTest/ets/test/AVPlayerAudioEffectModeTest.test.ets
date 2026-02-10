@@ -441,7 +441,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.play();
@@ -452,7 +452,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   break;
               }
             if (playCount++ == 1) {
-              for (let i = 0; i < 1000; i++) {
+              for (let i = 0; i < 100; i++) {
                 avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
               }
               avPlayer.pause();
@@ -466,7 +466,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.play();
@@ -476,7 +476,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.release();

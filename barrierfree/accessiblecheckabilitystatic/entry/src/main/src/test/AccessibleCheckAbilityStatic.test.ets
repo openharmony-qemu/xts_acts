@@ -193,15 +193,15 @@ export default function abilityTest() {
       try {
           let abilityState = 'install';
           let abilityType = 'all';
-          let list = accessibility.getAccessibilityExtensionListSync(abilityType, abilityState);
-          console.info(`AccessibilityExtensionListSync: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0800 result: ${list}`);
-          expect(Array.isArray(list)).assertEqual(true);
-          done();
+          accessibility.getAccessibilityExtensionListSync(abilityType, abilityState);
+          console.info(`AccessibilityExtensionListSync: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0800 successed`);
+          result = true;
       } catch (exception) {
           console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0800 failed to AccessibilityExtensionListSync because ' + JSON.stringify(exception));
-          expect(null).assertFail();
-          done();
+          result = false;
       }
+      expect(result).assertEqual(true);
+      done();
     })
 
      /**

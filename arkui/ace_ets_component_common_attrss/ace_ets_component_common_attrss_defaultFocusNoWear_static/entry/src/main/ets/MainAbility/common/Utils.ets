@@ -94,7 +94,7 @@ export default class Utils {
     });
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
@@ -203,7 +203,7 @@ export default class Utils {
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(2000);
+    waitForCompletion(async ()=>{await Utils.sleep(2000);})
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }

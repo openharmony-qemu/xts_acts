@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function fileIOGetxattr() {
         let attrValue = fs.getxattrSync(fpath, attrKey);
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 the value is: ' + attrValue);
         expect(attrValue).assertEqual('Test file.');
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -76,7 +76,7 @@ export default function fileIOGetxattr() {
         }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 has error' + JSON.stringify(err));
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
