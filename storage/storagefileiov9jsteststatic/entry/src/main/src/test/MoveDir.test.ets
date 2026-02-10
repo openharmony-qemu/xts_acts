@@ -728,15 +728,10 @@ export default function fileIOMoveDir() {
         fs.rmdirSync(dpath);
         done();
       } catch (e) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_034 end error: ' + JSON.stringify(e));
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_000 end error: ' + JSON.stringify(e));
         expect(false).assertTrue();
-        fs.rmdirSync(dpath);
-        done();
       }
     });
-
-
-
 
     /**
      * @tc.name   fileIO_test_moveDir_async_static_001
@@ -1728,7 +1723,7 @@ export default function fileIOMoveDir() {
       fs.mkdirSync(ddpath);
       try {
         fs.moveDir('', ddpath, (err: BusinessError<void> | null) => {
-          if (err) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_031 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
             expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             fs.rmdirSync(dpath);
@@ -1761,7 +1756,7 @@ export default function fileIOMoveDir() {
       fs.mkdirSync(ddpath);
       try {
         fs.moveDir(ddpath, '', (err: BusinessError<void> | null) => {
-          if (err) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_032 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
             expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             fs.rmdirSync(dpath);
@@ -1794,7 +1789,7 @@ export default function fileIOMoveDir() {
       fs.mkdirSync(ddpath);
       try {
         fs.moveDirWithConflictFiles('', ddpath, (err: BusinessError<Array<ConflictFiles>> | null) => {
-          if (err) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_033 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
             expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             fs.rmdirSync(dpath);
@@ -1827,7 +1822,7 @@ export default function fileIOMoveDir() {
       fs.mkdirSync(ddpath);
       try {
         fs.moveDirWithConflictFiles(ddpath, '', (err: BusinessError<Array<ConflictFiles>> | null) => {
-          if (err) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_034 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
             expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             fs.rmdirSync(dpath);

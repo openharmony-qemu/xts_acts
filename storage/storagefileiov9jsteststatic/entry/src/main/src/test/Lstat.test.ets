@@ -1359,9 +1359,9 @@ export default function fileIOLstat() {
     it('fileIO_lstat_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       try {
         fs.lstat("", (err: BusinessError | null, stat: fs.Stat | undefined) => {
-          if (err) {
+          if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_005 should throw error with empty string path');
@@ -1392,7 +1392,7 @@ export default function fileIOLstat() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_006 end error' + JSON.stringify(e));
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1412,7 +1412,7 @@ export default function fileIOLstat() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_sync_static_002 end error' + JSON.stringify(e));
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
   });

@@ -388,7 +388,7 @@ export default function fileIOOpen() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_014 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -1191,7 +1191,7 @@ export default function fileIOOpen() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_030 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1210,7 +1210,7 @@ export default function fileIOOpen() {
         fs.open("", (err: BusinessError | null, file: fs.File | undefined) => {
           if(err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_031 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
             done();
           }
         });

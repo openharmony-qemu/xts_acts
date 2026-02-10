@@ -1165,8 +1165,8 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         fs.createRandomAccessFile(fpath, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          if (!err && randomaccessfile !== undefined) {
-            expect(typeof randomaccessfile.fd == 'int').assertTrue();
+          if (err?.code === 0 && randomaccessfile !== undefined) {
+            expect(typeof randomaccessfile?.fd == 'int').assertTrue();
             randomaccessfile?.close();
             fs.unlinkSync(fpath);
             done();
@@ -1223,8 +1223,8 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         fs.createRandomAccessFile(file, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          if (!err && randomaccessfile !== undefined) {
-            expect(typeof randomaccessfile.fd == 'int').assertTrue();
+          if (err?.code === 0 && randomaccessfile !== undefined) {
+            expect(typeof randomaccessfile?.fd == 'int').assertTrue();
             randomaccessfile?.close();
             fs.closeSync(file.fd);
             fs.unlinkSync(fpath);

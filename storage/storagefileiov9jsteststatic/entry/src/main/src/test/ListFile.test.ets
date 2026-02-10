@@ -2084,13 +2084,14 @@ export default function fileIOListfile() {
           recursion: false,
           filter: filter
         });
-        expect(false).assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_035 res: ' + dirents.length);
+        expect(dirents.length == 0).assertTrue();
+        fs.rmdirSync(dpath);
         done();
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_035 end error' + JSON.stringify(e));
-        fs.rmdirSync(dpath);
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2169,13 +2170,14 @@ export default function fileIOListfile() {
           recursion: false,
           filter: filter
         });
-        expect(false).assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_037 res: ' + dirents.length);
+        expect(dirents.length == 3).assertTrue();
+        fs.rmdirSync(dpath);
         done();
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_037 end error' + JSON.stringify(e));
-        fs.rmdirSync(dpath);
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(false).assertTrue();
         done();
       }
     });

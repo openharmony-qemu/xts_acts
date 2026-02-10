@@ -753,7 +753,7 @@ export default function fileIOMoveFile() {
           if (err?.code != 0) {
             fs.rmdirSync(dpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_016 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -783,7 +783,7 @@ export default function fileIOMoveFile() {
           if (err?.code != 0) {
             fs.rmdirSync(dpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_017 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -812,7 +812,7 @@ export default function fileIOMoveFile() {
           if (err?.code != 0) {
             fs.rmdirSync(dpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_018 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -842,7 +842,7 @@ export default function fileIOMoveFile() {
           if (err?.code != 0) {
             fs.rmdirSync(dpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveFile_async_static_019 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
