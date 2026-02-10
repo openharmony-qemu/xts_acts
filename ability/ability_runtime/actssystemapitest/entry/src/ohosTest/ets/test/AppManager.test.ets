@@ -1144,7 +1144,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + " err.code: " + e.code);
-        expect(err.code).assertEqual(401);
+        expect(e.code).assertEqual(401);
         done();
       }
     });
@@ -1322,7 +1322,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + " err.code catch: " + e.code);
-        expect(err.code).assertEqual(401);
+        expect(e.code).assertEqual(401);
         done();
       }
     });
@@ -1351,7 +1351,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + " err.code catch: " + e.code);
-        expect(err.code).assertEqual(401);
+        expect(e.code).assertEqual(401);
         done();
       }
 
