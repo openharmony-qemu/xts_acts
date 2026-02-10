@@ -2768,7 +2768,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testRegisterdeviceSelected0010 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testRegisterdeviceSelected0010 end----------------------");
             done();
@@ -2792,7 +2792,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceSelected0020 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testOndeviceSelected0020 end----------------------");
             done();
@@ -2815,7 +2815,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceSelected0030 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testOndeviceSelected0030 end----------------------");
             done();
@@ -2838,7 +2838,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceSelected0040 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testOndeviceSelected0040 end----------------------");
             done();
@@ -2861,7 +2861,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceSelected0010 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceSelected0010 end----------------------");
@@ -2884,7 +2884,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceSelected0002 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceSelected0002 end----------------------");
@@ -2906,7 +2906,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceSelected0030 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceSelected0030 end----------------------");
@@ -2928,7 +2928,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceSelected0040 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceSelected0040 end----------------------");
@@ -2951,7 +2951,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceUnselected0010 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testOndeviceUnselected0001 end----------------------");
             done();
@@ -2974,7 +2974,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceUnselected0020 continuationManager.on catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.log("----------------------testOndeviceUnselected0020 end----------------------");
             done();
@@ -2995,7 +2995,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             } catch (error) {
                 console.info("testOndeviceUnselected0010 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOndeviceUnselected0010 end----------------------");
             done()
@@ -3016,7 +3016,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             } catch (error) {
                 console.info("testOffdeviceSelected0020 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOffdeviceSelected0020 end----------------------");
             done()
@@ -3039,7 +3039,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceConnect0010 deviceConnect catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOndeviceConnect0010 end----------------------");
             done()
@@ -3062,7 +3062,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOndeviceConnect0020 deviceConnect catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOndeviceConnect0020 end----------------------");
             done()
@@ -3085,7 +3085,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOffdeviceConnect0030 deviceConnect catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOffdeviceConnect0030 end----------------------");
             done()
@@ -3108,7 +3108,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log("testOffdeviceConnect0040 deviceConnect catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testOffdeviceConnect0040 end----------------------");
             done()
@@ -3130,7 +3130,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceDisconnect0010 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceDisconnect0010 end----------------------");
@@ -3152,7 +3152,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testOffdeviceDisconnect0020 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testOffdeviceDisconnect0020 end----------------------");
@@ -3180,7 +3180,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testRegister0001 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testRegister0001 end----------------------");
@@ -3208,7 +3208,7 @@ export default function continuationManagerTest() {
                 done();
             } catch (error) {
                 console.info("testRegister001 catch error is" + error);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testRegister0002 end----------------------");
@@ -3269,10 +3269,10 @@ export default function continuationManagerTest() {
             continuationManager.unregister(undefined, (err, data) => {
                 if (err.code != 0) {
                     console.log('testunregister0001 get unregister is faild' + err.code)
-                    expect(err.code == -1).assertTrue()
+                    expect(err.code).assertEqual(-1)
                 }
                 console.log('testunregister0001 get unregister is success' + data)
-                expect(data == undefined).assertTrue()
+                expect(data).assertEqual(undefined)
             })
             console.info("----------------------testunregister0001 end----------------------");
             done();
@@ -3291,10 +3291,11 @@ export default function continuationManagerTest() {
             continuationManager.unregister(null, (err, data) => {
                 if (err.code != 0) {
                     console.log('testunregister0002 get unregister is faild' + err.code)
-                    expect(err.code == -1).assertTrue()
+                    expect(err.code).assertEqual(-1)
+                    
                 }
                 console.log('testunregister0002 get unregister is success' + data)
-                expect(data == undefined).assertTrue()
+                expect(data).assertEqual(undefined)
             })
             done();
             console.info("----------------------testunregister0002 end----------------------");
@@ -3312,10 +3313,10 @@ export default function continuationManagerTest() {
             console.info("----------------------testunregister0003 start----------------------");
             continuationManager.unregister(undefined).then((data) => {
                 console.info('unregister finished, ' + JSON.stringify(data));
-                expect(data == undefined).assertTrue()
+                expect(data).assertEqual(undefined)
             }).catch((error) => {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
-                expect(err.code == -1).assertTrue()
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------testunregister0003 end----------------------");
             done();
@@ -3336,7 +3337,7 @@ export default function continuationManagerTest() {
                 expect(data == undefined).assertTrue()
             }).catch((error) => {
                 console.error('unregister failed, cause: ' + JSON.stringify(error.code));
-                expect(err.code == -1).assertTrue()
+                expect(err.code).assertEqual(-1)
             })
             console.info("----------------------testunregister0004 end----------------------");
             done();
@@ -3356,7 +3357,7 @@ export default function continuationManagerTest() {
                 continuationManager.updateConnectStatus(undefined, TEST_DEVICE_ID, continuationManager.DeviceConnectState.IDLE, (err, data) => {
                     if (err.code != 0) {
                         console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1)
                     }
                 })
             } catch (error) {
@@ -3381,7 +3382,7 @@ export default function continuationManagerTest() {
                 continuationManager.updateConnectStatus(null, TEST_DEVICE_ID, continuationManager.DeviceConnectState.CONNECTING, (err) => {
                     if (err.code != 0) {
                         console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1)
                     }
                     console.info('unregister finished');
                 })
@@ -3408,7 +3409,7 @@ export default function continuationManagerTest() {
                 continuationManager.updateConnectStatus(token, '', continuationManager.DeviceConnectState.CONNECTED, (err) => {
                     if (err.code != 0) {
                         console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
-                        expect(err.code == 7).assertTrue();
+                        expect(err.code).assertEqual(7)
                     }
                     console.info('unregister finished');
                 })
@@ -3435,7 +3436,7 @@ export default function continuationManagerTest() {
                 continuationManager.updateConnectStatus(token, undefined, continuationManager.DeviceConnectState.DISCONNECTING, (err) => {
                     if (err.code != 0) {
                         console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1);
                     }
                     console.info('unregister finished');
                 })
@@ -3462,7 +3463,7 @@ export default function continuationManagerTest() {
                 continuationManager.updateConnectStatus(token, null, continuationManager.DeviceConnectState.CONNECTED, (err) => {
                     if (err.code != 0) {
                         console.info('updateConnectStatus failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1)
                     }
                     console.info('updateConnectStatus finished');
                 })
@@ -3489,7 +3490,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1);
             })
             console.info("----------------------testupdateConnectStatus0006 end----------------------");
             done();
@@ -3510,7 +3511,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------testupdateConnectStatus0007 end----------------------");
             done();
@@ -3532,7 +3533,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 7).assertTrue();
+                expect(error.code).assertEqual(7)
             })
             console.info("----------------------testupdateConnectStatus0008 end----------------------");
             done();
@@ -3554,7 +3555,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1);
             })
             console.info("----------------------testupdateConnectStatus0009 end----------------------");
             done();
@@ -3576,7 +3577,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('updateConnectStatus failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------testupdateConnectStatus0100 end----------------------");
             done();
@@ -3596,7 +3597,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(undefined, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1);
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3622,7 +3623,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(null, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1);
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3649,7 +3650,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(token, undefined, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1)
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3676,7 +3677,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(token, null, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1);
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3709,7 +3710,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(undefined, continuationExtraParams, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1);
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3742,7 +3743,7 @@ export default function continuationManagerTest() {
                 continuationManager.startDeviceManager(null, continuationExtraParams, (err) => {
                     if (err.code != 0) {
                         console.info('startDeviceManager failed, ' + JSON.stringify(err.code));
-                        expect(err.code == -1).assertTrue();
+                        expect(err.code).assertEqual(-1)
                     }
                     console.info('startDeviceManager finished');
                 })
@@ -3776,7 +3777,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------teststartDeviceManager0007 end----------------------");
             done();
@@ -3804,7 +3805,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------teststartDeviceManager0008 end----------------------");
             done();
@@ -3826,7 +3827,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 29360208).assertTrue();
+                expect(error.code).assertEqual(29360208)
             })
             console.info("----------------------teststartDeviceManager0009 end----------------------");
             done();
@@ -3848,7 +3849,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 29360208).assertTrue();
+                expect(error.code).assertEqual(29360208)
             })
             console.info("----------------------teststartDeviceManager010 end----------------------");
             done();
@@ -3869,7 +3870,7 @@ export default function continuationManagerTest() {
                 expect().assertFail()
             }).catch((error) => {
                 console.info('startDeviceManager failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == -1).assertTrue();
+                expect(error.code).assertEqual(-1)
             })
             console.info("----------------------teststartDeviceManager011 end----------------------");
             done();
@@ -3896,7 +3897,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testregisterContinuation0001 end----------------------");
             done();
@@ -3923,7 +3924,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('registerContinuation failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testregisterContinuation0002 end----------------------");
             done();
@@ -4002,7 +4003,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0001 end----------------------");
             done();
@@ -4029,7 +4030,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0002 end----------------------");
             done();
@@ -4056,7 +4057,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0003 end----------------------");
             done();
@@ -4083,7 +4084,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0004 end----------------------");
             done();
@@ -4110,7 +4111,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0005 end----------------------");
             done();
@@ -4136,7 +4137,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState0006 end----------------------");
             done();
@@ -4162,7 +4163,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState007 end----------------------");
             done();
@@ -4188,7 +4189,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState008 end----------------------");
             done();
@@ -4214,7 +4215,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
 
             console.info("----------------------testupdateContinuationState009 end----------------------");
@@ -4241,7 +4242,7 @@ export default function continuationManagerTest() {
                 })
             } catch (error) {
                 console.error('updateContinuationState catch failed, cause: ' + JSON.stringify(error.code));
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testupdateContinuationState010 end----------------------");
             done();
@@ -4264,7 +4265,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("testStartContinuationDeviceManager0001 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testStartContinuationDeviceManager0001 end----------------------");
             done();
@@ -4287,7 +4288,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("testStartContinuationDeviceManager0002 catch error is" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
             }
             console.info("----------------------testStartContinuationDeviceManager0002 end----------------------");
             done();
@@ -4321,7 +4322,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("startContinuationDeviceManager catch error is" + error.code);
-                expect(error.code == 401).assertTrue()
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0003 end----------------------");
@@ -4381,7 +4382,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.info("startContinuationDeviceManager catch error is" + error);
-                expect(error.code == 16600002).assertTrue();
+                expect(error.code).assertEqual(16600002)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0005 end----------------------");
@@ -4443,7 +4444,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log('startContinuationDeviceManager catch err code is' + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0007 end----------------------");
@@ -4479,7 +4480,7 @@ export default function continuationManagerTest() {
                 });
             } catch (error) {
                 console.log('testStartContinuationDeviceManager0008 catch err code is' + error.code);
-                expect(error.code == 401).assertTrue();
+                expect(error.code).assertEqual(401)
                 done();
             }
             console.info("----------------------testStartContinuationDeviceManager0008 end----------------------");
@@ -4501,7 +4502,7 @@ export default function continuationManagerTest() {
                 done();
             }).catch((error) => {
                 console.log('testStartContinuationDeviceManager0009 err code is' + error.code);
-                expect(error.code == 16600002).assertTrue();
+                expect(error.code).assertEqual(16600002)
                 done();
             });
             console.info("----------------------testStartContinuationDeviceManager0009 end----------------------");
@@ -4523,7 +4524,7 @@ export default function continuationManagerTest() {
                 done();
             }).catch((error) => {
                 console.log('testStartContinuationDeviceManager010 err code is' + error.code);
-                expect(error.code == 16600002).assertTrue();
+                expect(error.code).assertEqual(16600002)
                 done();
             });
             console.info("----------------------testStartContinuationDeviceManager010 end----------------------");
