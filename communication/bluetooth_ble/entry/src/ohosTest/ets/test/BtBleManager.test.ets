@@ -29,20 +29,6 @@ function sleep(delay : number) :Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
 }
 
-async function openPhone() {
-  try{
-    let drivers = Driver.create();
-    console.info('[bluetooth_js] bt driver create:'+ drivers);
-    await drivers.delayMs(1000);
-    await drivers.wakeUpDisplay();
-    await drivers.delayMs(5000);
-    await drivers.swipe(1500, 1000, 1500, 100);
-    await drivers.delayMs(10000);
-  } catch (error) {
-    console.info('[bluetooth_js] driver error info:'+ error);
-  }
-}
-
 async function tryToEnableBt() {
     let sta = btAccess.getState();
     switch(sta){
@@ -382,7 +368,6 @@ function wrDescriptorVal() {
         describe('btBleManagerTest', () => {
           beforeAll(async (done : Function) =>  {
             await clickRequestPermission(PERMISSION_TEXT);
-            await openPhone();
             await tryToEnableBt()
             gattS = bluetoothBle.createGattServer();
             console.info('bluetooth ble create gattserver result:' + gattS);
@@ -888,6 +873,42 @@ function wrDescriptorVal() {
             }
             done();
           })
+           /**
+ 	            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0500
+ 	            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0500
+ 	            * @tc.desc   Test SetBLEMtuSize api10.
+ 	            * @tc.type   FUNCTION
+ 	            * @tc.size   MEDIUMTEST
+ 	            * @tc.level  LEVEL2
+ 	            */
+           it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
+            try {
+              gattC.setBLEMtuSize(22);
+              console.info("[bluetooth_js]setBLEMtuSize success");
+            } catch (error) {
+              console.error(`[bluetooth_js]MtuSize 5 failed, code is ${error.code},message is ${error.message}`);
+              expect(Number(error.code)).assertEqual(2900099);
+            }
+            done();
+          })
+          /**
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0600
+           * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0600
+           * @tc.desc   Test SetBLEMtuSize api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
+          it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
+            try {
+              gattC.setBLEMtuSize(518);
+              console.info("[bluetooth_js]setBLEMtuSize success");
+            } catch (error) {
+              console.error(`[bluetooth_js]MtuSize 6 failed, code is ${error.code},message is ${error.message}`);
+              expect(Number(error.code)).assertEqual(2900099);
+            }
+            done();
+          })          
           /**
            * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
            * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
