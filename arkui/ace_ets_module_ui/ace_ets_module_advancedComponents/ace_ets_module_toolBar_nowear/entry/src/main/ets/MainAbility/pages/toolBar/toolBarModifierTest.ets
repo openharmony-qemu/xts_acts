@@ -33,7 +33,7 @@ struct Index {
       .backgroundColor(Color.Transparent)
       .stateEffect(false)
       .padding(LengthMetrics.vp(10));
-  private toolBarModifier_undefined: ToolBarModifier =
+  private toolBarModifierUndefined: ToolBarModifier =
     new ToolBarModifier().height(LengthMetrics.vp(-51))
       .backgroundColor('')
       .stateEffect(true)
@@ -105,7 +105,7 @@ struct Index {
             .height(52)
 
           ToolBar({
-            toolBarModifier: this.toolBarModifier_undefined,
+            toolBarModifier: this.toolBarModifierUndefined,
             dividerModifier: this.dividerModifier,
             activateIndex: 0,
             toolBarList: this.toolbarList,
