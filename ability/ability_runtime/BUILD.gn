@@ -153,6 +153,7 @@ group("ability_runtime") {
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
       "actsGetAllWindowStagesTest:ActsGetAllWindowStagesTest",
+      "abilityactsabilityruntime:abilityactsabilityruntime"
     ]
   }
 }
