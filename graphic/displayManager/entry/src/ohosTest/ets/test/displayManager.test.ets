@@ -3839,7 +3839,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
         done()
       }
     });
@@ -3862,7 +3862,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
         done()
       }
     });
@@ -3885,7 +3885,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
       }
       try {
         display.convertRelativeToGlobalCoordinate(undefined);
@@ -3894,7 +3894,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
         done()
       }
     });
@@ -3917,7 +3917,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
       }
       try {
         display.getBrightnessInfo(undefined);
@@ -3926,7 +3926,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(1400004);
         done()
       }
     });
