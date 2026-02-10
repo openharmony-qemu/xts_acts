@@ -128,6 +128,7 @@ export default function testsuite() {
   RelationalStoreBatchInsert();
   RdbBatchInsertTransaction();
   RdbLockRow();
+
   RdbStoreDuplicateColumnsTest();
   RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
