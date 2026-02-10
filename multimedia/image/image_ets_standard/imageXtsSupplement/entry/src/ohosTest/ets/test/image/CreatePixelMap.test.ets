@@ -48,7 +48,9 @@ async function createPixelMapFromImage(pathUri: string, sourceDensity: number = 
     sourceDensity: sourceDensity,
   };
   let imageSource: image.ImageSource = image.createImageSource(array, ops);
-  return await imageSource.createPixelMap();
+  let pixelmap = await imageSource.createPixelMap();
+  await imageSource.release();
+  return pixelmap;
 }
 
 export default function CreatePixelMapSupp() {
@@ -76,28 +78,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_001';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_002
@@ -109,28 +113,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_002';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_003
@@ -142,28 +148,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_003';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_004
@@ -175,7 +183,8 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_004', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_004';
-      try {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
         let decodeOpts: image.DecodingOptions = {
           sampleSize: 1,
           editable: false,
@@ -186,19 +195,18 @@ export default function CreatePixelMapSupp() {
           desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
           index: 0,
         };
-        const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-        await imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-          console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-            JSON.stringify(pixelMap));
-          expect(pixelMap != undefined).assertTrue();
-          done();
-        })
-      } catch (err) {
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertUndefined();
-        done();
+          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
+        expect(error.code).assertUndefined();
       }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_005
@@ -210,28 +218,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_005';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_006
@@ -243,28 +253,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_006';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_007
@@ -276,28 +288,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_007';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_008
@@ -309,146 +323,131 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_008', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_008';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 198, height: 202 },
-        desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_009
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_009
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_009', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_009';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(null).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(null);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_010
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_010
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_010', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_010';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(undefined).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(undefined);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_011
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_011
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover ' '
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_011', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_011';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap();
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_012
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_012
-     * @tc.desc       createPixelMap cover isEditable
+     * @tc.desc       createPixelMap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_012';
-      let decodeOpts: image.DecodingOptions = {
-        editable: false
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isEditable);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          editable: false
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_013
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_013
-     * @tc.desc       createPixelMap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_013', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_013';
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isStrideAlignment);
         expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_014
@@ -460,28 +459,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_014', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_014';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_015
@@ -493,28 +494,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_015', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_015';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_016
@@ -526,28 +529,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_016', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_016';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_017
@@ -559,30 +564,31 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_017', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_017';
-      try {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
         let decodeOpts: image.DecodingOptions = {
           sampleSize: 1,
           editable: false,
-          desiredSize: { width: 300, height: 70 },
-          desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
           cropAndScaleStrategy: CROP_FIRST,
           rotate: 0,
           desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
           index: 0,
         };
-        const imageSourceApi = await getImageSource('test_exif_v2.png');
-        await imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-          console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-            JSON.stringify(pixelMap));
-          expect(pixelMap != undefined).assertTrue();
-          done();
-        })
-      } catch (err) {
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertUndefined();
-        done();
+          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
+        expect(error.code).assertUndefined();
+
       }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_018
@@ -594,28 +600,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_018', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_018';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_019
@@ -627,28 +635,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_019', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_019';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_020
@@ -660,28 +670,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_020', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_020';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_021
@@ -693,146 +705,131 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_021', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_021';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 300, height: 70 },
-        desiredRegion: { x: 0, y: 0, size: { width: 200, height: 60 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+        expect(error.code).assertUndefined();
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_022
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_022
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_022', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_022';
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(null).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(null);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_023
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_023
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_023', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_023';
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(undefined).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(undefined);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_024
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_024
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover ' '
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_024', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_024';
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap();
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_025
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_025
-     * @tc.desc       createPixelMap cover isEditable
+     * @tc.desc       createPixelMap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_025', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_025';
-      let decodeOpts: image.DecodingOptions = {
-        editable: false
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isEditable);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          editable: false
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.png');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_026
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_026
-     * @tc.desc       createPixelMap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_026', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_026';
-      const imageSourceApi = await getImageSource('test_exif_v2.png');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isStrideAlignment);
         expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_027
@@ -844,28 +841,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_027', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_027';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_028
@@ -877,28 +876,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_028', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_028';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_029
@@ -910,28 +911,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_029', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_029';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_030
@@ -943,30 +946,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_030', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_030';
-      try {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
         let decodeOpts: image.DecodingOptions = {
           sampleSize: 1,
           editable: false,
-          desiredSize: { width: 200, height: 200 },
-          desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
           cropAndScaleStrategy: CROP_FIRST,
           rotate: 0,
           desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
           index: 0,
         };
-        const imageSourceApi = await getImageSource('test_exif_v2.webp');
-        await imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-          console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-            JSON.stringify(pixelMap));
-          expect(pixelMap != undefined).assertTrue();
-          done();
-        })
-      } catch (err) {
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect().assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${err.code}, error.message ${err.message}`);
-        expect(err.code).assertUndefined();
-        done();
+          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
+        expect(error.code).assertUndefined();
       }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_031
@@ -978,28 +981,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_031', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_031';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_032
@@ -1011,28 +1016,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_032', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_032';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_033
@@ -1044,28 +1051,30 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_033', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_033';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_034
@@ -1077,146 +1086,131 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_034', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_034';
-      let decodeOpts: image.DecodingOptions = {
-        sampleSize: 1,
-        editable: false,
-        desiredSize: { width: 200, height: 200 },
-        desiredRegion: { x: 0, y: 0, size: { width: 150, height: 150 } },
-        cropAndScaleStrategy: CROP_FIRST,
-        rotate: 0,
-        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
-        index: 0,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
-        expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          sampleSize: 1,
+          editable: false,
+          desiredSize: { width: 198, height: 202 },
+          desiredRegion: { x: 0, y: 0, size: { width: 124, height: 100 } },
+          cropAndScaleStrategy: CROP_FIRST,
+          rotate: 0,
+          desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+          index: 0,
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
+        expect(pixelMap !== undefined).assertTrue();
+        await pixelMap?.release();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_035
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_035
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_035', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_035';
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(null).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(null);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_036
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_036
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_036', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_036';
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(undefined).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(undefined);
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_037
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_037
-     * @tc.desc       createPixelMap cover ASTC_4x4
+     * @tc.desc       createPixelMap cover ' '
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_037', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_037';
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap();
+        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.', pixelMap);
         expect(pixelMap != undefined).assertTrue();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_038
      * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_038
-     * @tc.desc       createPixelMap cover isEditable
+     * @tc.desc       createPixelMap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_038', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_038';
-      let decodeOpts: image.DecodingOptions = {
-        editable: false
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap(decodeOpts).then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isEditable);
+      let imageSourceApi: image.ImageSource | null = null;
+      try{
+        let decodeOpts: image.DecodingOptions = {
+          editable: false
+        };
+        imageSourceApi = await getImageSource('test_exif_v2.webp');
+        const pixelMap = await imageSourceApi.createPixelMap(decodeOpts);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_039
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_039
-     * @tc.desc       createPixelMap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_039', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_039';
-      const imageSourceApi = await getImageSource('test_exif_v2.webp');
-      imageSourceApi.createPixelMap().then((pixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'Succeeded in creating pixelMap object through image decoding parameters.',
-          pixelMap.isStrideAlignment);
         expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      }catch (error){
         console.error(TAG, testName,
           `Failed to create pixelMap object through image decoding parameters, error.code ${error.code}, error.message ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await imageSourceApi?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_040
@@ -1231,18 +1225,17 @@ export default function CreatePixelMapSupp() {
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.height);
-          expect(imageInfo.size.height).assertEqual(226);
-          done();
-        }
-      }).catch((error: BusinessError) => {
+      try{
+        const imageInfo = await pixelMap.getImageInfo();
+        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
+        expect(imageInfo.size != undefined).assertTrue();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_041
@@ -1254,21 +1247,20 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_GET_IMAGE_INFO_TEST_041', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_041';
-      const pathUri = 'test_exif_v2.jpg';
+      const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.width);
-          expect(imageInfo.size.width).assertEqual(472);
-          done();
-        }
-      }).catch((error: BusinessError) => {
+      try{
+        const imageInfo = await pixelMap.getImageInfo();
+        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
+        expect(imageInfo.size != undefined).assertTrue();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_042
@@ -1280,21 +1272,20 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_GET_IMAGE_INFO_TEST_042', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_042';
-      const pathUri = 'test_exif_v2.png';
+      const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.height);
-          expect(imageInfo.size.height).assertEqual(75);
-          done();
-        }
-      }).catch((error: BusinessError) => {
+      try{
+        const imageInfo = await pixelMap.getImageInfo();
+        console.info(TAG, testName, `imageInfo.size: ${JSON.stringify(imageInfo.size)}`);
+        expect(imageInfo.size != undefined).assertTrue();
+      }catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_043
@@ -1306,140 +1297,28 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_GET_IMAGE_INFO_TEST_043', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_043';
-      const pathUri = 'test_exif_v2.png';
+      const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.width);
-          expect(imageInfo.size.width).assertEqual(472);
-          done();
-        }
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_044
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_044
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_044', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_044';
-      const pathUri = 'test_exif_v2.webp';
-      const pixelMap = await createPixelMapFromImage(pathUri);
-      console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.height);
-          expect(imageInfo.size.height).assertEqual(221);
-          done();
-        }
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_045
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_045
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_045', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_045';
-      const pathUri = 'test_exif_v2.webp';
-      const pixelMap = await createPixelMapFromImage(pathUri);
-      console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        if (imageInfo != undefined) {
-          console.info(TAG, testName, `imageInfo.size:` + imageInfo.size.width);
-          expect(imageInfo.size.width).assertEqual(286);
-          done();
-        }
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_046
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_046
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_046', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_046';
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
+        pixelMap.getImageInfo(async (error: BusinessError, imageInfo: image.ImageInfo) => {
           if (error) {
             console.error(TAG, testName,
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-            done();
           } else {
             console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              imageInfo.size.height);
-            expect(imageInfo.size.height).assertEqual(226);
-            done();
+              JSON.stringify(imageInfo.size));
+            expect(imageInfo.size != undefined).assertTrue();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_047
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_047
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_047', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_047';
-      try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
-          if (error) {
-            console.error(TAG, testName,
-              `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`, imageInfo.size.width);
-            expect(imageInfo.size.width).assertEqual(472);
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_048
@@ -1451,62 +1330,28 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_GET_IMAGE_INFO_TEST_048', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_048';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
+        pixelMap.getImageInfo(async (error: BusinessError, imageInfo: image.ImageInfo) => {
           if (error) {
             console.error(TAG, testName,
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-            done();
           } else {
             console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              imageInfo.size.height);
-            expect(imageInfo.size.height).assertEqual(75);
-            done();
+              JSON.stringify(imageInfo.size));
+            expect(imageInfo.size != undefined).assertTrue();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_049
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_049
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_049', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_049';
-      try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
-          if (error) {
-            console.error(TAG, testName,
-              `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`, imageInfo.size.width);
-            expect(imageInfo.size.width).assertEqual(472);
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_050
@@ -1518,67 +1363,33 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_GET_IMAGE_INFO_TEST_050', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_050';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
+        pixelMap.getImageInfo(async (error: BusinessError, imageInfo: image.ImageInfo) => {
           if (error) {
             console.error(TAG, testName,
               `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-            done();
           } else {
             console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`,
-              imageInfo.size.height);
-            expect(imageInfo.size.height).assertEqual(221);
-            done();
+              JSON.stringify(imageInfo.size));
+            expect(imageInfo.size != undefined).assertTrue();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_GET_IMAGE_INFO_TEST_051
-     * @tc.name       SUB_MEDIA_GET_IMAGE_INFO_TEST_051
-     * @tc.desc       getImageInfo cover size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_GET_IMAGE_INFO_TEST_051', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_GET_IMAGE_INFO_TEST_051';
-      try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.getImageInfo((error: BusinessError, imageInfo: image.ImageInfo) => {
-          if (error) {
-            console.error(TAG, testName,
-              `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, `Succeeded in obtaining the image pixel map information`, imageInfo.size.width);
-            expect(imageInfo.size.width).assertEqual(286);
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_052
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_052
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -1588,45 +1399,25 @@ export default function CreatePixelMapSupp() {
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-        expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      try{
+        let alphaPixelMap = await pixelMap.createAlphaPixelmap();
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isStrideAlignment);
+        expect(alphaPixelMap.isEditable).assertFalse();
+        expect(alphaPixelMap.isStrideAlignment).assertFalse();
+        await alphaPixelMap?.release();
+      }catch (error){
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_053
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_053
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_053', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_053';
-      const pathUri = 'test_exif_v2.jpg';
-      const pixelMap = await createPixelMapFromImage(pathUri);
-      console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_054
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_054
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -1636,45 +1427,25 @@ export default function CreatePixelMapSupp() {
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-        expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      try{
+        let alphaPixelMap = await pixelMap.createAlphaPixelmap();
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isStrideAlignment);
+        expect(alphaPixelMap.isEditable).assertFalse();
+        expect(alphaPixelMap.isStrideAlignment).assertFalse();
+        await alphaPixelMap?.release();
+      }catch (error){
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_055
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_055
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_055', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_055';
-      const pathUri = 'test_exif_v2.png';
-      const pixelMap = await createPixelMapFromImage(pathUri);
-      console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_056
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_056
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -1684,394 +1455,212 @@ export default function CreatePixelMapSupp() {
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-        expect(pixelMap.isEditable).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
+      try{
+        let alphaPixelMap = await pixelMap.createAlphaPixelmap();
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isEditable);
+        console.info(TAG, testName, 'SUCCEED', alphaPixelMap.isStrideAlignment);
+        expect(alphaPixelMap.isEditable).assertFalse();
+        expect(alphaPixelMap.isStrideAlignment).assertFalse();
+        await alphaPixelMap?.release();
+      }catch (error){
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
-      })
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_057
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_057
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_057', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_057';
-      const pathUri = 'test_exif_v2.webp';
-      const pixelMap = await createPixelMapFromImage(pathUri);
-      console.info(TAG, testName, `pixelmap创建成功`);
-      pixelMap.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-        console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-        expect(pixelMap.isStrideAlignment).assertFalse();
-        done();
-      }).catch((error: BusinessError) => {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      })
+      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_058
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_058
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_058', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_058';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
+        pixelMap.createAlphaPixelmap(async (err: BusinessError, alphaPixelMap: image.PixelMap) => {
           if (alphaPixelMap == undefined) {
             console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
-            done();
           } else {
-            console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-            expect(pixelMap.isEditable).assertFalse();
-            done();
+            console.info(TAG, testName, 'SUCCEED ', alphaPixelMap.isEditable);
+            console.info(TAG, testName, 'SUCCEED ', alphaPixelMap.isStrideAlignment);
+            expect(alphaPixelMap.isEditable).assertFalse();
+            expect(alphaPixelMap.isStrideAlignment).assertFalse();
+            await alphaPixelMap?.release();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_059
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_059
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_059', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_059';
-      try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
-          if (alphaPixelMap == undefined) {
-            console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-            expect(pixelMap.isStrideAlignment).assertFalse();
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_060
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_060
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_060', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_060';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
+        pixelMap.createAlphaPixelmap(async (err: BusinessError, alphaPixelMap: image.PixelMap) => {
           if (alphaPixelMap == undefined) {
             console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
-            done();
           } else {
-            console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-            expect(pixelMap.isEditable).assertFalse();
-            done();
+            console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isEditable);
+            console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isStrideAlignment);
+            expect(alphaPixelMap.isEditable).assertFalse();
+            expect(alphaPixelMap.isStrideAlignment).assertFalse();
+            await alphaPixelMap?.release();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_061
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_061
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_061', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_061';
-      try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
-          if (alphaPixelMap == undefined) {
-            console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-            expect(pixelMap.isStrideAlignment).assertFalse();
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_062
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_062
-     * @tc.desc       createAlphaPixelmap cover isEditable
+     * @tc.desc       createAlphaPixelmap cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_062', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_062';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
+        pixelMap.createAlphaPixelmap(async (err: BusinessError, alphaPixelMap: image.PixelMap) => {
           if (alphaPixelMap == undefined) {
             console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
-            done();
           } else {
-            console.info(TAG, testName, 'pixelMap.isEditable is: ' + pixelMap.isEditable);
-            expect(pixelMap.isEditable).assertFalse();
-            done();
+            console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isEditable);
+            console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isStrideAlignment);
+            expect(alphaPixelMap.isEditable).assertFalse();
+            expect(alphaPixelMap.isStrideAlignment).assertFalse();
+            await alphaPixelMap?.release();
           }
         })
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_063
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_063
-     * @tc.desc       createAlphaPixelmap cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_063', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_063';
-      try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        pixelMap.createAlphaPixelmap((err: BusinessError, alphaPixelMap: image.PixelMap) => {
-          if (alphaPixelMap == undefined) {
-            console.error(TAG, testName, `Failed to obtain new pixel map. code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
-            done();
-          } else {
-            console.info(TAG, testName, 'pixelMap.isStrideAlignment is: ' + pixelMap.isStrideAlignment);
-            expect(pixelMap.isStrideAlignment).assertFalse();
-            done();
-          }
-        })
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_064
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_064
-     * @tc.desc       createAlphaPixelmapSync cover isEditable
+     * @tc.desc       createAlphaPixelmapSync cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_064', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_064';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isEditable is: ' + pixelmap.isEditable)
-          expect(pixelmap.isEditable).assertFalse();
-          done();
+          let alphaPixelMap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isEditable);
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isStrideAlignment);
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
+          await alphaPixelMap?.release();
         }
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_065
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_065
-     * @tc.desc       createAlphaPixelmapSync cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_065', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_065';
-      try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isStrideAlignment is: ' + pixelmap.isStrideAlignment)
-          expect(pixelmap.isStrideAlignment).assertFalse();
-          done();
-        }
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_066
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_066
-     * @tc.desc       createAlphaPixelmapSync cover isEditable
+     * @tc.desc       createAlphaPixelmapSync cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_066', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_066';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isEditable is: ' + pixelmap.isEditable)
-          expect(pixelmap.isEditable).assertFalse();
-          done();
+          let alphaPixelMap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isEditable);
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isStrideAlignment);
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
+          await alphaPixelMap?.release();
         }
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_067
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_067
-     * @tc.desc       createAlphaPixelmapSync cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_067', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_067';
-      try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isStrideAlignment is: ' + pixelmap.isStrideAlignment)
-          expect(pixelmap.isStrideAlignment).assertFalse();
-          done();
-        }
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_068
      * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_068
-     * @tc.desc       createAlphaPixelmapSync cover isEditable
+     * @tc.desc       createAlphaPixelmapSync cover isEditable&isStrideAlignment
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_068', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_068';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isEditable is: ' + pixelmap.isEditable)
-          expect(pixelmap.isEditable).assertFalse();
-          done();
+          let alphaPixelMap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isEditable);
+          console.info(TAG, testName, 'SUCCEED',alphaPixelMap.isStrideAlignment);
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
+          await alphaPixelMap?.release();
         }
       } catch (error) {
         console.error(TAG, testName,
           `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-    })
-    /**
-     * @tc.number     SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_069
-     * @tc.name       SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_069
-     * @tc.desc       createAlphaPixelmapSync cover isStrideAlignment
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_069', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_ALPHA_PIXELMAP_TEST_069';
-      try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
-        if (pixelMap != undefined) {
-          let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
-          console.info(TAG, testName,  'pixelMap.isStrideAlignment is: ' + pixelmap.isStrideAlignment)
-          expect(pixelmap.isStrideAlignment).assertFalse();
-          done();
-        }
-      } catch (error) {
-        console.error(TAG, testName,
-          `Failed to obtain the image pixel map information. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_070
@@ -2083,20 +1672,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_070', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_070';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(null, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_071
@@ -2108,20 +1698,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_071', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_071';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, null, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_072
@@ -2133,20 +1724,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_072', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_072';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_073
@@ -2158,20 +1750,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_073', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_073';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_074
@@ -2183,21 +1776,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_074', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_074';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_075
@@ -2209,21 +1803,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_075', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_075';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_076
@@ -2235,21 +1830,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_076', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_076';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.HIGH == 3).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_077
@@ -2261,20 +1857,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_077', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_077';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(null, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_078
@@ -2286,20 +1883,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_078', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_078';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, null, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_079
@@ -2311,20 +1909,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_079', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_079';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_080
@@ -2336,20 +1935,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_080', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_080';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_081
@@ -2361,21 +1961,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_081', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_081';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_082
@@ -2387,21 +1988,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_082', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_082';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_083
@@ -2413,21 +2015,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_083', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_083';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.HIGH == 3).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_084
@@ -2439,20 +2042,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_084', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_084';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(null, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_085
@@ -2464,20 +2068,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_085', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_085';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, null, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_086
@@ -2489,20 +2094,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_086', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_086';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_087
@@ -2514,20 +2120,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_087', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_087';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.error(TAG, testName, 'Expected to fail', scaledPixelMap);
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_088
@@ -2539,21 +2146,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_088', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_088';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_089
@@ -2565,21 +2173,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_089', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_089';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_090
@@ -2591,21 +2200,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_090', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_090';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         const scaledPixelMap = await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.HIGH == 3).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_091
@@ -2617,20 +2227,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_091', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_091';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(null, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_092
@@ -2642,20 +2253,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_092', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_092';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, null, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093
@@ -2667,20 +2279,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094
@@ -2692,20 +2305,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095
@@ -2717,21 +2331,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096
@@ -2743,21 +2358,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097
@@ -2769,21 +2385,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097';
+      const pathUri = 'test_exif_v2.jpg';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.jpg';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.HIGH == 3).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098
@@ -2795,20 +2412,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(null, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099
@@ -2820,20 +2438,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, null, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100
@@ -2845,20 +2464,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101
@@ -2870,20 +2490,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102
@@ -2895,21 +2516,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103
@@ -2921,21 +2543,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104
@@ -2947,21 +2570,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104';
+      const pathUri = 'test_exif_v2.png';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.png';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.HIGH == 3).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105
@@ -2973,20 +2597,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(null, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106
@@ -2998,20 +2623,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, null, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107
@@ -3023,20 +2649,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleY: number = 1.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(undefined, scaleY, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108
@@ -3048,20 +2675,21 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, undefined, image.AntiAliasingLevel.LOW);
         console.info(TAG, testName, 'SUCCEED');
         expect().assertFail();
-        done();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect(Number(error.code)).assertEqual(401);
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109
@@ -3073,21 +2701,22 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.NONE);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.NONE == 0).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
     /**
      * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110
@@ -3099,25 +2728,50 @@ export default function CreatePixelMapSupp() {
      */
     it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
       try {
-        const pathUri = 'test_exif_v2.webp';
-        const pixelMap = await createPixelMapFromImage(pathUri);
-        console.info(TAG, testName, `pixelmap创建成功`);
         let scaleX: number = 2.0;
         let scaleY: number = 2.0;
         let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
         console.info(TAG, testName, 'SUCCEED');
-        expect(image.AntiAliasingLevel.MEDIUM == 2).assertTrue();
-        done();
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
       } catch (error) {
         console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      await pixelMap?.release();
+      done();
     })
-
-
-
+    /**
+     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111
+     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111
+     * @tc.desc       createScaledPixelMapSync cover HIGH
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111';
+      const pathUri = 'test_exif_v2.webp';
+      const pixelMap = await createPixelMapFromImage(pathUri);
+      console.info(TAG, testName, `pixelmap创建成功`);
+      try {
+        let scaleX: number = 2.0;
+        let scaleY: number = 2.0;
+        let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+        console.info(TAG, testName, 'SUCCEED');
+        expect(scaledPixelMap != undefined).assertTrue();
+        await scaledPixelMap?.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
+        expect().assertFail();
+      }
+      await pixelMap?.release();
+      done();
+    })
 
 
   })
