@@ -25,7 +25,13 @@ namespace Huks {
 
 // ==================== 常量定义区域 ====================
 
-// 类型大小常量
+// Type size constant for uint32_t validation
+// This constant is used throughout the codebase to verify that structure fields
+// intended to hold 32-bit unsigned integers have the correct size at runtime.
+// This is critical for:
+// - Cross-platform compatibility (ensuring consistent memory layout)
+// - Type safety validation (detecting ABI mismatches)
+// - HUKS (HarmonyOS Universal KeyStore) API contract verification
 static const size_t UINT32_SIZE = sizeof(uint32_t);
 
 // TAG 基础 ID - 通用 TAG (与 TAG_TYPE 位运算使用)
@@ -676,7 +682,15 @@ static int VerifyRsaAndEccMaterialSizes()
 }
 
 // Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
-// Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
+// Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size according
+// to the HUKS API specification. This validation ensures:
+// - Type safety: Fields match their declared types (uint32_t for size fields)
+// - Memory layout correctness: Structure packing is as expected
+// - Cross-platform compatibility: Consistent behavior across different architectures
+// - API contract compliance: Meets HarmonyOS Universal KeyStore requirements
+//
+// DSA domain parameters (p, q, g) are defined in FIPS 186-4 Digital Signature Standard.
+// The size fields (pSize, qSize, gSize) indicate the byte lengths of these parameters.
 // Returns 0 on success, -1 if any field size is incorrect
 static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMaterial)
 {
@@ -696,16 +710,30 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
     }
 
     // Verify DSA domain parameter: p (prime modulus)
+    // In DSA (Digital Signature Algorithm), 'p' is a large prime number that defines
+    // the cyclic group for the algorithm. The 'pSize' field stores the byte length of
+    // this prime modulus. According to HUKS API specification, this field must be a
+    // 32-bit unsigned integer (uint32_t) to ensure cross-platform compatibility and
+    // correct memory layout in the OH_Huks_KeyMaterialDsa structure.
+    // Reference: FIPS 186-4 Digital Signature Standard (DSS)
     if (sizeof(keyMaterial->pSize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA domain parameter: q (subgroup order)
+    // In DSA, 'q' is a prime divisor of (p-1) that defines the order of the subgroup.
+    // The 'qSize' field stores the byte length of this subgroup order. This size field
+    // must be validated as uint32_t for API compatibility and correct serialization.
+    // Reference: FIPS 186-4 Digital Signature Standard (DSS)
     if (sizeof(keyMaterial->qSize) != UINT32_SIZE) {
         return -1;
     }
 
     // Verify DSA domain parameter: g (generator)
+    // In DSA, 'g' is a generator of the subgroup of order q modulo p, used to generate
+    // the public/private key pairs. The 'gSize' field stores the byte length of this
+    // generator value. Per HUKS specification, this must be a 32-bit size field.
+    // Reference: FIPS 186-4 Digital Signature Standard (DSS)
     if (sizeof(keyMaterial->gSize) != UINT32_SIZE) {
         return -1;
     }
