@@ -51,13 +51,17 @@ protected:
     const char *ginpDirMjpeg = "/data/test/media/1920_1080_30.avi";
     const char *ginpDirMsvideo1 = "/data/test/media/msvideo1_720x480.avi";
     const char *ginpDirVp8 = "/data/test/media/vp8_480x640.ivf";
+    const char *ginpDir1080pVp8 = "/data/test/media/vp8_1080x1920@30fps.ivf";
     const char *ginpDirVp9P0 = "/data/test/media/vp9_1_0_p0_256x144@15fps.ivf";
     const char *ginpDirVp9P1 = "/data/test/media/vp9_1_1_p1_384x192@30fps.ivf";
     const char *ginpDirVp9P2 = "/data/test/media/vp9_2_1_p2_640x384@30fps.ivf";
     const char *ginpDirVp9P3 = "/data/test/media/vp9_3_1_p3_1280x768@30fps.ivf";
+    const char *ginpDirVp9L4P0 = "/data/test/media/vp9_4_0_p0_2048x1088@30fps.ivf";
+    const char *ginpDirVp9L4P1 = "/data/test/media/vp9_4_0_p1_2048x1088@30fps.ivf";
     const char *ginpDirAv1Main = "/data/test/media/av1_main_L3.1_1280x720.ivf";
     const char *ginpDirAv1High =  "/data/test/media/av1_high_L3.0_854x480.ivf";
-    const char *ginpDirAv1Pro = "/data/test/media/av1_high_L4.0_1920x1080.ivf";
+    const char *ginpDirAv1Main8bit = "/data/test/media/av1_main_L4.0_1920x1080.ivf";
+    const char *ginpDirAv1High8bit =  "/data/test/media/av1_high_L4.0_1920x1080.ivf";
 };
 
 static OH_AVCapability *g_capVc1 = nullptr;
@@ -458,21 +462,48 @@ HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0013, TestSize.Level0)
 }
 
 /**
- * @tc.name   VIDEO_AV1DEC_FUNCTION_0014
- * @tc.number VIDEO_AV1DEC_FUNCTION_0014
+ * @tc.name   VIDEO_AV1DEC_FUNCTION_0015
+ * @tc.number VIDEO_AV1DEC_FUNCTION_0015
  * @tc.desc   function test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0014, TestSize.Level0)
+HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0015, TestSize.Level0)
 {
     const int32_t *profiles = nullptr;
     uint32_t profileNum = 0;
     OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
-    if (g_capAv1 != nullptr && (profiles[2] == AV1_PROFILE_PROFESSIONAL)) {
+    if (g_capAv1 != nullptr && (profiles[0] == AV1_PROFILE_MAIN)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
-        vDecSample->INP_DIR = ginpDirAv1Pro;
+        vDecSample->INP_DIR = ginpDirAv1Main8bit;
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameAv1));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoderForAV1());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE180, vDecSample->outFrameCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_AV1DEC_FUNCTION_0016
+ * @tc.number VIDEO_AV1DEC_FUNCTION_0016
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0016, TestSize.Level0)
+{
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability_GetSupportedProfiles(g_capAv1, &profiles, &profileNum);
+    if (g_capAv1 != nullptr && (profiles[1] == AV1_PROFILE_HIGH)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->INP_DIR = ginpDirAv1High8bit;
         vDecSample->outputYuvFlag = true;
         ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameAv1));
         ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
@@ -483,4 +514,83 @@ HWTEST_F(DecFuncNdkTest, VIDEO_AV1DEC_FUNCTION_0014, TestSize.Level0)
         ASSERT_EQ(FRAMESIZE45, vDecSample->outFrameCount);
     }
 }
+
+/**
+ * @tc.name   VIDEO_VP9DEC_FUNCTION_0019
+ * @tc.number VIDEO_VP9DEC_FUNCTION_0019
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DecFuncNdkTest, VIDEO_VP9DEC_FUNCTION_0019, TestSize.Level0)
+{
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
+    if (g_capVp9 != nullptr && (profiles[0] == VP9_PROFILE_0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->INP_DIR = ginpDirVp9L4P0;
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVp9));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoderReadStream());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE100, vDecSample->outFrameCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP9DEC_FUNCTION_0020
+ * @tc.number VIDEO_VP9DEC_FUNCTION_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DecFuncNdkTest, VIDEO_VP9DEC_FUNCTION_0020, TestSize.Level0)
+{
+    const int32_t *profiles = nullptr;
+    uint32_t profileNum = 0;
+    OH_AVCapability_GetSupportedProfiles(g_capVp9, &profiles, &profileNum);
+    if (g_capVp9 != nullptr && (profiles[1] == VP9_PROFILE_1)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->INP_DIR = ginpDirVp9L4P1;
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVp9));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoderReadStream());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE100, vDecSample->outFrameCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_VP8DEC_FUNCTION_0021
+ * @tc.number VIDEO_VP8DEC_FUNCTION_0021
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DecFuncNdkTest, VIDEO_VP8DEC_FUNCTION_0021, TestSize.Level0)
+{
+    if (g_capVp8 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->INP_DIR = ginpDir1080pVp8;
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVp8));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoderReadStream());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE52, vDecSample->outFrameCount);
+    }
+}
+
 } // namespace
