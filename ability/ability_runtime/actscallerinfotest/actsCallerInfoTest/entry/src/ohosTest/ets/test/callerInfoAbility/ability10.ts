@@ -59,37 +59,7 @@ export default class CallerInfo10 extends UIAbility {
 
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo10 onForeground');
-    let caller: Caller;
-    // 前台启动Ability，将parameters中的'ohos.aafwk.param.callAbilityToForeground'配置为true
-    let wantForeground: Want = {
-      bundleName: 'com.example.myapplication',
-      moduleName: 'entry_test',
-      abilityName: 'callerInfo10',
-      deviceId: '',
-      parameters: {
-        'ohos.aafwk.param.callAbilityToForeground': true
-      }
-    };
-
-    try {
-      this.context.startAbilityByCall(wantForeground)
-        .then((obj: Caller) => {
-          // 执行正常业务
-          caller = obj;
-          console.info('startAbilityByCall succeed');
-        }).catch((err: BusinessError) => {
-        // 处理业务逻辑错误
-        console.error(`startAbilityByCall failed, code is ${err.code}, message is ${err.message}`);
-      });
-    } catch (err) {
-      // 处理入参错误异常
-      let code = (err as BusinessError).code;
-      let message = (err as BusinessError).message;
-      console.error(`startAbilityByCall failed, code is ${code}, message is ${message}`);
-    }
-    setTimeout( () => {
-      globalThis.CallerInfo10.terminateSelf();
-    }, 2000);
+    commonEventManager.publish('CallerInfo10_onForeground', () => {});
   }
 
   onBackground():void {

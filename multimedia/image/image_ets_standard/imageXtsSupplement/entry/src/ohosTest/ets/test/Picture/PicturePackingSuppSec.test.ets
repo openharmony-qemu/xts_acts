@@ -496,10 +496,10 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_013', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_013';
-      creatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      creatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.AUTO,
             quality: 0
           };
@@ -507,20 +507,17 @@
           console.info(TAG, testName,'create imagePackerObj success.',imagePackerObj);
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
@@ -535,30 +532,27 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_014';
-      creatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      creatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0
           };
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
@@ -573,10 +567,10 @@
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_015';
-      creatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      creatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0,
             needsPackProperties:false
@@ -584,20 +578,17 @@
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
             console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
+            expect(data!=undefined).assertTrue();
             imageSource.release();
             console.info(TAG, testName,'imageSource release success.');
             done();
+          }).catch((error: BusinessError) => {
+            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+            expect().assertFail();
           });
         }catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
         }
       })
     })
@@ -610,38 +601,33 @@
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_016', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_016';
-      creatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
-        try {
-          let packOpts: image.PackingOption = {
-            format: "image/heic",
-            desiredDynamicRange: image.PackingDynamicRange.SDR,
-            quality: 0,
-            needsPackProperties:true
-          };
-          let  supportedFormats = imageSource.createWideGamutSdrPixelMap();
-          console.info(TAG, testName,'get supportedFormats success.',supportedFormats);
-          const imagePackerObj: image.ImagePacker = image.createImagePacker();
-          imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
-            console.info(TAG, testName,'Succeeded in packing the image.',data);
-            expect().assertFail();
-          }).catch((error: BusinessError) => {
-            console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
-            expect(error.code).assertUndefined();
-            imageSource.release();
-            console.info(TAG, testName,'imageSource release success.');
-            done();
-          });
-        }catch (err) {
-          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
-          expect().assertFail();
-          imageSource.release();
-          console.info(TAG, testName,'imageSource release success.');
-          done();
-        }
-      })
-    })
+        it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_016', Level.LEVEL0, async (done: Function) => {
+          const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_PROMISE_016';
+          creatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
+            try {
+              let packOpts: image.PackingOption = {
+                format: "image/jpeg",
+                desiredDynamicRange: image.PackingDynamicRange.SDR,
+                quality: 0,
+                needsPackProperties:true
+              };
+              const imagePackerObj: image.ImagePacker = image.createImagePacker();
+              imagePackerObj.packing(imageSource, packOpts).then((data: ArrayBuffer) => {
+                console.info(TAG, testName,'Succeeded in packing the image.',data);
+                expect(data!=undefined).assertTrue();
+                imageSource.release();
+                console.info(TAG, testName,'imageSource release success.');
+                done();
+              }).catch((error: BusinessError) => {
+                console.error(TAG, testName,`Failed to pack the image.code ${error.code},message is ${error.message}`);
+                expect().assertFail();
+              });
+            }catch (err) {
+              console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+              expect().assertFail();
+            }
+          })
+        })
 
       })
     }

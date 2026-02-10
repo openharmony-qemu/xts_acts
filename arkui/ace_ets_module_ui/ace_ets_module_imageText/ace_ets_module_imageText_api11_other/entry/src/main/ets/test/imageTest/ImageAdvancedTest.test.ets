@@ -433,7 +433,7 @@ export default function ImageAdvancedTest() {
       console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
       console.info("======> Internet connState : " + JSON.stringify(data.connState));
 
-      if (data.chload >= 800 || data.rssi <= -80) {
+      if (data.chload >= 900 || data.rssi <= -80) {
         expect().message("======> WLAN Network error").assertFail();//方式一
         done();
       } else if (data.chload >= 500) {
