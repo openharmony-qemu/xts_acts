@@ -22,7 +22,11 @@ export default function testsuite() {
   let simState = sim.getSimStateSync(0);
 
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
-    CallManagerTest();
+    if (sim.hasSimCardSync(0)) {
+      CallManagerTest();
+    } else {
+      EmptyTest()
+    }
   }else{
     EmptyTest()
   }
