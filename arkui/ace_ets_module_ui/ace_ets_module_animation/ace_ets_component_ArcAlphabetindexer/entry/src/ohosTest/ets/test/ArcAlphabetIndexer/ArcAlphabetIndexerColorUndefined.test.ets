@@ -18,6 +18,10 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@system.router';
 import CommonFunc from '../../MainAbility/utils/Common';
 
+interface optionsObj {
+  uri: string
+}
+
 export default function ArcAlphabetIndexerColorUndefinedTest() {
   describe('ArcAlphabetIndexerColorUndefinedTest', () => {
     beforeAll(async () => {
