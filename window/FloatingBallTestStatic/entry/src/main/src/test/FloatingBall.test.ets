@@ -229,7 +229,6 @@ export default function FloatingBallTest() {
             expect(issupportFloatingBall).assertEqual(true);
             floatingBallController.stopFloatingBall().then(() => {
               console.info(CaseName+ 'Succeeded in stopping floating ball.');
-              expect(true).assertTrue();
               done();
             }).catch((err: Error):void => {
               console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
@@ -326,7 +325,6 @@ export default function FloatingBallTest() {
             console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();
             if(err.code == 1300019){
-              expect(true).assertTrue();
               done();
             }
             else{
@@ -490,7 +488,6 @@ export default function FloatingBallTest() {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -540,7 +537,6 @@ export default function FloatingBallTest() {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -591,7 +587,6 @@ export default function FloatingBallTest() {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -635,7 +630,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -685,7 +679,6 @@ export default function FloatingBallTest() {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -735,7 +728,6 @@ export default function FloatingBallTest() {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -780,7 +772,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -827,7 +818,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -872,7 +862,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -921,7 +910,6 @@ export default function FloatingBallTest() {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
           if(err.code == 1300019){
-            expect(true).assertTrue();
             done();
           }
           else{
@@ -966,7 +954,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1013,7 +1000,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1058,7 +1044,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1102,7 +1087,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1149,7 +1133,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1196,7 +1179,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1241,7 +1223,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1285,7 +1266,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1332,7 +1312,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1379,7 +1358,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1424,7 +1402,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1468,7 +1445,6 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1797,7 +1773,6 @@ export default function FloatingBallTest() {
           floatingBallController.updateFloatingBall(updateParams).then(() => {
             console.info(CaseName+ ' Succeeded in updating floating ball.');
             floatingBallController.stopFloatingBall();
-            expect(true).assertTrue();
             done();
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1858,7 +1833,6 @@ export default function FloatingBallTest() {
           floatingBallController.updateFloatingBall(updateParams).then(() => {
             console.info(CaseName+ ' Succeeded in updating floating ball.');
             floatingBallController.stopFloatingBall();
-            expect(true).assertTrue();
             done();
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
@@ -1919,7 +1893,6 @@ export default function FloatingBallTest() {
           floatingBallController.updateFloatingBall(updateParams).then(() => {
             console.info(CaseName+ ' Succeeded in updating floating ball.');
             floatingBallController.stopFloatingBall();
-            expect(true).assertTrue();
             done();
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
@@ -2064,7 +2037,6 @@ export default function FloatingBallTest() {
               console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
               floatingBallController.stopFloatingBall().then(() => {
                 console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-                expect(true).assertTrue();
                 done()
               }).catch((err: Error):void => {
                 console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
@@ -2911,8 +2883,6 @@ export default function FloatingBallTest() {
 
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
-          floatingBallController.stopFloatingBall();
-          expect(true).assertTrue();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
