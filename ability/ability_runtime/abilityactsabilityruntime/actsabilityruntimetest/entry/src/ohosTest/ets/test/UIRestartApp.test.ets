@@ -43,7 +43,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(null);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -68,7 +68,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -97,7 +97,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -127,7 +127,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -156,7 +156,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -185,7 +185,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
@@ -215,7 +215,7 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          if (err?.code == 801) {
+          if (err?.code === 801) {
             expect(err.code).assertEqual(801)
             done()
           }else {
