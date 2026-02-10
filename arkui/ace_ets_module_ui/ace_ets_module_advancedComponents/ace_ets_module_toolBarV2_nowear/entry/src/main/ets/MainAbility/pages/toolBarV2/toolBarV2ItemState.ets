@@ -33,7 +33,7 @@ struct ToolBarItemState {
       .backgroundColor(ColorMetrics.resourceColor(Color.Transparent))
       .padding(LengthMetrics.vp(5))
       .stateEffect(false);
-  @Local toolBarModifier_undefined: ToolBarV2Modifier =
+  @Local toolBarModifierUndefined: ToolBarV2Modifier =
     new ToolBarV2Modifier().height(LengthMetrics.vp(52))
       .backgroundColor(ColorMetrics.resourceColor(Color.Red))
       .padding(LengthMetrics.vp(-5))
