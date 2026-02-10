@@ -33,7 +33,7 @@ async function mouseMoveToCommonEvent(id: string) {
 export default function buttonOnClickEventTest() {
 
   describe('ButtonOnHoverTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api17_static", "EntryAbility")
       let PAGE_TAG = 'ButtonOnHoverEventTest';
       Utils.pushPage(`button/${PAGE_TAG}`, false);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -128,7 +128,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -190,7 +190,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -252,7 +252,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -314,7 +314,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()

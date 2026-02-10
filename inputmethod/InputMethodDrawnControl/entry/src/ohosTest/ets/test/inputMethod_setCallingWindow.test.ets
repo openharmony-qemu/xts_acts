@@ -299,6 +299,100 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_setCallingWindowPromise_0100
+     * @tc.number Sub_InputMethod_IMF_setCallingWindowPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_setCallingWindowPromise_0100', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_setCallingWindowPromise_0100';
+      try {
+        let data = await inputMethod.getController().setCallingWindow(null);
+        console.info(`${CASE_NAME} execution success, data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        done();
+
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, except error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_setCallingWindowPromise_0200
+     * @tc.number Sub_InputMethod_IMF_setCallingWindowPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_setCallingWindowPromise_0200', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_setCallingWindowPromise_0200';
+      try {
+        let data = await inputMethod.getController().setCallingWindow(undefined);
+        console.info(`${CASE_NAME} execution success, data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        done();
+
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, except error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_setCallingWindowCallback_0100
+     * @tc.number Sub_InputMethod_IMF_setCallingWindowCallback_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_setCallingWindowCallback_0100', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_setCallingWindowCallback_0100';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+          console.info(`${CASE_NAME} CallBack success`);
+          expect().assertFail();
+          done();
+      };
+      try {
+        inputMethod.getController().setCallingWindow(null, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, except error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_setCallingWindowCallback_0200
+     * @tc.number Sub_InputMethod_IMF_setCallingWindowCallback_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_setCallingWindowCallback_0200', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_setCallingWindowCallback_0200';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+          console.info(`${CASE_NAME} CallBack success`);
+          expect().assertFail();
+          done();
+      };
+      try {
+        inputMethod.getController().setCallingWindow(undefined, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, except error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_Misc_inputMethod_setCallingWindow_Promise_0600
      * @tc.number SUB_Misc_inputMethod_setCallingWindow_Promise_0600
      * @tc.desc   Function test

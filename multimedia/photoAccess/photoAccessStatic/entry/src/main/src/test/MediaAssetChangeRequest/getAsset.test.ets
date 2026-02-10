@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,16 +44,16 @@ export default function getAsset() {
           let extension = 'jpg';
           let assetChangeRequest =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(appContext, photoType, extension);
-          expect(assetChangeRequest.getAsset()).assertEqual(null);
-          assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1000));
-          await helper.applyChanges(assetChangeRequest);
-          let asset = assetChangeRequest.getAsset();
+          expect((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset()).assertEqual(null);
+          (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1000));
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
+          let asset = (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset();
           if (asset === null || asset === undefined || !asset.uri.match('file://media/Photo')) {
             console.error(`${testNum} failed to get asset after applyChanges`);
             expect(false).assertTrue();
           }
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();

@@ -54,9 +54,9 @@ export default function ActsAceWebSafeBrowsing() {
      * @tc.desc   test EnableSafeBrowsingTrue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testEnableSafeBrowsingTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testEnableSafeBrowsingTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitEnableSafeBrowsingTrue", 10);

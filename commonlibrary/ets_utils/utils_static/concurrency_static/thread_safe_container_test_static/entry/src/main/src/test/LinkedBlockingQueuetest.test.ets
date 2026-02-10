@@ -1085,7 +1085,7 @@ export default function LinkedBlockingQueuetest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("linked_Blocking_Queue_Test_static_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it("linked_Blocking_Queue_Test_static_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let queueInt: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       let t = new taskpool.Task((queueIntTemp: containers.LinkedBlockingQueue<int>) => {
         for (let i:int = 0; i < 10; i++) {

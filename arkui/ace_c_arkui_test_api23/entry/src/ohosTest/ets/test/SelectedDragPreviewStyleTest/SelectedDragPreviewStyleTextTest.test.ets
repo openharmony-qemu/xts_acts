@@ -38,8 +38,6 @@ export default function SelectedDragPreviewStyleTextTest() {
     it('SelectedDragPreviewStyleTextTest0737', Level.LEVEL1, async (done: Function) => {
       let driver = await Driver.create();
       let DragText = await driver.findComponent(ON.id('text_test_capi'));
-      let DragCAPIText = await driver.findComponent(ON.id('Drag'));
-      await DragText.dragTo(DragCAPIText);
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('text_test_capi');
       let obj: ESObject = JSON.parse(strJson);

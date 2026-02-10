@@ -222,7 +222,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest0900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (a ? 1 : 0) - (b ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -247,7 +247,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (b ? 1 : 0) - (a ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -272,7 +272,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, true, false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (a ? 1 : 0) - (b ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -300,7 +300,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true, false, true, true, false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (b ? 1 : 0) - (a ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -328,7 +328,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (a ? 1 : 0) - (b ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -352,7 +352,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [true];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (b ? 1 : 0) - (a ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -376,7 +376,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (a ? 1 : 0) - (b ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -400,7 +400,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest1600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<boolean> = [false];
-        const comparator = (a: boolean, b: boolean): number => {
+        const comparator = (a: boolean, b: boolean): int => {
           return (b ? 1 : 0) - (a ? 1 : 0);
         };
         const result = toSorted(arr, comparator);
@@ -609,8 +609,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest2500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [20, 30, 10];
-        const comparator = (a: byte, b: byte): number => {
-          return a - b;
+        const comparator = (a: byte, b: byte): int => {
+          return (a - b).toInt()
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [10, 20, 30];
@@ -635,8 +635,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest2600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [20, 30, 10];
-        const comparator = (a: byte, b: byte): number => {
-          return b - a;
+        const comparator = (a: byte, b: byte): int => {
+          return (b - a).toInt()
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [30, 20, 10];
@@ -661,8 +661,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest2700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [-20, -30, -10, -40];
-        const comparator = (a: byte, b: byte): number => {
-          return a - b;
+        const comparator = (a: byte, b: byte): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [-40, -30, -20, -10];
@@ -688,8 +688,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest2800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [-20, -30, -10, -40];
-        const comparator = (a: byte, b: byte): number => {
-          return b - a;
+        const comparator = (a: byte, b: byte): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [-10, -20, -30, -40];
@@ -715,8 +715,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest2900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [-20, 30, -10, -40, 50];
-        const comparator = (a: byte, b: byte): number => {
-          return a - b;
+        const comparator = (a: byte, b: byte): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [-40, -20, -10, 30, 50];
@@ -743,8 +743,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest3000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [-20, 30, -10, -40, 50];
-        const comparator = (a: byte, b: byte): number => {
-          return b - a;
+        const comparator = (a: byte, b: byte): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [50, 30, -10, -20, -40];
@@ -771,8 +771,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest3100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [99, 99, 99];
-        const comparator = (a: byte, b: byte): number => {
-          return a - b;
+        const comparator = (a: byte, b: byte): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [99, 99, 99];
@@ -797,8 +797,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest3200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, -100, 100];
-        const comparator = (a: byte, b: byte): number => {
-          return b - a;
+        const comparator = (a: byte, b: byte): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<byte> = [100, 0, -100];
@@ -986,7 +986,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x43.toChar(), 0x42.toChar(), 0x41.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return a.toInt() - b.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1012,7 +1012,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x43.toChar(), 0x41.toChar(),  0x42.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return b.toInt() - a.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1038,7 +1038,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x30.toChar(), 0x36.toChar(), 0x32.toChar(), 0x31.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return a.toInt() - b.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1065,7 +1065,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x30.toChar(), 0x36.toChar(), 0x32.toChar(), 0x31.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return b.toInt() - a.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1092,7 +1092,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x36.toChar(), 0x36.toChar(), 0x30.toChar(), 0x36.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return a.toInt() - b.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1119,7 +1119,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x36.toChar(), 0x36.toChar(), 0x30.toChar(), 0x36.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return b.toInt() - a.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1146,7 +1146,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x55.toChar(), 0x4F.toChar(), 0x54.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return a.toInt() - b.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1172,7 +1172,7 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest4800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x55.toChar(), 0x4F.toChar(), 0x54.toChar()];
-        const comparator = (a: char, b: char): number => {
+        const comparator = (a: char, b: char): int => {
           return b.toInt() - a.toInt();
         };
         const result = toSorted(arr, comparator);
@@ -1383,8 +1383,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest5700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [222.22, 333.33, 111.11];
-        const comparator = (a: double, b: double): number => {
-          return a - b;
+        const comparator = (a: double, b: double): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [111.11, 222.22, 333.33];
@@ -1409,8 +1409,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [222.22, 333.33, 111.11];
-        const comparator = (a: double, b: double): number => {
-          return b - a;
+        const comparator = (a: double, b: double): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [333.33, 222.22, 111.11];
@@ -1435,8 +1435,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [-222.22, -333.33, -111.11];
-        const comparator = (a: double, b: double): number => {
-          return a - b;
+        const comparator = (a: double, b: double): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [-333.33, -222.22, -111.11];
@@ -1461,8 +1461,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest6000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [-222.22, -333.33, -111.11];
-        const comparator = (a: double, b: double): number => {
-          return b - a;
+        const comparator = (a: double, b: double): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [-111.11, -222.22, -333.33];
@@ -1487,8 +1487,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest6100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [-222.22, 333.33, -111.11];
-        const comparator = (a: double, b: double): number => {
-          return a - b;
+        const comparator = (a: double, b: double): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [-222.22, -111.11, 333.33];
@@ -1513,8 +1513,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest6200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [-222.22, 333.33, -111.11];
-        const comparator = (a: double, b: double): number => {
-          return b - a;
+        const comparator = (a: double, b: double): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [333.33, -111.11, -222.22];
@@ -1539,8 +1539,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 0.0, -1.1, 0.0];
-        const comparator = (a: double, b: double): number => {
-          return a - b;
+        const comparator = (a: double, b: double): int => {
+          return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [-1.1, 0.0, 0.0, 1.1];
@@ -1566,8 +1566,8 @@ export default function ArrayToSortedTest() {
         const caseName = 'ArrayToSortedTest6400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<double> = [1.1, 0.0, -1.1, 0.0];
-        const comparator = (a: double, b: double): number => {
-          return b - a;
+        const comparator = (a: double, b: double): int => {
+          return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<double> = [1.1, 0.0, 0.0, -1.1];

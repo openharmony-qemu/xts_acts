@@ -74,7 +74,7 @@ class CustomApplicationStateObserver implements appManager.ApplicationStateObser
 
 export default function abilitystaticTest() {
   describe('ActsAbilityStaticTest', (): void => {
-    let testAbilityContext: common.UIAbilityContext;
+    let testAbilityContext: common.UIAbilityContext | undefined;
     const BUNDLE_NAME: string = 'com.example.startuiserviceextensiontest.static';
     const RELY_BUNDLE_NAME: string = 'com.acts.startuiserviceextensionrely.static';
 
@@ -103,9 +103,9 @@ export default function abilitystaticTest() {
      * @tc.desc   Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WantConstant_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WantConstant_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = "SUB_Ability_AbilityRuntime_WantConstant_Static_0100";
       hilog.info(domain, tag, '====> [SUB_Ability_AbilityRuntime_WantConstant_Static_0100] start');
       expect(wantConstant.Params.APP_INSTANCE_KEY + '').assertEqual("ohos.extra.param.key.appInstance")
@@ -121,13 +121,13 @@ export default function abilitystaticTest() {
      * @tc.desc   When app not support capability, an error code is returned.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tag = "SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getAllRunningInstanceKeys_Static_0100] start');
       try {
-        testAbilityContext.getApplicationContext().getAllRunningInstanceKeys()
+        testAbilityContext?.getApplicationContext().getAllRunningInstanceKeys()
       } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
@@ -144,13 +144,13 @@ export default function abilitystaticTest() {
      * @tc.desc   When app not support capability, an error code is returned.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tag = "SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100";
       console.info('====> [SUB_Ability_AbilityRuntime_getCurrentInstanceKey_Static_0100] start');
       try {
-        testAbilityContext.getApplicationContext().getCurrentInstanceKey()
+        testAbilityContext?.getApplicationContext().getCurrentInstanceKey()
       } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
@@ -167,9 +167,9 @@ export default function abilitystaticTest() {
      * @tc.desc   Call the interface to return whether the current application is running
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,  async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_AppManager_Static_0100`;
       hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0100 begin`);
       try {
@@ -215,7 +215,7 @@ export default function abilitystaticTest() {
             bundleName: `${RELY_BUNDLE_NAME}`,
             abilityName: 'EntryAbility'
           }
-          await testAbilityContext.startAbility(want);
+          await testAbilityContext!.startAbility(want);
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} AppStateData assert start`);
@@ -269,9 +269,9 @@ export default function abilitystaticTest() {
      * @tc.desc   Test the third-party application with permission call killProcessesByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AppManager_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,  async (done: () => void): Promise<void> => {
       let bundleName = "com.ohos.application";
       try {
         appManager.killProcessesByBundleName(bundleName, false).then(() => {

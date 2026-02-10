@@ -22,6 +22,7 @@ import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import eventBus from '../lib/EventBus';
 
 export default class TestAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -58,6 +59,7 @@ export default class TestAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onForeground');
+    eventBus.emit('TestAbility_onForeground');
   }
 
   onBackground() {

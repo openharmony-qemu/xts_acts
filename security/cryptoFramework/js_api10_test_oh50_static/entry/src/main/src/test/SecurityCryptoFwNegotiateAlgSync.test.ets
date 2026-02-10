@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -81,7 +81,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -110,7 +110,7 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -132,9 +132,9 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
         let keyPair_B: cryptoFramework.KeyPair = await negotiateAlgSyncUtils.generateKey(algName);
         negotiateAlgSyncUtils.eccKeyAgreement(algName, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -155,9 +155,9 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -178,9 +178,9 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -201,9 +201,9 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -224,9 +224,9 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });

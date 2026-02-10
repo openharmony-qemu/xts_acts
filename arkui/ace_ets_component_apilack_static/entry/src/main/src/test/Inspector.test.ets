@@ -209,7 +209,7 @@ it('testInspectorTestAdd_static_0005', Level.LEVEL0, async () => {
             priority: events_emitter.EventPriority.LOW
           }
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testInspectorTestAdd0005] change component data error: " + err.message);
         }
       }catch(error) {

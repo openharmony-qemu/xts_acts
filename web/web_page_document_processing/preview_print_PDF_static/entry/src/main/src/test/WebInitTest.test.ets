@@ -67,9 +67,9 @@ export default function webInitTest() {
      * @tc.desc   test deleteAllGeolocation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetPrintBackgroundOneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 	  await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundOne', 10)
 	  await Utils.msSleep(4000);

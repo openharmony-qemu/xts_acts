@@ -389,14 +389,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]001
+     * @tc.name   testParamsSymboliterator001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02100
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParams[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsSymboliterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLParams("key1=value1&key2=value2");
         var i=0;
         var arr={};
@@ -410,14 +410,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]002
+     * @tc.name   testParams002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02200
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParams[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -431,14 +431,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]003
+     * @tc.name   testParamsSymbolIterator003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02300
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParams[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParamsSymbolIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("foo","jk")
         var i=0;
@@ -453,14 +453,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]004
+     * @tc.name   testParams004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02400
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParams[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         var i=0;
         var arr={};
@@ -474,14 +474,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]005
+     * @tc.name   testParams005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02500
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testParams[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('testParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let params = new Url.URLParams("key1=value1&key2=value2")
         params.append("jss","txt")
         var i=0;

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, Level, Size, TestType, it, expect } from '@ohos/hypium';
+import { beforeAll, describe, Level, Size, TestType, it, expect } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { SetParam, SetInData, MergeOptions, CheckSoftware } from './utils/huks/HuksOptionsUtils';
@@ -37,7 +37,11 @@ import { HuksMaxGroupId, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 export default function abilityTest() {
+  let useSoftware: boolean = true;
   describe('SecurityHuksGroupTest', () => {
+    beforeAll(async () => {
+      useSoftware = await CheckSoftware();
+    })
     /**
      * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0100
      * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0100
@@ -397,7 +401,9 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1700";
         let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMinGroupId));
@@ -716,7 +722,9 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3300";
         let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMaxGroupId));
@@ -1038,7 +1046,9 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4800";
         let attestOptions =
           SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
@@ -1354,7 +1364,9 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6300";
         let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array("group_not_exist"));

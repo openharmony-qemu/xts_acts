@@ -108,7 +108,7 @@ it('testColumn_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("[testColumn_static_02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testColumn_static_02] change component data error: " + err.message);
       }
       await Utils.sleep(1000);

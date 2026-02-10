@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,7 +108,7 @@ struct WebViewControllerDownloadTest {
             case 'testSetDownloadDelegate001': {
               try {
                 Utils.emitEvent(this.hasSetDownloadDelegate, 79520)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -117,7 +117,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrl);
                 Utils.emitEvent(true, 79530)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -128,7 +128,7 @@ struct WebViewControllerDownloadTest {
                 if (this.currentDownloadState == webview.WebDownloadState.IN_PROGRESS) {
                   Utils.emitEvent(this.currentDownloadState, 79540);
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -137,7 +137,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.testCompleted = true
                 this.controller.startDownload(this.downloadUrlImg);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -151,7 +151,7 @@ struct WebViewControllerDownloadTest {
                 if ( this.currentDownloadState == webview.WebDownloadState.CANCELED) {
                   Utils.emitEvent(this.currentDownloadState, 79544)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -163,7 +163,7 @@ struct WebViewControllerDownloadTest {
                 if (this.currentDownloadState == webview.WebDownloadState.INTERRUPTED) {
                   Utils.emitEvent(this.currentDownloadState, 79546)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -175,7 +175,7 @@ struct WebViewControllerDownloadTest {
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(this.currentDownloadState, 79548)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -194,7 +194,7 @@ struct WebViewControllerDownloadTest {
                   Utils.emitEvent(webview.WebDownloadState.PAUSED, 79550)
                 }
                 console.log('testWebDownloadState006:' + this.currentDownloadState)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -206,7 +206,7 @@ struct WebViewControllerDownloadTest {
                 if (this.guids.length >= 1) {
                   Utils.emitEvent(true, 79650)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -220,7 +220,7 @@ struct WebViewControllerDownloadTest {
                   Utils.emitEvent(true, 79652)
                 }
 
-              } catch (error: BusinessError) {
+              } catch (error) {
                 
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -234,7 +234,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79654)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -245,7 +245,7 @@ struct WebViewControllerDownloadTest {
                 if ( this.percentComplete > 0 && this.percentComplete <= 100 ) {
                   Utils.emitEvent(true , 79656)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -256,7 +256,7 @@ struct WebViewControllerDownloadTest {
                 if(this.percentComplete == 100) {
                   Utils.emitEvent(this.percentComplete == 100, 79658)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -271,7 +271,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79660)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -284,7 +284,7 @@ struct WebViewControllerDownloadTest {
                 if (this.methods.length > 0) {
                   Utils.emitEvent(true, 79662)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -296,7 +296,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('image/png')>-1) {
                   Utils.emitEvent(true, 79664)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -308,7 +308,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('video/mp4') > -1 ) {
                   Utils.emitEvent(true, 79666)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -320,7 +320,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('application/x-msdownload') > -1) {
                   Utils.emitEvent(true, 79668)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -332,7 +332,7 @@ struct WebViewControllerDownloadTest {
                 if (this.urls.indexOf(this.downloadUrl) > -1) {
                   Utils.emitEvent(true, 79670)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -343,7 +343,7 @@ struct WebViewControllerDownloadTest {
                 if (this.downloadUrl.indexOf(this.suggestedFileName) > -1) {
                   Utils.emitEvent(true, 79672)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -354,7 +354,7 @@ struct WebViewControllerDownloadTest {
                 if (this.receivedBytes > 0 && this.receivedBytes == this.totalBytes) {
                   Utils.emitEvent(true, 79674)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -366,7 +366,7 @@ struct WebViewControllerDownloadTest {
                 if (this.savePath == this.fullPath ) {
                   Utils.emitEvent(true, 79676)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -382,7 +382,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79678)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -415,7 +415,7 @@ struct WebViewControllerDownloadTest {
                     }
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -434,7 +434,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(webview.WebDownloadState.IN_PROGRESS, 79692)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -445,7 +445,7 @@ struct WebViewControllerDownloadTest {
                 if(this.onBeforeDownloadCalled) {
                   Utils.emitEvent(true, 79700)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -454,7 +454,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrl);
                 Utils.emitEvent(this.onDownloadUpdatedCalled, 79702)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -465,7 +465,7 @@ struct WebViewControllerDownloadTest {
                 if(this.onDownloadFinishCalled) {
                   Utils.emitEvent(this.onDownloadFinishCalled, 79704)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -473,7 +473,7 @@ struct WebViewControllerDownloadTest {
             case 'testWebDownloadManagerSetDownloadDelegate001': {
               try {
                 Utils.emitEvent(this.hasSetDownloadDelegate, 79750)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -494,7 +494,7 @@ struct WebViewControllerDownloadTest {
                     }
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -787,7 +787,7 @@ struct WebViewControllerDownloadTest {
               this.controller.setDownloadDelegate(this.delegate);
               webview.WebDownloadManager.setDownloadDelegate(this.delegate);
               this.hasSetDownloadDelegate = true
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
             }
           }

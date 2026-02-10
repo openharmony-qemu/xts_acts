@@ -106,7 +106,7 @@ it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async (
         console.info("PersistProp0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('PersistPropText', 10, "")));
         emitter.on(innerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("common_ts_ets_apiPersistProp0001 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -136,7 +136,7 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
         }
         console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
         emitter.on(innerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("common_ts_ets_apiEnvProp0001 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -162,7 +162,7 @@ it('test_font_registerFont__static_0001', Level.LEVEL2, async () => {
       try {
         uiContext.getFont().registerFont(fontOptions);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
         expect().assertFail();
 

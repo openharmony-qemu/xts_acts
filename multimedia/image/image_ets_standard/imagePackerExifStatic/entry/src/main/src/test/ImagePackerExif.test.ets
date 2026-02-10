@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ import { initialize } from './AbilityContextHelper.test';
 
 let filesDir: string | undefined | null;
 let cacheDir: string | undefined | null;
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 
 class picType {
   public name: string = ""
@@ -85,7 +85,7 @@ export default function imagePackerExifTest() {
       }
     ]
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       cacheDir = Hypium.get('cacheDir') as string | undefined | null;
@@ -96,10 +96,10 @@ export default function imagePackerExifTest() {
       const options: image.ImagePropertyOptions = {
         index: 0, defaultValue: 'undefined'
       }
-      return imageSource.getImageProperty(propertyKey, options)
+      return await imageSource.getImageProperty(propertyKey, options)
     }
 
-    const propertyComp = (tag: string, key: image.PropertyKey, newImageSource: image.ImageSource,
+    const propertyComp = async (tag: string, key: image.PropertyKey, newImageSource: image.ImageSource,
                                 oldImageSource: image.ImageSource, fileName: string) => {
       let result: boolean = true
       const imagePropertyOld = await getImageProperty(key, oldImageSource)
@@ -111,14 +111,15 @@ export default function imagePackerExifTest() {
       return result
     }
 
-    const propertyCompFalse = (tag: string, key: image.PropertyKey, newImageSource: image.ImageSource,
+    const propertyCompFalse = async (tag: string, key: image.PropertyKey, newImageSource: image.ImageSource,
                                      fileName: string) => {
       let result: boolean = true
       try {
         let data = await newImageSource.getImageProperty(key);
         hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} imagePropertyNew: ${data}`);
         result = false
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         if (error.code != 62980123) {
           result = false
           hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} errorCode: ${error.code} errorMessage: ${error.message}`);
@@ -127,14 +128,14 @@ export default function imagePackerExifTest() {
       return result
     }
 
-    const checkProperty = (tag: string, newImageSource: image.ImageSource, oldImageSource: image.ImageSource,
+    const checkProperty = async (tag: string, newImageSource: image.ImageSource, oldImageSource: image.ImageSource,
                                  name: string, fileName: string, needsPackProperties?: boolean | undefined) => {
       let checkResult: boolean = true
       if (name === "test_exif_v2") {
         if (needsPackProperties) {
           for (let i = 0; i < PropertyKeys.length; i++) {
             const key = PropertyKeys[i]
-            checkResult = propertyComp(tag, key, newImageSource, oldImageSource, fileName)
+            checkResult = await propertyComp(tag, key, newImageSource, oldImageSource, fileName)
             if (!checkResult) {
               return checkResult
             }
@@ -144,7 +145,7 @@ export default function imagePackerExifTest() {
         } else {
           for (let i = 0; i < PropertyKeys.length; i++) {
             const key = PropertyKeys[i]
-            checkResult = propertyCompFalse(tag, key, newImageSource, fileName)
+            checkResult = await propertyCompFalse(tag, key, newImageSource, fileName)
             if (!checkResult) {
               return checkResult
             }
@@ -155,7 +156,7 @@ export default function imagePackerExifTest() {
       } else if (name === "test_exif_v3") {
         if (needsPackProperties) {
           const key = image.PropertyKey.ORIENTATION
-          checkResult = propertyComp(tag, key, newImageSource, oldImageSource, fileName)
+          checkResult = await propertyComp(tag, key, newImageSource, oldImageSource, fileName)
           await oldImageSource.release();
           await newImageSource.release();
           if (!checkResult) {
@@ -163,7 +164,7 @@ export default function imagePackerExifTest() {
           }
         } else {
           const key = image.PropertyKey.ORIENTATION
-          checkResult = propertyCompFalse(tag, key, newImageSource, fileName)
+          checkResult = await propertyCompFalse(tag, key, newImageSource, fileName)
           await oldImageSource.release();
           await newImageSource.release();
           if (!checkResult) {
@@ -173,7 +174,7 @@ export default function imagePackerExifTest() {
       } else {
         for (let i = 0; i < PropertyKeys.length; i++) {
           const key = PropertyKeys[i]
-          checkResult = propertyCompFalse(tag, key, newImageSource, fileName)
+          checkResult = await propertyCompFalse(tag, key, newImageSource, fileName)
           if (!checkResult) {
             return checkResult
           }
@@ -200,7 +201,7 @@ export default function imagePackerExifTest() {
       return bufferRead
     }
 
-    const getImageSource = (fileName: string, type?: string) => {
+    const getImageSource = async (fileName: string, type?: string) => {
       let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName)
@@ -209,7 +210,7 @@ export default function imagePackerExifTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
         imageSourceApi = image.createImageSource(rawFileDescriptor)
       } else if (type === "incremental") {
@@ -224,8 +225,8 @@ export default function imagePackerExifTest() {
       return imageSourceApi!
     }
 
-    const getPixelMap = (fileName: string, type?: string) => {
-      const imageSourceApi = getImageSource(fileName, type)
+    const getPixelMap = async (fileName: string, type?: string) => {
+      const imageSourceApi = await getImageSource(fileName, type)
       let opt: image.DecodingOptions = {
         editable: true,
       }
@@ -236,7 +237,7 @@ export default function imagePackerExifTest() {
       return result
     }
 
-    const checkPackImageSourcePixelMapPromise = (packOptsFormat: string, name: string, fileNameEnd: string,
+    const checkPackImageSourcePixelMapPromise = async (packOptsFormat: string, name: string, fileNameEnd: string,
                                                        tag: string, caseType: string, packType: string,
                                                        needsPackProperties?: boolean | undefined, type?: string) => {
       const fileName = name + "." + fileNameEnd
@@ -259,7 +260,7 @@ export default function imagePackerExifTest() {
       let oldImageSource: image.ImageSource
       let newImageSource: image.ImageSource | undefined
       if (caseType === "pixelMap") {
-        const result = getPixelMap(fileName, type)
+        const result = await getPixelMap(fileName, type)
         if (result.pixelMap == undefined) {
           return false
         }
@@ -269,7 +270,7 @@ export default function imagePackerExifTest() {
         await imagePackerApi.packToFile(pixelMap, fdNum, packOpts)
         newImageSource = image.createImageSource(fdNum);
       } else {
-        const imageSourceApi = getImageSource(fileName, type)
+        const imageSourceApi = await getImageSource(fileName, type)
         if (imageSourceApi == undefined) {
           return false
         }
@@ -281,12 +282,12 @@ export default function imagePackerExifTest() {
       if (newImageSource == undefined) {
         return false;
       }
-      const result = checkProperty(tag, newImageSource, oldImageSource, name, fileName, needsPackProperties)
+      const result = await checkProperty(tag, newImageSource, oldImageSource, name, fileName, needsPackProperties)
       return result
     }
 
 
-    const checkPack = (tag: string, imageData: ArrayBuffer, name: string, fileName: string,
+    const checkPack = async (tag: string, imageData: ArrayBuffer, name: string, fileName: string,
                              oldImageSource: image.ImageSource, fdNum: int, checkType: string, needsPackProperties?: boolean | undefined) => {
       let result = false
       let newImageSource: image.ImageSource | undefined
@@ -299,7 +300,7 @@ export default function imagePackerExifTest() {
         return result;
       }
       try {
-        result = checkProperty(tag, newImageSource, oldImageSource, name, fileName, needsPackProperties)
+        result = await checkProperty(tag, newImageSource, oldImageSource, name, fileName, needsPackProperties)
       } catch (error) {
         result = false
       }
@@ -328,7 +329,7 @@ export default function imagePackerExifTest() {
     });
     }
 
-    const checkPackImageSourcePixelMapCallBack = (packOptsFormat: string, name: string, fileNameEnd: string,
+    const checkPackImageSourcePixelMapCallBack = async (packOptsFormat: string, name: string, fileNameEnd: string,
                                                         tag: string, caseType: string, packType: string,
                                                         needsPackProperties?: boolean | undefined, type?: string) => {
       const fileName = name + "." + fileNameEnd;
@@ -352,7 +353,7 @@ export default function imagePackerExifTest() {
       const fdNum = getFdCacheDir(tag, fileNameEnd)
       try {
         if (caseType === "pixelMap") {
-          const result = getPixelMap(fileName, type)
+          const result = await getPixelMap(fileName, type)
           if (result.pixelMap == undefined) {
             return false
           }
@@ -360,7 +361,7 @@ export default function imagePackerExifTest() {
           oldImageSource = result.imageSource as image.ImageSource
           await packToFileCallback(imagePackerApi, pixelMap, fdNum, packOpts);
         } else {
-          const imageSourceApi = getImageSource(fileName, type)
+          const imageSourceApi = await getImageSource(fileName, type)
           if (imageSourceApi == undefined) {
             return false
           }
@@ -371,7 +372,7 @@ export default function imagePackerExifTest() {
         hilog.info(0x0000, tag, `packToFileCallback failed: ${err}`);
         return false;
       }
-      cResult = checkPack(tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties)
+      cResult = await checkPack(tag, new ArrayBuffer(0), name, fileName, oldImageSource, fdNum, "fd", needsPackProperties)
       return cResult
     }
 
@@ -391,7 +392,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile", true, "rawfile")
           compResult = compResult && result
         }
@@ -420,7 +421,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile", false, "rawfile")
           compResult = compResult && result
         }
@@ -449,7 +450,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile")
           compResult = compResult && result
         }
@@ -479,7 +480,7 @@ export default function imagePackerExifTest() {
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
           //TODO type后续修改为incremental值,目前用该值会导致图片exif获取失败
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile", true)
           compResult = compResult && result
         }
@@ -509,7 +510,7 @@ export default function imagePackerExifTest() {
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
           //TODO type后续修改为incremental值,目前用该值会导致图片exif获取失败
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile", false)
           compResult = compResult && result
         }
@@ -538,7 +539,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapPromise(
+          const result = await checkPackImageSourcePixelMapPromise(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile")
           compResult = compResult && result
         }
@@ -567,7 +568,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile", true, "rawfile")
           compResult = compResult && result
         }
@@ -596,7 +597,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile", false, "rawfile")
           compResult = compResult && result
         }
@@ -625,7 +626,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "pixelMap", "packToFile")
           compResult = compResult && result
         }
@@ -654,7 +655,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile", true, "uri")
           compResult = compResult && result
         }
@@ -683,7 +684,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile", false, "buffer")
           compResult = compResult && result
         }
@@ -712,7 +713,7 @@ export default function imagePackerExifTest() {
           const name: string = picMimeType[i].name
           const mimeType: string = picMimeType[i].mimeType
           const fileSuffix: string = picMimeType[i].fileSuffix
-          const result = checkPackImageSourcePixelMapCallBack(
+          const result = await checkPackImageSourcePixelMapCallBack(
             mimeType, name, fileSuffix, tag, "imageSource", "packToFile")
           compResult = compResult && result
         }

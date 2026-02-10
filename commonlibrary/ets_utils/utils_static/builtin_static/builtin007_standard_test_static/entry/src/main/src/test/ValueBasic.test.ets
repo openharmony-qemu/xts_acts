@@ -2072,7 +2072,7 @@ export default function valueBasicTest() {
         console.log(domain, tag, '%{public}s', 'test017 end');
       });
 
-    const getValidLambdaType = (): LambdaType => {
+    const getValidLambdaType = () => {
     };
     const getValidFunction = (): Function => {
       return () => "test result";

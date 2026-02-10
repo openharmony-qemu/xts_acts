@@ -80,21 +80,23 @@ struct CanvasAttrsTabTest {
               .height('80%')
               .backgroundColor('#FFBF00')
               .onReady(():void => {
-                let node: FrameNode = this.context.canvas
-                node?.commonEvent.setOnVisibleAreaApproximateChange(
-                  { ratios: [0, 1], expectedUpdateInterval: 10},
-                  (isVisible: boolean, currentRatio: number) => {
-                    if (!isVisible && currentRatio <= 0.0) {
-                      this.message2 = 'Canvas 1 is completely invisible.'
+                if (this.context.canvas != null) {
+                  let node: FrameNode = this.context.canvas as FrameNode
+                  node?.commonEvent.setOnVisibleAreaApproximateChange(
+                    { ratios: [0, 1], expectedUpdateInterval: 10},
+                    (isVisible: boolean, currentRatio: number) => {
+                      if (!isVisible && currentRatio <= 0.0) {
+                        this.message2 = 'Canvas 1 is completely invisible.'
+                      }
+                      if (isVisible && currentRatio >= 1.0) {
+                        this.message1 = 'Canvas 1 is fully visible.'
+                      }
+                      this.context.reset()
+                      this.context.font = '30vp sans-serif'
+                      this.context.fillText(this.message2, 50, 50)
                     }
-                    if (isVisible && currentRatio >= 1.0) {
-                      this.message1 = 'Canvas 1 is fully visible.'
-                    }
-                    this.context.reset()
-                    this.context.font = '30vp sans-serif'
-                    this.context.fillText(this.message2, 50, 50)
-                  }
-                )
+                  )
+                }
               })
           }
         }.tabBar(():void=>this.tabBuilder(0, 'Tab one'))
@@ -106,21 +108,23 @@ struct CanvasAttrsTabTest {
               .height('80%')
               .backgroundColor('#007DFF')
               .onReady(():void => {
-                let node: FrameNode = this.context.canvas
-                node?.commonEvent.setOnVisibleAreaApproximateChange(
-                  { ratios: [0, 1], expectedUpdateInterval: 10},
-                  (isVisible: boolean, currentRatio: number) => {
-                    if (!isVisible && currentRatio <= 0.0) {
-                      this.message2 = 'Canvas 2 is completely invisible.'
+                if (this.context.canvas != null) {
+                  let node: FrameNode = this.context.canvas as FrameNode
+                  node?.commonEvent.setOnVisibleAreaApproximateChange(
+                    { ratios: [0, 1], expectedUpdateInterval: 10},
+                    (isVisible: boolean, currentRatio: number) => {
+                      if (!isVisible && currentRatio <= 0.0) {
+                        this.message2 = 'Canvas 2 is completely invisible.'
+                      }
+                      if (isVisible && currentRatio >= 1.0) {
+                        this.message1 = 'Canvas 2 is fully visible.'
+                      }
+                      this.context.reset()
+                      this.context.font = '30vp sans-serif'
+                      this.context.fillText(this.message2, 50, 50)
                     }
-                    if (isVisible && currentRatio >= 1.0) {
-                      this.message1 = 'Canvas 2 is fully visible.'
-                    }
-                    this.context.reset()
-                    this.context.font = '30vp sans-serif'
-                    this.context.fillText(this.message2, 50, 50)
-                  }
-                )
+                  )
+                }
               })
           }
         }.tabBar(():void=>this.tabBuilder(1, 'Tab two'))
@@ -132,21 +136,23 @@ struct CanvasAttrsTabTest {
               .height('80%')
               .backgroundColor('#FFBF00')
               .onReady(():void => {
-                let node: FrameNode = this.context.canvas
-                node?.commonEvent.setOnVisibleAreaApproximateChange(
-                  { ratios: [0, 1], expectedUpdateInterval: 10},
-                  (isVisible: boolean, currentRatio: number) => {
-                    if (!isVisible && currentRatio <= 0.0) {
-                      this.message2 = 'Canvas 3 is completely invisible.'
+                if (this.context.canvas != null) {
+                  let node: FrameNode = this.context.canvas as FrameNode
+                  node?.commonEvent.setOnVisibleAreaApproximateChange(
+                    { ratios: [0, 1], expectedUpdateInterval: 10},
+                    (isVisible: boolean, currentRatio: number) => {
+                      if (!isVisible && currentRatio <= 0.0) {
+                        this.message2 = 'Canvas 3 is completely invisible.'
+                      }
+                      if (isVisible && currentRatio >= 1.0) {
+                        this.message1 = 'Canvas 3 is fully visible.'
+                      }
+                      this.context.reset()
+                      this.context.font = '30vp sans-serif'
+                      this.context.fillText(this.message2, 50, 50)
                     }
-                    if (isVisible && currentRatio >= 1.0) {
-                      this.message1 = 'Canvas 3 is fully visible.'
-                    }
-                    this.context.reset()
-                    this.context.font = '30vp sans-serif'
-                    this.context.fillText(this.message2, 50, 50)
-                  }
-                )
+                  )
+                }
               })
           }
         }.tabBar(():void=>this.tabBuilder(2, 'Tab three'))

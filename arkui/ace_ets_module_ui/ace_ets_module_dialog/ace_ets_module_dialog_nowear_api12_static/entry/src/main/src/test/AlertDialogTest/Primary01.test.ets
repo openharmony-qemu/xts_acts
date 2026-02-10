@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ it('primary_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, as
         await CommonFunc.sleep(1000);
         console.info('primary_static_0100 END');
         done();
-      }catch(e:BusinessError){
+      }catch(e){
         expect().assertFail();
       }
     });
@@ -116,7 +116,7 @@ it('primary_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, as
         await CommonFunc.sleep(1000);
         console.info('primary_static_0200 END');
         done();
-      }catch(e:BusinessError){
+      }catch(e){
         expect().assertFail();
       }
     });

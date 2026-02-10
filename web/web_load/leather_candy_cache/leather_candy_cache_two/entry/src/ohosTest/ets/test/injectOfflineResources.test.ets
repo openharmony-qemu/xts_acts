@@ -114,7 +114,7 @@ export default function injectOfflineResourcesTest() {
      */
     it('testInjectOfflineResources004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources004", 148311)
-      Utils.registerBaseEvent("testInjectOfflineResources004", '17100002', 148390, done,
+      Utils.registerBaseEvent("testInjectOfflineResources004", '17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 148390, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });

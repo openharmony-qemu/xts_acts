@@ -61,9 +61,9 @@ export default function webJsunit() {
      * @tc.desc   test stop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('OnLoadInterceptStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('OnLoadInterceptStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       inspector.sendEventByKey('center', 10, '');
       await Utils.msSleep(2000);

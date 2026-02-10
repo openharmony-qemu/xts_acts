@@ -580,10 +580,18 @@ export default function drawingTsMatrixPart2Test() {
           console.info(msg + ' mapPoints successed dst.length is: ' + dst.length);
           expect(dst.length == 3).assertEqual(true);
         }
+        if(dst == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         let dst2: Array<common2D.Point> | undefined = matrix.mapPoints(src);
         if (dst2) {
           console.info(msg + ' mapPoints successed dst2.length is: ' + dst2.length);
           expect(dst2.length == 3).assertEqual(true);
+        }
+        if(dst2 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
         }
         console.info(msg + ' mapPoints successed');
       } catch (e) {
@@ -607,6 +615,10 @@ export default function drawingTsMatrixPart2Test() {
           console.info(msg + ' mapPoints successed dst3.length is: ' + dst3.length);
           expect(dst3.length == 3).assertEqual(true);
         }
+        if(dst3 == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' mapPoints successed');
       } catch (e) {
         e = e as BusinessError;
@@ -619,6 +631,10 @@ export default function drawingTsMatrixPart2Test() {
         if (dst4) {
           console.info(msg + ' mapPoints successed dst4.length is: ' + dst4.length);
           expect(dst4.length == 1).assertEqual(true);
+        }
+        if(dst4 == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
         }
         console.info(msg + ' mapPoints successed');
       } catch (e) {
@@ -1279,7 +1295,7 @@ export default function drawingTsMatrixPart2Test() {
       //       actualValues2[6] == 7.699999809265137 && actualValues2[7] == 8.800000190734863 &&
       //       actualValues2[8] == 9.899999618530273).assertEqual(true);
       //   }
-      // } catch (e: BusinessError) {
+      // } catch (e) {
       //   console.info(msg + ` matrix getAll actualValues2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
       //   expect().assertFail();
       // }
@@ -1295,7 +1311,7 @@ export default function drawingTsMatrixPart2Test() {
       //       actualValues3[3] == 2 && actualValues3[4] == 2 && actualValues3[5] == 2 &&
       //       actualValues3[6] == 2 && actualValues3[7] == 2 && actualValues3[8] == 2).assertEqual(true);
       //   }
-      // } catch (e: BusinessError) {
+      // } catch (e) {
       //   console.info(msg + ` matrix getAll actualValues3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
       //   expect().assertFail();
       // }
@@ -1311,7 +1327,7 @@ export default function drawingTsMatrixPart2Test() {
       //       actualValues4[3] == -4 && actualValues4[4] == -5 && actualValues4[5] == -6 &&
       //       actualValues4[6] == -7 && actualValues4[7] == -8 && actualValues4[8] == -9).assertEqual(true);
       //   }
-      // } catch (e: BusinessError) {
+      // } catch (e) {
       //   console.info(msg + ` matrix getAll actualValues4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
       //   expect().assertFail();
       // }
@@ -1329,7 +1345,7 @@ export default function drawingTsMatrixPart2Test() {
       //       actualValues5[5] == 7.67949104309082 &&
       //       actualValues5[6] == 0 && actualValues5[7] == 0 && actualValues5[8] == 1).assertEqual(true);
       //   }
-      // } catch (e: BusinessError) {
+      // } catch (e) {
       //   console.info(msg + ` matrix getAll actualValues5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
       //   expect().assertFail();
       // }
@@ -1345,7 +1361,7 @@ export default function drawingTsMatrixPart2Test() {
       //       actualValues6[3] == 0 && actualValues6[4] == 1 && actualValues6[5] == -25 &&
       //       actualValues6[6] == 0 && actualValues6[7] == 0 && actualValues6[8] == 1).assertEqual(true);
       //   }
-      // } catch (e: BusinessError) {
+      // } catch (e) {
       //   console.info(msg + ` matrix getAll actualValues6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
       //   expect().assertFail();
       // }

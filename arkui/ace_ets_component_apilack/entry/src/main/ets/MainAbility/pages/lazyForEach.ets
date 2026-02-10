@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2022-2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -105,23 +105,25 @@ class MyDataSource extends BasicDataSource {
   }
 
   public moveData(index1: number, index2: number): void {
-    if (index1 < index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i < index2; i++) {
-        this.dataArray[i] = this.dataArray[i+1]
+    const idx1 = index1
+    const idx2 = index2
+    if (idx1 < idx2) {
+      let temp = this.dataArray[idx1]
+      for (let i = idx1; i < idx2; i++) {
+        this.dataArray[i] = this.dataArray[i + 1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[idx2] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])
       }
     }
-    else if (index1 > index2) {
-      let temp = this.dataArray[index1]
-      for (let i = index1; i > index2; i--) {
-        this.dataArray[i] = this.dataArray[i-1]
+    else if (idx1 > idx2) {
+      let temp = this.dataArray[idx1]
+      for (let i = idx1; i > idx2; i--) {
+        this.dataArray[i] = this.dataArray[i - 1]
       }
-      this.dataArray[index2] = temp
+      this.dataArray[idx2] = temp
 
       for (let j = 0; j < this.dataArray.length; j++) {
         console.info('after moving :' + this.dataArray[j])

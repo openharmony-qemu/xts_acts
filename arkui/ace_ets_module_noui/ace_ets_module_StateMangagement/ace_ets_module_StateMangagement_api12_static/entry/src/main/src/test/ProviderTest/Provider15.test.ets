@@ -71,7 +71,8 @@ export default function Provider15Test() {
         if (!("Provider15" == pages.name)) {
           console.info("get Provider15Test pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
+          console.info("get Provider15Test pages.name:" + JSON.stringify(routerInstance.getState().name));
           await CommonFunc.sleep(2000);
 
         }

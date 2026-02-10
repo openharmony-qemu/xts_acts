@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,7 +76,7 @@ struct APIFontPrimary {
             this.text4 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('backgroundColor') + '';
             let strJson2 = inspector.getInspectorByKey('APIFontPrimary_Divider');
             this.text3 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('color') + '';
-          }catch(err:Error){
+          }catch(err){
             console.log('ClickError:',err)
           }
 

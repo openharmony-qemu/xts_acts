@@ -21,6 +21,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl'
 import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
+import wifiMg from '@ohos.wifiManager';
 
 async function changedLocationMode(){
   await geolocation.isLocationEnabled().then(async(result) => {
@@ -81,8 +82,36 @@ export default function geolocationCApiTest() {
       await applyPermission();
       done();
     })
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
       console.info('beforeEach case');
+      let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+      if(!isWifiActive){
+        console.info("======> wifi_test/enable wifi:false" );
+      }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail();
+
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+      }
+      done();
     })
     afterEach(() => {
     })

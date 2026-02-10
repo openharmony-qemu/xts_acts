@@ -21,6 +21,8 @@ import Utils from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import contextConstant from '@ohos.app.ability.contextConstant';
 import AtomicServiceOptions from '@ohos.app.ability.AtomicServiceOptions'
+import { FailureCode } from '@ohos.app.ability.CompletionHandlerForAtomicService'
+import CompletionHandlerForAtomicService from '@ohos.app.ability.CompletionHandlerForAtomicService'
 import { BusinessError, RecordData } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
@@ -30,7 +32,8 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
+const MALFUNCTION_MSG: string = 'A system error occurred';
 
 export default function UIAbilityContextStatic() {
   describe("UIAbilityContextStatic", () => {
@@ -79,7 +82,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(context));
         if (context){
           expect(context != null).assertTrue();
-          let abilityInfo = context.abilityInfo;
+          let abilityInfo = context!.abilityInfo;
           hilog.info(domain, tag, 'testAbilityInfoStatic001 info '+ JSON.stringify(abilityInfo));
           expect(abilityInfo != null).assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.bundleName: ` + abilityInfo.bundleName);
@@ -126,7 +129,7 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag, "testUIAbilityContextCurrentHapModuleInfoStatic001 begin");
       try {
         if (context) {
-          let hapModuleInfo = context.currentHapModuleInfo;
+          let hapModuleInfo = context!.currentHapModuleInfo;
           expect(hapModuleInfo != null).assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.name: ' + hapModuleInfo.name);
           expect(hapModuleInfo.name == "entry").assertTrue();
@@ -171,7 +174,7 @@ export default function UIAbilityContextStatic() {
     it('testResourceManagerStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let result = context.resourceManager
+          let result = context!.resourceManager
           hilog.info(domain, tag, "testResourceManagerStatic001 resourceManager:" + JSON.stringify(result));
           expect(result != null).assertTrue();
           done();
@@ -198,7 +201,7 @@ export default function UIAbilityContextStatic() {
     it('testCreateAreaModeContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let moduleContext: common.Context = context.createAreaModeContext(contextConstant.AreaMode.EL2)
+          let moduleContext: common.Context = context!.createAreaModeContext(contextConstant.AreaMode.EL2)
           hilog.info(domain, tag, "testCreateAreaModeContextStatic001 moduleContext:" + JSON.stringify(moduleContext));
           expect(moduleContext != null).assertTrue();
           done();
@@ -225,7 +228,7 @@ export default function UIAbilityContextStatic() {
     it('testCreateDisplayContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         if (context) {
-          let displayContext: common.Context = context.createDisplayContext(0)
+          let displayContext: common.Context = context!.createDisplayContext(0)
           hilog.info(domain, tag, "testCreateDisplayContextStatic001 displayContext:" + JSON.stringify(displayContext));
           expect(displayContext != null).assertTrue();
           done();
@@ -256,9 +259,27 @@ export default function UIAbilityContextStatic() {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
           parameters: {
             "demo.result": 123456
-          } as Record<string, RecordData>
+          } as Record<string, RecordData>,
+
+          completionHandlerForAtomicService:
+          {
+            onAtomicServiceRequestSuccess: (appId: string) => {
+              hilog.info(0x0000, 'testTag',
+                `UIAbilityContext.openAtomicService onAtomicServiceRequestSuccess appId:${appId}`);
+            },
+            onAtomicServiceRequestFailure: (appId: string, failureCode: FailureCode, failureMessage: string) => {
+              hilog.info(0x0000, 'testTag',
+                `UIAbilityContext.openAtomicService onAtomicServiceRequestFailure appId:${appId},
+                failureCode:${failureCode}, failureMessage:${failureMessage}`);
+              expect(failureCode === FailureCode.FAILURE_CODE_USER_CANCEL).assertFalse();
+              expect(failureCode === FailureCode.FAILURE_CODE_USER_REFUSE).assertFalse();
+              expect(failureCode).assertEqual(FailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
+              expect(failureMessage).assertEqual(MALFUNCTION_MSG);
+              done();
+            }
+          }
         };
-        context.openAtomicService('', options)
+        context?.openAtomicService('', options)
           .then((result: common.AbilityResult) => {
             console.info('openAtomicService succeed');
             expect().assertFail();
@@ -287,7 +308,7 @@ export default function UIAbilityContextStatic() {
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       try {
-        context.openAtomicService('')
+        context?.openAtomicService('')
           .then((result: common.AbilityResult) => {
             console.info('openAtomicService succeed');
             expect().assertFail();
@@ -316,7 +337,7 @@ export default function UIAbilityContextStatic() {
     it('testReportDrawnCompletedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let temp = false;
       try {
-        context.reportDrawnCompleted((err) => {
+        context?.reportDrawnCompleted((err) => {
           if (err?.code) {
             console.error(`reportDrawnCompleted failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -344,8 +365,8 @@ export default function UIAbilityContextStatic() {
      */
     it('testsetColorModeStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        context.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
-        expect(context.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        context?.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        expect(context?.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
         done();
       } catch (err) {
         hilog.info(domain, tag, `testsetColorModeStatic001 fail: ` + err);
@@ -370,7 +391,7 @@ export default function UIAbilityContextStatic() {
           "abilityName": "MainAbility",
           "moduleName": "entry"
         }
-        context.startAbility(want).then(() => {
+        context?.startAbility(want).then(() => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start successful. ');
         }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));

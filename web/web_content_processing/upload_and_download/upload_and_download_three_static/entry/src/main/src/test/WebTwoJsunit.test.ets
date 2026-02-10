@@ -59,9 +59,9 @@ export default function webTwoJsunit() {
      * @tc.desc   ets allow the Web access overview mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('onDownloadFailed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonDownloadFailed', 10)
         await Utils.msSleep(2000);

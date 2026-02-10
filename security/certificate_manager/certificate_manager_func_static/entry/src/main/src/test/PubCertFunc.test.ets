@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -118,8 +118,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.getPublicCertificate('');
         expect(null).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -136,8 +136,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.getPublicCertificate('aabb');
         expect(null).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -154,8 +154,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.isAuthorizedApp('');
         expect(null).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -172,8 +172,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.isAuthorizedApp('aabb');
         expect(null).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -210,7 +210,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         let Result : certManager.CMResult = await certManager.getPrivateCertificates();
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010: Result = " + JSON.stringify(Result.credentialList));
-      } catch (err:BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010: e.code " + err.code);
         expect(null).assertFail()
       }
@@ -269,12 +269,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
         if (deviceInfo.deviceType === '2in1') {
-          expect(err.code).assertEqual(29700005);
+          expect((err as BusinessError).code).assertEqual(29700005);
         } else {
-          expect(err.code).assertEqual(29700004);
+          expect((err as BusinessError).code).assertEqual(29700004);
         }
       }
       done();

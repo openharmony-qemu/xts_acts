@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -232,7 +232,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let str = 'Hello undefined World';
       let specialSubstr = 'undefined';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr: string = str;
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;
@@ -271,7 +271,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let str = 'Hello null World';
       let specialSubstr = 'null';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr: string = str;
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;
@@ -310,7 +310,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let str = 'Hello \'\' World';
       let specialSubstr = '\'\'';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr: string = str; // 初始化新字符串为原始字符串
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;
@@ -680,7 +680,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const str = 'Hello undefined World';
       let specialSubstr = 'undefined';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr = str;
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;
@@ -720,7 +720,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const str = 'Hello null World';
       let specialSubstr = 'null';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr = str;
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;
@@ -759,7 +759,7 @@ export default function builtinsForOfTest() {
     it('builtinsStatementForOfTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const str = 'Hello \'\' World';
       let specialSubstr = '\'\'';
-      let foundIndices = new Array<number>();
+      let foundIndices = new Array<int>();
       let newStr = str;
       for (let i = 0; i <= str.length - specialSubstr.length; i++) {
         let match = true;

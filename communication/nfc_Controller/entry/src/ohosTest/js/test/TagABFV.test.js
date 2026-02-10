@@ -1019,6 +1019,104 @@ export default function nfcTagABFVTest() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2700
+         * @tc.number SUB_Communication_NFC_nfctage_js_2700
+         * @tc.desc   This interface getBarcode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2700', Level.LEVEL0, async function (done)  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let recvNfcTagFunc = tagInfo => {
+                console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo != null).assertTrue();
+            }
+            let discTech = [1, 2, 4];
+            let interval = 200;
+
+            try {
+                tag.on('readerModeWithInterval', elementName, discTech, recvNfcTagFunc, interval);
+            } catch (err) {
+                if (err.code === 201) {
+                    expect(201).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 801) {
+                    expect(801).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 3100201) {
+                    expect(3100201).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 3100202) {
+                    expect(3100202).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else {
+                    expect().assertFail();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 Fail :  ");
+                }
+            }
+
+            try {
+                tag.off('readerModeWithInterval', elementName, recvNfcTagFunc);
+            } catch (err) {
+                if (err.code === 201) {
+                    expect(201).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 801) {
+                    expect(801).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 3100201) {
+                    expect(3100201).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else if (err.code === 3100203) {
+                    expect(3100203).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 ERROR :  " + err + " - " + err.code);
+                } else {
+                    expect().assertFail();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2700 Fail :  ");
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_2800
+         * @tc.number SUB_Communication_NFC_nfctage_js_2800
+         * @tc.desc   This interface getBarcode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2800', Level.LEVEL0, async function (done)  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let recvNfcTagFunc = tagInfo => {
+                console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                expect(tagInfo != null).assertTrue();
+            }
+
+            try {
+                tag.off('readerModeWithInterval', elementName, recvNfcTagFunc);
+            } catch (err) {
+                if (err.code === 3100203) {
+                    expect(3100203).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2800 ERROR :  " + err + " - " + err.code);
+                } else {
+                    expect().assertFail();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2800 Fail :  ");
+                }
+            }
+            done();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }

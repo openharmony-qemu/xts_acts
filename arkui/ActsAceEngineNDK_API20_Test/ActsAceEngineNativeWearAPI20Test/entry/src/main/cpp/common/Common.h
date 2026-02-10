@@ -32,6 +32,7 @@
 #include <ace/xcomponent/native_xcomponent_key_event.h>
 #include <arkui/drag_and_drop.h>
 #include <arkui/native_dialog.h>
+#include <arkui/native_key_event.h>
 
 #define PARMA_0_POINT_0001 0.0001
 #define PARAM_0_POINT_2 0.2

@@ -1572,6 +1572,127 @@ static napi_value OH_AVSCREEN_CAPTURE_ErrCode0100(napi_env env, napi_callback_in
     return retValue;
 }
 
+static napi_value OH_AudioCaptureSourceTypeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t mic = 1;
+    int32_t playback = 2;
+    int32_t res = 1;
+    if (OH_AudioCaptureSourceType::OH_MIC == mic &&
+        OH_AudioCaptureSourceType::OH_ALL_PLAYBACK == playback) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_CaptureModeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t screen = 0;
+    int32_t res = 1;
+    if (OH_CaptureMode::OH_CAPTURE_HOME_SCREEN == screen) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AudioCodecFormatEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t lc = 3;
+    int32_t res = 1;
+    if (OH_AudioCodecFormat::OH_AAC_LC == lc) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_VideoCodecFormatEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t h264 = 2;
+    int32_t res = 1;
+    if (OH_VideoCodecFormat::OH_H264 == h264) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_DataTypeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t stream = 0;
+    int32_t res = 1;
+    if (OH_DataType::OH_ORIGINAL_STREAM == stream) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVScreenCaptureStateCodeEnum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t started = 0;
+    int32_t canceled = 1;
+    int32_t stoppedByUser = 2;
+    int32_t other = 3;
+    int32_t call = 4;
+    int32_t unavailable = 5;
+    int32_t mutedByUser = 6;
+    int32_t unmutedByUser = 7;
+    int32_t enter = 8;
+    int32_t exit = 9;
+    int32_t switches = 10;
+    int32_t res = 1;
+    if (OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_STARTED == started &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_CANCELED == canceled &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_STOPPED_BY_USER == stoppedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_INTERRUPTED_BY_OTHER == other &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_STOPPED_BY_CALL == call &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_MIC_UNAVAILABLE == unavailable &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_MIC_MUTED_BY_USER == mutedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_MIC_UNMUTED_BY_USER == unmutedByUser &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_ENTER_PRIVATE_SCENE == enter &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_EXIT_PRIVATE_SCENE == exit &&
+        OH_AVScreenCaptureStateCode::OH_SCREEN_CAPTURE_STATE_STOPPED_BY_USER_SWITCHES == switches) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVScreenCaptureContentChangedEvent_Enum(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t hide = 0;
+    int32_t visible = 1;
+    int32_t unavailable = 2;
+    int32_t res = 1;
+    if (OH_AVScreenCaptureContentChangedEvent_Enum::OH_SCREEN_CAPTURE_CONTENT_HIDE == hide &&
+        OH_AVScreenCaptureContentChangedEvent_Enum::OH_SCREEN_CAPTURE_CONTENT_VISIBLE == visible &&
+        OH_AVScreenCaptureContentChangedEvent_Enum::OH_SCREEN_CAPTURE_CONTENT_UNAVAILABLE == unavailable) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OH_AVScreenCaptureErrCode(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t start = 100;
+    int32_t res = 1;
+    if (OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_EXTEND_START == start) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 
 napi_property_descriptor desc[] = {
     {"OH_AVScreenCapture_Init0100", nullptr, OH_AVScreenCapture_Init0100, nullptr, nullptr, nullptr, napi_default,
@@ -1746,6 +1867,18 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"OH_AVSCREEN_CAPTURE_ErrCode0100", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0100, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"OH_AudioCaptureSourceTypeEnum", nullptr, OH_AudioCaptureSourceTypeEnum, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_CaptureModeEnum", nullptr, OH_CaptureModeEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AudioCodecFormatEnum", nullptr, OH_AudioCodecFormatEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_VideoCodecFormatEnum", nullptr, OH_VideoCodecFormatEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_DataTypeEnum", nullptr, OH_DataTypeEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCaptureStateCodeEnum", nullptr, OH_AVScreenCaptureStateCodeEnum, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVScreenCaptureContentChangedEventEnum", nullptr, OH_AVScreenCaptureContentChangedEvent_Enum, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCaptureErrCode", nullptr, OH_AVScreenCaptureErrCode, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
 
 };
 

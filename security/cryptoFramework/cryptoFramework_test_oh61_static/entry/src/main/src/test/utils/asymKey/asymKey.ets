@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -676,7 +676,7 @@ export async function getPubKey(priKey: cryptoFramework.PriKey): Promise<cryptoF
     let pubKey: cryptoFramework.PubKey = await priKey.getPubKey();
 
     return pubKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] getPubKey ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -687,7 +687,7 @@ export function getPubKeySync(priKey: cryptoFramework.PriKey): cryptoFramework.P
     let pubKey: cryptoFramework.PubKey = priKey.getPubKeySync();
 
     return pubKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] getPubKeySync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -699,7 +699,7 @@ export async function generatorKeyPair(algName: string): Promise<cryptoFramework
     let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPair ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -711,7 +711,7 @@ export function generatorKeyPairSync(algName: string): cryptoFramework.KeyPair {
     let keyPair: cryptoFramework.KeyPair = generator.generateKeyPairSync();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPairSync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -729,7 +729,7 @@ export async function generatorKeyPairCb(algName: string): Promise<cryptoFramewo
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPairCb ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -747,7 +747,7 @@ export async function convertPemKeyPair(algName: string, priKey: string|null,
     }
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] convertPemKeyPair ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -765,7 +765,7 @@ export function convertPemKeyPairSync(algName: string, priKey: string|null,
     }
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] convertPemKeyPairSync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -778,7 +778,7 @@ export async function convertKeyPair(algName: string, priKey: cryptoFramework.Da
     let keyPair: cryptoFramework.KeyPair = await generator.convertKey(pubKey, priKey);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] convertKeyPair ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -791,7 +791,7 @@ export function convertKeyPairSync(algName: string, priKey: cryptoFramework.Data
     let keyPair: cryptoFramework.KeyPair = generator.convertKeySync(pubKey, priKey);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] convertKeyPairSync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -810,7 +810,7 @@ export async function convertKeyPairCb(algName: string, priKey: cryptoFramework.
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] convertKeyPairCb ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -822,7 +822,7 @@ export async function generatorKeyPairBySpec(spec: cryptoFramework.AsyKeySpec): 
     let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPairBySpec ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -834,7 +834,7 @@ export function generatorKeyPairBySpecSync(spec: cryptoFramework.AsyKeySpec): cr
     let keyPair: cryptoFramework.KeyPair = generator.generateKeyPairSync();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPairBySpecSync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -852,7 +852,7 @@ export async function generatorKeyPairBySpecCb(spec: cryptoFramework.AsyKeySpec)
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorKeyPairBySpecCb ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -864,7 +864,7 @@ export async function generatorPriKeyBySpec(spec: cryptoFramework.AsyKeySpec): P
     let priKey: cryptoFramework.PriKey = await generator.generatePriKey();
 
     return priKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorPriKeyBySpec ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -876,7 +876,7 @@ export function generatorPriKeyBySpecSync(spec: cryptoFramework.AsyKeySpec): cry
     let priKey: cryptoFramework.PriKey = generator.generatePriKeySync();
 
     return priKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorPriKeyBySpecSync ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -894,7 +894,7 @@ export async function generatorPriKeyBySpecCb(spec: cryptoFramework.AsyKeySpec):
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] generatorPriKeyBySpecCb ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -905,7 +905,7 @@ export function getKeySpecItem(pubKey: cryptoFramework.PubKey, item: cryptoFrame
     let n = pubKey.getAsyKeySpec(item);
 
     return n.toString().length != 0 ? true : false;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] getKeySpecItem ${error}, error code: ${error.code}`);
     throw error as Error;
   }

@@ -37,8 +37,10 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listSwipeAction12EndJsunit() {
   describe('listSwipeAction12EndTest', () => {
 
-    await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    waitForCompletion(async ()=>{ 
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    })
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
     beforeAll(async (): Promise<void> => {
@@ -104,7 +106,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120', Level.LEVEL0,
           "--" + top + "--" + bottom);
 
 
-        driver.swipe(
+        await driver.swipe(
           (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(150)) as number)).toInt(),
           (Math.round((AppStorage.get<number>('winLeft') ?? 0 + top + height / 2) as number)).toInt(),
           (Math.round((AppStorage.get<number>('winLeft') ?? 0 + left + uiContext.vp2px(50)) as number)).toInt(),

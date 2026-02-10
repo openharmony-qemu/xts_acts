@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,7 +82,8 @@ export default function PermissionTest(){
             });
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag',
               'Test case Permission_bindDriverWithDeviceId_001 catch err : ' + JSON.stringify(error));
             expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
@@ -110,7 +111,8 @@ export default function PermissionTest(){
             await deviceManager.unbindDriverWithDeviceId(TEST_DEVICE_ID);
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case Permission_unbindDriverWithDeviceId catch err :' + JSON.stringify(error));
             expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
             done();
@@ -136,7 +138,8 @@ export default function PermissionTest(){
         try {
           deviceManager.queryDevices();
           expect(false).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case Permission_queryDevices_001 catch err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
         }

@@ -33,7 +33,7 @@ export default function HuksApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD0100 start====");
@@ -56,7 +56,7 @@ export default function HuksApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL0100 start====");

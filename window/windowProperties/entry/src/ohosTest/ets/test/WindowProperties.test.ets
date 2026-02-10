@@ -226,7 +226,7 @@ export default function windowPropertiesTest() {
                 console.info(caseName + " Succeeded in setting watermark image.");
                 await window.setWatermarkImageForAppWindows(undefined);
                 console.info(caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
-                expect(true).assertTrue();
+                
                 done();
               }).catch((err: BusinessError) => {
                 console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
@@ -291,9 +291,9 @@ export default function windowPropertiesTest() {
           let errMessageText = await errMessage.getText();
           await sleep(200);
           if (errCodeText == '801') {
-            expect(true).assertTrue()
+            done();
           } else if (errMessageText == 'success') {
-            expect(true).assertTrue()
+            done();
           } else {
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
             expect().assertFail()
@@ -348,9 +348,9 @@ export default function windowPropertiesTest() {
             let errMessageText = await errMessage.getText();
             await sleep(200);
             if (errCodeText == '801') {
-              expect(true).assertTrue()
+              done();
             } else if (errMessageText == 'success') {
-              expect(true).assertTrue()
+              done();
             } else {
               console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
               expect().assertFail()
@@ -408,7 +408,7 @@ export default function windowPropertiesTest() {
               await window.setWatermarkImageForAppWindows(undefined);
               await subWindowClass?.showWindow();
               await subWindowClass?.destroyWindow()
-              expect(true).assertTrue();
+              
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
@@ -3961,7 +3961,7 @@ export default function windowPropertiesTest() {
         promise.then(async () => {
           console.info(`${caseName} Succeeded in moving the window`);
           await windowClass.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -4311,7 +4311,7 @@ export default function windowPropertiesTest() {
         let promise = mainWindow.startMoving(100, 50)
         promise.then(() => {
           console.info(`${caseName} :Succeeded startMoving ` );
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
@@ -4349,7 +4349,7 @@ export default function windowPropertiesTest() {
         let promise = mainWindow.stopMoving()
         promise.then(() => {
           console.info(`${caseName} :Succeeded stopMoving ` );
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to stopMoving. Cause code: ${err.code}, message: ${err.message}`);
@@ -4433,7 +4433,7 @@ export default function windowPropertiesTest() {
       console.log(msgStr + "begin");
       try {
         windowStage.setDefaultDensityEnabled(true);
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
@@ -4460,7 +4460,7 @@ export default function windowPropertiesTest() {
       console.log(msgStr + "begin");
       try {
         windowStage.setDefaultDensityEnabled(false);
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
@@ -4495,10 +4495,10 @@ export default function windowPropertiesTest() {
         let reason: ohosWindow.RectChangeReason;
         windowClass.on('windowRectChange', (data: ohosWindow.RectChangeOptions) => {
           console.log(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
-          expect(true).assertTrue();
+          
           done();
         });
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error.code)+'error.message: '+ error.message);
@@ -4530,7 +4530,7 @@ export default function windowPropertiesTest() {
         let grayScale = 0;
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 0.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4565,7 +4565,7 @@ export default function windowPropertiesTest() {
       try {
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 0.5.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4600,7 +4600,7 @@ export default function windowPropertiesTest() {
       try {
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 1.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4712,7 +4712,7 @@ export default function windowPropertiesTest() {
             subWindowClass.setWindowGrayScale(grayScale).then(async () => {
               console.info(msgStr + 'Succeeded in setting the grayScale 1.');
               await subWindowClass.destroyWindow();
-              expect(true).assertTrue();
+              
               done();
             }).catch(async (err: BusinessError) => {
               console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4776,7 +4776,7 @@ export default function windowPropertiesTest() {
               expect(err.message!=null).assertTrue();
               done();
             } else if(err.code == 1300002){
-              expect(true).assertTrue();
+              
               expect(err.message!=null).assertTrue();
               done();
             }else {
@@ -4905,7 +4905,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -4989,7 +4989,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -6329,7 +6329,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();

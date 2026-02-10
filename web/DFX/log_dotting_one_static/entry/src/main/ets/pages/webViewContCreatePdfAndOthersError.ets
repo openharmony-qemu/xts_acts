@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,8 @@ struct webViewContCreatePdfAndOthersError {
             case 'emitSetPrintBackgroundInitErr': {
               try {
                 this.controllerNull.setPrintBackground(false)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`XXXXXXXX emitGetScrollableInitErr ErrorCode: ${error.code}`);
                 this.errorCode = error.code;
                 Utils.emitEvent(this.errorCode, 17113)
@@ -83,7 +84,7 @@ struct webViewContCreatePdfAndOthersError {
             case 'emitCreateWebPrintDocumentAdapterInitErr': {
               try {
                 this.controllerNull.createWebPrintDocumentAdapter('example.pdf')
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`XXXXXXXX emitCreateWebPrintDocumentAdapterInitErr ErrorCode: ${error.code}`);
                 this.errorCode = error.code;
               }

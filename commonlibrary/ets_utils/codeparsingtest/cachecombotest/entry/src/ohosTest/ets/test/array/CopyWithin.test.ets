@@ -54,7 +54,6 @@ import {
   testGetTrapThrowsDuringCopyWithin,
   testHasPropertyNotRequiredByCopyWithin,
   testHasTrapNotCalledDuringCopyWithin,
-  testImmutableProxyReturnsNewArrayOnCopyWithin,
   testInOperatorNotUsedInCopyWithin,
   testIsExtensibleFalseAllowsExistingWrites,
   testIsFrozenTrapDoesNotBlockWrites,
@@ -98,6 +97,9 @@ import {
   testZeroLengthCopyWithinNoOp
 } from './CopyWithinTest';
 
+function sleep(time: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
 
 export default function CopyWithinTest() {
   describe('CopyWithinTest', () => {
@@ -106,7 +108,8 @@ export default function CopyWithinTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(40);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -416,7 +419,6 @@ export default function CopyWithinTest() {
       let result: boolean = testRevocableProxyBlocksCopyWithinAfterRevoke();
       expect(result).assertEqual(true);
     });
-
 
 
     /**

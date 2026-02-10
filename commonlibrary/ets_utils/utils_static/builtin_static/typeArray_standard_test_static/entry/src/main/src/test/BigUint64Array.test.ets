@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -414,7 +414,7 @@ export default function BigUint64ArrayTest() {
       const TAG = "testBigUint64ArrayFrom0018";
       try {
 
-        const newArr = Array.from<number, BigInt>(new Array<number>(1, 2, 3), (v: number, k: number) => {
+        const newArr = Array.from<number, BigInt>(new Array<number>(1, 2, 3), (v: number, k: int) => {
           return new BigInt(v + v);
         });
         let array: BigUint64Array = BigUint64Array.from(newArr);

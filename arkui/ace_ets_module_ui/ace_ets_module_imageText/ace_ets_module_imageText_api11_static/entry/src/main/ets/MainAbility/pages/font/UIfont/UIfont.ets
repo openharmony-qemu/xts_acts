@@ -28,7 +28,6 @@ import {
   Margin,
   ClickEvent,
   TextDataDetectorType,
-  Date,
   TextAlign,
   Button,
 } from '@ohos.arkui.component';

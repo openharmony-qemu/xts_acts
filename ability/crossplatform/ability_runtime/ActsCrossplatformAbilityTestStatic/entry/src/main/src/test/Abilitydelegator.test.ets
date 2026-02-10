@@ -38,9 +38,9 @@ export default function AbilityDelegatorTest() {
      * @tc.desc   test getArguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("GET_ARGUMENTS_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("GET_ARGUMENTS_0001", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       const abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
       let bundleName: string = abilityDelegatorArguments.bundleName;

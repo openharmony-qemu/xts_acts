@@ -69,7 +69,7 @@ export default function waterFlowAniTrue() {
      * @tc.desc     waterFlowAniTrue_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('waterFlowAniTrue_static_0100', Level.LEVEL1, (done: () => void): Promise<void> => {
+it('waterFlowAniTrue_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowAniTrue_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

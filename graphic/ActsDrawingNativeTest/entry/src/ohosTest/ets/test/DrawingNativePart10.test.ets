@@ -34,6 +34,242 @@ export default function ActsNewDrawingNativeTestPart10() {
       // This API supports only one parameter: clear action function.
     })
 
+    // Lattice related test cases
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0001
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0100
+     * @tc.desc   test for TestLatticeCreateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_Lattice_0001', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingLattice(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0002
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0101
+     * @tc.desc   test for TestLatticeCreateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_Lattice_0002', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingLattice(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0003
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0102
+     * @tc.desc   test for TestLatticeCreateAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_Lattice_0003', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingLattice(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0004
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0103
+     * @tc.desc   test for TestLatticeCreateEnumTraversal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_Lattice_0004', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingLattice(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0005
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0104
+     * @tc.desc   test for TestLatticeCreateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_Lattice_0005', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingLattice(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0006
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0200
+     * @tc.desc   test for TestLatticeDestroyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_Lattice_0006', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingLattice(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_Lattice_0007
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_Lattice_0201
+     * @tc.desc   test for TestLatticeDestroyNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_Lattice_0007', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingLattice(6);
+      expect(result).assertEqual(0);
+    })
+
+    // Path Iterator related test cases
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0001
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATORITERATOR_0100
+     * @tc.desc   test for testPathIteratorCreateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0001', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0002
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0101
+     * @tc.desc   test for testPathIteratorCreateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_PathIterator_0002', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathIterator(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0003
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0102
+     * @tc.desc   test for testPathIteratorCreateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_PathIterator_0003', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathIterator(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0004
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0200
+     * @tc.desc   test for testPathIteratorDestroyNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0004', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0005
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0201
+     * @tc.desc   test for testPathIteratorDestroyNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_PathIterator_0005', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathIterator(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0006
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0300
+     * @tc.desc   test for testPathIteratorHasNextNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0006', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0007
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0301
+     * @tc.desc   test for testPathIteratorHasNextNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_PathIterator_0007', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathIterator(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0008
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0400
+     * @tc.desc   test for testPathIteratorNextNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0008', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0009
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0401
+     * @tc.desc   test for testPathIteratorNextNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Drawing_PathIterator_0009', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathIterator(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0010
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0500
+     * @tc.desc   test for testPathIteratorPeekNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0010', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_Drawing_PathIterator_0011
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0501
+     * @tc.desc   test for testPathIteratorPeekNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Drawing_PathIterator_0011', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathIterator(10);
+      expect(result).assertEqual(0);
+    })
+
     // Canvas Part5 DrawPixelMapMesh related test cases
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_20300

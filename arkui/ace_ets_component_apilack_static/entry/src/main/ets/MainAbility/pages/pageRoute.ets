@@ -112,7 +112,7 @@ struct PageRouteExample {
       }
       console.info("page start to emit action state")
       events_emitter.emit(eventt, eventData)
-    } catch (err: Error) {
+    } catch (err) {
       console.info("page emit action state err: " + JSON.stringify((err as Error)?.message))
     }
   }

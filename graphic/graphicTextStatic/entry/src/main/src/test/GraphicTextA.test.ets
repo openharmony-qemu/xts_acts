@@ -20,7 +20,7 @@ import common2D from '@ohos.graphics.common2D';
 export default function GraphicTextATest() {
 
   describe('GraphicTextATest', () => {
-    let myColor: common2D.Color;
+    let myColor: common2D.Color | undefined;
     beforeAll(() => {
       myColor = { alpha: 255, red: 255, green: 0, blue: 0 };
     })
@@ -64,14 +64,14 @@ export default function GraphicTextATest() {
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
         textDecoration: text.TextDecorationType.UNDERLINE,
-        color: myColor,
+        color: myColor!,
         decorationStyle : text.TextDecorationStyle.SOLID,
         decorationThicknessScale : 20
       };
       try {
         let myTextStyle : text.TextStyle = {
           decoration: decoration,
-          color: myColor,
+          color: myColor!,
           fontWeight : text.FontWeight.W100,
           fontStyle : text.FontStyle.ITALIC,
           baseline : text.TextBaseline.ALPHABETIC,
@@ -159,7 +159,7 @@ export default function GraphicTextATest() {
       let msg = "====testGetActualTextRange===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
-        color: myColor,
+        color: myColor!,
         fontSize: 33,
       };
       let myParagraphStyle: text.ParagraphStyle = {
@@ -194,7 +194,7 @@ export default function GraphicTextATest() {
       let msg = "====testGetLineMetrics_1===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
-        color: myColor,
+        color: myColor!,
         fontSize: 33,
       };
       let myParagraphStyle: text.ParagraphStyle = {
@@ -230,7 +230,7 @@ export default function GraphicTextATest() {
       let msg = "====testGetLineMetrics_2===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
-        color: myColor,
+        color: myColor!,
         fontSize: 33,
       };
       let myParagraphStyle: text.ParagraphStyle = {
@@ -265,7 +265,7 @@ export default function GraphicTextATest() {
       async (done: () => void): Promise<void> => {
       let msg = "====testAddSymbol===="
       let myTextStyle: text.TextStyle = {
-        color: myColor,
+        color: myColor!,
         fontSize: 33,
       };
       let myParagraphStyle: text.ParagraphStyle = {

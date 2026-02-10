@@ -25,7 +25,7 @@ export default function KeyEventStopPropagationTest() {
   describe('KeyEventStopPropagationTest', (): void  => {
 
     let PAGE_TAG = 'KeyEventStopPropagationTest';
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api14.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
