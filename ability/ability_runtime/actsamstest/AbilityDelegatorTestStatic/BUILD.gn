@@ -22,7 +22,7 @@ ohos_js_app_static_suite("ActsAbilityDelegatorStaticTest") {
   part_name = "ability_runtime"
   subsystem_name = "ability"
   deps = [
-    "AbilityDelegatorRelyStatic:ActsAbilityDelegatorStaticRely"
+    "../AbilityDelegatorRelyStatic:ActsAbilityDelegatorStaticRely"
   ]
 }
 
