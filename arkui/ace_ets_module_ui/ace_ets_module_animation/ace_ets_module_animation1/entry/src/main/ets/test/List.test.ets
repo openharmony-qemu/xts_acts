@@ -51,11 +51,11 @@ import StepsCurveComponent from './StepsCurveComponent.test';
 import CurvesSpringMotion from './CurvesSpringMotion.test';
 import AnimatorEase from './Animation/AnimatorEase.test';
 import ExcludeFromRenderGroupDemo from './ExcludeFromRenderGroupDemo.test';
-import DurationNullUndefined from './animator/DurationNullUndefined.test';
-import DelayNullUndefined from './animator/DelayNullUndefined.test';
-import FillNullUndefined from './animator/FillNullUndefined.test';
-import DirectionNullUndefined from './animator/DirectionNullUndefined.test';
-import IterationsNullUndefined from './animator/IterationsNullUndefined.test';
+import DurationNullUndefinedTest from './animator/DurationNullUndefined.test';
+import DelayNullUndefinedTest from './animator/DelayNullUndefined.test';
+import FillNullUndefinedTest from './animator/FillNullUndefined.test';
+import DirectionNullUndefinedTest from './animator/DirectionNullUndefined.test';
+import IterationsNullUndefinedTest from './animator/IterationsNullUndefined.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -96,9 +96,9 @@ export default function testsuite() {
   CurvesSpringMotion();
   AnimatorEase();
   ExcludeFromRenderGroupDemo();
-  DurationNullUndefined();
-  DelayNullUndefined();
-  FillNullUndefined();
-  DirectionNullUndefined();
-  IterationsNullUndefined();
+  DurationNullUndefinedTest();
+  DelayNullUndefinedTest();
+  FillNullUndefinedTest();
+  DirectionNullUndefinedTest();
+  IterationsNullUndefinedTest();
 }
