@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
+import { beforeAll, describe, expect, it, TestType, Size, Level } from '@ohos/hypium'
 import huksndk from 'libhuksndk.so'
+import { CheckSoftware } from './utils/huks/HuksOptionsUtils.ets';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
 
 export default function huksNdkTest() {
+  let useSoftware: boolean = true;
   describe('SecurityHuksTest', () => {
+    beforeAll(async () => {
+      useSoftware = await CheckSoftware();
+    })
 
     /**
      * @tc.name   testOHHuksGetSdkVersion001
@@ -614,7 +619,9 @@ export default function huksNdkTest() {
      * @tc.level  LEVEL2
      */
     it('testOHHuksAnonAttestKeyItem001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      await CheckWifiInfo();
+      if(!useSoftware){
+        await CheckWifiInfo();
+      }
       let result: number = huksndk.oHHuksAnonAttestKeyItem();
       expect(result).assertEqual(0);
     });

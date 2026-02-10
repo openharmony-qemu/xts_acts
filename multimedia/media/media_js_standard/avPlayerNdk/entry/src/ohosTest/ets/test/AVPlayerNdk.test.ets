@@ -2292,5 +2292,50 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testOhAVPlayerOnInfoTypeEnum001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_ONINFOTYPEENUM_0100
+     * @tc.desc   test OH_AVPlayer_OnInfoTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerOnInfoTypeEnum001', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerOnInfoTypeEnum();
+      console.info(`testOhAVPlayerOnInfoTypeEnum001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAVPlayerOnInfoTypeEnum002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_ONINFOTYPEENUM_0200
+     * @tc.desc   test OH_AVPlayer_OnInfoTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerOnInfoTypeEnum002', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerOnInfoTypeEnum1();
+      console.info(`testOhAVPlayerOnInfoTypeEnum002 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAVPlayerBufferingTypeEnum001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_BUFFERINGTYPE_0100
+     * @tc.desc   test OH_AVPlayer_BufferingTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerBufferingTypeEnum001', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerBufferingTypeEnum();
+      console.info(`testOhAVPlayerBufferingTypeEnum001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

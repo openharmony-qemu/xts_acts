@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,13 +67,13 @@ export default function getBurstAssetsTest() {
           let ops = fetchAllOption();
           let burstKey = "e719d696-09fa-44f8-ec3f215aa62a";
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getBurstAssets(burstKey, ops);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getBurstAssets(burstKey, ops);
           if (fetchResult === undefined || fetchResult.getCount() > 0) {
             expect(false).assertTrue();
             done();
           }
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' getBurstAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue();
@@ -100,7 +100,7 @@ export default function getBurstAssetsTest() {
             predicates: predicates
           };
           let assetResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           hilog.info(domain, tag, `${testNum} :: assetResult count:: count = ${assetResult.getCount()}`);
           expect(assetResult.getCount() >= 0).assertTrue();
           done();

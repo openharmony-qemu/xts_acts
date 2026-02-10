@@ -30,7 +30,7 @@ struct Index {
     maxLines: 2,
     textIndent: this.textIndent
   })
-  
+
   @State textSizeMaxLine3: SizeOptions = this.measure.measureTextSize({
     textContent: this.message,
     fontSize: '15vp',
@@ -39,140 +39,145 @@ struct Index {
     maxLines: 3,
     textIndent: this.textIndent
   })
-    
+
   build(){
     Row() {
       Column() {
         Text(this.message).width('220vp')
-        .maxFontSize('20vp')
-        .minFontSize('15vp')
-        .maxLines(2)
-        .textIndent(this.textIndent)
-        .wordBreak(this.textWordBreak)
+          .maxFontSize('20vp')
+          .minFontSize('15vp')
+          .maxLines(2)
+          .textIndent(this.textIndent)
+          .wordBreak(this.textWordBreak)
         Text('' + this.textSizeMaxLine2.height).key('textSizeMaxLine2')
         Text('' + this.textSizeMaxLine3.height).key('textSizeMaxLine3')
-        Button('testForTextIndent')
-          .id('testForTextIndent')
-          .onClick(()=>{
-            this.textIndent = 40;
-            this.textSizeMaxLine2 = this.measure.measureTextSize({
-              textContent: this.message,
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 2,
-              textIndent: this.textIndent,            
-              fontSize: '15vp',
-            })
-            
-            this.textSizeMaxLine3 = this.measure.measureTextSize({
-              textContent: this.message,
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 3,
-              textIndent: this.textIndent,            
-              fontSize: '15vp',
-            })            
-          })
-          
-        Button('reset')
-          .id('resetMeasureText')
-          .onClick(()=>{
-            this.textIndent = 10;
-            this.textWordBreak = WordBreak.BREAK_ALL;
-            this.message = 'this message is test for measure measureTextSize in english';
-            
-            this.textSizeMaxLine2 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 2,
-              textIndent: this.textIndent
-            })
-            
-            this.textSizeMaxLine3 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 3,
-              textIndent: this.textIndent
-            })            
-          })
-        
-        Button('testForWordBreak')
-          .id('testForWordBreak')
-          .onClick(()=>{
-            this.textIndent = 10;
-            this.textWordBreak = WordBreak.BREAK_WORD;            
-            this.textSizeMaxLine2 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 2,
-              textIndent: this.textIndent
-            })
-            
-            this.textSizeMaxLine3 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 3,
-              textIndent: this.textIndent
-            })            
-          })
-          
-        Button('resetInChinese')
-          .id('resetInChinese')
-          .onClick(()=>{
-            this.textIndent = 10;
-            this.textWordBreak = WordBreak.BREAK_ALL;
-            this.message = '这个是用于测试文本计算接口的首行缩进变化下文本计算能力';
-            
-            this.textSizeMaxLine2 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 2,
-              textIndent: this.textIndent
-            })
-            
-            this.textSizeMaxLine3 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 3,
-              textIndent: this.textIndent
-            })            
-          })
-          
-        Button('testForTextIndentInChinese')
-          .id('testForTextIndentInChinese')
-          .onClick(()=>{
-            this.textIndent = 40;
-            
-            this.textSizeMaxLine2 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 2,
-              textIndent: this.textIndent
-            })
-            
-            this.textSizeMaxLine3 = this.measure.measureTextSize({
-              textContent: this.message,
-              fontSize: '15vp',
-              constraintWidth:'220vp',
-              wordBreak: this.textWordBreak,
-              maxLines: 3,
-              textIndent: this.textIndent
-            })            
-          })
+        Row(){
+          Button('testForTextIndent')
+            .id('testForTextIndent')
+            .onClick(()=>{
+              this.textIndent = 40;
+              this.textSizeMaxLine2 = this.measure.measureTextSize({
+                textContent: this.message,
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 2,
+                textIndent: this.textIndent,
+                fontSize: '15vp',
+              })
+
+              this.textSizeMaxLine3 = this.measure.measureTextSize({
+                textContent: this.message,
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 3,
+                textIndent: this.textIndent,
+                fontSize: '15vp',
+              })
+            }).width('30%')
+
+          Button('reset')
+            .id('resetMeasureText')
+            .onClick(()=>{
+              this.textIndent = 10;
+              this.textWordBreak = WordBreak.BREAK_ALL;
+              this.message = 'this message is test for measure measureTextSize in english';
+
+              this.textSizeMaxLine2 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 2,
+                textIndent: this.textIndent
+              })
+
+              this.textSizeMaxLine3 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 3,
+                textIndent: this.textIndent
+              })
+            }).width('30%')
+        }.height('5%')
+
+        Row(){
+          Button('testForWordBreak')
+            .id('testForWordBreak')
+            .onClick(()=>{
+              this.textIndent = 10;
+              this.textWordBreak = WordBreak.BREAK_WORD;
+              this.textSizeMaxLine2 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 2,
+                textIndent: this.textIndent
+              })
+
+              this.textSizeMaxLine3 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 3,
+                textIndent: this.textIndent
+              })
+            }).width('30%')
+
+          Button('resetInChinese')
+            .id('resetInChinese')
+            .onClick(()=>{
+              this.textIndent = 10;
+              this.textWordBreak = WordBreak.BREAK_ALL;
+              this.message = '这个是用于测试文本计算接口的首行缩进变化下文本计算能力';
+
+              this.textSizeMaxLine2 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 2,
+                textIndent: this.textIndent
+              })
+
+              this.textSizeMaxLine3 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 3,
+                textIndent: this.textIndent
+              })
+            }).width('30%')
+
+          Button('testForTextIndentInChinese')
+            .id('testForTextIndentInChinese')
+            .onClick(()=>{
+              this.textIndent = 40;
+
+              this.textSizeMaxLine2 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 2,
+                textIndent: this.textIndent
+              })
+
+              this.textSizeMaxLine3 = this.measure.measureTextSize({
+                textContent: this.message,
+                fontSize: '15vp',
+                constraintWidth:'220vp',
+                wordBreak: this.textWordBreak,
+                maxLines: 3,
+                textIndent: this.textIndent
+              })
+            }).width('30%')
+        }.height('5%')
+
       }
       .width('100%')
     }

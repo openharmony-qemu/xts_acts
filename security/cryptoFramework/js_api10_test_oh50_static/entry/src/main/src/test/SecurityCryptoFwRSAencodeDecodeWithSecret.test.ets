@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ async function doRSAEncodeDecodeByPasswdPromiseSpecStub(format: string): Promise
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doRSAEncodeDecodeByPasswdPromiseSpecStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -99,7 +99,7 @@ async function doRSAEncodeDecodeByPasswdSyncSpecStub(format: string): Promise<bo
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doRSAEncodeDecodeByPasswdSyncSpecStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -144,7 +144,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -181,7 +181,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -218,7 +218,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0300 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -255,7 +255,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -292,7 +292,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0500 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -329,7 +329,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -366,7 +366,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0700 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -390,9 +390,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS1", {password: passWd, cipherName: cipherName})
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0800 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -414,7 +414,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_0900 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -438,9 +438,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1000 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -462,7 +462,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -486,7 +486,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -510,7 +510,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1300 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -534,7 +534,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -558,9 +558,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         keyPair.priKey.getEncodedPem("PKCS8", {password: passWd, cipherName: cipherName})
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1500 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -605,7 +605,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -652,7 +652,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1700 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -699,7 +699,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1600 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -746,7 +746,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_1900 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -793,7 +793,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2000 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -840,7 +840,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2100 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -887,7 +887,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
             expect(ret).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2200 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -909,9 +909,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(null, rsa_enc_prikey, passWd);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2300 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -934,7 +934,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
         let keyPair2: cryptoFramework.KeyPair = await generator.convertPemKey(null, rsa_enc_prikey, passWd);
         let ret: boolean = commonUtils.compareDataBlob(keyPair1.priKey.getEncoded(), keyPair2.priKey.getEncoded())
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2400 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -956,9 +956,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(null, rsa_enc_prikey_pkcs1, passWd);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2500 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -978,9 +978,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(null, rsa_enc_prikey, passWd);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2600 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1000,9 +1000,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(null, rsa_enc_prikey_error, passWd);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2700 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1022,7 +1022,7 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(null, rsa_prikey, passWd);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2800 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1044,9 +1044,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(rsa_enc_prikey, rsa_pubkey, passWd);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_2900 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1065,9 +1065,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
       try {
         await generator.convertPemKey(rsa_enc_prikey, rsa_pubkey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_3000 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1088,9 +1088,9 @@ export default function SecurityCryptoFwRSAEncodeDecodeWithSecretTestUnit() {
         passWd = 'aBc123';
         await generator.convertPemKey(null, rsa_pubkey, passWd);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSAEncodeDecodeWithPasswd_Func_3100 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });

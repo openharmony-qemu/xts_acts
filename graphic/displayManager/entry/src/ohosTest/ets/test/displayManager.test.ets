@@ -25,6 +25,7 @@ import common from '@ohos.app.ability.common';
 import { StartOptions } from '@kit.AbilityKit';
 import floatingBall from '@ohos.window.floatingBall';
 import settings from '@ohos.settings';
+import deviceInfo from '@ohos.deviceInfo';
 
 function checkIsCaptured() {
   let status = false;
@@ -89,6 +90,8 @@ export default function displayTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let isSupportRotate = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -942,7 +945,6 @@ export default function displayTest() {
       try {
           displayClass = display.getDefaultDisplaySync();
           displayClass.off('availableAreaChange');
-          expect(true).assertTrue();
           done();
       }
       catch (err) {
@@ -981,7 +983,6 @@ export default function displayTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -1601,7 +1602,6 @@ export default function displayTest() {
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.top: ${info.waterfallDisplayAreaRects.top}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.right: ${info.waterfallDisplayAreaRects.right}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.bottom: ${info.waterfallDisplayAreaRects.bottom}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`jsunittets ${caseName} fail to get display available info :` + error);
@@ -2317,19 +2317,21 @@ export default function displayTest() {
         expect(region.displayId).assertEqual(0)
         if (result) {
           if (region.creaseRects.length == 0) {
-            expect(true).assertTrue();
+            done();
           } else {
             for (let i = 0; i < region.creaseRects.length; i++) {
               expect(region.creaseRects[i].left).assertLargerOrEqual(0);
               expect(region.creaseRects[i].top).assertLargerOrEqual(0);
               expect(region.creaseRects[i].width).assertLargerOrEqual(0);
               expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+              done();
             }
           }
         } else {
           expect(region.creaseRects.length).assertEqual(0)
+          done();
         }
-        done();
+        
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
@@ -2820,6 +2822,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertLarger(0);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange');
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -2901,6 +2904,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -2974,6 +2978,7 @@ export default function displayTest() {
         let windowClass = windowStageStart.getMainWindowSync();
 
         await windowClass.setWindowBrightness(0);
+        await sleep(100);
         let brightnessChangeCount1 = 0;
         let callback1Triggered = false;
 
@@ -2999,6 +3004,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         await windowClass.setWindowBrightness(-1);
         await sleep(100);
         display.off('brightnessInfoChange');
@@ -3297,7 +3303,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
           expect(roundedCorner.length).assertLarger(0)
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
@@ -3311,7 +3317,7 @@ export default function displayTest() {
           expect(roundedCorner[3].type).assertEqual(3)
           expect(roundedCorner[3].position.x).assertEqual(roundedCorner[3].radius)
           expect(roundedCorner[3].position.y).assertEqual(displayInfo.height - roundedCorner[3].radius)
-        } else if (isPCStatus == 'true') {
+        } else {
           expect(roundedCorner.length).assertEqual(0)
         }
         done();
@@ -3397,7 +3403,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (isPCStatus == '') {
+        if (deviceType == 'phone'||deviceType == 'tablet') {
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertLarger(0)
           expect(roundedCorner[0].position.y).assertLarger(0)

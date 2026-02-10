@@ -72,8 +72,14 @@ export default function PathEffect2() {
         image.createPixelMap(color, opts).then((pixelMap) => {
           const canvas = new drawing.Canvas(pixelMap);
           let effect = drawing.PathEffect.createDiscretePathEffect(100, -50, 0);
-          console.info(msg + ' drawing.PathEffect.createDiscretePathEffect: ' + effect);
-          done()
+          if(effect == undefined){
+            console.info(msg + ' 1 test failed');
+            expect().assertFail();
+            done();
+          } else {
+            console.info(msg + ' success drawing.PathEffect.createDiscretePathEffect: ' + effect);
+            done()
+          }
         }).catch((err) => {
           console.log(msg + " Failed in drawing.PathEffect.createDiscretePathEffect " + err)
           expect().assertFail()
@@ -108,6 +114,10 @@ export default function PathEffect2() {
           if (pathEffect1 != undefined && pathEffect2 != undefined){
             let effect = drawing.PathEffect.createComposePathEffect(pathEffect1, pathEffect2);
             console.info(msg + ' drawing.PathEffect.createComposePathEffect: ' + effect);
+            if(effect == undefined){
+              console.info(msg + ' 1 test failed');
+              expect().assertFail();
+            }
           }else{
             expect().assertFail()
           }
@@ -147,6 +157,10 @@ export default function PathEffect2() {
           if (pathEffectOne != undefined && pathEffectTwo != undefined){
             let effect = drawing.PathEffect.createSumPathEffect(pathEffectOne, pathEffectTwo);
             console.info(msg + ' drawing.PathEffect.createSumPathEffect: ' + effect);
+            if(effect == undefined){
+              console.info(msg + ' 1 test failed');
+              expect().assertFail();
+            }
           }else{
             expect().assertFail()
           }
@@ -190,6 +204,75 @@ export default function PathEffect2() {
           done()
         })
       })
+    /**
+     * @tc.name   testCreatePathDashEffectNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_0600
+     * @tc.desc   The Interface of createPathDashEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreatePathDashEffectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let msg = " ====testCreatePathDashEffectNormalStatic==== "
+        const color = new ArrayBuffer(96);
+        let opts : image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: {
+            height: 4,
+            width: 6
+          }
+        }
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          const canvas = new drawing.Canvas(pixelMap);
+          let pen = new drawing.Pen();
+          const penColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 }
+          pen.setColor(penColor);
+          pen.setStrokeWidth(10);
+          canvas.attachPen(pen);
+          pen.setAntiAlias(true);
 
+          const path = new drawing.Path();
+          path.moveTo(100, 100);
+          path.lineTo(150, 50);
+          path.lineTo(200, 100);
+
+          const path1 = new drawing.Path();
+          path1.moveTo(0, 0);
+          path1.lineTo(10, 0);
+          path1.lineTo(20, 10);
+          path1.lineTo(0,10);
+
+          let pathEffect1: drawing.PathEffect|undefined = drawing.PathEffect.createPathDashEffect(path1, 50, -30,
+            drawing.PathDashStyle.MORPH);
+          if(pathEffect1 == undefined){
+            console.info(msg + ' 1 test failed');
+            expect().assertFail();
+          } else {
+            pen.setPathEffect(pathEffect1);
+            canvas.attachPen(pen);
+            canvas.drawPath(path);
+            canvas.detachPen();
+            console.info(msg + ' drawing.PathEffect.createPathDashEffect: ' + pathEffect1);
+            console.info(msg + ' drawing.PathEffect.createPathDashEffect: ' + JSON.stringify(pathEffect1));
+          }
+          let pathEffect2: drawing.PathEffect|undefined = drawing.PathEffect.createPathDashEffect(path1, 50, -30,
+            drawing.PathDashStyle.TRANSLATE);
+          if(pathEffect2 == undefined){
+            console.info(msg + ' 2 test failed');
+            expect().assertFail();
+          }
+          let pathEffect3: drawing.PathEffect|undefined = drawing.PathEffect.createPathDashEffect(path1, 50, -30,
+            drawing.PathDashStyle.ROTATE);
+          if(pathEffect3 == undefined){
+            console.info(msg + ' 3 test failed');
+            expect().assertFail();
+          }
+        }).catch((err) => {
+          console.log(msg + " Failed in drawing.PathEffect.createPathDashEffect " + JSON.stringify(err))
+          console.log(msg + " Failed in drawing.PathEffect.createPathDashEffect " + err)
+          expect().assertFail()
+        })
+      })
   })
 }

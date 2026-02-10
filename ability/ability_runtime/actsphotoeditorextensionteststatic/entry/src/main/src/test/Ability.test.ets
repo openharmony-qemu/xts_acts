@@ -32,7 +32,7 @@ export default function abilityTest() {
 
     describe("abilityTest", (): void => {
         hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'describe start');
-        let globalscribe: commonEventManager.CommonEventSubscriber;
+        let globalscribe: commonEventManager.CommonEventSubscriber | undefined;
 
 
         /**
@@ -56,7 +56,7 @@ export default function abilityTest() {
                 if(commonEventSubscriber !== undefined){
                     globalscribe = commonEventSubscriber;
                     hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 globalscribe success`)
-                    commonEventManager.subscribe(globalscribe, (err:BusinessError | null,
+                    commonEventManager.subscribe(globalscribe!, (err:BusinessError | null,
                         CommonEventData:commonEventManager.CommonEventData|undefined) => {
                         hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 subscribe success`)
                         if (err) {
@@ -108,8 +108,8 @@ export default function abilityTest() {
             await Utils.msSleep(4000);
 
             setTimeout(async () => {
-                if (globalscribe) {
-                    commonEventManager.unsubscribe(globalscribe, (err: BusinessError<void> | null) => {
+                if (globalscribe!) {
+                    commonEventManager.unsubscribe(globalscribe!, (err: BusinessError<void> | null) => {
                         hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', `${TAG} unsubscribe success`);
                         done();
                     })

@@ -33,12 +33,17 @@ struct KeyboardAvoidModeNone {
   }
 
   build() {
-    RelativeContainer() {
+    Flex() {
+      Button('显示软键盘')
+              .height(20)
+              .fontSize(20)
+              .margin({bottom:10})
+              .onClick(() => {
+                // 显示软键盘
+                this.hideKeyboard();
+              })
+              .id('hideBtn')
       Button('Click Show Menu')
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        })
         .bindMenu(this.MyMenu, {
           keyboardAvoidMode: MenuKeyboardAvoidMode.NONE,
           minKeyboardAvoidDistance: undefined
@@ -50,7 +55,8 @@ struct KeyboardAvoidModeNone {
           }, 2000)
         })
     }
-    .height('100%')
+    .position({bottom:80})
+    .height('40%')
     .width('100%')
 
   }
@@ -66,6 +72,14 @@ struct KeyboardAvoidModeNone {
       })
     } catch (err) {
       console.error('Fail to attach')
+    }
+  }
+  async hideKeyboard() {
+    try {
+      await this.inputController.detach();
+
+    } catch (err) {
+      console.error('Fail to hide keyboard: ' + JSON.stringify(err));
     }
   }
 }

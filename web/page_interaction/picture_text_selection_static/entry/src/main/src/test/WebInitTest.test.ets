@@ -81,9 +81,9 @@ export default function WebInitTest() {
      * @tc.desc   Save current page
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags', 10)
         await Utils.msSleep(1000)

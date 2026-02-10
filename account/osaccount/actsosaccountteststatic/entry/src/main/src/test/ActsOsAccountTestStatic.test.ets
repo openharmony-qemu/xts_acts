@@ -214,12 +214,12 @@ export default function ActsOsAccountTestStatic() {
         }
         hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0700 createSubscriber");
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data: commonEventManager.CommonEventSubscriber | null) => {
-          let subscriber: commonEventManager.CommonEventSubscriber;
+          let subscriber: commonEventManager.CommonEventSubscriber | undefined;
           if (data) {
             subscriber = data;
           }
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0700 subscribe start");
-          commonEventManager.subscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
+          commonEventManager.subscribe(subscriber!, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
             hilog.info(0x0000, tag, "====>GetDomainInfo_0700 subscriberCallback data: " + JSON.stringify(data));
             try {
               if (data) {
@@ -232,7 +232,7 @@ export default function ActsOsAccountTestStatic() {
             } catch (err) {
               hilog.info(0x0000, tag, "====>Assert Fail: " + JSON.stringify(err));
             }
-            commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: undefined): void => {
+            commonEventManager.unsubscribe(subscriber!, (err: BusinessError<void> | null, data: undefined): void => {
               hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0700 unsubscribe err: " + JSON.stringify(err));
               Utils.msSleep(500).then(() => {
                 done();
@@ -271,12 +271,12 @@ export default function ActsOsAccountTestStatic() {
         }
         hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0800 createSubscriber");
         await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data: commonEventManager.CommonEventSubscriber | null) => {
-          let subscriber: commonEventManager.CommonEventSubscriber;
+          let subscriber: commonEventManager.CommonEventSubscriber | undefined;
           if (data) {
             subscriber = data;
           }
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0800 subscribe start");
-          commonEventManager.subscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
+          commonEventManager.subscribe(subscriber!, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
             hilog.info(0x0000, tag, "====>GetDomainInfo_0800 subscriberCallback data: " + JSON.stringify(data));
             try {
               if (data) {
@@ -289,7 +289,7 @@ export default function ActsOsAccountTestStatic() {
             } catch (err) {
               hilog.info(0x0000, tag, "====>Assert Fail: " + JSON.stringify(err));
             }
-            commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: undefined): void => {
+            commonEventManager.unsubscribe(subscriber!, (err: BusinessError<void> | null, data: undefined): void => {
               hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0800 unsubscribe err: " + JSON.stringify(err));
               Utils.msSleep(500).then(() => {
                 done();

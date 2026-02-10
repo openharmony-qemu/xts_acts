@@ -57,7 +57,8 @@ export default function gridSettingsJsunit() {
           console.info("get gridSettings state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push gridSettings page error:" + err);
       }
     });
@@ -133,7 +134,8 @@ it('testGridSettings002_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings002] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -178,7 +180,8 @@ it('testGridSettings003_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings003] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings003] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -222,7 +225,8 @@ it('testGridSettings004_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings004] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -266,7 +270,8 @@ it('testGridSettings005_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings005] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -328,7 +333,8 @@ it('testGridSettings007_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings007] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings007] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -362,7 +368,8 @@ it('testGridSettings008_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings008] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings008] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -396,7 +403,8 @@ it('testGridSettings009_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings009] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings009] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -430,7 +438,8 @@ it('testGridSettings010_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings010] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings010] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -481,7 +490,8 @@ it('testGridSettings012_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings012] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings012] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -514,7 +524,8 @@ it('testGridSettings013_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings013] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings013] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -547,7 +558,8 @@ it('testGridSettings014_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings014] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings014] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -580,7 +592,8 @@ it('testGridSettings015_static', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testGridSettings015] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings015] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

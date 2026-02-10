@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,7 +62,7 @@ export async function sleep(time: int): Promise<int> {
 let originalArray: number[] = [0, 1, -2, 4, -8, 16];
 let array: number[] = [0, 1, -2, 4, -8, 16];
 let arrayIndex = -1;
-function mapFn(value: number, index: number): number {
+function mapFn(value: number, index: int): number {
     arrayIndex++;
     expect(value).assertEqual(array[arrayIndex]);
     expect(index).assertEqual(arrayIndex);
@@ -1509,6 +1509,7 @@ export default function EsArrayTest001(){
                     srcArr[1] = 3;
                     return true;
                 }
+                return false;
             };
             let resArr = srcArr.filter(callbackfn);
             expect(resArr.length).assertEqual(2);

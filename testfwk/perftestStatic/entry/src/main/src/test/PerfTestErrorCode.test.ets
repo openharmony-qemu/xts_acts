@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,9 +62,9 @@ export default function perfTestErrorTest() {
                 }
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_create_32400003_static strategy.iterations = -1 error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(ParameterErrorCode);
+                expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
             }
             try {
                 let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
@@ -81,9 +81,9 @@ export default function perfTestErrorTest() {
                 }
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_create_32400003_static strategy.timeout = -10 error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(ParameterErrorCode);
+                expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
         })
@@ -117,9 +117,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400005_bundleName_static bundleName error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(CollectErrorCode);
+                expect((e as BusinessError).code).assertEqual(CollectErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400005_bundleName_static end`);
         })
@@ -150,9 +150,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_actionCode_static actionCode not finish error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400004_actionCode_static end`);
         })
@@ -183,9 +183,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_resetCode_static actionCode not finish error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400004_resetCode_static end`);
         })
@@ -219,9 +219,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeError_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeError_static end`);
         })
@@ -256,9 +256,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeError_static resetCode throw error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeError_static end`);
         })
@@ -293,9 +293,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode timeOut is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             await Utils.msSleep(8000);
             console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static end`);
@@ -331,9 +331,9 @@ export default function perfTestErrorTest() {
                 let perfTest: PerfTest= PerfTest.create(perfTestStrategy)
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode timeOut is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(TimeoutErrorCode);
+                expect((e as BusinessError).code).assertEqual(TimeoutErrorCode);
             }
             await Utils.msSleep(8000);
             console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static end`);
@@ -369,9 +369,9 @@ export default function perfTestErrorTest() {
                 await Utils.msSleep(2000);
                 await perfTest.run();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_run_32400002_afterDestroy_static after destroy error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(AsyncErrorCode);
+                expect((e as BusinessError).code).assertEqual(AsyncErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_run_32400002_afterDestroy_static end`);
         })
@@ -405,9 +405,9 @@ export default function perfTestErrorTest() {
                 await Utils.msSleep(2000);
                 perfTest.getMeasureResult(PerfMetric.DURATION);
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400006_noRun_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(ObtainErrorCode);
+                expect((e as BusinessError).code).assertEqual(ObtainErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400006_noRun_static end`);
         })
@@ -444,9 +444,9 @@ export default function perfTestErrorTest() {
                 await Utils.msSleep(1000);
                 perfTest.getMeasureResult(PerfMetric.DURATION);
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400002_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(AsyncErrorCode);
+                expect((e as BusinessError).code).assertEqual(AsyncErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400002_static end`);
         })
@@ -483,9 +483,9 @@ export default function perfTestErrorTest() {
                 await Utils.msSleep(1000);
                 perfTest.destroy();
                 expect().assertFail();
-            }catch (e: BusinessError) {
+            }catch (e) {
                 console.log(`${TestTag}, test_PerfTest_destroy_32400002_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(AsyncErrorCode);
+                expect((e as BusinessError).code).assertEqual(AsyncErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_destroy_32400002_static end`);
         })

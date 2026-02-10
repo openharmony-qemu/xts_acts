@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,7 +94,8 @@ export default function SystemIni18nTest() {
         let value = i18n.System.getDisplayCountry('zh', 'en-US', true);
         console.log('i18n_system_test_static_0400 ' + value);
         expect(value).assertEqual('');
-      }catch(e: BusinessError){
+      }catch(e){
+        e = e as BusinessError;
         console.log('i18n_system_test_static_0400 ' + e.code);
         console.log('i18n_system_test_static_0400 ' + e.message);
         expect(e.code).assertEqual(890001);
@@ -129,7 +130,8 @@ export default function SystemIni18nTest() {
         let value = i18n.System.getDisplayCountry('zh-Hans', 'en-US', true);
         console.log('i18n_system_test_static_0600 ' + value);
         expect(value).assertEqual('');
-      }catch(e: BusinessError){
+      }catch(e){
+        e = e as BusinessError;
         console.log('i18n_system_test_static_0600 ' + e.code);
         console.log('i18n_system_test_static_0600 ' + e.message);
         expect(e.code).assertEqual(890001);

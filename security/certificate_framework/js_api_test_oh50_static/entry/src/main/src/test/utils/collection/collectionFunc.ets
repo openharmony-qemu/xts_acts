@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import * as certFunc from "./certFunc";
 function createCertCRLCollectionWithOneParam(certs: cert.X509Cert[]): cert.CertCRLCollection {
   try {
     return cert.createCertCRLCollection(certs);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("createCertCRLCollection err", err);
     throw err as Error;
   };
@@ -28,7 +28,7 @@ function createCertCRLCollectionWithOneParam(certs: cert.X509Cert[]): cert.CertC
 function createCertCRLCollectionWithTwoParam(certs: cert.X509Cert[], crls: cert.X509CRL[]): cert.CertCRLCollection {
   try {
     return cert.createCertCRLCollection(certs, crls);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("createCertCRLCollection err", err);
     throw err as Error;
   };

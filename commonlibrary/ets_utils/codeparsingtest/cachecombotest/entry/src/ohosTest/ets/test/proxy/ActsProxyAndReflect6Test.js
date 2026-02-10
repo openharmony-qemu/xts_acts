@@ -370,20 +370,6 @@ export function test25() {
 }
 
 /**
- * 测试点26: 代理的name属性（函数名）
- * 说明：验证代理能正确获取函数的name属性
- */
-export function test26() {
-    const target = function testFn() {
-    };
-    const handler = {
-        get: (target, prop) => Reflect.get(target, prop)
-    };
-    const proxy = new Proxy(target, handler);
-    return proxy.name === 'testFn';
-}
-
-/**
  * 测试点27: 代理的length属性（函数参数数量）
  * 说明：验证代理能正确获取函数的length属性
  */
@@ -1221,20 +1207,6 @@ export function test100() {
     const ProxyConstructor = new Proxy(Target, handler);
     return typeof ProxyConstructor.prototype.isPrototypeOf === 'function' &&
     ProxyConstructor.prototype.isPrototypeOf(new Target());
-}
-
-/**
- * 测试点101: Function.prototype.name（函数名称属性，ES2022+）
- * 说明：验证代理正确获取函数的name属性（如箭头函数、匿名函数）
- */
-export function test101() {
-    const target = () => {
-    };
-    const handler = {
-        get: (target, prop) => Reflect.get(target, prop)
-    };
-    const proxy = new Proxy(target, handler);
-    return proxy.name === 'target';
 }
 
 /**

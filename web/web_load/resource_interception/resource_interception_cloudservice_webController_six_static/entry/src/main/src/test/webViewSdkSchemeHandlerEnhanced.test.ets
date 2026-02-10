@@ -66,9 +66,9 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
      * @tc.desc   test SdkSchemeHandler_isEof_false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewSdkSchemeHandler_isEof_false_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewSdkSchemeHandler_isEof_false_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       emitKey = 'emitWebViewSdkSchemeHandler_isEof_false'
       Utils.emitEvent(emitKey, 10);
       await Utils.msSleep(2000);

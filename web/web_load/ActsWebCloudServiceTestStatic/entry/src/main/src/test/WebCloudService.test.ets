@@ -52,9 +52,9 @@ export default function webCloudServiceTest() {
          * @tc.desc   test OnPageBegin
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('testOnPageBegin_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('testOnPageBegin_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnPageBegin", 10);
             Utils.registerEvent("testOnPageBegin_static", "resource://rawfile/first.html", 100, done);
             await Utils.msSleep(2000);

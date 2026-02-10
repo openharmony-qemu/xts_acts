@@ -75,9 +75,9 @@ export default function WindowZindexTest() {
 
     describe("WindowZindexTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowZindexTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         let windowclassArr:Array<window.Window>;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -105,7 +105,7 @@ export default function WindowZindexTest() {
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
             try{
-                windowclassArr = await windowStage.getSubWindow();
+                windowclassArr = await windowStage!.getSubWindow();
                 hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
                 if(windowclassArr.length!=0){
                     for(let i = 0;i<windowclassArr.length;i++){
@@ -131,7 +131,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_raiseToAppTop_mainWindow_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window =  windowStage.getMainWindowSync();
+            let mainWindow:window.Window =  windowStage!.getMainWindowSync();
             hilog.info(domain, tag,msgStr + ' ' + 'getMainWindow success: ' + mainWindow);
             try {
                 mainWindow.raiseToAppTop((err:  BusinessError<void> | null) :void => {
@@ -175,7 +175,7 @@ export default function WindowZindexTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
             try {
-                let subWindow:window.Window = await windowStage.createSubWindow("test_raiseToAppTop_subWindowDestroy");
+                let subWindow:window.Window = await windowStage!.createSubWindow("test_raiseToAppTop_subWindowDestroy");
                 await subWindow.destroyWindow();
                 let promise1 = subWindow.raiseToAppTop();
                 promise1.then(async () => {
@@ -212,7 +212,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_raiseToAppTop_1300002_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let subWindow:window.Window = await windowStage.createSubWindow("test_raiseToAppTop_1300002_static");
+            let subWindow:window.Window = await windowStage!.createSubWindow("test_raiseToAppTop_1300002_static");
             await subWindow.destroyWindow();
             try {
                 subWindow.raiseToAppTop((err:  BusinessError<void> | null) :void => {
@@ -255,7 +255,7 @@ export default function WindowZindexTest() {
             let caseName:string = "testRaiseToAppTopPromiseErrCode1300009_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
-            let mainWindow: window.Window =  windowStage.getMainWindowSync();
+            let mainWindow: window.Window =  windowStage!.getMainWindowSync();
             hilog.info(domain, tag,caseName + ' ' + 'Succeeded in obtaining the main window. Data: '+mainWindow);
             expect(!!mainWindow).assertTrue();
             try {
@@ -291,9 +291,9 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_raiseToAppTop_Two_subWindow_normal_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
             try {
-                let promise = windowStage.createSubWindow("test1_raiseToAppTop_Two_subWindow_normal");
+                let promise = windowStage!.createSubWindow("test1_raiseToAppTop_Two_subWindow_normal");
                 promise.then((data:window.Window) => {
                     if (data == null) {
                         hilog.error(domain, tag,msgStr + "Failed to create the subWindow1. Cause: The data is empty");
@@ -310,7 +310,7 @@ export default function WindowZindexTest() {
                         decorEnabled: true,
                         isModal: false
                     };
-                    let promise2 = windowStage.createSubWindow("test2_raiseToAppTop_Two_subWindow_normal");
+                    let promise2 = windowStage!.createSubWindow("test2_raiseToAppTop_Two_subWindow_normal");
                     promise2.then((data:window.Window) => {
                         if (data == null) {
                             hilog.error(domain, tag,msgStr + "Failed to create the subWindow. Cause: The data is empty");
@@ -326,7 +326,7 @@ export default function WindowZindexTest() {
                         let promise4 = subWindow1.raiseToAppTop();
                         promise4.then(() => {
                             hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
-                            let lastWindowClass = await window.getLastWindow(context);
+                            let lastWindowClass = await window.getLastWindow(context!);
                             let properties = lastWindowClass.getWindowProperties();
                             hilog.info(domain, tag,msgStr + 'properties:'+JSON.stringify(properties)+'name:'+properties.name);
                             expect(properties.windowRect.height).assertEqual(1000);
@@ -377,7 +377,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_setRaiseByClickEnabled_mainWindow_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let mainWindow:window.Window = await windowStage.getMainWindow();
+            let mainWindow:window.Window = await windowStage!.getMainWindow();
             try {
                 mainWindow.setRaiseByClickEnabled(true,(err: BusinessError<void> | null) :void => {
                     const errCode: number = err!.code;
@@ -417,7 +417,7 @@ export default function WindowZindexTest() {
             let caseName:string = "testSetRaiseByClickEnabledPromiseErrCode1300009_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
-            let mainWindow: window.Window = windowStage.getMainWindowSync();
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
             hilog.info(domain, tag,caseName + ' ' + 'Succeeded in obtaining the main window. Data: ' + mainWindow);
             expect(!!mainWindow).assertTrue();
             try {
@@ -461,7 +461,7 @@ export default function WindowZindexTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
             try {
-                let subWindow:window.Window = await windowStage.createSubWindow("test_setRaiseByClickEnabled_subWindowDestroy");
+                let subWindow:window.Window = await windowStage!.createSubWindow("test_setRaiseByClickEnabled_subWindowDestroy");
                 await subWindow.destroyWindow();
                 let promise = subWindow.setRaiseByClickEnabled(false);
                 promise.then(async () => {
@@ -501,7 +501,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_setRaiseByClickEnabled_1300002_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let subWindow:window.Window = await windowStage.createSubWindow("test_setRaiseByClickEnabled_1300002_static");
+            let subWindow:window.Window = await windowStage!.createSubWindow("test_setRaiseByClickEnabled_1300002_static");
             await subWindow.destroyWindow();
             try {
                 subWindow.setRaiseByClickEnabled(true,(err: BusinessError<void> | null) :void => {
@@ -541,8 +541,8 @@ export default function WindowZindexTest() {
          */
         it('testSetWindowTopmostInSubWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'TestSetWindowTopmostInSubWindow_static';
-            let windowClass:window.Window = windowStage.getMainWindowSync();
-            let subWindowClass:window.Window = await windowStage.createSubWindow('testSetWindowTopmostInSubWindow_static');
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('testSetWindowTopmostInSubWindow_static');
             hilog.info(domain, tag,`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             hilog.info(domain, tag,`${caseName} Succeeded in loading the sub window content.`);
@@ -583,7 +583,7 @@ export default function WindowZindexTest() {
          */
         it('testSetWindowTopmostUnauthorized_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'TestSetWindowTopmostUnauthorized_static';
-            let subWindowClass = await windowStage.createSubWindow('subWindow');
+            let subWindowClass = await windowStage!.createSubWindow('subWindow');
             hilog.info(domain, tag,`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             hilog.info(domain, tag,`${caseName} Succeeded in loading the sub window content.`);
@@ -628,7 +628,7 @@ export default function WindowZindexTest() {
             let caseName :string = "testSetWindowTopmostPromiseErrCode1300002_static_0100";
             let msgStr = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
-            let subWin: window.Window = await windowStage.createSubWindow('testSetWindowTopmostPromiseErrCode1300002_static0100');
+            let subWin: window.Window = await windowStage!.createSubWindow('testSetWindowTopmostPromiseErrCode1300002_static0100');
             hilog.info(domain, tag,msgStr + 'Succeeded in createSubWindow.');
             await subWin.setUIContent('pages/index2');
             hilog.info(domain, tag,`${caseName} Succeeded in loading the sub window content.`);
@@ -667,7 +667,7 @@ export default function WindowZindexTest() {
         it('testGetDestroyedSubWindowFocused_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetDestroyedSubWindowFocused_static';
             try {
-                let windowClass:window.Window = await windowStage.createSubWindow('subwindow');
+                let windowClass:window.Window = await windowStage!.createSubWindow('subwindow');
                 hilog.info(domain, tag,`${caseName} Succeeded in creating the sub window.`);
                 await windowClass.setUIContent("pages/index2");
                 await windowClass.destroyWindow();
@@ -698,7 +698,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_SubWindowZLevel_static_0200';
             hilog.info(domain, tag,caseName + 'begin');
             try{
-                let mainWindow:window.Window = windowStage.getMainWindowSync();
+                let mainWindow:window.Window = windowStage!.getMainWindowSync();
                 await mainWindow.setSubWindowZLevel(1);
                 hilog.info(domain, tag,`${caseName} :main window setSubWindowZLevel success`);
                 expect(false).assertTrue();
@@ -712,7 +712,7 @@ export default function WindowZindexTest() {
             let config: window.Configuration = {
                 name: "test_SubWindowZLevel_0200",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             };
             let dialogWindow:window.Window = await window.createWindow(config);
             try{
@@ -741,7 +741,7 @@ export default function WindowZindexTest() {
         it('test_SubWindowZLevel_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_SubWindowZLevel_static_0300 ';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowClass:window.Window = await windowStage.createSubWindow('test_SubWindowZLevel_static_0300');
+            let windowClass:window.Window = await windowStage!.createSubWindow('test_SubWindowZLevel_static_0300');
             hilog.info(domain, tag,caseName + 'Succeeded in createSubWindow.');
             await windowClass.destroyWindow();
             try {
@@ -772,7 +772,7 @@ export default function WindowZindexTest() {
         it('test_SubWindowZLevel_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_SubWindowZLevel_static_0500';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowClass:window.Window = await windowStage.createSubWindow('test_SubWindowZLevel_0500');
+            let windowClass:window.Window = await windowStage!.createSubWindow('test_SubWindowZLevel_0500');
             try{
                 await windowClass.setSubWindowZLevel(10);
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel test1 success`);
@@ -791,7 +791,7 @@ export default function WindowZindexTest() {
                 }
             }
 
-            let windowClass2:window.Window = await windowStage.createSubWindow('test_SubWindowZLevel_0500');
+            let windowClass2:window.Window = await windowStage!.createSubWindow('test_SubWindowZLevel_0500');
             try{
                 await windowClass2.setSubWindowZLevel(-10);
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel test2 success`);
@@ -823,7 +823,7 @@ export default function WindowZindexTest() {
         it('test_SubWindowZLevel_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_SubWindowZLevel_static_0600';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowClass:window.Window = await windowStage.createSubWindow('test_SubWindowZLevel_0600');
+            let windowClass:window.Window = await windowStage!.createSubWindow('test_SubWindowZLevel_0600');
             try{
                 await windowClass.setSubWindowZLevel(10);
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel test1 success`);
@@ -859,7 +859,7 @@ export default function WindowZindexTest() {
         it('test_SubWindowZLevel_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_SubWindowZLevel_static_0700 ';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowClass:window.Window = await windowStage.createSubWindow('test_SubWindowZLevel_0700');
+            let windowClass:window.Window = await windowStage!.createSubWindow('test_SubWindowZLevel_0700');
             await windowClass.destroyWindow();
             try {
                 windowClass.getSubWindowZLevel();
@@ -883,7 +883,7 @@ export default function WindowZindexTest() {
             let caseName: string = 'test_getSubWindowZLevel_1300004_static';
             hilog.info(domain, tag,caseName + 'begin');
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 windowClass.getSubWindowZLevel()
                 hilog.error(domain, tag,`${caseName} : mainwindow succeed getSubWindowZLevel`);
                 expect(false).assertTrue();
@@ -907,7 +907,7 @@ export default function WindowZindexTest() {
         it('test_SetWindowDelayRaiseOnDrag_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'jsunittest test_SetWindowDelayRaiseOnDrag_1300002';
             console.log(caseName + 'begin');
-            let windowClass = await windowStage.createSubWindow('test_SetWindowDelayRaiseOnDrag_1300002');
+            let windowClass = await windowStage!.createSubWindow('test_SetWindowDelayRaiseOnDrag_1300002');
             try{
                 await windowClass.destroyWindow();
                 windowClass.setWindowDelayRaiseOnDrag(true);

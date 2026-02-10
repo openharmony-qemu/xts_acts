@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ function doMdSync(md: cryptoFramework.Md, message: cryptoFramework.DataBlob): cr
     md.updateSync(message);
     let mdResult: cryptoFramework.DataBlob = md.digestSync();
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -36,7 +36,7 @@ async function doMdPromise(md: cryptoFramework.Md, message: cryptoFramework.Data
     await md.update(message);
     let mdResult: cryptoFramework.DataBlob = await md.digest();
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -53,7 +53,7 @@ async function doUpdate(md: cryptoFramework.Md, message: cryptoFramework.DataBlo
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doUpdate “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -74,7 +74,7 @@ async function doDigest(md: cryptoFramework.Md): Promise<cryptoFramework.DataBlo
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doDigest “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -86,7 +86,7 @@ async function doMdCallBack(md: cryptoFramework.Md, message: cryptoFramework.Dat
     let mdResult: cryptoFramework.DataBlob = await doDigest(md);
 
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdCallBack “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -114,7 +114,7 @@ function doMdSyncSplit(md: cryptoFramework.Md, message: cryptoFramework.DataBlob
     let mdResult: cryptoFramework.DataBlob = md.digestSync();
 
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdSyncSplit “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -142,7 +142,7 @@ async function doMdPromiseSplit(md: cryptoFramework.Md, message: cryptoFramework
     let mdResult: cryptoFramework.DataBlob = await md.digest();
 
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdPromiseSplit “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -170,7 +170,7 @@ async function doMdCallBackSplit(md: cryptoFramework.Md, message: cryptoFramewor
     let mdResult: cryptoFramework.DataBlob = await doDigest(md);
 
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMdCallBackSplit “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -192,7 +192,7 @@ async function doMd(md: cryptoFramework.Md, msg: cryptoFramework.DataBlob,
         break;
     }
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMd “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -214,7 +214,7 @@ async function doMdSpilt(md: cryptoFramework.Md, msg: cryptoFramework.DataBlob, 
         break;
     }
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMd “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

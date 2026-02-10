@@ -22,8 +22,8 @@ class Params {
   }
 }
 
-let contentNode: ComponentContent<Params>;
-let gUIContext: UIContext;
+let contentNode: ComponentContent<Params> | undefined;
+let gUIContext: UIContext | undefined;
 
 @Builder
 function buildText(params: Params) {
@@ -32,7 +32,7 @@ function buildText(params: Params) {
     Button('Update BindSheet')
       .fontSize(20)
       .onClick(() => {
-        gUIContext.updateBindSheet(contentNode, {
+        gUIContext?.updateBindSheet(contentNode!, {
           backgroundColor: Color.Pink,
         }, true)
           .then(() => {
@@ -44,7 +44,7 @@ function buildText(params: Params) {
       .id('close')
       .fontSize(20)
       .onClick(() => {
-        gUIContext.closeBindSheet(contentNode)
+        gUIContext?.closeBindSheet(contentNode!)
           .then(() => {
             console.info('closeBindSheet success');
           })
@@ -77,7 +77,7 @@ struct UIContextBindSheet {
               let uniqueId = this.getUniqueId();
               let frameNode: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
               let targetId = frameNode?.getFirstChild()?.getUniqueId();
-              uiContext.openBindSheet(contentNode, {
+              uiContext.openBindSheet(contentNode!, {
                 height: SheetSize.MEDIUM,
                 backgroundColor: Color.Green,
                 title: { title: "Title", subtitle: "subtitle" }
@@ -87,7 +87,7 @@ struct UIContextBindSheet {
                   this.openBindSheet = 'openBindSheet'
                 })
               setTimeout(() => {
-                gUIContext.closeBindSheet(contentNode)
+                gUIContext?.closeBindSheet(contentNode!)
               }, 2000); //2秒后自动关闭
             })
         }.width('100%')

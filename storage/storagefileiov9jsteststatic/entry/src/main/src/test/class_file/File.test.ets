@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function fileIOFileProperties() {
         expect(file.name === 'fileIO_test_open_file_static_000').assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_file_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -74,7 +74,7 @@ export default function fileIOFileProperties() {
         fs.closeSync(file);
         fs.closeSync(newFile);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_file_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

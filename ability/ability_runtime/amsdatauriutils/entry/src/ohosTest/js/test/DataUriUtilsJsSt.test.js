@@ -427,5 +427,431 @@ describe('ActsDataUriUtilsTest', function () {
         expect(result).assertEqual("com.ix.dataUriUtils/0");
         done();
     })
+
+    /**
+     * @tc.name   ACTS_getId_0600
+     * @tc.number ACTS_getId_0600
+     * @tc.desc   Test getId with uri as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_getId_0600', Level.LEVEL1, function (done) {
+        console.log('ACTS_getId_0600 ' + 'dataUriUtils getId start with empty string');
+        var result = dataUriUtils.getId("");
+        console.log('ACTS_getId_0600 ' + 'dataUriUtils getId URI : ' + result);
+        expect(result).assertEqual(-1);
+        console.log('ACTS_getId_0600 ' + 'dataUriUtils getId_test with empty string successful');
+        done();
+    })
+
+    /**
+     * @tc.name   ACTS_getId_0700
+     * @tc.number ACTS_getId_0700
+     * @tc.desc   Test getId with uri as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_getId_0700', Level.LEVEL1, function (done) {
+        console.log('ACTS_getId_0700 ' + 'dataUriUtils getId start with null');
+        try {
+            var result = dataUriUtils.getId(null);
+            console.log('ACTS_getId_0700 ' + 'dataUriUtils getId URI : ' + result);
+            expect(result).assertEqual(-1);
+            done();
+        } catch (err) {
+            console.log('ACTS_getId_0700 ' + 'dataUriUtils getId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_getId_0800
+     * @tc.number ACTS_getId_0800
+     * @tc.desc   Test getId with uri as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_getId_0800', Level.LEVEL1, function (done) {
+        console.log('ACTS_getId_0800 ' + 'dataUriUtils getId start with undefined');
+        try {
+            var result = dataUriUtils.getId(undefined);
+            console.log('ACTS_getId_0800 ' + 'dataUriUtils getId URI : ' + result);
+            expect(result).assertEqual(-1);
+            done();
+        } catch (err) {
+            console.log('ACTS_getId_0800 ' + 'dataUriUtils getId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_0600
+     * @tc.number ACTS_attachId_0600
+     * @tc.desc   Test attachId with uri as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_0600', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_0600 ' + 'dataUriUtils attachId start with empty string');
+        var idint = 123;
+        var result = dataUriUtils.attachId("", idint);
+        console.log('ACTS_attachId_0600 ' + 'dataUriUtils attachId URI :' + result);
+        expect(result).assertEqual("/123");
+        console.log('ACTS_attachId_0600 ' + 'dataUriUtils attachId_test with empty string successful');
+        done();
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_0700
+     * @tc.number ACTS_attachId_0700
+     * @tc.desc   Test attachId with uri as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_0700', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_0700 ' + 'dataUriUtils attachId start with null uri');
+        var idint = 123;
+        try {
+            var result = dataUriUtils.attachId(null, idint);
+            console.log('ACTS_attachId_0700 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual(null);
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_0700 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_0800
+     * @tc.number ACTS_attachId_0800
+     * @tc.desc   Test attachId with uri as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_0800', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_0800 ' + 'dataUriUtils attachId start with undefined uri');
+        var idint = 123;
+        try {
+            var result = dataUriUtils.attachId(undefined, idint);
+            console.log('ACTS_attachId_0800 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual(undefined);
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_0800 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_0900
+     * @tc.number ACTS_attachId_0900
+     * @tc.desc   Test attachId with id as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_0900', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_0900 ' + 'dataUriUtils attachId start with null id');
+        try {
+            var result = dataUriUtils.attachId("com.ix.dataUriUtils", null);
+            console.log('ACTS_attachId_0900 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual("com.ix.dataUriUtils");
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_0900 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_1000
+     * @tc.number ACTS_attachId_1000
+     * @tc.desc   Test attachId with id as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_1000', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_1000 ' + 'dataUriUtils attachId start with undefined id');
+        try {
+            var result = dataUriUtils.attachId("com.ix.dataUriUtils", undefined);
+            console.log('ACTS_attachId_1000 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual("com.ix.dataUriUtils");
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_1000 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_1100
+     * @tc.number ACTS_attachId_1100
+     * @tc.desc   Test attachId with uri as null and id as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_1100', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_1100 ' + 'dataUriUtils attachId start with both null');
+        try {
+            var result = dataUriUtils.attachId(null, null);
+            console.log('ACTS_attachId_1100 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual(null);
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_1100 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_attachId_1200
+     * @tc.number ACTS_attachId_1200
+     * @tc.desc   Test attachId with uri as undefined and id as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_attachId_1200', Level.LEVEL1, function (done) {
+        console.log('ACTS_attachId_1200 ' + 'dataUriUtils attachId start with both undefined');
+        try {
+            var result = dataUriUtils.attachId(undefined, undefined);
+            console.log('ACTS_attachId_1200 ' + 'dataUriUtils attachId URI :' + result);
+            expect(result).assertEqual(undefined);
+            done();
+        } catch (err) {
+            console.log('ACTS_attachId_1200 ' + 'dataUriUtils attachId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_deleteId_0600
+     * @tc.number ACTS_deleteId_0600
+     * @tc.desc   Test deleteId with uri as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_deleteId_0600', Level.LEVEL1, function (done) {
+        console.log('ACTS_deleteId_0600 ' + 'dataUriUtils deleteId start with empty string');
+        var result = dataUriUtils.deleteId("");
+        console.log('ACTS_deleteId_0600 ' + 'dataUriUtils deleteId URI : ' + result);
+        expect(result).assertEqual("");
+        console.log('ACTS_deleteId_0600 ' + 'dataUriUtils deleteId_test with empty string successful');
+        done();
+    })
+
+    /**
+     * @tc.name   ACTS_deleteId_0700
+     * @tc.number ACTS_deleteId_0700
+     * @tc.desc   Test deleteId with uri as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_deleteId_0700', Level.LEVEL1, function (done) {
+        console.log('ACTS_deleteId_0700 ' + 'dataUriUtils deleteId start with null');
+        try {
+            var result = dataUriUtils.deleteId(null);
+            console.log('ACTS_deleteId_0700 ' + 'dataUriUtils deleteId URI : ' + result);
+            expect(result).assertEqual(null);
+            done();
+        } catch (err) {
+            console.log('ACTS_deleteId_0700 ' + 'dataUriUtils deleteId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_deleteId_0800
+     * @tc.number ACTS_deleteId_0800
+     * @tc.desc   Test deleteId with uri as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_deleteId_0800', Level.LEVEL1, function (done) {
+        console.log('ACTS_deleteId_0800 ' + 'dataUriUtils deleteId start with undefined');
+        try {
+            var result = dataUriUtils.deleteId(undefined);
+            console.log('ACTS_deleteId_0800 ' + 'dataUriUtils deleteId URI : ' + result);
+            expect(result).assertEqual(undefined);
+            done();
+        } catch (err) {
+            console.log('ACTS_deleteId_0800 ' + 'dataUriUtils deleteId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_0600
+     * @tc.number ACTS_updateId_0600
+     * @tc.desc   Test updateId with uri as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_0600', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_0600 ' + 'dataUriUtils updateId start with empty string');
+        var idint = 1234;
+        var result = dataUriUtils.updateId("", idint);
+        console.log('ACTS_updateId_0600 ' + 'updateId updateId URI : ' + result);
+        expect(result).assertEqual("");
+        console.log('ACTS_updateId_0600 ' + 'dataUriUtils updateId_test with empty string successful');
+        done();
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_0700
+     * @tc.number ACTS_updateId_0700
+     * @tc.desc   Test updateId with uri as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_0700', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_0700 ' + 'dataUriUtils updateId start with null uri');
+        var idint = 1234;
+        try {
+            var result = dataUriUtils.updateId(null, idint);
+            console.log('ACTS_updateId_0700 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual(null);
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_0700 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_0800
+     * @tc.number ACTS_updateId_0800
+     * @tc.desc   Test updateId with uri as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_0800', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_0800 ' + 'dataUriUtils updateId start with undefined uri');
+        var idint = 1234;
+        try {
+            var result = dataUriUtils.updateId(undefined, idint);
+            console.log('ACTS_updateId_0800 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual(undefined);
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_0800 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_0900
+     * @tc.number ACTS_updateId_0900
+     * @tc.desc   Test updateId with id as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_0900', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_0900 ' + 'dataUriUtils updateId start with null id');
+        try {
+            var result = dataUriUtils.updateId("com.ix.dataUriUtils", null);
+            console.log('ACTS_updateId_0900 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual('com.ix.dataUriUtils');
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_0900 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_1000
+     * @tc.number ACTS_updateId_1000
+     * @tc.desc   Test updateId with id as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_1000', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_1000 ' + 'dataUriUtils updateId start with undefined id');
+        try {
+            var result = dataUriUtils.updateId("com.ix.dataUriUtils", undefined);
+            console.log('ACTS_updateId_1000 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual('com.ix.dataUriUtils');
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_1000 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_1100
+     * @tc.number ACTS_updateId_1100
+     * @tc.desc   Test updateId with both parameters as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_1100', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_1100 ' + 'dataUriUtils updateId start with both null');
+        try {
+            var result = dataUriUtils.updateId(null, null);
+            console.log('ACTS_updateId_1100 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual(null);
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_1100 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   ACTS_updateId_1200
+     * @tc.number ACTS_updateId_1200
+     * @tc.desc   Test updateId with both parameters as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ACTS_updateId_1200', Level.LEVEL1, function (done) {
+        console.log('ACTS_updateId_1200 ' + 'dataUriUtils updateId start with both undefined');
+        try {
+            var result = dataUriUtils.updateId(undefined, undefined);
+            console.log('ACTS_updateId_1200 ' + 'updateId updateId URI : ' + result);
+            expect(result).assertEqual(undefined);
+            done();
+        } catch (err) {
+            console.log('ACTS_updateId_1200 ' + 'dataUriUtils updateId error: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        }
+    })
 })
 }

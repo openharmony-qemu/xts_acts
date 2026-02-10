@@ -107,7 +107,7 @@ struct TouchExample {
             console.log('fang--->D')
             console.info("touchFlag start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("touchFlag emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

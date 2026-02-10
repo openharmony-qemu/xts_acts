@@ -58,8 +58,8 @@ struct ColorAndBlur {
     NavDestination() {
       Stack({ alignContent: Alignment.Center }) {
         BackComponent()
-          // .width('100%')
-          // .height('100%')
+          .width('100%')
+          .height('100%')
         Column() {
           Button('switch')
             .onClick((e: ClickEvent) => {
@@ -81,20 +81,6 @@ struct ColorAndBlur {
       backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
       barStyle: BarStyle.STACK
     })
-    .menus([
-      { value: 'A' },
-      { value: 'B' },
-      { value: 'C' },
-      { value: 'D' },
-    ])
-    .toolbarConfiguration([
-      { value: 'A' },
-      { value: 'B' },
-      { value: 'C' },
-      { value: 'D' },
-      { value: 'E' },
-      { value: 'F' }
-    ])
   }
 }
 
@@ -116,8 +102,8 @@ struct TitleOptionsToolOptions {
     Navigation(this.navPathStack) {
       Stack({ alignContent: Alignment.Center }) {
         BackComponent()
-          // .width('100%')
-          // .height('100%')
+          .width('100%')
+          .height('100%')
         Column() {
           Button('switch')
             .onClick((e: ClickEvent) => {
@@ -148,24 +134,5 @@ struct TitleOptionsToolOptions {
       barStyle: BarStyle.STACK,
     })
     .titleMode(NavigationTitleMode.Mini)
-    .menus([
-      { value: 'A' },
-      { value: 'B' },
-      { value: 'C' },
-      { value: 'D' },
-    ]
-    )
-    .toolbarConfiguration([
-      { value: 'A' },
-      { value: 'B' },
-      { value: 'C' },
-      { value: 'D' },
-      { value: 'E' },
-      { value: 'F' }
-    ], {
-      backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
-      backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,
-      barStyle: BarStyle.STACK,
-    })
   }
 }

@@ -26,7 +26,7 @@ let libUtil:LibUtil = new LibUtil();
 export default function TextAreaLetterSpacing(){
 
   describe('TextAreaLetterSpacing',  () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

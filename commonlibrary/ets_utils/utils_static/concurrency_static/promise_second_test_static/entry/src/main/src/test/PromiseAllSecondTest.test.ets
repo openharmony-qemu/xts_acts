@@ -937,11 +937,11 @@ export default function PromiseAllSecondTest() {
         const taskPromises: Promise<Array<String>>[] = [];
         let results: string[] = [];
         arr.push(1);
-        let resolvePromise1: (value: string) => void;
+        let resolvePromise1: ((value: string) => void) | undefined;
         const promise1: Promise<string> = new Promise<string>((resolve):void => {
           resolvePromise1 = resolve;
         });
-        let resolvePromise2: (value: string) => void;
+        let resolvePromise2: ((value: string) => void) | undefined;
         const promise2: Promise<string> = new Promise<string>((resolve):void => {
           resolvePromise2 = resolve;
         });
@@ -950,7 +950,7 @@ export default function PromiseAllSecondTest() {
         arr.push(2);
         setTimeout(() => {
           arr.push(3);
-          resolvePromise1('Promise 1 Resolved');
+          resolvePromise1!('Promise 1 Resolved');
         }, 100);
         allPromises
           .then((res:Array<string>) => {
@@ -971,7 +971,7 @@ export default function PromiseAllSecondTest() {
         });
         setTimeout(() => {
           arr.push(8);
-          resolvePromise2('Promise 2 Resolved');
+          resolvePromise2!('Promise 2 Resolved');
         }, 200);
         try {
           await Promise.all(taskPromises);
@@ -1010,11 +1010,11 @@ export default function PromiseAllSecondTest() {
         const taskPromises: Promise<Array<String>>[] = [];
         let results: string[] = [];
         arr.push(1);
-        let resolvePromise1: (value: string) => void;
+        let resolvePromise1: ((value: string) => void) | undefined;
         const promise1: Promise<string> = new Promise<string>((resolve):void => {
           resolvePromise1 = resolve;
         });
-        let rejectPromise2: (reason: Error) => void;
+        let rejectPromise2: ((reason: Error) => void) | undefined;
         const promise2: Promise<string> = new Promise<string>((_, reject):void => {
           rejectPromise2 = reject;
         });
@@ -1044,11 +1044,11 @@ export default function PromiseAllSecondTest() {
         });
         setTimeout(() => {
           arr.push(8);
-          resolvePromise1('Promise 1 Resolved');
+          resolvePromise1!('Promise 1 Resolved');
         }, 100);
         setTimeout(() => {
           arr.push(9);
-          rejectPromise2(new Error('Promise 2 Rejected'));
+          rejectPromise2!(new Error('Promise 2 Rejected'));
         }, 200);
         try {
           await Promise.all(taskPromises);
@@ -1087,11 +1087,11 @@ export default function PromiseAllSecondTest() {
         const taskPromises: Promise<Array<String>>[] = [];
         let results: string[] = [];
         arr.push(1);
-        let resolvePromise1: (value: string) => void;
+        let resolvePromise1: ((value: string) => void) | undefined;
         const promise1: Promise<string> = new Promise<string>((resolve):void => {
           resolvePromise1 = resolve;
         });
-        let rejectPromise2: (reason: Error) => void;
+        let rejectPromise2: ((reason: Error) => void) | undefined;
         const promise2: Promise<string> = new Promise<string>((_, reject):void => {
           rejectPromise2 = reject;
         });
@@ -1121,11 +1121,11 @@ export default function PromiseAllSecondTest() {
         });
         setTimeout(() => {
           arr.push(8);
-          resolvePromise1('Promise 1 Resolved');
+          resolvePromise1!('Promise 1 Resolved');
         }, 100);
         setTimeout(() => {
           arr.push(9);
-          rejectPromise2(new Error('Promise 2 Rejected'));
+          rejectPromise2!(new Error('Promise 2 Rejected'));
         }, 200);
         try {
           await Promise.all(taskPromises);
@@ -1164,13 +1164,13 @@ export default function PromiseAllSecondTest() {
         const taskPromises: Promise<Array<String>>[] = [];
         let results: string[] = [];
         arr.push(1);
-        let resolvePromise1: (value: string) => void;
-        let rejectPromise1: (reason: Error) => void;
+        let resolvePromise1: ((value: string) => void) | undefined;
+        let rejectPromise1: ((reason: Error) => void) | undefined;
         const promise1: Promise<string> = new Promise<string>((resolve, reject) => {
           resolvePromise1 = resolve;
           rejectPromise1 = reject;
         });
-        let resolvePromise2: (value: string) => void;
+        let resolvePromise2: ((value: string) => void) | undefined;
         const promise2: Promise<string> = new Promise<string>((resolve):void => {
           resolvePromise2 = resolve;
         });
@@ -1200,11 +1200,11 @@ export default function PromiseAllSecondTest() {
         });
         setTimeout(() => {
           arr.push(8);
-          rejectPromise1(new Error('Promise 1 Rejected'));
+          rejectPromise1!(new Error('Promise 1 Rejected'));
         }, 100);
         setTimeout(() => {
           arr.push(9);
-          resolvePromise2('Promise 2 Resolved');
+          resolvePromise2!('Promise 2 Resolved');
         }, 200);
         try {
           await Promise.all(taskPromises);

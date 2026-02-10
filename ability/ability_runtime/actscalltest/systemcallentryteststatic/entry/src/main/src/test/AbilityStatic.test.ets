@@ -40,7 +40,7 @@ export default function AbilityStaticTest() {
   describe('AbilityStaticTest', (): void => {
     const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     const BUNDLE_NAME: string = 'com.example.systemcalltest.static';
-    let caller: Caller;
+    let caller: Caller | undefined;
 
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll start');
@@ -48,7 +48,7 @@ export default function AbilityStaticTest() {
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(5000)
       caller = AppStorage.get<Caller>('Caller') as Caller;
-      hilog.info(domain, tag, `beforeAll Caller: ${!!caller}`);
+      hilog.info(domain, tag, `beforeAll Caller: ${!!caller!}`);
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -64,7 +64,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0100';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.release();
+        caller?.release();
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -87,7 +87,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0200';
       hilog.info(domain, tag, `${itName} start`);
       const data = new CustomParcelable();
-      caller.call('testCall', data).then(() => {
+      caller?.call('testCall', data).then(() => {
         hilog.info(domain, tag, `${itName} caller call success`);
         expect().assertFail();
       }).catch((e: Error) => {
@@ -111,7 +111,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0300';
       hilog.info(domain, tag, `${itName} start`);
       const data = new CustomParcelable();
-      caller.callWithResult('testCall', data).then((message: rpc.MessageSequence) => {
+      caller?.callWithResult('testCall', data).then((message: rpc.MessageSequence) => {
         hilog.info(domain, tag, `${itName} caller call success`);
         expect().assertFail();
       }).catch((e: Error) => {
@@ -136,7 +136,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0400';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRelease((msg) => {});
+        caller?.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -160,7 +160,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0500';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRemoteStateChange((msg) => {});
+        caller?.onRemoteStateChange((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -184,7 +184,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0600';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRelease((msg) => {});
+        caller?.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -208,7 +208,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0700';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.offRelease((msg) => {});
+        caller?.offRelease((msg) => {});
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -231,7 +231,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0800';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.offRelease();
+        caller?.offRelease();
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {

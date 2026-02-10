@@ -71,7 +71,8 @@ export default function Param4Jsunit() {
         if (!("Param4" == pages.name)) {
           console.info("get Param4Jsunit pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
+          console.info("get Param4Jsunit pages.name:" + JSON.stringify(routerInstance.getState().name));
           await CommonFunc.sleep(2000);
 
         }

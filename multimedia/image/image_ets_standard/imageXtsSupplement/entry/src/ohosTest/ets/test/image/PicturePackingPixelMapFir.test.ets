@@ -66,15 +66,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_001
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_001
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_001
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_001
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.AUTO,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_001', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_001';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_001', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_001';
       pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -102,15 +102,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_002
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_002
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_002
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_002
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.SDR,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_002';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_002';
       pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -137,15 +137,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_003
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_003
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_003
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_003
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:false,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_003';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_003';
       pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -173,15 +173,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_004
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_004
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_004
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_004
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:true,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_004', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_004';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_004', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_004';
       pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -209,15 +209,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_005
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_005
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_005
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_005
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.AUTO,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_005', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_005';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_005', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_005';
       pictureCreatImageSource(done,testName ,'test_exif_v2.png', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -245,15 +245,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_006
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_006
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_006
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_006
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.SDR,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_006', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_006';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_006';
       pictureCreatImageSource(done,testName ,'test_exif_v2.png', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -279,15 +279,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_007
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_007
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_007
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_007
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:false,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_007';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_007';
       pictureCreatImageSource(done,testName ,'test_exif_v2.png', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -315,15 +315,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_008
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_008
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_008
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_008
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:true,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_008', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_008';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_008', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_008';
       pictureCreatImageSource(done,testName ,'test_exif_v2.png', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -350,15 +350,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_009
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_009
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_009
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_009
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.AUTO,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_009', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_009';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_009', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_009';
       pictureCreatImageSource(done,testName ,'test_exif_v3.webp', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -386,15 +386,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_010
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_010
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_010
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_010
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.SDR,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_010', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_010';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_010';
       pictureCreatImageSource(done,testName ,'test_exif_v3.webp', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -422,15 +422,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_011
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_011
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_011
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_011
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:false,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_011', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_011';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_011';
       pictureCreatImageSource(done,testName ,'test_exif_v3.webp', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -459,15 +459,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_012
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_012
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_012
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_012
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:true,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_012', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_012';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_012', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_012';
       pictureCreatImageSource(done,testName ,'test_exif_v3.webp', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -494,15 +494,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_013
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_013
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_013
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_013
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.AUTO,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_013', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_013';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_013', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_013';
       pictureCreatImageSource(done,testName ,'test.jpeg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -530,15 +530,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_014
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_014
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_014
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_014
      * @tc.desc       desiredDynamicRange: image.PackingDynamicRange.SDR,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_014', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_014';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_014';
       pictureCreatImageSource(done,testName ,'test.jpeg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -564,15 +564,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_015
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_015
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_015
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_015
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:false,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_015', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_015';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_015';
       pictureCreatImageSource(done,testName ,'test.jpeg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
@@ -600,15 +600,15 @@ export default function PicturePackingPixelMapFirTestSupp() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_016
-     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_016
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_016
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_016
      * @tc.desc       needsPackProperties: image.PackingOption.needsPackProperties:true,
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_016', Level.LEVEL0, (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_016';
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_016', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACKING_PIXELMAP_FIR_016';
       pictureCreatImageSource(done,testName ,'test.jpeg', async (pixelMap,imageSource) => {
         try {
           let packOpts: image.PackingOption = {

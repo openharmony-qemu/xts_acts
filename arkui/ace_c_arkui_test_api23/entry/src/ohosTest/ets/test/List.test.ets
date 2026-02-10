@@ -34,6 +34,7 @@ import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressL
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
 import TextEnumTest from "./text/TextEnum.test";
 import TextMarqueeOptionsTest from './TextMarqueeOptions/TextMarqueeOptions.test';
+import ControllerBaseCreatTest from './TextMarqueeOptions/ControllerBaseCreatTest.test';
 import ScrollToVisibleTest from './ScrollToVisible/ScrollToVisible.test';
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
@@ -105,5 +106,6 @@ export default function testsuite() {
   SelectedDragPreviewStyleTextAreaTest()
   SelectedDragPreviewStyleTextInputTest()
   TextMarqueeOptionsTest();
+  ControllerBaseCreatTest();
   ScrollToVisibleTest();
 }

@@ -25,7 +25,7 @@ let libUtil:LibUtil = new LibUtil()
 export default function NativeXComponent_RegisterKeyEventCallbackWithResultTest(){
 
   describe('NativeXComponent_RegisterKeyEventCallbackWithResultTest', (): void  => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api14.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

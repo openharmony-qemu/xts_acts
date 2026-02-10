@@ -668,7 +668,6 @@ export default function ActsDisplayNdkApi14Test() {
       try{
         let callback: Callback<boolean> = (captureStatus: boolean) => {
           console.info(caseName + 'Listening capture status: ' + captureStatus);
-          expect(true).assertTrue();
           display.off('captureStatusChange', callback);
           done();
         };

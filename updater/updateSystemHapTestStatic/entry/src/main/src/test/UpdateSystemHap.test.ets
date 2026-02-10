@@ -1,6 +1,6 @@
 // @ts-nocheck
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file expect in compliance with the License.
  * You may obtain a copy of the License at
@@ -876,7 +876,7 @@ export default function updateSystemHapTest() {
       try {
         updater = update.getOnlineUpdater(upgradeInfo);
         let result = await updater.terminateUpgrade()
-      } catch (err : Error) {
+      } catch (err) {
         console.error("updateSystemHapTest031 catch " + JSON.stringify(err));
         console.error("updateSystemHapTest031 message " + err);
         try {
@@ -977,7 +977,7 @@ export default function updateSystemHapTest() {
       try {
         restorer = update.getRestorer();
         let result = await restorer.factoryReset();
-      } catch (err : Error) {
+      } catch (err) {
         console.error("updateSystemHapTest035 catch " + JSON.stringify(err));
         console.error("updateSystemHapTest035 message " + err);
         try {

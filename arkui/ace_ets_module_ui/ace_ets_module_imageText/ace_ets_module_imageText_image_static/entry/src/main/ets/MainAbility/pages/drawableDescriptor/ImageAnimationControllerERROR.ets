@@ -101,7 +101,7 @@ struct ImageAnimationControllerERROR {
               this.animated_1 = animated1;
 
               hilog.info(0x0000, 'testTag', 'AnimatedDrawable end');
-            } catch (e: Error) {
+            } catch (e) {
               console.log('更新图片 catch error：-----------' + e.message);
             }
           }
@@ -117,7 +117,7 @@ struct ImageAnimationControllerERROR {
                 console.log('Result catch result：-----------' + result);
                 this.controllerText = JSON.stringify(result)
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('Result catch error：-----------' + e.message);
             }
           })

@@ -53,15 +53,15 @@ import {
   Observed
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,SubscribedAbstractProperty } from '@ohos.arkui.stateManagement';
+import { AppStorage,SubscribedAbstractProperty, AbstractProperty } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
 AppStorage.setOrCreate<Router>('router', router);
 AppStorage.setOrCreate<number>('PropA', 160);
 let storage36 = new LocalStorage();
-let link361: SubscribedAbstractProperty<number> = AppStorage.setAndRef<number>('PropA',48) as SubscribedAbstractProperty<number>
-let link362: SubscribedAbstractProperty<number> = AppStorage.setAndRef<number>('sss',48) as SubscribedAbstractProperty<number>
+let link361: AbstractProperty<number> = AppStorage.setAndRef<number>('PropA',48) as AbstractProperty<number>
+let link362: AbstractProperty<number> = AppStorage.setAndRef<number>('sss',48) as AbstractProperty<number>
 
 const get_storage36 = (): LocalStorage => storage36
 @Entry({ storage:'get_storage36' })

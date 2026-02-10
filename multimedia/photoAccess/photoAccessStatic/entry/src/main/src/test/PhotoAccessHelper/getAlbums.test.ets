@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function getAlbumsTest() {
           subTypes.push(photoAccessHelper.AlbumSubtype.FAVORITE);
           let count = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
+            (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
               fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
               try {
                 if (err?.code !== 0) {
@@ -70,7 +70,7 @@ export default function getAlbumsTest() {
                   checkSystemAlbum(testNum, album, subTypes[i]);
                   count++;
                 }
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.info(domain, tag,
                   testNum + ' getAlbums Failed!' + ", error.name:" + error.name + ", error.message:" + error.message);
               }
@@ -81,7 +81,7 @@ export default function getAlbumsTest() {
             });
             await Utils.msSleep(50)
           }
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' PhotoAccessHelperTest failed' + ", error.name:" + error.name + ", error.message:" +
             error.message);
@@ -104,13 +104,13 @@ export default function getAlbumsTest() {
       try {
         let albumName = testNum;
         const fetchOps = fetchOption(testNum, photoAccessHelper.AlbumKeys.ALBUM_NAME, albumName);
-        helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (err: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined): void => {
             expect(false).assertTrue();
           });
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
         hilog.info(domain, tag, `${testNum} failed, error code: ${error.code}`);
         expect(error.code === 13900020 || error.code === 401).assertTrue();
         done();

@@ -31,12 +31,12 @@ import {
   ItemAlign,
   Row,
   Button,PromptActionDialogController,
-  ClickEvent,Error,
+  ClickEvent,
   Week,ComponentV2,BorderStyle,ShadowStyle,
   FontWeight,RowOptions,DismissDialogAction,DismissReason,ShadowType,
   Axis,AlertDialogParamWithButtons,$r,DialogAlignment,DialogButtonStyle,DialogAlignment,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TipsOptions
 } from '@ohos.arkui.component';
 import {

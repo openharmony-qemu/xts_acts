@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import request from "@ohos.request";
 import common from "@ohos.app.ability.common";
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let baseContext: common.UIAbilityContext;
+let baseContext: common.UIAbilityContext | undefined;
 
 export default function RequestDownloadJSUnitStatic() {
 
@@ -69,11 +69,12 @@ export default function RequestDownloadJSUnitStatic() {
         saveas: './SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010.txt',
       };
       try {
-        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010 create success: " + task);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Promise_Static_0010 catch error: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(201);
         done();
@@ -96,7 +97,7 @@ export default function RequestDownloadJSUnitStatic() {
         saveas: './SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010.txt',
       };
       try {
-        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+        request.agent.create(baseContext!, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
           hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010 downloadTask: " + task);
           if (err?.code !== 0) {
             hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010 create err: " + err?.code + JSON.stringify(err));
@@ -108,7 +109,8 @@ export default function RequestDownloadJSUnitStatic() {
             done();
           } 
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Promise_Download_Callback_Static_0010 catch error: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(201);
         done();

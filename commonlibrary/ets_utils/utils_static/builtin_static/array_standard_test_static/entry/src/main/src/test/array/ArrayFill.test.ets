@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1479,7 +1479,7 @@ export default function ArrayFillTest() {
     it("testArrayFill0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4];
       arr.fill(2, 0, 2);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([2, 2, 4]));
     });
 

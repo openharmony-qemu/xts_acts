@@ -25,8 +25,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
-import { Callback, RecordData } from '@ohos.base'
-import { BusinessError } from '@ohos.arkui.component';
+import { Callback, RecordData, BusinessError } from '@ohos.base'
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'

@@ -60,7 +60,7 @@ export default function SupportWindowModeStaticTest() {
             expect(`${err?.code}`).assertEqual('0');
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${subTag} fail.`)
           expect().assertFail();
           done();

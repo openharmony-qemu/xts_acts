@@ -16,10 +16,12 @@
 
 
 import ErrcodeTest from './ErrorCodeTest.test.ets';
+import GetAbilityInfoNopermissionTest from './GetAbilityInfoNopermission.test.ets';
 
 
 export default function testsuite() {
 
   ErrcodeTest();
+  GetAbilityInfoNopermissionTest();
 
 }

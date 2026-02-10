@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for hjunit demo Tests",
+    "description": "Configuration for Actsbmsaccesstoken Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "120000",

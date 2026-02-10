@@ -17,6 +17,9 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
+const ARKUI_ERROR_CODE_NO_ERROR = 0;
+const ARKUI_ERROR_CODE_ERROR = 1;
+
 export default function calendarPickerWidthTest() {
 
   describe('CalendarPickerWidthTest', () => {
@@ -65,5 +68,23 @@ export default function calendarPickerWidthTest() {
       done()
     })
 
+    /**
+     * @tc.name   testCalendarPickerWidth004
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_WIDTH_0400
+     * @tc.desc   testing calendarPicker with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCalendarPickerWidth004', Level.LEVEL1, async  (done: Function) => {	   
+      try {
+        let result: number = nativeFunc.testCalendarPickerWidth004()
+        expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+        done();
+      } catch (err) {
+        console.error("====>testCalendarPickerWidth004 catch err: " + err);
+        expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
+      }
+    })
   })
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,15 +46,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates orderByAsc normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testOrderByAsc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testOrderByAsc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan");
         predicates.orderByAsc("id");
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -66,16 +66,16 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates orderByDesc normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testOrderByDesc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testOrderByDesc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan");
         predicates.orderByDesc("id");
         hilog.info(domain, tag, "update predicates " + predicates)
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -87,16 +87,16 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates and normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testAnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testAnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan");
         predicates.and();
         predicates.equalTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -108,9 +108,9 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates in normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('testIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
 
       try {
         let numbersArr = new Array<ValueType>(255.0, 11.6, 13.0);
@@ -118,7 +118,7 @@ export default function dataSharePredicatesTest() {
         // Replace static in with inValues interface.
         predicates.inValues("age", numbersArr);
         expect(predicates != null && predicates != undefined).assertTrue()
-      } catch (e: BusinessError) {
+      } catch (e) {
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " + e.message)
       }
@@ -130,14 +130,14 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates limit normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLimit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLimit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.equalTo("name", "zhangSan").limit(10, 3);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -149,14 +149,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates greaterThan normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.greaterThan("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -168,14 +169,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates greaterThanOrEqualTo normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.greaterThanOrEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -187,14 +189,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates lessThanOrEqualTo normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.lessThanOrEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -206,14 +209,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates lessThan normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.lessThan("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -225,14 +229,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates notEqualTo normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testNotEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNotEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notEqualTo("age", 18 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -244,14 +249,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates notBetween normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testNotBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNotBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notBetween("age", 18 as long, 24 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -263,14 +269,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates between normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.between("age", 18 as long, 24 as long);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -282,14 +289,15 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates notInValues normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testNotInValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNotInValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notInValues("age", [2 as long, 4 as long]);
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }
@@ -301,9 +309,9 @@ export default function dataSharePredicatesTest() {
      * @tc.desc   predicates beginWrap|endWrap|notEqualTo|or|like normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testBeginWrap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testBeginWrap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notEqualTo("age", 18 as long)
@@ -313,7 +321,8 @@ export default function dataSharePredicatesTest() {
         .endWrap()
         .like("name","li%");
         expect(predicates != null && predicates != undefined).assertTrue()
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError
         expect().assertFail()
         hilog.info(domain, tag, "update fail err.code is " + e.code + "err.message is " +e.message)
       }

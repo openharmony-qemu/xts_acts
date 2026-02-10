@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -37,7 +37,6 @@ struct NavigationLevelTest9 {
       Column({ space: 10 } as ColumnOptions) {
         Button('pushPath pageTwo')
           .onClick((e: ClickEvent) => {
- this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
             this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
           })
           .id('NavigationLevelTest9_btn2')
@@ -75,8 +74,7 @@ struct NavigationLevelTest9 {
         Column({ space: 10 } as ColumnOptions) {
           Button('pushPath pageOne')
             .onClick((e: ClickEvent) => {
-this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
-              this.pageInfos.pushPath(new NavPathInfo('pageTwo','mes'))
+              this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
             })
             .id('NavigationLevelTest9_btn1')
         }

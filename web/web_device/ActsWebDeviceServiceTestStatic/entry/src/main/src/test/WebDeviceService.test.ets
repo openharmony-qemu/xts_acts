@@ -62,9 +62,9 @@ export default function webDeviceServiceTest() {
          * @tc.desc   test GeolocationAccess
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('testGeolocationAccess_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('testGeolocationAccess_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             Utils.emitEvent("GeolocationAccess", 10);
             Utils.registerEvent("testGeolocationAccess_static", true, 101, done);
             await Utils.msSleep(2000);

@@ -249,8 +249,10 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       console.info(`case media.StateChangeReason.BACKGROUND`);
-      await avPlayer!!.release().then(() => {
-      }).catch(mediaTestBase.catchCallback);
+      waitForCompletion(async () => {
+        await avPlayer!!.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+      });
     }
     console.info(`case state is ${state}`);
     switch (state) {
@@ -289,7 +291,9 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         } else if (playCnt == 1) {
           expect(avPlayer?.state).assertEqual(PLAYING);
           // step 3: playing -> seek duration/3
-          await mediaTestBase.msleepAsync(playTime);
+          waitForCompletion(async () => {
+            await mediaTestBase.msleepAsync(playTime);
+          });
           avPlayer?.seek(avPlayer!!.duration / 3);
         } else if (playCnt == 2) {
           expect(avPlayer?.state).assertEqual(PLAYING);
@@ -403,7 +407,9 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         }
         if (nowTime > avPlayer!!.duration / 2) {
           avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
-          await mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime);
+          waitForCompletion(async () => {
+            await mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime);
+          });
         }
         if (avPlayer!!.loop == true) {
           // step 8: playing -> seek duration when loop false
@@ -427,9 +433,11 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
   avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
+    waitForCompletion(async () => {
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
     });
   });
 }

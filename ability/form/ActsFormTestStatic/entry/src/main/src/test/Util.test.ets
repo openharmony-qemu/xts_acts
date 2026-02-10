@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,18 +64,22 @@ export default class Utils {
         uri: uri,
         bundleName: bundleName,
       }).then(() => {
-        hilog.info(DOMAIN, TAG, `start ${abilityName} success.`);
+        hilog.info(DOMAIN, TAG, `start ${abilityName}-uri:${uri} success.`);
         isSuccessStartAbility = true;
       });
-      await Utils.msSleep(500);
-    } catch (error: BusinessError) {
-      hilog.error(DOMAIN, TAG, `start ${abilityName} fail. message: ${error?.message}`);
+      hilog.info(DOMAIN, TAG, 'msSleep 500 start');
+      waitForCompletion(async ()=>{await Utils.msSleep(500);});
+      hilog.info(DOMAIN, TAG, 'msSleep 500 end');
+    } catch (error) {
+      error = error as BusinessError;
+      hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} fail. message: ${error?.message}`);
       return false;
     }
     if (isSuccessStartAbility) {
+      hilog.info(DOMAIN, TAG, `start ${abilityName}-uri:${uri} success, isSuccessStartAbility is true`);
       return true;
     }
-    hilog.error(DOMAIN, TAG, `start ${abilityName} timeout so failed.`);
+    hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} timeout so failed.`);
     return false;
   }
 

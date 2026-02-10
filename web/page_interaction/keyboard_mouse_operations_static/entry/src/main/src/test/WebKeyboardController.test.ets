@@ -48,9 +48,9 @@ export default function webHitTestTypeEnumTest() {
      * @tc.desc   test the value of WebHitTestType.EditText is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('webKeyboardControllerStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('webKeyboardControllerStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.pageInteractionFive.test.static', 'EntryAbility');
       await Utils.msSleep(9000);
