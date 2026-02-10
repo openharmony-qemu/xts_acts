@@ -27,13 +27,13 @@ namespace Huks {
 
 // Constants from huks_wrapped_test_common.h
 static const uint32_t IV_SIZE = 16;
-static uint8_t IV[IV_SIZE] = "bababababababab";
+static uint8_t g_iv[IV_SIZE] = "bababababababab";
 
 static const uint32_t AAD_SIZE = 16;
-static uint8_t AAD[AAD_SIZE] = "abababababababa";
+static uint8_t g_aad[AAD_SIZE] = "abababababababa";
 
 static const uint32_t NONCE_SIZE = 12;
-static uint8_t NONCE[NONCE_SIZE] = "hahahahahah";
+static uint8_t g_nonce[NONCE_SIZE] = "hahahahahah";
 
 static const uint32_t AEAD_TAG_SIZE = 16;
 static const uint32_t X25519_256_SIZE = 256;
@@ -99,8 +99,8 @@ static struct OH_Huks_Param g_importWrappedAes256Params[] = {
     { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_GCM },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
     { .tag = OH_HUKS_TAG_UNWRAP_ALGORITHM_SUITE, .uint32Param = OH_HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING },
-    { .tag = OH_HUKS_TAG_ASSOCIATED_DATA, .blob = { .size = AAD_SIZE, .data = (uint8_t*)AAD } },
-    { .tag = OH_HUKS_TAG_NONCE, .blob = { .size = NONCE_SIZE, .data = (uint8_t*)NONCE } },
+    { .tag = OH_HUKS_TAG_ASSOCIATED_DATA, .blob = { .size = AAD_SIZE, .data = (uint8_t*)g_aad } },
+    { .tag = OH_HUKS_TAG_NONCE, .blob = { .size = NONCE_SIZE, .data = (uint8_t*)g_nonce } },
     { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
 };
 
@@ -131,7 +131,7 @@ static struct OH_Huks_Param g_importParamsCallerKek[] = {
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
     { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_GCM },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
-    { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)IV } },
+    { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)g_iv } },
     { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
 };
 
@@ -149,8 +149,8 @@ static struct OH_Huks_Param g_aesKekEncryptParams[] = {
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
     { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_GCM },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
-    { .tag = OH_HUKS_TAG_ASSOCIATED_DATA, .blob = { .size = AAD_SIZE, .data = (uint8_t*)AAD } },
-    { .tag = OH_HUKS_TAG_NONCE, .blob = { .size = NONCE_SIZE, .data = (uint8_t*)NONCE } },
+    { .tag = OH_HUKS_TAG_ASSOCIATED_DATA, .blob = { .size = AAD_SIZE, .data = (uint8_t*)g_aad } },
+    { .tag = OH_HUKS_TAG_NONCE, .blob = { .size = NONCE_SIZE, .data = (uint8_t*)g_nonce } },
     { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
 };
 
@@ -161,7 +161,7 @@ static struct OH_Huks_Param g_importAgreeKeyParams[] = {
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
     { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_GCM },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
-    { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)IV } },
+    { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)g_iv } },
     { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
 };
 
@@ -439,8 +439,8 @@ static int ImportWrappedKey(const struct HksImportWrappedKeyTestParams* params,
                             struct OH_Huks_Blob* peerPublicKey,
                             struct OH_Huks_Blob* wrappedKeyData)
 {
-    struct OH_Huks_Blob commonAad = { .size = AAD_SIZE, .data = reinterpret_cast<uint8_t*>(AAD) };
-    struct OH_Huks_Blob commonNonce = { .size = NONCE_SIZE, .data = reinterpret_cast<uint8_t*>(NONCE) };
+    struct OH_Huks_Blob commonAad = { .size = AAD_SIZE, .data = reinterpret_cast<uint8_t*>(g_aad) };
+    struct OH_Huks_Blob commonNonce = { .size = NONCE_SIZE, .data = reinterpret_cast<uint8_t*>(g_nonce) };
     struct OH_Huks_Blob keyMaterialLen = { .size = sizeof(uint32_t), .data = (uint8_t*)&params->keyMaterialLen };
 
     const uint32_t tagSize = AEAD_TAG_SIZE;

@@ -84,7 +84,7 @@ static const struct GenerateKeyCaseParam g_genParamsTest[] = {
     },
 };
 
-static const struct GenerateKeyCaseParam g_signParamsTest[] = {
+static const struct GenerateKeyCaseParam SIGN_PARAMS_TEST[] = {
     {
         0,
         OH_HUKS_SUCCESS,
@@ -459,8 +459,8 @@ static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob* keyAlias,
                                            struct OH_Huks_ParamSet** signParamSet)
 {
     OH_Huks_Result ret = InitParamSet(signParamSet,
-                                      g_signParamsTest[signIndex].params,
-                                      sizeof(g_signParamsTest[signIndex].params) / sizeof(OH_Huks_Param));
+                                      SIGN_PARAMS_TEST[signIndex].params,
+                                      sizeof(SIGN_PARAMS_TEST[signIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
@@ -468,7 +468,7 @@ static OH_Huks_Result PerformSignOperation(const struct OH_Huks_Blob* keyAlias,
     ret = HksTestSignVerify(keyAlias, *signParamSet, inData, outDataSign);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         ret.errorCode =
-            ((ret.errorCode == g_signParamsTest[signIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
+            ((ret.errorCode == SIGN_PARAMS_TEST[signIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
     }
     return ret;
 }

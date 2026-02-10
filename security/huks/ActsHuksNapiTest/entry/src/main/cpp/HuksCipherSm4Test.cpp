@@ -450,7 +450,7 @@ int SecurityHuksNapiCipherSm40100()
     char tmpKeyAlias[] = "HksSm4CipherKeyAliasTest001";
     struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t*)tmpKeyAlias };
 
-    static uint8_t g_hksSm4TestIv[HKS_SM4_IV_SIZE] = { 0 };
+    static uint8_t gHksSm4TestIv[HKS_SM4_IV_SIZE] = { 0 };
 
     static struct OH_Huks_Param g_genParams001[] = {
         {
@@ -470,7 +470,7 @@ int SecurityHuksNapiCipherSm40100()
         { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM4_KEY_SIZE_128 },
         { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
         { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
-        { .tag = OH_HUKS_TAG_IV, .blob = { .size = HKS_SM4_IV_SIZE, .data = (uint8_t*)g_hksSm4TestIv } },
+        { .tag = OH_HUKS_TAG_IV, .blob = { .size = HKS_SM4_IV_SIZE, .data = (uint8_t*)gHksSm4TestIv } },
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 
@@ -480,7 +480,7 @@ int SecurityHuksNapiCipherSm40100()
         { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_SM4_KEY_SIZE_128 },
         { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
         { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
-        { .tag = OH_HUKS_TAG_IV, .blob = { .size = HKS_SM4_IV_SIZE, .data = (uint8_t*)g_hksSm4TestIv } },
+        { .tag = OH_HUKS_TAG_IV, .blob = { .size = HKS_SM4_IV_SIZE, .data = (uint8_t*)gHksSm4TestIv } },
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 
