@@ -42,7 +42,7 @@ struct GenerateKeyCaseParam {
     struct OH_Huks_Param params[5];
 };
 
-static const struct GenerateKeyCaseParam g_genParamsTest[] = {
+static const struct GenerateKeyCaseParam GEN_PARAMS_TEST[] = {
     {
         0,
         OH_HUKS_SUCCESS,
@@ -429,8 +429,8 @@ static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob* keyAlias,
                                          struct OH_Huks_ParamSet** genParamSet)
 {
     OH_Huks_Result ret = InitParamSet(genParamSet,
-                                      g_genParamsTest[genIndex].params,
-                                      sizeof(g_genParamsTest[genIndex].params) / sizeof(OH_Huks_Param));
+                                      GEN_PARAMS_TEST[genIndex].params,
+                                      sizeof(GEN_PARAMS_TEST[genIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
@@ -443,7 +443,7 @@ static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob* keyAlias,
     }
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         ret.errorCode =
-            ((ret.errorCode == g_genParamsTest[genIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
+            ((ret.errorCode == GEN_PARAMS_TEST[genIndex].result) ? (int32_t)OH_HUKS_SUCCESS : ret.errorCode);
         return ret;
     }
 

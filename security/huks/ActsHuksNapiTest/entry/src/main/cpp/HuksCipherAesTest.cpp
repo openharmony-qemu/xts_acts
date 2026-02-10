@@ -35,10 +35,10 @@ static const uint32_t MAX_UPDATE_SIZE = 64;
 static const uint32_t DOUBLE_SIZE_MULTIPLIER = 2; // 用于计算输出缓冲区大小的倍数因子
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * DOUBLE_SIZE_MULTIPLIER;
 
-static uint8_t IV[IV_SIZE] = { 0 };
-static uint8_t AAD[AAD_SIZE] = { 0 };
-static uint8_t NONCE[NONCE_SIZE] = { 0 };
-static uint8_t AEAD[AEAD_SIZE] = { 0 };
+static uint8_t g_iv[IV_SIZE] = { 0 };
+static uint8_t g_aad[AAD_SIZE] = { 0 };
+static uint8_t g_nonce[NONCE_SIZE] = { 0 };
+static uint8_t g_aead[AEAD_SIZE] = { 0 };
 
 static const std::string IN_DATA =
     "Hks_AES_Cipher_Test_000000000000000000000000000000000000000000000000000000000000"
@@ -464,7 +464,7 @@ int SecurityHuksNapiCipherAes0100()
         { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
         { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
         { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
-        { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)IV } },
+        { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)g_iv } },
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
     static struct OH_Huks_Param g_decryptParams015[] = {
@@ -474,7 +474,7 @@ int SecurityHuksNapiCipherAes0100()
         { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE },
         { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_CBC },
         { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_NONE },
-        { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)IV } },
+        { .tag = OH_HUKS_TAG_IV, .blob = { .size = IV_SIZE, .data = (uint8_t*)g_iv } },
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 

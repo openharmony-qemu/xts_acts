@@ -615,7 +615,7 @@ static int VerifyBasicStructSizes()
     struct OH_Huks_Blob blob;
 
     if ((sizeof(result.errorCode) != sizeof(int32_t)) || (sizeof(result.errorMsg) != sizeof(const char*)) ||
-        (sizeof(result.data) != sizeof(uint8_t*)) || !IsUint32Field(sizeof(blob.size)) ||
+        (sizeof(result.data) != sizeof(uint8_t*)) || !IsUint32Type(sizeof(blob.size)) ||
         (sizeof(blob.data) != sizeof(uint8_t*))) {
         return -1;
     }
@@ -628,10 +628,10 @@ static int VerifyParamStructSizes()
     struct OH_Huks_Param param;
     struct OH_Huks_ParamSet paramset;
 
-    if (!IsUint32Field(sizeof(param.tag)) || (sizeof(param.boolParam) != sizeof(bool)) ||
-        (sizeof(param.int32Param) != sizeof(int32_t)) || !IsUint32Field(sizeof(param.uint32Param)) ||
+    if (!IsUint32Type(sizeof(param.tag)) || (sizeof(param.boolParam) != sizeof(bool)) ||
+        (sizeof(param.int32Param) != sizeof(int32_t)) || !IsUint32Type(sizeof(param.uint32Param)) ||
         (sizeof(param.uint64Param) != sizeof(uint64_t)) || (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) ||
-        !IsUint32Field(sizeof(paramset.paramSetSize)) || !IsUint32Field(sizeof(paramset.paramsCnt)) ||
+        !IsUint32Type(sizeof(paramset.paramSetSize)) || !IsUint32Type(sizeof(paramset.paramsCnt)) ||
         (sizeof(paramset.params[0]) != sizeof(struct OH_Huks_Param))) {
         return -1;
     }
@@ -645,12 +645,12 @@ static int VerifyCertAndKeyInfoSizes()
     struct OH_Huks_KeyInfo keyInfo;
     struct OH_Huks_PubKeyInfo pubKeyInfo;
 
-    if ((sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) || !IsUint32Field(sizeof(certChain.certsCount)) ||
+    if ((sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) || !IsUint32Type(sizeof(certChain.certsCount)) ||
         (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
         (sizeof(keyInfo.paramSet) != sizeof(struct OH_Huks_ParamSet*)) ||
-        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || !IsUint32Field(sizeof(pubKeyInfo.keySize)) ||
-        !IsUint32Field(sizeof(pubKeyInfo.nOrXSize)) || !IsUint32Field(sizeof(pubKeyInfo.eOrYSize)) ||
-        !IsUint32Field(sizeof(pubKeyInfo.placeHolder))) {
+        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || !IsUint32Type(sizeof(pubKeyInfo.keySize)) ||
+        !IsUint32Type(sizeof(pubKeyInfo.nOrXSize)) || !IsUint32Type(sizeof(pubKeyInfo.eOrYSize)) ||
+        !IsUint32Type(sizeof(pubKeyInfo.placeHolder))) {
         return -1;
     }
     return 0;
@@ -662,11 +662,11 @@ static int VerifyRsaAndEccMaterialSizes()
     struct OH_Huks_KeyMaterialRsa keyMaterialRsa;
     struct OH_Huks_KeyMaterialEcc keyMaterialEcc;
 
-    if ((sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) || !IsUint32Field(sizeof(keyMaterialRsa.keySize)) ||
-        !IsUint32Field(sizeof(keyMaterialRsa.nSize)) || !IsUint32Field(sizeof(keyMaterialRsa.eSize)) ||
-        !IsUint32Field(sizeof(keyMaterialRsa.dSize)) || (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        !IsUint32Field(sizeof(keyMaterialEcc.keySize)) || !IsUint32Field(sizeof(keyMaterialEcc.xSize)) ||
-        !IsUint32Field(sizeof(keyMaterialEcc.ySize)) || !IsUint32Field(sizeof(keyMaterialEcc.zSize))) {
+    if ((sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) || !IsUint32Type(sizeof(keyMaterialRsa.keySize)) ||
+        !IsUint32Type(sizeof(keyMaterialRsa.nSize)) || !IsUint32Type(sizeof(keyMaterialRsa.eSize)) ||
+        !IsUint32Type(sizeof(keyMaterialRsa.dSize)) || (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
+        !IsUint32Type(sizeof(keyMaterialEcc.keySize)) || !IsUint32Type(sizeof(keyMaterialEcc.xSize)) ||
+        !IsUint32Type(sizeof(keyMaterialEcc.ySize)) || !IsUint32Type(sizeof(keyMaterialEcc.zSize))) {
         return -1;
     }
     return 0;
@@ -675,7 +675,7 @@ static int VerifyRsaAndEccMaterialSizes()
 // Inline helper: Check if a field has uint32_t size
 // Returns true if the field size matches uint32_t, false otherwise
 // This is a standard type validation pattern used in C/C++ for runtime size checks
-inline bool IsUint32Field(size_t fieldSize)
+inline bool IsUint32Type(size_t fieldSize)
 {
     return fieldSize == sizeof(uint32_t);
 }
@@ -691,27 +691,27 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
     }
 
     // Verify key size field
-    if (!IsUint32Field(sizeof(keyMaterial->keySize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->keySize))) {
         return -1;
     }
 
     // Verify DSA parameter sizes: x (private exponent), y (public key)
-    if (!IsUint32Field(sizeof(keyMaterial->xSize)) || !IsUint32Field(sizeof(keyMaterial->ySize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->xSize)) || !IsUint32Type(sizeof(keyMaterial->ySize))) {
         return -1;
     }
 
     // Verify DSA domain parameter: p (prime modulus)
-    if (!IsUint32Field(sizeof(keyMaterial->pSize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->pSize))) {
         return -1;
     }
 
     // Verify DSA domain parameter: q (subgroup order)
-    if (!IsUint32Field(sizeof(keyMaterial->qSize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->qSize))) {
         return -1;
     }
 
     // Verify DSA domain parameter: g (generator)
-    if (!IsUint32Field(sizeof(keyMaterial->gSize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->gSize))) {
         return -1;
     }
 
@@ -724,17 +724,17 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
 static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Field(sizeof(keyMaterial->keySize))) {
+    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Type(sizeof(keyMaterial->keySize))) {
         return -1;
     }
 
     // Verify DH key component sizes: public key and private key
-    if (!IsUint32Field(sizeof(keyMaterial->pubKeySize)) || !IsUint32Field(sizeof(keyMaterial->priKeySize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->pubKeySize)) || !IsUint32Type(sizeof(keyMaterial->priKeySize))) {
         return -1;
     }
 
     // Verify reserved field
-    if (!IsUint32Field(sizeof(keyMaterial->reserved))) {
+    if (!IsUint32Type(sizeof(keyMaterial->reserved))) {
         return -1;
     }
 
@@ -747,17 +747,17 @@ static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial
 static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyMaterial)
 {
     // Verify algorithm type and key size fields
-    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Field(sizeof(keyMaterial->keySize))) {
+    if (sizeof(keyMaterial->keyAlg) != sizeof(OH_Huks_KeyAlg) || !IsUint32Type(sizeof(keyMaterial->keySize))) {
         return -1;
     }
 
     // Verify X25519 key component sizes: public key and private key
-    if (!IsUint32Field(sizeof(keyMaterial->pubKeySize)) || !IsUint32Field(sizeof(keyMaterial->priKeySize))) {
+    if (!IsUint32Type(sizeof(keyMaterial->pubKeySize)) || !IsUint32Type(sizeof(keyMaterial->priKeySize))) {
         return -1;
     }
 
     // Verify reserved field
-    if (!IsUint32Field(sizeof(keyMaterial->reserved))) {
+    if (!IsUint32Type(sizeof(keyMaterial->reserved))) {
         return -1;
     }
 
