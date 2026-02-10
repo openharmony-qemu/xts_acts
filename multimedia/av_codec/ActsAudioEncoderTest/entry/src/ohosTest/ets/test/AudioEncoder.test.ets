@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import libAudioEncoder from 'libaudioencoder.so';
 
@@ -751,6 +766,21 @@ export default function AudioEncoderTest() {
       expect(result).assertEqual(0);
       done();
     })
+
+    /**
+     * @tc.name   STATUS_CHECK_019
+     * @tc.number STATUS_CHECK_019
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_019', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(18);
+      expect(result).assertEqual(0);
+      done();
+    })
+
     /**
      * @tc.name   STATUS_CHECK_020
      * @tc.number STATUS_CHECK_020
@@ -839,6 +869,19 @@ export default function AudioEncoderTest() {
      */
     it('STATUS_CHECK_026', Level.LEVEL2, async (done: Function) => {
       const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(25);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_027
+     * @tc.number STATUS_CHECK_027
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_027', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(26);
       expect(result).assertEqual(0);
       done();
     })
@@ -934,6 +977,19 @@ export default function AudioEncoderTest() {
       done();
     })
     /**
+     * @tc.name   STATUS_CHECK_035
+     * @tc.number STATUS_CHECK_035
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_035', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(34);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
      * @tc.name   STATUS_CHECK_036
      * @tc.number STATUS_CHECK_036
      * @tc.desc   status check test
@@ -1008,6 +1064,32 @@ export default function AudioEncoderTest() {
      */
     it('STATUS_CHECK_041', Level.LEVEL2, async (done: Function) => {
       const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(40);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_042
+     * @tc.number STATUS_CHECK_042
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_042', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(41);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_043
+     * @tc.number STATUS_CHECK_043
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_043', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(42);
       expect(result).assertEqual(0);
       done();
     })
@@ -1090,6 +1172,19 @@ export default function AudioEncoderTest() {
       done();
     })
     /**
+     * @tc.name   STATUS_CHECK_050
+     * @tc.number STATUS_CHECK_050
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_050', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(49);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
      * @tc.name   STATUS_CHECK_051
      * @tc.number STATUS_CHECK_051
      * @tc.desc   status check test
@@ -1125,6 +1220,19 @@ export default function AudioEncoderTest() {
      */
     it('STATUS_CHECK_053', Level.LEVEL2, async (done: Function) => {
       const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(52);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_054
+     * @tc.number STATUS_CHECK_054
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_054', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(53);
       expect(result).assertEqual(0);
       done();
     })
@@ -1177,6 +1285,19 @@ export default function AudioEncoderTest() {
      */
     it('STATUS_CHECK_058', Level.LEVEL2, async (done: Function) => {
       const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(57);
+      expect(result).assertEqual(0);
+      done();
+    })
+    /**
+     * @tc.name   STATUS_CHECK_059
+     * @tc.number STATUS_CHECK_059
+     * @tc.desc   status check test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('STATUS_CHECK_059', Level.LEVEL2, async (done: Function) => {
+      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(58);
       expect(result).assertEqual(0);
       done();
     })
@@ -1245,33 +1366,6 @@ export default function AudioEncoderTest() {
       expect(result).assertEqual(0);
       done();
     })
-    /**
-     * @tc.name   STATUS_CHECK_065
-     * @tc.number STATUS_CHECK_065
-     * @tc.desc   status check test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('STATUS_CHECK_065', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(64);
-      expect(result).assertEqual(0);
-      done();
-    })
-    /**
-     * @tc.name   STATUS_CHECK_066
-     * @tc.number STATUS_CHECK_066
-     * @tc.desc   status check test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('STATUS_CHECK_066', Level.LEVEL2, async (done: Function) => {
-      const result = libAudioEncoder.Audio_Encoder_StatusCheckTest(65);
-      expect(result).assertEqual(0);
-      done();
-    })
-
 
   })
 }

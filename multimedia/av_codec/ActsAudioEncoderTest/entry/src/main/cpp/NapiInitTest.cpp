@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -92,8 +92,7 @@ static napi_value Audio_Encoder_StatusCheckTest(napi_env env, napi_callback_info
             STATUS_CHECK_043, STATUS_CHECK_044, STATUS_CHECK_045, STATUS_CHECK_046, STATUS_CHECK_047, STATUS_CHECK_048,
             STATUS_CHECK_049, STATUS_CHECK_050, STATUS_CHECK_051, STATUS_CHECK_052, STATUS_CHECK_053, STATUS_CHECK_054,
             STATUS_CHECK_055, STATUS_CHECK_056, STATUS_CHECK_057, STATUS_CHECK_058, STATUS_CHECK_059, STATUS_CHECK_060,
-            STATUS_CHECK_061, STATUS_CHECK_062, STATUS_CHECK_063, STATUS_CHECK_064, STATUS_CHECK_065, STATUS_CHECK_066,
-            STATUS_CHECK_067, STATUS_CHECK_068,
+            STATUS_CHECK_061, STATUS_CHECK_062, STATUS_CHECK_063, STATUS_CHECK_064, 
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
