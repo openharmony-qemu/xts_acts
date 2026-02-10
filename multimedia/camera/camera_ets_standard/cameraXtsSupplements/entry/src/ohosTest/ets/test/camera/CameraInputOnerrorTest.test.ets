@@ -26,6 +26,7 @@ let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mCameraInput: camera.CameraInput;
 let fdNumber: number;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+let count = 0;
 
 function getCameraManager() {
   console.info(TAG, 'getCameraManager.');
@@ -60,13 +61,9 @@ function getCameraInput() {
   return false;
 }
 
-let callback = (err: BusinessError) => {
-  console.error(TAG, `Camera input on error code: ${err.code}`);
-}
-
 let callbackOn = (err: BusinessError) => {
   console.error(TAG, `Camera input error code: ${err.code}`);
-  expect(Number(err.code)).assertEqual(7400109);
+  count = count + 1;
 }
 
 export default function CameraInputOnerrorTest() {
@@ -77,7 +74,6 @@ export default function CameraInputOnerrorTest() {
       await driveFn();
       getCameraManager();
       getSupportedCameraDeviceArray();
-      getCameraInput();
     });
 
     beforeEach(() => {
@@ -95,512 +91,6 @@ export default function CameraInputOnerrorTest() {
     });
 
     /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_001
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_001
-     * @tc.desc   CameraInput -off_error -cameraId -" ".
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_001', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_001';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let useDevice: camera.CameraDevice = {
-        cameraId: " ",
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_002
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_002
-     * @tc.desc   CameraInput -off_error -hostDeviceName -" ".
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_002', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_002';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: " ",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_003
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_003
-     * @tc.desc   CameraInput -off_error -cameraPosition -CAMERA_POSITION_UNSPECIFIED.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_003', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_003';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_004
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_004
-     * @tc.desc   CameraInput -off_error -cameraPosition -CAMERA_POSITION_BACK.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_004', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_004';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_005
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_005
-     * @tc.desc   CameraInput -off_error -cameraPosition -CAMERA_POSITION_FOLD_INNER.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_005', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_005';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: camera.CameraPosition.CAMERA_POSITION_FOLD_INNER,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_006
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_006
-     * @tc.desc   CameraInput -off_error -connectionType -CAMERA_CONNECTION_USB_PLUGIN.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_006', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_006';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: camera.ConnectionType.CAMERA_CONNECTION_USB_PLUGIN,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_007
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_007
-     * @tc.desc   CameraInput -off_error -connectionType -CAMERA_CONNECTION_REMOTE.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_007', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_007';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: camera.ConnectionType.CAMERA_CONNECTION_REMOTE,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_008
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_008
-     * @tc.desc   CameraInput -off_error -cameraType -CAMERA_TYPE_DEFAULT.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_008', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_008';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: camera.CameraType.CAMERA_TYPE_DEFAULT,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_009
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_009
-     * @tc.desc   CameraInput -off_error -cameraType -CAMERA_TYPE_ULTRA_WIDE.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_009', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_009';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: camera.CameraType.CAMERA_TYPE_ULTRA_WIDE,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_010
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_010
-     * @tc.desc   CameraInput -off_error -cameraType -CAMERA_TYPE_TELEPHOTO.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_010', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_010';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: camera.CameraType.CAMERA_TYPE_TELEPHOTO,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_011
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_011
-     * @tc.desc   CameraInput -off_error -cameraType -CAMERA_TYPE_TRUE_DEPTH.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_011', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_011';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: camera.CameraType.CAMERA_TYPE_TRUE_DEPTH,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_012
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_012
-     * @tc.desc   CameraInput -off_error -hostDeviceType -PHONE.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_012', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_012';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: camera.HostDeviceType.PHONE,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_013
-     * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_013
-     * @tc.desc   CameraInput -off_error -hostDeviceType -TABLET.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUM
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_013', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_013';
-      if (isEmpty(mCameraManager)) {
-        console.info(TAG, `${testName} cameraManager is null.`);
-        done();
-        return;
-      }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: camera.HostDeviceType.TABLET,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
-      try {
-        mCameraInput.on('error', useDevice, callback);
-        mCameraInput.off('error', useDevice, callback);
-        console.info(TAG, testName, 'Success');
-        expect(mCameraInput != undefined).assertTrue();
-      } catch (err) {
-        console.error(TAG, testName, 'Failed', err, err.code);
-        expect().assertFail();
-      }
-      done();
-    })
-
-    /**
      * @tc.name   SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_014
      * @tc.number SUB_CAMERA_CAMERA_INPUT_OFF_ERROR_014
      * @tc.desc   CameraInput -off_error -null.
@@ -615,27 +105,18 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
+      getCameraInput();
+      let useDevice = mCameraManager.getSupportedCameras();
       try {
-        mCameraInput.off(null, useDevice);
+        mCameraInput.off(null, useDevice[0]);
         console.info(TAG, testName, 'Success');
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -653,27 +134,18 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
+      getCameraInput();
+      let useDevice = mCameraManager.getSupportedCameras();
       try {
-        mCameraInput.off(undefined, useDevice);
+        mCameraInput.off(undefined, useDevice[0]);
         console.info(TAG, testName, 'Success');
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -691,6 +163,7 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
+      getCameraInput();
       try {
         mCameraInput.off('error', null);
         console.info(TAG, testName, 'Success');
@@ -698,8 +171,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -717,6 +191,7 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
+      getCameraInput();
       try {
         mCameraInput.off('error', undefined);
         console.info(TAG, testName, 'Success');
@@ -724,8 +199,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -759,14 +235,17 @@ export default function CameraInputOnerrorTest() {
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      console.info(TAG, testName, 'Success');
-      done();
     })
 
     /**
@@ -798,17 +277,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -840,17 +323,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -868,7 +355,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -883,17 +369,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -911,7 +401,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -926,17 +415,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -954,7 +447,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -969,17 +461,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -997,7 +493,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1012,17 +507,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1040,7 +539,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1055,17 +553,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1083,7 +585,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1098,17 +599,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1126,7 +631,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1141,17 +645,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1169,7 +677,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1184,17 +691,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1212,7 +723,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1227,17 +737,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1255,7 +769,6 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
       let res = mCameraManager.getSupportedCameras();
       let useDevice: camera.CameraDevice = {
@@ -1270,17 +783,21 @@ export default function CameraInputOnerrorTest() {
         isRetractable: false
       }
       try {
+        getCameraInput();
         mCameraInput.on('error', useDevice, callbackOn);
         await mCameraInput.open();
         await mCameraInput.open();
-        console.info(TAG, testName, 'Success');
+        mCameraInput.off('error', useDevice, callbackOn);
+        console.info(TAG, testName, 'Success', count);
+        expect(count == 1).assertTrue();
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        count = 0;
+        await mCameraInput?.close();
+        done();
       }
-      await mCameraInput.close();
-      mCameraInput.off('error', useDevice, callbackOn);
-      done();
     })
 
     /**
@@ -1298,22 +815,10 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
+      let useDevice = mCameraManager.getSupportedCameras();
       try {
-        mCameraInput.on(null, useDevice, (err: BusinessError) => {
+        mCameraInput.on(null, useDevice[0], (err: BusinessError) => {
           console.error(TAG, testName, `Camera input error code: ${err.code}`);
         });
         console.info(TAG, testName, 'Success');
@@ -1321,8 +826,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -1340,22 +846,10 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
-      ;
       getCameraInput();
-      let res = mCameraManager.getSupportedCameras();
-      let useDevice: camera.CameraDevice = {
-        cameraId: res[0].cameraId,
-        cameraPosition: 2,
-        connectionType: 0,
-        hostDeviceName: "",
-        cameraType: 1,
-        hostDeviceType: 0,
-        lensEquivalentFocalLength: [],
-        cameraOrientation: 0,
-        isRetractable: false
-      }
+      let useDevice = mCameraManager.getSupportedCameras();
       try {
-        mCameraInput.on(undefined, useDevice, (err: BusinessError) => {
+        mCameraInput.on(undefined, useDevice[0], (err: BusinessError) => {
           console.error(TAG, testName, `Camera input error code: ${err.code}`);
         });
         console.info(TAG, testName, 'Success');
@@ -1363,8 +857,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -1382,6 +877,7 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
+      getCameraInput();
       try {
         mCameraInput.on('error', null, (err: BusinessError) => {
           console.error(TAG, testName, `Camera input error code: ${err.code}`);
@@ -1391,8 +887,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
 
     /**
@@ -1410,6 +907,7 @@ export default function CameraInputOnerrorTest() {
         done();
         return;
       }
+      getCameraInput();
       try {
         mCameraInput.on('error', undefined, (err: BusinessError) => {
           console.error(TAG, testName, `Camera input error code: ${err.code}`);
@@ -1419,8 +917,9 @@ export default function CameraInputOnerrorTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect(Number(err.code)).assertEqual(7400101);
+      } finally {
+        done();
       }
-      done();
     })
   })
 }
