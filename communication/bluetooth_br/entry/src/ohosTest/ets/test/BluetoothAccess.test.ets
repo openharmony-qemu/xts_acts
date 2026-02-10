@@ -20,34 +20,6 @@ import { BusinessError } from '@ohos.base';
 function sleep(delay : number) : Promise<void> {
     return new Promise(resovle => setTimeout(resovle, delay))
 }
-async function tryToEnableBt() {
-    let sta = bluetooth.getState();
-    switch (sta) {
-        case 0:
-            bluetooth.enableBluetooth();
-            await clickRequestPermission(OPEN_BT_TEXT);
-            await sleep(10000);
-            let sta1 = bluetooth.getState();
-            console.info('[bluetooth_js] bt turn off:' + JSON.stringify(sta1));
-            break;
-        case 1:
-            console.info('[bluetooth_js] bt turning on:' + JSON.stringify(sta));
-            await sleep(3000);
-            break;
-        case 2:
-            console.info('[bluetooth_js] bt turn on:' + JSON.stringify(sta));
-            break;
-        case 3:
-            bluetooth.enableBluetooth();
-            await clickRequestPermission(OPEN_BT_TEXT);
-            await sleep(10000);
-            let sta2 = bluetooth.getState();
-            console.info('[bluetooth_js] bt turning off:' + JSON.stringify(sta2));
-            break;
-        default:
-            console.info('[bluetooth_js] enable success');
-    }
-}
 
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
@@ -110,10 +82,14 @@ export default function btAccessTest() {
         afterEach(() => {
             console.info('afterEach called');
         })
-        afterAll(async (done : Function) => {
-            await tryToEnableBt();
-            console.info('afterAll called');
-            done();
+        afterAll(async (done : Function) =>  {
+            console.info('afterAll called')
+            await sleep(3000);
+            bluetooth.enableBluetoothAsync();
+            await sleep(3000);
+            await clickRequestPermission(OPEN_BT_TEXT);
+            await sleep(3000);
+            console.info('[bluetooth_js] bluetooth enable state ='+ JSON.stringify(bluetooth.getState()));
         })
 
         /**
