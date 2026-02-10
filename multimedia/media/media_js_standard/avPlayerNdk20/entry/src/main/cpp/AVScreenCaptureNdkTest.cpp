@@ -295,7 +295,8 @@ static napi_value OH_AVScreenCapture_StopScreenRecording0101(napi_env env, napi_
 
 static napi_value OH_AVScreenCapture_AcquireAudioBuffer0100(napi_env env, napi_callback_info info)
 {
-    OH_AudioBuffer *audiobuffer;
+    OH_AudioBuffer audio = {};
+    OH_AudioBuffer *audiobuffer = &audio;
     OH_AudioCaptureSourceType type = OH_SOURCE_DEFAULT;
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_AcquireAudioBuffer(g_screenCapturee, &audiobuffer, type);
     int32_t res = 1;
@@ -309,7 +310,8 @@ static napi_value OH_AVScreenCapture_AcquireAudioBuffer0100(napi_env env, napi_c
 
 static napi_value OH_AVScreenCapture_AcquireAudioBuffer0101(napi_env env, napi_callback_info info)
 {
-    OH_AudioBuffer *audiobuffer;
+    OH_AudioBuffer audio = {};
+    OH_AudioBuffer *audiobuffer = &audio;
     OH_AudioCaptureSourceType type = OH_SOURCE_DEFAULT;
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_AcquireAudioBuffer(nullptr, &audiobuffer, type);
     int32_t res = 1;
