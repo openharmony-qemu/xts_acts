@@ -19,8 +19,8 @@ import events_emitter from '@ohos.events.emitter'
 import CommonFunc from '../../MainAbility/utils/Common';
 import { Driver, ON} from '@ohos.UiTest';
 
-export default function SimpleAnimatorOptionsNullUndefinedTest() {
-  describe('SimpleAnimatorOptionsNullUndefinedTest', () => {
+export default function DurationNullUndefinedTest() {
+  describe('DurationNullUndefinedTest', () => {
 
     beforeEach(async (done: Function) => {
       console.info("DurationNullUndefined beforeEach start");
