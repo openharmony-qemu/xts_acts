@@ -130,7 +130,7 @@ export default function testsuite() {
   RdbBatchInsertTransaction();
   RdbLockRow();
   RdbSetdistributedtableTest();
-  RdbStoreDuplicateColumnsTest(); 
-  RdbStoreErrorCodeAddTest(); 
+  RdbStoreDuplicateColumnsTest();
+  RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
 }
