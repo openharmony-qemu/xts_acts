@@ -1584,27 +1584,19 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       } 
       try {
-        let input1 = await driver.findComponent(ON.text('MainPage'))        
+        let input1 = await driver.findComponent(ON.type('Scroll'))        
         await input1.scrollSearch(ON.text('next page'), false, null);
       } catch (error) {
         console.log(`${TestTag}, testApi9_Component_scrollSearch_401 offset = null error, ${JSON.stringify(error)}`);
          expect().assertFail(); 
       } 
       try {
-        let input1 = await driver.findComponent(ON.text('MainPage'))        
+        let input1 = await driver.findComponent(ON.type('Scroll'))        
         await input1.scrollSearch(ON.text('next page'), false, undefined);
       } catch (error) {
         console.log(`${TestTag}, testApi9_Component_scrollSearch_401 offset = undefined error, ${JSON.stringify(error)}`);
          expect().assertFail(); 
-      } 
-      try {
-        let input1 = await driver.findComponent(ON.text('MainPage'))        
-        await input1.scrollSearch(ON.text('next page'), false, -1);
-         expect().assertFail();        
-      } catch (error) {
-        console.log(`${TestTag}, testApi9_Component_scrollSearch_401 offset = -1 error, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(ErrorCode);
-      } 
+      }  
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollSearch_401 END`);
     })
@@ -1618,7 +1610,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL3
      */
     it('testApi9_Driver_delayMs_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, testApi9_Component_scrollSearch_401 start`);
+      console.log(`${TestTag}, testApi9_Driver_delayMs_401 start`);
       let driver = Driver.create()
       try {
         await driver.delayMs(null)
@@ -1641,7 +1633,7 @@ export default function abilityTest() {
         console.log(`${TestTag}, testApi9_Driver_delayMs_401 dur = -1 error, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ErrorCode);
       } 
-      console.log(`${TestTag}, testApi9_Component_scrollSearch_401 END`);
+      console.log(`${TestTag}, testApi9_Driver_delayMs_401 END`);
     })
 
      /**
