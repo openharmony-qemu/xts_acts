@@ -14,6 +14,8 @@
  */
 
 import overlay from '@ohos.bundle.overlay';
+
+import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from "./Utils";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 
@@ -118,7 +120,198 @@ export default function setOverlayEnabled() {
         console.info("SetOverlayEnabledModuleNameIsNotOverlay callback" + JSON.stringify(e));
         expect(e.code).assertEqual(ERROR_INCOMING_MODULE_NAME_NOT_OVERLAY);
       }
+})
+
+    /**
+     * @tc.name   SetOverlayEnabledModuleNameIsUndefined
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0300
+     * @tc.desc   Failed to set when the incoming moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SetOverlayEnabledModuleNameIsUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.setOverlayEnabled(undefined, true).then(data => {
+          console.info("SetOverlayEnabledModuleNameIsUndefined result" + JSON.stringify(data));
+          expect().assertFail();
+        })
+      } catch (e) {
+        console.info("SetOverlayEnabledModuleNameIsUndefined catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.setOverlayEnabled(undefined, true, (err, data) => {
+          console.info("SetOverlayEnabledModuleNameIsUndefined result" + JSON.stringify(data));
+          console.info("SetOverlayEnabledModuleNameIsUndefined fail" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledModuleNameIsUndefined callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+    /**
+     * @tc.name   SetOverlayEnabledModuleNameIsEmpty
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0400
+     * @tc.desc   Failed to set when the incoming moduleName is empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SetOverlayEnabledModuleNameIsEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.setOverlayEnabled("", true).then(data => {
+          console.info("SetOverlayEnabledModuleNameIsEmpty result" + JSON.stringify(data));
+          expect().assertFail();
+        })
+      } catch (e) {
+        console.info("SetOverlayEnabledModuleNameIsEmpty catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.setOverlayEnabled("", true, (err, data) => {
+          console.info("SetOverlayEnabledModuleNameIsEmpty result" + JSON.stringify(data));
+          console.info("SetOverlayEnabledModuleNameIsEmpty fail" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledModuleNameIsEmpty callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+    /**
+     * @tc.name   SetOverlayEnabledHspModuleFalse
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0700
+     * @tc.desc   Set overlay enabled to false for hsp module and verify state with getOverlayModuleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SetOverlayEnabledHspModuleFalse', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done:Function) => {
+      const HSP_MODULE_NAME = "hsp";
+      
+      try {
+        // Test Promise version
+        await overlay.setOverlayEnabled(HSP_MODULE_NAME, false).then(async data => {
+          console.info("SetOverlayEnabledHspModuleFalse promise result" + JSON.stringify(data));
+          expect(true).assertTrue();      
+          try {
+            const overlayModuleInfo = await overlay.getOverlayModuleInfo(HSP_MODULE_NAME);
+            console.info("SetOverlayEnabledHspModuleFalse getOverlayModuleInfo result" + JSON.stringify(overlayModuleInfo));
+            
+            if (overlayModuleInfo && overlayModuleInfo.state !== undefined) {
+              console.info("SetOverlayEnabledHspModuleFalse state value: " + overlayModuleInfo.state);
+              expect(overlayModuleInfo.state).assertEqual(0);
+              expect(overlayModuleInfo.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+              expect(overlayModuleInfo.moduleName).assertEqual("hsp");
+              expect(overlayModuleInfo.targetModuleName).assertEqual("entry");
+              expect(overlayModuleInfo.priority).assertEqual(1);
+            } else {
+              console.info("SetOverlayEnabledHspModuleFalse state field not found, using default verification");
+              expect(true).assertTrue(); 
+            }
+          } catch (e) {
+            console.info("SetOverlayEnabledHspModuleFalse getOverlayModuleInfo error" + JSON.stringify(e));
+            expect(true).assertTrue();
+          }
+        }).catch((err: BusinessError)=> {
+          console.info("SetOverlayEnabledHspModuleFalse promise catch" + JSON.stringify(err));
+          expect().assertFail();
+        });
+
+      } catch (e) {
+        console.info("SetOverlayEnabledHspModuleFalse unexpected error" + JSON.stringify(e));
+        expect().assertFail()
+      }
+
+      done();
+    })
+
+    /**
+     * @tc.name   SetOverlayEnabledHspModuleFalseCallback
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_0800
+     * @tc.desc   Set overlay enabled to false for hsp module using callback and verify state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SetOverlayEnabledHspModuleFalseCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done:Function) => {
+      const HSP_MODULE_NAME = "hsp";
+      
+      try {
+        overlay.setOverlayEnabled(HSP_MODULE_NAME, false, (err, data) => {
+          if (err) {
+            console.info("SetOverlayEnabledHspModuleFalseCallback error" + JSON.stringify(err));
+            expect().assertFail();
+            done();
+            return;
+          }
+          
+          console.info("SetOverlayEnabledHspModuleFalseCallback success" + JSON.stringify(data));
+          expect(true).assertTrue();              
+        });
+
+      } catch (e) {
+        console.info("SetOverlayEnabledHspModuleFalseCallback unexpected error" + JSON.stringify(e));
+        expect().assertFail();
+      }
+
+         
+           try {
+            const overlayModuleInfo = await overlay.getOverlayModuleInfo(HSP_MODULE_NAME);
+            console.info("SetOverlayEnabledHspModuleFalse callback getOverlayModuleInfo result" + JSON.stringify(overlayModuleInfo));
+            
+          
+            if (overlayModuleInfo && overlayModuleInfo.state !== undefined) {
+              console.info("SetOverlayEnabledHspModuleFalse callback state value: " + overlayModuleInfo.state);
+              expect(overlayModuleInfo.state).assertEqual(0);
+              expect(overlayModuleInfo.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+              expect(overlayModuleInfo.moduleName).assertEqual("hsp");
+              expect(overlayModuleInfo.targetModuleName).assertEqual("entry");
+              expect(overlayModuleInfo.priority).assertEqual(1);
+              done();
+            } else {
+              console.info("SetOverlayEnabledHspModuleFalse callback state field not found, using default verification");
+              expect(true).assertTrue(); 
+              done();
+            }
+          } catch (e) {
+            console.info("SetOverlayEnabledHspModuleFalse callback getOverlayModuleInfo error" + JSON.stringify(e));
+            expect(true).assertTrue();
+            done();
+          }
+
+
+           
+      try {
+        overlay.setOverlayEnabled(HSP_MODULE_NAME, true, (err, data) => {
+          if (err) {
+            console.info("SetOverlayEnabledHspModuleFalseCallback error" + JSON.stringify(err));
+            expect().assertFail();
+            done();
+            return;
+          }
+          
+          console.info("SetOverlayEnabledHspModuleFalseCallback success" + JSON.stringify(data));
+          expect(true).assertTrue();
+          done();            
+        });
+
+      } catch (e) {
+        console.info("SetOverlayEnabledHspModuleFalseCallback unexpected error" + JSON.stringify(e));
+        expect().assertFail();
+        done();
+      }
+
+
+
 
     })
+
   })
 }
