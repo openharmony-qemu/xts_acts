@@ -673,37 +673,81 @@ static int VerifyRsaAndEccMaterialSizes()
     return 0;
 }
 
-// Helper function: Verify DSA key material field sizes
-static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* material)
+// Macro: Verify struct field size matches expected type size
+#define VERIFY_FIELD_SIZE(field, expectedType) (sizeof(field) != sizeof(expectedType))
+
+// Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
+static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMaterial)
 {
-    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
-        (sizeof(material->xSize) != sizeof(uint32_t)) || (sizeof(material->ySize) != sizeof(uint32_t)) ||
-        (sizeof(material->pSize) != sizeof(uint32_t)) || (sizeof(material->qSize) != sizeof(uint32_t)) ||
-        (sizeof(material->gSize) != sizeof(uint32_t))) {
+    // Verify algorithm type field
+    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg)) {
         return -1;
     }
+
+    // Verify key size field
+    if (VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
+        return -1;
+    }
+
+    // Verify DSA parameter sizes: x (private exponent), y (public key)
+    if (VERIFY_FIELD_SIZE(keyMaterial->xSize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->ySize, uint32_t)) {
+        return -1;
+    }
+
+    // Verify DSA domain parameter sizes: p (prime modulus), q (subgroup order), g (generator)
+    if (VERIFY_FIELD_SIZE(keyMaterial->pSize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->qSize, uint32_t) ||
+        VERIFY_FIELD_SIZE(keyMaterial->gSize, uint32_t)) {
+        return -1;
+    }
+
     return 0;
 }
 
-// Helper function: Verify DH key material field sizes
-static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* material)
+// Helper function: Verify DH (Diffie-Hellman) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterialDh has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
+static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial)
 {
-    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
-        (sizeof(material->pubKeySize) != sizeof(uint32_t)) || (sizeof(material->priKeySize) != sizeof(uint32_t)) ||
-        (sizeof(material->reserved) != sizeof(uint32_t))) {
+    // Verify algorithm type and key size fields
+    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg) || VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
         return -1;
     }
+
+    // Verify DH key component sizes: public key and private key
+    if (VERIFY_FIELD_SIZE(keyMaterial->pubKeySize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->priKeySize, uint32_t)) {
+        return -1;
+    }
+
+    // Verify reserved field
+    if (VERIFY_FIELD_SIZE(keyMaterial->reserved, uint32_t)) {
+        return -1;
+    }
+
     return 0;
 }
 
-// Helper function: Verify X25519 key material field sizes
-static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* material)
+// Helper function: Verify X25519 (Curve25519) key material field sizes
+// Verifies that each field in OH_Huks_KeyMaterial25519 has the correct size
+// Returns 0 on success, -1 if any field size is incorrect
+static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyMaterial)
 {
-    if ((sizeof(material->keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(material->keySize) != sizeof(uint32_t)) ||
-        (sizeof(material->pubKeySize) != sizeof(uint32_t)) || (sizeof(material->priKeySize) != sizeof(uint32_t)) ||
-        (sizeof(material->reserved) != sizeof(uint32_t))) {
+    // Verify algorithm type and key size fields
+    if (VERIFY_FIELD_SIZE(keyMaterial->keyAlg, OH_Huks_KeyAlg) || VERIFY_FIELD_SIZE(keyMaterial->keySize, uint32_t)) {
         return -1;
     }
+
+    // Verify X25519 key component sizes: public key and private key
+    if (VERIFY_FIELD_SIZE(keyMaterial->pubKeySize, uint32_t) || VERIFY_FIELD_SIZE(keyMaterial->priKeySize, uint32_t)) {
+        return -1;
+    }
+
+    // Verify reserved field
+    if (VERIFY_FIELD_SIZE(keyMaterial->reserved, uint32_t)) {
+        return -1;
+    }
+
     return 0;
 }
 
