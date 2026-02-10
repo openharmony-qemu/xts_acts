@@ -90,7 +90,8 @@ export default function ArcAlphabetIndexerColorUndefinedTest() {
         let strJson: string = getInspectorByKey('testArcAlphabetIndexerUndefined');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-        console.info("[arcAlphabetIndexerSelectedColorUndefined_0100] selectedColor is: " + JSON.stringify(obj.$attrs?.selectedColor));
+        console.info("[arcAlphabetIndexerSelectedColorUndefined_0100] selectedColor is: "
+         + JSON.stringify(obj.$attrs?.selectedColor));
         expect(obj.$attrs.selectedColor).assertEqual('0xFFFFFF');
         console.info('[arcAlphabetIndexerSelectedColorUndefined_0100] END');
       } catch (error) {
@@ -156,7 +157,8 @@ export default function ArcAlphabetIndexerColorUndefinedTest() {
         let strJson: string = getInspectorByKey('testArcAlphabetIndexerUndefined');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-        console.info("[arcAlphabetIndexerPopupBackgroundUndefined_0100] popupBackground is: " + JSON.stringify(obj.$attrs?.popupBackground));
+        console.info("[arcAlphabetIndexerPopupBackgroundUndefined_0100] popupBackground is: "
+         + JSON.stringify(obj.$attrs?.popupBackground));
         expect(obj.$attrs.popupBackground).assertEqual('0xD8404040');
         console.info('[arcAlphabetIndexerPopupBackgroundUndefined_0100] END');
       } catch (error) {
@@ -200,7 +202,8 @@ export default function ArcAlphabetIndexerColorUndefinedTest() {
         let strJson: string = getInspectorByKey('testArcAlphabetIndexerUndefined');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-        console.info("[arcAlphabetIndexerSelectedFontUndefined_0100] selectedFont is: " + JSON.stringify(obj.$attrs?.selectedFont));
+        console.info("[arcAlphabetIndexerSelectedFontUndefined_0100] selectedFont is: "
+         + JSON.stringify(obj.$attrs?.selectedFont));
         // 验证selectedFont有值且不为null
         expect(obj.$attrs.selectedFont !== null && obj.$attrs.selectedFont !== undefined).assertTrue();
         console.info('[arcAlphabetIndexerSelectedFontUndefined_0100] END');
@@ -335,7 +338,8 @@ export default function ArcAlphabetIndexerColorUndefinedTest() {
         let strJson: string = getInspectorByKey('testArcAlphabetIndexerUndefined');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-        console.info("[arcAlphabetIndexerPopupBackgroundBlurStyleUndefined_0100] popupBackgroundBlurStyle is: " + JSON.stringify(obj.$attrs?.popupBackgroundBlurStyle));
+        console.info("[arcAlphabetIndexerPopupBackgroundBlurStyleUndefined_0100] popupBackgroundBlurStyle is: "
+         + JSON.stringify(obj.$attrs?.popupBackgroundBlurStyle));
         // 默认值为BlurStyle.NONE，对应值为0
         expect(obj.$attrs.popupBackgroundBlurStyle).assertEqual(0);
         console.info('[arcAlphabetIndexerPopupBackgroundBlurStyleUndefined_0100] END');

@@ -134,7 +134,8 @@ export default function ArcAlphabetIndexerColorNullTest() {
         let strJson: string = getInspectorByKey('testArcAlphabetIndexerNull');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-        console.info("[arcAlphabetIndexerSelectedBackgroundColorNull_0100] selectedBackgroundColor is: " + JSON.stringify(obj.$attrs?.selectedBackgroundColor));
+        console.info("[arcAlphabetIndexerSelectedBackgroundColorNull_0100] selectedBackgroundColor is: "
+         + JSON.stringify(obj.$attrs?.selectedBackgroundColor));
         expect(obj.$attrs.selectedBackgroundColor).assertEqual('0x1F71FF');
         console.info('[arcAlphabetIndexerSelectedBackgroundColorNull_0100] END');
       } catch (error) {

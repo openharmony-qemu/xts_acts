@@ -8,8 +8,7 @@ import {
   ArcListItemAttribute,
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
-} from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+} from '@kit.ArkUI'
 
 @Entry
 @Component
