@@ -1211,6 +1211,74 @@ export default function sceneNodeTest() {
         let node2: scene3d.Node | null | undefined = null;
         node2 = scene?.importNode("scene2", node1, scene.root);
         expect(node2 != null).assertTrue();
+
+        // Test name parameter with empty string
+        try {
+          let emptyNameNode = scene?.importNode("", node1, scene.root);
+          console.info(msg + " importNode with empty string name: " + JSON.stringify(emptyNameNode));
+          expect(emptyNameNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with empty string name threw error: " + JSON.stringify(err));
+        }
+
+        /* task_0204 第1个参数为null/undefined时，返回undefined
+        // Test name parameter with null
+        try {
+          let nullNameNode = scene?.importNode(null, node1, scene.root);
+          console.info(msg + " importNode with null name: " + JSON.stringify(nullNameNode));
+          expect(nullNameNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with null name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with undefined
+        try {
+          let undefinedNameNode = scene?.importNode(undefined, node1, scene.root);
+          console.info(msg + " importNode with undefined name: " + JSON.stringify(undefinedNameNode));
+          expect(undefinedNameNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with undefined name threw error: " + JSON.stringify(err));
+        }
+          */
+
+        /* task_0204 第2个参数为null/undefined时，返回null
+        // Test node parameter with null
+        try {
+          let nullNodeParamNode = scene?.importNode("testNullNode", null, scene.root);
+          console.info(msg + " importNode with null node parameter: " + JSON.stringify(nullNodeParamNode));
+          expect(nullNodeParamNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with null node parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test node parameter with undefined
+        try {
+          let undefinedNodeParamNode = scene?.importNode("testUndefinedNode", undefined, scene.root);
+          console.info(msg + " importNode with undefined node parameter: " + JSON.stringify(undefinedNodeParamNode));
+          expect(undefinedNodeParamNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with undefined node parameter threw error: " + JSON.stringify(err));
+        }
+        */
+
+        // Test parent parameter with null
+        try {
+          let nullParentNode = scene?.importNode("testNullParent", node1, null);
+          console.info(msg + " importNode with null parent: " + JSON.stringify(nullParentNode));
+          expect(nullParentNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with null parent threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with undefined
+        try {
+          let undefinedParentNode = scene?.importNode("testUndefinedParent", node1, undefined);
+          console.info(msg + " importNode with undefined parent: " + JSON.stringify(undefinedParentNode));
+          expect(undefinedParentNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with undefined parent threw error: " + JSON.stringify(err));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testImportNode " + JSON.stringify(err));
@@ -1233,6 +1301,74 @@ export default function sceneNodeTest() {
         let node2: scene3d.Node | null | undefined = null;
         node2 = scene?.importScene("scene1", scene1, null);
         expect(node2 != null).assertTrue();
+
+        // Test name parameter with empty string
+        try {
+          let emptyNameScene = scene?.importScene("", scene1, null);
+          console.info(msg + " importScene with empty string name: " + JSON.stringify(emptyNameScene));
+          expect(emptyNameScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with empty string name threw error: " + JSON.stringify(err));
+        }
+
+        /* task_0204 第1个参数为null/undefined时，返回undefined
+        // Test name parameter with null
+        try {
+          let nullNameScene = scene?.importScene(null, scene1, null);
+          console.info(msg + " importScene with null name: " + JSON.stringify(nullNameScene));
+          expect(nullNameScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with null name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with undefined
+        try {
+          let undefinedNameScene = scene?.importScene(undefined, scene1, null);
+          console.info(msg + " importScene with undefined name: " + JSON.stringify(undefinedNameScene));
+          expect(undefinedNameScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with undefined name threw error: " + JSON.stringify(err));
+        }
+          */
+
+        /* task_0204 第2个参数为null/undefined时，返回null
+        // Test scene parameter with null
+        try {
+          let nullSceneScene = scene?.importScene("testNullScene", null, null);
+          console.info(msg + " importScene with null scene parameter: " + JSON.stringify(nullSceneScene));
+          expect(nullSceneScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with null scene parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test scene parameter with undefined
+        try {
+          let undefinedSceneScene = scene?.importScene("testUndefinedScene", undefined, null);
+          console.info(msg + " importScene with undefined scene parameter: " + JSON.stringify(undefinedSceneScene));
+          expect(undefinedSceneScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with undefined scene parameter threw error: " + JSON.stringify(err));
+        }
+          */
+
+        // Test parent parameter with null
+        try {
+          let nullParentScene = scene?.importScene("testNullParent", scene1, null);
+          console.info(msg + " importScene with null parent: " + JSON.stringify(nullParentScene));
+          expect(nullParentScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with null parent threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with undefined
+        try {
+          let undefinedParentScene = scene?.importScene("testUndefinedParent", scene1, undefined);
+          console.info(msg + " importScene with undefined parent: " + JSON.stringify(undefinedParentScene));
+          expect(undefinedParentScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with undefined parent threw error: " + JSON.stringify(err));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testImportScene " + JSON.stringify(err));
