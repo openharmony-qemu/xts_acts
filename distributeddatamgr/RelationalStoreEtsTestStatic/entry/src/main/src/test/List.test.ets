@@ -65,6 +65,7 @@ import RdbLockRow from "./RdbLockRow.test"
 import RdbStoreDuplicateColumnsTest from "./RdbStoreDuplicateColumns.test";
 import RdbStoreErrorCodeAddTest from "./RdbStoreErrorCodeAdd.test";
 import RdbStoreErrorCodeAdd2Test from "./RdbStoreErrorCodeAdd2.test";
+import RdbSetdistributedtableTest from "./RdbSetdistributedTableEts.test"
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -131,4 +132,5 @@ export default function testsuite() {
   RdbStoreDuplicateColumnsTest();
   RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
+  RdbSetdistributedtableTest();
 }
