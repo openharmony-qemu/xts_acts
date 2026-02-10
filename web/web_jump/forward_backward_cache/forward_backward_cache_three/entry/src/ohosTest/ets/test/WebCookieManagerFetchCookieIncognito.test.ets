@@ -95,7 +95,7 @@ export default function webCookieManagerFetchCookieIncognito() {
     it('testFetchCookieIncognitoErrorCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent('testFetchCookieIncognitoErrorCode003', 136700)
-        Utils.registerEvent('testFetchCookieIncognitoErrorCode003', 17100002, 136730, done);
+        Utils.registerEvent('testFetchCookieIncognitoErrorCode003', '17100002URL error. No valid cookie found for the specified URL.', 136730, done);
       await Utils.waitAndClickComponent(driver, 'WebCookieManagerFetchCookieTestButton', 'testFetchCookieIncognitoErrorCode003');
       })
   })

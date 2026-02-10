@@ -26,9 +26,9 @@ const VIDEO_SOURCE = 'H264_AAC_Matedata.mp4';
 const VIDEO_NOSUPPORT = 'No_Support_Format.mov'
 const TAG = "MetadataDemo"
 const SLEEP_TIME = 200
-let AVFileDescriptor: media.AVFileDescriptor;
-let AVFileDescriptor2: media.AVFileDescriptor;
-let AVFileDescriptor3: media.AVFileDescriptor;
+let AVFileDescriptor: media.AVFileDescriptor | undefined;
+let AVFileDescriptor2: media.AVFileDescriptor | undefined;
+let AVFileDescriptor3: media.AVFileDescriptor | undefined;
 let mediaTestBase = new MediaTestBase()
 
 function openFileFailed() {
@@ -64,9 +64,9 @@ export default function AVMetadata() {
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await mediaTestBase.closeFdNumber(AVFileDescriptor.fd);
-      await mediaTestBase.closeFdNumber(AVFileDescriptor2.fd);
-      await mediaTestBase.closeFdNumber(AVFileDescriptor3.fd);
+      await mediaTestBase.closeFdNumber(AVFileDescriptor!.fd);
+      await mediaTestBase.closeFdNumber(AVFileDescriptor2!.fd);
+      await mediaTestBase.closeFdNumber(AVFileDescriptor3!.fd);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_static_0100
@@ -81,7 +81,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, album: ${metadata!!.album}`);
@@ -105,7 +105,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata!!.albumArtist}`);
@@ -129,7 +129,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, artist: ${metadata!!.artist}`);
@@ -152,7 +152,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, author: ${metadata!!.author}`);
@@ -176,7 +176,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, dateTime: ${metadata!!.dateTime}`);
@@ -201,7 +201,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       console.info('AVMetadataExtractor success   22222222222');
       // 获取元数据
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video album :${metadata!!.album}}`);
@@ -225,7 +225,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, genre: ${metadata!!.composer}`);
@@ -249,7 +249,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, duration: ${metadata!!.duration}`);
@@ -273,7 +273,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, genre: ${metadata!!.genre}`);
@@ -297,7 +297,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, hasAudio: ${metadata!!.hasAudio}`);
@@ -321,7 +321,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, hasVideo: ${metadata!!.hasVideo}`);
@@ -345,7 +345,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, mimeType: ${metadata!!.mimeType}`);
@@ -369,7 +369,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, trackCount: ${metadata!!.trackCount}`);
@@ -393,7 +393,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, sampleRate: ${metadata!!.sampleRate}`);
@@ -417,7 +417,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, title: ${metadata!!.title}`);
@@ -441,7 +441,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, videoHeight: ${metadata!!.videoHeight}`);
@@ -465,7 +465,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, videoWidth: ${metadata!!.videoWidth}`);
@@ -489,7 +489,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, videoOrientation: ${metadata!!.videoOrientation}`);
@@ -513,7 +513,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, album: ${metadata!!.album}`);
@@ -537,7 +537,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata!!.albumArtist}`);
@@ -561,7 +561,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, artist: ${metadata!!.artist}`);
@@ -585,7 +585,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, author: ${metadata!!.author}`);
@@ -609,7 +609,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video dateTime :${metadata!!.dateTime}}`);
@@ -633,7 +633,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video composer :${metadata!!.composer}}`);
@@ -657,7 +657,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video duration :${metadata!!.duration}}`);
@@ -681,7 +681,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video genre :${metadata!!.genre}}`);
@@ -705,7 +705,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video hasAudio :${metadata!!.hasAudio}}`);
@@ -729,7 +729,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video hasVideo :${metadata!!.hasVideo}}`);
@@ -753,7 +753,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video mimeType :${metadata!!.mimeType}}`);
@@ -777,7 +777,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video trackCount :${metadata!!.trackCount}}`);
@@ -801,7 +801,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video sampleRate :${metadata!!.sampleRate}}`);
@@ -825,7 +825,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata!!.videoWidth}}`);
@@ -849,7 +849,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata!!.videoWidth}}`);
@@ -873,7 +873,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success video videoOrientation :${metadata!!.videoOrientation}}`);
@@ -904,9 +904,9 @@ export default function AVMetadata() {
       if(AVFileDescriptor == undefined) {
         console.info(TAG + "0100 AVFileDescriptor == undefined");
       } else {
-        console.info(TAG + "0100 AVFileDescriptor != undefined: " + JSON.stringify(AVFileDescriptor));
+        console.info(TAG + "0100 AVFileDescriptor != undefined: " + JSON.stringify(AVFileDescriptor!));
       }
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
 
       avMetadataExtractor!!.fetchMetadata((err, metadata) => {
         if (err != null) {
@@ -932,7 +932,7 @@ export default function AVMetadata() {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, hdrType: ${metadata!!.hdrType}`);
@@ -956,7 +956,7 @@ export default function AVMetadata() {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         expect(metadata).not().assertNull();
@@ -983,7 +983,7 @@ export default function AVMetadata() {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success');
-      let stat = fs.statSync(AVFileDescriptor.fd);
+      let stat = fs.statSync(AVFileDescriptor!.fd);
       let size = stat.size;
       let dataSrc: media.AVDataSrcDescriptor = {
         fileSize: size,
@@ -996,7 +996,7 @@ export default function AVMetadata() {
             offset: pos,
             length: len
           };
-          let num = fs.readSync(AVFileDescriptor.fd, buffer, options);
+          let num = fs.readSync(AVFileDescriptor!.fd, buffer, options);
           console.info(TAG, 'readAt end, num: ' + num);
           if (num > 0 && size >= pos) {
             return num.toInt();
@@ -1027,7 +1027,7 @@ export default function AVMetadata() {
     it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200  is success");
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       avMetadataExtractor!!.fetchAlbumCover((err, PixelMap) => {
         if (err) {
           console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
@@ -1054,7 +1054,7 @@ export default function AVMetadata() {
       let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
       // 获取元数据
       console.info('AVMetadataExtractor success   22222222222');
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor!;
       // 获取专辑封面
       await avMetadataExtractor!!.fetchAlbumCover().then((pixelMap: image.PixelMap | undefined) => {
         pixelMap!!.getImageInfo().then((imageInfo: image.ImageInfo) => {
@@ -1097,7 +1097,7 @@ export default function AVMetadata() {
       if (!AVFileDescriptor2) {
         console.info('AVFileDescriptor2 create failed. Received null or undefined');
       }
-      avMetadataExtractor!!.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor!!.fdSrc = AVFileDescriptor2!;
       // 调用FetchFrameByTime方法
       await avMetadataExtractor!!.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap | undefined) => {
         console.info('fetchFrameByTime success');

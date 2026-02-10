@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,8 @@ export default function getSignatureAInfo() {
         let datas = bundleManager.getSignatureInfo(0);
         expect().assertFail();
         done();
-      }catch(err: BusinessError){
+      }catch(err){
+        err = err as BusinessError;
         hilog.error(domain, tag, `Sub_Bms_Framework_getSignatureInfo_static_02 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(17700021);
         done();

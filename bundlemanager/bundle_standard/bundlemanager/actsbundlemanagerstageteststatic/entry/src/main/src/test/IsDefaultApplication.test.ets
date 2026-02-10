@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,8 @@ export default function isDefaultApplicationTest() {
               done();
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_0900 failed: %{public}s', JSON.stringify(err));
           expect(err.code == 801).assertTrue()
           done();
@@ -62,7 +63,7 @@ export default function isDefaultApplicationTest() {
 
         try {
           let damp1 = defaultAppManager.isDefaultApplication(type);
-          damp1.then((result: boolean): boolean => {
+          damp1.then((result: boolean) => {
             hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 success, boolean: ' + result);
             expect(result).assertFalse();
             done();
@@ -74,7 +75,8 @@ export default function isDefaultApplicationTest() {
               done()
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 failed: %{public}s', JSON.stringify(err));
           expect(err.code == 801).assertTrue()
           done();
@@ -96,7 +98,8 @@ export default function isDefaultApplicationTest() {
           hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_2550 success, boolean: ' + boolResult);
           expect(boolResult).assertFalse();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code != 0) {
             hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_2550 failed: %{public}s', JSON.stringify(err));
             expect(err.code == 801).assertTrue()

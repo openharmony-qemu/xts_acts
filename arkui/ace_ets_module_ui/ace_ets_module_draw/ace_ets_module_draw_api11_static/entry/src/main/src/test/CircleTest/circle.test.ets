@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -245,7 +245,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0100 failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -266,7 +267,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
           message: 'undefined'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0200, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
@@ -285,7 +287,8 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       try {
         ohosrouter.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_hideAlertBeforeBackPage_static_0100, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -320,7 +323,7 @@ it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => 
               expect(value).assertEqual('ohosProject');
             }
           });
-      } catch (error: BusinessError) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

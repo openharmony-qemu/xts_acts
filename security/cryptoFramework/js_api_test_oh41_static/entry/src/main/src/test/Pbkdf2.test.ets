@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         expect(kdfObj != null).assertTrue();
         expect(kdfObj.algName).assertEqual(inputParam);
         console.log(`kdfObj algName is: ${kdfObj.algName}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0100 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -73,26 +73,26 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         crypto.createKdf("");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         crypto.createKdf(randomStr);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         crypto.createKdf("pbKDF2|SHA1");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         crypto.createKdf("PBKDF2|SHA2");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -120,7 +120,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA1", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0300 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -150,7 +150,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA1", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0400 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -180,7 +180,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA224", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0500 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -210,7 +210,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA224", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0600 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -240,7 +240,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0700 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -270,7 +270,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0800 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -300,7 +300,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA384", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_0900 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -330,7 +330,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA384", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1000 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -360,7 +360,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1100 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -390,7 +390,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1200 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -420,7 +420,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1300 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -450,7 +450,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1400 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -483,7 +483,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1500 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -516,7 +516,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SM3", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1600 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -549,7 +549,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1700 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -582,7 +582,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA256", dataSpec);
         expect(retData.data != null).assertTrue();
         expect(retData.data.length).assertEqual(keySize);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1800 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -620,7 +620,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
         let retData2: crypto.DataBlob = await pbkPromise.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec2);
         expect(commons.uInt8ArrayToString(retData.data)).assertEqual(commons.uInt8ArrayToString(retData2.data));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_1900 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -658,7 +658,7 @@ export default function cryptoPbkdf2JsTestUnit() {
         let retData: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec);
         let retData2: crypto.DataBlob = await pbkCallback.pbkdf2NormalProcess("PBKDF2|SHA512", dataSpec2);
         expect(commons.uInt8ArrayToString(retData.data)).assertEqual(commons.uInt8ArrayToString(retData2.data));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_Pbkdf2_Func_2000 catch error: ${err}`);
         expect(null).assertFail();
       }
@@ -685,22 +685,22 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.algName = "PBkdf2";
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.algName = "";
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -725,22 +725,22 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.algName = "PBkdf2";
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.algName = "null";
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -764,12 +764,12 @@ export default function cryptoPbkdf2JsTestUnit() {
       let kdfObj: crypto.Kdf = crypto.createKdf("PBKDF2|SHA224");
       try {
         await kdfObj.generateSecret(dataSpec);
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       try {
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -795,15 +795,15 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.iterations = 0;
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -828,15 +828,15 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.iterations = 0;
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -861,15 +861,15 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.keySize = 0;
         await pbkCallback.kdfGenerateSecret(kdfObj, dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -894,15 +894,15 @@ export default function cryptoPbkdf2JsTestUnit() {
       try {
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       try {
         dataSpec.keySize = 0;
         await kdfObj.generateSecret(dataSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });

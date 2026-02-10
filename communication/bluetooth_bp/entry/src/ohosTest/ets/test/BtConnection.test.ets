@@ -49,19 +49,7 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
         console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
         expect(data).not().assertUndefined();
     }
-    async function openPhone() {
-        try{
-            let drivers = Driver.create();
-            console.info('[bluetooth_js] bt driver create:'+ drivers);            
-            await drivers.delayMs(1000);
-            await drivers.wakeUpDisplay();
-            await drivers.delayMs(5000);
-            await drivers.swipe(1500, 1000, 1500, 100);
-            await drivers.delayMs(10000);
-        } catch (error) {
-            console.info('[bluetooth_js] driver error info:'+ error);
-        }
-    }
+
     async function tryToEnableBt() {
         let sta = btAccess.getState();
         switch (sta) {
@@ -161,7 +149,6 @@ describe('btConnectionTest', () => {
     beforeAll(async (done : Function) => {
         console.info('beforeAll called')
         await clickRequestPermission(PERMISSION_TEXT);
-        await openPhone();
         done();
     })
     beforeEach(async (done : Function) => {

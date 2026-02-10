@@ -197,9 +197,9 @@ export default function TextRunTest() {
     let globalTextStyle: text.TextStyle;
     let globalParagraphStyle: text.ParagraphStyle;
     let globalStructStyle: text.StrutStyle;
-    let globalCanvas: drawing.Canvas;
+    let globalCanvas: drawing.Canvas | undefined;
     let checkFontStyle: text.FontStyle;
-    let globalParagraph: text.Paragraph;
+    let globalParagraph: text.Paragraph | undefined;
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
@@ -335,11 +335,11 @@ export default function TextRunTest() {
     it('testGetGlyphRunsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(500);
+          globalParagraph?.layoutSync(500);
 
           let range: text.Range = { start: 0, end: 1 };
 
-          let textLines: Array<text.TextLine> = globalParagraph.getTextLines();
+          let textLines: Array<text.TextLine> = globalParagraph!.getTextLines();
           let length = textLines.length;
           for (let i = 0; i < length; i++) {
             let textLine: text.TextLine = textLines[i];
@@ -361,7 +361,7 @@ export default function TextRunTest() {
                 JSON.stringify(run.getOffsets()));
               hilog.info(domain, tag, 'TEXT_LOG run [%{public}d %{public}d] getFont :%{public}s', i, j,
                 JSON.stringify(run.getFont()));
-              run.paint(globalCanvas, 0, 0);
+              run.paint(globalCanvas!, 0, 0);
               let indices: Array<int> | undefined = run.getStringIndices(range);
               if (indices) {
                 hilog.info(domain, tag, 'TEXT_LOG indices size: %{public}d ', indices.length);

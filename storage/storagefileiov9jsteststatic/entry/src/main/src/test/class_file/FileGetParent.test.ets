@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function fileIOFileGetParent() {
         expect(file.getParent() == str).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filegetParent_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -76,7 +76,7 @@ export default function fileIOFileGetParent() {
         expect(file.getParent() == str).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filegetParent_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -101,7 +101,7 @@ export default function fileIOFileGetParent() {
         expect(file.getParent() == filenew.getParent()).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filegetParent_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -129,7 +129,7 @@ export default function fileIOFileGetParent() {
         expect(file.getParent() == str).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filegetParent_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

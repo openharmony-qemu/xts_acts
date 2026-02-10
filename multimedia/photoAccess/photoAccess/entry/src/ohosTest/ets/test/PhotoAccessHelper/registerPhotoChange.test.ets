@@ -55,6 +55,7 @@ export default function registerPhotoChangeTest () {
       const testNum = 'register_photoChange_callback_001';
       try {
         const predicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('display_name', 'registerPhotoChange_01.jpg');
         const ops : photoAccessHelper.FetchOptions = {
           fetchColumns: [photoKeys.TITLE],
           predicates: predicates
@@ -98,6 +99,7 @@ export default function registerPhotoChangeTest () {
       const testNum = 'register_photoChange_callback_002';
       try {
         const predicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('display_name', 'register_photoChange_callback_001registerPhotoChange_01.jpg');
         const ops : photoAccessHelper.FetchOptions = {
           fetchColumns: [photoKeys.TITLE],
           predicates: predicates

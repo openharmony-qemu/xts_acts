@@ -122,6 +122,12 @@ static void OnNewOutputBufferCallback(OH_VideoProcessing* videoProcessor, uint32
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0010, TestSize.Level0)
 {
+    ASSERT_EQ(SRC_INFO.metadataType, OH_VIDEO_HDR_VIVID);
+    ASSERT_EQ(SRC_INFO.colorSpace, OH_COLORSPACE_BT2020_HLG_LIMIT);
+    ASSERT_EQ(SRC_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_P010);
+    ASSERT_EQ(DST_INFO.metadataType, OH_VIDEO_HDR_VIVID);
+    ASSERT_EQ(DST_INFO.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
+    ASSERT_EQ(DST_INFO.pixelFormat, NATIVEBUFFER_PIXEL_FMT_YCBCR_P010);
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_InitializeEnvironment();
     ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
     OH_VideoProcessing_DeinitializeEnvironment();

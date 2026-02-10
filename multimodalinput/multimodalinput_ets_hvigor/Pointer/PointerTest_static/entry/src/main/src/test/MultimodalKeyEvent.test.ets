@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(Action.DOWN == 1);
           ExpectTrue(Action.UP == 2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -86,7 +86,7 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(testKey.pressedTime == 10);
           ExpectTrue(testKey.deviceId == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -143,7 +143,7 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(testKeyEvent.numLock == true);
           ExpectTrue(testKeyEvent.scrollLock == true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

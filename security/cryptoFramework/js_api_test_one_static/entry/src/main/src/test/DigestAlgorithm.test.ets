@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -159,8 +159,8 @@ export default function DigestAlgorithmJsunit() {
       try {
         cryptoFramework.createMd("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -196,9 +196,9 @@ export default function DigestAlgorithmJsunit() {
       try {
         let mdGenerator: cryptoFramework.Md = cryptoFramework.createMd("SHA224");
         await mdGenerator.digest();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("err is " + err.code);
-        expect(err.code).assertEqual(401);
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -310,11 +310,11 @@ export default function DigestAlgorithmJsunit() {
       try {
         cryptoFramework.createMac("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(
           "[Promise]: error code: " + err.code + ", message is: " + err.message
         );
-        expect(err.code).assertEqual(401);
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -344,7 +344,7 @@ export default function DigestAlgorithmJsunit() {
         await macObj.init(symKey);
         await macObj.update(inBlob);
         await macObj.doFinal();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();

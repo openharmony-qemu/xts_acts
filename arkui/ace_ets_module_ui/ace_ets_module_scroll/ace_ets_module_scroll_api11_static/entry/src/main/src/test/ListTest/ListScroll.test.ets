@@ -73,7 +73,7 @@ export default function ListScrollTest() {
           })
           await CommonFunc.sleep(2500);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });

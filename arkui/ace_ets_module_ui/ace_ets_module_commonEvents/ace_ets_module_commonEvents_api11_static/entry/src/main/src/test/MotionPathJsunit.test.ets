@@ -115,7 +115,7 @@ it('motionPathTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         emitter.on(indexEventOne, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("motionPathTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0200 click result is: " +
@@ -149,7 +149,7 @@ it('motionPathTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("motionPathTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0300 click result is: " +

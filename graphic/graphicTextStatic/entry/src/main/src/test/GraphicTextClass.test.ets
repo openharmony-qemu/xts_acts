@@ -23,8 +23,8 @@ import common2D from '@ohos.graphics.common2D';
 export default function GraphicTextClass() {
 
   describe('GraphicTextClass', () => {
-    let pixel: image.PixelMap;
-    let myColor: common2D.Color;
+    let pixel: image.PixelMap | undefined;
+    let myColor: common2D.Color | undefined;
     beforeAll(async () => {
       myColor = { alpha: 255, red: 255, green: 0, blue: 0 };
       const color: ArrayBuffer = new ArrayBuffer(40000);
@@ -70,7 +70,7 @@ export default function GraphicTextClass() {
     it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
-        let canvas = new drawing.Canvas(pixel)
+        let canvas = new drawing.Canvas(pixel!)
         expect(true).assertTrue();
         let paragraph: text.Paragraph = buildParagraph();
         try {
@@ -96,7 +96,7 @@ export default function GraphicTextClass() {
     it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
-        let canvas = new drawing.Canvas(pixel)
+        let canvas = new drawing.Canvas(pixel!)
         expect(true).assertTrue();
         let paragraph: text.Paragraph = buildParagraph();
         let path = new drawing.Path();
@@ -125,12 +125,12 @@ export default function GraphicTextClass() {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
-        color : myColor,
+        color : myColor!,
         fontSize: 66,
       };
 
       let myTextStyleTwo: text.TextStyle = {
-        color : myColor,
+        color : myColor!,
         fontSize : 33,
       };
       let myParagraphStyle: text.ParagraphStyle = {

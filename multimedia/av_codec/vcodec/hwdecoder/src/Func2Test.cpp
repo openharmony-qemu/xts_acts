@@ -1223,4 +1223,28 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_TRANSFORM_0020, TestSize.Level0)
         ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     }
 }
+
+/**
+ * @tc.name   VIDEO_DECODE_RESOLUTION_0010
+ * @tc.number VIDEO_DECODE_RESOLUTION_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_RESOLUTION_0010, TestSize.Level2)
+{
+    if (g_codecName.find("hisi") != string::npos) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->DEFAULT_WIDTH = 1104;
+        vDecSample->DEFAULT_HEIGHT = 622;
+        vDecSample->DEFAULT_FRAME_RATE = 30;
+        vDecSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_LT(0, vDecSample->changeCount);
+    }
+}
 } // namespace

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function EveryModulusTest() {
         try {
             let a = Type.of("OpenHarmony");
             expect(String(a)).assertEqual("string");
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -78,7 +78,7 @@ export default function EveryModulusTest() {
             expect(validTypes.includes(typeDesc)).assertTrue();
             expect(typeof num === "number").assertTrue();
             expect(num > 3.13 && num < 3.15).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail, err is ${err}`);
             expect().assertFail();
         }
@@ -97,7 +97,7 @@ export default function EveryModulusTest() {
         try {
             let a = Type.of(true);
             expect(String(a)).assertEqual("boolean");
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -119,7 +119,7 @@ export default function EveryModulusTest() {
             };
             let a = Type.of(func);
             expect(String(a)).assertEqual("(): void");
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail, err is ${err}`);
             expect().assertFail();
         }
@@ -138,7 +138,7 @@ export default function EveryModulusTest() {
         try {
             let a = Type.of(null);
             expect(String(a)).assertEqual("null");
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -158,7 +158,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -178,7 +178,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [1.0, 2.0, 3.0];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -198,7 +198,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [1.0, -2.0, 3.0];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -218,7 +218,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [10.0, 20.0, 30.0];
             let result = every(arr, (value, index) => value > index);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -238,7 +238,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [5.0, 5.0, 5.0];
             let result = every(arr, (value, _, array) => value === array[0]);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -258,7 +258,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<float> = [5.0f, 5.0f, 5.0f, 5.0f];
             let result = every(arr, (value) => value === 5.0f);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }

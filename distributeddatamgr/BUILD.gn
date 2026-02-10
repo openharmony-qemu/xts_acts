@@ -22,6 +22,7 @@ group("distributeddatamgr") {
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
+      "PasteboardPermissionTestTaiheStatic:ActsPasteBoardPermissionsStatic",
       "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
       "PasteboardTestStatic:ActsPasteboardStaticTest",
       "Pasteboardjsapitest:ActsPasteBoardETSApiTest",
@@ -34,8 +35,10 @@ group("distributeddatamgr") {
       "dataObjecttest:dataObjecttest",
       "dataShareEts_static:ActsDataShareStaticTest",
       "dataShareTest:dataShareTest",
+      "dataShare_Static:dataShare_Static",
       "dataSharejstest:dataShare_js_test",
       "distributedKVStoretest:distributedKVStoretest",
+      "intelligenceTest_static:ActsIntelligenceStaticTest",
       "kvStoretest:kvStoretest",
       "pasteboard_errorcode:ActsPasteboardErrorTest",
       "preferenceEts_static:ActsPreferenceStaticTest",
@@ -47,14 +50,13 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
-      "dataShare_Static:dataShare_Static"
     ]
   } else {
     deps = [
+      "dataShare_Static:dataShare_Static",
       "kvStorejstest/hap:distributeddatamgrfunctest_hap",
       "relationalStorejstest/hap:appdatamgrfunctest_hap",
       "searchtest/hap:searchfunctest_hap",
-      "dataShare_Static:dataShare_Static"
     ]
   }
 }

@@ -159,7 +159,7 @@ export struct ModifierPage {
   ];
   private displayWidth: number = 0;
   private displayHeight: number = 0;
-  private listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)') // 监听横屏事件
+  private listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)') // 监听横屏事件
 
   aboutToAppear(): void {
     try {

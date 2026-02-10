@@ -49,9 +49,9 @@ export default function lastExitReasonStaticTest() {
      * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7900`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 begin');
       try {
@@ -86,9 +86,9 @@ export default function lastExitReasonStaticTest() {
      * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7901`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 begin');
       try {

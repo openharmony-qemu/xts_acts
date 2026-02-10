@@ -109,7 +109,7 @@ it('testBackground_static_0200', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("testBackground_0200 start pages");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testBackground_0200 change component data error: " + err.message);
       }
       await Utils.sleep(3000);

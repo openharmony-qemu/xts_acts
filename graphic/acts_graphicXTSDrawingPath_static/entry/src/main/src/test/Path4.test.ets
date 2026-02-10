@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsPath4Test() {
   describe('DrawingTsPath4Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       const color: ArrayBuffer = new ArrayBuffer(40000); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -699,7 +699,7 @@ export default function drawingTsPath4Test() {
         expect(drawing.PathOp.XOR + '').assertEqual('3');
         expect(drawing.PathOp.REVERSE_DIFFERENCE + '').assertEqual('4');
         console.info(msg + 'PathOp successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `PathOp errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -748,12 +748,12 @@ export default function drawingTsPath4Test() {
     it('testPathIsRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathIsRectNormalStatic';
       let path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       try {
         let isRect = path.isRect(null);
         console.info(msg + `path isRect success`);
         expect(isRect).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `path isRect error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -766,7 +766,7 @@ export default function drawingTsPath4Test() {
         let isRect2 = path.isRect(rect);
         console.info(msg + `path isRect2 success  isRect2: ${isRect2}`);
         expect(isRect2).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `path isRect2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -776,7 +776,7 @@ export default function drawingTsPath4Test() {
         let isRect3 = path.isRect(rect);
         console.info(msg + `path isRect3 success`);
         expect(isRect3).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `path isRect3 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -794,7 +794,7 @@ export default function drawingTsPath4Test() {
         let isRect4 = path.isRect(rect);
         console.info(msg + `path isRect4 success`);
         expect(isRect4).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `path isRect4 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -806,7 +806,7 @@ export default function drawingTsPath4Test() {
         let isRect5 = path.isRect(rect);
         console.info(msg + `path isRect5 success`);
         expect(isRect5).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `path isRect5 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -828,7 +828,7 @@ export default function drawingTsPath4Test() {
           green: 0.4,
           blue: 0.7
         };
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `color4f error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }

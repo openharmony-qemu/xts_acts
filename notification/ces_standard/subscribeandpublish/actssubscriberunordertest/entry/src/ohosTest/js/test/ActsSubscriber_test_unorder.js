@@ -41,14 +41,17 @@ export default function ActsSubscriberTestUnorder() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2700 START`)
+      let count = 0
       let CommonEventSubscriber = await commonEvent.createSubscriber(CommonEventSubscriberInfo)
       if (CommonEventSubscriber == undefined) {
         console.info(TAG + ': createSubscriber failed! Err.Info ===> ' + JSON.stringify(CommonEventSubscriber))
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
+        
       }
 
       await CommonEventSubscriber.getSubscribeInfo((err, CommonEventSubscriberInfo) => {
@@ -58,7 +61,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': getSubscribeInfo successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('event')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -80,19 +82,20 @@ export default function ActsSubscriberTestUnorder() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_2800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2800 START`)
+      let count = 0
       let CommonEventSubscriber = await commonEvent.createSubscriber(CommonEventSubscriberInfo)
       if (CommonEventSubscriber == undefined) {
         console.info(TAG + ': createSubscriber failed! Err.Info ===> ' + JSON.stringify(CommonEventSubscriber))
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('event')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -117,14 +120,16 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ans_Subscriber_Subscribe_2900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_2900 START`)
       CommonEventSubscriberInfo.events[0] = '@#￥#3243adsafdf_'
+      let count = 0
       let CommonEventSubscriber = await commonEvent.createSubscriber(CommonEventSubscriberInfo)
       if (CommonEventSubscriber == undefined) {
         console.info(TAG + ': createSubscriber failed! Err.Info ===> ' + JSON.stringify(CommonEventSubscriber))
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await CommonEventSubscriber.getSubscribeInfo((err, CommonEventSubscriberInfo) => {
@@ -134,7 +139,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': getSubscribeInfo successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('@#￥#3243adsafdf_')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -157,19 +161,21 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ans_Subscriber_Subscribe_3000', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_3000 START`)
       CommonEventSubscriberInfo.events[0] = '@#￥#3243adsafdf_'
+      let count = 0
       let CommonEventSubscriber = await commonEvent.createSubscriber(CommonEventSubscriberInfo)
       if (CommonEventSubscriber == undefined) {
         console.info(TAG + ': createSubscriber failed! Err.Info ===> ' + JSON.stringify(CommonEventSubscriber))
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
+
       }
 
       await CommonEventSubscriber.getSubscribeInfo().then((CommonEventSubscriberInfo) => {
         console.info(TAG + ': getSubscribeInfo promise successed! event.Info ===> ' + JSON.stringify(CommonEventSubscriberInfo))
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('@#￥#3243adsafdf_')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId == '').assertTrue()
@@ -194,6 +200,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Subscriber_Subscribe_0900', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_0900 START`)
       await sleep(5000)
+      let count = 0
       CommonEventSubscriberInfo.events[0] = 'publish_event_0500'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0500'
       CommonEventSubscriberInfo.priority = 10
@@ -209,8 +216,9 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await commonEvent.subscribe(CommonEventSubscriber, (err, CommonEventData) => {
@@ -219,8 +227,8 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         } else {
+          expect(CommonEventData !=null).assertTrue()
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
         }
       })
 
@@ -231,7 +239,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': isOrderedCommonEvent successed!')
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0500')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0500')
@@ -245,13 +252,15 @@ export default function ActsSubscriberTestUnorder() {
       })
 
       await commonEvent.publish('publish_event_0500', CommonEventPublishData, (err) => {
+        count = 0
         if (err.code) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
           expect(false).assertTrue()
           done()
         } else {
+          count++
+          expect(count).assertEqual(1)
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
           done()
         }
       })
@@ -270,6 +279,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_8350', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8350 START`)
       await sleep(5000)
+      let count = 0
       CommonEventSubscriberInfo.events[0] = 'publish_event_0600'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0600'
       CommonEventSubscriberInfo.priority = 10
@@ -286,8 +296,9 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await commonEvent.subscribe(CommonEventSubscriber, (err, CommonEventData) => {
@@ -296,14 +307,13 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         } else {
+          expect(CommonEventData !=null).assertTrue()
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
         }
       })
 
       await CommonEventSubscriber.isOrderedCommonEvent().then(() => {
         console.info(TAG + ': isOrderedCommonEvent successed!')
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0600')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0600')
@@ -321,13 +331,15 @@ export default function ActsSubscriberTestUnorder() {
       })
 
       await commonEvent.publish('publish_event_0600', CommonEventPublishData, (err) => {
+        count = 0
         if (err.code) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
           expect(false).assertTrue()
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }
       })
@@ -346,6 +358,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_8250', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8250 START`)
       await sleep(5000)
+      let count = 0
       CommonEventSubscriberInfo.events[0] = 'publish_event_0700'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0700'
       CommonEventSubscriberInfo.priority = 10
@@ -361,8 +374,9 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await commonEvent.subscribe(CommonEventSubscriber, (err, CommonEventData) => {
@@ -371,8 +385,8 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         } else {
+          expect(CommonEventData !=null).assertTrue()
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
         }
       })
 
@@ -383,7 +397,6 @@ export default function ActsSubscriberTestUnorder() {
           done()
         } else {
           console.info(TAG + ': isStickyCommonEvent successed!')
-          expect(true).assertTrue()
           expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0700')
           expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
           expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0700')
@@ -397,13 +410,15 @@ export default function ActsSubscriberTestUnorder() {
       })
 
       await commonEvent.publish('publish_event_0700', CommonEventPublishData, (err) => {
+        count = 0
         if (err.code) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
           expect(false).assertTrue()
           done()
         } else {
+          count++
+          expect(count).assertEqual(1)
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
           done()
         }
       })
@@ -422,6 +437,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Publish_CommonEvent_8300', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_8300 START`)
       await sleep(5000)
+      let count = 0
       CommonEventSubscriberInfo.events[0] = 'publish_event_0800'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0800'
       CommonEventSubscriberInfo.priority = 10
@@ -437,8 +453,9 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await commonEvent.subscribe(CommonEventSubscriber, (err, CommonEventData) => {
@@ -447,14 +464,13 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         } else {
+          expect(CommonEventData !=null).assertTrue()
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
         }
       })
 
       await CommonEventSubscriber.isStickyCommonEvent().then(() => {
         console.info(TAG + ': isStickyCommonEvent successed!')
-        expect(true).assertTrue()
         expect(CommonEventSubscriberInfo.events[0]).assertEqual('publish_event_0800')
         expect(CommonEventSubscriberInfo.publisherPermission == '').assertTrue()
         expect(CommonEventSubscriberInfo.publisherDeviceId).assertEqual('PublishDeviceId_0800')
@@ -471,13 +487,15 @@ export default function ActsSubscriberTestUnorder() {
       })
 
       await commonEvent.publish('publish_event_0800', CommonEventPublishData, (err) => {
+        count =0
         if (err.code) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
           expect(false).assertTrue()
           done()
         } else {
+          count++
+          expect(count).assertEqual(1)
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
           done()
         }
       })
@@ -495,6 +513,7 @@ export default function ActsSubscriberTestUnorder() {
     it('Sub_Notification_Ces_Subscriber_Subscribe_0800', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_0800 START`)
       await sleep(5000)
+      let count = 0
       CommonEventSubscriberInfo.events[0] = 'publish_event_0900'
       CommonEventSubscriberInfo.publisherDeviceId = 'PublishDeviceId_0900'
       CommonEventSubscriberInfo.priority = 10
@@ -515,8 +534,9 @@ export default function ActsSubscriberTestUnorder() {
         expect(false).assertTrue()
         done()
       } else {
+        count++
+        expect(count).assertEqual(1)
         console.info(TAG + ': createSubscriber successed! Subscriber.Info ===> ' + JSON.stringify(CommonEventSubscriber))
-        expect(true).assertTrue()
       }
 
       await commonEvent.subscribe(CommonEventSubscriber, (err, CommonEventData) => {
@@ -525,19 +545,21 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         } else {
+          expect(CommonEventData !=null).assertTrue()
           console.info(TAG + ': subscribe successed! CommonEventData.Info ===> ' + JSON.stringify(CommonEventData))
-          expect(true).assertTrue()
         }
       })
 
       await commonEvent.publish('publish_event_0900', CommonEventPublishData, (err) => {
+        count = 0
         if (err.code) {
           console.info(TAG + ': publish failed! event.Info ===> ' + JSON.stringify(err.code))
           expect(false).assertTrue()
           done()
         } else {
           console.info(TAG + ': publish successed! event.Info ===> ' + JSON.stringify(CommonEventPublishData))
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }
       })
