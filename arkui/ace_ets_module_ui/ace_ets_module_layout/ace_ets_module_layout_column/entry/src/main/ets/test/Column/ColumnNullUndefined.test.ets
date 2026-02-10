@@ -23,24 +23,24 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 export default function ColumnNullUndefinedTest() {
   describe('ColumnNullUndefinedTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("ColumnMatchParentTest beforeEach start");
+      console.info("ColumnNullUndefined beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/ColumnNullUndefined',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get ColumnMatchParentTest state pages:" + JSON.stringify(pages));
-        if (!("ColumnMatchParent" == pages.name)) {
-          console.info("get ColumnMatchParentTest pages.name:" + JSON.stringify(pages.name));
+        console.info("get ColumnNullUndefined state pages:" + JSON.stringify(pages));
+        if (!("ColumnNullUndefined" == pages.name)) {
+          console.info("get ColumnNullUndefined pages.name:" + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push ColumnMatchParentTest page result:" + JSON.stringify(result));
+          console.info("push ColumnNullUndefined page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push ColumnMatchParentTest page error:" + err);
+        console.error("push ColumnNullUndefined page error:" + err);
       }
-      console.info("ColumnMatchParentTest beforeEach end");
+      console.info("ColumnNullUndefined beforeEach end");
       done();
     });
     afterEach(async () => {
