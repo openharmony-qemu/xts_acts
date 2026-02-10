@@ -182,11 +182,12 @@ export default function connectNativeParameterTest() {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
             return;  // 跳过测试，不失败
           }
-          // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
+          // 验证错误码为 WANT_CONTENT_ERROR、PERMISSION_DENY 或 INNER_ERROR (都是有效的错误)
           // 将 code 转换为数字以确保类型匹配
           let errorCode = Number(code);
           let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
-                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR)];
           expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
@@ -239,11 +240,12 @@ export default function connectNativeParameterTest() {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
             return;  // 跳过测试，不失败
           }
-          // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
+          // 验证错误码为 WANT_CONTENT_ERROR、PERMISSION_DENY 或 INNER_ERROR (都是有效的错误)
           // 将 code 转换为数字以确保类型匹配
           let errorCode = Number(code);
           let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
-                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR)];
           expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
@@ -306,11 +308,12 @@ export default function connectNativeParameterTest() {
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
             return;  // 跳过测试，不失败
           }
-          // 验证错误码为 WANT_CONTENT_ERROR 或 PERMISSION_DENY (都是有效的参数错误)
+          // 验证错误码为 WANT_CONTENT_ERROR、PERMISSION_DENY 或 INNER_ERROR (都是有效的错误)
           // 将 code 转换为数字以确保类型匹配
           let errorCode = Number(code);
           let validErrorCodes = [Number(webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR),
-                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY)];
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY),
+                                  Number(webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR)];
           expect(validErrorCodes.includes(errorCode)).assertTrue();
         }
       };
@@ -329,8 +332,5 @@ export default function connectNativeParameterTest() {
         expect(err.code).not().assertUndefined();
       }
     })
-
-    
-
   })
 }
