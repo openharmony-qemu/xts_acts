@@ -20,6 +20,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
+import { BusinessError } from '@ohos.base';
 const domain = 0xFF00;
 const tag = "TestTag";
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
