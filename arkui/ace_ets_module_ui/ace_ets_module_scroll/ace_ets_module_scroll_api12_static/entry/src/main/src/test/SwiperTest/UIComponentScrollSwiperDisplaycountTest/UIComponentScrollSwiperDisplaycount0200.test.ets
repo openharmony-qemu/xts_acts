@@ -43,7 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function UIComponentScrollSwiperDisplaycount0200() {
   describe('UIComponentScrollSwiperDisplaycount0200', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")

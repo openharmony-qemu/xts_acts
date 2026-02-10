@@ -26,7 +26,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 export default function progressButtonV2PageTest() {
   describe('progressButtonV2Page', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressButtonV2Page beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
 

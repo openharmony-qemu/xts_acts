@@ -32,7 +32,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

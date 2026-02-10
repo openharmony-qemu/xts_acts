@@ -45,7 +45,7 @@ export default function systemThemeTest() {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/SystemThemeTestPage",

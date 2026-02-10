@@ -62,7 +62,7 @@ export default function withThemeTest() {
       
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/WithThemeTestPage",

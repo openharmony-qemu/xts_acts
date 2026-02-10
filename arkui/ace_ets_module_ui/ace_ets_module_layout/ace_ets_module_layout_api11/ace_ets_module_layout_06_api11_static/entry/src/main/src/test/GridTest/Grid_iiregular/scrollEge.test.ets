@@ -47,7 +47,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function scrollByJsunit() {
   describe('scrollEgeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollEgeJsunit beforeAll start");
             
       await UtilsTest.msSleep(4000)

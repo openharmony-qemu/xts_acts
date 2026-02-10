@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleTest() {
   describe("ParticleTest", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticleTest beforeEach start");
 
       

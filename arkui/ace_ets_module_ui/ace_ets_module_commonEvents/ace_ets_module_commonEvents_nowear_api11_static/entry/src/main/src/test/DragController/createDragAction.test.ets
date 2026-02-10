@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function createDragAction() {
   describe('createDragAction', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.nowear.api11.static", "EntryAbility")
 

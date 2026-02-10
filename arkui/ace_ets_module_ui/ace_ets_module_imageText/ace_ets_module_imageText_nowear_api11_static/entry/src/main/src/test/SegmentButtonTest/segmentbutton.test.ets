@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function segmentbutton() {
   const SUITE = 'SegmentButton'
   describe('segmentbutton', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceSegmentButtonTest beforeEach start");
 
      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");

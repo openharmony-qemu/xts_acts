@@ -19,7 +19,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextAreaShowCounter() {
   describe('TextAreaShowCounter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaShowCounter beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

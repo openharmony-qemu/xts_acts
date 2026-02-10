@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function StateSet0010TestJsunit() {
   describe('StateSet0010TestJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateSet0010TestJsunit beforeEach start");
 
 

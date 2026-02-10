@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function BindSheetTest() {
   describe('BindSheetTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

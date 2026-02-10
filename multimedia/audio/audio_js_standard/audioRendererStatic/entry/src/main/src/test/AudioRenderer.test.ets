@@ -47,7 +47,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: beforeEach: Prerequisites at the test case level`);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info(`${TagFrmwkRender}: afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(1000);
     })

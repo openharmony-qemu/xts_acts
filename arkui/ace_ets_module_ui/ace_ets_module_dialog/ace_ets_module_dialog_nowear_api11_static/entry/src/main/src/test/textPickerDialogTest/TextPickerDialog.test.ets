@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextPickerDialog() {
   describe('TextPickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

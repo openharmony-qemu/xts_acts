@@ -40,7 +40,7 @@ export default function imagepixelMapSupportYuv() {
     let filePath: string;
     let fdInt: int;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       testContext = Hypium.get('context') as common.UIAbilityContext;
     })

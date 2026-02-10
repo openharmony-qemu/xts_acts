@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 
 export default function SideBarContainerTypeTest() {
   describe('SideBarContainerTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SideBarContainerTypeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
 

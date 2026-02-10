@@ -456,7 +456,7 @@ export default function cameraSessionFocusTest() {
 
   describe('cameraSessionFocusTest', () => {
     console.info(TAG + '----------cameraSessionFocusTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -477,7 +477,7 @@ export default function cameraSessionFocusTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);

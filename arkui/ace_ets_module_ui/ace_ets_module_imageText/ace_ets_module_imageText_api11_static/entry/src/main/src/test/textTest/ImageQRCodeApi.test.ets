@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Image_QRCode_Api() {
   describe('Image_QRCode_Api', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Image_QRCode_Api beforeEach start");
 
 

@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemPositionTest() {
   describe('Grid_RowCol_ItemPositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_RowCol_ItemPositionTest beforeAll start");
            
       await UtilsTest.msSleep(4000)

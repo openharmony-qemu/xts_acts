@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function longPressEventTest() {
   describe('longPressEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       

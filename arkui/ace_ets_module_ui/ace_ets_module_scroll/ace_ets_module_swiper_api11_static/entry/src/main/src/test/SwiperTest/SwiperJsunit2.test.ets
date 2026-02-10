@@ -96,7 +96,7 @@ async function backToIndex() {
 export default function swiperJsunit2() {
 
   describe('swiper2Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperJsunit2 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

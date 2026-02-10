@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function textPickerJsunit() {
   describe('appInfoTest_four_13', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textPickerJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

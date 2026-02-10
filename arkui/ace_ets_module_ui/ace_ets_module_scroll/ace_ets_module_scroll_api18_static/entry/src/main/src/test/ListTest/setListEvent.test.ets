@@ -41,7 +41,7 @@ import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function setListEvent() {
   describe('setListEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setListEvent beforeEach start");
 
       

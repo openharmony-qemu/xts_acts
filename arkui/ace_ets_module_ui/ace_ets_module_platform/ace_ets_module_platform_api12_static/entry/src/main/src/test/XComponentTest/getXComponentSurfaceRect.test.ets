@@ -38,7 +38,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 export default function getXComponentSurfaceRectJsunit() {
   describe('getXComponentSurfaceRectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")

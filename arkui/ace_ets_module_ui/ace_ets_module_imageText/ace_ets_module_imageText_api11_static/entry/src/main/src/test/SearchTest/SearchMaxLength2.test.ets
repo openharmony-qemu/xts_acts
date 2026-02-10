@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function search_maxLength2() {
   describe('search_maxLength2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search_maxLength2 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

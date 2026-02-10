@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function OnSizeChangeUndefinedTest() {
   describe('OnSizeChangeUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnSizeChangeUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

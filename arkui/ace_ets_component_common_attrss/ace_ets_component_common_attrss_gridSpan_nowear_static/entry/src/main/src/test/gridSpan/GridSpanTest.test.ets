@@ -69,7 +69,7 @@ export default function gridSpanTest() {
   }]
 
   describe('GridSpanTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GridSpanTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.gridSpan.nowear.test.static", "EntryAbility")

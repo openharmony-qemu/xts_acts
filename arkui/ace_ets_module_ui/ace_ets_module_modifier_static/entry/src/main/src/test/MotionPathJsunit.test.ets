@@ -34,7 +34,7 @@ interface Action {
 }
 export default function motionPathJsunit() {
   describe('common_motionPathTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

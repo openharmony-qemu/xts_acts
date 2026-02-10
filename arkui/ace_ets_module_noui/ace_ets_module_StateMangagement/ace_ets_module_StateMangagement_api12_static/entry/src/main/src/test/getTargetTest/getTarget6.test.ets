@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function getTarget6Test() {
   describe('getTarget6Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getTarget6Test beforeEach start");
 
 

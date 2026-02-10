@@ -40,7 +40,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function SearchMinFontScaleTest() {
   describe('SearchMinFontScaleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchMinFontScaleTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

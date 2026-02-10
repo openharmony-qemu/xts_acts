@@ -54,7 +54,7 @@ let emitKey = "emitUserAgent";
 
 export default function swiperCurveJsunit() {
   describe('swiperCurveTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperCurveJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

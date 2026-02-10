@@ -41,7 +41,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function BounceSymbolEffectTest() {
   describe('BounceSymbolEffectTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BounceSymbolEffectTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

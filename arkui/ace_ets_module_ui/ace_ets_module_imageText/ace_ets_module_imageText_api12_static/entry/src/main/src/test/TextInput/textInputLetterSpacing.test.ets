@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputLetterSpacing() {
   describe('textInputLetterSpacing', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputLetterSpacing beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

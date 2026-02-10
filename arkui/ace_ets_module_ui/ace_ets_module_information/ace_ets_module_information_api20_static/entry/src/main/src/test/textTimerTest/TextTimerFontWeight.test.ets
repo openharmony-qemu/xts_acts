@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextTimerFontWeightTest() {
   describe('TextTimerFontWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextTimerFontWeightTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility");
     });

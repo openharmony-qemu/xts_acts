@@ -26,7 +26,7 @@ export default function wifiDisableTest() {
 
     describe("wifiDisableTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             await Utils.closeWifi();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');

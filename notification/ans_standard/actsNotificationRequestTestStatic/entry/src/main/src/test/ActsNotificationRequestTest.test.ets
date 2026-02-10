@@ -34,7 +34,7 @@ let count: int = 0;
 export default function ActsNotificationRequestTest() {
   describe('SUB_NOTIFICATION_ANS_REQUEST_TEST', () => {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

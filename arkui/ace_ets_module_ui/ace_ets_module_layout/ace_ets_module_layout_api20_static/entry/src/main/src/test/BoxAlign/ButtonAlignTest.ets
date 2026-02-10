@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ButtonAlignTest() {
   describe('ButtonAlignTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ButtonAlignTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

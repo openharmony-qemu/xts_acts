@@ -52,7 +52,7 @@ import RectValue from './RectValue.test';
 
 export default function globalJsunit() {
   describe('globalJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

@@ -221,7 +221,7 @@ export default function cameraManagerTest() {
 
   describe('CameraManagerTest', () => {
     console.info(TAG + '----------CameraManagerTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
@@ -239,7 +239,7 @@ export default function cameraManagerTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       Utils.msSleep(1000);
       console.info('afterAll case');

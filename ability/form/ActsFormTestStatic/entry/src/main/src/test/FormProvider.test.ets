@@ -58,7 +58,7 @@ export default function formProviderTest() {
       hilog.error(DOMAIN, TAG, `addForm error, set formId manually error error, code: ${error?.code}, message: ${error?.message}`);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 

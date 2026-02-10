@@ -40,7 +40,7 @@ export default function pasteBoardTest() {
 
     describe("pasteBoardTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             try {
                 await Utils.msSleep(2000);

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function APIUnderlineColorTest() {
   describe('APIUnderlineColorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIUnderlineColorTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

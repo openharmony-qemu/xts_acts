@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 export default function renderNodeGetInterfaceTest() {
   describe('renderNodeGetInterfaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("renderNodeGetInterfaceTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")

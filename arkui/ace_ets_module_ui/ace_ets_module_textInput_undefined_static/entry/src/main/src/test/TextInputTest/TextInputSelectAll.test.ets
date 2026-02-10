@@ -26,7 +26,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputSelectAllTest() {
   describe('TextInputSelectAllTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputSelectAllTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

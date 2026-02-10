@@ -77,7 +77,7 @@ export default function ActsRichEditorTest() {
       }
       console.info("ActsRichEditorTest beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsRichEditorTest beforeEach start");
 
 

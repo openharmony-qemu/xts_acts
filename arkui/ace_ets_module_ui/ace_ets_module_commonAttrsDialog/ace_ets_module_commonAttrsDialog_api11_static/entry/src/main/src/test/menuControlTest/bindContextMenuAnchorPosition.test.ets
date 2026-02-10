@@ -37,7 +37,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function bindContextMenuAnchorPosition() {
   describe('bindContextMenuAnchorPosition', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 

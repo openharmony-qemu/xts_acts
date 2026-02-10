@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputHeightAdaptivePolicy() {
   describe('textInputHeightAdaptivePolicy', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputHeightAdaptivePolicy beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

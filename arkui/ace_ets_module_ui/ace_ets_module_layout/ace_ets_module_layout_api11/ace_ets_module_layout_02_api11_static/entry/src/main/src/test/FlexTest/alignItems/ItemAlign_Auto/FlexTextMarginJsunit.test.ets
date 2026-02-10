@@ -39,7 +39,7 @@ export default function flexTextMargin_AutoJsunit() {
 
   describe('flexItemAlignAutoTest4', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignAutoTest4 beforeEach start")
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

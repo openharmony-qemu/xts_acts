@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetPopupBackgroundModifierTest() {
   describe('AlphabetPopupBackgroundModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetPopupBackgroundModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

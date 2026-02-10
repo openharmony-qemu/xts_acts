@@ -32,7 +32,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
 
   describe("actsNotificationThirdPartyWatchWithoutAbilityTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.startAbility({

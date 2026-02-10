@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
   describe('OnKeyEventDispatchAttrsModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnKeyEventDispatchAttrsModifierUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

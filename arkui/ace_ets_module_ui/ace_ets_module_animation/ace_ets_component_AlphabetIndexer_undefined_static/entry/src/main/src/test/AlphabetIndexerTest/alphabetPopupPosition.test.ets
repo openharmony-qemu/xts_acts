@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetPopupPositionTest() {
   describe('AlphabetPopupPositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetPopupPositionTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

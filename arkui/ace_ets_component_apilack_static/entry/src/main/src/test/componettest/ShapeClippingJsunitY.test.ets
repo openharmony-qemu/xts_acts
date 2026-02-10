@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 
 export default function shapeClippingJsunit() {
   describe('borderTest_five_4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
