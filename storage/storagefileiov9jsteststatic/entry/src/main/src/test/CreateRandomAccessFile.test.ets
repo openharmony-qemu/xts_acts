@@ -1120,7 +1120,7 @@ export default function fileIOCreateRandomAccessFile() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_020 end error' + JSON.stringify(e));
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1196,7 +1196,7 @@ export default function fileIOCreateRandomAccessFile() {
         fs.createRandomAccessFile("", (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_023 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });

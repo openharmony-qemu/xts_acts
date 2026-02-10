@@ -1882,7 +1882,7 @@ export default function fileIOListfile() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_030 end error ' + e.message);
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1923,7 +1923,7 @@ export default function fileIOListfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_031 end error' + JSON.stringify(e));
         fs.rmdirSync(dpath);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -2006,7 +2006,7 @@ export default function fileIOListfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_033 end error' + JSON.stringify(e));
         fs.rmdirSync(dpath);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -2048,7 +2048,7 @@ export default function fileIOListfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_034 end error' + JSON.stringify(e));
         fs.rmdirSync(dpath);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -2090,7 +2090,7 @@ export default function fileIOListfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_035 end error' + JSON.stringify(e));
         fs.rmdirSync(dpath);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -2175,7 +2175,7 @@ export default function fileIOListfile() {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_037 end error' + JSON.stringify(e));
         fs.rmdirSync(dpath);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
