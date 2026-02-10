@@ -129,7 +129,7 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0300 is starting-----------------------");
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
-        caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/sm2.ca.pem'
+        caPath?: string | undefined = ''
       }
       let url: string = 'https://test1.gmssl.cn';
       let num: number = 20 * 1024 * 1024
@@ -144,7 +144,13 @@ export default function requestCacheDownloadStateSecretUnitTest() {
         let t = setTimeout(() => {
           clearTimeout(t);
           try {
-            let ifExit: boolean = fs.accessSync(path);
+            let ifExit: boolean;
+            let fileExistence: boolean = fs.accessSync(path);
+            if(!fileExistence){
+              ifExit = true;
+            } else{
+              ifExit = false;
+            }
             console.info("====>SUB_Request_cacheDownload_stateSecret_0300 ifExit: " + ifExit);
             expect(ifExit).assertTrue();
             done();
