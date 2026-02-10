@@ -6,7 +6,7 @@
         "bundle-name": "com.example.completionhandlertest",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": "15000"
+        "testcase-timeout": "10000"
     },
     "kits": [
         {
