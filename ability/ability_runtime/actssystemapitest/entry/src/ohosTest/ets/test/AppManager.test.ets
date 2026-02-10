@@ -1139,12 +1139,12 @@ export default function appManagerTest() {
           })
           .catch((err: BusinessError) => {
             console.log(TAG + " err.code: " + err.code);
-            expect(err.code).assertEqual(401);
+            expect().assertFail();
             done();
           });
       } catch (e) {
         console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1317,12 +1317,12 @@ export default function appManagerTest() {
           })
           .catch((err: BusinessError) => {
             console.log(TAG + " err.code: " + err.code);
-            expect(err.code).assertEqual(401);
+            expect().assertFail();
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        console.log(TAG + " err.code catch: " + e.code);
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1345,13 +1345,13 @@ export default function appManagerTest() {
             done();
           })
           .catch((err: BusinessError) => {
-            console.log(TAG + " err.code: " + err.code);
-            expect(err.code).assertEqual(401);
+            console.log(TAG + " err.code : " + err.code);
+            expect().assertFail();
             done();
           });
       } catch (e) {
-        console.log(TAG + " err.code: " + e.code);
-        expect().assertFail();
+        console.log(TAG + " err.code catch: " + e.code);
+        expect(err.code).assertEqual(401);
         done();
       }
 
