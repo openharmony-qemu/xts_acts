@@ -62,7 +62,7 @@ import ColumnSpaceResourceTest from './Column/ColumnSpaceResourceTest.test.ets'
 import ColumnFixAtIdealSizeTest from './Column/ColumnFixAtIdealSizeTest.ets'
 import ColumnMatchParentTest from './Column/ColumnMatchParentTest.ets'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest.ets'
-import columnNullUndefinedTest from './column/ColumnNullUndefined.test';
+import columnNullUndefinedTest from './Column/ColumnNullUndefined.test';
 
 
 export default function testsuite() {
