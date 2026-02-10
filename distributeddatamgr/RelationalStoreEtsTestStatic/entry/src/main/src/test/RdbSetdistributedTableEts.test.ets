@@ -90,25 +90,25 @@ export default function RdbSetdistributedtableTest() {
         })
         beforeEach(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeEach');
-            rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-            rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-            rdbStoreNoschema = await relationalStore.getRdbStore(context, STORE_CONFIGNoschema);
-            rdbStore2 = await relationalStore.getRdbStore(context, STORE_CONFIG2);
-            rdbStore3 = await relationalStore.getRdbStore(context, STORE_CONFIG3);
-            rdbStore4 = await relationalStore.getRdbStore(context, STORE_CONFIG4);
-            rdbStore5 = await relationalStore.getRdbStore(context, STORE_CONFIG5);
-            rdbStore6 = await relationalStore.getRdbStore(context, STORE_CONFIG6);
+            rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+            rdbStoreNoschema = await relationalStore.getRdbStore(context!, STORE_CONFIGNoschema);
+            rdbStore2 = await relationalStore.getRdbStore(context!, STORE_CONFIG2);
+            rdbStore3 = await relationalStore.getRdbStore(context!, STORE_CONFIG3);
+            rdbStore4 = await relationalStore.getRdbStore(context!, STORE_CONFIG4);
+            rdbStore5 = await relationalStore.getRdbStore(context!, STORE_CONFIG5);
+            rdbStore6 = await relationalStore.getRdbStore(context!, STORE_CONFIG6);
         })
         afterEach(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'afterEach');
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG2);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG4);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG5);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG6);
-            await relationalStore.deleteRdbStore(context, STORE_CONFIGNoschema);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG2);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG4);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG5);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG6);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIGNoschema);
         })
         afterAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'afterAll');
@@ -129,14 +129,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect().assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
                         DISTRIBUTED_CONFIG_COLLABORATION);
                     hilog.info(domain, tag, '%{public}s',
                         `SetDistributedTableTest0001 EMPLOYEE DEVICE_COLLABORATION successfully.`);
@@ -146,7 +146,7 @@ export default function RdbSetdistributedtableTest() {
                     expect().assertFail();
                 }
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
                         DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `SetDistributedTableTest0001 EMPLOYEE SINGLE_VERSION successfully.`);
                 } catch (e) {
@@ -173,14 +173,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
                         DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `SetDistributedTableTest0002 EMPLOYEE SINGLE_VERSION successfully.`);              
                 } catch (e) {
@@ -188,7 +188,7 @@ export default function RdbSetdistributedtableTest() {
                     expect(null).assertFail();
                 }
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
                         DISTRIBUTED_CONFIG_COLLABORATION);
                     hilog.info(domain, tag, '%{public}s',
                         `SetDistributedTableTest0002 EMPLOYEE DEVICE_COLLABORATION successfully.`);
@@ -279,14 +279,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE,
                         DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `SetDistributedTableTest0004 EMPLOYEE SINGLE_VERSION successfully.`);
                 } catch (e) {
@@ -347,14 +347,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"]);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"]);
                     hilog.info(domain, tag, '%{public}s', `setDistributedTableTest0006 EMPLOYEE default successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s',
@@ -380,14 +380,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `setDistributedTableTest0007 EMPLOYEE SINGLE_VERSION successfully.`);
                     expect(null).assertFail();
                 } catch (e) {
@@ -413,14 +413,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER UNIQUE ON CONFLICT REPLACE, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER UNIQUE ON CONFLICT REPLACE, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `setDistributedTableTest0008 EMPLOYEE SINGLE_VERSION successfully.`);
                     expect(null).assertFail();
                 } catch (e) {
@@ -775,14 +775,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE ON CONFLICT REPLACE, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER UNIQUE ON CONFLICT REPLACE, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `setDistributedTableTest0019 EMPLOYEE SINGLE_VERSION successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setDistributedTableTest0019 EMPLOYEE SINGLE_VERSION failed message:${e.message} code:${e.code}`);
@@ -840,14 +840,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_NOTABLETYPE);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_NOTABLETYPE);
                     hilog.info(domain, tag, '%{public}s', `setCloudDistributedTableTest0001 EMPLOYEE successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setCloudDistributedTableTest0001 EMPLOYEE failed message:${e.message} code:${e.code}`);
@@ -872,14 +872,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_COLLABORATION);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_COLLABORATION);
                     hilog.info(domain, tag, '%{public}s', `setCloudDistributedTableTest0002 EMPLOYEE successfully.`);
                     expect(null).assertFail();
                 } catch (e) {
@@ -905,14 +905,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_SINGLE);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_SINGLE);
                     hilog.info(domain, tag, '%{public}s', `setCloudDistributedTableTest0003 EMPLOYEE successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setCloudDistributedTableTest0003 EMPLOYEE failed message:${e.message} code:${e.code}`);
@@ -937,14 +937,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
                     hilog.info(domain, tag, '%{public}s', `setCloudDistributedTableTest0004 EMPLOYEE successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setCloudDistributedTableTest0004 EMPLOYEE failed message:${e.message} code:${e.code}`);
@@ -969,14 +969,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetCloudDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
                     hilog.info(domain, tag, '%{public}s', `setMultiDistributedTableTest0001 SetCloudDistributedTables EMPLOYEE successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setMultiDistributedTableTest0001 SetCloudDistributedTables EMPLOYEE failed message:${e.message} code:${e.code}`);
@@ -984,7 +984,7 @@ export default function RdbSetdistributedtableTest() {
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDeviceDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
                     hilog.info(domain, tag, '%{public}s', `setMultiDistributedTableTest0001 SetDeviceDistributedTables EMPLOYEE successfully.`);
                     expect(null).assertFail();
                 } catch (e) {
@@ -1010,14 +1010,14 @@ export default function RdbSetdistributedtableTest() {
                 expect().assertFail();
             } else {
                 try {
-                    await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+                    await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `executeSql failed message:${e.message} code:${e.code}`);
                     expect(null).assertFail();
                 }
                 hilog.info(domain, tag, '%{public}s', `SetDeviceDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_DEVICE, DISTRIBUTED_CONFIG_COLLABORATION);
                     hilog.info(domain, tag, '%{public}s', `setMultiDistributedTableTest0002 SetDeviceDistributedTables EMPLOYEE successfully.`);
                 } catch (e) {
                     hilog.error(domain, tag, '%{public}s', `setMultiDistributedTableTest0002 SetDeviceDistributedTables EMPLOYEE failed message:${e.message} code:${e.code}`);
@@ -1025,7 +1025,7 @@ export default function RdbSetdistributedtableTest() {
                 }
                 hilog.info(domain, tag, '%{public}s', `SetCloudDistributedTables EMPLOYEE begin`);
                 try {
-                    await rdbStore.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
+                    await rdbStore!.setDistributedTables(["EMPLOYEE"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, DISTRIBUTED_CONFIG_UNDEFINED);
                     hilog.info(domain, tag, '%{public}s', `setMultiDistributedTableTest0001 SetCloudDistributedTables EMPLOYEE successfully.`);
                     expect(null).assertFail();
                 } catch (e) {
