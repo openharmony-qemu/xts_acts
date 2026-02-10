@@ -25,6 +25,9 @@ namespace Huks {
 
 // ==================== 常量定义区域 ====================
 
+// 类型大小常量
+static const size_t UINT32_SIZE = sizeof(uint32_t);
+
 // TAG 基础 ID - 通用 TAG (与 TAG_TYPE 位运算使用)
 const uint32_t TAG_ALGORITHM_ID = 1;
 const uint32_t TAG_PURPOSE_ID = 2;
@@ -615,7 +618,7 @@ static int VerifyBasicStructSizes()
     struct OH_Huks_Blob blob;
 
     if ((sizeof(result.errorCode) != sizeof(int32_t)) || (sizeof(result.errorMsg) != sizeof(const char*)) ||
-        (sizeof(result.data) != sizeof(uint8_t*)) || (sizeof(blob.size) != sizeof(uint32_t)) ||
+        (sizeof(result.data) != sizeof(uint8_t*)) || (sizeof(blob.size) != UINT32_SIZE) ||
         (sizeof(blob.data) != sizeof(uint8_t*))) {
         return -1;
     }
@@ -628,10 +631,10 @@ static int VerifyParamStructSizes()
     struct OH_Huks_Param param;
     struct OH_Huks_ParamSet paramset;
 
-    if ((sizeof(param.tag) != sizeof(uint32_t)) || (sizeof(param.boolParam) != sizeof(bool)) ||
-        (sizeof(param.int32Param) != sizeof(int32_t)) || (sizeof(param.uint32Param) != sizeof(uint32_t)) ||
+    if ((sizeof(param.tag) != UINT32_SIZE) || (sizeof(param.boolParam) != sizeof(bool)) ||
+        (sizeof(param.int32Param) != sizeof(int32_t)) || (sizeof(param.uint32Param) != UINT32_SIZE) ||
         (sizeof(param.uint64Param) != sizeof(uint64_t)) || (sizeof(param.blob) != sizeof(struct OH_Huks_Blob)) ||
-        (sizeof(paramset.paramSetSize) != sizeof(uint32_t)) || (sizeof(paramset.paramsCnt) != sizeof(uint32_t)) ||
+        (sizeof(paramset.paramSetSize) != UINT32_SIZE) || (sizeof(paramset.paramsCnt) != UINT32_SIZE) ||
         (sizeof(paramset.params[0]) != sizeof(struct OH_Huks_Param))) {
         return -1;
     }
@@ -645,12 +648,12 @@ static int VerifyCertAndKeyInfoSizes()
     struct OH_Huks_KeyInfo keyInfo;
     struct OH_Huks_PubKeyInfo pubKeyInfo;
 
-    if ((sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) ||
-        (sizeof(certChain.certsCount) != sizeof(uint32_t)) || (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
+    if ((sizeof(certChain.certs) != sizeof(struct OH_Huks_Blob*)) || (sizeof(certChain.certsCount) != UINT32_SIZE) ||
+        (sizeof(keyInfo.alias) != sizeof(struct OH_Huks_Blob)) ||
         (sizeof(keyInfo.paramSet) != sizeof(struct OH_Huks_ParamSet*)) ||
-        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(pubKeyInfo.keySize) != sizeof(uint32_t)) ||
-        (sizeof(pubKeyInfo.nOrXSize) != sizeof(uint32_t)) || (sizeof(pubKeyInfo.eOrYSize) != sizeof(uint32_t)) ||
-        (sizeof(pubKeyInfo.placeHolder) != sizeof(uint32_t))) {
+        (sizeof(pubKeyInfo.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(pubKeyInfo.keySize) != UINT32_SIZE) ||
+        (sizeof(pubKeyInfo.nOrXSize) != UINT32_SIZE) || (sizeof(pubKeyInfo.eOrYSize) != UINT32_SIZE) ||
+        (sizeof(pubKeyInfo.placeHolder) != UINT32_SIZE)) {
         return -1;
     }
     return 0;
@@ -662,12 +665,11 @@ static int VerifyRsaAndEccMaterialSizes()
     struct OH_Huks_KeyMaterialRsa keyMaterialRsa;
     struct OH_Huks_KeyMaterialEcc keyMaterialEcc;
 
-    if ((sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialRsa.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.nSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialRsa.eSize) != sizeof(uint32_t)) || (sizeof(keyMaterialRsa.dSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
-        (sizeof(keyMaterialEcc.keySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.xSize) != sizeof(uint32_t)) ||
-        (sizeof(keyMaterialEcc.ySize) != sizeof(uint32_t)) || (sizeof(keyMaterialEcc.zSize) != sizeof(uint32_t))) {
+    if ((sizeof(keyMaterialRsa.keyAlg) != sizeof(OH_Huks_KeyAlg)) || (sizeof(keyMaterialRsa.keySize) != UINT32_SIZE) ||
+        (sizeof(keyMaterialRsa.nSize) != UINT32_SIZE) || (sizeof(keyMaterialRsa.eSize) != UINT32_SIZE) ||
+        (sizeof(keyMaterialRsa.dSize) != UINT32_SIZE) || (sizeof(keyMaterialEcc.keyAlg) != sizeof(OH_Huks_KeyAlg)) ||
+        (sizeof(keyMaterialEcc.keySize) != UINT32_SIZE) || (sizeof(keyMaterialEcc.xSize) != UINT32_SIZE) ||
+        (sizeof(keyMaterialEcc.ySize) != UINT32_SIZE) || (sizeof(keyMaterialEcc.zSize) != UINT32_SIZE)) {
         return -1;
     }
     return 0;
@@ -691,20 +693,20 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
     }
 
     // Verify key size field
-    if (SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify DSA parameter sizes: x (private exponent), y (public key)
-    if (SizeMismatch(sizeof(keyMaterial->xSize), sizeof(uint32_t)) ||
-        SizeMismatch(sizeof(keyMaterial->ySize), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->xSize), UINT32_SIZE) ||
+        SizeMismatch(sizeof(keyMaterial->ySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify DSA domain parameter sizes: p (prime modulus), q (subgroup order), g (generator)
-    if (SizeMismatch(sizeof(keyMaterial->pSize), sizeof(uint32_t)) ||
-        SizeMismatch(sizeof(keyMaterial->qSize), sizeof(uint32_t)) ||
-        SizeMismatch(sizeof(keyMaterial->gSize), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->pSize), UINT32_SIZE) ||
+        SizeMismatch(sizeof(keyMaterial->qSize), UINT32_SIZE) ||
+        SizeMismatch(sizeof(keyMaterial->gSize), UINT32_SIZE)) {
         return -1;
     }
 
@@ -718,18 +720,18 @@ static int VerifyDhMaterialSizes(const struct OH_Huks_KeyMaterialDh* keyMaterial
 {
     // Verify algorithm type and key size fields
     if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
-        SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
+        SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify DH key component sizes: public key and private key
-    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), sizeof(uint32_t)) ||
-        SizeMismatch(sizeof(keyMaterial->priKeySize), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), UINT32_SIZE) ||
+        SizeMismatch(sizeof(keyMaterial->priKeySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify reserved field
-    if (SizeMismatch(sizeof(keyMaterial->reserved), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->reserved), UINT32_SIZE)) {
         return -1;
     }
 
@@ -743,18 +745,18 @@ static int VerifyX25519MaterialSizes(const struct OH_Huks_KeyMaterial25519* keyM
 {
     // Verify algorithm type and key size fields
     if (SizeMismatch(sizeof(keyMaterial->keyAlg), sizeof(OH_Huks_KeyAlg)) ||
-        SizeMismatch(sizeof(keyMaterial->keySize), sizeof(uint32_t))) {
+        SizeMismatch(sizeof(keyMaterial->keySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify X25519 key component sizes: public key and private key
-    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), sizeof(uint32_t)) ||
-        SizeMismatch(sizeof(keyMaterial->priKeySize), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->pubKeySize), UINT32_SIZE) ||
+        SizeMismatch(sizeof(keyMaterial->priKeySize), UINT32_SIZE)) {
         return -1;
     }
 
     // Verify reserved field
-    if (SizeMismatch(sizeof(keyMaterial->reserved), sizeof(uint32_t))) {
+    if (SizeMismatch(sizeof(keyMaterial->reserved), UINT32_SIZE)) {
         return -1;
     }
 
