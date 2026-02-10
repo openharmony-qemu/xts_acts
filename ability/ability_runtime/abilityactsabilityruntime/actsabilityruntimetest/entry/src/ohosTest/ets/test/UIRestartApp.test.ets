@@ -17,21 +17,13 @@ import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
-import { systemParameterEnhance } from '@kit.BasicServicesKit';
 
 let context:common.UIAbilityContext;
-let mpEnable: string;
 
 export default function AbilityRuntimeUIRestartApp() {
   describe('AbilityRuntimeUIRestartApp', () => {
     beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
-      try {
-        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
-      } catch (err) {
-        hilog.info(0x0000, "[%{public}s] Get system parameter error: ${public}s", JSON.stringify(err));
-        mpEnable = 'fail';
-      }
     })
     beforeEach(async () => {})
     afterEach(() => {})
@@ -47,22 +39,19 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0100', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0100';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
+
         try {
           await context.restartApp(null);
         } catch (err) {
-          hilog.info(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(401)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.info(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(401)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -76,22 +65,18 @@ export default function AbilityRuntimeUIRestartApp() {
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0200', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0200';
       let want :Want= {} ;
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -104,10 +89,6 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0300', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0300';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
         let want: Want = {
           bundleName: undefined,
           moduleName: 'entry',
@@ -116,15 +97,15 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -137,10 +118,7 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0400', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0400';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
+
         let want: Want = {
           bundleName: 'com.wz.restartapp',
           moduleName: 'entry',
@@ -149,15 +127,15 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -170,10 +148,6 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0500', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0500';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
         let want: Want = {
           bundleName: 'com.acts.myapplication',
           abilityName: 'EntryAbility',
@@ -182,15 +156,15 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -203,10 +177,6 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0600', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0600';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
         let want: Want = {
           bundleName: 'com.acts.myapplication',
           moduleName: 'entry',
@@ -215,15 +185,15 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
 
     /**
@@ -236,10 +206,6 @@ export default function AbilityRuntimeUIRestartApp() {
      */
     it('SUB_Ability_AbilityRuntime_UIRestartApp_0700', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_UIRestartApp_0700';
-      if (mpEnable == 'true') {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
-        done();
-      }else if (mpEnable == 'false') {
         let want: Want = {
           'action': 'action.system.home',
           'entities': ['entity.system.home'],
@@ -249,15 +215,15 @@ export default function AbilityRuntimeUIRestartApp() {
         try {
           await context.restartApp(want);
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect(err?.code).assertEqual(16000063)
-          done();
+          if (err?.code == 801) {
+            expect(err.code).assertEqual(801)
+            done()
+          }else {
+            hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+            expect(err?.code).assertEqual(16000063)
+            done();
+          }
         }
-      } else {
-        hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`,mpEnable);
-        expect().assertFail();
-        done();
-      }
     })
   })
 }

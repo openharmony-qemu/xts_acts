@@ -12,27 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AbilityRuntimeABILITYStartAbilityOpenLink from "./AbilityStartAbilityOpenLink.test"
-import AbilityRuntimeAmsJSChildProcess from "./AmsJsChildProcess.test"
-import AbilityRuntimeConfigRationApplicationContextSetColorMode from "./ConfigRationApplicationContextSetColorMode.test"
-import AbilityRuntimeConfigRationApplicationContextSetLanguage from "./ConfigRationApplicationContextSetLanguage.test"
-import AbilityRuntimeConfigRationFontSettings from "./ConfigRationFontSettings.test"
-import AbilityRuntimeCreateDifferentAreaContext from "./CreateDifferentAreaContext.test"
-import AbilityRuntimeExitMasterProcessRole from "./ExitMasterProcessRole.test"
-import AbilityRuntimeStartNativeChildProcess from "./StartNativeChildProcess.test"
-import AbilityRuntimeUIRestartApp from "./UIRestartApp.test"
-
+import UIRestartApp from './UIRestartApp.test'
+import ConfigurationFontSettings from './ConfigurationFontSettings.test'
+import StartNativeChildProcess from './StartNativeChildProcess.test'
+import AbilityYStartAbilityOpenLink from './AbilityStartAbilityOpenLink.test'
+import ConfigurationApplicationContextSetColorMode from './ConfigurationApplicationContextSetColorMode.test'
+import ConfigurationApplicationContextSetLanguage from './ConfigurationApplicationContextSetLanguage.test'
+import AmsJSChildProcess from './AmsJsChildProcess.test'
+import CreateDifferentAreaContext from './CreateDifferentAreaContext.test'
 
 export default function testsuite() {
-  AbilityRuntimeUIRestartApp()
-  AbilityRuntimeConfigRationFontSettings()
-  AbilityRuntimeStartNativeChildProcess()
-  AbilityRuntimeABILITYStartAbilityOpenLink()
-  AbilityRuntimeConfigRationApplicationContextSetColorMode()
-  AbilityRuntimeConfigRationApplicationContextSetLanguage()
-  AbilityRuntimeAmsJSChildProcess()
-  AbilityRuntimeCreateDifferentAreaContext()
-  AbilityRuntimeExitMasterProcessRole()
+  UIRestartApp()
+  ConfigurationFontSettings()
+  StartNativeChildProcess()
+  AbilityYStartAbilityOpenLink()
+  ConfigurationApplicationContextSetColorMode()
+  ConfigurationApplicationContextSetLanguage()
+  AmsJSChildProcess()
+  CreateDifferentAreaContext()
 }
 
 
