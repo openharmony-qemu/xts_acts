@@ -152,7 +152,7 @@ napi_value OH_OHNativeErrorCodeBufferSupport(napi_env env, napi_callback_info in
     int32_t size = 10;
     uint8_t* metadata = new uint8_t(size);
     int32_t res = OH_NativeBuffer_SetMetadataValue(buffer, OH_HDR_STATIC_METADATA, size, metadata);
-    napi_create_int32(env, res == NATIVE_ERROR_UNSUPPORTED || res == NATIVE_ERROR_OK, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK, &result);
     return result;
 }
 
