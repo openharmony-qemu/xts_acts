@@ -86,7 +86,7 @@ struct ToolBarItemState {
           })
 
           ToolBarV2({
-            toolBarModifier: this.toolBarModifier_undefined,
+            toolBarModifier: this.toolBarModifierUndefined,
             dividerModifier: this.dividerModifier,
             activatedIndex: this.activatedIndex,
             toolBarList: this.toolBarList,
