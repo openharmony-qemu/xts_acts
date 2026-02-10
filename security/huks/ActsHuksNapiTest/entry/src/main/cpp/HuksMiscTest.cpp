@@ -703,10 +703,18 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
         return -1;
     }
 
-    // Verify DSA domain parameter sizes: p (prime modulus), q (subgroup order), g (generator)
-    if (SizeMismatch(sizeof(keyMaterial->pSize), UINT32_SIZE) ||
-        SizeMismatch(sizeof(keyMaterial->qSize), UINT32_SIZE) ||
-        SizeMismatch(sizeof(keyMaterial->gSize), UINT32_SIZE)) {
+    // Verify DSA domain parameter: p (prime modulus)
+    if (SizeMismatch(sizeof(keyMaterial->pSize), UINT32_SIZE)) {
+        return -1;
+    }
+
+    // Verify DSA domain parameter: q (subgroup order)
+    if (SizeMismatch(sizeof(keyMaterial->qSize), UINT32_SIZE)) {
+        return -1;
+    }
+
+    // Verify DSA domain parameter: g (generator)
+    if (SizeMismatch(sizeof(keyMaterial->gSize), UINT32_SIZE)) {
         return -1;
     }
 
