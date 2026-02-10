@@ -216,7 +216,7 @@ export default function fileIOMkdtemp() {
      */
     it('fileIO_test_mkdtemp_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
-        fs.mkdtemp('', (err: BusinessError<string> | null, res: string | undefined) => {
+        fs.mkdtemp('', (err: BusinessError<void> | null, res: string | undefined) => {
           if (err) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
             expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();

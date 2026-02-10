@@ -409,7 +409,7 @@ export default function fileIOReadLines() {
         fs.readLines("", { encoding: 'utf-8' }, (err: BusinessError | null, readerIterator: fs.ReaderIterator | undefined) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_007 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
