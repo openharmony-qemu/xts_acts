@@ -13,7 +13,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext ;
+let context:common.UIAbilityContext | undefined;
 
 const DISTRIBUTED_CONFIG_COLLABORATION:relationalStore.DistributedConfig= {
     autoSync: false,
@@ -70,14 +70,14 @@ const STORE_CONFIG6:relationalStore.StoreConfig = {
     securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let rdbStore: relationalStore.RdbStore;
-let rdbStoreNoschema: relationalStore.RdbStore;
-let rdbStore1: relationalStore.RdbStore;
-let rdbStore2: relationalStore.RdbStore;
-let rdbStore3: relationalStore.RdbStore;
-let rdbStore4: relationalStore.RdbStore;
-let rdbStore5: relationalStore.RdbStore;
-let rdbStore6: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
+let rdbStoreNoschema: relationalStore.RdbStore | undefined;
+let rdbStore1: relationalStore.RdbStore | undefined;
+let rdbStore2: relationalStore.RdbStore | undefined;
+let rdbStore3: relationalStore.RdbStore | undefined;
+let rdbStore4: relationalStore.RdbStore | undefined;
+let rdbStore5: relationalStore.RdbStore | undefined;
+let rdbStore6: relationalStore.RdbStore | undefined;
 
 export default function RdbSetdistributedtableTest() {
     describe("RdbSetdistributedtableTest", (): void => {
