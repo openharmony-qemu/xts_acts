@@ -96,7 +96,7 @@ export default function UDMFAddApiStaticTest() {
       try {
         unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
           console.log(tag, `Succeeded in inserting data. key = ${key}`);
-          expect(key).assertContain('SystemShare/com.example.helloworld');
+          expect(key).assertContain('SystemShare/com.example.udmfetstest.static');
           console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0100 end');
           done();
         });
@@ -134,7 +134,7 @@ export default function UDMFAddApiStaticTest() {
       try {
         unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
           console.log(tag, `Succeeded in inserting data. key = ${key}`);
-          expect(key).assertContain('SystemShare/com.example.helloworld');
+          expect(key).assertContain('SystemShare/com.example.udmfetstest.static');
           console.log(tag, 'SUB_DistributedData_UDMF_SDK_UDMFInsertDataStaticTest_0200 end');
           done();
         });
