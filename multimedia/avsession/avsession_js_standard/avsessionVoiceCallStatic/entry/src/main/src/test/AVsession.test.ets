@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,12 +21,12 @@ import Utils from './Util.test';
 import { WantAgent } from '@ohos.app.ability.wantAgent';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe('AVSessionTest', () => {
         let TAG: string = "[AVSessionTest]";
         let session: avSession.AVSession | null = null;
-        let controller: avSession.AVSessionController;
+        let controller: avSession.AVSessionController | undefined;
         let tag: string = 'VoiceCallXTS';
         let customdata: Record<string, Object> = {'customData': 'appdata'}
         let eventName = 'dynamic_lyric'
@@ -48,20 +48,20 @@ export default function abilityTest() {
 
         beforeEach(async () => {
             try{
-                session = await avSession.createAVSession(context, tag, 'voice_call');
+                session = await avSession.createAVSession(context!, tag, 'voice_call');
                 console.info(`${session!.sessionType}`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`${TAG}: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`${TAG}: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -74,7 +74,7 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`${TAG}: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -82,9 +82,9 @@ export default function abilityTest() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`${TAG}: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`${TAG}: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -114,7 +114,8 @@ export default function abilityTest() {
                 aVCastController = await session!.getAVCastController();
                 console.info(`${TAG}: getAVCastController11 : SUCCESS`);
                 expect(false).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`${TAG}:getAVCastController11 BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -162,7 +163,8 @@ export default function abilityTest() {
                     console.info('on pause entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`SUB_MULTIMEDIA_AVSESSION_ON_PAUSE_STATIC_1300 on pause entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -185,7 +187,8 @@ export default function abilityTest() {
                     console.info('on stop entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on stop entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -208,7 +211,8 @@ export default function abilityTest() {
                     console.info('on playNext entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on playNext entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -231,7 +235,8 @@ export default function abilityTest() {
                     console.info('on playPrevious entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on playPrevious entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -255,7 +260,8 @@ export default function abilityTest() {
                     console.info('on fastForward entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on fastForward entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -279,7 +285,8 @@ export default function abilityTest() {
                     console.info('on rewind entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on rewind entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -299,7 +306,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlay();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off play entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -320,7 +328,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPause();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off pause entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -340,7 +349,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offStop();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off stop entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -360,7 +370,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlayNext();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off playNext entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -380,7 +391,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlayPrevious();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off playPrevious entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -400,7 +412,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offFastForward();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off fastForward entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -420,7 +433,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offRewind();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off rewind entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -443,7 +457,8 @@ export default function abilityTest() {
                     console.info('on playFromAssetId entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on seek entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -464,7 +479,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSeek();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off seek entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -487,7 +503,8 @@ export default function abilityTest() {
                     console.info('on setSpeed entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on setSpeed entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -507,7 +524,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSetSpeed();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off setSpeed entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -530,7 +548,8 @@ export default function abilityTest() {
                     console.info('on setLoopMode entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on setLoopMode entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -550,7 +569,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSetLoopMode();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off setLoopMode entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -573,7 +593,8 @@ export default function abilityTest() {
                     console.info('on toggleFavorite entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on toggleFavorite entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -593,7 +614,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offToggleFavorite();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off toggleFavorite entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -616,7 +638,8 @@ export default function abilityTest() {
                     console.info('on handleKeyEvent entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on handleKeyEvent entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -636,7 +659,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offHandleKeyEvent();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off handleKeyEvent entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -659,7 +683,8 @@ export default function abilityTest() {
                     console.info('on outputDeviceChange entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -679,7 +704,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offOutputDeviceChange();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -702,7 +728,8 @@ export default function abilityTest() {
                     console.info('on commonCommand entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on commonCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -722,7 +749,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offCommonCommand();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off commonCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -745,7 +773,8 @@ export default function abilityTest() {
                     console.info('on skipToQueueItem entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on skipToQueueItem entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -765,7 +794,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSkipToQueueItem();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off skipToQueueItem entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -785,7 +815,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offCastDisplayChange();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off castDisplayChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -803,7 +834,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVMETADATA_STATIC_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            controller.getAVMetadata((err: BusinessError | null, metadata: avSession.AVMetadata | undefined) => {
+            controller!.getAVMetadata((err: BusinessError | null, metadata: avSession.AVMetadata | undefined) => {
                 if (err) {
                     console.error(`GetAVMetadata11 BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
@@ -826,7 +857,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVMETADATA_PROMISE_STATIC_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            await controller.getAVMetadata().then((metadata: avSession.AVMetadata) => {
+            await controller!.getAVMetadata().then((metadata: avSession.AVMetadata) => {
                 console.info(`GetAVMetadata12 : SUCCESS : assetId : ${metadata.assetId}`);
             }).catch((err: Error) => {
                 console.error(`GetAVMetadata12 BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -847,7 +878,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_STATIC_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            controller.getLaunchAbility((err: BusinessError | null, agent: object | undefined) => {
+            controller!.getLaunchAbility((err: BusinessError | null, agent: object | undefined) => {
             if (err) {
                 console.error(`GetLaunchAbility11 BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
@@ -871,7 +902,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETLAUNCHABILITY_PROMISE_STATIC_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            await controller.getLaunchAbility().then((agent: object) => {
+            await controller!.getLaunchAbility().then((agent: object) => {
                 console.info(`GetLaunchAbility12 : SUCCESS : wantAgent : ${agent}`);
             }).catch((err: Error) => {
                 console.error(`GetLaunchAbility12 BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -892,7 +923,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ISACTIVE_PROMISE_STATIC_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            await controller.isActive().then((isActive: boolean) => {
+            await controller!.isActive().then((isActive: boolean) => {
                 console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
             }).catch((err: Error) => {
                 console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -913,7 +944,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_ISACTIVE_STATIC_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            controller.isActive((err: BusinessError | null, isActive: boolean | undefined) => {
+            controller!.isActive((err: BusinessError | null, isActive: boolean | undefined) => {
             if (err) {
                 console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
@@ -936,7 +967,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATE_PROMISE_STATIC_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            await controller.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
+            await controller!.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
                 console.info('getAVPlaybackState : SUCCESS');
             }).catch((err: Error) => {
                 console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -958,7 +989,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATE_STATIC_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await session!.destroy()
             await Utils.msSleep(500)
-            controller.getAVPlaybackState((err: BusinessError | null, state: avSession.AVPlaybackState | undefined) => {
+            controller!.getAVPlaybackState((err: BusinessError | null, state: avSession.AVPlaybackState | undefined) => {
             if (err) {
                 console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
@@ -986,7 +1017,8 @@ export default function abilityTest() {
                     console.info('on play entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on play entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -1008,14 +1040,14 @@ export default function abilityTest() {
             try{
                 await session!.setAVMetadata(metadata0);
                 console.info(`${TAG}:TestLog: Set bundleIcon Successfully`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}:TestLog: Set bundleIcon error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
 
             let data: avSession.AVMetadata;
             try{
-                data = await controller.getAVMetadata()
+                data = await controller!.getAVMetadata()
                 if (data.bundleIcon ) {
                     console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
                     expect(true).assertTrue();
@@ -1024,7 +1056,7 @@ export default function abilityTest() {
                     console.info(`${TAG}:TestLog: bundleIcon is: ${data.bundleIcon}`);
                     expect(true).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`${TAG}:TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1051,12 +1083,12 @@ export default function abilityTest() {
             });
 
             try {
-                await controller.sendControlCommand({
+                await controller!.sendControlCommand({
                     command: 'setTargetLoopMode',
                     parameter: avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller sent setTargetLoopMode command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`TestLog: Controller command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1079,7 +1111,8 @@ export default function abilityTest() {
                 session!.onSetTargetLoopMode(() => {
                     console.info('on setTargetLoopMode entry');
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`on setTargetLoopMode entry error,error code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             }
@@ -1117,12 +1150,12 @@ export default function abilityTest() {
             session!.offSetTargetLoopMode();
 
             try{
-                await controller.sendControlCommand({
+                await controller!.sendControlCommand({
                     command: 'setTargetLoopMode',
                     parameter: avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch(err: BusinessError) {
+            } catch(err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             };
@@ -1159,12 +1192,12 @@ export default function abilityTest() {
 
             session!.offSetTargetLoopMode(callback1);
             try{
-                await controller.sendControlCommand({
+                await controller!.sendControlCommand({
                     command: 'setTargetLoopMode',
                     parameter: avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch(err: BusinessError) {
+            } catch(err) {
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1185,7 +1218,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSetTargetLoopMode();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`off setTargetLoopMode entry error,error code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             }
@@ -1217,7 +1251,7 @@ export default function abilityTest() {
                session!.setAVPlaybackState(PlaybackState)
                console.info(`${TAG}:SetAVPlaybackState successfully`);
                expect(true).assertTrue();
-           }catch(err: BusinessError){
+           }catch(err){
                console.error(`${TAG}:SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
            };
            done();
@@ -1239,7 +1273,8 @@ export default function abilityTest() {
                 data = await session!.getAllCastDisplays()
                 console.info(`${TAG}:getAllCastDisplays success: ${JSON.stringify(data)}`);
                 expect(true).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`${TAG}:getAllCastDisplays successfully: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600102);
             };
@@ -1264,7 +1299,8 @@ export default function abilityTest() {
                         expect(true).assertTrue();
                     };
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {
@@ -1288,10 +1324,11 @@ export default function abilityTest() {
                 try{
                     await session!.stopCasting()
                     console.info('stopCasting successfully');
-                }catch(err: BusinessError){
+                }catch(err){
                     console.error(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined" || error.code == 6600109) {
                     console.info(`stopCasting callback successfully`);
@@ -1311,16 +1348,17 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
-                let aVCastController: avSession.AVCastController;
-                let avcontroller: avSession.AVCastController;
+                let aVCastController: avSession.AVCastController | undefined;
+                let avcontroller: avSession.AVCastController | undefined;
                 try{
-                    session!.getAVCastController();
+                    session?.getAVCastController();
                     aVCastController = avcontroller;
                     console.info(`${TAG}:getAVCastController : SUCCESS : sessionid `);
-                }catch(err: BusinessError){
+                }catch(err){
                     console.error(`${TAG}:getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${TAG}:getAVCastController failed: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined" || error.code == 6600109 ) {
                     console.info(`${TAG}:getAVCastController callback successfully`);
@@ -1349,7 +1387,8 @@ export default function abilityTest() {
                         console.info(`${TAG}:getAVCastController : SUCCESS`);
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.error(`${TAG}:getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {
@@ -1379,7 +1418,7 @@ export default function abilityTest() {
                         expect(err.code).assertEqual(401);
                         done();
                     } else {
-                        controller.getAVMetadata((err:BusinessError | null, data:avSession.AVMetadata | undefined) => {
+                        controller!.getAVMetadata((err:BusinessError | null, data:avSession.AVMetadata | undefined) => {
                             if (err) {
                                 console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                                 expect(false).assertTrue();
@@ -1395,7 +1434,7 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: set & get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1423,7 +1462,7 @@ export default function abilityTest() {
                 done();
             });
 
-            await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
+            await controller!.getAVMetadata().then((data:avSession.AVMetadata) => {
                 if (JSON.stringify(data.filter) === JSON.stringify(metadata.filter)) {
                     expect(true).assertTrue();
                 } else {
@@ -1465,7 +1504,7 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 })
 
-            } catch(err: BusinessError) {
+            } catch(err) {
                 console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -1500,7 +1539,7 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            } catch(err: BusinessError) {
+            } catch(err) {
                 console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -1546,7 +1585,7 @@ export default function abilityTest() {
             let queueItemsArray: avSession.AVQueueItem[] = [queueItem_1, queueItem_2];
             await session!.setAVQueueItems(queueItemsArray).then(() => {
                 console.info('SetAVQueueItems successfully');
-                controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
+                controller!.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
                     console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                     expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                     done();
@@ -1597,7 +1636,7 @@ export default function abilityTest() {
             let queueItemsArray: avSession.AVQueueItem[] = [queueItem_1, queueItem_2];
             await session!.setAVQueueItems(queueItemsArray).then(() => {
                 console.info('SetAVQueueItems successfully');
-                controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
+                controller!.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
                     console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                     expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                     done();
@@ -1651,7 +1690,7 @@ export default function abilityTest() {
                     console.error(`SetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 } else {
-                    controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
+                    controller!.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                         done();
@@ -1705,7 +1744,7 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info('SetAVQueueItems successfully');
-                    controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
+                    controller!.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                         done();
@@ -1729,7 +1768,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             await session!.destroy();
             let commandName = "my_command";
-            controller.sendCommonCommand(commandName, {'command' : "This is my command"}, (err: BusinessError | null) => {
+            controller!.sendCommonCommand(commandName, {'command' : "This is my command"}, (err: BusinessError | null) => {
                 if (err) {
                 console.error(`SendCommonCommand BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
@@ -1750,7 +1789,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
             await session!.destroy();
             let commandName = "my_command";
-            await controller.sendCommonCommand(commandName, {'command' : "This is my command"}).then(() => {
+            await controller!.sendCommonCommand(commandName, {'command' : "This is my command"}).then(() => {
                 console.info('SendCommonCommand successfully');
             }).catch((err: Error) => {
                 console.error(`SendCommonCommand BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -1885,7 +1924,8 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 session!.offSetTargetLoopMode()
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.error(`off BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600101);
             }
@@ -1932,7 +1972,7 @@ export default function abilityTest() {
                     console.error(`SetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 } else {
-                    controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
+                    controller!.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.launchClientData).assertEqual(queueItem_1.description?.launchClientData);
                         done();
@@ -1976,7 +2016,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCUSTOMDATA_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info('controller sendCustomData Start');
-            await controller.sendCustomData(customdata).then(() => {
+            await controller!.sendCustomData(customdata).then(() => {
                 console.info('controller sendCustomData Successfully');
             }).catch((err: Error) => {
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -1998,7 +2038,8 @@ export default function abilityTest() {
             await session!.destroy();
             try{
                 await session!.sendCustomData(customdata);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`session sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -2015,10 +2056,11 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDCUSTOMDATA_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try{
-                await controller.sendCustomData(customdata);
-            } catch(err: BusinessError) {
+                await controller!.sendCustomData(customdata);
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -2058,7 +2100,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SENDCUSTOMDATA_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let customdata2: Record<string, Object>  = {'appdata' : 'aaa'}
             console.info('controller sendCustomData Start');
-            await controller.sendCustomData(customdata2).then(() => {
+            await controller!.sendCustomData(customdata2).then(() => {
                 console.info('controller sendCustomData Successfully');
             }).catch((err: Error) => {
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -2079,8 +2121,9 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SENDCUSTOMDATA_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.destroy();
             try{
-                await controller.sendCustomData(customdata);
-            } catch(err: BusinessError) {
+                await controller!.sendCustomData(customdata);
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -2122,7 +2165,8 @@ export default function abilityTest() {
                 session!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`on_customDataChange Successfully ${data}`);
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`session on_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -2139,13 +2183,13 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.onCustomDataChange((data: Record<string, Object>) => {
+            controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`session on_customDataChange Successfully ${data}`)
-                controller.offCustomDataChange();
+                controller!.offCustomDataChange();
                 expect(true).assertTrue();
                 done();
             })
-            await controller.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2159,12 +2203,13 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try{
-                controller.onCustomDataChange((data: Record<string, Object>) => {
+                controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`on_customDataChange Successfully ${data}`);
                 });
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller on_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -2204,7 +2249,8 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try{
                 session!.offCustomDataChange();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`session off_customDataChangeBusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600101);
             };
@@ -2221,14 +2267,14 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.onCustomDataChange((data: Record<string, Object>) => {
+            controller!.onCustomDataChange((data: Record<string, Object>) => {
                 console.info(`controller on_customDataChange Successfully ${data}`);
                 expect(false).assertTrue();
                 done();
             })
-            controller.offCustomDataChange();
+            controller!.offCustomDataChange();
             console.info('controller off_customDataChange end')
-            await controller.sendCustomData(customdata);
+            await controller!.sendCustomData(customdata);
             await Utils.msSleep(300);
             done();
         })
@@ -2242,10 +2288,11 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFF_CUSTOMDATACHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            await controller.destroy();
+            await controller!.destroy();
             try{
-                controller.offCustomDataChange();
-            } catch(err: BusinessError) {
+                controller!.offCustomDataChange();
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`controller off_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600103);
             };
@@ -2265,7 +2312,8 @@ export default function abilityTest() {
             await session!.destroy();
             try{
                 session!.offCustomDataChange();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 console.info(`session off_customDataChange BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -2427,7 +2475,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 await Utils.msSleep(500);
-                avSession.getAVSession(context).then((data) => {
+                avSession.getAVSession(context!).then((data) => {
                     session = data;
                     console.info('getAVSession successfully${session!.sessionType}');
                 })
@@ -2451,7 +2499,7 @@ export default function abilityTest() {
             await session!.destroy();
             try{
                 await Utils.msSleep(500);
-                avSession.getAVSession(context).then((data) => {
+                avSession.getAVSession(context!).then((data) => {
                     expect(data.sessionTag).assertEqual(session!.sessionTag)
                     console.info('getAVSession successfully${data.sessionType}');
                     expect(false).assertTrue();

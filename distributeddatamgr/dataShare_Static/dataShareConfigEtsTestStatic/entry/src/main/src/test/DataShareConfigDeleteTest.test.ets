@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import dataShare from '@ohos.data.dataShare';
 import { BusinessError } from '@ohos.base';
 
-let g_handle: dataShare.DataProxyHandle;
+let g_handle: dataShare.DataProxyHandle | undefined;
 let g_config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG
 }
@@ -76,7 +76,8 @@ export default function dataShareConfigDeleteTest() {
         }
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] beforeEach publish failed, code =" + err.code + ", message =" + err.message);
         expect().assertFail();
       }
@@ -94,7 +95,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed. code =" + err.code + ", message =" + err.message);
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] afterEach delete failed. code =" + err.code + ", message =" + err.message);
         expect().assertFail();
       }
@@ -128,7 +130,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest003 delete failed, err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest003 failed. code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -154,7 +157,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest004 failed.code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(401);
       }
@@ -183,7 +187,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest005 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -213,7 +218,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest006 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -243,7 +249,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest009 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -273,7 +280,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest010 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -303,7 +311,8 @@ export default function dataShareConfigDeleteTest() {
           console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest011 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }

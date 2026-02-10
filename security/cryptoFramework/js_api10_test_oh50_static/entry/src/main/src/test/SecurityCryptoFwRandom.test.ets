@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
         random.enableHardwareEntropy();
         let secret: cryptoFramework.DataBlob = await random.generateRandom(secretLen);
         expect(secret.data.length).assertEqual(secretLen);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Random “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -57,7 +57,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
         try {
           let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_CALLBACK);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random Pthread CallBack “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -84,7 +84,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
           random.setSeed({data: new Uint8Array(seed)});
           let secret: cryptoFramework.DataBlob = random.generateRandomSync(secretLen);
           expect(secret.data.length).assertEqual(secretLen);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -113,7 +113,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
             let secret: cryptoFramework.DataBlob = await random.generateRandom(secretLen);
             expect(secret.data.length).assertEqual(secretLen);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -136,9 +136,9 @@ export default function SecurityCryptoFwRandomTestUnit() {
           random.enableHardwareEntropy();
           await random.generateRandom(secretLen);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
@@ -159,9 +159,9 @@ export default function SecurityCryptoFwRandomTestUnit() {
           random.enableHardwareEntropy();
           random.generateRandomSync(secretLen);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
@@ -179,7 +179,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
         try {
           let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_SYNC);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random Pthread Sync “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -199,7 +199,7 @@ export default function SecurityCryptoFwRandomTestUnit() {
         try {
           let ret: boolean = await enableHardwareEntropyRandom(16, CallbackType.TYPE_IS_PROMISE);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Random Pthread Promise “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }

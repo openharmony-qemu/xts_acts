@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -143,7 +143,7 @@ struct AlignSelfPage {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('test start 0012')
-      await Utils.sleep(2000);
+      waitForCompletion(async ()=>{await Utils.sleep(2000)})
       this.containerView = routerParamOptions.view.containerView ?? ''
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''
@@ -151,7 +151,7 @@ struct AlignSelfPage {
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -571,7 +571,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -615,7 +615,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -654,7 +654,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -704,7 +704,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -731,7 +731,7 @@ export default function RunningLockTest() {
           let runningLockType: int = runningLock.RunningLockType.BACKGROUND_USER_IDLE;
           hilog.info(domain, tag, `${TAG} runningLockType: ${runningLockType}`);
           expect(runningLockType).assertEqual(129);
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {

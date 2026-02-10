@@ -1146,7 +1146,7 @@ export default function brushTest() {
       try {
         brush.reset();
         console.info(msg + ' reset successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1154,7 +1154,7 @@ export default function brushTest() {
         brush.setColor(255, 255, 0, 0);
         brush.reset();
         console.info(msg + ' reset successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1174,7 +1174,7 @@ export default function brushTest() {
         try {
           brush.reset();
           console.info(msg + ' reset succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

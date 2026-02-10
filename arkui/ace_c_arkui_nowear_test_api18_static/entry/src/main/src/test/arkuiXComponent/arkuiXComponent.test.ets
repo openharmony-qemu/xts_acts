@@ -25,7 +25,7 @@ let libUtil: LibUtil = new LibUtil();
 
 export default function ArkuiXComponentTest(){
   describe('ArkuiXComponentTest',  () =>{
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
       console.info("[ui] beforeAll start");

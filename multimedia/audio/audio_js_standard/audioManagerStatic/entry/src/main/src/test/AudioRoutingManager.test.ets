@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,12 +63,12 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -99,12 +99,12 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0200 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -135,12 +135,12 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0400 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -179,7 +179,7 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0500 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -217,7 +217,7 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0600 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -255,7 +255,7 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0800 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -282,7 +282,7 @@ export default function audioRoutingManager() {
         JSON.stringify(data));
         expect(true).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -331,7 +331,7 @@ export default function audioRoutingManager() {
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -353,7 +353,7 @@ export default function audioRoutingManager() {
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -384,7 +384,7 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -415,7 +415,7 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0400 ERROR: ${e.message},ErrorCode:${e.code}`);
         expect(false).assertTrue();
         done();
@@ -444,7 +444,7 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();

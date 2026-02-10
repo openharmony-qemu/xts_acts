@@ -141,6 +141,50 @@ export default function DataUriUtilsJsStNew() {
         done();
       }
     })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_0700
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_0700
+     * @tc.desc   Test getId with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_getId_0700', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils getId start7 ');
+      try{
+        var result = dataUriUtils.getId(null);
+        console.log('dataUriUtils getId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils getId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_0800
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_0800
+     * @tc.desc   Test getId with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_getId_0800', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils getId start8 ');
+      try{
+        var result = dataUriUtils.getId("");
+        console.log('dataUriUtils getId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils getId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
     /**
      * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_0100
      * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_0100
@@ -260,6 +304,184 @@ export default function DataUriUtilsJsStNew() {
       try{
         var idint = -1;
         var result = dataUriUtils.attachId(undefined, idint);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_0700
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_0700
+     * @tc.desc   Test attachId with null uri parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_0700', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start7 ');
+      try{
+        var idint = 100;
+        var result = dataUriUtils.attachId(null, idint);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_0800
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_0800
+     * @tc.desc   Test attachId with empty string uri parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_0800', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start8 ');
+      try{
+        var idint = 100;
+        var result = dataUriUtils.attachId("", idint);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect(result).assertEqual('/100');
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_0900
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_0900
+     * @tc.desc   Test attachId with undefined id parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_0900', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start9 ');
+      try{
+        var result = dataUriUtils.attachId("com.ix.dataUriUtils", undefined);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_1000
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_1000
+     * @tc.desc   Test attachId with null id parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_1000', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start10 ');
+      try{
+        var result = dataUriUtils.attachId("com.ix.dataUriUtils", null);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_1100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_1100
+     * @tc.desc   Test attachId with both parameters undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_1100', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start11 ');
+      try{
+        var result = dataUriUtils.attachId(undefined, undefined);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_1200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_1200
+     * @tc.desc   Test attachId with both parameters null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_1200', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start12 ');
+      try{
+        var result = dataUriUtils.attachId(null, null);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_1300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_1300
+     * @tc.desc   Test attachId with uri as empty string and id as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_1300', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start13 ');
+      try{
+        var result = dataUriUtils.attachId("", undefined);
+        console.log('dataUriUtils attachId URI :' + result)
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils attachId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_1400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_1400
+     * @tc.desc   Test attachId with uri as empty string and id as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_attachId_1400', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils attachId start14 ');
+      try{
+        var result = dataUriUtils.attachId("", null);
         console.log('dataUriUtils attachId URI :' + result)
         expect().assertFail();
         done();
@@ -398,6 +620,50 @@ export default function DataUriUtilsJsStNew() {
     })
 
     /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_0700
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_0700
+     * @tc.desc   Test deleteId with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_0700', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils deleteId start7 ');
+      try{
+        var result = dataUriUtils.deleteId(null);
+        console.log('dataUriUtils deleteId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils deleteId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_0800
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_0800
+     * @tc.desc   Test deleteId with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_0800', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils deleteId start8 ');
+      try{
+        var result = dataUriUtils.deleteId("");
+        console.log('dataUriUtils deleteId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('dataUriUtils deleteId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_0100
      * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_0100
      * @tc.desc   Check the return value of the interface
@@ -510,18 +776,196 @@ export default function DataUriUtilsJsStNew() {
     /**
      * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_0600
      * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_0600
-     * @tc.desc   Check the return value of the interface
+     * @tc.desc   Test updateId with undefined uri parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_0600', Level.LEVEL0, function (done) {
-      console.log('dataUriUtils updateId start5 ');
+      console.log('dataUriUtils updateId start6 ');
       var idint = 0;
       expect(typeof(idint)).assertEqual("number");
       console.log('dataUriUtils updateId start666 ');
       try{
         var result = dataUriUtils.updateId(undefined, idint)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_0700
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_0700
+     * @tc.desc   Test updateId with null uri parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_0700', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start7 ');
+      try{
+        var idint = 100;
+        var result = dataUriUtils.updateId(null, idint)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_0800
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_0800
+     * @tc.desc   Test updateId with empty string uri parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_0800', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start8 ');
+      try{
+        var idint = 100;
+        var result = dataUriUtils.updateId("", idint)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_0900
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_0900
+     * @tc.desc   Test updateId with undefined id parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_0900', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start9 ');
+      try{
+        var result = dataUriUtils.updateId("com.ix.dataUriUtils/1122", undefined)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_1000
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_1000
+     * @tc.desc   Test updateId with null id parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_1000', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start10 ');
+      try{
+        var result = dataUriUtils.updateId("com.ix.dataUriUtils/1122", null)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_1100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_1100
+     * @tc.desc   Test updateId with both parameters undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_1100', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start11 ');
+      try{
+        var result = dataUriUtils.updateId(undefined, undefined)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_1200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_1200
+     * @tc.desc   Test updateId with both parameters null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_1200', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start12 ');
+      try{
+        var result = dataUriUtils.updateId(null, null)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_1300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_1300
+     * @tc.desc   Test updateId with uri as empty string and id as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_1300', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start13 ');
+      try{
+        var result = dataUriUtils.updateId("", undefined)
+        console.log('updateId updateId URI : ' + result);
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.log('updateId updateId URI catch: ' + err?.code);
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_1400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_1400
+     * @tc.desc   Test updateId with uri as empty string and id as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityBase_dataUriUtils_updateId_1400', Level.LEVEL0, function (done) {
+      console.log('dataUriUtils updateId start14 ');
+      try{
+        var result = dataUriUtils.updateId("", null)
         console.log('updateId updateId URI : ' + result);
         expect().assertFail();
         done();

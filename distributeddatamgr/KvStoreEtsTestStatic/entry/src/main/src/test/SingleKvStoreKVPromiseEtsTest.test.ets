@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2022 Huawei Device Co., Ltd.
+* Copyright (c) 2022-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -170,7 +170,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTSTRING_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -200,7 +200,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTSTRING_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -243,7 +243,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTSTRING_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -282,7 +282,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETSTRING_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -311,7 +311,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETSTRING_PROMISE_0200 get e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           done();
@@ -341,7 +341,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -386,7 +386,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -430,7 +430,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -471,7 +471,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0400 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -516,7 +516,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0500 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -555,7 +555,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0600 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -595,7 +595,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0700 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -633,7 +633,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETINT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -662,7 +662,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBOOLEAN_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -701,7 +701,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETBOOLEAN_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -730,7 +730,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTFLOAT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -769,7 +769,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETFLOAT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -808,7 +808,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETFLOAT_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -848,7 +848,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETFLOAT_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -888,7 +888,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETESTRING_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -931,7 +931,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETESTRING_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -961,7 +961,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETESTRING_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1000,7 +1000,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEINT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1039,7 +1039,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEFLOAT_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1078,7 +1078,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEBOOLEAN_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1107,7 +1107,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEPREDICATES_PROMISE_0100 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1146,7 +1146,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEPREDICATES_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1185,7 +1185,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEPREDICATES_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1220,7 +1220,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONCHANGE_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1255,7 +1255,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONCHANGE_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1289,7 +1289,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONCHANGE_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1324,12 +1324,12 @@ export default function SingleKvStorePromiseTest() {
             let mode = factory.SyncMode.PULL_ONLY;
             console.info('test logkvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0100 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1364,12 +1364,12 @@ export default function SingleKvStorePromiseTest() {
             let mode = factory.SyncMode.PUSH_ONLY;
             console.info('test logkvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0200 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1404,12 +1404,12 @@ export default function SingleKvStorePromiseTest() {
             let mode = factory.SyncMode.PUSH_PULL;
             console.info('test logkvStore!.sync to ' + JSON.stringify(syncDeviceIds));
             kvStore!.sync(syncDeviceIds, mode, 10);
-          } catch (e: Error) {
+          } catch (e) {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0300 sync no peer device :e:' +
               `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ONSYNCCOMPLETE_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1437,7 +1437,7 @@ export default function SingleKvStorePromiseTest() {
           kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func);
 
           kvStore!.offDataChange(func);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFCHANGE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1472,7 +1472,7 @@ export default function SingleKvStorePromiseTest() {
 
           kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func1);
           kvStore!.offDataChange(func);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFCHANGE_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1507,7 +1507,7 @@ export default function SingleKvStorePromiseTest() {
           kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func1);
           kvStore!.offDataChange(func);
           kvStore!.offDataChange(func1);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFCHANGE_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1534,7 +1534,7 @@ export default function SingleKvStorePromiseTest() {
 
           kvStore!.onDataChange(factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL, func);
           kvStore!.offDataChange();
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFCHANGE_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1560,7 +1560,7 @@ export default function SingleKvStorePromiseTest() {
           };
           kvStore!.onSyncComplete(func);
           kvStore!.offSyncComplete(func);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0100 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1591,7 +1591,7 @@ export default function SingleKvStorePromiseTest() {
           kvStore!.onSyncComplete(func);
           kvStore!.onSyncComplete(func1);
           kvStore!.offSyncComplete(func);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0200 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1623,7 +1623,7 @@ export default function SingleKvStorePromiseTest() {
           kvStore!.onSyncComplete(func1);
           kvStore!.offSyncComplete(func);
           kvStore!.offSyncComplete(func1);
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0300 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1648,7 +1648,7 @@ export default function SingleKvStorePromiseTest() {
           };
           kvStore!.onSyncComplete(func);
           kvStore!.offSyncComplete();
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_OFFSYNCCOMPLETE_PROMISE_0400 put e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1680,7 +1680,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_SETSYNCRANGE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1712,7 +1712,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_SETSYNCRANGE_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1744,7 +1744,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_SETSYNCRANGE_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1791,7 +1791,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1847,7 +1847,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1903,7 +1903,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -1958,7 +1958,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2014,7 +2014,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0500 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2070,7 +2070,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCH_PROMISE_0600 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2115,7 +2115,7 @@ export default function SingleKvStorePromiseTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCHVALUE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2169,7 +2169,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCHVALUE_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2218,7 +2218,7 @@ export default function SingleKvStorePromiseTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCHVALUE_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2265,7 +2265,7 @@ export default function SingleKvStorePromiseTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCHVALUE_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2316,7 +2316,7 @@ export default function SingleKvStorePromiseTest() {
               done();
             });
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_PUTBATCHVALUE_PROMISE_0500 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2371,7 +2371,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEBATCHVALUE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2402,7 +2402,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEBATCHVALUE_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2456,7 +2456,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_DELETEBATCHVALUE_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2520,7 +2520,7 @@ export default function SingleKvStorePromiseTest() {
           });
           await sleep(500);
           expect(count == 1).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_STARTTRANSACTION_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2584,7 +2584,7 @@ export default function SingleKvStorePromiseTest() {
           });
           await sleep(500);
           expect(count == 0).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_STARTTRANSACTION_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2612,7 +2612,7 @@ export default function SingleKvStorePromiseTest() {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_ROOLBACK_PROMISE_0300 rollback fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ROOLBACK_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
         }
@@ -2641,7 +2641,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ENABLESYNC_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2671,7 +2671,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_ENABLESYNC_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2717,7 +2717,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2743,7 +2743,7 @@ export default function SingleKvStorePromiseTest() {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0200 removeDeviceData fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
         }
@@ -2769,7 +2769,7 @@ export default function SingleKvStorePromiseTest() {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0300 removeDeviceData fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0300 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
         }
@@ -2796,7 +2796,7 @@ export default function SingleKvStorePromiseTest() {
             console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0400 removeDeviceData fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
         }
@@ -2826,7 +2826,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_SETSYNCPARAM_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2856,7 +2856,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETSECURITYLEVEL_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2876,7 +2876,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key'
@@ -2906,7 +2906,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100 closeResultSet success   err:'+err);
             expect(err == undefined).assertTrue();
             done();
@@ -2916,7 +2916,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2936,7 +2936,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           await kvStore!.getResultSet('batch_test_string_key').then((result: factory.KVStoreResultSet) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200 getResultSet success');
             resultSet = result;
@@ -2946,7 +2946,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -2956,7 +2956,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -2976,7 +2976,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           // kvStore!.getResultSet('test_key_string', 123).then((result) => {
           await kvStore!.getResultSet('test_key_string').then((result: factory.KVStoreResultSet) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400 getResultSet success');
@@ -2987,7 +2987,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          await kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          await kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -2997,7 +2997,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -3019,7 +3019,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0500');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key';
@@ -3051,7 +3051,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0500 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -3061,7 +3061,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0500 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -3081,7 +3081,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0600');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key';
@@ -3113,7 +3113,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0600 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -3123,7 +3123,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0600 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -3143,7 +3143,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0700');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'name_';
@@ -3186,7 +3186,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0700 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -3206,7 +3206,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0800');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let query = new factory.Query();
           await kvStore!.getResultSet(query).then((result: factory.KVStoreResultSet) => {
             console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0800 getResultSet success');
@@ -3231,7 +3231,7 @@ export default function SingleKvStorePromiseTest() {
             done();
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0800 e' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
@@ -3283,7 +3283,7 @@ export default function SingleKvStorePromiseTest() {
             expect(null).assertFail();
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSIZE_PROMISE_0100 e ' +
             `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();

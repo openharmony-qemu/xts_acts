@@ -48,6 +48,7 @@ export default class CommonFunc {
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
+    console.info(`${key} rectInfo left: ${rectInfo[0][0]}, top: ${rectInfo[0][1]}, right: ${rectInfo[1][0]}, bottom: ${rectInfo[1][1]}`);
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0)
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0)
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0)

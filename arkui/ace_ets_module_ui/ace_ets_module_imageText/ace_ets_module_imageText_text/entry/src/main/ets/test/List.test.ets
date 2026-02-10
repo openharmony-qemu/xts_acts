@@ -108,6 +108,8 @@ import TextDirectionTest from './TextTest/TextDirection.test';
 import TextTextDirectionTest from './TextTest/TextTextDirection.test';
 import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
 import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
+import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -206,4 +208,5 @@ export default function testsuite() {
   TextTextDirectionTest();
   SelectedDragPreviewStyle();
   TextMarqueeOptionsTest();
+  TextSpecialAttributesTest();
 }

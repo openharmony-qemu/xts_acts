@@ -52,7 +52,8 @@
                 "bm uninstall -n com.pcs.software.bundle.first",
                 "bm uninstall -n com.pcs.software.bundle.fourth",
                 "bm uninstall -n com.pcs.software.signedhap",
-                "bm uninstall -n  com.pcs.software.signedhsp"
+                "bm uninstall -n com.pcs.software.signedhsp",
+                "power-shell setmode 600"
             ]
         }
     ]

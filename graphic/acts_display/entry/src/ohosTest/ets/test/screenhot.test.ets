@@ -89,7 +89,6 @@ export default function screenHotTest() {
         //             console.log(msgStr + 'pick Pixel bytes number: ' + pickInfo.pixelMap.getPixelBytesNumber());
         //             console.log(msgStr + 'pick Rect: ' + pickInfo.pickRect);
         //             pickInfo.pixelMap.release(); // PixelMap使用完后及时释放内存
-        //             expect(true).assertTrue();
         //             done();
         //         }).catch((err) => {
         //             console.log(msgStr + 'Failed to pick. Code: ' + JSON.stringify(err));

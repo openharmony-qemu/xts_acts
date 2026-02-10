@@ -65,6 +65,7 @@
 #define MP3_PATH "/data/storage/el2/base/files/01.mp3"
 #define AAC_PATH "/data/storage/el2/base/files/AAC_48000_32_1.aac"
 #define WAV_PATH "/data/storage/el2/base/files/vorbis_48000_32_1.wav"
+#define MP4_PATH "/data/storage/el2/base/files/H264_AAC.mp4"
 static int32_t g_gPlaytime = 100;
 int g_currentPathId = 0;
 float g_minDelta = 0.001;
@@ -415,11 +416,24 @@ static napi_value OH_AVPlayer_SetVolumeMode0100(napi_env env, napi_callback_info
     return retValue;
 }
 
+static int64_t GetFileSize(const char *fileName)
+{
+    int64_t fileSize = PARAM_0;
+    if (fileName != nullptr) {
+        struct stat fileStatus;
+        fileSize = static_cast<size_t>(fileStatus.st_size);
+    }
+    return fileSize;
+}
+
 static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
 {
     int32_t *videoHeight;
+    std::string filePath = MP4_PATH;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
-    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    int fileDescribe = open(filePath.c_str(), O_RDONLY, PARAM_0666);
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(AVPlayer, fileDescribe, PARAM_0, fileSize);
     OH_AVPlayer_Prepare(AVPlayer);
     OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_50_X);
     int32_t res = 1;
@@ -427,6 +441,7 @@ static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
         res = 0;
     }
     OH_AVPlayer_ReleaseSync(AVPlayer);
+    close(fileDescribe);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -435,8 +450,11 @@ static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
 static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
 {
     int32_t *videoHeight;
+    std::string filePath = MP4_PATH;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
-    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    int fileDescribe = open(filePath.c_str(), O_RDONLY, PARAM_0666);
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(AVPlayer, fileDescribe, PARAM_0, fileSize);
     OH_AVPlayer_Prepare(AVPlayer);
     OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_1_50_X);
     int32_t res = 1;
@@ -444,6 +462,7 @@ static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
         res = 0;
     }
     OH_AVPlayer_ReleaseSync(AVPlayer);
+    close(fileDescribe);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -452,8 +471,11 @@ static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
 static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
 {
     int32_t *videoHeight;
+    std::string filePath = MP4_PATH;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
-    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    int fileDescribe = open(filePath.c_str(), O_RDONLY, PARAM_0666);
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(AVPlayer, fileDescribe, PARAM_0, fileSize);
     OH_AVPlayer_Prepare(AVPlayer);
     OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_25_X);
     int32_t res = 1;
@@ -461,6 +483,7 @@ static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
         res = 0;
     }
     OH_AVPlayer_ReleaseSync(AVPlayer);
+    close(fileDescribe);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;
@@ -469,8 +492,11 @@ static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
 static napi_value AVPlaybackSpeed0103(napi_env env, napi_callback_info info)
 {
     int32_t *videoHeight;
+    std::string filePath = MP4_PATH;
     OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
-    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    int fileDescribe = open(filePath.c_str(), O_RDONLY, PARAM_0666);
+    int64_t fileSize = GetFileSize(filePath.c_str());
+    OH_AVErrCode errCode = OH_AVPlayer_SetFDSource(AVPlayer, fileDescribe, PARAM_0, fileSize);
     OH_AVPlayer_Prepare(AVPlayer);
     OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_125_X);
     int32_t res = 1;
@@ -478,6 +504,7 @@ static napi_value AVPlaybackSpeed0103(napi_env env, napi_callback_info info)
         res = 0;
     }
     OH_AVPlayer_ReleaseSync(AVPlayer);
+    close(fileDescribe);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
     return retValue;

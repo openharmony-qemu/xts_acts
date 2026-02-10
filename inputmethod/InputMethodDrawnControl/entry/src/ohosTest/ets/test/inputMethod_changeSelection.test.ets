@@ -117,6 +117,148 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionCallback_0300
+     * @tc.number Sub_InputMethod_IMF_changeSelectionCallback_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionCallback_0300', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionCallback_0300';
+      const START = 0;
+      const END = 5;
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} execution success, error: ${JSON.stringify(error)}`);
+        expect(error == undefined).assertTrue();
+        done();
+      };
+      try {
+        inputMethod.getController().changeSelection('', START, END, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionCallback_0100
+     * @tc.number Sub_InputMethod_IMF_changeSelectionCallback_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionCallback_0100', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionCallback_0100';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} execution success, error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      };
+      try {
+        inputMethod.getController().changeSelection(null, null, null, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionCallback_0200
+     * @tc.number Sub_InputMethod_IMF_changeSelectionCallback_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionCallback_0200', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionCallback_0200';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} execution success, error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      };
+      try {
+        inputMethod.getController().changeSelection(undefined, undefined, undefined, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionPromise_0300
+     * @tc.number Sub_InputMethod_IMF_changeSelectionPromise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionPromise_0300', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionPromise_0300';
+      const START = 0;
+      const END = 5;
+      try {
+        let data = await inputMethod.getController().changeSelection('', START, END);
+        console.info(`${CASE_NAME} execution success, data: ${JSON.stringify(data)}`);
+        expect(data == undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionPromise_0100
+     * @tc.number Sub_InputMethod_IMF_changeSelectionPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionPromise_0100', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionPromise_0100';
+      try {
+        let data = await inputMethod.getController().changeSelection(null, null, null);
+        console.info(`${CASE_NAME} execution success, data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_changeSelectionPromise_0200
+     * @tc.number Sub_InputMethod_IMF_changeSelectionPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_changeSelectionPromise_0200', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_changeSelectionPromise_0200';
+      try {
+        let data = await inputMethod.getController().changeSelection(undefined, undefined, undefined);
+        console.info(`${CASE_NAME} execution success, data: ${JSON.stringify(data)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect(error.code).assertEqual(401);
+        done();
+      };
+    });
+
+    /**
      * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0200
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0200
      * @tc.desc   Function test

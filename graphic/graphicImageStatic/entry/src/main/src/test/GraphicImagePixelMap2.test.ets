@@ -31,7 +31,7 @@ import { taskPoolTest } from '../utils/Taskpool';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
-let pixelMap: image.PixelMap;
+let pixelMap: image.PixelMap | undefined;
 
 export default function graphicImagePixelMap2() {
 
@@ -57,7 +57,7 @@ export default function graphicImagePixelMap2() {
         let scaleX: double = 2.0;
         let scaleY: double = 1.0;
         if (pixelMap != undefined) {
-          await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE)
+          await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE)
             .then((scaledPixelMap: image.PixelMap) => {
               console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
               expect(scaledPixelMap !== undefined).assertTrue();
@@ -65,7 +65,7 @@ export default function graphicImagePixelMap2() {
               console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
-          await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW)
+          await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW)
             .then((scaledPixelMap: image.PixelMap) => {
               console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
               expect(scaledPixelMap !== undefined).assertTrue();
@@ -73,7 +73,7 @@ export default function graphicImagePixelMap2() {
               console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
-          await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM)
+          await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM)
             .then((scaledPixelMap: image.PixelMap) => {
               console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
               expect(scaledPixelMap !== undefined).assertTrue();
@@ -81,7 +81,7 @@ export default function graphicImagePixelMap2() {
               console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
-          await pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH)
+          await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH)
             .then((scaledPixelMap: image.PixelMap) => {
               console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
               expect(scaledPixelMap !== undefined).assertTrue();
@@ -89,7 +89,7 @@ export default function graphicImagePixelMap2() {
               console.error(`www data Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
-          await pixelMap.createScaledPixelMap(scaleX, scaleY)
+          await pixelMap!.createScaledPixelMap(scaleX, scaleY)
             .then((scaledPixelMap: image.PixelMap) => {
               console.info('www data Succeeded in creating scaledPixelMap.' + scaledPixelMap);
               expect(scaledPixelMap !== undefined).assertTrue();
@@ -115,31 +115,31 @@ export default function graphicImagePixelMap2() {
         let scaleY: double = 1.0;
         if (pixelMap != undefined) {
           try {
-            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.NONE);
+            let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.NONE);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
           }
           try {
-            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
+            let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
           }
           try {
-            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
+            let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
           }
           try {
-            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
+            let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
           }
           try {
-            let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY);
+            let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY);
             expect(scaledPixelMap !== undefined).assertTrue();
           } catch (err) {
             expect().assertFail();
@@ -161,7 +161,7 @@ export default function graphicImagePixelMap2() {
         let translateX: double = 50.0;
         let translateY: double = 10.0;
         if (pixelMap != undefined) {
-          pixelMap.translate(translateX, translateY, (err: BusinessError | null) => {
+          pixelMap!.translate(translateX, translateY, (err: BusinessError | null) => {
             if (err) {
               console.error(`Failed to translate pixelmap. code is ${err.code}, message is ${err.message}`);
               expect().assertFail();
@@ -187,7 +187,7 @@ export default function graphicImagePixelMap2() {
         let translateX: double = 50.0;
         let translateY: double = 10.0;
         if (pixelMap != undefined) {
-          pixelMap.translate(translateX, translateY).then(() => {
+          pixelMap!.translate(translateX, translateY).then(() => {
             console.info('Succeeded in translating pixelmap.');
           }).catch((err) => {
             console.error(`Failed to translate pixelmap. code is ${err.code}, message is ${err.message}`);
@@ -211,7 +211,7 @@ export default function graphicImagePixelMap2() {
         let translateY: double = 10.0;
         if (pixelMap != undefined) {
           try {
-            pixelMap.translateSync(translateX, translateY);
+            pixelMap!.translateSync(translateX, translateY);
           } catch (err) {
             expect().assertFail();
           }
@@ -230,7 +230,7 @@ export default function graphicImagePixelMap2() {
     it('graphicImagePixelMap2_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         if (pixelMap != undefined) {
-          pixelMap.clone().then((clonePixelMap: image.PixelMap) => {
+          pixelMap!.clone().then((clonePixelMap: image.PixelMap) => {
             console.info('Succeeded clone pixelmap.');
             expect(clonePixelMap !== undefined).assertTrue();
           }).catch((error) => {
@@ -253,7 +253,7 @@ export default function graphicImagePixelMap2() {
       async (done: () => void): Promise<void> => {
         if (pixelMap != undefined) {
           try {
-            let clonePixelMap:image.PixelMap = pixelMap.cloneSync();
+            let clonePixelMap:image.PixelMap = pixelMap!.cloneSync();
             expect(clonePixelMap !== undefined).assertTrue();
           } catch(e) {
             let error = e as BusinessError;
@@ -284,7 +284,7 @@ export default function graphicImagePixelMap2() {
           maxContentLightLevel: 2.1,
           maxFrameAverageLightLevel: 2.1,
         };
-        pixelMap.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
+        pixelMap?.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
           console.info('www data Succeeded in setting pixelMap metadata.');
           expect().assertFail();
         }).catch((error) => {
@@ -308,7 +308,7 @@ export default function graphicImagePixelMap2() {
         if (pixelMap != undefined) {
           console.info('www data Succeeded in creating pixelMap object.');
           try {
-            let staticMetadata = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+            let staticMetadata = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
             console.info(`www data getMetadata:${staticMetadata}`);
             expect().assertFail();
           } catch (error) {
@@ -338,11 +338,11 @@ export default function graphicImagePixelMap2() {
         }
         const pixelMap = image.createPixelMapSync(options);
         console.info('www data ' + pixelMap.isStrideAlignment)
-        if (pixelMap.isStrideAlignment) {
+        if (pixelMap?.isStrideAlignment) {
           console.info('www data Succeeded in creating pixelMap object.');
-          await pixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE).then(() => {
+          await pixelMap!.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE).then(() => {
             console.info('www data Succeeded in setting pixelMap metadata1111111111.');
-            let metadataType = pixelMap.getMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE) as image.HdrMetadataType;
+            let metadataType = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE) as image.HdrMetadataType;
             console.info('www data metadataType ' + image.HdrMetadataKey.HDR_METADATA_TYPE);
             expect('0').assertEqual(image.HdrMetadataKey.HDR_METADATA_TYPE + '');
           }).catch((error) => {
@@ -368,11 +368,11 @@ export default function graphicImagePixelMap2() {
         }
         const pixelMap = image.createPixelMapSync(options);
         console.info('www data ' + pixelMap.isStrideAlignment)
-        if (pixelMap.isStrideAlignment) {
+        if (pixelMap!.isStrideAlignment) {
           console.info('www data Succeeded in creating pixelMap object.');
-          await pixelMap.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, image.HdrMetadataType.BASE).then(() => {
+          await pixelMap!.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, image.HdrMetadataType.BASE).then(() => {
             console.info('www data Succeeded in setting pixelMap metadata1111111111.');
-            let metadataType = pixelMap.getMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE) as image.HdrMetadataType;
+            let metadataType = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE) as image.HdrMetadataType;
             console.info('www data metadataType ' + image.HdrMetadataKey.HDR_METADATA_TYPE);
             expect().assertFail();
           }).catch((error) => {
@@ -398,13 +398,13 @@ export default function graphicImagePixelMap2() {
           pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
         }
         const pixelMap = image.createPixelMapSync(options);
-        console.info('www data ' + pixelMap.isStrideAlignment)
-        if (pixelMap.isStrideAlignment) {
+        console.info('www data ' + pixelMap!.isStrideAlignment)
+        if (pixelMap!.isStrideAlignment) {
           console.info('www data Succeeded in creating pixelMap object.');
-          await pixelMap.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE).then(() => {
+          await pixelMap!.setMetadata(image.HdrMetadataKey.HDR_METADATA_TYPE, image.HdrMetadataType.BASE).then(() => {
             console.info('www data Succeeded in setting pixelMap metadata1111111111333.');
             try {
-              let metadataType = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA) as image.HdrMetadataType;
+              let metadataType = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA) as image.HdrMetadataType;
               console.info('www data metadataType ' + image.HdrMetadataKey.HDR_STATIC_METADATA);
               expect().assertFail();
             } catch(error) {
@@ -432,7 +432,7 @@ export default function graphicImagePixelMap2() {
       async (done: () => void): Promise<void> => {
         if (pixelMap != undefined) {
           try {
-            pixelMap.setTransferDetached(true);
+            pixelMap!.setTransferDetached(true);
           } catch (err) {
             expect().assertFail();
           }

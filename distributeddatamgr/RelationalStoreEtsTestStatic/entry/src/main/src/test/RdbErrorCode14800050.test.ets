@@ -29,9 +29,9 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: 'rdbStore14800050.db',
   securityLevel: relationalStore.SecurityLevel.S1
 };
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const COLOUNM_NAMES = ["id", "data1", "data2", "data3", "data4"];
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 let resultSet: relationalStore.ResultSet;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -86,8 +86,8 @@ export default function RdbErrorCode14800050() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
     })
 
     beforeEach(async (): Promise<void> => {
@@ -100,7 +100,7 @@ export default function RdbErrorCode14800050() {
 
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -115,12 +115,12 @@ export default function RdbErrorCode14800050() {
       async (done: () => void) => {
         console.info(TAG + '************* testRdbEmit14800050_001 start *************');
         let predicates = new relationalStore.RdbPredicates('test');
-        let resultSet = await rdbStore.query(predicates);
+        let resultSet = await rdbStore!.query(predicates);
         let storeObserver = () => {
           console.info(`storeObserver`);
         }
         try {
-          rdbStore.emit('storeObserver');
+          rdbStore!.emit('storeObserver');
         } catch (e) {
           if (e.code != 801) {
             expect(e.code).assertEqual(14800050);
@@ -142,14 +142,14 @@ export default function RdbErrorCode14800050() {
     it('testRdbOn14800050_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.info(TAG + '************* testRdbOn14800050_002 start *************');
-        await createTest(rdbStore);
+        await createTest(rdbStore!);
         let predicates = new relationalStore.RdbPredicates('test');
-        let resultSet = await rdbStore.query(predicates);
+        let resultSet = await rdbStore!.query(predicates);
         let storeObserver = () => {
           console.info(`storeObserver`);
         }
         try {
-          rdbStore.on('storeObserver', false, storeObserver);
+          rdbStore!.on('storeObserver', false, storeObserver);
         } catch (e) {
           if (e.code != 801) {
             expect(e.code).assertEqual(14800050);
@@ -171,21 +171,21 @@ export default function RdbErrorCode14800050() {
     it('testRdbOff14800050_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.info(TAG + '************* testRdbOff14800050_003 start *************');
-        await createTest(rdbStore);
+        await createTest(rdbStore!);
         let predicates = new relationalStore.RdbPredicates('test');
-        let resultSet = await rdbStore.query(predicates);
+        let resultSet = await rdbStore!.query(predicates);
         let storeObserver = () => {
           console.info(`storeObserver`);
         }
         try {
-          rdbStore.on('storeObserver', false, storeObserver);
+          rdbStore!.on('storeObserver', false, storeObserver);
         } catch (e) {
           if (e.code != 801) {
             expect(e.code).assertEqual(14800050);
           }
         }
         try {
-          rdbStore.off('storeObserver', false, storeObserver);
+          rdbStore!.off('storeObserver', false, storeObserver);
         } catch (e) {
           if (e.code != 801) {
             expect(e.code).assertEqual(14800050);

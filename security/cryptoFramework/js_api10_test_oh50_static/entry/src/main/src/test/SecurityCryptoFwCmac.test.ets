@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,7 +69,7 @@ async function doCmacPromiseSplitStub(algName: string, msgLen: int, blockSize: i
         }, intervalTime)
       })//.then(undefined, (error) => {
       //});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doCmacPromiseSplitStub “${error}“, error code: ${error.code}`);
       return false;
     }
@@ -101,7 +101,7 @@ async function doCmacPromiseStub(algName: string, msgLen: int): Promise<boolean>
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doCmacPromiseStub “${error}“, error code: ${error.code}`);
       return false;
     }
@@ -133,7 +133,7 @@ async function doCmacSyncSplitStub(algName: string, msgLen: int, blockSize: int)
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doCmacSyncSplitStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -166,7 +166,7 @@ async function doCmacSyncStub(algName: string, msgLen: int): Promise<boolean> {
         }, intervalTime)
       })//.then(undefined, (error: Object) => {
       //});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doCmacSyncStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -203,7 +203,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           let macSize: number = getMacSize(mdName);
           expect(secret.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -233,7 +233,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           let secret: cryptoFramework.DataBlob = await doMacPromise(spec, symKey, msg);
           expect(secret.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -263,7 +263,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           let secret: cryptoFramework.DataBlob = doMacSync(spec, symKey, msg);
           expect(secret.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -295,7 +295,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           expect(macSize).assertEqual(mac.macObj.getMacLength());
           expect(mac.dataRes.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -327,7 +327,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           expect(macSize).assertEqual(mac.macObj.getMacLength());
           expect(mac.dataRes.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -360,7 +360,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
         expect(secret.data.byteLength).assertEqual(macSize);
         let ret: boolean = compareDataBlob({data: new Uint8Array(secret_null)}, secret);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -393,7 +393,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
         expect(secret.data.byteLength).assertEqual(macSize);
         let ret: boolean = compareDataBlob({data: new Uint8Array(secret_null)}, secret);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -427,7 +427,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           expect(macSize).assertEqual(mac.getMacLength());
           expect(secret.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -455,9 +455,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
         let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
         await mac.init(symKey);
         await mac.update(msg);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -481,9 +481,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
       let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
       try {
         mac.updateSync(msg);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -509,9 +509,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
         let mac: cryptoFramework.Mac = cryptoFramework.createMac(spec);
         mac.initSync(symKey);
         mac.updateSync(msg);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -544,7 +544,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
         await mac.doFinal();
         expect(macSize).assertEqual(mac.getMacLength());
         expect(secret.data.byteLength).assertEqual(macSize);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -575,7 +575,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
         let symKey: cryptoFramework.SymKey = await convertSymKey(symAlg, keyBlob);
         let secret: cryptoFramework.DataBlob = await doMacPromise(spec, symKey, msg);
         expect(secret.data.byteLength).assertEqual(macSize);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -606,7 +606,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
         let symKey: cryptoFramework.SymKey = await convertSymKey(symAlg, keyBlob);
         let secret: cryptoFramework.DataBlob = doMacSync(spec, symKey, msg);
         expect(secret.data.byteLength).assertEqual(macSize);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -630,9 +630,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
         }
         cryptoFramework.createMac(spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -654,9 +654,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
         }
         cryptoFramework.createMac(spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -678,9 +678,9 @@ export default function SecurityCryptoFwCmacTestUnit() {
         }
         cryptoFramework.createMac(spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -710,7 +710,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           let ret: boolean = compareDataBlob(secret, expect_secret);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -743,7 +743,7 @@ export default function SecurityCryptoFwCmacTestUnit() {
           let secret: cryptoFramework.DataBlob = await doFinalMacCallback(mac);
           expect(secret.data.byteLength).assertEqual(macSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

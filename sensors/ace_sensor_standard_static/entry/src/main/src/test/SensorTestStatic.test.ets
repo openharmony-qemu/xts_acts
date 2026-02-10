@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -332,7 +332,7 @@ export default function SensorJsStaticTest() {
         });
         hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
         done();
       }

@@ -1606,7 +1606,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("Error");
-        expect(error.message).assertContain("Unexpected end of input at 0..0");
+        expect(error.message).assertContain("Unexpected character at 8..8");
       }
     });
 

@@ -37,7 +37,16 @@ export struct V1ContentComponent {
   @Env(SystemProperties.WINDOW_AVOID_AREA_PX) windowAvoidAreaInfoPX: window.UIEnvWindowAvoidAreaInfoPX;
   private caseName: string = 'testEnvSystemPropertiesWindowAvoidAreawithMainWindow|testEnvSystemPropertiesWindowAvoidAreawithSubWindow';
   private keyboardCallback = (res: window.AvoidAreaOptions) => {
-    console.log(this.caseName + ' callback res: ' + JSON.stringify(res))
+    console.info(' callback result: ' + JSON.stringify(res));
+    if (res.type == window.AvoidAreaType.TYPE_KEYBOARD) {
+    console.info(' callback result2, AvoidAreaType.TYPE_KEYBOARD area: ' + JSON.stringify(res.area));
+    console.log(this.caseName + ' page Index4 this.windowAvoidAreaInfoVP 2: ' + JSON.stringify(this.windowAvoidAreaInfoVP))
+    console.log(this.caseName + ' page Index4 this.windowAvoidAreaInfoPX 2: ' + JSON.stringify(this.windowAvoidAreaInfoPX))
+    if (this.windowAvoidAreaInfoVP && this.windowAvoidAreaInfoPX) {
+    AppStorage.setOrCreate('keyboardVP2', this.windowAvoidAreaInfoVP.keyboard);
+    AppStorage.setOrCreate('keyboardPX2', this.windowAvoidAreaInfoPX.keyboard);
+    }
+    }
   }
 
   build() {
@@ -59,6 +68,12 @@ export struct V1ContentComponent {
               AppStorage.setOrCreate('navigationIndicatorPX', this.windowAvoidAreaInfoPX.navigationIndicator);
             }
           })
+          Button('subWindowKeyBoardç›‘å¬')
+          .id('index4Btn2')
+          .onClick(()=>{
+            let windowClass = AppStorage.get('windowClass2') as window.Window;
+            windowClass.on('avoidAreaChange', this.keyboardCallback);
+          })
         TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 14, weight: 400 })
@@ -72,7 +87,7 @@ export struct V1ContentComponent {
             this.text = value
           })
           .id('textInput')
-        Button('Ö÷´°keyBoard¼àÌý')
+        Button('ï¿½ï¿½ï¿½ï¿½keyBoardï¿½ï¿½ï¿½ï¿½')
           .id('index4Btn3')
           .onClick(()=>{
             let windowClass = AppStorage.get('windowClass3') as window.Window;

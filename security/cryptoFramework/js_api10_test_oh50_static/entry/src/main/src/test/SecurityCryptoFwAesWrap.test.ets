@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,7 +62,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             ret = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -99,7 +99,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             let ret: boolean = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0200 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -142,7 +142,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0300 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -185,7 +185,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             ret = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -222,7 +222,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             let ret: boolean = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0500 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -265,7 +265,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0600 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             ret = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -345,7 +345,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             let ret: boolean = compareDataBlob(plainText, keyData);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0800 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -388,7 +388,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 0900 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -414,9 +414,9 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = await createFullData(keyLen);
           await JsAesWrapCallback(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec, keyData);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1000 "${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -440,9 +440,9 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = await createFullData(keyLen);
           await JsAesWrapCallback(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec, keyData);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1100 "${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -466,9 +466,9 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let keyData: cryptoFramework.DataBlob = await createFullData(keyLen);
           await JsAesWrapCallback(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec, keyData);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1200 "${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -493,15 +493,15 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlgName);
           try {
             encCipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
             await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec);
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1300 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -536,9 +536,9 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, encIvParamsSpec, keyData);
           await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, decIvParamsSpec, cipherText);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -565,18 +565,18 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
           try {
             await encCipher.update(keyData);
             expect(null).assertFail();
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
           let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlgName);
           await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec);
           try {
             await decCipher.update(keyData);
             expect(null).assertFail();
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          } catch (error) {
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -618,7 +618,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec, cipherText);
           ret = compareDataBlob(plainText, keyData);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -661,7 +661,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec, cipherText);
           ret = compareDataBlob(plainText, keyData);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -704,7 +704,7 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParamsSpec, cipherText);
           ret = compareDataBlob(plainText, keyData);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -745,9 +745,9 @@ export default function SecurityCryptoFwAesWrapTestUnit() {
             await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey1, ivParamsSpec, keyData);
           await JsAesWrapPromise(cipherAlgName, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey2, ivParamsSpec, cipherText);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Aes Wrap 1900 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });

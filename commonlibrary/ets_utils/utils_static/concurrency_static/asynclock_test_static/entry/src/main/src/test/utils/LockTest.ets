@@ -333,7 +333,7 @@ export function abortTest(): Promise<string> {
       throw new Error('Test failed. Promise is fulfilled.')
     },
     (err: Error) => {
-      if (err.message !== "Aborted") {
+      if (!err.message.includes('AsyncLock:: Operation aborted by signal')) {
         throw new Error('Test failed. Wrong error value.');
       }
     });
