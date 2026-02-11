@@ -5,6 +5,10 @@
         "MainAbility/pages/observer/axisHorizontal",
         "MainAbility/pages/observer/UIObserverDensityUpdateTest",
         "MainAbility/pages/observer/UIObserverWillDrawTest",
-        "MainAbility/pages/observer/UIObserverDidLayoutTest"
+        "MainAbility/pages/observer/UIObserverDidLayoutTest",
+		"pages/uIObserver/UIObserverDensityUpdateNullTest",
+        "pages/uIObserver/UIObserverWillDrawNullUndefinedTest",
+        "pages/uIObserver/WindowSizeLayoutBreakpointNullUndefinedTest"
+		
     ]
 }
