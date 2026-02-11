@@ -48,15 +48,15 @@ export default function AttributeModifierNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   buttonAttributeModifierNullUndefined_0100
-     * @tc.number SUB_ARKUI_BUTTON_ATTRIBUTEMODIFIER_NULL_0100
+     * @tc.name   buttonAttributeModifierMethodNullUndefined_0100
+     * @tc.number buttonAttributeModifierMethodNullUndefined_0100
      * @tc.desc   Test Button attributeModifier property with null, should be same as default (unset)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('buttonAttributeModifierNullUndefined_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('buttonAttributeModifierNullUndefined_0100 START');
+    it('buttonAttributeModifierMethodNullUndefined_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('buttonAttributeModifierMethodNullUndefined_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('attributeModifier_null'));
@@ -72,20 +72,20 @@ export default function AttributeModifierNullUndefinedTest() {
       AppStorage.delete('ModifierFocusedAttributeNullUndefined')
       AppStorage.delete('ModifierDisabledAttributeNullUndefined')
       AppStorage.delete('ModifierSelectedAttributeNullUndefined')
-      console.info('[buttonAttributeModifierNullUndefined_0100] END');
+      console.info('[buttonAttributeModifierMethodNullUndefined_0100] END');
       done();
     })
 
     /**
-     * @tc.name   buttonAttributeModifierNullUndefined_0200
-     * @tc.number SUB_ARKUI_BUTTON_ATTRIBUTEMODIFIER_UNDEFINED_0100
+     * @tc.name   buttonAttributeModifierMethodNullUndefined_0200
+     * @tc.number buttonAttributeModifierMethodNullUndefined_0200
      * @tc.desc   Test Button attributeModifier property with undefined, should be same as default (unset)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('buttonAttributeModifierNullUndefined_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('buttonAttributeModifierNullUndefined_0200 START');
+    it('buttonAttributeModifierMethodNullUndefined_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('buttonAttributeModifierMethodNullUndefined_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('attributeModifier_undefined'));
@@ -101,7 +101,7 @@ export default function AttributeModifierNullUndefinedTest() {
       AppStorage.delete('ModifierFocusedAttributeNullUndefined')
       AppStorage.delete('ModifierDisabledAttributeNullUndefined')
       AppStorage.delete('ModifierSelectedAttributeNullUndefined')
-      console.info('[buttonAttributeModifierNullUndefined_0200] END');
+      console.info('[buttonAttributeModifierMethodNullUndefined_0200] END');
       done();
     })
   })
