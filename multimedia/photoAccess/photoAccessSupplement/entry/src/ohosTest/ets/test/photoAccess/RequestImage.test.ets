@@ -17,13 +17,29 @@ import image from '@ohos.multimedia.image'
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
 import {
   photoKeys,
-  fetchOption, getPermission, driveFn, sleep,
+  fetchOption, getPermission, driveFn, sleep, isEmpty,
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData'
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
+import { UIAbility } from '@kit.AbilityKit';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { systemDateTime } from '@kit.BasicServicesKit';
+import { JSON } from '@kit.ArkTS';
 
 const TAG ='PhotoAssetsSetSupp';
+const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+
+let fdNumber: number;
+async function getFd(fileName: string) {
+  const ability: UIAbility = await delegator.getCurrentTopAbility();
+  let testContext: common.UIAbilityContext = ability.context;
+  let filePath = `file://${testContext.filesDir}/${fileName}`;
+  console.info(TAG, 'image case filePath is ' + filePath);
+  const fileInfo = await fs.open(filePath);
+  fdNumber = fileInfo.fd
+}
 
 class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<image.ImageSource> {
   onDataPrepared(data: image.ImageSource) {
@@ -749,7 +765,7 @@ export default function requestImageTest() {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
         await photoAccessHelper.MediaAssetManager.cancelRequest(null, requestId);
-        expect(requestId != undefined).assertTrue();
+        expect(isEmpty(requestId)).assertFalse();
         done();
       }
       catch (error) {
@@ -786,7 +802,7 @@ export default function requestImageTest() {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
         await photoAccessHelper.MediaAssetManager.cancelRequest(null, '');
-        expect(requestId != undefined).assertTrue();
+        expect(isEmpty(requestId)).assertFalse();
         done();
       }
       catch (error) {
@@ -867,7 +883,7 @@ export default function requestImageTest() {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
         await photoAccessHelper.MediaAssetManager.cancelRequest(undefined, requestId);
-        expect(requestId != undefined).assertTrue();
+        expect(isEmpty(requestId)).assertFalse();
         done();
       }
       catch (error) {
@@ -904,7 +920,7 @@ export default function requestImageTest() {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
         await photoAccessHelper.MediaAssetManager.cancelRequest(undefined, '');
-        expect(requestId != undefined).assertTrue();
+        expect(isEmpty(requestId)).assertFalse();
         done();
       }
       catch (error) {
@@ -985,7 +1001,7 @@ export default function requestImageTest() {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
         await photoAccessHelper.MediaAssetManager.cancelRequest(testContext, '');
-        expect(requestId != undefined).assertTrue();
+        expect(isEmpty(requestId)).assertFalse();
         done();
       }
       catch (error) {
@@ -2021,7 +2037,7 @@ export default function requestImageTest() {
           await phAccessHelper.getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let fileUri = `file://${testContext.filesDir}/${fileName}`;
-        let requestId = await photoAccessHelper.MediaAssetManager.requestVideoFile(null, photoAsset, requestOptions,fileUri, null)
+        let requestId = await photoAccessHelper.MediaAssetManager.requestVideoFile(null, photoAsset, requestOptions,fileUri, null);
         expect().assertFail();
         done();
       }
@@ -2059,13 +2075,712 @@ export default function requestImageTest() {
           await phAccessHelper.getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let fileUri = `file://${testContext.filesDir}/${fileName}`;
-        let requestId = await photoAccessHelper.MediaAssetManager.requestVideoFile(null, photoAsset, requestOptions,fileUri, undefined)
+        let requestId = await photoAccessHelper.MediaAssetManager.requestVideoFile(null, photoAsset, requestOptions,fileUri, undefined);
         expect().assertFail();
         done();
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error.code}`);
         expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029
+     * @tc.desc      close-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.close(null);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.info(TAG, testNum, JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030
+     * @tc.desc      close-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.close(undefined);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`,JSON.stringify(error));
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031
+     * @tc.desc      close-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.close(null, (err) => {
+          if (err === undefined) {
+            console.info('asset close succeed.');
+          } else {
+            console.error(`close failed, error: ${err.code}, ${err.message}`);
+          }
+        });
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032
+     * @tc.desc      close-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.close(undefined, (err) => {
+          if (err === undefined) {
+            console.info('asset close succeed.');
+          } else {
+            console.error(`close failed, error: ${err.code}, ${err.message}`);
+          }
+        });
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0033
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0033
+     * @tc.desc      getThumbnail-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0033', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0033';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail((err, pixelMap) => {
+          if (err === undefined) {
+            console.info('getThumbnail successful ' + pixelMap);
+            expect(isEmpty(pixelMap)).assertFalse();
+          } else {
+            console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          }
+        });
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0034
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0034
+     * @tc.desc      getThumbnail-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0034', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0034';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let size: image.Size = { width: 720, height: 720 };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(size,(err, pixelMap) => {
+          if (err === undefined) {
+            console.info('getThumbnail successful ' + pixelMap);
+            expect(isEmpty(pixelMap)).assertFalse();
+          } else {
+            console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          }
+        });
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0035
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0035
+     * @tc.desc      getThumbnail-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0035', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0035';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(null,(err, pixelMap) => {
+          if (err === undefined) {
+            console.info('getThumbnail successful ' + pixelMap);
+            expect(isEmpty(pixelMap)).assertFalse();
+          } else {
+            console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          }
+        });
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0036
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0036
+     * @tc.desc      getThumbnail-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0036', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0036';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(undefined,(err, pixelMap) => {
+          if (err === undefined) {
+            console.info('getThumbnail successful ' + pixelMap);
+            expect(isEmpty(pixelMap)).assertFalse();
+          } else {
+            console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          }
+        });
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0037
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0037
+     * @tc.desc      getThumbnail-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0037', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0037';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let size: image.Size = { width: 720, height: 720 };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(size).then((pixelMap) => {
+          console.info('getThumbnail successful ' + pixelMap);
+          expect(isEmpty(pixelMap)).assertFalse();
+        }).catch((err: BusinessError) => {
+          console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+        });
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038
+     * @tc.desc      getThumbnail-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let size: image.Size = null as ESObject;
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(size).then((pixelMap) => {
+          console.info('getThumbnail successful ' + pixelMap);
+          expect(isEmpty(pixelMap)).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          done();
+        });
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039
+     * @tc.desc      getThumbnail-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let size: image.Size = undefined as ESObject;
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        photoAsset.getThumbnail(size).then((pixelMap) => {
+          console.info('getThumbnail successful ' + pixelMap);
+          expect(isEmpty(pixelMap)).assertFalse();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          done();
+        });
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
+     * @tc.desc      clone-13900020
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = systemDateTime.getTime().toString();
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect(photoAsset.photoType == newAsset.photoType).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0041
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0041
+     * @tc.desc      clone-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0041', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0041';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = null as ESObject;
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0042
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0042
+     * @tc.desc      clone-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0042', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0042';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = undefined as ESObject;
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0043
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0043
+     * @tc.desc      clone-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0043', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0043';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = '';
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0044
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0044
+     * @tc.desc      clone-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0044', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0044';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = '1';
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect(isEmpty(newAsset)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0045
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0045
+     * @tc.desc      clone-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0045', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0045';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = '8z7M8y6N9x115P8w7Q8v6R9u5S8t7T8s6U9r5V8q7W8p6X9o5Y8n7Z8m6a9l5b8k7c8j6d9i5e8h7f8g6g9f5h8e7i8d6j9c5k8b7l8a6m9z5n8y7o8x6p9w5q8v7r8u6s9t5t8s7u8r6v9q5w8p7x8o6y9n5z8m7A8l6B9k5C8j7D8i6E9h5F8g7G8f6H9e5I8d7J8c6K9b5L8a7M8z6N9y5O8x7P8w6Q9v5R8u7S8t6T9s5U8r7V8q6W9p5X8';
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0046
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0046
+     * @tc.desc      clone-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0046', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0046';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = 'a9l5b8k7c8j6d9i5e8h7f8g6g9f5h8e7i8d6j9c5k8b7l8a6m9z5n8y7o8x6p9w58v7r8u6s9t5t8s7u8r6v9q5w8p7x8o6y9n5z8m7A8l6B9k5C8j7D8i6E9h5F8g7G8f6H9e5I8d7J8c6K9b5L8a7M8z6N9y5O8x7P8w6Q9v5R8u7S8t6T9s5U8r7V8q6W9p5X8o7Y8n6Z9m5a8l7b8k6c9j5d8i7e8h6f9g5g8f7h8e6i9d5j8c7k8b6l9a5m';
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
+     * @tc.desc      getFirstObject-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        expect(isEmpty(photoAsset)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
+     * @tc.desc      getLastObject-401
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
+        expect(isEmpty(photoAsset)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
         done();
       }
     });
