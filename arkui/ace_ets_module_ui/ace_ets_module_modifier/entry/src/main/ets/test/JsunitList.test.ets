@@ -90,6 +90,10 @@ import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
 import DrawForegroundTest from './DrawTest/DrawForegroundTest.test';
 import DrawOverlayTest from './DrawTest/DrawOverlayTest.test';
 import UseEffectIndexTest from './useEffect/UseEffectIndex.test';
+import DrawModifierNullUndefinedTest from './button/ButtonDrawModifierNullUndefined.test';
+import AttributeModifierNullUndefinedTest from './button/ButtonAttributeModifierNullUndefined.test';
+import attributeModifierMethodNullUndefinedTest from './button/AttributeModifierNullUndefined.test';
+import AttributeUpdaterNullUndefined from './button/AttributeUpdaterNullUndefined.test';
 
 export default function testsuite() {
   common9Jsunit();
@@ -169,4 +173,8 @@ export default function testsuite() {
   DrawForegroundTest();
   DrawOverlayTest();
   UseEffectIndexTest();
+  DrawModifierNullUndefinedTest();
+  AttributeModifierNullUndefinedTest();
+  attributeModifierMethodNullUndefinedTest();
+  AttributeUpdaterNullUndefined();
 }
