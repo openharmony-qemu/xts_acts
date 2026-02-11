@@ -3971,7 +3971,7 @@ export default function JsvmJsunit() {
        Object.freeze(obj);
        setNamedProperty(obj, "message", "strValue");
    `;
-      expect(napitest.runJsVm(script).message).not('strValue');
+      expect(napitest.runJsVm(script).message).not().assetEqual('strValue');
     });
     /**
      * @tc.name   JsvmTest0256
