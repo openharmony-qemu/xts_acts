@@ -57,6 +57,7 @@ export default function dragControllerTest() {
     it('DragController_execute_drag_null_custom_001', Level.LEVEL2, async (done: Function) => {
       console.info('[DragController_execute_drag_null_custom_001] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_execute_drag'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -77,6 +78,7 @@ export default function dragControllerTest() {
     it('DragController_execute_drag_undefined_draginfo_002', Level.LEVEL2, async (done: Function) => {
       console.info('[DragController_execute_drag_undefined_draginfo_002] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_execute_drag'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -97,6 +99,7 @@ export default function dragControllerTest() {
     it('DragController_execute_drag_undefined_custom_003', Level.LEVEL2, async (done: Function) => {
       console.info('[DragController_execute_drag_undefined_custom_003] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_execute_drag'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -117,6 +120,7 @@ export default function dragControllerTest() {
     it('DragController_execute_drag_null_draginfo_004', Level.LEVEL2, async (done: Function) => {
       console.info('[DragController_execute_drag_null_draginfo_004] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_execute_drag'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -137,6 +141,7 @@ export default function dragControllerTest() {
     it('set_drag_event_strict_reporting_enabled_true_005', Level.LEVEL1, async (done: Function) => {
       console.info('[set_drag_event_strict_reporting_enabled_true_005] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_strict_reporting'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -157,6 +162,7 @@ export default function dragControllerTest() {
     it('set_drag_event_strict_reporting_enabled_false_006', Level.LEVEL1, async (done: Function) => {
       console.info('[set_drag_event_strict_reporting_enabled_false_006] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_strict_reporting'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -177,6 +183,7 @@ export default function dragControllerTest() {
     it('cancel_data_loading_empty_007', Level.LEVEL2, async (done: Function) => {
       console.info('[cancel_data_loading_empty_007] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_cancel_data_loading'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -197,6 +204,7 @@ export default function dragControllerTest() {
     it('cancel_data_loading_null_008', Level.LEVEL2, async (done: Function) => {
       console.info('[cancel_data_loading_null_008] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_cancel_data_loading'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -217,6 +225,7 @@ export default function dragControllerTest() {
     it('cancel_data_loading_undefined_009', Level.LEVEL2, async (done: Function) => {
       console.info('[cancel_data_loading_undefined_009] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_cancel_data_loading'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -237,6 +246,7 @@ export default function dragControllerTest() {
     it('enable_drop_disallowed_badge_true_010', Level.LEVEL1, async (done: Function) => {
       console.info('[enable_drop_disallowed_badge_true_010] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_enable_badge'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -257,6 +267,7 @@ export default function dragControllerTest() {
     it('enable_drop_disallowed_badge_false_011', Level.LEVEL1, async (done: Function) => {
       console.info('[enable_drop_disallowed_badge_false_011] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_enable_badge'));
       await button.click();
       await CommonFunc.sleep(1000);

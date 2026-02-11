@@ -57,6 +57,7 @@ export default function focusControllerTest() {
     it('request_focus_empty_001', Level.LEVEL2, async (done: Function) => {
       console.info('[request_focus_empty_001] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_request_focus_empty'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -77,6 +78,7 @@ export default function focusControllerTest() {
     it('request_focus_null_002', Level.LEVEL2, async (done: Function) => {
       console.info('[request_focus_null_002] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_request_focus_null'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -97,6 +99,7 @@ export default function focusControllerTest() {
     it('request_focus_undefined_003', Level.LEVEL2, async (done: Function) => {
       console.info('[request_focus_undefined_003] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_request_focus_undefined'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -117,6 +120,7 @@ export default function focusControllerTest() {
     it('set_auto_focus_transfer_true_004', Level.LEVEL1, async (done: Function) => {
       console.info('[set_auto_focus_transfer_true_004] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_auto_focus_true'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -137,6 +141,7 @@ export default function focusControllerTest() {
     it('set_auto_focus_transfer_false_005', Level.LEVEL1, async (done: Function) => {
       console.info('[set_auto_focus_transfer_false_005] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_auto_focus_false'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -157,6 +162,7 @@ export default function focusControllerTest() {
     it('set_key_processing_mode_null_006', Level.LEVEL2, async (done: Function) => {
       console.info('[set_key_processing_mode_null_006] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_key_mode_null'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -177,6 +183,7 @@ export default function focusControllerTest() {
     it('set_key_processing_mode_undefined_007', Level.LEVEL2, async (done: Function) => {
       console.info('[set_key_processing_mode_undefined_007] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_set_key_mode_undefined'));
       await button.click();
       await CommonFunc.sleep(1000);

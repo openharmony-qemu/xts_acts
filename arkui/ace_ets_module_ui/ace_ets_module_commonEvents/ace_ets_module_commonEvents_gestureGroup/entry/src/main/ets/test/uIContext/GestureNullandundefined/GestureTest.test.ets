@@ -57,6 +57,7 @@ export default function gestureTest() {
     it('UIObserver_add_global_gesture_null_001', Level.LEVEL2, async (done: Function) => {
       console.info('[UIObserver_add_global_gesture_null_001] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_add_global_gesture'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -77,6 +78,7 @@ export default function gestureTest() {
     it('UIObserver_add_global_gesture_undefined_002', Level.LEVEL2, async (done: Function) => {
       console.info('[UIObserver_add_global_gesture_undefined_002] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_add_global_gesture'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -97,6 +99,7 @@ export default function gestureTest() {
     it('UIObserver_add_global_gesture_empty_array_003', Level.LEVEL2, async (done: Function) => {
       console.info('[UIObserver_add_global_gesture_empty_array_003] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_add_global_gesture'));
       await button.click();
       await CommonFunc.sleep(1000);
