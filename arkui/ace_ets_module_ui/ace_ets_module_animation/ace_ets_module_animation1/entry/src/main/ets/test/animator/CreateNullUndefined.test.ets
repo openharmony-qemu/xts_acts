@@ -30,7 +30,7 @@ export default function CreateNullUndefinedTest() {
         router.clear();
         let pages = router.getState();
         console.info("get CreateNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("CreateNullUndefinedTest" == pages.name)) {
+        if (!("CreateNullUndefined" == pages.name)) {
           console.info("get CreateNullUndefinedTest state pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
