@@ -1103,7 +1103,7 @@ export default function UDMFAddApiStaticTest() {
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Failed, code is ${error.code},message is ${error.message} `);
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
       }
       console.log(tag + "SUB_DistributedData_UDMF_SDK_UDMFGetTypeDescriptorTest_0100 end");
     });
