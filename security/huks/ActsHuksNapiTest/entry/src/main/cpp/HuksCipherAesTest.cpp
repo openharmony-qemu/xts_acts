@@ -52,8 +52,9 @@ static int32_t HksMemCmp(const void* ptr1, const void* ptr2, uint32_t size)
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result
-    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
+    uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {

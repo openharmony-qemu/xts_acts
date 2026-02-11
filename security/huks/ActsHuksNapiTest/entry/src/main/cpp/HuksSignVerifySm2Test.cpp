@@ -126,7 +126,7 @@ static const struct GenerateKeyCaseParam SIGN_PARAMS_TEST[] = {
     },
 };
 
-static const struct GenerateKeyCaseParam g_verifyParamsTest[] = {
+static const struct GenerateKeyCaseParam VERIFY_PARAMS_TEST[] = {
     {
         0,
         OH_HUKS_SUCCESS,
@@ -169,8 +169,9 @@ static const struct GenerateKeyCaseParam g_verifyParamsTest[] = {
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result
-    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
+    uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -492,15 +493,15 @@ static OH_Huks_Result ExportAndImportKeyForVerify(const struct ExportImportKeyPa
     }
 
     ret = InitParamSet(params->verifyParamSet,
-                       g_verifyParamsTest[params->verifyIndex].params,
-                       sizeof(g_verifyParamsTest[params->verifyIndex].params) / sizeof(OH_Huks_Param));
+                       VERIFY_PARAMS_TEST[params->verifyIndex].params,
+                       sizeof(VERIFY_PARAMS_TEST[params->verifyIndex].params) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
     ret = OH_Huks_ImportKeyItem(params->importKeyAlias, *params->verifyParamSet, params->publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        ret.errorCode = ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
+        ret.errorCode = ((ret.errorCode == VERIFY_PARAMS_TEST[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
                                                                                            : ret.errorCode);
     }
     return ret;
@@ -526,7 +527,7 @@ static OH_Huks_Result PerformVerifyOperation(const struct VerifyOperationParams*
     OH_Huks_Result ret =
         HksTestSignVerify(params->importKeyAlias, params->verifyParamSet, params->inData, params->outDataSign);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        ret.errorCode = ((ret.errorCode == g_verifyParamsTest[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
+        ret.errorCode = ((ret.errorCode == VERIFY_PARAMS_TEST[params->verifyIndex].result) ? (int32_t)OH_HUKS_SUCCESS
                                                                                            : ret.errorCode);
     }
     return ret;
