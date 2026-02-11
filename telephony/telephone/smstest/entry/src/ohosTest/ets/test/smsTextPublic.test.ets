@@ -78,9 +78,9 @@ export default function smsTextPublic() {
      * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use Promise asynchronous callback. version 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsCreateMessage1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsCreateMessage1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1000';
       console.info(`${caseName} test start`);
       try {
@@ -107,9 +107,9 @@ export default function smsTextPublic() {
      * @tc.desc   Create a SMS instance based on the Protocol Data Unit (PDU) and the specified SMS protocol. Use callback for asynchronous callback. version 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsCreateMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsCreateMessage1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsCreateMessage1100';
       console.info(`${caseName} test start`);
       try {
@@ -1212,9 +1212,9 @@ export default function smsTextPublic() {
      * @tc.desc   Get the default SIM card slot ID for sending text messages. Use Promise asynchronous callback. version 7
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTelephonySmsMmsGetDefaultSmsSlotId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonySmsMmsGetDefaultSmsSlotId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySmsMmsGetDefaultSmsSlotId0200';
       console.info(`${caseName} test start`);
       try {
