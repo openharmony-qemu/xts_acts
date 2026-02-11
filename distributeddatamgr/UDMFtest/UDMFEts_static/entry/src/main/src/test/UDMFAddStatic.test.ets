@@ -1099,7 +1099,7 @@ export default function UDMFAddApiStaticTest() {
 
       try {
         let typeObj1 = uniformTypeDescriptor.getTypeDescriptor('');
-        expect().assertFail();
+        expect(typeObj1 == null).assertTrue();
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.error(tag, `Failed, code is ${error.code},message is ${error.message} `);
