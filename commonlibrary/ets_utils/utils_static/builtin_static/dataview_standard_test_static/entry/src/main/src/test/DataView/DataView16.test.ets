@@ -1528,7 +1528,7 @@ export default function DataView16Test() {
     it('DataView16Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer122 = new ArrayBuffer(8);
       const view122 = new DataView(buffer122);
-      const reduced = [1.1, 2.2, 3.3].reduce((a, b) => a + b, 0);
+      const reduced = [1.1, 2.2, 3.3].reduce((a, b) => a + b, 0.);
       view122.setFloat64(0, reduced, true);
       expect(view122.getFloat64(0, true)).assertEqual(reduced);
     });

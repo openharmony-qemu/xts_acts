@@ -455,8 +455,8 @@ export default function typeArrayInt16ArrayTest() {
     it('TypeArrayInt16Array0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Int16Array([1, 2, 3, 4]);
 
-      const sum = arr.reduce((acc, val) => acc + val, 0);
-      const product = arr.reduce((acc, val) => acc * val, 1);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
+      const product = arr.reduce((acc, val) => acc * val, 1.);
 
       expect(sum).assertEqual(10);
       expect(product).assertEqual(24);
@@ -1055,7 +1055,7 @@ export default function typeArrayInt16ArrayTest() {
             throw new Error('Value 2 encountered');
           }
           return acc + val;
-        }, 0);
+        }, 0.);
       } catch (e) {
         errorThrown = true;
         expect((e as Error).message).assertEqual('Value 2 encountered');
@@ -1355,7 +1355,7 @@ export default function typeArrayInt16ArrayTest() {
     it('TypeArrayInt16Array0085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Int16Array([1, 2, 3, 4, 5]);
 
-      const sum = arr.reduce((a, b) => a + b, 0);
+      const sum = arr.reduce((a, b) => a + b, 0.);
       expect(sum).assertEqual(15);
 
       const avg = sum / arr.length;
@@ -1368,7 +1368,7 @@ export default function typeArrayInt16ArrayTest() {
       expect(max).assertEqual(5);
 
 
-      const variance = arr.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / arr.length;
+      const variance = arr.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0.) / arr.length;
       const stdDev = Math.sqrt(variance);
       expect(Math.round(stdDev * 100) / 100).assertEqual(1.41);
     })
@@ -2041,7 +2041,7 @@ export default function typeArrayInt16ArrayTest() {
     it('TypeArrayInt16Array0110', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const calculateChecksum = (data: Int16Array): number => {
-        return data.reduce((checksum, val) => checksum ^ val, 0);
+        return data.reduce((checksum, val) => checksum ^ val, 0.);
       };
 
       const data1 = new Int16Array([1, 2, 3, 4, 5]);
@@ -2095,7 +2095,7 @@ export default function typeArrayInt16ArrayTest() {
       const evaluatePolynomial = (x: number, coefficients: Int16Array): number => {
         return coefficients.reduce((result, coeff, power) => {
           return result + coeff * Math.pow(x, power);
-        }, 0);
+        }, 0.);
       };
 
 
@@ -2333,7 +2333,7 @@ export default function typeArrayInt16ArrayTest() {
     it('TypeArrayInt16Array0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const zeroMeanNormalize = (data: Int16Array): Int16Array => {
-        const mean = data.reduce((sum, val) => sum + val, 0) / data.length;
+        const mean = data.reduce((sum, val) => sum + val, 0.) / data.length;
         return new Int16Array(data.map(val => Math.round(val - mean)));
       };
 
@@ -2341,7 +2341,7 @@ export default function typeArrayInt16ArrayTest() {
       const normalized = zeroMeanNormalize(data);
 
 
-      const sum = normalized.reduce((a, b) => a + b, 0);
+      const sum = normalized.reduce((a, b) => a + b, 0.);
       expect(Math.abs(sum)).assertEqual(0);
 
       expect(normalized.toString()).assertEqual('-20,-10,0,10,20');
@@ -2692,10 +2692,10 @@ export default function typeArrayInt16ArrayTest() {
     it('TypeArrayInt16Array0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const zScoreNormalize = (data: Int16Array): Int16Array => {
-        const mean = data.reduce((sum, val) => sum + val, 0) / data.length;
+        const mean = data.reduce((sum, val) => sum + val, 0.) / data.length;
 
 
-        const variance = data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / data.length;
+        const variance = data.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0.) / data.length;
         const stdDev = Math.sqrt(variance);
 
 
@@ -2714,7 +2714,7 @@ export default function typeArrayInt16ArrayTest() {
       const normalized = zScoreNormalize(data);
 
 
-      const mean = normalized.reduce((sum, val) => sum + val, 0) / normalized.length;
+      const mean = normalized.reduce((sum, val) => sum + val, 0.) / normalized.length;
       expect(Math.abs(mean)).assertEqual(0);
 
       expect(normalized[0]).assertEqual(-14142);
@@ -2979,8 +2979,8 @@ export default function typeArrayInt16ArrayTest() {
 
         for (let i = 0; i < result.length; i++) {
           const window = data.subarray(i, i + windowSize);
-          const mean = window.reduce((sum, val) => sum + val, 0) / windowSize;
-          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / windowSize;
+          const mean = window.reduce((sum, val) => sum + val, 0.) / windowSize;
+          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0.) / windowSize;
           const stdDev = Math.sqrt(variance);
           result[i] = Math.round(stdDev);
         }
@@ -3538,8 +3538,8 @@ export default function typeArrayInt16ArrayTest() {
 
         for (let i = 0; i < result.length; i++) {
           const window = data.subarray(i, i + windowSize);
-          const mean = window.reduce((sum, val) => sum + val, 0) / windowSize;
-          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / windowSize;
+          const mean = window.reduce((sum, val) => sum + val, 0.) / windowSize;
+          const variance = window.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0.) / windowSize;
           result[i] = Math.round(variance);
         }
 

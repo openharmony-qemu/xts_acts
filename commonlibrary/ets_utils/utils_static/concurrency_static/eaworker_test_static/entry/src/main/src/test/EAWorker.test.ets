@@ -454,7 +454,7 @@ export default function EAWorkerTest() {
             async (taskInstance: taskpool.Task): Promise<string> => {
               let taskStr: string = '';
               await taskpool.execute(taskInstance).then((res) => {
-                taskStr = res;
+                taskStr = res as string;
               });
               return taskStr;
             },
@@ -947,7 +947,7 @@ export default function EAWorkerTest() {
                 return SUCCESS_MSG;
               }).then((result) => {
                 try {
-                  expect(result).assertEqual(SUCCESS_MSG);
+                  expect(result as string).assertEqual(SUCCESS_MSG);
                   resolve(undefined);
                 } catch (err) {
                   err = err as Error;
