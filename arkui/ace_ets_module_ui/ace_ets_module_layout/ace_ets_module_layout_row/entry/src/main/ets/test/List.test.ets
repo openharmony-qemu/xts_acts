@@ -54,6 +54,7 @@ import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test.ets'
 import RowFixAtIdealSizeTest from './Row/RowFixAtIdealSizeTest.ets'
 import RowMatchParentTest from './Row/RowMatchParentTest.ets'
 import RowWrapContentTest from './Row/RowWrapContentTest.ets'
+import rowAlignItemsJustifyContentReverseNullUndefinedTest from './Row/RowAlignItemsJustifyContentReverseNullUndefined.test'
 
 export default function testsuite() {
   Row_layoutWeight_All();
@@ -98,4 +99,5 @@ export default function testsuite() {
   RowFixAtIdealSizeTest();
   RowMatchParentTest();
   RowWrapContentTest();
+  rowAlignItemsJustifyContentReverseNullUndefinedTest();
 }

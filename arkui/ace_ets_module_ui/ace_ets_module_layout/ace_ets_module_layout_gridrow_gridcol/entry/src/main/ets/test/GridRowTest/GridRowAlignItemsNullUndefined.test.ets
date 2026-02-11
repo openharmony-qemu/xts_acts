@@ -21,8 +21,8 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 
 export default function GridRowAlignItemsNullUndefinedTest() {
   describe('GridRowAlignItemsNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
-      console.info("GridRowAlignItemsNullUndefined beforeEach start");
+    beforeAll(async (done: Function) => {
+      console.info("GridRowAlignItemsNullUndefined beforeAll start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GridRow/GridRowAlignItemsNullUndefined',
       }
@@ -39,7 +39,7 @@ export default function GridRowAlignItemsNullUndefinedTest() {
       } catch (err) {
         console.error("push GridRowAlignItemsNullUndefined page error:" + err);
       }
-      console.info("GridRowAlignItemsNullUndefined beforeEach end");
+      console.info("GridRowAlignItemsNullUndefined beforeAll end");
       done();
     });
     afterEach(async () => {
