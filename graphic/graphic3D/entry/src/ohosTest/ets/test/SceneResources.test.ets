@@ -289,7 +289,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateEnvironmentNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1031
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1039
      * @tc.desc   Test createEnvironment with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateNodeNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1038
      * @tc.desc   Test createNode with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -756,7 +756,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateMaterialNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1032
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1040
      * @tc.desc   Test createMaterial with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2057,7 +2057,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateCameraNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1023
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1041
      * @tc.desc   Test createCamera with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2456,7 +2456,7 @@ export default function sceneResourcesTest() {
     })
     /**
      * @tc.name   testEffectSetPropertyValue
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1042
      * @tc.desc   Test setPropertyValue method of Effect to set effect property values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2550,7 +2550,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateCameraWithParamsNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1026
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1043
      * @tc.desc   Test createCamera with cameraParams and null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2639,7 +2639,7 @@ export default function sceneResourcesTest() {
 
     /**
      * @tc.name   testCreateEffectNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1027
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1044
      * @tc.desc   Test createEffect with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

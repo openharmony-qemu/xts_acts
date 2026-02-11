@@ -31,15 +31,15 @@ export default function sceneNodeTest() {
     let directionalLight: DirectionalLight;
 
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testNodeGetNodeByPath
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0100
      * @tc.desc   Used to obtain the node according to the path, and return empty if it cannot be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testGetNodeByPath";
+    it('testNodeGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testNodeGetNodeByPath";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
@@ -971,7 +971,7 @@ export default function sceneNodeTest() {
     })
     /**
      * @tc.name   testCreateGeometryNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1029
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1046
      * @tc.desc   Test createGeometry with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1051,7 +1051,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testCreateLightNull
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1028
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1045
      * @tc.desc   Test createLight with null/undefined parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

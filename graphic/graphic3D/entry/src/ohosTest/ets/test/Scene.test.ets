@@ -69,15 +69,15 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testSceneGetNodeByPath
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
      * @tc.desc   Nodes are obtained from paths
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testGetNodeByPath";
+    it('testSceneGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneGetNodeByPath";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
@@ -920,7 +920,6 @@ export default function sceneTest() {
               expect(loadNull).assertUndefined();
             } catch (nullErr) {
               console.info(msg + ' plugin null parameter caused exception (expected):', JSON.stringify(nullErr));
-              expect(true).assertTrue();
             }
 
             // Test with undefined parameter
@@ -930,7 +929,6 @@ export default function sceneTest() {
               expect(loadUndefined).assertUndefined();
             } catch (undefinedErr) {
               console.info(msg + ' plugin undefined parameter caused exception (expected):', JSON.stringify(undefinedErr));
-              expect(true).assertTrue();
             }
           }
           console.info(msg + " test completed successfully");
@@ -1164,7 +1162,6 @@ export default function sceneTest() {
               expect(registerNullProtocol).assertUndefined();
             } catch (nullProtocolErr) {
               console.info(msg + ' null protocol parameter caused exception (expected):', JSON.stringify(nullProtocolErr));
-              expect(true).assertTrue();
             }
 
             // Test with undefined protocol parameter
@@ -1174,7 +1171,6 @@ export default function sceneTest() {
               expect(registerUndefinedProtocol).assertUndefined();
             } catch (undefinedProtocolErr) {
               console.info(msg + ' undefined protocol parameter caused exception (expected):', JSON.stringify(undefinedProtocolErr));
-              expect(true).assertTrue();
             }
 
             // Test with null uri parameter
@@ -1184,7 +1180,6 @@ export default function sceneTest() {
               expect(registerNullUri).assertUndefined();
             } catch (nullUriErr) {
               console.info(msg + ' null uri parameter caused exception (expected):', JSON.stringify(nullUriErr));
-              expect(true).assertTrue();
             }
 
             // Test with undefined uri parameter
@@ -1194,7 +1189,6 @@ export default function sceneTest() {
               expect(registerUndefinedUri).assertUndefined();
             } catch (undefinedUriErr) {
               console.info(msg + ' undefined uri parameter caused exception (expected):', JSON.stringify(undefinedUriErr));
-              expect(true).assertTrue();
             }
 
             // Test with both parameters as null
@@ -1204,7 +1198,6 @@ export default function sceneTest() {
               expect(registerBothNull).assertUndefined();
             } catch (bothNullErr) {
               console.info(msg + ' both null parameters caused exception (expected):', JSON.stringify(bothNullErr));
-              expect(true).assertTrue();
             }
 
             // Test with both parameters as undefined
@@ -1214,7 +1207,6 @@ export default function sceneTest() {
               expect(registerBothUndefined).assertUndefined();
             } catch (bothUndefinedErr) {
               console.info(msg + ' both undefined parameters caused exception (expected):', JSON.stringify(bothUndefinedErr));
-              expect(true).assertTrue();
             }
 
             // Test with both parameters as empty string
