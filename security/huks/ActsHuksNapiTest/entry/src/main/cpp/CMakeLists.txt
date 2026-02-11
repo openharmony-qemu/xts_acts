@@ -1,4 +1,4 @@
-security/huks/ActsHuksNapiTest/entry/src/main/cpp/CMakeLists.txt# the minimum version of CMake.
+# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.5.0)
 project(ActsHuksNapiTest)
 
