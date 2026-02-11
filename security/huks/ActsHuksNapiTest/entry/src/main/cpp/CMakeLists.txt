@@ -33,7 +33,7 @@ add_library(huks SHARED
 )
 
 target_link_libraries(huks PUBLIC
+    libhuks_ndk.z.so
     libace_napi.z.so
     libhilog_ndk.z.so
-    libhuks_ndk.z.so
 )
