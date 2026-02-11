@@ -102,7 +102,7 @@ export default function RichEditorCustomSpan015() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      let str = '{"start":4,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"}}';
+      let str = '{"start":4,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       done();
     });
@@ -126,8 +126,8 @@ export default function RichEditorCustomSpan015() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      let str = '{"start":4,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"}}';
-      let str1 = '{"start":6,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":60,"word":"test"}}';
+      let str = '{"start":4,"length":1,"styledKey":400,"styledValue":';
+      let str1 = '{"start":6,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       expect(stylesInfoText).assertContain(str1);
       done();

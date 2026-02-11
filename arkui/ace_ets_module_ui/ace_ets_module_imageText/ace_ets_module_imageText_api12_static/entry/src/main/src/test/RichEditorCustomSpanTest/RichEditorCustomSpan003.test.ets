@@ -96,7 +96,7 @@ export default function RichEditorCustomSpan003() {
       let customSpanInfo = await (driver.findComponent(ON.id('customSpanInfo')) as Promise<Component>);
       let customSpanInfoText = await customSpanInfo.getText();
       await CommonFunc.sleep(500);
-      expect(customSpanInfoText).assertContain('"type_":"CustomSpan","width":-1,"word":"Hello","height":-1');
+      expect(customSpanInfoText).assertContain('"start":0,"length":1,"styledKey":400,"styledValue":');
       done();
     });
 

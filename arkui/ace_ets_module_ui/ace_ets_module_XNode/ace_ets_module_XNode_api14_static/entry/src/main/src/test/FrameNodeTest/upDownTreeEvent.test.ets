@@ -57,7 +57,7 @@ export default function upDownTreeEventTest() {
         // router.clear();
         let pages = router.getState();
         console.info("get upDownTreeEventTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/FrameNode/upDownTreeEventTest" == pages.name)) {
+        if (!("upDownTreeEventTest" == pages.name)) {
           console.info("get upDownTreeEventTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

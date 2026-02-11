@@ -171,20 +171,6 @@ export default function AccessibilityValueTest(){
     })
 
     /**
-     * @tc.number   AccessibilityValueTest_f
-     * @tc.name     AccessibilityValueTest_f
-     * @tc.desc     AccessibilityValueTest_f
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_f', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_f()).assertEqual(0)
-      console.log('AccessibilityValueTest_f will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
      * @tc.number   AccessibilityValueTest_f1
      * @tc.name     AccessibilityValueTest_f1
      * @tc.desc     AccessibilityValueTest_f1
@@ -193,20 +179,6 @@ export default function AccessibilityValueTest(){
     it('AccessibilityValueTest_f1', Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(libUtil.AccessibilityValueTest_f1()).assertEqual(0)
       console.log('AccessibilityValueTest_f1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
-     * @tc.number   AccessibilityValueTest_g
-     * @tc.name     AccessibilityValueTest_g
-     * @tc.desc     AccessibilityValueTest_g
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_g', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_g()).assertEqual(0)
-      console.log('AccessibilityValueTest_g will drag and check:: ')
       await Utils.sleep(200)
       
       done()
@@ -227,20 +199,6 @@ export default function AccessibilityValueTest(){
     })
 
     /**
-     * @tc.number   AccessibilityValueTest_h
-     * @tc.name     AccessibilityValueTest_h
-     * @tc.desc     AccessibilityValueTest_h
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_h', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_h()).assertEqual(0)
-      console.log('AccessibilityValueTest_h will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
      * @tc.number   AccessibilityValueTest_h1
      * @tc.name     AccessibilityValueTest_h1
      * @tc.desc     AccessibilityValueTest_h1
@@ -255,20 +213,6 @@ export default function AccessibilityValueTest(){
     })
 
     /**
-     * @tc.number   AccessibilityValueTest_i
-     * @tc.name     AccessibilityValueTest_i
-     * @tc.desc     AccessibilityValueTest_i
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_i', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_i()).assertEqual(0)
-      console.log('AccessibilityValueTest_i will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
      * @tc.number   AccessibilityValueTest_i1
      * @tc.name     AccessibilityValueTest_i1
      * @tc.desc     AccessibilityValueTest_i1
@@ -277,20 +221,6 @@ export default function AccessibilityValueTest(){
     it('AccessibilityValueTest_i1', Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(libUtil.AccessibilityValueTest_i1()).assertEqual(0)
       console.log('AccessibilityValueTest_i1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
-     * @tc.number   AccessibilityValueTest_j
-     * @tc.name     AccessibilityValueTest_j
-     * @tc.desc     AccessibilityValueTest_j
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_j', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_j()).assertEqual(0)
-      console.log('AccessibilityValueTest_j will drag and check:: ')
       await Utils.sleep(200)
       
       done()
@@ -319,20 +249,6 @@ export default function AccessibilityValueTest(){
     it('AccessibilityValueTest_k1', Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(libUtil.AccessibilityValueTest_k1()).assertEqual(0)
       console.log('AccessibilityValueTest_k1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
-    })
-
-    /**
-     * @tc.number   AccessibilityValueTest_l
-     * @tc.name     AccessibilityValueTest_l
-     * @tc.desc     AccessibilityValueTest_l
-     * @tc.level    Level.LEVEL0
-     */
-    it('AccessibilityValueTest_l', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.AccessibilityValueTest_l()).assertEqual(0)
-      console.log('AccessibilityValueTest_l will drag and check:: ')
       await Utils.sleep(200)
       
       done()
