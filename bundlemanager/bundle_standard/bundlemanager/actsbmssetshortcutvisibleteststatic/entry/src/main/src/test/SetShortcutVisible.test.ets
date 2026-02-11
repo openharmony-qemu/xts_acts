@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,9 +32,9 @@ export default function setShortcutVisible() {
      * @tc.desc   Obtain the shortcut config data through the get interface to determine if it is correct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let tag = 'Sub_Bms_Framework_shortcutManager_static_001';
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
@@ -79,7 +79,8 @@ export default function setShortcutVisible() {
         await shortcutManager.setShortcutVisibleForSelf('not_exist', false);
         expect().assertFail();
         done();
-      } catch (error : BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         let msg: string = `setShortcutVisibleForSelf(not_exist,false) failed: ${JSON.stringify(error)}`;
         hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
         expect(error.code).assertEqual(17700070);

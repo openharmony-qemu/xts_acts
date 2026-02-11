@@ -74,9 +74,9 @@ export default function webViewControllerJsunit() {
      * @tc.desc   Get the WebId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testGetWebIdStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetWebIdStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       emitKey='emitFetchCookieSync';
       Utils.registerEvent('testGetWebId',6,100,done); //3个Web页面的id之和(6)会根据此用例之前的测试套及用例的运行发生变化

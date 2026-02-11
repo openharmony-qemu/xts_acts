@@ -31,7 +31,7 @@ import {
   FontWeight,
   Axis,
   Margin,DismissReason,DialogAlignment,BorderStyle,CustomDialogControllerOptions,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,DismissDialogAction,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,DismissDialogAction,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,CustomDialog,CustomDialogControllerOptions,CustomDialogController
 } from '@ohos.arkui.component';
 import {

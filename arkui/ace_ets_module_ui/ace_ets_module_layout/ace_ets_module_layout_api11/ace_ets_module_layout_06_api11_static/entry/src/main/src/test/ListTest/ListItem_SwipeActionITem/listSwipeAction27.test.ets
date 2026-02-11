@@ -100,7 +100,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0260', Level.LEVEL0,
       let width = right - left;
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0260 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + bottom - UIContext.resolveUIContext()!.vp2px(20))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),

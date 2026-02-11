@@ -1945,7 +1945,7 @@ export default function IntTest() {
         const caseName = 'IntTest9200'
         console.info(`${caseName}, test start`);
         const a = new Int(2147483647);
-        const b = 2147483647 as short;
+        const b = (2147483647).toShort();
         const result = a.toShort();
         expect(result).assertEqual(b);
         console.info(`${caseName}, test end`);
@@ -1966,7 +1966,7 @@ export default function IntTest() {
         const caseName = 'IntTest9300'
         console.info(`${caseName}, test start`);
         const a = new Int(-2147483648);
-        const b = -2147483648 as short;
+        const b = (-2147483648).toShort();
         const result = a.toShort();
         expect(result).assertEqual(b);
         console.info(`${caseName}, test end`);

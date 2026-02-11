@@ -49,13 +49,13 @@ export default function sceneResourcesTest() {
     let scene0: Scene | null = null;
     let scene1: Scene | null = null;
     let scene2: Scene | null = null;
-    let env: Environment;
-    let anim: Animation;
+    let env: Environment | null = null;
+    let anim: Animation | null = null;
     let envImage1: Image | null = null;
     let envImage2: Image | null = null;
     let envImage3: Image | null = null;
     let radianceImage: Image | null = null;
-    let rf: SceneResourceFactory;
+    let rf: SceneResourceFactory | null = null;
     let rf1: SceneResourceFactory;
     let material: ShaderMaterial | null = null;
     let shader: Shader | null = null;
@@ -83,12 +83,12 @@ export default function sceneResourcesTest() {
         anim = scene0!.animations[0];
         expect(scene0 != null).assertTrue();
         console.info(msg + " Succeed in scene0?.animations[0] ");
-        anim.onStarted(() => {
+        anim?.onStarted(() => {
           console.info(msg + " Succeed in anim.start() ");
           startFlag = true;
         })
-        anim.start();
-        anim.progress;
+        anim?.start();
+        anim?.progress;
         await sleep(200);
         expect(startFlag).assertTrue();
         console.info(msg + " Succeed in onStarted() ");
@@ -133,11 +133,11 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationSeek";
       console.info(msg + ' begin ');
       try {
-        anim.seek(0.3);
-        console.info(msg + " Succeed in anim.seek(0.3) ");
+        anim?.seek(0.3);
+        console.info(msg + " Succeed in anim?.seek(0.3) ");
         done();
       } catch (err) {
-        console.info(msg + " Failed in anim.seek(0.3) " + JSON.stringify(err));
+        console.info(msg + " Failed in anim?.seek(0.3) " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -154,12 +154,12 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationRestart";
       console.info(msg + ' begin ');
       try {
-        anim.restart();
-        console.info(msg + " Succeed in anim.restart() ");
+        anim?.restart();
+        console.info(msg + " Succeed in anim?.restart() ");
         expect(anim!.running).assertTrue();
         done();
       } catch (err) {
-        console.info(msg + " Failed in anim.restart() " + JSON.stringify(err));
+        console.info(msg + " Failed in anim?.restart() " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -176,11 +176,11 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationStop";
       console.info(msg + ' begin ');
       try {
-        anim.restart();
-        expect(anim.running).assertTrue();
+        anim?.restart();
+        expect(anim!.running).assertTrue();
         console.info(msg + " anim is running ");
-        anim.stop();
-        expect(anim.running).assertFalse();
+        anim?.stop();
+        expect(anim!.running).assertFalse();
         console.info(msg + " anim is stopping ");
         done();
       } catch (err) {
@@ -203,14 +203,14 @@ export default function sceneResourcesTest() {
       try {
         await sleep(200);
         let finishFlag = false;
-        anim.onFinished(() => {
+        anim?.onFinished(() => {
           console.info(msg + " Succeed in anim.finish() ");
           finishFlag = true;
         })
-        anim.restart();
-        expect(anim.running).assertTrue();
+        anim?.restart();
+        expect(anim!.running).assertTrue();
         console.info(msg + " anim is running ");
-        anim.finish();
+        anim?.finish();
         await sleep(200);
         expect(finishFlag).assertTrue();
         console.info(msg + " Succeed in onFinished() ");
@@ -233,7 +233,7 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationDuration";
       console.info(msg + ' begin ');
       try {
-        let duration = anim.duration;
+        let duration = anim!.duration;
         expect(duration != 0).assertTrue();
         console.info(msg + " Succeed in anim.duration ");
         done();
@@ -255,10 +255,10 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationEnabled";
       console.info(msg + ' begin ');
       try {
-        anim.start();
-        expect(anim.running).assertTrue();
-        anim.enabled = false;
-        expect(anim.running).assertFalse();
+        anim?.start();
+        expect(anim!.running).assertTrue();
+        anim!.enabled = false;
+        expect(anim!.running).assertFalse();
         console.info(msg + " Succeed in anim.enabled = false ");
         done();
       } catch (err) {
@@ -287,10 +287,10 @@ export default function sceneResourcesTest() {
           rf = scene1!.getResourceFactory();
           env = scene1!.environment;
           let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-          env.indirectDiffuseFactor = vec4;
-          expect(env.indirectDiffuseFactor.y).assertEqual(40);
+          env!.indirectDiffuseFactor = vec4;
+          expect(env!.indirectDiffuseFactor.y).assertEqual(40);
           console.info(msg + " Succeed in env.indirectDiffuseFactor ");
-          let env1 = await rf.createEnvironment({ "name": "Env" });
+          let env1 = await rf!.createEnvironment({ "name": "Env" });
           expect(env1 != null).assertTrue();
           console.info(msg + " Succeed in createEnvironment ");
           done();
@@ -314,8 +314,8 @@ export default function sceneResourcesTest() {
         console.info(msg + ' begin ');
         try {
           let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-          env.indirectSpecularFactor = vec4;
-          expect(env.indirectSpecularFactor.y).assertEqual(40);
+          env!.indirectSpecularFactor = vec4;
+          expect(env!.indirectSpecularFactor.y).assertEqual(40);
           console.info(msg + " Succeed in env.indirectSpecularFactor ");
           done();
         } catch (err) {
@@ -337,8 +337,8 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-        env.environmentMapFactor = vec4;
-        expect(env.environmentMapFactor.y).assertEqual(40);
+        env!.environmentMapFactor = vec4;
+        expect(env!.environmentMapFactor.y).assertEqual(40);
         console.info(msg + " Succeed in env.environmentMapFactor ");
         done();
       } catch (err) {
@@ -360,31 +360,31 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let image1Uri = $rawfile("gltf/Cube/glTF/Cube_BaseColor.png");
-        envImage1 = await rf.createImage({ name: "envImage1", uri: image1Uri });
+        envImage1 = await rf!.createImage({ name: "envImage1", uri: image1Uri });
         expect(envImage1 != undefined).assertTrue();
         console.info(msg + " create envImage1 success ");
         let image2Uri = $rawfile("gltf/Environment/glTF/images/quarry_02_2k_skybox.ktx");
-        envImage2 = await rf.createImage({ name: "envImage2", uri: image2Uri });
+        envImage2 = await rf!.createImage({ name: "envImage2", uri: image2Uri });
         expect(envImage2 != undefined).assertTrue();
         console.info(msg + " create envImage2 success ");
         let image3Uri = $rawfile("gltf/DamagedHelmet/glTF/Default_albedo.jpg");
-        envImage3 = await rf.createImage({ name: "envImage3", uri: image3Uri });
+        envImage3 = await rf!.createImage({ name: "envImage3", uri: image3Uri });
         expect(envImage3 != undefined).assertTrue();
         console.info(msg + " create envImage3 success ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_NONE;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_NONE);
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_NONE;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_NONE);
         console.info(msg + " Succeed in Environment environmentImage set NONE ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_IMAGE;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_IMAGE);
-        env.environmentImage = envImage1;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_IMAGE;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_IMAGE);
+        env!.environmentImage = envImage1;
         console.info(msg + " Succeed in Environment environmentImage set envImage1 IMAGE ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_CUBEMAP);
-        env.environmentImage = envImage2;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_CUBEMAP);
+        env!.environmentImage = envImage2;
         console.info(msg + " Succeed in Environment environmentImage set envImage2 CUBEMAP ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR);
-        env.environmentImage = envImage3;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR);
+        env!.environmentImage = envImage3;
         console.info(msg + " Succeed in Environment environmentImage set envImage3 EQUIRECTANGULAR ");
         done();
       } catch (err) {
@@ -406,14 +406,14 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let imageUri = $rawfile("gltf/Environment/glTF/images/quarry_02_2k_radiance.ktx");
-        radianceImage = await rf.createImage({ name: "radianceImage", uri: imageUri });
+        radianceImage = await rf!.createImage({ name: "radianceImage", uri: imageUri });
         expect(radianceImage != undefined).assertTrue();
         console.info(msg + " create radianceImage success ");
-        env.radianceImage = null;
+        env!.radianceImage = null;
         console.info(msg + " Succeed in Environment radianceImage set null ");
-        env.radianceImage = radianceImage;
-        expect(env.radianceImage!.width).assertEqual(radianceImage!.width);
-        expect(env.radianceImage!.height).assertEqual(radianceImage!.height);
+        env!.radianceImage = radianceImage;
+        expect(env!.radianceImage!.width).assertEqual(radianceImage!.width);
+        expect(env!.radianceImage!.height).assertEqual(radianceImage!.height);
         console.info(msg + " Succeed in Environment radianceImage set radianceImage ");
         radianceImage?.width;
         radianceImage?.height;
@@ -437,7 +437,7 @@ export default function sceneResourcesTest() {
         let msg = "============================testEnvironmentIrradianceCoefficients";
         console.info(msg + ' begin ');
         try {
-          env.irradianceCoefficients =
+          env!.irradianceCoefficients =
             [{ x: GenRandom(), y: GenRandom(), z: GenRandom() },
             { x: GenRandom(), y: GenRandom(), z: GenRandom() },
             { x: GenRandom(), y: GenRandom(), z: GenRandom() },
@@ -528,7 +528,7 @@ export default function sceneResourcesTest() {
       let msg = "============================testSceneResourceType";
       console.info(msg + ' begin ');
       try {
-        node = await rf.createNode({ name: "createNode" });
+        node = await rf!.createNode({ name: "createNode" });
         console.info(msg + " shader?.resourceType: " + JSON.stringify(shader?.resourceType));
         expect(shader?.resourceType).assertEqual(SceneResourceType.SHADER);
         console.info(msg + " node?.resourceType: " + JSON.stringify(node?.resourceType));
@@ -620,7 +620,7 @@ export default function sceneResourcesTest() {
           expect(scene0 != undefined).assertTrue();
           console.info(msg + " get scene0 success ");
           rf = scene0!.getResourceFactory();
-          let material = await rf.createMaterial({ name: 'metalMat' }, MaterialType.METALLIC_ROUGHNESS);
+          let material = await rf!.createMaterial({ name: 'metalMat' }, MaterialType.METALLIC_ROUGHNESS);
           expect(MaterialType.METALLIC_ROUGHNESS).assertEqual(2);
           expect(material != null).assertTrue();
           expect(material.materialType).assertEqual(MaterialType.METALLIC_ROUGHNESS);
@@ -666,7 +666,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'testCullModeMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'testCullModeMat' }, MaterialType.METALLIC_ROUGHNESS);
         expect(material != null).assertTrue();
 
         material.cullMode = CullMode.NONE;
@@ -754,7 +754,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'renderSortTestMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'renderSortTestMat' }, MaterialType.METALLIC_ROUGHNESS);
         console.info(msg, 'material created:', material !== null);
         expect(material != null).assertTrue();
 
@@ -799,7 +799,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'fullFeatureMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'fullFeatureMat' }, MaterialType.METALLIC_ROUGHNESS);
         expect(material != null).assertTrue();
         expect(material.materialType).assertEqual(MaterialType.METALLIC_ROUGHNESS);
 

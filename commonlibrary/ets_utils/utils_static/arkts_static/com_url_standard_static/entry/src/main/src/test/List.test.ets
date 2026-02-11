@@ -18,8 +18,8 @@ import urlTest2 from "./url/Url2.test";
 import urlTest3 from "./url/Emoji_Url.test.ets";
 import urlTest4 from "./url/Escape_Url.test.ets";
 export default function testsuite() {
-    //urlTest1();
+    urlTest1();
     urlTest2();
-    //urlTest3();
-   // urlTest4();
+    urlTest3();
+    urlTest4();
 }

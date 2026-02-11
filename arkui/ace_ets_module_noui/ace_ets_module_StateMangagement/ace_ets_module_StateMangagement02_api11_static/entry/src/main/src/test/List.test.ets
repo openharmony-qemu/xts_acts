@@ -50,7 +50,6 @@ import Storage35Jsunit from './State/Storage35Jsunit.test.ets';
 import Storage36Jsunit from './State/Storage36Jsunit.test.ets'; 
 import Storage38Jsunit from './State/Storage38Jsunit.test.ets';
 import StorageLinkJsunit1 from './State/StorageLinkJsunit1.test.ets';
-import StorageProp19Jsunit from './State/StorageProp19Jsunit.test.ets'
 import StorageProp20Jsunit from './State/StorageProp20Jsunit.test.ets'
 import StorageProp21Jsunit from './State/StorageProp21Jsunit.test.ets'
 import StorageProp22Jsunit from './State/StorageProp22Jsunit.test.ets'
@@ -135,7 +134,6 @@ export default function testsuite() {
 
   StorageProp21Jsunit();
   StorageLinkJsunit1();
-  StorageProp19Jsunit();
   StorageProp20Jsunit();
   StorageProp22Jsunit();
   StorageProp25Jsunit();

@@ -81,7 +81,7 @@ struct PixelMapColorFilter {
     let createPixelMap: image.PixelMap = imageSource?.createPixelMapSync({
       desiredPixelFormat: image.PixelMapFormat.RGBA_8888
     })!
-    await (imageSource?.release() as Promise<void>)
+    waitForCompletion(async ()=>{await (imageSource?.release() as Promise<void>)})
     return createPixelMap
   }
 

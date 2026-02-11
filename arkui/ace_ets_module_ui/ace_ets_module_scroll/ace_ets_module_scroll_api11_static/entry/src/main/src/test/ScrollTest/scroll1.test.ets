@@ -250,7 +250,7 @@ it('testscrollOnScrollBegin0008_static_08', Level.LEVEL0, async () => {
         }
         console.info("[testscrollOnScrollBegin0008_static_08] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testscrollOnScrollBegin0008_static_08] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

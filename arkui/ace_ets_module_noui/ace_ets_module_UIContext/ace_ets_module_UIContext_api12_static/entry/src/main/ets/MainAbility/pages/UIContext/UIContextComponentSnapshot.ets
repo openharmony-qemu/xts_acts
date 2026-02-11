@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ struct UIContextComponentSnapshot{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code = error!.code.toString()
               }
             }).height('5%')
@@ -58,7 +58,7 @@ struct UIContextComponentSnapshot{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('1',{scale:1,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code1 = error!.code.toString()
               }
             }).height('5%')
@@ -68,7 +68,7 @@ struct UIContextComponentSnapshot{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-2',{scale:4,waitUntilRenderFinished:false});
                 this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code2 = error!.code.toString()
               }
             }).height('5%')
@@ -78,7 +78,7 @@ struct UIContextComponentSnapshot{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code3 = error!.code.toString()
               }
             }).height('5%')

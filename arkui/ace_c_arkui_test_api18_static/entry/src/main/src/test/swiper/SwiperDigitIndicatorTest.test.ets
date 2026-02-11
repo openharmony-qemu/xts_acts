@@ -26,7 +26,7 @@ const libUtil: LibUtil = new LibUtil();
 export default function swiperDigitIndicatorTest() {
 
   describe('swiperDigitIndicatorTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

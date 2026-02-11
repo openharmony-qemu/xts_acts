@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,9 +48,9 @@ export default function changeDatetest() {
         cloudSync.registerChange(uri, false, onCallback1);
         cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_001 has failed for ' + e.message + ', code: ' + e.code)
-        expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+        expect((e as BusinessError).code == 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
       }
     });
 
@@ -74,10 +74,10 @@ export default function changeDatetest() {
         cloudSync.unregisterChange(uri);
         fs.rmdirSync(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_002 has failed for ' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
-        expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+        expect((e as BusinessError).code == 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
       }
     });
 
@@ -105,9 +105,9 @@ export default function changeDatetest() {
         cloudSync.registerChange(uri, false, onCallback1);
         cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_003 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+        expect((e as BusinessError).code == 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
       }
     });
 

@@ -123,7 +123,7 @@ it('testZIndex_static_02', Level.LEVEL0, async () => {
         }
         console.info("[testZIndex02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -157,7 +157,7 @@ it('testZIndex_static_03', Level.LEVEL0, async () => {
         console.info("[testZIndex03] start to publish emit");
         emitter.emit(innerEvent, eventData);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -190,7 +190,7 @@ it('testZIndex_static_04', Level.LEVEL0, async () => {
         }
         console.info("[testZIndex04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

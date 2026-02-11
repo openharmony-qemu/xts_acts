@@ -15,6 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
 import Log from '../../common/Log';
 import {
   Alignment,
@@ -22,7 +23,6 @@ import {
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -135,7 +135,7 @@ struct PanelBackgroundMask {
               }
               console.info("onHeightChange start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("testpanelOnHeightChange0002 emit action state err: " +
               JSON.stringify((err as Error)?.message))
             }

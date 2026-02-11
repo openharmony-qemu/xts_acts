@@ -184,13 +184,10 @@ it('TextPickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
 it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_static_0400] START');
-  AppStorage.setOrCreate<string>('fruits','abc')
-      await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<string>('select','test')
-      await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<int>('parameterValue',123)
-      await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<string>('defaultPickerItemHeight','abc')
+    AppStorage.setOrCreate<string>('fruits','abc')
+    AppStorage.setOrCreate<string>('select','test')
+    AppStorage.setOrCreate<int>('parameterValue',123)
+     AppStorage.setOrCreate<string>('defaultPickerItemHeight','abc')
       await CommonFunc.sleep(1000);
 
       // Get the attribute of TextPicker component

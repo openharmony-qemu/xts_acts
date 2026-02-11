@@ -147,7 +147,7 @@ it('testOverlay_static_02', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -186,7 +186,7 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay03] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -238,7 +238,7 @@ it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -277,7 +277,7 @@ it('testOverlay_static_05', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay05] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -317,7 +317,7 @@ it('testOverlay_static_06', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay06] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -363,7 +363,7 @@ it('testOverlay_static_07', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay07] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -403,7 +403,7 @@ it('testOverlay_static_08', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("[testOverlay08] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

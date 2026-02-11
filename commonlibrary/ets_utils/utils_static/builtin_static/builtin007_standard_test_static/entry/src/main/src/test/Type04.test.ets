@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -478,7 +478,7 @@ export default function type_04Test() {
         const input = null;
         const type = Type.of(input);
         expect(type.toString()).assertEqual(String(null));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -498,7 +498,7 @@ export default function type_04Test() {
         const input = undefined;
         const type = Type.of(input);
         expect(type.toString()).assertEqual(String(undefined));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -518,7 +518,7 @@ export default function type_04Test() {
         const input: double = 3.14;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('double');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -538,7 +538,7 @@ export default function type_04Test() {
         const input: FixedArray<double> = [3.14, 1.59, 2.71, 0.618, 1.414];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('double[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -559,7 +559,7 @@ export default function type_04Test() {
         const input: FixedArray<int> = [500, 300, 900, 200];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('int[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -579,7 +579,7 @@ export default function type_04Test() {
         const input: long = 9223372036854775807;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('long');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -599,7 +599,7 @@ export default function type_04Test() {
         const input: FixedArray<long> = [-9223372036854775808, 0, 9223372036854775807];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('long[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -619,7 +619,7 @@ export default function type_04Test() {
         const input: short = 5;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('short');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -639,7 +639,7 @@ export default function type_04Test() {
         const input: FixedArray<short> = [5, 3, 9, 2];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('short[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -659,7 +659,7 @@ export default function type_04Test() {
         const input: boolean = true;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -679,7 +679,7 @@ export default function type_04Test() {
         const input: boolean = false;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -699,7 +699,7 @@ export default function type_04Test() {
         const input: string = "ArkTS Type Test";
         const type = Type.of(input);
         expect(type.toString()).assertEqual('string');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -719,7 +719,7 @@ export default function type_04Test() {
         const input: string = "";
         const type = Type.of(input);
         expect(type.toString()).assertEqual('string');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -739,7 +739,7 @@ export default function type_04Test() {
         const input: FixedArray<boolean> = [true, false, true];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -759,7 +759,7 @@ export default function type_04Test() {
         const input: FixedArray<byte> = [60, -38, -128];
         const type = Type.of(input);
         expect(type.toString()).assertEqual("byte[]");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -779,7 +779,7 @@ export default function type_04Test() {
         const input: byte = 65;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('byte');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -799,7 +799,7 @@ export default function type_04Test() {
         const input: byte = -35;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('byte');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -820,7 +820,7 @@ export default function type_04Test() {
         const input: FixedArray<Object> = [new TestObject(1), new TestObject(2)];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('std.core.Object[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -840,7 +840,7 @@ export default function type_04Test() {
       try {
         const type = Type.of(127 as byte) as ByteType;
         expect(type.toString()).assertEqual(type.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -861,7 +861,7 @@ export default function type_04Test() {
         const input: FixedArray<boolean> = [true, false];
         const type = Type.of(input) as ArrayType;
         expect(type.toString()).assertEqual(type.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -881,7 +881,7 @@ export default function type_04Test() {
         const testObj = new TestClass("TestClass");
         const type = Type.of(testObj) as ClassType;
         expect(type.toString()).assertEqual(type.getName());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -903,7 +903,7 @@ export default function type_04Test() {
         const expected: boolean = intType.assignableFrom(byteType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -925,7 +925,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(intType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -946,7 +946,7 @@ export default function type_04Test() {
         const expected: boolean = longType.assignableFrom(longType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -968,7 +968,7 @@ export default function type_04Test() {
         const expected: boolean = parentType.assignableFrom(childType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -990,7 +990,7 @@ export default function type_04Test() {
         const expected: boolean = interfaceType.assignableFrom(implType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1012,7 +1012,7 @@ export default function type_04Test() {
         const expected: boolean = intType.assignableFrom(boolType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1034,7 +1034,7 @@ export default function type_04Test() {
         const expected: boolean = parentType.assignableFrom(stringType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1056,7 +1056,7 @@ export default function type_04Test() {
         const expected: boolean = objectType.assignableFrom(nullType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1078,7 +1078,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(undefinedType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1100,7 +1100,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(floatType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1123,7 +1123,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(BooleanType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1145,7 +1145,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(ByteType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1167,7 +1167,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(CharType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1189,7 +1189,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(ShortType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1211,7 +1211,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(IntType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1233,7 +1233,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(LongType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1255,7 +1255,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(FloatType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1277,7 +1277,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(DoubleType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1302,7 +1302,7 @@ export default function type_04Test() {
 
         expect(result.isPrimitive()).assertTrue();
         expect(result.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1324,7 +1324,7 @@ export default function type_04Test() {
         const type = Type.of(input);
         Type.toRefType(type);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual("type  is not primitive type");
       }
@@ -1346,7 +1346,7 @@ export default function type_04Test() {
         let result = Type.toRefType(type);
         expect(result.isPrimitive()).assertTrue();
         expect(result.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1369,7 +1369,7 @@ export default function type_04Test() {
         let type: LambdaType = Type.of(addNumbers) as LambdaType;
         let result = type.getLiteral();
         expect(result).assertEqual('(1: double, 2: double): double');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1400,7 +1400,7 @@ export default function type_04Test() {
         const expected: number = 8;
         const result: number = (madeObject as (a: number, b: number) => number)(5, 3);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1431,7 +1431,7 @@ export default function type_04Test() {
         const expected: string = "Hello World";
         const result: string = (madeObject as (s1: string, s2: string) => string)("Hello", "World");
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1466,7 +1466,7 @@ export default function type_04Test() {
         expected = false;
         result = (madeObject as (a: number, b: number) => boolean)(3, 7);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1498,7 +1498,7 @@ export default function type_04Test() {
         const expected: string = "Default message";
         const result: string = (madeObject as () => string)();
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1531,7 +1531,7 @@ export default function type_04Test() {
         const expected: number = 10;
         const result: number = (madeObject as (value: number) => number)(5);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1564,7 +1564,7 @@ export default function type_04Test() {
         const expected: string = "Hello, my name is Alice and I'm 30 years old";
         const result: string = (madeObject as (p: Person) => string)(testPerson);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1592,7 +1592,7 @@ export default function type_04Test() {
         const expected: boolean = true;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1620,7 +1620,7 @@ export default function type_04Test() {
         const expected: boolean = false;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1646,7 +1646,7 @@ export default function type_04Test() {
         const expected: boolean = false;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1674,7 +1674,7 @@ export default function type_04Test() {
         const expected: boolean = true;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1702,7 +1702,7 @@ export default function type_04Test() {
         const expected: boolean = false;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1730,7 +1730,7 @@ export default function type_04Test() {
         const expected: boolean = true;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1758,7 +1758,7 @@ export default function type_04Test() {
         const expected: boolean = false;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1783,7 +1783,7 @@ export default function type_04Test() {
         const expected: boolean = true;
         const result: boolean = lambdaType1.assignableFrom(lambdaType2);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1808,7 +1808,7 @@ export default function type_04Test() {
         const expected: boolean = false;
         const result: boolean = lambdaType.assignableFrom(otherType);
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1832,7 +1832,7 @@ export default function type_04Test() {
         let expected: long = 0;
         expect(result).assertEqual(expected);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1855,7 +1855,7 @@ export default function type_04Test() {
         const parameter = functionType.getParameter(0);
         expect(parameter !== null).assertTrue();
 
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1877,7 +1877,7 @@ export default function type_04Test() {
         const resultType: Type = functionType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getLiteral()).assertEqual("string");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1899,7 +1899,7 @@ export default function type_04Test() {
         const resultType: Type = functionType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1921,7 +1921,7 @@ export default function type_04Test() {
         const resultType: Type = functionType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1942,7 +1942,7 @@ export default function type_04Test() {
         const resultType: Type = functionType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getName()).assertEqual("void");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1966,7 +1966,7 @@ export default function type_04Test() {
         const resultType: Type = lambdaType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1986,7 +1986,7 @@ export default function type_04Test() {
         const functionType: FunctionType = Type.of(noParamFunction) as FunctionType;
         const result: number = functionType.getParametersNum();
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2006,7 +2006,7 @@ export default function type_04Test() {
         const functionType: FunctionType = Type.of(oneParamFunction) as FunctionType;
         const result: number = functionType.getParametersNum();
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2026,7 +2026,7 @@ export default function type_04Test() {
         const functionType: FunctionType = Type.of(twoParamsFunction) as FunctionType;
         const result: number = functionType.getParametersNum();
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2046,7 +2046,7 @@ export default function type_04Test() {
         const functionType: FunctionType = Type.of(threeParamsFunction) as FunctionType;
         const result: number = functionType.getParametersNum();
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }

@@ -67,6 +67,10 @@ export default function toolTest() {
         if (color1) {
           expect(color1 != null).assertTrue();
         }
+        if(color1 == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
@@ -79,6 +83,10 @@ export default function toolTest() {
         if (color2) {
           expect(color2 != null).assertTrue();
         }
+        if(color2 == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor 0xff0000 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -89,6 +97,10 @@ export default function toolTest() {
         console.info(msg + ' makeColorFromResourceColor 0x5500ff00 successed');
         if (color3) {
           expect(color3 != null).assertTrue();
+        }
+        if(color3 == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -102,6 +114,10 @@ export default function toolTest() {
         if (color4) {
           expect(color4 != null).assertTrue();
         }
+        if(color4 == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #0223fa errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -112,6 +128,10 @@ export default function toolTest() {
         console.info(msg + ' makeColorFromResourceColor #ffaca5e5 successed');
         if (color5) {
           expect(color5 != null).assertTrue();
+        }
+        if(color5 == undefined){
+          console.info(msg + ' 5 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -125,6 +145,10 @@ export default function toolTest() {
         if (color6) {
           expect(color6 != null).assertTrue();
         }
+        if(color6 == undefined){
+          console.info(msg + ' 6 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #1f0 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -135,6 +159,10 @@ export default function toolTest() {
         console.info(msg + ' makeColorFromResourceColor #5ff0 successed');
         if (color7) {
           expect(color7 != null).assertTrue();
+        }
+        if(color7 == undefined){
+          console.info(msg + ' 7 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -147,6 +175,10 @@ export default function toolTest() {
         if (color8) {
           expect(color8 != null).assertTrue();
         }
+        if(color8 == undefined){
+          console.info(msg + ' 8 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
@@ -158,6 +190,10 @@ export default function toolTest() {
         console.info(msg + ' makeColorFromResourceColor rgba(255, 100, 255, 0.20) successed');
         if (color9) {
           expect(color9 != null).assertTrue();
+        }
+        if(color9 == undefined){
+          console.info(msg + ' 9 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -172,6 +208,10 @@ export default function toolTest() {
         if (color10) {
           expect(color10 != null).assertTrue();
         }
+        if(color10 == undefined){
+          console.info(msg + ' 10 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg +
@@ -184,6 +224,10 @@ export default function toolTest() {
         console.info(msg + ' makeColorFromResourceColor app.color.appColorTest1 successed');
         if (color11) {
           expect(color11 != null).assertTrue();
+        }
+        if(color11 == undefined){
+          console.info(msg + ' 11 test failed');
+          expect().assertFail();
         }
       } catch (e) {
         e = e as BusinessError;

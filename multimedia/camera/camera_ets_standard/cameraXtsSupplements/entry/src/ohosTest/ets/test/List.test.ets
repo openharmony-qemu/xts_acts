@@ -34,6 +34,14 @@ import cameraEnumTestSupp from './camera/CameraEnum.test';
 import CameraAPIEnumSupplementTest from "./camera/CameraAPIEnumSupplement.test";
 import cameraAddMetadataObjectSuppTest from './camera/CameraMetadataOutputErrCode.test';
 import CameraSessionSuppTest from './camera/CameraSessionWhiteBalanceTest.test';
+import CameraManagerGetCameraDevicesTest from './camera/CameraManagerGetCameraDevicesTest.test';
+import CameraManagerCreateMetadataOutputTest from './camera/CameraManagerCreateMetadataOutputTest.test';
+import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhotoOutputTest.test';
+import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
+import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
+import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
+import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
+
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -71,4 +79,11 @@ export default function testsuite() {
   CameraAPIEnumSupplementTest();
   cameraAddMetadataObjectSuppTest();
   CameraSessionSuppTest();
+  CameraManagerGetCameraDevicesTest();
+  CameraManagerCreateMetadataOutputTest();
+  CameraManagerCreatePhotoOutputTest();
+  CameraManagerCreateVideoOutputTest();
+  CameraManagerGetSupportedOutputCapabilityTest();
+  CameraInputOnerrorTest();
+  createCameraInput();
 }

@@ -69,6 +69,7 @@ import TextAreaEnableSelectedDataDetectorTest from './TextAreaApi22Test/TextArea
 import TextAreaSetStyledPlaceholderTest from './TextAreaApi22Test/TextAreaSetStyledPlaceholder.test';
 import TextAreaOnWillAttachIMETest from './TextAreaApi22Test/TextAreaOnWillAttachIME.test';
 import TextAreaTextDirectionTest from './TextAreaApi23Test/TextAreaTextDirection.test';
+import TextAreaSpecialAttrsTest from './TextAreaTest/TextAreaSpecialAttrs.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -187,6 +188,7 @@ export default function testsuite() {
   TextAreaSetStyledPlaceholderTest()
   TextAreaOnWillAttachIMETest()
   TextAreaTextDirectionTest()     // Api23
+  TextAreaSpecialAttrsTest()
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ function eccKeyAgreement(algName: string,
     let secret: cryptoFramework.DataBlob = agreeObj.generateSecretSync(priKey, pubKey);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`eccKeyAgreement “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -50,7 +50,7 @@ async function generateKey(algName: string): Promise<cryptoFramework.KeyPair> {
     let keyPair: cryptoFramework.KeyPair = await keyObj.generateKeyPair();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

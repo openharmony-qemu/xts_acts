@@ -117,6 +117,7 @@ export default function actsWifiManagerEventTest() {
                     passphrase : "12345678",
                     groupName : "DIRECT-AAAZZZ456",
                     goBand : wifiMg.GroupOwnerBand.GO_BAND_AUTO,
+                    goFreq:2400,
                 };
                 let connectResult = wifiMg.p2pConnect(wifiP2PConfig);
                 let p2pCancelResult = wifiMg.p2pCancelConnect();

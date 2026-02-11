@@ -921,7 +921,7 @@ struct ZIndexPage {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

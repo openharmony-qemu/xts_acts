@@ -15,7 +15,7 @@
  */
 import image from '@ohos.multimedia.image'
 import {
-  Entry,Uint8Array,
+  Entry,
   Component,
   Column,
   ColumnOptions,
@@ -58,7 +58,7 @@ struct imageAddApi2 {
 
   build() {
     Column() {
-      Image($r('app.media.icon'), this.options)
+      Image(this.imagePixelMap, this.options)
         .enableAnalyzer(true)
         .width(200)
         .height(200)

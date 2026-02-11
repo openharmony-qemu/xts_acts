@@ -197,6 +197,7 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
 import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
 import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
 import ImageGPSDest from './image/ImageGPSDest.test';
@@ -220,7 +221,9 @@ import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import ImagePictureTest from './image/ImagePictureTest.test';
 
+import CrateImageSupp from './image/CreateImageTest.test';
 
 
 export default function testsuite() {
@@ -405,28 +408,31 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  imageCreateCroppedAndScaledPixelMap();
   ImageBodySerialNumber();
   ImageCameraOwnerName();
   ImageGPSDest();
   ImageSourceLensMakeSupp();
-  ImageSourceLensModelSupp()
+  ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
-  ImageGammaSupp();
+  ImagePictureMetadataTest();
+  MultimediaImageTest();
+  ImageExifMetadataTestSupp();
   PicturePackDataFirTestSupp();
   PicturePackDataThrTestSupp();
   PicturePackingPictureTestSupp();
   PicturePackingPictureSecTestSupp();
   ImageSourceModifyImagePropertySupp();
   ImageGammaSupp()
-  ImagePictureMetadataTest()
-  MultimediaImageTest()
-  ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
+  ImagePictureTest();
+
+  CrateImageSupp();
 }

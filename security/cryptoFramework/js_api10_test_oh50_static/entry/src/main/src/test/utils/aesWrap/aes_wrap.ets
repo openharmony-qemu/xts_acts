@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ export async function JsAesWrapPromise(algName: string, mode: cryptoFramework.Cr
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('JsAesWrapEncryptPromise, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -60,7 +60,7 @@ export function JsAesWrapSync(algName: string, mode:cryptoFramework.CryptoMode, 
     } else {
       return {data: new Uint8Array()} as cryptoFramework.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('JsAesWrapEncryptSync, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -89,7 +89,7 @@ export async function JsAesWrapCallback(algName: string, mode:cryptoFramework.Cr
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('JsAesWrapEncryptCallback, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -101,7 +101,7 @@ export async function JsGenSymKey(algName: string): Promise<cryptoFramework.SymK
     let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('genSymKey, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -114,7 +114,7 @@ export async function JsConvertSymKey(algName: string,
     let symKey: cryptoFramework.SymKey = await generate.convertKey(keyData);
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('JsConvertSymKey, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

@@ -632,7 +632,7 @@ export default function SetSymbolIteratorTest() {
       arr[0] = 3;
       arr[1] = 1;
       arr[2] = 2;
-      const sorted = arr.sort((a, b) => a - b);
+      const sorted = arr.sort((a, b) => (a - b).toInt());
       expect(sorted[0]).assertEqual(1);
       expect(sorted[2]).assertEqual(3);
     });

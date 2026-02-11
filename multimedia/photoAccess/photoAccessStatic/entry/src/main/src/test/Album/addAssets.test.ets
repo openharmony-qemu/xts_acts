@@ -46,12 +46,12 @@ export default function addAssetsTest() {
         const testNum = 'addAssets_promise_static_004';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album)
           albumChangeRequest.addAssets([]);
-          await helper.applyChanges(albumChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(albumChangeRequest);
           expect(false).assertTrue();
           done();
         } catch (error) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function fileIODup() {
         fs.closeSync(file);
         fs.closeSync(newFile);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -78,7 +78,8 @@ export default function fileIODup() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.writeSync(newFile.fd, FILE_CONTENT);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -106,7 +107,8 @@ export default function fileIODup() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         fs.readSync(newFile.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -126,7 +128,8 @@ export default function fileIODup() {
       try {
         fs.dup(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -151,9 +154,40 @@ export default function fileIODup() {
         let newFile = fs.dup(fd);
         fs.writeSync(newFile.fd, new ArrayBuffer(20));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_005 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_dup_sync_static_006
+     * @tc.number SUB_DF_FILEIO_DUP_SYNC_0600
+     * @tc.desc   Test dup() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_dup_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_dup_sync_static_006');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+        let newFile = fs.dup(file.fd);
+        expect(await Utils.isIntNum(newFile.fd)).assertTrue();
+        let bytesWritten = fs.writeSync(newFile.fd, new ArrayBuffer(20));
+        expect(bytesWritten == 20).assertTrue();
+        let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
+        expect(readlen == 0).assertTrue();
+        fs.closeSync(file);
+        fs.closeSync(newFile);
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_006 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
       }
     });
   });

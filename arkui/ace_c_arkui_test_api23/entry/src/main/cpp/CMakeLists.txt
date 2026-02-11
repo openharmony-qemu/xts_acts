@@ -55,6 +55,7 @@ add_library(nativefunc SHARED
     containerPicker/ContainerPickerSelectionIndicatorTest.cpp
     containerPicker/ContainerPickerSubComponentTest.cpp
     TextMarqueeOptions/TextMarqueeOptionsTest.cpp
+    TextMarqueeOptions/ControllerBaseCreatTest.cpp
     image/ImageAntialiasedTest.cpp
 )
 

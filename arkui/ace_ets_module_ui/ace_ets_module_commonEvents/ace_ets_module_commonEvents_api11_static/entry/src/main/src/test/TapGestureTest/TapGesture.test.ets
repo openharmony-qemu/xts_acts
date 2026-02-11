@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -124,7 +124,7 @@ it('testTapGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<v
       }
       try {
         emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testTapGesture01] on emitter err : " + JSON.stringify(err));
       }
       console.info('testTapGesture01 sendTouchEvent one:' + sendTouchEvent(point));

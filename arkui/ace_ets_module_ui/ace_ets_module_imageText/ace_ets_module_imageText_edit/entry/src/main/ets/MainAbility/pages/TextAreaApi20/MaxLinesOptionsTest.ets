@@ -46,11 +46,18 @@ struct MaxLinesOptionsTest {
         .fontSize(10)
         .textOverflow(TextOverflow.Clip)
         .id('TextAreaMaxLinesModeUndefined')
-      TextArea({text:this.testText})
-        .maxLines(-1,{overflowMode:undefined})
-        .fontSize(10)
-        .textOverflow(TextOverflow.Clip)
-        .id('TextAreaMaxLinesNegative')
+      Row(){
+        TextArea({text:this.testText})
+          .maxLines(-1)
+          .fontSize(10)
+          .textOverflow(TextOverflow.Clip)
+          .id('TextAreaMaxLinesNegative').width('50%')
+        TextArea({text:this.testText})
+          .maxLines(0)
+          .fontSize(10)
+          .textOverflow(TextOverflow.Clip)
+          .id('TextAreaMaxLinesZero').width('50%')
+      }
     }
   }
 }

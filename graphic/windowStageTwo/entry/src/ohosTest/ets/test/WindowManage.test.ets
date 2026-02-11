@@ -662,7 +662,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(false).then(() => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
@@ -698,7 +698,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(true).then(async () => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           await windowClass.setWindowTopmost(false)
           await subWindowClass.destroyWindow();
           done();

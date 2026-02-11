@@ -32,6 +32,7 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, StorageLink, AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 const TAG = 'ets_apiLack_add';
 
@@ -40,7 +41,7 @@ const TAG = 'ets_apiLack_add';
 struct MediaQueryOff {
   @State color: string = '#000'
   @State text: string = 'Test'
-  listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)')
+  listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)');
   @StorageLink('result') result: boolean = true;
 
   onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {

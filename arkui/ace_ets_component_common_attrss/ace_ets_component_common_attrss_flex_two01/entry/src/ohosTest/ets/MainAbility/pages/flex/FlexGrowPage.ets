@@ -55,6 +55,7 @@ struct FlexGrowPage {
 
   @Styles commonStyle(){
     .margin(0)
+    .padding(0)
     .flexGrow(this._flexGrow)
     .width(this.targetWidth)
     .height(this.targetHeight)

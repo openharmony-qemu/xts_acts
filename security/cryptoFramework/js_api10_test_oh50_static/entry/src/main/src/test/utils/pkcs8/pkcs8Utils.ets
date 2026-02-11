@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ async function generateRfc5915KeyPair(algName: string): Promise<cryptoFramework.
     let keyPair: cryptoFramework.KeyPair = await cipher.generateKeyPair();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateRfc5915KeyPair “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -45,7 +45,7 @@ async function generateRfc5915KeyPairEncoded(algName: string): Promise<dataKeyPa
     let convertPriKey: cryptoFramework.DataBlob = keyPair.priKey.getEncoded();
 
     return {dataPubKey: convertPubKey, dataPriKey: convertPriKey} as dataKeyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateRfc5915KeyPairEncoded “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -57,7 +57,7 @@ async function convertDataKeyPairToKeyPair(algName: string, data: dataKeyPair): 
     let keyPair: cryptoFramework.KeyPair = await cipher.convertKey(data.dataPubKey, data.dataPriKey);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertDataKeyPairToKeyPair “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -69,7 +69,7 @@ async function generateRfc5208KeyPair(algName: string, dataKeyPair: dataKeyPair)
     let keyPair: cryptoFramework.KeyPair = await cipher.convertKey(dataKeyPair.dataPubKey, dataKeyPair.dataPriKey);
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateRfc5208KeyPair “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -80,7 +80,7 @@ function generatePriKeyDerData(keyPair: cryptoFramework.KeyPair): cryptoFramewor
     let dataPriKey = keyPair.priKey.getEncodedDer("PKCS8");
 
     return dataPriKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateDerData “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

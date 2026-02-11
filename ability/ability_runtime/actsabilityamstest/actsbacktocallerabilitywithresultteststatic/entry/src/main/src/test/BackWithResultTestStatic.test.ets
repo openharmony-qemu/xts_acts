@@ -56,9 +56,9 @@ export default function BackWithResultStaticTest() {
      * @tc.desc   Test backToCallerAbleWithResult when requestCode is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_static_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackWithResult_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_BackWithResult_static_2900`;
       hilog.info(domain, tag, `it begin`);
       let requestCode: string = '23124asjdja';

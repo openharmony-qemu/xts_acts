@@ -93,7 +93,7 @@ export default function ohosMatrix4Jsunit() {
           // console.info("push ohosMatrix4 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push ohosMatrix4  page error:" + err);
       }
 
@@ -188,7 +188,7 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[test_OhosMatrix4_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -220,7 +220,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err:Error) {
+      } catch (err) {
         console.info("[test_OhosMatrix4_005] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_OhosMatrix4_005] sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));
@@ -256,7 +256,7 @@ it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_006] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[test_OhosMatrix4_006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 // let uiContext = new UIContext()
 export default function BindSheetTest() {
   describe('BindSheetTest', () => {
-    await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")})
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");

@@ -42,6 +42,7 @@ import ResourceNormalTest from './ResourceNormal.test';
 import TextAddApi1 from './TextAddApi1.test';
 import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
+import CustomKeyboardContinueTest from './CustomKeyboardContinueTest.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
@@ -103,4 +104,5 @@ export default function testsuite() {
   TextInputDelete();
   SelectedDragPreviewStyleTest();
   SetTextSelectionTest()
+  CustomKeyboardContinueTest();
 }

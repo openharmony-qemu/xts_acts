@@ -51,7 +51,7 @@ export default function sceneNodeTest() {
     let scene1: Scene | null = null;
     let node: Node | null = null;
     let geom: Geometry | null = null;
-    let rf: SceneResourceFactory;
+    let rf: SceneResourceFactory | null = null;
     let cam: Camera | null = null;
     let lig: Light | null = null;
     let spotLight: SpotLight;
@@ -379,7 +379,7 @@ export default function sceneNodeTest() {
         console.info(msg + " scene is not null ");
         if (scene) {
           rf = scene!.getResourceFactory();
-          cam = await rf.createCamera({ name: "Camera1" });
+          cam = await rf!.createCamera({ name: "Camera1" });
         }
         expect(cam != null).assertTrue();
         console.info(msg + " cam is not null ");
@@ -554,7 +554,7 @@ export default function sceneNodeTest() {
       let msg = "============================testLightColor";
       console.info(msg + ' begin ');
       try {
-        lig = await rf.createLight({ name: "Light" }, LightType.DIRECTIONAL);
+        lig = await rf!.createLight({ name: "Light" }, LightType.DIRECTIONAL);
         expect(lig != null).assertTrue();
         console.info(msg + " lig is not null ");
         if (lig) {
@@ -639,10 +639,10 @@ export default function sceneNodeTest() {
       let msg = "============================testLightType";
       console.info(msg + ' begin ');
       try {
-        directionalLight = await rf.createLight({ name: "Light1" }, LightType.DIRECTIONAL) as DirectionalLight;
+        directionalLight = await rf!.createLight({ name: "Light1" }, LightType.DIRECTIONAL) as DirectionalLight;
         expect(directionalLight.lightType).assertEqual(LightType.DIRECTIONAL);
         console.info(msg + " Succeed in createLight LightType.DIRECTIONAL ");
-        spotLight = await rf.createLight({ name: "Light2" }, LightType.SPOT) as SpotLight;
+        spotLight = await rf!.createLight({ name: "Light2" }, LightType.SPOT) as SpotLight;
         expect(spotLight.lightType).assertEqual(LightType.SPOT);
         console.info(msg + " Succeed in createLight LightType.SPOT ");
         done();
@@ -692,7 +692,7 @@ export default function sceneNodeTest() {
       let msg = "============================testNodeType";
       console.info(msg + ' begin ');
       try {
-        let node1 = await rf.createNode({ name: "createNode1" })
+        let node1 = await rf!.createNode({ name: "createNode1" })
         let sceneUri = $rawfile("gltf/Cube/glTF/Cube.glb");
         scene1 = await Scene.load(sceneUri);
         expect(scene1 != undefined).assertTrue();
@@ -789,10 +789,10 @@ export default function sceneNodeTest() {
         console.info(msg + " cubeGeom is not null ");
         expect(cubeGeom.geometryType).assertEqual(GeometryType.CUBE);
         cubeGeom.size = { x: 0.8, y: 0.4, z: 0.6 }
-        let meshRes1 = await rf.createMesh({ name: "resource name not used at the moment " }, cubeGeom);
+        let meshRes1 = await rf!.createMesh({ name: "resource name not used at the moment " }, cubeGeom);
         expect(meshRes1 != null).assertTrue();
         console.info(msg + " Succeed in createMesh ");
-        let geometry1 = await rf.createGeometry({ name: "cuubio" }, meshRes1);
+        let geometry1 = await rf!.createGeometry({ name: "cuubio" }, meshRes1);
         expect(geometry1 != null).assertTrue();
         console.info(msg + " Succeed in createGeometry ");
         scene?.root?.children.append(geometry1);
@@ -820,10 +820,10 @@ export default function sceneNodeTest() {
         console.info(msg + " planeGeom is not null ");
         expect(planeGeom.geometryType).assertEqual(GeometryType.PLANE);
         planeGeom.size = { x: 1, y: 1 };
-        let meshRes2 = await rf.createMesh({ name: "resource name not used at the moment " }, planeGeom);
+        let meshRes2 = await rf!.createMesh({ name: "resource name not used at the moment " }, planeGeom);
         expect(meshRes2 != null).assertTrue();
         console.info(msg + " Succeed in createMesh ");
-        let geometry2 = await rf.createGeometry({ name: "plaanio" }, meshRes2);
+        let geometry2 = await rf!.createGeometry({ name: "plaanio" }, meshRes2);
         expect(geometry2 != null).assertTrue();
         console.info(msg + " Succeed in createGeometry ");
         scene?.root?.children.append(geometry2);

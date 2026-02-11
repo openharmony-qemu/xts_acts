@@ -41,9 +41,9 @@ export default function webHitTestTypeEnumTest01() {
      * @tc.desc   test the value of WebHitTestType.EditText is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebHitTestTypeEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebHitTestTypeEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testWebHitTestTypeEnum001', 10)
         await Utils.msSleep(2000);

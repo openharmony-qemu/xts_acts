@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,20 +21,20 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function abilityTest() {
     describe("AVSessionControllerJsTest", () => {
         const TAG = "[AVSessionControllerJSTest]";
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         let receivedCallback: boolean;
         let receivedCallback2: boolean;
-        let receivedString: string;
-        let receivedString2: string;
-        let receivedParam: Record<string, Object>;
-        let receivedParam2: Record<string, Object>;
-        let receivedExtras: Record<string, Object>;
-        let receivedExtras2: Record<string, Object>;
+        let receivedString: string = '';
+        let receivedString2: string = '';
+        let receivedParam: Record<string, Object> = {};
+        let receivedParam2: Record<string, Object> = {};
+        let receivedExtras: Record<string, Object> = {};
+        let receivedExtras2: Record<string, Object> = {};
         const INVALID_STRING = "invalid string";
         const UPDATE_LYRICS_EVENT = "dynamic_lyrics";
         const UPDATE_LYRICS_WANT_PARAMS: Record<string, Object> = {
@@ -100,20 +100,20 @@ export default function abilityTest() {
 
         beforeEach(async () => {
             try{
-                session = await avSession.createAVSession(context, "AVSessionDemo", 'video_call');
-            }catch(err: BusinessError){
+                session = await avSession.createAVSession(context!, "AVSessionDemo", 'video_call');
+            }catch(err){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`TestLog: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`TestLog: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -126,7 +126,7 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`TestLog: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -134,9 +134,9 @@ export default function abilityTest() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`TestLog: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -282,10 +282,10 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.onSessionEvent(dynamicLyricsCallback1);
+            controller!.onSessionEvent(dynamicLyricsCallback1);
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -315,11 +315,11 @@ export default function abilityTest() {
          * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            controller.onSessionEvent(dynamicLyricsCallback1);
-            controller.onSessionEvent(dynamicLyricsCallback2);
+            controller!.onSessionEvent(dynamicLyricsCallback1);
+            controller!.onSessionEvent(dynamicLyricsCallback2);
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0200 Set session event error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -352,12 +352,12 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onSessionEvent(dynamicLyricsCallback1);
-            controller.onSessionEvent(dynamicLyricsCallback2);
-            controller.offSessionEvent(dynamicLyricsCallback2);
+            controller!.onSessionEvent(dynamicLyricsCallback1);
+            controller!.onSessionEvent(dynamicLyricsCallback2);
+            controller!.offSessionEvent(dynamicLyricsCallback2);
             try{
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "Set session event error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -387,14 +387,14 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onSessionEvent(dynamicLyricsCallback1);
-            controller.onSessionEvent(dynamicLyricsCallback2);
-            controller.offSessionEvent(dynamicLyricsCallback1);
-            controller.offSessionEvent(dynamicLyricsCallback2);
+            controller!.onSessionEvent(dynamicLyricsCallback1);
+            controller!.onSessionEvent(dynamicLyricsCallback2);
+            controller!.offSessionEvent(dynamicLyricsCallback1);
+            controller!.offSessionEvent(dynamicLyricsCallback2);
 
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "Set session event error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -420,13 +420,13 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onSessionEvent(dynamicLyricsCallback1);
-            controller.onSessionEvent(dynamicLyricsCallback2);
-            controller.offSessionEvent();
+            controller!.onSessionEvent(dynamicLyricsCallback1);
+            controller!.onSessionEvent(dynamicLyricsCallback2);
+            controller!.offSessionEvent();
 
             try{
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "Set session event error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -453,7 +453,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err) => {
+            controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0100 error " + JSON.stringify(err));
                     expect(true).assertFalse();
@@ -476,8 +476,8 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try{
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            } catch (err: BusinessError) {
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -498,12 +498,12 @@ export default function abilityTest() {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 start");
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
             };
             let extras: Record<string, Object>|undefined;
-            controller.getExtras((err, extras) => {
+            controller!.getExtras((err, extras) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0100 error " + JSON.stringify(err));
                     expect(true).assertFalse();
@@ -527,15 +527,15 @@ export default function abilityTest() {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 start");
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
             };
 
-            let extras: Record<string, Object>;
+            let extras: Record<string, Object> = {};
             try {
-                extras = await controller.getExtras()
-            } catch (err: BusinessError) {
+                extras = await controller!.getExtras()
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -555,10 +555,10 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100 start");
-            controller.onExtrasChange(extrasChangeCallback1);
+            controller!.onExtrasChange(extrasChangeCallback1);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -588,11 +588,11 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200 start");
-            controller.onExtrasChange(extrasChangeCallback1);
-            controller.onExtrasChange(extrasChangeCallback2);
+            controller!.onExtrasChange(extrasChangeCallback1);
+            controller!.onExtrasChange(extrasChangeCallback2);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -624,12 +624,12 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onExtrasChange(extrasChangeCallback1);
-            controller.onExtrasChange(extrasChangeCallback2);
-            controller.offExtrasChange(extrasChangeCallback2);
+            controller!.onExtrasChange(extrasChangeCallback1);
+            controller!.onExtrasChange(extrasChangeCallback2);
+            controller!.offExtrasChange(extrasChangeCallback2);
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -658,13 +658,13 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onExtrasChange(extrasChangeCallback1);
-            controller.onExtrasChange(extrasChangeCallback2);
-            controller.offExtrasChange(extrasChangeCallback1);
-            controller.offExtrasChange(extrasChangeCallback2);
+            controller!.onExtrasChange(extrasChangeCallback1);
+            controller!.onExtrasChange(extrasChangeCallback2);
+            controller!.offExtrasChange(extrasChangeCallback1);
+            controller!.offExtrasChange(extrasChangeCallback2);
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -690,12 +690,12 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            controller.onExtrasChange(extrasChangeCallback1);
-            controller.onExtrasChange(extrasChangeCallback2);
-            controller.offExtrasChange();
+            controller!.onExtrasChange(extrasChangeCallback1);
+            controller!.onExtrasChange(extrasChangeCallback2);
+            controller!.offExtrasChange();
             try{
                 await session!.setExtras(CUSTOM_EXTRAS)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_STATIC_0300 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -722,10 +722,10 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.onQueueItemsChange(queueItemsCallback1);
+            controller!.onQueueItemsChange(queueItemsCallback1);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -753,11 +753,11 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.onQueueItemsChange(queueItemsCallback1);
-            controller.onQueueItemsChange(queueItemsCallback2);
+            controller!.onQueueItemsChange(queueItemsCallback1);
+            controller!.onQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -785,10 +785,10 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.onQueueTitleChange(queueTitleCallback1);
+            controller!.onQueueTitleChange(queueTitleCallback1);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -816,11 +816,11 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.onQueueTitleChange(queueTitleCallback1);
-            controller.onQueueTitleChange(queueTitleCallback2);
+            controller!.onQueueTitleChange(queueTitleCallback1);
+            controller!.onQueueTitleChange(queueTitleCallback2);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -848,12 +848,12 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueItemsChange(queueItemsCallback1);
-            controller.onQueueItemsChange(queueItemsCallback2);
-            controller.offQueueItemsChange(queueItemsCallback2);
+            controller!.onQueueItemsChange(queueItemsCallback1);
+            controller!.onQueueItemsChange(queueItemsCallback2);
+            controller!.offQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0100 setAVQueueItems error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -880,13 +880,13 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueItemsChange(queueItemsCallback1);
-            controller.onQueueItemsChange(queueItemsCallback2);
-            controller.offQueueItemsChange(queueItemsCallback1);
-            controller.offQueueItemsChange(queueItemsCallback2);
+            controller!.onQueueItemsChange(queueItemsCallback1);
+            controller!.onQueueItemsChange(queueItemsCallback2);
+            controller!.offQueueItemsChange(queueItemsCallback1);
+            controller!.offQueueItemsChange(queueItemsCallback2);
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0200 setAVQueueItems error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -913,12 +913,12 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueItemsChange(queueItemsCallback1);
-            controller.onQueueItemsChange(queueItemsCallback2);
-            controller.offQueueItemsChange();
+            controller!.onQueueItemsChange(queueItemsCallback1);
+            controller!.onQueueItemsChange(queueItemsCallback2);
+            controller!.offQueueItemsChange();
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_STATIC_0300 setAVQueueItems error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -945,12 +945,12 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueTitleChange(queueTitleCallback1);
-            controller.onQueueTitleChange(queueTitleCallback2);
-            controller.offQueueTitleChange(queueTitleCallback2);
+            controller!.onQueueTitleChange(queueTitleCallback1);
+            controller!.onQueueTitleChange(queueTitleCallback2);
+            controller!.offQueueTitleChange(queueTitleCallback2);
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0100 setAVQueueTitle error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -977,14 +977,14 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueTitleChange(queueTitleCallback1);
-            controller.onQueueTitleChange(queueTitleCallback2);
-            controller.offQueueTitleChange(queueTitleCallback1);
-            controller.offQueueTitleChange(queueTitleCallback2);
+            controller!.onQueueTitleChange(queueTitleCallback1);
+            controller!.onQueueTitleChange(queueTitleCallback2);
+            controller!.offQueueTitleChange(queueTitleCallback1);
+            controller!.offQueueTitleChange(queueTitleCallback2);
 
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0200 setAVQueueTitle error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1011,13 +1011,13 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-            controller.onQueueTitleChange(queueTitleCallback1);
-            controller.onQueueTitleChange(queueTitleCallback2);
-            controller.offQueueTitleChange();
+            controller!.onQueueTitleChange(queueTitleCallback1);
+            controller!.onQueueTitleChange(queueTitleCallback2);
+            controller!.offQueueTitleChange();
 
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_STATIC_0300 setAVQueueTitle error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1068,7 +1068,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1111,7 +1111,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1130,7 +1130,7 @@ export default function abilityTest() {
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            controller.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
+            controller!.skipToQueueItem(QUEUE_ITEM_ID, (err) => {
                 if (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
                     expect(true).assertFalse();
@@ -1153,8 +1153,8 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try{
-                await controller.skipToQueueItem(QUEUE_ITEM_ID)
-            } catch (err: BusinessError) {
+                await controller!.skipToQueueItem(QUEUE_ITEM_ID)
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1175,8 +1175,8 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             session!.onSkipToQueueItem(skipToQueueItemCallback1);
             try{
-                await controller.skipToQueueItem(SKIP_ITEM_ID)
-            } catch (err: BusinessError) {
+                await controller!.skipToQueueItem(SKIP_ITEM_ID)
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1206,8 +1206,8 @@ export default function abilityTest() {
             session!.onSkipToQueueItem(skipToQueueItemCallback1);
             session!.onSkipToQueueItem(skipToQueueItemCallback2);
             try{
-                await controller.skipToQueueItem(SKIP_ITEM_ID)
-            } catch (err: BusinessError) {
+                await controller!.skipToQueueItem(SKIP_ITEM_ID)
+            } catch (err) {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1241,7 +1241,7 @@ export default function abilityTest() {
                     expect(true).assertFalse();
                     done();
                 } else {
-                    controller.getAVQueueItems((err) => {
+                    controller!.getAVQueueItems((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0100 error " + JSON.stringify(err));
                             expect(true).assertFalse();
@@ -1268,13 +1268,13 @@ export default function abilityTest() {
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
                 try{
-                    await controller.getAVQueueItems()
-                } catch (err: BusinessError) {
+                    await controller!.getAVQueueItems()
+                } catch (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
                     expect(true).assertFalse();
                 };
                 done();
-            }catch(err: BusinessError){
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1297,7 +1297,7 @@ export default function abilityTest() {
                     expect(true).assertFalse();
                     done();
                 } else {
-                    controller.getAVQueueTitle((err) => {
+                    controller!.getAVQueueTitle((err) => {
                         if (err) {
                             console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0100 error " + JSON.stringify(err));
                             expect(true).assertFalse();
@@ -1324,13 +1324,13 @@ export default function abilityTest() {
             try{
                 await session!.setAVQueueTitle(QUEUE_TITLE)
                 try{
-                    await controller.getAVQueueTitle()
-                } catch (err: BusinessError) {
+                    await controller!.getAVQueueTitle()
+                } catch (err) {
                     console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
                     expect(true).assertFalse();
                 };
                 done();
-            }catch(err: BusinessError){
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -1353,7 +1353,7 @@ export default function abilityTest() {
                 }
                 await session!.setAVPlaybackState(playbackState);
                 Utils.msSleep(200);
-                let currentPlaybackState = controller.getAVPlaybackStateSync();
+                let currentPlaybackState = controller!.getAVPlaybackStateSync();
                 console.log(`Get playback state: ${playbackState}`);
                 expect(currentPlaybackState.state).assertEqual(0);
             } catch (err) {
@@ -1379,10 +1379,10 @@ export default function abilityTest() {
                 };
                 await session!.setAVMetadata(metaData);
                 Utils.msSleep(200);
-                let currentMetaData = controller.getAVMetadataSync();
+                let currentMetaData = controller!.getAVMetadataSync();
                 console.log(`Get metadata: ${currentMetaData}`);
                 expect(currentMetaData.assetId).assertEqual("0");
-            }catch(err: BusinessError){
+            }catch(err){
                 expect(true).assertFalse();
             }
             console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_STATIC_0100 finished");
@@ -1402,7 +1402,7 @@ export default function abilityTest() {
             try {
                 await session!.setAVQueueTitle(QUEUE_TITLE);
                 Utils.msSleep(200);
-                let currentQueueTitle = controller.getAVQueueTitleSync();
+                let currentQueueTitle = controller!.getAVQueueTitleSync();
                 console.log(`Get queue title: ${currentQueueTitle}`);
                 expect(currentQueueTitle).assertEqual(QUEUE_TITLE);
             } catch (err) {
@@ -1425,7 +1425,7 @@ export default function abilityTest() {
             try {
                 await session!.setAVQueueItems(ITEMS_ARRAY);
                 Utils.msSleep(200);
-                let currentQueueItem = controller.getAVQueueItemsSync();
+                let currentQueueItem = controller!.getAVQueueItemsSync();
                 console.log(`Get queue item: ${currentQueueItem}`);
                 expect(currentQueueItem[0].itemId).assertEqual(ITEMS_ARRAY[0].itemId);
             } catch (err) {
@@ -1446,7 +1446,7 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
-                let outputDeviceInfo = controller.getOutputDeviceSync();
+                let outputDeviceInfo = controller!.getOutputDeviceSync();
                 console.log(`Get output device info: ${outputDeviceInfo}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
             } catch (err) {
@@ -1469,7 +1469,7 @@ export default function abilityTest() {
             try {
                 await session!.activate();
                 Utils.msSleep(200);
-                let isActive = controller.isActiveSync();
+                let isActive = controller!.isActiveSync();
                 console.log(`Get session active state: ${isActive}`);
                 expect(isActive).assertEqual(true);
             } catch (err) {
@@ -1492,7 +1492,7 @@ export default function abilityTest() {
             try {
                 session!.onPlay(() => { });
                 Utils.msSleep(200);
-                let validCommands = controller.getValidCommandsSync();
+                let validCommands = controller!.getValidCommandsSync();
                 console.log(`Get valid commands: ${validCommands}`);
                 expect(validCommands[0]).assertEqual('play');
             } catch (err) {
@@ -1514,7 +1514,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             try{
                 await session!.setAVQueueItems(ITEMS_ARRAY)
-                await controller.getAVQueueItems().then((items: Array<avSession.AVQueueItem>) => {
+                await controller!.getAVQueueItems().then((items: Array<avSession.AVQueueItem>) => {
                     console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 data " + String(items));
                     if (items[0].description?.drmScheme === ITEMS_ARRAY[0].description?.drmScheme){
                         console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 data success");
@@ -1524,7 +1524,7 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_STATIC_0300 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();

@@ -62,9 +62,9 @@ export default function audioEventManagement() {
      * @tc.desc   DeviceChangeType - CONNECT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(audio.DeviceChangeType.CONNECT == 0).assertTrue();
       await Utils.msSleep(50);
       done();
@@ -76,9 +76,9 @@ export default function audioEventManagement() {
      * @tc.desc   DeviceChangeType - DISCONNECT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect(audio.DeviceChangeType.DISCONNECT == 1).assertTrue();
       await Utils.msSleep(50);
       done();

@@ -43,6 +43,11 @@
           }
         ]
       }
-    ]
+    ],
+    "requestPermissions": [
+ 	    {
+ 	      "name": "ohos.permission.GET_WIFI_INFO"
+ 	    }
+ 	  ]
   }
 }

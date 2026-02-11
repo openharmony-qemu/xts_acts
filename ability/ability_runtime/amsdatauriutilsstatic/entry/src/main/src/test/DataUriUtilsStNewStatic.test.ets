@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -100,7 +100,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -255,7 +255,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -299,7 +299,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();
@@ -365,7 +365,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();
@@ -389,7 +389,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();

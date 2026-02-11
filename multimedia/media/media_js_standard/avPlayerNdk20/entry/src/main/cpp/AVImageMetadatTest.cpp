@@ -290,7 +290,7 @@ static napi_value OH_AVMetadataExtractor_SetFDSource0100(napi_env env, napi_call
 
 static napi_value OH_AVMetadataExtractor_SetFDSource0101(napi_env env, napi_callback_info info)
 {
-    int32_t fd = -1;
+    int32_t fd = 1;
     int32_t fileDescribe = 1;
     int64_t offset = 0;
     int64_t size = -1;

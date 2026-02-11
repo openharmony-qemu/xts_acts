@@ -15,8 +15,10 @@
 
 import SerialTest from './SerialTest.test';
 import SerialAddTest from './SerialAddTest.test';
+import SerialAddApiTest from './SerialAddApiTest.test';
 
 export default function testsuite() {
   SerialTest()
   SerialAddTest()
+  SerialAddApiTest()
 }

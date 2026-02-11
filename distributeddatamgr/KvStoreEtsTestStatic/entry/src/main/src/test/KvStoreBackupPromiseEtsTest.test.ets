@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,13 +39,13 @@ function publicGetKvStore(optionsp: distributedData.Options) {
   //context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
 
   hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
-  await Utils.msSleep(2000)
+  waitForCompletion(async ()=>{ await Utils.msSleep(2000)} );
   abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
   // await abilityDelegator.startAbility({
   //   bundleName: 'com.example.kvstoreetstest.static',
   //   abilityName: 'EntryAbility'
   // });
-  await Utils.msSleep(8000)
+  waitForCompletion(async ()=>{ await Utils.msSleep(8000)} );
   context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
   hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
   let mKVMgrConfig: distributedData.KVManagerConfig = {
@@ -171,7 +171,7 @@ function publicDeleteBackup(kvStore: distributedData.SingleKVStore|null,files: A
         console.log(tag + "Test deleteBackup err information: " + err );
         reject(err)
       })
-    } catch (e: Error) {
+    } catch (e) {
       console.log(tag + "111Test deleteBackup err information: " + e );
       reject(e);
     }
@@ -282,7 +282,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALRESTORE_PROMISE_0200 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALRESTORE_PROMISE_0200 Manualrestore fail 2" + e);
         expect(e).assertFail();
         done();
@@ -313,7 +313,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0100 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0100 export fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -344,7 +344,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0200 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0200 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -375,7 +375,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0300 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0300 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -406,7 +406,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0400 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0400 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -436,7 +436,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           expect(true).assertEqual(err.code == 401)
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0500 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -504,7 +504,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0600 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0600 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -584,7 +584,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0700 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_MANALBACKUP_PROMISE_0700 fail 2 " + e);
         expect(e).assertFail();
         done();
@@ -617,7 +617,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0100 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0100 Manualrestoresp fail 2" + e);
         expect(e).assertFail();
         done();
@@ -651,7 +651,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0200 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0200 fail 2" + e);
         expect(e).assertFail();
         done();
@@ -684,7 +684,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0300 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0300 fail 2" + e);
         expect(e).assertFail();
         done();
@@ -717,7 +717,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0400 publicDeleteBackup" + JSON.stringify(data));
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0400 Manualrestoresp fail 2" + e);
         expect(e).assertFail();
         done();
@@ -754,7 +754,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           expect(true).assertEqual(err.code == 401);
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0500 Manualrestoresp fail 2" + e);
         expect(e).assertFail();
         done();
@@ -783,7 +783,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           expect(true).assertEqual(err.code == 401);
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_RESTORESPECIFIEDVERSION_PROMISE_0600 Manualrestoresp fail 2" + e);
         expect(e).assertFail();
         done();
@@ -832,7 +832,7 @@ export default function kvStoreBackupPromiseJsunittest(){
         await publicPut(kvStore,"key1","value1");
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_PUT_PROMISE_0100 going putdata");
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_PUT_PROMISE_0100 Backupinfo fail" + e);
         expect(e).assertFail();
         done();
@@ -861,7 +861,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           expect(err).assertFail();
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_PUT_PROMISE_0200 Get fail 2" + e);
         expect(e).assertFail();
         done();
@@ -891,7 +891,7 @@ export default function kvStoreBackupPromiseJsunittest(){
           expect(15100004).assertEqual(err.code);
           done();
         })
-      } catch (e: Error) {
+      } catch (e) {
         console.log(tag + "SUB_DDM_DKV_KVBACKUP_PUT_PROMISE_0300 Get fail 2" + e);
         expect(e).assertFail();
         done();
