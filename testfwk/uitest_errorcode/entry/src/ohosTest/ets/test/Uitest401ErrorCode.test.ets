@@ -4297,17 +4297,15 @@ export default function abilityTest() {
       }
       try {
         await driver.knuckleKnock([{x: 100, y: 100}], null);
-        expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, time = null error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(NewErrorCode);
+        expect().assertFail();
       }
       try {
         await driver.knuckleKnock([{x: 100, y: 100}], undefined);
-        expect().assertFail();
       } catch (error) {
         console.log(TestTag, `testApi22_Driver_knuckleKnock_17000007, time = undefined error is, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(NewErrorCode);
+        expect().assertFail();
       }
       console.log(`${TestTag}, testApi22_Driver_knuckleKnock_17000007 END`);
     })
