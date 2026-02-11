@@ -37,7 +37,7 @@ struct UIContextDragControllerTestPage {
   @Builder
   DraggingBuilder() {
     Column() {
-      Text("DraggingBuilder")
+      Text('DraggingBuilder')
         .fontColor(Color.White)
         .fontSize(12)
     }
