@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { Chip, ChipSize } from '@ohos.arkui.stateManagement';
+import { Chip, ChipSize, PrefixIconOptions} from '@ohos.arkui.advanced.Chip';
 import {
   Entry,
   Component,
@@ -24,7 +24,7 @@ import {
   DragEvent,
   Image,
   Button,
-  Color,
+  Color
 } from '@ohos.arkui.component';
 import {
   State,
@@ -48,7 +48,7 @@ struct ChipOnClose {
             src: $r('app.media.icon'),
             size: { width: 16, height: 16 },
             fillColor: Color.Red,
-          }  as PrefixIconOptions,
+          } as PrefixIconOptions,
           label: {
             text: "操作块",
             fontSize: 16,

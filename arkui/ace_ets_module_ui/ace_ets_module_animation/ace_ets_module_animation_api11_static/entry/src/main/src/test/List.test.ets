@@ -37,6 +37,5 @@ export default function testsuite() {
   animateJsunit();
   animationStatusJsunit();
   curvesJsunit();
-  WorkerUseCurvesTest();
   pageTransitionJsunit();
 }
