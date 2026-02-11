@@ -132,7 +132,6 @@ export default function windowPCTest() {
           let jsonObj: object = JSON.parse(data);
           console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
           isPCMode = jsonObj["isPcMode"];
-          isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
         }).catch((err: BusinessError) => {
           console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
         });
@@ -936,7 +935,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN,
         ]
       };
-      if (deviceInfo === '2in1'|| (deviceInfo === 'tablet'&& isFreeWindowMode === true)) {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FULL_SCREEN
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -973,7 +972,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT,
         ]
       };
-      if (deviceInfo === '2in1'|| (deviceInfo === 'tablet'&& isFreeWindowMode === true)) {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1174,7 +1173,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN
         ]
       };
-      if (deviceInfo === '2in1'|| (deviceInfo === 'tablet'&& isFreeWindowMode === true)) {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
