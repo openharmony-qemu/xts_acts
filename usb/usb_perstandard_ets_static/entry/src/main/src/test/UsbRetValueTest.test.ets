@@ -1303,8 +1303,7 @@ export default function UsbRetValueTest() {
             expect(typeof(ret)).assertEqual("int");
             done();
           } catch (error) {
-            let err: BusinessError = error as BusinessError;
-            hilog.info(domain, tag, `testUsbControlTransferRet err.code= ${err.code}`);
+            hilog.info(domain, tag, 'testUsbControlTransferRet catch err code: ' + JSON.stringify(error));
             done();
           }
         }
