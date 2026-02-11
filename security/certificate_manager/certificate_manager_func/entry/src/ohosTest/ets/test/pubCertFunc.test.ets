@@ -577,7 +577,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         }
       }
 
-
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
         expect(null).assertFail()
