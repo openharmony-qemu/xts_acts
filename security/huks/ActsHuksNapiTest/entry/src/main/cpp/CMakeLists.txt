@@ -1,4 +1,4 @@
-# the minimum version of CMake.
+security/huks/ActsHuksNapiTest/entry/src/main/cpp/CMakeLists.txt# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.5.0)
 project(ActsHuksNapiTest)
 
@@ -32,7 +32,8 @@ add_library(huks SHARED
     HuksWrappedTest.cpp
 )
 
-target_link_libraries(huks PUBLIC libhuks_ndk.z.so
+target_link_libraries(huks PUBLIC
+    libhuks_ndk.z.so
     libace_napi.z.so
     libhilog_ndk.z.so
 )
