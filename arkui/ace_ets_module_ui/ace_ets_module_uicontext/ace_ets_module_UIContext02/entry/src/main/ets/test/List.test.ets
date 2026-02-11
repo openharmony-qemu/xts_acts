@@ -18,6 +18,7 @@ import uiContextUnitConversionNullUndefinedTest from './uiContext/UIContextUnitC
 import uiContextFrameNodeQueryNullTest from './uiContext/UIContextFrameNodeQueryNull.test';
 import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefined.test';
 import GetRectangleByIdNullUndefinedTest from './componentUtils/ComponentUtilsGetRectangleByIdNullUndefined.test';
+import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceManagerCacheNullUndefined.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   uiContextFrameNodeQueryNullTest();
   uiContextMiscNullUndefinedTest();
   GetRectangleByIdNullUndefinedTest();
+  setResourceManagerCacheNullUndefinedTest();
 }
