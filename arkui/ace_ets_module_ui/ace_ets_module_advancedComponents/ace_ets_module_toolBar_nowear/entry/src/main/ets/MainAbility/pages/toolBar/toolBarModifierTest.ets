@@ -38,6 +38,7 @@ struct Index {
       .backgroundColor('')
       .stateEffect(true)
       .padding(LengthMetrics.vp(-5));
+  @State dividerModifier: DividerModifier = new DividerModifier().height(0);
 
   aboutToAppear() {
     // 添加工具栏子项
