@@ -59,13 +59,13 @@ export default function WindowSizeLayoutBreakpointNullUndefinedTest() {
       console.info('uIObserverWindowSizeLayoutBreakpointChangeOnNull_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('windowSizeLayoutBreakpointChange_on_null_id'));
+      let button1 = await driver.findComponent(ON.id('windowSizeBreakpoint_on_null_id'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_on_null')).assertEqual('success');
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_on_undefined')).assertEqual('success');
-      AppStorage.delete('windowSizeLayoutBreakpointChange_on_null')
-      AppStorage.delete('windowSizeLayoutBreakpointChange_on_undefined')
+      expect(AppStorage.get('windowSizeBreakpoint_on_null')).assertEqual('success');
+      expect(AppStorage.get('windowSizeBreakpoint_on_undefined')).assertEqual('success');
+      AppStorage.delete('windowSizeBreakpoint_on_null')
+      AppStorage.delete('windowSizeBreakpoint_on_undefined')
       console.info('[uIObserverWindowSizeLayoutBreakpointChangeOnNull_0100] END');
       done();
     });
@@ -82,17 +82,17 @@ export default function WindowSizeLayoutBreakpointNullUndefinedTest() {
       console.info('uIObserverWindowSizeLayoutBreakpointChangeOffNull_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('windowSizeLayoutBreakpointChange_off_null_id'));
+      let button1 = await driver.findComponent(ON.id('windowSizeBreakpoint_off_null_id'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_off_null')).assertEqual('success');
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_off_undefined')).assertEqual('success');
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_off_null_with_callback')).assertEqual('success');
-      expect(AppStorage.get('windowSizeLayoutBreakpointChange_off_undefined_with_callback')).assertEqual('success');
-      AppStorage.delete('windowSizeLayoutBreakpointChange_off_null')
-      AppStorage.delete('windowSizeLayoutBreakpointChange_off_undefined')
-      AppStorage.delete('windowSizeLayoutBreakpointChange_off_null_with_callback')
-      AppStorage.delete('windowSizeLayoutBreakpointChange_off_undefined_with_callback')
+      expect(AppStorage.get('windowSizeBreakpoint_off_null')).assertEqual('success');
+      expect(AppStorage.get('windowSizeBreakpoint_off_undefined')).assertEqual('success');
+      expect(AppStorage.get('windowSizeBreakpoint_off_null_with_callback')).assertEqual('success');
+      expect(AppStorage.get('windowSizeBreakpoint_off_undefined_with_callback')).assertEqual('success');
+      AppStorage.delete('windowSizeBreakpoint_off_null')
+      AppStorage.delete('windowSizeBreakpoint_off_undefined')
+      AppStorage.delete('windowSizeBreakpoint_off_null_with_callback')
+      AppStorage.delete('windowSizeBreakpoint_off_undefined_with_callback')
       console.info('[uIObserverWindowSizeLayoutBreakpointChangeOffNull_0100] END');
       done();
     });

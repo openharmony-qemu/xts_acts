@@ -23,7 +23,7 @@ export default function UIObserverDensityUpdateNullTest() {
     beforeEach(async (done: Function) => {
       console.info("UIObserverDensityUpdateNullTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/observer/UIObserverDensityUpdateNullTest',
+        url: 'MainAbility/pages/uIObserver/UIObserverDensityUpdateNullTest',
       }
       try {
         router.clear();
