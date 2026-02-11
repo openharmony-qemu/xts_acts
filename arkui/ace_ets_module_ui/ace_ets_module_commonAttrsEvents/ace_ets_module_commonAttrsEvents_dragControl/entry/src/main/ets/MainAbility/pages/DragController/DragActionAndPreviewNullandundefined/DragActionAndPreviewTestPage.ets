@@ -138,7 +138,7 @@ struct DragActionAndPreviewTestPage {
           .height('15%')
           .draggable(true)
           .onDragStart((event: DragEvent) => {
-            console.log("Drag Start Image")
+            console.log('Drag Start Image')
           })
           .margin({ right: '2%' })
 
