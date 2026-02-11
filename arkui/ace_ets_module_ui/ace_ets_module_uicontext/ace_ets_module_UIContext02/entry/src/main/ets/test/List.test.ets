@@ -17,7 +17,7 @@ import GetUIContextTest from './getUIContext/GetUIContextTest.test';
 import uiContextUnitConversionNullUndefinedTest from './uiContext/UIContextUnitConversionNullUndefined.test';
 import uiContextFrameNodeQueryNullTest from './uiContext/UIContextFrameNodeQueryNull.test';
 import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefined.test';
-import GetRectangleByIdNullUndefinedTest from './componentUtils/ComponentUtilsGetRectangleByIdNullUndefined.test';
+import UIContextGetRectangleByIdNullUndefined from './uiContext/UIContextGetRectangleByIdNullUndefined.test';
 import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceManagerCacheNullUndefined.test';
 import columnAllowForceDarkTest from './column/ColumnAllowForceDark.test';
 
@@ -27,7 +27,7 @@ export default function testsuite() {
   uiContextUnitConversionNullUndefinedTest();
   uiContextFrameNodeQueryNullTest();
   uiContextMiscNullUndefinedTest();
-  GetRectangleByIdNullUndefinedTest();
+  UIContextGetRectangleByIdNullUndefined();
   setResourceManagerCacheNullUndefinedTest();
   columnAllowForceDarkTest();
 }
