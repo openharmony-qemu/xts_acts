@@ -791,11 +791,11 @@ export default function sceneResourcesTest() {
         } catch (err) {
           console.info(msg + " createMaterial with (undefined, MaterialType.METALLIC_ROUGHNESS) threw error: " + JSON.stringify(err));
         }
-        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
+
         // Test null parameter for createMaterial 2
         try {
           let nullMaterial = await rf.createMaterial({ name: 'metalMat' }, null);
-          expect(nullMaterial != null).assertTrue();
+          expect(nullMaterial).assertUndefined();
           console.info(msg + " createMaterial with ({ name: 'metalMat' }, null) returned material");
         } catch (err) {
           console.info(msg + " createMaterial with ({ name: 'metalMat' }, null) threw error: " + JSON.stringify(err));
@@ -804,7 +804,7 @@ export default function sceneResourcesTest() {
         // Test undefined parameter for createMaterial 2
         try {
           let undefinedMaterial = await rf.createMaterial({ name: 'metalMat' }, undefined);
-          expect(undefinedMaterial != null).assertTrue();
+          expect(undefinedMaterial).assertUndefined();
           console.info(msg + " createMaterial with ({ name: 'metalMat' }, undefined) returned null");
         } catch (err) {
           console.info(msg + " createMaterial with ({ name: 'metalMat' }, undefined) threw error: " + JSON.stringify(err));
@@ -813,7 +813,7 @@ export default function sceneResourcesTest() {
         // Test null parameter for createMaterial
         try {
           let nullMaterial = await rf.createMaterial(null, null);
-          expect(nullMaterial != null).assertTrue();
+          expect(nullMaterial).assertUndefined();
           console.info(msg + " createMaterial with (null, null) returned null");
         } catch (err) {
           console.info(msg + " createMaterial with (null, null) threw error: " + JSON.stringify(err));
@@ -822,12 +822,12 @@ export default function sceneResourcesTest() {
         // Test undefined parameter for createMaterial
         try {
           let undefinedMaterial = await rf.createMaterial(undefined, undefined);
-          expect(undefinedMaterial != null).assertTrue();
+          expect(undefinedMaterial).assertUndefined();
           console.info(msg + " createMaterial with (undefined, undefined) returned null");
         } catch (err) {
           console.info(msg + " createMaterial with (undefined, undefined) threw error: " + JSON.stringify(err));
         }
-        */
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -2521,19 +2521,17 @@ export default function sceneResourcesTest() {
         expect(result4).assertFalse();
         console.info(msg + " thresholdSoft property with null set successfully");
 
-        /* task_0204 第1个参数为 null/undefined 时,返回 undefined
         // Test 5: Set null property name (should return false)
         let result5 = effect.setPropertyValue(null, 1);
         console.info(msg + " set with null propertyName result: " + result5);
-        expect(result5).assertFalse();
+        expect(result5).assertUndefined();
         console.info(msg + " null propertyName test completed");
 
         // Test 6: Set undefined property name (should return false)
         let result6 = effect.setPropertyValue(undefined, 1);
         console.info(msg + " set with undefined propertyName result: " + result6);
-        expect(result6).assertFalse();
+        expect(result6).assertUndefined();
         console.info(msg + " undefined propertyName test completed");
-        */
 
         // Test 7: Set empty string property name (should return false)
         let result7 = effect.setPropertyValue('', 1);

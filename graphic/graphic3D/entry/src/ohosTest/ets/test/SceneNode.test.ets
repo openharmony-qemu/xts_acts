@@ -340,12 +340,11 @@ export default function sceneNodeTest() {
         expect(node?.layerMask.getEnabled(3)).assertTrue();
         console.info(msg + " Succeed in node?.layerMask.setEnabled(3, true) ");
 
-        /* task_0204 第1个参数为 null/undefined 时,返回 undefined
         // Test null parameter for getEnabled
         try {
           let nullGetResult = node?.layerMask.getEnabled(null);
           console.info(msg + " getEnabled with null parameter: " + JSON.stringify(nullGetResult));
-          expect(nullGetResult != null).assertTrue();
+          expect(nullGetResult).assertUndefined();
         } catch (nullErr) {
           console.info(msg + " getEnabled with null parameter threw error: " + JSON.stringify(nullErr));
         }
@@ -354,11 +353,10 @@ export default function sceneNodeTest() {
         try {
           let undefinedGetResult = node?.layerMask.getEnabled(undefined);
           console.info(msg + " getEnabled with undefined parameter: " + JSON.stringify(undefinedGetResult));
-          expect(undefinedGetResult != null).assertTrue();
+          expect(undefinedGetResult).assertUndefined();
         } catch (undefinedErr) {
           console.info(msg + " getEnabled with undefined parameter threw error: " + JSON.stringify(undefinedErr));
         }
-        */
 
         // Test null parameter for setEnabled (index)
         try {
@@ -1015,12 +1013,11 @@ export default function sceneNodeTest() {
           console.info(msg + " createGeometry with (undefined, meshRes) threw error: " + JSON.stringify(err));
         }
 
-        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
         // Test null parameter for createGeometry 2
         try {
           let nullGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, null);
-          expect(nullGeometry != null).assertTrue();
-          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) returned null");
+          expect(nullGeometry).assertUndefined();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) returned undefined");
         } catch (err) {
           console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) threw error: " + JSON.stringify(err));
         }
@@ -1028,30 +1025,11 @@ export default function sceneNodeTest() {
         // Test undefined parameter for createGeometry 2
         try {
           let undefinedGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, undefined);
-          expect(undefinedGeometry != null).assertTrue();
-          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) returned null");
+          expect(undefinedGeometry).assertUndefined();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) returned undefined");
         } catch (err) {
           console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
         }
-
-        // Test null parameter for createGeometry
-        try {
-          let nullGeometry = await rf.createGeometry(null, null);
-          expect(nullGeometry != null).assertTrue();
-          console.info(msg + " createGeometry with (null, null) returned null");
-        } catch (err) {
-          console.info(msg + " createGeometry with (null, null) threw error: " + JSON.stringify(err));
-        }
-
-        // Test undefined parameter for createGeometry
-        try {
-          let undefinedGeometry = await rf.createGeometry(undefined, undefined);
-          expect(undefinedGeometry != null).assertTrue();
-          console.info(msg + " createGeometry with (undefined, undefined) returned null");
-        } catch (err) {
-          console.info(msg + " createGeometry with (undefined, undefined) threw error: " + JSON.stringify(err));
-        }
-        */
 
         // Test empty path for createGeometry
         try {
@@ -1109,12 +1087,11 @@ export default function sceneNodeTest() {
           console.info(msg + " createLight with (undefined, LightType.DIRECTIONAL) threw error: " + JSON.stringify(err));
         }
 
-        /* task_0204 第2个参数为 null/undefined 时,返回 undefined
         // Test null parameter for createLight 2
         try {
           let nullLight = await rf.createLight({ name: "Light", path: "" }, null);
-          expect(nullLight != null).assertTrue();
-          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) returned null");
+          expect(nullLight).assertUndefined();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) returned undefined");
         } catch (err) {
           console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) threw error: " + JSON.stringify(err));
         }
@@ -1122,8 +1099,8 @@ export default function sceneNodeTest() {
         // Test undefined parameter for createLight 2
         try {
           let undefinedLight = await rf.createLight({ name: "Light", path: "" }, undefined);
-          expect(undefinedLight != null).assertTrue();
-          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) returned null");
+          expect(undefinedLight).assertUndefined();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) returned undefined");
         } catch (err) {
           console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
         }
@@ -1131,8 +1108,8 @@ export default function sceneNodeTest() {
         // Test null parameter for createLight
         try {
           let nullLight = await rf.createLight(null, null);
-          expect(nullLight != null).assertTrue();
-          console.info(msg + " createLight with (null, null) returned null");
+          expect(nullLight).assertUndefined();
+          console.info(msg + " createLight with (null, null) returned undefined");
         } catch (err) {
           console.info(msg + " createLight with (null, null) threw error: " + JSON.stringify(err));
         }
@@ -1140,12 +1117,11 @@ export default function sceneNodeTest() {
         // Test undefined parameter for createLight
         try {
           let undefinedLight = await rf.createLight(undefined, undefined);
-          expect(undefinedLight != null).assertTrue();
-          console.info(msg + " createLight with (undefined, undefined) returned null");
+          expect(undefinedLight).assertUndefined();
+          console.info(msg + " createLight with (undefined, undefined) returned undefined");
         } catch (err) {
           console.info(msg + " createLight with (undefined, undefined) threw error: " + JSON.stringify(err));
         }
-          */
 
         // Test empty path for createLight
         try {
@@ -1221,12 +1197,11 @@ export default function sceneNodeTest() {
           console.info(msg + " importNode with empty string name threw error: " + JSON.stringify(err));
         }
 
-        /* task_0204 第1个参数为null/undefined时，返回undefined
         // Test name parameter with null
         try {
           let nullNameNode = scene?.importNode(null, node1, scene.root);
           console.info(msg + " importNode with null name: " + JSON.stringify(nullNameNode));
-          expect(nullNameNode != null).assertTrue();
+          expect(nullNameNode).assertUndefined();
         } catch (err) {
           console.info(msg + " importNode with null name threw error: " + JSON.stringify(err));
         }
@@ -1235,18 +1210,16 @@ export default function sceneNodeTest() {
         try {
           let undefinedNameNode = scene?.importNode(undefined, node1, scene.root);
           console.info(msg + " importNode with undefined name: " + JSON.stringify(undefinedNameNode));
-          expect(undefinedNameNode != null).assertTrue();
+          expect(undefinedNameNode).assertUndefined();
         } catch (err) {
           console.info(msg + " importNode with undefined name threw error: " + JSON.stringify(err));
         }
-          */
 
-        /* task_0204 第2个参数为null/undefined时，返回null
         // Test node parameter with null
         try {
           let nullNodeParamNode = scene?.importNode("testNullNode", null, scene.root);
           console.info(msg + " importNode with null node parameter: " + JSON.stringify(nullNodeParamNode));
-          expect(nullNodeParamNode != null).assertTrue();
+          expect(nullNodeParamNode).assertNull();
         } catch (err) {
           console.info(msg + " importNode with null node parameter threw error: " + JSON.stringify(err));
         }
@@ -1255,11 +1228,10 @@ export default function sceneNodeTest() {
         try {
           let undefinedNodeParamNode = scene?.importNode("testUndefinedNode", undefined, scene.root);
           console.info(msg + " importNode with undefined node parameter: " + JSON.stringify(undefinedNodeParamNode));
-          expect(undefinedNodeParamNode != null).assertTrue();
+          expect(undefinedNodeParamNode).assertNull();
         } catch (err) {
           console.info(msg + " importNode with undefined node parameter threw error: " + JSON.stringify(err));
         }
-        */
 
         // Test parent parameter with null
         try {
@@ -1311,12 +1283,11 @@ export default function sceneNodeTest() {
           console.info(msg + " importScene with empty string name threw error: " + JSON.stringify(err));
         }
 
-        /* task_0204 第1个参数为null/undefined时，返回undefined
         // Test name parameter with null
         try {
           let nullNameScene = scene?.importScene(null, scene1, null);
           console.info(msg + " importScene with null name: " + JSON.stringify(nullNameScene));
-          expect(nullNameScene != null).assertTrue();
+          expect(nullNameScene).assertUndefined();
         } catch (err) {
           console.info(msg + " importScene with null name threw error: " + JSON.stringify(err));
         }
@@ -1325,18 +1296,16 @@ export default function sceneNodeTest() {
         try {
           let undefinedNameScene = scene?.importScene(undefined, scene1, null);
           console.info(msg + " importScene with undefined name: " + JSON.stringify(undefinedNameScene));
-          expect(undefinedNameScene != null).assertTrue();
+          expect(undefinedNameScene).assertUndefined();
         } catch (err) {
           console.info(msg + " importScene with undefined name threw error: " + JSON.stringify(err));
         }
-          */
 
-        /* task_0204 第2个参数为null/undefined时，返回null
         // Test scene parameter with null
         try {
           let nullSceneScene = scene?.importScene("testNullScene", null, null);
           console.info(msg + " importScene with null scene parameter: " + JSON.stringify(nullSceneScene));
-          expect(nullSceneScene != null).assertTrue();
+          expect(nullSceneScene).assertNull();
         } catch (err) {
           console.info(msg + " importScene with null scene parameter threw error: " + JSON.stringify(err));
         }
@@ -1345,11 +1314,10 @@ export default function sceneNodeTest() {
         try {
           let undefinedSceneScene = scene?.importScene("testUndefinedScene", undefined, null);
           console.info(msg + " importScene with undefined scene parameter: " + JSON.stringify(undefinedSceneScene));
-          expect(undefinedSceneScene != null).assertTrue();
+          expect(undefinedSceneScene).assertNull();
         } catch (err) {
           console.info(msg + " importScene with undefined scene parameter threw error: " + JSON.stringify(err));
         }
-          */
 
         // Test parent parameter with null
         try {

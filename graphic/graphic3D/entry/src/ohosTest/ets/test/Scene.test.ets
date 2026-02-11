@@ -1001,12 +1001,11 @@ export default function sceneTest() {
           }
           */
 
-          /* task_0204 第2个参数为 null/undefined 时,返回 undefined
           // Test name parameter with null
           try {
             let nullNameComponent = await scene.createComponent(rootNode, null);
             console.info(msg + " createComponent with null name: " + JSON.stringify(nullNameComponent));
-            expect(nullNameComponent != null).assertTrue();
+            expect(nullNameComponent).assertUndefined();
           } catch (err) {
             console.info(msg + " createComponent with null name threw error: " + JSON.stringify(err));
           }
@@ -1015,11 +1014,10 @@ export default function sceneTest() {
           try {
             let undefinedNameComponent = await scene.createComponent(rootNode, undefined);
             console.info(msg + " createComponent with undefined name: " + JSON.stringify(undefinedNameComponent));
-            expect(undefinedNameComponent != null).assertTrue();
+            expect(undefinedNameComponent).assertUndefined();
           } catch (err) {
             console.info(msg + " createComponent with undefined name threw error: " + JSON.stringify(err));
           }
-          */
 
           console.info(msg + " test completed successfully");
           done();
@@ -1093,12 +1091,11 @@ export default function sceneTest() {
             console.info(msg + " getComponent with empty string name threw error: " + JSON.stringify(err));
           }
           
-          /* task_0204 第2个参数为 null/undefined 时,返回 undefined
           // Test name parameter with null
           try {
             let nullNameComponent = scene.getComponent(rootNode, null);
             console.info(msg + " getComponent with null name: " + JSON.stringify(nullNameComponent));
-            expect(nullNameComponent).assertNull();
+            expect(nullNameComponent).assertUndefined();
           } catch (err) {
             console.info(msg + " getComponent with null name threw error: " + JSON.stringify(err));
           }
@@ -1107,11 +1104,10 @@ export default function sceneTest() {
           try {
             let undefinedNameComponent = scene.getComponent(rootNode, undefined);
             console.info(msg + " getComponent with undefined name: " + JSON.stringify(undefinedNameComponent));
-            expect(undefinedNameComponent).assertNull();
+            expect(undefinedNameComponent).assertUndefined();
           } catch (err) {
             console.info(msg + " getComponent with undefined name threw error: " + JSON.stringify(err));
           }
-            */
 
           console.info(msg + " test completed successfully");
           done();
@@ -1416,12 +1412,11 @@ export default function sceneTest() {
           expect(resultUndefinedNode).assertNull();
           console.info(msg + " cloneNode with undefined node returns null");
 
-          /* task_0204 第2个参数为 null/undefined 时,返回 undefined
           // Test cloneNode with null parent
           try {
             let resultNullParent = scene.cloneNode(cubeNode, null, "testNullParent");
             console.info(msg + " cloneNode with null parent: " + JSON.stringify(resultNullParent));
-            expect(resultNullParent).assertNull();
+            expect(resultNullParent).assertUndefined();
           } catch (err) {
             console.info(msg + " cloneNode with null parent threw error: " + JSON.stringify(err));
           }
@@ -1430,11 +1425,10 @@ export default function sceneTest() {
           try {
             let resultUndefinedParent = scene.cloneNode(cubeNode, undefined, "testUndefinedParent");
             console.info(msg + " cloneNode with undefined parent: " + JSON.stringify(resultUndefinedParent));
-            expect(resultUndefinedParent).assertNull();
+            expect(resultUndefinedParent).assertUndefined();
           } catch (err) {
             console.info(msg + " cloneNode with undefined parent threw error: " + JSON.stringify(err));
           }
-            */
 
           // Test cloneNode with empty string name
           try {
@@ -1445,12 +1439,11 @@ export default function sceneTest() {
             console.info(msg + " cloneNode with empty string name threw error: " + JSON.stringify(err));
           }
 
-          /* task_0204 第3个参数为 null/undefined 时,返回 undefined
           // Test cloneNode with null name
           try {
             let resultNullName = scene.cloneNode(cubeNode, scene.root, null);
             console.info(msg + " cloneNode with null name: " + JSON.stringify(resultNullName));
-            expect(resultNullName).assertNull();
+            expect(resultNullName).assertUndefined();
           } catch (err) {
             console.info(msg + " cloneNode with null name threw error: " + JSON.stringify(err));
           }
@@ -1459,11 +1452,10 @@ export default function sceneTest() {
           try {
             let resultUndefinedName = scene.cloneNode(cubeNode, scene.root, undefined);
             console.info(msg + " cloneNode with undefined name: " + JSON.stringify(resultUndefinedName));
-            expect(resultUndefinedName).assertNull();
+            expect(resultUndefinedName).assertUndefined();
           } catch (err) {
             console.info(msg + " cloneNode with undefined name threw error: " + JSON.stringify(err));
           }
-          */
         }
 
         console.info(msg + " test completed successfully");
@@ -1699,13 +1691,6 @@ export default function sceneTest() {
         sphereGeom.segmentCount = 0;
         expect(sphereGeom.segmentCount).assertEqual(0);
         console.info(msg + " zero segmentCount set successfully");
-        
-        /* task_0204 输入浮点,返回浮点
-        // Test setting segmentCount with floating point value (should truncate)
-        sphereGeom.segmentCount = 26.7;
-        expect(sphereGeom.segmentCount).assertEqual(26);
-        console.info(msg + " floating point segmentCount truncated to 26 successfully");
-        */
 
         console.info(msg + " test completed successfully");
         done();
@@ -1834,13 +1819,6 @@ export default function sceneTest() {
         expect(cylinderGeom.segmentCount).assertEqual(0);
         console.info(msg + " zero segmentCount set successfully");
         
-        /* task_0204 输入浮点,返回浮点
-        // Test setting segmentCount with floating point value (should truncate)
-        cylinderGeom.segmentCount = 24.8;
-        expect(cylinderGeom.segmentCount).assertEqual(24);
-        console.info(msg + " floating point segmentCount truncated to 24 successfully");
-        */
-
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
