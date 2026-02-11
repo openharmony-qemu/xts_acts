@@ -27,7 +27,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function RouterUrlErrorJsunit() {
   describe('RouterUrlErrorJsunit', () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

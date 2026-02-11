@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ObserverPageId() {
   describe('ObserverPageId', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObserverPageId beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");

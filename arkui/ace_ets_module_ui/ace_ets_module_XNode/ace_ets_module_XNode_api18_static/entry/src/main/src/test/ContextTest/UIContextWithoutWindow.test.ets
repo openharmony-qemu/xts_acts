@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function UIContextWithoutWindowTest() {
   describe('UIContextWithoutWindowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.XNode.api18.static", "EntryAbility");
       

@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function EnableSwipeBackPage() {
   describe('EnableSwipeBackPage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EnableSwipeBackPage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigationwear18.static", "EntryAbility");

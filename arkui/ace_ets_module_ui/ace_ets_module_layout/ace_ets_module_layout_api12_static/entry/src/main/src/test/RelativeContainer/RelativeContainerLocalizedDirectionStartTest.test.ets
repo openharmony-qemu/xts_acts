@@ -53,7 +53,7 @@ let tag: string = 'testTag';
 
 export default function RelativeContainerLocalizedDirectionStartTest() {
   describe('RelativeContainerLocalizedDirectionStartTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RelativeContainerLocalizedDirectionStartTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

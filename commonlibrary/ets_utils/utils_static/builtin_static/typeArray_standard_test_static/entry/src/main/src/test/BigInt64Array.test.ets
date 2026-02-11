@@ -30,7 +30,7 @@ import hilog from '@ohos.hilog'
 
 export default function BigInt64ArrayTest() {
   describe('BigInt64ArrayTest', (): void => {
-    // afterEach(() => {
+    // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);
     // })
     // let value: string;

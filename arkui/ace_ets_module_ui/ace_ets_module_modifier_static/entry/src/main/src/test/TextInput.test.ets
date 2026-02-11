@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 export default function textInput() {
   describe('textInputTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollNestedScroll beforeEach start");
 
 

@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ResourceDefaultTest() {
   describe('ResourceDefaultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

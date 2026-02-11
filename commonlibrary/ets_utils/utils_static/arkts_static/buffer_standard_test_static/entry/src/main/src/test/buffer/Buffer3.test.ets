@@ -32,7 +32,7 @@ import {
 
 export default function bufferTest3() {
   describe("bufferTest3", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

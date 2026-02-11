@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listScrollerBar() {
   describe('listScrollerBar', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("listScrollerBar beforeEach start");
 
       

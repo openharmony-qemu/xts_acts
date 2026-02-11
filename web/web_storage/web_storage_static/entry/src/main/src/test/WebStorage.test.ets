@@ -17,7 +17,7 @@ export default function webStorageTest() {
 
     describe("webStorageTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({
                 abilityName: "EntryAbility",

@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function indicatorComponentUndefined() {
   describe('indicatorComponentUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("indicatorComponentUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

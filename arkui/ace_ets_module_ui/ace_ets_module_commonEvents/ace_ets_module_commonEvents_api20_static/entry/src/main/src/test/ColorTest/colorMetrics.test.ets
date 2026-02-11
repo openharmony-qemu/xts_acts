@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function colorMetricsTest() {
   describe('colorMetricsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("colorMetricsTest beforeAll start");
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi20.static", "EntryAbility")

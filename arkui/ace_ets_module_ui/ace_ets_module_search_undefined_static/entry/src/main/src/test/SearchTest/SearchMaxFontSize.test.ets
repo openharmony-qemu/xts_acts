@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchMaxFontSize() {
   describe('SearchMaxFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchMaxFontSize beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

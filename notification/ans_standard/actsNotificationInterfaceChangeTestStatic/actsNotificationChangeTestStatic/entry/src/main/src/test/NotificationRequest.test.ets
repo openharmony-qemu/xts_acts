@@ -33,7 +33,7 @@ let bundle_name: string = 'com.example.notificationchangetest.static';
 export default function ActsNotificationRequestTest() {
   describe('ActsNotificationRequestTest', () => {
     const TAG = 'ActsNotificationRequestTest ===>';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

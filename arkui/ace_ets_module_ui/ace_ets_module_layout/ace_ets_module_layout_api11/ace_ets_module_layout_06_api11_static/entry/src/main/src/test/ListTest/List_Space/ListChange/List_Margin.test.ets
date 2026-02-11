@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_Margin() {
 
   describe('List_Margin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_Margin beforeAll start111")
             
       await UtilsTest.msSleep(4000)

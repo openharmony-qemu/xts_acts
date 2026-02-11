@@ -114,7 +114,7 @@ export default function cameraConcurrentTest() {
   describe('CameraConcurrentTest', () => {
     console.info(TAG + '----------CameraConcurrentTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
@@ -122,7 +122,7 @@ export default function cameraConcurrentTest() {
       await Utils.msSleep(500);
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
       await Utils.msSleep(100);

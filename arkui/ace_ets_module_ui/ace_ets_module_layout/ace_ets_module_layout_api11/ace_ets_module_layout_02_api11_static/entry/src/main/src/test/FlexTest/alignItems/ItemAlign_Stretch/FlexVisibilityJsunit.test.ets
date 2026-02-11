@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexVisibility_StretchJsunit() {
   describe('flexVisibility_StretchJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexVisibility_StretchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

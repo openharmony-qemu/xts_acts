@@ -40,7 +40,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function column_MarPad_ChangeParent() {
 
   describe('Column_MarPad_ChangeParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Column_MarPad_ChangeParentTest beforeEach start");
 
 

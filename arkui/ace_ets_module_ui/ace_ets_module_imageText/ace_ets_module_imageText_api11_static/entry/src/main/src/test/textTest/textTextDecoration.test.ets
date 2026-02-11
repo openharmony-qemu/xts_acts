@@ -43,7 +43,7 @@ interface ValueType {
 export default function textTextDecorationTest() {
   describe('textTextDecorationTest', ()=> {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textTextDecorationTest beforeEach start");
 
 

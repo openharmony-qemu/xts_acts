@@ -39,7 +39,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST START')
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -59,7 +59,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       await notificationManager.cancelAll()
       await notificationManager.removeAllSlots();

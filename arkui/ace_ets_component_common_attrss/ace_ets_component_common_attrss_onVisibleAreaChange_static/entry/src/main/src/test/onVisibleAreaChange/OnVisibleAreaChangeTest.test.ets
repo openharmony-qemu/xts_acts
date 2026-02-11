@@ -114,7 +114,7 @@ export default function onVisibleAreaChangeTest() {
     }]
 
   describe('OnVisibleAreaChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('++++++++++++++++++++++++1')
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       console.log('++++++++++++++++++++++++2')

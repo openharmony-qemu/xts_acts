@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindSelectionMenuTest() {
   describe('bindSelectionMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindSelectionMenuTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

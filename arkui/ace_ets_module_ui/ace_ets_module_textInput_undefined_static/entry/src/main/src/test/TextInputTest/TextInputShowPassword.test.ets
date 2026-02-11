@@ -25,7 +25,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputShowPasswordTest() {
   describe('TextInputShowPasswordTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputShowPasswordTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

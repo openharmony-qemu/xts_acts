@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LocalStorageDeleteTest0120() {
   describe('LocalStorageDeleteTest0120', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LocalStorageDeleteTest0120 beforeEach start");
 
 

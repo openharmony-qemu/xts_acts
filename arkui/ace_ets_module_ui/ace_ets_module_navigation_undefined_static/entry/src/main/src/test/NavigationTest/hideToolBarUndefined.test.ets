@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function NavigationUndefinedTest() {
   describe('HideToolBarUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("HideToolBarUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

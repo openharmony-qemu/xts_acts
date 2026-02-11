@@ -61,7 +61,7 @@ function sleep(time: int) : Promise<int>  {
 export default function FreezeV2Test03() {
   describe('FreezeV2Test03', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FreezeV2Test03 beforeEach start");
 
 

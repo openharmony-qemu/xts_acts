@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function overlayModifierUndefined() {
   describe('overlayModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overlayModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -20,7 +20,7 @@ let tag: string = 'testRegExpPrototypeToString0001haha'; //日志标识字符串
 
 export default function RegExpTest() {
   describe('regExpTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

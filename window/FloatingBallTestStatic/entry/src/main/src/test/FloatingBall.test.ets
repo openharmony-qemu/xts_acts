@@ -2795,7 +2795,7 @@ export default function FloatingBallTest() {
           };
           floatingBallController.onStateChange(onStateChange);
           floatingBallController.startFloatingBall(startParams);
-          await Utils.msSleep(1000);
+          waitForCompletion(async ()=>{await Utils.msSleep(1000);});
           if(State == floatingBall.FloatingBallState.STARTED){
             floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
               console.info(caseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data));
@@ -2824,7 +2824,7 @@ export default function FloatingBallTest() {
               done();
             });
           }else{
-            await Utils.msSleep(300);
+            waitForCompletion(async ()=>{await Utils.msSleep(300);});
           }
         }).catch((err: Error):void => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);

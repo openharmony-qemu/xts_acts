@@ -28,7 +28,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function indicator_ModifierUndefinedTest() {
   describe('indicator_ModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility('com.arkui.ace.navigation.undefined.static', 'EntryAbility');
       await UtilsTest.msSleep(4000);

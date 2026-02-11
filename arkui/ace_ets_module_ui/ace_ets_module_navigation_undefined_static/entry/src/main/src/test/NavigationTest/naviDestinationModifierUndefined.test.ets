@@ -41,7 +41,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function naviDestinationModifierUndefined() {
   describe('naviDestinationModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("naviDestinationModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -44,7 +44,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function textPickerUndefined() {
   describe('textPickerUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textPickerUndefined beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.information01.undefined.static", "EntryAbility");

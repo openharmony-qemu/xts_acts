@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function slideRange() {
   describe('slideRange', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("slideRange beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

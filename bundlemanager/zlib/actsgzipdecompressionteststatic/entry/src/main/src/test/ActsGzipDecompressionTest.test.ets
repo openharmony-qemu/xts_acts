@@ -33,7 +33,7 @@ let allFilePath: string = "";
 
 export default function ActsGzipDecompressionTest() {
   describe('ActsGzipDecompressionTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');

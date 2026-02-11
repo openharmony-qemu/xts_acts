@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function XComponentSliderTest() {
   describe('XComponentSliderTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("XComponentSliderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

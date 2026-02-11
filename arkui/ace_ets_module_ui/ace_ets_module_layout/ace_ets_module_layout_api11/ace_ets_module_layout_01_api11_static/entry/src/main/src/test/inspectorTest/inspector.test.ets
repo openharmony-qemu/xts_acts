@@ -46,7 +46,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function inspectorJsunit() {
   describe('inspectorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("inspectorJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
 

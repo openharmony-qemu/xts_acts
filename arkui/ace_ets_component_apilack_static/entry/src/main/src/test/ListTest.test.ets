@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function listNewJsunit() {
   describe('listNewJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

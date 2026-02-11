@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function marqueeJsunit() {
   describe('marqueeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("marqueeJsunit beforeEach start");
 
 

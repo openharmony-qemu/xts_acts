@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function DrawModifier() {
   describe('DrawModifier', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DrawModifier beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
     });

@@ -62,7 +62,7 @@ export default function image10bitPixelMap() {
     let openHdrPic: HdrPicture | undefined;
     let isSupportHEICEncode: boolean;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;

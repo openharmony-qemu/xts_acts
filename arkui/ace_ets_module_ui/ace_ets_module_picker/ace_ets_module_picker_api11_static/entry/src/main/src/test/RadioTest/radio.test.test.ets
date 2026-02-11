@@ -33,7 +33,7 @@ let emitKey = "emitUserAgent";
 
 export default function radioTest() {
   describe('ActsRadioTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

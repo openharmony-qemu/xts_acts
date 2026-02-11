@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SimpleAnimatorOptionsPage() {
   describe('SimpleAnimatorOptionsPage', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SimpleAnimatorOptionsPage beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")

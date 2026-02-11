@@ -102,7 +102,7 @@ export default function imagePicture() {
   let isSupportHdr: Boolean;
 
   describe('imagePicture', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;

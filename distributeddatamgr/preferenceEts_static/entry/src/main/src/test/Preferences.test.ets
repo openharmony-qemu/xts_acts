@@ -64,7 +64,7 @@ class Company {
 
 export default function preferenceTest() {
   describe('preferenceTest', (): void =>  {
-    beforeAll (() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll')
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -93,14 +93,14 @@ export default function preferenceTest() {
       hilog.info(domain, tag, '%{public}s', 'afterAll')
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context!.stageMode)
       mPreferences = await dataPreferences.getPreferences(context!, NAME);
       mPreferences!.clearSync();
       mPreferences!.flush();
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterEach')
       await dataPreferences.deletePreferences(context!, NAME);
     })

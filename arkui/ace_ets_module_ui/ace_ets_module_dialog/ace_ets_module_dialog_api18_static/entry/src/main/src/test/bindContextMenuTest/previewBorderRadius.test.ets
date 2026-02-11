@@ -32,7 +32,7 @@ let emitKey = 'emitUserAgent';
 
 export default function previewBorderRadius() {
   describe('bindContextMenuPreviewBorderRadius', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
