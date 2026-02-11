@@ -2883,6 +2883,7 @@ export default function FloatingBallTest() {
 
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
+          floatingBallController.stopFloatingBall();
           done();
         }).catch((err: Error):void => {
           console.error(CaseName+` Failed to restore floating ball main window. Cause code: ${err.code}, message: ${err.message}`);
