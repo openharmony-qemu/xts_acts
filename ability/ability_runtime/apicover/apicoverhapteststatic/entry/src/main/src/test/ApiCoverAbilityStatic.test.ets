@@ -31,6 +31,10 @@ import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import DemoProcess from '../process/AProcess';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
+import window from '@ohos.window';
+import startOptions from '@ohos.app.ability.StartOptions';
+import fileIo from '@ohos.file.fs';
+import Want from '@ohos.app.ability.Want';
 
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
@@ -60,6 +64,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext | undefined;
 let array: string[] = new Array<string>();
+let dir: string = "";
 
 export default function ApiCoverStaticTest() {
   describe('ApiCoverStaticTestTest', () => {
@@ -81,8 +86,61 @@ export default function ApiCoverStaticTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.apicoverhaptest.static")
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
+      let dirAll = AppStorage.get<string>("dir");
+      if(dirAll) {
+        dir = dirAll!;
+      }
+      hilog.info(domain, tag, 'ActsZlibTest dir: ' + dir);
       hilog.info(domain, tag, 'beforeAll end');
     })
+    /**
+     * @tc.name   SUB_AA_Test_StartOptions_Static_0100
+     * @tc.number SUB_AA_Test_StartOptions_Static_0100
+     * @tc.desc   Function test window.WindowCreateParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_Test_StartOptions_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', `satrt`);
+        let windowParam: window.WindowCreateParams = {};
+        let startOp: startOptions = {
+          withAnimation: false,
+          displayId: 0,
+          windowLeft: 100,
+          windowTop: 100,
+          windowWidth: 100,
+          windowHeight: 100,
+          windowFocused: true,
+          windowCreateParams: windowParam
+        }
+        let startWant: Want = {
+          bundleName: "com.example.apicoverhaptest.static",
+          abilityName: "EntryAbility",
+        }
+        expect('0').assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND + '');
+        hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', insightIntent.ExecuteMode.UI_EXTENSION_ABILITY + '');
+        try {
+          context?.startAbility(startWant, startOp, (err: BusinessError | null) => {
+            if (err?.code !== 0) {
+              hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', `catch code: ${err?.code}, message: ${err?.message}`);
+              expect().assertFail();
+              hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', `end`);
+              done();
+            } else {
+              hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', `start success`);
+              hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', `end`);
+              done();
+            }
+          })
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', `catch code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.name   SUB_AA_ABILITY_Extension_API_Static_012

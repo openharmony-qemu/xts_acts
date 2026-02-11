@@ -22,10 +22,23 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import rpc from '@ohos.rpc';
+
+class CustomParcelable implements rpc.Parcelable {
+  marshalling(dataOut: rpc.MessageSequence) {
+    return false;
+  }
+
+  unmarshalling(dataIn: rpc.MessageSequence) {
+    return false;
+  }
+}
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -71,6 +84,29 @@ class EntryAbility extends UIAbility {
       });
     } catch (err) {
       hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', `startAbilityByCall error: ${JSON.stringify(err)}`);
+    }
+    this.callee.on('testCall', (dataOut: rpc.MessageSequence) => {
+      return new CustomParcelable();
+    });
+    try {
+      this.callee.on('', (dataOut: rpc.MessageSequence) => {
+        return new CustomParcelable();
+      });
+      hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    } catch (err) {
+      const e = err as BusinessError;
+      const errmsg: string = e?.code + ':' + e?.message
+      AppStorage.setOrCreate<string>("oncode", errmsg);
+      hilog.info(0x0000, 'testTag EntryAbility', `callee on release fail error code: ${e?.code}, msg: ${e?.message}`);
+    }
+    try {
+      this.callee.off('');
+      hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    } catch (err) {
+      const e = err as BusinessError;
+      const errmsg: string = e?.code + ':' + e?.message
+      AppStorage.setOrCreate<string>("offcode", errmsg);
+      hilog.info(0x0000, 'testTag EntryAbility', `callee off release fail error code: ${e?.code}, msg: ${e?.message}`);
     }
   }
 
