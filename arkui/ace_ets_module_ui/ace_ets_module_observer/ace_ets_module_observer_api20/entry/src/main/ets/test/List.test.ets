@@ -18,7 +18,7 @@ import axisHorizontal from './observerTest/axisHorizontal.test'
 import UIObserverDensityUpdateTest from './observerTest/UIObserverDensityUpdate.test';
 import UIObserverWillDrawTest from './observerTest/UIObserverWillDraw.test';
 import UIObserverDidLayoutTest from './observerTest/UIObserverDidLayout.test';
-import uIObserverDensityUpdateNullUndefinedTest from './uIObserver/UIObserverDensityUpdateNullUndefined.test';
+import uIObserverDensityUpdateNullUndefinedTest from './uIObserver/UIObserverDensityUpdateNull.test';
 import uIObserverWillDrawNullUndefinedTest from './uIObserver/UIObserverWillDrawNullUndefined.test';
 import WindowSizeLayoutBreakpointNullUndefinedTest from './uIObserver/WindowSizeLayoutBreakpointNullUndefined.test';
 
