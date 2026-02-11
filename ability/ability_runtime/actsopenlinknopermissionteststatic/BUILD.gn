@@ -20,5 +20,8 @@ ohos_js_app_static_suite("actsopenlinknopermissionStaticTest") {
   hap_name = "ActsOpenLinkNoPermissionStaticTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [
+    "../actsopenlinktestrelystatic:actsopenlinkRelyStaticTest",
+  ]
 }
 
