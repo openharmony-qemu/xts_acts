@@ -68,7 +68,7 @@ export default function getOverlayModuleInfo() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getOverlayModuleInfoModuleNameIsNullParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async  () =>{
+    it('getOverlayModuleInfoModuleNameIsNullParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () =>{
       try {
         await overlay.getOverlayModuleInfo(null).then(data => {
           console.info("getOverlayModuleInfoModuleNameIsNullParam result" + JSON.stringify(data));
@@ -99,7 +99,7 @@ export default function getOverlayModuleInfo() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getOverlayModuleInfoModuleNameIsUndefinedParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async  () =>{
+    it('getOverlayModuleInfoModuleNameIsUndefinedParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () =>{
       try {
         await overlay.getOverlayModuleInfo(undefined).then(data => {
           console.info("getOverlayModuleInfoModuleNameIsUndefinedParam result" + JSON.stringify(data));
