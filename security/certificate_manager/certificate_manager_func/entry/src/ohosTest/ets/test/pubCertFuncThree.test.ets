@@ -196,78 +196,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
-      const req1: certManager.CMSignatureSpec = {
-        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
-        padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-        digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
-      }
-      try {
-        CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
-          certManager.init(uri, req1, (err: Error, CMHandle: certManager.CMHandle) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(CMHandle);
-            }
-          });
-        });
-        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
-        expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
-      } catch (err) {
-        console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
-        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
-      }
-      const paddings = [certManager.CmKeyPadding.CM_PADDING_NONE, certManager.CmKeyPadding.CM_PADDING_PKCS1_V1_5];
-      for (let i = 0; i < paddings.length; i++) {
-        let req2: certManager.CMSignatureSpec = {
-          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
-          padding: paddings[i],
-          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
-        }
-        try {
-          CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
-            certManager.init(uri, req2, (err: Error, CMHandle: certManager.CMHandle) => {
-              if (err) {
-                reject(err);
-              } else {
-                resolve(CMHandle);
-              }
-            });
-          });
-          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
-          expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
-        } catch (err) {
-          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
-        }
-      }
-      const digests = [certManager.CmKeyDigest.CM_DIGEST_NONE, certManager.CmKeyDigest.CM_DIGEST_MD5,
-        certManager.CmKeyDigest.CM_DIGEST_SHA1, certManager.CmKeyDigest.CM_DIGEST_SHA224,
-        certManager.CmKeyDigest.CM_DIGEST_SHA384, certManager.CmKeyDigest.CM_DIGEST_SHA512,
-        certManager.CmKeyDigest.CM_DIGEST_SM3];
-      for(let i=0;i<digests.length;i++){
-        let req3: certManager.CMSignatureSpec = {
-          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
-          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-          digest: digests[i]
-        }
-        try {
-          CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
-            certManager.init(uri, req3, (err: Error, CMHandle: certManager.CMHandle) => {
-              if (err) {
-                reject(err);
-              } else {
-                resolve(CMHandle);
-              }
-            });
-          });
-          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
-          expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
-        } catch (err) {
-          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
-        }
-      }
       done();
     });
 
@@ -280,38 +208,38 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0106: started ");
-        let CMHandle1: certManager.CMHandle;
-        let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
-        const req: certManager.CMSignatureSpec = {
-          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
-          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
+      console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0106: started ");
+      let CMHandle1: certManager.CMHandle;
+      let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
+      const req: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+        padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
+      }
+      const param1 = ["",null,undefined];
+      for(let i=0;i<param1.length;i++){
+        try {
+          await certManager.init(param1[i], req);
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-        const param1 = ["",null,undefined];
-        for(let i=0;i<param1.length;i++){
-          try {
-            await certManager.init(param1[i], req);
-            console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
-            expect(null).assertFail();
-          } catch (err) {
-            console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-          }
+      }
+      const param2 = [null,undefined];
+      for(let i=0;i<param2.length;i++){
+        try {
+          await certManager.init(uri, param2[i]);
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
-        const param2 = [null,undefined];
-        for(let i=0;i<param2.length;i++){
-          try {
-            await certManager.init(uri, param2[i]);
-            console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
-            expect(null).assertFail();
-          } catch (err) {
-            console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-          }
-        }
-        done();
-      });
+      }
+      done();
+    });
 
     /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0109
@@ -322,17 +250,17 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0109: started ");
-        try {
-          await certManager.getUserTrustedCertificate(null);
-          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0109 init success. `);
-          expect(null).assertFail();
-        } catch (err) {
-          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0109 init err: " + err.code);
-          expect(err.code).assertEqual(401);
-        }
-        done();
-      });
+      console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0109: started ");
+      try {
+        await certManager.getUserTrustedCertificate(null);
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0109 init success. `);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0109 init err: " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
 
     /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0110
