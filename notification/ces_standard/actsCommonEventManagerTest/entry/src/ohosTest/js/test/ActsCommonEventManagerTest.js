@@ -534,6 +534,7 @@ export default function ActsCommonEventManagerTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 START`)
 
       let subscriber
+      let count
       let subscribeInfo = {
         events: ["event08"]
       }
@@ -548,16 +549,18 @@ export default function ActsCommonEventManagerTest() {
             console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 success ${commonEventSubscriber}`)
             subscriber = commonEventSubscriber
             done()
-
+            count= 0
             await subscriber.setCode(3).then(() => {
+              count++
               console.info(`setCode_2 success `)
+              sleep(300)
+              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`setCode_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
-
             await subscriber.getCode().then((Code) => {
               console.info(`getCode_2 success ${Code}`)
               expect(Code).assertEqual(3)
@@ -585,9 +588,12 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             })
-
+            count = 0
             await subscriber.setCodeAndData(4, 'data04').then(() => {
               console.info(`setCodeAndData_2 success `)
+              count++
+              sleep(300)
+              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
@@ -604,9 +610,12 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             })
-
+            count = 0
             await subscriber.finishCommonEvent().then(() => {
               console.info(`finishCommonEvent_2 success `)
+              count++
+              sleep(300)
+              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
