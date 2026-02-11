@@ -24,7 +24,7 @@ export default function AnimatorNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info("AnimatorNullUndefinedTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/animator/AnimatorNullUndefinedTest',
+        url: 'MainAbility/pages/animator/AnimatorNullUndefined',
       }
       try {
         router.clear();
