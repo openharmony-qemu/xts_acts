@@ -24,7 +24,7 @@ export default function ArcSwiperAttributeNullTest() {
     beforeEach(async (done: Function) => {
       console.info("ArcSwiperAttributeNull beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/swiper/ArcSwiperAttributeNull",
+        url: "MainAbility/pages/arcSwiper/ArcSwiperAttributeNull",
       }
       try {
         router.clear();

@@ -23,7 +23,7 @@ export default function ArcSwiperControllerFinishAnimationNullTest() {
     beforeEach(async (done: Function) => {
       console.info("ArcSwiperControllerFinishAnimationNull beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/swiper/ArcSwiperControllerFinishAnimationNull",
+        url: "MainAbility/pages/arcSwiper/ArcSwiperControllerFinishAnimationNull",
       }
       try {
         router.clear();

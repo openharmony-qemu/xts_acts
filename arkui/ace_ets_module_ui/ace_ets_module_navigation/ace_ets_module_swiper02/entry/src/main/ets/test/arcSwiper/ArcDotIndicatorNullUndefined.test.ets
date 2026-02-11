@@ -24,7 +24,7 @@ export default function ArcDotIndicatorNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info("ArcDotIndicatorNullUndefined beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/swiper/ArcDotIndicatorNullUndefined",
+        url: "MainAbility/pages/arcSwiper/ArcDotIndicatorNullUndefined",
       }
       try {
         router.clear();

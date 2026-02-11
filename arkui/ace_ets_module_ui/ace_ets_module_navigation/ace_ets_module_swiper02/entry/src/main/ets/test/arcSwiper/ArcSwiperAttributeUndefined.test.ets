@@ -24,7 +24,7 @@ export default function ArcSwiperAttributeUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info("ArcSwiperAttributeUndefined beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/swiper/ArcSwiperAttributeUndefined",
+        url: "MainAbility/pages/arcSwiper/ArcSwiperAttributeUndefined",
       }
       try {
         router.clear();
