@@ -174,7 +174,6 @@ describe('AccessibleSendEvent', function () {
     }
 
     let event = new accessibility.EventInfo(jsonObj);
-    let Result = false;
 
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0500 result ${result}`);
@@ -182,10 +181,8 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0500 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
   /**
@@ -207,17 +204,15 @@ describe('AccessibleSendEvent', function () {
     }
 
     let event = new accessibility.EventInfo(jsonObj);
-    let Result = false;
+
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0600 result ${result}`);
         expect(null).assertFail();
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0600 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
   /**
@@ -852,7 +847,6 @@ describe('AccessibleSendEvent', function () {
     it('SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_2900', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_2900');
         let event = null;
-        let Result = false;
 
         accessibility.sendEvent(event).then((result) => {           
             console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_2900 result ${result}`);
@@ -860,10 +854,8 @@ describe('AccessibleSendEvent', function () {
             done();
         }).catch((err) => {
             console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_2900 has error: ${err}`);
-            Result = true;
+            done();
         });
-        expect(Result).assertEqual(true);
-        done();
     })
 
   /**
@@ -1674,17 +1666,14 @@ describe('AccessibleSendEvent', function () {
 
     let event = new accessibility.EventInfo(jsonObj);
 
-    let Result = false;
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5600 result ${result}`);
         expect(null).assertFail();
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5600 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
   /**
@@ -1707,17 +1696,14 @@ describe('AccessibleSendEvent', function () {
 
     let event = new accessibility.EventInfo(jsonObj);
 
-    let Result = false;
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5700 result ${result}`);
         expect(null).assertFail();
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5700 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
   /**
@@ -2051,17 +2037,14 @@ describe('AccessibleSendEvent', function () {
 
     let event = new accessibility.EventInfo(jsonObj);
 
-    let Result = false;
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6800 result ${result}`);
         expect(null).assertFail();
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6800 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
   /**
@@ -2085,17 +2068,14 @@ describe('AccessibleSendEvent', function () {
 
     let event = new accessibility.EventInfo(jsonObj);
 
-    let Result = false;
     accessibility.sendEvent(event).then((result) =>{
         console.error(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6900 result ${result}`);
         expect(null).assertFail();
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6900 has error: ${err}`);
-        Result = true;
+        done();
     });
-    expect(Result).assertEqual(true);
-    done();
   })
 
    /**
