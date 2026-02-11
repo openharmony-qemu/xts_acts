@@ -1961,5 +1961,203 @@ export default function sceneTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testSceneAnimations
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.desc   Verify Scene.animations property returns valid Animation array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneAnimations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneAnimations";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/BrainStem/glTF/BrainStem.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get animations property
+        let anims = scene.animations;
+        expect(anims != null).assertTrue();
+        expect(anims != undefined).assertTrue();
+        console.info(msg + " animations property retrieved successfully, length: " + anims.length);
+
+        // Test with scene that has animations
+        if (anims.length > 0) {
+          expect(anims[0] != null).assertTrue();
+          console.info(msg + " first animation is not null");
+        }
+
+        // Test with scene that has no animations
+        let scene2 = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        let anims2 = scene2.animations;
+        expect(anims2 != null).assertTrue();
+        expect(anims2 != undefined).assertTrue();
+        console.info(msg + " animations property retrieved from scene without animations, length: " + anims2.length);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneAnimations " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneRoot
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1026
+     * @tc.desc   Verify Scene.root property returns valid Node instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneRoot";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get root property
+        let rootNode = scene.root;
+        expect(rootNode != null).assertTrue();
+        console.info(msg + " root property retrieved successfully");
+
+        // Verify root node properties
+        expect(rootNode != undefined).assertTrue();
+        console.info(msg + " root is defined");
+
+        expect(rootNode?.nodeType).assertEqual(scene3d.NodeType.NODE);
+        console.info(msg + " root node type is NODE");
+
+        expect(rootNode?.path).assertEqual("");
+        console.info(msg + " root path is empty string");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneRoot " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneRenderConfiguration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1027
+     * @tc.desc   Verify Scene.renderConfiguration property returns valid RenderConfiguration instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneRenderConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneRenderConfiguration";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get renderConfiguration property
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        console.info(msg + " renderConfiguration property retrieved successfully");
+
+        // Verify renderConfiguration is valid object
+        expect(renderConfig != undefined).assertTrue();
+        console.info(msg + " renderConfiguration is defined");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneRenderConfiguration " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneGetResourceFactory
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1028
+     * @tc.desc   Verify Scene.getResourceFactory() returns valid SceneResourceFactory instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneGetResourceFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneGetResourceFactory";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Call getResourceFactory method
+        let factory = scene.getResourceFactory();
+        expect(factory != null).assertTrue();
+        console.info(msg + " getResourceFactory() returned successfully");
+
+        // Verify factory is valid object
+        expect(factory != undefined).assertTrue();
+        console.info(msg + " factory is defined");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneGetResourceFactory " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGeometryDefinitionGeometryType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1029
+     * @tc.desc   Verify geometryType property returns correct GeometryType enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGeometryDefinitionGeometryType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testGeometryDefinitionGeometryType";
+      console.info(msg + ' begin ');
+      try {
+        // Test CustomGeometry
+        let customGeom = new scene3d.CustomGeometry();
+        expect(customGeom.geometryType).assertEqual(scene3d.GeometryType.CUSTOM);
+        console.info(msg + " CustomGeometry.geometryType returns CUSTOM");
+
+        // Test CubeGeometry
+        let cubeGeom = new scene3d.CubeGeometry();
+        expect(cubeGeom.geometryType).assertEqual(scene3d.GeometryType.CUBE);
+        console.info(msg + " CubeGeometry.geometryType returns CUBE");
+
+        // Test PlaneGeometry
+        let planeGeom = new scene3d.PlaneGeometry();
+        expect(planeGeom.geometryType).assertEqual(scene3d.GeometryType.PLANE);
+        console.info(msg + " PlaneGeometry.geometryType returns PLANE");
+
+        // Test SphereGeometry
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom.geometryType).assertEqual(scene3d.GeometryType.SPHERE);
+        console.info(msg + " SphereGeometry.geometryType returns SPHERE");
+
+        // Test CylinderGeometry
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom.geometryType).assertEqual(scene3d.GeometryType.CYLINDER);
+        console.info(msg + " CylinderGeometry.geometryType returns CYLINDER");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testGeometryDefinitionGeometryType " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
