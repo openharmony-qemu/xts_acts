@@ -19,6 +19,7 @@ import uiContextFrameNodeQueryNullTest from './uiContext/UIContextFrameNodeQuery
 import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefined.test';
 import GetRectangleByIdNullUndefinedTest from './componentUtils/ComponentUtilsGetRectangleByIdNullUndefined.test';
 import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceManagerCacheNullUndefined.test';
+import columnAllowForceDarkTest from './column/ColumnAllowForceDark.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   uiContextMiscNullUndefinedTest();
   GetRectangleByIdNullUndefinedTest();
   setResourceManagerCacheNullUndefinedTest();
+  columnAllowForceDarkTest();
 }
