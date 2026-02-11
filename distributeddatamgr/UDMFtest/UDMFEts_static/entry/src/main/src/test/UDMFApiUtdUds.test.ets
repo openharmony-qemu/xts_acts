@@ -435,7 +435,7 @@ export default function UDMFApiUtdUds() {
             } catch (err) {
                 const error = err as BusinessError;
                 console.log("error message:" + error.message + ";error code:" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect().assertFail();
             }
             console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9200 end");
         });

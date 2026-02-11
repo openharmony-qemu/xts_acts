@@ -639,7 +639,7 @@ export default function UDMFApiDescriptorTest() {
         const error = err as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
-        expect(error.code).assertEqual(401);
+        expect().assertFail();
         done()
       }
       hilog.info(domain, tag, TAG + ' end ');
