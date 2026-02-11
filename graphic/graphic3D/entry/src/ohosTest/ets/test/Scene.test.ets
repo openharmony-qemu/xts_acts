@@ -1475,6 +1475,381 @@ export default function sceneTest() {
       }
     })
     /**
+     * @tc.name   testCustomGeometryVertices
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
+     * @tc.desc   Test set and get for vertices property of CustomGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomGeometryVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCustomGeometryVertices";
+      console.info(msg + ' begin ');
+      try {
+        let customGeom = new scene3d.CustomGeometry();
+        expect(customGeom != null).assertTrue();
+        console.info(msg + " CustomGeometry created successfully");
+
+        // Test setting vertices with normal values
+        customGeom.vertices = [{x: 0, y: 1, z: 0}, {x: 0.5, y: 0, z: 0.3}, {x: 0, y: -1, z: 0}];
+        expect(customGeom.vertices != null).assertTrue();
+        expect(customGeom.vertices.length).assertEqual(3);
+        console.info(msg + " normal vertices set successfully");
+
+        // Test setting vertices with negative coordinates
+        customGeom.vertices = [{x: -1, y: -1, z: -1}, {x: -2.5, y: -3.5, z: -4.5}];
+        expect(customGeom.vertices.length).assertEqual(2);
+        expect(customGeom.vertices[0].x).assertEqual(-1);
+        console.info(msg + " negative coordinate vertices set successfully");
+
+        // Test setting vertices with zero coordinates
+        customGeom.vertices = [{x: 0, y: 0, z: 0}];
+        expect(customGeom.vertices.length).assertEqual(1);
+        expect(customGeom.vertices[0].x).assertEqual(0);
+        console.info(msg + " zero coordinate vertices set successfully");
+
+        // Test setting vertices with floating point values
+        customGeom.vertices = [{x: 1.234, y: 2.567, z: -3.890}];
+        expect(Math.abs(customGeom.vertices[0].x - 1.234) < 0.001).assertTrue();
+        console.info(msg + " floating point vertices set successfully");
+
+        // Test setting vertices with mixed values
+        customGeom.vertices = [{x: 0, y: 0, z: 0}, {x: 1, y: -1, z: 2}, {x: -3.14, y: 2.71, z: 0}];
+        expect(customGeom.vertices.length).assertEqual(3);
+        console.info(msg + " mixed value vertices set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCustomGeometryVertices " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCubeGeometrySize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1031
+     * @tc.desc   Test set and get for size property of CubeGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCubeGeometrySize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCubeGeometrySize";
+      console.info(msg + ' begin ');
+      try {
+        let cubeGeom = new scene3d.CubeGeometry();
+        expect(cubeGeom != null).assertTrue();
+        console.info(msg + " CubeGeometry created successfully");
+
+        // Test setting size with normal positive values
+        cubeGeom.size = {x: 1.0, y: 2.0, z: 3.0};
+        expect(cubeGeom.size != null).assertTrue();
+        expect(cubeGeom.size.x).assertEqual(1.0);
+        expect(cubeGeom.size.y).assertEqual(2.0);
+        expect(cubeGeom.size.z).assertEqual(3.0);
+        console.info(msg + " normal positive size values set successfully");
+
+        // Test setting size with negative values
+        cubeGeom.size = {x: -1.5, y: -2.5, z: -3.5};
+        expect(cubeGeom.size.x).assertEqual(-1.5);
+        expect(cubeGeom.size.y).assertEqual(-2.5);
+        expect(cubeGeom.size.z).assertEqual(-3.5);
+        console.info(msg + " negative size values set successfully");
+
+        // Test setting size with zero values
+        cubeGeom.size = {x: 0, y: 0, z: 0};
+        expect(cubeGeom.size.x).assertEqual(0);
+        expect(cubeGeom.size.y).assertEqual(0);
+        expect(cubeGeom.size.z).assertEqual(0);
+        console.info(msg + " zero size values set successfully");
+
+        // Test setting size with floating point values
+        cubeGeom.size = {x: 1.234, y: 2.567, z: 3.890};
+        expect(cubeGeom.size.x).assertEqual(1.234);
+        console.info(msg + " floating point size values set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCubeGeometrySize " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testPlaneGeometrySize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1032
+     * @tc.desc   Test set and get for size property of PlaneGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPlaneGeometrySize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testPlaneGeometrySize";
+      console.info(msg + ' begin ');
+      try {
+        let planeGeom = new scene3d.PlaneGeometry();
+        expect(planeGeom != null).assertTrue();
+        console.info(msg + " PlaneGeometry created successfully");
+
+        // Test setting size with normal positive values
+        planeGeom.size = {x: 2.0, y: 3.0};
+        expect(planeGeom.size != null).assertTrue();
+        expect(planeGeom.size.x).assertEqual(2.0);
+        expect(planeGeom.size.y).assertEqual(3.0);
+        console.info(msg + " normal positive size values set successfully");
+
+        // Test setting size with negative values
+        planeGeom.size = {x: -1.5, y: -2.5};
+        expect(planeGeom.size.x).assertEqual(-1.5);
+        expect(planeGeom.size.y).assertEqual(-2.5);
+        console.info(msg + " negative size values set successfully");
+
+        // Test setting size with zero values
+        planeGeom.size = {x: 0, y: 0};
+        expect(planeGeom.size.x).assertEqual(0);
+        expect(planeGeom.size.y).assertEqual(0);
+        console.info(msg + " zero size values set successfully");
+
+        // Test setting size with floating point values
+        planeGeom.size = {x: 1.234, y: 5.678};
+        expect(planeGeom.size.x).assertEqual(1.234);
+        console.info(msg + " floating point size values set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testPlaneGeometrySize " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSphereGeometryRadius
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1033
+     * @tc.desc   Test set and get for radius property of SphereGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSphereGeometryRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testSphereGeometryRadius";
+      console.info(msg + ' begin ');
+      try {
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom != null).assertTrue();
+        console.info(msg + " SphereGeometry created successfully");
+
+        // Test setting radius with normal positive value
+        sphereGeom.radius = 1.5;
+        expect(sphereGeom.radius).assertEqual(1.5);
+        console.info(msg + " normal positive radius set successfully");
+
+        // Test setting radius with negative value
+        sphereGeom.radius = -2.5;
+        expect(sphereGeom.radius).assertEqual(-2.5);
+        console.info(msg + " negative radius set successfully");
+
+        // Test setting radius with zero
+        sphereGeom.radius = 0;
+        expect(sphereGeom.radius).assertEqual(0);
+        console.info(msg + " zero radius set successfully");
+
+        // Test setting radius with floating point value
+        sphereGeom.radius = 3.14159;
+        expect(sphereGeom.radius).assertEqual(3.14159);
+        console.info(msg + " floating point radius set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSphereGeometryRadius " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSphereGeometrySegmentCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1034
+     * @tc.desc   Test set and get for segmentCount property of SphereGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSphereGeometrySegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testSphereGeometrySegmentCount";
+      console.info(msg + ' begin ');
+      try {
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom != null).assertTrue();
+        console.info(msg + " SphereGeometry created successfully");
+
+        // Test setting segmentCount with normal positive integer
+        sphereGeom.segmentCount = 24;
+        expect(sphereGeom.segmentCount).assertEqual(24);
+        console.info(msg + " normal positive segmentCount set successfully");
+
+        // Test setting segmentCount with negative value
+        sphereGeom.segmentCount = -10;
+        expect(sphereGeom.segmentCount).assertEqual(-10);
+        console.info(msg + " negative segmentCount set successfully");
+
+        // Test setting segmentCount with zero
+        sphereGeom.segmentCount = 0;
+        expect(sphereGeom.segmentCount).assertEqual(0);
+        console.info(msg + " zero segmentCount set successfully");
+        
+        /* task_0204 输入浮点,返回浮点
+        // Test setting segmentCount with floating point value (should truncate)
+        sphereGeom.segmentCount = 26.7;
+        expect(sphereGeom.segmentCount).assertEqual(26);
+        console.info(msg + " floating point segmentCount truncated to 26 successfully");
+        */
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSphereGeometrySegmentCount " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometryRadius
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1035
+     * @tc.desc   Test set and get for radius property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometryRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometryRadius";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting radius with normal positive value
+        cylinderGeom.radius = 1.5;
+        expect(cylinderGeom.radius).assertEqual(1.5);
+        console.info(msg + " normal positive radius set successfully");
+
+        // Test setting radius with negative value
+        cylinderGeom.radius = -2.5;
+        expect(cylinderGeom.radius).assertEqual(-2.5);
+        console.info(msg + " negative radius set successfully");
+
+        // Test setting radius with zero
+        cylinderGeom.radius = 0;
+        expect(cylinderGeom.radius).assertEqual(0);
+        console.info(msg + " zero radius set successfully");
+
+        // Test setting radius with floating point value
+        cylinderGeom.radius = 3.14159;
+        expect(cylinderGeom.radius).assertEqual(3.14159);
+        console.info(msg + " floating point radius set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometryRadius " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometryHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1036
+     * @tc.desc   Test set and get for height property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometryHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometryHeight";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting height with normal positive value
+        cylinderGeom.height = 2.5;
+        expect(cylinderGeom.height).assertEqual(2.5);
+        console.info(msg + " normal positive height set successfully");
+
+        // Test setting height with negative value
+        cylinderGeom.height = -3.5;
+        expect(cylinderGeom.height).assertEqual(-3.5);
+        console.info(msg + " negative height set successfully");
+
+        // Test setting height with zero
+        cylinderGeom.height = 0;
+        expect(cylinderGeom.height).assertEqual(0);
+        console.info(msg + " zero height set successfully");
+
+        // Test setting height with floating point value
+        cylinderGeom.height = 3.14159;
+        expect(cylinderGeom.height).assertEqual(3.14159);
+        console.info(msg + " floating point height set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometryHeight " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometrySegmentCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1037
+     * @tc.desc   Test set and get for segmentCount property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometrySegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometrySegmentCount";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting segmentCount with normal positive integer
+        cylinderGeom.segmentCount = 20;
+        expect(cylinderGeom.segmentCount).assertEqual(20);
+        console.info(msg + " normal positive segmentCount set successfully");
+
+        // Test setting segmentCount with negative value
+        cylinderGeom.segmentCount = -15;
+        expect(cylinderGeom.segmentCount).assertEqual(-15);
+        console.info(msg + " negative segmentCount set successfully");
+
+        // Test setting segmentCount with zero
+        cylinderGeom.segmentCount = 0;
+        expect(cylinderGeom.segmentCount).assertEqual(0);
+        console.info(msg + " zero segmentCount set successfully");
+        
+        /* task_0204 输入浮点,返回浮点
+        // Test setting segmentCount with floating point value (should truncate)
+        cylinderGeom.segmentCount = 24.8;
+        expect(cylinderGeom.segmentCount).assertEqual(24);
+        console.info(msg + " floating point segmentCount truncated to 24 successfully");
+        */
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometrySegmentCount " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testSceneRenderConfigurationShadowResolution
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1023
      * @tc.desc   Verify Scene.renderConfiguration.shadowResolution property can be set and retrieved
