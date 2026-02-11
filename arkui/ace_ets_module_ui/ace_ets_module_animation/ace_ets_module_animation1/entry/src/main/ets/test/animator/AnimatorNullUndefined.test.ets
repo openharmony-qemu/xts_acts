@@ -30,7 +30,7 @@ export default function AnimatorNullUndefinedTest() {
         router.clear();
         let pages = router.getState();
         console.info("get AnimatorNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("AnimatorNullUndefinedTest" == pages.name)) {
+        if (!("AnimatorNullUndefined" == pages.name)) {
           console.info("get AnimatorNullUndefinedTest state pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
