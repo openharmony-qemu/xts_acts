@@ -48,7 +48,7 @@ class Logger {
 export default function imagePicturePack() {
   let filesDir: string | undefined | null;
   let cacheDir: string | undefined | null;
-  let testContext: common.UIAbilityContext;
+  let testContext: common.UIAbilityContext | undefined;
   let isSupportHEIFDecode: boolean;
   let isSupportHEICEncode: boolean;
   let isSupportHdr: Boolean;
@@ -83,7 +83,7 @@ export default function imagePicturePack() {
             console.info("file not exists");
             isSupportHdr = false;
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       };
@@ -112,7 +112,7 @@ export default function imagePicturePack() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath);
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
         waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
         imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor);
@@ -361,7 +361,7 @@ export default function imagePicturePack() {
             picture.release();
             waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
@@ -378,7 +378,7 @@ export default function imagePicturePack() {
             picture.release();
             waitForCompletion(async () => {await sleep(5000);})
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
