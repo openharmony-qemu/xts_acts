@@ -42,7 +42,7 @@ export default function TextAreaTypeTest() {
 
     /**
      * @tc.name   textAreaType_0100
-     * @tc.number SUB_ARKUI_TEXTAREA_TYPE_0100
+     * @tc.number textAreaType_0100
      * @tc.desc   Test TextArea type property with TextAreaType.PHONE_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -59,7 +59,7 @@ export default function TextAreaTypeTest() {
 
     /**
      * @tc.name   textAreaType_0200
-     * @tc.number SUB_ARKUI_TEXTAREA_TYPE_0200
+     * @tc.number textAreaType_0200
      * @tc.desc   Test TextArea type property with TextAreaType.EMAIL
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

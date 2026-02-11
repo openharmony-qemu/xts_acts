@@ -110,7 +110,9 @@ import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPre
 import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
 import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
 import TextDataDetectorDateTimeTest from './TextTest/TextDataDetectorDateTime.test';
-
+import TextFontNullTest from './TextTest/TextFontNull.test';
+import TextMinMaxFontSizeNullTest from './TextTest/TextMinMaxFontSizeNull.test';
+import TextMinFontScaleMaxFontScaleTest from './TextTest/TextMinFontScaleMaxFontScale.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -211,4 +213,7 @@ export default function testsuite() {
   TextMarqueeOptionsTest();
   TextSpecialAttributesTest();
   TextDataDetectorDateTimeTest();
+  TextFontNullTest();
+  TextMinMaxFontSizeNullTest();
+  TextMinFontScaleMaxFontScaleTest();
 }
