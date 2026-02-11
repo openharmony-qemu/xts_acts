@@ -721,7 +721,7 @@ export default function audioFramework() {
       console.info("audio.DeviceType.HEARING_AID:" + audio.DeviceType.HEARING_AID);
       expect(audio.DeviceType.NEARLINK).assertEqual(31);
       console.info("audio.DeviceType.NEARLINK:" + audio.DeviceType.NEARLINK);
-      expect(audio.DeviceType.SYSTEM_PRIVATE).assertEqual(31);
+      expect(audio.DeviceType.SYSTEM_PRIVATE).assertEqual(200);
       console.info("audio.DeviceType.SYSTEM_PRIVATE:" + audio.DeviceType.SYSTEM_PRIVATE);
       expect(audio.DeviceType.DEFAULT == 1000).assertTrue();
       console.info("audio.DeviceType.DEFAULT:" + audio.DeviceType.DEFAULT);
