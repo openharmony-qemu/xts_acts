@@ -49,8 +49,8 @@ export default function flexWrapReverse_fixedParentPadding() {
     });
 
     /**
-     * @tc.name   testWrapReverseParentfixedPaddingChildPadding
-     * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0300
+     * @tc.name   testWrapReverseParentfixedPaddingChildMargin
+     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildMargin
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,15 +112,15 @@ export default function flexWrapReverse_fixedParentPadding() {
     });
 
     /**
-     * @tc.name   testWrapReverseParentfixedPaddingChildMargin
-     * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0400
+     * @tc.name   testWrapReverseParentfixedPaddingChildMarginNew
+     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildMarginNew
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWrapReverseParentfixedPaddingChildMargin',  Level.LEVEL0, async () => {
-      console.info('new testWrapReverseParentfixedPaddingChildMargin START');
+    it('testWrapReverseParentfixedPaddingChildMarginNew',  Level.LEVEL0, async () => {
+      console.info('new testWrapReverseParentfixedPaddingChildMarginNew START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 0
       })
@@ -173,7 +173,7 @@ export default function flexWrapReverse_fixedParentPadding() {
       console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi16:'+ Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))))
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
 
-      console.info('new testWrapReverseParentfixedPaddingChildMargin END');
+      console.info('new testWrapReverseParentfixedPaddingChildMarginNew END');
     });
 
     /**
