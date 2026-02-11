@@ -12,9 +12,9 @@
     "MainAbility/pages/datePicker/datePickerUI",
     "MainAbility/pages/datePicker/datePickerPropertiesModifier",
     "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined",
-    "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined",
-    "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined",
-    "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined",
-    "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined"
+    "MainAbility/pages/datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined",
+    "MainAbility/pages/datePickerNullUndefined/DatePickerLunarNullUndefined",
+    "MainAbility/pages/datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined",
+    "MainAbility/pages/datePickerNullUndefined/DatePickerTextStyleNullUndefined"
   ]
 }
