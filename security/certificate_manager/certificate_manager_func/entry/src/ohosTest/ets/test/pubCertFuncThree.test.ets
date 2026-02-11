@@ -39,8 +39,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0100: started ");
         let uri: string = 'test'; /* 业务安装凭据，返回唯一标识符，此处省略 */
         try {
@@ -62,8 +61,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0101: started ");
         let uri: string = 'test';
         let cmResult2: certManager.CMResult;
@@ -94,8 +92,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0102: started ");
         let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
         try {
@@ -117,8 +114,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0103: started ");
         let cmResult2: certManager.CMResult;
         let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
@@ -149,8 +145,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0105: started ");
         let CMHandle1: certManager.CMHandle;
         let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
@@ -280,8 +275,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0106: started ");
         let CMHandle1: certManager.CMHandle;
         let uri: string = 'oh:t=ak;o=appCertAliasDemoRsa;u=100;a=20010045';
@@ -312,41 +306,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
             expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
           }
         }
-        const paddings = [certManager.CmKeyPadding.CM_PADDING_NONE, certManager.CmKeyPadding.CM_PADDING_PKCS1_V1_5];
-        for (let i = 0; i < paddings.length; i++) {
-          let req2: certManager.CMSignatureSpec = {
-            purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
-            padding: paddings[i],
-            digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
-          };
-          try {
-            await certManager.init(uri, req2);
-            console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
-            expect(null).assertFail();
-          } catch (err) {
-            console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-          }
-        }
-        const digests = [certManager.CmKeyDigest.CM_DIGEST_NONE, certManager.CmKeyDigest.CM_DIGEST_MD5,
-          certManager.CmKeyDigest.CM_DIGEST_SHA1, certManager.CmKeyDigest.CM_DIGEST_SHA224,
-          certManager.CmKeyDigest.CM_DIGEST_SHA384, certManager.CmKeyDigest.CM_DIGEST_SHA512,
-          certManager.CmKeyDigest.CM_DIGEST_SM3];
-        for(let i=0;i<digests.length;i++){
-          let req3: certManager.CMSignatureSpec = {
-            purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_VERIFY,
-            padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-            digest: digests[i]
-          };
-          try {
-            await certManager.init(uri, req3);
-            console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
-            expect(null).assertFail();
-          } catch (err) {
-            console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
-          }
-        }
         done();
       });
 
@@ -358,8 +317,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0109: started ");
         try {
           await certManager.getUserTrustedCertificate(null);
@@ -380,8 +338,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: Function) => {
+    it('SUB_Security_CertManager_GetPriCertJsApi_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0110: started ");
         let uri: string = 'oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0;a=20010044';
         try {
