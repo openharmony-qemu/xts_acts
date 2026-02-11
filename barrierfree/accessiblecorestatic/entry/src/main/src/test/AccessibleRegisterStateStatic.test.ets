@@ -2,8 +2,26 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import accessibility from '@ohos.accessibility'
+import { BusinessError } from '@ohos.base';
+import Rect from '@ohos.application.AccessibilityExtensionAbility';
+import { Resource } from 'global.resource';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
+
+class Rect {
+        left: number;
+        top: number;
+        width: number;
+        height: number;
+}
+
+type CaptionsFontFamily = 'default' | 'monospacedSerif' | 'serif' | 'monospacedSansSerif' | 'sansSerif' | 'casual' | 'cursive' | 'smallCapitals';
+type CaptionsFontEdgeType = 'none' | 'raised' | 'depressed' | 'uniform' | 'dropShadow';
+
+let result: boolean = false;
+const bundleName = 'com.huawei.hmos.cardistributedassist';
+const triggerAction : accessibility.Action = 'accessibilityFocus';
+const eventType : accessibility.EventType = 'accessibilityFocus';
 
 export default function abilityTest() {
   describe("AccessibleRegisterStateStatic", (): void => {
@@ -46,6 +64,7 @@ export default function abilityTest() {
       try {
         let status = accessibility.isOpenAccessibilitySync();
         hilog.info(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0500 result: ${status}`);
+        expect(status).assertEqual(false);
         expect(typeof (status)).assertEqual('boolean');
         done();
       } catch (error) {

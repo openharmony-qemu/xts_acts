@@ -189,6 +189,28 @@ export default function abilityTest() {
       }
     })
 
+    /**
+     * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500
+     * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500
+     * @tc.desc    test Ability Captions Manager
+     * @tc.size    MEDIUMTEST
+     * @tc.type    User
+     * @tc.level   Level 0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1500');
+      let captionsManager = accessibility.getCaptionsManager();
+      expect(captionsManager.enabled == true || captionsManager.enabled == false).assertTrue();
+      expect(captionsManager.style != null).assertTrue();
+      expect(captionsManager.style.backgroundColor != null).assertTrue();
+      expect(captionsManager.style.fontColor != null).assertTrue();
+      expect(captionsManager.style.fontEdgeType != null).assertTrue();
+      expect(captionsManager.style.fontFamily != null).assertTrue();
+      expect(captionsManager.style.fontScale != null).assertTrue();
+      expect(captionsManager.style.windowColor != null).assertTrue();
+      done();
+    })
+
 
 
 
