@@ -565,6 +565,18 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
       }
+      try {
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, 3, caCert)
+        expect(null).assertFail()
+      } catch (err) {
+        if (err.code == 29700004) {
+          done();
+        } else {
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+
 
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, null)
