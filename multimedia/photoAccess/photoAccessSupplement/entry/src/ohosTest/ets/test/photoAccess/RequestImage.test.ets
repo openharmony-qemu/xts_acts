@@ -2495,7 +2495,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
-     * @tc.desc      clone-13900020
+     * @tc.desc      clone-success
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2726,7 +2726,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
-     * @tc.desc      getFirstObject-401
+     * @tc.desc      getFirstObject-success
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2757,7 +2757,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
-     * @tc.desc      getLastObject-401
+     * @tc.desc      getLastObject-success
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
