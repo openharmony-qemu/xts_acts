@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 
 export default function ratingModifierUndefinedTest() {
   describe('ratingModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

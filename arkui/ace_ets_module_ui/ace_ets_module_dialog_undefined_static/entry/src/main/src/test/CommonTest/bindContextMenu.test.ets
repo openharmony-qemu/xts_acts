@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function bindContextMenuUndefinedTest() {
   describe('commonMenu', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("bindContextMenu beforeAll start");
 
       await UtilsTest.msSleep(4000)

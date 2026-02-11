@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function sliderModifierUndefinedTest() {
   describe('sliderModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("SliderModifierUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function radioUndefined() {
   describe('radioUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("radioUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

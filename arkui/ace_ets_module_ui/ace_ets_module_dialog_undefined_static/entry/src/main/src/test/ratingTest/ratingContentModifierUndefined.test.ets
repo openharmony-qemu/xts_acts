@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function ratingContentModifierUndefinedTest() {
   describe('ratingContentModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

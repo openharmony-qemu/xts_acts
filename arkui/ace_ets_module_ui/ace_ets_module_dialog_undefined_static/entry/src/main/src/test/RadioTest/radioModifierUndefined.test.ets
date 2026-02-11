@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function radioModifierUndefined() {
   describe('radioModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("radioModifierUndefined beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");

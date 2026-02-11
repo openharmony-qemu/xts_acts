@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function toggleUndefinedTest() {
   describe('toggleUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("toggleUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

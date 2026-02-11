@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function checkboxGroupUndefined() {
   describe('checkboxGroupUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("checkboxGroupUndefined beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");

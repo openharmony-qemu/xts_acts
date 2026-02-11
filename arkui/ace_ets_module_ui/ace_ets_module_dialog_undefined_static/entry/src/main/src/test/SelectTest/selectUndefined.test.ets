@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function selectUndefined() {
   describe('selectUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("selectUndefined beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");
