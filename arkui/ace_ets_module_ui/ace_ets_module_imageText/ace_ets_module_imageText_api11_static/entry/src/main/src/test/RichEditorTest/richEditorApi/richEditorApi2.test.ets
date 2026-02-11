@@ -97,7 +97,7 @@ export default function richEditorApi2() {
       expect(JSON.stringifyJsonElement(contentElement.getArray("size")[0])).assertEqual("80")
       expect(JSON.stringifyJsonElement(contentElement.getArray("size")[1])).assertEqual("80")
       expect(contentElement.getDouble("verticalAlign")).assertEqual(3)
-      expect(contentElement.getDouble("objectFit")).assertEqual(1)
+      expect(contentElement.getDouble("objectFit")).assertEqual(2)
       expect(contentElement.getElement("layoutStyle").getElement("margin").getString("top")).assertEqual("0.00px")
       expect(contentElement.getElement("layoutStyle").getElement("margin").getString("right")).assertEqual("0.00px")
       expect(contentElement.getElement("layoutStyle").getElement("margin").getString("bottom")).assertEqual("0.00px")

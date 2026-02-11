@@ -34,6 +34,8 @@ import {
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
+import { Chip,ChipSize,PrefixIconOptions,SuffixIconOptions } from '@ohos.arkui.advanced.Chip'
+
 @Entry
 @Component
 struct ChipOnClose {

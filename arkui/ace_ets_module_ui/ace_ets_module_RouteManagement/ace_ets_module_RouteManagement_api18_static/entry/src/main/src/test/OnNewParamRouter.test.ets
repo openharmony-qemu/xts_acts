@@ -40,10 +40,7 @@ import { BusinessError } from '@ohos.base';
 export default function OnNewParamRouter() {
   describe('OnNewParamRouter', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api18.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnNewParamRouter beforeEach start");
@@ -58,6 +55,7 @@ export default function OnNewParamRouter() {
         if (!("OnNewParamRouter" == pages.name)) {
           console.info("get OnNewParamRouter state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push OnNewParamRouter page error:" + err);
