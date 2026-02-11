@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function checkboxGroupModifierUndefined() {
   describe('checkboxGroupModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("checkboxGroupModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

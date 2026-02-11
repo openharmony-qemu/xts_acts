@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function sliderModifierUndefined() {
   describe('sliderModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("sliderModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

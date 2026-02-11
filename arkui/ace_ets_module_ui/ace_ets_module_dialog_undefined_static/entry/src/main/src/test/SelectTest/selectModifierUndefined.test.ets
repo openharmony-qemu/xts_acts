@@ -42,7 +42,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function selectModifierUndefined() {
   describe('selectModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async ():Promise<void> => {
       console.info("selectModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)
