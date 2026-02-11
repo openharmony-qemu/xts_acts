@@ -57,6 +57,7 @@ export default function createDragActionAndSpringTest() {
     it('create_drag_action_null_array_001', Level.LEVEL2, async (done: Function) => {
       console.info('[create_drag_action_null_array_001] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_create_action_null_array'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -77,6 +78,7 @@ export default function createDragActionAndSpringTest() {
     it('create_drag_action_undefined_array_002', Level.LEVEL2, async (done: Function) => {
       console.info('[create_drag_action_undefined_array_002] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_create_action_undefined_array'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -97,6 +99,7 @@ export default function createDragActionAndSpringTest() {
     it('create_drag_action_empty_array_003', Level.LEVEL2, async (done: Function) => {
       console.info('[create_drag_action_empty_array_003] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_create_action_empty_array'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -117,6 +120,7 @@ export default function createDragActionAndSpringTest() {
     it('create_drag_action_null_draginfo_004', Level.LEVEL2, async (done: Function) => {
       console.info('[create_drag_action_null_draginfo_004] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_create_action_null_draginfo'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -137,6 +141,7 @@ export default function createDragActionAndSpringTest() {
     it('create_drag_action_undefined_draginfo_005', Level.LEVEL2, async (done: Function) => {
       console.info('[create_drag_action_undefined_draginfo_005] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_create_action_undefined_draginfo'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -157,6 +162,7 @@ export default function createDragActionAndSpringTest() {
     it('update_config_null_006', Level.LEVEL2, async (done: Function) => {
       console.info('[update_config_null_006] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Set test mode to null
       let setNullButton = await driver.findComponent(ON.id('btn_set_test_null'));
       await setNullButton.click();
@@ -185,6 +191,7 @@ export default function createDragActionAndSpringTest() {
     it('update_config_undefined_007', Level.LEVEL2, async (done: Function) => {
       console.info('[update_config_undefined_007] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Set test mode to undefined
       let setUndefinedButton = await driver.findComponent(ON.id('btn_set_test_undefined'));
       await setUndefinedButton.click();

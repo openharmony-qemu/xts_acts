@@ -129,6 +129,7 @@ export default function dragActionAndPreviewTest() {
     it('DragPreview_set_foreground_null_005', Level.LEVEL2, async (done: Function) => {
       console.info('[DragPreview_set_foreground_null_005] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Click test mode button to set testPreviewNull flag
       let setModeButton = await driver.findComponent(ON.id('btn_test_preview_null'));
       await setModeButton.click();
@@ -157,6 +158,7 @@ export default function dragActionAndPreviewTest() {
     it('DragPreview_set_foreground_undefined_006', Level.LEVEL2, async (done: Function) => {
       console.info('[DragPreview_set_foreground_undefined_006] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Click test mode button to set testPreviewUndefined flag
       let setModeButton = await driver.findComponent(ON.id('btn_test_preview_undefined'));
       await setModeButton.click();
@@ -185,6 +187,7 @@ export default function dragActionAndPreviewTest() {
     it('DragPreview_animate_null_007', Level.LEVEL2, async (done: Function) => {
       console.info('[DragPreview_animate_null_007] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Click test mode button to set testAnimateNull flag
       let setModeButton = await driver.findComponent(ON.id('btn_test_animate_null'));
       await setModeButton.click();
@@ -213,6 +216,7 @@ export default function dragActionAndPreviewTest() {
     it('DragPreview_animate_undefined_008', Level.LEVEL2, async (done: Function) => {
       console.info('[DragPreview_animate_undefined_008] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       // Click test mode button to set testAnimateUndefined flag
       let setModeButton = await driver.findComponent(ON.id('btn_test_animate_undefined'));
       await setModeButton.click();

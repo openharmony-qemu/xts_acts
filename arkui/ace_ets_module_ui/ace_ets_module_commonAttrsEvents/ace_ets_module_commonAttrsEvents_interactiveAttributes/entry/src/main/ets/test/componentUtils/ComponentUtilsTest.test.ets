@@ -56,7 +56,8 @@ export default function componentUtilsTest() {
      */
     it('ComponentUtils_get_rectangle_by_id_empty_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ComponentUtils_get_rectangle_by_id_empty_001] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_get_rectangle_by_id'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -76,7 +77,8 @@ export default function componentUtilsTest() {
      */
     it('ComponentUtils_get_rectangle_by_id_null_002', Level.LEVEL2, async (done: Function) => {
       console.info('[ComponentUtils_get_rectangle_by_id_null_002] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_get_rectangle_by_id'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -96,7 +98,8 @@ export default function componentUtilsTest() {
      */
     it('ComponentUtils_get_rectangle_by_id_undefined_003', Level.LEVEL2, async (done: Function) => {
       console.info('[ComponentUtils_get_rectangle_by_id_undefined_003] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_get_rectangle_by_id'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -116,7 +119,8 @@ export default function componentUtilsTest() {
      */
     it('ComponentUtils_get_rectangle_by_id_valid_004', Level.LEVEL1, async (done: Function) => {
       console.info('[ComponentUtils_get_rectangle_by_id_valid_004] START');
-      let driver = Driver.create();
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('btn_get_rectangle_by_id'));
       await button.click();
       await CommonFunc.sleep(1000);
