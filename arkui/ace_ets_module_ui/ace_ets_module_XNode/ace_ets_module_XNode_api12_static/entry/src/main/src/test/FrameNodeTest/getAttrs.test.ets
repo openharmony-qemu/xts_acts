@@ -351,7 +351,7 @@ it('getAttrsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_1100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("undefined");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("false");
       console.info('[getAttrsTest_static_1100] END');
       done();
     });
