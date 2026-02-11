@@ -3952,17 +3952,17 @@ export default function displayTest() {
           done();
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + 'Failed to call capture. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
         });
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
-          done()
-        } else {
-          expect(exception.code).assertEqual(401);
-          expect(exception.message!=null).assertTrue();
-        }
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
       }
       try {
         screenshot.capture(undefined).then(async () => {
@@ -3971,18 +3971,18 @@ export default function displayTest() {
           done();
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + 'Failed2 to call capture. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
-          done()
+          if (err.code === 801) {
+            done()
+          } else {
+            expect().assertFail();
+            done()
+          }
         });
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
-          done()
-        } else {
-          expect(exception.code).assertEqual(401);
-          expect(exception.message!=null).assertTrue();
-          done()
-        }
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
       }
     })
 
