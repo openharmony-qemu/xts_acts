@@ -55,7 +55,7 @@ export default function richEditorTest() {
       }
       console.info("richEditorTest beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorTest beforeEach start");
 
 

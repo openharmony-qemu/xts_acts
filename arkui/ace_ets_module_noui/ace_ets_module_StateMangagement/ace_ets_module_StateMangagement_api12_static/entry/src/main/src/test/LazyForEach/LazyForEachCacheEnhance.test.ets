@@ -45,7 +45,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function LazyForEachCacheEnhance() {
   describe('LazyForEachCacheEnhance', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachCacheEnhance beforeEach start");
 
 

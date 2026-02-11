@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function lazyChangeJsunit() {
   describe('lazyChangeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("lazyChangeJsunit beforeEach start");
 
 

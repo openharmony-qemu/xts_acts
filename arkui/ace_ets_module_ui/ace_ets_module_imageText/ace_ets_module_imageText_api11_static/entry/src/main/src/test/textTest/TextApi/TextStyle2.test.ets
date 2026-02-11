@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TextStyle2() {
   describe('TextStyle2', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextStyle2 beforeEach start");
 
 

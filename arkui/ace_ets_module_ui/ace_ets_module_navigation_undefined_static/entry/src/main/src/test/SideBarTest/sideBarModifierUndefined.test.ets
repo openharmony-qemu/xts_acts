@@ -41,7 +41,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function sideBarModifierUndefined() {
   describe('sideBarModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("sideBarModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

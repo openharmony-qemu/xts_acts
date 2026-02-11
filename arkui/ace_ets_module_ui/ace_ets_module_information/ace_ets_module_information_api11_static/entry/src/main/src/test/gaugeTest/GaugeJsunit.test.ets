@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function gaugeJsunit() {
   describe('gaugeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gaugeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

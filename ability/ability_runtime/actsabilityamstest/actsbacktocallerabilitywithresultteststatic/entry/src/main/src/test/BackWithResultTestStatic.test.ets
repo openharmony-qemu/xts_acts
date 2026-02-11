@@ -42,7 +42,7 @@ export default function BackWithResultStaticTest() {
       }
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.backwithresulttest.static")

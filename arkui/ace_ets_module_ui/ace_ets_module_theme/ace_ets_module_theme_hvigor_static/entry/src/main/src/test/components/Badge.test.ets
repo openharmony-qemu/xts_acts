@@ -42,7 +42,7 @@ export default function badgeThemeTest() {
 
   describe(SUITE, () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BadgePage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       

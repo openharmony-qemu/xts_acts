@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function enableJsunit() {
   describe('enableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enableJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });

@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function ModeUndefinedTest() {
   describe('ModeUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ModeUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

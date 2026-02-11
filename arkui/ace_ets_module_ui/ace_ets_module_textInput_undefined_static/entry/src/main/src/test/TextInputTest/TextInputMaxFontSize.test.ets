@@ -20,7 +20,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInputMaxFontSize() {
   describe('TextInputMaxFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputMaxFontSize beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

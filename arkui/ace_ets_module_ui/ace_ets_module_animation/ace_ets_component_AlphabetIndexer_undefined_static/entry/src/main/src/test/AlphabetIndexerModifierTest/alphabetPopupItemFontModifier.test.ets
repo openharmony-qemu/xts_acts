@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetPopupItemFontModifierTest() {
   describe('AlphabetPopupItemFontModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetPopupItemFontModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

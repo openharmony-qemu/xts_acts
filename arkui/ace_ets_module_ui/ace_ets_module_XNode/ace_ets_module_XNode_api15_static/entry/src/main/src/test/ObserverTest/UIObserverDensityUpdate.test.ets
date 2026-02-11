@@ -25,7 +25,7 @@ import {UtilsTest,startAbility} from '../Util.test'
 
 export default function UIObserverDensityUpdateTest() {
   describe('UIObserverDensityUpdateTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIObserverDensityUpdateTest beforeEach start");
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

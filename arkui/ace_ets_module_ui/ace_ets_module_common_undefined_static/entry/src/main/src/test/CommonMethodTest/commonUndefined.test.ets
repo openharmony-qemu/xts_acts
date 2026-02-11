@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function CommonUndefinedTest() {
   describe('CommonUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CommonUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

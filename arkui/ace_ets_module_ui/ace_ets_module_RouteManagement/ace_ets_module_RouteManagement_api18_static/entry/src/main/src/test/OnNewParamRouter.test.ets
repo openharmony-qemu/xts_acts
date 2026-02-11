@@ -39,7 +39,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function OnNewParamRouter() {
   describe('OnNewParamRouter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api18.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

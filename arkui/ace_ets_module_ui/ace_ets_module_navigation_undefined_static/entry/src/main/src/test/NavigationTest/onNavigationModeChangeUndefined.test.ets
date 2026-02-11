@@ -28,7 +28,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function onNavigationModeChangeUndefined() {
   describe('onNavigationModeChangeUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onNavigationModeChangeUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000);

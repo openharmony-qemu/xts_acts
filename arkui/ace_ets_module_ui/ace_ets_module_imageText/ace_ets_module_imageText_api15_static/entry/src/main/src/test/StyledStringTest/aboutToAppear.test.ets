@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AboutToAppearTest() {
   describe('AboutToAppearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AboutToAppearTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

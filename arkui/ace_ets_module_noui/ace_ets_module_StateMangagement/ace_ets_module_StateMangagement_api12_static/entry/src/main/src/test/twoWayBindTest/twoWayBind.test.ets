@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function twoWayBindTest() {
   describe('twoWayBindTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("twoWayBindTest beforeEach start");
 
 

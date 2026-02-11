@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function MeasurableLayoutableReturn2UndefinedTest() {
   describe('MeasurableLayoutableReturn2UndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility('com.arkui.ace.layout.undefined.static', 'EntryAbility');
       await UtilsTest.msSleep(4000);

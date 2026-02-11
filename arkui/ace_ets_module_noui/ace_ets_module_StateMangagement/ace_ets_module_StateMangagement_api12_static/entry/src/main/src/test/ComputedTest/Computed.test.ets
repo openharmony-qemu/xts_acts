@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ComputedTest() {
   describe('ComputedTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ComputedTest beforeEach start");
 
 

@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleEmitter() {
   describe('ParticleEmitter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticleEmitter beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")

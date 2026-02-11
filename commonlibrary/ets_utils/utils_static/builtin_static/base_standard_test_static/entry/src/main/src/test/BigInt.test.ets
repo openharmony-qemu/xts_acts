@@ -28,7 +28,7 @@ import Utils from './Util.test';
 
 export default function BigIntTest() {
   describe("BigIntTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

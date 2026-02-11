@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Gutter_Length_Default() {
   describe('Gutter_Length_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Gutter_Length_Default beforeAll start");
            
       await UtilsTest.msSleep(4000)

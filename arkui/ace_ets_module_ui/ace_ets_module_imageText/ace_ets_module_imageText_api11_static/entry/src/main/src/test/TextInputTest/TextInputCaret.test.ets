@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textInput_caret() {
   describe('textInput_caret', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInput_caret beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function selectJsunit() {
   describe('appInfoTest_five_2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_five_2 beforeEach start");
 
 

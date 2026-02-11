@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function rowSplitJsunit() {
 
   describe('RowSplitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RowSplitTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")

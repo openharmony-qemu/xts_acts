@@ -39,7 +39,7 @@ import { Driver, ON, Component, InputTextMode } from '@kit.TestKit';
 
 export default function SearchOnTextSelectionChangeTest() {
   describe('SearchOnTextSelectionChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnTextSelectionChangeTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

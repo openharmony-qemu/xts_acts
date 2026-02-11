@@ -39,7 +39,7 @@ import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
 export default function PathStackPage() {
   describe('PathStackPage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
 

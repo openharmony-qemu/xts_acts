@@ -42,8 +42,8 @@ function getRandomInt(min: number, max: number): number {
 export default function Decimal1Test() {
   describe('Decimal1Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      afterEach(() => {
+    beforeAll(async (): Promise<void> => {
+      afterEach(async (): Promise<void> => {
         await Utils.msSleep(10)
       })
       // Presets an action, which is performed only once before all test cases of the test suite start.

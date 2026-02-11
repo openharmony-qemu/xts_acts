@@ -48,7 +48,7 @@ function spliceColor(sysColor: Resource) {
 export default function UIPickerIndicatorTest() {
   describe('UIPickerIndicatorTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIPickerIndicatorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
       await UtilsTest.msSleep(SLEEP_TIME_L)

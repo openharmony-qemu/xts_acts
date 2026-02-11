@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_Offset() {
 
   describe('ListItem_OffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_OffsetTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

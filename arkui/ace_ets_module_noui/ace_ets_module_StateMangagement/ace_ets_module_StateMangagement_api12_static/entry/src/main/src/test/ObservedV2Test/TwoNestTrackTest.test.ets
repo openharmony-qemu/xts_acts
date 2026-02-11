@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TwoNestTrackTest() {
   describe('TwoNestTrackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TwoNestTrackTest beforeEach start");
 
 

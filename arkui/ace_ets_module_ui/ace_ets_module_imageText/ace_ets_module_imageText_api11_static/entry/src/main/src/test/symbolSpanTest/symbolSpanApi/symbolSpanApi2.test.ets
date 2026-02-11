@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function symbolSpanApi2Test() {
   describe('symbolSpanApi2Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("symbolSpanApi2Test beforeEach start");
 
 

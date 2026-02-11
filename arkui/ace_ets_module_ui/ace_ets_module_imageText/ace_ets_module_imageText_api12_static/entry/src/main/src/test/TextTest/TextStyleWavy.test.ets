@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextStyleWavy() {
   describe('TextStyleWavy', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextStyleWavy beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

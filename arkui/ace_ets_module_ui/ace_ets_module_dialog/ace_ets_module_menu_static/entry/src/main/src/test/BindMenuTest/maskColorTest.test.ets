@@ -36,7 +36,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function maskColorTest() {
   describe('maskColorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("maskColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
     });

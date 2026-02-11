@@ -39,7 +39,7 @@ export default function GeneralLayoutPositionTest() {
     let mirror_rect_bottom: number;
     let mirror_rect_right: number;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GeneralLayoutPositionTest beforeEach start");
       
       await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")

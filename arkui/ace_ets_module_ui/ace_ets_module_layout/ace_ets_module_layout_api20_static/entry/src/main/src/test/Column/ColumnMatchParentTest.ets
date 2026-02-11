@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnMatchParentTest() {
   describe('ColumnMatchParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnMatchParentTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

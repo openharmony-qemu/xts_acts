@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function progressModifierUndefined() {
   describe('progressModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

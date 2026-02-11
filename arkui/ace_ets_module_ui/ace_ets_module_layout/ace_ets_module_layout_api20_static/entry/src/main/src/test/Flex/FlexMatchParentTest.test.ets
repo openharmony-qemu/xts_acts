@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function FlexMatchParentTest() {
   describe('FlexMatchParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexMatchParentTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

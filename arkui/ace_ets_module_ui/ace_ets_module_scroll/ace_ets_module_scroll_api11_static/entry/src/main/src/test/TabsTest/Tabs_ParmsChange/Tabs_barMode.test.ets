@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function Tabs_barMode() {
   describe('Tabs_barMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

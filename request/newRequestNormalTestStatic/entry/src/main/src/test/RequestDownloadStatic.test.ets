@@ -29,7 +29,7 @@ export default function RequestDownloadJSUnitStatic() {
   describe("RequestDownloadJSUnitStatic", (): void => {
   hilog.info(domain, tag, '%{public}s', 'RequestDownloadJSUnitStatic start');
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

@@ -24,7 +24,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function SwipeGestureExample01Test() {
   describe('SwipeGestureExample01Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 

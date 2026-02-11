@@ -252,7 +252,7 @@ export default function AlignRulesTest() {
   // testAlignRulesBadgeSubassemblyVerticalCenterHorizontally
 
   describe('AlignRulesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alignRulesTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs02.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

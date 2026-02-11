@@ -34,7 +34,7 @@ export default function ActsAnsNotificationBadgeNoSystemTest() {
   let TEST_SUITE_NAME: string = 'ActsAnsNotificationBadgeNoSystemTest ===>'
 
   describe('ActsAnsNotificationBadgeNoSystemTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle1)}`)

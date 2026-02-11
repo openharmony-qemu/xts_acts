@@ -108,7 +108,7 @@ export default function AddUsbManagerTest() {
 
   describe("AddUsbManagerTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -396,7 +396,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         expect(err.code).assertEqual(401);
@@ -420,7 +420,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight035 err : ', err);
@@ -445,7 +445,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight036 err : ', err);
@@ -470,7 +470,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight037 err : ', err);
@@ -495,7 +495,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight038 err : ', err);
@@ -520,7 +520,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -548,7 +548,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -576,7 +576,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -604,7 +604,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -632,7 +632,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -660,7 +660,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -688,7 +688,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -716,7 +716,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -744,7 +744,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);

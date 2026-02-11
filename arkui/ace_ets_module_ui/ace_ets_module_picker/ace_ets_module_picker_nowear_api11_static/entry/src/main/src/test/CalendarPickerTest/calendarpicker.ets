@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function calendarpicker() {
   describe('ActsAceCalendarPickerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceCalendarPickerTest beforeEach start");
 
 

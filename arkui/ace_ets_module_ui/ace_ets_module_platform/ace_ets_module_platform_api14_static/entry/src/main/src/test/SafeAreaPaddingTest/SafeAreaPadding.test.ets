@@ -28,7 +28,7 @@ let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 export default function SafeAreaPadding1() {
   describe('SafeAreaPadding1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.platform.api14.static", "EntryAbility")
     });

@@ -27,7 +27,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function columnWidthsTest() {
   describe('columnWidthsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("columnWidthsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });

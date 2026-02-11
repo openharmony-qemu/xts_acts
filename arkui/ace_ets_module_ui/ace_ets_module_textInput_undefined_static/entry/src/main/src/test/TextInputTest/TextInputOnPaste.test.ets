@@ -36,7 +36,7 @@ function doPaste(driver: Driver, componentId: string){
 
 export default function TextInputOnPasteTest() {
   describe('TextInputOnPasteTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputOnPasteTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function treeViewSymbol() {
   describe('treeViewSymbol', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("treeViewSymbol beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

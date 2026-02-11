@@ -29,7 +29,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function displayArrow_modifierUndefinedTest() {
   describe('displayArrow_modifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility('com.arkui.ace.navigation.undefined.static', 'EntryAbility');
       await UtilsTest.msSleep(4000);

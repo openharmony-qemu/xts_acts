@@ -45,7 +45,7 @@ interface Eve {
 export default function sourceTypeJsunit() {
 
   describe('sourceTypeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("sourceTypeJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });

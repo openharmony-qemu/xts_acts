@@ -25,7 +25,7 @@ import { RecordData } from '@ohos.base';
 
 export default function transitionJsunit() {
   describe('transitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("transitionTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

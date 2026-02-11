@@ -36,7 +36,7 @@ async function noParamNoReturnTask(): Promise<void> {
 
 export default function AtomicsTest() {
   describe('AtomicsTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await sleep(200);
     })
     /**

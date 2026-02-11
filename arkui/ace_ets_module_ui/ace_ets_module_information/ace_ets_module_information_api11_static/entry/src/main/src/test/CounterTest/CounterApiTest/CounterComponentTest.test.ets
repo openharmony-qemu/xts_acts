@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function CounterComponentTest() {
   describe('CounterComponentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CounterComponentTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

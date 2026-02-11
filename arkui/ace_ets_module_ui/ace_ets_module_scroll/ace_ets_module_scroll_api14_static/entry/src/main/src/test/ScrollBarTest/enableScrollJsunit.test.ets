@@ -43,7 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function enableScrollJsunit() {
   describe('enableScrollJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enableScrollJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
       

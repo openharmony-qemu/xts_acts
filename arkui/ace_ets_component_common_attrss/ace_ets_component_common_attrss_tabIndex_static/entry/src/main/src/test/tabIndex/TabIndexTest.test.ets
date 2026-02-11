@@ -146,7 +146,7 @@ export default function TabIndexTest() {
   ]
 
   describe("TabIndexTest", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TabIndexTest beforeEach start");
       
       await UtilsTest.msSleep(4000)

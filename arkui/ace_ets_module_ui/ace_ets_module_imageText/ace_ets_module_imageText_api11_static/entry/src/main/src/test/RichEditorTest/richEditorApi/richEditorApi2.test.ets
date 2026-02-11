@@ -55,7 +55,7 @@ export default function richEditorApi2() {
       }
       console.info("richEditorApi2 beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

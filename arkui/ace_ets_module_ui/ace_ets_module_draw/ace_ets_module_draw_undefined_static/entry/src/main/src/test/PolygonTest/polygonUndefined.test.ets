@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function PolygonUndefinedTest() {
   describe('PolygonUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PolygonUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

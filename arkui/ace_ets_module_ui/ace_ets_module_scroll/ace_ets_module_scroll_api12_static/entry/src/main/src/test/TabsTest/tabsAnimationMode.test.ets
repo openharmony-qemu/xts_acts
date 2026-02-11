@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsAnimationMode() {
   describe('tabsAnimationMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

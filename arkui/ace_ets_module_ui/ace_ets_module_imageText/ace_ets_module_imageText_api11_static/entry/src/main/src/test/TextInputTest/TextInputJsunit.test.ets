@@ -48,7 +48,7 @@ export default function textInputJsunit() {
     /**
      * run before testcase
      */
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputJsunit beforeEach start");
 
 

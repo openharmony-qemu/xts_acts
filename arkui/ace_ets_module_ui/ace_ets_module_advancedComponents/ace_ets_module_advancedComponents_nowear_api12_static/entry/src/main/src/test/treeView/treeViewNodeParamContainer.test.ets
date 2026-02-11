@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function treeViewNodeParamContainer() {
   describe('treeViewNodeParamContainer', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("treeViewNodeParamContainer beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

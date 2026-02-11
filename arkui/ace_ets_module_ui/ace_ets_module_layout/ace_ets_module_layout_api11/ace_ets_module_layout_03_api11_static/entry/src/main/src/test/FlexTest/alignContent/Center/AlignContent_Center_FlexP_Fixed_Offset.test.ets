@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContent_Center_FlexP_Fixed_Offset() {
 
   describe('AlignContent_Center_FlexP_Fixed_Offset', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContent_Center_FlexP_Fixed_Offset beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

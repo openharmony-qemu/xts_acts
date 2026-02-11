@@ -47,7 +47,7 @@ const searchIconRightSpace = 8;
 const defaultSearchIconWidth = 16;
 export default function search_gesture() {
   describe('search_gesture', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search_gesture beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

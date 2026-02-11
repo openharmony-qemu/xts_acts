@@ -103,8 +103,10 @@ struct RichEditorSetStyledString002 {
   options: RichEditorStyledStringOptions = {controller: this.controller} as RichEditorStyledStringOptions;
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    this.imagePixelMap1 = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+      this.imagePixelMap1 = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

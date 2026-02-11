@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function CurvePage() {
   describe('CurvePage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CurvePage beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
