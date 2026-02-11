@@ -25,6 +25,7 @@ struct TextInputCaret {
   build() {
     Column() {
       TextInput({ text:"12345", placeholder: 'input your word...', controller: this.controller })
+        .fontSize(16)
         .height('10%')
       Text(this.text).fontSize(18).margin(15).key('inputCaretText').height('5%')
 
