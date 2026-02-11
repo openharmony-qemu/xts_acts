@@ -534,7 +534,6 @@ export default function ActsCommonEventManagerTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 START`)
 
       let subscriber
-      let count
       let subscribeInfo = {
         events: ["event08"]
       }
@@ -551,10 +550,7 @@ export default function ActsCommonEventManagerTest() {
             done()
 
             await subscriber.setCode(3).then(() => {
-              count = 0
               console.info(`setCode_2 success `)
-              count++
-              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`setCode_2 err, error code: ${err.code}, message: ${err.message}`)
@@ -573,10 +569,7 @@ export default function ActsCommonEventManagerTest() {
             })
 
             await subscriber.setData('data03').then(() => {
-              count = 0
               console.info(`setData_2 success `)
-              count++
-              expect(count).assertEqual(1)
               done()
               subscriber.getData().then((data) => {
                 console.info(`getData_2 success ${data}`)
@@ -594,10 +587,7 @@ export default function ActsCommonEventManagerTest() {
             })
 
             await subscriber.setCodeAndData(4, 'data04').then(() => {
-              count = 0
               console.info(`setCodeAndData_2 success `)
-              count++
-              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
@@ -616,10 +606,7 @@ export default function ActsCommonEventManagerTest() {
             })
 
             await subscriber.finishCommonEvent().then(() => {
-              count = 0
               console.info(`finishCommonEvent_2 success `)
-              count++
-              expect(count).assertEqual(1)
               done()
             }).catch((err) => {
               console.info(`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
