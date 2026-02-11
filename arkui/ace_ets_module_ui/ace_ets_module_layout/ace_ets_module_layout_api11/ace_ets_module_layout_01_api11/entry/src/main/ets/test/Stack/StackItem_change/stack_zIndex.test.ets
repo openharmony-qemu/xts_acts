@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2026 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,82 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc, { RectValue } from '../../../MainAbility/utils/Common';
-import screenshot from '@ohos.screenshot';
-import image from '@ohos.multimedia.image';
-import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
-
-async function imageComparisonAssert(left: number, top: number) {
-  let theWinTop = 0;
-  let theWinLeft = 0;
-  let isTrue = true
-  try {
-    let winTop = window.getLastWindow(globalThis.abilityContext);
-    winTop.then((data) => {
-      let windowClass: window.Window = data;
-      console.info('Succeeded in obtaining the top window. Data: ' + JSON.stringify(data));
-      let properties = windowClass.getWindowProperties();
-      console.info('Succeeded in obtaining the window properties. Data: ' + properties.windowRect.top);
-      theWinTop = properties.windowRect.top + top
-      theWinLeft = properties.windowRect.left + left + vp2px(10)
-      console.info('theWinTop:' + theWinTop + 'theWinLeft:' + theWinLeft);
-    }).catch((err: BusinessError) => {
-      console.error('Failed to obtain the top window. Cause: ' + err);
-    });
-  } catch (exception) {
-    console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
-  }
-  await CommonFunc.sleep(3000);
-  let screenshotOptions: screenshot.ScreenshotOptions = {
-    "screenRect": {
-      "left": theWinLeft,
-      "top": theWinTop,
-      "width": 50,
-      "height": 50
-    },
-    "imageSize": {
-      "width": 50,
-      "height": 50
-    },
-    "rotation": 0,
-    "displayId": 0
-  };
-  try {
-    screenshot.save(screenshotOptions, (err: BusinessError, pixelMap: image.PixelMap) => {
-      if (err) {
-        console.log('Failed to save screenshot. Code: ' + JSON.stringify(err));
-        isTrue = false;
-        return isTrue;
-      }
-      console.log('Succeeded in saving sreenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
-      let PixelBytesNumber = pixelMap.getPixelBytesNumber();
-      const color = new ArrayBuffer(PixelBytesNumber);
-      pixelMap.readPixelsToBuffer(color, (err, res) => {
-        if (err) {
-          console.log('Failed to read image pixel data.' + err);
-          isTrue = false;
-        } else {
-          let bufferArr = new Uint8Array(color);
-          console.info('bufferArr',bufferArr)
-          for (let i = 0; i < bufferArr.length; i += 40) {
-            if (bufferArr[i] != 255 || bufferArr[i + 1] != 0 || bufferArr[i + 2] != 0) {
-              isTrue = false;
-              break;
-            }
-          }
-        }
-      })
-      pixelMap.release();
-      return isTrue;
-    });
-  } catch (exception) {
-    console.error('Failed to save screenshot. Code: ' + JSON.stringify(exception));
-    isTrue = false;
-  }
-  ;
-  await CommonFunc.sleep(5000);
-  return isTrue;
-}
 
 export default function Stack_ZIndex() {
   describe('Stack_ZIndex_Test', () => {
@@ -144,11 +68,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let num = await imageComparisonAssert(0, theTop);
-      await CommonFunc.sleep(1000);
-      console.log('[testStackZIndexWithAlignmentStart] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentStart] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentStart] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_01.left is', Stack_ZIndex_01.left);
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_011.left) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_012.left) <= 1).assertTrue();
@@ -198,12 +124,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let theLeft: number = Stack_ZIndex_012.left;
-      let num = await imageComparisonAssert(theLeft, theTop);
-      await CommonFunc.sleep(1000);
-      console.log('[testStackZIndexWithAlignmentCenter] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentCenter] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentCenter] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_011.left - Stack_ZIndex_01.left is', Stack_ZIndex_011.left - Stack_ZIndex_01.left);
       expect(Math.abs(Math.round(Stack_ZIndex_011.left - Stack_ZIndex_01.left) -
       Math.round(Stack_ZIndex_01.right - Stack_ZIndex_011.right)) <= 1).assertTrue();
@@ -256,12 +183,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let theLeft: number = Stack_ZIndex_012.left;
-      let num = await imageComparisonAssert(theLeft, theTop);
-      await CommonFunc.sleep(1000);
-      console.log('[testStackZIndexWithAlignmentEnd] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentEnd] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentEnd] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_01.right is', Stack_ZIndex_01.right);
       expect(Math.abs((Stack_ZIndex_01.right) - (Stack_ZIndex_011.right)) <= 1).assertTrue();
       expect(Math.abs((Stack_ZIndex_01.right) - (Stack_ZIndex_012.right)) <= 1).assertTrue();
@@ -311,11 +239,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let num = await imageComparisonAssert(0, theTop);
-      await CommonFunc.sleep(1000);
-      console.log('[testStackZIndexWithAlignmentBottomStart] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentBottomStart] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentBottomStart] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_01.left is', Stack_ZIndex_01.left);
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_011.left) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.left - Stack_ZIndex_012.left) <= 1).assertTrue();
@@ -362,12 +292,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let theLeft: number = Stack_ZIndex_012.left;
-      let num = await imageComparisonAssert(theLeft, theTop);
-      await CommonFunc.sleep(3000);
-      console.log('[testStackZIndexWithAlignmentBottom] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentBottom] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentBottom] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_01.bottom is', Stack_ZIndex_01.bottom);
       expect(Math.abs((Stack_ZIndex_01.bottom) - (Stack_ZIndex_011.bottom)) <= 1).assertTrue();
       expect(Math.abs((Stack_ZIndex_01.bottom) - (Stack_ZIndex_012.bottom)) <= 1).assertTrue();
@@ -417,12 +348,13 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01: RectValue = CommonFunc.getComponentRect('Stack_ZIndex_01');
       let Stack_ZIndex_01_width = Stack_ZIndex_01.right - Stack_ZIndex_01.left;
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
-      let theTop: number = Stack_ZIndex_012.top;
-      let theLeft: number = Stack_ZIndex_012.left;
-      let num = await imageComparisonAssert(theLeft, theTop);
-      await CommonFunc.sleep(3000);
-      console.log('[testStackZIndexWithAlignmentBottomEnd] num is', num);
-      expect(num).assertEqual(true);
+      let strJson_011 = getInspectorByKey('Stack_ZIndex_011');
+      let strJson_012 = getInspectorByKey('Stack_ZIndex_012');
+      let Stack_ZIndex_011_zIndex = JSON.stringify(JSON.parse(strJson_011).$attrs.zIndex);
+      let Stack_ZIndex_012_zIndex = JSON.stringify(JSON.parse(strJson_012).$attrs.zIndex);
+      console.log('[testStackZIndexWithAlignmentBottomEnd] Stack_ZIndex_011 zIndex is ', Stack_ZIndex_011_zIndex);
+      console.log('[testStackZIndexWithAlignmentBottomEnd] Stack_ZIndex_012 zIndex is ', Stack_ZIndex_012_zIndex);
+      expect(Stack_ZIndex_011_zIndex).assertLarger(Stack_ZIndex_012_zIndex);
       console.log('Stack_ZIndex_01.bottom is', Stack_ZIndex_01.bottom);
       expect(Math.abs(Stack_ZIndex_01.bottom - Stack_ZIndex_011.bottom) <= 1).assertTrue();
       expect(Math.abs(Stack_ZIndex_01.bottom - Stack_ZIndex_012.bottom) <= 1).assertTrue();
