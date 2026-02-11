@@ -111,9 +111,9 @@ build() {
       }).id('imageTop')
 
       Button('get content').onClick((e: ClickEvent) => {
-        // this.richEditorStyledString = this.controller!.getStyledString()!;
-        // this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
-        // console.log('RichEditorController this.content:' + this.content);
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.content = this.richEditorStyledString!.subStyledString(0, 6)!.getString();
+        console.log('RichEditorController this.content:' + this.content);
 
       }).id('getContent')
       Button('getStyles')
@@ -130,7 +130,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          // this.controller!.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -140,10 +140,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            // this.richEditorStyledString = this.controller!.getStyledString()!;
-            // this.richEditorStyledString.appendStyledString(this.style1);
-            // this.controller!.setStyledString(this.richEditorStyledString);
-            // this.controller!.setCaretOffset(this.richEditorStyledString.length);
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
 

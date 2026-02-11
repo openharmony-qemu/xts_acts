@@ -34,10 +34,7 @@ export default function openLinkTest() {
     });
     afterEach((done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Ability afterEach');
-      setTimeout(() => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'Ability setTimeout');
-        done();
-      }, 1000);
+      done();
     });
 
     /**
@@ -1058,6 +1055,152 @@ export default function openLinkTest() {
         })
       } catch (err) {
         hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4400 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4500
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4500
+     * @tc.desc   Test addAbilityStageMonitor with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4500', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4500 start');
+      try {
+        abilityDelegator.addAbilityStageMonitor(null);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4500 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4600
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4600
+     * @tc.desc   Test waitAbilityMonitor with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4600', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4600 start');
+      try {
+        abilityDelegator.waitAbilityMonitor(undefined, 5).then((data)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4600 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4700
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4700
+     * @tc.desc   Test waitAbilityStageMonitor with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4700', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4700 start');
+      try {
+        abilityDelegator.waitAbilityStageMonitor(null, 5).then((data)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4700 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4800
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4800
+     * @tc.desc   Test waitAbilityStageMonitor with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_4800', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4800 start');
+      try {
+        abilityDelegator.waitAbilityStageMonitor(undefined, 5).then((data)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_4800 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5300
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5300
+     * @tc.desc   Test executeShellCommand with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_5300', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_5300 start');
+      try {
+        abilityDelegator.executeShellCommand(null, 1).then((data)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_5300 ${err?.code}`);
+        try{expect(err?.code).assertEqual(401);}catch(e){}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5400
+     * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5400
+     * @tc.desc   Test executeShellCommand with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityDelegatorError_5400', Level.LEVEL0, async (done: Function)=> {
+      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_5400 start');
+      try {
+        abilityDelegator.executeShellCommand(undefined, 1).then((data)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch(e){}
+          done();
+        })
+      } catch (err) {
+        hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_5400 ${err?.code}`);
         try{expect(err?.code).assertEqual(401);}catch(e){}
         done();
       }

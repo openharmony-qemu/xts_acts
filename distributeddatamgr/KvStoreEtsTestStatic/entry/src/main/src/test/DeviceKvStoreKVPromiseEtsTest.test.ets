@@ -20,6 +20,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
+import { BusinessError } from '@ohos.base';
 const domain = 0xFF00;
 const tag = "TestTag";
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
@@ -2429,13 +2430,154 @@ export default function deviceKvStorePromiseTest(){
           expect(null).assertFail();
           done();
         });
-
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
       }
+    })
+    /**
+         * @tc.name   SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800
+         * @tc.number testSUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800
+         * @tc.desc   Test Ets Api DeviceKvStore.getResultSet() testcase 008
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800 start');
+      let resultSet: factory.KVStoreResultSet | null = null;
+      let entries: factory.Entry[] = [];
+      for (let i = 0; i < 10; i++) {
+        let key = 'batch_test_string_key';
+        let entry: factory.Entry = {
+          key : key + i,
+          value : {
+            type : factory.ValueType.STRING,
+            value : 'batch_test_string_value'
+          }
+        }
+        entries.push(entry);
+      }
+      await kvStore!.putBatch(entries).then((err) => {
+        console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800 putBatch success');
+        expect(err == undefined).assertTrue();
+      }).catch((err: Error) => {
+        console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+      let query = new factory.Query();
+      query.prefixKey("batch_test");
+      console.info("SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800 " + query.getSqlLike());
+      try {
+        await kvStore!.getResultSet('');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0800 end');
+    })
 
+    /**
+         * @tc.name   SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0900
+         * @tc.number testSUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0900
+         * @tc.desc   Test Ets Api DeviceKvStore.getResultSet() testcase 009
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0900 start');
+      let resultSet: factory.KVStoreResultSet | null = null;
+      try {
+        await kvStore!.getResultSet(localDeviceId, '');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_PROMISE_0900 end');
+    })
+
+    /**
+         * @tc.name   SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0100
+         * @tc.number TESTSUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0100
+         * @tc.desc   getResultSet(deviceId: string, keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void;
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
+      console.log(tag + 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0100 start');
+      try {
+        kvStore!.getResultSet(localDeviceId, '', (err: BusinessError | null) => {
+          if (err) {
+            console.error(tag, `Failed. code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(401);
+            console.log(tag + 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0100 end');
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `error code is ${e.code}, message is ${e.message}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+         * @tc.name   SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200
+         * @tc.number testSUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200
+         * @tc.desc   getResultSet
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200 start');
+      let resultSet: factory.KVStoreResultSet;
+      let entries: factory.Entry[] = [];
+      for (let i = 0; i < 10; i++) {
+        entries.push({
+          key: 'batch_test_string_key'+i,
+          value: {
+            type: factory.ValueType.STRING,
+            value: 'batch_test_string_value'
+          }
+        });
+      }
+      kvStore!.putBatch(entries, (err: BusinessError | null, data: string[] | undefined) => {
+        console.log(tag, 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200 putBatch success');
+        expect(err == undefined).assertTrue();
+        let query = new factory.Query();
+        query.prefixKey("batch_test");
+        query.deviceId(localDeviceId);
+        try {
+          kvStore!.getResultSet('', (err: BusinessError | null, resultSize: factory.KVStoreResultSet | undefined) => {
+            if (err) {
+              console.error(tag, `Failed. code is ${err.code}, message is ${err.message}`);
+              expect(err.code).assertEqual(401);
+              console.log(tag + 'SUB_DDM_DKV_DEVICEKVSTORE_GETRESULTSET_CALLBACK_0200 end');
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (e) {
+          let error: BusinessError = e as BusinessError;
+          console.error(tag, `error code is ${e.code}, message is ${e.message}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      });
     })
   })
 }

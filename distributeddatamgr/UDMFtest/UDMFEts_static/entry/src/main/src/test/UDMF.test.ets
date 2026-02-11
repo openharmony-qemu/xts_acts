@@ -3884,11 +3884,14 @@ export default function UDMFApiTest() {
         "bb1": 123,
       }
       summary.summary = test;
+      summary.totalSize = 3;
       hilog.info(domain, tag, TAG + summary.summary);
       hilog.info(domain, tag, TAG + summary.overview);
+      hilog.info(domain, tag, TAG + summary.totalSize);
       expect(summary.summary != null).assertTrue();
       expect(JSON.stringify(summary.summary)).assertEqual(JSON.stringify(test));
       expect(JSON.stringify(summary.overview)).assertEqual(JSON.stringify(test));
+      expect(summary.totalSize).assertEqual(3);
       hilog.info(domain, tag, TAG + ' end ');
       done();
     })
