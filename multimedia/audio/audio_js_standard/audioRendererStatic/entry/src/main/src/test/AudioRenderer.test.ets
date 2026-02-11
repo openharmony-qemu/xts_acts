@@ -11514,6 +11514,7 @@ export default function audioRendererTest() {
               console.info('Renderer drained.');
             }
           });
+          await Utils.msSleep(1000);
           data?.stop((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer stop failed');
@@ -11669,7 +11670,7 @@ export default function audioRendererTest() {
             console.info(`Successed in doing selectMediaInputDevice.`);
             expect(flag).assertEqual(true);
             done();
-          }).catch(async(error:BusinessError) => {
+          }).catch((error:Error) => {
               expect(flag).assertEqual(false);
               console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
               done();
@@ -11751,7 +11752,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let flag: boolean = false;
       let audioManager = audio.getAudioManager();
       let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
@@ -11780,7 +11781,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let flag: boolean = false;
       let audioManager = audio.getAudioManager();
       let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
