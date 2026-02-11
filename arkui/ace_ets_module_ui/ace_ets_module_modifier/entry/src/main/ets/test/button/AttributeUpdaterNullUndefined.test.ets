@@ -23,7 +23,7 @@ export default function AttributeUpdaterNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info("AttributeUpdaterNullUndefinedTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/uiContext/AttributeUpdaterNullUndefined',
+        url: 'MainAbility/pages/button/AttributeUpdaterNullUndefined',
       }
       try {
         router.clear();
@@ -55,7 +55,7 @@ export default function AttributeUpdaterNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AttributeUpdaterApplyNormalAttributeNull_0100', Level.LEVEL2, async () => {
+    it('AttributeUpdaterApplyNormalAttributeNull_0100', Level.LEVEL2, async (done: Function) => {
       console.info('setResourceManagerCacheMaxCountForHSPNull_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -80,7 +80,7 @@ export default function AttributeUpdaterNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('AttributeUpdaterApplyNormalAttributeUndefined_0200', Level.LEVEL2, async () => {
+    it('AttributeUpdaterApplyNormalAttributeUndefined_0200', Level.LEVEL2, async (done: Function) => {
       console.info('AttributeUpdaterApplyNormalAttributeUndefined_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

@@ -23,7 +23,7 @@ export default function AttributeModifierNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info("AttributeModifierNullUndefinedTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/uiContext/AttributeModifierNullUndefined',
+        url: 'MainAbility/pages/button/AttributeModifierNullUndefined',
       }
       try {
         router.clear();
@@ -55,7 +55,7 @@ export default function AttributeModifierNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('buttonAttributeModifierNullUndefined_0100', Level.LEVEL0, async () => {
+    it('buttonAttributeModifierNullUndefined_0100', Level.LEVEL0, async (done: Function) => {
       console.info('buttonAttributeModifierNullUndefined_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -84,7 +84,7 @@ export default function AttributeModifierNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('buttonAttributeModifierNullUndefined_0200', Level.LEVEL0, async () => {
+    it('buttonAttributeModifierNullUndefined_0200', Level.LEVEL0, async (done: Function) => {
       console.info('buttonAttributeModifierNullUndefined_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -102,6 +102,7 @@ export default function AttributeModifierNullUndefinedTest() {
       AppStorage.delete('ModifierDisabledAttributeNullUndefined')
       AppStorage.delete('ModifierSelectedAttributeNullUndefined')
       console.info('[buttonAttributeModifierNullUndefined_0200] END');
+      done();
     })
   })
 }
