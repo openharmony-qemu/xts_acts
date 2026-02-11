@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import { BusinessError } from '@kit.BasicServicesKit';
 import Want from '@ohos.app.ability.Want';
 import { ColorMetrics } from '@kit.ArkUI';
+import deviceInfo from '@ohos.deviceInfo';
 
 
 
@@ -130,6 +131,8 @@ export default function windowAutoSaveTest() {
     let isFreeWindowMode = false;
     let isPCMode:boolean = false;
     let isSupportFreeWindowMode:boolean = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

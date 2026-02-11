@@ -1178,7 +1178,7 @@ export default function windowImmersiveTest() {
     it('testOnSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOnSystemAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isPCStatus == ''|| isPCStatus == '1')){
+        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isFreeWindowMode === false || isPCStatus == '1')){
           let windowClass = windowStage.getMainWindowSync();
           windowClass.on('systemAvoidAreaChange', (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for system avoid area changes. Data: ${JSON.stringify(data)}`);
@@ -1215,7 +1215,7 @@ export default function windowImmersiveTest() {
     it('testOnRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnRepeatSystemAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isPCStatus == ''|| isPCStatus == '1')){
+        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isFreeWindowMode === false|| isPCStatus == '1')){
           let windowClass = windowStage.getMainWindowSync();
           const callback1 = () => {
             console.info(`${caseName} callback1 Succeeded in enabling the listener for system avoid area changes.`);
@@ -1302,7 +1302,7 @@ export default function windowImmersiveTest() {
     it('testOnAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isPCStatus == ''|| isPCStatus == '1')){
+        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isFreeWindowMode === false|| isPCStatus == '1')){
           let windowClass = windowStage.getMainWindowSync();
           windowClass.on('avoidAreaChange', (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. Data: ${JSON.stringify(data)}`);
@@ -2392,7 +2392,7 @@ export default function windowImmersiveTest() {
         console.log(msgStr +' :' + JSON.stringify(data));
         height = data.bottomRect.height;
       };
-      if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0)  && (isPCStatus == ''|| isPCStatus == '1')){
+      if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0)  && (isFreeWindowMode === false|| isPCStatus == '1')){
         windowStage.getMainWindow((err, data) => {
           if (err.code != 0) {
             console.log(msgStr + ' getTopWindow callback fail ' + JSON.stringify(err.code));
