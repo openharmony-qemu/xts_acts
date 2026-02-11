@@ -70,6 +70,8 @@ import Consumer0140Test from './consumerTest/Consumer0140Test.test';
 import Consumer0170Test from './consumerTest/Consumer0170Test.test';
 import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
 import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
+import appStorageV2NullUndefinedTest from './appstoragev2/AppStorageV2NullUndefinedTest.test';
+import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2NullUndefinedTest.test';
 export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
@@ -128,4 +130,6 @@ export default function testsuite() {
     Consumer0170Test();
     SyncMonitor0010Test();
     SyncMonitor0020Test();
+    persistenceV2NullUndefinedTest();
+    appStorageV2NullUndefinedTest();
 }
