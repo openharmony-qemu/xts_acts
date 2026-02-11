@@ -81,9 +81,9 @@ describe('SmsMmsErrorTest', function () {
    * @tc.desc   Function test
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL1
+   * @tc.level  LEVEL0
    */
-  it('Telephony_SmsMms_hasSmsCapability_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+  it('Telephony_SmsMms_hasSmsCapability_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let result = sms.hasSmsCapability();
     if (result) {
       expect(result).assertEqual(true);
@@ -141,9 +141,9 @@ describe('SmsMmsErrorTest', function () {
    * @tc.desc   Function test
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL1
+   * @tc.level  LEVEL0
    */
-  it('Telephony_SmsMms_sendMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+  it('Telephony_SmsMms_sendMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     try {
       let sendCallback = function (err, data) {
         expect(data.isLastPart !== '').assertTrue();
@@ -180,9 +180,9 @@ describe('SmsMmsErrorTest', function () {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
+    * @tc.level  LEVEL0
     */
-   it('Telephony_SmsMms_sendShortMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+   it('Telephony_SmsMms_sendShortMessage_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     try {
       let sendCallback = function (err, data) {
         console.log(`sendCallback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
