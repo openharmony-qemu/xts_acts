@@ -51,6 +51,7 @@ export default function selectmenuOutline() {
 
     beforeEach(async () => {
       console.info('selectmenuOutline beforeEach start');
+      await Utils.sleep(5000);
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/select/select',
       }
