@@ -19,6 +19,9 @@ export default function ActsCommonEventManagerTest() {
   describe('SUB_NOTIFICATION_CES_MANAGER_TEST', function () {
     let TAG = 'SUB_NOTIFICATION_CES_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_TEST START`)
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
 
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_4700
