@@ -32,6 +32,7 @@ export default function ActsContextTest() {
       console.log('ACTS_GetBundleName_0100 context is:' + JSON.stringify(context));
       let result = await context.getBundleName();
       expect(typeof(context)).assertEqual("object");
+      done();
     })
 
     /**
@@ -239,10 +240,10 @@ export default function ActsContextTest() {
       let datainfo = await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION);
       await context.verifyPermission("ohos.permission.INSTALL_BUNDLE").then((data)=>{
         console.log('ACTS_VerifyPermission_0600 promise is:' + JSON.stringify(data));
-        expect(promise).assertEqual(0);
+        expect(data).assertEqual(0);
         done();
       }).catch(()=>{
-        expect(promise).assertFail(0);
+        expect().assertFail();
         done();
       });
     })
