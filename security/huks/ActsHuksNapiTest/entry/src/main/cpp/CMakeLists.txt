@@ -32,8 +32,7 @@ add_library(huks SHARED
     HuksWrappedTest.cpp
 )
 
-target_link_libraries(huks PUBLIC
-    libhuks_ndk.z.so
+target_link_libraries(huks PUBLIC libhuks_ndk.z.so
     libace_napi.z.so
-
+    libhilog_ndk.z.so
 )
