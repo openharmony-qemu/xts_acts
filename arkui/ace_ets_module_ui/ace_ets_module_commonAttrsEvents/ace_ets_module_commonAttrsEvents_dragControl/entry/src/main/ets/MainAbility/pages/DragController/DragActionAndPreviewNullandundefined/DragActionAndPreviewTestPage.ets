@@ -36,7 +36,7 @@ struct DragActionAndPreviewTestPage {
   @Builder
   DraggingBuilder() {
     Column() {
-      Text("DraggingBuilder")
+      Text('DraggingBuilder')
     }
     .width('20%')
     .height('10%')
