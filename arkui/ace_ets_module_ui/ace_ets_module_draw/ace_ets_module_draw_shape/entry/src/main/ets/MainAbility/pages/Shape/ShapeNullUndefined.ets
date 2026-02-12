@@ -18,15 +18,7 @@
 struct ShapeNullUndefinedTest {
   build() {
     Column() {
-      Text('Shape stroke/fill/strokeLineCap Test Page')
-        .fontSize(20)
-        .fontWeight(FontWeight.Bold)
-        .margin({ bottom: 20 })
-
       // ========== fill tests ==========
-      Text('fill Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -72,9 +64,6 @@ struct ShapeNullUndefinedTest {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== stroke tests ==========
-      Text('stroke Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -128,9 +117,6 @@ struct ShapeNullUndefinedTest {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== strokeLineCap tests ==========
-      Text('strokeLineCap Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -173,6 +159,6 @@ struct ShapeNullUndefinedTest {
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 5, right: 5, top: 5, bottom: 5 })
+    .padding(2)
   }
 }

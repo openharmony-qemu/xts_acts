@@ -18,15 +18,7 @@
 struct ShapeNullUndefined2Test {
   build() {
     Column() {
-      Text('Shape strokeLineJoin/strokeOpacity/fillOpacity Test Page')
-        .fontSize(20)
-        .fontWeight(FontWeight.Bold)
-        .margin({ bottom: 20 })
-
       // ========== strokeLineJoin tests ==========
-      Text('strokeLineJoin Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -68,9 +60,6 @@ struct ShapeNullUndefined2Test {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== strokeOpacity tests ==========
-      Text('strokeOpacity Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -115,9 +104,6 @@ struct ShapeNullUndefined2Test {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== fillOpacity tests ==========
-      Text('fillOpacity Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Valid parameters (对照)
         Shape() {
@@ -157,6 +143,6 @@ struct ShapeNullUndefined2Test {
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 5, right: 5, top: 5, bottom: 5 })
+    .padding(2)
   }
 }

@@ -18,15 +18,7 @@
 struct RowAlignItemsJustifyContentReverseNullUndefinedTest {
   build() {
     Column() {
-      Text('Row alignItems/justifyContent/reverse Test Page')
-        .fontSize(20)
-        .fontWeight(FontWeight.Bold)
-        .margin({ bottom: 20 })
-
       // ========== alignItems tests ==========
-      Text('alignItems Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Not set alignItems (对照)
         Row() {
@@ -64,9 +56,6 @@ struct RowAlignItemsJustifyContentReverseNullUndefinedTest {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== justifyContent tests ==========
-      Text('justifyContent Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Not set justifyContent (对照)
         Row() {
@@ -104,9 +93,6 @@ struct RowAlignItemsJustifyContentReverseNullUndefinedTest {
       .justifyContent(FlexAlign.SpaceEvenly)
 
       // ========== reverse tests ==========
-      Text('reverse Tests')
-        .fontSize(16)
-        .margin({ top: 10, bottom: 5 })
       Row() {
         // Not set reverse (对照) - 正序: 1, 2
         Row() {
@@ -145,6 +131,6 @@ struct RowAlignItemsJustifyContentReverseNullUndefinedTest {
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 5, right: 5, top: 5, bottom: 5 })
+    .padding(2)
   }
 }
