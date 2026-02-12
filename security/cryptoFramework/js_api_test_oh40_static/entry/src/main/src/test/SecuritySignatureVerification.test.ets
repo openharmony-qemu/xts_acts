@@ -34,11 +34,11 @@ export default function SecuritySignatureVerificationJsunit() {
      * @tc.desc   Pass in the RSAKeyPar structure with a signature verification type of "RSA512|PKCS1|MD5"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_SignatureVerification_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyCallback
           .signAndVerifyBySpecProcess(

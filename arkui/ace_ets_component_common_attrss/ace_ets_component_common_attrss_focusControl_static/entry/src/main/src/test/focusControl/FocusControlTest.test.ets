@@ -97,7 +97,7 @@ export default function FocusControlTest() {
    */
 
   describe('FocusControlTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FocusControlTest beforeEach start");
       
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Local1Jsunit() {
   describe('Local1Jsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Local1Jsunit beforeEach start");
 
 

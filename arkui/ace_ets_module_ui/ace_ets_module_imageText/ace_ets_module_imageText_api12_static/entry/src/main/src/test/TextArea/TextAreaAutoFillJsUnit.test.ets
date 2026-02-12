@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaAutoFillTest() {
   describe('textAreaAutoFillTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaAutoFillTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

@@ -38,7 +38,7 @@ export default function GeneralLayoutMarkAnchorTest() {
     let mirror_rect_right: number;
     let mirror_rect_bottom: number;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GeneralLayoutMarkAnchorTest beforeEach start");
       
       await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")

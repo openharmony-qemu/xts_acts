@@ -43,7 +43,7 @@ import { UtilsTest } from '../Util.test';
 export default function selectmenuOutline() {
   describe('selectmenuOutline', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectmenuOutline beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
       

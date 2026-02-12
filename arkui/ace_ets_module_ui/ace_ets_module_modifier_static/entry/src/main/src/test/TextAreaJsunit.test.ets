@@ -32,7 +32,7 @@ import Utils from './Utils.test';
 
 export default function textAreaJsunit() {
   describe('textAreaTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollNestedScroll beforeEach start");
 
 

@@ -24,7 +24,7 @@ import {UtilsTest,startAbility} from '../Util.test';
 import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
 export default function getBlendColor() {
   describe('getBlendColor', () => { 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getBlendColor beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")

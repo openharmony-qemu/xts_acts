@@ -2243,7 +2243,7 @@ export default function streamTest() {
     it('testStreamDuplex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let duplex = new MyDuplex001();
       expect(duplex instanceof stream.Duplex).assertEqual(true);
-      let read: Object;
+      let read: Object = {};
       duplex.on('data', (obj: Object) => {
         read = obj;
       });

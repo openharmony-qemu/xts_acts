@@ -56,7 +56,7 @@ interface DataA {
 }
 export default function stateManagementGetSharedJsunit() {
   describe('stateManagementGetSharedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stateManagementGetSharedJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

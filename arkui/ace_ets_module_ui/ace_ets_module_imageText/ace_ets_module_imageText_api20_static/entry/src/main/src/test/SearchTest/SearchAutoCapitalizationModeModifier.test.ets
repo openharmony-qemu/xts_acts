@@ -37,7 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function SearchAutoCapitalizationModeModifierTest() {
   describe('SearchAutoCapitalizationModeModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchAutoCapitalizationModeModifierTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api20.static", "EntryAbility")
     });

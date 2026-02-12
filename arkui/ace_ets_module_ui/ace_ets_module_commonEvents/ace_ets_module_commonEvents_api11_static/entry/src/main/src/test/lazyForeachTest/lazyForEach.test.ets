@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function lazyForEachOnDataAddJsunit() {
   describe('lazyForEachOnDataAddTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -95,7 +95,7 @@ it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
           // console.info("Lazy_101 eventData.data?.result1 result is: " + eventData.data?.['result1']);
           // expect(eventData.data?.['result1']).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_101 on emitter err : " + JSON.stringify(err));
         }
 
@@ -103,7 +103,7 @@ it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
       try {
         console.info("Lazy_101 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemOne', 10, "")));
         emitter.on(innerEvent1, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_101 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -130,7 +130,7 @@ it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
           // console.info("Lazy_102 eventData.data?.result2 result is: " + eventData.data?.['result2']);
           // expect(eventData.data?.['result2']).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_102 on emitter err : " + JSON.stringify(err));
         }
 
@@ -138,7 +138,7 @@ it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
       try {
         console.info("Lazy_102 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemTwo', 10, "")));
         emitter.on(innerEvent2, callback2);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_102 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -165,7 +165,7 @@ it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
           // console.info("Lazy_103 eventData.data?.result3 result is: " + eventData.data?.['result3']);
           // expect(eventData.data?.['result3']).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_103 on emitter err : " + JSON.stringify(err));
         }
 
@@ -173,7 +173,7 @@ it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
       try {
         console.info("Lazy_103 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemThree', 10, "")));
         emitter.on(innerEvent3, callback3);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_103 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -200,7 +200,7 @@ it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
           // console.info("Lazy_104 eventData.data?.result4 result is: " + eventData.data?.['result4']);
           // expect(eventData.data?.['result4']).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_104 on emitter err : " + JSON.stringify(err));
         }
 
@@ -208,7 +208,7 @@ it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
       try {
         console.info("Lazy_104 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemFour', 10, "")));
         emitter.on(innerEvent4, callback4);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_104 on emitter err : " + JSON.stringify(err));
       }
     });

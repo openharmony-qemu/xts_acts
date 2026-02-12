@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flex_AlignContent_SpaceAround_FlexSizeTest() {
   describe('Flex_AlignContent_SpaceAround_FlexSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flex_AlignContent_SpaceAround_FlexSizeTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

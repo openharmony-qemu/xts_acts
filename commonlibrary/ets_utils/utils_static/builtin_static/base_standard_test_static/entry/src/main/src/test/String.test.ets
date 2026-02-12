@@ -22,7 +22,7 @@ let tag: string = 'StringTestTag'; //日志标识字符串,作为tag标识当前
 export default function StringTest() {
 
   describe("stringTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -339,29 +339,6 @@ export default function StringTest() {
       const TAG = "testFromCodePoint0008";
       try {
         let result = String.fromCodePoint(-1);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0900
-     * @tc.name testFromCodePoint0009
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0009";
-      try {
-        let result = String.fromCodePoint(3);
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {

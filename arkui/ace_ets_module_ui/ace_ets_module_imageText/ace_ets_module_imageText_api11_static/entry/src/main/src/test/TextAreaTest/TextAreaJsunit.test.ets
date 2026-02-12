@@ -44,7 +44,7 @@ export default function textAreaJsunit() {
 
   describe('textAreaTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaTest beforeEach start");
 
 

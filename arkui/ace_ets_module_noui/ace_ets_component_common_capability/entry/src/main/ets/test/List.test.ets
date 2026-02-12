@@ -18,6 +18,10 @@ import LayoutInspectorTest from './layoutInspector/layoutInspector.test';
 import assemblyCallbackTest from './assemblycallback/assemblycallback.test';
 import enumTest from './enumTest/enum.test';
 import LayoutChildrenTest from './assemblycallback/LayoutChildren.test';
+import drawChildrenTest from './CreateComponentObserver/drawChildren.test';
+import xComponentNodeOnCreateNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentNodeOnCreateNullUndefined.test';
+import xComponentNodeChangeRenderTypeNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentNodeChangeRenderTypeNullUndefined.test';
+
 
 
 export default function testsuite() {
@@ -26,4 +30,7 @@ export default function testsuite() {
   assemblyCallbackTest();
   enumTest();
   LayoutChildrenTest();
+  drawChildrenTest();
+  xComponentNodeChangeRenderTypeNullUndefinedTest();
+  xComponentNodeOnCreateNullUndefinedTest();
 }

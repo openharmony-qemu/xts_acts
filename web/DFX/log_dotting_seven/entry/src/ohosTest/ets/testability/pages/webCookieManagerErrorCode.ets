@@ -73,13 +73,17 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100002', 123210);
+                  Utils.emitEvent('17100002URL error. No valid cookie found for the specified URL.', 123210);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
-                  this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100002', 123210, this.str);
+                  let result = e.code + e.message;
+                  await waitForAssert(() => result,
+                    check,
+                    '17100002URL error. No valid cookie found for the specified URL.',
+                    123210,
+                    this.str);
                 }
               }
               break;
@@ -92,13 +96,17 @@ struct Index {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent('17100002', 123220);
+                  Utils.emitEvent('17100002URL error. No valid cookie found for the specified URL.', 123220);
                 } else {
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }
-                  this.errorCode = String(e.code)
-                  await waitForAssert(()=>this.errorCode, check, '17100002', 123220, this.str);
+                  let result = e.code + e.message;
+                  await waitForAssert(() => result,
+                    check,
+                    '17100002URL error. No valid cookie found for the specified URL.',
+                    123220,
+                    this.str);
                 }
               }
               break;

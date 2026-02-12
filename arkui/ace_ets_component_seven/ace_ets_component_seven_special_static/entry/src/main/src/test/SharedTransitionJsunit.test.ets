@@ -26,7 +26,7 @@ import { RecordData } from '@ohos.base';
 
 export default function sharedTransitionJsunit() {
   describe('sharedTransitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("sharedTransitionTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
@@ -100,7 +100,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
       }
       try {
         events_emitter.on(indexEventOne, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("sharedTransitionTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("sharedTransitionTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('Navigator', 10, "")));

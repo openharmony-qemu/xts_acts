@@ -39,9 +39,9 @@ export default function decompressFileTest() {
      * @tc.desc   decompressFile err code 900001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('acts_zlibDecompressFile_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('acts_zlibDecompressFile_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(Domain, TAG,
         '==================acts_zlibDecompressFile_static_0100 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';
@@ -79,9 +79,9 @@ export default function decompressFileTest() {
      * @tc.desc   decompressFile err code 900002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('acts_zlibDecompressFile_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('acts_zlibDecompressFile_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(Domain, TAG,
         '==================acts_zlibDecompressFile_static_0200 start==================');
       let inFile = '/data/storage/el1/bundle/nofile.zip';

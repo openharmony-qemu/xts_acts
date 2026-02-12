@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ import { BusinessError } from "@ohos.base";
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let context1: common.UIAbilityContext;
+let context1: common.UIAbilityContext | undefined;
 const TAG = "OBJECTSTORE_TEST";
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -119,7 +119,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_002 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
-        let g_object: distributedObject.DataObject = distributedObject.create(context1, source);
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         try {
           await g_object.setSessionId(undefined) //参数不合法
@@ -146,7 +146,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_003 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         await sleep(2000);
         expect(g_object == undefined).assertEqual(false);
         if (g_object) {
@@ -154,10 +154,10 @@ export default function objectStoreTestV9() {
           sleep(2000);
           expect("session1" == g_object["__sessionId"]).assertTrue();
         }
-        let g_object1 = distributedObject.create(context1, source);
+        let g_object1 = distributedObject.create(context1!, source);
         try {
           await g_object1.setSessionId("session1");
-        } catch (err: Error) {
+        } catch (err) {
           console.info(TAG + 'setSessionId failed' + err.code + err.message);
           expect(err.code).assertEqual(15400001);
         }
@@ -180,7 +180,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         await sleep(2000);
         expect(g_object == undefined).assertEqual(false);
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004 start *************" + JSON.stringify(g_object));
@@ -211,7 +211,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_On_001 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         g_object.setSessionId("session1").then(() => {
           console.info("join session");
@@ -261,7 +261,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Off_001 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         await g_object.setSessionId("session5").then(() => {
           console.info("join session");
@@ -315,7 +315,7 @@ export default function objectStoreTestV9() {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_OnStatus_002 start *************");
         console.info(TAG + "start watch status");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         await sleep(2000);
         expect(g_object == undefined).assertEqual(false);
         expect(g_object["name"] == "Amy").assertEqual(true);
@@ -346,7 +346,7 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Save_001 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         await sleep(2000);
         expect(g_object == undefined).assertEqual(false);
         g_object.setSessionId("mySession1").then(() => {
@@ -390,7 +390,7 @@ export default function objectStoreTestV9() {
       async (done: () => void) => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_002 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18.0, "isVis": false };
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         await sleep(2000);
         expect(g_object != undefined).assertEqual(true);
         await g_object.setSessionId("mySession5");
@@ -444,10 +444,10 @@ export default function objectStoreTestV9() {
           let g_object: distributedObject.DataObject;
           let maxValue = Number.MAX_VALUE;
           let source: Record<String, object> = { "name": "Amy", "age": maxValue, "isVis": false };
-          g_object = distributedObject.create(context1, source);
+          g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -470,10 +470,10 @@ export default function objectStoreTestV9() {
           let g_object: distributedObject.DataObject;
           let minValue = Number.MIN_VALUE;
           let source: Record<String, object> = { "name": "Amy", "age": minValue, "isVis": false };
-          g_object = distributedObject.create(context1, source);
+          g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -496,10 +496,10 @@ export default function objectStoreTestV9() {
           let g_object: distributedObject.DataObject;
           let abnValue = -1;
           let source: Record<String, object> = { "name": "Amy", "age": abnValue, "isVis": false };
-          g_object = distributedObject.create(context1, source);
+          g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -522,10 +522,10 @@ export default function objectStoreTestV9() {
           let abnValue = 0.02;
           let source: Record<String, object> = { "name": "Amy", "age": abnValue, "isVis": false };
           let g_object: distributedObject.DataObject;
-          g_object = distributedObject.create(context1, source);
+          g_object = distributedObject.create(context1!, source);
           console.info(TAG + "_age = " + g_object["age"]);
           expect(g_object == undefined).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect().assertFail();
         }
@@ -559,7 +559,7 @@ export default function objectStoreTestV9() {
           "mark": "no mark",
           "asset010": asset010
         }
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         await g_object.setSessionId("sessionBA010");
         let asset1: commonType.Asset = {
@@ -611,7 +611,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore010 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -644,7 +644,7 @@ export default function objectStoreTestV9() {
           "mark": "no mark",
           "assetPromise010": assetPromise010
         }
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         await g_object.setSessionId("sessionBAassetPromise010");
         let asset1: commonType.Asset = {
@@ -731,7 +731,7 @@ export default function objectStoreTestV9() {
           "mark": "no mark",
           "asset020": asset020
         }
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         await g_object.setSessionId("sessionBA020");
         let asset1: commonType.Asset = {
@@ -784,7 +784,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore020 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -817,7 +817,7 @@ export default function objectStoreTestV9() {
           "mark": "no mark",
           "asset030": asset030
         }
-        let g_object = distributedObject.create(context1, source);
+        let g_object = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         await g_object.setSessionId("sessionBA030");
         let asset1: commonType.Asset = {
@@ -870,7 +870,7 @@ export default function objectStoreTestV9() {
             expect(err == undefined).assertEqual(true);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`V9testbindAssetStore030 err is: ${error.code} and msg is: ${error.message}`);
           expect().assertFail();
           done();
@@ -904,7 +904,7 @@ export default function objectStoreTestV9() {
           "mark": false,
           "name": attachment
         };
-        g_object = distributedObject.create(context1, source);
+        g_object = distributedObject.create(context1!, source);
         expect(g_object === undefined).assertEqual(false);
         try {
           await g_object.setSessionId("123456").then((data) => {
@@ -914,7 +914,7 @@ export default function objectStoreTestV9() {
             console.info(TAG + error);
           });
           g_object["attachment"] = {};
-        } catch (error: Error) {
+        } catch (error) {
           console.info(error.code + error.message);
           expect(error.code === 401).assertEqual(true);
         }
@@ -944,14 +944,14 @@ export default function objectStoreTestV9() {
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006 start *************");
         let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false };
-        let g_object: distributedObject.DataObject = distributedObject.create(context1, source);
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
         expect(g_object == undefined).assertEqual(false);
         g_object.setSessionId("123456", (error, data) => {
           console.info(TAG + error + "," + data);
           console.info(TAG + "setSessionId test");
         });
         await sleep(2000);
-        let g_object1: distributedObject.DataObject = distributedObject.create(context1, source);
+        let g_object1: distributedObject.DataObject = distributedObject.create(context1!, source);
         // let source = new SourceObject("Amy", 18, false);
         // let g_object1: distributedObject.DataObject | null = null;
         // g_object1: distributedObject.DataObject = distributedObject.create(context1, source)

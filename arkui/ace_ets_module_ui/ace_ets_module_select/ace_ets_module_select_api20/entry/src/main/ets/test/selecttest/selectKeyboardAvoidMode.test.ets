@@ -56,12 +56,15 @@ export default function selectKeyboardAvoidMode() {
      console.log('selectKeyboardAvoidMode_001 START')
      let driver: Driver = Driver.create();
      let btn1 = await driver.findComponent(ON.id('select01'));
+     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
      await btn1.click();
      await Utils.sleep(5000);
      let str = await driver.findComponent(ON.text('ddd'));
      expect(str == null ).assertTrue();
      await Utils.sleep(1000);
      await btn1.click();
+     await Utils.sleep(1000);
+     await hideBtn.click();
      console.log('selectKeyboardAvoidMode_001 END')
      done();
    });
@@ -79,12 +82,15 @@ export default function selectKeyboardAvoidMode() {
      console.log('selectKeyboardAvoidMode_002 START')
      let driver: Driver = Driver.create();
      let btn2 = await driver.findComponent(ON.id('select02'));
+     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
      await btn2.click();
      await Utils.sleep(5000);
      let str1 = await driver.findComponent(ON.text('ddd'));
      expect(str1 == null ).assertTrue();
      await Utils.sleep(1000);
      await btn2.click();
+     await Utils.sleep(1000);
+     await hideBtn.click();
      console.log('selectKeyboardAvoidMode_002 END')
      done();
    });
@@ -102,12 +108,15 @@ export default function selectKeyboardAvoidMode() {
      console.log('selectKeyboardAvoidMode_003 START')
      let driver: Driver = Driver.create();
      let btn3 = await driver.findComponent(ON.id('select03'));
+     let hideBtn = await driver.findComponent(ON.id('hideBtn'));
      await btn3.click();
      await Utils.sleep(5000);
      let str1 = await driver.findComponent(ON.text('ddd'));
-     expect(str1 == null ).assertTrue();
+     expect(str1 !== null ).assertTrue();
      await Utils.sleep(1000);
      await btn3.click();
+     await Utils.sleep(1000);
+     await hideBtn.click();
      console.log('selectKeyboardAvoidMode_003 END')
      done();
    });

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function DatePickerDialog() {
   describe('DatePickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })
@@ -59,7 +59,7 @@ export default function DatePickerDialog() {
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push DatePickerDialog page error: " + err);
         expect().assertFail();
       }

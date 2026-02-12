@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTes2() {
   describe('NewEAWorkerTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -293,7 +293,7 @@ export default function NewEAWorkerTes2() {
           });
           expect(false).assertFail();
         } catch (error) {
-          expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot have uncaught exception handler');
         } finally {
           console.info('test end');
           done();
@@ -320,7 +320,7 @@ export default function NewEAWorkerTes2() {
           )
           expect(false).assertFail();
         } catch (error) {
-          expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot have uncaught exception handler');
         } finally {
           console.info('test end');
           done();
@@ -558,7 +558,7 @@ export default function NewEAWorkerTes2() {
           let getValue2 = EAWorker.main().getUncaughtExceptionHandler();
           expect(getValue2).assertUndefined();
         } catch (error) {
-          expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot have uncaught exception handler');
           expect(false).assertFail();
         } finally {
           console.info(`test end`);
@@ -613,7 +613,7 @@ export default function NewEAWorkerTes2() {
         EAWorker.main().start();
         expect(false).assertFail();
       } catch (error) {
-        expect(error.message).assertContain('Main worker cannot be started');
+        expect(error.message).assertContain('EAWorker:: Main worker cannot be started');
       } finally {
         console.info(`test end`);
         done();
@@ -716,7 +716,7 @@ export default function NewEAWorkerTes2() {
         EAWorker.main().setUncaughtExceptionHandler((error: Error) => {
         });
       } catch (error) {
-        expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
+        expect(error.message).assertContain('EAWorker:: Main worker cannot have uncaught exception handler');
       } finally {
         console.info(`test end`);
         done();
@@ -732,12 +732,12 @@ export default function NewEAWorkerTes2() {
      * @tc.level Level 0
      */
     it("MainTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let getValue: WorkerPriority;
+      let getValue: WorkerPriority | undefined;
       try {
         await taskpool.execute(() => {
           getValue = EAWorker.main().getPriority()
         })
-        expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+        expect(getValue!).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
       } catch (error) {
         expect(false).assertFail()
       } finally {
@@ -765,7 +765,7 @@ export default function NewEAWorkerTes2() {
         })
         expect(false).assertFail();
       } catch (error) {
-        expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
+        expect(error.message).assertContain('EAWorker:: Main worker cannot have uncaught exception handler');
       } finally {
         console.info(`test end`);
         done();
@@ -1035,7 +1035,7 @@ export default function NewEAWorkerTes2() {
           expect(false).assertFail();
           current!.join();
         } catch (error) {
-          expect(error.message).assertContain('Worker already started');
+          expect(error.message).assertContain('EAWorker:: Worker already started or quit');
         } finally {
           console.info(`test end`);
           done();
@@ -1061,7 +1061,7 @@ export default function NewEAWorkerTes2() {
               errMessage = error.message;
             }
           })
-          expect(errMessage).assertContain('Can not get current worker in taskpool');
+          expect(errMessage).assertContain('EAWorker:: Cannot get current worker in taskpool');
         } catch (error) {
           expect(false).assertFail()
         } finally {

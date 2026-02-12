@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,13 +26,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
 
   describe("actsNotificationThirdPartyWatchWithoutAbilityTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.startAbility({
@@ -63,7 +63,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          await notificationExtensionSubscription.openSubscriptionSettings(context)
+          await notificationExtensionSubscription.openSubscriptionSettings(context!)
             .then(() => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               expect().assertFail();
@@ -80,7 +80,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
               done();
             }
             })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();

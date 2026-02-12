@@ -564,7 +564,7 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600 START`)
   
         let subscriber
-  
+        let count = 0
         let subscribeInfo = {
           events: ["event06"]
         }
@@ -572,7 +572,8 @@ export default function ActsSubscriberTestOrder() {
         await commonEvent.createSubscriber(subscribeInfo, undefined).then((commonEventSubscriber) => {
           console.info(`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0600 success ${commonEventSubscriber}`)
           subscriber = commonEventSubscriber
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }).catch((err) => {
           console.info(
@@ -597,7 +598,7 @@ export default function ActsSubscriberTestOrder() {
         console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 START`)
   
         let subscriber
-  
+        let count = 0
         let subscribeInfo = {
           events: ["event07"]
         }
@@ -605,7 +606,8 @@ export default function ActsSubscriberTestOrder() {
         await commonEventManager.createSubscriber(subscribeInfo, undefined).then((commonEventSubscriber) => {
           console.info(`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_0700 success ${commonEventSubscriber}`)
           subscriber = commonEventSubscriber
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }).catch((err) => {
           console.info(

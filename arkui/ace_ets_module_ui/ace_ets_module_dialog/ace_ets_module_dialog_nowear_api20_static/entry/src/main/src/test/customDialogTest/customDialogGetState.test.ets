@@ -37,7 +37,7 @@ import { UtilsTest } from '../Util.test';
 export default function CustomDialogGetStateTest() {
   describe('CustomDialogGetStateTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomDialogGetStateTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
     });

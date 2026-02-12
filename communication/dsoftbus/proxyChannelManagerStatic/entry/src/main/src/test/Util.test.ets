@@ -56,7 +56,7 @@ export default class Utils {
         await permissionButton.click();
         hilog.info(domain, tag, 'clickRequestPermission end');
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
       hilog.info(domain, tag, 'clickRequestPermission get err:' + err);
     }
   }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,9 +57,9 @@ export default function uitestComponentErrorTest() {
           await scrollBar.scrollToTop();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         hilog.info(domain, tag, `test_scrollToTop_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       hilog.info(domain, tag, `test_scrollToTop_17000004_static end`);
@@ -87,9 +87,9 @@ export default function uitestComponentErrorTest() {
           await button.scrollSearch(ON.text('next page'));
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_scrollSearch_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_scrollSearch_17000004_static end');
@@ -119,9 +119,9 @@ export default function uitestComponentErrorTest() {
         }
         console.log(`${TestTag}, test_scrollToBottom_17000004_static scrollToBottom success.`);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_scrollToBottom_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_scrollToBottom_17000004_static end');
@@ -149,9 +149,9 @@ export default function uitestComponentErrorTest() {
           await button.click();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_click_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_click_17000004_static end');
@@ -179,9 +179,9 @@ export default function uitestComponentErrorTest() {
           await button.doubleClick();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_doubleClick_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_doubleClick_17000004_static end');
@@ -208,9 +208,9 @@ export default function uitestComponentErrorTest() {
           await button.longClick();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_longClick_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_longClick_17000004_static end');
@@ -237,9 +237,9 @@ export default function uitestComponentErrorTest() {
           await button.getId();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getId_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_getId_17000004_static end');
@@ -266,9 +266,9 @@ export default function uitestComponentErrorTest() {
           await button.getText();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getText_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_getText_17000004_static end');
@@ -295,9 +295,9 @@ export default function uitestComponentErrorTest() {
           await button.getType();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getType_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_getType_17000004_static end');
@@ -324,9 +324,9 @@ export default function uitestComponentErrorTest() {
           await button.getBounds();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getBounds_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_getBounds_17000004_static end');
@@ -353,9 +353,9 @@ export default function uitestComponentErrorTest() {
           await button.getBoundsCenter();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getBoundsCenter_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_getBoundsCenter_17000004_static end');
     })
@@ -381,9 +381,9 @@ export default function uitestComponentErrorTest() {
           await button.isClickable();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isClickable_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_isClickable_17000004_static end');
@@ -410,9 +410,9 @@ export default function uitestComponentErrorTest() {
           await button.isLongClickable();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isLongClickable_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_isLongClickable_17000004_static end');
@@ -439,9 +439,9 @@ export default function uitestComponentErrorTest() {
           await button.isChecked();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isChecked_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_isChecked_17000004_static end');
@@ -468,9 +468,9 @@ export default function uitestComponentErrorTest() {
           await button.isCheckable();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isCheckable_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       await Utils.msSleep(1000);
       console.log(TestTag, 'test_isCheckable_17000004_static end');
@@ -497,9 +497,9 @@ export default function uitestComponentErrorTest() {
           await button.isScrollable();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isScrollable_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isScrollable_17000004_static end');
     })
@@ -525,9 +525,9 @@ export default function uitestComponentErrorTest() {
           await button.isEnabled();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isEnabled_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isEnabled_17000004_static end');
     })
@@ -553,9 +553,9 @@ export default function uitestComponentErrorTest() {
           await button.isFocused();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isFocused_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isFocused_17000004_static end');
     })
@@ -581,9 +581,9 @@ export default function uitestComponentErrorTest() {
           await button.isSelected();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_isSelected_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isSelected_17000004_static end');
     })
@@ -609,9 +609,9 @@ export default function uitestComponentErrorTest() {
           await button.inputText('hello');
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_inputText_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_inputText_17000004_static end');
     })
@@ -637,9 +637,9 @@ export default function uitestComponentErrorTest() {
           await button.clearText();
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_clearText_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_clearText_17000004_static end');
     })
@@ -665,9 +665,9 @@ export default function uitestComponentErrorTest() {
           await button.dragTo(button);
         }
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_dragTo_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_dragTo_17000004_static end');
     })
@@ -694,9 +694,9 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_pinchOut_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       } finally {
 
       }
@@ -725,9 +725,9 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs)
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_pinchIn_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       } finally {
 
       }
@@ -757,9 +757,9 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getDescription_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       } finally {
 
       }
@@ -789,9 +789,9 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_getHint_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(`${TestTag}, test_getHint_17000004_static end`);
     })
@@ -825,9 +825,9 @@ export default function uitestComponentErrorTest() {
             paste: true
           });
         }
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(CapabilityCode);
+        expect((e as BusinessError).code).assertEqual(CapabilityCode);
       } finally {
         await stopApplication('com.uitestScene.acts');
       }
@@ -861,9 +861,9 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
         console.log(`${TestTag}, test_inputTextMode_17000004_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(InvisibleErrorCode);
+        expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
       console.log(`${TestTag}, test_inputTextMode_17000004_static end`);
     })

@@ -32,7 +32,7 @@ export default function shortcutKeyJsunit() {
   const baseEvent = 62000
 
   describe('shortcutKeyJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("shortcutKeyJsunit beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

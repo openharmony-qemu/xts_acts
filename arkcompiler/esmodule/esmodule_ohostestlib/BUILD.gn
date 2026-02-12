@@ -15,6 +15,7 @@ import("//test/xts/tools/build/suite.gni")
 
 ohos_js_app_suite("ActsEsmoduleOhostestLib") {
   hap_name = "ActsEsmoduleOhostestLibTest"
+  test_hap = true
   testonly = true
   part_name = "ets_frontend"
   subsystem_name = "arkcompiler"

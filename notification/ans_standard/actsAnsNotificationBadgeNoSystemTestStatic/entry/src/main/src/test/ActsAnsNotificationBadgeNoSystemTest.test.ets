@@ -34,7 +34,7 @@ export default function ActsAnsNotificationBadgeNoSystemTest() {
   let TEST_SUITE_NAME: string = 'ActsAnsNotificationBadgeNoSystemTest ===>'
 
   describe('ActsAnsNotificationBadgeNoSystemTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle1)}`)
@@ -64,7 +64,8 @@ export default function ActsAnsNotificationBadgeNoSystemTest() {
         await Utils.msSleep(1000)
         try{
           notificationManager.offBadgeNumberQuery();
-        } catch(err: BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.error(TEST_SUITE_NAME + TAG + `OffBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
           expect(err.code).assertEqual(202);
           done();

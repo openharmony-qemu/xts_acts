@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function cachedShowGrid() {
   describe('cachedShowGrid', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
       
@@ -102,7 +102,7 @@ it('cachedShowGrid_static_0200', Level.LEVEL0, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<boolean>('clip1', false);
         AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -128,7 +128,7 @@ it('cachedShowGrid_static_0400', Level.LEVEL0, async (done: () => void): Promise
           try {
             AppStorage.setOrCreate<boolean>('clip1', true);
             AppStorage.setOrCreate<boolean>('show1', true);
-          } catch (err: Error) {
+          } catch (err) {
             console.log("[cachedShowGrid_static_0400] change component data error: " + err.message);
           }
           await CommonFunc.sleep(2000);
@@ -157,7 +157,7 @@ it('cachedShowGrid_static_0300', Level.LEVEL0, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<boolean>('clip1', true);
         AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -182,7 +182,7 @@ it('cachedShowGrid_static_0500', Level.LEVEL0, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<boolean>('clip1', false);
         AppStorage.setOrCreate<boolean | null>('show1', null);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -207,7 +207,7 @@ it('cachedShowGrid_static_0600', Level.LEVEL0, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<boolean>('clip1', false);
         AppStorage.setOrCreate<boolean | undefined>('show1', undefined);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

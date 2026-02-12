@@ -59,7 +59,7 @@ const uiContext = new UIContext();
 
 export default function SwiperNextPrevMarginAddJsunit() {
   describe('SwiperNextPrevMarginAddJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperNextPrevMarginAddJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

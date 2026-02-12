@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function Swiper07Test() {
   describe('Swiper07Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Swiper07Test beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -98,7 +98,7 @@ it('ArkUX_Grid_List_Swiper_static_0300', Level.LEVEL0, async (done: () => void):
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("200.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0300 END ');
 
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0300 ERR  ' + JSON.stringify(err));
         }
@@ -126,7 +126,7 @@ it('ArkUX_Grid_List_Swiper_static_0310', Level.LEVEL0, async (done: () => void):
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("100.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0310 END ');
 
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0310 ERR  ' + JSON.stringify(err));
         }
@@ -151,7 +151,7 @@ it('ArkUX_Grid_List_Swiper_static_0320', Level.LEVEL0, async (done: () => void):
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0320 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0320 ERR  ' + JSON.stringify(err));
         }
@@ -176,7 +176,7 @@ it('ArkUX_Grid_List_Swiper_static_0330', Level.LEVEL0, async (done: () => void):
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("500.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0330 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0330 ERR  ' + JSON.stringify(err));
         }
@@ -201,7 +201,7 @@ it('ArkUX_Grid_List_Swiper_static_0340', Level.LEVEL0, async (done: () => void):
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0340 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0340 ERR  ' + JSON.stringify(err));
         }

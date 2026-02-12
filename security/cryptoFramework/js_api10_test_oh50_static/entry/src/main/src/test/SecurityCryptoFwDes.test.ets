@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,7 +67,7 @@ async function doGenDes64Stub(mode: string): Promise<boolean> {
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -117,7 +117,7 @@ async function doEncryptDes64Stub(mode: string, type: asyncType): Promise<boolea
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -178,7 +178,7 @@ async function doUpdateEncryptDes64Stub(mode: string, type: asyncType): Promise<
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doDes64Stub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -208,7 +208,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_SYNC);
           let keyData: cryptoFramework.DataBlob = symKey.getEncoded();
           expect(keyData.data.byteLength).assertEqual(DES64_KEY_SIZE);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -231,7 +231,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_PROMISE);
           let keyData: cryptoFramework.DataBlob = symKey.getEncoded();
           expect(keyData.data.byteLength).assertEqual(DES64_KEY_SIZE);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -254,7 +254,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let symKey: cryptoFramework.SymKey = await generateSymKey(algName, asyncType.TYPE_IS_CALLBACK);
           let keyData: cryptoFramework.DataBlob = symKey.getEncoded();
           expect(keyData.data.byteLength).assertEqual(DES64_KEY_SIZE);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -280,7 +280,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           expect(keyData2.data.byteLength).assertEqual(DES64_KEY_SIZE);
           let ret: boolean = compareDataBlob(keyData1, keyData2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -306,7 +306,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           expect(keyData2.data.byteLength).assertEqual(DES64_KEY_SIZE);
           let ret: boolean = compareDataBlob(keyData1, keyData2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -332,7 +332,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           expect(keyData2.data.byteLength).assertEqual(DES64_KEY_SIZE);
           let ret: boolean = compareDataBlob(keyData1, keyData2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -361,7 +361,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = compareDataBlob(keyData, dataTemp);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0700 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -390,7 +390,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = compareDataBlob(keyData, dataTemp);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0800 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -419,7 +419,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
           let ret: boolean = compareDataBlob(keyData, dataTemp);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_0900 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -446,9 +446,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_SYNC);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1000 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -473,9 +473,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_SYNC);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1100 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -500,9 +500,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_PROMISE);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1200 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -527,9 +527,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_CALLBACK);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -554,9 +554,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_PROMISE);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -581,9 +581,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           let keyData: cryptoFramework.DataBlob = {data: new Uint8Array(data)};
           await convertSymKey(algName, keyData, asyncType.TYPE_IS_CALLBACK);
           expect(null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -607,7 +607,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
             let ret: boolean = compareDataBlob(dataTemp, keyData);
             expect(ret).assertTrue();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`DES_Func_1600 “${error}“, error code: ${error.code}`);
             expect(null).assertTrue(); // openssl低层未做弱口令校验
           }
@@ -634,7 +634,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
             let ret: boolean = compareDataBlob(dataTemp, keyData);
             expect(ret).assertTrue();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`DES_Func_1700 “${error}“, error code: ${error.code}`);
             expect(null).assertTrue();
           }
@@ -661,7 +661,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             let dataTemp: cryptoFramework.DataBlob = symKey.getEncoded();
             let ret: boolean = compareDataBlob(dataTemp, keyData);
             expect(ret).assertTrue();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`DES_Func_1800 “${error}“, error code: ${error.code}`);
             expect(null).assertTrue();
           }
@@ -707,7 +707,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_1900 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -752,7 +752,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2000 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -797,7 +797,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2100 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -842,7 +842,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2200 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -887,7 +887,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2300 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -925,7 +925,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let plainText: cryptoFramework.DataBlob|null = await decCipher.doFinal(cipherText);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2400 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -972,7 +972,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_SYNC);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2500 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -1019,7 +1019,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2600 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -1062,7 +1062,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1105,7 +1105,7 @@ export default function SecurityCryptoFwDESTestUnit() {
               expect(ret).assertTrue();
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1134,16 +1134,16 @@ export default function SecurityCryptoFwDESTestUnit() {
         try {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2900 init “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         try {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_2900 initSync “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -1170,16 +1170,16 @@ export default function SecurityCryptoFwDESTestUnit() {
         try {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3000 init “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         try {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, spec);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3000 initSync “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -1211,16 +1211,16 @@ export default function SecurityCryptoFwDESTestUnit() {
         try {
           await cipher.doFinal(msg);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3100 doFinal “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         try {
           cipher2.doFinalSync(msg);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3100 doFinalSync “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1263,7 +1263,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertFalse();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3200 “${error}“, error code: ${error.code}`);
           expect(null).assertFalse();
         }
@@ -1307,9 +1307,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           await doCipher(algName, mode, padding, spec, symKey,
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1358,7 +1358,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret2: boolean = compareDataBlob(plainText, msg);
           expect(ret2).assertFalse();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1398,9 +1398,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           await doCipher(algName, mode, padding, spec, symKey,
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1446,7 +1446,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let text2: cryptoFramework.DataBlob = { data:tmp2 };
           ret = compareDataBlob(text1, text2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1488,9 +1488,9 @@ export default function SecurityCryptoFwDESTestUnit() {
         try {
           await cipher.doFinal(null);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -1529,9 +1529,9 @@ export default function SecurityCryptoFwDESTestUnit() {
         try {
           await cipher.doFinal(null);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3800 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       }
@@ -1570,9 +1570,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           await doCipher(algName, mode, padding2, spec, symKey,
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_3900 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1612,7 +1612,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           expect(msgLen).not().assertEqual(plainText.data.byteLength);
           expect(msgLen+8).assertEqual(plainText.data.byteLength);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1654,7 +1654,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_SYNC);
           expect(msgLen).not().assertEqual(plainText.data.byteLength);
           expect(msgLen+8).assertEqual(plainText.data.byteLength);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1699,7 +1699,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let Text2: cryptoFramework.DataBlob = { data:tmp2 };
           ret = compareDataBlob(Text1, Text2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1744,7 +1744,7 @@ export default function SecurityCryptoFwDESTestUnit() {
           let Text2: cryptoFramework.DataBlob = { data:tmp2 };
           ret = compareDataBlob(Text1, Text2);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1780,7 +1780,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret = compareDataBlob(plainText, msg);
           expect(ret).assertFalse();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1827,9 +1827,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           await doCipher(algName, mode, padding, spec, symKey2,
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1874,9 +1874,9 @@ export default function SecurityCryptoFwDESTestUnit() {
           await doCipher(algName, mode, padding, spec, symKey2,
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_SYNC);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4600 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       }
@@ -1914,7 +1914,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cryptoFramework.CryptoMode.ENCRYPT_MODE, asyncType.TYPE_IS_SYNC);
           let ret: boolean = compareDataBlob(cipherText, cipherExpect);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1954,7 +1954,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cryptoFramework.CryptoMode.ENCRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(cipherText, cipherExpect);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1994,7 +1994,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cryptoFramework.CryptoMode.ENCRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(cipherText, cipherExpect);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_4900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -2030,7 +2030,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_SYNC);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_5000 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }
@@ -2066,7 +2066,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cryptoFramework.CryptoMode.ENCRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(cipherText, cipherExpect);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_5200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -2103,7 +2103,7 @@ export default function SecurityCryptoFwDESTestUnit() {
             cipherText, cryptoFramework.CryptoMode.DECRYPT_MODE, asyncType.TYPE_IS_PROMISE);
           let ret: boolean = compareDataBlob(plainText, msg);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DES_Func_5300 “${error}“, error code: ${error.code}`);
           expect(null).assertTrue();
         }

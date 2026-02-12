@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function touchJsunit() {
   describe('touchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -97,7 +97,7 @@ it('testTouch_static_01', Level.LEVEL0, async (done: () => void): Promise<void> 
           priority: emitter.EventPriority.LOW
         }
         emitter.on(backEvent, callBackTouch);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testTouch01 on touchEvent err : " + JSON.stringify(err));
       }
       console.info("testTouch01 click result is: " + JSON.stringify(inspector.sendEventByKey('touch', 10, "")));

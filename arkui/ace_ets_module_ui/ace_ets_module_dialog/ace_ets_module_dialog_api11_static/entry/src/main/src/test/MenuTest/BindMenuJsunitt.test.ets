@@ -59,7 +59,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindMenuTesttt() {
   describe('bindMenuTesttt', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindMenuTesttt beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -85,7 +85,7 @@ export default function bindMenuTesttt() {
           await CommonFunc.sleep(2000);
           // console.info("push bindMenu success: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push bindMenu page error:" + err);
       }
 
@@ -122,7 +122,7 @@ it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindMenuTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindMenuTest_static_0100 button click result is: " +

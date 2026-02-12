@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function GaugePrivacySensitiveTest() {
   describe('GaugePrivacySensitiveTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GaugePrivacySensitiveTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });

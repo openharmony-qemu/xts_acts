@@ -32,7 +32,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SearchStopBackPressTest() {
   describe('SearchStopBackPressTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchStopBackPressTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

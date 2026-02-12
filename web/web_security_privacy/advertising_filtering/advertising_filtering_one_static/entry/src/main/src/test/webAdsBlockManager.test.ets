@@ -56,9 +56,9 @@ export default function ActsAceWebAdsBlockManager() {
      * @tc.desc   test EnableAdsBlock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testEnableAdsBlockStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testEnableAdsBlockStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       emitKey = "emitEnableAdsBlock"
       Utils.emitEvent(emitKey, 10);

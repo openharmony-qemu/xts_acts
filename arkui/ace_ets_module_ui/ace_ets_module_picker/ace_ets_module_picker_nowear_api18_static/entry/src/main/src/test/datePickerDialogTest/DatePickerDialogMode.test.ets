@@ -27,7 +27,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function datePickerDialogModeTest() {
   describe('DatePickerDialogMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialogMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });

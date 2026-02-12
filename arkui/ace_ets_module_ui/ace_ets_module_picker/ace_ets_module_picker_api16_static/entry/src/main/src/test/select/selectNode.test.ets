@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function selectNodeTest() {
   describe('selectNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectNodeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")

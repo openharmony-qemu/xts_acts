@@ -699,7 +699,13 @@ export default function btConnectionNopUiJsunit() {
         expect(true).assertFalse();
       } catch (e) {
         hilog.error(Domain, TAG, `setLocalName promise error, error code is: ${e.code}, error message is: ${e.message}`);
-        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (e.code === 801) {
+          console.info('[bluetooth_js] RK板 is not support');
+          expect(Number(e.code) == 801).assertTrue();
+        } else {
+          console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+          expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })

@@ -26,7 +26,7 @@ import {
   Size
 } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import Utils from './Util.test';
+import sleep from './Util.test';
 
 async function noParamNoReturnTask(): Promise<void> {
   await new Promise<string>((resolve) => {
@@ -36,8 +36,8 @@ async function noParamNoReturnTask(): Promise<void> {
 
 export default function AtomicsTest() {
   describe('AtomicsTest', (): void => {
-    afterEach(() => {
-      await Utils.msSleep(200);
+    afterEach(async (): Promise<void> => {
+      await sleep(200);
     })
     /**
      * @tc.number SUB_Atomics_Test_0100

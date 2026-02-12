@@ -36,7 +36,7 @@ import { startAbility, stopApplication, UtilsTest } from './Util.test'
 
 export default function SelectTest() {
   describe('SelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectTest beforeEach start");
       await UtilsTest.startAbility("com.example.Select.static", "EntryAbility");
       

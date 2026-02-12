@@ -41,7 +41,7 @@ import {
 
 export default function Params() {
   describe('Params', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

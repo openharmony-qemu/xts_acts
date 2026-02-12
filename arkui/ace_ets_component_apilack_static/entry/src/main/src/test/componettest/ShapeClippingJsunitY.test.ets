@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 
 export default function shapeClippingJsunit() {
   describe('borderTest_five_4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -66,7 +66,7 @@ export default function shapeClippingJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push shapeClipping page error:" + err);
       }
     });
@@ -142,7 +142,7 @@ it('testShapeClipping_static_003', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testShapeClipping003] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -177,7 +177,7 @@ it('testShapeClipping_static_004', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testShapeClipping004] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -212,7 +212,7 @@ it('testShapeClipping_static_005', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testShapeClipping004] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

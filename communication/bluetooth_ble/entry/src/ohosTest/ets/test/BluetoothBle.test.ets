@@ -33,20 +33,6 @@ function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
 
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
-
 async function tryToEnableBt() {
     let sta = btAccess.getState();
     switch(sta){
@@ -145,7 +131,6 @@ export default function bluetoothBleTest() {
 
         beforeAll(async (done : Function) => {
             await clickRequestPermission(PERMISSION_TEXT);
-            await openPhone();
             console.info('beforeAll called')
             BleScanner = bluetooth.createBleScanner();
             console.info('createBleScanner result:' + JSON.stringify(BleScanner));
@@ -157,15 +142,17 @@ export default function bluetoothBleTest() {
             done();
         })
         beforeEach(async (done : Function) =>{
-            console.info('beforeEach called')
-            await tryToEnableBt()
+            console.info('beforeEach called');
+            await tryToEnableBt();
             done();
         })
         afterEach(() => {
             console.info('afterEach called')
         })
-        afterAll(() => {
-            console.info('afterAll called')
+        afterAll(async (done : Function) =>{
+            await tryToEnableBt();
+            console.info('afterAll called');
+            done();
         })
 
         /**
@@ -963,8 +950,7 @@ export default function bluetoothBleTest() {
             }
             done();
         })
-   
-        
+
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100
@@ -1299,7 +1285,7 @@ export default function bluetoothBleTest() {
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100
-         * @tc.desc API23 server setPhy 连接未建立 test 
+         * @tc.desc API23 server setPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
@@ -1320,18 +1306,17 @@ export default function bluetoothBleTest() {
                 }
             }
             done();
-        })   
+        })
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200
-         * @tc.desc API23 server readPhy 连接未建立 test 
+         * @tc.desc API23 server readPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-                
                 let data: bluetooth.PhyValue  = await gattServer.readPhy(deviceId);
                 console.info('[bt_arkts] server readPhy:'+ JSON.stringify(data));
                 console.info('[bt_arkts] server readPhy txPhy: ' + JSON.stringify(data.txPhy));
@@ -1351,18 +1336,17 @@ export default function bluetoothBleTest() {
                 }
             }
             done();
-        })  
+        })
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300
-         * @tc.desc API23 client readPhy 连接未建立 test 
+         * @tc.desc API23 client readPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
          it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-
                 let data: bluetooth.PhyValue = await device.readPhy();
                 console.info('[bt_arkts] client readPhy:'+ JSON.stringify(data));
                 console.info('[bt_arkts] client readPhy txPhy: ' + JSON.stringify(data.txPhy));
@@ -1386,14 +1370,13 @@ export default function bluetoothBleTest() {
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400
-         * @tc.desc API23 client setPhy 连接未建立 test 
+         * @tc.desc API23 client setPhy 连接未建立 test
          * @tc.type Method
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
-
                 await device.setPhy(phyValue1);
                 console.info('[bt_arkts] client setPhy success');
                 expect().assertFail();

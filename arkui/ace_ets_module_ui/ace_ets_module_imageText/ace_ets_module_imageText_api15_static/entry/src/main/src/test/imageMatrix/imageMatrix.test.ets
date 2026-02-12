@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function imageMatrix() {
   describe('imageMatrix', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("imageMatrix beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

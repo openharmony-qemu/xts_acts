@@ -45,7 +45,7 @@ function sleep(time: int) {
 export default function badgeJsunit() {
 
   describe('badgeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("badgeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

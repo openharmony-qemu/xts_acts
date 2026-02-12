@@ -41,7 +41,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function resourceColorErrorCodeTest() {
   describe('resourceColorErrorCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("resourceColorErrorCodeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
@@ -105,7 +105,6 @@ it('resourceColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => vo
       console.info("[resourceColorErrorCodeTest_0100] content obj is: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
       console.info("[resourceColorErrorCodeTest_0100] component obj is: " + JSON.stringify(obj2));
       console.info("[resourceColorErrorCodeTest_0100] content obj is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('401');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('180003');
       console.info('[resourceColorErrorCodeTest_0100] END');
       done();

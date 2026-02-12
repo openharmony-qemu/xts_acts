@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatGridBoolean() {
   describe('RepeatGridBoolean', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatGridBoolean beforeEach start");
 
 

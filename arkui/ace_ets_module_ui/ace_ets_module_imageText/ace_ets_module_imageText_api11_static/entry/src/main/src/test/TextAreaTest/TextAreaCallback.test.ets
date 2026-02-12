@@ -39,7 +39,7 @@ export default function TextAreaCallbackTest() {
 
   describe('TextAreaCallbackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaCallbackTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

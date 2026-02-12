@@ -78,7 +78,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     console.info("setArrowStyle start send emitKey");
     console.info("setArrowStyle backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setArrowStyle emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -86,7 +86,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
 
 export default function swiperTest() {
   describe('ActSwiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
     });
@@ -102,7 +102,7 @@ export default function swiperTest() {
           router.pushUrl(options)
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -138,7 +138,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0100', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("5.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -172,7 +172,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0200', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -207,7 +207,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0300', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("9999.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -242,7 +242,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0400', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -277,7 +277,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0500', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -312,7 +312,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0600', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -347,7 +347,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0700', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -382,7 +382,7 @@ it('ArkUX_Stage_Swiper_SelectedItemWidth_static_0800', Level.LEVEL0, async (done
           expect(obj2.getString('selectedItemWidth')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -417,7 +417,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0100', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -452,7 +452,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0200', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -487,7 +487,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0300', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("9999.00fp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -522,7 +522,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0400', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -557,7 +557,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0500', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -592,7 +592,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0600', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -627,7 +627,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0700', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("8.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -662,7 +662,7 @@ it('ArkUX_Stage_Swiper_SelectedItemHeight_static_0800', Level.LEVEL0, async (don
           expect(obj2.getString('selectedItemHeight')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -696,7 +696,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -730,7 +730,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0200', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -764,7 +764,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0300', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("9999.00lpx");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -798,7 +798,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0400', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -832,7 +832,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0500', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -866,7 +866,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0600', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("8.00px");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -900,7 +900,7 @@ it('ArkUX_Stage_Swiper_ItemWidth_static_0700', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('itemWidth')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -935,7 +935,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0100', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -970,7 +970,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0200', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1005,7 +1005,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0300', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("9999.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1040,7 +1040,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0400', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1075,7 +1075,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0500', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1110,7 +1110,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0600', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1145,7 +1145,7 @@ it('ArkUX_Stage_Swiper_ItemHeight_static_0700', Level.LEVEL0, async (done: () =>
           expect(obj2.getString('itemHeight')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1180,7 +1180,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0100', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -1215,7 +1215,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0200', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1250,7 +1250,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0300', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1285,7 +1285,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0400', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1320,7 +1320,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0500', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1355,7 +1355,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0600', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1390,7 +1390,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0700', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1426,7 +1426,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0800', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -1461,7 +1461,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_0900', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -1496,7 +1496,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_1000', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FF808080");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1000 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1000 ERR  ' + JSON.stringify(err));
           done();
@@ -1531,7 +1531,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_1100', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -1566,7 +1566,7 @@ it('ArkUX_Stage_Swiper_SelectedFontColor_static_1200', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1200 ERR  ' + JSON.stringify(err));
           done();
@@ -1600,7 +1600,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -1634,7 +1634,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0200', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1668,7 +1668,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0300', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1702,7 +1702,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0400', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1736,7 +1736,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0500', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1770,7 +1770,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0600', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1804,7 +1804,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0700', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1839,7 +1839,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0800', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -1873,7 +1873,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_0900', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -1907,7 +1907,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_1000', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FF808080");
           console.info('ArkUX_Stage_Swiper_FontColor_static_1000 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1000 ERR  ' + JSON.stringify(err));
           done();
@@ -1941,7 +1941,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_1100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_FontColor_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -1975,7 +1975,7 @@ it('ArkUX_Stage_Swiper_FontColor_static_1200', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_1200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1200 ERR  ' + JSON.stringify(err));
           done();

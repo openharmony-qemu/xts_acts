@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function wifiDisableTest() {
 
     describe("wifiDisableTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             await Utils.closeWifi();
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
@@ -45,7 +45,8 @@ export default function wifiDisableTest() {
                 let metered: boolean = wifiManager.isMeteredHotspot();
                 hilog.info(domain, tag, "isMeteredHotspot:" + metered);
                 expect().assertFail();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isMeteredHotspot get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -70,7 +71,8 @@ export default function wifiDisableTest() {
             try {
                 await wifiManager.getLinkedInfo().then((data: wifiManager.WifiLinkedInfo) => {});
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -109,7 +111,7 @@ export default function wifiDisableTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err :BusinessError) {
+                } catch (err) {
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     done();
                 }
@@ -129,7 +131,8 @@ export default function wifiDisableTest() {
             try {
                 let infoSync: wifiManager.WifiLinkedInfo = wifiManager.getLinkedInfoSync();
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLinkedInfoSync get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {

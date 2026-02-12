@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ import { UtilsTest } from './Util.test';
 
 export default function noBarrierComponentsTest() {
   describe('noBarrierComponentsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("noBarrierComponentsTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.nowear.api11.static", "EntryAbility")
@@ -57,7 +57,7 @@ export default function noBarrierComponentsTest() {
           console.info("get noBarrierComponents state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push noBarrierComponents page error: " + err);
       }
     });
@@ -89,7 +89,7 @@ it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Prom
         console.info(' START  :' + JSON.stringify(strJson));
         expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Select");
         console.info('noBarrierComponents025 END ');
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail()
         console.info('noBarrierComponents025 ERR  ' + JSON.stringify(err));
       }
@@ -114,7 +114,7 @@ it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Prom
     //       console.info(' START  :' + JSON.stringify(strJson));
     //       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
     //       console.info('noBarrierComponents029 END ');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //       expect().assertFail()
     //       console.info('noBarrierComponents029 ERR  ' + JSON.stringify(err));
     //     }

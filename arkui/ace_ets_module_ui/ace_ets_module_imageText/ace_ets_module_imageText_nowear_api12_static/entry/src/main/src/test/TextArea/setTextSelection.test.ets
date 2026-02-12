@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function setTextSelection() {
   describe('setTextSelection', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setTextSelection beforeEach start");
 
 

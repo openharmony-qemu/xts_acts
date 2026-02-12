@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 export default function UIAbilityContextteststatic() {
   describe("AbilityUIAbilityContextTestStatic", (): void => {
@@ -57,9 +57,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_0100 START');
         let want: Want = {
@@ -68,12 +68,13 @@ export default function UIAbilityContextteststatic() {
           abilityName: 'EntryAbility1'
         };
         try {
-          context.startAbilityForResult(want,(err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,(err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0100`, err?.message);
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0100`, err.message);
           expect().assertFail();
           done();
@@ -87,9 +88,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 start');
         let want: Want = {
@@ -98,12 +99,13 @@ export default function UIAbilityContextteststatic() {
           action: 'zzabc'
         };
         try {
-          context.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 ${err?.code}`);
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_0200 ${err?.code}`);
           expect().assertFail();
           done();
@@ -117,9 +119,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 start');
         let Fd: Record<String,Object> = {
@@ -136,12 +138,13 @@ export default function UIAbilityContextteststatic() {
           parameters: parameters
         };
         try {
-          context.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 ${err?.code}`);
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1000 ${err?.code}`);
           expect().assertFail();
           done();
@@ -155,9 +158,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -168,12 +171,13 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err?.message);
             expect(err?.code).assertEqual(16000004);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
           expect().assertFail();
           done();
@@ -187,9 +191,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -201,12 +205,13 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err?.message);
             expect(err?.code).assertEqual(16000019);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_1100`, err.message);
           expect().assertFail();
           done();
@@ -220,9 +225,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let Fd: Record<String,Object> = {
@@ -242,12 +247,13 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2000`, err?.message);
             expect(err?.code).assertEqual(16000050);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2000`, err.message);
           expect().assertFail();
           done();
@@ -261,9 +267,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000004 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -275,7 +281,7 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -286,7 +292,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000004);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -300,9 +307,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000019 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -314,7 +321,7 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -325,7 +332,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000019);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
           expect().assertFail();
           done();
@@ -339,9 +347,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityForResult interface is invoked,Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let Fd: Record<String,Object> = {
@@ -361,7 +369,7 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -372,7 +380,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000050);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
           expect().assertFail();
           done();
@@ -386,9 +395,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000001 is returned when the startAbilityByCall interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 START');
         let caller: Caller;
@@ -398,7 +407,7 @@ export default function UIAbilityContextteststatic() {
           abilityName: 'EntryAbilityzzabc',
         };
         try {
-          context.startAbilityByCall(want)
+          context?.startAbilityByCall(want)
             .then((obj: Caller) => {
               caller = obj;
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
@@ -409,7 +418,8 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000001);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
           expect().assertFail();
           done();
@@ -423,9 +433,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000050 is returned when the startAbilityByCall interface is invoked Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 START');
         let caller: Caller;
@@ -443,7 +453,7 @@ export default function UIAbilityContextteststatic() {
           parameters: parameters
         };
         try {
-          context.startAbilityByCall(want)
+          context?.startAbilityByCall(want)
             .then((obj: Caller) => {
               caller = obj;
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
@@ -454,7 +464,8 @@ export default function UIAbilityContextteststatic() {
             expect(err.code).assertEqual(16000050);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
           expect().assertFail();
           done();
@@ -468,9 +479,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -481,12 +492,13 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err?.message);
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -500,9 +512,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -510,12 +522,13 @@ export default function UIAbilityContextteststatic() {
           abilityName: 'EntryAbility2'
         };
         try {
-          context.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err?.message);
             expect(err?.code).assertEqual(16000005);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -529,9 +542,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 16000005 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -543,7 +556,7 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -554,7 +567,8 @@ export default function UIAbilityContextteststatic() {
               expect(err.code).assertEqual(16000005);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -568,12 +582,12 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
-        context.moveAbilityToBackground()
+        context?.moveAbilityToBackground()
         .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
@@ -589,12 +603,13 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err?.message);
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -608,12 +623,12 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
-        context.moveAbilityToBackground()
+        context?.moveAbilityToBackground()
         .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
@@ -626,12 +641,13 @@ export default function UIAbilityContextteststatic() {
           abilityName: 'EntryAbility'
         };
         try {
-          context.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err?.message);
             expect(err?.code).assertEqual(201);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -645,12 +661,12 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
-        context.moveAbilityToBackground()
+        context?.moveAbilityToBackground()
         .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
@@ -667,7 +683,7 @@ export default function UIAbilityContextteststatic() {
           displayId: 0
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -678,7 +694,8 @@ export default function UIAbilityContextteststatic() {
               expect(err?.code).assertEqual(201);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();
@@ -692,9 +709,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 801 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -706,7 +723,7 @@ export default function UIAbilityContextteststatic() {
           startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
         };
         try {
-          context.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
+          context?.startAbilityForResult(want,options, (err: BusinessError | null, data: common.AbilityResult | undefined)=>{
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err?.message);
             if (err?.code !== 0) {
               if(err?.code==801) {
@@ -720,7 +737,8 @@ export default function UIAbilityContextteststatic() {
               done();
             }
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_1100`, err.message);
           expect().assertFail();
           done();
@@ -734,9 +752,9 @@ export default function UIAbilityContextteststatic() {
      * @tc.desc   To verify the scenario where error code 201 is returned when the startAbilityForResult interface is invoked, Expect: call failed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("SUB_Ability_AbilityBase_UIAbilityContextError_static_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         let want: Want = {
@@ -748,7 +766,7 @@ export default function UIAbilityContextteststatic() {
           startupVisibility: contextConstant.StartupVisibility.STARTUP_SHOW
         };
         try {
-          context.startAbilityForResult(want,options)
+          context?.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {
               hilog.info(domain, tag, '%{public}s', `startAbilityForResult succeed`);
               expect().assertFail();
@@ -768,7 +786,8 @@ export default function UIAbilityContextteststatic() {
                 done();
               }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
           expect().assertFail();
           done();

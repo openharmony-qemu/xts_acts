@@ -49,7 +49,7 @@ class C2 {
 
 export default function LightWeightSetTest2() {
   describe('lightWeightSetTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

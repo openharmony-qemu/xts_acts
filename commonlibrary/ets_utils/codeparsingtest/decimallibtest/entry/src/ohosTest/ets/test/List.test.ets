@@ -15,9 +15,11 @@
 
 import decimalTest from './decimal/Decimal.test'
 import Decimal2Test from './decimal/Decimal2.test'
-
+import Decimal3Test from './decimal/Decimal3.test'
 
 export default function testsuite() {
   Decimal2Test();
   decimalTest();
+
+  Decimal3Test();
 }

@@ -19,7 +19,7 @@ import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
 let TagFrmwk = "audioSessionManagerTest";
 let audioManager: audio.AudioManager;
-let sessionManager: audio.AudioSessionManager;
+let sessionManager: audio.AudioSessionManager | undefined;
 
 function getSessionManager() {
   audioManager = audio.getAudioManager();
@@ -73,15 +73,15 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        if (sessionManager.isAudioSessionActivated()) {
-          await sessionManager.deactivateAudioSession();
+        if (sessionManager!.isAudioSessionActivated()) {
+          await sessionManager!.deactivateAudioSession();
           console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
         }
-        sessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
+        sessionManager!.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
         console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
-        sessionManager.enableMuteSuggestionWhenMixWithOthers(true);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0100. Code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       }
@@ -98,15 +98,15 @@ export default function audioSessionManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        if (sessionManager.isAudioSessionActivated()) {
-          await sessionManager.deactivateAudioSession();
+        if (sessionManager!.isAudioSessionActivated()) {
+          await sessionManager!.deactivateAudioSession();
           console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
         }
-        sessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
+        sessionManager!.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
         console.info(`${TagFrmwk}: setAudioSessionScene succeed`);
-        sessionManager.enableMuteSuggestionWhenMixWithOthers(false);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(false);
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TagFrmwk}: Failed to ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_0200. Code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       }
@@ -126,12 +126,13 @@ export default function audioSessionManagerTest() {
         let strategy: audio.AudioSessionStrategy = {
           concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
         }
-        await sessionManager.activateAudioSession(strategy);
-        await sessionManager.deactivateAudioSession();
+        await sessionManager!.activateAudioSession(strategy);
+        await sessionManager!.deactivateAudioSession();
         console.info(`${TagFrmwk}: deactivateAudioSession succeed`);
-        sessionManager.enableMuteSuggestionWhenMixWithOthers(true);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
         expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
       }
@@ -151,11 +152,12 @@ export default function audioSessionManagerTest() {
         let strategy: audio.AudioSessionStrategy = {
           concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
         }
-        await sessionManager.activateAudioSession(strategy);
+        await sessionManager!.activateAudioSession(strategy);
         console.info(`${TagFrmwk}: activateAudioSession succeed`);
-        sessionManager.enableMuteSuggestionWhenMixWithOthers(true);
+        sessionManager!.enableMuteSuggestionWhenMixWithOthers(true);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: enableMuteSuggestionWhenMixWithOthers：err.code: ${err.code}, err.message: ${err.message}`);
         expect(Number(err.code)).assertEqual(audio.AudioErrors.ERROR_ILLEGAL_STATE);
       }

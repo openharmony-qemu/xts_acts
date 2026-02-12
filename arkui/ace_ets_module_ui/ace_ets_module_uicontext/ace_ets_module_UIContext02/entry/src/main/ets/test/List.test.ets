@@ -14,8 +14,14 @@
  */
 import IsFollowingSystemFontScaleTrueTest from './ContextTest/IsFollowingSystemFontScaleTrueTest.test';
 import GetUIContextTest from './getUIContext/GetUIContextTest.test';
+import uiContextUnitConversionNullUndefinedTest from './uiContext/UIContextUnitConversionNullUndefined.test';
+import uiContextFrameNodeQueryNullTest from './uiContext/UIContextFrameNodeQueryNull.test';
+import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefined.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
   GetUIContextTest();
+  uiContextUnitConversionNullUndefinedTest();
+  uiContextFrameNodeQueryNullTest();
+  uiContextMiscNullUndefinedTest();
 }

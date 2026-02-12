@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ export default function RunningLockPermissionTest() {
           }
         } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(201);
+          expect((e as BusinessError).code).assertEqual(201);
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
           done();
@@ -88,9 +88,9 @@ export default function RunningLockPermissionTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(201);
+          expect((e as BusinessError).code).assertEqual(201);
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
           done();
@@ -120,9 +120,9 @@ export default function RunningLockPermissionTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(201);
+          expect((e as BusinessError).code).assertEqual(201);
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
           done();
@@ -158,9 +158,9 @@ export default function RunningLockPermissionTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(201);
+          expect((e as BusinessError).code).assertEqual(201);
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
           done();

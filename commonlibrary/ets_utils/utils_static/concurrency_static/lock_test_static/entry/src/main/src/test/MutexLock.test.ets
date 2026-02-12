@@ -36,7 +36,7 @@ async function noParamNoReturnTask(): Promise<void> {
 
 export default function MutexLockTest() {
   describe('MutexLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**

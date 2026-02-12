@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function BuiltinArrayFillTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -63,7 +63,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(5);
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -86,7 +86,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[1]).assertEqual(2);
         expect(result[2]).assertEqual(3);
         expect(result.length).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -111,7 +111,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -134,7 +134,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[1]).assertEqual(2);
         expect(result[2]).assertEqual(3);
         expect(result.length).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -159,7 +159,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -179,7 +179,7 @@ export default function BuiltinArrayFillTest() {
         let arr: FixedArray<number> = [];
         let result = fill(arr, 9, 0, 1);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -204,7 +204,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(9);
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -226,7 +226,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(9);
         expect(result[1]).assertEqual(9);
         expect(result[2]).assertEqual(9);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -250,7 +250,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(9);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -274,7 +274,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -296,7 +296,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(1);
         expect(result[1]).assertEqual(2);
         expect(result[2]).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -320,7 +320,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(3);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -340,7 +340,7 @@ export default function BuiltinArrayFillTest() {
         let arr: FixedArray<number> = [];
         let result = fill(arr, 9, 0, 1);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -364,7 +364,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -388,7 +388,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(3);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -412,7 +412,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -435,7 +435,7 @@ export default function BuiltinArrayFillTest() {
           expect(result[i]).assertEqual(9);
         }
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -459,7 +459,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(9);
         expect(result[4]).assertEqual(9);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -483,7 +483,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -505,7 +505,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(9);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -529,7 +529,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(3);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -553,7 +553,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(3);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -577,7 +577,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(3);
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -597,7 +597,7 @@ export default function BuiltinArrayFillTest() {
         let arr: FixedArray<number> = [];
         let result = fill(arr, 9, -1, -1);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -621,7 +621,7 @@ export default function BuiltinArrayFillTest() {
         expect(Number.isNaN(result[1])).assertTrue();
         expect(result2[2]).assertEqual(Infinity);
         expect(result2[3]).assertEqual(Infinity);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -644,7 +644,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(original[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -667,7 +667,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(fillValue);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -690,7 +690,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(original[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -713,7 +713,7 @@ export default function BuiltinArrayFillTest() {
         expect(1/result[1]).assertEqual(Infinity);
         expect(result[2]).assertEqual(-1.0);
         expect(result[3]).assertEqual(1.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -736,7 +736,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(1e-10);
         expect(result[1]).assertEqual(largeValue);
         expect(result[2]).assertEqual(largeValue);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -759,7 +759,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(smallValue);
         expect(result[1]).assertEqual(smallValue);
         expect(result[2]).assertEqual(0.3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -782,7 +782,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(Math.abs(result[i] - fillValue) < Number.EPSILON).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -804,7 +804,7 @@ export default function BuiltinArrayFillTest() {
         expect(Number.isNaN(result[0])).assertFalse();
         expect(Number.isNaN(result[1])).assertTrue();
         expect(Number.isNaN(result[2])).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -826,7 +826,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(Infinity);
         expect(result[1]).assertEqual(Infinity);
         expect(result[2]).assertEqual(0.3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -848,7 +848,7 @@ export default function BuiltinArrayFillTest() {
         expect(1/result[0]).assertEqual(Infinity);
         expect(result[1]).assertEqual(-1.0);
         expect(result[2]).assertEqual(1.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -871,7 +871,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(1e-10);
         expect(result[1]).assertEqual(largeValue);
         expect(result[2]).assertEqual(largeValue);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -894,7 +894,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(smallValue);
         expect(result[1]).assertEqual(smallValue);
         expect(result[2]).assertEqual(0.3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -918,7 +918,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[2]).assertEqual(9.9);
         expect(result[3]).assertEqual(9.9);
         expect(result[4]).assertEqual(5.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -938,7 +938,7 @@ export default function BuiltinArrayFillTest() {
         let arr: FixedArray<number> = [];
         let result = fill(arr, 9.9, 0, 1);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -960,7 +960,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(1.5);
         expect(result[1]).assertEqual(2.5);
         expect(result[2]).assertEqual(3.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -982,7 +982,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(0.5);
         expect(result[1]).assertEqual(1.5);
         expect(result[2]).assertEqual(2.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1006,7 +1006,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(Math.abs(result[i] - fillValue) < Number.EPSILON).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1029,7 +1029,7 @@ export default function BuiltinArrayFillTest() {
         expect(Number.isNaN(result[1])).assertTrue();
         expect(Number.isNaN(result[2])).assertTrue();
         expect(Number.isNaN(result[3])).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1052,7 +1052,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[1]).assertEqual(Infinity);
         expect(result[2]).assertEqual(2.5);
         expect(result[3]).assertEqual(3.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1075,7 +1075,7 @@ export default function BuiltinArrayFillTest() {
         expect(1/result[1]).assertEqual(Infinity);
         expect(1/result[2]).assertEqual(Infinity);
         expect(1/result[3]).assertEqual(-Infinity);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1098,7 +1098,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(largeValue);
         expect(result[1]).assertEqual(largeValue);
         expect(result[2]).assertEqual(3.1415926535);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1121,7 +1121,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(0.000001);
         expect(result[1]).assertEqual(smallValue);
         expect(result[2]).assertEqual(smallValue);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1143,7 +1143,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(1.5);
         expect(result[1]).assertEqual(2.5);
         expect(result[2]).assertEqual(3.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1165,7 +1165,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(0.1);
         expect(result[1]).assertEqual(0.2);
         expect(result[2]).assertEqual(0.3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1189,7 +1189,7 @@ export default function BuiltinArrayFillTest() {
         for (let i = 0; i < result.length; i++) {
           expect(Math.abs(result[i] - fillValue) < Number.EPSILON).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1209,7 +1209,7 @@ export default function BuiltinArrayFillTest() {
         let arr: FixedArray<number> = [];
         let result = fill(arr, 9.9, 0, 1);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1232,7 +1232,7 @@ export default function BuiltinArrayFillTest() {
         expect(result[0]).assertEqual(original[0]);
         expect(result[1]).assertEqual(original[1]);
         expect(result[2]).assertEqual(original[2]);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1253,7 +1253,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, -3, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 9, 9, 5]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1274,7 +1274,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 10, 15);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1295,7 +1295,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1316,7 +1316,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([9, 9, 9]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1337,7 +1337,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 10, 15);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1358,7 +1358,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1379,7 +1379,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 10, 15);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1400,7 +1400,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1421,7 +1421,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 10, 15);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1442,7 +1442,7 @@ export default function BuiltinArrayFillTest() {
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1463,7 +1463,7 @@ export default function BuiltinArrayFillTest() {
         const original = [...arr];
         arr.fill(true, 3);
         expect(arr.join(',')).assertEqual(original.join(','));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1483,7 +1483,7 @@ export default function BuiltinArrayFillTest() {
         const arr: boolean[] = [];
         arr.fill(true);
         expect(arr.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1504,7 +1504,7 @@ export default function BuiltinArrayFillTest() {
         const original = [...arr];
         arr.fill(true, 1, 1);
         expect(arr.join(',')).assertEqual(original.join(','));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1524,7 +1524,7 @@ export default function BuiltinArrayFillTest() {
         const arr = [false, false, false, false];
         arr.fill(true, -3, -1);
         expect(arr.join(',')).assertEqual('false,true,true,false');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1546,7 +1546,7 @@ export default function BuiltinArrayFillTest() {
         arr.fill(false, 2, 4);
         arr.fill(true, 4);
         expect(arr.join(',')).assertEqual('true,true,false,false,true');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1567,7 +1567,7 @@ export default function BuiltinArrayFillTest() {
         let original = [...arr];
         arr.fill(false, 0, 0);
         expect(arr.toString()).assertEqual(original.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1587,7 +1587,7 @@ export default function BuiltinArrayFillTest() {
         let arr: boolean[] = [false, false, false, false];
         arr.fill(true, -3, -1);
         expect(arr.toString()).assertEqual('false,true,true,false');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1608,7 +1608,7 @@ export default function BuiltinArrayFillTest() {
         let original = arr.toString();
         arr.fill(false, 3, 4);
         expect(arr.toString()).assertEqual(original);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1629,7 +1629,7 @@ export default function BuiltinArrayFillTest() {
         let original = arr.toString();
         arr.fill(true, 1, 1);
         expect(arr.toString()).assertEqual(original);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1649,7 +1649,7 @@ export default function BuiltinArrayFillTest() {
         let arr: boolean[] = [false, false, false];
         arr.fill(true, -10, 2);
         expect(arr.toString()).assertEqual('true,true,false');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1670,7 +1670,7 @@ export default function BuiltinArrayFillTest() {
         let original = arr.toString();
         arr.fill(false, 0, -10);
         expect(arr.toString()).assertEqual(original);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1690,7 +1690,7 @@ export default function BuiltinArrayFillTest() {
         let arr: boolean[] = [false, false, false];
         arr.fill(true, 2, 3);
         expect(arr.toString()).assertEqual('false,false,true');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1710,7 +1710,7 @@ export default function BuiltinArrayFillTest() {
         let arr: boolean[] = [false, false, false];
         arr.fill(true, -1, 3);
         expect(arr.toString()).assertEqual('false,false,true');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1732,7 +1732,7 @@ export default function BuiltinArrayFillTest() {
         arr.fill(true, 3, 5);
         arr.fill(false, 2, 3);
         expect(arr.toString()).assertEqual('true,true,false,true,true');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1752,7 +1752,7 @@ export default function BuiltinArrayFillTest() {
         let arr: boolean[] = [false, false, false];
         arr.fill(true, 0, 3);
         expect(arr.toString()).assertEqual('true,true,true');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }

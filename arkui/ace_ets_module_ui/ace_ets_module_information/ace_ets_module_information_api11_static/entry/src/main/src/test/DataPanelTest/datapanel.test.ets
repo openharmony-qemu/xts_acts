@@ -50,7 +50,7 @@ function dataPanelDefaultStrokeWidth(sysWidth: Resource) {
 
 export default function datapanelTest() {
   describe('ActsDatapanelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsDatapanelTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

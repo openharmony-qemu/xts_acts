@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function LocalizedBorderRadiuses() {
   describe('LocalizedBorderRadiuses', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LocalizedBorderRadiuses beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")

@@ -59,9 +59,9 @@ export default function webOnBeforeUnload() {
      * @tc.desc   test OnBeforeUnload when refresh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnBeforeUnloadStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnBeforeUnloadStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnBeforeUnload001", 10)
       await Utils.msSleep(5000);
       let driver = Driver.create();

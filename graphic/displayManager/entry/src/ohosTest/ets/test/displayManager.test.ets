@@ -945,7 +945,6 @@ export default function displayTest() {
       try {
           displayClass = display.getDefaultDisplaySync();
           displayClass.off('availableAreaChange');
-          expect(true).assertTrue();
           done();
       }
       catch (err) {
@@ -984,7 +983,6 @@ export default function displayTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -1604,7 +1602,6 @@ export default function displayTest() {
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.top: ${info.waterfallDisplayAreaRects.top}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.right: ${info.waterfallDisplayAreaRects.right}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.bottom: ${info.waterfallDisplayAreaRects.bottom}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`jsunittets ${caseName} fail to get display available info :` + error);
@@ -2320,19 +2317,21 @@ export default function displayTest() {
         expect(region.displayId).assertEqual(0)
         if (result) {
           if (region.creaseRects.length == 0) {
-            expect(true).assertTrue();
+            done();
           } else {
             for (let i = 0; i < region.creaseRects.length; i++) {
               expect(region.creaseRects[i].left).assertLargerOrEqual(0);
               expect(region.creaseRects[i].top).assertLargerOrEqual(0);
               expect(region.creaseRects[i].width).assertLargerOrEqual(0);
               expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+              done();
             }
           }
         } else {
           expect(region.creaseRects.length).assertEqual(0)
+          done();
         }
-        done();
+        
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
@@ -2445,7 +2444,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2498,7 +2497,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2551,7 +2550,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2591,7 +2590,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2631,7 +2630,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2823,6 +2822,7 @@ export default function displayTest() {
         expect(brightnessChangeCount1).assertLarger(0);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange');
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -2904,6 +2904,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
         expect(brightnessChangeCount2).assertLarger(0);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
@@ -3003,6 +3004,7 @@ export default function displayTest() {
         console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
         expect(brightnessChangeCount1).assertLargerOrEqual(1);
         display.off('brightnessInfoChange', callback1);
+        await sleep(100);
         await windowClass.setWindowBrightness(-1);
         await sleep(100);
         display.off('brightnessInfoChange');

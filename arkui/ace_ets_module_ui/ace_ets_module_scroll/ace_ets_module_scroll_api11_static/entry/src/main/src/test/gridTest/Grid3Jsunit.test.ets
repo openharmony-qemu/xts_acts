@@ -25,7 +25,7 @@ import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -87,7 +87,7 @@ it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info('gridTest01 start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('gridTest01 change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -131,7 +131,7 @@ it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info('[ gridTest02 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest02 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -176,7 +176,7 @@ it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info('[ gridTest03 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest03 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -222,7 +222,7 @@ it('gridTest04_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info('[ gridTest04 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest04 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)

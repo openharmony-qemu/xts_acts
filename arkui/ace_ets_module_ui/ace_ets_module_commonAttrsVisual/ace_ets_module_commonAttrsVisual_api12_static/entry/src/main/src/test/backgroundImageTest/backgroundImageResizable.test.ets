@@ -32,13 +32,13 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function backgroundImageResizableTest() {
   describe('backgroundImageResizableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundImageResizableTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("backgroundImageResizableTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/backgroundImage/backgroundImageResizable',

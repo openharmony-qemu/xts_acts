@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import RectValue from './RectValue.test';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -116,7 +116,7 @@ it('testEdgeEffectOptions_static_0003', Level.LEVEL0, async () => {
       await Utils.sleep(2000);
       try {
         AppStorage.setOrCreate<boolean>('alwaysEnabled', false);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEdgeEffectOptions0003] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

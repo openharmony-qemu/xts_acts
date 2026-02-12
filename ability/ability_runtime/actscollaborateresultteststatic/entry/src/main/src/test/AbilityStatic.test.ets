@@ -30,9 +30,9 @@ export default function abilitystaticTest() {
      * @tc.desc   AbilityConstant.CollaborateResult.ACCEPT equal 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_Ability_Runtime_onCollaborate_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_Ability_Runtime_onCollaborate_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_2900';
       hilog.info(domain, tag, `${caseName} Begin`);
       try {
@@ -52,9 +52,9 @@ export default function abilitystaticTest() {
      * @tc.desc   AbilityConstant.CollaborateResult.REJECT equal 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_Ability_Runtime_onCollaborate_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_Ability_Runtime_onCollaborate_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3000';
       hilog.info(domain, tag, `${caseName} Begin`);
       try {
@@ -74,9 +74,9 @@ export default function abilitystaticTest() {
      * @tc.desc   wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE equal 0x00002000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_Ability_Runtime_onCollaborate_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_Ability_Runtime_onCollaborate_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3100';
       console.info(`${caseName} Begin`);
       try {

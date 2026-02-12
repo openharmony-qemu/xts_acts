@@ -171,7 +171,8 @@ export default function nfcTagTest() {
       let nfcATag: tag.NfcATag;
       try {
         nfcATag = tag.getNfcA(aTag);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0200 error is :  ' + error + " - " + error.code);
           expect(801).assertEqual(error.code);
@@ -207,7 +208,8 @@ export default function nfcTagTest() {
       let nfcBTag: tag.NfcBTag;
       try {
         nfcBTag = tag.getNfcB(bTag);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0300 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -243,7 +245,8 @@ export default function nfcTagTest() {
          hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0400 is :');
         try {
           nfcFTag = tag.getNfcF(fTag);
-        } catch (error: BusinessError) {
+        } catch (error) {
+        error = error as BusinessError;
           if (error.code === 801) {
             hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0400 error is ' + error.code + " - " + error);
             expect(801).assertEqual(error.code)
@@ -279,7 +282,8 @@ export default function nfcTagTest() {
       hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0500 is :');
       try {
         nfcVTag = tag.getNfcV(vTag);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0500 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -317,7 +321,8 @@ export default function nfcTagTest() {
       let nfcIsoDepTag: tag.IsoDepTag;
       try{
         nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
-      }catch(error: BusinessError){
+      }catch(error){
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0600 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -357,7 +362,8 @@ export default function nfcTagTest() {
       try {
         nfcNdefTag = tag.getNdef(NDEFTaginfo);
         hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_07001 is :');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0700 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code);
@@ -396,7 +402,8 @@ export default function nfcTagTest() {
       let nfcMifareClassicTag: tag.MifareClassicTag ;
       try{
         nfcMifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0800 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -434,7 +441,8 @@ export default function nfcTagTest() {
       let nfcMifareUltralightTag: tag.MifareUltralightTag;
       try {
         nfcMifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0900 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -472,7 +480,8 @@ export default function nfcTagTest() {
       let nfcNdefFormatable: tag.NdefFormatableTag;
       try {
         nfcNdefFormatable = tag.getNdefFormatable(NdefFormatableTag);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1000 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -509,7 +518,8 @@ export default function nfcTagTest() {
       };
       try {
         let data: tag.BarcodeTag = tag.getBarcodeTag(cTag);
-      }catch(error: BusinessError){
+      }catch(error){
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code);
@@ -538,7 +548,8 @@ export default function nfcTagTest() {
         nfcTagtest = tag.getTagInfo(want);
         hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1200 Nfcget tagABFV gettaginfo is:  ' + nfcTagtest);
         expect(nfcTagtest instanceof Object).assertTrue();
-      }catch(error: BusinessError){
+      }catch(error){
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code);
@@ -572,7 +583,8 @@ export default function nfcTagTest() {
       }
       try {
         tag.registerForegroundDispatch(elementName, discTech, AsyncCallback);
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 registerForegroundDispatch error:  ' + error + error.code);
           expect(801).assertEqual(error.code)
@@ -589,7 +601,8 @@ export default function nfcTagTest() {
       try {
         hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 unregisterForegroundDispatch ');
         tag.unregisterForegroundDispatch(elementName);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 unregisterForegroundDispatch error:  ' + error + error.code);
           expect(801).assertEqual(error.code)
@@ -626,7 +639,8 @@ export default function nfcTagTest() {
 
       try {
         tag.onReaderMode(elementName, discTech, AsyncCallback);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        error = error as BusinessError;
         if (err.code === 3100201) {
           expect(3100201).assertEqual(err.code);
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
@@ -641,7 +655,8 @@ export default function nfcTagTest() {
       }
       try {
         tag.offReaderMode(elementName, AsyncCallback);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        error = error as BusinessError;
         if (err.code === 3100201) {
           expect(3100201).assertEqual(err.code);
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
@@ -681,7 +696,8 @@ export default function nfcTagTest() {
         await tag.getBarcodeTag(dTag).getBarcode().then(() => {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode: ');
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 201) {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
           expect(201).assertEqual(error.code);

@@ -26,7 +26,7 @@ export default function styledNumberFormatTest() {
     describe("styledNumberFormatTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'styledNumberFormatTest beforeAll start');
 
             await UtilsTest.startAbility("ohos.acts.i18nStage.static", "EntryAbility");

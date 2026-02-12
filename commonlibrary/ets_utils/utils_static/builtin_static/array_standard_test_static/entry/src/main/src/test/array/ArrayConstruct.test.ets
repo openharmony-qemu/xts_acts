@@ -1522,7 +1522,7 @@ export default function ArrayConstructTest() {
       const date2 = new Date('2023-01-15');
       const date3 = new Date('2023-02-10');
       const arr = new Array<Date>(date1, date2, date3);
-      const sorted = [...arr].sort((a, b) => (a.getTime() - b.getTime()).toInt());
+      const sorted = [...arr].sort((a, b) => (a.getTime() - b.getTime()).toDouble().toInt());
       expect(arr).assertDeepEquals([date1, date2, date3]);
       expect(sorted).assertDeepEquals([date2, date3, date1]);
     });

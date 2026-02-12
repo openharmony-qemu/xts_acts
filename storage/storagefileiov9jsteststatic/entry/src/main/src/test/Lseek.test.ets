@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function fileIOLseek() {
         expect(pnumber == offsetnum).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -78,7 +78,7 @@ export default function fileIOLseek() {
         expect(readLen == FILE_CONTENT.length - offsetnum).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -108,7 +108,7 @@ export default function fileIOLseek() {
         expect(readLen == FILE_CONTENT.length - offsetnum * 2).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -136,7 +136,7 @@ export default function fileIOLseek() {
         expect(readLen == 0).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -154,7 +154,8 @@ export default function fileIOLseek() {
       try {
         fs.lseek(-1,-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_005 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -181,7 +182,7 @@ export default function fileIOLseek() {
         expect(readLen == 0).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -212,7 +213,7 @@ export default function fileIOLseek() {
         expect(readLen == FILE_CONTENT.length - (offsetnum + offsetnum1)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -238,7 +239,7 @@ export default function fileIOLseek() {
         expect(pnumber == offsetnum).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -262,7 +263,8 @@ export default function fileIOLseek() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.lseek(file.fd, invalidoffset, fs.WhenceType.SEEK_SET);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_009 has failed for' + JSON.stringify(e));
@@ -295,7 +297,7 @@ export default function fileIOLseek() {
         expect(readLen == FILE_CONTENT.length - (offsetnum + invalidoffset)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -323,7 +325,7 @@ export default function fileIOLseek() {
         expect(readLen == FILE_CONTENT.length - pnumber).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -375,7 +377,8 @@ export default function fileIOLseek() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.lseek(file.fd, invalidoffset, fs.WhenceType.SEEK_CUR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_013 has failed for' + JSON.stringify(e));

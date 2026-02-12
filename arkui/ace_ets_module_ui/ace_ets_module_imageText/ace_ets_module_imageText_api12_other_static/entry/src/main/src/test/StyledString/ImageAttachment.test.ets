@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ImageAttachment() {
   describe('ImageAttachment', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageAttachment beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -94,8 +94,8 @@ it('ImageAttachment_static_0001', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       get!.click();
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0001_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('10');
+      console.info('StyledString ImageAttachment_static_0001_static marginTop ' + AppStorage.get<double>('marginTop'));
+      expect('' + AppStorage.get<double>('marginTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginRight ' +
       AppStorage.get<string>('marginRight'));
       expect('' + AppStorage.get<string>('marginRight')).assertEqual('10');
@@ -153,8 +153,8 @@ it('ImageAttachment_static_0002', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0002_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
+      console.info('StyledString ImageAttachment_static_0002_static marginTop ' + AppStorage.get<double>('marginTop'));
+      expect('' + AppStorage.get<double>('marginTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static marginRight ' +
       AppStorage.get<string>('marginRight'));
       expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
@@ -212,8 +212,8 @@ it('ImageAttachment_static_0002', Level.LEVEL1, async (done: () => void): Promis
     //   await CommonFunc.sleep(500);
     //   get!.click()
     //   await CommonFunc.sleep(500);
-    //   console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<string>('marginTop'));
-    //   expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
+    //   console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<double>('marginTop'));
+    //   expect('' + AppStorage.get<double>('marginTop')).assertEqual('0');
     //   console.info('StyledString ImageAttachment_static_0003_static marginRight ' +
     //   AppStorage.get<string>('marginRight'));
     //   expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
@@ -271,8 +271,8 @@ it('ImageAttachment_static_0004', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0004_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('10');
+      console.info('StyledString ImageAttachment_static_0004_static marginTop ' + AppStorage.get<double>('marginTop'));
+      expect('' + AppStorage.get<double>('marginTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static marginRight ' +
       AppStorage.get<string>('marginRight'));
       expect('' + AppStorage.get<string>('marginRight')).assertEqual('10');
@@ -330,8 +330,8 @@ it('ImageAttachment_static_0005', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0005_static marginTop ' + AppStorage.get<string>('marginTop'));
-      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
+      console.info('StyledString ImageAttachment_static_0005_static marginTop ' + AppStorage.get<double>('marginTop'));
+      expect('' + AppStorage.get<double>('marginTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static marginRight ' +
       AppStorage.get<string>('marginRight'));
       expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
@@ -389,8 +389,8 @@ it('ImageAttachment_static_0005', Level.LEVEL1, async (done: () => void): Promis
     //   await CommonFunc.sleep(500);
     //   get!.click()
     //   await CommonFunc.sleep(500);
-    //   console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<string>('marginTop'));
-    //   expect('' + AppStorage.get<string>('marginTop')).assertEqual('undefined');
+    //   console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<double>('marginTop'));
+    //   expect('' + AppStorage.get<double>('marginTop')).assertEqual('undefined');
     //   console.info('StyledString ImageAttachment_static_0006_static marginRight ' +
     //   AppStorage.get<string>('marginRight'));
     //   expect('' + AppStorage.get<string>('marginRight')).assertEqual('undefined');

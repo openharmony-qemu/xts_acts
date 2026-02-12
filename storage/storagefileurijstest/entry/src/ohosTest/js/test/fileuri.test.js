@@ -246,12 +246,7 @@ describe('file_uri_test', function () {
       expect(uri.equalsTo(uri3) === false).assertTrue();
       expect(uri.equals(uri2) === true).assertTrue();
       expect(uri.equals(uri3) === false).assertTrue();
-      if (uri.path === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.demo.b/test/../test1.txt' && uri.normalize().path === exceptPath){
-        expect(true).assertTrue();
-      }else{
-        expect(uri.path == '/data/storage/el2/share/r/com.demo.b/data/storage/el2/distributedfiles/test/../test1.txt' 
-          && uri.normalize().path == '/data/storage/el2/share/r/com.demo.b/data/storage/el2/distributedfiles/test1.txt').assertTrue();
-      }
+      expect(uri.path === '/storage/Users/currentUser/appdata/el2/distributedfiles/com.demo.b/test/../test1.txt' && uri.normalize().path === exceptPath).assertTrue();
     } catch (e) {
       console.log('test_FileUri_Other_Function_000 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();

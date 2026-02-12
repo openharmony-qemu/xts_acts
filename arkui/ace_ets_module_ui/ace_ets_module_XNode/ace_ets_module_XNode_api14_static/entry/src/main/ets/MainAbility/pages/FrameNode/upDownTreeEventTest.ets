@@ -88,26 +88,26 @@ class MyNodeController extends NodeController {
     return this.buttonNode!.getFrameNode();
   }
 
-  onBind(containerId: number): void {
+  onBind(containerId: long): void {
     console.log('test666666 on bind1: '+containerId);
-    this.bindValue = 'bind';
-  }
-
-  onUnbind(containerId: number): void {
-    console.log('test666666 on unbind1: '+containerId);
-    this.unbindValue = 'unbind';
-
-  }
-
-  onWillBind(containerId: number): void {
-    console.log('test666666 about to bind1: '+containerId);
-    this.willBindValue = 'willBind';
-  }
-
-  onWillUnbind(containerId: number): void {
-    console.log('test666666 about to unbind1: '+containerId);
-    this.willUnbindValue = 'willUnbind';
-  }
+ 	  this.bindValue = 'bind';
+ 	}
+ 	 
+ 	onUnbind(containerId: long): void {
+ 	  console.log('test666666 on unbind1: '+containerId);
+ 	  this.unbindValue = 'unbind';
+ 	 
+ 	}
+ 	 
+ 	onWillBind(containerId: long): void {
+ 	  console.log('test666666 about to bind1: '+containerId);
+ 	  this.willBindValue = 'willBind';
+ 	}
+ 	 
+ 	onWillUnbind(containerId: long): void {
+ 	  console.log('test666666 about to unbind1: '+containerId);
+ 	  this.willUnbindValue = 'willUnbind';
+ 	}
 
   onAttach(): void {
     console.log('test666666 on attach1111111');

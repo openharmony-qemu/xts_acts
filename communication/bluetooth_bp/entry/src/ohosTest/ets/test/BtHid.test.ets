@@ -26,19 +26,7 @@ let hidDevice: hid.HidDeviceProfile;
 function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);            
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
+
 async function tryToEnableBt() {
     let sta = btAccess.getState();
     switch (sta) {
@@ -193,7 +181,6 @@ describe('btHidTest', () => {
     beforeAll(async (done : Function) =>  {
         console.info('beforeAll called')
         await clickRequestPermission(PERMISSION_TEXT);
-        await openPhone();
         hidDevice = hid.createHidDeviceProfile();
         console.info('[bluetooth_js]beforeAll createHidDeviceProfile success'+ JSON.stringify(hidDevice));
         done();
@@ -209,8 +196,10 @@ describe('btHidTest', () => {
         console.info("[bluetooth_js]afterEach unregisterHidDevice is success ");
         done();
     })
-    afterAll(() => {
-        console.info('afterAll called')
+    afterAll(async (done : Function) =>  {
+        console.info('afterAll called');
+        await tryToEnableBt();
+        done();
     })
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0100
@@ -399,12 +388,12 @@ describe('btHidTest', () => {
         try {
             hidDevice = hid.createHidDeviceProfile();
             console.info("[bluetooth_js]hid createHidDeviceProfile is success ");
-            expect(true).assertEqual(hidDevice != null);
+            expect(hidDevice != null).assertTrue();
         } catch (err) {
             console.error("[bluetooth_js]hid createHidDeviceProfile is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("RK板 is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -431,7 +420,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -455,7 +444,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid unregisterHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -484,7 +473,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid connect is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -509,7 +498,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid disconnect is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -535,7 +524,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -562,7 +551,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -587,7 +576,7 @@ describe('btHidTest', () => {
             console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -611,10 +600,10 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result2));
             expect().assertFail();
         } catch (err) {
-            console.error("[bluetooth_js]hid unregisterHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);            
+            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);            
             if (Number(err.code) == 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903051);
             }
