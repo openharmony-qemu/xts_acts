@@ -110,6 +110,7 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS, 'string', composeKeys([BinaryKeys.get("ALL")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_MIME_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
 }
 
 export default function AVMetadata() {
