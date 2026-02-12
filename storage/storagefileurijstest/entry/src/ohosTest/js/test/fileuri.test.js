@@ -109,6 +109,42 @@ describe('file_uri_test', function () {
   });
 
   /**
+  * @tc.name   test_FileUri_GetUriFromPath_004
+  * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0400
+  * @tc.desc   Function of API, get Uri from Path. Test argument is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('test_FileUri_GetUriFromPath_004', Level.LEVEL0, async function () {
+    try {
+      fileUri.getUriFromPath(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('test_FileUri_GetUriFromPath_004 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   test_FileUri_GetUriFromPath_005
+  * @tc.number SUB_STORAGE_FileUri_GetUriFromPath_0500
+  * @tc.desc   Function of API, get Uri from Path. Test argument is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('test_FileUri_GetUriFromPath_005', Level.LEVEL0, async function () {
+    try {
+      fileUri.getUriFromPath(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('test_FileUri_GetUriFromPath_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   test_FileUri_Parameter_Name_000
    * @tc.number SUB_STORAGE_FileUri_Parameter_0000
    * @tc.desc   Get the FileURI object through 'path' and validates the properties of the FileURI object.
