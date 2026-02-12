@@ -53,7 +53,7 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastBottomEmpty_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastBottomEmpty_0100] START');
       await CommonFunc.sleep(1000);
-      
+      let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('btn_toast_bottom_empty'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -79,6 +79,7 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastShowModeDefault_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastShowModeDefault_0100] START'); 
       await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('btn_toast_showmode_default'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -104,7 +105,8 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastShowModeTopMost_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastShowModeTopMost_0100] START');
       await CommonFunc.sleep(1000);
-      const button = await driver.findComponent(ON.id('btn_toast_showmode_topmost'));
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('btn_toast_showmode_topmost'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -129,8 +131,8 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastEnableHoverModeTrue_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastEnableHoverModeTrue_0100] START');
       await CommonFunc.sleep(1000);
-      
-      const button = await driver.findComponent(ON.id('btn_toast_enablehovermode_true'));
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('btn_toast_enablehovermode_true'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -155,8 +157,8 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastEnableHoverModeFalse_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastEnableHoverModeFalse_0100] START');
       await CommonFunc.sleep(1000);
-      
-      const button = await driver.findComponent(ON.id('btn_toast_enablehovermode_false'));
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('btn_toast_enablehovermode_false'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -180,8 +182,8 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastOptionNull_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastOptionNull_0100] START');
       await CommonFunc.sleep(1000);
-      
-      const button = await driver.findComponent(ON.id('btn_toast_options_null'));
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('btn_toast_options_null'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -205,8 +207,8 @@ export default function PromptActionShowToastTest() {
     it('promptActionShowToastOptionUndefined_0100', Level.LEVEL1, async () => {
       console.info('[promptActionShowToastOptionUndefined_0100] START');
       await CommonFunc.sleep(1000);
-      
-      const button = await driver.findComponent(ON.id('btn_toast_options_undefined'));
+      let driver: Driver = Driver.create();
+      let button = await driver.findComponent(ON.id('btn_toast_options_undefined'));
       await button.click();
       await CommonFunc.sleep(1000);
 
