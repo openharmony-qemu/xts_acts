@@ -75,7 +75,7 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition1'));
-      button?.Click();
+      button?.click();
       await CommonFunc.sleep(3000);
 
       driver?.click(20, 20);
@@ -113,7 +113,7 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition2'));
-      button?.Click();
+      button?.click();
       await CommonFunc.sleep(3000);
 
       driver?.click(20, 20);
@@ -152,7 +152,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition3'));
-      button?.Click();
+      button?.click();
       await CommonFunc.sleep(3000);
 
       driver?.click(20, 20);
