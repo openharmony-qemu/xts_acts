@@ -136,7 +136,6 @@ export default function testsuite() {
   RdbStoreDuplicateColumnsTest();
   RdbStoreErrorCodeAddTest();
   RdbStoreErrorCodeAdd2Test();
-
   RdbSetdistributedtableTest();
 
   RdbPredicatesTest();
