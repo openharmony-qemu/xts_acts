@@ -168,15 +168,15 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.name   testTelephonySimGetOpKey0600
-     * @tc.number SUB_Telephony_Sim_GetOpKey_0600
+     * @tc.name   testTelephonySimGetOpKey0400
+     * @tc.number SUB_Telephony_Sim_GetOpKey_0400
      * @tc.desc   Obtain the opkey of the SIM card in the specified slot. Use callback for asynchronous callback. Need to insert  SIM card
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testTelephonySimGetOpKey0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testTelephonySimGetOpKey0600';
+    it('testTelephonySimGetOpKey0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetOpKey0400';
       console.info(`${caseName} test start`);
       let hasSimCard: Boolean = await sim.hasSimCardSync(0);
       if (!hasSimCard) {
