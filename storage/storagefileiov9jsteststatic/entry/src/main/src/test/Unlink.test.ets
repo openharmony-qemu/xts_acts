@@ -313,7 +313,7 @@ export default function fileIOUnlink() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_004 has failed for' + JSON.stringify(e));
-        eexpect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
   })
