@@ -1639,6 +1639,111 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection1800
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1800
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection1800";
+      console.info(`${caseName} test start`);
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [connection.NetBearType.BEARER_BLUETOOTH]
+          }
+        });
+        ExpectTrue(netCon != undefined);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection1900
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1900
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection1900";
+      console.info(`${caseName} test start`);
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection({
+          netCapabilities: {
+            bearerTypes: [],
+            networkCap: []
+          }
+        });
+        ExpectTrue(netCon != undefined);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection2000
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_2000
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection2000";
+      console.info(`${caseName} test start`);
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection(null,null);
+        ExpectTrue(netCon == undefined);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection2100
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_2100
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionCreateNetConnection2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionCreateNetConnection2100";
+      console.info(`${caseName} test start`);
+      try {
+        let netCon: connection.NetConnection = connection.createNetConnection(undefined,undefined);
+        ExpectTrue(netCon != undefined);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback0100
      * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0100
      * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
@@ -3382,6 +3487,46 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync1000
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_1000
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetConnectionPropertiesSync1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync1000";
+      console.info(`${caseName} test start `);
+      try {
+        let netHandle: connection.NetHandle = await connection.getDefaultNetSync();
+        let connectionProperties: connection.ConnectionProperties = connection.getConnectionPropertiesSync(netHandle);
+        console.info(`${caseName} GetConnectionPropertiesSync: success data->${JSON.stringify(connectionProperties)}`);
+        if(connectionProperties != undefined){
+          ExpectTrue(connectionProperties.interfaceName != null);
+          ExpectTrue(connectionProperties.domains != null);
+          ExpectTrue(connectionProperties.linkAddresses.length > 0);
+          ExpectTrue(connectionProperties.linkAddresses[0].address != null);
+          ExpectTrue(connectionProperties.linkAddresses[0].prefixLength !=null);
+          ExpectTrue(connectionProperties.routes.length > 0);
+          ExpectTrue(connectionProperties.dnses.length > 0);
+          ExpectTrue(connectionProperties.mtu != null);
+          console.info(`${caseName}---End`);
+          done();
+        }
+        else{
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetNetCapabilities0100
      * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0100
      * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
@@ -3906,6 +4051,125 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+    
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities1900
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1900
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilities1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionGetNetCapabilities1900";
+      console.info(`${caseName} test start `);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
+            if (error == undefined) {
+              console.info(`${caseName} callback: err->${JSON.stringify(error)}`);
+              if (data != undefined) {
+                ExpectTrue(data.linkUpBandwidthKbps != null);
+                ExpectTrue(data.linkDownBandwidthKbps != null);
+                if(data.networkCap != undefined){
+                  ExpectTrue(data.networkCap.length > 0);                
+                }else{
+                  ExpectFail();
+                  console.info(`${caseName}---End`);
+                  done();
+                }
+                if(data.bearerTypes != undefined){
+                  ExpectTrue(data.bearerTypes.length > 0);                
+                }else{
+                  ExpectFail();
+                  console.info(`${caseName}---End`);
+                  done();
+                }
+                console.info(`${caseName}---End`);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName}---End`);
+                done();
+              }
+            }else{
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities2000
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_2000
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilities2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionGetNetCapabilities2000";
+      console.info(`${caseName} test start `);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
+            console.info(`${caseName} GetNetCapabilities: success data->${JSON.stringify(data)}`);
+            if(data != undefined){
+              ExpectTrue(data.linkUpBandwidthKbps != null);
+              ExpectTrue(data.linkDownBandwidthKbps != null);
+              if(data.networkCap != undefined){
+                ExpectTrue(data.networkCap.length > 0);                
+              }else{
+                ExpectFail();
+                console.info(`${caseName}---End`);
+                done();
+              }
+              if(data.bearerTypes != undefined){
+                ExpectTrue(data.bearerTypes.length > 0);                
+              }else{
+                ExpectFail();
+                console.info(`${caseName}---End`);
+                done();
+              }
+            }else{
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            }
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} GetNetCapabilities: err->${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
 
     /**
      * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync0100
@@ -4086,6 +4350,47 @@ export default function ConnectionPublicTest() {
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync1000
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_1000
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionGetNetCapabilitiesSync1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync1000";
+      console.info(`${caseName} test start `);
+      try {
+        let netHandle: connection.NetHandle = await connection.getDefaultNetSync();
+        let getNetCapAbilitiesSync: connection.NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+        console.info(`${caseName} getNetCapabilitiesSync: success data->${JSON.stringify(getNetCapAbilitiesSync)}`);
+        ExpectTrue(getNetCapAbilitiesSync.linkUpBandwidthKbps != null);
+        ExpectTrue(getNetCapAbilitiesSync.linkDownBandwidthKbps != null);
+        if(getNetCapAbilitiesSync.networkCap != undefined){
+          ExpectTrue(getNetCapAbilitiesSync.networkCap.length > 0);                
+        }else{
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+        if(getNetCapAbilitiesSync.bearerTypes != undefined){
+          ExpectTrue(getNetCapAbilitiesSync.bearerTypes.length > 0);                
+        }else{
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
         console.info(`${caseName}---End`);
         done();
       }
@@ -5351,6 +5656,69 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressByName1900
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_1900
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressByName1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressByName1900';
+      console.info(`${caseName}---Start`);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          netHandle.getAddressByName("", (error: BusinessError, data: connection.NetAddress) => {
+            if (error) {
+              console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+              ExpectTrue(error.code == 2100001);
+              console.info(`${caseName}---End`);
+              done();
+            } else {
+              console.info(`${caseName} data: ${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressByName2200
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressByName_2200
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressByName2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressByName2200';
+      console.info(`${caseName}---Start`);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          netHandle.getAddressByName("").then().catch((error: BusinessError) => {
+            console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+            ExpectTrue(error.code == 2100001);
+            console.info(`${caseName}---End`);
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName0100
      * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_0100
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
@@ -6128,6 +6496,34 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionSetAppHttpProxy0400
+     * @tc.number SUB_NetworkMgr_Connection_SetAppHttpProxy_0400
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionSetAppHttpProxy0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionSetAppHttpProxy0400';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.setAppHttpProxy({
+          host: "192.168.1.1",
+          port: 8080,
+          exclusionList: []
+        } as connection.HttpProxy);
+        ExpectTrue(true);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0100
      * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0100
      * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
@@ -6286,6 +6682,63 @@ export default function ConnectionPublicTest() {
       console.info(`${caseName}---Start`);
       try {
         connection.addCustomDnsRule(undefined, ["255.255.255.0", "127.0.0.1"]).then((data: void) => {
+          console.error(`${caseName} data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0700
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0700
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0700';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", [], (error: BusinessError, data: void) => {
+          console.error(`${caseName} error:${JSON.stringify(error)}, data:${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0800
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0800
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionAddCustomDnsRule0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0800';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.addCustomDnsRule("192.168.1.1", []).then((data: void) => {
           console.error(`${caseName} data:${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName}---End`);
@@ -6868,7 +7321,7 @@ export default function ConnectionPublicTest() {
         let netCon: connection.NetConnection = connection.createNetConnection({
           netCapabilities: {
             bearerTypes: [connection.NetBearType.BEARER_WIFI, connection.NetBearType.BEARER_CELLULAR],
-            networkCap: [0, 11, 12, 15, 16],
+            networkCap: [0, 11, 12, 15, 16, 17, 31],
             linkUpBandwidthKbps: 0,
             linkDownBandwidthKbps: 0
           }
@@ -6900,7 +7353,7 @@ export default function ConnectionPublicTest() {
         let netCon: connection.NetConnection = connection.createNetConnection({
           netCapabilities: {
             bearerTypes: [connection.NetBearType.BEARER_WIFI, connection.NetBearType.BEARER_CELLULAR],
-            networkCap: [0, 11, 12, 15, 16],
+            networkCap: [0, 11, 12, 15, 16, 17, 31],
             linkUpBandwidthKbps: 9999999,
             linkDownBandwidthKbps: 9999999
           },
