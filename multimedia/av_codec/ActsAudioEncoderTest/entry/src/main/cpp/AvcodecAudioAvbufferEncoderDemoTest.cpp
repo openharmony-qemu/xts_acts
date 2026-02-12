@@ -665,6 +665,7 @@ OH_AVErrCode AudioBufferAacEncDemo::PushInputData(OH_AVCodec* codec, uint32_t in
         info.size = attr.size;
         info.pts = attr.pts;
         info.flags = attr.flags;
+        info.offset = attr.offset;
         OH_AVErrCode ret = OH_AVBuffer_SetBufferAttr(buffer, &info);
         if (ret != AV_ERR_OK) {
             return ret;
