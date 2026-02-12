@@ -65,7 +65,7 @@ struct RichEditorCustomSpan014 {
   @State styleString: string = '';
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
     [{
       start: 0,
@@ -73,7 +73,7 @@ struct RichEditorCustomSpan014 {
       styledKey: StyledStringKey.FONT,
       styledValue: this.fontStyle1
     }]);
-  fontStyle2: TextStyle = { fontColor: Color.Red } as TextStyle;
+  fontStyle2: TextStyle = new TextStyle({ fontColor: Color.Red });
   mutableStyledString1: MutableStyledString = new MutableStyledString('1234',
     [{
       start: 0,

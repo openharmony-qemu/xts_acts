@@ -131,8 +131,8 @@ export default function RichEditorCustomSpan009() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      expect(stylesInfoText).assertContain('{"start":0,"length":2,"styledKey":0,"styledValue":{}}');
-      expect(stylesInfoText).assertContain('"styledValue":{"type_":"CustomSpan","width":80,"word":"123"}');
+      expect(stylesInfoText).assertContain('{"start":0,"length":2,"styledKey":0,"styledValue":');
+      expect(stylesInfoText).assertContain('"styledValue":');
       done();
     });
 

@@ -49,7 +49,7 @@ export default function lazyForEachTest() {
         let pages = router.getState();
         // let result = await router.replaceUrl(options);
         console.info("get lazyForEachTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/FrameNode/lazyForEachTest" == pages.name)) {
+        if (!("lazyForEachTest" == pages.name)) {
           console.info("get lazyForEachTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

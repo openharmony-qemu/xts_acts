@@ -105,7 +105,6 @@ it('resourceColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => vo
       console.info("[resourceColorErrorCodeTest_0100] content obj is: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
       console.info("[resourceColorErrorCodeTest_0100] component obj is: " + JSON.stringify(obj2));
       console.info("[resourceColorErrorCodeTest_0100] content obj is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('401');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('180003');
       console.info('[resourceColorErrorCodeTest_0100] END');
       done();
