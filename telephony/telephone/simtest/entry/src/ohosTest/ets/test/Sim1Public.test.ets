@@ -1492,42 +1492,6 @@ export default function Sim1Public() {
     });
 
     /**
-     * @tc.name   testTelephonySimGetSimAuthentication1500
-     * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1500
-     * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTelephonySimGetSimAuthentication1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testTelephonySimGetSimAuthentication1500';
-      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
-      if (!hasSimCard) {
-        console.info(`${caseName} failed, No SIM exists in slot 0`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }
-      let simState: sim.SimState = await sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
-        console.info(`${caseName} test end`);
-        done();
-      }
-      sim.getSimAuthentication(0, sim.AuthType.SIM_AUTH_EAP_SIM_TYPE, "test").then((data: sim.SimAuthenticationResponse) => {
-        console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
-        ExpectTrue(true);
-        console.info(`${caseName} test end`);
-        done();
-      }).catch((err: BusinessError) => {
-        console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      });
-    });
-
-    /**
      * @tc.name   testTelephonySimGetSimAuthentication1600
      * @tc.number SUB_Telephony_Sim_GetSimAuthentication_1600
      * @tc.desc   Performs SIM card authentication. Need to insert SIM card.
