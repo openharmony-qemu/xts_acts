@@ -222,5 +222,5 @@ export default function PromptActionOpenToastTest() {
       expect(resultText).assertEqual('Test Result: options undefined: FAILED');
       console.info('[promptActionOpenToastOptionsUndefined_0100] END');
     })
-  }
+  
 }

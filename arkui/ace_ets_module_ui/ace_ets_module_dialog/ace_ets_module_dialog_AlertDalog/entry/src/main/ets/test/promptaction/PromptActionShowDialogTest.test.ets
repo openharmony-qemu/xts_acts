@@ -354,5 +354,5 @@ export default function PromptActionShowDialogTest() {
       expect(resultText).assertEqual('Test Result: options undefined: FAILED');
       console.info('[promptActionShowDialogOptionsUndefined_0100] END');
     })
-  }
+  
 }

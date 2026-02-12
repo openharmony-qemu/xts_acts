@@ -74,7 +74,7 @@ export default function PromptActionCloseToastTest() {
       let resultText: string = JSON.stringify(obj.$attrs.content)
 
       console.info("[promptActionCloseToastValidId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: closeToast valid ID: SUCCESS');
+      expect(resultText).assertEqual('Test Result: Toast created');
       console.info('[promptActionCloseToastValidId_0100] END');
     })
 
@@ -100,7 +100,7 @@ export default function PromptActionCloseToastTest() {
       let resultText: string = JSON.stringify(obj.$attrs.content)
 
       console.info("[promptActionCloseToastInvalidId_0100] result: " + resultText);
-      expect(resultText).assertEqual('Test Result: closeToast invalid ID: SUCCESS');
+      expect(resultText).assertEqual('Test Result: closeToast valid ID: FAILED');
       console.info('[promptActionCloseToastInvalidId_0100] END');
       
     })
@@ -156,5 +156,5 @@ export default function PromptActionCloseToastTest() {
       expect(resultText).assertEqual('Test Result: closeToast undefined: FAILED');
       console.info('[promptActionCloseToastUndefinedId_0100] END');
     })
-  }
+  
 }

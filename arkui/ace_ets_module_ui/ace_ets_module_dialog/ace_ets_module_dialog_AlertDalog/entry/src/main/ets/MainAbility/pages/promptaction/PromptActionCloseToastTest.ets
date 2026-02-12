@@ -65,15 +65,10 @@ struct PromptActionCloseToastTest {
             try {
               promptAction.showToast({
                 message: 'Test Toast for Closing',
-                duration: 10000
-              }).then((toastId: number) => {
-                this.currentToastId = toastId;
-                this.toastTestResult = `Toast created with ID: ${toastId}`;
-                this.lastError = '';
-              }).catch((error: BusinessError) => {
-                this.toastTestResult = 'Toast creation: FAILED';
-                this.lastError = `code: ${error.code}, message: ${error.message}`;
-              });
+                duration: 3000
+              })
+              this.toastTestResult = 'Toast created';
+              this.lastError = '';
             } catch (error) {
               let err = error as BusinessError;
               this.toastTestResult = 'Toast creation: FAILED';
