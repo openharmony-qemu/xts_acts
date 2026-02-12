@@ -47,6 +47,8 @@
         "MainAbility/pages/animator/DelayNullUndefined",
         "MainAbility/pages/animator/FillNullUndefined",
         "MainAbility/pages/animator/DirectionNullUndefined",
-        "MainAbility/pages/animator/IterationsNullUndefined"
+        "MainAbility/pages/animator/IterationsNullUndefined",
+        "MainAbility/pages/animator/AnimatorNullUndefined",
+        "MainAbility/pages/animator/CreateNullUndefined"
     ]
 }

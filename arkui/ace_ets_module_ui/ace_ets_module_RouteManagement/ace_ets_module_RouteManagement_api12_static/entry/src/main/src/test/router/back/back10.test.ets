@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function back10() {
   describe('back10', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("back10 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

@@ -206,6 +206,29 @@ export default function applicationBundleJsunit() {
         });
 
         /**
+         * @tc.name   bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE
+         * @tc.number bundle_getApplicationInfo_test_0700_001
+         * @tc.desc   getApplicationInfo with GET_ABILITY_INFO_WITH_DISABLE flag test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            let startTime = await Utils.getNowTime();
+            let data = await Bundle.getApplicationInfo(BUNDLE_NAME,
+                Bundle.BundleFlag.GET_ABILITY_INFO_WITH_DISABLE, userId).catch((error) => {
+                    console.info('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE promise error is: ' + error);
+                    expect(error).assertFail();
+                });
+            let endTime = Utils.getNowTime();
+            Utils.getDurationTime('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE', startTime, endTime);
+            console.info('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE promise data is: ' + JSON.stringify(data));
+            expectData('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE', data);
+            getApplicationInfoSuccess_plus('bundle_getApplicationInfo_test_GET_ABILITY_INFO_WITH_DISABLE', data);
+            done();
+        });
+
+        /**
          * @tc.name   Sub_Bms_Framework_Query_AppInfo_0460
          * @tc.number Sub_Bms_Framework_Query_AppInfo_0460
          * @tc.desc   Check the return value of the interface

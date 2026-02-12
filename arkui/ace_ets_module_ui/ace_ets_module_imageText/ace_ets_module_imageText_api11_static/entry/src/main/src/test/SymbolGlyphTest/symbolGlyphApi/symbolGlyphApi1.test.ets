@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function symbolGlyphApi1() {
   describe('symbolGlyphApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("symbolGlyphApi1 beforeEach start");
 
 

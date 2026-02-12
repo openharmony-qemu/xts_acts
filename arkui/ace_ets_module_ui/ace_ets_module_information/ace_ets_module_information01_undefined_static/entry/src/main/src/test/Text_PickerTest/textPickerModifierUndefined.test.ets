@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function textPickerModifierUndefined() {
   describe('textPickerModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textPickerModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

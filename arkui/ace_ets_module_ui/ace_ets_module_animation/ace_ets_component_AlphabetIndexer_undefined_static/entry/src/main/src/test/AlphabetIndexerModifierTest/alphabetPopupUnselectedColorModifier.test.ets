@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetPopupUnselectedColorModifierTest() {
   describe('AlphabetPopupUnselectedColorModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetPopupUnselectedColorModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

@@ -25,7 +25,7 @@ import Utils from '../../ets/MainAbility/common/Utils';
 
 export default function TextClockJsunit() {
   describe('TextClockJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("TextClockJsunit beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

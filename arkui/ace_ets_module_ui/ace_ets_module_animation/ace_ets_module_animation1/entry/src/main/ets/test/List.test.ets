@@ -56,6 +56,8 @@ import DelayNullUndefinedTest from './animator/DelayNullUndefined.test';
 import FillNullUndefinedTest from './animator/FillNullUndefined.test';
 import DirectionNullUndefinedTest from './animator/DirectionNullUndefined.test';
 import IterationsNullUndefinedTest from './animator/IterationsNullUndefined.test';
+import AnimatorNullUndefinedTest from './animator/AnimatorNullUndefined.test';
+import CreateNullUndefinedTest from './animator/CreateNullUndefined.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -101,4 +103,6 @@ export default function testsuite() {
   FillNullUndefinedTest();
   DirectionNullUndefinedTest();
   IterationsNullUndefinedTest();
+  AnimatorNullUndefinedTest();
+  CreateNullUndefinedTest();
 }

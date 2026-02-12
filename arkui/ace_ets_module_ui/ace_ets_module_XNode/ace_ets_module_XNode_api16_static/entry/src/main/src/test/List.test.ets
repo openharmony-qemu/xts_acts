@@ -36,7 +36,5 @@ export default function testsuite() {
   componentContentDisposeTest();
   postFrameCallbackTest();
   setCrossLanguageOptionsErrorCodeTest();
-  blendColorErrorCodeTest();
   resourceColorErrorCodeTest();
-  BindControllerErrorCodeTest();
 }

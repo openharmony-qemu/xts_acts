@@ -32,7 +32,7 @@ export default function ActsNotificationBadgeTest() {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

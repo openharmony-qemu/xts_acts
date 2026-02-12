@@ -26,7 +26,7 @@ import emitter from "@ohos.events.emitter"
 import Utils from "../../../ets/MainAbility/common/Utils"
 export default function webViewPageattrLackJsunit() {
     describe("webviewpageLackattr", () => {
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info("webviewpageLackattr beforeAll start");
             await UtilsTest.msSleep(4000)
             await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")

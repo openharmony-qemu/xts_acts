@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector'
 export default function GetWindowWidthAndHeightTest() {
   describe('GetWindowWidthAndHeightTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api13.static", "EntryAbility")

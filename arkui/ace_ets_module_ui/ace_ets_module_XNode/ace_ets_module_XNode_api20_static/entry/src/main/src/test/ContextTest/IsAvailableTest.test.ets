@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function IsAvailableTest() {
   describe('IsAvailableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("IsAvailableTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
       

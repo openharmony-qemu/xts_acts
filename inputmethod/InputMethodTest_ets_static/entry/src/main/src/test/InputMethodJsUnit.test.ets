@@ -29,7 +29,7 @@ export default function inputMethodTest() {
 
     describe("inputMethodTest", (): void => {
         console.info('%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info('%{public}s', 'beforeAll start');
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({

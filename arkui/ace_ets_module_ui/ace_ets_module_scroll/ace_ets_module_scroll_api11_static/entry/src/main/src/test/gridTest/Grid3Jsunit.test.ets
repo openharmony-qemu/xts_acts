@@ -25,7 +25,7 @@ import { RecordData } from '@ohos.base';
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

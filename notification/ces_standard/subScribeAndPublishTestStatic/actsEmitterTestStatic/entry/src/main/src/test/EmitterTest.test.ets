@@ -37,7 +37,7 @@ export default function EmitterTest() {
   describe('EmitterTest', () => {
     hilog.info(domain, tag, '%{public}s', 'SUB_NOTIFICATION_CES_EMITTER_TEST START');
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

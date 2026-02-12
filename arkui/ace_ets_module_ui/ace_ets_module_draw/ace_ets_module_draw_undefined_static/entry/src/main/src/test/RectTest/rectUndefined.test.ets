@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function RectUndefinedTest() {
   describe('RectUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RectUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

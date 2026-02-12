@@ -63,7 +63,7 @@ export default function ResponseRegionJsunit() {
   describe('responseRegionTest', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("responseRegionTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

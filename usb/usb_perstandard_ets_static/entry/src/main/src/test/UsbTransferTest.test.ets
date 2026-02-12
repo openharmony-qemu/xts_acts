@@ -77,7 +77,7 @@ export default function UsbTransferTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     let isDeviceConnected: boolean = false;
     let devices: UsbMgr.USBDevice;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

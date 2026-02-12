@@ -16,7 +16,7 @@ export default function SupportWindowModeStaticTest() {
   let context: common.UIAbilityContext;
 
   describe("SupportWindowModeStaticTest", (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.startAbility({

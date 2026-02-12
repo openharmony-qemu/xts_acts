@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchOnEditChange() {
   describe('SearchOnEditChange', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchOnEditChange beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

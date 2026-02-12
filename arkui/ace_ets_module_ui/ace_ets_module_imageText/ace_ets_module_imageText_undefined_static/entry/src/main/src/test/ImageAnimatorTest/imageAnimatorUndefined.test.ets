@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function ImageAnimatorUndefinedTest() {
   describe('ImageAnimatorUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageAnimatorUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

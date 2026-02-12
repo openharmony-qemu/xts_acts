@@ -64,7 +64,7 @@ export default function BorderRadiusTest() {
    * Create test suite.
    */
   describe('borderRadiusTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

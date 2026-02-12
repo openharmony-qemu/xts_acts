@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function waterFlowAniTrue() {
   describe('waterFlowAniTrue', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("waterFlowAniTrue beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");

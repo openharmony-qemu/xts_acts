@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Tabs_itemSize() {
   describe('Tabs_itemSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

@@ -43,7 +43,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function onAreaChangeUndefined() {
   describe('onAreaChangeUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onAreaChangeUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

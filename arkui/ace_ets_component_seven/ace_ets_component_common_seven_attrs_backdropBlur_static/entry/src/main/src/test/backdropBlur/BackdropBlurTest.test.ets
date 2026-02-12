@@ -47,7 +47,7 @@ export default function BackdropBlurTest() {
    * Create test suite.
    */
   describe('backdropBlurTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backdropBlurTest beforeAll start");
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function NavDestinationUndefinedTest() {
   describe('NavDestinationUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavDestinationUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

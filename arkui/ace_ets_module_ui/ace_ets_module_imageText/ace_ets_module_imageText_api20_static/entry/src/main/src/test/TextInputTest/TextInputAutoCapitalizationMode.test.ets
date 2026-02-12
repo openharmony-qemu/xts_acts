@@ -37,7 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function TextInputAutoCapitalizationModeTest() {
   describe('TextInputAutoCapitalizationModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputAutoCapitalizationModeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api20.static", "EntryAbility")
     });

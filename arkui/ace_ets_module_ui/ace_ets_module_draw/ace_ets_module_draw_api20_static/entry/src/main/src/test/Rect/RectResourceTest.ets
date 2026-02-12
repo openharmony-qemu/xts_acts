@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 export default function RectResourceTest() {
   describe('RectResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RectResourceTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")

@@ -69,7 +69,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : afterEach: Prerequisites at the test case level`);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(1000);
        console.info(`${Tag} : afterEach: Test case-level clearance conditions`);
     })

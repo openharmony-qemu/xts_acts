@@ -52,7 +52,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SwiperLoop() {
   describe('SwiperLoop', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperLoop beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

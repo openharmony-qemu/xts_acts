@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContentFlexJsunit() {
 
   describe('AlignContentFlexJsunitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContentFlexJsunitTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

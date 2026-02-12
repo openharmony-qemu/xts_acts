@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function timePickerUndefined() {
   describe('timePickerUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("timePickerUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

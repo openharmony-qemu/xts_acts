@@ -32,7 +32,7 @@ const SLEEP_TIME_L = 1000;
 export default function UIPickerEnableHapModifierTest() {
   describe('UIPickerEnableHapModifierTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIPickerEnableHapModifierTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
       await UtilsTest.msSleep(SLEEP_TIME_L)

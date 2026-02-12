@@ -34,7 +34,7 @@ export default function ImageTextTest() {
   const SUITE = 'ImageText'
   describe('ImageTextTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageTextTest beforeEach start");
 
 

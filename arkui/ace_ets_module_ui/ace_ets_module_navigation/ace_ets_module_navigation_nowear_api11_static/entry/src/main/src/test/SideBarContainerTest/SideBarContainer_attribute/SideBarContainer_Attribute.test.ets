@@ -34,7 +34,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 export default function SideBarContainer_AttributeTest() {
   describe('SideBarContainer_AttributeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SideBarContainer_AttributeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
 

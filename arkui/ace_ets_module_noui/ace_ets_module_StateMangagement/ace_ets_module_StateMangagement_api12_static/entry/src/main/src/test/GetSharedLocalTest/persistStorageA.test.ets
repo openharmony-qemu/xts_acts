@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function persistStorageATest() {
   describe('persistStorageATest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("persistStorageATest beforeEach start");
 
 

@@ -30,7 +30,7 @@ let testAbilityContext: common.UIAbilityContext | undefined;
 export default function abilitystaticTest() {
   describe("abilitystaticTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'start');
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info('beforeEach start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.startSelfUIAbilityInCurrentProcess.static")

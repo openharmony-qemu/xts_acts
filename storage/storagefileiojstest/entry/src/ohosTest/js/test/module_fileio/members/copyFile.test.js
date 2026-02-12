@@ -350,5 +350,346 @@ describe('fileio_copyfile', function () {
       expect(false).assertTrue();
     }
   });
+
+   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_001
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_001
+ 	    * @tc.desc   Test copyFileSync() interface with null src.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_001', Level.LEVEL2, async function () {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_001_target');
+ 	     try {
+ 	       fileio.copyFileSync(null, fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_002
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_002
+ 	    * @tc.desc   Test copyFileSync() interface with undefined src.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_002', Level.LEVEL2, async function () {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_002_target');
+ 	     try {
+ 	       fileio.copyFileSync(undefined, fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_003
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_003
+ 	    * @tc.desc   Test copyFileSync() interface with null dest.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_003', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_003');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       fileio.copyFileSync(fpath, null);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_003: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_004
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_004
+ 	    * @tc.desc   Test copyFileSync() interface with undefined dest.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_004', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_004');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       fileio.copyFileSync(fpath, undefined);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_004: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_005
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_005
+ 	    * @tc.desc   Test copyFileSync() interface with null mode.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_005', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_005');
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_005_target');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       fileio.copyFileSync(fpath, fpathTarget, null);
+ 	       fileio.unlinkSync(fpath);
+ 	       fileio.unlinkSync(fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_005: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid mode' || err.message == 'Invalid arg').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_006
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_006
+ 	    * @tc.desc   Test copyFileSync() interface with undefined mode.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_006', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_006');
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_006_target');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       fileio.copyFileSync(fpath, fpathTarget, undefined);
+ 	       fileio.accessSync(fpathTarget);
+         let stat1 = fileio.statSync(fpath);
+         let stat2 = fileio.statSync(fpathTarget);
+         expect(stat1.size == stat2.size).assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	       fileio.unlinkSync(fpathTarget);
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_006: ' + err.message + ', code: ' + err.code);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_007
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_007
+ 	    * @tc.desc   Test copyFileSync() interface with empty string src.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_007', Level.LEVEL2, async function () {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_007_target');
+ 	     try {
+ 	       fileio.copyFileSync("", fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_007: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'No such file or directory').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_008
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_008
+ 	    * @tc.desc   Test copyFileSync() interface with empty string dest.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_008', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_008');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       fileio.copyFileSync(fpath, "");
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_008: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'No such file or directory').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_sync_error_009
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILESYNC_ERROR_009
+ 	    * @tc.desc   Test copyFileSync() interface with string src and number dest.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_sync_error_009', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_sync_error_009');
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_sync_error_009_target');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     let fdTarget = fileio.openSync(fpathTarget, 0o201 | 0o102, 0o666);
+ 	     try {
+ 	       fileio.copyFileSync(fpath, fdTarget);
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_sync_error_009: ' + err.message + ', code: ' + err.code);
+ 	       fileio.closeSync(fdTarget);
+ 	       fileio.unlinkSync(fpath);
+ 	       fileio.unlinkSync(fpathTarget);
+ 	       expect(err.message == 'Bad file descriptor').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_promise_error_001
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_PROMISE_ERROR_001
+ 	    * @tc.desc   Test copyFile() interface with null src. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_promise_error_001', Level.LEVEL2, async function () {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_promise_error_001_target');
+ 	     try {
+ 	       await fileio.copyFile(null, fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_promise_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_promise_error_002
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_PROMISE_ERROR_002
+ 	    * @tc.desc   Test copyFile() interface with undefined src. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_promise_error_002', Level.LEVEL2, async function () {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_promise_error_002_target');
+ 	     try {
+ 	       await fileio.copyFile(undefined, fpathTarget);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_promise_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_promise_error_003
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_PROMISE_ERROR_003
+ 	    * @tc.desc   Test copyFile() interface with null dest. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_promise_error_003', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_promise_error_003');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       await fileio.copyFile(fpath, null);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_promise_error_003: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_promise_error_004
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_PROMISE_ERROR_004
+ 	    * @tc.desc   Test copyFile() interface with undefined dest. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_promise_error_004', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_copy_file_promise_error_004');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     
+ 	     try {
+ 	       await fileio.copyFile(fpath, undefined);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_copy_file_promise_error_004: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_callback_error_001
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_CALLBACK_ERROR_001
+ 	    * @tc.desc   Test copyFile() interface with null src. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_callback_error_001', Level.LEVEL2, async function (done) {
+      try {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_callback_error_001_target');
+ 	     fileio.copyFile(null, fpathTarget, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_copy_file_callback_error_001: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	         done();
+ 	       }
+        });
+        console.log('fileio_copy_file_callback_error_001 res');
+        done();
+      } catch (err) {
+        console.log('fileio_copy_file_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_copy_file_callback_error_002
+ 	    * @tc.number SUB_DF_FILEIO_COPYFILE_CALLBACK_ERROR_002
+ 	    * @tc.desc   Test copyFile() interface with undefined src. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_copy_file_callback_error_002', Level.LEVEL2, async function (done) {
+      try {
+ 	     let fpathTarget = await nextFileName('fileio_copy_file_callback_error_002_target');
+ 	     fileio.copyFile(undefined, fpathTarget, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_copy_file_callback_error_002: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_copy_file_callback_error_002 res');
+       done();
+      } catch (err) {
+        console.log('fileio_copy_file_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'The first/second argument requires filepath/fd').assertTrue();
+        done();
+ 	    }
+ 	   });
 });
 }

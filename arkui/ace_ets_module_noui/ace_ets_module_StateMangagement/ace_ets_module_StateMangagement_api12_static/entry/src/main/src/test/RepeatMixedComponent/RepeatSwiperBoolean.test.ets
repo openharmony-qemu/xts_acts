@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatSwiperBoolean() {
   describe('RepeatSwiperBoolean', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatSwiperBoolean beforeEach start");
 
 

@@ -20,6 +20,7 @@ import ohosWindow from '@ohos.window';
 import { Driver, ON } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import display from '@ohos.display';
+import deviceInfo from '@ohos.deviceInfo';
 
 function createSysSubWindow(context: common.UIAbilityContext, caseName: string): Promise<window.Window> {
   let config: window.Configuration = {
@@ -89,6 +90,8 @@ export default function windowManageTest() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -152,7 +155,7 @@ export default function windowManageTest() {
       let displayId = display.getDefaultDisplaySync().id;
       let width = display.getDefaultDisplaySync().width;
       let height = display.getDefaultDisplaySync().height;
-      if(isPCStatus != ''){
+      if(deviceType === '2in1'){
         try{
           await mainWindowClass.minimize();
           await sleep(1000);

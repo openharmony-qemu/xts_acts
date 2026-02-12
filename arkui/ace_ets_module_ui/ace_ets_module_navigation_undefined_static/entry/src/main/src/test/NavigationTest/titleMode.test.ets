@@ -41,7 +41,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function titleMode() {
   describe('titleMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("titleMode beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -41,7 +41,7 @@ let gContext: common.UIAbilityContext;
 export default function pasteComponentStaticTest() {
   describe('pasteComponentStaticTest', () => {
     console.info('====>pasteComponentStaticTest start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.example.securitycomponent.static', 'EntryAbility')
       await UtilsTest.msSleep(2000);
       let options: router.RouterOptions = {

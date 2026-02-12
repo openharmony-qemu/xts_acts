@@ -28,7 +28,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function customNavContentTransitionUndefined() {
   describe('customNavContentTransitionUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("customNavContentTransitionUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000);

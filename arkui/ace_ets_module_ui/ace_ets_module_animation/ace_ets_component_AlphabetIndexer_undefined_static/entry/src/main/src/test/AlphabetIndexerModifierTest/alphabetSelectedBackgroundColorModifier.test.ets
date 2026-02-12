@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetSelectedBackgroundColorModifierTest() {
   describe('AlphabetSelectedBackgroundColorModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetSelectedBackgroundColorModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

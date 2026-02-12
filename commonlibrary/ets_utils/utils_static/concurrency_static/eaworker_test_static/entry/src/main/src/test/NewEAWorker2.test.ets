@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTes2() {
   describe('NewEAWorkerTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 

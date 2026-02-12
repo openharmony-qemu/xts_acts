@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 export default function RatingStarStyleOptionsTest() {
   describe('RatingStarStyleOptionsTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RatingStarStyleOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
     });

@@ -32,7 +32,7 @@ export default function webJsunit() {
         //     await Utils.sleep(2000)
         //     console.info("web beforeEach start")
         // })
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info("ActsAceWebDevTest1 beforeAll start");
             await UtilsTest.msSleep(4000)
             await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")

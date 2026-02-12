@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function eventInterceptionModifierUndefined() {
   describe('eventInterceptionModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("eventInterceptionModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

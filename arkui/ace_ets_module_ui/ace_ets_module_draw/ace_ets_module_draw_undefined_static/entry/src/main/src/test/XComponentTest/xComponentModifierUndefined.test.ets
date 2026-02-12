@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function XComponentModifierUndefinedTest() {
   describe('XComponentModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("XComponentModifierUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

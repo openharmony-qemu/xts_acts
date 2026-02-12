@@ -42,7 +42,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function RefreshTest() {
   describe('RefreshTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

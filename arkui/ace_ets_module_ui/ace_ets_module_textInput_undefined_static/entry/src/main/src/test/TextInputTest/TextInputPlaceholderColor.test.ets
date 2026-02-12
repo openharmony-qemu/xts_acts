@@ -20,7 +20,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInputPlaceholderColor() {
   describe('TextInputPlaceholderColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputPlaceholderColor beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

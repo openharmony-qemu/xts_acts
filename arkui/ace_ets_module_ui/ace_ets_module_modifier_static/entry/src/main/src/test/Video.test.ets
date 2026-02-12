@@ -32,7 +32,7 @@ import Utils from './Utils.test';
 
 export default function videoJsunit() {
   describe('videoTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

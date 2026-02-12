@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 
 export default function common_ts_ets_apiStaticClearJsunit() {
   describe('common_ts_ets_apiStaticClearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
