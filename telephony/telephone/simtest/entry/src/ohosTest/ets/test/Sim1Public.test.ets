@@ -1739,7 +1739,7 @@ export default function Sim1Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      let simState: sim.SimState = await sim.hasSimCardSync(null);
+      let simState: sim.SimState = await sim.getSimStateSync(null);
       if (simState == sim.SimState.SIM_STATE.UNKNOW) {
         console.info(`${caseName} successed, SIM STATE IS UNKNOW`);
         ExpectTrue(true);
@@ -1771,7 +1771,7 @@ export default function Sim1Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      let simState: sim.SimState = await sim.hasSimCardSync(undefined);
+      let simState: sim.SimState = await sim.getSimStateSync(undefined);
       if (simState == sim.SimState.SIM_STATE.UNKNOW) {
         console.info(`${caseName} successed, SIM STATE IS UNKNOW`);
         ExpectTrue(true);
