@@ -313,64 +313,6 @@ struct webStorage {
               break;
             }
 
-            case 'testDeleteAllDataFalse': {
-              try {
-                let getUsage = -1
-                webView.WebStorage.deleteAllData(false)
-                webView.WebStorage.getOrigins((error, origins) => {
-                  getUsage = origins[0].usage;
-                })
-                await waitForExist(() => getUsage, this.str, 0, 100);
-                webView.WebStorage.getOrigins((error, origins) => {
-                  if (error) {
-                    console.error('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 135030)
-                    return;
-                  }
-                  for (let i = 0; i < origins.length; i++) {
-                    console.log('origin: ' + origins[i].origin);
-                    console.log('usage: ' + origins[i].usage);
-                    console.log('quota: ' + origins[i].quota);
-                  }
-                  Utils.emitEvent(origins[0].usage, 135030)
-                })
-              } catch (error) {
-                let e: business_error.BusinessError = error as business_error.BusinessError;
-                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 135030)
-              }
-              break;
-            }
-
-            case 'testDeleteAllDataTrue': {
-              try {
-                let getUsage = -1
-                webView.WebStorage.deleteAllData(true)
-                webView.WebStorage.getOrigins((error, origins) => {
-                  getUsage = origins[0].usage;
-                })
-                await waitForExist(() => getUsage, this.str, 0, 100);
-                webView.WebStorage.getOrigins((error, origins) => {
-                  if (error) {
-                    console.error('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 135040)
-                    return;
-                  }
-                  for (let i = 0; i < origins.length; i++) {
-                    console.log('origin: ' + origins[i].origin);
-                    console.log('usage: ' + origins[i].usage);
-                    console.log('quota: ' + origins[i].quota);
-                  }
-                  Utils.emitEvent(origins[0].usage, 135040)
-                })
-              } catch (error) {
-                let e: business_error.BusinessError = error as business_error.BusinessError;
-                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 135040)
-              }
-              break;
-            }
-
             case 'testDeleteOrigin001': {
               try {
                 let getUsage = -1
