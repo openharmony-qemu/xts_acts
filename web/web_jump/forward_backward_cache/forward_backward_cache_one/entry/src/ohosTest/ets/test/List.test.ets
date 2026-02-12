@@ -19,6 +19,9 @@ import webStorage from './WebStorage.test'
 import webViewControllerPart3 from './WebViewControllerPart3.test'
 import webStorageDeleteAllDataNormal from './WebStorageDeleteAllDataNormal.test'
 import webStorageDeleteOriginError from './WebStorageDeleteOriginError.test'
+import webStorageGetOriginQuotaError from './WebStorageGetOriginQuotaError.test'
+import webStorageGetOriginQuotaCallbackError from './WebStorageGetOriginQuotaCallbackError.test'
+import webStorageGetOriginUsageError from './WebStorageGetOriginUsageError.test'
 
 export default function testsuite() {
   webStorage()
@@ -27,4 +30,7 @@ export default function testsuite() {
   webViewControllerPart3()
   webStorageDeleteAllDataNormal()
   webStorageDeleteOriginError()
+  webStorageGetOriginQuotaError()
+  webStorageGetOriginQuotaCallbackError()
+  webStorageGetOriginUsageError()
 }

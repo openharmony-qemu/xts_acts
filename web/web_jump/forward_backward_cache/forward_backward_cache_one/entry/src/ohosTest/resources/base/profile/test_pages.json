@@ -6,7 +6,10 @@
     "testability/pages/webController",
     "testability/pages/WebViewControllerPart3",
     "testability/pages/DeleteAllDataNormal",
-    "testability/pages/WebStorageDeleteOriginError"
+    "testability/pages/WebStorageDeleteOriginError",
+    "testability/pages/WebStorageGetOriginQuotaError",
+    "testability/pages/WebStorageGetOriginQuotaCallbackError",
+    "testability/pages/WebStorageGetOriginUsageError"
   ]
 }
 
