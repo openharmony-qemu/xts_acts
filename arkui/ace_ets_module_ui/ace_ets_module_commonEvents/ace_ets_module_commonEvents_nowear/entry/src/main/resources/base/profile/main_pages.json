@@ -29,6 +29,7 @@
         "MainAbility/pages/customGestureTest/columnMonopolizeFalse",
         "MainAbility/pages/customGestureTest/gestureParallel",
         "MainAbility/pages/customGestureTest/listMonopolize",
-        "MainAbility/pages/TextArea/textAreaInputTest"
+        "MainAbility/pages/TextArea/textAreaInputTest",
+        "MainAbility/pages/cursorControl/setCursorNullAndUndefined"
     ]
 }
