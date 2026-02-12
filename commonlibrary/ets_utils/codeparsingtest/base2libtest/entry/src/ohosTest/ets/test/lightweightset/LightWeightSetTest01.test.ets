@@ -13,10 +13,15 @@ class testLightWeightSet{
   }
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightSetTest01() {
   describe('testLightWeightSetTest01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     });
@@ -34,7 +39,7 @@ export default function testLightWeightSetTest01() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    //=============constructor接口===============
+
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0001
      * @tc.name      testLightWeightSetTest01Chapter0001
@@ -71,7 +76,6 @@ export default function testLightWeightSetTest01() {
 
     });
 
-    //=============isEmpty接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0003
      * @tc.name      testLightWeightSetTest01Chapter0003
@@ -144,7 +148,6 @@ export default function testLightWeightSetTest01() {
 
     });
 
-    //=============add接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0007
      * @tc.name      testLightWeightSetTest01Chapter0007
@@ -631,7 +634,6 @@ export default function testLightWeightSetTest01() {
 
     });
 
-    //=============addAll接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0033
      * @tc.name      testLightWeightSetTest01Chapter0033
@@ -1182,7 +1184,6 @@ export default function testLightWeightSetTest01() {
       console.log(TAG + 'end');
     });
 
-    //=============hasAll接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0056
      * @tc.name      testLightWeightSetTest01Chapter0056
@@ -1738,7 +1739,6 @@ export default function testLightWeightSetTest01() {
       console.log(TAG + 'end');
     });
 
-    //=============has接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST01_0079
      * @tc.name      testLightWeightSetTest01Chapter0079

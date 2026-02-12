@@ -2,10 +2,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import { util, LinkedList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LinkedListTest09() {
   describe('LinkedListTest09', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -283,8 +288,8 @@ export default function LinkedListTest09() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('GetIndexOfTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'GetIndexOfTest0011';
+    it('testLinkedList09Chapter0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLinkedList09Chapter0011';
       console.log(TAG + ' start');
       const newLinkedList = new LinkedList<Uint8Array>()
       const text = new Uint8Array([72, 101, 108, 108, 111, 87, 111, 114, 108,0,0,0,0,0, 100, 49, 50, 51, 63])
@@ -579,7 +584,6 @@ export default function LinkedListTest09() {
 
     })
 
-    //=============RemoveFirst API===============
     /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT09_2400
      * @tc.name      testLinkedList09Chapter0024

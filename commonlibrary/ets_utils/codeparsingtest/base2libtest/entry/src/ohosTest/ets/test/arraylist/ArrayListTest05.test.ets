@@ -1,12 +1,15 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function ArrayList05Test() {
   describe('ArrayList05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -25,7 +28,6 @@ export default function ArrayList05Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ============= getIndexOf interface =============
     /**
      * @tc.number    SUB_ARRAYLIST_GETINDEXOF01_0100
      * @tc.name      testArrayList01GetIndexOf0001

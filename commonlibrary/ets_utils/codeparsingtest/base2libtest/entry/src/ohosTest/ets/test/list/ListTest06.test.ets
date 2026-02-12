@@ -134,10 +134,16 @@ class SpecialValueObject {
     this.value = value;
   }
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest06() {
   describe('ListTest06', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -156,8 +162,6 @@ export default function ListTest06() {
       // This API supports only one parameter: clear action function.
     })
 
-
-    //=============get API===============
     /**
      * @tc.number    SUB_LIST_TEXT06_0100
      * @tc.name      testList06Chapter0001
@@ -224,7 +228,6 @@ export default function ListTest06() {
       expect((mixList.get(1) as List<string>).get(1)).assertEqual("b");
     });
 
-    //=============getLastIndexOf API===============
     /**
      * @tc.number    SUB_LIST_TEXT06_0300
      * @tc.name      testList06Chapter0003
@@ -1000,7 +1003,6 @@ export default function ListTest06() {
       expect(list44.getLastIndexOf(numVal)).assertEqual(4);
     });
 
-    //=============getIndexOf API===============
     /**
      * @tc.number    SUB_LIST_TEXT06_2200
      * @tc.name      testList06Chapter0022

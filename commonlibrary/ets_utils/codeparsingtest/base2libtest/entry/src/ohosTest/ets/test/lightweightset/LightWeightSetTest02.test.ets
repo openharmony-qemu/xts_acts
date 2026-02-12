@@ -13,10 +13,15 @@ class testLightWeightSet{
   }
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightSetTest02() {
   describe('testLightWeightSetTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -35,7 +40,6 @@ export default function testLightWeightSetTest02() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============has接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0001
      * @tc.name      testLightWeightSetTest02Chapter0001
@@ -372,7 +376,6 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'end');
     });
 
-    //=============increaseCapacityTo接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0017
      * @tc.name      testLightWeightSetTest02Chapter0017
@@ -1073,7 +1076,6 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'end');
     });
 
-    //=============getIndexOf接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0052
      * @tc.name      testLightWeightSetTest02Chapter0052
@@ -1596,7 +1598,6 @@ export default function testLightWeightSetTest02() {
       console.log(TAG + 'end');
     });
 
-    //=============remove接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0076
      * @tc.name      testLightWeightSetTest02Chapter0076

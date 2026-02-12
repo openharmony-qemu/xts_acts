@@ -11,10 +11,15 @@ interface GeneratedObjectLiteralInterface_3 {
   value: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray05Test() {
   describe('PlainArray05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -32,7 +37,7 @@ export default function PlainArray05Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== clone ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST05_0100
      * @tc.name      testPlainArray05Chapter0001
@@ -305,7 +310,6 @@ export default function PlainArray05Test() {
       expect(clonedArray.get(0).undefinedProp === undefined).assertTrue()
       expect(clonedArray.get(0).nullProp === null).assertTrue()
     })
-    // =============== add ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST05_0600

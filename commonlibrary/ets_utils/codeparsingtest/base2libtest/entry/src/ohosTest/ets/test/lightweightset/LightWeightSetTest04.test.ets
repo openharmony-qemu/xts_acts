@@ -50,10 +50,16 @@ interface NestedObj {
   id: number;
   data: NestedMid;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LightWeightSetTest04() {
   describe('LightWeightSetTest04', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -72,7 +78,6 @@ export default function LightWeightSetTest04() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============getValueAt接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0001
      * @tc.name      testLightWeightSetTest04Chapter0001
@@ -399,7 +404,6 @@ export default function LightWeightSetTest04() {
       console.log(TAG + 'end');
     });
 
-    // ======================= values 接口 =======================
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0015
      * @tc.name      testLightWeightSetTest04Chapter0015
@@ -923,7 +927,6 @@ export default function LightWeightSetTest04() {
       console.log(TAG + 'end');
     });
 
-    //=============forEach接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0037
      * @tc.name      testLightWeightSetTest04Chapter0037
@@ -1480,7 +1483,6 @@ export default function LightWeightSetTest04() {
       console.log(TAG + 'end');
     });
 
-    //=============entries接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0057
      * @tc.name      testLightWeightSetTest04Chapter0057

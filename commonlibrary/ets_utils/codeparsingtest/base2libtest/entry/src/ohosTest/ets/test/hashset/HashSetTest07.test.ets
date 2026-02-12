@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { HashSet } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function HashSet07Test() {
   describe('HashSet07Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,7 +27,7 @@ export default function HashSet07Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== forEach ======================
+
     /**
      * @tc.number    SUB_HASHSET_TEST07_0100
      * @tc.name      testHashSet07Chapter0001
@@ -641,7 +646,6 @@ export default function HashSet07Test() {
 
     });
 
-    // =============== entries ======================
     /**
      * @tc.number    SUB_HASHSET_TEST07_1500
      * @tc.name      testHashSet07Chapter0015
@@ -1645,8 +1649,6 @@ export default function HashSet07Test() {
 
     });
 
-
-    // =============== [Symbol.iterator] ======================
     /**
      * @tc.number    SUB_HASHSET_TEST07_4000
      * @tc.name      testHashSet07Chapter0040

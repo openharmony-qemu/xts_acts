@@ -335,10 +335,16 @@ class NewKeyObject {
     this.newKey = newKey;
   }
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest14() {
   describe('ListTest14', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -630,7 +636,6 @@ export default function ListTest14() {
       expect((listInsert.get(3) as NewKeyObject).newKey).assertEqual("newVal");
     });
 
-    //=============convertToArray API===============
     /**
      * @tc.number    SUB_LIST_TEXT14_0700
      * @tc.name      testList14Chapter0007
@@ -709,7 +714,6 @@ export default function ListTest14() {
       expect(bigUint64ResultArr[0][0]).assertEqual(456n);
       const emptyFloatList: List<Float64Array> = new List<Float64Array>();
       const emptyResultArr = emptyFloatList.convertToArray();
-      expect(emptyResultArr).assertEqual(emptyResultArr);
       expect(emptyResultArr.length).assertEqual(0)
     });
 

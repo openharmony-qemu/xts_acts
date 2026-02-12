@@ -287,10 +287,15 @@ interface LargeArrayLike {
   length: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest01() {
   describe('ListTest01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -309,7 +314,6 @@ export default function ListTest01() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============Constructor API===============
     /**
      * @tc.number    SUB_LIST_TEXT01_0100
      * @tc.name      testList01Chapter0001
@@ -418,7 +422,7 @@ export default function ListTest01() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testList01Chapter0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testList01Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testList01Chapter0004';
       console.log(TAG + ' start');
       const list: List<TestArray> = new List<TestArray>();
@@ -1447,7 +1451,6 @@ export default function ListTest01() {
       expect(list30_1.get(0)).assertEqual(structResult);
     });
 
-    //=============Add API===============
     /**
      * @tc.number    SUB_LIST_TEXT01_4000
      * @tc.name      testList01Chapter0040
@@ -1639,7 +1642,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0400
+     * @tc.number    SUB_LIST_TEST01_4300
      * @tc.name      testList01Chapter0043
      * @tc.desc      Verify Float32Array/Float64Array boundary/out-of-bounds/special values
      * @tc.size      MediumTest

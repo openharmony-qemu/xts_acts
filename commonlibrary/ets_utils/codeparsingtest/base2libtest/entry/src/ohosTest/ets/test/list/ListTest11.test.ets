@@ -366,10 +366,15 @@ type ListComparatorFn<T> = (a: T, b: T) => number;
 
 class EmptyObject {}
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest11() {
   describe('ListTest11', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -388,7 +393,6 @@ export default function ListTest11() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============ForEach API===============
     /**
      * @tc.number    SUB_LIST_TEXT11_0100
      * @tc.name      testList11Chapter0001
@@ -429,7 +433,6 @@ export default function ListTest11() {
       expect((complexList.get(0) as List<number>).get(3)).assertEqual(4);
     });
 
-    //=============sort API===============
     /**
      * @tc.number    SUB_LIST_TEXT11_0200
      * @tc.name      testList11Chapter0002
@@ -733,7 +736,6 @@ export default function ListTest11() {
     it('testList11Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testList11Chapter0009';
       console.log(TAG + ' start');
-
       const specialChars = [
         '|}~', ']^_`{', '>?@[\\\\', '/:;<=', '*+,-.', '&\'()'
       ];

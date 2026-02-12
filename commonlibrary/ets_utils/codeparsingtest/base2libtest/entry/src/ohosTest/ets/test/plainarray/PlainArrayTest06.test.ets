@@ -40,10 +40,15 @@ interface GeneratedTypeLiteralInterface_10 {
   message?: string;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray06Test() {
   describe('PlainArray06Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -61,7 +66,7 @@ export default function PlainArray06Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== add ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST06_0100
      * @tc.name      testPlainArray06Chapter0001
@@ -618,7 +623,7 @@ export default function PlainArray06Test() {
       expect(result0.name).assertEqual("Object 1")
       expect(result1.name).assertEqual("Object 2")
     })
-    // =============== remove ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST06_1400
      * @tc.name      testPlainArray06Chapter0014
@@ -1442,7 +1447,6 @@ export default function PlainArray06Test() {
       }
       expect(errorCaught).assertTrue();
     });
-    // =============== removeAt ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST06_4700

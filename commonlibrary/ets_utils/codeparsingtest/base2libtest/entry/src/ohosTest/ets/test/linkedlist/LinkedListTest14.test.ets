@@ -2,10 +2,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import { util, LinkedList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LinkedListTest14() {
   describe('LinkedListTest14', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -1151,7 +1156,7 @@ export default function LinkedListTest14() {
         expect(err).assertContain("BusinessError")
       }
     })
-    //=============Clone API===============
+
     /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT14_4800
      * @tc.name      testLinkedList14Chapter0048
@@ -1503,7 +1508,6 @@ export default function LinkedListTest14() {
     it('testLinkedList14Chapter0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testLinkedList14Chapter0061';
       console.log(TAG + ' start');
-
       const newLinkedList = new LinkedList<string>()
       const textString = [
         undefined, null, "", " ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".",
@@ -1523,7 +1527,6 @@ export default function LinkedListTest14() {
         expect(testLinkedList.add(i)).assertTrue()
       }
       expect(testLinkedList.length).assertEqual(newLinkedList.length * 2)
-
     });
 
     /**

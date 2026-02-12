@@ -52,10 +52,15 @@ type NullableElement = number | string | boolean | null | undefined;
 
 type MixedDequeElement = number | string | boolean;
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function dequeArraylistInsertFront01Test() {
   describe('dequeArraylistInsertFront01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -74,7 +79,6 @@ export default function dequeArraylistInsertFront01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============insertFront接口===============
     /**
      * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0100
      * @tc.name      testArraylistInsertFront01NumberBasic0001

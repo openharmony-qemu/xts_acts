@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList09Test() {
   describe('ArrayList09Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,7 +28,6 @@ export default function ArrayList09Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============forEach接口===============
     /**
      * @tc.number    SUB_ARRAYLIST_FOREACH01_0100
      * @tc.name      testArrayList01ForEach0001
@@ -747,8 +751,6 @@ export default function ArrayList09Test() {
         expect(afterClearCount).assertEqual(0);
         console.log(TAG + ' done');
       });
-
-    //=============sort接口===============
 
     /**
      * @tc.number    SUB_ARRAYLIST_SORT02_0100

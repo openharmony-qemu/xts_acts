@@ -98,11 +98,15 @@ interface ArrayBufferObject {
   other?: string;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function Json04Test() {
   describe('Json04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -126,7 +130,6 @@ export default function Json04Test() {
       truthyValue: number;
     }
 
-    // =============== stringify(value: Object, replacer?: Transformer, space?: string | number): string ======================
     /**
      * @tc.number    SUB_JSON_TEST04_0100
      * @tc.name      testJson04Chapter0001
@@ -955,7 +958,7 @@ export default function Json04Test() {
           expect(err instanceof Error).assertEqual(true);
         }
       });
-    // =============== JSON.has ======================
+
     /**
      * @tc.number    SUB_JSON_TEST04_2600
      * @tc.name      testJson04Chapter0026

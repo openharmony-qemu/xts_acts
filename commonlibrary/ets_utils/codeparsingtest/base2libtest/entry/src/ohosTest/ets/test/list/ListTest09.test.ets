@@ -76,18 +76,18 @@ class List<T> {
     this.data = [];
   }
   remove(index: number): T | undefined;
-  // 新增：按元素删除，返回布尔值（完全匹配你的测试用例！）
+
   remove(item: T): boolean;
-  // 实现重载
+
   remove(arg: number | T): T | undefined | boolean {
     if (typeof arg === 'number') {
-      // 按索引删除
+
       if (arg < 0 || arg >= this.data.length) {
         return undefined;
       }
       return this.data.splice(arg, 1)[0];
     } else {
-      // 按元素删除：找到第一个匹配项删除，返回是否成功
+
       const index = this.data.findIndex(i => i === arg);
       if (index === -1) return false;
       this.data.splice(index, 1);
@@ -278,10 +278,15 @@ function createUint8Array(values: Array<number>): Uint8Array {
   return arr;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest09() {
   describe('ListTest09', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -300,7 +305,6 @@ export default function ListTest09() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============Remove API===============
     /**
      * @tc.number    SUB_LIST_TEXT09_0100
      * @tc.name      testList09Chapter0001
@@ -394,7 +398,6 @@ export default function ListTest09() {
       expect((insertList.get(0) as SpecialValueInsertObject).j).assertEqual(123);
     });
 
-    //=============replaceAllElements API===============
     /**
      * @tc.number    SUB_LIST_TEXT09_0400
      * @tc.name      testList09Chapter0004

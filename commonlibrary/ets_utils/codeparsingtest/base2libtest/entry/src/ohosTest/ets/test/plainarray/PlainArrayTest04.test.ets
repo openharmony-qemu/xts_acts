@@ -21,10 +21,15 @@ interface GeneratedTypeLiteralInterface_3 {
   d: GeneratedTypeLiteralInterface_4;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray04Test() {
   describe('PlainArray04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -43,7 +48,6 @@ export default function PlainArray04Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== clone ======================
     /**
      * @tc.number    SUB_PLAINARRAY_TEST04_0100
      * @tc.name      testPlainArray04Chapter0001

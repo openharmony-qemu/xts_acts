@@ -2,10 +2,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import { util, LinkedList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LinkedListTest06() {
   describe('LinkedListTest06', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -387,7 +392,6 @@ export default function LinkedListTest06() {
     it('testLinkedList06Chapter0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testLinkedList06Chapter0016';
       console.log(TAG + ' start');
-
       const newLinkedList = new LinkedList<string>()
 
       const textString = [
@@ -405,7 +409,7 @@ export default function LinkedListTest06() {
       }
       expect(newLinkedList.get(textString.length+10)).assertUndefined()
     })
-    //=============GetLastIndexOf API===============
+
     /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1700
      * @tc.name      testLinkedList06Chapter0017

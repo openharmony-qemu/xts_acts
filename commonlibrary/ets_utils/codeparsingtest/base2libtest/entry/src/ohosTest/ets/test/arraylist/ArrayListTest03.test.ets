@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList_03Test() {
   describe('ArrayList_03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,7 +27,7 @@ export default function ArrayList_03Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    //=============subArrayList接口===============
+
     /**
      * @tc.number    SUB_UTIL_ARRAYLIST_SUBARRAYLIST_03_1900
      * @tc.name      testSubArray03List0019
@@ -92,8 +97,6 @@ export default function ArrayList_03Test() {
         let personSubList = personList.subArrayList(1, 4);
         expect(personSubList.length).assertEqual(3);
         expect(personList.length).assertEqual(4);
-
-
       });
 
     /**
@@ -147,7 +150,6 @@ export default function ArrayList_03Test() {
         let promiseSubList = promiseList.subArrayList(1, 3);
         expect(promiseSubList.length).assertEqual(2);
 
-
       });
 
     /**
@@ -177,7 +179,6 @@ export default function ArrayList_03Test() {
         expect(bigIntSubList[0]).assertEqual(0n);
         expect(bigIntSubList[1]).assertEqual(-9999999999999999999n);
         expect(bigIntSubList[2]).assertEqual(BigInt(Number.MAX_SAFE_INTEGER));
-
 
       });
 
@@ -394,7 +395,6 @@ export default function ArrayList_03Test() {
 
       });
 
-    //=============[index: number]12+接口===============
     /**
      * @tc.number    SUB_UTIL_ARRAYLIST_INDEX_03_0100
      * @tc.name      testArray03ListIndex0001
@@ -658,17 +658,13 @@ export default function ArrayList_03Test() {
         console.log(TAG + ' start');
         let arrayList = new ArrayList<string>();
 
-        // 添加元素到数组
         arrayList.add("first");
         arrayList.add("second");
         arrayList.add("third");
         arrayList.add("fourth");
 
-        // 测试第一个元素和最后一个元素
         expect(arrayList[0]).assertEqual("first");
         expect(arrayList[arrayList.length - 1]).assertEqual("fourth");
-
-
       });
 
     /**
@@ -695,7 +691,6 @@ export default function ArrayList_03Test() {
           expect(error.code).assertEqual(10200001);
         }
 
-
       });
 
     /**
@@ -718,24 +713,19 @@ export default function ArrayList_03Test() {
         arrayList.add(40);
         arrayList.add(50);
 
-        // 测试数组长度
         expect(arrayList.length).assertEqual(5);
 
-        // 测试索引访问，验证所有有效范围内的元素
         expect(arrayList[0]).assertEqual(10);
         expect(arrayList[1]).assertEqual(20);
         expect(arrayList[2]).assertEqual(30);
         expect(arrayList[3]).assertEqual(40);
         expect(arrayList[4]).assertEqual(50);
 
-        // 测试使用数组长度属性进行索引访问
         expect(arrayList[arrayList.length - 1]).assertEqual(50);
         expect(arrayList[arrayList.length - 2]).assertEqual(40);
         expect(arrayList[arrayList.length - 3]).assertEqual(30);
         expect(arrayList[arrayList.length - 4]).assertEqual(20);
         expect(arrayList[arrayList.length - 5]).assertEqual(10);
-
-
       });
 
     /**
@@ -762,8 +752,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0]).assertDeepEquals(date1);
         expect(arrayList[1]).assertDeepEquals(date2);
         expect(arrayList[2]).assertDeepEquals(date3);
-
-
       });
 
     /**
@@ -790,8 +778,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0].toString()).assertEqual(regex1.toString());
         expect(arrayList[1].toString()).assertEqual(regex2.toString());
         expect(arrayList[2].toString()).assertEqual(regex3.toString());
-
-
       });
 
     /**
@@ -818,8 +804,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0]).assertDeepEquals(map1);
         expect(arrayList[1]).assertDeepEquals(map2);
         expect(arrayList[2]).assertDeepEquals(map3);
-
-
       });
 
     /**
@@ -846,8 +830,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0]).assertDeepEquals(set1);
         expect(arrayList[1]).assertDeepEquals(set2);
         expect(arrayList[2]).assertDeepEquals(set3);
-
-
       });
 
     /**
@@ -887,8 +869,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[1].age).assertEqual(30);
         expect(arrayList[2].name).assertEqual("Charlie");
         expect(arrayList[2].age).assertEqual(35);
-
-
       });
 
     /**
@@ -915,8 +895,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0].byteLength).assertEqual(16);
         expect(arrayList[1].byteLength).assertEqual(32);
         expect(arrayList[2].byteLength).assertEqual(64);
-
-
       });
 
     /**
@@ -943,8 +921,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0].byteLength).assertEqual(8);
         expect(arrayList[1].byteLength).assertEqual(16);
         expect(arrayList[2].byteLength).assertEqual(24);
-
-
       });
 
     /**
@@ -968,8 +944,6 @@ export default function ArrayList_03Test() {
         expect(arrayList[0]).assertEqual(0);
         expect(arrayList[5000]).assertEqual(50000);
         expect(arrayList[9999]).assertEqual(99990);
-
-
       });
   })
 }

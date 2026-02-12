@@ -268,10 +268,16 @@ interface NumberBaseExprValues {
   exponent: number;
   floatHex: number;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest13() {
   describe('ListTest13', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -830,7 +836,6 @@ export default function ListTest13() {
       expect(mixedBasicList.get(7)).assertEqual(undefined);
     });
 
-    //=============set API===============
     /**
      * @tc.number    SUB_LIST_TEXT13_2000
      * @tc.name      testList13Chapter0020

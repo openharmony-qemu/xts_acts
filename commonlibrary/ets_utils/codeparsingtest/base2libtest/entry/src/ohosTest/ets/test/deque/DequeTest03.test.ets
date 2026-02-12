@@ -50,10 +50,16 @@ class DeleteTestObject {
   original?: string;
   last?: string;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Deque03Test() {
   describe('Deque03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -72,7 +78,6 @@ export default function Deque03Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=========================getFirst接口=========================
     /**
      * @tc.number    SUB_DEQUE_GETFIRST01_0100
      * @tc.name      testDeque01GetFirst0001
@@ -1000,8 +1005,6 @@ export default function Deque03Test() {
         console.log(TAG + ' done');
         
       });
-
-    //=========================getLast接口=========================
 
     /**
      * @tc.number    SUB_DEQUE_GETLAST02_0100

@@ -23,11 +23,12 @@ function sleep(ms: number) {
 export default function HashMapTest03Test() {
   describe('hashMapTest03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
+    beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -1613,8 +1614,6 @@ export default function HashMapTest03Test() {
       expect(hashMap.get("key").toString()).assertEqual(9007199254740991n.toString());
       console.log(TAG + ' end');
     });
-
-    //=============boolean===============
 
     /**
      * @tc.number    SUB_HASHMAP_TEST_0378

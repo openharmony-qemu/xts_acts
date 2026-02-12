@@ -466,10 +466,15 @@ function createUint8Array(values: Array<number>): Uint8Array {
   return arr;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest16() {
   describe('ListTest16', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -488,7 +493,6 @@ export default function ListTest16() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============getFirst API===============
     /**
      * @tc.number    SUB_LIST_TEXT16_0100
      * @tc.name      testList16Chapter0001
@@ -925,8 +929,6 @@ export default function ListTest16() {
       expect(((listMixed.getFirst() as BufferObject).buffer as ArrayBuffer).byteLength).assertEqual(16);
     });
 
-
-    //=============getLast API===============
     /**
      * @tc.number    SUB_LIST_TEXT16_1900
      * @tc.name      testList16Chapter0019
@@ -1669,7 +1671,6 @@ export default function ListTest16() {
       expect(mixedList.getLast()!.g.size).assertEqual(3);
     });
 
-    //=============Symbollterator API===============
     /**
      * @tc.number    SUB_LIST_TEXT16_4700
      * @tc.name      testList16Chapter0047

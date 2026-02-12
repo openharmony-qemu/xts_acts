@@ -3,10 +3,15 @@ import { LightWeightMap } from '@kit.ArkTS';
 
 interface GeneratedObjectLiteralInterface_1 {}
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightMapTest02() {
   describe('testLightWeightMapTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
     // Presets an action, which is performed only once before all test cases of the test suite start.
     // This API supports only one parameter: preset action function.
     })
@@ -25,7 +30,6 @@ export default function testLightWeightMapTest02() {
     // This API supports only one parameter: clear action function.
     })
 
-    //=============hasKey接口===============
     /**
     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST02_0001
     * @tc.name      testLightWeightMapTest02Chapter0001
@@ -322,7 +326,6 @@ export default function testLightWeightMapTest02() {
       console.log(TAG + 'end');
     });
 
-    //=============hasValue接口===============
     /**
     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST02_0011
     * @tc.name      testLightWeightMapTest02Chapter0011
@@ -713,7 +716,6 @@ export default function testLightWeightMapTest02() {
       console.log(TAG + 'end');
     });
 
-    //=============IncreaseCapacityTo接口===============
     /**
     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST02_0026
     * @tc.name      testLightWeightMapTest02Chapter0026

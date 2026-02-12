@@ -42,10 +42,15 @@ interface GeneratedTypeLiteralInterface_8 {
   s: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray01Test() {
   describe('PlainArray01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -64,7 +69,6 @@ export default function PlainArray01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //============= constructor ===============
     /**
      * @tc.number SUB_PLAINARRAY_TEST01_0100
      * @tc.name testPlainArray01Chapter0001
@@ -851,7 +855,6 @@ export default function PlainArray01Test() {
       expect((plainArray.get(3) as NonConfigObj).b).assertEqual(2);
 
     });
-    // =============== isEmpty ======================
 
     /**
      * @tc.number SUB_PLAINARRAY_TEST01_1500
@@ -991,8 +994,6 @@ export default function PlainArray01Test() {
       expect(errorCaught).assertTrue();
 
     });
-
-    // =============== has ======================
 
     /**
      * @tc.number SUB_PLAINARRAY_TEST01_2100
@@ -1556,7 +1557,6 @@ export default function PlainArray01Test() {
         expect(e !== undefined).assertTrue()
       }
     })
-    // =============== get ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST01_4600

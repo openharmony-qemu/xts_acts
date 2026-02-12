@@ -3,10 +3,15 @@ import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList08Test() {
   describe('ArrayList08Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -25,7 +30,6 @@ export default function ArrayList08Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============removeByRange接口===============
     /**
      * @tc.number    SUB_ARRAYLIST_REMOVEBYRANGE03_2600
      * @tc.name      testArraylist03RemoveSingleElement0026
@@ -107,7 +111,6 @@ export default function ArrayList08Test() {
         console.log(TAG + ' done');
       });
 
-    //=============replaceAllElements接口===============
     /**
      * @tc.number    SUB_ARRAYLIST_REPLACEALLELEMENTS01_0100
      * @tc.name      testArraylist01NumberNormal0001

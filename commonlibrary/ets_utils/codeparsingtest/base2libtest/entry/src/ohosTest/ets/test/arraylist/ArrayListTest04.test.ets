@@ -3,10 +3,15 @@ import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList04Test() {
   describe('ArrayList04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -25,7 +30,6 @@ export default function ArrayList04Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ============= add interface =============
     /**
      * @tc.number    SUB_ARRAYLIST_ADD01_0100
      * @tc.name      testArrayList01Add0001
@@ -763,7 +767,6 @@ export default function ArrayList04Test() {
 
     });
 
-    // ============= insert interface =============
     /**
      * @tc.number    SUB_ARRAYLIST_INSERT02_0100
      * @tc.name      testArrayList02Insert0001
@@ -1081,13 +1084,13 @@ export default function ArrayList04Test() {
         console.log(TAG + ' start');
         const list = new ArrayList<number>();
         try {
-          // 尝试使用大索引（文档说明需要小于等于2147483647）
-          list.insert(1, 1000000); // 在空列表中使用大索引
+          list.insert(1, 1000000);
           console.log("Large index insertion attempted");
-        } catch (error) {
-          console.log("Error with large index:", error.message);
+        } catch (err) {
+          console.log("Error with large index:", err.message);
+          expect(err.message).assertEqual('The value of "index" is out of range. It must be >= 0 && <= 0. Received value is: 1000000');
         }
-        console.log(TAG + ' done');
+        console.log(TAG + ' end');
 
       });
 
@@ -1108,8 +1111,9 @@ export default function ArrayList04Test() {
         try {
           list.insert(2, -1);
           console.log("No error for negative index");
-        } catch (error) {
-          console.log("Expected error for negative index:", error.message);
+        } catch (err) {
+          console.log("Expected error for negative index:", err.message);
+          expect(err.message).assertEqual('The value of "index" is out of range. It must be >= 0 && <= 1. Received value is: -1');
         }
         expect(list.length).assertEqual(1);
         console.log(TAG + ' done');
@@ -1132,8 +1136,9 @@ export default function ArrayList04Test() {
         try {
           list.insert(1, 0.5);
           console.log("Decimal index insertion attempted");
-        } catch (error) {
-          console.log("Error with decimal index:", error.message);
+        } catch (err) {
+          console.log("Error with decimal index:", err.message);
+          expect(err.message).assertEqual('The type of "index" must be small integer. Received value is: 0.5');
         }
         console.log(TAG + ' done');
 
@@ -1220,7 +1225,6 @@ export default function ArrayList04Test() {
 
       });
 
-    // ============= has interface =============
     /**
      * @tc.number    SUB_ARRAYLIST_HAS03_0100
      * @tc.name      testArrayList03Has0001

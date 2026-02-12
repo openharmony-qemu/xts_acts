@@ -24,10 +24,15 @@ interface keyobject {
   name: string;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightMapTest03() {
   describe('testLightWeightMapTest03', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -46,7 +51,6 @@ export default function testLightWeightMapTest03() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============get接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0001
      * @tc.name      testLightWeightMapTest03Chapter0001
@@ -379,7 +383,6 @@ export default function testLightWeightMapTest03() {
       console.log(TAG + "end");
     });
 
-    //=============getIndexOfKey接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0017
      * @tc.name      testLightWeightMapTest03Chapter0017
@@ -733,8 +736,6 @@ export default function testLightWeightMapTest03() {
       console.log(TAG + "end");
     });
 
-
-    //=============getIndexOfValue接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0034
      * @tc.name      testLightWeightMapTest03Chapter0034
@@ -1118,7 +1119,6 @@ export default function testLightWeightMapTest03() {
       console.log(TAG + "end");
     });
 
-    //=============getKeyAt接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0052
      * @tc.name      testLightWeightMapTest03Chapter0052

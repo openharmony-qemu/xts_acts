@@ -10,10 +10,15 @@ interface GeneratedTypeLiteralInterface_1 {
   d: GeneratedTypeLiteralInterface_2;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray08Test() {
   describe('PlainArray08Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -31,7 +36,7 @@ export default function PlainArray08Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== setValueAt ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST08_0100
      * @tc.name      testPlainArray08Chapter0001
@@ -1004,7 +1009,7 @@ export default function PlainArray08Test() {
       expect(result.prop2).assertEqual("test");
       expect(result.prop3).assertTrue();
     });
-    // =============== toString ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST08_5200
      * @tc.name      testPlainArray08Chapter0052
@@ -1338,7 +1343,7 @@ export default function PlainArray08Test() {
       expect(errorCaught).assertTrue();
       expect(errorCode).assertEqual(10200011);
     });
-    // =============== clear ======================
+
     /**
      * @tc.number    SUB_PLAINARRAY_TEST08_7000
      * @tc.name      testPlainArray08Chapter0070

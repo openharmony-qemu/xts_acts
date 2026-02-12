@@ -195,10 +195,15 @@ function createUint8Array(values: Array<number>): Uint8Array {
   return arr;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest12() {
   describe('ListTest12', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -217,7 +222,6 @@ export default function ListTest12() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============GetSubList API===============
     /**
      * @tc.number    SUB_LIST_TEXT12_0100
      * @tc.name      testList12Chapter0001
@@ -1253,7 +1257,6 @@ export default function ListTest12() {
       expect(arr3.length).assertEqual(0);
     });
 
-    //=============clear API===============
     /**
      * @tc.number    SUB_LIST_TEXT12_2500
      * @tc.name      testList12Chapter0025

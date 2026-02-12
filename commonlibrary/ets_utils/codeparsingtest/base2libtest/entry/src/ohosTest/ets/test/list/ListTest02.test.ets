@@ -185,10 +185,16 @@ class NewKeyObject {
 function isEmptyObject(obj: EmptyObject): boolean {
   return obj instanceof EmptyObject;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest02() {
   describe('ListTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -207,7 +213,6 @@ export default function ListTest02() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============Add API===============
     /**
      * @tc.number    SUB_LIST_TEST02_0100
      * @tc.name      testList02Chapter0001

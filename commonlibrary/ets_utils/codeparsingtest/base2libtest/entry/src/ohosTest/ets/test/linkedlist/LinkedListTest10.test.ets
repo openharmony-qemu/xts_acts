@@ -2,10 +2,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import { util, LinkedList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LinkedListTest10() {
   describe('LinkedListTest10', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -675,7 +680,6 @@ export default function LinkedListTest10() {
       }
     })
 
-    //=============RemoveLast API===============
     /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT10_2700
      * @tc.name      testLinkedList10Chapter0027

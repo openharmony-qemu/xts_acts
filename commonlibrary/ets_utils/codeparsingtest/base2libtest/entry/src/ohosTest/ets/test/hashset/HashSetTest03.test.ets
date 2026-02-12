@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { HashSet } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function HashSet03Test() {
   describe('HashSet03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,7 +27,7 @@ export default function HashSet03Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== add ======================
+
     /**
      * @tc.number    SUB_HASHSET_TEST03_0100
      * @tc.name      testHashSet03Chapter0001
@@ -1561,7 +1566,7 @@ export default function HashSet03Test() {
       const result5: boolean = hashSet.has("valid string");
       expect(result5).assertTrue();
     });
-    // =============== add ======================
+
     /**
      * @tc.number    SUB_HASHSET_TEST03_4600
      * @tc.name      testHashSet03Chapter0046

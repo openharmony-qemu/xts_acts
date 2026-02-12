@@ -3,10 +3,15 @@ import { Deque } from '@kit.ArkTS';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@ohos.base';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Deque01Test() {
   describe('Deque01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -25,7 +30,6 @@ export default function Deque01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ============= Deque has接口测试用例 =============
     /**
      * @tc.number    SUB_DEQUE_HAS01_0100
      * @tc.name      testDeque01Has0001

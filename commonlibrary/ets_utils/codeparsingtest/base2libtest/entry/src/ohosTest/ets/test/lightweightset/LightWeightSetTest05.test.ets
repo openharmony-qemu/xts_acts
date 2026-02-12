@@ -72,10 +72,16 @@ interface NestedObj {
   id: number;
   data: NestedMid;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function LightWeightSetTest05() {
   describe('LightWeightSetTest05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -94,7 +100,6 @@ export default function LightWeightSetTest05() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============entries接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST05_0001
      * @tc.name      testLightWeightSetTest05Chapter0001
@@ -290,7 +295,6 @@ export default function LightWeightSetTest05() {
       console.log(TAG + 'end');
     });
 
-    //=============[Symbol.iterator]接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST05_0008
      * @tc.name      testLightWeightSetTest05Chapter0008
@@ -936,7 +940,6 @@ export default function LightWeightSetTest05() {
       console.log(TAG + 'end');
     });
 
-    //=============equal(deprecated)接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST05_0030
      * @tc.name      testLightWeightSetTest05Chapter0030
@@ -1394,7 +1397,6 @@ export default function LightWeightSetTest05() {
       console.log(TAG + 'end');
     });
 
-    //=============toString接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST05_0052
      * @tc.name      testLightWeightSetTest05Chapter0052
@@ -1587,7 +1589,6 @@ export default function LightWeightSetTest05() {
       console.log(TAG + 'end');
     });
 
-    //=============toArray接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTSET_TEST05_0062
      * @tc.name      testLightWeightSetTest05Chapter0062

@@ -1,10 +1,15 @@
 import { JSON } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Json01Test() {
   describe('Json01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -29,7 +34,6 @@ export default function Json01Test() {
       city: string;
     }
 
-    // ===============parse======================
     /**
      * @tc.number    SUB_JSON_TEST01_0100
      * @tc.name      testJson01Chapter0001

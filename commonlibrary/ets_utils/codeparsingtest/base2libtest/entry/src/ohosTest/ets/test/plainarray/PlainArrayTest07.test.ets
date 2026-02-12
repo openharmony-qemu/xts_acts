@@ -1,11 +1,15 @@
 import { PlainArray } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function PlainArray07Test() {
   describe('PlainArray07Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,7 +27,6 @@ export default function PlainArray07Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== removeAt ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST07_0100
@@ -617,7 +620,6 @@ export default function PlainArray07Test() {
       expect(result3).assertEqual("value7");
       console.log(TAG + ' end');
     });
-    // =============== removeRangeFrom ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST07_2400
@@ -1275,7 +1277,6 @@ export default function PlainArray07Test() {
       expect(plainArray.get(8)).assertEqual(80);
       expect(plainArray.get(9)).assertEqual(90);
     });
-    // =============== setValueAt ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST07_5100

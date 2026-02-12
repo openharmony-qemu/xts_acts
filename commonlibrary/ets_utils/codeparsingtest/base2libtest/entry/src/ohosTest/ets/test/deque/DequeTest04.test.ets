@@ -55,10 +55,16 @@ class C1 {
   name: string = "";
   age: string = "";
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Deque04Test() {
   describe('Deque04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -76,8 +82,6 @@ export default function Deque04Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    //=========================getLast接口=========================
 
     /**
      * @tc.number    SUB_DEQUE_GETLAST02_3100
@@ -265,8 +269,6 @@ export default function Deque04Test() {
         console.log(TAG + ' done');
         
       });
-
-    //=========================insertEnd接口=========================
 
     /**
      * @tc.number    SUB_DEQUE_INSERTEND03_0100
@@ -1260,8 +1262,6 @@ export default function Deque04Test() {
         console.log(TAG + ' done');
         
       });
-
-    //=========================forEach接口=========================
 
     /**
      * @tc.number    SUB_DEQUE_FOREACH04_0100

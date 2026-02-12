@@ -28,10 +28,16 @@ interface valueobject {
   type: string;
   score: number;
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightMapTest04() {
   describe('testLightWeightMapTest04', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -49,8 +55,6 @@ export default function testLightWeightMapTest04() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    //=============setAll接口===============
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0001
@@ -616,7 +620,6 @@ export default function testLightWeightMapTest04() {
       console.log(TAG + "end");
     });
 
-    //=============set接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0021
      * @tc.name      testLightWeightMapTest04Chapter0021
@@ -1033,8 +1036,6 @@ export default function testLightWeightMapTest04() {
       expect(lightWeightMap.length).assertEqual(1);
       console.log(TAG + 'end');
     });
-
-    // ======================= remove 接口 =======================
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0043

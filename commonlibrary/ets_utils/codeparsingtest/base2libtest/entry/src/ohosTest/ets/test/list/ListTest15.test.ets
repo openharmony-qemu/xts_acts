@@ -161,10 +161,15 @@ interface NumberBaseExprValues {
 }
 class EmptyObject {}
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ListTest15() {
   describe('ListTest15', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -183,7 +188,6 @@ export default function ListTest15() {
       // This API supports only one parameter: clear action function.
     })
 
-    //=============isEmpty API===============
     /**
      * @tc.number    SUB_LIST_TEXT15_0100
      * @tc.name      testList15Chapter0001
@@ -966,7 +970,7 @@ export default function ListTest15() {
     /**
      * @tc.number    SUB_LIST_TEXT15_2000
      * @tc.name      testList15Chapter0020
-     * @desc         Test if the List is non-empty after adding objects with special values (undefined, null, NaN, etc.)
+     * @tc.desc         Test if the List is non-empty after adding objects with special values (undefined, null, NaN, etc.)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1244,7 +1248,6 @@ export default function ListTest15() {
       expect(list3.isEmpty()).assertTrue();
     });
 
-    //=============getFirst API===============
     /**
      * @tc.number    SUB_LIST_TEXT15_2500
      * @tc.name      testList15Chapter0025

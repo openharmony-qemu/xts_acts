@@ -75,10 +75,15 @@ interface GeneratedTypeLiteralInterface_8 {
   data: Map<number, number>;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray02Test() {
   describe('PlainArray02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -96,7 +101,6 @@ export default function PlainArray02Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== getIndexOfKey ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST02_0100
@@ -549,7 +553,6 @@ export default function PlainArray02Test() {
       }
       expect(errorCaught).assertTrue();
     });
-    // =============== getIndexOfValue ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST02_2400
@@ -1524,7 +1527,6 @@ export default function PlainArray02Test() {
       const result = arr.getIndexOfValue(value);
       expect(result).assertEqual(0);
     });
-    // =============== getKeyAt ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST02_7800

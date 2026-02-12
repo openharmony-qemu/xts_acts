@@ -40,10 +40,15 @@ interface NestedObj {
   data: DataObject;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightMapTest07() {
   describe('testLightWeightMapTest07', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -61,9 +66,6 @@ export default function testLightWeightMapTest07() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-
-    // ======================= values 接口 =======================
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST07_0001
@@ -515,7 +517,6 @@ export default function testLightWeightMapTest07() {
       expect(ok).assertTrue();
       console.log(TAG + 'end');
     });
-    // ======================= forEach 接口 =======================
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST07_0016
@@ -990,8 +991,6 @@ export default function testLightWeightMapTest07() {
       console.log(TAG + 'end');
     });
 
-    // ====================== entries 接口 ======================
-
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST07_0032
      * @tc.name      testLightWeightMapTest07Chapter0032
@@ -1196,8 +1195,6 @@ export default function testLightWeightMapTest07() {
       expect(ok).assertTrue();
       console.log(TAG + 'end');
     });
-
-    // ====================== toString 接口 ======================
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST07_0038

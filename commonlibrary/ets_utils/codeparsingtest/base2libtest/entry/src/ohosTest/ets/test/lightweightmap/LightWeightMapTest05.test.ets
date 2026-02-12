@@ -18,10 +18,16 @@ class TestClass {
     return this.name;
   }
 }
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testLightWeightMapTest05() {
   describe('testLightWeightMapTest05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -39,8 +45,6 @@ export default function testLightWeightMapTest05() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // ======================= removeAt 接口 =======================
 
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST05_0001
@@ -900,7 +904,6 @@ export default function testLightWeightMapTest05() {
       console.log(TAG + 'end');
     });
 
-    //=============setValueAt接口===============
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TEST05_0039
      * @tc.name      testLightWeightMapTest05Chapter0039

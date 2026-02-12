@@ -3,10 +3,15 @@ import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList07Test() {
   describe('ArrayList07Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -25,7 +30,6 @@ export default function ArrayList07Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ============= removeByIndex 接口测试用例 =============
     /**
      * @tc.number    SUB_ARRAYLIST_REMOVEBYINDEX01_0100
      * @tc.name      testArraylist01NormalMiddleElement0001
@@ -397,7 +401,6 @@ export default function ArrayList07Test() {
           let result: number = arrayList.removeByIndex(Number.MIN_VALUE);
           expect(result).assertEqual(999);
         } catch (error) {
-          // MIN_VALUE is very small positive number, should be treated as 0
           expect(error.code).assertEqual(401);
         }
         console.log(TAG + ' done');
@@ -422,7 +425,6 @@ export default function ArrayList07Test() {
           let result: number = arrayList.removeByIndex(Number.EPSILON);
           expect(result).assertEqual(888);
         } catch (error) {
-          // EPSILON is very small positive number, should be treated as 0
           expect(error.code).assertEqual(401);
         }
         console.log(TAG + ' done');
@@ -716,7 +718,6 @@ export default function ArrayList07Test() {
 
       });
 
-    // ============= remove接口=============
     /**
      * @tc.number    SUB_ARRAYLIST_REMOVE02_0100
      * @tc.name      testArraylist02IntElement0001
@@ -1353,8 +1354,6 @@ export default function ArrayList07Test() {
         console.log(TAG + ' done');
 
       });
-
-    //=============removeByRange接口===============
 
     /**
      * @tc.number    SUB_ARRAYLIST_REMOVEBYRANGE03_0100

@@ -2,10 +2,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { Deque } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Deque06Test() {
   describe('Deque06Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -24,7 +29,6 @@ export default function Deque06Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ============= popFirst接口 =============
     /**
      * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0100
      * @tc.name      testDeque06PopFirst0001
@@ -669,7 +673,6 @@ export default function Deque06Test() {
       expect(deque.length).assertEqual(2);
     });
 
-    //=============popLast接口===============
     /**
      * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0100
      * @tc.name      testDeque06PopLast0001

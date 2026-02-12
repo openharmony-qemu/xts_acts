@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArrayList } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList_02Test() {
   describe('ArrayList_02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,7 +27,7 @@ export default function ArrayList_02Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    //=============clear接口===============
+
     /**
      * @tc.number    SUB_UTIL_ARRAYLIST_CLEAR_02_3900
      * @tc.name      testArrayList02Clear0039
@@ -145,8 +150,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -191,8 +194,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -259,8 +260,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -304,10 +303,9 @@ export default function ArrayList_02Test() {
 
           if (arrayList.length !== 0) {
             console.error(`ERROR: ArrayList not empty after clear! Length: ${arrayList.length}`);
+            expect().assertFail();
           }
         }
-
-
       });
 
     /**
@@ -358,8 +356,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -413,8 +409,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -449,8 +443,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
 
     /**
@@ -493,11 +485,7 @@ export default function ArrayList_02Test() {
         arrayList.clear();
         expect(arrayList.length).assertEqual(0);
         expect(arrayList.isEmpty()).assertTrue();
-
-
       });
-
-    //=============clone接口===============
 
     /**
      * @tc.number    SUB_UTIL_ARRAYLIST_CLONE_02_0100
@@ -523,8 +511,6 @@ export default function ArrayList_02Test() {
 
         clonedList[0][0] = -128;
         expect(arrayList[0][0]).assertEqual(-128);
-
-
       });
 
     /**
@@ -549,8 +535,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(255);
         expect(clonedList[1][0]).assertEqual(255);
         expect(clonedList[1][1]).assertEqual(0);
-
-
       });
 
     /**
@@ -575,8 +559,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(255);
         expect(clonedList[1][0]).assertEqual(0);
         expect(clonedList[1][1]).assertEqual(255);
-
-
       });
 
     /**
@@ -601,8 +583,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(32767);
         expect(clonedList[1][0]).assertEqual(32767);
         expect(clonedList[1][1]).assertEqual(-32768);
-
-
       });
 
     /**
@@ -627,8 +607,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(65535);
         expect(clonedList[1][0]).assertEqual(65535);
         expect(clonedList[1][1]).assertEqual(0);
-
-
       });
 
     /**
@@ -653,8 +631,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(2147483647);
         expect(clonedList[1][0]).assertEqual(2147483647);
         expect(clonedList[1][1]).assertEqual(-2147483648);
-
-
       });
 
     /**
@@ -679,8 +655,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][1]).assertEqual(4294967295);
         expect(clonedList[1][0]).assertEqual(4294967295);
         expect(clonedList[1][1]).assertEqual(0);
-
-
       });
 
     /**
@@ -703,8 +677,6 @@ export default function ArrayList_02Test() {
         expect(clonedList.length).assertEqual(2);
         expect(clonedList[0][0].toString()).assertEqual("-3.4028234663852886e+38");
         expect(clonedList[1][0].toString()).assertEqual("-Infinity");
-
-
       });
 
     /**
@@ -727,8 +699,6 @@ export default function ArrayList_02Test() {
         expect(clonedList.length).assertEqual(2);
         expect(clonedList[0][0].toString()).assertEqual("-1.7976931348623157e+308");
         expect(clonedList[1][0].toString()).assertEqual("-Infinity");
-
-
       });
 
     /**
@@ -751,8 +721,6 @@ export default function ArrayList_02Test() {
         expect(clonedList.length).assertEqual(2);
         expect(clonedList[0][0].toString()).assertEqual("-9223372036854775808");
         expect(clonedList[1][0].toString()).assertEqual("9223372036854775807");
-
-
       });
 
     /**
@@ -776,8 +744,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0][0].toString()).assertEqual("0");
         expect(clonedList[0][1].toString()).assertEqual("18446744073709551615");
         expect(clonedList[1][0].toString()).assertEqual("0");
-
-
       });
 
     /**
@@ -812,8 +778,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[4][0]).assertEqual(255);
         expect(clonedList[4][1]).assertEqual(0);
         expect(clonedList[4][2]).assertEqual(0);
-
-
       });
 
     /**
@@ -844,8 +808,6 @@ export default function ArrayList_02Test() {
 
         clonedList[2] = "modified";
         expect(arrayList[2]).assertEqual("");
-
-
       });
 
     /**
@@ -871,8 +833,6 @@ export default function ArrayList_02Test() {
         expect(clonedList.length).assertEqual(4);
         expect(clonedList[0].length).assertEqual(11);
         expect(clonedList[2]).assertEqual("👿");
-
-
       });
 
     /**
@@ -907,8 +867,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0]).assertEqual("\ud83d\udc46");
         expect(clonedList[3]).assertEqual("\ud83d\udcaf");
         expect(clonedList[8].length).assertEqual(5);
-
-
       });
 
     /**
@@ -937,8 +895,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0].length).assertEqual(1);
         expect(clonedList[3]).assertEqual("0");
         expect(clonedList[4]).assertEqual("NaN");
-
-
       });
 
     /**
@@ -979,8 +935,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[0].startsWith('[')).assertTrue();
         expect(clonedList[0].endsWith('}]')).assertTrue();
         expect(clonedList[1]).assertEqual("{k1:value1,k2:value");
-
-
       });
 
     /**
@@ -1029,8 +983,6 @@ export default function ArrayList_02Test() {
 
         clonedList[0] = 999;
         expect(arrayList[0]).assertEqual(0);
-
-
       });
 
     /**
@@ -1069,8 +1021,6 @@ export default function ArrayList_02Test() {
         expect(clonedList[7]).assertEqual(1000);
         expect(clonedList[8]).assertEqual(0.025);
         expect(clonedList[9].toString()).assertEqual("9007199254740991");
-
-
       });
 
     /**
@@ -1111,8 +1061,6 @@ export default function ArrayList_02Test() {
 
         clonedList[0] = false;
         expect(arrayList[0]).assertTrue();
-
-
       });
 
     /**
@@ -1146,11 +1094,8 @@ export default function ArrayList_02Test() {
 
         clonedList[0][0] = 72;
         expect(arrayList[0][0]).assertEqual(72);
-
-
       });
 
-    //=============subArrayList接口===============
     /**
      * @tc.number    SUB_UTIL_ARRAYLIST_SUBARRAYLIST_02_0100
      * @tc.name      testSubArray02List0001
@@ -1175,8 +1120,6 @@ export default function ArrayList_02Test() {
 
         expect(subList.length).assertEqual(3);
         expect(arrayList.length).assertEqual(5);
-
-
       });
 
     /**
@@ -1202,8 +1145,6 @@ export default function ArrayList_02Test() {
 
         expect(subList.length).assertEqual(4);
         expect(arrayList.length).assertEqual(4);
-
-
       });
 
     /**
@@ -1228,8 +1169,6 @@ export default function ArrayList_02Test() {
 
         expect(subList.length).assertEqual(1);
         expect(arrayList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1255,8 +1194,6 @@ export default function ArrayList_02Test() {
         arrayList.clear();
 
         expect(arrayList.length).assertEqual(0);
-
-
       });
 
     /**
@@ -1283,8 +1220,6 @@ export default function ArrayList_02Test() {
         } catch (error) {
           expect(error.code).assertEqual(10200001);
         }
-
-
       });
 
     /**
@@ -1310,8 +1245,6 @@ export default function ArrayList_02Test() {
         } catch (error) {
           expect(error.code).assertEqual(10200001);
         }
-
-
       });
 
     /**
@@ -1338,8 +1271,6 @@ export default function ArrayList_02Test() {
         } catch (error) {
           expect(error.code).assertEqual(10200001);
         }
-
-
       });
 
     /**
@@ -1379,8 +1310,6 @@ export default function ArrayList_02Test() {
         let objSubList = objList.subArrayList(0, 2);
         expect(objSubList.length).assertEqual(2);
         expect(objList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1408,8 +1337,6 @@ export default function ArrayList_02Test() {
         expect(subList.length).assertEqual(50);
 
         expect(arrayList.length).assertEqual(100);
-
-
       });
 
     /**
@@ -1435,8 +1362,6 @@ export default function ArrayList_02Test() {
         let subList = arrayList.subArrayList(1, 4);
 
         expect(subList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1462,8 +1387,6 @@ export default function ArrayList_02Test() {
 
         let subList2 = arrayList.subArrayList(2, 3);
         expect(subList2.length).assertEqual(1);
-
-
       });
 
     /**
@@ -1494,8 +1417,6 @@ export default function ArrayList_02Test() {
         expect(subList3.length).assertEqual(2);
 
         expect(arrayList.length).assertEqual(10);
-
-
       });
 
     /**
@@ -1531,8 +1452,6 @@ export default function ArrayList_02Test() {
 
         let mixedSubList = mixedList.subArrayList(1, 4);
         expect(mixedSubList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1564,8 +1483,6 @@ export default function ArrayList_02Test() {
 
         let subList2 = arrayList.subArrayList(0, 4);
         expect(subList2.length).assertEqual(4);
-
-
       });
 
     /**
@@ -1605,8 +1522,6 @@ export default function ArrayList_02Test() {
 
         let float32SubList = float32ArrayList.subArrayList(0, 2);
         expect(float32SubList.length).assertEqual(2);
-
-
       });
 
     /**
@@ -1646,8 +1561,6 @@ export default function ArrayList_02Test() {
 
         let regexSubList = regexList.subArrayList(2, 5);
         expect(regexSubList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1688,8 +1601,6 @@ export default function ArrayList_02Test() {
 
         let setSubList = setList.subArrayList(1, 4);
         expect(setSubList.length).assertEqual(3);
-
-
       });
 
     /**
@@ -1728,8 +1639,6 @@ export default function ArrayList_02Test() {
 
         let dataViewSubList = dataViewList.subArrayList(0, 2);
         expect(dataViewSubList.length).assertEqual(2);
-
-
       });
   })
 }

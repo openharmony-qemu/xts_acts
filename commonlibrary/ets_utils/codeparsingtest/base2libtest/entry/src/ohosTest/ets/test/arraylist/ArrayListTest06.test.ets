@@ -6,10 +6,15 @@ interface ErrorWithCodeAndMessage {
   message: string;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ArrayList06Test() {
   describe('ArrayList06Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -28,7 +33,6 @@ export default function ArrayList06Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    //====================getCapacity接口======================
     /**
      * @tc.number    SUB_ARRAYLIST_TEST06_0100
      * @tc.name      testArrayList06Chapter0001
@@ -132,7 +136,7 @@ export default function ArrayList06Test() {
     it("testArrayList06Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testArrayList06Chapter0005';
       console.log(TAG + ' start');
-      let arrayList: ArrayList<number> = new ArrayList<number>(); // 简化声明
+      let arrayList: ArrayList<number> = new ArrayList<number>();
       try {
         const invalidCall: () => number = (): number => {
           const unboundMethod = arrayList.getCapacity;
@@ -597,7 +601,6 @@ export default function ArrayList06Test() {
       console.log(`${TAG} done`);
     });
 
-    //=====================convertToArray接口=====================
     /**
      * @tc.number    SUB_ARRAYLIST_TEST06_2700
      * @tc.name      testArrayList06Chapter0027
@@ -1325,7 +1328,6 @@ export default function ArrayList06Test() {
       console.info(`result = ${JSON.stringify(resultArray)}`);
     });
 
-    //=====================isEmpty接口======================
     /**
      * @tc.number    SUB_ARRAYLIST_TEST06_5300
      * @tc.name      testArrayList06Chapter0053
@@ -1366,7 +1368,7 @@ export default function ArrayList06Test() {
       const result: boolean = arrayList.isEmpty();
       expect(result).assertEqual(false);
       expect(arrayList.length > 0).assertTrue();
-      console.info("result = ", result); // result =  false
+      console.info("result = ", result);
       console.log(TAG + ' done, non-empty list isEmpty result: ', result);
     });
 
