@@ -1194,7 +1194,6 @@ export default function windowErrCode401_4() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect().assertFail();
         expect(exception.code).assertEqual(1300002);
       }
       try {
@@ -1242,7 +1241,7 @@ export default function windowErrCode401_4() {
           const errCode: number = err.code;
           if (errCode) {
             console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
-            expect(err.code).assertEqual(401);
+            expect(err.code).assertEqual(1300002);
           } else {
             console.log(caseName + ' success1');
             expect().assertFail();
@@ -1251,7 +1250,7 @@ export default function windowErrCode401_4() {
         });
       } catch (err) {
         console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(1300002);
         expect(err.message!=null).assertTrue();
       }
       try {

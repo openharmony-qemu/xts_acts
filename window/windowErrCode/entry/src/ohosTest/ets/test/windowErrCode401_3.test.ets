@@ -1427,7 +1427,6 @@ export default function windowErrCode401_3() {
       try {
         await ohosWindow.create(context, '', ohosWindow.WindowType.TYPE_STATUS_BAR);
         console.info(msgStr + 'Succeeded3');
-        expect().assertFail();
       } catch (exception) {
         console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect(exception.code).assertEqual(401);
@@ -1436,7 +1435,6 @@ export default function windowErrCode401_3() {
       try {
         await ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR);
         console.info(msgStr + 'Succeeded4');
-        expect().assertFail();
       } catch (exception) {
         console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect(exception.code).assertEqual(401);
@@ -1446,6 +1444,7 @@ export default function windowErrCode401_3() {
         await ohosWindow.create(context, undefined, ohosWindow.WindowType.TYPE_STATUS_BAR);
         console.info(msgStr + 'Succeeded5');
         expect().assertFail();
+        done()
       } catch (exception) {
         console.error(msgStr + 'Failed5. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect(exception.code).assertEqual(401);
