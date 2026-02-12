@@ -5872,11 +5872,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         try {
           pipController = await pipWindow.create(config);
           pipController.updateContentNode(undefined);
-          expect(true).assertTrue();
+          expect().assertFail();
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
-          expect().assertFail();
+          expect(err.code).assertEqual(401);
           done();
         }
       } else {

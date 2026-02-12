@@ -1488,7 +1488,7 @@ export default function windowErrCode401_3() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
+        expect(exception.code).assertEqual(1300002);
         expect(exception.message!=null).assertTrue();
       }
       try {

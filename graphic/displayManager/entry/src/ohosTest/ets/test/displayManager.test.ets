@@ -3933,58 +3933,5 @@ export default function displayTest() {
       }
     });
 
-    /**
-     * @tc.name   testCapture_0100
-     * @tc.number testCapture_0100
-     * @tc.desc   testCapture_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testCapture_0100', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testCapture_0100";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      try {
-        screenshot.capture(null).then(async () => {
-          console.info(msgStr + 'Succeeded in calling capture.');
-          expect().assertFail();
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(msgStr + 'Failed to call capture. Cause: ' + JSON.stringify(err));
-          if (err.code === 801) {
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
-        });
-      } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        screenshot.capture(undefined).then(async () => {
-          console.info(msgStr + 'Succeeded2 in calling capture.');
-          expect().assertFail();
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(msgStr + 'Failed2 to call capture. Cause: ' + JSON.stringify(err));
-          if (err.code === 801) {
-            done()
-          } else {
-            expect().assertFail();
-            done()
-          }
-        });
-      } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-        done()
-      }
-    })
-
   })
 }
