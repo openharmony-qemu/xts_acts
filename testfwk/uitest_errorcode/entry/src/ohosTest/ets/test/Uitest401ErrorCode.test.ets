@@ -2477,7 +2477,7 @@ export default function abilityTest() {
     })
 
      /**
-     * @tc.name   testApi9_Driver_longClickAt_17000007
+     * @tc.name   testApi20_Driver_longClickAt_17000007
      * @tc.number UiTest_uitest401_065
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
@@ -4118,7 +4118,7 @@ export default function abilityTest() {
     })
 
      /**
-     * @tc.name   testApi20_Driver_isComponentPresentWhenDrag_17000007
+     * @tc.name   testApi22_Driver_isComponentPresentWhenDrag_17000007
      * @tc.number UiTest_uitest401_098
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
@@ -4342,7 +4342,7 @@ export default function abilityTest() {
 
      /**
      * @tc.name   testApi9_UiWindow_moveTo_401
-     * @tc.number UiTest_uitest401_0102
+     * @tc.number UiTest_uitest401_01020
      * @tc.desc   type 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
