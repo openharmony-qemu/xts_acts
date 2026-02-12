@@ -515,6 +515,62 @@ export default function StackTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testStaticLocate001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATIC_CASE_0100
+     * @tc.desc   Testing Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testStaticLocate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let stack = new Stack<number | null | undefined>();
+      stack.push(2);
+      stack.push(4);
+      stack.push(5);
+      stack.push(null);
+      stack.push(undefined);
+      let result = stack.locate(5);
+      expect(result).assertEqual(2);
 
+      let result1 = stack.locate(null);
+      expect(result1).assertEqual(3);
+
+      let result2 = stack.locate(undefined);
+      expect(result2).assertEqual(4);
+
+    });
+
+    /**
+     * @tc.name   testStaticForEach001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATIC_CASE_0200
+     * @tc.desc   Testing Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testStaticForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let stack = new Stack<number | null | undefined>();
+      stack.push(2);
+      stack.push(4);
+      stack.push(5);
+      stack.push(4);
+      stack.forEach((value : number, index: number) :void => {
+        console.info("value:" + value, "index:" + index);
+      });
+      try {
+        stack.forEach(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        stack.forEach(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
   })
 }

@@ -521,6 +521,55 @@ export default function DequeTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testDequeCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDequeCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testDequeCase001';
+      let deque: Deque<number | string | boolean | undefined | null | Object> = new Deque();
+      deque.insertFront("squirrel");
+      let result1 = deque.has(null);
+      expect(result1).assertFalse();
 
+      let result2 = deque.has(undefined);
+      expect(result2).assertFalse();
+
+      deque.insertFront(null);
+      let result3 = deque.has(null);
+      expect(result3).assertTrue();
+
+      deque.insertFront(undefined);
+      let result4 = deque.has(undefined);
+      expect(result4).assertTrue();
+    });
+
+    /**
+     * @tc.name   testDequeCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDequeCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testDequeCase002';
+      let num = 0;
+      let deque: Deque<number | string | boolean | undefined | null | Object> = new Deque();
+      deque.insertFront(2);
+      deque.insertEnd(3);
+      deque.forEach((value: number | string | boolean | undefined | null | Object, index: number): void => {
+        num++;
+      }, null);
+
+      deque.forEach((value: number | string | boolean | undefined | null | Object, index: number): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
   })
 }
