@@ -89,11 +89,11 @@ export default function patternLockThemeTest() {
       const activeColor: string = attrsPatternLock?.activeColor?.toString().toUpperCase() ?? emptyAttr;
       const checkActiveColor: string = colorValues?.get(`compBackgroundNeutral`)?.toString().toUpperCase()
         ?? emptyCheck;
-      expect(activeColor, checkActiveColor);
+      expect(activeColor).assertEqual(checkActiveColor);
       const selectedColor: string = attrsPatternLock?.selectedColor?.toString().toUpperCase();
       const checkSelectedColor: string = colorValues?.get(`compBackgroundNeutral`)?.toString().toUpperCase()
         ?? emptyCheck;
-      expect(selectedColor, checkSelectedColor);
+      expect(selectedColor).assertEqual(checkSelectedColor);
       const pathColor: string = attrsPatternLock?.pathColor?.toString().toUpperCase();
       const checkPathColor: string = colorValues?.get(`compDivider`)?.toString().toUpperCase() ?? emptyCheck;
       expect(pathColor).assertEqual(checkPathColor);
