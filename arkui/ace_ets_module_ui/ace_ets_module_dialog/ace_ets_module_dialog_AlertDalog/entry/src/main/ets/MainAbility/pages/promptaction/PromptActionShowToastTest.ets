@@ -181,7 +181,7 @@ struct PromptActionShowToastTest {
           .onClick(() => {
             try {
               // Test passing null as options parameter
-              promptAction.showToast(null as any);
+              promptAction.showToast(null);
               this.toastTestResult = 'options null: SUCCESS';
               this.lastError = '';
             } catch (error) {
@@ -200,7 +200,7 @@ struct PromptActionShowToastTest {
           .onClick(() => {
             try {
               // Test passing undefined as options parameter
-              promptAction.showToast(undefined as any);
+              promptAction.showToast(undefined);
               this.toastTestResult = 'options undefined: SUCCESS';
               this.lastError = '';
             } catch (error) {
