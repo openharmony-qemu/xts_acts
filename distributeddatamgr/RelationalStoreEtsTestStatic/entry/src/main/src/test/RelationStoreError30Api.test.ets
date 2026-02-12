@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 let domain: int = 0x0000;
@@ -44,27 +44,6 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
 
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
-const dbName = "testljj.db"
-let dbPath =  "";
-let dbPathWal =  "";
-let dbPathShm = "";
-async function CreateCorruptDb() {
-  try {
-    let fileExist = fs.accessSync(dbPath);
-    console.info(tag + "fileExist:"+fileExist)
-    expect(fileExist).assertTrue();
-    fs.truncateSync(dbPathWal, 4)
-    fs.truncateSync(dbPathShm, 4)
-    let file = fs.openSync(dbPath, fs.OpenMode.READ_ONLY | fs.OpenMode.TRUNC);
-    fs.truncateSync(file.fd, 4);
-    fs.fsyncSync(file.fd)
-    fs.closeSync(file)
-  } catch (err) {
-    err = err as BusinessError;
-    console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
-  }
-  console.info(tag, `quit create corrupt store`);
-}
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,
@@ -85,10 +64,6 @@ export default function RelationStoreError30Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      context.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
     })
 
     /**
@@ -107,14 +82,14 @@ export default function RelationStoreError30Test() {
           securityLevel: data_relationalStore.SecurityLevel.S1
         }
         try {
-          rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+          rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
           done();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError00Test0001 err *************  ' + err.code);
           expect(err.code == 14800030).assertEqual(true);
-          await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+          await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
           done();
         }
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError30Test0001 end *************');
@@ -136,14 +111,14 @@ export default function RelationStoreError30Test() {
           securityLevel: data_relationalStore.SecurityLevel.S1
         }
         try{
-          await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+          await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
           done();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* deleteRdbStore err *************  ' + err.code);
           expect(err.code == 14800030).assertEqual(true);
-          await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+          await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
           done();
         }
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError30Test0002 end *************');
