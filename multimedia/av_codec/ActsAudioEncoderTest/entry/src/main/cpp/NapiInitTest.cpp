@@ -83,31 +83,23 @@ static napi_value CreateAsyncTest(napi_env env,
                                   const char* resourceNameStr)
 {
     int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-
     if (caseNum < 0 || caseNum >= handlerCount) {
         napi_throw_error(env, nullptr, "Invalid case number");
         return nullptr;
     }
-
     napi_value promise;
     auto* context = new GenericAsyncContext();
-
     context->env = env;
     context->caseNum = caseNum;
     context->result = RESULT_ERROR;
     context->handlers = handlers;
     context->handlerCount = handlerCount;
-
     napi_create_promise(env, &context->deferred, &promise);
-
     napi_value resourceName;
     napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
-
     napi_create_async_work(
         env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
-
     napi_queue_async_work(env, context->work);
-
     return promise;
 }
 
