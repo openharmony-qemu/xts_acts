@@ -2351,8 +2351,8 @@ export default function Sim2Public() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("testTelephonySimGetSimCardTypeSync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonySimGetSimCardTypeSync0100';
+    it("testTelephonySimGetSimCardTypeSync0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimCardTypeSync0300';
       console.info(`${caseName} test start `);
       sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
         if (data) {
