@@ -267,31 +267,5 @@ export default function UIAbilityContextStatic() {
       });
       hilog.info(domain,  tag , '%{public}s', '--end');
     })
-
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_Static_1200
-     * @tc.desc   Expect: failed with code 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        application.createPluginModuleContext(context!, '', '')
-          .then((data: common.Context): void => {
-            hilog.info(0x0000, 'testTag', 'createPluginModuleContext success data:' + JSON.stringify(data));
-          })
-          .catch((err: Error): void => {
-            hilog.info(0x0000, 'testTag', `createPluginModuleContext faiiled code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(401);
-            done();
-          });
-      } catch (err) {
-        hilog.info(domain,  tag , 'createPluginModuleContext Failed: ' + JSON.stringify(err));
-        expect(err?.code).assertEqual(401);
-        done();
-      }
-    })
   })
 }

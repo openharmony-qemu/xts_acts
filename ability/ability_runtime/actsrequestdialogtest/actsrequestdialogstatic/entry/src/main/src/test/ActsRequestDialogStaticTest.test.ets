@@ -70,6 +70,8 @@ export default function ActsRequestDialogStaticTest() {
       console.log('ACTS_requestDialog_static_0100====<begin');
       let id: int;
       let resultCode: dialogRequest.ResultCode | undefined;
+      expect(0).assertEqual(dialogRequest.ResultCode.RESULT_OK);
+      expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
           if (err) {
@@ -99,6 +101,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_CANCEL'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0100 request end + result:" + JSON.stringify(result));
@@ -162,6 +165,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_OK'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0200 request end + result:" + JSON.stringify(result));
