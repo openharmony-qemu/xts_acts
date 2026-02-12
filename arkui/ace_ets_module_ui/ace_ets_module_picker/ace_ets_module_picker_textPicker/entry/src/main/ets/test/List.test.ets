@@ -31,6 +31,13 @@ import textPickerSelectedAreaTest from './textPicker/textPickerSelectedArea.test
 import textPickerTextStyleThreeTest from './textPicker/textPickerTextStyleThree.test';
 import textPickerValueTest from './textPicker/textPickerValue.test';
 
+import TextPickerDefaultPickerItemHeightNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDefaultPickerItemHeightNullUndefined.test';
+import TextPickerDisappearTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDisappearTextStyleNullUndefined.test';
+import TextPickerGradientHeightNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerGradientHeightNullUndefined.test';
+import TextPickerSelectedBackgroundStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerSelectedBackgroundStyleNullUndefined.test';
+import TextPickerSelectedTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerSelectedTextStyleNullUndefined.test';
+import TextPickerTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerTextStyleNullUndefined.test';
+
 export default function testsuite() {
     textPickerSelectedBackgroundStyleTest();
     textPickerPropertiesModifierTest();
@@ -49,4 +56,10 @@ export default function testsuite() {
     textPickerSelectedAreaTest();
     textPickerTextStyleThreeTest();
     textPickerValueTest();
+    TextPickerDefaultPickerItemHeightNullUndefinedTest();
+    TextPickerDisappearTextStyleNullUndefinedTest();
+    TextPickerGradientHeightNullUndefinedTest();
+    TextPickerSelectedBackgroundStyleNullUndefinedTest();
+    TextPickerSelectedTextStyleNullUndefinedTest();
+    TextPickerTextStyleNullUndefinedTest();
 }
