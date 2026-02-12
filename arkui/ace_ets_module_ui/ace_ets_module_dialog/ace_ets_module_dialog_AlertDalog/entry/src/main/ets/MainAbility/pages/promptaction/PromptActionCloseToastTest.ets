@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { promptAction } from '@kit.ArkUI';
+import promptAction from '@ohos.promptAction';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
@@ -138,7 +138,7 @@ struct PromptActionCloseToastTest {
           .onClick(() => {
             try {
               // Test passing null as toastId parameter
-              promptAction.closeToast(null as any);
+              promptAction.closeToast(null);
               this.toastTestResult = 'closeToast null: SUCCESS';
               this.lastError = '';
             } catch (error) {
@@ -157,7 +157,7 @@ struct PromptActionCloseToastTest {
           .onClick(() => {
             try {
               // Test passing undefined as toastId parameter
-              promptAction.closeToast(undefined as any);
+              promptAction.closeToast(undefined);
               this.toastTestResult = 'closeToast undefined: SUCCESS';
               this.lastError = '';
             } catch (error) {

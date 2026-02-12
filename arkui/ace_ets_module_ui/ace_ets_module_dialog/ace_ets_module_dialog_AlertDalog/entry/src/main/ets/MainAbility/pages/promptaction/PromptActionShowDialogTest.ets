@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { promptAction } from '@kit.ArkUI';
+import promptAction from '@ohos.promptAction';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
@@ -378,7 +378,7 @@ struct PromptActionShowDialogTest {
             try {
               this.dialogIndex++;
               // Test passing null as options parameter
-              PromptAction.showDialog(null as any).then((data: promptAction.ShowDialogSuccessResponse) => {
+              PromptAction.showDialog(null).then((data: promptAction.ShowDialogSuccessResponse) => {
                 this.dialogTestResult = 'options null: SUCCESS';
                 this.lastError = '';
               }).catch((error: BusinessError) => {
@@ -402,7 +402,7 @@ struct PromptActionShowDialogTest {
             try {
               this.dialogIndex++;
               // Test passing undefined as options parameter
-              PromptAction.showDialog(undefined as any).then((data: promptAction.ShowDialogSuccessResponse) => {
+              PromptAction.showDialog(undefined).then((data: promptAction.ShowDialogSuccessResponse) => {
                 this.dialogTestResult = 'options undefined: SUCCESS';
                 this.lastError = '';
               }).catch((error: BusinessError) => {
