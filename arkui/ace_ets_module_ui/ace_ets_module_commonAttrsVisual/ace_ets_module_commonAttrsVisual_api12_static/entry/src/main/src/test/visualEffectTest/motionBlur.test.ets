@@ -60,15 +60,15 @@ export default function motionBlurTest() {
     });
 
 
-    
-    
-/**
+
+
+    /**
      * @tc.number   motionBlurTest_static_0100
      * @tc.name     motionBlurTest_static_0100
      * @tc.desc     motionBlurTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('motionBlurTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('motionBlurTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('motionBlurTest_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('motionBlur_id');

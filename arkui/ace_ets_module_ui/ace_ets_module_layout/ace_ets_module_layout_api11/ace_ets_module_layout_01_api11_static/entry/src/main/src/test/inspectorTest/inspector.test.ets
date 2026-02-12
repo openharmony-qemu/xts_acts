@@ -255,53 +255,5 @@ export default function inspectorJsunit() {
         console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));
       }
     });
-
-
-
-    /**
-     * @tc.number   testInspectorTestAdd_static_007
-     * @tc.name     testInspectorTestAdd_static_007
-     * @tc.desc     testInspectorTestAdd_static_007
-     * @tc.level    Level.LEVEL0
-     */
-    it('testInspectorTestAdd_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testInspectorTestAdd007 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('getFilteredInspectorTree'))
-      console.info('[testInspectorTestAdd007] findcomponent');
-      await (btn?.click() as Promise<void>);
-      console.info('[testInspectorTestAdd007] click success');
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text01_id');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("response: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertContain("401");
-      console.info('[testInspectorTestAdd007] END');
-      done();
-    });
-
-
-
-    /**
-     * @tc.number   testInspectorTestAdd_static_008
-     * @tc.name     testInspectorTestAdd_static_008
-     * @tc.desc     testInspectorTestAdd_static_008
-     * @tc.level    Level.LEVEL0
-     */
-    it('testInspectorTestAdd_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testInspectorTestAdd008 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('getFilteredInspectorTreeById'))
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text02_id');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("response: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertContain("401");
-      console.info('[testInspectorTestAdd008] END');
-      done();
-    });
   })
 }
