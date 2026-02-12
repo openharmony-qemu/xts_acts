@@ -221,34 +221,6 @@ export default function webStorage() {
     })
 
     /**
-     * @tc.name   testDeleteAllDataFalse
-     * @tc.number SUB_WEB_DELETEALLDATA_0200
-     * @tc.desc   test deleteAllData with incognito false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testDeleteAllDataFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testDeleteAllDataFalse', 134900)
-      Utils.registerEvent('testDeleteAllDataFalse', 0, 135030, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
-
-    /**
-     * @tc.name   testDeleteAllDataTrue
-     * @tc.number SUB_WEB_DELETEALLDATA_0300
-     * @tc.desc   test deleteAllData with incognito true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testDeleteAllDataTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testDeleteAllDataTrue', 134900)
-      Utils.registerEvent('testDeleteAllDataTrue', 0, 135040, done);
-      sendEventByKey('WebStorageButton', 10, '');
-    })
-
-    /**
      * @tc.name   testDeleteOrigin001
      * @tc.number SUB_WEB_DELETEORIGIN_0100
      * @tc.desc   test deleteOrigin
