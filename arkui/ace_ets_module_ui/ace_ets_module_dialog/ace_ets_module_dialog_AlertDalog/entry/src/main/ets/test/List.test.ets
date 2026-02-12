@@ -31,7 +31,7 @@ import alertDialogBlurStyleOptionsTest from './alertDialogTest/alertDialogBlurSt
 import promptActionShowToastTest from './showToastTest/PromptActionShowToast.test';
 import promptActionOpenToastTest from './promptaction/PromptActionOpenToast.test';
 import promptActionCloseToastTest from './promptaction/PromptActionCloseToast.test';
-import promptActionShowDialogTest from './promptaction/PromptActionShowDialog.test';
+import promptActionShowDialogTest from './promptaction/PromptActionShowDialogTest.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
