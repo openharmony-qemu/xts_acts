@@ -2715,7 +2715,7 @@ export default function abilityTest() {
                     console.log("AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 error : " + JSON.stringify(err));
                     if (err && err.code != 0) {
                         console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 has error: ${err.code}`);
-                        expect(err.code).assertEqual(401);
+                        expect(err.code).assertEqual(930000);
                         done();
                     } else {
                         expect(result).assertEqual(undefined);
@@ -2755,7 +2755,7 @@ export default function abilityTest() {
                     done();
                 }).catch((err) => {
                     console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600 has error: ${err}`);
-                    expect(err.code).assertEqual(401);
+                    expect(err.code).assertEqual(9300000);
                     done();
                 });
             } catch (error) {

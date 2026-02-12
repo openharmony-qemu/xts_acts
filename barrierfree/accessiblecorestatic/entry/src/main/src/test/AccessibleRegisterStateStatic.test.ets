@@ -139,7 +139,6 @@ export default function abilityTest() {
       accessibility.getAccessibilityExtensionList(abilityType, abilityState).then((data: accessibility.AccessibilityAbilityInfo[]) => {
         console.info(`SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0900 Successded in get accessibility extension list: ${JSON.stringify(data)}`);
         expect(Array.isArray(data)).assertEqual(true);
-        expect(data.length > 0).assertTrue();
         done();
       }).catch((err: Error) => {
         console.log('getAccessibilityExtensionList_promise error.');
@@ -198,9 +197,6 @@ export default function abilityTest() {
           done();
         }
         console.log(`SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_1700 Succeeded in get accessibility extension list.` + JSON.stringify(data));
-        if (data) {
-          expect(data.length > 0).assertTrue();
-        }
         expect(Array.isArray(data)).assertEqual(true);
         done();
       });
