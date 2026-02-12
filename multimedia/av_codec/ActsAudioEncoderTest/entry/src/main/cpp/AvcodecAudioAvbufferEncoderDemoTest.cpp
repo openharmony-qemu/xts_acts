@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -706,7 +706,7 @@ uint32_t AudioBufferAacEncDemo::GetInputIndex()
     const auto totalTimeout = std::chrono::seconds(TIMEOUT_SEC);
     std::unique_lock<std::mutex> lock(signal_->inMutex_);
     bool hasData = signal_->inCond_.wait_for(
-        lock, std::chrono::milliseconds(100), [this]() { return !signal_->inQueue_.empty(); });
+        lock, totalTimeout, [this]() { return !signal_->inQueue_.empty(); });
     if (!hasData) {
         return 0;
     }
@@ -721,7 +721,7 @@ uint32_t AudioBufferAacEncDemo::GetOutputIndex()
     const auto totalTimeout = std::chrono::seconds(TIMEOUT_SEC);
     std::unique_lock<std::mutex> lock(signal_->outMutex_);
     bool hasData = signal_->outCond_.wait_for(
-        lock, std::chrono::milliseconds(100), [this]() { return !signal_->outQueue_.empty(); });
+        lock, totalTimeout, [this]() { return !signal_->outQueue_.empty(); });
     if (!hasData) {
         return 0;
     }
