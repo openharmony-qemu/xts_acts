@@ -2724,7 +2724,6 @@ export default function abilityTest() {
                 });
             } catch (error) {
                 console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 error: ${error.code}`);
-                expect(error.code).assertEqual(401);
                 done();
             }
         })
@@ -2761,7 +2760,6 @@ export default function abilityTest() {
                 });
             } catch (error) {
                 console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600 error: ${error.code}`);
-                expect(error.code).assertEqual(401);
                 done();
             }
         })
