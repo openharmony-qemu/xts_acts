@@ -2142,5 +2142,101 @@ export default function windowErrCode401_3() {
       }
     })
 
+    /**
+     * @tc.name   testLoadContentByName_0100
+     * @tc.number testLoadContentByName_0100
+     * @tc.desc   testLoadContentByName_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadContentByName_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testLoadContentByName_0100";
+      let windowClass = windowStage.getMainWindowSync()
+      let storage: LocalStorage = new LocalStorage();
+      try {
+        windowClass.loadContentByName('', storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName(null, storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed1, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success1');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed1. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName(undefined, storage, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(401);
+          } else {
+            console.log(caseName + ' success2');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed2. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+      }
+      try {
+        windowClass.loadContentByName('pages/Index', null, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed3, err: ' + JSON.stringify(err));
+            expect().assertFail();
+          } else {
+            console.log(caseName + ' success3');
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed3. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect().assertFail();
+      }
+      try {
+        windowClass.loadContentByName('pages/Index', undefined, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + ' failed4, err: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else {
+            console.log(caseName + ' success4');
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed4. Caused: err.code '+ err.code +' ,err.message: '+err.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
