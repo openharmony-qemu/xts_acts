@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
 
 export default function AttributeUpdaterNullUndefinedTest() {
   describe('AttributeUpdaterNullUndefinedTest', () => {
@@ -32,7 +32,7 @@ export default function AttributeUpdaterNullUndefinedTest() {
         if (!("gestureEventTest" == pages.name)) {
           console.info("get AttributeUpdaterNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push AttributeUpdaterNullUndefinedTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -43,7 +43,7 @@ export default function AttributeUpdaterNullUndefinedTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("AttributeUpdaterNullUndefinedTest after each called");
     });
 
@@ -58,10 +58,10 @@ export default function AttributeUpdaterNullUndefinedTest() {
     it('AttributeUpdaterApplyNormalAttributeNull_0100', Level.LEVEL2, async (done: Function) => {
       console.info('setResourceManagerCacheMaxCountForHSPNull_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button1 = await driver.findComponent(ON.id('btn_attributeModifier_null'));
       await button1.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       expect(AppStorage.get('applyNormalAttributeNullUndefined')).assertEqual(null);
       expect(AppStorage.get('initializeModifierNullUndefined')).assertEqual(null);
       expect(AppStorage.get('onComponentChangedNullUndefined')).assertEqual(null);
@@ -83,10 +83,10 @@ export default function AttributeUpdaterNullUndefinedTest() {
     it('AttributeUpdaterApplyNormalAttributeUndefined_0200', Level.LEVEL2, async (done: Function) => {
       console.info('AttributeUpdaterApplyNormalAttributeUndefined_0200 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button1 = await driver.findComponent(ON.id('btn_attributeModifier_undefined'));
       await button1.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       expect(AppStorage.get('applyNormalAttributeNullUndefined')).assertEqual(undefined);
       expect(AppStorage.get('initializeModifierNullUndefined')).assertEqual(undefined);
       expect(AppStorage.get('onComponentChangedNullUndefined')).assertEqual(undefined);
