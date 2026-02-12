@@ -919,21 +919,21 @@ export default function avMusicTemplateThrowsErrorTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1501
-     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1501
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1511
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1511
      * @tc.desc   Testing off query compilation by keyword
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1511', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         template?.offQueryCompilationByKeyword(async (keyword: string): Promise<avMusicTemplate.Compilation[]> => {
           return [FakerDataUtil.getCompilation(keyword)];
         });
         done();
       } catch (err) {
-        CommonUtils.logError(TAG, "OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_1501 catch err: " + CommonUtils.getError(err));
+        CommonUtils.logError(TAG, "OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_1511 catch err: " + CommonUtils.getError(err));
         expect(Number(err.code) === 35000005).assertTrue();
         done();
       }

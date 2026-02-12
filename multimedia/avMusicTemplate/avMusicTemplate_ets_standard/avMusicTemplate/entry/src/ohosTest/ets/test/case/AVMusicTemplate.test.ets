@@ -2016,14 +2016,14 @@ export default function avMusicTemplateTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6100
-     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6100
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6111
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6111
      * @tc.desc   Testing destroy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_6111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           template = AVMusicTemplateUtil.getTemplate();
