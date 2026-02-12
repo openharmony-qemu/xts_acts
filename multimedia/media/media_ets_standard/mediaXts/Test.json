@@ -25,7 +25,8 @@
     },
     {
       "test-file-name": [
-        "ActsMediaXtsTest.hap"
+        "ActsMediaXtsTest.hap",
+        "ActsMediaXtsMainTest.hap"
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true
