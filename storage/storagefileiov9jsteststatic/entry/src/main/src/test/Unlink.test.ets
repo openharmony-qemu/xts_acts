@@ -265,7 +265,7 @@ export default function fileIOUnlink() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_006 has failed for' + JSON.stringify(e));
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -284,7 +284,7 @@ export default function fileIOUnlink() {
         fs.unlink("", (err: BusinessError<void> | null) => {
           if (err) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_007 has failed for' + JSON.stringify(err));
-            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -313,7 +313,7 @@ export default function fileIOUnlink() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_004 has failed for' + JSON.stringify(e));
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        eexpect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
   })

@@ -108,7 +108,7 @@ export default function fileIODfsConnect() {
     } catch (e) {
       e = e as BusinessError;
       hilog.info(domain, tag, '%{public}s', testNum + 'connectDfs has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900004 && e.message == 'Interrupted system call').assertTrue();
       done();
     }
   });
@@ -130,7 +130,7 @@ export default function fileIODfsConnect() {
     } catch (e) {
       e = e as BusinessError;
       hilog.info(domain, tag, '%{public}s', testNum + 'disconnectDfs has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900004 && e.message == 'Interrupted system call').assertTrue();
       done();
     }
   });

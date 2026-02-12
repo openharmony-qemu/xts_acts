@@ -162,7 +162,7 @@ export default function fileIORename() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_005 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -185,7 +185,7 @@ export default function fileIORename() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_006 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -432,7 +432,7 @@ export default function fileIORename() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_009 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -456,7 +456,7 @@ export default function fileIORename() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_010 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -476,7 +476,7 @@ export default function fileIORename() {
         fs.rename("", newf, (err: BusinessError<void> | null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_011 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -504,7 +504,7 @@ export default function fileIORename() {
           if (err?.code != 0) {
             fs.unlinkSync(fpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_012 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });

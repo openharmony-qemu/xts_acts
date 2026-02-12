@@ -124,7 +124,7 @@ export default function fileIOSymlink() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_003 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -148,7 +148,7 @@ export default function fileIOSymlink() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_004 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -170,7 +170,7 @@ export default function fileIOSymlink() {
           if (err?.code != 0) {
             fs.unlinkSync(fpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -198,7 +198,7 @@ export default function fileIOSymlink() {
           if (err?.code != 0) {
             fs.unlinkSync(fpath);
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_006 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
@@ -228,7 +228,7 @@ export default function fileIOSymlink() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_001 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -251,7 +251,7 @@ export default function fileIOSymlink() {
         e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_002 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
   })

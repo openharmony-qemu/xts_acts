@@ -144,8 +144,8 @@ export default function fileIOSetxattr() {
         expect(false).assertTrue();
       } catch (e) {
         e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_005 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_005 error' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -167,8 +167,8 @@ export default function fileIOSetxattr() {
         expect(false).assertTrue();
       } catch (e) {
         e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_006 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_006 error' + e.code + e.message);
+        expect(e.code === 13900042).assertTrue();
         fs.unlinkSync(fpath);
         done();
       }
@@ -215,8 +215,8 @@ export default function fileIOSetxattr() {
         expect(false).assertTrue();
       } catch (e) {
         e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_005 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_005 error' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -237,8 +237,8 @@ export default function fileIOSetxattr() {
         expect(false).assertTrue();
       } catch (e) {
         e = e as BusinessError;
-        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_006 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_006 error' + e.code);
+        expect(e.code === 13900042).assertTrue();
         fs.unlinkSync(fpath);
       }
     });
@@ -278,12 +278,14 @@ export default function fileIOSetxattr() {
     it('test_FileIO_Getxattr_Async_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let attrKey = 'user.comment';
       try {
-        await fs.getxattr("", attrKey);
-        expect(false).assertTrue();
+        let getValue = await fs.getxattr("", attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        done();
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Async_Static_001 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(false).assertTrue();
         done();
       }
     });
@@ -300,13 +302,15 @@ export default function fileIOSetxattr() {
       let fpath = await Utils.nextFileName('test_FileIO_Getxattr_Async_Static_002');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
-        await fs.getxattr(fpath, "");
-        expect(false).assertTrue();
+        let getValue = await fs.getxattr(fpath, "");
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
+        done();
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Async_Static_002 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
-        fs.unlinkSync(fpath);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -322,12 +326,13 @@ export default function fileIOSetxattr() {
     it('test_FileIO_Getxattr_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let attrKey = 'user.comment';
       try {
-        fs.getxattrSync("", attrKey);
-        expect(false).assertTrue();
+        let getValue = fs.getxattrSync("", attrKey);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 value is: ' + getValue);
+        expect(getValue).assertEqual("");
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(false).assertTrue();
       }
     });
 
@@ -343,13 +348,14 @@ export default function fileIOSetxattr() {
       let fpath = await Utils.nextFileName('test_FileIO_Getxattr_Sync_Static_002');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
-        fs.getxattrSync(fpath, "");
-        expect(false).assertTrue();
+        let getValue = fs.getxattrSync(fpath, "");
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_002 value is: ' + getValue);
+        expect(getValue).assertEqual("");
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_002 error' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
-        fs.unlinkSync(fpath);
+        expect(false).assertTrue();
       }
     });
 

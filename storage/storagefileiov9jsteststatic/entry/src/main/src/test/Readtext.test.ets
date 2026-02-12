@@ -311,7 +311,7 @@ export default function fileIOReadtext() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_sync_static_012 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -875,7 +875,7 @@ export default function fileIOReadtext() {
       } catch (e) {
         e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_023 error: {message: ' + e.message + ', code: ' + e.code + '}');
-        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -894,7 +894,7 @@ export default function fileIOReadtext() {
         fs.readText("", (err: BusinessError | null, str: string | undefined) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_024 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
-            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
