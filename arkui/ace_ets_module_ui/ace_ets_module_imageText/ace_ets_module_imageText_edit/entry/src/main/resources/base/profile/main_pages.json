@@ -117,7 +117,9 @@
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier",
-        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined"
-
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined02",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined03",
+        "MainAbility/pages/TextInput/TextInputTypeParam"
     ]
 }
