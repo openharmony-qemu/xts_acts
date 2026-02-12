@@ -107,7 +107,7 @@ export default function gridDefaultTest1() {
 
     /**
      * @tc.name   gridColumnsTemplateNullUndefined_0400
-     * @tc.number SUB_ARKUI_GRID_COLUMNSTEMPLATE_NULL_0300
+     * @tc.number SUB_ARKUI_GRID_COLUMNSTEMPLATE_NULL_0400
      * @tc.desc   Test Grid columnsTemplate property with empty string, should restore to default value (固定1列)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
