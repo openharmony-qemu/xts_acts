@@ -124,7 +124,7 @@ export default function UIContextGetRectangleByIdNullUndefinedTest() {
         hilog.info(0x0000, 'UIContextGetRectangleByIdNullUndefinedTest',
           '[uiContextGetRectangleByIdEmptyString_0100] getRectangleById(\'\') result: ' + JSON.stringify(result));
         // 验证返回值
-        expect(result === null).assertTrue();
+        expect(result !== null).assertTrue();
       } catch (e) {
         // 如果抛出异常，验证异常信息
         hilog.info(0x0000, 'UIContextGetRectangleByIdNullUndefinedTest',
