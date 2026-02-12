@@ -8,6 +8,7 @@
         "MainAbility/pages/arcSwiper/ArcSwiperControllerFinishAnimationNull",
         "MainAbility/pages/arcSwiper/ArcDotIndicatorNullUndefined",
         "MainAbility/pages/arcSwiper/ArcSwiperAttributeNull",
-        "MainAbility/pages/arcSwiper/ArcSwiperAttributeUndefined"
+        "MainAbility/pages/arcSwiper/ArcSwiperAttributeUndefined",
+        "MainAbility/pages/swiper/SwiperFakeDragTest"
     ]
 }
