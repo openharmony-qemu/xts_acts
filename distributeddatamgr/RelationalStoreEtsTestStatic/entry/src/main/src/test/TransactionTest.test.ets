@@ -98,33 +98,34 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCommitNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testCommitNormal start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testCommitNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testCommitNormal start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "name": "Charlie",
-          "age": 35 as long,
-          "salary": 7000.00,
-        };
-        await transaction!.insert("test", values);
+          const values: relationalStore.ValuesBucket = {
+            "name": "Charlie",
+            "age": 35 as long,
+            "salary": 7000.00,
+          };
+          await transaction!.insert("test", values);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Charlie");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testCommitNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testCommitNormal end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Charlie");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testCommitNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testCommitNormal end *************");
+      })
 
     /**
      * @tc.name   testRollbackNormal
@@ -134,33 +135,34 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRollbackNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testRollbackNormal start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testRollbackNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testRollbackNormal start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "name": "David",
-          "age": 40 as long,
-          "salary": 8000.00,
-        };
-        await transaction!.insert("test", values);
+          const values: relationalStore.ValuesBucket = {
+            "name": "David",
+            "age": 40 as long,
+            "salary": 8000.00,
+          };
+          await transaction!.insert("test", values);
 
-        await transaction!.rollback();
+          await transaction!.rollback();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "David");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(0);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testRollbackNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testRollbackNormal end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "David");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testRollbackNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testRollbackNormal end *************");
+      })
 
     /**
      * @tc.name   testTransactionInsert
@@ -170,35 +172,36 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionInsert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionInsert start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionInsert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionInsert start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "name": "Eve",
-          "age": 28 as long,
-          "salary": 5500.00,
-        };
-        let id = await transaction!.insert("test", values);
+          const values: relationalStore.ValuesBucket = {
+            "name": "Eve",
+            "age": 28 as long,
+            "salary": 5500.00,
+          };
+          let id = await transaction!.insert("test", values);
 
-        expect(id).assertLarger(0);
+          expect(id).assertLarger(0);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Eve");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionInsert failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionInsert end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Eve");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionInsert failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionInsert end *************");
+      })
 
     /**
      * @tc.name   testTransactionInsertSync
@@ -208,35 +211,36 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionInsertSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionInsertSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionInsertSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionInsertSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "name": "Frank",
-          "age": 32 as long,
-          "salary": 6500.00,
-        };
-        let id = transaction!.insertSync("test", values);
+          const values: relationalStore.ValuesBucket = {
+            "name": "Frank",
+            "age": 32 as long,
+            "salary": 6500.00,
+          };
+          let id = transaction!.insertSync("test", values);
 
-        expect(id).assertLarger(0);
+          expect(id).assertLarger(0);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Frank");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionInsertSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionInsertSync end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Frank");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionInsertSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionInsertSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionBatchInsert
@@ -246,34 +250,35 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionBatchInsert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionBatchInsert start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionBatchInsert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionBatchInsert start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket[] = [
-          { "name": "Grace", "age": 27 as long, "salary": 5700.00 },
-          { "name": "Henry", "age": 33 as long, "salary": 6700.00 }
-        ];
-        let id = await transaction!.batchInsert("test", values);
+          const values: relationalStore.ValuesBucket[] = [
+            { "name": "Grace", "age": 27 as long, "salary": 5700.00 },
+            { "name": "Henry", "age": 33 as long, "salary": 6700.00 }
+          ];
+          let id = await transaction!.batchInsert("test", values);
 
-        expect(id).assertLarger(0);
+          expect(id).assertLarger(0);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Grace").or().equalTo("name", "Henry");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionBatchInsert failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionBatchInsert end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Grace").or().equalTo("name", "Henry");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionBatchInsert failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionBatchInsert end *************");
+      })
 
     /**
      * @tc.name   testTransactionBatchInsertSync
@@ -283,34 +288,35 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionBatchInsertSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionBatchInsertSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionBatchInsertSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionBatchInsertSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket[] = [
-          { "name": "Iris", "age": 29 as long, "salary": 5900.00 },
-          { "name": "Jack", "age": 31 as long, "salary": 6300.00 }
-        ];
-        let id = transaction!.batchInsertSync("test", values);
+          const values: relationalStore.ValuesBucket[] = [
+            { "name": "Iris", "age": 29 as long, "salary": 5900.00 },
+            { "name": "Jack", "age": 31 as long, "salary": 6300.00 }
+          ];
+          let id = transaction!.batchInsertSync("test", values);
 
-        expect(id).assertLarger(0);
+          expect(id).assertLarger(0);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Iris").or().equalTo("name", "Jack");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionBatchInsertSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionBatchInsertSync end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Iris").or().equalTo("name", "Jack");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionBatchInsertSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionBatchInsertSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionUpdate
@@ -320,36 +326,37 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionUpdate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionUpdate start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionUpdate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionUpdate start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "age": 26 as long,
-        };
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice");
-        let count = await transaction!.update(values, predicates);
+          const values: relationalStore.ValuesBucket = {
+            "age": 26 as long,
+          };
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice");
+          let count = await transaction!.update(values, predicates);
 
-        expect(count).assertEqual(1);
+          expect(count).assertEqual(1);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Alice");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(26);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionUpdate failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionUpdate end *************");
-    })
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Alice");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(26);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionUpdate failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionUpdate end *************");
+      })
 
     /**
      * @tc.name   testTransactionUpdateSync
@@ -359,36 +366,37 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionUpdateSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionUpdateSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionUpdateSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionUpdateSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        const values: relationalStore.ValuesBucket = {
-          "salary": 5100.00,
-        };
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Bob");
-        let count = transaction!.updateSync(values, predicates);
+          const values: relationalStore.ValuesBucket = {
+            "salary": 5100.00,
+          };
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Bob");
+          let count = transaction!.updateSync(values, predicates);
 
-        expect(count).assertEqual(1);
+          expect(count).assertEqual(1);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Bob");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        resultSet.goToFirstRow();
-        expect(resultSet.getDouble(resultSet.getColumnIndex("salary"))).assertEqual(5100.00);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionUpdateSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionUpdateSync end *************");
-    })
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Bob");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          resultSet.goToFirstRow();
+          expect(resultSet.getDouble(resultSet.getColumnIndex("salary"))).assertEqual(5100.00);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionUpdateSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionUpdateSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionDelete
@@ -398,32 +406,33 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionDelete start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionDelete start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice");
-        let count = await transaction!.delete(predicates);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice");
+          let count = await transaction!.delete(predicates);
 
-        expect(count).assertEqual(1);
+          expect(count).assertEqual(1);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Alice");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        expect(resultSet.rowCount).assertEqual(0);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionDelete failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionDelete end *************");
-    })
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Alice");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionDelete failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionDelete end *************");
+      })
 
     /**
      * @tc.name   testTransactionDeleteSync
@@ -433,32 +442,33 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionDeleteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionDeleteSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionDeleteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionDeleteSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Bob");
-        let count = transaction!.deleteSync(predicates);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Bob");
+          let count = transaction!.deleteSync(predicates);
 
-        expect(count).assertEqual(1);
+          expect(count).assertEqual(1);
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Bob");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        expect(resultSet.rowCount).assertEqual(0);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionDeleteSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionDeleteSync end *************");
-    })
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Bob");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionDeleteSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionDeleteSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionQuery
@@ -468,29 +478,30 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionQuery start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionQuery', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionQuery start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice");
-        let resultSet = await transaction!.query(predicates, []);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice");
+          let resultSet = await transaction!.query(predicates, []);
 
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
 
-        await transaction!.commit();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionQuery failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionQuery end *************");
-    })
+          await transaction!.commit();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionQuery failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionQuery end *************");
+      })
 
     /**
      * @tc.name   testTransactionQuerySync
@@ -500,29 +511,30 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionQuerySync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionQuerySync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionQuerySync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionQuerySync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Bob");
-        let resultSet = transaction!.querySync(predicates, []);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Bob");
+          let resultSet = transaction!.querySync(predicates, []);
 
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Bob");
-        resultSet.close();
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Bob");
+          resultSet.close();
 
-        await transaction!.commit();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionQuerySync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionQuerySync end *************");
-    })
+          await transaction!.commit();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionQuerySync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionQuerySync end *************");
+      })
 
     /**
      * @tc.name   testTransactionQuerySql
@@ -532,27 +544,28 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionQuerySql', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionQuerySql start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionQuerySql', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionQuerySql start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let resultSet = await transaction!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"]);
+          let resultSet = await transaction!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"]);
 
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
 
-        await transaction!.commit();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionQuerySql failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionQuerySql end *************");
-    })
+          await transaction!.commit();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionQuerySql failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionQuerySql end *************");
+      })
 
     /**
      * @tc.name   testTransactionQuerySqlSync
@@ -562,27 +575,28 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTransactionQuerySqlSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionQuerySqlSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionQuerySqlSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionQuerySqlSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let resultSet = transaction!.querySqlSync("SELECT * FROM test WHERE name = ?", ["Bob"]);
+          let resultSet = transaction!.querySqlSync("SELECT * FROM test WHERE name = ?", ["Bob"]);
 
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Bob");
-        resultSet.close();
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Bob");
+          resultSet.close();
 
-        await transaction!.commit();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionQuerySqlSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionQuerySqlSync end *************");
-    })
+          await transaction!.commit();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionQuerySqlSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionQuerySqlSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionExecute
@@ -592,31 +606,32 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTransactionExecute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionExecute start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionExecute', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionExecute start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let result = await transaction!.execute("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
-          ["Kate", 26 as long, 5200.00]);
+          let result = await transaction!.execute("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
+            ["Kate", 26 as long, 5200.00]);
 
-        expect(result == null).assertFalse();
+          expect(result == null).assertFalse();
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Kate");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionExecute failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionExecute end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Kate");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionExecute failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionExecute end *************");
+      })
 
     /**
      * @tc.name   testTransactionExecuteSync
@@ -626,31 +641,32 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTransactionExecuteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionExecuteSync start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionExecuteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionExecuteSync start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let result = transaction!.executeSync("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
-          ["Leo", 34 as long, 6800.00]);
+          let result = transaction!.executeSync("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
+            ["Leo", 34 as long, 6800.00]);
 
-        expect(result == null).assertFalse();
+          expect(result == null).assertFalse();
 
-        await transaction!.commit();
+          await transaction!.commit();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Leo");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionExecuteSync failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionExecuteSync end *************");
-    })
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Leo");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionExecuteSync failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionExecuteSync end *************");
+      })
 
     /**
      * @tc.name   testTransactionRollbackAfterMultipleOps
@@ -660,45 +676,46 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTransactionRollbackAfterMultipleOps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionRollbackAfterMultipleOps start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionRollbackAfterMultipleOps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionRollbackAfterMultipleOps start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        // 执行多个操作
-        await transaction!.insert("test", { "name": "Mia", "age": 24 as long, "salary": 5400.00 });
-        await transaction!.insert("test", { "name": "Noah", "age": 36 as long, "salary": 7200.00 });
+          // 执行多个操作
+          await transaction!.insert("test", { "name": "Mia", "age": 24 as long, "salary": 5400.00 });
+          await transaction!.insert("test", { "name": "Noah", "age": 36 as long, "salary": 7200.00 });
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice");
-        await transaction!.update({ "age": 99 as long }, predicates);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice");
+          await transaction!.update({ "age": 99 as long }, predicates);
 
-        // 回滚所有操作
-        await transaction!.rollback();
+          // 回滚所有操作
+          await transaction!.rollback();
 
-        // 验证数据未改变
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Mia").or().equalTo("name", "Noah");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        expect(resultSet.rowCount).assertEqual(0);
-        resultSet.close();
+          // 验证数据未改变
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Mia").or().equalTo("name", "Noah");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
 
-        // Alice的age应该仍然是25
-        let predicates3 = new relationalStore.RdbPredicates("test");
-        predicates3.equalTo("name", "Alice");
-        let resultSet3 = await rdbStore!.query(predicates3, []);
-        resultSet3.goToFirstRow();
-        expect(resultSet3.getLong(resultSet3.getColumnIndex("age"))).assertEqual(25);
-        resultSet3.close();
+          // Alice的age应该仍然是25
+          let predicates3 = new relationalStore.RdbPredicates("test");
+          predicates3.equalTo("name", "Alice");
+          let resultSet3 = await rdbStore!.query(predicates3, []);
+          resultSet3.goToFirstRow();
+          expect(resultSet3.getLong(resultSet3.getColumnIndex("age"))).assertEqual(25);
+          resultSet3.close();
 
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionRollbackAfterMultipleOps failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionRollbackAfterMultipleOps end *************");
-    })
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionRollbackAfterMultipleOps failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionRollbackAfterMultipleOps end *************");
+      })
 
     /**
      * @tc.name   testTransactionCommitAfterMultipleOps
@@ -708,44 +725,45 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTransactionCommitAfterMultipleOps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionCommitAfterMultipleOps start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
-        // 执行多个操作
-        await transaction!.insert("test", { "name": "Olivia", "age": 23 as long, "salary": 5300.00 });
-        await transaction!.insert("test", { "name": "Peter", "age": 37 as long, "salary": 7300.00 });
+    it('testTransactionCommitAfterMultipleOps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionCommitAfterMultipleOps start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
+          // 执行多个操作
+          await transaction!.insert("test", { "name": "Olivia", "age": 23 as long, "salary": 5300.00 });
+          await transaction!.insert("test", { "name": "Peter", "age": 37 as long, "salary": 7300.00 });
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Bob");
-        await transaction!.update({ "age": 31 as long }, predicates);
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Bob");
+          await transaction!.update({ "age": 31 as long }, predicates);
 
-        // 提交所有操作
-        await transaction!.commit();
+          // 提交所有操作
+          await transaction!.commit();
 
-        // 验证所有操作都已生效
-        let predicates2 = new relationalStore.RdbPredicates("test");
-        predicates2.equalTo("name", "Olivia").or().equalTo("name", "Peter");
-        let resultSet = await rdbStore!.query(predicates2, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
+          // 验证所有操作都已生效
+          let predicates2 = new relationalStore.RdbPredicates("test");
+          predicates2.equalTo("name", "Olivia").or().equalTo("name", "Peter");
+          let resultSet = await rdbStore!.query(predicates2, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
 
-        // Bob的age应该是31
-        let predicates3 = new relationalStore.RdbPredicates("test");
-        predicates3.equalTo("name", "Bob");
-        let resultSet3 = await rdbStore!.query(predicates3, []);
-        resultSet3.goToFirstRow();
-        expect(resultSet3.getLong(resultSet3.getColumnIndex("age"))).assertEqual(31);
-        resultSet3.close();
+          // Bob的age应该是31
+          let predicates3 = new relationalStore.RdbPredicates("test");
+          predicates3.equalTo("name", "Bob");
+          let resultSet3 = await rdbStore!.query(predicates3, []);
+          resultSet3.goToFirstRow();
+          expect(resultSet3.getLong(resultSet3.getColumnIndex("age"))).assertEqual(31);
+          resultSet3.close();
 
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionCommitAfterMultipleOps failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionCommitAfterMultipleOps end *************");
-    })
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionCommitAfterMultipleOps failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionCommitAfterMultipleOps end *************");
+      })
 
     /**
      * @tc.name   testTransactionQueryWithColumns
@@ -755,26 +773,27 @@ export default function TransactionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTransactionQueryWithColumns', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testTransactionQueryWithColumns start *************");
-      try {
-        transaction = await rdbStore!.createTransaction();
+    it('testTransactionQueryWithColumns', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testTransactionQueryWithColumns start *************");
+        try {
+          transaction = await rdbStore!.createTransaction();
 
-        let predicates = new relationalStore.RdbPredicates("test");
-        let resultSet = await transaction!.query(predicates, ["name", "age"]);
+          let predicates = new relationalStore.RdbPredicates("test");
+          let resultSet = await transaction!.query(predicates, ["name", "age"]);
 
-        expect(resultSet.rowCount).assertEqual(2);
-        expect(resultSet.columnCount).assertEqual(2);
-        resultSet.close();
+          expect(resultSet.rowCount).assertEqual(2);
+          expect(resultSet.columnCount).assertEqual(2);
+          resultSet.close();
 
-        await transaction!.commit();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testTransactionQueryWithColumns failed, err.code ${err.code}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testTransactionQueryWithColumns end *************");
-    })
+          await transaction!.commit();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testTransactionQueryWithColumns failed, err.code ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testTransactionQueryWithColumns end *************");
+      })
   })
 }

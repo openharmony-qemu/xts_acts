@@ -50,7 +50,7 @@ let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RdbStoreTest() {
   describe('RdbStoreTest', (): void => {
-    beforeAll(async () : Promise<void> => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, "beforeAll start");
       delegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(5000);
@@ -58,7 +58,7 @@ export default function RdbStoreTest() {
       hilog.info(domain, tag, 'beforeAll end');
     });
 
-    beforeEach(async () : Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeEach start');
       rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, "create rdb store success")
@@ -79,13 +79,13 @@ export default function RdbStoreTest() {
       hilog.info(domain, tag, 'beforeEach end');
     });
 
-    afterEach(async () : Promise<void> => {
+    afterEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'afterEach start');
       await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
       hilog.info(domain, tag, 'afterEach end');
     });
 
-    afterAll(async () : Promise<void> => {
+    afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'afterAll start');
       hilog.info(domain, tag, 'afterAll end');
     });
@@ -99,30 +99,17 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQueryWithPredicatesNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryWithPredicatesNormal start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Alice");
-          rdbStore!.query(predicates, (err, resultSet) => {
-            if (err) {
-              hilog.error(domain, tag, `testQueryWithPredicatesNormal failed: ${err.code + ", " + err.message}`);
-              expect().assertFail();
-              done();
-              return;
-            }
-            if (!resultSet) {
-              hilog.error(domain, tag, 'testQueryWithPredicatesNormal resultSet is null');
-              expect().assertFail();
-              done();
-              return;
-            }
-            expect(resultSet.rowCount).assertEqual(1);
-            resultSet.goToFirstRow();
-            expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-            resultSet.close();
-            done();
-          });
+          let resultSet = await rdbStore!.query(predicates);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
+          done();
         } catch (err) {
           hilog.error(domain, tag, `testQueryWithPredicatesNormal failed: ${err.code + ", " + err.message}`);
           expect().assertFail();
@@ -140,7 +127,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQueryWithPredicatesAndColumns', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryWithPredicatesAndColumns start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -182,26 +169,15 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL2
      */
     it('testQueryWithNullPredicates', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryWithNullPredicates start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("nonexistent", "value");
-          rdbStore!.query(predicates, (err, resultSet) => {
-            if (err) {
-              hilog.info(domain, tag, `testQueryWithNullPredicates expected error: ${err.code + ", " + err.message}`);
-              expect(err.code !== 0).assertTrue();
-              done();
-              return;
-            }
-            if (resultSet) {
-              resultSet.close();
-            }
-            // 如果没有错误也应该没有结果
-            hilog.info(domain, tag, "************* testQueryWithNullPredicates call *************");
-            expect().assertFail();
-            done();
-          });
+          let resultSet = await rdbStore!.query(predicates);
+          expect(resultSet.goToFirstRow()).assertFalse();
+          resultSet.close();
+          done();
         } catch (err) {
           hilog.info(domain, tag, `testQueryWithNullPredicates expected exception: ${err.code + ", " + err.message}`);
           expect().assertFail();
@@ -219,7 +195,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQuerySqlNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlNormal start *************");
         try {
           rdbStore!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"], (err, resultSet) => {
@@ -258,7 +234,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQuerySqlWithoutBindArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithoutBindArgs start *************");
         try {
           rdbStore!.querySql("SELECT * FROM test", (err, resultSet) => {
@@ -295,22 +271,13 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL2
      */
     it('testQuerySqlWithInvalidSql', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithInvalidSql start *************");
         try {
-          rdbStore!.querySql("INVALID SQL STATEMENT", (err, resultSet) => {
-            if (err) {
-              hilog.info(domain, tag, `testQuerySqlWithInvalidSql expected error: ${err.code + ", " + err.message}`);
-              expect(err.code !== 0).assertTrue();
-              done();
-              return;
-            }
-            if (resultSet) {
-              resultSet.close();
-            }
-            expect().assertFail();
-            done();
-          });
+          let resultSet = await rdbStore!.querySql("INVALID SQL STATEMENT");
+          expect(resultSet.rowCount).assertEqual(-1);
+          resultSet.close();
+          done();
         } catch (err) {
           hilog.info(domain, tag, `testQuerySqlWithInvalidSql expected exception: ${err.code + ", " + err.message}`);
           expect().assertFail();
@@ -328,7 +295,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBeginTransactionNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBeginTransactionNormal start *************");
         try {
           rdbStore!.beginTransaction();
@@ -365,7 +332,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBeginTransactionRollback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBeginTransactionRollback start *************");
         try {
           // 开始事务
@@ -404,7 +371,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testBeginTransactionMultiple', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBeginTransactionMultiple start *************");
         try {
           // 第一次开始事务
@@ -451,7 +418,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testQueryWithEmptyResultSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryWithEmptyResultSet start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -491,23 +458,13 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testQuerySqlWithEmptyBindArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlWithEmptyBindArgs start *************");
         try {
-          rdbStore!.querySql("SELECT * FROM test WHERE name = ?", [], (err, resultSet) => {
-            // 空绑定参数应该导致错误
-            if (err) {
-              hilog.info(domain, tag, `testQuerySqlWithEmptyBindArgs expected error: ${err.code + ", " + err.message}`);
-              expect(err.code !== 0).assertTrue();
-              done();
-              return;
-            }
-            if (resultSet) {
-              resultSet.close();
-            }
-            expect().assertFail();
-            done();
-          });
+          let resultSet = await rdbStore!.querySql("SELECT * FROM test WHERE name = ?", []);
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
+          done();
         } catch (err) {
           hilog.info(domain, tag, `testQuerySqlWithEmptyBindArgs expected exception: ${err.code + ", " + err.message}`);
           expect().assertFail();
@@ -525,7 +482,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testQueryWithComplexPredicates', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryWithComplexPredicates start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -538,23 +495,10 @@ export default function RdbStoreTest() {
             .greaterThanOrEqualTo("age", 20 as long)
             .orderByAsc("age")
             .limitAs(10);
-          rdbStore!.query(predicates, (err, resultSet) => {
-            if (err) {
-              hilog.error(domain, tag, `testQueryWithComplexPredicates failed: ${err.code + ", " + err.message}`);
-              expect().assertFail();
-              done();
-              return;
-            }
-            if (!resultSet) {
-              hilog.error(domain, tag, 'testQueryWithComplexPredicates resultSet is null');
-              expect().assertFail();
-              done();
-              return;
-            }
-            expect(resultSet.rowCount).assertEqual(2);
-            resultSet.close();
-            done();
-          });
+          let resultSet = await rdbStore!.query(predicates);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
         } catch (err) {
           hilog.error(domain, tag, `testQueryWithComplexPredicates failed: ${err.code + ", " + err.message}`);
           expect().assertFail();
@@ -574,7 +518,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testInsertNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testInsertNormal start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -602,7 +546,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testInsertWithConflict', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testInsertWithConflict start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -630,7 +574,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testInsertCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testInsertCallback start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -665,7 +609,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testInsertSyncNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testInsertSyncNormal start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -693,7 +637,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBatchInsertNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBatchInsertNormal start *************");
         try {
           const values: relationalStore.ValuesBucket[] = [
@@ -720,7 +664,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBatchInsertSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBatchInsertSync start *************");
         try {
           const values: relationalStore.ValuesBucket[] = [
@@ -747,7 +691,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testBatchInsertWithConflictResolution', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBatchInsertWithConflictResolution start *************");
         try {
           const values: relationalStore.ValuesBucket[] = [
@@ -775,7 +719,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testBatchInsertWithConflictResolutionSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBatchInsertWithConflictResolutionSync start *************");
         try {
           const values: relationalStore.ValuesBucket[] = [
@@ -787,7 +731,8 @@ export default function RdbStoreTest() {
           expect(num).assertEqual(2);
           done();
         } catch (err) {
-          hilog.error(domain, tag, `testBatchInsertWithConflictResolutionSync failed: ${err.code + ", " + err.message}`);
+          hilog.error(domain, tag,
+            `testBatchInsertWithConflictResolutionSync failed: ${err.code + ", " + err.message}`);
           expect().assertFail();
           done();
         }
@@ -803,7 +748,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testInsertCallbackWithConflict', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testInsertCallbackWithConflict start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -838,7 +783,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBatchInsertCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBatchInsertCallback start *************");
         try {
           const values: relationalStore.ValuesBucket[] = [
@@ -874,7 +819,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testDeleteNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testDeleteNormal start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -899,7 +844,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testDeleteCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testDeleteCallback start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -931,7 +876,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testDeleteSyncNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testDeleteSyncNormal start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -956,7 +901,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testDeleteWithEmptyResult', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testDeleteWithEmptyResult start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -983,7 +928,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testUpdateNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateNormal start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1011,7 +956,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testUpdateWithConflict', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateWithConflict start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1019,7 +964,8 @@ export default function RdbStoreTest() {
           };
           let predicates = new relationalStore.RdbPredicates("test");
           predicates.equalTo("name", "Bob");
-          let count = await rdbStore!.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+          let count =
+            await rdbStore!.update(values, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           expect(count).assertEqual(1);
           done();
         } catch (err) {
@@ -1039,7 +985,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testUpdateCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateCallback start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1074,7 +1020,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testUpdateSyncNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateSyncNormal start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1102,7 +1048,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testUpdateMultipleRows', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateMultipleRows start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1130,7 +1076,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testUpdateWithNoMatches', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateWithNoMatches start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1158,7 +1104,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testUpdateCallbackWithConflict', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testUpdateCallbackWithConflict start *************");
         try {
           const values: relationalStore.ValuesBucket = {
@@ -1195,7 +1141,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQueryPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQueryPromise start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -1220,7 +1166,7 @@ export default function RdbStoreTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testQuerySync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('testQuerySync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "************* testQuerySync start *************");
       try {
         let predicates = new relationalStore.RdbPredicates("test");
@@ -1246,7 +1192,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQuerySqlPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlPromise start *************");
         try {
           let resultSet = await rdbStore!.querySql("SELECT * FROM test WHERE name = ?", ["Alice"]);
@@ -1270,7 +1216,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testQuerySqlSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testQuerySqlSync start *************");
         try {
           let resultSet = rdbStore!.querySqlSync("SELECT * FROM test");
@@ -1296,7 +1242,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testExecuteSqlPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSqlPromise start *************");
         try {
           await rdbStore!.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",
@@ -1325,7 +1271,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testExecuteSqlCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSqlCallback start *************");
         try {
           rdbStore!.executeSql("UPDATE test SET salary = 9000 WHERE name = ?", ["Alice"], (err) => {
@@ -1354,7 +1300,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testExecuteSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testExecuteSync start *************");
         try {
           let result = rdbStore!.executeSync("DELETE FROM test WHERE name = ?", ["TestUser"]);
@@ -1383,7 +1329,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBackupPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBackupPromise start *************");
         try {
           await rdbStore!.backup("test_backup");
@@ -1405,7 +1351,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testBackupCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testBackupCallback start *************");
         try {
           rdbStore!.backup("test_backup_cb", (err) => {
@@ -1434,7 +1380,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testRestorePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testRestorePromise start *************");
         try {
           // 先备份
@@ -1459,7 +1405,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testRestoreCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testRestoreCallback start *************");
         try {
           rdbStore!.restore("test_restore_backup", (err) => {
@@ -1490,7 +1436,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testSetDistributedTablesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testSetDistributedTablesPromise start *************");
         try {
           await rdbStore!.setDistributedTables(["test"]);
@@ -1513,7 +1459,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL0
      */
     it('testSetDistributedTablesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testSetDistributedTablesCallback start *************");
         try {
           rdbStore!.setDistributedTables(["test"], (err) => {
@@ -1538,7 +1484,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testObtainDistributedTableName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testObtainDistributedTableName start *************");
         try {
           let tableName = await rdbStore!.obtainDistributedTableName("testDevice", "test");
@@ -1562,7 +1508,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testCloudSyncPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testCloudSyncPromise start *************");
         try {
           const progressCallback = (progress: relationalStore.ProgressDetails) => {
@@ -1588,7 +1534,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testRemoteQueryPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testRemoteQueryPromise start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("test");
@@ -1615,7 +1561,7 @@ export default function RdbStoreTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+    it('testClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "************* testClose start *************");
       try {
         await rdbStore!.close();
@@ -1637,7 +1583,7 @@ export default function RdbStoreTest() {
      * @tc.level  LEVEL1
      */
     it('testCreateTransaction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done:()=>void) : Promise<void> => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, "************* testCreateTransaction start *************");
         try {
           let transaction = await rdbStore!.createTransaction();

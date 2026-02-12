@@ -107,24 +107,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEqualToNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testEqualToNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testEqualToNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testEqualToNormal end *************");
-    })
+    it('testEqualToNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testEqualToNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testEqualToNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testEqualToNormal end *************");
+      })
 
     /**
      * @tc.name   testEqualToWithNullField
@@ -134,20 +135,21 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEqualToWithNullField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testEqualToWithNullField start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("", "Alice");
-        let resultSet = await rdbStore!.query(predicates, []);
-        resultSet.close();
-      } catch (err) {
-        hilog.info(domain, tag, `testEqualToWithNullField expected error: ${err.code + ", " + err.message}`);
-        expect(err.code !== 0).assertTrue();
-      }
-      hilog.info(domain, tag, "************* testEqualToWithNullField end *************");
-      done();
-    })
+    it('testEqualToWithNullField', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testEqualToWithNullField start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("", "Alice");
+          let resultSet = await rdbStore!.query(predicates, []);
+          resultSet.close();
+        } catch (err) {
+          hilog.info(domain, tag, `testEqualToWithNullField expected error: ${err.code + ", " + err.message}`);
+          expect(err.code !== 0).assertTrue();
+        }
+        hilog.info(domain, tag, "************* testEqualToWithNullField end *************");
+        done();
+      })
 
     /**
      * @tc.name   testNotEqualToNormal
@@ -157,22 +159,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotEqualToNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testNotEqualToNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.notEqualTo("name", "Alice");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testNotEqualToNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testNotEqualToNormal end *************");
-    })
+    it('testNotEqualToNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testNotEqualToNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.notEqualTo("name", "Alice");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testNotEqualToNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testNotEqualToNormal end *************");
+      })
 
     /**
      * @tc.name   testBeginWrapEndWrap
@@ -182,26 +185,27 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBeginWrapEndWrap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testBeginWrapEndWrap start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.beginWrap()
-          .equalTo("name", "Alice")
-          .or()
-          .equalTo("name", "Bob")
-          .endWrap();
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testBeginWrapEndWrap failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testBeginWrapEndWrap end *************");
-    })
+    it('testBeginWrapEndWrap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testBeginWrapEndWrap start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.beginWrap()
+            .equalTo("name", "Alice")
+            .or()
+            .equalTo("name", "Bob")
+            .endWrap();
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testBeginWrapEndWrap failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testBeginWrapEndWrap end *************");
+      })
 
     /**
      * @tc.name   testOrAnd
@@ -246,22 +250,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testContainsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testContainsNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.contains("email", "example");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testContainsNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testContainsNormal end *************");
-    })
+    it('testContainsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testContainsNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.contains("email", "example");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testContainsNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testContainsNormal end *************");
+      })
 
     /**
      * @tc.name   testContainsWithEmptyValue
@@ -271,22 +276,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testContainsWithEmptyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testContainsWithEmptyValue start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.contains("email", "");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(3);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testContainsWithEmptyValue failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testContainsWithEmptyValue end *************");
-    })
+    it('testContainsWithEmptyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testContainsWithEmptyValue start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.contains("email", "");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(3);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testContainsWithEmptyValue failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testContainsWithEmptyValue end *************");
+      })
 
     /**
      * @tc.name   testBeginsWithNormal
@@ -296,24 +302,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBeginsWithNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testBeginsWithNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.beginsWith("name", "A");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testBeginsWithNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testBeginsWithNormal end *************");
-    })
+    it('testBeginsWithNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testBeginsWithNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.beginsWith("name", "A");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testBeginsWithNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testBeginsWithNormal end *************");
+      })
 
     /**
      * @tc.name   testEndsWithNormal
@@ -323,22 +330,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testEndsWithNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testEndsWithNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.endsWith("email", ".com");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(3);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testEndsWithNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testEndsWithNormal end *************");
-    })
+    it('testEndsWithNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testEndsWithNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.endsWith("email", ".com");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(3);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testEndsWithNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testEndsWithNormal end *************");
+      })
 
     /**
      * @tc.name   testIsNull
@@ -408,24 +416,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLikeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testLikeNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.like("name", "A%");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testLikeNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testLikeNormal end *************");
-    })
+    it('testLikeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testLikeNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.like("name", "A%");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testLikeNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testLikeNormal end *************");
+      })
 
     /**
      * @tc.name   testGlobNormal
@@ -435,24 +444,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGlobNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testGlobNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.glob("name", "A*");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testGlobNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testGlobNormal end *************");
-    })
+    it('testGlobNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testGlobNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.glob("name", "A*");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testGlobNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testGlobNormal end *************");
+      })
 
     /**
      * @tc.name   testBetweenNormal
@@ -462,22 +472,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBetweenNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testBetweenNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.between("age", 25 as long, 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testBetweenNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testBetweenNormal end *************");
-    })
+    it('testBetweenNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testBetweenNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.between("age", 25 as long, 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testBetweenNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testBetweenNormal end *************");
+      })
 
     /**
      * @tc.name   testNotBetweenNormal
@@ -487,24 +498,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotBetweenNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testNotBetweenNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.notBetween("age", 25 as long, 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testNotBetweenNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testNotBetweenNormal end *************");
-    })
+    it('testNotBetweenNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testNotBetweenNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.notBetween("age", 25 as long, 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testNotBetweenNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testNotBetweenNormal end *************");
+      })
 
     /**
      * @tc.name   testGreaterThanNormal
@@ -514,24 +526,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGreaterThanNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testGreaterThanNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.greaterThan("age", 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testGreaterThanNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testGreaterThanNormal end *************");
-    })
+    it('testGreaterThanNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testGreaterThanNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.greaterThan("age", 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testGreaterThanNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testGreaterThanNormal end *************");
+      })
 
     /**
      * @tc.name   testLessThanNormal
@@ -541,24 +554,25 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLessThanNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testLessThanNormal start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.lessThan("age", 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testLessThanNormal failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testLessThanNormal end *************");
-    })
+    it('testLessThanNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testLessThanNormal start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.lessThan("age", 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testLessThanNormal failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testLessThanNormal end *************");
+      })
 
     /**
      * @tc.name   testGreaterThanOrEqualTo
@@ -568,22 +582,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGreaterThanOrEqualTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testGreaterThanOrEqualTo start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.greaterThanOrEqualTo("age", 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testGreaterThanOrEqualTo failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testGreaterThanOrEqualTo end *************");
-    })
+    it('testGreaterThanOrEqualTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testGreaterThanOrEqualTo start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.greaterThanOrEqualTo("age", 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testGreaterThanOrEqualTo failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testGreaterThanOrEqualTo end *************");
+      })
 
     /**
      * @tc.name   testLessThanOrEqualTo
@@ -593,22 +608,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLessThanOrEqualTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testLessThanOrEqualTo start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.lessThanOrEqualTo("age", 30 as long);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testLessThanOrEqualTo failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testLessThanOrEqualTo end *************");
-    })
+    it('testLessThanOrEqualTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testLessThanOrEqualTo start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.lessThanOrEqualTo("age", 30 as long);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testLessThanOrEqualTo failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testLessThanOrEqualTo end *************");
+      })
 
     /**
      * @tc.name   testOrderByAsc
@@ -618,28 +634,29 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOrderByAsc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testOrderByAsc start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.orderByAsc("age");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(3);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
-        resultSet.goToNextRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(30);
-        resultSet.goToNextRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testOrderByAsc failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testOrderByAsc end *************");
-    })
+    it('testOrderByAsc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testOrderByAsc start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.orderByAsc("age");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(3);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
+          resultSet.goToNextRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(30);
+          resultSet.goToNextRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testOrderByAsc failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testOrderByAsc end *************");
+      })
 
     /**
      * @tc.name   testOrderByDesc
@@ -649,28 +666,29 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOrderByDesc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testOrderByDesc start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.orderByDesc("age");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(3);
-        resultSet.goToFirstRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
-        resultSet.goToNextRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(30);
-        resultSet.goToNextRow();
-        expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testOrderByDesc failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testOrderByDesc end *************");
-    })
+    it('testOrderByDesc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testOrderByDesc start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.orderByDesc("age");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(3);
+          resultSet.goToFirstRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(35);
+          resultSet.goToNextRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(30);
+          resultSet.goToNextRow();
+          expect(resultSet.getLong(resultSet.getColumnIndex("age"))).assertEqual(25);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testOrderByDesc failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testOrderByDesc end *************");
+      })
 
     /**
      * @tc.name   testDistinct
@@ -744,22 +762,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLimitAsBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testLimitAsBoundary start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.limitAs(1);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testLimitAsBoundary failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testLimitAsBoundary end *************");
-    })
+    it('testLimitAsBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testLimitAsBoundary start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.limitAs(1);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testLimitAsBoundary failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testLimitAsBoundary end *************");
+      })
 
     /**
      * @tc.name   testOffsetAs
@@ -844,22 +863,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testInAllDevices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testInAllDevices start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice").inAllDevices();
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testInAllDevices failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testInAllDevices end *************");
-    })
+    it('testInAllDevices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testInAllDevices start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice").inAllDevices();
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testInAllDevices failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testInAllDevices end *************");
+      })
 
     /**
      * @tc.name   testComplexPredicates
@@ -869,32 +889,33 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testComplexPredicates', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testComplexPredicates start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.beginWrap()
-          .equalTo("name", "Alice")
-          .or()
-          .equalTo("name", "Bob")
-          .endWrap()
-          .and()
-          .greaterThanOrEqualTo("age", 25 as long)
-          .and()
-          .lessThan("salary", 7000.00)
-          .orderByAsc("age")
-          .limitAs(10);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testComplexPredicates failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testComplexPredicates end *************");
-    })
+    it('testComplexPredicates', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testComplexPredicates start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.beginWrap()
+            .equalTo("name", "Alice")
+            .or()
+            .equalTo("name", "Bob")
+            .endWrap()
+            .and()
+            .greaterThanOrEqualTo("age", 25 as long)
+            .and()
+            .lessThan("salary", 7000.00)
+            .orderByAsc("age")
+            .limitAs(10);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testComplexPredicates failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testComplexPredicates end *************");
+      })
 
     /**
      * @tc.name   testIndexedByWithInvalidIndex
@@ -904,20 +925,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIndexedByWithInvalidIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testIndexedByWithInvalidIndex start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice").indexedBy("invalid_index");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect().assertFail();
-      } catch (err) {
-        hilog.error(domain, tag, `testIndexedByWithInvalidIndex failed: ${err.code + ", " + err.message}`);
-        expect(err.code).assertEqual(1480000);
-      }
-      hilog.info(domain, tag, "************* testIndexedByWithInvalidIndex end *************");
-      done();
-    })
+    it('testIndexedByWithInvalidIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testIndexedByWithInvalidIndex start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice").indexedBy("invalid_index");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(-1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testIndexedByWithInvalidIndex failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testIndexedByWithInvalidIndex end *************");
+      })
 
     /**
      * @tc.name   testIndexedBy
@@ -977,22 +1001,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotInValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testNotInValues start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.notInValues("name", ["Alice"]);
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testNotInValues failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testNotInValues end *************");
-    })
+    it('testNotInValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testNotInValues start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.notInValues("name", ["Alice"]);
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testNotInValues failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testNotInValues end *************");
+      })
 
     /**
      * @tc.name   testNotContains
@@ -1002,22 +1027,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotContains', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testNotContains start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.notContains("email", "test");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(2);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testNotContains failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testNotContains end *************");
-    })
+    it('testNotContains', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testNotContains start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.notContains("email", "test");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(2);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testNotContains failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testNotContains end *************");
+      })
 
     /**
      * @tc.name   testNotLike
@@ -1077,22 +1103,23 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHavingWithArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testHavingWithArgs start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.groupBy(["age"]).having("COUNT(*) > ?", [0 as long]);
-        let resultSet = await rdbStore!.query(predicates, ["age", "COUNT(*) as count"]);
-        expect(resultSet.rowCount).assertLarger(0);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testHavingWithArgs failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testHavingWithArgs end *************");
-    })
+    it('testHavingWithArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testHavingWithArgs start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.groupBy(["age"]).having("COUNT(*) > ?", [0 as long]);
+          let resultSet = await rdbStore!.query(predicates, ["age", "COUNT(*) as count"]);
+          expect(resultSet.rowCount).assertLarger(0);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testHavingWithArgs failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testHavingWithArgs end *************");
+      })
 
     /**
      * @tc.name   testInValuesEmpty
@@ -1102,23 +1129,24 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testInValuesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testInValuesEmpty start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.inValues("name", []);
-        let resultSet = await rdbStore!.query(predicates, []);
-        // 空数组应该返回0结果
-        expect(resultSet.rowCount).assertEqual(0);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testInValuesEmpty failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testInValuesEmpty end *************");
-    })
+    it('testInValuesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testInValuesEmpty start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.inValues("name", []);
+          let resultSet = await rdbStore!.query(predicates, []);
+          // 空数组应该返回0结果
+          expect(resultSet.rowCount).assertEqual(0);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testInValuesEmpty failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testInValuesEmpty end *************");
+      })
 
     /**
      * @tc.name   testIndexedByEmpty
@@ -1128,21 +1156,22 @@ export default function RdbPredicatesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIndexedByEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, "************* testIndexedByEmpty start *************");
-      try {
-        let predicates = new relationalStore.RdbPredicates("test");
-        predicates.equalTo("name", "Alice").indexedBy("");
-        let resultSet = await rdbStore!.query(predicates, []);
-        expect(resultSet.rowCount).assertEqual(1);
-        resultSet.close();
-        done();
-      } catch (err) {
-        hilog.error(domain, tag, `testIndexedByEmpty failed: ${err.code + ", " + err.message}`);
-        expect().assertFail();
-        done();
-      }
-      hilog.info(domain, tag, "************* testIndexedByEmpty end *************");
-    })
+    it('testIndexedByEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "************* testIndexedByEmpty start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("test");
+          predicates.equalTo("name", "Alice").indexedBy("");
+          let resultSet = await rdbStore!.query(predicates, []);
+          expect(resultSet.rowCount).assertEqual(1);
+          resultSet.close();
+          done();
+        } catch (err) {
+          hilog.error(domain, tag, `testIndexedByEmpty failed: ${err.code + ", " + err.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, "************* testIndexedByEmpty end *************");
+      })
   })
 }
