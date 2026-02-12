@@ -13,96 +13,72 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
-import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import Utils from '../Utils';
+class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {
 
-export default function AttributeModifierNullUndefinedTest() {
-  describe('AttributeModifierNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
-      console.info("AttributeModifierNullUndefinedTest beforeEach start");
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/button/AttributeModifierNullUndefined',
+  applyNormalAttribute(instance: ButtonAttribute|null|undefined): void {
+    AppStorage.setOrCreate('ModifierNormalAttributeNullUndefined', instance);
+  }
+
+  applyPressedAttribute(instance: ButtonAttribute|null|undefined): void {
+    AppStorage.setOrCreate('ModifierPressedAttributeNullUndefined', instance);
+  }
+
+  applyFocusedAttribute(instance: ButtonAttribute|null|undefined): void {
+    AppStorage.setOrCreate('ModifierFocusedAttributeNullUndefined', instance);
+  }
+
+  applyDisabledAttribute(instance: ButtonAttribute|null|undefined): void {
+    AppStorage.setOrCreate('ModifierDisabledAttributeNullUndefined', instance);
+  }
+
+  applySelectedAttribute(instance: ButtonAttribute|null|undefined): void {
+    AppStorage.setOrCreate('ModifierSelectedAttributeNullUndefined', instance);
+  }
+}
+
+@Entry
+@Component
+struct AttributeModifierNullIndex {
+  @State modifier: MyButtonModifier1 = new MyButtonModifier1()
+
+  build() {
+    Row() {
+      Column() {
+        // ========== attributeModifier tests ==========
+        Button('Button attributeModifier default')
+          .id('attributeModifier_default')
+          .width('100%')
+          .height('5%')
+          .attributeModifier(this.modifier)
+
+        // Test attributeModifier with null parameter
+        Button('Button attributeModifier null')
+          .id('attributeModifier_null')
+          .width('100%')
+          .height('5%')
+          .onClick(() => {
+            this.modifier.applyNormalAttribute(null);
+            this.modifier.applyPressedAttribute(null);
+            this.modifier.applyFocusedAttribute(null);
+            this.modifier.applyDisabledAttribute(null);
+            this.modifier.applySelectedAttribute(null);
+          })
+
+        // Test attributeModifier with undefined parameter
+        Button('Button attributeModifier undefined')
+          .id('attributeModifier_undefined')
+          .width('100%')
+          .height('5%')
+          .onClick(() => {
+            this.modifier.applyNormalAttribute(undefined);
+            this.modifier.applyPressedAttribute(undefined);
+            this.modifier.applyFocusedAttribute(undefined);
+            this.modifier.applyDisabledAttribute(undefined);
+            this.modifier.applySelectedAttribute(undefined);
+          })
       }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get AttributeModifierNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("gestureEventTest" == pages.name)) {
-          console.info("get AttributeModifierNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push AttributeModifierNullUndefinedTest page result:" + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push AttributeModifierNullUndefinedTest page error:" + err);
-      }
-      console.info("AttributeModifierNullUndefinedTest beforeEach end");
-      done();
-    });
-
-    afterEach(async () => {
-      await Utils.sleep(2000);
-      console.info("AttributeModifierNullUndefinedTest after each called");
-    });
-
-    /**
-     * @tc.name   buttonAttributeModifierMethodNullUndefined_0100
-     * @tc.number buttonAttributeModifierMethodNullUndefined_0100
-     * @tc.desc   Test Button attributeModifier property with null, should be same as default (unset)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('buttonAttributeModifierMethodNullUndefined_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('buttonAttributeModifierMethodNullUndefined_0100 START');
-      let driver = await Driver.create()
-      await Utils.sleep(2000);
-      let button1 = await driver.findComponent(ON.id('attributeModifier_null'));
-      await button1.click();
-      await Utils.sleep(2000);
-      expect(AppStorage.get('ModifierNormalAttributeNullUndefined')).assertEqual(null);
-      expect(AppStorage.get('ModifierPressedAttributeNullUndefined')).assertEqual(null);
-      expect(AppStorage.get('ModifierFocusedAttributeNullUndefined')).assertEqual(null);
-      expect(AppStorage.get('ModifierDisabledAttributeNullUndefined')).assertEqual(null);
-      expect(AppStorage.get('ModifierSelectedAttributeNullUndefined')).assertEqual(null);
-      AppStorage.delete('ModifierNormalAttributeNullUndefined')
-      AppStorage.delete('ModifierPressedAttributeNullUndefined')
-      AppStorage.delete('ModifierFocusedAttributeNullUndefined')
-      AppStorage.delete('ModifierDisabledAttributeNullUndefined')
-      AppStorage.delete('ModifierSelectedAttributeNullUndefined')
-      console.info('[buttonAttributeModifierMethodNullUndefined_0100] END');
-      done();
-    })
-
-    /**
-     * @tc.name   buttonAttributeModifierMethodNullUndefined_0200
-     * @tc.number buttonAttributeModifierMethodNullUndefined_0200
-     * @tc.desc   Test Button attributeModifier property with undefined, should be same as default (unset)
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('buttonAttributeModifierMethodNullUndefined_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('buttonAttributeModifierMethodNullUndefined_0200 START');
-      let driver = await Driver.create()
-      await Utils.sleep(2000);
-      let button1 = await driver.findComponent(ON.id('attributeModifier_undefined'));
-      await button1.click();
-      await Utils.sleep(2000);
-      expect(AppStorage.get('ModifierNormalAttributeNullUndefined')).assertEqual(undefined);
-      expect(AppStorage.get('ModifierPressedAttributeNullUndefined')).assertEqual(undefined);
-      expect(AppStorage.get('ModifierFocusedAttributeNullUndefined')).assertEqual(undefined);
-      expect(AppStorage.get('ModifierDisabledAttributeNullUndefined')).assertEqual(undefined);
-      expect(AppStorage.get('ModifierSelectedAttributeNullUndefined')).assertEqual(undefined);
-      AppStorage.delete('ModifierNormalAttributeNullUndefined')
-      AppStorage.delete('ModifierPressedAttributeNullUndefined')
-      AppStorage.delete('ModifierFocusedAttributeNullUndefined')
-      AppStorage.delete('ModifierDisabledAttributeNullUndefined')
-      AppStorage.delete('ModifierSelectedAttributeNullUndefined')
-      console.info('[buttonAttributeModifierMethodNullUndefined_0200] END');
-      done();
-    })
-  })
+      .width('100%')
+    }
+    .height('100%')
+  }
 }
