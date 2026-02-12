@@ -547,8 +547,12 @@
  	       let uris = ["file://media/image/1", "file://media/image/2"];
  	       
  	       try {
- 	         fileCache.startBatch(uris, cloudSync.DownloadFileType.THUMBNAIL);
- 	         expect(true).assertTrue(); // This is a valid operation
+			fileCache.startBatch(uris, cloudSync.DownloadFileType.THUMBNAIL).then(() => {
+				console.info("startBatch THUMBNAI successfully");
+			}).catch((err: BusinessError) => {
+				console.error(TAG + "startBatch download failed: " + err.message + ", error code: " + err.code);
+				expect(err.code == 22400005).assertTrue();
+			});
  	       } catch (err) {
  	         console.log(TAG + " threw error for THUMBNAIL fileType: " + err.code);
  	         expect(false).assertTrue(); // Should not reach here for valid operation
@@ -570,8 +574,12 @@
  	       let uris = ["file://media/image/1", "file://media/image/2"];
  	       
  	       try {
- 	         fileCache.startBatch(uris, cloudSync.DownloadFileType.LCD);
- 	         expect(true).assertTrue(); // This is a valid operation
+			fileCache.startBatch(uris, cloudSync.DownloadFileType.LCD).then(() => {
+				console.info("startBatch LCD successfully");
+			}).catch((err: BusinessError) => {
+				console.error(TAG + "startBatch download failed: " + err.message + ", error code: " + err.code);
+				expect(err.code == 22400005).assertTrue();
+			});
  	       } catch (err) {
  	         console.log(TAG + " threw error for LCD fileType: " + err.code);
  	         expect(false).assertTrue(); // Should not reach here for valid operation
@@ -661,7 +669,6 @@
  	       
  	       try {
  	         fileCache.stop(uri, false);
- 	         expect(true).assertTrue(); // This is a valid operation
  	       } catch (err) {
  	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
  	         expect(err.code === 13600001).assertTrue(); // 13600001 - IPC error
@@ -802,7 +809,6 @@
  	       
  	       try {
  	         fileCache.stopBatch(1, false);
- 	         expect(true).assertTrue(); // This is a valid operation
  	       } catch (err) {
  	         console.log(TAG + " threw error for false needClean parameter: " + err.code);
  	         expect(err.code === 13600001 || err.code === 13900020).assertTrue(); // 13600001 or 13900020
@@ -1029,7 +1035,6 @@
  	       
  	       try {
  	         cloudSync.registerChange(uri, true, callback);
- 	         expect(true).assertTrue(); // This is a valid operation
  	       } catch (err) {
  	         console.log(TAG + " threw error for true recursion parameter: " + err.code);
  	         expect(err.code === 401 || err.code === 14000002).assertTrue();
