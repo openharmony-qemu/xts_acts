@@ -13,7 +13,15 @@
  * limitations under the License.
  */
 import ActsGzipDecompressionTest from './actsgzipdecompressiontest.test'
+import ZiptestnewTest from './ziptestnew.test'
+import ZiptestnewPromiseTest from './ziptestnewPromise.test'
+import ZiptestnewCompressFilesTest from './ziptestnewCompressFiles.test'
+import ZipdecompressFileTest from './zipdecompressFile.test'
 
 export default function testsuite() {
     ActsGzipDecompressionTest();
+    ZiptestnewTest();
+    ZiptestnewPromiseTest();
+    ZiptestnewCompressFilesTest();
+    ZipdecompressFileTest();
 }
