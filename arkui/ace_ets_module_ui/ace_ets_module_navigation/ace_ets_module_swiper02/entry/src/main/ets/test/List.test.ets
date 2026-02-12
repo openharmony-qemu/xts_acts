@@ -20,6 +20,7 @@ import ArcSwiperControllerFinishAnimationNullTest from './arcSwiper/ArcSwiperCon
 import ArcDotIndicatorNullUndefinedTest from './arcSwiper/ArcDotIndicatorNullUndefined.test';
 import ArcSwiperAttributeUndefinedTest from './arcSwiper/ArcSwiperAttributeUndefined.test';
 import ArcSwiperAttributeNullTest from './arcSwiper/ArcSwiperAttributeNull.test';
+import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
 export default function testsuite() {
   swiperFillPolicy()
   SwiperParamExample()
@@ -29,4 +30,5 @@ export default function testsuite() {
   ArcDotIndicatorNullUndefinedTest()
   ArcSwiperAttributeNullTest()
   ArcSwiperAttributeUndefinedTest()
+  SwiperFakeDragTest()
 }
