@@ -423,7 +423,7 @@ export class FakerDataUtil {
     let wantAgentInfo: wantAgent.WantAgentInfo = {
       wants: [
         {
-          bundleName: "com.huawei.hmos.carmusicdemo1",
+          bundleName: "com.abcd.hmos.carmusicdemo1",
           abilityName: "TestAbility",
           type: "action",
           parameters: {

@@ -501,15 +501,6 @@ export default function avMusicTemplateTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1501
-     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_QUERY_COMPILATION_BY_KEYWORD_THROWS_ERROR_STATIC_1501
-     * @tc.desc   Testing off query compilation by keyword
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_QUERY_MEDIA_ENTITY_BY_KEYWORD_STATIC_1600
      * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_QUERY_MEDIA_ENTITY_BY_KEYWORD_STATIC_1600
      * @tc.desc   Testing on query media entity by keyword
@@ -2016,14 +2007,14 @@ export default function avMusicTemplateTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6100
-     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6100
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6110
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6110
      * @tc.desc   Testing destroy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_DESTROY_THROWS_ERROR_STATIC_6110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           template = AVMusicTemplateUtil.getTemplate();

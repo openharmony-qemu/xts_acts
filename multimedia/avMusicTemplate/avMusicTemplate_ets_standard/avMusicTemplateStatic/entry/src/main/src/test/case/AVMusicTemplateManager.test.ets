@@ -67,7 +67,6 @@ export default function avMusicTemplateManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
     it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_CREATE_AV_MUSIC_TEMPLATE_CONTROLLER_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
