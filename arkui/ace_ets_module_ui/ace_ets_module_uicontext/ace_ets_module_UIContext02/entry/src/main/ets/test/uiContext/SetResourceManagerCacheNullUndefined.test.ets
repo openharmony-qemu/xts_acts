@@ -59,7 +59,7 @@ export default function SetResourceManagerCacheNullUndefinedTest() {
       console.info('setResourceManagerCacheMaxCountForHSPNull_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('setResourceManagerCacheMaxCountForHSP_null_id'));
+      let button1 = await driver.findComponent(ON.id('setResourceManagerCache_null_id'));
       await button1.click();
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('setResourceManagerCacheMaxCountForHSP_null')).assertEqual('success');
