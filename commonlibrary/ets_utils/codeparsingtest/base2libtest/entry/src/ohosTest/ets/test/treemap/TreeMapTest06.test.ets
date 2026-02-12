@@ -45,10 +45,14 @@ interface GeneratedObjectLiteralInterface_4 {
   parentProp: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 export default function TreeMap06Test() {
   describe('TreeMap06Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -67,7 +71,6 @@ export default function TreeMap06Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== setAll ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST06_0100
      * @tc.name      testTreeMap06Chapter0001
@@ -535,8 +538,6 @@ export default function TreeMap06Test() {
       expect(treeMap2.get("0")).assertEqual(asciiChars.indexOf("0"));
       expect(treeMap2.get("~")).assertEqual(asciiChars.length - 1);
     });
-
-    // =============== set ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST06_1700

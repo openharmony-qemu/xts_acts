@@ -22,10 +22,15 @@ interface GeneratedTypeLiteralInterface_1 {
   d: GeneratedTypeLiteralInterface_2;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeMap04Test() {
   describe('TreeMap04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -43,7 +48,7 @@ export default function TreeMap04Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== get ======================
+
     /**
      * @tc.number    SUB_TREEMAP_TEST04_0100
      * @tc.name      testTreeMap04Chapter0001
@@ -1411,7 +1416,7 @@ export default function TreeMap04Test() {
         expect(e !== undefined).assertTrue();
       }
     });
-    // =============== getFirstKey ======================
+
     /**
      * @tc.number    SUB_TREEMAP_TEST04_7300
      * @tc.name      testTreeMap04Chapter0073

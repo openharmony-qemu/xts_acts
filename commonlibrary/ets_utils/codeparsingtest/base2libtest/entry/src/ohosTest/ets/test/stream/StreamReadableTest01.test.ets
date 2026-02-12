@@ -14,10 +14,15 @@ function createReadable(): stream.Readable {
   return new stream.Readable(options);
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamReadable01Test() {
   describe('StreamReadable01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -36,7 +41,6 @@ export default function StreamReadable01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== constructor ======================
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_0100
      * @tc.name      testStreamReadable01Chapter0001
@@ -53,7 +57,6 @@ export default function StreamReadable01Test() {
       expect(readableStream !== null && readableStream !== undefined).assertTrue();
     });
 
-    // =============== constructor(options: ReadableOptions) ======================
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_0200
      * @tc.name      testStreamReadable01Chapter0002
@@ -514,9 +517,6 @@ export default function StreamReadable01Test() {
         expect(err instanceof Error).assertTrue();
       }
     });
-
-
-    // =============== read  ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_2300
@@ -1413,8 +1413,6 @@ export default function StreamReadable01Test() {
       expect(dataChunk !== null && dataChunk !== undefined).assertTrue();
     });
 
-
-    // =============== read ======================
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_5800
      * @tc.name      testStreamReadable01Chapter0058
@@ -1463,8 +1461,6 @@ export default function StreamReadable01Test() {
       let dataChunk = readableStream.read();
       expect(dataChunk != null).assertTrue();
     });
-
-    // =============== resume ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_6000
@@ -1669,8 +1665,6 @@ export default function StreamReadable01Test() {
       });
 
     })
-
-    // =============== pause ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST01_6600

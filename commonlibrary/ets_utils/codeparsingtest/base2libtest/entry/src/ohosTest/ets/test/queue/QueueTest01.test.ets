@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { Queue } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Queue01Test() {
   describe('Queue01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,7 +28,6 @@ export default function Queue01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== constructor ======================
     /**
      * @tc.number SUB_QUEUE_TEST01_0100
      * @tc.name testQueue01Chapter0001
@@ -163,7 +167,6 @@ export default function Queue01Test() {
       }
     });
 
-    // =============== add ======================
     /**
      * @tc.number    SUB_QUEUE_TEST01_0900
      * @tc.name      testQueue01Chapter0009
@@ -1112,7 +1115,6 @@ export default function Queue01Test() {
       expect(queue.length).assertEqual(1);
     });
 
-    // =============== pop ======================
     /**
      * @tc.number    SUB_QUEUE_TEST01_6000
      * @tc.name      testQueue01Chapter0060
@@ -1412,7 +1414,7 @@ export default function Queue01Test() {
       expect(fourthPop).assertEqual("D");
       expect(queue.length).assertEqual(0);
     });
-    // =============== getFirst ======================
+
     /**
      * @tc.number    SUB_QUEUE_TEST01_7200
      * @tc.name      testQueue01Chapter0072
@@ -1530,7 +1532,6 @@ export default function Queue01Test() {
       let result: boolean = queue.getFirst();
       expect(result).assertTrue();
     });
-    // =============== forEach ======================
 
     /**
      * @tc.number    SUB_QUEUE_TEST01_7800

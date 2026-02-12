@@ -14,10 +14,15 @@ interface GeneratedObjectLiteralInterface_2 {
   c: number[];
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Queue02Test() {
   describe('Queue02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -35,8 +40,6 @@ export default function Queue02Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== forEach ======================
 
     /**
      * @tc.number    SUB_QUEUE_TEST02_0100
@@ -682,7 +685,6 @@ export default function Queue02Test() {
       expect(collected[0]).assertEqual("\\a");
       expect(collected[10]).assertEqual("\\?");
     });
-    // =============== [Symbol.iterator] ======================
 
     /**
      * @tc.number    SUB_QUEUE_TEST02_1900

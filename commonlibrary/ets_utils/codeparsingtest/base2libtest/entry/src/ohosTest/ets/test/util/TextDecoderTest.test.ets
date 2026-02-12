@@ -1,11 +1,17 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import  util  from '@ohos.util';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function TextDecoderTest() {
   describe('TextDecoderTest', () => {
     let textDecoder: util.TextDecoder;
-
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       textDecoder = new util.TextDecoder(); // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })

@@ -17,10 +17,15 @@ function wait(timeout: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamReadable04Test() {
   describe('StreamReadable04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -39,7 +44,6 @@ export default function StreamReadable04Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== on ======================
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST04_0100
      * @tc.name      testStreamReadable04Chapter0001
@@ -689,7 +693,6 @@ export default function StreamReadable04Test() {
       }, 100);
     });
 
-    // =============== doInitialize ======================
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST04_1700
      * @tc.name      testStreamReadable04Chapter0017

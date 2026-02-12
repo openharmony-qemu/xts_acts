@@ -1,11 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { TreeSet, util } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function TreeSet02Test() {
   describe('TreeSet02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,8 +27,6 @@ export default function TreeSet02Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== isEmpty ======================
 
     /**
      * @tc.number    SUB_TREESET_TEST02_0100
@@ -361,10 +363,6 @@ export default function TreeSet02Test() {
       let result: boolean = treeSet.isEmpty();
       expect(result).assertFalse();
     });
-
-
-    // =============== has ======================
-
 
     /**
      * @tc.number    SUB_TREESET_TEST02_1900
@@ -950,8 +948,6 @@ export default function TreeSet02Test() {
       expect(hasResult).assertTrue();
     });
 
-    // =============== getFirstValue ======================
-
     /**
      * @tc.number    SUB_TREESET_TEST02_5000
      * @tc.name      testTreeSet02Chapter0050
@@ -1337,7 +1333,6 @@ export default function TreeSet02Test() {
       expect(result).assertEqual("second");
     });
 
-    // =============== getLastValue ======================
     /**
      * @tc.number    SUB_TREESET_TEST02_7000
      * @tc.name      testTreeSet02Chapter0070
@@ -1680,8 +1675,6 @@ export default function TreeSet02Test() {
       const result = treeSet.getLastValue();
       expect(result).assertEqual(3);
     });
-
-    // =============== add ======================
 
     /**
      * @tc.number    SUB_TREESET_TEST02_8800

@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { TreeSet, util } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeSet05Test() {
   describe('TreeSet05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,8 +27,6 @@ export default function TreeSet05Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== popFirst ======================
 
     /**
      * @tc.number    SUB_TREESET_TEST05_0100
@@ -367,9 +370,6 @@ export default function TreeSet05Test() {
       }
 
     });
-
-
-    // =============== popLast ======================
 
     /**
      * @tc.number    SUB_TREESET_TEST05_1500
@@ -753,8 +753,6 @@ export default function TreeSet05Test() {
         expect(error.code).assertEqual(10200011);
       }
     });
-
-    // =============== clear ======================
 
     /**
      * @tc.number    SUB_TREESET_TEST05_3100
@@ -1165,7 +1163,6 @@ export default function TreeSet05Test() {
       }
     });
 
-    // =============== values ======================
     /**
      * @tc.number    SUB_TREESET_TEST05_4700
      * @tc.name      testTreeSet05Chapter0047

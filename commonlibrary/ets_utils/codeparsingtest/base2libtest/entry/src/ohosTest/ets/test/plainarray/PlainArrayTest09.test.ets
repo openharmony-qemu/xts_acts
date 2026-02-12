@@ -1,10 +1,15 @@
 import { PlainArray } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function PlainArray09Test() {
   describe('PlainArray09Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     });
@@ -22,7 +27,6 @@ export default function PlainArray09Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
-    // =============== forEach ======================
 
     /**
      * @tc.number    SUB_PLAINARRAY_TEST09_0100
@@ -634,8 +638,6 @@ export default function PlainArray09Test() {
       }) as ((value: string, index?: number) => void));
       expect(plainArray.length).assertEqual(1);
     });
-
-    // =============== [Symbol.iterator] ======================
 
     /**
      * @tc.number SUB_PLAINARRAY_TEST09_2100

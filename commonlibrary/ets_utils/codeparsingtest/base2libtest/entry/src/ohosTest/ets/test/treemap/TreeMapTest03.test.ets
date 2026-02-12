@@ -57,10 +57,15 @@ interface SimpleAB {
   b: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeMap03Test() {
   describe('TreeMap03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -79,7 +84,6 @@ export default function TreeMap03Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== hasValue ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST03_0100
      * @tc.name      testTreeMap03Chapter0001

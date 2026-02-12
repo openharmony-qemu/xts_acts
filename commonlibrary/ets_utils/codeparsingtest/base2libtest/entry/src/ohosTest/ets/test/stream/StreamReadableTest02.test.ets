@@ -14,10 +14,15 @@ function createReadable(): stream.Readable {
   return new stream.Readable(options);
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamReadable02Test() {
   describe('StreamReadable02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -35,7 +40,7 @@ export default function StreamReadable02Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // =============== pause ======================
+
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST02_0100
      * @tc.name      testStreamReadable02Chapter0001

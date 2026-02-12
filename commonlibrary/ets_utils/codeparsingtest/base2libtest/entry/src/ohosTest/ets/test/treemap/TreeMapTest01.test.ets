@@ -91,11 +91,15 @@ interface TypedArrayPropertyObject {
 
 type MapValue = string | MapValueObject;
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
 
 export default function TreeMap01Test() {
   describe('TreeMap01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -113,8 +117,6 @@ export default function TreeMap01Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== constructor ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST01_0100
@@ -697,7 +699,7 @@ export default function TreeMap01Test() {
         index++;
       }
     });
-    // =============== isEmpty ======================
+
     /**
      * @tc.number    SUB_TREEMAP_TEST01_2500
      * @tc.name      testTreeMap01Chapter0025

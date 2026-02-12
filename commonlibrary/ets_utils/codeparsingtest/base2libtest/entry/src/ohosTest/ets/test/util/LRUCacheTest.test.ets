@@ -10,11 +10,18 @@ interface TestObject {
 interface ConfigWithFunction {
     capacity: number | (() => number);
 }
-		
+
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function LRUCacheTest() {
   describe('LRUCacheTest', () => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })

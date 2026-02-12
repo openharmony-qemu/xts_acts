@@ -2,10 +2,15 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { util } from '@kit.ArkTS';
 import Stack from '@ohos.util.Stack';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function Stack04Test() {
   describe('Stack04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,8 +28,6 @@ export default function Stack04Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== isEmpty ======================
 
     /**
      * @tc.number    SUB_STACK_TEST04_0100
@@ -118,8 +121,6 @@ export default function Stack04Test() {
       let result2: boolean = stack2.isEmpty();
       expect(result2).assertFalse();
     });
-
-    // =============== Symbol.iterator ======================
 
     /**
      * @tc.number    SUB_STACK_TEST04_0600

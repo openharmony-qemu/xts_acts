@@ -4,10 +4,17 @@ import { util, xml } from '@kit.ArkTS';
 
 const DOMAIN = 0x0000
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function XmlTest_02() {
   describe('XmlTest_02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })

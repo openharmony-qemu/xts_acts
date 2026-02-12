@@ -1,10 +1,17 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { Vector } from '@kit.ArkTS';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function vectorTest06() {
   describe('VectorTest06', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,8 +29,6 @@ export default function vectorTest06() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    //=============convertToArray接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST06_0100
@@ -51,7 +56,6 @@ export default function vectorTest06() {
       expect(arr[0]).assertEqual(vector.get(0));
     })
 
-    //=============isEmpty接口===============
     /**
      * @tc.number    SUB_VECTOR_TEST06_0200
      * @tc.name      testVector06Chapter0002
@@ -240,8 +244,6 @@ export default function vectorTest06() {
       vector.clear();
       expect(vector.isEmpty()).assertTrue();
     })
-
-    //=============increaseCapacityTo接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST06_1200
@@ -470,8 +472,6 @@ export default function vectorTest06() {
       expect(vector.get(0)).assertEqual(objVal);
     })
 
-    //=============trimToCurrentLength接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_2200
      * @tc.name      testVector06Chapter0022
@@ -673,8 +673,6 @@ export default function vectorTest06() {
       expect(vector.length).assertEqual(1);
     })
 
-    //=============toString接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_3200
      * @tc.name      testVector06Chapter0032
@@ -868,8 +866,6 @@ export default function vectorTest06() {
       expect(str).assertEqual('[object Object]'); // 对象默认 toString 结果
       expect(vector.get(0)).assertEqual(objVal)
     })
-
-    //=============copyToArray接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST06_4200
@@ -1096,8 +1092,6 @@ export default function vectorTest06() {
       expect(objVal.a).assertEqual(1); // 原对象属性不变（浅拷贝验证）
     })
 
-    //=============getFirstElement接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_5200
      * @tc.name      testVector06Chapter0052
@@ -1288,8 +1282,6 @@ export default function vectorTest06() {
       expect(vector.getFirstElement()).assertEqual(objVal);
     })
 
-    //=============getLastElement接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_6300
      * @tc.name      testVector06Chapter0063
@@ -1479,8 +1471,6 @@ export default function vectorTest06() {
       vector.add(objVal);
       expect(vector.getLastElement()).assertEqual(objVal);
     })
-
-    //=============getLastIndexFrom接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST06_7400
@@ -1710,8 +1700,6 @@ export default function vectorTest06() {
       expect(result).assertEqual(0);
     })
 
-    //=============getIndexFrom接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_8600
      * @tc.name      testVector06Chapter0086
@@ -1939,8 +1927,6 @@ export default function vectorTest06() {
       expect(result).assertEqual(1);
     })
 
-    //=============setLength接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST06_9800
      * @tc.name      testVector06Chapter0098
@@ -2099,7 +2085,6 @@ export default function vectorTest06() {
       expect(vector.length).assertEqual(1)
     })
 
-    //=============get接口===============
     /**
      * @tc.number    SUB_VECTOR_TEST06_10500
      * @tc.name      testVector06Chapter0105
@@ -2184,9 +2169,6 @@ export default function vectorTest06() {
       expect(vector.get(0)[0]).assertEqual(-128)
       expect(vector.length).assertEqual(1)
     })
-
-
-    //=============get接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST06_10900

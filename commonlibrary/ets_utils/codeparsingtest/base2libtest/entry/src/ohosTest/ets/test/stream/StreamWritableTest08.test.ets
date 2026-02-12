@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { stream } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamWritable08Test() {
   describe('StreamWritable08Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,7 +28,6 @@ export default function StreamWritable08Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== doWritev  ======================
     /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST08_0100
      * @tc.name      testStreamWritable08Chapter0001

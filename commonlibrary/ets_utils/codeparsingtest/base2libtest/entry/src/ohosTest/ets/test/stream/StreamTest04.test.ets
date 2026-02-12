@@ -94,10 +94,16 @@ class CustomReadable extends stream.Readable {
   _read(): void {}
 }
 class InvalidReadable extends stream.Readable {}
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamTest_04() {
   describe('StreamTest_04', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })

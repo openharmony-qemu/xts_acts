@@ -17,10 +17,15 @@ interface ObjA {
   b?: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeMap02Test() {
   describe('TreeMap02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -39,7 +44,6 @@ export default function TreeMap02Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== isEmpty ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST02_0100
      * @tc.name      testTreeMap02Chapter0001
@@ -504,7 +508,6 @@ export default function TreeMap02Test() {
       expect(result).assertFalse();
     });
 
-    // =============== hasKey ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST02_2600
      * @tc.name      testTreeMap02Chapter0026
@@ -1588,7 +1591,6 @@ export default function TreeMap02Test() {
       expect(result).assertFalse();
     });
 
-    // =============== hasValue ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST02_7800
      * @tc.name      testTreeMap02Chapter0078

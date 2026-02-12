@@ -1,10 +1,17 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { Vector } from '@kit.ArkTS';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function vectorTest05() {
   describe('VectorTest05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,8 +29,6 @@ export default function vectorTest05() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    
-    //=============remove接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST05_0100
@@ -53,9 +58,6 @@ export default function vectorTest05() {
       expect(result).assertEqual(true)
       expect(vector.length).assertEqual(2)
     })
-
-
-    //=============removeByRange接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST05_0200
@@ -282,7 +284,6 @@ export default function vectorTest05() {
       expect(vector.length).assertEqual(1)
     })
 
-    //=============replaceAllElements接口===============
     /**
      * @tc.number    SUB_VECTOR_TEST05_1300
      * @tc.name      testVector05Chapter0013
@@ -509,8 +510,6 @@ export default function vectorTest05() {
       expect((vector[0].c)[0]).assertEqual(1);
     });
 
-    //=============forEach接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST05_2300
      * @tc.name      testVector05Chapter0023
@@ -681,9 +680,6 @@ export default function vectorTest05() {
         expect((value as C1).b).assertEqual("test");
       });
     });
-
-
-    //=============sort接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST05_3200
@@ -901,9 +897,6 @@ export default function vectorTest05() {
       expect(vector[1]).assertEqual(res2);
     });
 
-
-    //=============subVector接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST05_4200
      * @tc.name      testVector05Chapter0042
@@ -1114,8 +1107,6 @@ export default function vectorTest05() {
       expect(result.length).assertEqual(1);
     });
 
-
-    //=============clear接口===============
     /**
      * @tc.number    SUB_VECTOR_TEST05_5200
      * @tc.name      testVector05Chapter0052
@@ -1267,9 +1258,6 @@ export default function vectorTest05() {
       vector.clear();
       expect(vector.length).assertEqual(0);
     })
-
-
-    //=============clone接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST05_6100
@@ -1491,9 +1479,6 @@ export default function vectorTest05() {
       expect(vectorClone.length).assertEqual(1);
     })
 
-
-    //=============getCapacity接口===============
-
     /**
      * @tc.number    SUB_VECTOR_TEST05_7100
      * @tc.name      testVector05Chapter0071
@@ -1687,9 +1672,6 @@ export default function vectorTest05() {
       expect(capacity >= length).assertTrue();
       expect(length).assertEqual(1)
     })
-
-
-    //=============convertToArray接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST05_8100

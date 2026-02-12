@@ -1,10 +1,17 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { Vector } from '@kit.ArkTS';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function vectorTest02() {
   describe('VectorTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -22,8 +29,6 @@ export default function vectorTest02() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    //=============add接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST02_0100
@@ -1332,8 +1337,6 @@ export default function vectorTest02() {
       expect(vector[0].regex.flags).assertEqual('gi');
       expect(vector[0].flags.flags).assertEqual('m');
     })
-
-    //=============insert接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST02_7000

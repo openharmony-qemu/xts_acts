@@ -43,10 +43,15 @@ interface PipeOptions {
   end?: boolean;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamReadable03Test() {
   describe('StreamReadable03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -64,8 +69,6 @@ export default function StreamReadable03Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== setEncoding ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST03_0100
@@ -698,7 +701,6 @@ export default function StreamReadable03Test() {
       }
       expect(result).assertFalse();
     });
-    // =============== isPaused ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST03_2300
@@ -908,7 +910,6 @@ export default function StreamReadable03Test() {
       let result: boolean = readableStream.isPaused();
       expect(result).assertFalse();
     });
-    // =============== pipe ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST03_3100
@@ -1740,7 +1741,6 @@ export default function StreamReadable03Test() {
         expect(writable.receivedDataLength).assertEqual(12);
       }, 100);
     });
-    // =============== unpipe ======================
 
     /**
      * @tc.number    SUB_STREAM_READABLE_TEST03_4800

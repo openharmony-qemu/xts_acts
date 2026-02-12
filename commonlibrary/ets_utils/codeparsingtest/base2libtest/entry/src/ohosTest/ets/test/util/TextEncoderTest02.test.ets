@@ -41,20 +41,33 @@ class TestCase {
   }
 }
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function TextEncoder02Test() {
   describe('TextEncoder02Test', () => {
-
-    beforeAll(() => {
-      console.info('TextEncoder02Test: beforeAll');
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(async () => {
+      await sleep(30);
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {
-      console.info('TextEncoder02Test: beforeEach');
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      console.info('TextEncoder02Test: afterEach');
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      console.info('TextEncoder02Test: afterAll');
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
 
@@ -123,19 +136,10 @@ export default function TextEncoder02Test() {
         try {
           console.info(`${TAG} Testing encoding: ${enc}`);
           const encoder = util.TextEncoder.create(enc);
-
-          if (encoder) {
-            expect(encoder instanceof util.TextEncoder).assertTrue();
-            if (encoder.encoding) {
-
-              expect(typeof encoder.encoding).assertEqual('string');
-              console.info(`${TAG} Created successfully: ${encoder.encoding}`);
-            }
-          } else {
-            console.warn(`${TAG} Encoding not supported (returned null): ${enc}`);
-          }
+          expect(typeof encoder.encoding).assertEqual('string');
         } catch (e) {
           console.warn(`${TAG} Exception creating encoder for ${enc}: ${e}`);
+          expect().assertFail();
         }
       });
       console.info(`${TAG} end`);

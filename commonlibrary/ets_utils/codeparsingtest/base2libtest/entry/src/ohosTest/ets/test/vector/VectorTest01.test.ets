@@ -2,10 +2,17 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { ArrayList, util, Vector } from '@kit.ArkTS';
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function vectorTest01() {
   describe('VectorTest01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,8 +30,6 @@ export default function vectorTest01() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    //=============constructor接口===============
-
 
     /**
      * @tc.number    SUB_VECTOR_TEST01_0100
@@ -310,8 +315,6 @@ export default function vectorTest01() {
       expect(vector4 instanceof Vector).assertTrue();
       expect(vector4.constructor.name).assertEqual("Vector");
     })
-
-    //=============add接口===============
 
     /**
      * @tc.number    SUB_VECTOR_TEST01_2000

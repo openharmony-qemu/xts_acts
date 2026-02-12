@@ -1,10 +1,15 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { stream, util } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function StreamDuplex01Test() {
   describe('StreamDuplex01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -23,7 +28,6 @@ export default function StreamDuplex01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    // =============== constructor ======================
     /**
      * @tc.number    SUB_STREAM_DUPLEX_TEST01_0100
      * @tc.name      testStreamDuplex01Chapter0001
@@ -189,7 +193,6 @@ export default function StreamDuplex01Test() {
       expect(duplex.writable !== undefined).assertTrue();
     });
 
-    // =============== write ======================
     /**
      * @tc.number    SUB_STREAM_DUPLEX_TEST01_1100
      * @tc.name      testStreamDuplex01Chapter0011

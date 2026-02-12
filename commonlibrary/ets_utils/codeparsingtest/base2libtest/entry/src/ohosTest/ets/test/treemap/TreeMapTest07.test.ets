@@ -13,10 +13,15 @@ import {
 } from '@ohos/hypium';
 import { PlainArray, TreeMap, util } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeMap07Test() {
   describe('TreeMap07Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -34,8 +39,6 @@ export default function TreeMap07Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== set ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST07_0100
@@ -826,7 +829,6 @@ export default function TreeMap07Test() {
       expect(result.testRegex2("def")).assertTrue();
     });
 
-    // =============== remove ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST07_2700
      * @tc.name      testTreeMap07Chapter0027
@@ -1334,7 +1336,6 @@ export default function TreeMap07Test() {
       expect(treeMap.length).assertEqual(0);
     });
 
-    // =============== getLowerKey ======================
     /**
      * @tc.number    SUB_TREEMAP_TEST07_4700
      * @tc.name      testTreeMap07Chapter0047

@@ -25,10 +25,15 @@ interface GeneratedTypeLiteralInterface_6 {
   code: number;
 }
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function TreeMap09Test() {
   describe('TreeMap09Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async () => {
+      await sleep(30);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -46,8 +51,6 @@ export default function TreeMap09Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    // =============== replace ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_0100
@@ -303,8 +306,6 @@ export default function TreeMap09Test() {
       expect(treeMap.get("key")).assertEqual(4);
     });
 
-    // =============== clear ======================
-
     /**
      * @tc.number    SUB_TREEMAP_TEST09_1100
      * @tc.name      testTreeMap09Chapter0011
@@ -479,7 +480,6 @@ export default function TreeMap09Test() {
       }
       expect(errorCaught).assertTrue();
     });
-    // =============== keys ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_1700
@@ -658,7 +658,6 @@ export default function TreeMap09Test() {
       }
       expect(errorCaught).assertTrue();
     });
-    // =============== values ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_2300
@@ -908,7 +907,6 @@ export default function TreeMap09Test() {
       expect(resultValues[3].id).assertEqual(3);
       expect(resultValues[3].name).assertEqual("falcon");
     });
-    // =============== forEach ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_3100
@@ -1159,7 +1157,6 @@ export default function TreeMap09Test() {
       }
       expect(errorCaught).assertTrue();
     });
-    // =============== entries ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_3900
@@ -1489,7 +1486,6 @@ export default function TreeMap09Test() {
       expect(secondPair?.[1]).assertEqual(2);
       expect(r.done).assertTrue();
     });
-    // =============== [Symbol.iterator] ======================
 
     /**
      * @tc.number    SUB_TREEMAP_TEST09_4900
