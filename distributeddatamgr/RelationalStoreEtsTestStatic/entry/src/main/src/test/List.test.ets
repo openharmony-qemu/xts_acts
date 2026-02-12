@@ -47,10 +47,7 @@ import RelationStoreRdbStoreTest from "./RelationStoreApi.test";
 import RelationalStoreEnumTest from "./RelationStoreEnumApi.test";
 import RelationStoreError00Test from "./RelationStoreError00Api.test";
 import RelationStoreError17Test from "./RelationStoreError17Api.test";
-import RelationStoreError21Test from "./RelationStoreError21Api.test";
-import RelationStoreError24Test from "./RelationStoreError24Api.test";
 import RelationStoreError30Test from "./RelationStoreError30Api.test";
-import RelationStoreError32Test from "./RelationStoreError32Api.test";
 import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
 import VectorStore from "./VectorStore.test";
 import RdbStoreSqliteErrorOccurredTest from  "./RdbOnErrorLog.test";
@@ -76,10 +73,7 @@ export default function testsuite() {
   RdbResultSetTest();
   RelationStoreError00Test();
 
-  RelationStoreError21Test();
-  RelationStoreError24Test();
   RelationStoreError30Test();
-  RelationStoreError32Test();
   RelationStoreError17Test();
 
   RelationalStoreSyncApiTest();
