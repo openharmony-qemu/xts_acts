@@ -38,7 +38,12 @@
         "MainAbility/pages/Canvas/CanvasParamsUnitPage",
         "MainAbility/pages/Canvas/CanvasParamsImageAnalyzerPage",
         "MainAbility/pages/Canvas/CanvasParamsVisibilityPage",
-        "MainAbility/pages/Canvas/CanvasParamsAntialiasPage"
+        "MainAbility/pages/Canvas/CanvasParamsAntialiasPage",
+        "MainAbility/pages/path2D/Path2DArcArcToNullUndefined",
+        "MainAbility/pages/path2D/Path2DBezierCurveToEllipseNullUndefined",
+        "MainAbility/pages/path2D/Path2DLineToMoveToNullUndefined",
+        "MainAbility/pages/path2D/Path2DQuadraticCurveToRectNullUndefined",
+        "MainAbility/pages/path2D/Path2DAddPathNullUndefined"
         
     ]
 }

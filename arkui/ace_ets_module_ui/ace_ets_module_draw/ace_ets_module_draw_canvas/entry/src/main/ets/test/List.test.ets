@@ -48,6 +48,11 @@ import CanvasParamsUnitTest from './Canvas/CanvasParamsUnitTest.test';
 import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTest.test';
 import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
 import CanvasParamsAntialiasTest from './Canvas/CanvasParamsAntialiasTest.test';
+import path2DArcArcToNullUndefinedTest from './path2D/Path2DArcArcToNullUndefined.test';
+import path2DBezierCurveToEllipseNullUndefinedTest from './path2D/Path2DBezierCurveToEllipseNullUndefined.test';
+import path2DLineToMoveToNullUndefinedTest from './path2D/Path2DLineToMoveToNullUndefined.test';
+import path2DQuadraticCurveToRectNullUndefinedTest from './path2D/Path2DQuadraticCurveToRectNullUndefined.test';
+import path2DAddPathNullUndefinedTest from './path2D/Path2DAddPathNullUndefined.test';
 
 export default function testsuite() {
 
@@ -87,4 +92,10 @@ export default function testsuite() {
   CanvasParamsImageAnalyzerTest();
   CanvasParamsVisibilityTest();
   CanvasParamsAntialiasTest();
+
+  path2DArcArcToNullUndefinedTest();
+  path2DBezierCurveToEllipseNullUndefinedTest();
+  path2DLineToMoveToNullUndefinedTest();
+  path2DQuadraticCurveToRectNullUndefinedTest();
+  path2DAddPathNullUndefinedTest();
 }
