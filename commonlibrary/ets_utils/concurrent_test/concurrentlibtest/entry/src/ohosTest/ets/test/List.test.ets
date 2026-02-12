@@ -23,6 +23,7 @@ import workerAddTest from './worker/WorkerAdd.test';
 import workerErrorCodeTest from './worker/WorkerErrorCode.test';
 import WorkerCoverageTest from './worker/WorkerCoverage.test';
 import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
+import utilsCoverageTest from './arkTSUtils/UtilsCoverageTest.test';
 
 export default function testsuite() {
   arkTSUtilsTest();
@@ -34,4 +35,5 @@ export default function testsuite() {
   workerErrorCodeTest();
   WorkerCoverageTest();
   concurrencyReturnCoveredTest();
+  utilsCoverageTest();
 }
