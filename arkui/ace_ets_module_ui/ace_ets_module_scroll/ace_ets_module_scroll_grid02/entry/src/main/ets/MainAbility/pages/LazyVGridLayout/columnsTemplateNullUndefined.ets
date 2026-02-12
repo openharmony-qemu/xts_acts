@@ -62,7 +62,7 @@ struct LazyVGridLayoutColumnsTemplateNullUn {
         }
         .columnsTemplate('')
         .id('lazyVGrid_columnsTemplate_emptyString')
-        .backgroundColor("#FFF000")
+        .backgroundColor('#FFF000')
         .height('20%')
         .margin(5)
 
@@ -92,7 +92,7 @@ struct LazyVGridLayoutColumnsTemplateNullUn {
         }
         .columnsTemplate(undefined)
         .id('lazyVGrid_columnsTemplate_undefined')
-        .backgroundColor("#FFF000")
+        .backgroundColor('#FFF000')
         .height('20%')
         .margin(5)
       }

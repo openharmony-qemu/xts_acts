@@ -61,7 +61,7 @@ struct LazyVGridLayoutGapNullUndefinedExample {
         .columnsTemplate('1fr 1fr')
         .columnsGap(null)
         .id('lazyVGrid_columnsGap_null')
-        .backgroundColor("#FFF000")
+        .backgroundColor('#FFF000')
         .height('30%')
 
         LazyVGridLayout() {
@@ -112,7 +112,7 @@ struct LazyVGridLayoutGapNullUndefinedExample {
         .columnsTemplate('1fr 1fr')
         .rowsGap(null)
         .id('lazyVGrid_rowsGap_null')
-        .backgroundColor("#FFF000")
+        .backgroundColor('#FFF000')
         .height('30%')
 
         LazyVGridLayout() {
