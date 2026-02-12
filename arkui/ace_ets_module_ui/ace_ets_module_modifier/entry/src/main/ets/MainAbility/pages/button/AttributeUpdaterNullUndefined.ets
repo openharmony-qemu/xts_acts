@@ -13,51 +13,89 @@
  * limitations under the License.
  */
 
-import { AttributeUpdater } from '@kit.ArkUI'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
+import router from '@ohos.router';
+import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import Utils from '../Utils';
 
-class MyButtonUpdater extends AttributeUpdater<ButtonAttribute> {
-  applyNormalAttribute(instance: ButtonAttribute|undefined|null): void {
-    AppStorage.setOrCreate('applyNormalAttributeNullUndefined', instance);
-  }
-
-  initializeModifier(instance: ButtonAttribute|undefined|null): void {
-    AppStorage.setOrCreate('initializeModifierNullUndefined', instance);
-  }
-
-  onComponentChanged(instance: ButtonAttribute|undefined|null): void {
-    AppStorage.setOrCreate('onComponentChangedNullUndefined', instance);
-  }
-}
-
-@Entry
-@Component
-struct AttributeUpdaterNullIndex {
-  @State modifier: MyButtonUpdater = new MyButtonUpdater()
-
-  build() {
-    Row() {
-      Column() {
-        // Test applyNormalAttribute with null
-        Button('Button attributeModifier null')
-          .id('btn_attributeModifier_null')
-          .attributeModifier(this.modifier)
-          .onClick(() => {
-            this.modifier.applyNormalAttribute(null);
-            this.modifier.initializeModifier(null);
-            this.modifier.onComponentChanged(null);
-          })
-        // Test applyNormalAttribute with undefined
-        Button('Button attributeModifier undefined')
-          .id('btn_attributeModifier_undefined')
-          .attributeModifier(this.modifier)
-          .onClick(() => {
-            this.modifier.applyNormalAttribute(undefined);
-            this.modifier.initializeModifier(undefined);
-            this.modifier.onComponentChanged(undefined);
-          })
+export default function AttributeUpdaterNullUndefinedTest() {
+  describe('AttributeUpdaterNullUndefinedTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("AttributeUpdaterNullUndefinedTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/button/AttributeUpdaterNullUndefined',
       }
-      .width('100%')
-    }
-    .height('100%')
-  }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get AttributeUpdaterNullUndefinedTest state pages:" + JSON.stringify(pages));
+        if (!("gestureEventTest" == pages.name)) {
+          console.info("get AttributeUpdaterNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          await Utils.sleep(2000);
+          console.info("push AttributeUpdaterNullUndefinedTest page result:" + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push AttributeUpdaterNullUndefinedTest page error:" + err);
+      }
+      console.info("AttributeUpdaterNullUndefinedTest beforeEach end");
+      done();
+    });
+
+    afterEach(async () => {
+      await Utils.sleep(1000);
+      console.info("AttributeUpdaterNullUndefinedTest after each called");
+    });
+
+    /**
+     * @tc.name   AttributeUpdaterApplyNormalAttributeNull_0100
+     * @tc.number SUB_ARKUI_ATTRIBUTEUPDATER_APPLYNORMALATTRIBUTE_NULL_0100
+     * @tc.desc   Test AttributeUpdater.applyNormalAttribute with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('AttributeUpdaterApplyNormalAttributeNull_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('setResourceManagerCacheMaxCountForHSPNull_0100 START');
+      let driver = await Driver.create()
+      await Utils.sleep(1000);
+      let button1 = await driver.findComponent(ON.id('btn_attributeModifier_null'));
+      await button1.click();
+      await Utils.sleep(1000);
+      expect(AppStorage.get('applyNormalAttributeNullUndefined')).assertEqual(null);
+      expect(AppStorage.get('initializeModifierNullUndefined')).assertEqual(null);
+      expect(AppStorage.get('onComponentChangedNullUndefined')).assertEqual(null);
+      AppStorage.delete('applyNormalAttributeNullUndefined')
+      AppStorage.delete('initializeModifierNullUndefined')
+      AppStorage.delete('onComponentChangedNullUndefined')
+      console.info('[setResourceManagerCacheMaxCountForHSPNull_0100] END');
+      done();
+    })
+
+    /**
+     * @tc.name   AttributeUpdaterApplyNormalAttributeUndefined_0200
+     * @tc.number SUB_ARKUI_ATTRIBUTEUPDATER_APPLYNORMALATTRIBUTE_UNDEFINED_0200
+     * @tc.desc   Test AttributeUpdater.applyNormalAttribute with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('AttributeUpdaterApplyNormalAttributeUndefined_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('AttributeUpdaterApplyNormalAttributeUndefined_0200 START');
+      let driver = await Driver.create()
+      await Utils.sleep(1000);
+      let button1 = await driver.findComponent(ON.id('btn_attributeModifier_undefined'));
+      await button1.click();
+      await Utils.sleep(1000);
+      expect(AppStorage.get('applyNormalAttributeNullUndefined')).assertEqual(undefined);
+      expect(AppStorage.get('initializeModifierNullUndefined')).assertEqual(undefined);
+      expect(AppStorage.get('onComponentChangedNullUndefined')).assertEqual(undefined);
+      AppStorage.delete('applyNormalAttributeNullUndefined')
+      AppStorage.delete('initializeModifierNullUndefined')
+      AppStorage.delete('onComponentChangedNullUndefined')
+      console.info('[AttributeUpdaterApplyNormalAttributeUndefined_0200] END');
+      done();
+    })
+
+  })
 }
