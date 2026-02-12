@@ -32,7 +32,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceDefaultTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
@@ -49,10 +49,11 @@ export default function SelectionMenuOptions() {
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get SelectionMenuOptions state pages:" + JSON.stringify(pages));
+        let result = await routerInstance.replaceUrl(options);
         if (!("SelectionMenuOptions" == pages.name)) {
           console.info("get SelectionMenuOptions pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          console.info("push SelectionMenuOptions page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SelectionMenuOptions page error:" + err);

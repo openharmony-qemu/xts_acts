@@ -27,7 +27,7 @@ interface optionsObj {
 }
 export default function TimePicker() {
   describe('TimePicker', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePicker beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")

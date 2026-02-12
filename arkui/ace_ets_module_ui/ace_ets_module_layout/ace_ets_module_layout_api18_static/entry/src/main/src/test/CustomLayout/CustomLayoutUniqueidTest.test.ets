@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomLayoutUniqueidTest() {
   describe('CustomLayoutUniqueidTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomLayoutUniqueidTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")

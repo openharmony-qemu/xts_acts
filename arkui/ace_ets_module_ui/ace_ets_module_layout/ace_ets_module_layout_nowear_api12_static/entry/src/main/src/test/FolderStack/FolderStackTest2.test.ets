@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function FolderStackTest2() {
   describe('FolderStackTest2', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FolderStackTest2 beforeAll start");
 
 

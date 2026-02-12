@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindSheetShowClose() {
   describe('bindSheetShowClose', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindSheetShowClose beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function polygonJsunit() {
   describe('appInfoTest_four_6', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       

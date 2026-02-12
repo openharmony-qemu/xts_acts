@@ -24,7 +24,7 @@ import {UtilsTest,startAbility} from '../Util.test'
 
 export default function UIContextComponentSnapshotJsunit() {
   describe('UIContextComponentSnapshotTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIContextComponentSnapshotTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.example.myapplication.static", "EntryAbility")

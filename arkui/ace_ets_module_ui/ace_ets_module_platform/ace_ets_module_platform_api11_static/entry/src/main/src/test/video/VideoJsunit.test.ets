@@ -49,7 +49,7 @@ export default function videoJsunit() {
 
 
   describe('VideoAppInfoTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
     });

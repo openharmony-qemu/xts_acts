@@ -28,7 +28,7 @@ const SLEEP_TIME_L = 1000;
 export default function UIPickerOnChangeTest() {
   describe('UIPickerOnChangeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIPickerOnChangeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
       await UtilsTest.msSleep(SLEEP_TIME_L)

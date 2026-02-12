@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 export default function navigationNavbar01() {
   describe('navigationNavbar01',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

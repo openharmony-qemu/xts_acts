@@ -27,7 +27,7 @@ import { RecordData } from '@ohos.base';
 export default function animationStatusJsunit() {
   describe('animationStatusJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("animationStatusJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

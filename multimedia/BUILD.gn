@@ -107,6 +107,7 @@ group("multimedia") {
       "camera/camera_ndk_supplement:ActsMediaCameraXtsTest",
       "camera/camera_picker_test:camera_picker_ets_hap",
       "camera/camera_ets_standard/cameraXts:cameraXts_ets_hap",
+      "camera/cameraKitXts:camera_kit_Xts_ets_hap",
       "camera/camera_js_standard_static:camera_framework_ets_static_hap",
       "camera/camera_picker_test_static:camera_picker_ets_static_hap",
       "drm/AVCodecDrmNdk:AVcodecDrm_NDK_test",

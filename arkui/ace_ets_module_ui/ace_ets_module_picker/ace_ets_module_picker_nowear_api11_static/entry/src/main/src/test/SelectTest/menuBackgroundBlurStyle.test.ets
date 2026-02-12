@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function menuBackgroundBlurStyle() {
   describe('menuBackgroundBlurStyle', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("menuBackgroundBlurStyle beforeEach start");
 
 

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorOnHoverTest() {
   describe('RichEditorOnHoverTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnHoverTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

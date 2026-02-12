@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function navDestinationJsunit() {
   describe('navDestinationTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

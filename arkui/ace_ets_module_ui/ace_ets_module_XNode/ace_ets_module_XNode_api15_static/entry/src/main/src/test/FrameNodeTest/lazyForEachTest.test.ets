@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function lazyForEachTest() {
   describe('lazyForEachTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("lazyForEachTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
@@ -49,7 +49,7 @@ export default function lazyForEachTest() {
         let pages = router.getState();
         // let result = await router.replaceUrl(options);
         console.info("get lazyForEachTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/FrameNode/lazyForEachTest" == pages.name)) {
+        if (!("lazyForEachTest" == pages.name)) {
           console.info("get lazyForEachTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

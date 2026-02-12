@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_ListInitialIndex6Test() {
   describe('List_ListInitialIndex6Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_ListInitialIndex6Test beforeAll start");
             
       await UtilsTest.msSleep(4000)

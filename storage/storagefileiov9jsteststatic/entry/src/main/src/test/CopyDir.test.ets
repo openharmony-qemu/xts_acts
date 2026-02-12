@@ -477,6 +477,62 @@ export default function fileIOCopyDir() {
     });
 
     /**
+     * @tc.name   fileIO_test_copyDir_sync_static_010
+     * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1000
+     * @tc.desc   Test copyDirSync() interface with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_010 start');
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_sync_static_010');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+
+      try {
+        fs.copyDirSync('', ddpath2);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_010 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fs.rmdirSync(dpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_sync_static_011
+     * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1100
+     * @tc.desc   Test copyDirSync() interface with second parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_011 start');
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_sync_static_011');
+      let ddpath1 = dpath + '/srcDir';
+      let dddpath1 = ddpath1 + '/srcDir_first';
+      let fpath1 = ddpath1 + '/srcFile_first_01';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath1);
+      fs.mkdirSync(dddpath1);
+      expect(await Utils.prepareFile(fpath1, await Utils.randomString(10))).assertTrue();
+
+      try {
+        fs.copyDirSync(ddpath1, '');
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_011 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fs.rmdirSync(dpath);
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_copyDir_async_static_000
      * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0000
      * @tc.desc   Test copyDir() interface.Promise.
@@ -1173,6 +1229,105 @@ export default function fileIOCopyDir() {
       }
     });
 
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_019
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1900
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_019');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+
+      try {
+        await fs.copyDir('', ddpath2);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_019 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_020
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2000
+     * @tc.desc   Test copyDir() interfaces with second parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_020');
+      let ddpath1 = dpath + '/srcDir';
+      let dddpath1 = ddpath1 + '/srcDir_first';
+      let fpath1 = ddpath1 + '/srcFile_first_01';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath1);
+      fs.mkdirSync(dddpath1);
+      expect(await Utils.prepareFile(fpath1, await Utils.randomString(10))).assertTrue();
+
+      try {
+        await fs.copyDir(ddpath1, '');
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_020 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_021
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2100
+     * @tc.desc   Test copyDir() interfaces with third parameter as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_copyDir_async_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_021');
+      let ddpath = dpath + '/srcDir_first';
+      let ddpath2 = dpath + '/destDir_first';
+      let ffpath = ddpath + '/srcFile_first_01';
+      let ffpath2 = ddpath + '/srcFile_first_02';
+      let dddpath = ddpath + '/srcDir_second';
+      let fffpath = dddpath + '/srcFile_second_01';
+      let ffpath3 = ddpath2 + '/destFile_first_01';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath);
+      fs.mkdirSync(ddpath2);
+      fs.mkdirSync(dddpath);
+      expect(await Utils.prepareFile(ffpath, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(ffpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(ffpath3, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fffpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        await fs.copyDir(ddpath, ddpath2, undefined);
+        let stat1 = fs.statSync(ddpath2 + '/srcDir_first/srcFile_first_02');
+        expect(stat1.size == FILE_CONTENT.length).assertTrue();
+        let stat2 = fs.statSync(ddpath2 + '/srcDir_first/srcFile_first_01');
+        expect(stat2.size == FILE_CONTENT.length).assertTrue();
+        expect(fs.accessSync(ddpath)).assertTrue();
+        expect(fs.accessSync(ddpath2 + '/srcDir_first/srcDir_second')).assertTrue();
+        let stat3 = fs.statSync(ddpath2 + '/srcDir_first/srcDir_second/srcFile_second_01');
+        expect(stat3.size == FILE_CONTENT.length).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_021 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_copyDir end');
 

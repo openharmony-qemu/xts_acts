@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextArea_lineSpacingTest() {
   describe('TextArea_lineSpacingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextArea_lineSpacingTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

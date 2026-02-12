@@ -42,7 +42,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MovingPhotoViewTest() {
   describe('MovingPhotoViewTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MovingPhotoViewTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api18.static", "EntryAbility")

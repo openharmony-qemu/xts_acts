@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorCustomSpan002() {
   describe('RichEditorCustomSpan002', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -96,7 +96,7 @@ export default function RichEditorCustomSpan002() {
       let customSpanInfo = await (driver.findComponent(ON.id('customSpanInfo')) as Promise<Component>);
       let customSpanInfoText = await customSpanInfo.getText();
       await CommonFunc.sleep(500);
-      expect(customSpanInfoText).assertContain('"type_":"CustomSpan","width":80,"word":"Hello","height":0');
+      expect(customSpanInfoText).assertContain('"start":0,"length":1,"styledKey":400,"styledValue":');
       done();
     });
 

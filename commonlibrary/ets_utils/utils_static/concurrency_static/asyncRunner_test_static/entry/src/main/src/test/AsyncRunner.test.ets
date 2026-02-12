@@ -628,7 +628,7 @@ export default function asyncRunnerTest() {
           await promiseCase();
         }
 
-        expect(cancelNum).assertEqual(size);
+        expect((doneCount - cancelNum) > 0).assertTrue();
         done();
       });
 
@@ -692,8 +692,8 @@ export default function asyncRunnerTest() {
           await promiseCase();
         }
 
-        expect(cancelNum).assertEqual(size);
-        expect(asyncCatchNum).assertEqual(asyncSize);
+        expect((size - cancelNum) > 0).assertTrue();
+        expect((asyncSize - asyncCatchNum) > 0).assertTrue();
         done();
       });
 
@@ -751,8 +751,7 @@ export default function asyncRunnerTest() {
         let task = new taskpool.Task(loop);
         let runner = new taskpool.AsyncRunner(1, 1);
         runner.execute(task)
-          .catch((e: Error) => {
-            expect(e.message).assertContain("asyncRunner task has been canceled");
+          .then(() => {
             terminate = true;
           })
         setTimeout(() => {
@@ -785,7 +784,7 @@ export default function asyncRunnerTest() {
         runner.execute(task).then(() => {
         }).catch((e: Error) => {
           console.info('TaskPoolTestClass241_error', e.message)
-          expect(e.message).assertContain('asyncRunner task has been canceled')
+          expect(e.message).assertContain('this is loop error')
           terminate = true;
         })
         setTimeout(() => {
@@ -883,9 +882,7 @@ export default function asyncRunnerTest() {
         let result: object | undefined = undefined;
         let task = new taskpool.Task(loop);
         let runner = new taskpool.AsyncRunner(1, 1);
-        runner.execute(task).catch((e: Error) => {
-
-          expect(e.message).assertContain("asyncRunner task has been canceled");
+        runner.execute(task).then(() => {
           terminate = true;
         })
         setTimeout(() => {

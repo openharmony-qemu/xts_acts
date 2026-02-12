@@ -27,20 +27,6 @@ function sleep(delay : number) :Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
 }
 
-async function openPhone() {
-  try{
-    let drivers = Driver.create();
-    console.info('[bluetooth_js] bt driver create:'+ drivers);
-    await drivers.delayMs(1000);
-    await drivers.wakeUpDisplay();
-    await drivers.delayMs(5000);
-    await drivers.swipe(1500, 1000, 1500, 100);
-    await drivers.delayMs(10000);
-  } catch (error) {
-    console.info('[bluetooth_js] driver error info:'+ error);
-  }
-}
-
 async function clickRequestPermission(text:string) {
   console.info('[bluetooth_js] clickRequestPermission start');
   let PERMISSION_TEXT:string = "允许";
@@ -133,7 +119,6 @@ export default function bluetoothAdvertisingTest() {
 
     beforeAll(async (done : Function) =>  {
       await clickRequestPermission(PERMISSION_TEXT);
-      await openPhone();
       console.info('beforeAll called');
       done();
     })

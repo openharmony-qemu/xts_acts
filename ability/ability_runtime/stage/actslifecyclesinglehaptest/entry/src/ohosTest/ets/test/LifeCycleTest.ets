@@ -20,6 +20,7 @@ import ability from '@ohos.ability.ability';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import AbilityLifecycleCallback from '@ohos.app.ability.AbilityLifecycleCallback';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriber: commonEvent.CommonEventSubscriber;
@@ -63,7 +64,6 @@ export default function lifecycleTest() {
 
     beforeEach(async (done: Function) => {
       console.info('LifeCycleTest before each called');
-      await sleep(1000);
       done()
     });
 
@@ -80,12 +80,13 @@ export default function lifecycleTest() {
           }
         }
         console.log("LifeCycleTest terminateSelfwithresult para: " + JSON.stringify(para));
-        await globalThis.ability1context.terminateSelfWithResult(para)
+        globalThis.ability1context.terminateSelfWithResult(para)
           .then((data: ESObject) => {
             console.log("LifeCycleTest terminateSelfwithresult successful data: " + JSON.stringify(data));
           }).catch((error: base.BusinessError) => {
             console.log("LifeCycleTest terminateSelfwithresult error: " + JSON.stringify(error));
           });
+        await eventBusPlus.onWait('MainAbility1_onDestroy');
       } else if ('Singlehap_LifeCycleTest_1300' === TAG || 'Singlehap_LifeCycleTest_1400' === TAG) {
         let para2: ability.AbilityResult = {
           resultCode: 2,
@@ -95,12 +96,13 @@ export default function lifecycleTest() {
           }
         }
         console.log("LifeCycleTest terminateSelfwithresult para: " + JSON.stringify(para2));
-        await globalThis.ability9.terminateSelfWithResult(para2)
+        globalThis.ability9.terminateSelfWithResult(para2)
           .then((data: ESObject) => {
             console.log("LifeCycleTest terminateSelfwithresult successful data: " + JSON.stringify(data));
           }).catch((error: base.BusinessError) => {
             console.log("LifeCycleTest terminateSelfwithresult error: " + JSON.stringify(error));
           });
+        await eventBusPlus.onWait('MainAbility9_onDestroy');
       } else if ("Singlehap_LifeCycleTest_2000" === TAG) {
         let para1: ability.AbilityResult = {
           resultCode: 2,
@@ -110,12 +112,13 @@ export default function lifecycleTest() {
           }
         }
         console.log("LifeCycleTest terminateSelfwithresult para: " + JSON.stringify(para1));
-        await globalThis.ability12.terminateSelfWithResult(para1)
+        globalThis.ability12.terminateSelfWithResult(para1)
           .then((data: ESObject) => {
             console.log("LifeCycleTest terminateSelfwithresult successful data: " + JSON.stringify(data));
           }).catch((error: base.BusinessError) => {
             console.log("LifeCycleTest terminateSelfwithresult error: " + JSON.stringify(error));
           });
+        await eventBusPlus.onWait('MainAbility12_onDestroy');
       }
       done();
     });
@@ -137,46 +140,39 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility2_onAbilityDestroy') {
-            console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-            let listTemp = JSON.stringify(globalThis.list);
-            console.log(TAG + " listTemp is :" + listTemp);
-            tempCallbackId = globalThis.callbackid;
-            console.log(TAG + " registerAbilityLifecycleCallback tempCallbackId : " + JSON.stringify(tempCallbackId));
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext
-              .unregisterAbilityLifecycleCallback(tempCallbackId, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                expect(error.code).assertEqual(0);
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      let ab2AbDestPromise = eventBusPlus.onWait('MainAbility2_onAbilityDestroy');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
         })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise,
+        ab2AbDestPromise
+      ]);
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list);
+      console.log(TAG + " listTemp is :" + listTemp);
+      tempCallbackId = globalThis.callbackid;
+      console.log(TAG + " registerAbilityLifecycleCallback tempCallbackId : " + JSON.stringify(tempCallbackId));
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext
+        .unregisterAbilityLifecycleCallback(tempCallbackId, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          expect(error.code).assertEqual(0);
+          done();
+        });
     })
 
     /**
@@ -204,57 +200,51 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility1_onForground' && count === 0) {
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onAbilityDestroy') {
-            await sleep(1000);
-            console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-            let listTemp = JSON.stringify(globalThis.list1);
-            console.log(TAG + " listTemp is :" + listTemp);
-            expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
-            expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                expect(error.code).assertEqual(0);
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab1ForePromise;
+      count++;
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      let ab2AbDestPromise = eventBusPlus.onWait('MainAbility2_onAbilityDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise,
+        ab2AbDestPromise
+      ]);
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list1);
+      console.log(TAG + " listTemp is :" + listTemp);
+      expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
+      expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          expect(error.code).assertEqual(0);
+          done();
+        });
+
     });
 
     /**
@@ -282,67 +272,58 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility1_onForground' && count === 0) {
-            count++;
-            await sleep(1000);
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 1) {
-            await sleep(1000);
-            console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-            count++;
-            let listTemp = JSON.stringify(globalThis.list1);
-            console.log(TAG + " listTemp is :" + listTemp);
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' unregisterAbilityLifecycleCallback successful. Data: ' + data);
-              })
-              .catch((error: base.BusinessError) => {
-                console.error(TAG + ' unregisterAbilityLifecycleCallback failed. Cause: ' + JSON.stringify(error));
-              })
-            console.log(TAG + " secondunregister callbackid : " + JSON.stringify(globalThis.callbackid1));
-            expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
-            expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback_1 success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                expect(error.code).assertEqual(1);
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              })
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab1ForePromise;
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      let ab2AbDestPromise = eventBusPlus.onWait('MainAbility2_onAbilityDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+        })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise,
+        ab2AbDestPromise
+      ]);
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      count++;
+      let listTemp = JSON.stringify(globalThis.list1);
+      console.log(TAG + " listTemp is :" + listTemp);
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' unregisterAbilityLifecycleCallback successful. Data: ' + data);
+        })
+        .catch((error: base.BusinessError) => {
+          console.error(TAG + ' unregisterAbilityLifecycleCallback failed. Cause: ' + JSON.stringify(error));
+        })
+      console.log(TAG + " secondunregister callbackid : " + JSON.stringify(globalThis.callbackid1));
+      expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(2);
+      expect(listTemp.indexOf("MainAbility1 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback_1 success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          expect(error.code).assertEqual(1);
+          done();
+        });
     });
 
     /**
@@ -370,76 +351,60 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility3_onForground' && count === 0) {
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onForground' && count === 1) {
-            await sleep(1000);
-            count++;
-            let para: ability.AbilityResult = {
-              resultCode: 1,
-              want: {
-                "abilityName": "MainAbility3",
-                "bundleName": "com.example.lifecycle_xts"
-              }
-            }
-            console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
-            setTimeout(()=>{
-              globalThis.ability3.terminateSelfWithResult(para)
-              .then((data: ESObject) => {
-                console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
-              }).catch((error: base.BusinessError) => {
-                console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
-              });
-            },500)
-          } else if (data.event === 'MainAbility3_onAbilityDestroy' && count === 2) {
-            await sleep(1000);
-            console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list3));
-            console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid3));
-            count++;
-            let listTemp = JSON.stringify(globalThis.list3);
-            console.log(TAG + " listTemp is :" + listTemp);
-            expect(listTemp.indexOf("MainAbility3 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.split("MainAbility3 onAbilityForeground").length - 1).assertEqual(2);
-            expect(listTemp.indexOf("MainAbility3 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext3
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                expect(error.code).assertEqual(0);
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              })
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab3ForePromise = eventBusPlus.onWait('MainAbility3_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility3 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility3 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab3ForePromise;
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+        })
+      await ab2ForePromise;
+      let ab3DestPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
+      let para: ability.AbilityResult = {
+        resultCode: 1,
+        want: {
+          "abilityName": "MainAbility3",
+          "bundleName": "com.example.lifecycle_xts"
+        }
+      }
+      console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
+      globalThis.ability3.terminateSelfWithResult(para)
+        .then((data: ESObject) => {
+          console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
+        }).catch((error: base.BusinessError) => {
+        console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
+      });
+      await ab3DestPromise;
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list3));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid3));
+      count++;
+      let listTemp = JSON.stringify(globalThis.list3);
+      console.log(TAG + " listTemp is :" + listTemp);
+      expect(listTemp.indexOf("MainAbility3 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.split("MainAbility3 onAbilityForeground").length - 1).assertEqual(2);
+      expect(listTemp.indexOf("MainAbility3 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext3
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          expect(error.code).assertEqual(0);
+          done();
+        })
+
     });
 
     /**
@@ -470,73 +435,64 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility4",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility1_onForground') {
-            await sleep(1000);
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility3 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility3 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility3_onForground') {
-            await sleep(1000);
-            await globalThis.abilityContext.startAbility(str2)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility4 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility4 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility4_onForground') {
-            await sleep(1000);
-            console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
-            console.log(TAG + " listKey3 : " + JSON.stringify(globalThis.list3));
-            console.log(TAG + " callbackid3 : " + JSON.stringify(globalThis.callbackid3));
-            let id3 = globalThis.callbackid3;
-            console.log(TAG + " listKey4 : " + JSON.stringify(globalThis.list4));
-            console.log(TAG + " callbackid4 : " + JSON.stringify(globalThis.callbackid4));
-            let id4 = globalThis.callbackid4;
-            expect(id3 + 1).assertEqual(id4);
-            globalThis.applicationContext4
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid4, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback4 success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-              })
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback1 success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                console.log("------------Singlehap_LifeCycleTest_0500 END-------------");
-              })
-            if (globalThis.ability3) {
-              globalThis.ability3.terminateSelf();
-            }
-            globalThis.applicationContext3
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                expect(error.code).assertEqual(0);
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              })
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
+        })
+      await ab1ForePromise;
+      let ab3ForePromise = eventBusPlus.onWait('MainAbility3_onForground');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility3 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility3 failed. Cause: ' + JSON.stringify(error));
+      })
+      await ab3ForePromise;
+      let ab4ForePromise = eventBusPlus.onWait('MainAbility4_onForground');
+      let ab4DestPromise = eventBusPlus.onWait('MainAbility4_onDestroy');
+      globalThis.abilityContext.startAbility(str2)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility4 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility4 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab4ForePromise,
+        ab4DestPromise
+      ]);
+      console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
+      console.log(TAG + " listKey3 : " + JSON.stringify(globalThis.list3));
+      console.log(TAG + " callbackid3 : " + JSON.stringify(globalThis.callbackid3));
+      let id3 = globalThis.callbackid3;
+      console.log(TAG + " listKey4 : " + JSON.stringify(globalThis.list4));
+      console.log(TAG + " callbackid4 : " + JSON.stringify(globalThis.callbackid4));
+      let id4 = globalThis.callbackid4;
+      expect(id3 + 1).assertEqual(id4);
+      globalThis.applicationContext4
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid4, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback4 success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+        })
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback1 success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          console.log("------------Singlehap_LifeCycleTest_0500 END-------------");
+        })
+      if (globalThis.ability3) {
+        globalThis.ability3.terminateSelf();
+        await eventBusPlus.onWait('MainAbility3_onDestroy');
+      }
+      globalThis.applicationContext3
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid3, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback3 success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          expect(error.code).assertEqual(0);
+          done();
         })
     });
 
@@ -569,67 +525,58 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility1_onForground' && count === 0) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility5 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility5 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility5_onForground' && count === 1) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str2)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 2) {
-            await sleep(1000);
-            console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-            count++;
-            let listTemp = JSON.stringify(globalThis.list1);
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility5 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              })
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
+        })
+      await ab1ForePromise;
+      let ab5ForePromise = eventBusPlus.onWait('MainAbility5_onForground');
+      let ab5DestPromise = eventBusPlus.onWait('MainAbility5_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility5 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility5 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab5ForePromise,
+        ab5DestPromise
+      ]);
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str2)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise
+      ]);
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list1);
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility5 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
         })
     });
 
@@ -769,64 +716,55 @@ export default function lifecycleTest() {
         "bundleName": "com.example.lifecycle_xts",
         "abilityName": "MainAbility2",
       };
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event == 'MainAbility1_onForground') {
-            await sleep(1000);
-            count++;
-            if (count < 4) {
-              await globalThis.abilityContext.startAbility(str1)
-                .then((data: ESObject) => {
-                  console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-                }).catch((error: base.BusinessError) => {
-                  console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-                })
-            } else {
-              await sleep(1000);
-              console.info(TAG + ' count++ is: ' + count);
-              console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-              console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-              let listTemp = JSON.stringify(globalThis.list1);
-              console.log(TAG + " listTemp is :" + listTemp);
-              try {
-                expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
-                expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertLarger(1);
-                expect(listTemp.split("MainAbility1 onAbilityBackground").length - 1).assertEqual(3);
-                expect(listTemp.split("MainAbility2 onAbilityCreate").length - 1).assertEqual(3);
-                expect(listTemp.split("MainAbility2 onWindowStageCreate").length - 1).assertEqual(3);
-                expect(listTemp.split("MainAbility2 onAbilityForeground").length - 1).assertEqual(3);
-                expect(listTemp.split("MainAbility2 onAbilityBackground").length - 1).assertLarger(1);
-                expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertLarger(1);
-                expect(listTemp.split("MainAbility2 onAbilityDestroy").length - 1).assertLarger(1);
-              } catch (error) {
-                console.error(`${TAG} startRunning failed: ${JSON.stringify(error)}`);
-                done();
-              }
-              globalThis.applicationContext1
-                .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                  console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                    ",data: " + JSON.stringify(data));
-                  commonEvent.unsubscribe(subscriber, () => {
-                    console.log(`${TAG} UnSubscribeCallback end`);
-                    done();
-                  })
-                });
-            }
-          }
-        })
-      })
 
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab1ForePromise;
+      while (count < 3) {
+        let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+        let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+        globalThis.abilityContext.startAbility(str1)
+          .then((data: ESObject) => {
+            console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+          }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+        })
+        await Promise.all([
+          ab2ForePromise,
+          ab2DestPromise
+        ])
+        count++;
+      }
+      console.info(TAG + ' count++ is: ' + count);
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list1);
+      console.log(TAG + " listTemp is :" + listTemp);
+      try {
+        expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
+        expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertLarger(1);
+        expect(listTemp.split("MainAbility1 onAbilityBackground").length - 1).assertEqual(3);
+        expect(listTemp.split("MainAbility2 onAbilityCreate").length - 1).assertEqual(3);
+        expect(listTemp.split("MainAbility2 onWindowStageCreate").length - 1).assertEqual(3);
+        expect(listTemp.split("MainAbility2 onAbilityForeground").length - 1).assertEqual(3);
+        expect(listTemp.split("MainAbility2 onAbilityBackground").length - 1).assertLarger(1);
+        expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertLarger(1);
+        expect(listTemp.split("MainAbility2 onAbilityDestroy").length - 1).assertLarger(1);
+      } catch (error) {
+        console.error(`${TAG} startRunning failed: ${JSON.stringify(error)}`);
+        done();
+      }
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     });
 
     /**
@@ -854,59 +792,49 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event == 'MainAbility1_onForground') {
-            await sleep(1000);
-            count++;
-            if (count < 3) {
-              await globalThis.abilityContext.startAbility(str1)
-                .then((data: ESObject) => {
-                  console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-                }).catch((error: base.BusinessError) => {
-                  console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-                })
-            } else {
-              await sleep(1000);
-              console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
-              console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
-              let listTemp = JSON.stringify(globalThis.list1);
-              console.log(TAG + " listTemp is :" + listTemp);
-
-              expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
-              expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(3);
-              expect(listTemp.split("MainAbility1 onAbilityBackground").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onAbilityCreate").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onWindowStageCreate").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onAbilityForeground").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onAbilityBackground").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
-              expect(listTemp.split("MainAbility2 onAbilityDestroy").length - 1).assertEqual(2);
-              globalThis.applicationContext1
-                .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                  console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                    ",data: " + JSON.stringify(data));
-                  commonEvent.unsubscribe(subscriber, () => {
-                    console.log(`${TAG} UnSubscribeCallback end`);
-                    done();
-                  })
-                });
-            }
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility1 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab1ForePromise;
+      while (count < 2) {
+        let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+        let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+        globalThis.abilityContext.startAbility(str1)
+          .then((data: ESObject) => {
+            console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+          }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+        })
+        await Promise.all([
+          ab2ForePromise,
+          ab2DestPromise
+        ]);
+        count ++;
+      }
+      console.log(TAG + " registerAbilityLifecycleCallback listKey : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " registerAbilityLifecycleCallback callbackid : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list1);
+      console.log(TAG + " listTemp is :" + listTemp);
+
+      expect(listTemp.indexOf("MainAbility1 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.split("MainAbility1 onAbilityForeground").length - 1).assertEqual(3);
+      expect(listTemp.split("MainAbility1 onAbilityBackground").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onAbilityCreate").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onWindowStageCreate").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onAbilityForeground").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onAbilityBackground").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
+      expect(listTemp.split("MainAbility2 onAbilityDestroy").length - 1).assertEqual(2);
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     })
 
     /**
@@ -936,57 +864,45 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event == 'MainAbility6_onForground') {
-            await sleep(1000);
-            count++;
-            if (count < 2) {
-              console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list6));
-              console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
-              id1 = globalThis.callbackid6;
-              console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
-              globalThis.abilityContext.startAbility(str1)
-                .then((data: ESObject) => {
-                  console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-                }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-            } else {
-              await sleep(1000);
-              console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list6));
-              console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
-              id2 = globalThis.callbackid6;
-              console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
-              expect(id1 + 1).assertEqual(id2);
-              if (globalThis.ability6) {
-                globalThis.ability6.terminateSelf();
-              }
-              globalThis.applicationContext6
-                .unregisterAbilityLifecycleCallback(globalThis.callbackid6, (error: base.BusinessError, data: ESObject) => {
-                  console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                    ",data: " + JSON.stringify(data));
-                  commonEvent.unsubscribe(subscriber, () => {
-                    console.log(`${TAG} UnSubscribeCallback end`);
-                    done();
-                  })
-                });
-            }
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab6ForePromise = eventBusPlus.onWait('MainAbility6_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility6 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility6 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab6ForePromise;
+      console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list6));
+      console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
+      id1 = globalThis.callbackid6;
+      console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise
+      ]);
+      console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list6));
+      console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid6));
+      id2 = globalThis.callbackid6;
+      console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
+      expect(id1 + 1).assertEqual(id2);
+      if (globalThis.ability6) {
+        globalThis.ability6.terminateSelf();
+      }
+      globalThis.applicationContext6
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid6, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
+
     });
 
     /**
@@ -1007,49 +923,37 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility7",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list7));
-          console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid7));
-          console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid7_1));
-          id1 = globalThis.callbackid7;
-          id2 = globalThis.callbackid7_1;
-          expect(id1 + 1).assertEqual(id2);
-          globalThis.applicationContext7
-            .unregisterAbilityLifecycleCallback(globalThis.callbackid7, (error: base.BusinessError, data: ESObject) => {
-              console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                ",data: " + JSON.stringify(data));
-            });
-          let para: ability.AbilityResult = {
-            resultCode: 1,
-            want: {
-              "abilityName": "MainAbility7",
-              "bundleName": "com.example.lifecycle_xts"
-            }
-          }
-          console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
-          globalThis.ability7.terminateSelfWithResult(para, (error: base.BusinessError, data: ESObject) => {
-            console.log(TAG + " terminateSelfwithresult success, err: " + JSON.stringify(error) +
-              ",data: " + JSON.stringify(data));
-            commonEvent.unsubscribe(subscriber, () => {
-              console.log(`${TAG} UnSubscribeCallback end`);
-              done();
-            })
-          });
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab7ForePromise = eventBusPlus.onWait('MainAbility7_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility7 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility7 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab7ForePromise;
+      id1 = globalThis.callbackid7;
+      id2 = globalThis.callbackid7_1;
+      expect(id1 + 1).assertEqual(id2);
+      globalThis.applicationContext7
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid7, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+        });
+      let para: ability.AbilityResult = {
+        resultCode: 1,
+        want: {
+          "abilityName": "MainAbility7",
+          "bundleName": "com.example.lifecycle_xts"
+        }
+      }
+      let ab7DestPromise = eventBusPlus.onWait('MainAbility7_onDestroy');
+      console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
+      globalThis.ability7.terminateSelfWithResult(para, (error: base.BusinessError, data: ESObject) => {
+        console.log(TAG + " terminateSelfwithresult success, err: " + JSON.stringify(error) +
+          ",data: " + JSON.stringify(data));
+      });
+      await ab7DestPromise;
+      done();
     });
     /**
      * @tc.name   Singlehap_LifeCycleTest_1200
@@ -1074,44 +978,40 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility8",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility8_onForground' && count === 0) {
-            await sleep(1000);
-            console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list8));
-            console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
-            count++;
-            id1 = globalThis.callbackid8;
-            console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
-            await globalThis.abilityContext.startAbility(str)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility8 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility8 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else {
-            await sleep(1000);
-            console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list8));
-            console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
-            id2 = globalThis.callbackid8;
-            console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
-            expect(id1 + 1).assertEqual(id2);
-            done();
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab8ForePromise = eventBusPlus.onWait('MainAbility8_onForground');
+      let ab8DestPromise = eventBusPlus.onWait('MainAbility8_onDestroy');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility8 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility8 failed. Cause: ' + JSON.stringify(error));
         })
+      await Promise.all([
+        ab8ForePromise,
+        ab8DestPromise
+      ]);
+      console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list8));
+      console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
+      id1 = globalThis.callbackid8;
+      let ab8ForePromise2 = eventBusPlus.onWait('MainAbility8_onForground');
+      let ab8DestPromise2 = eventBusPlus.onWait('MainAbility8_onDestroy');
+      console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
+      globalThis.abilityContext.startAbility(str)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility8 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility8 failed. Cause: ' + JSON.stringify(error));
+        })
+      await Promise.all([
+        ab8ForePromise2,
+        ab8DestPromise2
+      ]);
+      console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list8));
+      console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid8));
+      id2 = globalThis.callbackid8;
+      console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
+      expect(id1 + 1).assertEqual(id2);
+      done();
     });
 
     /**
@@ -1139,62 +1039,53 @@ export default function lifecycleTest() {
         "abilityName": "Hap1MainAbility1",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility9_onForground' && count === 0) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' Hap1MainAbility1 first successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' Hap1MainAbility1 first failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'Hap1MainAbility1_onDestroy' && count === 1) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' Hap1MainAbility1 second successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' Hap1MainAbility1 second failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'Hap1MainAbility1_onForground' && count === 2) {
-            await sleep(1000);
-            count++;
-            let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
-            console.log(TAG + "listTemp is :" + listTemp);
-            console.log(TAG + "globalThis.mainAbility9CallBackId is :" + globalThis.mainAbility9CallBackId);
-            expect(listTemp.indexOf("Hap1MainAbility1 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("Hap1MainAbility1 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("Hap1MainAbility1 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("Hap1MainAbility1 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext9
-              .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab9ForePromise = eventBusPlus.onWait('MainAbility9_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility9 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility9 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab9ForePromise;
+      let hap1Ab1ForePromise = eventBusPlus.onWait('Hap1MainAbility1_onForeground');
+      let hap1Ab1DestPromise = eventBusPlus.onWait('Hap1MainAbility1_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' Hap1MainAbility1 first successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' Hap1MainAbility1 first failed. Cause: ' + JSON.stringify(error));
+        })
+      await Promise.all([
+        hap1Ab1ForePromise,
+        hap1Ab1DestPromise
+      ]);
+      let hap1Ab1ForePromise2 = eventBusPlus.onWait('Hap1MainAbility1_onForeground');
+      let hap1Ab1DestPromise2 = eventBusPlus.onWait('Hap1MainAbility1_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' Hap1MainAbility1 second successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' Hap1MainAbility1 second failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        hap1Ab1ForePromise2,
+        hap1Ab1DestPromise2
+      ]);
+      let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
+      console.log(TAG + "listTemp is :" + listTemp);
+      console.log(TAG + "globalThis.mainAbility9CallBackId is :" + globalThis.mainAbility9CallBackId);
+      expect(listTemp.indexOf("Hap1MainAbility1 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("Hap1MainAbility1 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("Hap1MainAbility1 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("Hap1MainAbility1 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("Hap1MainAbility1 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext9
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     });
 
     /**
@@ -1222,62 +1113,53 @@ export default function lifecycleTest() {
         "abilityName": "Hap1MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility9_onForground' && count === 0) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' Hap1MainAbility2 first successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' Hap1MainAbility2 first failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'Hap1MainAbility2_onDestroy' && count === 1) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' Hap1MainAbility2 second successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' Hap1MainAbility2 second failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'Hap1MainAbility2_onAbilityDestroy' && count === 2) {
-            await sleep(1000);
-            count++;
-            let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
-            console.log(TAG + "listTemp is :" + listTemp);
-            console.log(TAG + "globalThis.mainAbility9CallBackId is :" + globalThis.mainAbility9CallBackId);
-            expect(listTemp.split("Hap1MainAbility2 onAbilityCreate").length - 1).assertEqual(2);
-            expect(listTemp.split("Hap1MainAbility2 onWindowStageCreate").length - 1).assertEqual(2);
-            expect(listTemp.split("Hap1MainAbility2 onAbilityForeground").length - 1).assertEqual(2);
-            expect(listTemp.split("Hap1MainAbility2 onAbilityBackground").length - 1).assertEqual(2);
-            expect(listTemp.split("Hap1MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
-            expect(listTemp.split("Hap1MainAbility2 onAbilityDestroy").length - 1).assertEqual(2);
-            globalThis.applicationContext9
-              .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab9ForePromise = eventBusPlus.onWait('MainAbility9_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility9 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility9 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab9ForePromise;
+      let hap1Ab2ForePromise2 = eventBusPlus.onWait('Hap1MainAbility2_onForeground');
+      let hap1Ab2DestPromise2 = eventBusPlus.onWait('Hap1MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' Hap1MainAbility2 first successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' Hap1MainAbility2 first failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        hap1Ab2ForePromise2,
+        hap1Ab2DestPromise2
+      ])
+      let hap1Ab2DestPromise = eventBusPlus.onWait('Hap1MainAbility2_onDestroy');
+      let hap1Ab2AbDestPromise = eventBusPlus.onWait('Hap1MainAbility2_onAbilityDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' Hap1MainAbility2 second successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' Hap1MainAbility2 second failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        hap1Ab2DestPromise,
+        hap1Ab2AbDestPromise
+      ]);
+      let listTemp = JSON.stringify(globalThis.mainAbility9ListKey);
+      console.log(TAG + "listTemp is :" + listTemp);
+      console.log(TAG + "globalThis.mainAbility9CallBackId is :" + globalThis.mainAbility9CallBackId);
+      expect(listTemp.split("Hap1MainAbility2 onAbilityCreate").length - 1).assertEqual(2);
+      expect(listTemp.split("Hap1MainAbility2 onWindowStageCreate").length - 1).assertEqual(2);
+      expect(listTemp.split("Hap1MainAbility2 onAbilityForeground").length - 1).assertEqual(2);
+      expect(listTemp.split("Hap1MainAbility2 onAbilityBackground").length - 1).assertEqual(2);
+      expect(listTemp.split("Hap1MainAbility2 onWindowStageDestroy").length - 1).assertEqual(2);
+      expect(listTemp.split("Hap1MainAbility2 onAbilityDestroy").length - 1).assertEqual(2);
+      globalThis.applicationContext9
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbility9CallBackId, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     });
     /**
      * @tc.name   Singlehap_LifeCycleTest_1500
@@ -1306,79 +1188,71 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          console.info(TAG + ' count. is: ' + JSON.stringify(count));
-          if (data.event === 'MainAbility11_onForground' && count === 0) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onForground' && count === 1) {
-            await sleep(1000);
-            console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list11));
-            console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
-            id1 = globalThis.callbackid11;
-            console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
-            count++;
-            await globalThis.abilityContext.startAbility(str)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility11 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility11 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility11_onForground' && count === 2) {
-            await sleep(1000);
-            count++;
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onAbilityDestroy' && count === 3) {
-            await sleep(1000);
-            console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list11));
-            console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
-            id2 = globalThis.callbackid11;
-            console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
-            let listTemp = JSON.stringify(globalThis.list11);
-            console.log(TAG + " listTemp is :" + listTemp);
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            expect(id1 + 1).assertEqual(id2);
-            globalThis.applicationContext11
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid11, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab11ForePromise = eventBusPlus.onWait('MainAbility11_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility11 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility11 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab11ForePromise;
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise
+      ]);
+      console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list11));
+      console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
+      id1 = globalThis.callbackid11;
+      console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
+      let ab11ForePromise2 = eventBusPlus.onWait('MainAbility11_onForground');
+      globalThis.abilityContext.startAbility(str)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility11 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+          console.error(TAG + ' startMainAbility11 failed. Cause: ' + JSON.stringify(error));
+        })
+      await ab11ForePromise2;
+      let ab2ForePromise2 = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise2 = eventBusPlus.onWait('MainAbility2_onDestroy');
+      let ab2AbDestPromise = eventBusPlus.onWait('MainAbility2_onAbilityDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise2,
+        ab2DestPromise2,
+        ab2AbDestPromise
+      ]);
+      console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list11));
+      console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid11));
+      id2 = globalThis.callbackid11;
+      console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
+      let listTemp = JSON.stringify(globalThis.list11);
+      console.log(TAG + " listTemp is :" + listTemp);
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      expect(id1 + 1).assertEqual(id2);
+      globalThis.applicationContext11
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid11, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     });
 
     /**
@@ -1398,7 +1272,6 @@ export default function lifecycleTest() {
           console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
             ",data: " + JSON.stringify(data));
           code = error.code;
-          sleep(1000);
           expect(code).assertEqual(1);
           done();
         });
@@ -1421,7 +1294,6 @@ export default function lifecycleTest() {
           console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
             ",data: " + JSON.stringify(data));
           code = error.code;
-          sleep(1000);
           expect(code).assertEqual(1);
           done();
         });
@@ -1444,7 +1316,6 @@ export default function lifecycleTest() {
           console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
             ",data: " + JSON.stringify(data));
           code = error.code;
-          sleep(1000);
           expect(code).assertEqual(1);
           done();
         });
@@ -1467,7 +1338,6 @@ export default function lifecycleTest() {
           console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
             ",data: " + JSON.stringify(data));
           code = error.code;
-          sleep(1000);
           expect(code).assertEqual(1);
           done();
         });
@@ -1500,78 +1370,82 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility12_onForground') {
-            count++;
-            if (count === 1 || count === 3) {
-              await sleep(1000);
-              await globalThis.abilityContext.startAbility(str1)
-                .then((data: ESObject) => {
-                  console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
-                }).catch((error: base.BusinessError) => {
-                  console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
-                })
-            } else if (count === 2) {
-              await sleep(1000);
-              console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list12));
-              console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
-              id1 = globalThis.callbackid12;
-              console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
-              globalThis.ability12.terminateSelf(str)
-                .then((data: ESObject) => {
-                  console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
-                }).catch((error: base.BusinessError) => {
-                console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
-              });
-            } else {
-              await sleep(1000);
-              console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list12));
-              console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
-              id2 = globalThis.callbackid12;
-              console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
-              let listTemp = JSON.stringify(globalThis.list12);
-              console.log(TAG + " listTemp is :" + listTemp);
-              expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-              expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-              expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-              expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-              expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-              expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-              expect(id1 + 1).assertEqual(id2);
-              globalThis.applicationContext12
-                .unregisterAbilityLifecycleCallback(id2, (error: base.BusinessError, data: ESObject) => {
-                  console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                    ",data: " + JSON.stringify(data));
-                  commonEvent.unsubscribe(subscriber, () => {
-                    console.log(`${TAG} UnSubscribeCallback end`);
-                    done();
-                  })
-                });
-            }
-          }
-          if (data.event === 'MainAbility12_onDestroy') {
-            globalThis.abilityContext.startAbility(str)
-              .then((data: ESObject) => {
-                console.info(TAG + ' startMainAbility12 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-              console.error(TAG + ' startMainAbility12 failed. Cause: ' + JSON.stringify(error));
-            })
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab12ForePromise = eventBusPlus.onWait('MainAbility12_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' startMainAbility12 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' startMainAbility12 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab12ForePromise;
+
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise
+      ]);
+
+      console.log(TAG + " firstCallback listKey : " + JSON.stringify(globalThis.list12));
+      console.log(TAG + " firstCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
+      id1 = globalThis.callbackid12;
+      console.log(TAG + " firstCallback id : " + JSON.stringify(id1));
+      let ab12DestPromise = eventBusPlus.onWait('MainAbility12_onDestroy');
+      globalThis.ability12.terminateSelf(str)
+        .then((data: ESObject) => {
+          console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
+        }).catch((error: base.BusinessError) => {
+        console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
+      });
+      await ab12DestPromise;
+
+      let ab12ForePromise2 = eventBusPlus.onWait('MainAbility12_onForground');
+      globalThis.abilityContext.startAbility(str)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility12 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility12 failed. Cause: ' + JSON.stringify(error));
+      })
+      await ab12ForePromise2;
+
+      let ab2ForePromise2 = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise2 = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' startMainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise2,
+        ab2DestPromise2
+      ]);
+
+      console.log(TAG + " secondCallback listKey : " + JSON.stringify(globalThis.list12));
+      console.log(TAG + " secondCallback callbackid : " + JSON.stringify(globalThis.callbackid12));
+      id2 = globalThis.callbackid12;
+      console.log(TAG + " secondCallback id : " + JSON.stringify(id2));
+      let listTemp = JSON.stringify(globalThis.list12);
+      console.log(TAG + " listTemp is :" + listTemp);
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      expect(id1 + 1).assertEqual(id2);
+      globalThis.applicationContext12
+        .unregisterAbilityLifecycleCallback(id2, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          done();
+        });
     });
 
     /**
@@ -1599,72 +1473,65 @@ export default function lifecycleTest() {
         "abilityName": "MainAbility2",
       }
 
-      await commonEvent.createSubscriber({
-        events: event
-      }).then((data: ESObject) => {
-        subscriber = data;
-        commonEvent.subscribe(data, async (err, data) => {
-          console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
-          console.info(TAG + ' subscribeCallBack. err: ' + JSON.stringify(err));
-          if (data.event === 'MainAbility1_onForground') {
-            await sleep(1000);
-            await globalThis.abilityContext.startAbility(str1)
-              .then((data: ESObject) => {
-                console.info(TAG + ' MainAbility2 successful. Data: ' + data);
-              }).catch((error: base.BusinessError) => {
-                console.error(TAG + ' MainAbility1 failed. Cause: ' + JSON.stringify(error));
-              })
-          } else if (data.event === 'MainAbility2_onForground') {
-            await sleep(1000);
-            console.log(TAG + " firstCallback listKey1 : " + JSON.stringify(globalThis.list1));
-            console.log(TAG + " firstCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
-            id1 = globalThis.callbackid1;
-            console.log(TAG + " firstCallback id1 : " + JSON.stringify(id1));
-            let para: ability.AbilityResult = {
-              resultCode: 2100,
-              want: {
-                "abilityName": "MainAbility1",
-                "bundleName": "com.example.lifecycle_xts"
-              }
-            }
-            console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
-            globalThis.ability1context.terminateSelfWithResult(para)
-              .then((data: ESObject) => {
-                console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
-              }).catch((error: base.BusinessError) => {
-              console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
-            });
-          } else if (data.event === 'MainAbility1_onDestroy') {
-            await sleep(1000);
-            console.log(TAG + " secondCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
-            let listTemp = JSON.stringify(globalThis.list1);
-            console.log(TAG + " listTemp is :" + listTemp);
-            expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-            expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
-            globalThis.applicationContext1
-              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                  ",data: " + JSON.stringify(data));
-                console.log("------------Singlehap_LifeCycleTest_2100 END-------------");
-                commonEvent.unsubscribe(subscriber, () => {
-                  console.log(`${TAG} UnSubscribeCallback end`);
-                  done();
-                })
-              });
-          }
-        })
-      })
-
-      await globalThis.abilityContext.startAbility(str)
+      let ab1ForePromise = eventBusPlus.onWait('MainAbility1_onForground');
+      globalThis.abilityContext.startAbility(str)
         .then((data: ESObject) => {
           console.info(TAG + ' MainAbility1 successful. Data: ' + data);
         }).catch((error: base.BusinessError) => {
           console.error(TAG + ' MainAbility1 failed. Cause: ' + JSON.stringify(error));
         })
+      await ab1ForePromise;
+
+      let ab2ForePromise = eventBusPlus.onWait('MainAbility2_onForground');
+      let ab2DestPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+      globalThis.abilityContext.startAbility(str1)
+        .then((data: ESObject) => {
+          console.info(TAG + ' MainAbility2 successful. Data: ' + data);
+        }).catch((error: base.BusinessError) => {
+        console.error(TAG + ' MainAbility1 failed. Cause: ' + JSON.stringify(error));
+      })
+      await Promise.all([
+        ab2ForePromise,
+        ab2DestPromise
+      ]);
+
+      console.log(TAG + " firstCallback listKey1 : " + JSON.stringify(globalThis.list1));
+      console.log(TAG + " firstCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
+      id1 = globalThis.callbackid1;
+      console.log(TAG + " firstCallback id1 : " + JSON.stringify(id1));
+      let para: ability.AbilityResult = {
+        resultCode: 2100,
+        want: {
+          "abilityName": "MainAbility1",
+          "bundleName": "com.example.lifecycle_xts"
+        }
+      }
+      console.log(TAG + " terminateSelfwithresult para: " + JSON.stringify(para));
+      let ab1DestPromise = eventBusPlus.onWait('MainAbility1_onDestroy');
+      globalThis.ability1context.terminateSelfWithResult(para)
+        .then((data: ESObject) => {
+          console.log(TAG + " terminateSelfwithresult successful data: " + JSON.stringify(data));
+        }).catch((error: base.BusinessError) => {
+        console.log(TAG + " terminateSelfwithresult error: " + JSON.stringify(error));
+      });
+      await ab1DestPromise;
+
+      console.log(TAG + " secondCallback callbackid1 : " + JSON.stringify(globalThis.callbackid1));
+      let listTemp = JSON.stringify(globalThis.list1);
+      console.log(TAG + " listTemp is :" + listTemp);
+      expect(listTemp.indexOf("MainAbility2 onAbilityCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityForeground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityBackground") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+      expect(listTemp.indexOf("MainAbility2 onAbilityDestroy") !== -1).assertTrue();
+      globalThis.applicationContext1
+        .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+          console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+            ",data: " + JSON.stringify(data));
+          console.log("------------Singlehap_LifeCycleTest_2100 END-------------");
+          done();
+        });
     });
   })
 }

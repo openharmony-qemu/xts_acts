@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function textArea_center() {
   describe('textArea_center', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textArea_center beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

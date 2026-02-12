@@ -260,5 +260,21 @@ export default function ActsRequestDialogStaticTest() {
       }, CASE_TIMEOUT);
       console.log('Start ACTS_requestDialog_static_0500 timer id : ' + id);
     })
+
+    /**
+     * @tc.name   ACTS_GetProcessInfo_static_0200
+     * @tc.number ACTS_GetProcessInfo_static_0200
+     * @tc.desc   reguest dialog service 16000010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GetProcessInfo_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, 'ACTS_GetProcessInfo_static_0200====<begin');
+      expect(typeof (processInfo)).assertEqual("object");
+      expect(typeof (processInfo.processName)).assertEqual("string");
+      expect(typeof (processInfo.pid)).assertEqual("int");
+      done()
+    })
   })
 }

@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function AlertDialog() {
   describe('AlertDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlertDialog beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

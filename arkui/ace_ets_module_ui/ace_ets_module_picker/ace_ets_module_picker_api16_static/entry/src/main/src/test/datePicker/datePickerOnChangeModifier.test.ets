@@ -37,7 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function datePickerOnChangeModifierTest() {
   describe('datePickerOnChangeModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("datePickerOnChangeModifierTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")

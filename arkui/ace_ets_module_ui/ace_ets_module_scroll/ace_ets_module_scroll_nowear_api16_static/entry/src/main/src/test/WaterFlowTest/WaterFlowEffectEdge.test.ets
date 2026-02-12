@@ -33,7 +33,7 @@ export default function WaterFlowEffectEdge() {
   const waitUiReadyMs: number = 1500
 
   describe('WaterFlowEffectEdge', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WaterFlowEffectEdge beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api16.static", "EntryAbility");

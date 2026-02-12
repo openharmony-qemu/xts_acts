@@ -52,7 +52,7 @@ export default function toggleThemeTest() {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const options: router.RouterOptions = {

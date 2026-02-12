@@ -127,7 +127,7 @@ import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressL
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
 import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
 import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInputCompressLeadingPunctuationModifier.test';
-
+import TextInputPropertiesNullUndefinedTest from './TextInputTest/TextInputPropertiesNullUndefined.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -246,4 +246,5 @@ export default function testsuite() {
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()
   TextInputCompressLeadingPunctuationModifier()
+  TextInputPropertiesNullUndefinedTest()
 }

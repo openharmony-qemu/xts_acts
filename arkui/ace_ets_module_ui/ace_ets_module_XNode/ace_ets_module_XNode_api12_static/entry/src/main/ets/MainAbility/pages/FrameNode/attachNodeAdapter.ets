@@ -44,7 +44,7 @@ let para: Record<string,string> = {
   'attachNodeAdapter': 'start',
   'detachNodeAdapter': 'start',
 };
-let storage: LocalStorage = new LocalStorage();
+let storage: LocalStorage = new LocalStorage(para);
 
 class MyNodeAdapter extends NodeAdapter {
   uiContext: UIContext = new UIContext();
@@ -83,7 +83,7 @@ class MyNodeAdapter extends NodeAdapter {
   }
 
   loadData(): void {
-    // console.log('+++++++++++data.length',this.data.length,'this.totalNodeCount',this.totalNodeCount)
+    console.log('+++++++++++data.length',this.data.length,'this.totalNodeCount',this.totalNodeCount)
     for (let i = 0; i < this.totalNodeCount; i++) {
       this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;
     }

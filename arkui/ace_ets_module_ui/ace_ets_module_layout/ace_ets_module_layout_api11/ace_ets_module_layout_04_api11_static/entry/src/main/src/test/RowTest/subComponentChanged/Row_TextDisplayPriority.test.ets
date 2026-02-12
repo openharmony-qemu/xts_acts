@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextDisplayPriorityTest() {
   describe('Row_TextDisplayPriorityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextDisplayPriorityTest beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

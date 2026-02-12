@@ -42,7 +42,7 @@ function sleep(time: number) {
 export default function textInputTest() {
   describe('ActsTextInputTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsTextInputTest beforeEach start");
 
 

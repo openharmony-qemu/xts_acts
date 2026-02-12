@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function menuBindMenuModifierTest() {
   describe('menuBindMenuModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
     })
 

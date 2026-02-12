@@ -17,49 +17,48 @@ import commonEvent from '@ohos.commonEvent';
 
 export default class Hap1MainAbility1 extends Ability {
     onCreate(want, launchParam) {
-        console.log("[Demo] Hap1MainAbility1 onCreate")
+        console.log('[Demo] Hap1MainAbility1 onCreate');
         globalThis.ability1Hap1Want = want;
         globalThis.ability1Hap1 = this.context;
     }
 
-    onDestroy() {
-        console.log("[Demo] Hap1MainAbility1 onDestroy");
-        setTimeout(function () {
-          commonEvent.publish('Hap1MainAbility1_onDestroy', (err, data) => {
-            console.log(' Hap1MainAbility1 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
-          })
-        }, 500);
+    async onDestroy():Promise<void> {
+        console.log('[Demo] Hap1MainAbility1 onDestroy');
+        commonEvent.publish('Hap1MainAbility1_onDestroy', (err, data) => {
+          console.log(' Hap1MainAbility1 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+        });
     }
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("[Demo] Hap1MainAbility1 onWindowStageCreate")
+        console.log('[Demo] Hap1MainAbility1 onWindowStageCreate');
 
-        windowStage.setUIContent(this.context, "MainAbility/pages/indexh1a1", null)
+        windowStage.setUIContent(this.context, 'MainAbility/pages/indexh1a1', null);
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("[Demo] Hap1MainAbility1 onWindowStageDestroy")
+        console.log('[Demo] Hap1MainAbility1 onWindowStageDestroy');
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("[Demo] Hap1MainAbility1 onForeground");
-        setTimeout(function () {
-          globalThis.ability1Hap1.terminateSelf().then((data) => {
-            console.log("Hap1MainAbility1 EventTest terminateSelf data: " + JSON.stringify(data));
+        console.log('[Demo] Hap1MainAbility1 onForeground');
+        commonEvent.publish('Hap1MainAbility1_onForeground', (err, data) => {
+          console.log(' Hap1MainAbility1 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+        });
+        globalThis.ability1Hap1.terminateSelf().then((data) => {
+          console.log('Hap1MainAbility1 EventTest terminateSelf data: ' + JSON.stringify(data));
         }).catch((error) => {
-            console.log("Hap1MainAbility1 EventTest terminateSelf error: " + JSON.stringify(error));
+          console.log('Hap1MainAbility1 EventTest terminateSelf error: ' + JSON.stringify(error));
         })
-          commonEvent.publish('Hap1MainAbility1_onForground', (err, data) => {
-            console.log('Hap1MainAbility1 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
-          })
-        }, 500);
+        commonEvent.publish('Hap1MainAbility1_onForground', (err, data) => {
+          console.log('Hap1MainAbility1 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+        })
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("[Demo] Hap1MainAbility1 onBackground")
+        console.log('[Demo] Hap1MainAbility1 onBackground');
     }
 };

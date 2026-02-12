@@ -35,7 +35,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function CustomDialogControllerOptionsTest() {
   describe('CustomDialogControllerOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomDialogControllerOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
     });

@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function timeStampJsunit() {
   describe('timeStampTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

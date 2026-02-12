@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditor5() {
   describe('RichEditor5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditor5 beforeEach start");
 
 

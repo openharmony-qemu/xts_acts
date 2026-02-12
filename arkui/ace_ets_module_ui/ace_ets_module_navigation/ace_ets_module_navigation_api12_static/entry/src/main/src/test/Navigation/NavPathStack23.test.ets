@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavPathStack23() {
   describe('NavPathStack23', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");

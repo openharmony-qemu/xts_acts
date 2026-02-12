@@ -32,7 +32,7 @@ import { UtilsTest } from '../Util.test';
 export default function textPickerOnChange() {
   describe('textPickerOnChange', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textPickerOnChange beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

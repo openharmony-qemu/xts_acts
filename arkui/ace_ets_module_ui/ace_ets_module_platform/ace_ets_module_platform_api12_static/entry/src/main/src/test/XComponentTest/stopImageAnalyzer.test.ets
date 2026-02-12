@@ -35,7 +35,7 @@ import { Driver, ON,Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 export default function stopImageAnalyzerJsunit() {
   describe('stopImageAnalyzerJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")

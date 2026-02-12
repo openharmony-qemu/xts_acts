@@ -46,7 +46,7 @@ const uiContext = new UIContext();
 
 export default function columnMonopolizeFalse() {
   describe('columnMonopolizeFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       

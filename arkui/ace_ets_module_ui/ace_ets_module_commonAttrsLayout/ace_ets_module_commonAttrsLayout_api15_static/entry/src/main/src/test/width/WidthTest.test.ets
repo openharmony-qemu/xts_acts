@@ -34,13 +34,13 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function WidthTest() {
   describe('WidthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WidthTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api15.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("WidthTest beforeEach start");
       let options: router.RouterOptions = {
         url:  "MainAbility/pages/width/WidthPage",

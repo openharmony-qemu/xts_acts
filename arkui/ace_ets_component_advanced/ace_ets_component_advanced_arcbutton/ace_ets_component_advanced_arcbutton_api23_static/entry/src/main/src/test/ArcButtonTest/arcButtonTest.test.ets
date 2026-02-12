@@ -26,7 +26,7 @@ const SLEEP_TIME = 1000;
 
 export default function arcButtonTest() {
   describe('arcButtonTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("arcButtonTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.arcbutton.api23.static", "EntryAbility")
     });

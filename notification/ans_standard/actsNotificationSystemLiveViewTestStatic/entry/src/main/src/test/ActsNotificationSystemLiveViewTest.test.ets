@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext
 
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    beforeAll((done: () => void) => {
+    beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

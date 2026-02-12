@@ -739,6 +739,74 @@ export default function audioRoutingManager() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400
+     * @tc.desc   On/Off prefer output device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let flag: boolean = false;
+      try {
+        audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo');
+
+        let preferOutputDeviceChangeForRendererInfoCallback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`Succeeded in using on or off function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+        };
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // 音频流使用类型：音乐。根据业务场景配置，参考StreamUsage。
+          rendererFlags: 0 // 音频渲染器标志。
+        };
+
+        audioRoutingManager.on('preferOutputDeviceChangeForRendererInfo', rendererInfo, preferOutputDeviceChangeForRendererInfoCallback);
+
+        audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo', preferOutputDeviceChangeForRendererInfoCallback);
+        flag = true;
+      } catch (e) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0400 FAIL: ${e.message},Code:${e.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0500
+     * @tc.desc   On/Off prefer output device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let flag: boolean = false;
+      try {
+        let preferOutputDeviceChangeForRendererInfoCallback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`Succeeded in using on or off function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+        };
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // 音频流使用类型：音乐。根据业务场景配置，参考StreamUsage。
+          rendererFlags: 0 // 音频渲染器标志。
+        };
+
+        audioRoutingManager.on('preferOutputDeviceChangeForRendererInfo', rendererInfo, preferOutputDeviceChangeForRendererInfoCallback);
+
+        audioRoutingManager.off('preferOutputDeviceChangeForRendererInfo');
+        flag = true;
+      } catch (e) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0500 FAIL: ${e.message},Code:${e.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_0100
      * @tc.number s
      * @tc.desc   Off prefer output device - callback
@@ -1110,6 +1178,72 @@ export default function audioRoutingManager() {
         expect(Number(e.code)).assertEqual(401);
         done();
       }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0400
+     * @tc.desc   On/Off preferred input devicechangeinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let flag: boolean = false;
+      try {
+        audioRoutingManager.off('preferredInputDeviceChangeForCapturerInfo');
+
+        let preferredInputDeviceChangeForCapturerInfoCallback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`Succeeded in using on or off function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+        };
+        let capturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_MIC, // 音源类型：Mic音频源。根据业务场景配置，参考SourceType。
+          capturerFlags: 0 // 音频采集器标志。
+        };
+
+        audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', capturerInfo, preferredInputDeviceChangeForCapturerInfoCallback);
+
+        audioRoutingManager.off('preferredInputDeviceChangeForCapturerInfo', preferredInputDeviceChangeForCapturerInfoCallback);
+        flag = true;
+      } catch (e) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0400 FAIL: ${e.message},Code:${e.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0500
+     * @tc.desc   On/Off preferred input devicechangeinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let flag: boolean = false;
+      try {
+        let preferredInputDeviceChangeForCapturerInfoCallback = (audioDeviceDescriptors: audio.AudioDeviceDescriptors) => {
+          console.info(`Succeeded in using on or off function, AudioDeviceDescriptors: ${JSON.stringify(audioDeviceDescriptors)}.`);
+        };
+        let capturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_MIC, // 音源类型：Mic音频源。根据业务场景配置，参考SourceType。
+          capturerFlags: 0 // 音频采集器标志。
+        };
+
+        audioRoutingManager.on('preferredInputDeviceChangeForCapturerInfo', capturerInfo, preferredInputDeviceChangeForCapturerInfoCallback);
+
+        audioRoutingManager.off('preferredInputDeviceChangeForCapturerInfo');
+        flag = true;
+      } catch (e) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_ON_PREFERREDINPUTDEVICEFORCAPTURERINFO_0500 FAIL: ${e.message},Code:${e.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
       done();
     })
   })

@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 import Utils from '../../../ets/MainAbility/common/Utils';
 export default function APIFontPrimaryTest() {
   describe('APIFontPrimaryTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIFontPrimaryTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")

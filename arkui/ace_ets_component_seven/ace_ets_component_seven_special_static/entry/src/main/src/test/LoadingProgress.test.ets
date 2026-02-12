@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function loadingProgressJsunit() {
   describe('loadingProgress', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("loadingProgress beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

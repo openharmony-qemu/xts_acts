@@ -42,7 +42,7 @@ function sleep(time: number) {
 
 export default function spanJsunit() {
   describe('SpanTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("spanJsunit beforeEach start");
 
 

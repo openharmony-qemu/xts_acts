@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ProvideConsume0030TestJsunit() {
   describe('ProvideConsume0030TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProvideConsume0030TestJsunit beforeEach start");
 
 

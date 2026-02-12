@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function grid_rowOnBreakpointChangeJsunit() {
   describe('grid_rowOnBreakpointChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

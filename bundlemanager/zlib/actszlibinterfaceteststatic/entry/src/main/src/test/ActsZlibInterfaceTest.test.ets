@@ -31,7 +31,7 @@ let dir: string = "";
 
 export default function ActsZlibInterfaceTest() {
   describe('ActsZlibInterfaceTest', ():void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
