@@ -48,7 +48,7 @@ export default function Matrix4TransitNullTest() {
 
     /**
      * @tc.name   matrix4CombineNull_0100
-     * @tc.number SUB_ARKUI_MATRIX4_COMBINE_NULL_0100
+     * @tc.number matrix4CombineNull_0100
      * @tc.desc   Test Matrix4 combine method with null parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -76,7 +76,7 @@ export default function Matrix4TransitNullTest() {
 
     /**
      * @tc.name   matrix4TranslateNull_0100
-     * @tc.number SUB_ARKUI_MATRIX4_TRANSLATE_NULL_0100
+     * @tc.number matrix4TranslateNull_0100
      * @tc.desc   Test Matrix4 translate method with null parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -104,7 +104,7 @@ export default function Matrix4TransitNullTest() {
 
     /**
      * @tc.name   matrix4ScaleNull_0100
-     * @tc.number SUB_ARKUI_MATRIX4_SCALE_NULL_0100
+     * @tc.number matrix4ScaleNull_0100
      * @tc.desc   Test Matrix4 scale method with null parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -130,7 +130,7 @@ export default function Matrix4TransitNullTest() {
 
     /**
      * @tc.name   matrix4RotateNull_0100
-     * @tc.number SUB_ARKUI_MATRIX4_ROTATE_NULL_0100
+     * @tc.number matrix4RotateNull_0100
      * @tc.desc   Test Matrix4 rotate method with null parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -156,7 +156,7 @@ export default function Matrix4TransitNullTest() {
 
     /**
      * @tc.name   matrix4TransformPointNull_0100
-     * @tc.number SUB_ARKUI_MATRIX4_TRANSFORM_POINT_NULL_0100
+     * @tc.number matrix4TransformPointNull_0100
      * @tc.desc   Test Matrix4 transformPoint method with null parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

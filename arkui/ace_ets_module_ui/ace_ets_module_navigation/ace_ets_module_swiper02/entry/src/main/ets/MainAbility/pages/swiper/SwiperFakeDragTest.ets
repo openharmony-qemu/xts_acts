@@ -40,7 +40,6 @@ struct SwiperFakeDragTest {
                 if (ret) {
                   return;
                 }
-                //ret = this.swiperController1.startFakeDrag();
                 console.info('SwiperFakeDrag test startFakeDrag ret = ', ret);
                 this.baseDisplayX = event.offsetX;
               })
