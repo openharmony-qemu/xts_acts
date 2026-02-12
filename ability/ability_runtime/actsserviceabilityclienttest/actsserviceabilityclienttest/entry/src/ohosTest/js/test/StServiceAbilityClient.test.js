@@ -88,6 +88,86 @@ export default function ActsStServiceAbilityTest() {
             "ACTS_SerivceAbilityServerSecond_onConnectCallback_ServiceConnectService_1500"
             ],
         };
+        let subscriber1600;
+        let CommonEventSubscribeInfo1600 = {
+            events: ["ACTS_JsServiceAbility_1800_Result",
+            ],
+        };
+        let subscriber1700;
+        let CommonEventSubscribeInfo1700 = {
+            events: ["ACTS_JsServiceAbility_1900_Result",
+            ],
+        };
+        let subscriber1800;
+        let CommonEventSubscribeInfo1800 = {
+            events: ["ACTS_JsServiceAbility_2000_Result",
+            ],
+        };
+        let subscriber1900;
+        let CommonEventSubscribeInfo1900 = {
+            events: ["ACTS_JsServiceAbility_2200_Result",
+            ],
+        };
+        let subscriber2000;
+        let CommonEventSubscribeInfo2000 = {
+            events: ["ACTS_JsServiceAbility_2300_Result",
+            ],
+        };
+        let subscriber2100;
+        let CommonEventSubscribeInfo2100 = {
+            events: ["ACTS_JsServiceAbility_2400_Result",
+            ],
+        };
+        let subscriber2200;
+        let CommonEventSubscribeInfo2200 = {
+            events: ["ACTS_JsServiceAbility_2500_Result",
+            ],
+        };
+        let subscriber2300;
+        let CommonEventSubscribeInfo2300 = {
+            events: ["ACTS_JsServiceAbility_2600_Result",
+            ],
+        };
+        let subscriber2400;
+        let CommonEventSubscribeInfo2400 = {
+            events: ["ACTS_JsServiceAbility_2700_Result",
+            ],
+        };
+        let subscriber2500;
+        let CommonEventSubscribeInfo2500 = {
+            events: ["ACTS_JsServiceAbility_2800_Result",
+            ],
+        };
+        let subscriber2600;
+        let CommonEventSubscribeInfo2600 = {
+            events: ["ACTS_JsServiceAbility_2900_Result",
+            ],
+        };
+        let subscriber2700;
+        let CommonEventSubscribeInfo2700 = {
+            events: ["ACTS_JsServiceAbility_3000_Result",
+            ],
+        };
+        let subscriber2800;
+        let CommonEventSubscribeInfo2800 = {
+            events: ["ACTS_JsServiceAbility_3100_Result",
+            ],
+        };
+        let subscriber2900;
+        let CommonEventSubscribeInfo2900 = {
+            events: ["ACTS_JsServiceAbility_3200_Result",
+            ],
+        };
+        let subscriber3000;
+        let CommonEventSubscribeInfo3000 = {
+            events: ["ACTS_JsServiceAbility_3300_Result",
+            ],
+        };
+        let subscriber3100;
+        let CommonEventSubscribeInfo3100 = {
+            events: ["ACTS_JsServiceAbility_3400_Result",
+            ],
+        };
 
         function unsubscribe(caller, subscriber) {
             commonEvent.unsubscribe(subscriber, (err, data) => {
@@ -977,5 +1057,635 @@ export default function ActsStServiceAbilityTest() {
               done();
           }
       })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1800
+         * @tc.number ACTS_JsServiceAbility_1800
+         * @tc.desc   Test particleAbility.startAbility with null parameter (Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_1800', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_1800====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo1600).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_1800 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber1600 = data;
+                    commonEvent.subscribe(subscriber1600, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_1800 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_1800_Result");
+                        unsubscribe("ACTS_JsServiceAbility_1800_unsubscribe", subscriber1600);
+                        console.info('ACTS_JsServiceAbility_1800====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_Null_1600",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_1800 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_1800==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_1800==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1900
+         * @tc.number ACTS_JsServiceAbility_1900
+         * @tc.desc   Test particleAbility.startAbility with undefined parameter (Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_1900', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_1900====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo1700).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_1900 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber1700 = data;
+                    commonEvent.subscribe(subscriber1700, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_1900 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_1900_Result");
+                        unsubscribe("ACTS_JsServiceAbility_1900_unsubscribe", subscriber1700);
+                        console.info('ACTS_JsServiceAbility_1900====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_Undefined_1700",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_1900 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_1900==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_1900==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2000
+         * @tc.number ACTS_JsServiceAbility_2000
+         * @tc.desc   Test particleAbility.startAbility with empty string parameter (Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2000', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2000====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo1800).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2000 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber1800 = data;
+                    commonEvent.subscribe(subscriber1800, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2000 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2000_Result");
+                        unsubscribe("ACTS_JsServiceAbility_2000_unsubscribe", subscriber1800);
+                        console.info('ACTS_JsServiceAbility_2000====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_EmptyString_1800",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2000 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2000==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2000==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2700
+         * @tc.number ACTS_JsServiceAbility_2700
+         * @tc.desc   Test particleAbility.acquireDataAbilityHelper with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2700', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2700====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2400).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2700 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2400 = data;
+                    commonEvent.subscribe(subscriber2400, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2700 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2700_Result");
+                        unsubscribe("ACTS_JsServiceAbility_2700_unsubscribe", subscriber2400);
+                        console.info('ACTS_JsServiceAbility_2700====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_AcquireDataAbilityHelper_Null_2400",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2700 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2700==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2700==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2800
+         * @tc.number ACTS_JsServiceAbility_2800
+         * @tc.desc   Test particleAbility.acquireDataAbilityHelper with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2800', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2800====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2500).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2800 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2500 = data;
+                    commonEvent.subscribe(subscriber2500, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2800 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2800_Result");
+                        unsubscribe("ACTS_JsServiceAbility_2800_unsubscribe", subscriber2500);
+                        console.info('ACTS_JsServiceAbility_2800====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_AcquireDataAbilityHelper_Undefined_2500",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2800 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2800==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2800==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2900
+         * @tc.number ACTS_JsServiceAbility_2900
+         * @tc.desc   Test particleAbility.acquireDataAbilityHelper with empty string parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2900', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2900====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2600).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2900 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2600 = data;
+                    commonEvent.subscribe(subscriber2600, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2900 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2900_Result");
+                        unsubscribe("ACTS_JsServiceAbility_2900_unsubscribe", subscriber2600);
+                        console.info('ACTS_JsServiceAbility_2900====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_AcquireDataAbilityHelper_EmptyString_2600",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2900 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2900==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2900==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2200
+         * @tc.number ACTS_JsServiceAbility_2200
+         * @tc.desc   Test particleAbility.connectAbility with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2200', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2200====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo1900).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2200 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber1900 = data;
+                    commonEvent.subscribe(subscriber1900, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2200 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2200_Result");
+                        expect(data.parameters?.result).assertEqual(undefined);
+                        unsubscribe("ACTS_JsServiceAbility_2200_unsubscribe", subscriber1900);
+                        console.info('ACTS_JsServiceAbility_2200====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_ConnectAbility_Null_1900",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2200 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2200==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2200==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2300
+         * @tc.number ACTS_JsServiceAbility_2300
+         * @tc.desc   Test particleAbility.connectAbility with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2300', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2300====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2000).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2300 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2000 = data;
+                    commonEvent.subscribe(subscriber2000, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2300 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2300_Result");
+                        expect(data.parameters?.result).assertEqual(undefined);
+                        unsubscribe("ACTS_JsServiceAbility_2300_unsubscribe", subscriber2000);
+                        console.info('ACTS_JsServiceAbility_2300====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_ConnectAbility_Undefined_2000",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2300 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2300==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2300==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_2400
+         * @tc.number ACTS_JsServiceAbility_2400
+         * @tc.desc   Test particleAbility.connectAbility with empty string parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_2400', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_2400====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2100).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_2400 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2100 = data;
+                    commonEvent.subscribe(subscriber2100, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_2400 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_2400_Result");
+                        expect(data.parameters?.result).assertEqual(0);
+                        unsubscribe("ACTS_JsServiceAbility_2400_unsubscribe", subscriber2100);
+                        console.info('ACTS_JsServiceAbility_2400====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_ConnectAbility_EmptyString_2100",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_2400 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_2400==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_2400==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_3000
+         * @tc.number ACTS_JsServiceAbility_3000
+         * @tc.desc   Test particleAbility.startAbility with null parameter (AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_3000', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_3000====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2700).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_3000 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2700 = data;
+                    commonEvent.subscribe(subscriber2700, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_3000 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_3000_Result");
+                        expect(data.parameters?.result).assertEqual(202);
+                        unsubscribe("ACTS_JsServiceAbility_3000_unsubscribe", subscriber2700);
+                        console.info('ACTS_JsServiceAbility_3000====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_Null_Callback_2700",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_3000 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_3000==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_3000==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_3100
+         * @tc.number ACTS_JsServiceAbility_3100
+         * @tc.desc   Test particleAbility.startAbility with undefined parameter (AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_3100', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_3100====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2800).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_3100 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2800 = data;
+                    commonEvent.subscribe(subscriber2800, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_3100 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_3100_Result");
+                        expect(data.parameters?.result).assertEqual(202);
+                        unsubscribe("ACTS_JsServiceAbility_3100_unsubscribe", subscriber2800);
+                        console.info('ACTS_JsServiceAbility_3100====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_Undefined_Callback_2800",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_3100 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_3100==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_3100==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   ACTS_JsServiceAbility_3200
+         * @tc.number ACTS_JsServiceAbility_3200
+         * @tc.desc   Test particleAbility.startAbility with empty string parameter (AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('ACTS_JsServiceAbility_3200', Level.LEVEL0, async function (done) {
+            console.info('ACTS_JsServiceAbility_3200====<begin');
+            try {
+                await commonEvent.createSubscriber(CommonEventSubscribeInfo2900).then((data) => {
+                    console.info("=ACTS_JsServiceAbility_3200 createSubscriber .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                    subscriber2900 = data;
+                    commonEvent.subscribe(subscriber2900, (err, data) => {
+                        console.info("=ACTS_JsServiceAbility_3200 subscribe (err,data)=======>"
+                        + ("json err【") + JSON.stringify(err) + (" 】")
+                        + ("json data【") + JSON.stringify(data) + (" 】")
+                        + " ,err=" + err + " ,data=" + data);
+                        expect(data.event).assertEqual("ACTS_JsServiceAbility_3200_Result");
+                        expect(data.parameters?.result).assertEqual(1);
+                        unsubscribe("ACTS_JsServiceAbility_3200_unsubscribe", subscriber2900);
+                        console.info('ACTS_JsServiceAbility_3200====<end');
+                        done();
+                    });
+                })
+                featureAbility.startAbility(
+                    {
+                        want:
+                        {
+                            bundleName: bundleName,
+                            abilityName: abilityName,
+                            action: "PageStartService_StartAbility_EmptyString_Callback_2900",
+                        },
+                    }
+                ).then(data => {
+                    console.info("=ACTS_JsServiceAbility_3200 .then(data)=======>"
+                    + ("json data【") + JSON.stringify(data) + (" 】")
+                    + " ,data=" + data);
+                }).catch(err => {
+                    expect().assertFail()
+                    console.info('ACTS_JsServiceAbility_3200==== err: ' + JSON.stringify(err));
+                    done();
+                })
+            } catch (err) {
+                expect().assertFail()
+                console.info('ACTS_JsServiceAbility_3200==== err: ' + JSON.stringify(err));
+                done();
+            }
+        })
     })
 }
