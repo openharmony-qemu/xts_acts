@@ -19,86 +19,80 @@ import fs from '@ohos.file.fs';
 import { router, ComponentContent } from '@kit.ArkUI';
 import { matrix4 } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
+import { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { uiObserver } from '@kit.ArkUI';
+import window from '@ohos.window';
+import { CustomKeyboardContinueFeature } from '@ohos.arkui.UIContext';
 import FirstDialog from '../model/FirstDialog';
-import Logger from '../model/Logger';
+
 class BuilderParams {
-public text: string | Resource;
+  public text: string | Resource;
 
   constructor(text: string | Resource) {
     this.text = text;
   }
 }
+
 @Builder
-function itemBuilder1(params: BuilderParams) {
+function itemBuilder(params: BuilderParams) {
   Column() {
     Row() {
-      Text(params.text).fontColor(Color.White).fontSize(20)
+      Button(params.text).margin('4vp')
+      Button('Set').margin('4vp')
     }
-
+    .backgroundColor(Color.Gray)
+    .justifyContent(FlexAlign.SpaceEvenly)
     Grid() {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
+      ForEach(['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'], (item: string) => {
         GridItem() {
-          Button(item + '')
-            .width(110).onClick(() => {
+          Button(item).width(110).onClick(() => {
+            console.log('whw: 自定义键盘被点击')
           })
         }
       })
     }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-  }.backgroundColor(Color.Gray)
+  }.backgroundColor(Color.Gray).height('30%')
 }
 
-@Builder
-function itemBuilder2(params: BuilderParams) {
-  Column() {
-    Row() {
-      Text(params.text).fontColor(Color.White).fontSize(20)
-    }
+@Observed
+class MyRichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+  public builder ?: ComponentContent<BuilderParams> | CustomBuilder = undefined;
 
-    Grid() {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
-        GridItem() {
-          Button(item + '')
-            .width(110).onClick(() => {
-          })
-        }
-      })
-    }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-  }.backgroundColor(Color.Gray)
+  applyNormalAttribute(instance: RichEditorAttribute): void {
+    instance.customKeyboard(this.builder)
+    instance.border({ width: 1 })
+    instance.borderWidth(1)
+    instance.borderColor(Color.Red)
+    instance.margin(10)
+    instance.height(50)
+    instance.width('100%')
+  }
+  setBuilder(builder: ComponentContent<BuilderParams> | CustomBuilder) {
+    this.builder = builder;
+  }
 }
 @Entry
 @Component
-struct TabBarIndicatorPixmap {
+struct SR20250916000370 {
   @State name: string = 'RichEditior ComponentContent Keyboard';
-  @State stepTips: string = '操作步骤:\n' + '1.点击componentContent键盘1 文本框\n' +
-    '2.点击componentContent键盘2 文本框\n' +
-    '预期结果：\n' + '1.键盘呼出\n' +
-    '2.键盘接续，始终存在\n'
+  @State stepTips: string = '操作步骤:\n' + '1.点击打开按钮 \n' +
+    '2.分别点击下方的富文本.\n' +
+    '预期结果：\n' + '点击富文本时键盘正常弹出，再点击其他富文本时，键盘接续正常\n'
+  @State mod: MyRichEditorModifier = new MyRichEditorModifier();
+  @State mod2: MyRichEditorModifier = new MyRichEditorModifier();
+  controller: RichEditorController = new RichEditorController();
+  controller1: RichEditorController = new RichEditorController();
+  controller2: RichEditorController = new RichEditorController();
+  styleStringController: RichEditorStyledStringController = new RichEditorStyledStringController()
+  styleStringController1: RichEditorStyledStringController = new RichEditorStyledStringController()
+  styleStringController2: RichEditorStyledStringController = new RichEditorStyledStringController()
+  textController : TextController = new TextController()
+  textAreaController: TextAreaController = new TextAreaController()
+  builder ?: ComponentContent<BuilderParams> = undefined;
+  builderParam = new BuilderParams('delete');
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
-  @State isVertical: boolean = false;
-  @State barOverlap: boolean = false;
-  @State fadingEdge: boolean = false;
-  @State currentIndex: number = 2;
-  @State selectedIndex: number = 2;
-
-  @State text: string = '文本';
-  @State barMode: BarMode = BarMode.Fixed;
-
-  // 声明DrawableDescriptor对象
-  @State pixmapDesc: DrawableDescriptor | null = null;
-
-
-  @State subTabBorderRadius: number = 20;
-  @State selectedMode: SelectedMode = SelectedMode.INDICATOR;
-  controller: RichEditorController = new RichEditorController();
-  controller2: RichEditorController = new RichEditorController();
-  builder1 ?: ComponentContent<BuilderParams> = undefined;
-  builder2 ?: ComponentContent<BuilderParams> = undefined;
-  builderParam1 = new BuilderParams('ComponentContent CustomKeyboard1');
-  builderParam2 = new BuilderParams('ComponentContent CustomKeyboard2');
-  @State supportAvoidance: boolean = true;
-
-  // 自定义键盘组件
   @Builder
   CustomKeyboardBuilder() {
     Column() {
@@ -118,14 +112,61 @@ struct TabBarIndicatorPixmap {
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
-    }.backgroundColor(Color.Gray)
+    }.backgroundColor(Color.Gray).height('30%')
+  }
+  aboutToAppear(): void {
+    this.builder = new ComponentContent(this.getUIContext(), wrapBuilder(itemBuilder), this.builderParam);
+    this.mod.setBuilder(this.builder);
+    this.mod2.setBuilder(this.builder);
+    FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
 
-  aboutToAppear(): void {
-    //创建ComponentContent
-    this.builder1 = new ComponentContent(this.getUIContext(), wrapBuilder(itemBuilder1), this.builderParam1);
-    this.builder2 = new ComponentContent(this.getUIContext(), wrapBuilder(itemBuilder2), this.builderParam2);
-    FirstDialog.ChooseDialog(this.stepTips, this.name);
+  @Builder
+  PassBtn(text: Resource, isFullScreen: boolean) {
+    Button({ stateEffect: this.isOk }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
+      })
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
+  }
+
+  @Builder
+  FailBtn(text: Resource, isFullScreen: boolean) {
+    Button() {
+      Image($r('app.media.ic_public_fail'))
+        .width('20vp')
+        .height('20vp')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'false', title: this.name,
+        }
+      });
+      promptAction.showToast({
+        message: '失败', duration: 1000
+      });
+    })
   }
 
   onPageHide() {
@@ -134,31 +175,106 @@ struct TabBarIndicatorPixmap {
 
   aboutToDisappear() {
     clearInterval(this.intervalNum);
+
   }
 
   build() {
     Column() {
-      Text('componentContent键盘1')
-      RichEditor({ controller: this.controller })// 绑定自定义键盘
-        .customKeyboard(this.builder1)
-        .border({ width: 1 })
-        .borderWidth(1)
-        .borderColor(Color.Red)
-        .margin(10)
-        .height(50)
-        .width('100%')
-      Text('componentContent键盘2')
-      RichEditor({ controller: this.controller2 })// 绑定自定义键盘
-        .customKeyboard(this.builder1)
-        .border({ width: 1 })
-        .borderWidth(1)
-        .borderColor(Color.Red)
-        .margin(10)
-        .height(50)
-        .width('100%')
+      Row() {
+        Button() {
+          Image($r('app.media.ic_public_back'))
+            .width('20vp')
+            .height('18vp')
+            .margin({ left: '20vp' })
+        }
+        .backgroundColor(Color.Black)
+        .size({ width: '40vp', height: '30vp' })
+        .onClick(() => {
+          router.back({
+            url: 'pages/ArkUI/ArkUI_index',
+            params: { result: 'None' }
+          });
+        })
 
+        Text(this.name)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .margin({ left: '-20vp' })
+        Text('hello')
+          .fontColor(Color.White)
+          .visibility(Visibility.Hidden)
+      }
+      .backgroundColor(Color.Black)
+      .height('10%')
+      .width('100%')
+      .justifyContent(FlexAlign.SpaceBetween)
+
+      Column() {
+        Row(){
+          Button('打开').onClick(() => {
+            this.getUIContext().setCustomKeyboardContinueFeature(CustomKeyboardContinueFeature.ENABLED);
+          }).fontSize(20).width('50%').key('button')
+          Button('关闭').onClick(() => {
+            this.getUIContext().setCustomKeyboardContinueFeature(CustomKeyboardContinueFeature.DISABLED);
+          }).fontSize(20).width('50%').key('button')
+        }
+        RichEditor({ controller: this.controller })
+          .id('RICH_1')
+          .placeholder('非属性字符串RICH_1绑定自定义键盘1-ComponentContent')
+          .customKeyboard(this.CustomKeyboardBuilder())
+
+        RichEditor({ controller: this.controller1 })
+          .id('RICH_2')
+          .placeholder('非属性字符串RICH_2通过modifier绑定自定义键盘1-ComponentContent')
+          .attributeModifier(this.mod)
+        RichEditor({ controller: this.controller2 })
+          .id('RICH_3')
+          .placeholder('非属性字符串RICH_3绑定自定义键盘2-CustomBuilder')
+          .customKeyboard(this.CustomKeyboardBuilder())
+
+        RichEditor({ controller: this.styleStringController })
+          .id('RICH_4')
+          .placeholder('属性字符串RICH_4绑定自定义键盘1-ComponentContent')
+          .customKeyboard(this.CustomKeyboardBuilder())
+
+      }.width('100%')
+      .height('80%')
+      .backgroundColor('#F1F3F5')
+
+
+        Row() {
+          this.PassBtn($r('app.string.btn_fullscreen'), true);
+          Button() {
+            Image($r('app.media.ic_public_help'))
+              .width('20vp')
+              .height('20vp')
+          }
+          .margin({ bottom: '20vp' })
+          .width('30%')
+          .height('30vp')
+          .backgroundColor(Color.Grey)
+          .onClick(() => {
+            AlertDialog.show(
+              {
+                title: '操作提示',
+                message: this.stepTips,
+                confirm: {
+                  value: 'OK',
+                  action: () => {
+                  }
+                }
+              }
+            )
+          })
+          this.FailBtn($r('app.string.btn_fullscreen'), true);
+        }
+        .height('10%')
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceEvenly)
+        .backgroundColor(Color.Black)
     }.width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')
+    
   }
 }
