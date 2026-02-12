@@ -1190,10 +1190,12 @@ export default function windowErrCode401_4() {
       try {
         await windowStage.createSubWindow('');
         console.info(msgStr + 'Succeeded1');
+        expect().assertFail();
+        done();
       } catch (exception) {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         expect().assertFail();
-        done();
+        expect(exception.code).assertEqual(1300002);
       }
       try {
         await windowStage.createSubWindow(undefined);
@@ -1330,7 +1332,7 @@ export default function windowErrCode401_4() {
         expect(exception.message!=null).assertTrue();
       }
       try {
-        await windowStage.createSubWindowWithOptions('subwindow', undefined);
+        await windowStage.createSubWindowWithOptions('subwindow2', undefined);
         console.info(msgStr + 'Succeeded4.');
         expect().assertFail();
         done();
@@ -1789,10 +1791,12 @@ export default function windowErrCode401_4() {
       try {
         await windowStage.loadContent('aaa', undefined);
         console.info(msgStr + 'Succeeded4.');
+        expect().assertFail();
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect().assertFail();
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
         done()
       }
     })

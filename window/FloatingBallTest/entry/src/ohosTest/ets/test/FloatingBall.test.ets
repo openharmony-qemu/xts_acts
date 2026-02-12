@@ -133,6 +133,7 @@ export default function abilityTest() {
         context: context,
       };
       let floatingBallController: floatingBall.FloatingBallController | undefined
+      let floatingBallController2: floatingBall.FloatingBallController | undefined
       try {
         floatingBallController = await floatingBall.create(config)
         await floatingBallController.startFloatingBall(null);
@@ -149,7 +150,8 @@ export default function abilityTest() {
         }
       }
       try {
-        await floatingBallController?.startFloatingBall(undefined);
+        floatingBallController2 = await floatingBall.create(config)
+        await floatingBallController2?.startFloatingBall(undefined);
         console.info(msgStr + 'Succeeded2.');
         expect().assertFail();
         done();
@@ -262,6 +264,7 @@ export default function abilityTest() {
       }
       let floatingBallController2: floatingBall.FloatingBallController | undefined
       try {
+        floatingBallController2 = await floatingBall.create(config)
         await floatingBallController2?.startFloatingBall(startParams);
         await floatingBallController2?.restoreMainWindow(undefined);
         console.info(msgStr + 'Succeeded2.');
