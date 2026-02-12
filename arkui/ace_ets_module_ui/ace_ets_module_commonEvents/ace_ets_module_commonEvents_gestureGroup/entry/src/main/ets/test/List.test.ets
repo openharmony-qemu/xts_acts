@@ -23,6 +23,6 @@ export default function testsuite() {
   gestureParallelJsunit()
   addGestureApplyGesture();
   BoxSelectTest();
-  WebTextMenuGestureTest();
   gestureTest();
+  WebTextMenuGestureTest();
 }
