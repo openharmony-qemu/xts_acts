@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import RectValue from '../../MainAbility/common/Rect';
+import router from '@ohos.router';
 
 export default function SwiperFakeDragTest() {
   describe('SwiperFakeDragTest', () => {
