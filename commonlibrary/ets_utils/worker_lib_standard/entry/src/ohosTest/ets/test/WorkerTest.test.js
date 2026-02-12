@@ -3098,7 +3098,7 @@ export default function WorkerTest() {
                 expect(isTerminate).assertEqual(true)
                 console.log('test worker post message: ' + results)
                 expect(results)
-                    .assertDeepEquals([null,null,401,401,1,1,2,2,"success",401,401,401,401,"success",401,401,401,401,401,401])
+                    .assertDeepEquals([null,undefined,401,401,1,1,2,2,"success",401,401,401,401,"success",401,401,401,401,401,401,401])
                 done()
             })
     })
