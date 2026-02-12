@@ -75,6 +75,7 @@ group("ability_runtime") {
       "actsgetwantagentwithuseridtest:ActsGetwantagentWithUseridTest",
       "actsintent:actsintent",
       "actsjsdataabilitytest:ActsJsDataAbilityTest",
+      "actskioskmanagerstatictest:ActsKioskManagerStaticTest",
       "actskioskmanagertest:ActsKioskManagerTest",
       "actslastexitreason:actslastexitreason",
       "actslifecycle:actslifecycle",
