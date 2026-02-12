@@ -19,7 +19,7 @@ import CommonFunc from '../../MainAbility/utils/Common';
 
 export default function DividerLineCapNullUndefinedTest() {
   describe('DividerLineCapNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
+    beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Divider/DividerLineCapNullUndefined',
       }

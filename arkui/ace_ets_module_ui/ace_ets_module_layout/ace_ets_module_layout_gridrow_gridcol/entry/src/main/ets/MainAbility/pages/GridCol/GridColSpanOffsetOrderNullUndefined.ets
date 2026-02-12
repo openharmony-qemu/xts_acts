@@ -219,6 +219,6 @@ struct GridColSpanOffsetOrderNullUndefinedTest {
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 5, right: 5, top: 5, bottom: 5 })
+    .padding(2)
   }
 }
