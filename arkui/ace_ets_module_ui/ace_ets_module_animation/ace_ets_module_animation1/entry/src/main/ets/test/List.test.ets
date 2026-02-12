@@ -58,8 +58,8 @@ import DirectionNullUndefinedTest from './animator/DirectionNullUndefined.test';
 import IterationsNullUndefinedTest from './animator/IterationsNullUndefined.test';
 import AnimatorNullUndefinedTest from './animator/AnimatorNullUndefined.test';
 import CreateNullUndefinedTest from './animator/CreateNullUndefined.test';
-import Matrix4TransitNullTest from './matrix4/Matrix4TransitNullTest.test';
-import Matrix4TransitUndefinedTest from './matrix4/Matrix4TransitUndefinedTest.test';
+import Matrix4TransitNullTest from './matrix4/Matrix4TransitNull.test';
+import Matrix4TransitUndefinedTest from './matrix4/Matrix4TransitUndefined.test';
 
 export default function testsuite() {
   animateJsunit();
