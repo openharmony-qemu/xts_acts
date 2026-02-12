@@ -6,9 +6,9 @@
         "MainAbility/pages/observer/UIObserverDensityUpdateTest",
         "MainAbility/pages/observer/UIObserverWillDrawTest",
         "MainAbility/pages/observer/UIObserverDidLayoutTest",
-		"pages/uIObserver/UIObserverDensityUpdateNullTest",
-        "pages/uIObserver/UIObserverWillDrawNullUndefinedTest",
-        "pages/uIObserver/WindowSizeLayoutBreakpointNullUndefinedTest"
+		"MainAbility/pages/uIObserver/UIObserverDensityUpdateNullTest",
+        "MainAbility/pages/uIObserver/UIObserverWillDrawNullUndefinedTest",
+        "MainAbility/pages/uIObserver/WindowSizeLayoutBreakpointNullUndefinedTest"
 		
     ]
 }
