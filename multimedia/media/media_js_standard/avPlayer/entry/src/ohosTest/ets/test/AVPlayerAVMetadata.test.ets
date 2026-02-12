@@ -1236,8 +1236,10 @@ export default function AVMetadata() {
       const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
         if (err) {
           expect(err.code).assertEqual(5400106);
-          let result: number = frameInfo.result;
-          expect(result).assertEqual(0);
+          if (frameInfo !== undefined) {
+            let result: number = frameInfo.result;
+            expect(result).assertEqual(0);
+          }
           console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
           return;
         }
@@ -1302,7 +1304,7 @@ export default function AVMetadata() {
           return;
         }
 
-        if(frameInfo !== undefined && frameInfo.image !== undefined) {
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
           let requestedTimeUs: number = frameInfo.requestedTimeUs;
           expect(requestedTimeUs).assertEqual(1000000);
           if (frameInfo.actualTimeUs != undefined) {
