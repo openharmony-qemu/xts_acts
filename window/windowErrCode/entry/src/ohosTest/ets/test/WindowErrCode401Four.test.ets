@@ -1644,7 +1644,6 @@ export default function windowErrCode401_4() {
             done();
           } else {
             console.log(caseName + ' success3');
-            expect(true).assertTrue();
           }
         });
       } catch (err) {
@@ -1661,7 +1660,6 @@ export default function windowErrCode401_4() {
             done();
           } else {
             console.log(caseName + ' success4');
-            expect(true).assertTrue();
             done();
           }
         });
