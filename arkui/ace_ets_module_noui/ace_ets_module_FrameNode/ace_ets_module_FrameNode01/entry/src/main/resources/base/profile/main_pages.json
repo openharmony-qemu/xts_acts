@@ -58,7 +58,6 @@
         "MainAbility/pages/FrameNodeNew/RenderNodeMethodNullTest",
         "MainAbility/pages/FrameNodeNew/MakeNodeNullTest",
         "MainAbility/pages/FrameNodeNew/AttachNodeAdapterBooleanTest",
-//        "MainAbility/pages/FrameNodeNew/isTransferredTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeNullTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeMethodNullTest",
         "MainAbility/pages/FrameNodeMethod/AdoptChildOneTest",
