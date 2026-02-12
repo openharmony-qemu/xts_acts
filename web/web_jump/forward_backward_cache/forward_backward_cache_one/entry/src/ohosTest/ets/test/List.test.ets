@@ -17,10 +17,14 @@ import webCookieManager from './WebCookieManager.test'
 import webController from './WebController.test'
 import webStorage from './WebStorage.test'
 import webViewControllerPart3 from './WebViewControllerPart3.test'
+import webStorageDeleteAllDataNormal from './WebStorageDeleteAllDataNormal.test'
+import webStorageDeleteOriginError from './WebStorageDeleteOriginError.test'
 
 export default function testsuite() {
   webStorage()
   webCookieManager()
   webController()
   webViewControllerPart3()
+  webStorageDeleteAllDataNormal()
+  webStorageDeleteOriginError()
 }
