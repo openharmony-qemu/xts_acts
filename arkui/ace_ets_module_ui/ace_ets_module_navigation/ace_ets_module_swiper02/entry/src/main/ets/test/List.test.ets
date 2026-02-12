@@ -16,9 +16,12 @@ import swiperFillPolicy from './swiper/swiperFillPolicy.test';
 import SwiperParamExample from './swiper/SwiperParamExample.test';
 import TabsExample1 from './tabs/TabsExample1.test';
 import TabsExample2 from './tabs/TabsExample2.test';
+import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
+
 export default function testsuite() {
   swiperFillPolicy()
   SwiperParamExample()
   TabsExample1()
   TabsExample2()
+  SwiperFakeDragTest()
 }
