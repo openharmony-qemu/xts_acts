@@ -92,7 +92,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with primary button',
                 buttons: [
@@ -122,7 +122,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with non-primary button',
                 buttons: [
@@ -157,7 +157,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog in sub window',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -185,7 +185,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog in main window',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -219,7 +219,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with hover enabled',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -247,7 +247,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with hover disabled',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -281,7 +281,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with OVERLAY level mode',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -315,7 +315,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with DEFAULT immersive mode',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -343,7 +343,7 @@ struct PromptActionShowDialogTest {
           .onClick(() => {
             try {
               this.dialogIndex++;
-              PromptAction.showDialog({
+              promptAction.showDialog({
                 title: 'Test Dialog',
                 message: 'Dialog with EXTEND immersive mode',
                 buttons: [{ text: 'OK', color: '#0A59F7' }],
@@ -378,7 +378,7 @@ struct PromptActionShowDialogTest {
             try {
               this.dialogIndex++;
               // Test passing null as options parameter
-              PromptAction.showDialog(null).then((data: promptAction.ShowDialogSuccessResponse) => {
+              promptAction.showDialog(null).then((data: promptAction.ShowDialogSuccessResponse) => {
                 this.dialogTestResult = 'options null: SUCCESS';
                 this.lastError = '';
               }).catch((error: BusinessError) => {
@@ -402,7 +402,7 @@ struct PromptActionShowDialogTest {
             try {
               this.dialogIndex++;
               // Test passing undefined as options parameter
-              PromptAction.showDialog(undefined).then((data: promptAction.ShowDialogSuccessResponse) => {
+              promptAction.showDialog(undefined).then((data: promptAction.ShowDialogSuccessResponse) => {
                 this.dialogTestResult = 'options undefined: SUCCESS';
                 this.lastError = '';
               }).catch((error: BusinessError) => {
