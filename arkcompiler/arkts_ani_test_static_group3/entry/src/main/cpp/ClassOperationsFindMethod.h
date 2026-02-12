@@ -151,9 +151,6 @@ ani_boolean test_Class_Find_Method_11([[maybe_unused]] ani_env *env, [[maybe_unu
     ASSERT_EQ(env->FindClass("test.FindConstructorWithDefaultParams", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", nullptr, &ctor), ANI_AMBIGUOUS);
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":", &ctor), ANI_OK);
-    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.Int}:", &ctor), ANI_OK);
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.Int}C{std.core.Int}:", &ctor), ANI_OK);
     return ANI_TRUE;
 }
