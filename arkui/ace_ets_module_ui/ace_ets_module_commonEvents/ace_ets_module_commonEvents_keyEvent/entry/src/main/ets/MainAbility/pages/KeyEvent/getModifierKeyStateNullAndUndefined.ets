@@ -17,9 +17,9 @@
 struct KeyEventGetModifierKeyState {
   @State baseEventCtrlResult: boolean = false
   @State baseEventShiftResult: boolean = false
-  @State baseEventNullResult: string = ""
-  @State baseEventUndefinedResult: string = ""
-  @State baseEventEmptyResult: string = ""
+  @State baseEventNullResult: string = ''
+  @State baseEventUndefinedResult: string = ''
+  @State baseEventEmptyResult: string = ''
 
   build() {
     Column() {
@@ -35,8 +35,8 @@ struct KeyEventGetModifierKeyState {
           this.resetStates();
         })
         .onClick((event: BaseEvent) => {
-          this.baseEventCtrlResult = event.getModifierKeyState?.(["ctrl"]) ?? false
-          this.baseEventShiftResult = event.getModifierKeyState?.(["shift"]) ?? false
+          this.baseEventCtrlResult = event.getModifierKeyState?.(['ctrl']) ?? false
+          this.baseEventShiftResult = event.getModifierKeyState?.(['shift']) ?? false
           AppStorage.setOrCreate('getModifierKeyStateNormalResult', this.baseEventCtrlResult);
           AppStorage.setOrCreate('getModifierKeyStateShiftResult', this.baseEventShiftResult);
         })
@@ -52,11 +52,11 @@ struct KeyEventGetModifierKeyState {
           try {
             let result = event.getModifierKeyState?.(null);
             AppStorage.setOrCreate('getModifierKeyStateNullResult', result);
-            this.baseEventNullResult = "SUCCESS";
+            this.baseEventNullResult = 'SUCCESS';
           } catch (error) {
             AppStorage.setOrCreate('getModifierKeyStateNullResult', false);
             AppStorage.setOrCreate('getModifierKeyStateNullError', error.message);
-            this.baseEventNullResult = "ERROR";
+            this.baseEventNullResult = 'ERROR';
           }
         })
 
@@ -71,11 +71,11 @@ struct KeyEventGetModifierKeyState {
           try {
             let result = event.getModifierKeyState?.(undefined);
             AppStorage.setOrCreate('getModifierKeyStateUndefinedResult', result);
-            this.baseEventUndefinedResult = "SUCCESS";
+            this.baseEventUndefinedResult = 'SUCCESS';
           } catch (error) {
             AppStorage.setOrCreate('getModifierKeyStateUndefinedResult', false);
             AppStorage.setOrCreate('getModifierKeyStateUndefinedError', error.message);
-            this.baseEventUndefinedResult = "ERROR";
+            this.baseEventUndefinedResult = 'ERROR';
           }
         })
 
@@ -90,11 +90,11 @@ struct KeyEventGetModifierKeyState {
           try {
             let result = event.getModifierKeyState?.([]);
             AppStorage.setOrCreate('getModifierKeyStateEmptyResult', result);
-            this.baseEventEmptyResult = "SUCCESS";
+            this.baseEventEmptyResult = 'SUCCESS';
           } catch (error) {
             AppStorage.setOrCreate('getModifierKeyStateEmptyResult', false);
             AppStorage.setOrCreate('getModifierKeyStateEmptyError', error.message);
-            this.baseEventEmptyResult = "ERROR";
+            this.baseEventEmptyResult = 'ERROR';
           }
         })
 
@@ -113,9 +113,9 @@ struct KeyEventGetModifierKeyState {
   private resetStates(): void {
     this.baseEventCtrlResult = false;
     this.baseEventShiftResult = false;
-    this.baseEventNullResult = "";
-    this.baseEventUndefinedResult = "";
-    this.baseEventEmptyResult = "";
+    this.baseEventNullResult = '';
+    this.baseEventUndefinedResult = '';
+    this.baseEventEmptyResult = '';
     AppStorage.clear();
   }
 }

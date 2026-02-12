@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,9 +20,9 @@ import { BusinessError } from '@ohos.base'
 @Component
 struct CursorControlSetCursor {
   @State currentCursor: PointerStyle = pointer.PointerStyle.DEFAULT
-  @State setCursorResult: string = ""
-  @State setCursorNullResult: string = ""
-  @State setCursorUndefinedResult: string = ""
+  @State setCursorResult: string = ''
+  @State setCursorNullResult: string = ''
+  @State setCursorUndefinedResult: string = ''
   controller: TextInputController = new TextInputController()
 
   build() {
@@ -92,11 +92,11 @@ struct CursorControlSetCursor {
           this.resetStates();
           try {
             cursorControl.setCursor(pointer.PointerStyle.SOUTH);
-            this.setCursorResult = "SUCCESS";
-            AppStorage.setOrCreate('setCursorNormalResult', "SUCCESS");
+            this.setCursorResult = 'SUCCESS';
+            AppStorage.setOrCreate('setCursorNormalResult', 'SUCCESS');
           } catch (error) {
-            this.setCursorResult = "ERROR: " + error.message;
-            AppStorage.setOrCreate('setCursorNormalResult', "ERROR");
+            this.setCursorResult = 'ERROR: ' + error.message;
+            AppStorage.setOrCreate('setCursorNormalResult', 'ERROR');
           }
         })
 
@@ -108,11 +108,11 @@ struct CursorControlSetCursor {
           this.resetStates();
           try {
             cursorControl.setCursor(null);
-            this.setCursorNullResult = "SUCCESS";
-            AppStorage.setOrCreate('setCursorNullResult', "SUCCESS");
+            this.setCursorNullResult = 'SUCCESS';
+            AppStorage.setOrCreate('setCursorNullResult', 'SUCCESS');
           } catch (error) {
-            this.setCursorNullResult = "ERROR: " + error.message;
-            AppStorage.setOrCreate('setCursorNullResult', "ERROR");
+            this.setCursorNullResult = 'ERROR: ' + error.message;
+            AppStorage.setOrCreate('setCursorNullResult', 'ERROR');
           }
         })
 
@@ -124,11 +124,11 @@ struct CursorControlSetCursor {
           this.resetStates();
           try {
             cursorControl.setCursor(undefined);
-            this.setCursorUndefinedResult = "SUCCESS";
-            AppStorage.setOrCreate('setCursorUndefinedResult', "SUCCESS");
+            this.setCursorUndefinedResult = 'SUCCESS';
+            AppStorage.setOrCreate('setCursorUndefinedResult', 'SUCCESS');
           } catch (error) {
-            this.setCursorUndefinedResult = "ERROR: " + error.message;
-            AppStorage.setOrCreate('setCursorUndefinedResult', "ERROR");
+            this.setCursorUndefinedResult = 'ERROR: ' + error.message;
+            AppStorage.setOrCreate('setCursorUndefinedResult', 'ERROR');
           }
         })
 
@@ -145,9 +145,9 @@ struct CursorControlSetCursor {
   }
 
   private resetStates(): void {
-    this.setCursorResult = "";
-    this.setCursorNullResult = "";
-    this.setCursorUndefinedResult = "";
+    this.setCursorResult = '';
+    this.setCursorNullResult = '';
+    this.setCursorUndefinedResult = '';
     AppStorage.clear();
   }
 }
