@@ -1724,7 +1724,7 @@ export default function geolocationTest_GeoErr() {
                         }
                     }).catch((error) => {
                         console.error("promise, SUB_HSS_getActiveGeofences_0001 error=" + error.code);
-                        expect(error.code).assertEqual(801);
+                        expect(error.code).assertEqual(201);
                     });
                 } catch (error) {
                     console.error("SUB_HSS_getActiveGeofences_0001: errCode" + error.code + ", errMessage" + error.message);
