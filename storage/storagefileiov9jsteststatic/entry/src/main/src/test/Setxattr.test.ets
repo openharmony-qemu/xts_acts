@@ -269,7 +269,7 @@ export default function fileIOSetxattr() {
 
     /**
      * @tc.name   test_FileIO_Getxattr_Async_Static_001
-     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Async_0100
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Async_0100
      * @tc.desc   Test getxattr() interface with empty string for first parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function fileIOSetxattr() {
 
     /**
      * @tc.name   test_FileIO_Getxattr_Async_Static_002
-     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Async_0200
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Async_0200
      * @tc.desc   Test getxattr() interface with empty string for second parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function fileIOSetxattr() {
 
     /**
      * @tc.name   test_FileIO_Getxattr_Sync_Static_001
-     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Sync_0100
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Sync_0100
      * @tc.desc   Test getxattrSync() interface with empty string for first parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function fileIOSetxattr() {
 
     /**
      * @tc.name   test_FileIO_Getxattr_Sync_Static_002
-     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Sync_0200
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_NULL_Sync_0200
      * @tc.desc   Test getxattrSync() interface with empty string for second parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
