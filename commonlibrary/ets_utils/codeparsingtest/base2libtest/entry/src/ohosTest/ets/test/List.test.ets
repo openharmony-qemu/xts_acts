@@ -165,6 +165,45 @@ import VectorTest07 from "./vector/VectorTest07.test"
 import VectorTest08 from "./vector/VectorTest08.test"
 import VectorTest09 from "./vector/VectorTest09.test"
 
+import ListTest01 from "./list/ListTest01.test"
+import ListTest02 from "./list/ListTest02.test"
+import ListTest03 from "./list/ListTest03.test"
+import ListTest04 from "./list/ListTest04.test"
+import ListTest05 from "./list/ListTest05.test"
+import ListTest06 from "./list/ListTest06.test"
+import ListTest07 from "./list/ListTest07.test"
+import ListTest08 from "./list/ListTest08.test"
+import ListTest09 from "./list/ListTest09.test"
+import ListTest10 from "./list/ListTest10.test"
+import ListTest11 from "./list/ListTest11.test"
+import ListTest12 from "./list/ListTest12.test"
+import ListTest13 from "./list/ListTest13.test"
+import ListTest14 from "./list/ListTest14.test"
+import ListTest15 from "./list/ListTest15.test"
+import ListTest16 from "./list/ListTest16.test"
+import ListTest17 from "./list/ListTest17.test"
+
+import LinkedListTest01 from "./linkedlist/LinkedListTest01.test"
+import LinkedListTest02 from "./linkedlist/LinkedListTest02.test"
+import LinkedListTest03 from "./linkedlist/LinkedListTest03.test"
+import LinkedListTest04 from "./linkedlist/LinkedListTest04.test"
+import LinkedListTest05 from "./linkedlist/LinkedListTest05.test"
+import LinkedListTest06 from "./linkedlist/LinkedListTest06.test"
+import LinkedListTest07 from "./linkedlist/LinkedListTest07.test"
+import LinkedListTest08 from "./linkedlist/LinkedListTest08.test"
+import LinkedListTest09 from "./linkedlist/LinkedListTest09.test"
+import LinkedListTest10 from "./linkedlist/LinkedListTest10.test"
+import LinkedListTest11 from "./linkedlist/LinkedListTest11.test"
+import LinkedListTest12 from "./linkedlist/LinkedListTest12.test"
+import LinkedListTest13 from "./linkedlist/LinkedListTest13.test"
+import LinkedListTest14 from "./linkedlist/LinkedListTest14.test"
+import LinkedListTest15 from "./linkedlist/LinkedListTest15.test"
+import LinkedListTest16 from "./linkedlist/LinkedListTest16.test"
+import LinkedListTest17 from "./linkedlist/LinkedListTest17.test"
+import LinkedListTest18 from "./linkedlist/LinkedListTest18.test"
+import LinkedListTest19 from "./linkedlist/LinkedListTest19.test"
+import LinkedListTest20 from "./linkedlist/LinkedListTest20.test"
+
 export default function testsuite() {
   LRUCacheTest();
   TextDecoderTest();
@@ -330,5 +369,44 @@ export default function testsuite() {
   VectorTest07();
   VectorTest08();
   VectorTest09();
+
+  ListTest01();
+  ListTest02();
+  ListTest03();
+  ListTest04();
+  ListTest05();
+  ListTest06();
+  ListTest07();
+  ListTest08();
+  ListTest09();
+  ListTest10();
+  ListTest11();
+  ListTest12();
+  ListTest13();
+  ListTest14();
+  ListTest15();
+  ListTest16();
+  ListTest17();
+
+  LinkedListTest01();
+  LinkedListTest02();
+  LinkedListTest03();
+  LinkedListTest04();
+  LinkedListTest05();
+  LinkedListTest06();
+  LinkedListTest07();
+  LinkedListTest08();
+  LinkedListTest09();
+  LinkedListTest10();
+  LinkedListTest11();
+  LinkedListTest12();
+  LinkedListTest13();
+  LinkedListTest14();
+  LinkedListTest15();
+  LinkedListTest16();
+  LinkedListTest17();
+  LinkedListTest18();
+  LinkedListTest19();
+  LinkedListTest20();
 };
 
