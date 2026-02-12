@@ -25,10 +25,13 @@ import AlertDialog1 from './alertDialogTest/AlertDialog1.test';
 import AlertDialog2 from './alertDialogTest/AlertDialog2.test';
 import AlertDialog3 from './alertDialogTest/AlertDialog3.test';
 import AlertDialog4 from './alertDialogTest/AlertDialog4.test';
-import AlertDialogLifeTest from './dialogLifeTest/AlertDialogLife.test'
-import alertDialogBackgroundEffectTest from './alertDialogTest/alertDialogBackgroundEffect.test'
-import alertDialogBlurStyleOptionsTest from './alertDialogTest/alertDialogBlurStyleOptions.test'
+import AlertDialogLifeTest from './dialogLifeTest/AlertDialogLife.test';
+import alertDialogBackgroundEffectTest from './alertDialogTest/alertDialogBackgroundEffect.test';
+import alertDialogBlurStyleOptionsTest from './alertDialogTest/alertDialogBlurStyleOptions.test';
 import promptActionShowToastTest from './showToastTest/PromptActionShowToast.test';
+import promptActionOpenToastTest from './promptaction/PromptActionOpenToast.test';
+import promptActionCloseToastTest from './promptaction/PromptActionCloseToast.test';
+import promptActionShowDialogTest from './promptaction/PromptActionShowDialog.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
@@ -47,5 +50,8 @@ export default function testsuite() {
   alertDialogBackgroundEffectTest();
   alertDialogBlurStyleOptionsTest();
   promptActionShowToastTest();
+  promptActionOpenToastTest();
+  promptActionCloseToastTest();
+  promptActionShowDialogTest();
   
 }
