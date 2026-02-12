@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import type Want from '@ohos.app.ability.Want';
 import { StartOptions, bundleManager } from '@kit.AbilityKit';
 import display from '@ohos.display';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -103,6 +104,9 @@ export default function windowPCTest() {
     let isPCStatus: string = '';
     let mainWindowClass: window.Window;
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
+    let isPCMode:boolean = false;
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -123,6 +127,15 @@ export default function windowPCTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      let promise = mainWindowClass.getWindowStateSnapshot();
+        promise.then((data) => {
+          let jsonObj: object = JSON.parse(data);
+          console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+          isPCMode = jsonObj["isPcMode"];
+        }).catch((err: BusinessError) => {
+          console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+        });
+        console.info(`beforeAll: isPCMode=${isPCMode}`);
       driver = Driver.create();
     });
     beforeEach(() => {
@@ -922,7 +935,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN,
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FULL_SCREEN
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -959,7 +972,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT,
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1008,7 +1021,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1058,7 +1071,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1109,7 +1122,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1160,7 +1173,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| (deviceType === 'tablet'&& isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1201,7 +1214,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -2942,7 +2955,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1'|| isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -3371,12 +3384,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3412,12 +3419,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithNotDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithNotDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 200,
@@ -3461,12 +3462,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithFloatValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithFloatValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 200.0,
@@ -3510,12 +3505,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_NegativeValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_NegativeValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: -200,
@@ -3555,12 +3544,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_ZeroValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_ZeroValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 0,
@@ -3600,12 +3583,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_SubWindowFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_SubWindowFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3650,12 +3627,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_1300002';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3699,12 +3670,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_Disable';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: false
       };
@@ -3747,7 +3712,7 @@ export default function windowPCTest() {
         ]
       };
       let windowStatusChange: window.WindowStatusType | undefined = undefined;
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode === true) {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -3791,7 +3756,7 @@ export default function windowPCTest() {
     it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0200';
       let windowStatusChange: window.WindowStatusType | undefined = undefined;
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
         let windowStatusType = windowClass.getWindowStatus();
