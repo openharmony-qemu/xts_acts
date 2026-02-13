@@ -37,7 +37,7 @@
             document.choose(types, (err, result) => {
             if (err) {
                 console.info(`${testNum}::choose err: ${err.message}`);
-                expect(err != null).assertTrue();
+                expect(err !== null).assertTrue();
             } else {
                 console.info(`${testNum}::choose result: ${JSON.stringify(result)}`);
                 expect(false).assertTrue();
@@ -46,7 +46,7 @@
             });
         } catch (error) {
             console.info(`${testNum}::choose error: ${JSON.stringify(error)}`);
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
             done();
         }
         });
@@ -67,7 +67,7 @@
             if (err) {
                 console.info(`${testNum}::choose err: ${err.message}`);
                 // This is expected as the API is deprecated
-                 expect(err != null).assertTrue();
+                 expect(err !== null).assertTrue();
             } else {
                 console.info(`${testNum}::choose result: ${JSON.stringify(result)}`);
                 expect(false).assertTrue();
@@ -77,7 +77,7 @@
         } catch (error) {
             console.info(`${testNum}::choose error: ${JSON.stringify(error)}`);
             // This is expected as the API is deprecated
-             expect(error != null).assertTrue();
+             expect(error !== null).assertTrue();
             done();
         }
         });
@@ -96,7 +96,7 @@
             document.choose(null, (err, result) => {
             if (err) {
                 console.info(`${testNum}::choose err: ${err.message}`);
-                expect(err != null).assertTrue();
+                expect(err !== null).assertTrue();
             } else {
                 console.info(`${testNum}::choose result: ${JSON.stringify(result)}`);
                 expect(false).assertTrue();
@@ -105,7 +105,7 @@
             });
         } catch (error) {
             console.info(`${testNum}::choose error: ${JSON.stringify(error)}`);
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
             done();
         }
         });
