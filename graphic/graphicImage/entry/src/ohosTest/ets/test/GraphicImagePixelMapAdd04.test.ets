@@ -2405,84 +2405,6 @@ export default function graphicImagePixelMapAdd04() {
       }
     });
 
-    // /**
-    //  * @tc.name readPixelsToBufferNull001
-    //  * @tc.number PixelMapParameterCoverageTest_001
-    //  * @tc.desc PixelMap readPixelsToBuffer with null parameter (should fail)
-    //  * @tc.type FUNCTION
-    //  * @tc.size MEDIUMTEST
-    //  * @tc.level LEVEL2
-    //  */
-    // it("readPixelsToBufferNull001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-    //   try {
-    //     const color: ArrayBuffer = new ArrayBuffer(96);
-    //     const opts: image.InitializationOptions = {
-    //       editable: true,
-    //       pixelFormat: image.PixelMapFormat.RGBA_8888,
-    //       size: { height: 4, width: 6 }
-    //     };
-    //     const pixelMap = image.createPixelMapSync(color, opts);
-    //     console.info(`${LOG_PREFIX} readPixelsToBufferNull001: Starting test with null parameter.`);
-    //
-    //     // 测试 null 参数
-    //     pixelMap.readPixelsToBuffer(null, (error: BusinessError) => {
-    //       if (error) {
-// console.info(`${LOG_PREFIX} readPixelsToBufferNull001: As expected, failed with null parameter. Code:
-//   + ${error.code}`);
-    //         expect(error.code).assertEqual(401); // 参数错误
-    //         done();
-    //       } else {
-    //         console.error(`${LOG_PREFIX} readPixelsToBufferNull001: Unexpectedly succeeded with null parameter`);
-    //         expect().assertFail();
-    //         done();
-    //       }
-    //     });
-    //   } catch (error) {
-    //     console.info(`${LOG_PREFIX} readPixelsToBufferNull001: Caught exception as expected: ${error}`);
-    //     expect(true).assertTrue();
-    //     done();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.name readPixelsToBufferUndefined001
-    //  * @tc.number PixelMapParameterCoverageTest_002
-    //  * @tc.desc PixelMap readPixelsToBuffer with undefined parameter (should fail)
-    //  * @tc.type FUNCTION
-    //  * @tc.size MEDIUMTEST
-    //  * @tc.level LEVEL2
-    //  */
-    // it("readPixelsToBufferUndefined001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-    //   try {
-    //     const color: ArrayBuffer = new ArrayBuffer(96);
-    //     const opts: image.InitializationOptions = {
-    //       editable: true,
-    //       pixelFormat: image.PixelMapFormat.RGBA_8888,
-    //       size: { height: 4, width: 6 }
-    //     };
-    //     const pixelMap = image.createPixelMapSync(color, opts);
-    //     console.info(`${LOG_PREFIX} readPixelsToBufferUndefined001: Starting test with undefined parameter.`);
-    //
-    //     // 测试 undefined 参数
-    //     pixelMap.readPixelsToBuffer(undefined, (error: BusinessError) => {
-    //       if (error) {
-// console.info(`${LOG_PREFIX} readPixelsToBufferUndefined001: As expected, failed with undefined parameter. Code:
-//   + ${error.code}`);
-    //         expect(error.code).assertEqual(401); // 参数错误
-    //         done();
-    //       } else {
-// console.error(``${LOG_PREFIX} readPixelsToBufferUndefined001: Unexpectedly succeeded with undefined parameter``);
-    //         expect().assertFail();
-    //         done();
-    //       }
-    //     });
-    //   } catch (error) {
-    //     console.info(`${LOG_PREFIX} readPixelsToBufferUndefined001: Caught exception as expected: ${error}`);
-    //     expect(true).assertTrue();
-    //     done();
-    //   }
-    // });
-
     /**
      * @tc.name opacityNullParam001
      * @tc.number PixelMapParameterCoverageTest_003
@@ -2516,7 +2438,7 @@ export default function graphicImagePixelMapAdd04() {
         });
       } catch (error) {
         console.info(`${LOG_PREFIX} opacityNull001: Caught exception as expected: ${error}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         done();
       }
     });
