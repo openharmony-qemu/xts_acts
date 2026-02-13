@@ -57,7 +57,7 @@ export default function drawCanvas() {
       await CommonFunc.sleep(1000);
       try {
         let value: drawing.Canvas | undefined = AppStorage.get<drawing.Canvas | undefined>("canvas");
-        expect(value).assertNotEqual(undefined)
+        expect(value).not().assertUndefined()
       } catch(err) {
         console.error("push drawCanvas page error" + JSON.stringify(err));
       }

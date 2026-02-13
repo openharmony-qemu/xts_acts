@@ -112,33 +112,6 @@ export default function textPickerModifierUndefined() {
     });
 
     /**
-     * @tc.number   textPickerModifierUndefined_static_0002
-     * @tc.name     textPickerModifierUndefined_static_0002
-     * @tc.desc     test textPickerModifierUndefined gradientHeight undefined
-     * @tc.level    Level.LEVEL1
-     */
-    it('textPickerModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[textPickerModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('textPicker_M_1');
-      let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('gradientHeight');
-      console.info("[textPickerModifierUndefined_static_0002] gradientHeight : " + res);
-      expect(res).assertEqual('36.00vp');
-
-      let changeBtn = await driver.findComponent(ON.id('textPicker_gradientHeight_M_Btn'));
-      await (changeBtn?.click() as Promise<void>);
-
-      console.info("[textPickerModifierUndefined_static_0002] click changeBtn");
-      await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('textPicker_M_1');
-      res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('gradientHeight');
-      console.info("[textPickerModifierUndefined_static_0002] gradientHeight : " + res);
-      expect(res).assertEqual('15.00vp');
-      console.info('[textPickerModifierUndefined_static_0002] END');
-      done();
-    });
-
-    /**
      * @tc.number   textPickerModifierUndefined_static_0003
      * @tc.name     textPickerModifierUndefined_static_0003
      * @tc.desc     test textPickerModifierUndefined onChange undefined

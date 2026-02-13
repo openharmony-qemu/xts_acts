@@ -120,6 +120,9 @@
         "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined",
         "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined02",
         "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined03",
-        "MainAbility/pages/TextInput/TextInputTypeParam"
+        "MainAbility/pages/TextInput/TextInputTypeParam",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined02",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined03"
     ]
 }
