@@ -272,7 +272,7 @@ export default function DeviceManagerTest() {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices005 ret : ' + JSON.stringify(devices));
           expect(devices != null).assertEqual(true);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices005 catch err: ' + JSON.stringify(err));
           expect().assertFail();
           done();
