@@ -37,6 +37,7 @@ import dragControllerTest from './UIContext/DragControllerNullandundefined/DragC
 
 export default function testsuite() {
     dragAdaptationTest();
+    DragEventUITest();
     getDragController();
     PreDrag();
     enableEdgeAutoScroll_false();
@@ -53,6 +54,5 @@ export default function testsuite() {
     APIPreDragStatusTest();
     DragInteractionOptionsTest();
     DragPreviewOptions();
-    DragEventUITest();
     dragControllerTest();
 }
