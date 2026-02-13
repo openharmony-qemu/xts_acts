@@ -65,9 +65,9 @@ export default function fusionNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[fusion_js]bindDevice  is failed, code is ${error.code},message is ${error.message}`);
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
           console.info('[bluetooth_js]设备 is not support');
-          expect(true).assertTrue();
+          expect(Number(error.code)).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
@@ -88,9 +88,9 @@ export default function fusionNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[fusion_js]unbindDevice  is failed, code is ${error.code},message is ${error.message}`);
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
           console.info('[bluetooth_js]设备 is not support');
-          expect(true).assertTrue();
+          expect(Number(error.code)).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
@@ -111,9 +111,9 @@ export default function fusionNopUiJsunit() {
         expect().assertFail();
       } catch (error) {
         console.error(`[fusion_js]unbindDevice  is failed, code is ${error.code},message is ${error.message}`);
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
           console.info('[bluetooth_js]设备 is not support');
-          expect(true).assertTrue();
+          expect(Number(error.code)).assertEqual(801);
         } else {
           expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
         }
