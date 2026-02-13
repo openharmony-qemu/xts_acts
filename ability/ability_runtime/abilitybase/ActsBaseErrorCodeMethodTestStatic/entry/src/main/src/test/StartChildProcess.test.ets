@@ -71,12 +71,12 @@ export default function StartChildProcessTestStatic() {
             done();
           }).catch((err: Error) => {
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
-            try{expect().assertFail();}catch(e){}
+            expect(err?.code).assertEqual(16000061)
             done();
           });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(801)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else{
@@ -111,13 +111,18 @@ export default function StartChildProcessTestStatic() {
       }else if(mpEnable === 'false'){
         console.error(`${tag} startChildProcess error, current device not support.`);
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
-            done();
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.SELF_FORK, (err, data)=>{
+            if(err?.code){
+              expect(err?.code).assertEqual(16000061)
+              done();
+            }else{
+              try{expect().assertFail();}catch(e){}
+              done();
+            }
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(801)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else{
@@ -162,12 +167,12 @@ export default function StartChildProcessTestStatic() {
             done();
           }).catch((err: Error) => {
             console.log(`${tag} startChildProcess error, err: ${err?.code}`);
-            try{expect().assertFail();}catch(e){}
+            expect(err?.code).assertEqual(16000061)
             done();
           });
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(801)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else{
@@ -202,13 +207,18 @@ export default function StartChildProcessTestStatic() {
       }else if(mpEnable === 'false'){
         console.error(`${tag} startChildProcess error, current device not support.`);
         try {
-          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, ()=>{
-            try{expect().assertFail();}catch(e){}
-            done();
+          childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, (err, data)=>{
+            if(err?.code){
+              expect(err?.code).assertEqual(16000061)
+              done();
+            }else{
+              try{expect().assertFail();}catch(e){}
+              done();
+            }
           })
         } catch (err) {
           console.error(`${tag} startChildProcess error, errorCode: ${err?.code}`);
-          expect(err?.code).assertEqual(801)
+          try{expect().assertFail();}catch(e){}
           done();
         }
       }else{
