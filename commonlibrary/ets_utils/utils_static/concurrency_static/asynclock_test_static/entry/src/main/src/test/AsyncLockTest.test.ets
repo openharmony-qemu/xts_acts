@@ -244,18 +244,21 @@ export default function AsyncLockTest() {
          */
         it('LockAsyncBasicTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
-
+            let currenttid = StdProcess.tid();
             let numberResult: int = await lock.lockAsync<int>(() => {
+                expect(StdProcess.tid()).assertEqual(currenttid);
                 return 42;
             });
             expect(numberResult).assertEqual(42);
 
             let stringResult: string = await lock.lockAsync<string>(() => {
+                expect(StdProcess.tid()).assertEqual(currenttid);
                 return "hello";
             });
             expect(stringResult).assertEqual("hello");
 
             let boolResult: boolean = await lock.lockAsync<boolean>(() => {
+                expect(StdProcess.tid()).assertEqual(currenttid);
                 return true;
             });
             expect(boolResult).assertTrue();
@@ -801,21 +804,24 @@ export default function AsyncLockTest() {
                 { aborted: false, reason: "test" },
                 0
             );
-            await lock.lockAsync<int, string>(() => 42, AsyncLockMode.EXCLUSIVE, optionsString);
+            let resultString: int = await lock.lockAsync<int, string>(() => 42, AsyncLockMode.EXCLUSIVE, optionsString);
+            expect(resultString).assertEqual(42);
 
             let optionsNumber: AsyncLockOptions<int> = new AsyncLockOptions<int>(
                 false,
                 { aborted: false, reason: 404 },
                 0
             );
-            await lock.lockAsync<int, int>(() => 42, AsyncLockMode.EXCLUSIVE, optionsNumber);
+            let resultNumber: int = await lock.lockAsync<int, int>(() => 42, AsyncLockMode.EXCLUSIVE, optionsNumber);
+            expect(resultNumber).assertEqual(42);
 
             let optionsError: AsyncLockOptions<Error> = new AsyncLockOptions<Error>(
                 false,
                 { aborted: false, reason: new Error("fail") },
                 0
             );
-            await lock.lockAsync<int, Error>(() => 42, AsyncLockMode.EXCLUSIVE, optionsError);
+            let resultError: int = await lock.lockAsync<int, Error>(() => 42, AsyncLockMode.EXCLUSIVE, optionsError);
+            expect(resultError).assertEqual(42);
 
             done();
         });

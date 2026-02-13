@@ -677,43 +677,6 @@ export default function WorkerLocalCoverTest() {
             done();
         });
 
-        /**
-         * @tc.number SUB_UTILS_WORKERLOCAL_MULTITHREAD_0300
-         * @tc.name MultiThreadConcurrent003
-         * @tc.desc test concurrent WorkerLocal operations across multiple threads
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        // 疑似问题
-        // it('MultiThreadConcurrent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        //     // Create multiple tasks that operate on WorkerLocal independently
-        //     let task1: taskpool.Task = new taskpool.Task(() => {
-        //         let wl: WorkerLocal<int> = new WorkerLocal<int>(() => {
-        //             return 1;
-        //         });
-        //         wl.set(10);
-        //         return wl.get();
-        //     });
-        //
-        //     let task2: taskpool.Task = new taskpool.Task(() => {
-        //         let wl: WorkerLocal<int> = new WorkerLocal<int>(() => {
-        //             return 2;
-        //         });
-        //         wl.set(20);
-        //         return wl.get();
-        //     });
-        //
-        //     let results = await Promise.all([
-        //         taskpool.execute(task1),
-        //         taskpool.execute(task2)
-        //     ]);
-        //
-        //     expect(results[0]).assertEqual(10);
-        //     expect(results[1]).assertEqual(20);
-        //     done();
-        // });
-
         // ==================== G. 错误码覆盖测试 ====================
 
         /**
