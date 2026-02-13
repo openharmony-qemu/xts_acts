@@ -39,7 +39,7 @@ export default function uiContextScrollEventNullUnTest() {
           console.info("push uiContextScrollEventNullUnTest page result:" + JSON.stringify(result));
 
           let driver = await Driver.create()
-          let rect = CommonFunc.getComponentRectOnScreen("getUIObserver_scrollEvent_default");
+          let rect = CommonFunc.getComponentRect("getUIObserver_scrollEvent_default");
           let width = rect.right - rect.left;
           let height = rect.bottom - rect.top;
           console.info("uiContextScrollEventNullUnTest width is" + width + ", height is" + height);

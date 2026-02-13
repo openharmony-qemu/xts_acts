@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { promptAction } from '@kit.ArkUI';
+import promptAction from '@ohos.promptAction';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry

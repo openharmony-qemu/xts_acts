@@ -110,6 +110,7 @@ export default class AVRecorderBase {
     profile: this.avProfile,
     url: '',
     rotation: 0, // 视频旋转角度，默认为0不旋转，支持的值为0、90、180、270
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     },
@@ -121,6 +122,7 @@ export default class AVRecorderBase {
     profile: this.avProfile,
     url: 'fd://35', //  参考应用文件访问与管理开发示例新建并读写一个文件
     rotation: 0, // 视频旋转角度，默认为0不旋转，支持的值为0、90、180、270
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     },
@@ -132,6 +134,7 @@ export default class AVRecorderBase {
     profile: this.avProfile,
     url: 'fd://35', //  参考应用文件访问与管理开发示例新建并读写一个文件
     rotation: 0, // 视频旋转角度，默认为0不旋转，支持的值为0、90、180、270
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     },
@@ -149,6 +152,7 @@ export default class AVRecorderBase {
     profile: this.avProfileMpeg,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -171,6 +175,7 @@ export default class AVRecorderBase {
     profile: this.avProfileMpegAac,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -188,6 +193,7 @@ export default class AVRecorderBase {
     profile: this.avProfileH264,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -205,6 +211,7 @@ export default class AVRecorderBase {
     profile: this.avProfileH265,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -227,6 +234,7 @@ export default class AVRecorderBase {
     profile: this.avProfileH264Aac,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -252,6 +260,7 @@ export default class AVRecorderBase {
     profile: this.avProfileH265Aac,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }
@@ -261,6 +270,7 @@ export default class AVRecorderBase {
     profile: this.avProfileH264Aac,
     url: 'fd://35',
     rotation: 0,
+    maxDuration: 3,
     location: {
       latitude: 30, longitude: 130
     }

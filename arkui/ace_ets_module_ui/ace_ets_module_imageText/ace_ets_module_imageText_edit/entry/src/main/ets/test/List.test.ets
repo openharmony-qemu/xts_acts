@@ -132,6 +132,10 @@ import TextInputPropertiesNullUndefined02Test from './TextInputTest/TextInputPro
 import TextInputPropertiesNullUndefined03Test from './TextInputTest/TextInputPropertiesNullUndefined03.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
 
+import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
+import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
+import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
+
 export default function testsuite() {
   InputPresetTest()
   TextAreaSelectTest()
@@ -253,4 +257,7 @@ export default function testsuite() {
   TextInputPropertiesNullUndefined02Test();
   TextInputPropertiesNullUndefined03Test();
   TextInputTypeParamTest();
+  TextAreaPropertiesNullUndefinedTest();
+  TextAreaPropertiesNullUndefined02Test();
+  TextAreaPropertiesNullUndefined03Test();
 }

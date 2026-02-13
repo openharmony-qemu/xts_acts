@@ -39,7 +39,7 @@ export default function scrollEventNullUndefinedTest() {
           console.info("push scrollEventNullUndefinedTest page result:" + JSON.stringify(result));
 
           let driver = await Driver.create()
-          let rect = CommonFunc.getComponentRectOnScreen("uiObserver_scrollEvent_default");
+          let rect = CommonFunc.getComponentRect("uiObserver_scrollEvent_default");
           let width = rect.right - rect.left;
           let height = rect.bottom - rect.top;
           console.info("scrollEventNullUndefinedTest width is" + width + ", height is" + height);

@@ -71,7 +71,7 @@ export default function ImageOhosMatrix4Test() {
       expect(JSON.parse(strJson).$attrs.transform.type)
         .assertEqual('matrix')
       expect(JSON.parse(strJson).$attrs.transform.matrix)
-        .assertNotNull;
+        .not().assertNull();
       done();
     });
 

@@ -181,7 +181,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0500 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
@@ -212,7 +211,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_0600 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
@@ -856,7 +854,6 @@ describe('AccessibleSendEvent', function () {
             done();
         }).catch((err) => {
             console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_2900 has error: ${err}`);
-            expect(true).assertTrue();
             done();
         });
     })
@@ -1675,7 +1672,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5600 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
@@ -1706,7 +1702,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_5700 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
@@ -2048,7 +2043,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6800 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
@@ -2080,7 +2074,6 @@ describe('AccessibleSendEvent', function () {
         done();
     }).catch((err) => {
         console.info(`AccessibleSendEvent: SUB_BASIC_BARRIERFREE_API_AccessibleSendEvent_6900 has error: ${err}`);
-        expect(true).assertTrue();
         done();
     });
   })
