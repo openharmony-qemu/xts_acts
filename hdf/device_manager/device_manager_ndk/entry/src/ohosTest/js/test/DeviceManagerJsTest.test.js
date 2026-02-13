@@ -440,7 +440,7 @@ describe("DeviceManagerJsTest", function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBindDeviceDriverNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('testBindDeviceDriverNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverNull001---------------------------');
         if (!isDeviceConnected) {
             expect(isDeviceConnected).assertFalse();
