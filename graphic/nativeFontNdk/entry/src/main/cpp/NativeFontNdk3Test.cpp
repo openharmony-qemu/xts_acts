@@ -679,6 +679,7 @@ napi_value OHDrawingGetSystemFontConfigInfo001(napi_env env, napi_callback_info 
 
     OH_Drawing_FontConfigInfoErrorCode code = ERROR_FONT_CONFIG_INFO_UNKNOWN;
     OH_Drawing_FontConfigInfo *configJsonInfo = OH_Drawing_GetSystemFontConfigInfo(&code);
+    NAPI_ASSERT_NO_MES(configJsonInfo != nullptr);
     NAPI_ASSERT_NO_MES(code == SUCCESS_FONT_CONFIG_INFO);
     OH_Drawing_DestroySystemFontConfigInfo(configJsonInfo);
 
