@@ -68,8 +68,8 @@ export default function TextMinMaxLineHeightTest() {
 
       // Verify null parameter restores default value
       expect(minLineHeight).assertEqual(defaultMinLineHeight);
-      // Default value is 0, which may be represented as '0.00px' or '0.00vp'
-      let isZero = minLineHeight === '0.00px' || minLineHeight === '0.00vp' || minLineHeight === '0';
+      // Default value is 0, which may be represented as '0.00px' or '0.00fp'
+      let isZero = minLineHeight === '0.00px' || minLineHeight === '0.00fp' || minLineHeight === '0';
       expect(isZero).assertTrue();
 
       console.info('TextMinMaxLineHeightTest', 'textMinLineHeightNull_0100 END');
@@ -101,8 +101,8 @@ export default function TextMinMaxLineHeightTest() {
 
       // Verify undefined parameter restores default value
       expect(minLineHeight).assertEqual(defaultMinLineHeight);
-      // Default value is 0, which may be represented as '0.00px' or '0.00vp'
-      let isZero = minLineHeight === '0.00px' || minLineHeight === '0.00vp' || minLineHeight === '0';
+      // Default value is 0, which may be represented as '0.00px' or '0.00fp'
+      let isZero = minLineHeight === '0.00px' || minLineHeight === '0.00fp' || minLineHeight === '0';
       expect(isZero).assertTrue();
 
       console.info('TextMinMaxLineHeightTest', 'textMinLineHeightUndefined_0100 END');
@@ -136,8 +136,8 @@ export default function TextMinMaxLineHeightTest() {
 
       // Verify null parameter restores default value
       expect(maxLineHeight).assertEqual(defaultMaxLineHeight);
-      // Default value is 0 (no limit), which may be represented as '0.00px' or '0.00vp'
-      let isZero = maxLineHeight === '0.00px' || maxLineHeight === '0.00vp' || maxLineHeight === '0';
+      // Default value is 0 (no limit), which may be represented as '0.00px' or '0.00fp'
+      let isZero = maxLineHeight === '0.00px' || maxLineHeight === '0.00fp' || maxLineHeight === '0';
       expect(isZero).assertTrue();
 
       console.info('TextMinMaxLineHeightTest', 'textMaxLineHeightNull_0100 END');
@@ -169,8 +169,8 @@ export default function TextMinMaxLineHeightTest() {
 
       // Verify undefined parameter restores default value
       expect(maxLineHeight).assertEqual(defaultMaxLineHeight);
-      // Default value is 0 (no limit), which may be represented as '0.00px' or '0.00vp'
-      let isZero = maxLineHeight === '0.00px' || maxLineHeight === '0.00vp' || maxLineHeight === '0';
+      // Default value is 0 (no limit), which may be represented as '0.00px' or '0.00fp'
+      let isZero = maxLineHeight === '0.00px' || maxLineHeight === '0.00fp' || maxLineHeight === '0';
       expect(isZero).assertTrue();
 
       console.info('TextMinMaxLineHeightTest', 'textMaxLineHeightUndefined_0100 END');
