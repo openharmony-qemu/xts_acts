@@ -20,6 +20,7 @@ import imagePixelMapTestErrorCode from './pixelMapErrorCode'
 import pixelMapNewAPI from './PixelMapNewAPI.test'
 import graphicImagePixelMapAPI22 from './GraphicImagePixelMapAPI22.test'
 import graphicImagePixelMapAPI23 from './GraphicImagePixelMapAPI23.test'
+import graphicImagePixelMapAdd_01 from './GraphicImagePixelMapAdd_01.test'
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -30,4 +31,5 @@ export default function testsuite() {
   pixelMapNewAPI()
   graphicImagePixelMapAPI22();
   graphicImagePixelMapAPI23();
+  graphicImagePixelMapAdd_01();
 }
