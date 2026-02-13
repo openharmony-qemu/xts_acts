@@ -802,5 +802,124 @@ export default function SerialTest() {
       }
       hilog.info(domain, TAG, 'testGetAttributeRet end');
     })
+
+    /**
+     * @tc.name   testReadInputUndefined
+     * @tc.number SUB_USB_HostMgr_Serial_inputFunc_0100
+     * @tc.desc   read successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReadInputUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, TAG, 'testReadInputUndefined start');
+      await Utils.msSleep(3000);
+      if (checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      } else {
+        try {
+          let readBuffer: Uint8Array = new Uint8Array(8192);
+          serialManager.open(openPortId);
+          let length = await serialManager.read(openPortId, readBuffer, undefined);
+          hilog.info(domain, TAG, 'usb testReadInputUndefined length:' + length);
+          expect(length >= 0).assertTrue();
+          serialManager.close(openPortId);
+          done();
+        } catch (error) {
+          hilog.error(domain, TAG, 'testReadInputUndefined catch err name: ', error.name, ', message: ', error.message);
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testReadSyncUndefined
+     * @tc.number SUB_USB_HostMgr_Serial_inputFunc_0200
+     * @tc.desc   readsync successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReadSyncUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(1000);
+      hilog.info(domain, TAG, 'testReadSyncUndefined start');
+      if (checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      } else {
+        try {
+          serialManager.open(openPortId);
+
+          let readSyncBuffer: Uint8Array = new Uint8Array(8192);
+          let length: int = serialManager.readSync(openPortId, readSyncBuffer, undefined);
+          hilog.info(domain, TAG, 'usb testReadSyncUndefined length:' + length);
+          expect(length >= 0).assertTrue();
+          serialManager.close(openPortId);
+          done();
+        } catch (error) {
+          hilog.error(domain, TAG, 'testReadSyncUndefined catch err code: ', error.code, ', message: ', error.message);
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testWriteUndefined
+     * @tc.number SUB_USB_HostMgr_Serial_inputFunc_0300
+     * @tc.desc   write successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWriteUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, TAG, 'testWriteUndefined start');
+      if (checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      } else {
+        try {
+          let writeBuffer: Uint8Array = new Uint8Array(100).fill(1);
+          serialManager.open(openPortId);
+          let length = await serialManager.write(openPortId, writeBuffer, undefined);
+          hilog.info(domain, TAG, 'usb testWriteUndefined length:' + length);
+          expect(length >= 0).assertTrue();
+          serialManager.close(openPortId);
+          done();
+        } catch (error) {
+          hilog.error(domain, TAG, 'testWriteUndefined catch err name: ', error.name, ', message: ', error.message);
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testWriteSyncUndefined
+     * @tc.number SUB_USB_HostMgr_Serial_inputFunc_0400
+     * @tc.desc   writeSync successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWriteSyncUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, TAG, 'testWriteSyncUndefined start');
+      if (checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      } else {
+        try {
+          let writeSyncBuffer: Uint8Array = new Uint8Array(100).fill(1);
+          serialManager.open(openPortId);
+          let length: int = serialManager.writeSync(openPortId, writeSyncBuffer, undefined);
+          hilog.info(domain, TAG, 'usb testWriteSyncUndefined length:' + length);
+          expect(length >= 0).assertTrue();
+          serialManager.close(openPortId);
+          done();
+        } catch (error) {
+          hilog.error(domain, TAG, 'testWriteSyncUndefined catch err code: ', error.code, ', message: ', error.message);
+          expect().assertFail();
+        }
+      }
+    })
   })
 }
