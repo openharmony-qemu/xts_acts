@@ -232,6 +232,7 @@ export default function observerManagerSimStateTest1() {
         }, (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(true);
+          observer.off('simStateChange');
           done();
         });
       } catch (error) {
