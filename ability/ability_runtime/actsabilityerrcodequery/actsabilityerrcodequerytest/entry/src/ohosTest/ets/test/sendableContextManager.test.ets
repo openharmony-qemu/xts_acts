@@ -296,7 +296,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRestartAppWantNull0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1000', Level.LEVEL0, (done: Function) => {
       let tag:string = `SUB_ChildProcessManager_sendableContextManager_1000`;
       let applicationContext = context.getApplicationContext();
       let want: Want|null = null;
@@ -322,7 +322,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testRestartAppWantUndefined0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1100', Level.LEVEL0, (done: Function) => {
       let tag:string = `SUB_ChildProcessManager_sendableContextManager_1100`;
       let applicationContext = context.getApplicationContext();
       let want: Want|undefined = undefined;
@@ -348,7 +348,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetGroupDirNullCallback0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1200`;
       let groupName: string|null = null;
       try {
@@ -380,7 +380,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetGroupDirNullPromise0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1300`;
       let groupName: string|null = null;
       try {
@@ -410,7 +410,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateModuleContextNull0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1400`;
       let moduleName: string|null = null;
       try {
@@ -435,7 +435,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetGroupDirEmptyStringCallback0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1500`;
       let groupName: string = "";
       try {
@@ -467,7 +467,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetGroupDirEmptyStringPromise0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1600`;
       let groupName: string = "";
       try {
@@ -497,7 +497,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateModuleContextEmptyString0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1700`;
       let moduleName: string = "";
       try {
@@ -522,7 +522,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunNullFirstParam0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1800`;
       let startupTasks: Array<string>|null = null;
       try {
@@ -552,7 +552,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunUndefinedFirstParam0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_1900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_1900`;
       let startupTasks: Array<string>|undefined = undefined;
       try {
@@ -582,7 +582,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunNullSecondParam0300', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2000`;
       let startupTasks: Array<string> = ["testTask"];
       let config = null;
@@ -613,7 +613,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunUndefinedSecondParam0400', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2100`;
       let startupTasks: Array<string> = ["testTask"];
       let config = undefined;
@@ -644,7 +644,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsNullFirstParam0100', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2200`;
       let startupTasks: Array<string>|null = null;
       let abilityStageContext = null;
@@ -676,7 +676,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsUndefinedFirstParam0200', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2300`;
       let startupTasks: Array<string>|undefined = undefined;
       let abilityStageContext = undefined;
@@ -708,7 +708,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsEmptyArrayFirstParam0300', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2400`;
       let startupTasks: Array<string> = [];
       let abilityStageContext = null;
@@ -740,7 +740,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsNullSecondParam0400', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2500`;
       let startupTasks: Array<string> = ["testTask"];
       let abilityStageContext = null;
@@ -772,7 +772,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsUndefinedSecondParam0500', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2600`;
       let startupTasks: Array<string> = ["testTask"];
       let abilityStageContext = undefined;
@@ -804,7 +804,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsNullThirdParam0600', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2700`;
       let startupTasks: Array<string> = ["testTask"];
       let abilityStageContext = undefined;
@@ -836,7 +836,7 @@ export default function sendableContextManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartupManagerRunThreeParamsUndefinedThirdParam0700', Level.LEVEL0, (done: Function) => {
+    it('SUB_ChildProcessManager_sendableContextManager_2800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_2800`;
       let startupTasks: Array<string> = ["testTask"];
       let abilityStageContext = undefined;

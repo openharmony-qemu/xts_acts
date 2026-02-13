@@ -299,7 +299,7 @@ export default {
             try {
                 let helper = particleAbility.acquireDataAbilityHelper(null);
                 console.info('PageStartService_AcquireDataAbilityHelper_Null_2400 helper = ' + JSON.stringify(helper));
-                if(helper == null){
+                if (helper == null) {
                   commonEvent.publish('ACTS_JsServiceAbility_2700_Result', (err) => {
                       console.info('ACTS_JsServiceAbility_2700_Result publish err=====>' + err?.code);
                   });
@@ -312,7 +312,7 @@ export default {
             try {
                 let helper = particleAbility.acquireDataAbilityHelper(undefined);
                 console.info('PageStartService_AcquireDataAbilityHelper_Undefined_2500 helper = ' + JSON.stringify(helper));
-                if(helper == null){
+                if (helper == null) {
                   commonEvent.publish('ACTS_JsServiceAbility_2800_Result', (err) => {
                       console.info('ACTS_JsServiceAbility_2800_Result publish err=====>' + err?.code);
                   });
@@ -325,7 +325,7 @@ export default {
             try {
                 let helper = particleAbility.acquireDataAbilityHelper('');
                 console.info('PageStartService_AcquireDataAbilityHelper_EmptyString_2600 helper = ' + JSON.stringify(helper));
-                if(helper == null){
+                if (helper == null) {
                   commonEvent.publish('ACTS_JsServiceAbility_2900_Result', (err) => {
                       console.info('ACTS_JsServiceAbility_2900_Result publish err=====>' + err?.code);
                   });

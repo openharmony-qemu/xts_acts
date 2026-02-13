@@ -28,8 +28,8 @@ export default function AbilityManagerGetAbilityRunningInfosTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetAbilityRunningInfosReturn001', Level.LEVEL0, async (done: Function) => {
-      let tag = 'getAbilityRunningInfosReturn001';
+    it('SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_001', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_001';
       console.info('====> [' + tag + '] start');
 
       try {
@@ -82,8 +82,8 @@ export default function AbilityManagerGetAbilityRunningInfosTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetAbilityRunningInfosCallback001', Level.LEVEL0, async (done: Function) => {
-      let tag = 'testGetAbilityRunningInfosCallback001';
+    it('SUB_Ability_AbilityManager_GetAbilityRunningInfos_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityManager_GetAbilityRunningInfos_CALLBACK_001';
       console.info('====> [' + tag + '] start');
       try {
         abilityManager.getAbilityRunningInfos((error: BusinessError,

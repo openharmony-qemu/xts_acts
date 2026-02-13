@@ -21,14 +21,14 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 export default function getProcessRunningInfosTest() {
   describe('AppManagerGetProcessRunningInfosTest', () => {
     /**
-     * @tc.name   getProcessRunningInfosReturn001
+     * @tc.name   SUB_Ability_AppManager_GetProcessRunningInfos_RETURN_001
      * @tc.number SUB_Ability_AppManager_GetProcessRunningInfos_RETURN_001
      * @tc.desc   getProcessRunningInfos Promise return test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetProcessRunningInfosReturn001', Level.LEVEL1, async (done: Function) => {
+    it('SUB_Ability_AppManager_GetProcessRunningInfos_RETURN_001', Level.LEVEL1, async (done: Function) => {
         let tag = 'getProcessRunningInfosReturn001';
         console.info('====> [' + tag + '] start');
         try {
@@ -59,15 +59,15 @@ export default function getProcessRunningInfosTest() {
       });
 
     /**
-     * @tc.name   getProcessRunningInfosCallback001
+     * @tc.name   SUB_Ability_AppManager_GetProcessRunningInfos_CALLBACK_001
      * @tc.number SUB_Ability_AppManager_GetProcessRunningInfos_CALLBACK_001
      * @tc.desc   getProcessRunningInfos AsyncCallback test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetProcessRunningInfosCallback001', Level.LEVEL1, (done: Function) => {
-      let tag = 'getProcessRunningInfosCallback001';
+    it('SUB_Ability_AppManager_GetProcessRunningInfos_CALLBACK_001', Level.LEVEL1, (done: Function) => {
+      let tag = 'SUB_Ability_AppManager_GetProcessRunningInfos_CALLBACK_001';
       console.info('====> [' + tag + '] start');
       try {
         appManager.getProcessRunningInfos((error: BusinessError, processInfos) => {
