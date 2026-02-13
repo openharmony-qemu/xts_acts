@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
-import { albumSubtype, albumType, driveFn, getPermission, LOG_TAG } from '../common';
+import { albumSubtype, albumType, driveFn, getPermission, isEmpty, LOG_TAG } from '../common';
 import { common } from '@kit.AbilityKit';
 import { dataSharePredicates } from '@kit.ArkData';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1948,5 +1948,71 @@ export default function GetAlbumsSuppTest() {
           expect(errCode).assertEqual('14000011')
         })
     })
+
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROPERTY_001
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROPERTY_001
+     * @tc.desc   lpath changeTime videoCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROPERTY_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROPERTY_001';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        console.info(TAG, testName, 'Start', helper);
+        helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY, fetchOptions).then(async (fetchResult) => {
+          const count = fetchResult.getCount();
+          let album = await fetchResult.getFirstObject();
+          console.info(TAG, testName, `getAlbums success`, count, JSON.stringify(album.lpath), album.changeTime, album.videoCount);
+          expect(isEmpty(album.lpath)).assertFalse();
+          expect(isEmpty(album.changeTime)).assertFalse();
+          expect(isEmpty(album.videoCount)).assertFalse();
+          fetchResult.close();
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `getAlbums catch failed `, error.code, JSON.stringify(error));
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.error(TAG, testName, `getAlbums catch failed; error: `, error.code, JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_ON_OFF
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_ON_OFF
+     * @tc.desc   lpath changeTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_ON_OFF', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_ON_OFF';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        console.info(TAG, testName, 'Start', helper);
+        helper.on('photoChange', undefined as ESObject);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbums catch failed; error: `, error.code, JSON.stringify(error));
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
   })
 }

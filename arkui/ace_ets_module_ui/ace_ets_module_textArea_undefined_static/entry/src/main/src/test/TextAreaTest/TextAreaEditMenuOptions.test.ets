@@ -20,7 +20,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchEitMenuOptionsTest() {
   describe('TextAreaEditMenuOptionsTest', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaEditMenuOptionsTest beforeEach start");
 
       await UtilsTest.msSleep(4000)

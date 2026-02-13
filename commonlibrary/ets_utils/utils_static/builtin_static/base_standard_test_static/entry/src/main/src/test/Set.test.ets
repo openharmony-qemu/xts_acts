@@ -4,7 +4,7 @@ import Utils from './Util.test';
 
 export default function SetTest() {
   describe('setTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

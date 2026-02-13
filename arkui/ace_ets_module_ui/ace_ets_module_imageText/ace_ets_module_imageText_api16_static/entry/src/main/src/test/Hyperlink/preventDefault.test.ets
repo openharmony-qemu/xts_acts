@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function preventDefault() {
   describe('preventDefault', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("preventDefault beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

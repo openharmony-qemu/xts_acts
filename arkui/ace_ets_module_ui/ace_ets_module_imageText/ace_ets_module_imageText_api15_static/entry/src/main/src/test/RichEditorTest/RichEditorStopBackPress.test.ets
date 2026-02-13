@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorStopBackPressTest() {
   describe('RichEditorStopBackPressTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorStopBackPressTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

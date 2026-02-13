@@ -40,7 +40,7 @@ export default function TextInputPropertiesNullUndefinedTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      await Utils.sleep(500);
       console.info("TextInputPropertiesNullUndefinedTest after each called");
     });
 
@@ -50,9 +50,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableSelectedDataDetector property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableSelectedDataDetector_null_0100', Level.LEVEL0, async () => {
+    it('textInputEnableSelectedDataDetector_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableSelectedDataDetector_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableSelectedDataDetector_default');
@@ -76,9 +76,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableSelectedDataDetector property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableSelectedDataDetector_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputEnableSelectedDataDetector_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableSelectedDataDetector_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableSelectedDataDetector_default');
@@ -102,9 +102,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput placeholderColor property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPlaceholderColor_null_0100', Level.LEVEL0, async () => {
+    it('textInputPlaceholderColor_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputPlaceholderColor_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_placeholderColor_default');
@@ -130,9 +130,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput placeholderColor property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPlaceholderColor_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputPlaceholderColor_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputPlaceholderColor_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_placeholderColor_default');
@@ -158,9 +158,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textOverflow property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextOverflow_null_0100', Level.LEVEL0, async () => {
+    it('textInputTextOverflow_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextOverflow_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textOverflow_default');
@@ -184,9 +184,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textOverflow property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextOverflow_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputTextOverflow_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextOverflow_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textOverflow_default');
@@ -210,9 +210,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textIndent property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextIndent_null_0100', Level.LEVEL0, async () => {
+    it('textInputTextIndent_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextIndent_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textIndent_default');
@@ -236,9 +236,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textIndent property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextIndent_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputTextIndent_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextIndent_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textIndent_default');
@@ -262,9 +262,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput placeholderFont property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPlaceholderFont_null_0100', Level.LEVEL0, async () => {
+    it('textInputPlaceholderFont_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputPlaceholderFont_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_placeholderFont_default');
@@ -288,9 +288,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput placeholderFont property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPlaceholderFont_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputPlaceholderFont_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputPlaceholderFont_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_placeholderFont_default');
@@ -314,9 +314,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretColor property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretColor_null_0100', Level.LEVEL0, async () => {
+    it('textInputCaretColor_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretColor_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretColor_default');
@@ -342,9 +342,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretColor property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretColor_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCaretColor_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretColor_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretColor_default');
@@ -370,9 +370,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput maxLength property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMaxLength_null_0100', Level.LEVEL0, async () => {
+    it('textInputMaxLength_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputMaxLength_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_maxLength_default');
@@ -396,9 +396,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput maxLength property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMaxLength_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputMaxLength_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputMaxLength_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_maxLength_default');
@@ -422,9 +422,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontColor property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontColor_null_0100', Level.LEVEL0, async () => {
+    it('textInputFontColor_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontColor_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontColor_default');
@@ -450,9 +450,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontColor property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontColor_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputFontColor_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontColor_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontColor_default');
@@ -478,9 +478,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontSize property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontSize_null_0100', Level.LEVEL0, async () => {
+    it('textInputFontSize_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontSize_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontSize_default');
@@ -504,9 +504,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontSize property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontSize_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputFontSize_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontSize_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontSize_default');
@@ -530,9 +530,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontStyle property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontStyle_null_0100', Level.LEVEL0, async () => {
+    it('textInputFontStyle_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontStyle_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontStyle_default');
@@ -556,9 +556,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontStyle property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontStyle_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputFontStyle_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontStyle_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontStyle_default');
@@ -582,9 +582,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontFamily property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontFamily_null_0100', Level.LEVEL0, async () => {
+    it('textInputFontFamily_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontFamily_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontFamily_default');
@@ -610,9 +610,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fontFamily property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFontFamily_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputFontFamily_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputFontFamily_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fontFamily_default');
@@ -638,9 +638,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput inputFilter property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputInputFilter_null_0100', Level.LEVEL0, async () => {
+    it('textInputInputFilter_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputInputFilter_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_inputFilter_default');
@@ -664,9 +664,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput inputFilter property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputInputFilter_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputInputFilter_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputInputFilter_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_inputFilter_default');
@@ -690,9 +690,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput copyOption property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCopyOption_null_0100', Level.LEVEL0, async () => {
+    it('textInputCopyOption_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCopyOption_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_copyOption_default');
@@ -716,9 +716,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput copyOption property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCopyOption_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCopyOption_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCopyOption_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_copyOption_default');
@@ -742,9 +742,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textAlign property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextAlign_null_0100', Level.LEVEL0, async () => {
+    it('textInputTextAlign_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextAlign_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textAlign_default');
@@ -768,9 +768,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textAlign property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextAlign_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputTextAlign_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextAlign_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textAlign_default');
@@ -794,9 +794,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput style property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStyle_null_0100', Level.LEVEL0, async () => {
+    it('textInputStyle_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputStyle_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_style_default');
@@ -820,9 +820,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput style property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStyle_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputStyle_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputStyle_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_style_default');
@@ -846,9 +846,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretStyle property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretStyle_null_0100', Level.LEVEL0, async () => {
+    it('textInputCaretStyle_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretStyle_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretStyle_default');
@@ -872,9 +872,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretStyle property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretStyle_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCaretStyle_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretStyle_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretStyle_default');
@@ -898,9 +898,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput passwordIcon property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPasswordIcon_null_0100', Level.LEVEL0, async () => {
+    it('textInputPasswordIcon_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputPasswordIcon_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_passwordIcon_default');
@@ -924,9 +924,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput passwordIcon property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputPasswordIcon_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputPasswordIcon_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputPasswordIcon_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_passwordIcon_default');
@@ -950,9 +950,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput showUnit property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputShowUnit_null_0100', Level.LEVEL0, async () => {
+    it('textInputShowUnit_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputShowUnit_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_showUnit_default');
@@ -976,9 +976,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput showUnit property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputShowUnit_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputShowUnit_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputShowUnit_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_showUnit_default');
@@ -1002,9 +1002,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput lineBreakStrategy property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputLineBreakStrategy_null_0100', Level.LEVEL0, async () => {
+    it('textInputLineBreakStrategy_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputLineBreakStrategy_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_lineBreakStrategy_default');
@@ -1028,9 +1028,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput lineBreakStrategy property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputLineBreakStrategy_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputLineBreakStrategy_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputLineBreakStrategy_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_lineBreakStrategy_default');
@@ -1054,9 +1054,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput cancelButton property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCancelButton_null_0100', Level.LEVEL0, async () => {
+    it('textInputCancelButton_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCancelButton_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_cancelButton_default');
@@ -1080,9 +1080,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput cancelButton property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCancelButton_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCancelButton_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCancelButton_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_cancelButton_default');
@@ -1106,9 +1106,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput minFontScale property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMinFontScale_null_0100', Level.LEVEL0, async () => {
+    it('textInputMinFontScale_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputMinFontScale_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_minFontScale_default');
@@ -1132,9 +1132,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput minFontScale property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMinFontScale_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputMinFontScale_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputMinFontScale_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_minFontScale_default');
@@ -1158,9 +1158,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput maxFontScale property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMaxFontScale_null_0100', Level.LEVEL0, async () => {
+    it('textInputMaxFontScale_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputMaxFontScale_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_maxFontScale_default');
@@ -1184,9 +1184,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput maxFontScale property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputMaxFontScale_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputMaxFontScale_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputMaxFontScale_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_maxFontScale_default');
@@ -1210,9 +1210,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput heightAdaptivePolicy property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputHeightAdaptivePolicy_null_0100', Level.LEVEL0, async () => {
+    it('textInputHeightAdaptivePolicy_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputHeightAdaptivePolicy_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_heightAdaptivePolicy_default');
@@ -1236,9 +1236,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput heightAdaptivePolicy property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputHeightAdaptivePolicy_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputHeightAdaptivePolicy_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputHeightAdaptivePolicy_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_heightAdaptivePolicy_default');
@@ -1262,9 +1262,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput decoration property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputDecoration_null_0100', Level.LEVEL0, async () => {
+    it('textInputDecoration_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputDecoration_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_decoration_default');
@@ -1288,9 +1288,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput decoration property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputDecoration_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputDecoration_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputDecoration_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_decoration_default');
@@ -1314,9 +1314,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput editMenuOptions property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEditMenuOptions_null_0100', Level.LEVEL0, async () => {
+    it('textInputEditMenuOptions_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputEditMenuOptions_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_editMenuOptions_default');
@@ -1340,9 +1340,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput editMenuOptions property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEditMenuOptions_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputEditMenuOptions_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputEditMenuOptions_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_editMenuOptions_default');
@@ -1366,9 +1366,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput autoCapitalizationMode property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputAutoCapitalizationMode_null_0100', Level.LEVEL0, async () => {
+    it('textInputAutoCapitalizationMode_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputAutoCapitalizationMode_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_autoCapitalizationMode_default');
@@ -1392,9 +1392,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput autoCapitalizationMode property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputAutoCapitalizationMode_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputAutoCapitalizationMode_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputAutoCapitalizationMode_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_autoCapitalizationMode_default');
@@ -1418,9 +1418,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput stopBackPress property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStopBackPress_null_0100', Level.LEVEL0, async () => {
+    it('textInputStopBackPress_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputStopBackPress_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_stopBackPress_default');
@@ -1444,9 +1444,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput stopBackPress property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStopBackPress_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputStopBackPress_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputStopBackPress_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_stopBackPress_default');
@@ -1470,9 +1470,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput keyboardAppearance property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputKeyboardAppearance_null_0100', Level.LEVEL0, async () => {
+    it('textInputKeyboardAppearance_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputKeyboardAppearance_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_keyboardAppearance_default');
@@ -1496,9 +1496,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput keyboardAppearance property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputKeyboardAppearance_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputKeyboardAppearance_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputKeyboardAppearance_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_keyboardAppearance_default');
@@ -1522,9 +1522,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput strokeWidth property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStrokeWidth_null_0100', Level.LEVEL0, async () => {
+    it('textInputStrokeWidth_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputStrokeWidth_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_strokeWidth_default');
@@ -1548,9 +1548,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput strokeWidth property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStrokeWidth_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputStrokeWidth_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputStrokeWidth_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_strokeWidth_default');
@@ -1574,9 +1574,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput strokeColor property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStrokeColor_null_0100', Level.LEVEL0, async () => {
+    it('textInputStrokeColor_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputStrokeColor_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_strokeColor_default');
@@ -1602,9 +1602,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput strokeColor property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputStrokeColor_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputStrokeColor_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputStrokeColor_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_strokeColor_default');
@@ -1630,9 +1630,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableAutoFillAnimation property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableAutoFillAnimation_null_0100', Level.LEVEL0, async () => {
+    it('textInputEnableAutoFillAnimation_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableAutoFillAnimation_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableAutoFillAnimation_default');
@@ -1656,9 +1656,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableAutoFillAnimation property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableAutoFillAnimation_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputEnableAutoFillAnimation_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableAutoFillAnimation_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableAutoFillAnimation_default');
@@ -1682,9 +1682,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableAutoSpacing property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableAutoSpacing_null_0100', Level.LEVEL0, async () => {
+    it('textInputEnableAutoSpacing_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableAutoSpacing_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableAutoSpacing_default');
@@ -1708,9 +1708,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput enableAutoSpacing property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputEnableAutoSpacing_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputEnableAutoSpacing_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputEnableAutoSpacing_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_enableAutoSpacing_default');
@@ -1734,9 +1734,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput includeFontPadding property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputIncludeFontPadding_null_0100', Level.LEVEL0, async () => {
+    it('textInputIncludeFontPadding_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputIncludeFontPadding_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_includeFontPadding_default');
@@ -1760,9 +1760,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput includeFontPadding property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputIncludeFontPadding_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputIncludeFontPadding_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputIncludeFontPadding_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_includeFontPadding_default');
@@ -1786,9 +1786,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fallbackLineSpacing property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFallbackLineSpacing_null_0100', Level.LEVEL0, async () => {
+    it('textInputFallbackLineSpacing_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputFallbackLineSpacing_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fallbackLineSpacing_default');
@@ -1812,9 +1812,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput fallbackLineSpacing property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputFallbackLineSpacing_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputFallbackLineSpacing_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputFallbackLineSpacing_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_fallbackLineSpacing_default');
@@ -1838,9 +1838,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput compressLeadingPunctuation property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCompressLeadingPunctuation_null_0100', Level.LEVEL0, async () => {
+    it('textInputCompressLeadingPunctuation_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCompressLeadingPunctuation_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_compressLeadingPunctuation_default');
@@ -1864,9 +1864,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput compressLeadingPunctuation property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCompressLeadingPunctuation_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCompressLeadingPunctuation_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCompressLeadingPunctuation_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_compressLeadingPunctuation_default');
@@ -1890,9 +1890,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput selectedDragPreviewStyle property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputSelectedDragPreviewStyle_null_0100', Level.LEVEL0, async () => {
+    it('textInputSelectedDragPreviewStyle_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputSelectedDragPreviewStyle_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_selectedDragPreviewStyle_default');
@@ -1916,9 +1916,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput selectedDragPreviewStyle property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputSelectedDragPreviewStyle_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputSelectedDragPreviewStyle_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputSelectedDragPreviewStyle_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_selectedDragPreviewStyle_default');
@@ -1942,9 +1942,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textDirection property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextDirection_null_0100', Level.LEVEL0, async () => {
+    it('textInputTextDirection_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextDirection_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textDirection_default');
@@ -1968,9 +1968,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput textDirection property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputTextDirection_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputTextDirection_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputTextDirection_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_textDirection_default');
@@ -1994,9 +1994,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretPosition property with null, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretPosition_null_0100', Level.LEVEL0, async () => {
+    it('textInputCaretPosition_null_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretPosition_null_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretPosition_default');
@@ -2020,9 +2020,9 @@ export default function TextInputPropertiesNullUndefinedTest() {
      * @tc.desc   Test TextInput caretPosition property with undefined, should restore to default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textInputCaretPosition_undefined_0100', Level.LEVEL0, async () => {
+    it('textInputCaretPosition_undefined_0100', Level.LEVEL2, async () => {
       console.info('[textInputCaretPosition_undefined_0100] START');
 
       let strJsonCompare: string = getInspectorByKey('TextInput_caretPosition_default');

@@ -39,7 +39,7 @@ export default function imageDecodeOptions() {
 
     let globalpixelmap: image.PixelMap | undefined;
     let globalimageSource: image.ImageSource | undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })

@@ -41,7 +41,7 @@ export default function getListItemGroupRect6() {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("getListItemGroupRect6 beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/getItemRect/list/getListItemGroupRect6',

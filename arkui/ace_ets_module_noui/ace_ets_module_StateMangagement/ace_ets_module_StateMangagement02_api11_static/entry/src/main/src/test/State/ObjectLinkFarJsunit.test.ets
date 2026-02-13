@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ObjectLinkFarJsunit() {
   describe('ObjectLinkFarJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObjectLinkFarJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

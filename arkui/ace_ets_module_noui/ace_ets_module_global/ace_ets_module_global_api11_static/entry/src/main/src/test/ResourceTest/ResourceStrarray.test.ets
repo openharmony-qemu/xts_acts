@@ -37,7 +37,7 @@ import { UtilsTest } from '../Util.test';
 export default function ResourceStrarray() {
   describe('ResourceStrarray', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceStrarray beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")

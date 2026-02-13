@@ -28,6 +28,7 @@ import AlertDialog4 from './alertDialogTest/AlertDialog4.test';
 import AlertDialogLifeTest from './dialogLifeTest/AlertDialogLife.test'
 import alertDialogBackgroundEffectTest from './alertDialogTest/alertDialogBackgroundEffect.test'
 import alertDialogBlurStyleOptionsTest from './alertDialogTest/alertDialogBlurStyleOptions.test'
+import promptActionShowToastTest from './showToastTest/PromptActionShowToast.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
@@ -45,5 +46,6 @@ export default function testsuite() {
   AlertDialogLifeTest();
   alertDialogBackgroundEffectTest();
   alertDialogBlurStyleOptionsTest();
+  promptActionShowToastTest();
   
 }

@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetEnableHapticFeedbackTest() {
   describe('AlphabetEnableHapticFeedbackTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetEnableHapticFeedbackTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

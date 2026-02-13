@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listNewJsunit() {
   describe('listNewJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

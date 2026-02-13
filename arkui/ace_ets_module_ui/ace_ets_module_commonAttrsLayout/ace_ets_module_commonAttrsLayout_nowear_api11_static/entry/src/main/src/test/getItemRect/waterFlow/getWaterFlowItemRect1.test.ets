@@ -50,7 +50,7 @@ export default function getWaterFlowItemRect1() {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
 
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("getWaterFlowItemRect1 beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect1',

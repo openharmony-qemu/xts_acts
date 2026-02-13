@@ -29,7 +29,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api12/EntryAbility';
 
 export default function onKeyPreImeTest() {
   describe('onKeyPreImeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 

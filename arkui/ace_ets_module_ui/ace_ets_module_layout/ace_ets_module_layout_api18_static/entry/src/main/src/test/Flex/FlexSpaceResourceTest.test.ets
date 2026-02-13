@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function FlexSpaceResourceTest() {
   describe('FlexSpaceResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexSpaceResourceTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")

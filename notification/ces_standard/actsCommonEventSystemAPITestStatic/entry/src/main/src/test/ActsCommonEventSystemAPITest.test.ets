@@ -96,7 +96,7 @@ export default function ActsCommonEventSystemAPITest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 

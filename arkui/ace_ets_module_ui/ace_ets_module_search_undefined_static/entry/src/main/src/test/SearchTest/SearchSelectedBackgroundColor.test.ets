@@ -41,7 +41,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function SearchSelectedBackgroundColor() {
   describe('SearchSelectedBackgroundColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchSelectedBackgroundColor beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

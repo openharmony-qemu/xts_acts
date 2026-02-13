@@ -45,7 +45,7 @@ let compareFlexGrow = 1;
 const uiContext = new UIContext();
 export default function nodeContainerTest() {
   describe('nodeContainerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("nodeContainerTest beforeEach start");
       await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
     });

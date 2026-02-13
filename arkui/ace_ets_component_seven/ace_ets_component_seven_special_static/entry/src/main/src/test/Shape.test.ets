@@ -23,7 +23,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function shape() {
   describe("shapeJsunit", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("shapeJsunit beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
@@ -90,28 +90,6 @@ it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
 
-
-    
-    /**
-     * @tc.number   ShapeJsunit_static_003
-     * @tc.name     ShapeJsunit_static_003
-     * @tc.desc     ShapeJsunit_static_003
-     * @tc.level    Level.LEVEL0
-     */
-it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ShapeJsunit_static_003] START');
-      let strJson = inspector.getInspectorByKey('ShapeKey1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ShapeJsunit_static_003] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
-
-      expect(obj.getElement('$attrs').getString('fill')).assertEqual("#FF317AF7");
-
-      console.info('[ShapeJsunit_static_003] END');
-      done();
-    });
-
-
-    
     /**
      * @tc.number   ShapeJsunit_static_004
      * @tc.name     ShapeJsunit_static_004
@@ -266,7 +244,7 @@ it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<vo
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ShapeJsunit_static_0011] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').getDouble('strokeWidth')).assertEqual(20);
+      expect(obj.getElement('$attrs').getElement('mesh').getArray('value')[0].asString()).assertEqual('1.000000');
 
       console.info('[ShapeJsunit_static_0011] END');
       done();

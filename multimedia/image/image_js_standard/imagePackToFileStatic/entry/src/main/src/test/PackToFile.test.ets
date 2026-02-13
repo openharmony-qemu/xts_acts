@@ -30,7 +30,7 @@ export default function imagePackToFile() {
     const pixelHeight: int = 4;
     const ERROR_CODE: int = 62980115;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       testContext = Hypium.get('context') as common.UIAbilityContext;
       filesDir = Hypium.get('filesDir') as string | undefined | null;

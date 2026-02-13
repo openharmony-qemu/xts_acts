@@ -30,7 +30,7 @@ function doCopy(driver: Driver, componentId: string){
 
 export default function TextAreaOnCutModifier() {
   describe('TextAreaOnCutModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaOnCutModifier beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ActionSheet3() {
   describe('ActionSheet3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActionSheet3 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     });

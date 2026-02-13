@@ -38,6 +38,7 @@ group("ActsAbilityAmsTest") {
       "actsembeddeduiextensiontest:ActsEmbeddedUIExtensionTest",
       "actsstartappcloneapptest:ActsStartAppCloneAppTest",
       "actsstartchildprocesstest:ActsStartChildProcessTest",
+      "actsstartchildprocessteststatic:ActsStartChildProcessStaticTest",
       "actsterminateselfwithresulttest:ActsTerminateselfWithResultEntry",
       "actsterminateselfwithresulttest:ActsTerminateselfWithResultTest",
       "appclonedemo:AppCloneDemo",

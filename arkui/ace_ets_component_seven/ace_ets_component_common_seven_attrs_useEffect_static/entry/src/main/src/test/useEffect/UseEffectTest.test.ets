@@ -60,7 +60,7 @@ export default function UseEffectTest() {
    * Create test suite.
    */
   describe('useEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       console.error('useEffectTest  start');
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

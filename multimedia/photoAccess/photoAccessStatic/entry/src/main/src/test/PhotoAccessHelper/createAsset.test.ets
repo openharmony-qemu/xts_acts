@@ -28,7 +28,7 @@ export default function createAssetTest() {
 
     let appContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();

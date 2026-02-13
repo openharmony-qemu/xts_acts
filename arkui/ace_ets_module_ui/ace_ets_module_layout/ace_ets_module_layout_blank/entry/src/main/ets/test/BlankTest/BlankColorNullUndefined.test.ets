@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 
 export default function BlankColorNullUndefinedTest() {
   describe('BlankColorNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
-      console.info("BlankColorNullUndefinedTest beforeEach start");
+    beforeAll(async (done: Function) => {
+      console.info("BlankColorNullUndefinedTest beforeAll start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Blank/BlankColorNullUndefined',
       }

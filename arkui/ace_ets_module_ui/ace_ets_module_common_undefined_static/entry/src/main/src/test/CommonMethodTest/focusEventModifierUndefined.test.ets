@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function focusEventModifierUndefined() {
   describe('focusEventModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("focusEventModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

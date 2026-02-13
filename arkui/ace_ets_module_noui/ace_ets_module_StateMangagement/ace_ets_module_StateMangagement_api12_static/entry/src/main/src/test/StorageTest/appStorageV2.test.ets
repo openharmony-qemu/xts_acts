@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function appStorageV2() {
   describe('appStorageV2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appStorageV2 beforeEach start");
 
 

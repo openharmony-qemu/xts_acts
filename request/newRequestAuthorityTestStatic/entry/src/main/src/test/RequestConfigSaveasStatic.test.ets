@@ -44,7 +44,7 @@ export default function requestConfigSavesStaticTest() {
     /**
      * beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.
      */
-    beforeAll((done: () => void) => {
+    beforeAll(async (done: () => void): Promise<void> => {
       try {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

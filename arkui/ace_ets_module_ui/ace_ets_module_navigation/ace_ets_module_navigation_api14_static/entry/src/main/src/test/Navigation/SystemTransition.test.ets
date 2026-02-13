@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SystemTransition() {
   describe('SystemTransition', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SystemTransition beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

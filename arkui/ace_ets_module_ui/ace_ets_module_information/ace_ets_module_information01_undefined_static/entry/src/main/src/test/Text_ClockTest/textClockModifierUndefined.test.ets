@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function textClockModifierUndefined() {
   describe('textClockModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textClockModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

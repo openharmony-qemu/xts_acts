@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function StaticTrackTest() {
   describe('StaticTrackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StaticTrackTest beforeEach start");
 
 

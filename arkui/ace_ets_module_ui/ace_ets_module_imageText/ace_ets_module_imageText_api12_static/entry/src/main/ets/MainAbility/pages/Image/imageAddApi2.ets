@@ -53,7 +53,9 @@ struct imageAddApi2 {
   } as ImageAIOptions
 
   onPageShow() {
-    this.imagePixelMap = this.getPixmapFromMedia($r('app.media.icon'))
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'))
+    })
   }
 
   build() {
@@ -71,7 +73,7 @@ struct imageAddApi2 {
         })
     }
   }
-  private getPixmapFromMedia(resource: Resource) {
+  private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
     let unit8Array = await AppStorage.get<common.Context>('applicationContext')?.resourceManager?.getMediaContent(resource.id)!
     let data: ArrayBuffer = unit8Array
       .buffer

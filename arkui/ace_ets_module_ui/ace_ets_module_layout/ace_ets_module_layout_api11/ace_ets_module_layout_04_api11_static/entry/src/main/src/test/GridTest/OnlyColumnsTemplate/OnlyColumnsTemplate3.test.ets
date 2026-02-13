@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function OnlyColumnsTemplate3() {
   describe('OnlyColumnsTemplate3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnlyColumnsTemplate3 beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

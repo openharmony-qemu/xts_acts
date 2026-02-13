@@ -240,7 +240,7 @@ export default function constraintSizeTest() {
   ]
 
   describe('ConstraintSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("constraintSizeTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

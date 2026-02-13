@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 
 export default function sidebar() {
   describe('ActsAceSideBarTest',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceSideBarTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
 

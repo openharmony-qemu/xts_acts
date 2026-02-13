@@ -38,7 +38,7 @@ let tag: string = 'testTag';
 
 export default function checkBoxGroupSelectAllJsunit() {
   describe('checkBoxGroupSelectAllTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

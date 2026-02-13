@@ -40,7 +40,7 @@ class Cat {
 
 export default function ArrayListTest2() {
   describe('arrayListTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

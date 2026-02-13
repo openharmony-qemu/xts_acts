@@ -30,7 +30,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 export default function prevMargin_modifierUndefinedTest() {
   describe('prevMargin_modifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility('com.arkui.ace.navigation.undefined.static', 'EntryAbility');
       await UtilsTest.msSleep(4000);

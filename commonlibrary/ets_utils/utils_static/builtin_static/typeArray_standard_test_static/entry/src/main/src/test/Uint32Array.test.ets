@@ -18,7 +18,7 @@ import Utils from './Util.test';
 
 export default function Uint32ArrayTest() {
   describe('Uint32ArrayTest', () :void=> {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
     let value: string;

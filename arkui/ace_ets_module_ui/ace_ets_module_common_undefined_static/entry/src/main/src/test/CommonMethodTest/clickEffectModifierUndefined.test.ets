@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function clickEffectModifierUndefined() {
   describe('clickEffectModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clickEffectModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

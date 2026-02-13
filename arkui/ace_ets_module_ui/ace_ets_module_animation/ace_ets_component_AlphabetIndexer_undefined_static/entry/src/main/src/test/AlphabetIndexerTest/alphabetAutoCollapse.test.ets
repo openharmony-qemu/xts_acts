@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetAutoCollapseTest() {
   describe('AlphabetAutoCollapseTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetAutoCollapseTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

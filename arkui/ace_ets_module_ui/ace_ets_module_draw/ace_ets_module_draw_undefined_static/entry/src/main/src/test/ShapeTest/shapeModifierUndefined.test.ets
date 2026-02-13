@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function ShapeModifierUndefinedTest() {
   describe('ShapeModifierUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShapeModifierUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -28,7 +28,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function getParamByNameModifierUndefined() {
   describe('getParamByNameModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getParamByNameModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000);

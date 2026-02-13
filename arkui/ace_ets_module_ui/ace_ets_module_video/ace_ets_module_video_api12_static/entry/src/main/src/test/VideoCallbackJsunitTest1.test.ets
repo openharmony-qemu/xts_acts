@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function VideoCallBackJsunit() {
   describe('VideoCallBackJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       

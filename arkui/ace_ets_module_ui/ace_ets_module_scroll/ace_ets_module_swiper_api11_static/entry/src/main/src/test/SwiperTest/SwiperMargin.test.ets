@@ -61,7 +61,7 @@ export default function SwiperMarginTest() {
   const SUITE: string = 'SwiperMargin'
   const waitUiReadyMs: int = 500;
   describe('SwiperMarginTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperMarginTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

@@ -37,7 +37,7 @@ import { UtilsTest } from '../Util.test';
 export default function selectDividerTest() {
   console.info('selectDividerTest beforeEach start');
   describe('selectDividerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectDividerTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
     });

@@ -27,7 +27,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function MultiSegmentButtonV2PageTest() {
   describe('MultiSegmentButtonV2PageTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MultiSegmentButtonV2PageTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
     });

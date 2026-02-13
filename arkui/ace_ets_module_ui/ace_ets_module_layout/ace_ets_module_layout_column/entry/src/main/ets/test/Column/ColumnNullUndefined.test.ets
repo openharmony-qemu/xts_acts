@@ -17,12 +17,10 @@ import CommonFunc, { RectValue } from '../../MainAbility/common/Common';
 import Utils from '../../MainAbility/common/Utils';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-
 
 export default function ColumnNullUndefinedTest() {
   describe('ColumnNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
+    beforeAll(async (done: Function) => {
       console.info("ColumnNullUndefined beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/ColumnNullUndefined',

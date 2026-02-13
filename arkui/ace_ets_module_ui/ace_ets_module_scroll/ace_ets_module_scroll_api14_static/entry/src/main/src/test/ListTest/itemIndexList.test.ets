@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function itemIndexList() {
   describe('itemIndexList', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
       

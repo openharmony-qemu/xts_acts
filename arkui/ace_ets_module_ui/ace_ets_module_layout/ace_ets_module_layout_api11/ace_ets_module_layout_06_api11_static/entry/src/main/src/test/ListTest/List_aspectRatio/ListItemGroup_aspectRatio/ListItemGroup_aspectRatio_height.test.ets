@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItemGroup_aspectRatio_height() {
   describe('ListItemGroup_aspectRatio_height', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListItemGroup_aspectRatio_height beforeAll start");
             
       await UtilsTest.msSleep(4000)

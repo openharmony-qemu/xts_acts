@@ -42,7 +42,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function PatternLockUndefinedTest() {
   describe('PatternLockUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PatternLockUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

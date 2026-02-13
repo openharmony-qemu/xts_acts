@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function showToastOptions() {
   describe('showToastOptions', () => {
     let currentDeviceIsPC = false
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")

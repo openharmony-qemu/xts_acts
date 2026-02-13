@@ -38,7 +38,7 @@ import inspector from '@ohos.arkui.inspector';
 export default function ShowActionMenuLife() {
   describe('ShowActionMenuLife', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PromptAction beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
