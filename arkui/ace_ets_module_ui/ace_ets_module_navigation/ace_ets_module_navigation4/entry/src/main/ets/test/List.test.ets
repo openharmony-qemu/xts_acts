@@ -17,6 +17,7 @@ import QueryNavDestinationSize from './UIobserver/Navigation/QueryNavDestination
 import NavDestinationSizeUnique from './UIobserver/Navigation/NavDestinationSizeUnique.test';
 import GetStackSize from './Router/GetStackSize.test';
 import NavigationDivider from './Navigation/NavigationDivider.test';
+import NavigationAttributeNullUndefinedTest from './Navigation/NavigationAttributeNullUndefined.test';
 
 export default function testsuite() {
   GetStackSize()
@@ -24,4 +25,5 @@ export default function testsuite() {
   QueryNavDestinationSize()
   NavDestinationSizeUnique()
   NavigationDivider()
+  NavigationAttributeNullUndefinedTest()
 }
