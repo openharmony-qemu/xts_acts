@@ -4068,7 +4068,7 @@ export default function ConnectionPublicTest() {
           connection.getNetCapabilities(netHandle, (error: BusinessError, data: connection.NetCapabilities) => {
             if (error == undefined) {
               console.info(`${caseName} callback: err->${JSON.stringify(error)}`);
-              if (data != undefined) {
+              if (data) {
                 ExpectTrue(data.linkUpBandwidthKbps != null);
                 ExpectTrue(data.linkDownBandwidthKbps != null);
                 if(data.networkCap != undefined){
@@ -4127,7 +4127,7 @@ export default function ConnectionPublicTest() {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             console.info(`${caseName} GetNetCapabilities: success data->${JSON.stringify(data)}`);
-            if(data != undefined){
+            if(data){
               ExpectTrue(data.linkUpBandwidthKbps != null);
               ExpectTrue(data.linkDownBandwidthKbps != null);
               if(data.networkCap != undefined){
