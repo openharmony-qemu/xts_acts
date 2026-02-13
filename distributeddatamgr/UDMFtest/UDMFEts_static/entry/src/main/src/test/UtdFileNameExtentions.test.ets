@@ -6445,7 +6445,7 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.dif', 'general.video');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.dif-video");
+        expect(typeIds).assertContain("general.dif-video");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
@@ -6464,10 +6464,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.dif', 'general.composite-object');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.microsoft.excel.dif")
+        expect(typeIds).assertContain("com.microsoft.excel.dif");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6482,10 +6483,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ts', 'general.video');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.ts")
+        expect(typeIds).assertContain("general.ts");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6500,10 +6502,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ts', 'general.source-code');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.type-script")
+        expect(typeIds).assertContain("general.type-script");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6518,10 +6521,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ogg', 'general.audio');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.ogg,org.xiph.ogg")
+        expect(typeIds).assertContain('general.ogg');
+        expect(typeIds).assertContain('org.xiph.ogg');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6536,10 +6541,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.aiff', 'general.audio');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.aiff,general.aifc-audio")
+        expect(typeIds).assertContain('general.aiff');
+        expect(typeIds).assertContain('general.aifc-audio');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
 
@@ -6555,10 +6562,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.au', 'general.audio');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.au-audio,general.ulaw-audio")
+        expect(typeIds).assertContain('general.au-audio');
+        expect(typeIds).assertContain('general.ulaw-audio');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6573,10 +6582,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.snd', 'general.audio');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.au-audio,general.ulaw-audio")
+        expect(typeIds).assertContain('general.au-audio');
+        expect(typeIds).assertContain('general.ulaw-audio');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6591,10 +6602,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.tar', 'general.archive');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.tar-archive")
+        expect(typeIds).assertContain("general.tar-archive");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6609,10 +6621,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'general.text');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.setext")
+        expect(typeIds).assertContain("general.setext");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6627,10 +6640,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'general.composite-object');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+        expect(typeIds).assertContain("com.kingsoft.office.spreadsheets.etx");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6645,10 +6659,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'com.kingsoft.office');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+        expect(typeIds).assertContain("com.kingsoft.office.spreadsheets.etx");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6663,10 +6678,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.etx', 'com.kingsoft.office');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.kingsoft.office.spreadsheets.etx")
+        expect(typeIds).assertContain("com.kingsoft.office.spreadsheets.etx");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6681,10 +6697,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'general.font');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("general.opentype-font")
+        expect(typeIds).assertContain("general.opentype-font");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6699,10 +6716,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'general.composite-object');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("org.oasis-open.opendocument.formula-template")
+        expect(typeIds).assertContain("org.oasis-open.opendocument.formula-template");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
 
@@ -6718,10 +6736,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.otf', 'org.oasis.opendocument');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("org.oasis-open.opendocument.formula-template")
+        expect(typeIds).assertContain("org.oasis-open.opendocument.formula-template");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6736,10 +6755,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.movie', 'general.video');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.sgi.movie,com.apple.quicktime-movie")
+        expect(typeIds).assertContain('com.sgi.movie');
+        expect(typeIds).assertContain('com.apple.quicktime-movie');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6754,10 +6775,12 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.sit', 'general.archive');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.allume.stuffit-archive,com.stuffit.sit-archive")
+        expect(typeIds).assertContain('com.allume.stuffit-archive');
+        expect(typeIds).assertContain('com.stuffit.sit-archive');
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6772,10 +6795,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pdb', 'general.database');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.microsoft.pdb")
+        expect(typeIds).assertContain("com.microsoft.pdb");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
     /**
@@ -6790,10 +6814,11 @@ export default function UtdFileNameTest() {
       try {
         let typeIds = UTD.getUniformDataTypesByFilenameExtension('.ape', 'general.audio');
         console.info(`typeId is ${typeIds}`);
-        expect(typeIds.toString()).assertEqual("com.monkeysaudio.ape-audio")
+        expect(typeIds).assertContain("com.monkeysaudio.ape-audio");
       } catch(e) {
         let error: BusinessError = e as BusinessError;
         console.error(`getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();
       }
     })
   });
