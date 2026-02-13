@@ -25,7 +25,7 @@
         "MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll",
         "MainAbility/pages/Drag/notifyDragStartRequest",
         "MainAbility/pages/DragController/DragActionAndPreviewNullandundefined/DragActionAndPreviewTestPage",
-        "MainAbility/pages/DragController/CreateDragActionAndSpringNullandundefined/CreateDragActionAndSpringTestPage"
+        "MainAbility/pages/DragController/CreateDragActionAndSpringNullandundefined/CreateDragActionAndSpringTestPage",
         "MainAbility/pages/UIContext/DragControllerNullandundefined/UIContextDragControllerTestPage"
     ]
 }
