@@ -365,7 +365,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_012 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -388,7 +388,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_013 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -411,7 +411,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_014 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -434,7 +434,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_015 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -457,7 +457,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_016 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -480,7 +480,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_error_017 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fileIO.unlinkSync(fpath);
         done();
       }
@@ -502,7 +502,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash("", 'md5', (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_018 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -533,7 +533,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash(null, 'md5', (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_019 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -564,7 +564,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash(undefined, 'md5', (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_020 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -595,7 +595,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash(fpath, "", (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_021 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -626,7 +626,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash(fpath, null, (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_022 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -657,7 +657,7 @@ describe('fileIO_fs_hash', function () {
         fileHash.hash(fpath, undefined, (err, str) => {
           if (err) {
             console.log('fileIO_test_hash_callback_error_023 error package: ' + JSON.stringify(err));
-            expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+            expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
             fileIO.unlinkSync(fpath);
             done();
           } else {
@@ -687,7 +687,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_update_error_024 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -707,7 +707,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_update_error_025 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -726,7 +726,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_createHash_error_026 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -745,7 +745,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_createHash_error_027 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -764,7 +764,7 @@ describe('fileIO_fs_hash', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_hash_createHash_error_028 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });

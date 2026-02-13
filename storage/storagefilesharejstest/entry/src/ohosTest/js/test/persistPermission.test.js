@@ -268,12 +268,12 @@ export default function FileSahre_PersistPermission_test() {
  	             done();
  	           }).catch((err) => {
  	             console.info("FileShare_persistPermission_006 failed with error message: " + err.message + ", error code: " + err.code);
- 	             expect(err.code == 401).assertTrue();
+ 	             expect(err.code === 401).assertTrue();
  	             done();
  	           });
  	         } catch (e) {
  	           console.info('FileShare_persistPermission_006 has failed for ' + e.message + ", err code: " + e.code);
- 	           expect(e.code == 401).assertTrue();
+ 	           expect(e.code === 401).assertTrue();
  	           done();
  	         }
  	       });
@@ -294,12 +294,12 @@ export default function FileSahre_PersistPermission_test() {
  	             done();
  	           }).catch((err) => {
  	             console.info("FileShare_persistPermission_007 failed with error message: " + err.message + ", error code: " + err.code);
- 	             expect(err.code == 401).assertTrue();
+ 	             expect(err.code === 401).assertTrue();
  	             done();
  	           });
  	         } catch (e) {
  	           console.info('FileShare_persistPermission_007 has failed for ' + e.message + ", err code: " + e.code);
- 	           expect(e.code == 401).assertTrue();
+ 	           expect(e.code === 401).assertTrue();
  	           done();
  	         }
  	       });
@@ -321,12 +321,12 @@ export default function FileSahre_PersistPermission_test() {
  	             done();
  	           }).catch((err) => {
  	             console.info("FileShare_persistPermission_008 failed with error message: " + err.message + ", error code: " + err.code);
- 	             expect(err.code == 401).assertTrue();
+ 	             expect(err.code === 401).assertTrue();
  	             done();
  	           });
  	         } catch (e) {
  	           console.info('FileShare_persistPermission_008 has failed for ' + e.message + ", err code: " + e.code);
- 	           if(e.code == 801){
+ 	           if(e.code === 801){
  	             expect(e.message == "The device doesn't support this api").assertTrue();
  	           }
  	           done();

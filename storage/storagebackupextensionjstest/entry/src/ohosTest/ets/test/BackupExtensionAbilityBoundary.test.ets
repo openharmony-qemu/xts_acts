@@ -109,9 +109,9 @@
  	            code: 1,
  	            name: ""
  	          };
- 	          await backupext.onRestore(bundleVersion);
+ 	          let result = await backupext.onRestore(bundleVersion);
  	          console.log('test_Backup_onRestore_name_empty_string_001 run ok');
- 	          expect(true).assertTrue();
+ 	          expect(result !== null).assertTrue();
  	       } catch (error) {
  	          console.info(`test_Backup_onRestore_name_empty_string_001 error: ${JSON.stringify(error)}`);
  	          expect(false).assertTrue();
