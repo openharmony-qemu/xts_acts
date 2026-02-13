@@ -23,6 +23,7 @@ import graphicImagePixelMapAPI23 from './GraphicImagePixelMapAPI23.test'
 import graphicImagePixelMapAdd01 from './GraphicImagePixelMapAdd01.test'
 import graphicImagePixelMapAdd02 from './GraphicImagePixelMapAdd02.test'
 import graphicImagePixelMapAdd03 from './GraphicImagePixelMapAdd03.test'
+import GraphicSendImagePixelMapAdd01 from './GraphicSendImagePixelMapAdd01.test'
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -35,4 +36,5 @@ export default function testsuite() {
   graphicImagePixelMapAPI23();
   graphicImagePixelMapAdd01();
   graphicImagePixelMapAdd03();
+  GraphicSendImagePixelMapAdd01();
 }
