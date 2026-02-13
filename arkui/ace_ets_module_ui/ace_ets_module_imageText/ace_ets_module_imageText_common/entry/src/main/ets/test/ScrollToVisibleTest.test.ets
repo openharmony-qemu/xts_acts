@@ -142,5 +142,31 @@ export default function ScrollToVisibleTest() {
       console.info("[ScrollToVisibleTest004] end");
       done();
     });
+
+    /**
+     * @tc.name   ScrollToVisibleTest005
+     * @tc.number ScrollToVisibleTest005
+     * @tc.desc   test ScrollToVisible not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ScrollToVisibleTest005', Level.LEVEL2, async (done: Function) => {
+      let driver = Driver.create();
+      console.info('ScrollToVisibleTest005 START');
+      await CommonFunc.sleep(1000);
+      let btn5 = await driver.findComponent(ON.id('setScrollToVisible5'))
+      await CommonFunc.sleep(500);
+      await btn5.click();
+      await CommonFunc.sleep(500);
+      console.info('ScrollToVisibleTest005--TextInputScrollToVisible:' + AppStorage.get('TextInputScrollToVisible'));
+      expect(AppStorage.get('TextInputScrollToVisible')).assertFalse();
+      console.info('ScrollToVisibleTest005--TextAreaScrollToVisible:' + AppStorage.get('TextAreaScrollToVisible'));
+      expect(AppStorage.get('TextAreaScrollToVisible')).assertFalse();
+      console.info('ScrollToVisibleTest005--SearchScrollToVisible:' + AppStorage.get('SearchScrollToVisible'));
+      expect(AppStorage.get('SearchScrollToVisible')).assertFalse();
+      console.info("[ScrollToVisibleTest005] end");
+      done();
+    });
   })
 }
