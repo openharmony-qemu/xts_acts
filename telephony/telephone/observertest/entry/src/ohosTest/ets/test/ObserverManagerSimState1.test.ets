@@ -464,12 +464,12 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: number = 1;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+          console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -490,12 +490,12 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: number = 2;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+          console.info(`${caseName} data: ${data}`);
           ExpectFail();
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 8300001);
         done();
       }
