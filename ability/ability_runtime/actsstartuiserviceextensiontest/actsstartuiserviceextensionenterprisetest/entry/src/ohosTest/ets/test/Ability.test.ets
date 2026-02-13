@@ -528,6 +528,152 @@ export default function abilityTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_1700
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_1700
+     * @tc.desc   Test off applicationState with non-existent observerId callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_1700', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_1700";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1700] start');
+      let observerId = 999999;
+      try {
+        appManager.off('applicationState', observerId, (err) => {
+          if (err) {
+            hilog.info(0x0000, 'testTag', tag + `off error: ${JSON.stringify(err)}`);
+            expect().assertFail();
+          } else {
+            hilog.info(0x0000, 'testTag', tag + `off succeed`);
+          }
+          done();
+        });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', tag + `off error: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_1900
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_1900
+     * @tc.desc   Test killProcessesByBundleName with non-existent bundleName.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_1900', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_1900";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1900] start');
+      try {
+        await appManager.killProcessesByBundleName("com.non.exist.app", false, 0).then(()=>{
+          hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
+          expect().assertFail();
+          done();
+        }).catch((err:BusinessError)=>{
+          hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName err ` + err?.code);
+          expect(err.code).assertEqual(16000050);
+          done();
+        });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', tag + `killProcessesByBundleName error: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_2000
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_2000
+     * @tc.desc   Test killProcessesByBundleName with non-existent bundleName and appIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_2000', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_2000";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_2000] start');
+      try {
+        await appManager.killProcessesByBundleName("com.non.exist.app", true, 1).then(()=>{
+          hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
+          expect().assertFail();
+          done();
+        }).catch((err:BusinessError)=>{
+          hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName err ` + err?.code);
+          expect(err.code).assertEqual(16000050);
+          done();
+        });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', tag + `killProcessesByBundleName error: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_1800
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_1800
+     * @tc.desc   Test off applicationState with non-existent observerId promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_1800', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_1800";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1800] start');
+      let observerId = 999999;
+      try {
+        await appManager.off('applicationState', observerId).then(()=>{
+          hilog.info(0x0000, 'testTag', tag + `off succeed`);
+          expect().assertFail();
+          done();
+        }).catch((err:BusinessError)=>{
+          hilog.info(0x0000, 'testTag', tag + `off err ` + err?.code);
+          expect().assertFail();
+          done();
+        });
+
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', tag + `off error: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityByCall_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartAbilityByCall_0100
+     * @tc.desc   Test startAbilityByCall to start current app EntryAbility, expected return 16000050.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_StartAbilityByCall_0100', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_StartAbilityByCall_0100";
+      console.info('====> [SUB_Ability_AbilityRuntime_StartAbilityByCall_0100] start');
+      try {
+        await testAbilityContext.startAbilityByCall({
+          bundleName: "com.acts.startuiserviceextensionrely",
+          abilityName: "EntryAbility"
+        }).then(()=>{
+          hilog.info(0x0000, 'testTag', tag + `startAbilityByCall succeed`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError)=>{
+          hilog.info(0x0000, 'testTag', tag + `startAbilityByCall error ` + err?.code);
+          expect(err.code).assertEqual(16000050);
+          done();
+        })
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', tag + `startAbilityByCall error: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
   })
 }
 

@@ -536,5 +536,180 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_StartSelfUIAbilityInCurrentProcess_1100
+     * @tc.number SUB_Ability_StartSelfUIAbilityInCurrentProcess_1100
+     * @tc.desc   Test startSelfUIAbilityInCurrentProcess with null flag parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_StartSelfUIAbilityInCurrentProcess_1100', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'StartSelfUIAbilityInCurrentProcess_1100';
+      hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} start`);
+      let want: Want = {
+        bundleName: 'com.example.startselfulabilitytest',
+        moduleName: 'entry_test',
+        abilityName: 'OneAbility'
+      }
+      let flag: string | null = null;
+      let startOptions: StartOptions = {};
+      try {
+        context.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          .then(() => {
+            hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            let msg =
+              `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+            hilog.error(0x0000, 'testTag', msg);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let msg =
+          `${TEST_CASE_NAME} try startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+        hilog.error(0x0000, 'testTag', msg);
+        expect((err as BusinessError).code).assertEqual(401);
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_StartSelfUIAbilityInCurrentProcess_1200
+     * @tc.number SUB_Ability_StartSelfUIAbilityInCurrentProcess_1200
+     * @tc.desc   Test startSelfUIAbilityInCurrentProcess with undefined flag parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_StartSelfUIAbilityInCurrentProcess_1200', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'StartSelfUIAbilityInCurrentProcess_1200';
+      hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} start`);
+      let want: Want = {
+        bundleName: 'com.example.startselfulabilitytest',
+        moduleName: 'entry_test',
+        abilityName: 'OneAbility'
+      }
+      let flag: string | undefined = undefined;
+      let startOptions: StartOptions = {};
+      try {
+        context.startSelfUIAbilityInCurrentProcess(want, flag, startOptions)
+          .then(() => {
+            hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            let msg =
+              `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+            hilog.error(0x0000, 'testTag', msg);
+            expect().assertFail();
+            done();
+          });
+      } catch (err) {
+        let msg =
+          `${TEST_CASE_NAME} try startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+        hilog.error(0x0000, 'testTag', msg);
+        expect((err as BusinessError).code).assertEqual(401);
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
+        done();
+      }
+    })
+
+    
+    /**
+     * @tc.name   SUB_Ability_StartSelfUIAbilityInCurrentProcess_1300
+     * @tc.number SUB_Ability_StartSelfUIAbilityInCurrentProcess_1300
+     * @tc.desc   Test startSelfUIAbilityInCurrentProcess with null flag parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_StartSelfUIAbilityInCurrentProcess_1300', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'StartSelfUIAbilityInCurrentProcess_1300';
+      hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} start`);
+      let want: Want = {
+        bundleName: 'com.example.startselfulabilitytest',
+        moduleName: 'entry_test',
+        abilityName: 'OneAbility'
+      }
+      let flag: string = 'notExist';
+      try {
+        context.startSelfUIAbilityInCurrentProcess(want, flag, undefined)
+          .then(() => {
+            hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            let msg =
+              `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+            hilog.error(0x0000, 'testTag', msg);
+            if(err.code == 801){
+              expect(err?.code).assertEqual(801)
+            } else {
+              expect(err.code).assertEqual(401);
+            }
+            done();
+          });
+      } catch (err) {
+        let msg =
+          `${TEST_CASE_NAME} try startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+        hilog.error(0x0000, 'testTag', msg);
+        expect().assertFail();
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_StartSelfUIAbilityInCurrentProcess_1400
+     * @tc.number SUB_Ability_StartSelfUIAbilityInCurrentProcess_1400
+     * @tc.desc   Test startSelfUIAbilityInCurrentProcess with undefined flag parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_StartSelfUIAbilityInCurrentProcess_1400', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'StartSelfUIAbilityInCurrentProcess_1400';
+      hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} start`);
+      let want: Want = {
+        bundleName: 'com.example.startselfulabilitytest',
+        moduleName: 'entry_test',
+        abilityName: 'OneAbility'
+      }
+      let flag: string = 'notExist';
+      try {
+        context.startSelfUIAbilityInCurrentProcess(want, flag, null)
+          .then(() => {
+            hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            let msg =
+              `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+            hilog.error(0x0000, 'testTag', msg);
+            if(err.code == 801){
+              expect(err?.code).assertEqual(801)
+            } else {
+              expect(err.code).assertEqual(401);
+            }
+            done();
+          });
+      } catch (err) {
+        let msg =
+          `${TEST_CASE_NAME} try startSelfUIAbilityInCurrentProcess failed, code: ${err.code}, message: ${err.message}`;
+        hilog.error(0x0000, 'testTag', msg);
+        expect().assertFail();
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} end`);
+        done();
+      }
+    })
   })
 }
