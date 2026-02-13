@@ -237,7 +237,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
@@ -264,7 +264,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
