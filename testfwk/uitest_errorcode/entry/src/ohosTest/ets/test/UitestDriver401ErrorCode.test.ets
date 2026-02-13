@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
-import { ComponentEventType, Driver, ON, PointerMatrix, UiDirection, WindowChangeType, MouseButton } from '@kit.TestKit';
+import { ComponentEventType, Driver, ON, PointerMatrix, UiDirection, WindowChangeType, MouseButton } from '@ohos.UiTest';
 
 const TestTag = 'testTag';
 const ErrorCode = 401;
