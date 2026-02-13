@@ -47,7 +47,7 @@ FakeCallback callback = [](uint64_t nanoTimestamp, uint32_t frameCount, void *us
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq g_dragCount %{public}d", g_dragCount);
     if (g_dragCount > 0) {
         bool ret = false;
-        OH_ArkUI_Swiper_FakeDragBy(swiper, PARAM_NE_3, &ret);
+        OH_ArkUI_Swiper_FakeDragBy(swiper, PARAM_NEGATIVE_3, &ret);
         OH_ArkUI_PostFrameCallback(g_contextHandle, nullptr, callback);
         --g_dragCount;
     } else {
@@ -266,8 +266,7 @@ namespace ArkUICapiTest {
             bool ret = false;
             int32_t codeErr = OH_ArkUI_Swiper_IsFakeDragging(swiper, &ret);
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-             "hzq OH_ArkUI_Swiper_IsFakeDragging %{public}d %{public}d",
-                         ret, codeErr);
+                "hzq OH_ArkUI_Swiper_IsFakeDragging %{public}d %{public}d", ret, codeErr);
         }
     };
     nodeAPI_->registerNodeEventReceiver(onclick);
