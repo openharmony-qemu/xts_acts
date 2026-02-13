@@ -3566,11 +3566,21 @@ export default function SingleKvStoreNull(){
           moved = resultSet.move(null);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
+
         });
+
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -3614,10 +3624,17 @@ export default function SingleKvStoreNull(){
           moved = resultSet.move(undefined);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3661,10 +3678,17 @@ export default function SingleKvStoreNull(){
           moveToPositiond = resultSet.moveToPosition(null);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3708,10 +3732,17 @@ export default function SingleKvStoreNull(){
           moveToPositiond = resultSet.moveToPosition(undefined);
           expect(null).assertFail();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async(err: BusinessError) => {
           console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(401);
-          done();
+          await kvStore!.closeResultSet(resultSet).then(() => {
+            console.info(TAG + ' closeResultSet success,' );
+            done();
+          }).catch((e: Error) => {
+            console.error(' closeResultSet fail ' + `, error code is ${e}`);
+            expect(null).assertFail();
+            done();
+          });
         });
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -3907,6 +3938,19 @@ export default function SingleKvStoreNull(){
         console.info(TAG + 'first.default f22=' + first.default);
         expect(first.default).assertEqual('');
 
+        let first33 = new factory.FieldNode('first33');
+        first33.type = factory.ValueType.STRING;
+        expect(first33.type).assertEqual(factory.ValueType.STRING);
+        first33.type = factory.ValueType.BYTE_ARRAY;
+        expect(first33.type).assertEqual(factory.ValueType.BYTE_ARRAY);
+        first33.type = factory.ValueType.BOOLEAN;
+        expect(first33.type).assertEqual(factory.ValueType.BOOLEAN);
+        first33.type = factory.ValueType.DOUBLE;
+        expect(first33.type).assertEqual(factory.ValueType.DOUBLE);
+        first33.type = factory.ValueType.INTEGER;
+        expect(first33.type).assertEqual(factory.ValueType.INTEGER);
+        first33.type = factory.ValueType.FLOAT;
+        expect(first33.type).assertEqual(factory.ValueType.FLOAT);
         done();
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
