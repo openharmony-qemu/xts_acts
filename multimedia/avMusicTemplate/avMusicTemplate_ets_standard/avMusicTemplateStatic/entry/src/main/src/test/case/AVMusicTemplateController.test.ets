@@ -900,14 +900,14 @@ export default function avMusicTemplateControllerTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1500
-     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1500
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1502
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1502
      * @tc.desc   Testing login
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_LOGIN_STATIC_1502', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           template!.onLogin(async (controlType: string, id?: string): Promise<avMusicTemplate.QrCodeInfo[]> => {
