@@ -15,8 +15,10 @@
 
 import UiAbilityContextStartAbilityStatic from './UIAbilityContextStartabilitystatic.test'
 import UIAbilityContextteststatic from "./UIAbilityContextteststatic.test";
+import StartChildProcessTestStatic from "./StartChildProcess.test";
 
 export default function testsuite() {
   UiAbilityContextStartAbilityStatic();
   UIAbilityContextteststatic();
+  StartChildProcessTestStatic();
 }

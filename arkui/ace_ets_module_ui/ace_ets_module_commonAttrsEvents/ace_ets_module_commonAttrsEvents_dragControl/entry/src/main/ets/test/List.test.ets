@@ -34,10 +34,12 @@ import notifyDragStartRequest from './Drag/notifyDragStartRequest.test';
 import DragEventUITest from "./DragController/DragEventUI.test";
 import dragActionAndPreviewTest from "./DragController/DragActionAndPreviewNullandundefined/DragActionAndPreviewTest.test";
 import createDragActionAndSpringTest from "./DragController/CreateDragActionAndSpringNullandundefined/CreateDragActionAndSpringTest.test";
+import dragControllerTest from './UIContext/DragControllerNullandundefined/DragControllerTest.test';
 
 
 export default function testsuite() {
     dragAdaptationTest();
+    DragEventUITest();
     getDragController();
     PreDrag();
     enableEdgeAutoScroll_false();
@@ -54,7 +56,7 @@ export default function testsuite() {
     APIPreDragStatusTest();
     DragInteractionOptionsTest();
     DragPreviewOptions();
-    DragEventUITest();
     dragActionAndPreviewTest();
     createDragActionAndSpringTest();
+    dragControllerTest();
 }

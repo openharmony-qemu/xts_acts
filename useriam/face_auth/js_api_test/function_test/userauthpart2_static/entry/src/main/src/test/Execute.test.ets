@@ -116,7 +116,7 @@ async function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.Widge
 
 export default function signNormalAccessBiometricExecute() {
   describe('signNormalAccessBiometricExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

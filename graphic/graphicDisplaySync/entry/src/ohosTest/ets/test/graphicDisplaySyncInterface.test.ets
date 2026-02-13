@@ -38,6 +38,9 @@ export default function graphicDisplaySyncInterfaceTest() {
       console.log(msg + ' begin')
       try {
         let backDisplaySync: displaySync.DisplaySync = displaySync.create();
+        console.info('www data testSetExpectedFrameRateRange ', backDisplaySync);
+        console.info('www data testSetExpectedFrameRateRange ', JSON.stringify(backDisplaySync));
+        expect(backDisplaySync !== undefined)
         let range: ExpectedFrameRateRange = {
           min: 0,
           max: 120,
@@ -159,6 +162,8 @@ export default function graphicDisplaySyncInterfaceTest() {
 
         let callback = (frameInfo: displaySync.IntervalInfo) => {
             console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp + ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
+          expect(frameInfo.timestamp !== undefined).assertTrue();
+          expect(frameInfo.targetTimestamp !== undefined).assertTrue();
         }
 
         backDisplaySync?.on("frame", callback)

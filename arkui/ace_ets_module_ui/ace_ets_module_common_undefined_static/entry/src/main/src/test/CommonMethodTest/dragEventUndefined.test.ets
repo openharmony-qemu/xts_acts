@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function DragEventUndefinedTest() {
   describe('DragEventUndefinedTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DragEventUndefinedTest beforeAll start");
 
       await UtilsTest.msSleep(4000)

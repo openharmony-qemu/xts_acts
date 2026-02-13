@@ -527,7 +527,7 @@ export default function requestUploadJSUnit() {
         request.upload(uploadConfig, (err, uploadTask) => {
           try {
             console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 into callback: ${JSON.stringify(err)}`);
-            expect().asserFail();
+            expect().assertFail();
           } catch (err) {
             done();
           }
@@ -608,7 +608,7 @@ export default function requestUploadJSUnit() {
         request.upload(uploadConfig, (err, uploadTask) => {
           try {
             console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 into callback: ${JSON.stringify(err)}`);
-            expect().asserFail();
+            expect().assertFail();
           } catch (err) {
             done();
           }

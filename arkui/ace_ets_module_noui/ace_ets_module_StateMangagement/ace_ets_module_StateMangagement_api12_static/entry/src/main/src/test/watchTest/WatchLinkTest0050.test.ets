@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function WatchLinkTest0050() {
   describe('WatchLinkTest0050', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WatchLinkTest0050 beforeEach start");
 
 

@@ -35,12 +35,10 @@ struct AppearExample {
         .id('button_onDetach2')
       Text('Count' + this.count)
         .fontSize(26)
-        .fontWeight(FontWeight.Bold)
         .id('commonmethod_onDetach')
       if (this.isShow === true) {
         Text('Text for onDetach')
           .fontSize(26)
-          .fontWeight(FontWeight.Bold)
           .onDetach(this.change?() => {
             this.count += 1;
           }: undefined)

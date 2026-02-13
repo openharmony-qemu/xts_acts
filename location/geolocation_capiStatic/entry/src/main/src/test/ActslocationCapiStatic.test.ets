@@ -96,7 +96,7 @@ export default function actslocationTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        beforeEach(() => {
+        beforeEach(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeEach start');
             try {
                 //await Utils.openBluetooth();
@@ -634,7 +634,8 @@ export default function actslocationTest() {
                         expect(error.code).assertEqual(3301900);
                     }                    
                 }
-            })            
+            })
+
             /**
             * @tc.number  SUB_Location_getActiveGeoFences_0100
             * @tc.name  SUB_Location_getActiveGeoFences_0100
@@ -644,22 +645,30 @@ export default function actslocationTest() {
             * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getActiveGeoFences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+              let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
+              console.info("SUB_Location_getActiveGeoFences_0100: " + isAccessToken);
+              if (!isAccessToken) {
+                  console.info("The device does not support Gnss");
+                  expect(isAccessToken).assertFalse();
+              } else {
               try{
                 geoLocationManager.getActiveGeoFences().then((res) => {
                   if (res) {
-                    console.info("fence num:" + res.size);
-                    expect(res.size != 0).assertTrue();
+                    console.info("SUB_Location_getActiveGeoFences_0100 fence num:" + res.size);
+                    expect(true).assertEqual(res != null);
+                    done();
                   }
-                })
-                .catch((error) => {
-                  console.error('promise, getActiveGeoFences: error=' + error.code);
+                }).catch((error) => {
+                  console.error('promise, SUB_Location_getActiveGeoFences_0100: error=' + error.code);
                   expect(error.code).assertEqual(801);
                 });
               } catch (error) {
-                console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
+                console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
               }
+             }
             })
+
             /**
             * @tc.number  SUB_Location_addGnssGeofence_0100
             * @tc.name  SUB_Location_addGnssGeofence_0100

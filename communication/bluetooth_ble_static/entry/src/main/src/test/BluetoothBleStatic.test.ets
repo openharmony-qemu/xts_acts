@@ -33,7 +33,7 @@ export default function bluetoothBleTest() {
 
     describe("bluetoothBleTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             try {
                 await Utils.msSleep(2000);
@@ -58,7 +58,7 @@ export default function bluetoothBleTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        beforeEach(() => {
+        beforeEach(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeEach start');
             try {
                 await Utils.openBluetooth();

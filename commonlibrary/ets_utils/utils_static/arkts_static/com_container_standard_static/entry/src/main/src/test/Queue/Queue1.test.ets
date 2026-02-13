@@ -25,7 +25,7 @@ class C1 {
 }
 export default function queueTest1() {
   describe('queueTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

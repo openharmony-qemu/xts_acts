@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textChangeEnabledJsunit() {
   describe('textChangeEnabledJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textChangeEnabledJsunit beforeEach start");
 
 

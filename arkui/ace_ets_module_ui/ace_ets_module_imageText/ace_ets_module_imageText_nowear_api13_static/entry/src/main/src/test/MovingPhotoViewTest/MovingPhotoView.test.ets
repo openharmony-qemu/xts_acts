@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MovingPhotoViewTest() {
   describe('MovingPhotoViewTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MovingPhotoViewTest beforeEach start");
 
       await UtilsTest.msSleep(4000);

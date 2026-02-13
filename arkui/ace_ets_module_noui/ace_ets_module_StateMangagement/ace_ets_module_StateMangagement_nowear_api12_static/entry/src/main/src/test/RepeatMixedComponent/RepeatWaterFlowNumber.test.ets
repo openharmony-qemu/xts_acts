@@ -49,7 +49,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RepeatWaterFlowNumber() {
   describe('RepeatWaterFlowNumber', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatWaterFlowNumber beforeEach start");
 
 

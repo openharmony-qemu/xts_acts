@@ -221,8 +221,10 @@ import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
+import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
+import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
 import ImagePictureTest from './image/ImagePictureTest.test';
-
 import CrateImageSupp from './image/CreateImageTest.test';
 
 
@@ -432,7 +434,9 @@ export default function testsuite() {
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
+  PicturePackingPixelMapFirTestSupp();
+  PicturePackingPixelMapSecTestSupp();
+  ImageGetComponentFirSupp();
   ImagePictureTest();
-
   CrateImageSupp();
 }

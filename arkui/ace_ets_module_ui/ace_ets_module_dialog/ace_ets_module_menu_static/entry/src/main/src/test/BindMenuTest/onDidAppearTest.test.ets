@@ -36,7 +36,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function onDidAppearTest() {
   describe('onDidAppearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onDidAppearTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
     });

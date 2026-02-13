@@ -46,7 +46,7 @@ export default function DecimalTest002() {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100)
       console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });

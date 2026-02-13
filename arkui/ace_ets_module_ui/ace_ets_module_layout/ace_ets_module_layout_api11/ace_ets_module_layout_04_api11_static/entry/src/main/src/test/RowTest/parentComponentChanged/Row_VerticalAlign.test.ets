@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Row_VerticalAlign() {
   describe('Row_VerticalAlign', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_VerticalAlign beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

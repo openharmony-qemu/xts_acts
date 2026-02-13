@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function spanApi1() {
   describe('spanApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageLoadResultTest beforeEach start");
 
 

@@ -127,7 +127,14 @@ import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressL
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
 import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
 import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInputCompressLeadingPunctuationModifier.test';
+import TextInputPropertiesNullUndefinedTest from './TextInputTest/TextInputPropertiesNullUndefined.test';
+import TextInputPropertiesNullUndefined02Test from './TextInputTest/TextInputPropertiesNullUndefined02.test';
+import TextInputPropertiesNullUndefined03Test from './TextInputTest/TextInputPropertiesNullUndefined03.test';
+import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
 
+import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
+import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
+import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -246,4 +253,11 @@ export default function testsuite() {
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()
   TextInputCompressLeadingPunctuationModifier()
+  TextInputPropertiesNullUndefinedTest()
+  TextInputPropertiesNullUndefined02Test();
+  TextInputPropertiesNullUndefined03Test();
+  TextInputTypeParamTest();
+  TextAreaPropertiesNullUndefinedTest();
+  TextAreaPropertiesNullUndefined02Test();
+  TextAreaPropertiesNullUndefined03Test();
 }

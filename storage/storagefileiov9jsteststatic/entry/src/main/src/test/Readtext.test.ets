@@ -296,6 +296,26 @@ export default function fileIOReadtext() {
     });
 
     /**
+     * @tc.name   fileIO_test_readtext_sync_static_012
+     * @tc.number SUB_DF_FILEIO_READ_TEXT_SYNC_1200
+     * @tc.desc   Test readTextSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readtext_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_sync_static_012 start');
+      try {
+        fs.readTextSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_sync_static_012 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_readtext_async_static_000
      * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0000
      * @tc.desc   Test readtext() interfaces. Promise.
@@ -836,6 +856,52 @@ export default function fileIOReadtext() {
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_022 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readtext_async_static_023
+     * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2300
+     * @tc.desc   Test readtext() promise interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readtext_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_023 start');
+      try {
+        await fs.readText("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_023 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readtext_async_static_024
+     * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_2400
+     * @tc.desc   Test readtext() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readtext_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_024 start');
+      try {
+        fs.readText("", (err: BusinessError | null, str: string | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_024 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readtext_async_static_024 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
   })

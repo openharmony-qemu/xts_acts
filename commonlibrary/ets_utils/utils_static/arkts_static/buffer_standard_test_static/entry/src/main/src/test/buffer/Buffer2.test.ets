@@ -53,7 +53,7 @@ class Person {
 
 export default function bufferTest2() {
   describe("bufferTest2", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

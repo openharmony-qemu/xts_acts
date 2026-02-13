@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PropSet() {
   describe('PropSet', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PropSet beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

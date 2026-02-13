@@ -33,7 +33,7 @@ let tag = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function OnResultPage() {
   describe('OnResultPage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnResultPage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");

@@ -21,6 +21,7 @@ import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { StartOptions } from '@kit.AbilityKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -132,6 +133,8 @@ export default function windowLayoutTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -360,7 +363,7 @@ export default function windowLayoutTest() {
       let windowClass = windowStage.getMainWindowSync()
       let enabled = true;
       let driver = await Driver.create();
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           windowClass.setResizeByDragEnabled(enabled, async (err) => {
             if (err.code == 801) {
@@ -4093,7 +4096,7 @@ export default function windowLayoutTest() {
     it('testSetContentAspectRatio_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0200';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowStageStart = await startAbility(caseName, context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();
@@ -4156,7 +4159,7 @@ export default function windowLayoutTest() {
     it('testSetContentAspectRatio_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0300';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowStageStart = await startAbility(caseName + '_1', context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();

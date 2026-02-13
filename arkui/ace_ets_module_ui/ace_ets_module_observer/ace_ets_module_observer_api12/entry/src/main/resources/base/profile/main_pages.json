@@ -14,6 +14,8 @@
         "MainAbility/pages/observer/onTabUpdate",
         "MainAbility/pages/observer/uiScrollEvent",
         "MainAbility/pages/observer/uiTabUpdate",
-        "MainAbility/pages/observer/uiIdUpdate"
+        "MainAbility/pages/observer/uiIdUpdate",
+        "MainAbility/pages/observer/scrollEventNullUndefined",
+        "MainAbility/pages/observer/uiContextScrollEventNullUn"
     ]
 }

@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function ImageOrientationTest() {
   describe('ImageOrientationTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageOrientationTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

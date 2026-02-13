@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 
 export default function alphabetIndexerOnSelectJsunit() {
   describe('alphabetIndexerOnSelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

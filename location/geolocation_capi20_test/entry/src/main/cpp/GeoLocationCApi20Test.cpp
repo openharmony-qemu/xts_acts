@@ -55,6 +55,18 @@ void LocationInfoCallback(Location_Info *location, void *userData)
 {
     size_t infoLen = 512;
     char *additionalInfo = (char *)malloc(infoLen);
+    Location_BasicInfo baseInfo = OH_LocationInfo_GetBasicInfo(location);
+    double latitude = baseInfo.latitude;
+    double longitude = baseInfo.longitude;
+    double altitude = baseInfo.altitude;
+    double accuracy = baseInfo.accuracy;
+    double speed = baseInfo.speed;
+    double direction = baseInfo.direction;
+    int64_t timeForFix = baseInfo.timeForFix;
+    int64_t timeSinceBoot = baseInfo.timeSinceBoot;
+    double speedAccuracy = baseInfo.speedAccuracy;
+    double directionAccuracy = baseInfo.directionAccuracy;
+    Location_SourceType locationsourcetype = baseInfo.locationSourceType;
     Location_ResultCode ResultCode = OH_LocationInfo_GetAdditionalInfo(location, additionalInfo, infoLen);
 };
 

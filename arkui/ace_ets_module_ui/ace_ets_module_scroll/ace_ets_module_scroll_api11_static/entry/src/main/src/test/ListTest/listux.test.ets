@@ -49,7 +49,7 @@ export default function listUxTest() {
 
   describe('listUxTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await CommonFunc.sleep(4000);
 

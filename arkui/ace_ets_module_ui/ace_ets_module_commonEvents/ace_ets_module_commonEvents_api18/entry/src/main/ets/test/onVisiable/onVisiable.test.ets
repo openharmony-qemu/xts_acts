@@ -59,20 +59,10 @@ export default function onVisibleAreaApproximateChangeTest() {
       console.info('onVisibleAreaApproximateChange_0010 START');
       let driver : Driver = await Driver.create()
       await CommonFunc.sleep(1000);
-
-      // 获取滑动组件Scroll
-      let swiperTabs = CommonFunc.getComponentRectOnScreen('onVisibleAreaApproximateChange_scroll_id');
-      let top = swiperTabs.top;
-      let right = swiperTabs.right;
-      let left = swiperTabs.left;
-      let bottom = swiperTabs.bottom;
-      console.info("onVisibleAreaApproximateChange_scroll value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
-      let width = right - left;
-      await CommonFunc.sleep(1000);
       // 从完全可见滑动到完全不可见
-      await driver.swipe(Math.round(left + width*0.5),Math.round(bottom - height*0.08),Math.round(left + width*0.5),Math.round(top + height*0.08));
-      await CommonFunc.sleep(3000);      
+      let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
+      await scrollBar.scrollToBottom();
+      await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);
       let obj: ESObject = JSON.parse(strJson);
@@ -82,7 +72,7 @@ export default function onVisibleAreaApproximateChangeTest() {
       await CommonFunc.sleep(1000);
 
       // 从完全不可见滑动到完全可见
-      await driver.swipe(Math.round(left + width*0.5),Math.round(top + height*0.08),Math.round(left + width*0.5),Math.round(bottom));
+      await scrollBar.scrollToTop();
       await CommonFunc.sleep(3000);
       strJson = getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);

@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function Tabs_barWidHei() {
   describe('Tabs_barWidHei', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

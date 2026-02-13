@@ -47,7 +47,7 @@ export default function datapanelJsunit() {
 
 
   describe('dataPanelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dataPanelTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

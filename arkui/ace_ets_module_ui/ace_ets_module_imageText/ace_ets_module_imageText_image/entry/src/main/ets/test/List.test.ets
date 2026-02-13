@@ -57,6 +57,12 @@ import getUIContextApi06 from './ImageGetUIContext/getUIContextApi06.test';
 import getUIContextApi07 from './ImageGetUIContext/getUIContextApi07.test';
 import blendNodeTest from './BlendModeTest/blendNodeTest.test';
 import ImageAntialiasedTest from './ImageAntialiasedTest/ImageAntialiased.test';
+import ImageObjectRepeatUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageObjectRepeatUndefinedAndNull.test';
+import ImageOrientationUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageOrientationUndefinedAndNull.test';
+import ImagePrivacySensitiveUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImagePrivacySensitiveUndefinedAndNull.test';
+import ImageCopyOptionUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageCopyOptionUndefinedAndNull.test';
+import ImageDynamicRangeModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDynamicRangeModeUndefinedAndNull.test';
+import ImageSyncLoadUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageSyncLoadUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -104,4 +110,10 @@ export default function testsuite() {
   BorderImageTest();
   blendNodeTest();
   ImageAntialiasedTest();
+  ImageObjectRepeatUndefinedAndNullTest();
+  ImageOrientationUndefinedAndNullTest();
+  ImagePrivacySensitiveUndefinedAndNullTest();
+  ImageCopyOptionUndefinedAndNullTest();
+  ImageDynamicRangeModeUndefinedAndNullTest();
+  ImageSyncLoadUndefinedAndNullTest();
 }

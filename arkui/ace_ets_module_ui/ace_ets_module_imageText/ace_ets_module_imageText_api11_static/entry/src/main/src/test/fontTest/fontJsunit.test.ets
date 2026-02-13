@@ -27,7 +27,7 @@ const uiContext = new UIContext();
 
 export default function fontJsunit() {
   describe('fontJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIgetUIFontConfigJsunit beforeEach start");
 
 

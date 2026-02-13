@@ -29,7 +29,7 @@ export default function imageHDR() {
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
       await initialize();

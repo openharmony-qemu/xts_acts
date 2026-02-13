@@ -49,7 +49,6 @@ struct MultiNavigationEntry {
   build() {
     Column() {
       Row() {
-        Text('11111111111111111111111111')
         MultiNavigation({ navDestination: this.PageMap, multiStack: this.pageStack })
       }
       .width('100%')

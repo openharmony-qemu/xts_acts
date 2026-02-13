@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeight_Part() {
   describe('layoutWeight_Part', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeight_Part beforeEach start");
 
 

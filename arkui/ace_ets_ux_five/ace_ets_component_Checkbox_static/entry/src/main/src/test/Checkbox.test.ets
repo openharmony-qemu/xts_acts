@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function CheckboxTest() {
   describe('CheckboxTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CheckboxTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.example.Checkbox.static", "EntryAbility");

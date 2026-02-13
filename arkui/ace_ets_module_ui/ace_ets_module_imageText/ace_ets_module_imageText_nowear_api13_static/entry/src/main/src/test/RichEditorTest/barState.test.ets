@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function BarStateTest() {
   describe('BarStateTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BarStateTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api13.static", "EntryAbility")

@@ -40,7 +40,7 @@ export default function imageColorSpace() {
     let cacheDir: string | undefined | null;
 
     describe('imageColorSpace', () => {
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info('beforeAll case');
             await initialize();
             filesDir = Hypium.get('filesDir') as string | undefined | null;

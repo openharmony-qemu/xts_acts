@@ -58,7 +58,7 @@ class ChildLRUCache extends util.LRUCache<number, number> {
 
 export default function Util2Test() {
   describe('Util2Test', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

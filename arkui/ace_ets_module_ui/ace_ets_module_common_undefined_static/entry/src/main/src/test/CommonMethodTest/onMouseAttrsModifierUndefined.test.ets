@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function OnMouseAttrsModifierUndefinedTest() {
  describe('OnMouseAttrsModifierUndefinedTest', () => {
-  beforeAll(() => {
+  beforeAll(async (): Promise<void> => {
    console.info("OnMouseAttrsModifierUndefinedTest beforeAll start");
 
    await UtilsTest.msSleep(4000)

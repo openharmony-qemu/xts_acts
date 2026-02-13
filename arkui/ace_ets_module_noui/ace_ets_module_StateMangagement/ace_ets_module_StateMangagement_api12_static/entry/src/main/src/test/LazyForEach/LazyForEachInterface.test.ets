@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LazyForEachInterface() {
   describe('LazyForEachInterface', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachInterface beforeEach start");
 
 

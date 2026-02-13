@@ -26,7 +26,7 @@ const uiContext = new UIContext();
 
 export default function ListMonopolize() {
   describe('ListMonopolize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 

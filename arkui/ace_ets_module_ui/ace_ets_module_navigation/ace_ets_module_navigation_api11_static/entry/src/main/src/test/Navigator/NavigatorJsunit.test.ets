@@ -34,7 +34,7 @@ export default function navigatorJsunit() {
 
 
   describe('navigatorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

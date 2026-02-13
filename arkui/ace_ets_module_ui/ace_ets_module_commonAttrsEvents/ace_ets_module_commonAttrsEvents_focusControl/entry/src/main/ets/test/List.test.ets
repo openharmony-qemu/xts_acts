@@ -106,6 +106,7 @@ import setKeyProcessingModeTest from './setKeyProcessingModeTest/setKeyProcessin
 import next_Focus from './next_Focus/next_Focus.test';
 import activeApiTest from './UIContext/FocusController/activeApiTest.test';
 import isActive from './UIContext/isActive.test';
+import focusControllerTest from './UIContext/FocusControllerNullandundefined/FocusControllerTest.test';
 
 
 export default function testsuite() {
@@ -199,4 +200,5 @@ export default function testsuite() {
     FocusScopeId19();
     // FocusScopeId16();
     // FocusScopeId4();
+    focusControllerTest();
 }

@@ -25,7 +25,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextInputMaxLinesTest() {
   describe('TextInputMaxLinesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputMaxLinesTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textInput.undefined.static", "EntryAbility")

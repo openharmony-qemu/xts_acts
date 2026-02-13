@@ -2444,7 +2444,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2497,7 +2497,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2550,7 +2550,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2590,7 +2590,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2630,7 +2630,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');

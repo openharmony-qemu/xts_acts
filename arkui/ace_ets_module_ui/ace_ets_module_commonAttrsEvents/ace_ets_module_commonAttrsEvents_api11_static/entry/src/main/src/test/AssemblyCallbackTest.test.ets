@@ -32,7 +32,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function assemblyCallbackTest() {
   describe('assemblyCallbackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
       console.info("assemblyCallbackTest beforeAll start");
     });

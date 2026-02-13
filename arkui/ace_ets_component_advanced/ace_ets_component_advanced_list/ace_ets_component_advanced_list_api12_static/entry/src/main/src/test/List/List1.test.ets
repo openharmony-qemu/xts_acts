@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ListTest() {
   describe('ListTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.example.myapplication.static", "EntryAbility")

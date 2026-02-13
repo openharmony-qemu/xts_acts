@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeight_flexGrow() {
   describe('layoutWeight_flexGrow', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeight_flexGrow beforeEach start");
 
 

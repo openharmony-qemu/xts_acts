@@ -20,7 +20,7 @@ import Utils from './Util.test';
 export default function Int8ArrayTest() {
   describe('Int8ArrayTest', (): void => {
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     let value: string;

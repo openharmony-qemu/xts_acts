@@ -70,6 +70,8 @@ export default function ActsRequestDialogStaticTest() {
       console.log('ACTS_requestDialog_static_0100====<begin');
       let id: int;
       let resultCode: dialogRequest.ResultCode | undefined;
+      expect(0).assertEqual(dialogRequest.ResultCode.RESULT_OK);
+      expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
           if (err) {
@@ -99,6 +101,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_CANCEL'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0100 request end + result:" + JSON.stringify(result));
@@ -162,6 +165,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_OK'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0200 request end + result:" + JSON.stringify(result));
@@ -259,6 +263,22 @@ export default function ActsRequestDialogStaticTest() {
         done();
       }, CASE_TIMEOUT);
       console.log('Start ACTS_requestDialog_static_0500 timer id : ' + id);
+    })
+
+    /**
+     * @tc.name   ACTS_GetProcessInfo_static_0200
+     * @tc.number ACTS_GetProcessInfo_static_0200
+     * @tc.desc   reguest dialog service 16000010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GetProcessInfo_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, 'ACTS_GetProcessInfo_static_0200====<begin');
+      expect(typeof (processInfo)).assertEqual("object");
+      expect(typeof (processInfo.processName)).assertEqual("string");
+      expect(typeof (processInfo.pid)).assertEqual("int");
+      done()
     })
   })
 }

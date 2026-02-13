@@ -40,7 +40,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function VideoReset13() {
   describe('VideoReset13', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")

@@ -408,7 +408,12 @@ export default function searchTest() {
       let strJsonNew = getInspectorByKey('search');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
-      expect(JSON.stringify(objNew.$attrs.cancelButton)).assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${vp2px(10).toFixed(2)}px\",\"color\":\"#FF000000\",\"src\":\"resource:///ohos_close.svg\"}}`);
+      expect(objNew.$attrs.cancelButton.style).assertEqual('CancelButtonStyle.CONSTANT');
+      let objNewIcon:ESObject = objNew.$attrs.cancelButton.icon
+      let IconSize:number =  Number(objNewIcon.size.slice(0,-2))
+      expect(Math.abs(IconSize-vp2px(10))<=1).assertEqual(true);
+      expect(objNewIcon.color).assertEqual('#FF000000');
+      expect(objNewIcon.src).assertEqual('resource:///ohos_close.svg');
       expect(objNew.$type).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');

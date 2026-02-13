@@ -94,6 +94,7 @@
         "MainAbility/pages/FocusView/defaultFocus",
         "MainAbility/pages/nextFocus/nextFocus",
         "MainAbility/pages/nextFocus2/nextFocus2",
-        "MainAbility/pages/Focus/requestFocus"
+        "MainAbility/pages/Focus/requestFocus",
+        "MainAbility/pages/UIContext/FocusControllerNullandundefined/UIContextFocusControllerTestPage"
     ]
 }

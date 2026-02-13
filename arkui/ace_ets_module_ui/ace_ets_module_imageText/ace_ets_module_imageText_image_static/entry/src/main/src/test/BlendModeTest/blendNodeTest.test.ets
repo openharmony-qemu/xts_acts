@@ -37,7 +37,7 @@ const SLEEP_TIME = 1000;
 
 export default function blendNodeTest() {
   describe('blendNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("blendNodeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

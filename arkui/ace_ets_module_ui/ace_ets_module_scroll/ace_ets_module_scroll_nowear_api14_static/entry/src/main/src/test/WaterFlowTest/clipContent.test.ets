@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function clipContent() {
   describe('clipContent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clipContent beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");

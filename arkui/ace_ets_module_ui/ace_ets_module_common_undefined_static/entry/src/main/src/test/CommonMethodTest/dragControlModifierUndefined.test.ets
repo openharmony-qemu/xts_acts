@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function dragControlModifierUndefined() {
   describe('dragControlModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dragControlModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

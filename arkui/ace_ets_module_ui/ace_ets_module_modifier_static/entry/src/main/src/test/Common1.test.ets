@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 
 export default function common1Jsunit() {
   describe('common_part1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

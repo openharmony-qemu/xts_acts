@@ -1664,7 +1664,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledTrue_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledTrueTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let options: window.SubWindowOptions = {
             title: 'subWindow',
@@ -1725,7 +1725,7 @@ export default function windowZindexTest() {
     it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0100';
       let windowClass = windowStage.getMainWindowSync()
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let enabled = false;
           let promise = windowClass.setResizeByDragEnabled(enabled);
@@ -1775,7 +1775,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         let options: window.SubWindowOptions = {
           title: 'subWindow',
           decorEnabled: true

@@ -116,6 +116,13 @@
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuation",
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
-        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier"
+        "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined02",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined03",
+        "MainAbility/pages/TextInput/TextInputTypeParam",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined02",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined03"
     ]
 }

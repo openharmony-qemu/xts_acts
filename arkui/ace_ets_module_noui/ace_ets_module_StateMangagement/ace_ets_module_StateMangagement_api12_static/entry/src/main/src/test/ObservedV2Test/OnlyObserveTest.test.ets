@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function OnlyObserveTest() {
   describe('OnlyObserveTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnlyObserveTest beforeEach start");
 
 

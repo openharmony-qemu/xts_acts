@@ -25,7 +25,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 export default function subHeaderIconGroup() {
   describe('subHeaderIconGroup', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("subHeaderIconGroup beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

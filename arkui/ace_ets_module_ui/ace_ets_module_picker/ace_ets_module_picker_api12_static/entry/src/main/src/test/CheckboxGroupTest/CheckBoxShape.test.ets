@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CheckBoxShape() {
   describe('CheckBoxShape', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CheckBoxShape beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

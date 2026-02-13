@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_fixedParentChildLayoutWeight() {
   describe('FlexWrapReverse_fixedParentChildLayoutWeight', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentChildLayoutWeight beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
