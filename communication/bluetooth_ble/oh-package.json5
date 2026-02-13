@@ -16,6 +16,7 @@
   "license": "",
   "devDependencies": {
     "@ohos/hypium": "1.0.6"
+    
   },
   "author": "",
   "modelVersion": "6.0.0",
