@@ -65,7 +65,7 @@ struct Index {
           .onClick(() => {
             this.fontFeatureFlag = !this.fontFeatureFlag
           }).margin({ top: 5 } as Margin)
-        Button('切换 fontFamily → ' + (this.fontFamilyFlag ? 'undefined' : 'iconFont'))
+        Button('切换 fontFamily → ' + (this.fontFamilyFlag ? 'undefined' : 'sans-serif'))
           .id('fontFamily_Btn')
           .height('5%')
           .onClick(() => {
@@ -126,7 +126,7 @@ struct Index {
           .dateTimeOptions(this.dateTimeOptionsFlag ?
             undefined : { hour: '2-digit' } as DateTimeOptions)
           .fontFeature(this.fontFeatureFlag ? undefined : '\"sinf\" on')
-          .fontFamily(this.fontFamilyFlag ? undefined : 'iconFont')
+          .fontFamily(this.fontFamilyFlag ? undefined : 'sans-serif')
           .fontWeight(this.fontWeightFlag ? undefined : FontWeight.Bold)
           .fontSize(this.fontSizeFlag ? undefined : 50.0)
           .fontColor(this.fontColorFlag ? undefined : Color.Red)
