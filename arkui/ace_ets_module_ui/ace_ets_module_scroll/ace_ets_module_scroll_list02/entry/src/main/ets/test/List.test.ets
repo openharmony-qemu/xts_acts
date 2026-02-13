@@ -67,6 +67,8 @@ import listVisibleContent from './List/listVisibleContent.test';
 import ListFlingCallback from './List/ListFlingCallback.test'
 import ListScrollEdgeCallback from './List/ListScrollEdgeCallback.test';
 import listFrictionRes from './List/listFrictionRes.test';
+import listItemNullUndefinedTest from './ListItem/listItemNullUndefined.test'
+import listItemGroupNullUndefinedTest from './ListItemGroup/listItemGroupNullUndefined.test'
 
 export default function testsuite() {
   listJsunit()
@@ -124,4 +126,6 @@ export default function testsuite() {
   ListFlingCallback()
   ListScrollEdgeCallback()
   listFrictionRes()
+  listItemNullUndefinedTest()
+  listItemGroupNullUndefinedTest()
 }
