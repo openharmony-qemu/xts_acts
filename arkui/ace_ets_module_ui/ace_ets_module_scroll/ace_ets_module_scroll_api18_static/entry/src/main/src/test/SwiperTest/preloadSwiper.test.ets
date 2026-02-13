@@ -100,7 +100,7 @@ it('preloadSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info("[preloadSwiper_static_0100] content2: " +
       JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
-        .assertEqual('preloadItems: "401"');
+        .assertEqual('preloadItems: 401');
 
       let btn3 = await driver.findComponent(ON.id('preloadItems_swiper_1004')) as Component;
       await (btn3.click() as Promise<void>);
