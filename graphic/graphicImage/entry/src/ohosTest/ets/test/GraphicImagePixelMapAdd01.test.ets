@@ -20,8 +20,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 // 统一的日志标识前缀
 const LOG_PREFIX: string = '[www data GraphicImagePixelMapAdd_01]';
 
-export default function GraphicImagePixelMapAdd_01() {
-  describe('GraphicImagePixelMapAdd_01', ()=> {
+export default function GraphicImagePixelMapAdd01() {
+  describe('GraphicImagePixelMapAdd01', ()=> {
     beforeAll(async (done:Function)=> {
       console.info("imagePixelMapTest beforeEach start");
       done();
