@@ -18,7 +18,7 @@ import { text, drawing, common2D } from "@kit.ArkGraphics2D"
 const LOG_PREFIX = 'www data GraphicTextAdd01Test';
 
 export default function GraphicTextAdd01Test() {
-  describe('GraphicTextAdd01Test.test', () => {
+  describe('GraphicTextAdd01Test', () => {
 
     /**
      * @tc.name   fontCollectionLoadFontPathNull401
@@ -298,11 +298,10 @@ export default function GraphicTextAdd01Test() {
 
         fontCollection.loadFontSyncWithCheck(fontName, fontPath, null);
         console.info('www data loadFontSyncWithCheckIndexNull ', 1111);
-        expect(true).assertTrue();
         fontCollection.unloadFontSync(fontName);
       } catch (err) {
         console.info('www data loadFontSyncWithCheckIndexNull ', JSON.stringify(err));
-        expect(true).assertTrue();
+        expect(err.code).assertEqual(25900002);
       }
     });
 
@@ -322,11 +321,10 @@ export default function GraphicTextAdd01Test() {
 
         fontCollection.loadFontSyncWithCheck(fontName, fontPath, undefined);
         console.info('www data loadFontSyncWithCheckIndexUndefined ', 1111);
-        expect(true).assertTrue();
         fontCollection.unloadFontSync(fontName);
       } catch (err) {
         console.info('www data loadFontSyncWithCheckIndexUndefined ', JSON.stringify(err));
-        expect(true).assertTrue();
+        expect(err.code).assertEqual(25900002);
       }
     });
 
@@ -603,7 +601,7 @@ export default function GraphicTextAdd01Test() {
       });
 
     /**
-     * @tc.name   loadFontWithCheckIndexNull25900001
+     * @tc.name   loadFontWithCheckIndexNull
      * @tc.number fontCollectionLoadFontWithCheckTest_019
      * @tc.desc   FontCollection loadFontWithCheck index parameter null test 25900001.
      * @tc.type   FUNCTION
@@ -618,16 +616,15 @@ export default function GraphicTextAdd01Test() {
 
         await fontCollection.loadFontWithCheck(fontName, fontPath, null);
         console.info('www data loadFontWithCheckIndexNull ', 1111);
-        expect(true).assertTrue();
         fontCollection.unloadFontSync(fontName);
       } catch (err) {
         console.info('www data loadFontWithCheckIndexNull ', JSON.stringify(err));
-        expect(true).assertTrue();
+        expect(err.code).assertEqual(25900002);
       }
     });
 
     /**
-     * @tc.name   loadFontWithCheckIndexUndefined25900001
+     * @tc.name   loadFontWithCheckIndexUndefined
      * @tc.number fontCollectionLoadFontWithCheckTest_020
      * @tc.desc   FontCollection loadFontWithCheck index parameter undefined test 25900001.
      * @tc.type   FUNCTION
@@ -642,11 +639,10 @@ export default function GraphicTextAdd01Test() {
 
         await fontCollection.loadFontWithCheck(fontName, fontPath, undefined);
         console.info('www data loadFontWithCheckIndexUndefined ', 1111);
-        expect(true).assertTrue();
         fontCollection.unloadFontSync(fontName);
       } catch (err) {
         console.info('www data loadFontWithCheckIndexUndefined ', JSON.stringify(err));
-        expect(true).assertTrue();
+        expect(err.code).assertEqual(25900002);
       }
     });
 
@@ -2075,7 +2071,6 @@ export default function GraphicTextAdd01Test() {
           done();
         }
       });
-
 
   })
 }
