@@ -25,7 +25,6 @@ import {
   AttributeModifier,
   Image,
   $r,
-  Row,
   OutlineStyle,
   Color
 } from '@ohos.arkui.component'
@@ -76,18 +75,15 @@ struct OutlineModifier {
   @State modifier: MyOutlineModifier = new MyOutlineModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('outlineModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('outlineModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(150)
+        .height(150)
+        .id('outlineModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('outlineModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }

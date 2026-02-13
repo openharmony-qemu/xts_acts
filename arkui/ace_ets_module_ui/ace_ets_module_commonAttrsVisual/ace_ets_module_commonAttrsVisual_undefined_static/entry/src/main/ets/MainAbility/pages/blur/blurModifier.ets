@@ -50,7 +50,8 @@ struct BlurModifierPage {
   build() {
     Column({ space: 10 } as ColumnOptions) {
       Image($r('app.media.startIcon'))
-        .width('100%')
+        .width(150)
+        .height(150)
         .id('blurModifierTest')
         .attributeModifier(this.modifier)
 
@@ -60,7 +61,5 @@ struct BlurModifierPage {
           this.modifier.isChange = !this.modifier.isChange
         })
     }
-    .width('100%')
-    .height('100%')
   }
 }

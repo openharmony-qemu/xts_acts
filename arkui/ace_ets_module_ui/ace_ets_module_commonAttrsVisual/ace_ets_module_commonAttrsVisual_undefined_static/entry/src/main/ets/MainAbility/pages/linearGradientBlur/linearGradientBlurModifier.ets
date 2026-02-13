@@ -24,7 +24,6 @@ import {
   AttributeModifier,
   Image,
   $r,
-  Row,
   GradientDirection
 } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
@@ -55,18 +54,15 @@ struct LinearGradientBlurModifier {
   @State modifier: MyLinearGradientBlurModifier = new MyLinearGradientBlurModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('linearGradientBlurModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('linearGradientBlurModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(150)
+        .height(150)
+        .id('linearGradientBlurModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('linearGradientBlurModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }

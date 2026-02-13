@@ -20,7 +20,6 @@ import {
   Button,
   ClickEvent,
   CommonAttribute,
-  Row,
   AttributeModifier,
   Image,
   $r
@@ -47,18 +46,15 @@ struct InvertModifier {
   @State modifier: MyInvertModifier = new MyInvertModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('invertModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('invertModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(150)
+        .height(150)
+        .id('invertModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('invertModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }
