@@ -24,8 +24,8 @@ const TAG = 'avMusicTemplateThrowsErrorTest';
 
 export default function avMusicTemplateThrowsErrorTest() {
   describe('ActsAVMusicTemplateThrowsErrorTest', () => {
-    let template: avMusicTemplate.AVMusicTemplate;
-    let controller: avMusicTemplate.AVMusicTemplateController;
+    let template: avMusicTemplate.AVMusicTemplate | null = null;
+    let controller: avMusicTemplate.AVMusicTemplateController | null = null;
 
     beforeAll(async () => {
       CommonUtils.logInfo(TAG, `Start testing avMusicTemplate interfaces`);
