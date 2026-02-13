@@ -28,12 +28,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
     
     /**
-     * @tc.name: opacityNullParam
-     * @tc.number: PixelMapAdditionalCoverageTest_001
-     * @tc.desc: PixelMap opacity with null parameter
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name opacityNullParam
+     * @tc.number PixelMapAdditionalCoverageTest_001
+     * @tc.desc PixelMap opacity with null parameter
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('opacityNullParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -56,24 +56,24 @@ export default function GraphicImagePixelMapAdd_01() {
             done();
           } else {
             console.error(`${LOG_PREFIX} opacityNullParam: Unexpectedly succeeded with null parameter`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           }
         });
       } catch (error) {
         console.info(`${LOG_PREFIX} opacityNullParam: Caught exception as expected: ${error}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: opacityValidParam
-     * @tc.number: PixelMapAdditionalCoverageTest_002
-     * @tc.desc: PixelMap opacity with valid parameter
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name opacityValidParam
+     * @tc.number PixelMapAdditionalCoverageTest_002
+     * @tc.desc PixelMap opacity with valid parameter
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('opacityValidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -92,18 +92,18 @@ export default function GraphicImagePixelMapAdd_01() {
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityValidParam failed: code ${error.code}, message ${error.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: scaleValidParamNone
-     * @tc.number: PixelMapAdditionalCoverageTest_003
-     * @tc.desc: PixelMap scale with AntiAliasingLevel.NONE
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name scaleValidParamNone
+     * @tc.number PixelMapAdditionalCoverageTest_003
+     * @tc.desc PixelMap scale with AntiAliasingLevel.NONE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('scaleValidParamNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -122,18 +122,18 @@ export default function GraphicImagePixelMapAdd_01() {
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleValidParamNone failed: code ${error.code}, message ${error.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: scaleValidParamHigh
-     * @tc.number: PixelMapAdditionalCoverageTest_004
-     * @tc.desc: PixelMap scale with AntiAliasingLevel.HIGH
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name scaleValidParamHigh
+     * @tc.number PixelMapAdditionalCoverageTest_004
+     * @tc.desc PixelMap scale with AntiAliasingLevel.HIGH
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('scaleValidParamHigh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -152,18 +152,18 @@ export default function GraphicImagePixelMapAdd_01() {
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} scaleValidParamHigh failed: code ${error.code}, message ${error.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: flipHorizontalTrue
-     * @tc.number: PixelMapAdditionalCoverageTest_005
-     * @tc.desc: PixelMap flip with horizontal=true, vertical=true
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name flipHorizontalTrue
+     * @tc.number PixelMapAdditionalCoverageTest_005
+     * @tc.desc PixelMap flip with horizontal=true, vertical=true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('flipHorizontalTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -180,7 +180,7 @@ export default function GraphicImagePixelMapAdd_01() {
         pixelMap.flip(true, true, (error: BusinessError) => {
           if (error) {
             console.error(`${LOG_PREFIX} flipHorizontalTrue failed: code ${error.code}, message ${error.message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flipHorizontalTrue: Succeeded with horizontal=true, vertical=true.`);
             done();
@@ -188,18 +188,18 @@ export default function GraphicImagePixelMapAdd_01() {
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipHorizontalTrue failed: ${error}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: flipHorizontalFalse
-     * @tc.number: PixelMapAdditionalCoverageTest_006
-     * @tc.desc: PixelMap flip with horizontal=true, vertical=false
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name flipHorizontalFalse
+     * @tc.number PixelMapAdditionalCoverageTest_006
+     * @tc.desc PixelMap flip with horizontal=true, vertical=false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('flipHorizontalFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -216,7 +216,7 @@ export default function GraphicImagePixelMapAdd_01() {
         pixelMap.flip(true, false, (error: BusinessError) => {
           if (error) {
             console.error(`${LOG_PREFIX} flipHorizontalFalse failed: code ${error.code}, message ${error.message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} flipHorizontalFalse: Succeeded with horizontal=true, vertical=false.`);
             done();
@@ -224,18 +224,18 @@ export default function GraphicImagePixelMapAdd_01() {
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipHorizontalFalse failed: ${error}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name: flipHorizontalFalseVerticalTrue
-     * @tc.number: PixelMapAdditionalCoverageTest_007
-     * @tc.desc: PixelMap flip with horizontal=false, vertical=true
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name flipHorizontalFalseVerticalTrue
+     * @tc.number PixelMapAdditionalCoverageTest_007
+     * @tc.desc PixelMap flip with horizontal=false, vertical=true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('flipHorizontalFalseVerticalTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -257,7 +257,7 @@ export default function GraphicImagePixelMapAdd_01() {
               console.error(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalTrue failed: code ${error.code}, message ${error.message}`
               );
-              expect(false).assertTrue();
+              expect().assertFail();
             } else {
               console.info(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalTrue: Succeeded with horizontal=false, vertical=true.`
@@ -267,18 +267,18 @@ export default function GraphicImagePixelMapAdd_01() {
           });
         } catch (error) {
           console.error(`${LOG_PREFIX} flipHorizontalFalseVerticalTrue failed: ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
     });
 
     /**
-     * @tc.name: flipHorizontalFalseVerticalFalse
-     * @tc.number: PixelMapAdditionalCoverageTest_008
-     * @tc.desc: PixelMap flip with horizontal=false, vertical=false
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name flipHorizontalFalseVerticalFalse
+     * @tc.number PixelMapAdditionalCoverageTest_008
+     * @tc.desc PixelMap flip with horizontal=false, vertical=false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('flipHorizontalFalseVerticalFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -300,7 +300,7 @@ export default function GraphicImagePixelMapAdd_01() {
               console.error(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalFalse failed: code ${error.code}, message ${error.message}`
               );
-              expect(false).assertTrue();
+              expect().assertFail();
             } else {
               console.info(
                 `${LOG_PREFIX} flipHorizontalFalseVerticalFalse: Succeeded with horizontal=false, vertical=false.`
@@ -310,19 +310,19 @@ export default function GraphicImagePixelMapAdd_01() {
           });
         } catch (error) {
           console.error(`${LOG_PREFIX} flipHorizontalFalseVerticalFalse failed: ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
     });
     
 
     /**
-     * @tc.name: createPixelMap001
-     * @tc.number: PixelMapCreateTest_001
-     * @tc.desc: createPixelMap with valid parameters
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMap001
+     * @tc.number PixelMapCreateTest_001
+     * @tc.desc createPixelMap with valid parameters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -344,12 +344,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapNull001
-     * @tc.number: PixelMapCreateTest_002
-     * @tc.desc: createPixelMap with null buffer (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapNull001
+     * @tc.number PixelMapCreateTest_002
+     * @tc.desc createPixelMap with null buffer (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -370,12 +370,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapNull002
-     * @tc.number: PixelMapCreateTest_003
-     * @tc.desc: createPixelMap with null options (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapNull002
+     * @tc.number PixelMapCreateTest_003
+     * @tc.desc createPixelMap with null options (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapNull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -392,12 +392,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapUndefined001
-     * @tc.number: PixelMapCreateTest_004
-     * @tc.desc: createPixelMap with undefined buffer (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapUndefined001
+     * @tc.number PixelMapCreateTest_004
+     * @tc.desc createPixelMap with undefined buffer (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -420,12 +420,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapUndefined002
-     * @tc.number: PixelMapCreateTest_005
-     * @tc.desc: createPixelMap with undefined options (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapUndefined002
+     * @tc.number PixelMapCreateTest_005
+     * @tc.desc createPixelMap with undefined options (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapUndefined002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -444,12 +444,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapInvalidSize001
-     * @tc.number: PixelMapCreateTest_006
-     * @tc.desc: createPixelMap with invalid size (width: 0)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapInvalidSize001
+     * @tc.number PixelMapCreateTest_006
+     * @tc.desc createPixelMap with invalid size (width: 0)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapInvalidSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -471,12 +471,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapInvalidSize002
-     * @tc.number: PixelMapCreateTest_007
-     * @tc.desc: createPixelMap with invalid size (height: 0)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapInvalidSize002
+     * @tc.number PixelMapCreateTest_007
+     * @tc.desc createPixelMap with invalid size (height: 0)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapInvalidSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -498,12 +498,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapInvalidSize003
-     * @tc.number: PixelMapCreateTest_008
-     * @tc.desc: createPixelMap with invalid size (negative width)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapInvalidSize003
+     * @tc.number PixelMapCreateTest_008
+     * @tc.desc createPixelMap with invalid size (negative width)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapInvalidSize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -527,12 +527,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapInvalidSize004
-     * @tc.number: PixelMapCreateTest_009
-     * @tc.desc: createPixelMap with invalid size (negative height)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapInvalidSize004
+     * @tc.number PixelMapCreateTest_009
+     * @tc.desc createPixelMap with invalid size (negative height)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapInvalidSize004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -556,12 +556,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapDifferentFormats001
-     * @tc.number: PixelMapCreateTest_010
-     * @tc.desc: createPixelMap with different pixel formats
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapDifferentFormats001
+     * @tc.number PixelMapCreateTest_010
+     * @tc.desc createPixelMap with different pixel formats
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapDifferentFormats001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -607,12 +607,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapAsync001
-     * @tc.number: PixelMapCreateTest_011
-     * @tc.desc: createPixelMap with async callback - valid parameters
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapAsync001
+     * @tc.number PixelMapCreateTest_011
+     * @tc.desc createPixelMap with async callback - valid parameters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapAsync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -642,12 +642,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapPromise001
-     * @tc.number: PixelMapCreateTest_013
-     * @tc.desc: createPixelMap with Promise - valid parameters
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapPromise001
+     * @tc.number PixelMapCreateTest_013
+     * @tc.desc createPixelMap with Promise - valid parameters
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -670,12 +670,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapPromiseNull001
-     * @tc.number: PixelMapCreateTest_014
-     * @tc.desc: createPixelMap with Promise - null buffer (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapPromiseNull001
+     * @tc.number PixelMapCreateTest_014
+     * @tc.desc createPixelMap with Promise - null buffer (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapPromiseNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -701,12 +701,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapARGB8888001
-     * @tc.number: PixelMapCreateAdditionalTest_001
-     * @tc.desc: createPixelMap with ARGB_8888 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapARGB8888001
+     * @tc.number PixelMapCreateAdditionalTest_001
+     * @tc.desc createPixelMap with ARGB_8888 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapARGB8888001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -734,12 +734,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapRGBA101010201
-     * @tc.number: PixelMapCreateAdditionalTest_002
-     * @tc.desc: createPixelMap with RGBA_1010102 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapRGBA101010201
+     * @tc.number PixelMapCreateAdditionalTest_002
+     * @tc.desc createPixelMap with RGBA_1010102 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapRGBA101010201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -769,12 +769,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapYCBCRP01001
-     * @tc.number: PixelMapCreateAdditionalTest_003
-     * @tc.desc: createPixelMap with YCBCR_P010 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapYCBCRP01001
+     * @tc.number PixelMapCreateAdditionalTest_003
+     * @tc.desc createPixelMap with YCBCR_P010 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapYCBCRP01001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -802,12 +802,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapYCRCBP01001
-     * @tc.number: PixelMapCreateAdditionalTest_004
-     * @tc.desc: createPixelMap with YCRCB_P010 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapYCRCBP01001
+     * @tc.number PixelMapCreateAdditionalTest_004
+     * @tc.desc createPixelMap with YCRCB_P010 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapYCRCBP01001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -835,12 +835,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapASTC4x401
-     * @tc.number: PixelMapCreateAdditionalTest_005
-     * @tc.desc: createPixelMap with ASTC_4x4 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapASTC4x401
+     * @tc.number PixelMapCreateAdditionalTest_005
+     * @tc.desc createPixelMap with ASTC_4x4 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapASTC4x401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -868,12 +868,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapPREMUL001
-     * @tc.number: PixelMapCreateAdditionalTest_006
-     * @tc.desc: createPixelMap with PREMUL alphaType test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapPREMUL001
+     * @tc.number PixelMapCreateAdditionalTest_006
+     * @tc.desc createPixelMap with PREMUL alphaType test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapPREMUL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -902,12 +902,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapFIT_TARGET_SIZE001
-     * @tc.number: PixelMapCreateAdditionalTest_007
-     * @tc.desc: createPixelMap with FIT_TARGET_SIZE scaleMode test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapFIT_TARGET_SIZE001
+     * @tc.number PixelMapCreateAdditionalTest_007
+     * @tc.desc createPixelMap with FIT_TARGET_SIZE scaleMode test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapFIT_TARGET_SIZE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -940,12 +940,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapNullBuffer001
-     * @tc.number: PixelMapCreateAdditionalTest_008
-     * @tc.desc: createPixelMap with null colors buffer (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapNullBuffer001
+     * @tc.number PixelMapCreateAdditionalTest_008
+     * @tc.desc createPixelMap with null colors buffer (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapNullBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -971,12 +971,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapUndefinedBuffer001
-     * @tc.number: PixelMapCreateAdditionalTest_009
-     * @tc.desc: createPixelMap with undefined colors buffer (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapUndefinedBuffer001
+     * @tc.number PixelMapCreateAdditionalTest_009
+     * @tc.desc createPixelMap with undefined colors buffer (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapUndefinedBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1001,12 +1001,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapNullOptions001
-     * @tc.number: PixelMapCreateAdditionalTest_010
-     * @tc.desc: createPixelMap with null options (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapNullOptions001
+     * @tc.number PixelMapCreateAdditionalTest_010
+     * @tc.desc createPixelMap with null options (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapNullOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -1026,12 +1026,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapUndefinedOptions001
-     * @tc.number: PixelMapCreateAdditionalTest_011
-     * @tc.desc: createPixelMap with undefined options (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapUndefinedOptions001
+     * @tc.number PixelMapCreateAdditionalTest_011
+     * @tc.desc createPixelMap with undefined options (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapUndefinedOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1052,12 +1052,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapEditableFalse001
-     * @tc.number: PixelMapCreateAdditionalTest_012
-     * @tc.desc: createPixelMap with editable false test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapEditableFalse001
+     * @tc.number PixelMapCreateAdditionalTest_012
+     * @tc.desc createPixelMap with editable false test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapEditableFalse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1085,12 +1085,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapCallbackARGB8888001
-     * @tc.number: PixelMapCreateAdditionalTest_013
-     * @tc.desc: createPixelMap callback with ARGB_8888 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapCallbackARGB8888001
+     * @tc.number PixelMapCreateAdditionalTest_013
+     * @tc.desc createPixelMap callback with ARGB_8888 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapCallbackARGB8888001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1132,12 +1132,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapCallbackPREMUL001
-     * @tc.number: PixelMapCreateAdditionalTest_014
-     * @tc.desc: createPixelMap callback with PREMUL alphaType test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapCallbackPREMUL001
+     * @tc.number PixelMapCreateAdditionalTest_014
+     * @tc.desc createPixelMap callback with PREMUL alphaType test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapCallbackPREMUL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1180,12 +1180,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapCallbackFIT_TARGET_SIZE001
-     * @tc.number: PixelMapCreateAdditionalTest_015
-     * @tc.desc: createPixelMap callback with FIT_TARGET_SIZE scaleMode test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapCallbackFIT_TARGET_SIZE001
+     * @tc.number PixelMapCreateAdditionalTest_015
+     * @tc.desc createPixelMap callback with FIT_TARGET_SIZE scaleMode test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapCallbackFIT_TARGET_SIZE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1229,12 +1229,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createScaledPixelMap001
-     * @tc.number: PixelMapCreateScaledPixelMapTest_001
-     * @tc.desc: PixelMap createScaledPixelMap with scale factor 1.0
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createScaledPixelMap001
+     * @tc.number PixelMapCreateScaledPixelMapTest_001
+     * @tc.desc PixelMap createScaledPixelMap with scale factor 1.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createScaledPixelMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1289,12 +1289,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createScaledPixelMap002
-     * @tc.number: PixelMapCreateScaledPixelMapTest_002
-     * @tc.desc: PixelMap createScaledPixelMap with scale factor 2.0
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createScaledPixelMap002
+     * @tc.number PixelMapCreateScaledPixelMapTest_002
+     * @tc.desc PixelMap createScaledPixelMap with scale factor 2.0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createScaledPixelMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1350,12 +1350,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createScaledPixelMap003
-     * @tc.number: PixelMapCreateScaledPixelMapTest_003
-     * @tc.desc: PixelMap createScaledPixelMap with scale factor 0.5
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createScaledPixelMap003
+     * @tc.number PixelMapCreateScaledPixelMapTest_003
+     * @tc.desc PixelMap createScaledPixelMap with scale factor 0.5
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createScaledPixelMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1411,12 +1411,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createScaledPixelMapInvalid001
-     * @tc.number: PixelMapCreateScaledPixelMapTest_004
-     * @tc.desc: PixelMap createScaledPixelMap with negative scale (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createScaledPixelMapInvalid001
+     * @tc.number PixelMapCreateScaledPixelMapTest_004
+     * @tc.desc PixelMap createScaledPixelMap with negative scale (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createScaledPixelMapInvalid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
       async (done: Function) => {
@@ -1458,12 +1458,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createScaledPixelMapInvalid002
-     * @tc.number: PixelMapCreateScaledPixelMapTest_005
-     * @tc.desc: PixelMap createScaledPixelMap with zero scale (should fail)
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createScaledPixelMapInvalid002
+     * @tc.number PixelMapCreateScaledPixelMapTest_005
+     * @tc.desc PixelMap createScaledPixelMap with zero scale (should fail)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createScaledPixelMapInvalid002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1505,12 +1505,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncARGB8888001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_001
-     * @tc.desc: createPixelMapSync with ARGB_8888 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncARGB8888001
+     * @tc.number PixelMapCreateSyncAdditionalTest_001
+     * @tc.desc createPixelMapSync with ARGB_8888 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncARGB8888001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1539,12 +1539,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncRGBA101010201
-     * @tc.number: PixelMapCreateSyncAdditionalTest_002
-     * @tc.desc: createPixelMapSync with RGBA_1010102 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncRGBA101010201
+     * @tc.number PixelMapCreateSyncAdditionalTest_002
+     * @tc.desc createPixelMapSync with RGBA_1010102 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncRGBA101010201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1572,12 +1572,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncYCBCRP01001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_003
-     * @tc.desc: createPixelMapSync with YCBCR_P010 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncYCBCRP01001
+     * @tc.number PixelMapCreateSyncAdditionalTest_003
+     * @tc.desc createPixelMapSync with YCBCR_P010 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncYCBCRP01001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1602,12 +1602,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncYCRCBP01001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_004
-     * @tc.desc: createPixelMapSync with YCRCB_P010 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncYCRCBP01001
+     * @tc.number PixelMapCreateSyncAdditionalTest_004
+     * @tc.desc createPixelMapSync with YCRCB_P010 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncYCRCBP01001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1632,12 +1632,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncASTC4x401
-     * @tc.number: PixelMapCreateSyncAdditionalTest_005
-     * @tc.desc: createPixelMapSync with ASTC_4x4 pixelFormat test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncASTC4x401
+     * @tc.number PixelMapCreateSyncAdditionalTest_005
+     * @tc.desc createPixelMapSync with ASTC_4x4 pixelFormat test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncASTC4x401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1666,12 +1666,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncPREMUL001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_006
-     * @tc.desc: createPixelMapSync with PREMUL alphaType test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncPREMUL001
+     * @tc.number PixelMapCreateSyncAdditionalTest_006
+     * @tc.desc createPixelMapSync with PREMUL alphaType test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncPREMUL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1702,12 +1702,12 @@ export default function GraphicImagePixelMapAdd_01() {
     });
 
     /**
-     * @tc.name: createPixelMapSyncFIT_TARGET_SIZE001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_007
-     * @tc.desc: createPixelMapSync with FIT_TARGET_SIZE scaleMode test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncFIT_TARGET_SIZE001
+     * @tc.number PixelMapCreateSyncAdditionalTest_007
+     * @tc.desc createPixelMapSync with FIT_TARGET_SIZE scaleMode test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncFIT_TARGET_SIZE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1742,12 +1742,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncNullBuffer001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_008
-     * @tc.desc: createPixelMapSync with null colors buffer (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapSyncNullBuffer001
+     * @tc.number PixelMapCreateSyncAdditionalTest_008
+     * @tc.desc createPixelMapSync with null colors buffer (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapSyncNullBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1773,12 +1773,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncUndefinedBuffer001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_009
-     * @tc.desc: createPixelMapSync with undefined colors buffer (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapSyncUndefinedBuffer001
+     * @tc.number PixelMapCreateSyncAdditionalTest_009
+     * @tc.desc createPixelMapSync with undefined colors buffer (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapSyncUndefinedBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1805,12 +1805,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncNullOptions001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_010
-     * @tc.desc: createPixelMapSync with null options (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapSyncNullOptions001
+     * @tc.number PixelMapCreateSyncAdditionalTest_010
+     * @tc.desc createPixelMapSync with null options (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapSyncNullOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1832,12 +1832,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncUndefinedOptions001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_011
-     * @tc.desc: createPixelMapSync with undefined options (should fail).
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL2
+     * @tc.name createPixelMapSyncUndefinedOptions001
+     * @tc.number PixelMapCreateSyncAdditionalTest_011
+     * @tc.desc createPixelMapSync with undefined options (should fail).
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
      */
     it('createPixelMapSyncUndefinedOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1860,12 +1860,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncEditableFalse001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_012
-     * @tc.desc: createPixelMapSync with editable false test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncEditableFalse001
+     * @tc.number PixelMapCreateSyncAdditionalTest_012
+     * @tc.desc createPixelMapSync with editable false test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncEditableFalse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1896,12 +1896,12 @@ export default function GraphicImagePixelMapAdd_01() {
     );
 
     /**
-     * @tc.name: createPixelMapSyncNoBuffer001
-     * @tc.number: PixelMapCreateSyncAdditionalTest_013
-     * @tc.desc: createPixelMapSync with only options (no buffer) test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name createPixelMapSyncNoBuffer001
+     * @tc.number PixelMapCreateSyncAdditionalTest_013
+     * @tc.desc createPixelMapSync with only options (no buffer) test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
     it('createPixelMapSyncNoBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
