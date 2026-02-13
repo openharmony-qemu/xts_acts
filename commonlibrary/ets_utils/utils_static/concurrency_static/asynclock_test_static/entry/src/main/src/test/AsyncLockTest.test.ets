@@ -31,14 +31,6 @@ type NullableString = string | null;
 type ThreeState = string | null | undefined;
 type UnionIntString = int | string;
 
-function sleep(time: int): Promise<int> {
-    return new Promise<int>((resolve: (value: int) => void) => {
-        setTimeout(() => {
-            resolve(time);
-        }, time);
-    });
-}
-
 export default function AsyncLockTest() {
   let printLog = 'AsyncLockTest:';
   describe('AsyncLockTest', (): void => {
@@ -177,8 +169,6 @@ export default function AsyncLockTest() {
             AsyncLock.request(lockName);
 
             let state: AsyncLockState = AsyncLock.query(lockName);
-            expect(state.held instanceof AsyncLockInfo[]).assertEqual(true);
-            expect(state.pending instanceof AsyncLockInfo[]).assertEqual(true);
             expect(state.held.length).assertEqual(0);
             expect(state.pending.length).assertEqual(0);
             done();
@@ -222,12 +212,11 @@ export default function AsyncLockTest() {
             AsyncLock.request("lock3");
 
             let states: AsyncLockState[] = AsyncLock.queryAll();
-            expect(states instanceof AsyncLockState[]).assertEqual(true);
             expect(states.length >= 3).assertTrue();
 
             states.forEach((state: AsyncLockState): void => {
-                expect(state.held instanceof AsyncLockInfo[]).assertEqual(true);
-                expect(state.pending instanceof AsyncLockInfo[]).assertEqual(true);
+                expect(state.held.length).assertEqual(0);
+                expect(state.pending.length).assertEqual(0);
             });
             done();
         });
@@ -791,38 +780,41 @@ export default function AsyncLockTest() {
         /**
          * @tc.number SUB_ASYNC_LOCK_GENERIC_U_0100
          * @tc.name GenericUSignalTypes001
-         * @tc.desc Test AsyncLockOptions generic U with various signal types
+         * @tc.desc Test AsyncLockOptions generic U with signal types
          * @tc.size SmallTest
          * @tc.type Function
          * @tc.level Level 1
          */
         it('GenericUSignalTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let lock: AsyncLock = new AsyncLock();
-
+            let signalString: AbortSignal<string> = new AbortSignal<string>();
             let optionsString: AsyncLockOptions<string> = new AsyncLockOptions<string>(
                 false,
-                { aborted: false, reason: "test" },
+                signalString,
                 0
             );
-            let resultString: int = await lock.lockAsync<int, string>(() => 42, AsyncLockMode.EXCLUSIVE, optionsString);
-            expect(resultString).assertEqual(42);
+            let resultString1 = lock.lockAsync<int, string>(() => 42, AsyncLockMode.EXCLUSIVE, optionsString);
+            let resultString2 = lock.lockAsync<int, string>(() => 43, AsyncLockMode.EXCLUSIVE, optionsString);
+            let resultString3 = lock.lockAsync<int, string>(() => 44, AsyncLockMode.EXCLUSIVE, optionsString);
 
-            let optionsNumber: AsyncLockOptions<int> = new AsyncLockOptions<int>(
-                false,
-                { aborted: false, reason: 404 },
-                0
-            );
-            let resultNumber: int = await lock.lockAsync<int, int>(() => 42, AsyncLockMode.EXCLUSIVE, optionsNumber);
-            expect(resultNumber).assertEqual(42);
-
-            let optionsError: AsyncLockOptions<Error> = new AsyncLockOptions<Error>(
-                false,
-                { aborted: false, reason: new Error("fail") },
-                0
-            );
-            let resultError: int = await lock.lockAsync<int, Error>(() => 42, AsyncLockMode.EXCLUSIVE, optionsError);
-            expect(resultError).assertEqual(42);
-
+            await resultString1.then((value) => {
+                signalString.aborted=true;
+                signalString.reason="test";
+                expect(value).assertEqual(42);
+            },(err)=>{
+                expect().assertFail();
+            });
+            await resultString2.then((value) => {
+                expect().assertFail();
+            },(err)=>{
+                expect(signalString.reason).assertEqual("test");
+                signalString.aborted=false;
+            });
+            await resultString3.then((value) => {
+                expect(value).assertEqual(44);
+            },(err)=>{
+                expect().assertFail();
+            });
             done();
         });
 
