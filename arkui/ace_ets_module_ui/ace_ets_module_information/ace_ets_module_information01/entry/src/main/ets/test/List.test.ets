@@ -36,6 +36,7 @@ import GaugeContentModifier from './GaugeTest/GaugeContentModifier.test';
 import PatternLock11Jsunit from './PatternLockTest/PatternLock11Jsunit.test';
 import PatternLockActivateCircleStyle1 from './PatternLockTest/PatternLockActivateCircleStyle1.test';
 import PatternLockJsunit from './PatternLockTest/PatternLockJsunit.test';
+import PatternLockPropertiesNullUndefinedTest from './PatternLockTest/PatternLockPropertiesNullUndefined.test';
 
 import QRCodeApiTest from './QRCodeTest/QRCodeApiTest.test';
 import QRCodeAttrTest from './QRCodeTest/QRCodeAttrTest.test';
@@ -70,6 +71,7 @@ export default function testsuite() {
     PatternLock11Jsunit()
     PatternLockActivateCircleStyle1()
     PatternLockJsunit()
+    PatternLockPropertiesNullUndefinedTest()
     // QRCodeTest
     QRCodeApiTest()
     QRCodeAttrTest()
