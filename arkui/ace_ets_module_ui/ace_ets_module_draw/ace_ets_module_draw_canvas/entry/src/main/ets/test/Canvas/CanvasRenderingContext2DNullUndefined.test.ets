@@ -42,12 +42,12 @@ export default function CanvasRenderingContext2DNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      CanvasRenderingContext2D_fill_test_null_undefined
-     * @tc.number    SUB_ACE_CANVAS_FILL_NULL_UNDEFINED_0100
-     * @tc.desc      Test CanvasRenderingContext2D fill method with null/undefined parameters (path, fillRule)
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   CanvasRenderingContext2D_fill_test_null_undefined
+     * @tc.number SUB_ACE_CANVAS_FILL_NULL_UNDEFINED_0100
+     * @tc.desc   Test CanvasRenderingContext2D fill method with null/undefined parameters (path, fillRule)
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_CANVAS_FILL_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('canvas_canvas2d_nullundefined');
@@ -56,12 +56,12 @@ export default function CanvasRenderingContext2DNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      CanvasRenderingContext2D_drawImage_test_null_undefined
-     * @tc.number    SUB_ACE_CANVAS_DRAWIMAGE_NULL_UNDEFINED_0100
-     * @tc.desc      Test CanvasRenderingContext2D drawImage method with null/undefined parameters (image, dx, dy, dw, dh, sx, sy, sw, sh)
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   CanvasRenderingContext2D_drawImage_test_null_undefined
+     * @tc.number SUB_ACE_CANVAS_DRAWIMAGE_NULL_UNDEFINED_0100
+     * @tc.desc   Test CanvasRenderingContext2D drawImage method with null/undefined parameters (image, dx, dy, dw, dh, sx, sy, sw, sh)
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_CANVAS_DRAWIMAGE_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('canvas_canvas2d_nullundefined');

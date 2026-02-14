@@ -42,12 +42,12 @@ export default function Path2DArcArcToNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_arc_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100
-     * @tc.desc      Test the arc method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_arc_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100
+     * @tc.desc   Test the arc method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arc_canvas');
@@ -56,12 +56,12 @@ export default function Path2DArcArcToNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_arcTo_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100
-     * @tc.desc      Test the arcTo method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_arcTo_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100
+     * @tc.desc   Test the arcTo method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arcto_canvas');

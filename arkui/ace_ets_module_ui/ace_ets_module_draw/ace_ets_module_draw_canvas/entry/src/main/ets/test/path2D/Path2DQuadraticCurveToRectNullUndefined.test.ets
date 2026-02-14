@@ -42,12 +42,12 @@ export default function Path2DQuadraticCurveToRectNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_quadraticCurveTo_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_QUADRATICCURVETO_NULL_UNDEFINED_0100
-     * @tc.desc      Test the quadraticCurveTo method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_quadraticCurveTo_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_QUADRATICCURVETO_NULL_UNDEFINED_0100
+     * @tc.desc   Test the quadraticCurveTo method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_PATH2D_QUADRATICCURVETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_quadraticcurveto_canvas');
@@ -56,12 +56,12 @@ export default function Path2DQuadraticCurveToRectNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_rect_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_RECT_NULL_UNDEFINED_0100
-     * @tc.desc      Test the rect method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_rect_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_RECT_NULL_UNDEFINED_0100
+     * @tc.desc   Test the rect method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_PATH2D_RECT_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_rect_canvas');

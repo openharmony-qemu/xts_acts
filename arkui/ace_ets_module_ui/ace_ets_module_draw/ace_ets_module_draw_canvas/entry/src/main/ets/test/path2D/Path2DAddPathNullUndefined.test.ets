@@ -42,12 +42,12 @@ export default function Path2DAddPathNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_addPath_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_ADDPATH_PATH_NULL_UNDEFINED_0100
-     * @tc.desc      Test the addPath method of Path2D with null/undefined path parameter
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_addPath_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_ADDPATH_PATH_NULL_UNDEFINED_0100
+     * @tc.desc   Test the addPath method of Path2D with null/undefined path parameter
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
     it('SUB_ACE_PATH2D_ADDPATH_PATH_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_addpath_canvas');
