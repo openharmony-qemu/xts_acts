@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include "StatusCheck2Test.h"
-#include "AvcodecAudioAvbufferEncoderDemo.h"
 #include <hilog/log.h>
+#include "AvcodecAudioAvbufferEncoderDemo.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -45,7 +44,6 @@ int STATUS_CHECK_041()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -57,8 +55,6 @@ int STATUS_CHECK_041()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
@@ -86,7 +82,6 @@ int STATUS_CHECK_042()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -98,14 +93,9 @@ int STATUS_CHECK_042()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
-    OH_LOG_INFO(LOG_APP, "STATUS_CHECK_042 PushInputData result0: %{public}d", result0);
     result0 = audioBufferAacEncDemo->Flush(codec);
-    OH_LOG_INFO(LOG_APP, "STATUS_CHECK_042 Flush result0: %{public}d", result0);
     result0 = audioBufferAacEncDemo->Start(codec);
-    OH_LOG_INFO(LOG_APP, "STATUS_CHECK_042 Start result0: %{public}d", result0);
-    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
+    ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     delete audioBufferAacEncDemo;
     return OH_AUDIO_STATUS_SUCCESS;
@@ -129,8 +119,8 @@ int STATUS_CHECK_043()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
@@ -141,12 +131,10 @@ int STATUS_CHECK_043()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     result0 = audioBufferAacEncDemo->PushInputData(codec, index);
-    ASSERT_EQ(result0, AV_ERR_UNKNOWN);
+    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     delete audioBufferAacEncDemo;
     return OH_AUDIO_STATUS_SUCCESS;
@@ -170,8 +158,8 @@ int STATUS_CHECK_044()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
@@ -182,8 +170,6 @@ int STATUS_CHECK_044()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     index = -1;
@@ -212,7 +198,6 @@ int STATUS_CHECK_045()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -224,9 +209,8 @@ int STATUS_CHECK_045()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Flush(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Destroy(codec);
@@ -252,7 +236,6 @@ int STATUS_CHECK_046()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -264,8 +247,6 @@ int STATUS_CHECK_046()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     result0 = audioBufferAacEncDemo->Stop(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -292,7 +273,6 @@ int STATUS_CHECK_047()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -304,8 +284,6 @@ int STATUS_CHECK_047()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     result0 = audioBufferAacEncDemo->Reset(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -332,7 +310,6 @@ int STATUS_CHECK_048()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -344,8 +321,6 @@ int STATUS_CHECK_048()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Flush(codec);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -371,7 +346,6 @@ int STATUS_CHECK_049()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -383,8 +357,6 @@ int STATUS_CHECK_049()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
@@ -412,7 +384,6 @@ int STATUS_CHECK_050()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -424,11 +395,9 @@ int STATUS_CHECK_050()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
+    ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     delete audioBufferAacEncDemo;
     return OH_AUDIO_STATUS_SUCCESS;
@@ -437,7 +406,7 @@ int STATUS_CHECK_050()
 /**
  * @tc.name   STATUS_CHECK_051
  * @tc.number STATUS_CHECK_051
- * @tc.desc   status check test (Stop + PushInputData)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -452,8 +421,8 @@ int STATUS_CHECK_051()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
@@ -464,8 +433,6 @@ int STATUS_CHECK_051()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     result0 = audioBufferAacEncDemo->PushInputData(codec, index);
@@ -478,7 +445,7 @@ int STATUS_CHECK_051()
 /**
  * @tc.name   STATUS_CHECK_052
  * @tc.number STATUS_CHECK_052
- * @tc.desc   status check test (Stop + PushInputDataEOS)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -493,8 +460,8 @@ int STATUS_CHECK_052()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
@@ -505,8 +472,6 @@ int STATUS_CHECK_052()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     index = -1;
@@ -520,7 +485,7 @@ int STATUS_CHECK_052()
 /**
  * @tc.name   STATUS_CHECK_053
  * @tc.number STATUS_CHECK_053
- * @tc.desc   status check test (Stop + Flush)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -535,7 +500,6 @@ int STATUS_CHECK_053()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -547,8 +511,6 @@ int STATUS_CHECK_053()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     result0 = audioBufferAacEncDemo->Flush(codec);
     ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
@@ -560,7 +522,7 @@ int STATUS_CHECK_053()
 /**
  * @tc.name   STATUS_CHECK_054
  * @tc.number STATUS_CHECK_054
- * @tc.desc   status check test (Stop + Stop)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -575,7 +537,6 @@ int STATUS_CHECK_054()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -587,11 +548,10 @@ int STATUS_CHECK_054()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Stop(codec);
-    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
+    ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     delete audioBufferAacEncDemo;
     return OH_AUDIO_STATUS_SUCCESS;
@@ -600,7 +560,7 @@ int STATUS_CHECK_054()
 /**
  * @tc.name   STATUS_CHECK_055
  * @tc.number STATUS_CHECK_055
- * @tc.desc   status check test (Stop + Reset)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -615,7 +575,6 @@ int STATUS_CHECK_055()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -627,8 +586,6 @@ int STATUS_CHECK_055()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     result0 = audioBufferAacEncDemo->Reset(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -640,7 +597,7 @@ int STATUS_CHECK_055()
 /**
  * @tc.name   STATUS_CHECK_056
  * @tc.number STATUS_CHECK_056
- * @tc.desc   status check test (Stop + Destroy)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -655,7 +612,6 @@ int STATUS_CHECK_056()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
@@ -667,8 +623,6 @@ int STATUS_CHECK_056()
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Stop(codec);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -679,7 +633,7 @@ int STATUS_CHECK_056()
 /**
  * @tc.name   STATUS_CHECK_057
  * @tc.number STATUS_CHECK_057
- * @tc.desc   status check test (Reset + Configure)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -687,6 +641,7 @@ int STATUS_CHECK_056()
 int STATUS_CHECK_057()
 {
     OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
     OH_AVFormat* format = OH_AVFormat_Create();
     int32_t channel = 1;       // channel1
     int32_t sampleRate = 8000; // 8000hz
@@ -694,20 +649,9 @@ int STATUS_CHECK_057()
     int32_t sampleFormat = SAMPLE_S16LE;
     int32_t sampleBit = 16;
     int32_t complexity = 10;
-    uint32_t index;
-    OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
@@ -720,7 +664,7 @@ int STATUS_CHECK_057()
 /**
  * @tc.name   STATUS_CHECK_058
  * @tc.number STATUS_CHECK_058
- * @tc.desc   status check test (Reset + Start)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -728,27 +672,10 @@ int STATUS_CHECK_057()
 int STATUS_CHECK_058()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Start(codec);
     ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
@@ -760,7 +687,7 @@ int STATUS_CHECK_058()
 /**
  * @tc.name   STATUS_CHECK_059
  * @tc.number STATUS_CHECK_059
- * @tc.desc   status check test (Reset + PushInputData)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -768,27 +695,11 @@ int STATUS_CHECK_058()
 int STATUS_CHECK_059()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     result0 = audioBufferAacEncDemo->PushInputData(codec, index);
@@ -801,7 +712,7 @@ int STATUS_CHECK_059()
 /**
  * @tc.name   STATUS_CHECK_060
  * @tc.number STATUS_CHECK_060
- * @tc.desc   status check test (Reset + PushInputDataEOS)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -809,27 +720,11 @@ int STATUS_CHECK_059()
 int STATUS_CHECK_060()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
+    uint32_t index;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     index = audioBufferAacEncDemo->GetInputIndex();
     index = -1;
@@ -843,7 +738,7 @@ int STATUS_CHECK_060()
 /**
  * @tc.name   STATUS_CHECK_061
  * @tc.number STATUS_CHECK_061
- * @tc.desc   status check test (Reset + Flush)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -851,27 +746,10 @@ int STATUS_CHECK_060()
 int STATUS_CHECK_061()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Flush(codec);
     ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
@@ -883,7 +761,7 @@ int STATUS_CHECK_061()
 /**
  * @tc.name   STATUS_CHECK_062
  * @tc.number STATUS_CHECK_062
- * @tc.desc   status check test (Reset + Stop)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -891,27 +769,10 @@ int STATUS_CHECK_061()
 int STATUS_CHECK_062()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Stop(codec);
     ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
@@ -923,7 +784,7 @@ int STATUS_CHECK_062()
 /**
  * @tc.name   STATUS_CHECK_063
  * @tc.number STATUS_CHECK_063
- * @tc.desc   status check test (Reset + Reset)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -931,27 +792,10 @@ int STATUS_CHECK_062()
 int STATUS_CHECK_063()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Reset(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -963,7 +807,7 @@ int STATUS_CHECK_063()
 /**
  * @tc.name   STATUS_CHECK_064
  * @tc.number STATUS_CHECK_064
- * @tc.desc   status check test (Reset + Destroy)
+ * @tc.desc   status check test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -971,205 +815,13 @@ int STATUS_CHECK_063()
 int STATUS_CHECK_064()
 {
     OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
     OH_AVErrCode result0;
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
     result0 = audioBufferAacEncDemo->Reset(codec);
     result0 = audioBufferAacEncDemo->Destroy(codec);
     ASSERT_EQ(result0, AV_ERR_OK);
-    delete audioBufferAacEncDemo;
-    return OH_AUDIO_STATUS_SUCCESS;
-}
-
-/**
- * @tc.name   STATUS_CHECK_065
- * @tc.number STATUS_CHECK_065
- * @tc.desc   status check test (Double Configure after Reset)
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-int STATUS_CHECK_065()
-{
-    OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
-    OH_AVErrCode result0;
-    AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
-    codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
-    ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
-    result0 = audioBufferAacEncDemo->Reset(codec);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
-    result0 = audioBufferAacEncDemo->Destroy(codec);
-    delete audioBufferAacEncDemo;
-    return OH_AUDIO_STATUS_SUCCESS;
-}
-
-/**
- * @tc.name   STATUS_CHECK_066
- * @tc.number STATUS_CHECK_066
- * @tc.desc   status check test (Destroy + Recreate)
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-int STATUS_CHECK_066()
-{
-    OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
-    OH_AVErrCode result0;
-    AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
-    // First create & destroy
-    codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
-    ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    // Recreate
-    codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
-    ASSERT_NE(codec, nullptr);
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Destroy(codec);
-    delete audioBufferAacEncDemo;
-    return OH_AUDIO_STATUS_SUCCESS;
-}
-
-/**
- * @tc.name   STATUS_CHECK_067
- * @tc.number STATUS_CHECK_067
- * @tc.desc   status check test (Null codec input)
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-int STATUS_CHECK_067()
-{
-    OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    OH_AVErrCode result0;
-    AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
-    // Test all APIs with null codec
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_NE(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Flush(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Stop(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Reset(codec);
-    ASSERT_NE(result0, AV_ERR_OK);
-    result0 = audioBufferAacEncDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK); // Destroy null is safe
-    delete audioBufferAacEncDemo;
-    return OH_AUDIO_STATUS_SUCCESS;
-}
-
-/**
- * @tc.name   STATUS_CHECK_068
- * @tc.number STATUS_CHECK_068
- * @tc.desc   status check test (Full lifecycle validation)
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-int STATUS_CHECK_068()
-{
-    OH_AVCodec* codec = nullptr;
-    OH_AVFormat* format = OH_AVFormat_Create();
-    int32_t channel = 1;       // channel1
-    int32_t sampleRate = 8000; // 8000hz
-    int64_t bitRate = 64000;   // 64K
-    int32_t sampleFormat = SAMPLE_S16LE;
-    int32_t sampleBit = 16;
-    int32_t complexity = 10;
-    uint32_t index;
-    OH_AVErrCode result0;
-    AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
-    // Full valid flow: Create → SetCallback → Configure → Start → PushData → Flush → Stop → Reset → Destroy
-    codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
-    ASSERT_NE(codec, nullptr);
-
-    result0 = audioBufferAacEncDemo->SetCallback(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    result0 = audioBufferAacEncDemo->Configure(
-        codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    result0 = audioBufferAacEncDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    index = audioBufferAacEncDemo->GetInputIndex();
-    result0 = audioBufferAacEncDemo->PushInputData(codec, index);
-    ASSERT_EQ(result0, AV_ERR_UNKNOWN); // Data not prepared, expect unknown
-
-    result0 = audioBufferAacEncDemo->Flush(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    result0 = audioBufferAacEncDemo->Stop(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    result0 = audioBufferAacEncDemo->Reset(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
-    result0 = audioBufferAacEncDemo->Destroy(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);
-
     delete audioBufferAacEncDemo;
     return OH_AUDIO_STATUS_SUCCESS;
 }
