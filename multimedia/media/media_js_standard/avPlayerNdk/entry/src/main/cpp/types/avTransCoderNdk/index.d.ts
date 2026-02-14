@@ -28,6 +28,7 @@ export const AvTransCoderParamError: (interfaceName: string) => number;
 export const AvTransCoderOperateError: (interfaceName: string) => number;
 export const AvTransCoderNdkCancelled: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number) => number;
 export const AvTransCoderSetStateCbError: () => number;
+export const AvTransCoderSetStateCb: () => number;
 export const AvTransCoderSetErrorCbError: () => number;
 export const AvTransCoderSetProgressUpdateCbError: () => number;
 export const AvTransCoderNdkProgressUpdateCb: (srcFd: number, srcOffset: number, srcLength: number, dstFd: number) => number;

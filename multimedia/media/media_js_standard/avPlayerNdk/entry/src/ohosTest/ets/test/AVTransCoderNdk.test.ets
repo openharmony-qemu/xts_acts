@@ -737,6 +737,21 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvTransCoderSetStateCb
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_STATE_CB_0001
+     * @tc.desc   Test OH_AVTranscoder_SetStateCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderSetStateCb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret: number = avTransCoderNdk.AvTransCoderSetStateCb();
+      console.log('case testOhAvTransCoderSetStateCb ret ' + ret);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvTransCoderSetErrorCbError
      * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_ERROR_CB_0001
      * @tc.desc   Test OH_AVTranscoder_SetErrorCallback with invalid parameters.

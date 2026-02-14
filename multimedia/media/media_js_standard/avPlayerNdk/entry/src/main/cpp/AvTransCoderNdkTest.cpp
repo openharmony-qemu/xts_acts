@@ -1201,6 +1201,8 @@ static napi_value Init(napi_env env, napi_value exports)
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetStateCbError", nullptr, OhAvTransCoderSetStateCbError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
+    {"AvTransCoderSetStateCb", nullptr, OhAvTransCoderSetStateCb, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetErrorCbError", nullptr, OhAvTransCoderSetErrorCbError, nullptr,
         nullptr, nullptr, napi_default, nullptr},
     {"AvTransCoderSetProgressUpdateCbError", nullptr, OhAvTransCoderSetProgressUpdateCbError, nullptr,
