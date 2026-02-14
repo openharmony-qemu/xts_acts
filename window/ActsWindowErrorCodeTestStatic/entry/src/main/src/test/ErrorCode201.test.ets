@@ -509,7 +509,7 @@ export default function ErrorCode201() {
                 done()
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
-                expect(err.code == 201 || err.code == 801)
+                expect(err.code == 201 || err.code == 801).assertTrue();
                 done()
             });
         } catch (exception) {
