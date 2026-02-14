@@ -109,7 +109,14 @@ import TextTextDirectionTest from './TextTest/TextTextDirection.test';
 import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
 import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
 import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
-
+import TextDataDetectorDateTimeTest from './TextTest/TextDataDetectorDateTime.test';
+import TextFontNullTest from './TextTest/TextFontNull.test';
+import TextMinMaxFontSizeNullTest from './TextTest/TextMinMaxFontSizeNull.test';
+import TextMinFontScaleMaxFontScaleTest from './TextTest/TextMinFontScaleMaxFontScale.test';
+import TextFontStyleLineSpacingNullTest from './TextTest/TextFontStyleLineSpacingNull.test';
+import TextLineHeightMultipleLineSpacingTest from './TextTest/TextLineHeightMultipleLineSpacing.test';
+import TextMinMaxLineHeightTest from './TextTest/TextMinMaxLineHeight.test';
+import TextTextVerticalAlignContentAlignTest from './TextTest/TextTextVerticalAlignContentAlign.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -209,4 +216,12 @@ export default function testsuite() {
   SelectedDragPreviewStyle();
   TextMarqueeOptionsTest();
   TextSpecialAttributesTest();
+  TextDataDetectorDateTimeTest();
+  TextFontNullTest();
+  TextMinMaxFontSizeNullTest();
+  TextMinFontScaleMaxFontScaleTest();
+  TextFontStyleLineSpacingNullTest();
+  TextLineHeightMultipleLineSpacingTest();
+  TextMinMaxLineHeightTest();
+  TextTextVerticalAlignContentAlignTest();
 }
