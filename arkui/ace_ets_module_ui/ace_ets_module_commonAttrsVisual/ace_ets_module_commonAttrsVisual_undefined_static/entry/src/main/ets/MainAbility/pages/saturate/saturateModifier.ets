@@ -20,7 +20,6 @@ import {
   Button,
   ClickEvent,
   CommonAttribute,
-  Row,
   AttributeModifier,
   Image,
   $r
@@ -46,18 +45,15 @@ struct SaturateModifier {
   @State modifier: MySaturateModifier = new MySaturateModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('saturateModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('saturateModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(200)
+        .height(200)
+        .id('saturateModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('saturateModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }

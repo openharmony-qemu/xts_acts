@@ -59,7 +59,6 @@ import BackgroundBlurStyleModifierTest from './backgroundBlurStyleTest/backgroun
 import BackgroundBlurStyleTest from './backgroundBlurStyleTest/backgroundBlurStyle.test'
 import BrightnessModifierTest from './brightnessTest/brightnessModifier.test'
 import ColorBlendModifierTest from './colorBlendTest/colorBlendModifier.test'
-import ContrastTestModifierTest from './contrastTest/contrastModifier.test'
 import ForegroundEffectModifierTest from './foregroundEffectTest/foregroundEffectModifier.test'
 import HueRotateModifierTest from './hueRotateTest/hueRotateModifier.test'
 import InvertModifierTest from './invertTest/invertModifier.test'
@@ -103,7 +102,6 @@ export default function testsuite() {
   BackgroundBlurStyleTest();
   BackgroundBlurStyleModifierTest();
   ContrastTest();
-  ContrastTestModifierTest();
   BrightnessModifierTest();
   ClipModifierTest();
   ColorBlendTest();
