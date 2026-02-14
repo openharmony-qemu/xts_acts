@@ -1318,7 +1318,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesEmptyString
-     * @tc.number paragraphBuilderPushStyleTest_010
+     * @tc.number paragraphBuilderPushStyleTest_013
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1352,7 +1352,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesNull
-     * @tc.number paragraphBuilderPushStyleTest_011
+     * @tc.number paragraphBuilderPushStyleTest_014
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1381,7 +1381,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesUndefined
-     * @tc.number paragraphBuilderPushStyleTest_012
+     * @tc.number paragraphBuilderPushStyleTest_015
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

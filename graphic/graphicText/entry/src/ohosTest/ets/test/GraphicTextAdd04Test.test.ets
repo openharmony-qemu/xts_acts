@@ -946,7 +946,7 @@ export default function GraphicTextAdd04Test() {
     });
 
     /**
-     * @tc.name   paragraphPaintOnPathHOffsetNull401
+     * @tc.name   paragraphPaintOnPathHOffsetNull
      * @tc.number paragraphPaintOnPathTest_005
      * @tc.desc   Paragraph paintOnPath hOffset parameter null test 401.
      * @tc.type   FUNCTION
@@ -983,7 +983,7 @@ export default function GraphicTextAdd04Test() {
     });
 
     /**
-     * @tc.name   paragraphPaintOnPathHOffsetUndefined401
+     * @tc.name   paragraphPaintOnPathHOffsetUndefined
      * @tc.number paragraphPaintOnPathTest_006
      * @tc.desc   Paragraph paintOnPath hOffset parameter undefined test 401.
      * @tc.type   FUNCTION
@@ -1020,7 +1020,7 @@ export default function GraphicTextAdd04Test() {
     });
 
     /**
-     * @tc.name   paragraphPaintOnPathVOffsetNull401
+     * @tc.name   paragraphPaintOnPathVOffsetNull
      * @tc.number paragraphPaintOnPathTest_007
      * @tc.desc   Paragraph paintOnPath vOffset parameter null test 401.
      * @tc.type   FUNCTION
@@ -1057,7 +1057,7 @@ export default function GraphicTextAdd04Test() {
     });
 
     /**
-     * @tc.name   paragraphPaintOnPathVOffsetUndefined401
+     * @tc.name   paragraphPaintOnPathVOffsetUndefined
      * @tc.number paragraphPaintOnPathTest_008
      * @tc.desc   Paragraph paintOnPath vOffset parameter undefined test 401.
      * @tc.type   FUNCTION
