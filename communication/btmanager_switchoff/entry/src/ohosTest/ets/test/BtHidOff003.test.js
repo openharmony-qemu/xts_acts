@@ -106,9 +106,6 @@ export default function btHidoff003Test() {
             let PERMISSION_TEXT = "允许";
             await sleep(2000);
             await clickTheWindow(PERMISSION_TEXT);
-            gattServer = ble.createGattServer();
-            gattClient = ble.createGattClientDevice("11:22:33:44:55:66");
-
             console.info('beforeAll end');
             done();
         })
@@ -135,8 +132,6 @@ export default function btHidoff003Test() {
             } catch (error) {
                 console.error('[bluetooth_js]tryToEnableBt get error:'+JSON.stringify(error)+ 'error.code = :'+JSON.stringify(error.code));
             }
-            gattServer.destroy();
-            gattClient.destroy();
             console.info('afterAll end')
             done();
         })
