@@ -148,7 +148,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -188,10 +188,10 @@ export default function WindowPCAndEventTest() {
         } catch (e) {
           e = e as BusinessError;
           hilog.info(domain, tag, msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
-          if (e.code == 1300002) {
+          if (e.code === 1300002) {
             hilog.info(domain, tag, caseName + ' window state abnormal, code: ' + e.code);
             done();
-          } else if (e.code == 801) {
+          } else if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -233,7 +233,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -274,7 +274,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -317,10 +317,10 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
-          } else if (e.code == 401) {
+          } else if (e.code === 401) {
             hilog.error(domain, tag, caseName + ' 不支持设置false');
             done();
           } else {
@@ -363,7 +363,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -417,7 +417,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -471,7 +471,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -525,7 +525,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -572,10 +572,10 @@ export default function WindowPCAndEventTest() {
         } catch (e) {
           e = e as BusinessError;
           hilog.info(domain, tag, msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
-          if (e.code == 1300002) {
+          if (e.code === 1300002) {
             hilog.info(domain, tag, caseName + ' window state abnormal, code: ' + e.code);
             done();
-          } else if (e.code == 801) {
+          } else if (e.code === 801) {
             hilog.error(domain, tag, ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
@@ -700,7 +700,7 @@ export default function WindowPCAndEventTest() {
           e = e as BusinessError;
           hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
           hilog.error(domain, tag, caseName + ' error code: ' + e.code + ', message: ' + e.message);
-          if (e.code == 801) {
+          if (e.code === 801) {
             hilog.error(domain, tag, caseName + ' 当前设备类型不支持系统能力SystemCapability.Window.SessionManager');
             done();
           } else {
