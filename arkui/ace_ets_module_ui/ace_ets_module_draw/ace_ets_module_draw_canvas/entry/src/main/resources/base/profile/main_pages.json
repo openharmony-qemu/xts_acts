@@ -38,7 +38,17 @@
         "MainAbility/pages/Canvas/CanvasParamsUnitPage",
         "MainAbility/pages/Canvas/CanvasParamsImageAnalyzerPage",
         "MainAbility/pages/Canvas/CanvasParamsVisibilityPage",
-        "MainAbility/pages/Canvas/CanvasParamsAntialiasPage"
+        "MainAbility/pages/Canvas/CanvasParamsAntialiasPage",
+
+        "MainAbility/pages/CanvasNullUndefined/canvasClipNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreateImageDataNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreatePatternNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasSetTransformNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasStrokeNullUndefined",
+        
+        "MainAbility/pages/CanvasNullUndefined/canvasGetImageDataNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasGetPixelMapNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasPutImageDataNullUndefined"
         
     ]
 }

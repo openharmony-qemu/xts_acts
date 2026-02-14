@@ -49,6 +49,16 @@ import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTes
 import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
 import CanvasParamsAntialiasTest from './Canvas/CanvasParamsAntialiasTest.test';
 
+import canvasClipNullUndefinedTest from './CanvasNullUndefined/canvasClipNullUndefinedTest.test';
+import canvasCreateImageDataNullUndefinedTest from './CanvasNullUndefined/canvasCreateImageDataNullUndefinedTest.test';
+import canvasCreatePatternNullUndefinedTest from './CanvasNullUndefined/canvasCreatePatternNullUndefinedTest.test';
+import canvasSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasSetTransformNullUndefinedTest.test';
+import canvasStrokeNullUndefinedTest from './CanvasNullUndefined/canvasStrokeNullUndefinedTest.test';
+
+import canvasGetImageDataNullUndefinedTest from './CanvasNullUndefined/canvasGetImageDataNullUndefinedTest.test';
+import canvasGetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasGetPixelMapNullUndefinedTest.test';
+import canvasPutImageDataNullUndefinedTest from './CanvasNullUndefined/canvasPutImageDataNullUndefinedTest.test';
+
 export default function testsuite() {
 
   CanvasAPIUnitTest();
@@ -87,4 +97,15 @@ export default function testsuite() {
   CanvasParamsImageAnalyzerTest();
   CanvasParamsVisibilityTest();
   CanvasParamsAntialiasTest();
+
+  canvasClipNullUndefinedTest();
+  canvasCreateImageDataNullUndefinedTest();
+  canvasCreatePatternNullUndefinedTest();
+  canvasSetTransformNullUndefinedTest();
+  canvasStrokeNullUndefinedTest();
+
+  canvasGetImageDataNullUndefinedTest();
+  canvasGetPixelMapNullUndefinedTest();
+  canvasPutImageDataNullUndefinedTest();
+
 }
