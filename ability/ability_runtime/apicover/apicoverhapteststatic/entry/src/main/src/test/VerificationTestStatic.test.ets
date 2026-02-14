@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -61,6 +62,7 @@ export default function verificationStaticTest() {
       await Utils.msSleep(2000);
       let launchWant: Want = AppStorage.get<Want>("launchWant") as Want;
       let lastRequestWant: Want = AppStorage.get<Want>("lastRequestWant") as Want;
+      let specifiedId: string = AppStorage.get<string>("specifiedId") as string;
       let windowStage: window.WindowStage = AppStorage.get<window.WindowStage>("windowStage") as window.WindowStage;
       expect(launchWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
       expect(lastRequestWant.bundleName).assertEqual("com.example.apicoverhaptest.static");
