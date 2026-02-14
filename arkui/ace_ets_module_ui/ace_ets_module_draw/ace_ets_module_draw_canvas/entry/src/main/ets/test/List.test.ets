@@ -48,6 +48,12 @@ import CanvasParamsUnitTest from './Canvas/CanvasParamsUnitTest.test';
 import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTest.test';
 import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
 import CanvasParamsAntialiasTest from './Canvas/CanvasParamsAntialiasTest.test';
+import path2DArcArcToNullUndefinedTest from './path2D/Path2DArcArcToNullUndefined.test';
+import path2DBezierCurveToEllipseNullUndefinedTest from './path2D/Path2DBezierCurveToEllipseNullUndefined.test';
+import path2DLineToMoveToNullUndefinedTest from './path2D/Path2DLineToMoveToNullUndefined.test';
+import path2DQuadraticCurveToRectNullUndefinedTest from './path2D/Path2DQuadraticCurveToRectNullUndefined.test';
+import path2DAddPathNullUndefinedTest from './path2D/Path2DAddPathNullUndefined.test';
+import canvasRenderingContext2DNullUndefinedTest from './Canvas/CanvasRenderingContext2DNullUndefined.test';
 
 import canvasClipNullUndefinedTest from './CanvasNullUndefined/canvasClipNullUndefinedTest.test';
 import canvasCreateImageDataNullUndefinedTest from './CanvasNullUndefined/canvasCreateImageDataNullUndefinedTest.test';
@@ -98,6 +104,12 @@ export default function testsuite() {
   CanvasParamsVisibilityTest();
   CanvasParamsAntialiasTest();
 
+  path2DArcArcToNullUndefinedTest();
+  path2DBezierCurveToEllipseNullUndefinedTest();
+  path2DLineToMoveToNullUndefinedTest();
+  path2DQuadraticCurveToRectNullUndefinedTest();
+  path2DAddPathNullUndefinedTest();
+  canvasRenderingContext2DNullUndefinedTest();
   canvasClipNullUndefinedTest();
   canvasCreateImageDataNullUndefinedTest();
   canvasCreatePatternNullUndefinedTest();
