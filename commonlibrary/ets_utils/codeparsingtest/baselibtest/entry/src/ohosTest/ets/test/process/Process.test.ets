@@ -266,6 +266,44 @@ export default function processTest() {
     });
 
     /**
+     * @tc.name   testGetUidForName0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0400
+     * @tc.desc   Attempts to get the uid with an empty string and expects -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetUidForName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetUidForName0004";
+      try {
+        const pres = process.getUidForName("");
+        expect(pres).assertEqual(-1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testGetUidForName0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0500
+     * @tc.desc   Attempts to get the uid with null and expects an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetUidForName0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetUidForName0005";
+      try {
+        process.getUidForName(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.name).assertEqual('Error');
+      }
+    });
+
+    /**
      * @tc.name   testProcessManagerKill0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0100
      * @tc.desc   Attempt to send a signal to the current process and expect success.
@@ -327,6 +365,46 @@ export default function processTest() {
     })
 
     /**
+     * @tc.name   testProcessManagerKill0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0500
+     * @tc.desc   Attempt to send a signal with null signal and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testProcessManagerKill0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testProcessManagerKill0005";
+      try {
+        const pro = new process.ProcessManager();
+        pro.kill(null, process.pid);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   testProcessManagerKill0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0600
+     * @tc.desc   Attempt to send a signal with valid signal and null pid and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testProcessManagerKill0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testProcessManagerKill0006";
+      try {
+        const pro = new process.ProcessManager();
+        pro.kill(23, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401)
+      }
+    })
+
+    /**
      * @tc.name   testGetThreadPriority0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0100
      * @tc.desc   Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
@@ -363,6 +441,26 @@ export default function processTest() {
       try {
         const pro = new process.ProcessManager();
         pro.getThreadPriority(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetThreadPriority0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0400
+     * @tc.desc   Attempt to get thread priority using null and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetThreadPriority0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetThreadPriority0004";
+      try {
+        const pro = new process.ProcessManager();
+        pro.getThreadPriority(null);
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.code}`);
@@ -426,7 +524,26 @@ export default function processTest() {
         process.isAppUid(undefined);
         expect().assertFail();
       } catch (err) {
-        console.error(`${TAG} failed, error: ${err.name}`);
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.name).assertEqual('Error')
+      }
+    });
+
+    /**
+     * @tc.name   testIsappuid0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0400
+     * @tc.desc   Given null input, expect a thrown exception.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testIsappuid0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testIsappuid0004";
+      try {
+        process.isAppUid(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.name).assertEqual('Error')
       }
     });
@@ -501,6 +618,25 @@ export default function processTest() {
     });
 
     /**
+     * @tc.name   testGetSystemConfig0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0400
+     * @tc.desc   Given null input, expect a thrown exception.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetSystemConfig0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetSystemConfig0004";
+      try {
+        process.getSystemConfig(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.name).assertEqual('Error')
+      }
+    });
+
+    /**
      * @tc.name   testGetEnvironmentVar0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0100
      * @tc.desc   testing if the PATH environment variable is set and not empty.
@@ -551,7 +687,7 @@ export default function processTest() {
     /**
      * @tc.name   testGetEnvironmentVar0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0300
-     * @tc.desc   testing if the undefined environment variable is set and return err.name is Error.
+     * @tc.desc   testing if the undefined environment variable is set and return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -568,9 +704,47 @@ export default function processTest() {
     });
 
     /**
+     * @tc.name   testGetEnvironmentVar0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0400
+     * @tc.desc   testing if the empty string environment variable returns undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetEnvironmentVar0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetEnvironmentVar0004";
+      try {
+        const environmentVar = process.getEnvironmentVar("");
+        expect(environmentVar).assertEqual(undefined);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testGetEnvironmentVar0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0500
+     * @tc.desc   testing if the null environment variable returns err.code is Error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetEnvironmentVar0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetEnvironmentVar0005";
+      try {
+        process.getEnvironmentVar(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.name).assertEqual('Error')
+      }
+    });
+
+    /**
      * @tc.name   testExit0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0100
-     * @tc.desc   testing exit(undefined) return err.name is Error.
+     * @tc.desc   testing exit(undefined) return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -581,7 +755,26 @@ export default function processTest() {
         process.exit(undefined)
         expect().assertFail();
       } catch (err) {
-        console.error(`${TAG} failed, error: ${err.name}`);
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.name).assertEqual('Error')
+      }
+    });
+
+    /**
+     * @tc.name   testExit0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0200
+     * @tc.desc   testing exit(null) return err.code is Error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testExit0002";
+      try {
+        process.exit(null)
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.name).assertEqual('Error')
       }
     });
@@ -643,7 +836,7 @@ export default function processTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.name).assertEqual('BuisnessError');
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -811,8 +1004,8 @@ export default function processTest() {
         pro.isAppUid(undefined);
         expect().assertFail();
       } catch (err) {
-        console.error(`${TAG} failed, error: ${err.name}`);
-        expect(err.name).assertEqual('BuisnessError')
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401)
       }
     });
 
@@ -884,7 +1077,7 @@ export default function processTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.name).assertEqual('BuisnessError')
+        expect(err.code).assertEqual(401)
       }
     });
 
@@ -941,7 +1134,7 @@ export default function processTest() {
     /**
      * @tc.name   testGetEnvironmentVarProcess0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0300
-     * @tc.desc   testing if the undefined environment variable is set and return err.name is Error.
+     * @tc.desc   testing if the undefined environment variable is set and return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -953,8 +1146,167 @@ export default function processTest() {
         pro.getEnvironmentVar(undefined);
         expect().assertFail();
       } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetEnvironmentVarProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0400
+     * @tc.desc   testing if the empty string environment variable returns undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetEnvironmentVarProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetEnvironmentVarProcess0004";
+      try {
+        let pro = new process.ProcessManager();
+        const environmentVar = pro.getEnvironmentVar("");
+        expect(environmentVar).assertEqual(undefined);
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.name).assertEqual('BuisnessError')
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testGetUidForNameProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0400
+     * @tc.desc   Attempts to get the uid with an empty string and returns -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetUidForNameProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetUidForNameProcess0004";
+      try {
+        let pro = new process.ProcessManager();
+        const pres = pro.getUidForName("");
+        expect(pres).assertEqual(-1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testIsappuidProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0400
+     * @tc.desc   Given null input, expect a thrown exception with error code: 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testIsappuidProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testIsappuidProcess0004";
+      try {
+        let pro = new process.ProcessManager();
+        pro.isAppUid(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetThreadPriorityProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0400
+     * @tc.desc   Attempt to get thread priority using null and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetThreadPriorityProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetThreadPriorityProcess0004";
+      try {
+        let pro = new process.ProcessManager();
+        pro.getThreadPriority(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401)
+      }
+    });
+
+    /**
+     * @tc.name   testGetSystemConfigProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0400
+     * @tc.desc   Given null input, expect a thrown exception with error name: BuisnessError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetSystemConfigProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testGetSystemConfigProcess0004";
+      try {
+        let pro = new process.ProcessManager();
+        pro.getSystemConfig(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testProcessManagerKillProcess0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0500
+     * @tc.desc   Attempt to send a signal with null parameters and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testProcessManagerKillProcess0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testProcessManagerKillProcess0005";
+      try {
+        let pro = new process.ProcessManager();
+        pro.kill(null, process.pid);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testProcessManagerKillProcess0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0600
+     * @tc.desc   Attempt to send a signal with valid signal and null pid and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testProcessManagerKillProcess0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testProcessManagerKillProcess0006";
+      try {
+        let pro = new process.ProcessManager();
+        pro.kill(23, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testExitProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_PROCESS_0100
+     * @tc.desc   testing exit(null) return err.code is BuisnessError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExitProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testExitProcess0001";
+      try {
+        let pro = new process.ProcessManager();
+        pro.exit(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(err.code).assertEqual(401);
       }
     });
   })

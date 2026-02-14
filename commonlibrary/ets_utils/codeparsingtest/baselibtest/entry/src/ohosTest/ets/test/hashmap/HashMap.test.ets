@@ -1935,5 +1935,79 @@ export default function HashMapTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testHashMapCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashMapCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testHashMapCase001';
+      const hashMap = new HashMap<string, number | string | boolean | undefined | null | Object>();
+      hashMap.set("squirrel", 123);
+      hashMap.set("sparrow", 456);
+      try {
+        hashMap.setAll(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        hashMap.setAll(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testHashMapCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashMapCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testHashMapCase002';
+      const hashMap = new HashMap<string, number | string | boolean | undefined | null | Object>();
+      hashMap.set("squirrel", 123);
+      hashMap.set("sparrow", 456);
+      hashMap.replace("squirrel", null);
+      expect(hashMap.get("squirrel")).assertNull();
+
+      hashMap.replace("sparrow", undefined);
+      expect(hashMap.get("sparrow")).assertUndefined();
+    });
+
+    /**
+     * @tc.name   testHashMapCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashMapCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testHashMapCase003';
+      let num = 0;
+      const hashMap = new HashMap<string, number | string | boolean | undefined | null | Object>();
+      hashMap.set("squirrel", 123);
+      hashMap.set("sparrow", 456);
+      hashMap.forEach((value: number | string | boolean | undefined | null | Object, index: string): void => {
+        num++;
+      }, null);
+
+      hashMap.forEach((value: number | string | boolean | undefined | null | Object, index: string): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
+
   });
 }

@@ -60,6 +60,8 @@
         "MainAbility/pages/TextAreaApi22/TextAreaOnWillAttachIME",
         "MainAbility/pages/TextAreaApi23/TextAreaTextDirection",
         "MainAbility/pages/TextArea/TextAreaSpecialAttrs",
+        "MainAbility/pages/TextArea/TextAreaType",
+        "MainAbility/pages/TextArea/TextAreaStyle",
 
         "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest",
         "MainAbility/pages/TextInputApi11/textInputApi11",
@@ -117,7 +119,12 @@
         "MainAbility/pages/TextArea/TextAreaCompressLeadingPunctuationModifier",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuation",
         "MainAbility/pages/TextInput/TextInputCompressLeadingPunctuationModifier",
-        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined"
-
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined02",
+        "MainAbility/pages/TextInput/TextInputPropertiesNullUndefined03",
+        "MainAbility/pages/TextInput/TextInputTypeParam",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined02",
+        "MainAbility/pages/TextArea/TextAreaPropertiesNullUndefined03"
     ]
 }

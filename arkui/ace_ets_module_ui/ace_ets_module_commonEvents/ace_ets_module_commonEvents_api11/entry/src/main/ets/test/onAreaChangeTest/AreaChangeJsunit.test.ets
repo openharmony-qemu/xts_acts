@@ -19,18 +19,20 @@ import events_emitter from '@ohos.events.emitter'
 import CommonFunc from '../../MainAbility/common/Common';
 import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
+import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 export default function areaChangeJsunit() {
   describe('areaChangeTest', async () => {
     beforeEach(async (done: Function) => {
-config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      console.info(`enable success`);
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-	done();
-});
+      done();
+    });
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/onAreaChange/areaChange',
@@ -66,38 +68,23 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      */
     it('areaChangeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('areaChangeTest_0300 START');
+      let driver : Driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      let text: Component = await driver.findComponent(ON.id('text'));
+      await text.click();
       await CommonFunc.sleep(1000);
-      let callback = (backData: events_emitter.EventData) => {
-        console.info("areaChangeTest_0300 get state result is: " + JSON.stringify(backData));
-        expect(backData.data?.value).assertEqual('TextText');
-        done()
-      }
-      let indexEvent: events_emitter.InnerEvent = {
-        eventId: 61,
-        priority: events_emitter.EventPriority.LOW
-      }
-      try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("areaChangeTest_0300 on events_emitter err : " + JSON.stringify(err));
-      }
-
-      console.info('areaChangeTest_0400 START');
-      await CommonFunc.sleep(1000);
-      let callback1 = (eventData: events_emitter.EventData) => {
-        console.info("areaChangeTest_0400 get state result is: " + JSON.stringify(eventData));
-        expect(eventData.data?.ACTION).assertEqual(true);
-      }
-      let indexEvent1: events_emitter.InnerEvent = {
-        eventId: 62,
-        priority: events_emitter.EventPriority.LOW
-      }
-      try {
-        events_emitter.on(indexEvent1, callback1);
-      } catch (err) {
-        console.info("areaChangeTest_0400 on events_emitter err : " + JSON.stringify(err));
-      }
-      console.info("areaChangeTest_0300 click result is: " + JSON.stringify(sendEventByKey('text1', 10, "")));
+      let strJson = getInspectorByKey('text');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('areaChangeTest_0300 text content is :' + obj.$attrs.content);
+      //大屏分层区域大
+      let Text: boolean = ((obj.$attrs.content) == 'TextText')||((obj.$attrs.content) == 'TextTextText');
+      expect(Text).assertTrue();
+      strJson = getInspectorByKey('text2');
+      obj = JSON.parse(strJson);
+      console.info('areaChangeTest_0300 text2 content is :' + obj.$attrs.content);
+      expect(JSON.stringify(obj.$attrs.content)).assertEqual('"true"');
+      console.info('[areaChangeTest_0300] END');
+      done();
     });
   })
 }

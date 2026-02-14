@@ -86,7 +86,7 @@ it('RouterPageUpdateTest_static_0100', Level.LEVEL2, async (done: () => void): P
       await driver.pressBack();
       await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);
+      expect(AppStorage.get<int>('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);
       AppStorage.delete('RouterPageUpdatePage_callBackFuncOnCount')
 
       console.info('RouterPageUpdateTest_static_0100 END');

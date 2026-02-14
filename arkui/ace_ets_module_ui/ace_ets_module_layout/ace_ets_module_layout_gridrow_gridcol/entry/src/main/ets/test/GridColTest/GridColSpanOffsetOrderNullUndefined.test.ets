@@ -21,8 +21,8 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 
 export default function GridColSpanOffsetOrderNullUndefinedTest() {
   describe('GridColSpanOffsetOrderNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
-      console.info("GridColSpanOffsetOrderNullUndefined beforeEach start");
+    beforeAll(async (done: Function) => {
+      console.info("GridColSpanOffsetOrderNullUndefined beforeAll start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GridCol/GridColSpanOffsetOrderNullUndefined',
       }
@@ -39,7 +39,7 @@ export default function GridColSpanOffsetOrderNullUndefinedTest() {
       } catch (err) {
         console.error("push GridColSpanOffsetOrderNullUndefined page error:" + err);
       }
-      console.info("GridColSpanOffsetOrderNullUndefined beforeEach end");
+      console.info("GridColSpanOffsetOrderNullUndefined beforeAll end");
       done();
     });
     afterEach(async () => {

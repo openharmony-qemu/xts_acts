@@ -55,6 +55,16 @@ import path2DQuadraticCurveToRectNullUndefinedTest from './path2D/Path2DQuadrati
 import path2DAddPathNullUndefinedTest from './path2D/Path2DAddPathNullUndefined.test';
 import canvasRenderingContext2DNullUndefinedTest from './Canvas/CanvasRenderingContext2DNullUndefined.test';
 
+import canvasClipNullUndefinedTest from './CanvasNullUndefined/canvasClipNullUndefinedTest.test';
+import canvasCreateImageDataNullUndefinedTest from './CanvasNullUndefined/canvasCreateImageDataNullUndefinedTest.test';
+import canvasCreatePatternNullUndefinedTest from './CanvasNullUndefined/canvasCreatePatternNullUndefinedTest.test';
+import canvasSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasSetTransformNullUndefinedTest.test';
+import canvasStrokeNullUndefinedTest from './CanvasNullUndefined/canvasStrokeNullUndefinedTest.test';
+
+import canvasGetImageDataNullUndefinedTest from './CanvasNullUndefined/canvasGetImageDataNullUndefinedTest.test';
+import canvasGetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasGetPixelMapNullUndefinedTest.test';
+import canvasPutImageDataNullUndefinedTest from './CanvasNullUndefined/canvasPutImageDataNullUndefinedTest.test';
+
 export default function testsuite() {
 
   CanvasAPIUnitTest();
@@ -100,4 +110,14 @@ export default function testsuite() {
   path2DQuadraticCurveToRectNullUndefinedTest();
   path2DAddPathNullUndefinedTest();
   canvasRenderingContext2DNullUndefinedTest();
+  canvasClipNullUndefinedTest();
+  canvasCreateImageDataNullUndefinedTest();
+  canvasCreatePatternNullUndefinedTest();
+  canvasSetTransformNullUndefinedTest();
+  canvasStrokeNullUndefinedTest();
+
+  canvasGetImageDataNullUndefinedTest();
+  canvasGetPixelMapNullUndefinedTest();
+  canvasPutImageDataNullUndefinedTest();
+
 }

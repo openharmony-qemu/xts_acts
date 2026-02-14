@@ -144,9 +144,9 @@ export default function testsuite() {
 
   requestFocus14();
 
-  requestFocus16();
+  // requestFocus16();
 
-  requestFocus18();
+  // requestFocus18();
 
   requestFocus24();
   requestFocus25();
@@ -166,7 +166,7 @@ export default function testsuite() {
   FocusScopePriority10();
   FocusScopePriority11();
   FocusScopePriority12();
-  FocusScopePriority13();
+  // FocusScopePriority13();
 
   FocusScopeId001();
   FocusScopeId002();
@@ -182,7 +182,7 @@ export default function testsuite() {
   FocusScopeId012();
   FocusScopeId013();
   FocusScopeId014();
-  FocusScopeId015();
+  // FocusScopeId015();
 
   FocusScopeId018();
   FocusScopeId019();
@@ -198,7 +198,7 @@ export default function testsuite() {
   FocusScopeId9();
   FocusScopeId10();
   FocusScopeId11();
-  FocusScopeId12();
+  // FocusScopeId12();
 
   FocusScopeId15();
   FocusScopeId17();

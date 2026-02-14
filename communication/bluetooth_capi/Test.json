@@ -10,7 +10,6 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsBluetoothCApiTest.hap",
                 "ActsBluetoothCApiTest.hap"
             ],
             "type": "AppInstallKit",

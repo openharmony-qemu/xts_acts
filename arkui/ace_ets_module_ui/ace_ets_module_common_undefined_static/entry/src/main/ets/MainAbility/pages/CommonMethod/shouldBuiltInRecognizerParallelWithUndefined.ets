@@ -92,10 +92,6 @@ struct FatherControlChild {
             }
           }
         } : undefined)
-      .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-        others: Array<GestureRecognizer>) => {
-        return GestureJudgeResult.CONTINUE;
-      })
         Button('undefined' + this.change)
           .onClick((e: ClickEvent) => {
             this.change = !this.change;

@@ -46,7 +46,7 @@ class MyModifier1 implements AttributeModifier<TextClockAttribute> {
       .dateTimeOptions(this.dateTimeOptionsMFlag ?
         undefined : { hour: '2-digit' } as DateTimeOptions)
       .fontFeature(this.fontFeatureFlag ? undefined : '\"sinf\" on')
-      .fontFamily(this.fontFamilyFlag ? undefined : 'iconFont')
+      .fontFamily(this.fontFamilyFlag ? undefined : 'sans-serif')
       .fontWeight(this.fontWeightFlag ? undefined : FontWeight.Bold)
       .fontStyle(this.fontStyleFlag ? undefined : FontStyle.Italic)
       .fontSize(this.fontSizeFlag ? undefined : 50.0)
@@ -107,7 +107,7 @@ struct Index {
           .onClick((e: ClickEvent) => {
             this.myModifier1.fontFeatureFlag = !this.myModifier1.fontFeatureFlag
           })
-        Button('切换 fontFamily → ' + (this.myModifier1.fontFamilyFlag ? 'undefined' : 'iconFont'))
+        Button('切换 fontFamily → ' + (this.myModifier1.fontFamilyFlag ? 'undefined' : 'sans-serif'))
           .id('fontFamilyM_Btn')
           .onClick((e: ClickEvent) => {
             this.myModifier1.fontFamilyFlag = !this.myModifier1.fontFamilyFlag

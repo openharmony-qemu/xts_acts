@@ -1286,6 +1286,27 @@ static napi_value OH_AVSamplesBuffer_GetRemainedCapacity0100(napi_env env, napi_
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
+
+static napi_value OH_LowPowerAudioSink_SetLoudnessGain0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    const double loudnessGain = 24.0;
+    const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(mime);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_SetLoudnessGain(AudioSink, loudnessGain);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Start0101", nullptr, OH_LowPowerAudioSink_Start0101, nullptr, nullptr, nullptr, napi_default,
      nullptr},
@@ -1365,6 +1386,8 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"OH_AVSamplesBuffer_GetRemainedCapacity0100", nullptr, OH_AVSamplesBuffer_GetRemainedCapacity0100, nullptr,
      nullptr, nullptr, napi_default, nullptr},
+    {"OH_SetLoudnessGain0200", nullptr, OH_LowPowerAudioSink_SetLoudnessGain0200, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
 
 };
 

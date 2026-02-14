@@ -107,6 +107,26 @@ export default function fileIOStat() {
     });
 
     /**
+     * @tc.name   fileIO_stat_sync_static_004
+     * @tc.number SUB_DF_fileIO_stat_sync_static_0400
+     * @tc.desc   Test statSync() interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_004 start');
+      try {
+        fs.statSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_004 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_stat_sync_ino_static_000
      * @tc.number SUB_DF_fileIO_stat_sync_ino_static_0000
      * @tc.desc   Test the ino member of class Stat.
@@ -2159,6 +2179,52 @@ export default function fileIOStat() {
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctimeNs_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_stat_async_static_009
+     * @tc.number SUB_DF_fileIO_stat_async_static_0900
+     * @tc.desc   Test stat() promise interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_009 start');
+      try {
+        await fs.stat("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_009 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_stat_async_static_010
+     * @tc.number SUB_DF_fileIO_stat_async_static_1000
+     * @tc.desc   Test stat() callback interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 start');
+      try {
+        fs.stat("", (err: BusinessError | null, statres: fs.Stat | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
 

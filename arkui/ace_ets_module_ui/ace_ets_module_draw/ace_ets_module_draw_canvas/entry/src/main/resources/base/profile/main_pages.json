@@ -44,7 +44,17 @@
         "MainAbility/pages/path2D/Path2DLineToMoveToNullUndefined",
         "MainAbility/pages/path2D/Path2DQuadraticCurveToRectNullUndefined",
         "MainAbility/pages/path2D/Path2DAddPathNullUndefined",
-        "MainAbility/pages/Canvas/CanvasRenderingContext2DNullUndefined"
+        "MainAbility/pages/Canvas/CanvasRenderingContext2DNullUndefined",
+
+        "MainAbility/pages/CanvasNullUndefined/canvasClipNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreateImageDataNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreatePatternNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasSetTransformNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasStrokeNullUndefined",
+        
+        "MainAbility/pages/CanvasNullUndefined/canvasGetImageDataNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasGetPixelMapNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasPutImageDataNullUndefined"
         
     ]
 }

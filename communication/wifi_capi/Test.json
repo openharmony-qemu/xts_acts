@@ -10,7 +10,6 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsWifiCApiTest.hap",
                 "ActsWifiCApiTest.hap"
             ],
             "type": "AppInstallKit",

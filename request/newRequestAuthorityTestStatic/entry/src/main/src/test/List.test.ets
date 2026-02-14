@@ -14,8 +14,10 @@
  */
 import RequestDownloadStaticTest from "./RequestDownloadStatic.test";
 import requestConfigSavesStaticTest from './RequestConfigSaveasStatic.test'
+import requestDownloadOneStaticTSTest from './RequestDownload001Static.test'
 
 export default function testsuite() {
   RequestDownloadStaticTest();
   requestConfigSavesStaticTest();
+  requestDownloadOneStaticTSTest();
 }

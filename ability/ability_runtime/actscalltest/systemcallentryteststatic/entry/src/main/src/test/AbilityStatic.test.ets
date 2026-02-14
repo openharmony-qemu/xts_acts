@@ -241,5 +241,55 @@ export default function AbilityStaticTest() {
         hilog.info(domain, tag, `${itName} end`);
       }
     })
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_3100
+     * @tc.number ACTS_CommonComponent_Call_Static_3100
+     * @tc.desc   Verify that the parameter method of the Callee.on function is an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_3100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_3100';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        let errmsg = AppStorage.get<string>("oncode") as string;
+        hilog.info(domain, tag, `${itName} errmsg：${errmsg} `);
+        expect(errmsg).assertEqual('401:Invalid input parameter.');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      } catch (err) {
+        const e = err as BusinessError;
+        hilog.info(domain, tag, `${itName} callee on release fail error code: ${e?.code}, msg: ${e?.message}`);
+        expect().assertFail();
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      }
+    })
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_3400
+     * @tc.number ACTS_CommonComponent_Call_Static_3400
+     * @tc.desc   Verify that the parameter method of the Callee.off function is an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_3400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_3400';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        let errmsg = AppStorage.get<string>("offcode") as string;
+        hilog.info(domain, tag, `${itName} errmsg：${errmsg} `);
+        expect(errmsg).assertEqual('401:Invalid input parameter.');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      } catch (err) {
+        const e = err as BusinessError;
+        hilog.info(domain, tag, `${itName} callee off release fail error code: ${e?.code}, msg: ${e?.message}`);
+        expect().assertFail();
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      }
+    })
   })
 }

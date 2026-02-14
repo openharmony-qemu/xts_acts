@@ -43,7 +43,6 @@ struct dragPreviewOptionsDemo {
         .id('commonmethod_onDragStart')
       Text('Count' + this.count)
         .fontSize(26)
-        .fontWeight(FontWeight.Bold)
         .id('commonmethod_onDragStart2')
       Button('undefined' + this.change)
         .onClick(() => {
