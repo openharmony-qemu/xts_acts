@@ -491,15 +491,15 @@ export default function ErrorCode201() {
 
 
       /**
-         * @tc.number     testSetWindowTopmostPromiseErrCode1300002_static_0100
-         * @tc.name       testSetWindowTopmostPromiseErrCode1300002_static_0100
-         * @tc.desc       testSetWindowTopmostPromiseErrCode1300002_static_0100
+         * @tc.number     testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.name       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.desc       testSetWindowTopmostPromiseErrCode201_static_0100
          * @tc.size       MediumTest
          * @tc.type       Function
          * @tc.level      Level 3
          */
-      it('testSetWindowTopmostPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-        let caseName :string = "testSetWindowTopmostPromiseErrCode1300002_static_0100";
+      it('testSetWindowTopmostPromiseErrCode201_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName :string = "testSetWindowTopmostPromiseErrCode201_static_0100";
         let msgStr = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag,msgStr + 'begin.');
         try {
