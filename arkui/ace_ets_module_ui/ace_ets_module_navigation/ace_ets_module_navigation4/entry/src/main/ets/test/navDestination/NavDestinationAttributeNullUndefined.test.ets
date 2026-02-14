@@ -23,7 +23,7 @@ export default function NavDestinationAttributeNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info('NavDestinationAttributeNullUndefined beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/NavDestinationAttributeNullUndefined',
+        url: 'MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined',
       }
       try {
         router.clear();
