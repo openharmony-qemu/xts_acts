@@ -1955,8 +1955,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackTypeNull0100', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackTypeNull0100`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6000', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6000`;
       console.log(`${tag}, it begin`);
       let type: string|null = null;
       let wantParam: Record<string, Object> = {
@@ -1995,8 +1995,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackTypeUndefined0200', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackTypeUndefined0200`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6100`;
       console.log(`${tag}, it begin`);
       let type: string|undefined = undefined;
       let wantParam: Record<string, Object> = {
@@ -2035,8 +2035,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackWantParamNull0300', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackWantParamNull0300`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6200`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object>|null = null;
@@ -2073,8 +2073,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackWantParamUndefined0400', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackWantParamUndefined0400`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6300`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object>|undefined = undefined;
@@ -2111,8 +2111,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackCallbackNull0500', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackCallbackNull0500`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6400`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object> = {
@@ -2144,8 +2144,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncCallbackCallbackUndefined0600', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncCallbackCallbackUndefined0600`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6500`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object> = {
