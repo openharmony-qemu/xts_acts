@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/enabled/enable",
         "MainAbility/pages/TouchInteractionControl/monopolizeEvents/monopolize",
-        "MainAbility/pages/responseRegion/responseRegionList"
+        "MainAbility/pages/responseRegion/responseRegionList",
+        "MainAbility/pages/componentUtils/ComponentUtilsTestPage"
     ]
 }
