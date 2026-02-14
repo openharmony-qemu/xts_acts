@@ -94,8 +94,6 @@ async function openPhone() {
         await drivers.delayMs(10000);
     } catch (error) {
         console.info('[bluetooth_js] driver error info:'+ error);
-    } finally{
-        driver.release();
     }
 }
 
