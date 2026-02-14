@@ -130,13 +130,13 @@ export default function btHidoff003Test() {
         })
         afterAll(async function (done) {
             console.info('afterAll start')
-            gattServer.destroy();
-            gattClient.destroy();
             try {
                 await tryToEnableBt();
             } catch (error) {
                 console.error('[bluetooth_js]tryToEnableBt get error:'+JSON.stringify(error)+ 'error.code = :'+JSON.stringify(error.code));
             }
+            gattServer.destroy();
+            gattClient.destroy();
             console.info('afterAll end')
             done();
         })
