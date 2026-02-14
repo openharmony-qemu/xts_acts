@@ -75,6 +75,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -126,6 +127,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -179,6 +181,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -230,6 +233,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -281,6 +285,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -332,6 +337,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -383,6 +389,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -434,6 +441,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -454,10 +462,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3500', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3500`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -490,6 +494,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -510,10 +515,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3600', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3600`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -546,6 +547,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -566,10 +568,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3700', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3700`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -602,6 +600,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -622,10 +621,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3800', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3800`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -658,6 +653,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -678,10 +674,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3900', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3900`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -714,6 +706,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -734,10 +727,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4000', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4000`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -770,6 +759,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -790,10 +780,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4100`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -826,6 +812,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -846,11 +833,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4200', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4200`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
-
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
@@ -882,6 +864,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -933,6 +916,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -984,6 +968,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -1035,6 +1020,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -1086,6 +1072,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {

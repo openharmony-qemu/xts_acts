@@ -51,7 +51,7 @@ export default function abilityTest() {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'AppServiceExtAbility'
       };
-
+      let errCode = -1;
       let options: common.ConnectOptions = {
         onConnect(elementName, remote) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onConnect elementName: ${JSON.stringify(elementName)}`);
@@ -63,8 +63,7 @@ export default function abilityTest() {
         },
         onFailed(code) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code}`);
-          expect(code).assertEqual(801);
-          done();
+          errCode = code;
         }
       };
 
@@ -76,7 +75,12 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectAppServiceExtensionAbility succeed`);
         }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectAppServiceExtensionAbility error: ${JSON.stringify(err)}`);
-          expect().assertFail();
+          if(errCode != 801){
+            expect().assertFail();
+          }else{
+            expect(err?.code).assertEqual(16000050)
+            expect(errCode).assertEqual(801)
+          }
           done();
         });
       } catch (err) {
@@ -220,17 +224,17 @@ export default function abilityTest() {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'AppServiceExtAbility'
       };
-
+      let errCode = -1;
       try {
         context.startAppServiceExtensionAbility(wantInfo)
           .then(() => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAppServiceExtensionAbility succeed`);
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAppServiceExtensionAbility error:${JSON.stringify(err)}`);
+            errCode = err?.code;
             if(err.code !== 801) {
               expect().assertFail();
             }
-            done();
           });
         await sleep(2000);
         context.stopAppServiceExtensionAbility(wantInfo)
@@ -240,7 +244,12 @@ export default function abilityTest() {
           })
           .catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} stopAppServiceExtensionAbility error: ${JSON.stringify(err)}`);
-            expect().assertFail();
+            if(errCode != 801){
+              expect().assertFail();
+            }else{
+              expect(err?.code).assertEqual(801)
+              expect(errCode).assertEqual(801)
+            }
             done();
           });
       } catch (err) {

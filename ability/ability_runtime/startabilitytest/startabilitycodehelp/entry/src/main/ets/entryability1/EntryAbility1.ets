@@ -43,7 +43,7 @@ export default class EntryAbility1 extends UIAbility {
   }
 
   onPrepareToTerminate(): boolean {
-    return 0;
+    return false;
   }
 
   async onPrepareToTerminateAsync(): Promise<boolean> {
