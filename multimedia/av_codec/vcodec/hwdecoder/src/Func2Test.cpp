@@ -1250,9 +1250,12 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_RESOLUTION_0010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_ANOTHER_0010
- * @tc.name      : 解码器1正常解码，解码器2状态轮转
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_ANOTHER_0010
+ * @tc.number VIDEO_DECODE_ANOTHER_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_ANOTHER_0010, TestSize.Level2)
 {

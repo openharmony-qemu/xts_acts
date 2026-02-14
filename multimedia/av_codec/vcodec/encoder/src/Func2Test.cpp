@@ -1865,9 +1865,12 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_PIXE_FORMAT_0010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_ANOTHER_0010
- * @tc.name      : 编码器1正常编码，编码器2状态机轮转
- * @tc.desc      : function test
+ * @tc.name   VIDEO_ENCODE_ANOTHER_0010
+ * @tc.number VIDEO_ENCODE_ANOTHER_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_ANOTHER_0010, TestSize.Level2)
 {
