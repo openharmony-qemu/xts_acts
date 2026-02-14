@@ -130,7 +130,7 @@ struct NavigationAttributeNullUndefined {
             .width('30%')
             .height('5%')
             .id('navigation_menus_null')
-            .menus(null)
+            .menus(null, undefined)
 
             // Undefined
             Navigation() {
@@ -140,7 +140,7 @@ struct NavigationAttributeNullUndefined {
             .width('30%')
             .height('5%')
             .id('navigation_menus_undefined')
-            .menus(undefined)
+            .menus(undefined, null)
           }
           .width('100%')
 
@@ -472,6 +472,188 @@ struct NavigationAttributeNullUndefined {
             .height('5%')
             .id('navigation_enableVisibilityLifecycleWithContentCover_undefined')
             .enableVisibilityLifecycleWithContentCover(undefined)
+          }
+          .width('100%')
+
+          Divider()
+
+          // ========== backButtonIcon tests ==========
+          Text('backButtonIcon Property Tests')
+            .fontSize(16)
+            .fontWeight(FontWeight.Bold)
+            .margin({ top: 10, bottom: 5 })
+
+          Row() {
+            // Default
+            Navigation() {
+              Text('backButtonIcon default')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_backButtonIcon_default')
+
+            // Null
+            Navigation() {
+              Text('backButtonIcon null')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_backButtonIcon_null')
+            .backButtonIcon(null)
+
+            // Undefined
+            Navigation() {
+              Text('backButtonIcon undefined')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_backButtonIcon_undefined')
+            .backButtonIcon(undefined, undefined)
+
+            // Empty String
+            Navigation() {
+              Text('backButtonIcon empty')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_backButtonIcon_empty')
+            .backButtonIcon('', null)
+          }
+          .width('100%')
+
+          Divider()
+
+          // ========== customNavContentTransition tests ==========
+          Text('customNavContentTransition Property Tests')
+            .fontSize(16)
+            .fontWeight(FontWeight.Bold)
+            .margin({ top: 10, bottom: 5 })
+
+          Row() {
+            // Default
+            Navigation() {
+              Text('customNavContentTransition default')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_customNavContentTransition_default')
+
+            // Null
+            Navigation() {
+              Text('customNavContentTransition null')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_customNavContentTransition_null')
+            .customNavContentTransition(null as never)
+
+            // Undefined
+            Navigation() {
+              Text('customNavContentTransition undefined')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_customNavContentTransition_undefined')
+            .customNavContentTransition(undefined)
+          }
+          .width('100%')
+
+          Divider()
+
+          // ========== ignoreLayoutSafeArea tests ==========
+          Text('ignoreLayoutSafeArea Property Tests')
+            .fontSize(16)
+            .fontWeight(FontWeight.Bold)
+            .margin({ top: 10, bottom: 5 })
+
+          Row() {
+            // Default
+            Navigation() {
+              Text('ignoreLayoutSafeArea default')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_ignoreLayoutSafeArea_default')
+
+            // Null
+            Navigation() {
+              Text('ignoreLayoutSafeArea null')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_ignoreLayoutSafeArea_null')
+            .ignoreLayoutSafeArea(null, null)
+
+            // Undefined
+            Navigation() {
+              Text('ignoreLayoutSafeArea undefined')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_ignoreLayoutSafeArea_undefined')
+            .ignoreLayoutSafeArea(undefined, undefined)
+            // []
+            Navigation() {
+              Text('ignoreLayoutSafeArea undefined')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_ignoreLayoutSafeArea_undefined')
+            .ignoreLayoutSafeArea([], [])
+          }
+          .width('100%')
+
+          Divider()
+
+          // ========== divider tests ==========
+          Text('divider Property Tests')
+            .fontSize(16)
+            .fontWeight(FontWeight.Bold)
+            .margin({ top: 10, bottom: 5 })
+
+          Row() {
+            // Default
+            Navigation() {
+              Text('divider default')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_divider_default')
+            .mode(NavigationMode.Split)
+
+            // Null
+            Navigation() {
+              Text('divider null')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_divider_null')
+            .mode(NavigationMode.Split)
+            .divider(null)
+
+            // Undefined
+            Navigation() {
+              Text('divider undefined')
+                .fontSize(14)
+            }
+            .width('30%')
+            .height('5%')
+            .id('navigation_divider_undefined')
+            .mode(NavigationMode.Split)
+            .divider(undefined)
           }
           .width('100%')
         }

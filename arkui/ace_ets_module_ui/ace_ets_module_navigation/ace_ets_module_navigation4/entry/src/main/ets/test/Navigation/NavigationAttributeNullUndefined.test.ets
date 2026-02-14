@@ -667,5 +667,282 @@ export default function NavigationAttributeNullUndefinedTest() {
 
       console.info('[navigationEnableVisibilityLifecycleWithContentCover_undefined_0100] END');
     })
+
+    /**
+     * @tc.name   navigationBackButtonIcon_null_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_BACKBUTTONICON_NULL_0100
+     * @tc.desc   Test Navigation backButtonIcon property with null, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationBackButtonIcon_null_0100', Level.LEVEL0, async () => {
+      console.info('[navigationBackButtonIcon_null_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_backButtonIcon_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_backButtonIcon_null');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationBackButtonIcon_null_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationBackButtonIcon_null_0100] null obj is: " + JSON.stringify(obj.$attrs));
+
+        // null should restore to default value
+        expect(obj.$attrs.backButtonIcon).assertEqual('');
+        console.info('[navigationBackButtonIcon_null_0100] Navigation backButtonIcon with null restores to default');
+      } catch (error) {
+        console.info('[navigationBackButtonIcon_null_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationBackButtonIcon_null_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationBackButtonIcon_undefined_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_BACKBUTTONICON_UNDEFINED_0100
+     * @tc.desc   Test Navigation backButtonIcon property with undefined, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationBackButtonIcon_undefined_0100', Level.LEVEL0, async () => {
+      console.info('[navigationBackButtonIcon_undefined_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_backButtonIcon_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_backButtonIcon_undefined');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationBackButtonIcon_undefined_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationBackButtonIcon_undefined_0100] undefined obj is: " + JSON.stringify(obj.$attrs));
+
+        // undefined should restore to default value
+        expect(obj.$attrs.backButtonIcon).assertEqual('');
+      } catch (error) {
+        console.info('[navigationBackButtonIcon_undefined_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationBackButtonIcon_undefined_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationBackButtonIcon_empty_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_BACKBUTTONICON_EMPTY_0100
+     * @tc.desc   Test Navigation backButtonIcon property with empty string, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationBackButtonIcon_empty_0100', Level.LEVEL0, async () => {
+      console.info('[navigationBackButtonIcon_empty_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_backButtonIcon_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_backButtonIcon_empty');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationBackButtonIcon_empty_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationBackButtonIcon_empty_0100] empty obj is: " + JSON.stringify(obj.$attrs));
+        console.info("obj backButtonIcon : " + JSON.stringify(obj.$attrs?.backButtonIcon));
+        console.info("empty objCompare backButtonIcon : " + JSON.stringify(objCompare.$attrs?.backButtonIcon));
+        // empty string should restore to default value
+        expect(obj.$attrs.backButtonIcon).assertEqual('');
+      } catch (error) {
+        console.info('[navigationBackButtonIcon_empty_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationBackButtonIcon_empty_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationCustomNavContentTransition_null_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_CUSTOMNAVCONTENTTRANSITION_NULL_0100
+     * @tc.desc   Test Navigation customNavContentTransition property with null, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationCustomNavContentTransition_null_0100', Level.LEVEL0, async () => {
+      console.info('[navigationCustomNavContentTransition_null_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_customNavContentTransition_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_customNavContentTransition_null');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+        console.info("[navigationCustomNavContentTransition_null_0100] null obj is: " + JSON.stringify(obj.$attrs));
+
+        // null should restore to default value
+        expect(obj.$attrs.customNavContentTransition).assertEqual(objCompare.$attrs.customNavContentTransition);
+      } catch (error) {
+        console.info('[navigationCustomNavContentTransition_null_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationCustomNavContentTransition_null_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationCustomNavContentTransition_undefined_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_CUSTOMNAVCONTENTTRANSITION_UNDEFINED_0100
+     * @tc.desc   Test Navigation customNavContentTransition property with undefined, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationCustomNavContentTransition_undefined_0100', Level.LEVEL0, async () => {
+      console.info('[navigationCustomNavContentTransition_undefined_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_customNavContentTransition_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_customNavContentTransition_undefined');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[CustomNavContentTransition_undefined] default obj is: " + JSON.stringify(objCompare.$attrs));
+
+        // undefined should restore to default value
+        expect(obj.$attrs.customNavContentTransition).assertEqual(objCompare.$attrs.customNavContentTransition);
+      } catch (error) {
+        console.info('[navigationCustomNavContentTransition_undefined_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationCustomNavContentTransition_undefined_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationIgnoreLayoutSafeArea_null_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_IGNORELAYOUTSAFEAREA_NULL_0100
+     * @tc.desc   Test Navigation ignoreLayoutSafeArea property with null, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationIgnoreLayoutSafeArea_null_0100', Level.LEVEL0, async () => {
+      console.info('[navigationIgnoreLayoutSafeArea_null_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_ignoreLayoutSafeArea_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_ignoreLayoutSafeArea_null');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationIgnoreLayoutSafeArea_null_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationIgnoreLayoutSafeArea_null_0100] null obj is: " + JSON.stringify(obj.$attrs));
+
+        // null should restore to default value
+        expect(obj.$attrs.ignoreLayoutSafeArea).assertEqual(objCompare.$attrs.ignoreLayoutSafeArea);
+      } catch (error) {
+        console.info('[navigationIgnoreLayoutSafeArea_null_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationIgnoreLayoutSafeArea_null_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationIgnoreLayoutSafeArea_undefined_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_IGNORELAYOUTSAFEAREA_UNDEFINED_0100
+     * @tc.desc   Test Navigation ignoreLayoutSafeArea property with undefined, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationIgnoreLayoutSafeArea_undefined_0100', Level.LEVEL0, async () => {
+      console.info('[navigationIgnoreLayoutSafeArea_undefined_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_ignoreLayoutSafeArea_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_ignoreLayoutSafeArea_undefined');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[IgnoreLayoutSafeArea_undefined_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[IgnoreLayoutSafeArea_undefined_0100] undefined obj is: " + JSON.stringify(obj.$attrs));
+
+        // undefined should restore to default value
+        expect(obj.$attrs.ignoreLayoutSafeArea).assertEqual(objCompare.$attrs.ignoreLayoutSafeArea);
+      } catch (error) {
+        console.info('[navigationIgnoreLayoutSafeArea_undefined_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationIgnoreLayoutSafeArea_undefined_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationDivider_null_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_DIVIDER_NULL_0100
+     * @tc.desc   Test Navigation divider property with null, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationDivider_null_0100', Level.LEVEL0, async () => {
+      console.info('[navigationDivider_null_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_divider_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_divider_null');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationDivider_null_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationDivider_null_0100] null obj is: " + JSON.stringify(obj.$attrs));
+        console.info("[navigationDivider_null_0100] default divider is: " + JSON.stringify(objCompare.$attrs.divider));
+        console.info("[navigationDivider_null_0100] null divider is: " + JSON.stringify(obj.$attrs.divider));
+
+        // null should restore to default value
+        expect(JSON.stringify(obj.$attrs.divider)).assertEqual(JSON.stringify(objCompare.$attrs.divider));
+        console.info('[navigationDivider_null_0100] Navigation divider with null restores to default');
+      } catch (error) {
+        console.info('[navigationDivider_null_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationDivider_null_0100] END');
+    })
+
+    /**
+     * @tc.name   navigationDivider_undefined_0100
+     * @tc.number SUB_ARKUI_NAVIGATION_DIVIDER_UNDEFINED_0100
+     * @tc.desc   Test Navigation divider property with undefined, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('navigationDivider_undefined_0100', Level.LEVEL0, async () => {
+      console.info('[navigationDivider_undefined_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navigation_divider_default');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navigation_divider_undefined');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navigationDivider_undefined_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navigationDivider_undefined_0100] undefined obj is: " + JSON.stringify(obj.$attrs));
+        console.info("[navigationDivider_undefined_0100] undefined divider is: " + JSON.stringify(obj.$attrs.divider));
+
+        // undefined should restore to default value
+        expect(obj.$attrs.divider?.color).assertEqual(objCompare.$attrs.divider?.color);
+        expect(obj.$attrs.divider?.startMargin.includes('0.00')).assertTrue();
+
+        expect(obj.$attrs.divider?.endMargin.includes('0.00')).assertTrue();
+        console.info('[navigationDivider_undefined_0100] Navigation divider with undefined restores to default');
+      } catch (error) {
+        console.info('[navigationDivider_undefined_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navigationDivider_undefined_0100] END');
+    })
   })
 }

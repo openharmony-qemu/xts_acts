@@ -7,6 +7,8 @@
         "MainAbility/pages/UIobserver/Navigation/NavDestinationSizeUnique",
         "MainAbility/pages/Router/GetStackSize",
         "MainAbility/pages/Navigation/NavigationDivider",
-        "MainAbility/pages/Navigation/NavigationAttributeNullUndefined"
+        "MainAbility/pages/Navigation/NavigationAttributeNullUndefined",
+        "MainAbility/pages/navigator/NavigatorAttributeNullUndefined",
+        "MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined"
     ]
 }
