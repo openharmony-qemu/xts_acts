@@ -23,7 +23,7 @@ export default function NavigatorAttributeNullUndefinedTest() {
     beforeEach(async (done: Function) => {
       console.info('NavigatorAttributeNullUndefined beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/NavigatorAttributeNullUndefined',
+        url: 'MainAbility/pages/navigator/NavigatorAttributeNullUndefined',
       }
       try {
         router.clear();
