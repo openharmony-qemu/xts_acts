@@ -18,6 +18,8 @@ import NavDestinationSizeUnique from './UIobserver/Navigation/NavDestinationSize
 import GetStackSize from './Router/GetStackSize.test';
 import NavigationDivider from './Navigation/NavigationDivider.test';
 import NavigationAttributeNullUndefinedTest from './Navigation/NavigationAttributeNullUndefined.test';
+import NavigatorAttributeNullUndefinedTest from './Navigation/NavigatorAttributeNullUndefined.test';
+import NavDestinationAttributeNullUndefinedTest from './Navigation/NavDestinationAttributeNullUndefined.test';
 
 export default function testsuite() {
   GetStackSize()
@@ -26,4 +28,6 @@ export default function testsuite() {
   NavDestinationSizeUnique()
   NavigationDivider()
   NavigationAttributeNullUndefinedTest()
+  NavigatorAttributeNullUndefinedTest()
+  NavDestinationAttributeNullUndefinedTest()
 }
