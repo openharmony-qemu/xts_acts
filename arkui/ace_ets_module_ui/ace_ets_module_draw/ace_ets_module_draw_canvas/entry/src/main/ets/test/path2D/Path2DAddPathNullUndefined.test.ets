@@ -49,7 +49,7 @@ export default function Path2DAddPathNullUndefinedTest() {
      * @tc.size   MediumTest
      * @tc.level  0
      */
-    it('SUB_ACE_PATH2D_ADDPATH_PATH_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
+    it('Path2D_addPath_test_null_undefined', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_addpath_canvas');
       let obj: Record<string, Object> = JSON.parse(json) as Record<string, Object>;
       expect(obj.$type).assertEqual('Canvas');

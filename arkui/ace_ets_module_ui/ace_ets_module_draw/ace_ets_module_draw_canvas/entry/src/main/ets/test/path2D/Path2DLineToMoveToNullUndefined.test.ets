@@ -42,28 +42,28 @@ export default function Path2DLineToMoveToNullUndefinedTest() {
     });
 
     /**
-     * @tc.name      Path2D_lineTo_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_LINETO_NULL_UNDEFINED_0100
-     * @tc.desc      Test the lineTo method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_lineTo_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_LINETO_NULL_UNDEFINED_0100
+     * @tc.desc   Test the lineTo method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
-    it('SUB_ACE_PATH2D_LINETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
+    it('Path2D_lineTo_test_null_undefined', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_lineto_canvas');
       let obj: Record<string, Object> = JSON.parse(json) as Record<string, Object>;
       expect(obj.$type).assertEqual('Canvas');
     });
 
     /**
-     * @tc.name      Path2D_moveTo_test_null_undefined
-     * @tc.number    SUB_ACE_PATH2D_MOVETO_NULL_UNDEFINED_0100
-     * @tc.desc      Test the moveTo method of Path2D with null/undefined parameters
-     * @tc.type      FunctionTest
-     * @tc.size      MediumTest
-     * @tc.level     0
+     * @tc.name   Path2D_moveTo_test_null_undefined
+     * @tc.number SUB_ACE_PATH2D_MOVETO_NULL_UNDEFINED_0100
+     * @tc.desc   Test the moveTo method of Path2D with null/undefined parameters
+     * @tc.type   FunctionTest
+     * @tc.size   MediumTest
+     * @tc.level  0
      */
-    it('SUB_ACE_PATH2D_MOVETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
+    it('Path2D_moveTo_test_null_undefined', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_moveto_canvas');
       let obj: Record<string, Object> = JSON.parse(json) as Record<string, Object>;
       expect(obj.$type).assertEqual('Canvas');

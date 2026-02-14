@@ -49,7 +49,7 @@ export default function Path2DArcArcToNullUndefinedTest() {
      * @tc.size   MediumTest
      * @tc.level  0
      */
-    it('SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
+    it('Path2D_arc_test_null_undefined', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arc_canvas');
       let obj: Record<string, Object> = JSON.parse(json) as Record<string, Object>;
       expect(obj.$type).assertEqual('Canvas');
@@ -63,7 +63,7 @@ export default function Path2DArcArcToNullUndefinedTest() {
      * @tc.size   MediumTest
      * @tc.level  0
      */
-    it('SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
+    it('Path2D_arcTo_test_null_undefined', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arcto_canvas');
       let obj: Record<string, Object> = JSON.parse(json) as Record<string, Object>;
       expect(obj.$type).assertEqual('Canvas');
