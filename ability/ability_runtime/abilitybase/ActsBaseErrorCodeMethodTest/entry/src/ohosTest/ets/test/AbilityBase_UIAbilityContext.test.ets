@@ -2177,8 +2177,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseTypeNull0900', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseTypeNull0900`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6800', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6800`;
       console.log(`${tag}, it begin`);
       let type: string|null = null;
       let wantParam: Record<string, Object> = {
@@ -2223,8 +2223,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseTypeUndefined1000', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseTypeUndefined1000`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_6900', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_6900`;
       console.log(`${tag}, it begin`);
       let type: string|undefined = undefined;
       let wantParam: Record<string, Object> = {
@@ -2269,8 +2269,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseWantParamNull1100', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseWantParamNull1100`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7000', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7000`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object>|null = null;
@@ -2313,8 +2313,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseWantParamUndefined1200', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseWantParamUndefined1200`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7100`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object>|undefined = undefined;
@@ -2357,8 +2357,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseCallbackNull1300', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseCallbackNull1300`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7200`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object> = {
@@ -2396,8 +2396,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseCallbackUndefined1400', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseCallbackUndefined1400`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7300', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7300`;
       console.log(`${tag}, it begin`);
       let type: string = 'testType';
       let wantParam: Record<string, Object> = {
@@ -2435,8 +2435,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncAllParamsNull1500', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncAllParamsNull1500`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7400`;
       console.log(`${tag}, it begin`);
       let type: string|null = null;
       let wantParam: Record<string, Object>|null = null;
@@ -2471,8 +2471,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypeAsyncAllParamsUndefined1600', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypeAsyncAllParamsUndefined1600`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7500', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7500`;
       console.log(`${tag}, it begin`);
       let type: string|undefined = undefined;
       let wantParam: Record<string, Object>|undefined = undefined;
@@ -2502,8 +2502,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseAllParamsNull1700', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseAllParamsNull1700`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7600', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7600`;
       console.log(`${tag}, it begin`);
       let type: string|null = null;
       let wantParam: Record<string, Object>|null = null;
@@ -2539,8 +2539,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStartAbilityByTypePromiseAllParamsUndefined1800', Level.LEVEL0, (done: Function) => {
-      let tag = `testStartAbilityByTypePromiseAllParamsUndefined1800`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_7700`;
       console.log(`${tag}, it begin`);
       let type: string|undefined = undefined;
       let wantParam: Record<string, Object>|undefined = undefined;
@@ -2576,8 +2576,8 @@ export default function openLinkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetColorMode0100', Level.LEVEL0, async (done: Function) => {
-      let tag = `testSetColorMode0100`;
+    it('SUB_Ability_AbilityBase_UIAbilityContext_7800', Level.LEVEL0, async (done: Function) => {
+      let tag = `testSSUB_Ability_AbilityBase_UIAbilityContext_7800etColorMode0100`;
       console.log(`${tag}, it begin`);
       try {
         let colorMode = context.config.colorMode;
