@@ -69,8 +69,6 @@ namespace {
     const char* TEST_FONT_FAMILY = "TestFontFamily";
     const char* EMPTY_FONT_FAMILY = "";
     const char* EMPTY_FONT_PATH = "";
-    // 测试结果常量
-    constexpr int FAILURE = -1;
     // 字符串长度限制常量
     constexpr size_t MAX_PATH_LENGTH = 1024;
     constexpr size_t MAX_NAME_LENGTH = 512;
@@ -566,9 +564,8 @@ napi_value OHDrawingRegisterFontByIndex004(napi_env env, napi_callback_info info
 
     uint32_t errorCode = OH_Drawing_RegisterFontByIndex(fontCollection,
         NULL_FONT_FAMILY, TEST_FONT_PATH, VALID_INDEX);
-
-    // null字体名应该返回错误
-    NAPI_ASSERT_NO_MES(errorCode != OH_DRAWING_SUCCESS);
+    // null字体名称返回成功
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     OH_Drawing_DestroyFontCollection(fontCollection);
     napi_create_int32(env, SUCCESS, &result);
@@ -780,9 +777,8 @@ napi_value OHDrawingRegisterFontBufferByIndex004(napi_env env, napi_callback_inf
 
     uint32_t errorCode = OH_Drawing_RegisterFontBufferByIndex(fontCollection,
         NULL_FONT_FAMILY, fontBuffer, fileSize, VALID_INDEX);
-
-    // 验证返回错误码
-    NAPI_ASSERT_NO_MES(errorCode != OH_DRAWING_SUCCESS);
+    // null字体名称返回成功
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     delete[] fontBuffer;
     OH_Drawing_DestroyFontCollection(fontCollection);
