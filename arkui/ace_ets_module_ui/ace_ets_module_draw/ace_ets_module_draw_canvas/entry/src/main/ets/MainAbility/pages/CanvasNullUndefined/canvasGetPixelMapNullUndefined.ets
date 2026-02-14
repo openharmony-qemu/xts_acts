@@ -18,7 +18,7 @@
 struct canvasGetPixelMapNullUndefined {
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
-  private img:ImageBitmap = new ImageBitmap("resources/base/media/icon.png")
+  private img:ImageBitmap = new ImageBitmap('resources/base/media/icon.png')
 
   build() {
     Column({ space:2 }) {
