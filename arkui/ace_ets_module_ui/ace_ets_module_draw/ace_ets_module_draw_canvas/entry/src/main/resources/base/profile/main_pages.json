@@ -43,7 +43,8 @@
         "MainAbility/pages/path2D/Path2DBezierCurveToEllipseNullUndefined",
         "MainAbility/pages/path2D/Path2DLineToMoveToNullUndefined",
         "MainAbility/pages/path2D/Path2DQuadraticCurveToRectNullUndefined",
-        "MainAbility/pages/path2D/Path2DAddPathNullUndefined"
+        "MainAbility/pages/path2D/Path2DAddPathNullUndefined",
+        "MainAbility/pages/Canvas/CanvasRenderingContext2DNullUndefined"
         
     ]
 }

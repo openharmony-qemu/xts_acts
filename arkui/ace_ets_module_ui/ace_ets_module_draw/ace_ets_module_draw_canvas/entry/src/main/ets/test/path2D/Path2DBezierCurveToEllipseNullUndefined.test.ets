@@ -30,7 +30,7 @@ export default function Path2DBezierCurveToEllipseNullUndefinedTest() {
         console.info("get Path2DBezierCurveToEllipseNullUndefined state pages: " + JSON.stringify(pages));
         if (!("Path2DBezierCurveToEllipseNullUndefined" == pages.name)) {
           console.info("get Path2DBezierCurveToEllipseNullUndefined state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push Path2DBezierCurveToEllipseNullUndefined success: " + JSON.stringify(result));
         }
@@ -42,9 +42,12 @@ export default function Path2DBezierCurveToEllipseNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_bezierCurveTo_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_BEZIERCURVETO_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D bezierCurveTo with null/undefined parameters
-     * @tc.desc      Verify bezierCurveTo handles null/undefined parameters correctly
+     * @tc.desc      Test the bezierCurveTo method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_BEZIERCURVETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_beziercurveto_canvas');
@@ -53,9 +56,12 @@ export default function Path2DBezierCurveToEllipseNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_ellipse_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_ELLIPSE_NULL_0100
-     * @tc.name      Test Path2D ellipse with null/undefined parameters
-     * @tc.desc      Verify ellipse handles null/undefined parameters correctly
+     * @tc.desc      Test the ellipse method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_ELLIPSE_NULL_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_ellipse_canvas');

@@ -53,6 +53,7 @@ import path2DBezierCurveToEllipseNullUndefinedTest from './path2D/Path2DBezierCu
 import path2DLineToMoveToNullUndefinedTest from './path2D/Path2DLineToMoveToNullUndefined.test';
 import path2DQuadraticCurveToRectNullUndefinedTest from './path2D/Path2DQuadraticCurveToRectNullUndefined.test';
 import path2DAddPathNullUndefinedTest from './path2D/Path2DAddPathNullUndefined.test';
+import canvasRenderingContext2DNullUndefinedTest from './Canvas/CanvasRenderingContext2DNullUndefined.test';
 
 export default function testsuite() {
 
@@ -98,4 +99,5 @@ export default function testsuite() {
   path2DLineToMoveToNullUndefinedTest();
   path2DQuadraticCurveToRectNullUndefinedTest();
   path2DAddPathNullUndefinedTest();
+  canvasRenderingContext2DNullUndefinedTest();
 }

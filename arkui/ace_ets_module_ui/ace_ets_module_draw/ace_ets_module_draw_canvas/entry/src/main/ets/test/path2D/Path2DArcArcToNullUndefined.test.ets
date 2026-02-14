@@ -30,7 +30,7 @@ export default function Path2DArcArcToNullUndefinedTest() {
         console.info("get Path2DArcArcToNullUndefined state pages: " + JSON.stringify(pages));
         if (!("Path2DArcArcToNullUndefined" == pages.name)) {
           console.info("get Path2DArcArcToNullUndefined state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push Path2DArcArcToNullUndefined success: " + JSON.stringify(result));
         }
@@ -42,9 +42,12 @@ export default function Path2DArcArcToNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_arc_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D arc with null/undefined parameters
-     * @tc.desc      Verify arc handles null/undefined parameters correctly
+     * @tc.desc      Test the arc method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_ARC_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arc_canvas');
@@ -53,9 +56,12 @@ export default function Path2DArcArcToNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_arcTo_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D arcTo with null/undefined parameters
-     * @tc.desc      Verify arcTo handles null/undefined parameters correctly
+     * @tc.desc      Test the arcTo method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_ARCTO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_arcto_canvas');

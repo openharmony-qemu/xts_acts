@@ -30,7 +30,7 @@ export default function Path2DLineToMoveToNullUndefinedTest() {
         console.info("get Path2DLineToMoveToNullUndefined state pages: " + JSON.stringify(pages));
         if (!("Path2DLineToMoveToNullUndefined" == pages.name)) {
           console.info("get Path2DLineToMoveToNullUndefined state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push Path2DLineToMoveToNullUndefined success: " + JSON.stringify(result));
         }
@@ -42,9 +42,12 @@ export default function Path2DLineToMoveToNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_lineTo_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_LINETO_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D lineTo with null/undefined parameters
-     * @tc.desc      Verify lineTo handles null/undefined parameters correctly
+     * @tc.desc      Test the lineTo method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_LINETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_lineto_canvas');
@@ -53,9 +56,12 @@ export default function Path2DLineToMoveToNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_moveTo_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_MOVETO_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D moveTo with null/undefined parameters
-     * @tc.desc      Verify moveTo handles null/undefined parameters correctly
+     * @tc.desc      Test the moveTo method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_MOVETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_moveto_canvas');

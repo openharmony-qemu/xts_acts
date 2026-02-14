@@ -13,23 +13,41 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import router from '@ohos.router';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function Path2DQuadraticCurveToRectNullUndefinedTest() {
   describe('Path2DQuadraticCurveToRectNullUndefinedTest', () => {
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/path2D/Path2DQuadraticCurveToRectNullUndefined');
-      await sleep(1000);
-    })
-
-    afterAll(async () => {
-    })
+    beforeAll(async (done: Function) => {
+      console.info("Path2DQuadraticCurveToRectNullUndefined beforeAll start");
+      let options: router.RouterOptions = {
+        url: "MainAbility/pages/path2D/Path2DQuadraticCurveToRectNullUndefined",
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get Path2DQuadraticCurveToRectNullUndefined state pages: " + JSON.stringify(pages));
+        if (!("Path2DQuadraticCurveToRectNullUndefined" == pages.name)) {
+          console.info("get Path2DQuadraticCurveToRectNullUndefined state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.replaceUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push Path2DQuadraticCurveToRectNullUndefined success: " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push Path2DQuadraticCurveToRectNullUndefined page error: " + err);
+        expect().assertFail();
+      }
+      done();
+    });
 
     /**
+     * @tc.name      Path2D_quadraticCurveTo_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_QUADRATICCURVETO_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D quadraticCurveTo with null/undefined parameters
-     * @tc.desc      Verify quadraticCurveTo handles null/undefined parameters correctly
+     * @tc.desc      Test the quadraticCurveTo method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_QUADRATICCURVETO_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_quadraticcurveto_canvas');
@@ -38,9 +56,12 @@ export default function Path2DQuadraticCurveToRectNullUndefinedTest() {
     });
 
     /**
+     * @tc.name      Path2D_rect_test_null_undefined
      * @tc.number    SUB_ACE_PATH2D_RECT_NULL_UNDEFINED_0100
-     * @tc.name      Test Path2D rect with null/undefined parameters
-     * @tc.desc      Verify rect handles null/undefined parameters correctly
+     * @tc.desc      Test the rect method of Path2D with null/undefined parameters
+     * @tc.type      FunctionTest
+     * @tc.size      MediumTest
+     * @tc.level     0
      */
     it('SUB_ACE_PATH2D_RECT_NULL_UNDEFINED_0100', Level.LEVEL0, async () => {
       let json = getInspectorByKey('path2d_rect_canvas');
