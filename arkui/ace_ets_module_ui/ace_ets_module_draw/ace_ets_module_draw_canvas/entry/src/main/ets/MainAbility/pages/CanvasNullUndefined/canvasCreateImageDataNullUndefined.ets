@@ -21,7 +21,7 @@ struct canvasCreateImageDataNullUndefined {
 
   build() {
     Column({ space:2 }) {
-      Column({space:2}){
+      Row({space:2}){
         Canvas(this.context)
           .width(80)
           .height(80)
@@ -55,6 +55,39 @@ struct canvasCreateImageDataNullUndefined {
             this.context.putImageData(imageData, 10, 10)
           })
           .id('canvasCreateImageDataUndefined')
+      }
+      Row({space:2}){
+        Canvas(this.context)
+          .width(80)
+          .height(80)
+          .backgroundColor('rgb(213,213,213)')
+          .onReady(() => {
+            let imageData = this.context.createImageData(null)
+            for (let i = 0; i < imageData.data.length; i += 4) {
+              imageData.data[i + 0] = 112
+              imageData.data[i + 1] = 112
+              imageData.data[i + 2] = 112
+              imageData.data[i + 3] = 255
+            }
+            this.context.putImageData(imageData, 10, 10)
+          })
+          .id('canvasCreateImageDataNewNull')
+
+        Canvas(this.context)
+          .width(80)
+          .height(80)
+          .backgroundColor('rgb(213,213,213)')
+          .onReady(() => {
+            let imageData = this.context.createImageData(undefined)
+            for (let i = 0; i < imageData.data.length; i += 4) {
+              imageData.data[i + 0] = 112
+              imageData.data[i + 1] = 112
+              imageData.data[i + 2] = 112
+              imageData.data[i + 3] = 255
+            }
+            this.context.putImageData(imageData, 10, 10)
+          })
+          .id('canvasCreateImageDataNewUndefined')
       }
     }
     .width('100%')

@@ -43,7 +43,7 @@ struct canvasClipNullUndefined {
             this.context.rect(0, 0, 80, 80)
             this.context.stroke()
             this.context.clip(null,undefined)
-            this.context.fillStyle = "rgb(255,0,0)"
+            this.context.fillStyle = 'rgb(255,0,0)'
             this.context.fillRect(0, 0, 80, 80)
           })
           .id('canvasClipNullUndefined')
@@ -60,7 +60,7 @@ struct canvasClipNullUndefined {
             this.context.fillStyle = 'rgb(255,0,0)'
             this.context.fillRect(0, 0, 80, 80)
           })
-          .id('canvasClipUndefinedNull')
+          .id('canvasClipUndefinedNull') 
         
         Canvas(this.context)
           .width(80)
@@ -70,7 +70,7 @@ struct canvasClipNullUndefined {
             this.context.rect(0, 0, 80, 80)
             this.context.stroke()
             this.context.clip(undefined,undefined)
-            this.context.fillStyle = "rgb(255,0,0)"
+            this.context.fillStyle = 'rgb(255,0,0)'
             this.context.fillRect(0, 0, 80, 80)
           })
           .id('canvasClipUndefinedUndefined')

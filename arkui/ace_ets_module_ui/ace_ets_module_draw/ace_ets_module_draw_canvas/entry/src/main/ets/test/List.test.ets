@@ -55,6 +55,10 @@ import canvasCreatePatternNullUndefinedTest from './CanvasNullUndefined/canvasCr
 import canvasSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasSetTransformNullUndefinedTest.test';
 import canvasStrokeNullUndefinedTest from './CanvasNullUndefined/canvasStrokeNullUndefinedTest.test';
 
+import canvasGetImageDataNullUndefinedTest from './CanvasNullUndefined/canvasGetImageDataNullUndefinedTest.test';
+import canvasGetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasGetPixelMapNullUndefinedTest.test';
+import canvasPutImageDataNullUndefinedTest from './CanvasNullUndefined/canvasPutImageDataNullUndefinedTest.test';
+
 export default function testsuite() {
 
   CanvasAPIUnitTest();
@@ -99,5 +103,9 @@ export default function testsuite() {
   canvasCreatePatternNullUndefinedTest();
   canvasSetTransformNullUndefinedTest();
   canvasStrokeNullUndefinedTest();
+
+  canvasGetImageDataNullUndefinedTest();
+  canvasGetPixelMapNullUndefinedTest();
+  canvasPutImageDataNullUndefinedTest();
 
 }
