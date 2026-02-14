@@ -376,5 +376,219 @@ export default function relationalStoreCloudSyncEts() {
           '************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200 end *************');
       })
 
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressCodeStatic_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressCodeStatic_0100
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressCodeStatic_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s',
+          '************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressCodeStatic_0100 start *************');
+          try {
+            console.log(tag + "SUCCESS=" + data_relationalStore.ProgressCode.SUCCESS);
+            expect(data_relationalStore.ProgressCode.SUCCESS).assertEqual(0);
+            expect(data_relationalStore.ProgressCode.UNKNOWN_ERROR).assertEqual(1);
+            expect(data_relationalStore.ProgressCode.NETWORK_ERROR).assertEqual(2);
+            expect(data_relationalStore.ProgressCode.CLOUD_DISABLED).assertEqual(3);
+            expect(data_relationalStore.ProgressCode.LOCKED_BY_OTHERS).assertEqual(4);
+            expect(data_relationalStore.ProgressCode.RECORD_LIMIT_EXCEEDED).assertEqual(5);
+            expect(data_relationalStore.ProgressCode.NO_SPACE_FOR_ASSET).assertEqual(6);
+            expect(data_relationalStore.ProgressCode.BLOCKED_BY_NETWORK_STRATEGY).assertEqual(7);
+            done();
+          } catch (err) {
+            console.log(tag + `testRdbStoreProgressCode0010 fail, err code is ${err.code}, message is ${err.message}.`);
+            expect().assertFail();
+            done();
+          }
+        done();
+        hilog.info(domain, tag, '%{public}s',
+          '************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressCodeStatic_0100 end *************');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0100
+     * @tc.desc   test ProgressDetails
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0100 start *************");
+      let statistic1 : data_relationalStore.Statistic = {"total":10, "successful":6, "failed":3, "remained":1};
+      let statistic2 : data_relationalStore.Statistic = {"total":100, "successful":60, "failed":30, "remained":10};
+      let tableble: Record<string, data_relationalStore.TableDetails> = { "cloud_text": {"upload": statistic1, "download": statistic2} }
+      let tableDetail : data_relationalStore.TableDetails = {"upload": statistic1, "download": statistic2};
+      let progressDetail : data_relationalStore.ProgressDetails = {"schedule":data_relationalStore.Progress.SYNC_FINISH,"code":data_relationalStore.ProgressCode.SUCCESS,"details": tableble};
+      expect(progressDetail.schedule).assertEqual(2);
+      expect(progressDetail.code).assertEqual(0);
+      console.log(tag, `${JSON.stringify(progressDetail.details)}`);
+      expect(JSON.stringify(progressDetail.details)).assertContain('cloud_text');
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0200
+     * @tc.desc   test ProgressDetails
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0200 start *************");
+      let statistic1 : data_relationalStore.Statistic = {"total":10, "successful":6, "failed":3, "remained":1};
+      let statistic2 : data_relationalStore.Statistic = {"total":100, "successful":60, "failed":30, "remained":10};
+      let tableble: Record<string, data_relationalStore.TableDetails> = { "cloud_text": {"upload": statistic1, "download": statistic2} }
+      let tableDetail : data_relationalStore.TableDetails = {"upload": statistic1, "download": statistic2};
+      let progressDetail : data_relationalStore.ProgressDetails = {"schedule":data_relationalStore.Progress.SYNC_IN_PROGRESS,"code":data_relationalStore.ProgressCode.SUCCESS,"details": tableble};
+      expect(progressDetail.schedule).assertEqual(1);
+      expect(progressDetail.code).assertEqual(0);
+      console.log(tag, `${JSON.stringify(progressDetail.details)}`);
+      expect(JSON.stringify(progressDetail.details)).assertContain('cloud_text');
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0200 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0300
+     * @tc.desc   test ProgressDetails
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0300 start *************");
+      let statistic1 : data_relationalStore.Statistic = {"total":10, "successful":6, "failed":3, "remained":1};
+      let statistic2 : data_relationalStore.Statistic = {"total":100, "successful":60, "failed":30, "remained":10};
+      let tableble: Record<string, data_relationalStore.TableDetails> = { "cloud_text": {"upload": statistic1, "download": statistic2} }
+      let tableDetail : data_relationalStore.TableDetails = {"upload": statistic1, "download": statistic2};
+      let progressDetail : data_relationalStore.ProgressDetails = {"schedule":data_relationalStore.Progress.SYNC_BEGIN,"code":data_relationalStore.ProgressCode.SUCCESS,"details": tableble};
+      expect(progressDetail.schedule).assertEqual(0);
+      expect(progressDetail.code).assertEqual(0);
+      console.log(tag, `${JSON.stringify(progressDetail.details)}`);
+      expect(JSON.stringify(progressDetail.details)).assertContain('cloud_text');
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestProgressDetailsStatic_0300 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestFieldStatic_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestFieldStatic_0100
+     * @tc.desc   Field test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestFieldStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestFieldStatic_0100 start *************");
+      console.log(tag, `Field test`);
+      expect(data_relationalStore.Field.CURSOR_FIELD).assertEqual('#_cursor');
+      expect(data_relationalStore.Field.ORIGIN_FIELD).assertEqual('#_origin');
+      expect(data_relationalStore.Field.DELETED_FLAG_FIELD).assertEqual('#_deleted_flag');
+      expect(data_relationalStore.Field.DATA_STATUS_FIELD).assertEqual('#_data_status');
+      expect(data_relationalStore.Field.OWNER_FIELD).assertEqual('#_cloud_owner');
+      expect(data_relationalStore.Field.PRIVILEGE_FIELD).assertEqual('#_cloud_privilege');
+      expect(data_relationalStore.Field.SHARING_RESOURCE_FIELD).assertEqual('#_sharing_resource_field'	);
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestFieldStatic_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestOriginStatic_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestOriginStatic_0100
+     * @tc.desc   Origin test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestOriginStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestOriginStatic_0100 start *************");
+      console.log(tag, `Origin test`);
+      expect(data_relationalStore.Origin.LOCAL).assertEqual(0);
+      expect(data_relationalStore.Origin.CLOUD).assertEqual(1);
+      expect(data_relationalStore.Origin.REMOTE).assertEqual(2);
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestOriginStatic_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestTableTypeStatic_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestTableTypeStatic_0100
+     * @tc.desc   TableType test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestTableTypeStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestTableTypeStatic_0100 start *************");
+      console.log(tag, `Origin test`);
+      expect(data_relationalStore.DistributedTableType.DEVICE_COLLABORATION).assertEqual(0);
+      expect(data_relationalStore.DistributedTableType.SINGLE_VERSION).assertEqual(1);
+      console.log(tag + "************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestTableTypeStatic_0100 end *************");
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0100
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0100 start *************");
+        try {
+          if (rdbStore != undefined) {
+            (rdbStore as data_relationalStore.RdbStore).setDistributedTables(["EMPLOYEE"], data_relationalStore.DistributedType.DISTRIBUTED_CLOUD, {
+              autoSync: true,
+              asyncDownloadAsset: true,
+              enableCloud: true,
+            })
+            console.log(tag, `SetDistributedTables success`);
+          } else {
+            expect().assertFail();
+          }
+        } catch (e) {
+          let error: BusinessError = e as BusinessError;
+          console.error(tag, `Failed, code is ${error.code},message is ${error.message} `);
+          expect().assertFail();
+        }
+      console.log(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0100 end *************");
+    });
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200
+     * @tc.desc   DistributedConfig test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200 start *************");
+        try {
+          if (rdbStore != undefined) {
+            (rdbStore as data_relationalStore.RdbStore).setDistributedTables(["EMPLOYEE"], data_relationalStore.DistributedType.DISTRIBUTED_CLOUD, {
+              autoSync: false,
+              asyncDownloadAsset: false,
+              enableCloud: false,
+            })
+            console.log(tag, `SetDistributedTables success`);
+          } else {
+            expect().assertFail();
+          }
+        } catch (e) {
+          let error: BusinessError = e as BusinessError;
+          console.error(tag, `Failed, code is ${error.code},message is ${error.message} `);
+          expect().assertFail();
+        }
+      console.log(tag +
+        "************* SUB_DistributedData_RelationalStore_SDK_DistributedConfig_0200 end *************");
+    });
   })
 }
