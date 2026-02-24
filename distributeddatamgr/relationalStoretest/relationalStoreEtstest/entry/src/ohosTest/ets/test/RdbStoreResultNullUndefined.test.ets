@@ -556,7 +556,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0016 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 14800001).assertTrue();
+        expect(err.code === 14800001).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -564,7 +564,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0016 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 14800001).assertTrue();
+        expect(err.code === 14800001).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0016 end-----")
     })
