@@ -200,7 +200,7 @@ export default function abilityTest() {
 
       if (isSupport) {
         try {
-          await floatingBallController.updateFloatingBall(null);
+          await floatingBallController?.updateFloatingBall(null);
           console.info(msgStr + 'Succeeded');
           expect().assertFail();
           done();
@@ -210,7 +210,7 @@ export default function abilityTest() {
           expect(exception.message!=null).assertTrue();
         }
         try {
-          await floatingBallController.updateFloatingBall(undefined);
+          await floatingBallController?.updateFloatingBall(undefined);
           console.info(msgStr + 'Succeeded2.');
           expect().assertFail();
           done();
@@ -258,7 +258,7 @@ export default function abilityTest() {
       }
       if (isSupport) {
         try {
-          await floatingBallController.restoreMainWindow(null);
+          await floatingBallController?.restoreMainWindow(null);
           console.info(msgStr + 'Succeeded');
           expect().assertFail();
           done();
