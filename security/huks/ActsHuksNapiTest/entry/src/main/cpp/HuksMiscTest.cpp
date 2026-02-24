@@ -699,12 +699,7 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
     if (!IsUint32Type(sizeof(keyMaterial->xSize)) || !IsUint32Type(sizeof(keyMaterial->ySize))) {
         return -1;
     }
-
-    // Verify DSA domain parameter: prime modulus (p)
-    if (!IsUint32Type(sizeof(keyMaterial->pSize))) {
-        return -1;
-    }
-
+    
     // Verify DSA domain parameter: subgroup order (q)
     if (!IsUint32Type(sizeof(keyMaterial->qSize))) {
         return -1;

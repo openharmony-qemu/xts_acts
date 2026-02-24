@@ -201,8 +201,9 @@ static inline uint32_t OH_HUKS_KEY_BYTES(uint32_t keySize)
     return (keySize + BITS_PER_BYTE - 1) / BITS_PER_BYTE;
 }
 
-static OH_Huks_Result
-    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
+static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param* params,
+    uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
