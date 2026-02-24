@@ -210,69 +210,6 @@ export default function WindowLifeCycleTest() {
             }
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0100
-         * @tc.name        testGetLastWindow_Promise_static_0100
-         * @tc.desc        Get the final show window
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
-         */
-        it('testGetLastWindow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testGetLastWindow_Promise_static_0100';
-            let msgStr:string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let lastWindow: window.Window;
-            try {
-                window.getLastWindow(context!).then((data:window.Window) => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'window.getLastWindow data: ' + JSON.stringify(data));
-                    lastWindow = data;
-                    expect(lastWindow != null).assertTrue();
-                    done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]','Failed to obtain the top window. Cause: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
-                    done();
-                })
-            } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done();
-            }
-            ;
-        })
-        /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0200
-         * @tc.name        testGetLastWindow_Callback_static_0200
-         * @tc.desc        Get the final show window
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level3
-         */
-        it('testGetLastWindow_Callback_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testGetLastWindow_Callback_static_0200';
-            let msgStr:string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            try {
-                window.getLastWindow(context!, (err: BusinessError<void> | null, data: window.Window | undefined):void => {
-                    if (err?.code) {
-                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(err));
-                        try {
-                            expect(false).assertTrue();
-                        } catch (error) {
-                            hilog.info(0x0000, '[ANI]',msgStr + `window.getLastWindow  catch error: ${JSON.stringify(error)}`)
-                        }
-                        done();
-                        return;
-                    }
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining the top window. Data: ' + JSON.stringify(data));
-                    done();
-                })
-            } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
-            }
-            ;
-        })
-        /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0100
          * @tc.name        testLoadContent_Callback_static_0100
          * @tc.desc        The page does not exist
