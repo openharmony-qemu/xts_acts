@@ -878,9 +878,9 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL2
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync4();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-        try {			
+        try {		
+            let result: boolean = await registerHidDeviceAsync4();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));	
 			hidDevice.connect(deviceId);
             console.info("[bluetooth_js]hid connect is success ");
             await sleep(1000);
@@ -907,11 +907,11 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL2
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync5();
-		console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
-        hidDevice.connect(deviceId);
-        console.info("[bluetooth_js]hid connect is success ");
         try {
+            let result: boolean = await registerHidDeviceAsync5();
+		    console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
 			let id: number = 1;
 			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
             hidDevice.sendReport(id,reportData);
@@ -939,11 +939,11 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL2
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync6();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-        hidDevice.connect(deviceId);
-        console.info("[bluetooth_js]hid connect is success ");
         try {
+            let result: boolean = await registerHidDeviceAsync6();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
 			let type1: hid.ReportType = hid.ReportType.REPORT_TYPE_INPUT;
 			let id: number = 1;
 			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
@@ -971,11 +971,11 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL2
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync7();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-        hidDevice.connect(deviceId);
-        console.info("[bluetooth_js]hid connect is success ");
         try {
+            let result: boolean = await registerHidDeviceAsync7();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
             let error: hid.ErrorReason = hid.ErrorReason.RSP_SUCCESS;
             hidDevice.reportError(error);
             console.info("[bluetooth_js]hid reportError is success ");
@@ -1401,9 +1401,9 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL3
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
         try {			
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
 			hidDevice.connect(deviceId401);
             console.info("[bluetooth_js]hid connect is success ");
             await sleep(1000);
@@ -1484,9 +1484,9 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL3
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-        try {			
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));		
 			hidDevice.connect(deviceId1);
             console.info("[bluetooth_js]hid connect is success ");
             await sleep(1000);
@@ -1512,9 +1512,9 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL3
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-        try {			
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));		
 			hidDevice.connect(deviceId2);
             console.info("[bluetooth_js]hid connect is success ");
             await sleep(1000);
@@ -1540,9 +1540,9 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL3
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        let result: boolean = await registerHidDeviceAsync();
-		console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
         try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
 			hidDevice.connect(deviceId401);
             console.info("[bluetooth_js]hid connect is success ");
             await sleep(1000);
