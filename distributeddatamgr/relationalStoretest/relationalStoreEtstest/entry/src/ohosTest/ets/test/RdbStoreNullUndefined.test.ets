@@ -119,7 +119,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0001 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert(null, valueBucket2).then((rowId: number) => {
@@ -128,7 +128,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0001 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert(undefined, valueBucket2).then((rowId: number) => {
@@ -137,7 +137,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0001 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", null).then((rowId: number) => {
@@ -146,7 +146,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0001 failed4:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).insert("test", undefined).then((rowId: number) => {
@@ -155,7 +155,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0001 failed5:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
 
       console.error("************* RdbStore_Null_Undefind_Test_0001 end *************");
@@ -182,7 +182,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0002 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsert(null, valueBuckets).then((insertNum: number) => {
@@ -191,7 +191,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0002 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsert(undefined, valueBuckets).then((insertNum: number) => {
@@ -200,7 +200,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0002 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsert("test", null).then((insertNum: number) => {
@@ -209,7 +209,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0002 failed4:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsert("test", undefined).then((insertNum: number) => {
@@ -218,7 +218,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0002 failed5:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0002 end *************");
     })
@@ -242,35 +242,35 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0003 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsertSync(null, valueBuckets);
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0003 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsertSync(undefined, valueBuckets);
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0003 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsertSync("test", null);
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0003 failed4:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         (rdbStore as relationalStore.RdbStore).batchInsertSync("test", undefined);
         expect().assertFail()
       }catch(err) {
         console.error(`RdbStore_Null_Undefind_Test_0003 failed5:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0003 end *************");
     })
@@ -297,7 +297,7 @@ export default function RdbStoreNullUndefinedTest() {
         })
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0004 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).update(undefined, predicates).then(async (rows: number) => {
@@ -306,7 +306,7 @@ export default function RdbStoreNullUndefinedTest() {
         })
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0004 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
 
       try{
@@ -316,7 +316,7 @@ export default function RdbStoreNullUndefinedTest() {
         })
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0004 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, undefined).then(async (rows: number) => {
@@ -325,7 +325,7 @@ export default function RdbStoreNullUndefinedTest() {
         })
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0004 failed4:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0004 end *************");
     })
@@ -350,7 +350,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
           console.error(TAG +`RdbStore_Null_Undefind_Test_0005 failed1:${err.message} code:${err.code}`);
-          expect(err.code == 401).assertTrue();
+          expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).delete(undefined).then((rows: number) => {
@@ -359,7 +359,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0005 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0005 end *************");
     })
@@ -382,14 +382,14 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0006 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.deleteSync(undefined);
         expect().assertFail();
       }catch (err){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0006 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0006 end *************");
     })
@@ -416,14 +416,14 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch (err){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0007 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.query(undefined, ["data1", "data2", "data3", "data4", "data5"]);
         expect().assertFail()
       }catch (err){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0007 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).query(predicates, []).then(async (resultSet: relationalStore.ResultSet) => {
@@ -472,14 +472,14 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0008 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.querySync(undefined, ["data1", "data2", "data3", "data4", "data5"]);
         expect().assertFail()
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0008 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         let resultSet  = await rdbStore.querySync(predicates, []);
@@ -524,21 +524,21 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0009 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.querySql(undefined);
         expect().assertFail()
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0009 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.querySql("");
         expect().assertFail()
       }catch (err){
         console.error(`RdbStore_Null_Undefind_Test_0009 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
 
       try {
@@ -582,49 +582,49 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime(undefined, "data1", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime("", "data1", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed3:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime("test", null, PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed4:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime("test", undefined, PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed5:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime("test", "", PRIKey);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed6:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try{
         rdbStore.getModifyTime("test", "data1", []);
         expect().assertFail();
       }catch (err) {
         console.error(TAG + `RdbStore_Null_Undefind_Test_0010 failed7:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.error("************* RdbStore_Null_Undefind_Test_0010 end *************");
     })
@@ -1170,7 +1170,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0030 end *************");
@@ -1193,7 +1193,7 @@ export default function RdbStoreNullUndefinedTest() {
           expect().assertFail();
         }catch(error){
           console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
-          expect(error.code == 401);
+          expect(error.code === 401);
           return;
         }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0031 end *************");
@@ -1216,7 +1216,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0032 end *************");
@@ -1239,7 +1239,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0033 end *************");
@@ -1262,7 +1262,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0034 end *************");
@@ -1290,7 +1290,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolution(null, valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((insertNum: number) => {
@@ -1299,7 +1299,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolution(undefined, valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((insertNum: number) => {
@@ -1308,7 +1308,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolution("test", [], relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((insertNum: number) => {
@@ -1317,7 +1317,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed4, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolution("test", null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((insertNum: number) => {
@@ -1326,7 +1326,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed5, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolution("test", undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then((insertNum: number) => {
@@ -1335,7 +1335,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed6, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0035 end *************");
     })
@@ -1361,7 +1361,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
 
       try{
@@ -1370,7 +1370,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         let insertNum: number = (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolutionSync(undefined, valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1378,7 +1378,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         let insertNum: number = (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolutionSync("test", [], relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1386,7 +1386,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed4, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         let insertNum: number = (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolutionSync("test", null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1394,7 +1394,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed5, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         let insertNum: number = (rdbStore as relationalStore.RdbStore).batchInsertWithConflictResolutionSync("test", undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1402,7 +1402,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `batchInsert is failed6, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0036 end *************");
     })
@@ -1455,7 +1455,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0038 end *************");
@@ -1480,7 +1480,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0039 end *************");
@@ -1505,7 +1505,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0040 end *************");
@@ -1530,7 +1530,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0041 end *************");
@@ -1555,7 +1555,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0042 end *************");
@@ -1580,7 +1580,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0044 end *************");
@@ -1605,7 +1605,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0045 end *************");
@@ -1630,7 +1630,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0046 end *************");
@@ -1658,7 +1658,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).update(undefined, predicates, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(async (rows: number) => {
@@ -1667,7 +1667,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, null, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(async (rows: number) => {
@@ -1676,7 +1676,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       try{
         (rdbStore as relationalStore.RdbStore).update(valueBucket2, undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE).then(async (rows: number) => {
@@ -1685,7 +1685,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Updated failed4, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401);
+        expect(error.code === 401);
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0047 end *************");
     })
@@ -2184,7 +2184,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Delete failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0065 end *************");
