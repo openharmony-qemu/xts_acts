@@ -200,8 +200,9 @@ static int32_t ConstructDataToCertChain(struct OH_Huks_CertChain** certChain,
 }
 
 // Helper function: Generate parameter set
-static OH_Huks_Result
-    GenerateParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param tmpParams[], uint32_t paramCount)
+static OH_Huks_Result GenerateParamSet(struct OH_Huks_ParamSet** paramSet,
+    const struct OH_Huks_Param tmpParams[],
+    uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
