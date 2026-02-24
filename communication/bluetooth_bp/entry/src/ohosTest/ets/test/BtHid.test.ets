@@ -925,8 +925,6 @@ describe('btHidTest', () => {
                 expect(Number(err.code)).assertEqual(2903053);
             }
         }
-        hidDevice.disconnect();
-        console.info("[bluetooth_js]hid disconnect is success ");
         done();
     })
 
@@ -958,8 +956,6 @@ describe('btHidTest', () => {
                 expect(Number(err.code)).assertEqual(2903053);
             }
         }
-        hidDevice.disconnect();
-        console.info("[bluetooth_js]hid disconnect is success ");
         done();
     })
     /**
@@ -988,8 +984,6 @@ describe('btHidTest', () => {
                 expect(Number(err.code)).assertEqual(2903053);
             }
         }
-        hidDevice.disconnect();
-        console.info("[bluetooth_js]hid disconnect is success ");
         done();
     })
 
