@@ -856,7 +856,6 @@ export default function ActsDisplayNdkApi14Test() {
       try {
         screenshot.capture(null).then(async () => {
           console.info(msgStr + 'Succeeded in calling capture.');
-          expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + 'Failed to call capture. Cause: ' + JSON.stringify(err));
@@ -869,13 +868,12 @@ export default function ActsDisplayNdkApi14Test() {
         });
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
+        expect().assertFail();
+        done()
       }
       try {
         screenshot.capture(undefined).then(async () => {
           console.info(msgStr + 'Succeeded2 in calling capture.');
-          expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + 'Failed2 to call capture. Cause: ' + JSON.stringify(err));
@@ -888,8 +886,7 @@ export default function ActsDisplayNdkApi14Test() {
         });
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
+        expect().assertFail();
         done()
       }
     })

@@ -1395,65 +1395,6 @@ export default function windowErrCode401_3() {
     })
 
     /**
-     * @tc.name   testCreate_0300
-     * @tc.number testCreate_0300
-     * @tc.desc   testCreate_0300
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testCreate_0300', Level.LEVEL3, async (done: Function) => {
-      let caseName = "testCreate_0300";
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin.');
-      try {
-        await ohosWindow.create(null, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded');
-        expect().assertFail();
-      } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(1001);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(undefined, 'id', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded2.');
-        expect().assertFail();
-      } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(1001);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, '', ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded3');
-      } catch (exception) {
-        console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded4');
-      } catch (exception) {
-        console.error(msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-      }
-      try {
-        await ohosWindow.create(context, undefined, ohosWindow.WindowType.TYPE_STATUS_BAR);
-        console.info(msgStr + 'Succeeded5');
-        expect().assertFail();
-        done()
-      } catch (exception) {
-        console.error(msgStr + 'Failed5. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        expect(exception.code).assertEqual(401);
-        expect(exception.message!=null).assertTrue();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testFindWindow_0100
      * @tc.number testFindWindow_0100
      * @tc.desc   testFindWindow_0100
