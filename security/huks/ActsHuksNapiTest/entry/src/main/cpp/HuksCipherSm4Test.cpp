@@ -14,19 +14,13 @@
  */
 
 #include "include/HuksCipherSm4Test.h"
+#include <algorithm>
 #include <cstdlib>
 #include <cstring>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#ifndef EOK
-#define EOK 0
-#endif
-#define memcpy_s(dest, destMax, src, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
-#define memset_s(dest, destMax, val, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -50,9 +44,8 @@ static int32_t HksMemCmp(const void* ptr1, const void* ptr2, uint32_t size)
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -106,14 +99,13 @@ static OH_Huks_Result ProcessUpdateLoop(const struct Sm4UpdateLoopState* state)
                 return ret;
             }
 
-            if (memcpy_s(*state->cur,
-                         SM4_COMMON_SIZE - (*state->cur - state->outData->data),
-                         outDataSeg.data,
-                         outDataSeg.size) != EOK) {
+            size_t remainingSize = SM4_COMMON_SIZE - static_cast<size_t>(*state->cur - state->outData->data);
+            if (static_cast<size_t>(outDataSeg.size) > remainingSize) {
                 free(outDataSeg.data);
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }
+            std::copy(outDataSeg.data, outDataSeg.data + outDataSeg.size, *state->cur);
             *state->cur += outDataSeg.size;
             state->outData->size += outDataSeg.size;
             free(outDataSeg.data);
@@ -159,14 +151,13 @@ static OH_Huks_Result ProcessFinalUpdate(const struct Sm4FinalUpdateState* state
             return ret;
         }
 
-        if (memcpy_s(*state->cur,
-                     SM4_COMMON_SIZE - (*state->cur - state->outData->data),
-                     outDataFinish.data,
-                     outDataFinish.size) != EOK) {
+        size_t remainingSize = SM4_COMMON_SIZE - static_cast<size_t>(*state->cur - state->outData->data);
+        if (static_cast<size_t>(outDataFinish.size) > remainingSize) {
             free(outDataFinish.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        std::copy(outDataFinish.data, outDataFinish.data + outDataFinish.size, *state->cur);
         *state->cur += outDataFinish.size;
         state->outData->size += outDataFinish.size;
         free(outDataFinish.data);
@@ -204,14 +195,13 @@ static OH_Huks_Result ProcessFinishSession(const struct Sm4FinishSessionState* s
         return ret;
     }
 
-    if (memcpy_s(state->cur,
-                 SM4_COMMON_SIZE - (state->cur - state->outData->data),
-                 outDataFinish.data,
-                 outDataFinish.size) != EOK) {
+    size_t remainingSize = SM4_COMMON_SIZE - static_cast<size_t>(state->cur - state->outData->data);
+    if (static_cast<size_t>(outDataFinish.size) > remainingSize) {
         free(outDataFinish.data);
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
+    std::copy(outDataFinish.data, outDataFinish.data + outDataFinish.size, state->cur);
     state->outData->size += outDataFinish.size;
     free(outDataFinish.data);
 

@@ -14,19 +14,13 @@
  */
 
 #include "include/HuksCipherRsaTest.h"
+#include <algorithm>
 #include <cstdlib>
 #include <cstring>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#ifndef EOK
-#define EOK 0
-#endif
-#define memcpy_s(dest, destMax, src, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
-#define memset_s(dest, destMax, val, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -75,9 +69,8 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 }
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -186,12 +179,12 @@ static OH_Huks_Result ProcessUpdateLoop(const struct OH_Huks_Blob* handle,
 
         // Extract variable to reduce nesting
         size_t remainingSize = state->outDataBufferSize - (*(state->cur) - state->outData->data);
-        int memcpyResult = memcpy_s(*(state->cur), remainingSize, outDataSeg.data, outDataSeg.size);
-        if (memcpyResult != EOK) {
+        if (static_cast<size_t>(outDataSeg.size) > remainingSize) {
             HksFree(outDataSeg.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        std::copy(outDataSeg.data, outDataSeg.data + outDataSeg.size, *(state->cur));
         *(state->cur) += outDataSeg.size;
         state->outData->size += outDataSeg.size;
 
@@ -234,12 +227,12 @@ static OH_Huks_Result ProcessFinalUpdate(const struct OH_Huks_Blob* handle,
 
     // Extract variable to reduce nesting
     size_t remainingSize = state->outDataBufferSize - (*(state->cur) - state->outData->data);
-    int memcpyResult = memcpy_s(*(state->cur), remainingSize, outDataFinish.data, outDataFinish.size);
-    if (memcpyResult != EOK) {
+    if (static_cast<size_t>(outDataFinish.size) > remainingSize) {
         HksFree(outDataFinish.data);
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
+    std::copy(outDataFinish.data, outDataFinish.data + outDataFinish.size, *(state->cur));
     *(state->cur) += outDataFinish.size;
     state->outData->size += outDataFinish.size;
     HksFree(outDataFinish.data);
@@ -279,12 +272,12 @@ static OH_Huks_Result ProcessFinishSession(const struct OH_Huks_Blob* handle,
 
     // Extract variable to reduce nesting
     size_t remainingSize = state->outDataBufferSize - (*(state->cur) - state->outData->data);
-    int memcpyResult = memcpy_s(*(state->cur), remainingSize, outDataFinish->data, outDataFinish->size);
-    if (memcpyResult != EOK) {
+    if (static_cast<size_t>(outDataFinish->size) > remainingSize) {
         HksFree(outDataFinish->data);
         ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
         return ret;
     }
+    std::copy(outDataFinish->data, outDataFinish->data + outDataFinish->size, *(state->cur));
     state->outData->size += outDataFinish->size;
     HksFree(outDataFinish->data);
 

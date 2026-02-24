@@ -14,19 +14,13 @@
  */
 
 #include "include/HuksWrappedTest.h"
+#include <algorithm>
 #include <cstdint>
 #include <cstring>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#ifndef EOK
-#define EOK 0
-#endif
-#define memcpy_s(dest, destMax, src, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
-#define memset_s(dest, destMax, val, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -305,21 +299,21 @@ static OH_Huks_Result BuildWrappedKeyData(struct OH_Huks_Blob** blobArray, uint3
     uint32_t offset = 0;
 
     for (uint32_t i = 0; i < size; ++i) {
-        if (memcpy_s(outBlob.data + offset,
-                     totalLength - offset,
-                     reinterpret_cast<uint8_t*>(&blobArray[i]->size),
-                     sizeof(blobArray[i]->size)) != EOK) {
+        const auto* sizePtr = reinterpret_cast<const uint8_t*>(&blobArray[i]->size);
+        if (sizeof(blobArray[i]->size) > static_cast<size_t>(totalLength - offset)) {
             HksFree(outBlob.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        std::copy(sizePtr, sizePtr + sizeof(blobArray[i]->size), outBlob.data + offset);
         offset += sizeof(blobArray[i]->size);
 
-        if (memcpy_s(outBlob.data + offset, totalLength - offset, blobArray[i]->data, blobArray[i]->size) != EOK) {
+        if (static_cast<size_t>(blobArray[i]->size) > static_cast<size_t>(totalLength - offset)) {
             HksFree(outBlob.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        std::copy(blobArray[i]->data, blobArray[i]->data + blobArray[i]->size, outBlob.data + offset);
         offset += blobArray[i]->size;
     }
 
@@ -452,18 +446,20 @@ static int ImportWrappedKey(const struct HksImportWrappedKeyTestParams* params,
     const uint32_t tagSize = AEAD_TAG_SIZE;
     uint8_t kekTagBuf[tagSize] = { 0 };
     struct OH_Huks_Blob kekTag = { .size = tagSize, .data = kekTagBuf };
-    if (memcpy_s(kekTag.data, sizeof(kekTagBuf), plainCipher->data + (plainCipher->size - tagSize), tagSize) != EOK) {
+    if (tagSize > sizeof(kekTagBuf)) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
+    std::copy(plainCipher->data + (plainCipher->size - tagSize), plainCipher->data + plainCipher->size, kekTag.data);
     plainCipher->size -= tagSize;
 
     uint8_t agreeKeyTagBuf[tagSize] = { 0 };
     struct OH_Huks_Blob agreeKeyTag = { .size = tagSize, .data = agreeKeyTagBuf };
-    if (memcpy_s(
-            agreeKeyTagBuf, sizeof(agreeKeyTagBuf), kekCipherText->data + (kekCipherText->size - tagSize), tagSize) !=
-        EOK) {
+    if (tagSize > sizeof(agreeKeyTagBuf)) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
+    std::copy(kekCipherText->data + (kekCipherText->size - tagSize),
+              kekCipherText->data + kekCipherText->size,
+              agreeKeyTagBuf);
     kekCipherText->size -= tagSize;
 
     struct OH_Huks_Blob* blobArray[] = { peerPublicKey, &commonAad,   &commonNonce, &agreeKeyTag,    kekCipherText,

@@ -14,21 +14,15 @@
  */
 
 #include "include/HuksAttestTest.h"
+#include <algorithm>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
+#include <hilog/log.h>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#ifndef EOK
-#define EOK 0
-#endif
-#define memcpy_s(dest, destMax, src, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
-#define memset_s(dest, destMax, val, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
-#include <hilog/log.h>
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -195,8 +189,11 @@ static int32_t ConstructDataToCertChain(struct OH_Huks_CertChain** certChain,
             FreeCertChain(certChain, i);
             return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         }
-        if ((*certChain)->certs[i].data != nullptr) {
-            (void)memset_s((*certChain)->certs[i].data, (*certChain)->certs[i].size, 0, certChainParam->certDataSize);
+        if ((*certChain)->certs[i].data != nullptr &&
+            certChainParam->certDataSize <= static_cast<size_t>((*certChain)->certs[i].size)) {
+            std::fill((*certChain)->certs[i].data,
+                      (*certChain)->certs[i].data + certChainParam->certDataSize,
+                      static_cast<uint8_t>(0));
         }
     }
     return 0;

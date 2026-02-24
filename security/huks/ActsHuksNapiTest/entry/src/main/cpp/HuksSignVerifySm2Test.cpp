@@ -14,19 +14,13 @@
  */
 
 #include "include/HuksSignVerifySm2Test.h"
+#include <algorithm>
 #include <cstdint>
 #include <cstring>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
-#ifndef EOK
-#define EOK 0
-#endif
-#define memcpy_s(dest, destMax, src, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
-#define memset_s(dest, destMax, val, count) \
-    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -269,11 +263,12 @@ static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
         }
 
         // 提取 memcpy_s 调用到更浅的层次
-        if (memcpy_s(*(state->cur), state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
+        if (static_cast<size_t>(outDataSeg.size) > static_cast<size_t>(state->outData->size + outDataSeg.size)) {
             HksFree(outDataSeg.data);
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        std::copy(outDataSeg.data, outDataSeg.data + outDataSeg.size, *(state->cur));
 
         *(state->cur) += outDataSeg.size;
         state->outData->size += outDataSeg.size;
@@ -321,11 +316,12 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
 
     if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         if (outDataSeg.size > 0 && state->cur != nullptr) {
-            if (memcpy_s(state->cur, state->outData->size + outDataSeg.size, outDataSeg.data, outDataSeg.size) != EOK) {
+            if (static_cast<size_t>(outDataSeg.size) > static_cast<size_t>(state->outData->size + outDataSeg.size)) {
                 HksFree(outDataSeg.data);
                 ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
                 return ret;
             }
+            std::copy(outDataSeg.data, outDataSeg.data + outDataSeg.size, state->cur);
             state->outData->size += outDataSeg.size;
         }
         HksFree(outDataSeg.data);
@@ -414,18 +410,20 @@ static OH_Huks_Result CreateImportKeyAlias(struct OH_Huks_Blob* importKeyAlias, 
         return ret;
     }
 
-    if (memcpy_s(importKeyAlias->data, importKeyAlias->size, keyAlias->data, keyAlias->size) != EOK) {
+    if (static_cast<size_t>(keyAlias->size) > static_cast<size_t>(importKeyAlias->size)) {
         HksFree(importKeyAlias->data);
         ret.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
+    std::copy(keyAlias->data, keyAlias->data + keyAlias->size, importKeyAlias->data);
 
-    if (memcpy_s(importKeyAlias->data + keyAlias->size, importKeyAlias->size - keyAlias->size, tmp, strlen(tmp)) !=
-        EOK) {
+    if (strlen(tmp) > static_cast<size_t>(importKeyAlias->size - keyAlias->size)) {
         HksFree(importKeyAlias->data);
         ret.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
+    const auto* tmpBytes = reinterpret_cast<const uint8_t*>(tmp);
+    std::copy(tmpBytes, tmpBytes + strlen(tmp), importKeyAlias->data + keyAlias->size);
     return ret;
 }
 
@@ -526,7 +524,8 @@ struct VerifyOperationParams {
 static OH_Huks_Result PerformVerifyOperation(const struct VerifyOperationParams* params)
 {
     if (params->isTestSignData) {
-        (void)memset_s(params->outDataSign->data, params->outDataSign->size, 0, params->outDataSign->size);
+        std::fill(
+            params->outDataSign->data, params->outDataSign->data + params->outDataSign->size, static_cast<uint8_t>(0));
     }
 
     OH_Huks_Result ret =

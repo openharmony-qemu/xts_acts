@@ -38,9 +38,8 @@ static uint8_t g_saltgen[16] = { 0x14, 0x10, 0x11, 0x3a, 0x27, 0x9e, 0xc8, 0x5f,
                                  0xe0, 0xf3, 0x36, 0x17, 0x57, 0x42, 0x8e, 0xff };
 
 // Helper function: Initialize parameter set
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramCount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
