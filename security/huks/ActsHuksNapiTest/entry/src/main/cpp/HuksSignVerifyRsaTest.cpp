@@ -41,28 +41,31 @@ static const std::string IN_DATA =
 static struct OH_Huks_Param g_genParamsTest071[] = {
     { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
     { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY },
-    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048 },
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
-    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE },
+    { .tag = OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, .uint32Param = OH_HUKS_RSA_PSS_SALT_LEN_DIGEST }
 };
 
 static struct OH_Huks_Param g_signParamsTest071[] = {
     { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
     { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN },
-    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048 },
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
-    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE },
+    { .tag = OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, .uint32Param = OH_HUKS_RSA_PSS_SALT_LEN_DIGEST }
 };
 
 static struct OH_Huks_Param g_verifyParamsTest071[] = {
     { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
     { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_VERIFY },
-    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+    { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_2048 },
     { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_PSS },
     { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
-    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE },
+    { .tag = OH_HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, .uint32Param = OH_HUKS_RSA_PSS_SALT_LEN_DIGEST }
 };
 
 // Helper function: Initialize ParamSet
@@ -200,9 +203,9 @@ static OH_Huks_Result ExportAndImportPublicKey(struct OH_Huks_Blob keyAlias,
 
     // Import Key
     OH_LOG_INFO(LOG_APP, "[Step 4/6] Importing public key...");
-    char newKey[] = "RSA_Sign_Verify_Import_KeyAlias";
+    static const char newKey[] = "RSA_Sign_Verify_Import_KeyAlias";
     newKeyAlias->size = static_cast<uint32_t>(strlen(newKey));
-    newKeyAlias->data = reinterpret_cast<uint8_t*>(newKey);
+    newKeyAlias->data = reinterpret_cast<uint8_t*>(const_cast<char*>(newKey));
     ret = OH_Huks_ImportKeyItem(newKeyAlias, verifyParamSet, publicKey);
     OH_LOG_INFO(LOG_APP, "[Step 4/6] ImportKeyItem: errorCode=%{public}d", ret.errorCode);
 
@@ -272,7 +275,7 @@ static OH_Huks_Result HksRsaSignVerifyTestNormalCase(struct OH_Huks_Blob keyAlia
     struct OH_Huks_Blob finishInData = { 0, tmpIn };
 
     /* 1. Generate Key */
-    OH_LOG_INFO(LOG_APP, "[Step 1/6] Generating RSA-4096 key (may take 5-60s on dev board)...");
+    OH_LOG_INFO(LOG_APP, "[Step 1/6] Generating RSA-2048 key...");
     OH_Huks_Result ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
     OH_LOG_INFO(LOG_APP, "[Step 1/6] GenerateKeyItem completed: errorCode=%{public}d", ret.errorCode);
 
@@ -431,7 +434,8 @@ int SecurityHuksNapiSignVerifyRsa0100()
 
     int result = ExecuteRsaSignVerifyTestWithCleanup(keyAliasString, genParamSet, signParamSet, verifyParamSet);
 
-    OH_LOG_INFO(LOG_APP, "========== SecurityHuksNapiSignVerifyRsa0100: Test PASSED, returning 0 ==========");
+    OH_LOG_INFO(
+        LOG_APP, "========== SecurityHuksNapiSignVerifyRsa0100: completed, result=%{public}d ==========", result);
     return result;
 }
 

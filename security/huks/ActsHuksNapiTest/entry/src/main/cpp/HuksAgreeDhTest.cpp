@@ -114,7 +114,7 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 
     // G.MEM.01：内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
-        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
 
@@ -293,8 +293,8 @@ static int AllocateAndExportDhPublicKeys(struct OH_Huks_Blob* publicKey01,
 
 // Structure to encapsulate DH key agreement parameters
 struct DhKeyAgreementParams {
-    const struct OH_Huks_Blob* publicKey01;
-    const struct OH_Huks_Blob* publicKey02;
+    struct OH_Huks_Blob* publicKey01;
+    struct OH_Huks_Blob* publicKey02;
     const struct OH_Huks_ParamSet* initParamSet01;
     const struct OH_Huks_ParamSet* finishParamSet01;
     const struct OH_Huks_ParamSet* initParamSet02;

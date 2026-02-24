@@ -19,8 +19,14 @@
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -169,9 +175,8 @@ static const struct GenerateKeyCaseParam VERIFY_PARAMS_TEST[] = {
 };
 
 // Helper function: Initialize ParamSet
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramcount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -437,7 +442,7 @@ static OH_Huks_Result GenerateKeyForTest(const struct OH_Huks_Blob* keyAlias,
     }
 
     ret = OH_Huks_GenerateKeyItem(keyAlias, *genParamSet, nullptr);
-    if (ret.errorCode == (int32_t)OH_HUKS_ERR_ALGORITHM_NOT_SUPPORTED) {
+    if (ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED) {
         // Algorithm not supported, return success to skip test gracefully
         ret.errorCode = (int32_t)OH_HUKS_SUCCESS;
         return ret;
@@ -557,7 +562,7 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
     struct OH_Huks_ParamSet* verifyParamSet = nullptr;
 
     struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA.length()),
-                                   static_cast<uint8_t*>(const_cast<char*>(IN_DATA.c_str())) };
+                                   reinterpret_cast<uint8_t*>(const_cast<char*>(IN_DATA.c_str())) };
     uint8_t outDataS[SM2_COMMON_SIZE] = { 0 };
     struct OH_Huks_Blob outDataSign = { SM2_COMMON_SIZE, outDataS };
 

@@ -19,8 +19,14 @@
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -365,6 +371,23 @@ static OH_Huks_Result HksSm4CipherTestCaseOther(const struct OH_Huks_Blob* keyAl
     return ret;
 }
 
+// Structure to hold SM4 parameter set output
+struct Sm4ParamSetOutput {
+    struct OH_Huks_ParamSet** genParamSet;
+    struct OH_Huks_ParamSet** encryptParamSet;
+    struct OH_Huks_ParamSet** decryptParamSet;
+};
+
+// Parameter structure for SM4 cipher test
+struct Sm4CipherTestParams {
+    const struct OH_Huks_Param* genParams;
+    uint32_t genParamCount;
+    const struct OH_Huks_Param* encryptParams;
+    uint32_t encryptParamCount;
+    const struct OH_Huks_Param* decryptParams;
+    uint32_t decryptParamCount;
+};
+
 // Helper function: Initialize all parameter sets
 static int InitAllParamSets(const struct Sm4CipherTestParams* params, const struct Sm4ParamSetOutput* output)
 {
@@ -388,23 +411,6 @@ static int InitAllParamSets(const struct Sm4CipherTestParams* params, const stru
 
     return 0;
 }
-
-// Structure to hold SM4 parameter set output
-struct Sm4ParamSetOutput {
-    struct OH_Huks_ParamSet** genParamSet;
-    struct OH_Huks_ParamSet** encryptParamSet;
-    struct OH_Huks_ParamSet** decryptParamSet;
-};
-
-// Parameter structure for SM4 cipher test
-struct Sm4CipherTestParams {
-    const struct OH_Huks_Param* genParams;
-    uint32_t genParamCount;
-    const struct OH_Huks_Param* encryptParams;
-    uint32_t encryptParamCount;
-    const struct OH_Huks_Param* decryptParams;
-    uint32_t decryptParamCount;
-};
 
 // Helper function: Execute SM4 cipher test with cleanup
 static int ExecuteSm4CipherTestWithCleanup(const struct OH_Huks_Blob* keyAlias,

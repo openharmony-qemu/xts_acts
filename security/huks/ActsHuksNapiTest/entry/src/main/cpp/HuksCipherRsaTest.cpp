@@ -19,8 +19,14 @@
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -57,7 +63,7 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
-        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
 

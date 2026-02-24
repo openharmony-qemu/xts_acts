@@ -19,8 +19,14 @@
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -424,7 +430,7 @@ static int ExecuteAesCipherTestWithCleanup(const struct OH_Huks_Blob* keyAlias,
     OH_Huks_FreeParamSet(&decryptParamSet);
 
     // Check if error is due to environment limitations
-    if (ret.errorCode == (int32_t)OH_HUKS_ERR_ALGORITHM_NOT_SUPPORTED ||
+    if (ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_FEATURE_NOT_SUPPORTED ||
         ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT ||
         ret.errorCode == (int32_t)OH_HUKS_ERR_CODE_INTERNAL_ERROR) {
         return 0; // Environment limitation, skip test gracefully

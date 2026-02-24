@@ -19,15 +19,16 @@ export default function HuksSignVerifyRsaTest() {
      * @tc.desc   alg-RSA pur-Sign pad-PKCS1_V1_5 digest-MD5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiSignVerifyRsa0100', Level.LEVEL1, async () => {
+    it('SecurityHuksNapiSignVerifyRsa0100', Level.LEVEL0, async (done: Function) => {
       try {
         const result = await libHuks.HuksSignVerifyRsaTest(0);
         expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
       }
+      done();
     })
   })
 }

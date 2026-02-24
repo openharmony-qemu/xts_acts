@@ -117,7 +117,7 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 
     // G.MEM.01：内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
-        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
 
@@ -290,7 +290,7 @@ static int AllocateAndExportEcdhPublicKeys(struct OH_Huks_Blob* publicKey01,
 
 // Structure: Encapsulate ParamSets for cleanup
 struct EcdhParamSetsForCleanup {
-    const struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* genParamSet;
     struct OH_Huks_ParamSet* initParamSet01;
     struct OH_Huks_ParamSet* finishParamSet01;
     struct OH_Huks_ParamSet* initParamSet02;
@@ -299,8 +299,8 @@ struct EcdhParamSetsForCleanup {
 
 // Structure to encapsulate ECDH key agreement parameters
 struct EcdhKeyAgreementParams {
-    const struct OH_Huks_Blob* publicKey01;
-    const struct OH_Huks_Blob* publicKey02;
+    struct OH_Huks_Blob* publicKey01;
+    struct OH_Huks_Blob* publicKey02;
     const struct OH_Huks_ParamSet* initParamSet01;
     const struct OH_Huks_ParamSet* finishParamSet01;
     const struct OH_Huks_ParamSet* initParamSet02;
@@ -343,7 +343,7 @@ static int PerformEcdhKeyAgreement(const struct EcdhKeyAgreementParams* params)
 
 // Structure to encapsulate ECDH cleanup resources
 struct EcdhCleanupResources {
-    const struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* genParamSet;
     struct OH_Huks_ParamSet* initParamSet01;
     struct OH_Huks_ParamSet* finishParamSet01;
     struct OH_Huks_ParamSet* initParamSet02;
@@ -373,15 +373,6 @@ static void CleanupEcdhResources(const struct EcdhCleanupResources* resources)
 struct EcdhPublicKeyOutput {
     struct OH_Huks_Blob* publicKey01;
     struct OH_Huks_Blob* publicKey02;
-};
-
-// Structure to hold ECDH parameter sets for cleanup
-struct EcdhParamSetsForCleanup {
-    const struct OH_Huks_ParamSet* genParamSet;
-    struct OH_Huks_ParamSet* initParamSet01;
-    struct OH_Huks_ParamSet* finishParamSet01;
-    struct OH_Huks_ParamSet* initParamSet02;
-    struct OH_Huks_ParamSet* finishParamSet02;
 };
 
 // Helper function: Export public keys with error handling

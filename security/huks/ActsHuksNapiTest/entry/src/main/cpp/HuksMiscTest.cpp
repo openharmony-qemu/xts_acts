@@ -608,6 +608,14 @@ static int VerifyTagConstants()
     return 0;
 }
 
+// Inline helper: Check if a field has uint32_t size
+// Returns true if the field size matches uint32_t, false otherwise
+// This is a standard type validation pattern used in C/C++ for runtime size checks
+inline bool IsUint32Type(size_t fieldSize)
+{
+    return fieldSize == sizeof(uint32_t);
+}
+
 // Helper function: Verify basic struct field sizes
 static int VerifyBasicStructSizes()
 {
@@ -672,14 +680,6 @@ static int VerifyRsaAndEccMaterialSizes()
     return 0;
 }
 
-// Inline helper: Check if a field has uint32_t size
-// Returns true if the field size matches uint32_t, false otherwise
-// This is a standard type validation pattern used in C/C++ for runtime size checks
-inline bool IsUint32Type(size_t fieldSize)
-{
-    return fieldSize == sizeof(uint32_t);
-}
-
 // Helper function: Verify DSA (Digital Signature Algorithm) key material field sizes
 // Verifies that each field in OH_Huks_KeyMaterialDsa has the correct size
 // Returns 0 on success, -1 if any field size is incorrect
@@ -697,6 +697,11 @@ static int VerifyDsaMaterialSizes(const struct OH_Huks_KeyMaterialDsa* keyMateri
 
     // Verify DSA parameter sizes: private exponent (x), public key (y)
     if (!IsUint32Type(sizeof(keyMaterial->xSize)) || !IsUint32Type(sizeof(keyMaterial->ySize))) {
+        return -1;
+    }
+
+    // Verify DSA domain parameter: prime modulus (p)
+    if (!IsUint32Type(sizeof(keyMaterial->pSize))) {
         return -1;
     }
 

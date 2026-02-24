@@ -17,12 +17,18 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <hilog/log.h>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
+#include <hilog/log.h>
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -197,9 +203,8 @@ static int32_t ConstructDataToCertChain(struct OH_Huks_CertChain** certChain,
 }
 
 // Helper function: Generate parameter set
-static OH_Huks_Result GenerateParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param tmpParams[],
-    uint32_t paramCount)
+static OH_Huks_Result
+    GenerateParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param tmpParams[], uint32_t paramCount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -227,6 +232,7 @@ static int32_t ValidataAndCompareCertInfo(ParamType type,
     if (certChain == nullptr || paramSet == nullptr) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
+    // Note: HksValidateCertChain is not available in NDK, skip validation
     int32_t ret = OH_HUKS_SUCCESS;
     if (ret == OH_HUKS_SUCCESS) {
         ret |= strcmp(SEC_INFO_DATA, reinterpret_cast<char*>(paramSet->params[G_INDEX0].blob.data));

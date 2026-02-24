@@ -19,8 +19,14 @@
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
-#include <securec.h>
 #include <string>
+#ifndef EOK
+#define EOK 0
+#endif
+#define memcpy_s(dest, destMax, src, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memcpy((dest), (src), (count)), EOK) : -1)
+#define memset_s(dest, destMax, val, count) \
+    ((size_t)(count) <= (size_t)(destMax) ? (memset((dest), (val), (count)), EOK) : -1)
 
 namespace Acts {
 namespace Huks {
@@ -201,9 +207,8 @@ static inline uint32_t OH_HUKS_KEY_BYTES(uint32_t keySize)
     return (keySize + BITS_PER_BYTE - 1) / BITS_PER_BYTE;
 }
 
-static OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet** paramSet,
-    const struct OH_Huks_Param* params,
-    uint32_t paramcount)
+static OH_Huks_Result
+    InitParamSet(struct OH_Huks_ParamSet** paramSet, const struct OH_Huks_Param* params, uint32_t paramcount)
 {
     OH_Huks_Result ret = OH_Huks_InitParamSet(paramSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
@@ -454,9 +459,9 @@ static int ImportWrappedKey(const struct HksImportWrappedKeyTestParams* params,
 
     uint8_t agreeKeyTagBuf[tagSize] = { 0 };
     struct OH_Huks_Blob agreeKeyTag = { .size = tagSize, .data = agreeKeyTagBuf };
-    if (memcpy_s(agreeKeyTagBuf, sizeof(agreeKeyTagBuf),
-            kekCipherText->data + (kekCipherText->size - tagSize),
-            tagSize) != EOK) {
+    if (memcpy_s(
+            agreeKeyTagBuf, sizeof(agreeKeyTagBuf), kekCipherText->data + (kekCipherText->size - tagSize), tagSize) !=
+        EOK) {
         return OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     }
     kekCipherText->size -= tagSize;

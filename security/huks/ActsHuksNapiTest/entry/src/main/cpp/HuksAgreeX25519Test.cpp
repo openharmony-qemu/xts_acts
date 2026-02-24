@@ -123,7 +123,7 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > X25519_COMMON_SIZE) {
-        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_INVALID_SIZE;
+        ret.errorCode = (int32_t)OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
 
@@ -353,7 +353,7 @@ static int PerformX25519KeyAgreement(const struct X25519KeyAgreementParams* para
 
 // Structure to hold X25519 cleanup resources
 struct X25519CleanupResources {
-    const struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* genParamSet;
     struct OH_Huks_ParamSet* initParamSet01;
     struct OH_Huks_ParamSet* finishParamSet01;
     struct OH_Huks_ParamSet* initParamSet02;

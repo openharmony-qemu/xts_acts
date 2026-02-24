@@ -51,7 +51,7 @@ static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob* blob, const ui
 
     // G.MEM.01: 内存申请前，必须对申请内存大小进行合法性校验
     if (blobSize == 0 || blobSize > MAX_BLOB_SIZE) {
-        ret.errorCode = OH_HUKS_ERR_CODE_INVALID_SIZE;
+        ret.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
         return ret;
     }
 
