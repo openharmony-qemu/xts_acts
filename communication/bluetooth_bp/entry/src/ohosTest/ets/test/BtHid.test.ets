@@ -878,7 +878,7 @@ describe('btHidTest', () => {
      * @tc.level  LEVEL2
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {		
+        try {
             let result: boolean = await registerHidDeviceAsync4();
             console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));	
 			hidDevice.connect(deviceId);
