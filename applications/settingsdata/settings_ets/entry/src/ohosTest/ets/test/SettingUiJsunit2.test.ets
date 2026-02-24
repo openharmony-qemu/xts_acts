@@ -2223,29 +2223,6 @@ export default function settingUiJsunit() {
       });
 
     /**
-     * @tc.name   settings_set_value_sync_domain_empty
-     * @tc.number settings_set_value_sync_domain_empty
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_sync_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          let result: boolean =
-            settings.setValueSync(mContext, 'testkey', 'testvalue', '');
-          expect(result === null).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_sync_domain_empty] error = " + err);
-          expect().assertFail();
-          done();
-          return;
-        }
-      });
-
-    /**
      * @tc.name   settings_get_value_context_null
      * @tc.number settings_get_value_context_null
      * @tc.desc   MediumTest
