@@ -30,6 +30,7 @@
         "MainAbility/pages/SymbolGlyph/SymbolGlyphApi4",
         "MainAbility/pages/SymbolGlyph/SymbolGlyphApi5",
         "MainAbility/pages/SymbolGlyph/SymbolGlyphFontScaleTest",
-        "MainAbility/pages/SymbolGlyph/SymbolGlyphNode"
+        "MainAbility/pages/SymbolGlyph/SymbolGlyphNode",
+        "MainAbility/pages/SymbolGlyph/SymbolEffectNullUndefinedTest"
     ]
 }
