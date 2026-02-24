@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter'
 @Component
 struct savebutton_customize {
   @State bgType: ButtonType = ButtonType.Normal
-  @State iconSize: number = 16
+  @State iconSize: number | SizeOptions | undefined = undefined
   @State direct: SecurityComponentLayoutDirection = 0
   @State positionX: number = 0
   @State positionY: number = 0
@@ -46,97 +46,22 @@ struct savebutton_customize {
   @State columnWidth: string = '100%'
   @State columnHeight: string = '100%'
   @State sbAlign: Alignment = Alignment.Center
-  @State customIcon: Resource = $r('app.media.icon')
-  @State customText: string = '自定义保存'
-  @State icRadius: number = 0
-  @State buEnabled: boolean = true
+  @State customIcon: Resource | undefined = undefined
+  @State customText: string | undefined = undefined
+  @State iconRadius: number | BorderRadiuses | undefined = undefined
+  @State stateEft: boolean | undefined = undefined
+  @State iconSize_w: number | undefined = undefined
+  @State iconSize_h: number | undefined = undefined
+  @State iconRadius_tl: number | undefined = undefined
+  @State iconRadius_tr: number | undefined = undefined
+  @State iconRadius_bl: number | undefined = undefined
+  @State iconRadius_br: number | undefined = undefined
 
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       console.debug('====>page_saveButton page state change called:' + JSON.stringify(eventData));
-      if (eventData.data.bgType != null) {
-        this.bgType = eventData.data.bgType;
-      }
       if (eventData.data.iconSize != null) {
         this.iconSize = eventData.data.iconSize;
-      }
-      if (eventData.data.direct != null) {
-        this.direct = eventData.data.direct;
-      }
-      if (eventData.data.positionX != null) {
-        this.positionX = eventData.data.positionX;
-      }
-      if (eventData.data.positionY != null) {
-        this.positionY = eventData.data.positionY;
-      }
-      if (eventData.data.anchorX != null) {
-        this.anchorX = eventData.data.anchorX;
-      }
-      if (eventData.data.anchorY != null) {
-        this.anchorY = eventData.data.anchorY;
-      }
-      if (eventData.data.offsetX != null) {
-        this.offsetX = eventData.data.offsetX;
-      }
-      if (eventData.data.offsetY != null) {
-        this.offsetY = eventData.data.offsetY;
-      }
-      if (eventData.data.fontSize != null) {
-        this.fontSize = eventData.data.fontSize;
-      }
-      if (eventData.data.fontStyle != null) {
-        this.fontStyle = eventData.data.fontStyle;
-      }
-      if (eventData.data.fontWeight != null) {
-        this.fontWeight = eventData.data.fontWeight;
-      }
-      if (eventData.data.fontColor != null) {
-        this.fontColor = eventData.data.fontColor;
-      }
-      if (eventData.data.iconColor != null) {
-        this.iconColor = eventData.data.iconColor;
-      }
-      if (eventData.data.bgColor != null) {
-        this.bgColor = eventData.data.bgColor;
-      }
-      if (eventData.data.borderSty != null) {
-        this.borderSty = eventData.data.borderSty;
-      }
-      if (eventData.data.borderWid != null) {
-        this.borderWid = eventData.data.borderWid;
-      }
-      if (eventData.data.borderCol != null) {
-        this.borderCol = eventData.data.borderCol;
-      }
-      if (eventData.data.borderRad != null) {
-        this.borderRad = eventData.data.borderRad;
-      }
-      if (eventData.data.left != null) {
-        this.left = eventData.data.left;
-      }
-      if (eventData.data.right != null) {
-        this.right = eventData.data.right;
-      }
-      if (eventData.data.top != null) {
-        this.top = eventData.data.top;
-      }
-      if (eventData.data.bottom != null) {
-        this.bottom = eventData.data.bottom;
-      }
-      if (eventData.data.middle != null) {
-        this.middle = eventData.data.middle;
-      }
-      if (eventData.data.clipSet != null) {
-        this.clipSet = eventData.data.clipSet;
-      }
-      if (eventData.data.columnWidth != null) {
-        this.columnWidth = eventData.data.columnWidth;
-      }
-      if (eventData.data.columnHeight != null) {
-        this.columnHeight = eventData.data.columnHeight;
-      }
-      if (eventData.data.columnHeight != null) {
-        this.sbAlign = eventData.data.align;
       }
       if (eventData.data.cuIcon != null) {
         this.customIcon = eventData.data.cuIcon;
@@ -144,11 +69,17 @@ struct savebutton_customize {
       if (eventData.data.cuText != null) {
         this.customText = eventData.data.cuText;
       }
-      if (eventData.data.cuRadius != null) {
-        this.icRadius = eventData.data.cuRadius;
+      if (eventData.data.icRadius != null) {
+        this.iconRadius = eventData.data.icRadius;
       }
-      if (eventData.data.cuEnable != null) {
-        this.buEnabled = eventData.data.cuEnable;
+      if (eventData.data.stateEffect != null) {
+        this.stateEft = eventData.data.stateEffect;
+      }
+      if (eventData.data.icSize_w != null || eventData.data.icSize_h != null) {
+        this.iconSize = {width: eventData.data.icSize_w, height: eventData.data.icSize_h};
+      }
+      if (eventData.data.icRads_tl != null || eventData.data.icRads_tr != null || eventData.data.icRads_bl != null || eventData.data.icRads_br != null) {
+        this.iconRadius = {topLeft: eventData.data.icRads_tl, topRight: eventData.data.icRads_tr, bottomLeft: eventData.data.icRads_bl, bottomRight: eventData.data.icRads_br};
       }
     }
   }
@@ -209,8 +140,8 @@ struct savebutton_customize {
             .align(this.sbAlign)
             .setIcon(this.customIcon)
             .setText(this.customText)
-            .iconBorderRadius(this.icRadius)
-            .stateEffect(this.buEnabled)
+            .iconBorderRadius(this.iconRadius)
+            .stateEffect(this.stateEft)
             .id('keySave')
         }.width(100)
       }.width('100%').alignItems(HorizontalAlign.Center)
