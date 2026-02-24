@@ -55,7 +55,17 @@ export default function textPickerOnScrollStopTest(){
       let btn1 = await driver.findComponent(ON.id('myTextPicker'));
       let rect = await btn1.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.swipe(Math.round((rect.left+rect.right)/2),Math.round((rect.top+rect.bottom)/2),Math.round((rect.left+rect.right)/2),Math.round((rect.top+rect.bottom)/4),600);
+      let top = rect.top;
+      let left = rect.left;
+      let right = rect.right;
+      let bottom = rect.bottom;
+
+      await driver.swipe(
+        Math.round(left + (right - left) / 2),
+        Math.round(top + (bottom - top) / 2),
+        Math.round(left + (right - left) / 2),
+        Math.round(top));
+
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('text');
       console.info('[textPickerOnScrollStopTest_0100] textPickerOnScrollStopTest JSON.parse(strJson) is: ' + JSON.stringify(strJson));
