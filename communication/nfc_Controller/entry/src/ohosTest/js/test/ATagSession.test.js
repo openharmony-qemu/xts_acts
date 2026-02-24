@@ -356,13 +356,13 @@ export default function nfcATagSessionTest() {
                 console.info("[NFC_test] tagsession10 getSendDataTimeout:" + gettime);
                 expect(gettime).assertInstanceOf('Number')
             } catch (error) {
-                if (error.code == 201) {
+                if (error.code === 201) {
                     console.info('[NFC_test] tagsession10 getSendDataTimeout error' + error + error.code)
                     expect(201).assertEqual(error.code);
-                } else if (error.code == 801) {
+                } else if (error.code === 801) {
                     console.info('[NFC_test] tagsession10 getSendDataTimeout error' + error + error.code)
                     expect(801).assertEqual(error.code);
-                } else if (error.code == 3100201) {
+                } else if (error.code === 3100201) {
                     console.info('[NFC_test] tagsession10 getSendDataTimeout error' + error + error.code)
                     expect(3100201).assertEqual(error.code);
                 } else {
@@ -402,7 +402,7 @@ export default function nfcATagSessionTest() {
                     console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
                     expect('401').assertEqual(err.code);
                     done();
-                } else if (err.code = '801') {
+                } else if (err.code === '801') {
                     console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
                     expect('801').assertEqual(err.code);
                     done();
@@ -416,15 +416,13 @@ export default function nfcATagSessionTest() {
                     done();
                 } else {
                     sleep(2500);
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data: " + data);
-                    expect(data).assertInstanceOf('Array')
+                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 failed: " + err);
+                    expect().assertFail();
                     done();
                 }
             }
             sleep(3500);
         })
-
-
 
         /**
          * @tc.name   SUB_Communication_NFC_nfcAtage_js_1200
@@ -684,15 +682,15 @@ export default function nfcATagSessionTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcAtage_js_2300', Level.LEVEL0, function ()  {
-                try {
-                    getAtag1 = tag.getNfcATag(aTag1);
-                    console.info('Nfcget Connected data' + getAtag1);
-                } catch (error) {
-                    if (error.code === 401) {
-                        console.info('Nfcget Connected error' + error + " --- " + error.code);
-                        expect(error.code).assertEqual(401);
-                    }
-                }          
+            try {
+                getAtag1 = tag.getNfcATag(aTag1);
+                console.info('Nfcget Connected data' + getAtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(error.code).assertEqual(401);
+                }
+            }
         })
 
         /**
@@ -704,15 +702,15 @@ export default function nfcATagSessionTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcAtage_js_2400', Level.LEVEL0, function ()  {
-                try {
-                    getAtag1 = tag.getNfcA(aTag1);
-                    console.info('Nfcget Connected data' + getAtag1);
-                } catch (error) {
-                    if (error.code === 401) {
-                        console.info('Nfcget Connected error' + error + " --- " + error.code);
-                        expect(error.code).assertEqual(401);
-                    }
-                }          
+            try {
+                getAtag1 = tag.getNfcA(aTag1);
+                console.info('Nfcget Connected data' + getAtag1);
+            } catch (error) {
+                if (error.code === 401) {
+                    console.info('Nfcget Connected error' + error + " --- " + error.code);
+                    expect(error.code).assertEqual(401);
+                }
+            }
         })
 
         console.info("*************[nfc_test] start nfc js unit test end*************");

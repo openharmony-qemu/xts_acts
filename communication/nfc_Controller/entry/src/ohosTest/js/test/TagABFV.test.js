@@ -1393,7 +1393,7 @@ export default function nfcTagABFVTest() {
          */
         it('SUB_Communication_NFC_nfctage_js_3300', Level.LEVEL0, function ()  {
             try {
-                let getFtag1 = tag.getNfcF(bTag2);
+                let getFtag1 = tag.getNfcF(fTag2);
                 console.info('Nfcget Connected data' + getFtag1);
             } catch (error) {
                 if (error.code === 401) {
@@ -1581,7 +1581,7 @@ export default function nfcTagABFVTest() {
                 "technology": [],
                 "tagRfDiscId": 1,
                 "supportedProfiles": 1,
-            }
+            };
             try {
                 let getBarcodeTag = tag.getBarcodeTag(bTag);
                 console.info('Nfcget Connected data' + getBarcodeTag);

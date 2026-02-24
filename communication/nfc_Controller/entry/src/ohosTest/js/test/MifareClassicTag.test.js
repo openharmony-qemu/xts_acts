@@ -135,7 +135,7 @@ export default function nfcMifareClassicTag() {
                         expect('3100201').assertEqual(err.code);
                     } else if (err.code === '3100204') {
                         console.info("[NFC_test] MifareClassicTag2 authenticateSector2 err: " + err);
-                        expect('3100201').assertEqual(err.code);
+                        expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag2 authenticateSector2 data: " + data + "json2:" + JSON.stringify(data));
                         expect(data != 0).assertTrue();
@@ -175,10 +175,10 @@ export default function nfcMifareClassicTag() {
                         expect('201').assertEqual(err.code);
                     } else if (err.code === '3100201') {
                         console.info("[NFC_test] MifareClassicTag3 readSingleBlock1 err: " + err);
-                        expect('201').assertEqual(err.code);
+                        expect('3100201').assertEqual(err.code);
                     } else if (err.code === '3100204') {
                         console.info("[NFC_test] MifareClassicTag3 readSingleBlock1 err: " + err);
-                        expect('201').assertEqual(err.code);
+                        expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag3 readSingleBlock1 err: " + err);
                         expect().assertFail();
@@ -259,7 +259,7 @@ export default function nfcMifareClassicTag() {
                         expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag5 writeSingleBlock1 err: " + err);
-                        expect(true).assertEqual(true);
+                        expect().assertFail();
                     }
                     done();
                 });
@@ -332,7 +332,7 @@ export default function nfcMifareClassicTag() {
                         expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag7 incrementBlock1 err: " + err);
-                        expect(true).assertEqual(true);
+                        expect().assertFail();
                     }
                     done();
                 });
@@ -404,13 +404,13 @@ export default function nfcMifareClassicTag() {
                         expect('201').assertEqual(err.code);
                     } else if (err.code === '3100201') {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
-                        expect(err.code).assertEqual('3100201');
+                        expect('3100201').assertEqual(err.code);
                     } else if (err.code === '3100204') {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
                         expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] MifareClassicTag9 decrementBlock1 err: " + err);
-                        expect(true).assertEqual(true);
+                        expect().assertFail();
                     }
                     done();
                 });
@@ -484,7 +484,7 @@ export default function nfcMifareClassicTag() {
                         expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] mifareClassic11 transferToBlock1 err: " + err);
-                        expect(true).assertEqual(true);
+                        expect().assertFail();
                     }
                     done();
                 });
@@ -663,7 +663,7 @@ export default function nfcMifareClassicTag() {
                 try{
                     let getType = MifareClassicTag.getType();
                     console.info("[NFC_test] MifareClassicTag17 getType: " + getType);
-                    expect(getType >= -1).assertTrue();
+                    expect(getType == MifareClassicType.TYPE_PLUS).assertTrue();
                 } catch (error) {
                     console.info('[NFC_test] MifareClassicTag17 getType error' + error)
                     expect().assertFail();

@@ -197,7 +197,7 @@ export default function nfcIsoDepTagTest() {
                     
                     done();
                 }).catch((err)=> {
-                    console.info("[NFC_test] Isodep3 isExtendedApduSuportepd data");
+                    console.info("[NFC_test] Isodep3 isExtendedApduSupported data");
                     if (err.code === '201') {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
                         expect('201').assertEqual(err.code);
@@ -235,7 +235,7 @@ export default function nfcIsoDepTagTest() {
                 console.info("[NFC_test] Isodep4 00isExtendedApduSupported: " );
                 IsoDepTag.isExtendedApduSupported((err, data)=> {
                     console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                    if (err == '201') {
+                    if (err === '201') {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
                         expect('201').assertEqual(err.code);
                     } else if (err === '3100201') {
