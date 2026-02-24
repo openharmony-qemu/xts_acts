@@ -197,19 +197,19 @@ export default function nfcIsoDepTagTest() {
                     
                     done();
                 }).catch((err)=> {
-                    console.info("[NFC_test] Isodep3 isExtendedApduSupported data");
-                    if (err.code == 201) {
+                    console.info("[NFC_test] Isodep3 isExtendedApduSuportepd data");
+                    if (err.code === '201') {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(true).assertTrue();
-                    } else if (err.code == 401) {
+                        expect('201').assertEqual(err.code);
+                    } else if (err.code === '401') {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                        expect('401').assertEqual(err.code);
+                    } else if (err.code === '3100201') {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100204) {
+                        expect('3100201').assertEqual(err.code);
+                    } else if (err.code === '3100204') {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(true).assertTrue();
+                        expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
                         expect().assertFail();
@@ -235,15 +235,15 @@ export default function nfcIsoDepTagTest() {
                 console.info("[NFC_test] Isodep4 00isExtendedApduSupported: " );
                 IsoDepTag.isExtendedApduSupported((err, data)=> {
                     console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                    if (err== 201) {
+                    if (err == '201') {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err == 3100201) {
+                        expect('201').assertEqual(err.code);
+                    } else if (err === '3100201') {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err == 3100204) {
+                        expect('3100201').assertEqual(err.code);
+                    } else if (err === '3100204') {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(true).assertTrue();
+                        expect('3100204').assertEqual(err.code);
                     } else {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
                         if (data == true) {
@@ -499,7 +499,6 @@ export default function nfcIsoDepTagTest() {
                 hceService.off("hceCmd", apduCallback)
                 console.info('[NFC_test]0900 hceServicesoff success ')
                 hceService.stop(hceElementName)
-                expect(true).assertTrue();
                 console.info('[NFC_test]0900 hceServicestop success ')
             } catch (error) {
                 console.info('[NFC_test]0900 hceService on/off error' + error + "/" + error.code)
@@ -603,6 +602,32 @@ export default function nfcIsoDepTagTest() {
             let hceService = new cardEmulation.HceService();
             console.info('[NFC_test]14 hceService state is' + hceService )
             let aidList = ["A0000000031010", "A0000000031011"]
+            let responseData = [0x1, 0x2];
+            try {
+                hceService.startHCE(aidList);
+                console.info('[NFC_test]14 hceService startHCE is success ')
+                hceService.stopHCE();
+                console.info('[NFC_test]14 hceService stopHCE is success ')
+                hceService.sendResponse(responseData);
+                console.info('[NFC_test]14 hceService sendResponse is success ')
+            } catch (error) {
+                console.info('[NFC_test]14 hceService startHCE/stopHCE/sendResponse ' + error + "/" + error.code)
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1401
+         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1401
+         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfccardEmulationnfc_js_1401', Level.LEVEL0, function ()  {
+            let hceService = new cardEmulation.HceService();
+            console.info('[NFC_test]14 hceService state is' + hceService )
+            let aidList = [];
             let responseData = [0x1, 0x2];
             try {
                 hceService.startHCE(aidList);
