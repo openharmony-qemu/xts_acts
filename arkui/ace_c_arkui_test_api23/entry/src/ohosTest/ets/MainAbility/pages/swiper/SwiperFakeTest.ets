@@ -26,7 +26,7 @@ struct columnReverseTest {
       CommonView({
         pageTag: this.PAGE_TAG,
       }).onAppear(() => {
-        render.SwiperFakeTest(this.PAGE_TAG);
+        render.CreateNativeSwiperNode(this.PAGE_TAG);
       })
     }
   }
