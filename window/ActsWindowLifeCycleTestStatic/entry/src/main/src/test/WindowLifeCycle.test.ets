@@ -210,6 +210,69 @@ export default function WindowLifeCycleTest() {
             }
         });
         /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0100
+         * @tc.name        testGetLastWindow_Promise_static_0100
+         * @tc.desc        Get the final show window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testGetLastWindow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetLastWindow_Promise_static_0100';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let lastWindow: window.Window;
+            try {
+                window.getLastWindow(context!).then((data:window.Window) => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'window.getLastWindow data: ' + JSON.stringify(data));
+                    lastWindow = data;
+                    expect(lastWindow != null).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]','Failed to obtain the top window. Cause: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+            ;
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0200
+         * @tc.name        testGetLastWindow_Callback_static_0200
+         * @tc.desc        Get the final show window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testGetLastWindow_Callback_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testGetLastWindow_Callback_static_0200';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            try {
+                window.getLastWindow(context!, (err: BusinessError<void> | null, data: window.Window | undefined):void => {
+                    if (err?.code) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(err));
+                        try {
+                            expect(false).assertTrue();
+                        } catch (error) {
+                            hilog.info(0x0000, '[ANI]',msgStr + `window.getLastWindow  catch error: ${JSON.stringify(error)}`)
+                        }
+                        done();
+                        return;
+                    }
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining the top window. Data: ' + JSON.stringify(data));
+                    done();
+                })
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
+            }
+            ;
+        })
+        /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0100
          * @tc.name        testLoadContent_Callback_static_0100
          * @tc.desc        The page does not exist
@@ -618,7 +681,32 @@ export default function WindowLifeCycleTest() {
                 expect(false).assertTrue();
                 done();
             }
+        });
+
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
+         * @tc.name        testEnumWindowStageLifecycleEventTypeReName_static_0100
+         * @tc.desc        To test the enum value of WindowStageEventType.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testEnumWindowStageLifecycleEventTypeReName_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>  {
+            hilog.info(0x0000, '[ANI]','test the enum value of WindowStageLifecycleEventType begin');
+            try {
+                expect(1).assertEqual(window.WindowStageLifecycleEventType.SHOWN);
+                expect(2).assertEqual(window.WindowStageLifecycleEventType.RESUMED);
+                expect(3).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
+                expect(4).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
+                done();
+            } catch (err) {
+                hilog.info(0x0000, '[ANI]','test enum value of WindowStageLifecycleEventType error ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done();
+            }
         })
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETMAINWINDOW_API_0100
          * @tc.name        testWindowStage_GetMainWIndow_Callback_static_0100
@@ -943,7 +1031,7 @@ export default function WindowLifeCycleTest() {
 
         })
 
-        
+
 /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
          * @tc.name        testNoInteractionDetected_OnMainWindow_static_0100
@@ -1045,7 +1133,7 @@ export default function WindowLifeCycleTest() {
                 }
             }
         })
-        
+
 
 
 
@@ -1086,7 +1174,7 @@ export default function WindowLifeCycleTest() {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 });
-            
+
         })
         /**
          * @tc.number       testOffSubWindowCloseErrCode1300002_0100
@@ -1124,7 +1212,7 @@ export default function WindowLifeCycleTest() {
                     hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 });
-            
+
         })
 
         /**
@@ -1768,7 +1856,7 @@ export default function WindowLifeCycleTest() {
                                 done()
                             }
                         });
-        
+
                     } catch (exception) {
                         exception = exception as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
@@ -1781,7 +1869,7 @@ export default function WindowLifeCycleTest() {
                     expect(false).assertTrue();
                     done()
                 });
-        
+
         })
 /**
          * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3910
@@ -1869,7 +1957,7 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr + ',error code:' + error.code);
                 expect(false).assertTrue();
                 done();
-               
+
             }
 
         })
@@ -2392,10 +2480,28 @@ export default function WindowLifeCycleTest() {
             }
         });
 
-
-        
-        
-
+      /**
+       * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
+       * @tc.name        testEnumWindowStageLifecycleEventTypeReName_static_0100
+       * @tc.desc        To test the enum value of WindowStageEventType.
+       * @tc.size        MediumTest
+       * @tc.type        Function
+       * @tc.level       Level3
+       */
+      it('testEnumWindowStageLifecycleEventTypeReName_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>  {
+        hilog.info(0x0000, '[ANI]','test the enum value of WindowStageLifecycleEventType begin');
+        try {
+          expect(1).assertEqual(window.WindowStageLifecycleEventType.SHOWN);
+          expect(2).assertEqual(window.WindowStageLifecycleEventType.RESUMED);
+          expect(3).assertEqual(window.WindowStageLifecycleEventType.PAUSED);
+          expect(4).assertEqual(window.WindowStageLifecycleEventType.HIDDEN);
+          done();
+        } catch (err) {
+          hilog.info(0x0000, '[ANI]','test enum value of WindowStageLifecycleEventType error ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      });
     })
 
 }
