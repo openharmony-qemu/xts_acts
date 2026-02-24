@@ -29,7 +29,8 @@
         },
         {
             "test-file-name": [
-                "ActsCameraKitXtsTest.hap"
+                "ActsCameraKitXtsTest.hap",
+                "ActsCameraKitXtsMainTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
