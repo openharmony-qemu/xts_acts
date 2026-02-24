@@ -1853,8 +1853,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0054 end *************");
     })
@@ -1882,8 +1884,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0055 end *************");
     })
@@ -1911,8 +1915,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0056 end *************");
     })
@@ -1940,8 +1946,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0057 end *************");
     })
@@ -1969,8 +1977,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0058 end *************");
     })
@@ -1996,7 +2006,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 14800021).assertTrue();
+        expect(error.code === 14800021).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0059 end *************");
     })
@@ -2024,8 +2034,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0060 end *************");
     })
@@ -2053,8 +2065,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0061 end *************");
     })
@@ -2082,8 +2096,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0062 end *************");
     })
@@ -2111,8 +2127,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0063 end *************");
     })
@@ -2140,8 +2158,10 @@ export default function RdbStoreNullUndefinedTest() {
           const row = results.resultSet.getRow();
           console.info(TAG + `updateWithReturningExample, data1 is ${row['data1']}, data2 is ${row['data2']}`);
         }
+        expect(results.changed == 1).assertTrue();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0064 end *************");
     })
@@ -2214,7 +2234,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG + `deleteWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 14800021).assertTrue();
+        expect(error.code === 14800021).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0067 end *************");
     })
@@ -2239,7 +2259,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG + `deleteWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 14800021).assertTrue();
+        expect(error.code === 14800021).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0068 end *************");
     })
@@ -3261,7 +3281,7 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).executeSql(SQL_DELETE_TABLE, undefined, (error) => {
           if (error) {
             console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-            expect(error.code == 14800021).assertTrue();
+            expect(error.code === 14800021).assertTrue();
             done()
           }else{
             console.info(TAG + 'Delete table done.');
@@ -3292,7 +3312,7 @@ export default function RdbStoreNullUndefinedTest() {
         (rdbStore as relationalStore.RdbStore).executeSql(SQL_DELETE_TABLE, undefined, (error) => {
           if (error) {
             console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-            expect(error.code == 14800021).assertTrue();
+            expect(error.code === 14800021).assertTrue();
             done()
           }else{
             console.info(TAG + 'Delete table done.');
