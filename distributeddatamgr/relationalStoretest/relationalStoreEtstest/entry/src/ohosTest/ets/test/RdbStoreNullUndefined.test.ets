@@ -646,7 +646,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0011 end *************");
@@ -669,7 +669,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG +`RdbStore_Null_Undefind_Test_0012, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0012 end *************");
@@ -692,7 +692,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0013 end *************");
@@ -715,7 +715,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0014 end *************");
@@ -738,7 +738,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG +`Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0015 end *************");
@@ -762,7 +762,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
 
@@ -787,7 +787,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0017 end *************");
@@ -811,7 +811,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
 
@@ -837,7 +837,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
 
@@ -863,7 +863,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0020 end *************");
@@ -938,7 +938,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(error){
         console.error(TAG + `Insert is failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       try{
@@ -948,7 +948,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(error){
         console.error(TAG + `Insert is failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       try{
@@ -958,7 +958,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       try{
@@ -968,7 +968,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail()
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       try{
@@ -978,7 +978,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info("************* RdbStore_Null_Undefind_Test_0023 end *************");
@@ -1000,7 +1000,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0024 end *************");
@@ -1022,7 +1022,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0025 end *************");
@@ -1116,7 +1116,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         let rowId: number = (rdbStore as relationalStore.RdbStore).insertSync("test", undefined, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
@@ -1124,7 +1124,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch(error){
         console.error(TAG + `Insert is failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         let rowId: number = (rdbStore as relationalStore.RdbStore).insertSync("test", sendableValuesBucket, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
@@ -1430,7 +1430,7 @@ export default function RdbStoreNullUndefinedTest() {
         done();
       } catch (error) {
         console.error(TAG + `batchInsertWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 14800001).assertTrue();
+        expect(error.code === 14800001).assertTrue();
         done();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0037 end *************");
@@ -1826,7 +1826,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG + `updateWithReturningExample failed. code is ${error.code}, message is ${error.message}`);
-        expect(error.code == 14800001).assertTrue();
+        expect(error.code === 14800001).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0053 end *************");
     })
@@ -2188,7 +2188,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Delete failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0066 end *************");
@@ -2264,7 +2264,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0069 end *************");
@@ -2289,7 +2289,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0070 end *************");
@@ -2314,7 +2314,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
 
@@ -2325,7 +2325,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0071 end *************");
     })
@@ -2349,7 +2349,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0072 end *************");
     })
@@ -2443,7 +2443,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0076 end *************");
@@ -2466,7 +2466,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0077 end *************");
@@ -2489,7 +2489,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0078 end *************");
@@ -2512,7 +2512,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0079 end *************");
@@ -2535,7 +2535,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0080 end *************");
@@ -2558,7 +2558,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0081 end *************");
@@ -2652,7 +2652,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0085 end *************");
@@ -2677,7 +2677,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0086 end *************");
@@ -2702,7 +2702,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0087 end *************");
@@ -2727,7 +2727,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0088 end *************");
@@ -2752,7 +2752,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0089 end *************");
@@ -2777,7 +2777,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0090 end *************");
@@ -2802,7 +2802,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0091 end *************");
@@ -2827,7 +2827,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0092 end *************");
@@ -2852,7 +2852,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `Query failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0093 end *************");
@@ -2875,7 +2875,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0094 end *************");
@@ -2898,7 +2898,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0095 end *************");
@@ -2921,7 +2921,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0096 end *************");
@@ -2944,7 +2944,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0097 end *************");
@@ -2967,7 +2967,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0098 end *************");
@@ -2990,7 +2990,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0099 end *************");
@@ -3013,7 +3013,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0100 end *************");
@@ -3036,7 +3036,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0101 end *************");
@@ -3063,7 +3063,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed1, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(null, 3).then(() => {
@@ -3072,7 +3072,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed2, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData(undefined, 3).then(() => {
@@ -3081,7 +3081,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(`clean dirty data failed3, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData("test", null)
@@ -3089,7 +3089,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `clean dirty data failed4, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       try{
         (rdbStore as relationalStore.RdbStore).cleanDirtyData("test", undefined)
@@ -3097,7 +3097,7 @@ export default function RdbStoreNullUndefinedTest() {
         expect().assertFail();
       }catch (error) {
         console.error(TAG + `clean dirty data failed5, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0102 end *************");
     })
@@ -3120,7 +3120,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0103 end *************");
@@ -3144,7 +3144,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0104 end *************");
@@ -3168,7 +3168,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0105 end *************");
@@ -3192,7 +3192,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0106 end *************");
@@ -3216,7 +3216,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0107 end *************");
@@ -3240,7 +3240,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0108 end *************");
@@ -3271,7 +3271,7 @@ export default function RdbStoreNullUndefinedTest() {
         });
       }catch (error) {
         console.error(TAG + `ExecuteSql failed, code is ${error.code},message is ${error.message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         return;
       }
       console.info(TAG +"************* RdbStore_Null_Undefind_Test_0109 end *************");
