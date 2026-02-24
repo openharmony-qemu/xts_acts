@@ -570,8 +570,8 @@ export default function RdbStoreResultNullUndefinedTest() {
     })
 
     /**
-     * @tc.name     ResultSet_Null_Undefind_Test_0015
-     * @tc.number   SUB_DistributedData_RelationalStore_ResultSet_Null_Undefind_Test_0015
+     * @tc.name     ResultSet_Null_Undefind_Test_0017
+     * @tc.number   SUB_DistributedData_RelationalStore_ResultSet_Null_Undefind_Test_0017
      * @tc.desc     1.The first parameter is null
      *              2.The first parameter is undefined
      *              3.The second parameter is null
