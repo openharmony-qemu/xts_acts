@@ -39,21 +39,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .iconSize(null)
-              .key("setNull0")
+              .key('setNull0')
           }
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
@@ -63,21 +63,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .position(null)
-              .key("setNull1")
+              .key('setNull1')
           }
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
@@ -87,21 +87,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .markAnchor(null)
-              .key("setNull2")
+              .key('setNull2')
           }
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
@@ -111,21 +111,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .offset(null)
-              .key("setNull3")
+              .key('setNull3')
           }
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
 
@@ -135,21 +135,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .fontSize(null)
-              .key("setNull4")
+              .key('setNull4')
           }
           .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
@@ -159,21 +159,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .fontStyle(null)
-              .key("setNull5")
+              .key('setNull5')
           }
           .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
@@ -183,21 +183,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .fontWeight(null)
-              .key("setNull6")
+              .key('setNull6')
           }
           .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
 
@@ -207,99 +207,99 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .fontFamily(null)
-              .key("setNull7")
+              .key('setNull7')
           }
           .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key("setNull8-1")
+            PasteButton().key('setNull8-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .fontColor(null)
-              .key("setNull8-2")
+              .key('setNull8-2')
           }
           .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key("setNull9-1")
+            PasteButton().key('setNull9-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .iconColor(null)
-              .key("setNull9-2")
+              .key('setNull9-2')
           }
           .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key("setNull10-1")
+            PasteButton().key('setNull10-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .backgroundColor(null)
-              .key("setNull10-2")
+              .key('setNull10-2')
           }
           .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
 
@@ -309,21 +309,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .borderStyle(null)
-              .key("setNull11")
+              .key('setNull11')
           }
           .visibility(this.isShow === 11 ? Visibility.Visible : Visibility.None)
 
@@ -333,21 +333,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .borderWidth(null)
-              .key("setNull12")
+              .key('setNull12')
           }
           .visibility(this.isShow === 12 ? Visibility.Visible : Visibility.None)
 
@@ -357,21 +357,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .borderColor(null)
-              .key("setNull13")
+              .key('setNull13')
           }
           .visibility(this.isShow === 13 ? Visibility.Visible : Visibility.None)
 
@@ -381,21 +381,21 @@ struct pasteButtonSetNull {
                 try {
                   let clickData:events_emitter.EventData = {
                     data: {
-                      "clickResult": result,
+                      'clickResult': result,
                     }
                   }
                   let clickEvent:events_emitter.InnerEvent = {
                     eventId: 2,
                     priority: events_emitter.EventPriority.LOW
                   }
-                  console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
                   events_emitter.emit(clickEvent, clickData)
                 } catch (err) {
-                  console.error("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
               .borderRadius(null)
-              .key("setNull14")
+              .key('setNull14')
           }
           .visibility(this.isShow === 14 ? Visibility.Visible : Visibility.None)
 

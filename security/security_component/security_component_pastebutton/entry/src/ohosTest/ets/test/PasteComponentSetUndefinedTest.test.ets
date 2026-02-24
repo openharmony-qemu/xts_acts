@@ -138,7 +138,7 @@ export default function pasteComponentSetUndefinedTest() {
       const TCNAME = 'Test_Security_PasteButton_SetUndefined_0100';
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
-      let strJson = getInspectorByKey('setUndefined0');
+      let strJson: string = getInspectorByKey('setUndefined0');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconSize).assertEqual('16.00vp');
       await Utils.sleep(1000);
@@ -159,7 +159,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined1');
+      let strJson: string = getInspectorByKey('setUndefined1');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.position.x).assertEqual('');
       expect(obj.$attrs.position.y).assertEqual('');
@@ -181,7 +181,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined2');
+      let strJson: string = getInspectorByKey('setUndefined2');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.markAnchor.x).assertEqual('0.00vp');
       expect(obj.$attrs.markAnchor.y).assertEqual('0.00vp');
@@ -203,7 +203,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined3');
+      let strJson: string = getInspectorByKey('setUndefined3');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.offset.x).assertEqual('0.00vp');
       expect(obj.$attrs.offset.y).assertEqual('0.00vp');
@@ -225,7 +225,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined4');
+      let strJson: string = getInspectorByKey('setUndefined4');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.fontSize).assertEqual('16.00fp');
       await Utils.sleep(1000);
@@ -246,7 +246,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined5');
+      let strJson: string = getInspectorByKey('setUndefined5');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.fontStyle).assertEqual(0);
       await Utils.sleep(1000);
@@ -267,7 +267,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined6');
+      let strJson: string = getInspectorByKey('setUndefined6');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Medium');
       await Utils.sleep(1000);
@@ -288,7 +288,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined7');
+      let strJson: string = getInspectorByKey('setUndefined7');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.fontFamily).assertEqual('HarmonyOS Sans');
       await Utils.sleep(1000);
@@ -309,10 +309,10 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson1 = getInspectorByKey('setUndefined8-1');
+      let strJson1: string = getInspectorByKey('setUndefined8-1');
       let obj1 : ESObject = JSON.parse(strJson1);
       let except_fontColor: string = obj1.$attrs.fontColor;
-      let strJson2 = getInspectorByKey('setUndefined8-2');
+      let strJson2: string = getInspectorByKey('setUndefined8-2');
       let obj2 : ESObject = JSON.parse(strJson2);
       expect(obj2.$attrs.fontColor).assertEqual(except_fontColor);
       await Utils.sleep(1000);
@@ -333,10 +333,10 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson1 = getInspectorByKey('setUndefined9-1');
+      let strJson1: string = getInspectorByKey('setUndefined9-1');
       let obj1 : ESObject = JSON.parse(strJson1);
       let except_iconColor: string = obj1.$attrs.iconColor;
-      let strJson2 = getInspectorByKey('setUndefined9-2');
+      let strJson2: string = getInspectorByKey('setUndefined9-2');
       let obj2 : ESObject = JSON.parse(strJson2);
       expect(obj2.$attrs.iconColor).assertEqual(except_iconColor);
       await Utils.sleep(1000);
@@ -357,10 +357,10 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson1 = getInspectorByKey('setUndefined10-1');
+      let strJson1: string = getInspectorByKey('setUndefined10-1');
       let obj1 : ESObject = JSON.parse(strJson1);
       let except_backgroundColor: string = obj1.$attrs.backgroundColor;
-      let strJson2 = getInspectorByKey('setUndefined10-2');
+      let strJson2: string = getInspectorByKey('setUndefined10-2');
       let obj2 : ESObject = JSON.parse(strJson2);
       expect(obj2.$attrs.backgroundColor).assertEqual(except_backgroundColor);
       await Utils.sleep(1000);
@@ -381,7 +381,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined11');
+      let strJson: string = getInspectorByKey('setUndefined11');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.borderStyle).assertEqual(3);
       await Utils.sleep(1000);
@@ -402,7 +402,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined12');
+      let strJson: string = getInspectorByKey('setUndefined12');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.borderWidth).assertEqual('0.00vp');
       await Utils.sleep(1000);
@@ -423,7 +423,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined13');
+      let strJson: string = getInspectorByKey('setUndefined13');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.borderColor).assertEqual('#FFFFFFFF');
       await Utils.sleep(1000);
@@ -444,7 +444,7 @@ export default function pasteComponentSetUndefinedTest() {
       console.info(`====>${TCNAME} START`);
       let driver = Driver.create();
       await clickSwitchButton(TCNAME, driver);
-      let strJson = getInspectorByKey('setUndefined14');
+      let strJson: string = getInspectorByKey('setUndefined14');
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.borderRadius).assertEqual('0.00vp');
       await Utils.sleep(1000);

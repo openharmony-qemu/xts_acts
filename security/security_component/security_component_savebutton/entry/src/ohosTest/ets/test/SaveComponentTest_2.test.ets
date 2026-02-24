@@ -1173,7 +1173,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('400');
@@ -1210,7 +1210,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Lighter');
@@ -1247,7 +1247,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Normal');
@@ -1284,7 +1284,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontFamily).assertEqual('HarmonyOS Sans');
@@ -1321,7 +1321,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.id).assertEqual('keySave11');
@@ -1359,7 +1359,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.maxFontSize).assertEqual('20.00fp');
@@ -1397,7 +1397,7 @@ export default function saveComponentTest_2() {
         console.error(`====>${TCNAME} change component data error: ` + err.message);
       }
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('keySave11');
+      let strJsonNew: string = getInspectorByKey('keySave11');
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.enabled).assertEqual(false);
