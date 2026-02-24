@@ -968,6 +968,103 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_get_uri_callback_null
+     * @tc.number settings_get_uri_callback_null
+     * @tc.desc   settings_get_uri_callback_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(null, (value) => {
+          console.info("[settings_get_uri_callback_null] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_null] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_null] error = " + errMsg);
+        expect(errMsg == "Error: assertion (valueType == napi_string) failed: Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_undefined
+     * @tc.number settings_get_uri_callback_undefined
+     * @tc.desc   settings_get_uri_callback_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(undefined, (value) => {
+          console.info("[settings_get_uri_callback_undefined] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_undefined] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_undefined] error = " + errMsg);
+        expect(errMsg == "Error: assertion (valueType == napi_string) failed: Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_empty
+     * @tc.number settings_get_uri_callback_empty
+     * @tc.desc   settings_get_uri_callback_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI('', (value) => {
+          console.info("[settings_get_uri_callback_empty] value is: " + value);
+          expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
+          done();
+        });
+        console.info("[settings_get_uri_callback_empty] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_empty] error = " + errMsg);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_callback_null
+     * @tc.number settings_registerKeyObserver_callback_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.registerKeyObserver(mContext, 'testkey', settings.domainName.DEVICE_SHARED, null);
+          console.info("[settings_registerKeyObserver_callback_null] result = " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_callback_null] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_036
      * @tc.number settings_get_value_036
      * @tc.desc   settings_get_value_036
