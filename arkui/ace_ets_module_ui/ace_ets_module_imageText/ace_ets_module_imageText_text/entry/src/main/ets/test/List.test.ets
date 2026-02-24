@@ -117,6 +117,20 @@ import TextFontStyleLineSpacingNullTest from './TextTest/TextFontStyleLineSpacin
 import TextLineHeightMultipleLineSpacingTest from './TextTest/TextLineHeightMultipleLineSpacing.test';
 import TextMinMaxLineHeightTest from './TextTest/TextMinMaxLineHeight.test';
 import TextTextVerticalAlignContentAlignTest from './TextTest/TextTextVerticalAlignContentAlign.test';
+import TextTextOverflowTest from './TextTest/TextTextOverflow.test';
+import TextFontFamilyTest from './TextTest/TextFontFamily.test';
+import TextMaxLinesTest from './TextTest/TextMaxLines.test';
+import TextMinLinesTest from './TextTest/TextMinLines.test';
+import TextDecorationTest from './TextTest/TextDecoration.test';
+import TextLetterSpacingTest from './TextTest/TextLetterSpacing.test';
+import TextTextCaseNullTest from './TextTest/TextTextCaseNull.test';
+import TextBaselineOffsetTest from './TextTest/TextBaselineOffset.test';
+import TextCopyOptionNullTest from './TextTest/TextCopyOptionNull.test';
+import TextShadowNullTest from './TextTest/TextShadowNull.test';
+import TextHeightAdaptivePolicyNullTest from './TextTest/TextHeightAdaptivePolicyNull.test';
+import TextWordBreakNullTest from './TextTest/TextWordBreakNull.test';
+import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.test';
+import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -224,4 +238,18 @@ export default function testsuite() {
   TextLineHeightMultipleLineSpacingTest();
   TextMinMaxLineHeightTest();
   TextTextVerticalAlignContentAlignTest();
+  TextTextOverflowTest();
+  TextFontFamilyTest();
+  TextMaxLinesTest();
+  TextMinLinesTest();
+  TextDecorationTest();
+  TextLetterSpacingTest();
+  TextTextCaseNullTest();
+  TextBaselineOffsetTest();
+  TextCopyOptionNullTest();
+  TextShadowNullTest();
+  TextHeightAdaptivePolicyNullTest();
+  TextWordBreakNullTest();
+  TextLineBreakStrategyNullTest();
+  TextSelectionPropertiesTest();
 }

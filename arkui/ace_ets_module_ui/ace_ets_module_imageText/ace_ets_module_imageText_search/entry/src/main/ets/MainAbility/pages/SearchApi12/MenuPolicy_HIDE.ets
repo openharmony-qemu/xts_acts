@@ -41,7 +41,7 @@ struct MenuPolicy_HIDE {
           this.MenuPolicyStatus = "HIDE"
         })
         .margin(20)
-        .id('Search')
+        .id('SearchMenuPolicyHIDE')
       Button('Hide Selected Text')
         .onClick(() => {
           this.controller.setTextSelection(2, 3, { menuPolicy: MenuPolicy.HIDE })
