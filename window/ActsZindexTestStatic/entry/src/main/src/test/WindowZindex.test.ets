@@ -85,7 +85,7 @@ export default function WindowZindexTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
             try {
@@ -181,7 +181,7 @@ export default function WindowZindexTest() {
                 let subWindow:window.Window = await windowStage!.createSubWindow("test_raiseToAppTop_subWindowDestroy");
                 await subWindow.destroyWindow();
                 let promise1 = subWindow.raiseToAppTop();
-                promise1.then(async (done: () => void): Promise<void> => {
+                promise1.then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
                     await subWindow.destroyWindow();
                     expect(false).assertTrue();
@@ -466,7 +466,7 @@ export default function WindowZindexTest() {
                 let subWindow:window.Window = await windowStage!.createSubWindow("test_setRaiseByClickEnabled_subWindowDestroy");
                 await subWindow.destroyWindow();
                 let promise = subWindow.setRaiseByClickEnabled(false);
-                promise.then(async (done: () => void): Promise<void> => {
+                promise.then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
                     await subWindow.destroyWindow();
                     expect(false).assertTrue();
@@ -1044,6 +1044,7 @@ export default function WindowZindexTest() {
             }
           });
           await Utils.msSleep(500)
+          done();
         } catch (err) {
           if (err.code != 801) {
             console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
@@ -1053,6 +1054,7 @@ export default function WindowZindexTest() {
             console.log(msgStr + JSON.stringify(err))
             expect(err.code).assertEqual(801);
           }
+          done();
         }
         await (tempWnd as window.Window).destroyWindow();
       })
@@ -1134,7 +1136,7 @@ export default function WindowZindexTest() {
         console.log(msgStr + 'begin');
         try {
             subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinFocus')
-        } catch(err: Error){
+        } catch(err){
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
           };
@@ -1192,7 +1194,7 @@ export default function WindowZindexTest() {
         console.log(msgStr + 'begin');
         try {
             subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
-        } catch(err: Error) {
+        } catch(err) {
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
         };
