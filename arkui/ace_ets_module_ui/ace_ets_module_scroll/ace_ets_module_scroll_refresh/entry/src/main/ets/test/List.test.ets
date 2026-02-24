@@ -23,6 +23,7 @@ import RefreshingContent from './Refresh/RefreshingContent.test';
 import maxDownRefresh from './Refresh/maxDownRefresh.test';
 import pullUpToCancelRefresh from './Refresh/pullUpToCancelRefresh.test';
 import pullUpToCancelRefreshModifier from './Refresh/pullUpToCancelRefreshModifier.test';
+import refreshNullUndefined from './Refresh/refreshNullUndefined.test';
 
 
 export default function testsuite() {
@@ -36,4 +37,5 @@ export default function testsuite() {
   maxDownRefresh()
   pullUpToCancelRefresh()
   pullUpToCancelRefreshModifier()
+  refreshNullUndefined()
 }
