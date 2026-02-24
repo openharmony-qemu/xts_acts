@@ -557,6 +557,8 @@ static napi_value OhAvTransCoderSetStateCb(napi_env env, napi_callback_info info
     transcoderUser->transcoder = OH_AVTranscoder_Create();
     if (transcoderUser->transcoder == nullptr) {
         LOGE("Transcoder OhAvTransCoderSetStateCb create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
         return result;
     }
     OH_AVErrCode err = OH_AVTranscoder_SetStateCallback(
@@ -564,6 +566,8 @@ static napi_value OhAvTransCoderSetStateCb(napi_env env, napi_callback_info info
     backParam = err;
     LOG("Transcoder OhAvTransCoderSetStateCb ret %{public}d", backParam);
     napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
     return result;
 }
 
@@ -586,6 +590,8 @@ static napi_value OhAvTransCoderSetErrorCb(napi_env env, napi_callback_info info
     transcoderUser->transcoder = OH_AVTranscoder_Create();
     if (transcoderUser->transcoder == nullptr) {
         LOGE("Transcoder OH_AVTranscoder_SetErrorCallback create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
         return result;
     }
     OH_AVErrCode err = OH_AVTranscoder_SetErrorCallback(
@@ -593,6 +599,8 @@ static napi_value OhAvTransCoderSetErrorCb(napi_env env, napi_callback_info info
     backParam = err;
     LOG("Transcoder OhAvTransCoderSetErrorCb ret %{public}d", backParam);
     napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
     return result;
 }
 
@@ -615,6 +623,8 @@ static napi_value OhAvTransCoderSetProgressUpdateCb(napi_env env, napi_callback_
     transcoderUser->transcoder = OH_AVTranscoder_Create();
     if (transcoderUser->transcoder == nullptr) {
         LOGE("Transcoder OH_AVTranscoder_SetProgressUpdateCallback create transcoder is nullptr");
+        delete transcoderUser;
+        transcoderUser = nullptr;
         return result;
     }
     OH_AVErrCode err = OH_AVTranscoder_SetProgressUpdateCallback(
@@ -622,6 +632,8 @@ static napi_value OhAvTransCoderSetProgressUpdateCb(napi_env env, napi_callback_
     backParam = err;
     LOG("Transcoder OhAvTransCoderSetProgressUpdateCb ret %{public}d", backParam);
     napi_create_int32(env, backParam, &result);
+    delete transcoderUser;
+    transcoderUser = nullptr;
     return result;
 }
 
