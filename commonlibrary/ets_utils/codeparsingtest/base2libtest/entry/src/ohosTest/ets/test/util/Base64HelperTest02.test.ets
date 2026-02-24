@@ -543,7 +543,6 @@ export default function Base64Helper02Test() {
       let result = base64Helper.encodeSync(array);
       // Check for '/' (47), ensure it is NOT '_' (95)
       expect(result[0]).assertEqual(47);
-      expect(result[0]).not().assertEqual(95);
       console.info(TAG + " end");
     });
 
