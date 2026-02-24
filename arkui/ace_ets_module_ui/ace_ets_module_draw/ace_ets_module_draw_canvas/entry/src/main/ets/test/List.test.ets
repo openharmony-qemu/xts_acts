@@ -65,6 +65,17 @@ import canvasGetImageDataNullUndefinedTest from './CanvasNullUndefined/canvasGet
 import canvasGetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasGetPixelMapNullUndefinedTest.test';
 import canvasPutImageDataNullUndefinedTest from './CanvasNullUndefined/canvasPutImageDataNullUndefinedTest.test';
 
+import canvasClearRectNullUndefinedTest from './CanvasNullUndefined/canvasClearRectNullUndefinedTest.test';
+import canvasCreateLinearGradientNullUndefinedTest from './CanvasNullUndefined/canvasCreateLinearGradientNullUndefinedTest.test';
+import canvasCreateRadialGradientNullUndefinedTest from './CanvasNullUndefined/canvasCreateRadialGradientNullUndefinedTest.test';
+import canvasFillRectNullUndefinedTest from './CanvasNullUndefined/canvasFillRectNullUndefinedTest.test';
+import canvasFillTextNullUndefinedTest from './CanvasNullUndefined/canvasFillTextNullUndefinedTest.test';
+import canvasMeasureTextNullUndefinedTest from './CanvasNullUndefined/canvasMeasureTextNullUndefinedTest.test';
+import canvasRotateNullUndefinedTest from './CanvasNullUndefined/canvasRotateNullUndefinedTest.test';
+import canvasSetLineDashNullUndefinedTest from './CanvasNullUndefined/canvasSetLineDashNullUndefinedTest.test';
+import canvasStrokeRectNullUndefinedTest from './CanvasNullUndefined/canvasStrokeRectNullUndefinedTest.test';
+import canvasStrokeTextNullUndefinedTest from './CanvasNullUndefined/canvasStrokeTextNullUndefinedTest.test';
+
 export default function testsuite() {
 
   CanvasAPIUnitTest();
@@ -119,5 +130,16 @@ export default function testsuite() {
   canvasGetImageDataNullUndefinedTest();
   canvasGetPixelMapNullUndefinedTest();
   canvasPutImageDataNullUndefinedTest();
+
+  canvasClearRectNullUndefinedTest();
+  canvasCreateLinearGradientNullUndefinedTest();
+  canvasCreateRadialGradientNullUndefinedTest();
+  canvasFillRectNullUndefinedTest();
+  canvasFillTextNullUndefinedTest();
+  canvasMeasureTextNullUndefinedTest();
+  canvasRotateNullUndefinedTest();
+  canvasSetLineDashNullUndefinedTest();
+  canvasStrokeRectNullUndefinedTest();
+  canvasStrokeTextNullUndefinedTest();
 
 }
