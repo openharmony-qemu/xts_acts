@@ -96,7 +96,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0002 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -104,7 +104,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0002 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -112,7 +112,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0002 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0002 end-----")
     })
@@ -135,7 +135,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0003 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -143,7 +143,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0003 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0003 end-----")
     })
@@ -166,7 +166,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0004 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -174,7 +174,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0004 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0004 end-----")
     })
@@ -197,7 +197,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0005 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -205,7 +205,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0005 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0005 end-----")
     })
@@ -228,7 +228,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0006 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -236,7 +236,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0006 failed:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0006 end-----")
     })
@@ -259,7 +259,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0007 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -267,7 +267,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0007 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0007 end-----")
     })
@@ -290,7 +290,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0008 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -298,7 +298,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0008 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0008 end-----")
     })
@@ -321,7 +321,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0009 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -329,7 +329,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0009 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0009 end-----")
     })
@@ -352,7 +352,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0010 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -360,7 +360,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0010 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0010 end-----")
     })
@@ -383,7 +383,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0011 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -391,7 +391,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0011 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0011 end-----")
     })
@@ -414,7 +414,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0012 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -422,7 +422,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0012 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0012 end-----")
     })
@@ -445,7 +445,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0013 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -453,7 +453,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0013 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0013 end-----")
     })
@@ -476,7 +476,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0014 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -484,7 +484,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0014 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0014 end-----")
     })
@@ -509,7 +509,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0015 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -517,7 +517,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0015 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -525,7 +525,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0015 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -533,7 +533,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0015 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0015 end-----")
     })
@@ -638,7 +638,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0018 failed1:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       try {
         resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -646,7 +646,7 @@ export default function RdbStoreResultNullUndefinedTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`ResultSet_Null_Undefind_Test_0018 failed2:${err.message} code:${err.code}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       console.info(TAG + "-----ResultSet_Null_Undefind_Test_0018 end-----")
     })
