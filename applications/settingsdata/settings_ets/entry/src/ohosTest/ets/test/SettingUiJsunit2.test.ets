@@ -1688,9 +1688,9 @@ export default function settingUiJsunit() {
      */
     it('open_manager_settings_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
-        let value = settings.openNetworkManagerSettings(globalThis.abilityContext);
+        let value = await settings.openNetworkManagerSettings(globalThis.abilityContext);
         console.info("[open_manager_settings_120] result is:" + value);
-        expect(!value).assertTrue();
+        expect(value).assertTrue();
         done();
       }catch (err) {
         console.error("[open_manager_settings_120] error = " + err);
@@ -3455,7 +3455,8 @@ export default function settingUiJsunit() {
       } catch (err) {
         let errMsg: string = err;
         console.error("[settings_get_uri_promise_null] error = " + errMsg);
-        expect(errMsg == "Error: assertion (valueType == napi_string) failed: Wrong argument type. String expected.")
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
           .assertTrue();
         done();
       }
@@ -3478,10 +3479,63 @@ export default function settingUiJsunit() {
       } catch (err) {
         let errMsg: string = err;
         console.error("[settings_get_uri_promise_undefined] error = " + errMsg);
-        expect(errMsg == "Error: assertion (valueType == napi_string) failed: Wrong argument type. String expected.")
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
           .assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_null
+     * @tc.number settings_get_uri_callback_null
+     * @tc.desc   settings_get_uri_callback_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(null, (value) => {
+          console.info("[settings_get_uri_callback_null] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_null] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_null] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_undefined
+     * @tc.number settings_get_uri_callback_undefined
+     * @tc.desc   settings_get_uri_callback_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(undefined, (value) => {
+          console.info("[settings_get_uri_callback_undefined] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_undefined] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_undefined] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
     });
   })
 }
