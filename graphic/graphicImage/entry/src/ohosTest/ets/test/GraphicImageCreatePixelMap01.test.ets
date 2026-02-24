@@ -1368,7 +1368,7 @@ export default function GraphicImageCreatePixelMap01() {
     it('createPixelMapFromSurfaceSingleParam011',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
-          const surfaceId = "test_Surface-001.Special@Char";
+          const surfaceId = "test_SurfaceId123-001.Special@Char";
 
           const pixelMap = await image.createPixelMapFromSurface(surfaceId);
 

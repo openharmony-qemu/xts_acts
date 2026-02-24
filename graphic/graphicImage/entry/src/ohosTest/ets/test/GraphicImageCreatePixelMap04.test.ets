@@ -20,7 +20,7 @@ import rpc from '@ohos.rpc';
 const LOG_PREFIX: string = "[www data GraphicImageCreatePixelMap04]";
 
 export default function GraphicImageCreatePixelMap04() {
-  describe('GraphicImageCreatePixelMap01', ()=> {
+  describe('GraphicImageCreatePixelMap04', ()=> {
     console.log('describe GraphicImageCreatePixelMap04 start!!!')
     beforeAll(async ()=> {
     })
