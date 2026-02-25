@@ -11,6 +11,11 @@
         "MainAbility/pages/CommonAttrs/border",
         "MainAbility/pages/CommonAttrs/BorderRadiusRenderStrategy",
         "MainAbility/pages/CommonAttrs/FlexFourBoundary",
-        "MainAbility/pages/CommonCustom/LayoutFourReturn"
+        "MainAbility/pages/CommonCustom/LayoutFourReturn",
+        "MainAbility/pages/CommonAttrs/ConstraintSizeNullUndefined",
+        "MainAbility/pages/CommonAttrs/LayoutWeightNullUndefined",
+        "MainAbility/pages/CommonAttrs/SafeAreaPaddingNullUndefined",
+        "MainAbility/pages/CommonAttrs/ChainWeightNullUndefined",
+        "MainAbility/pages/CommonAttrs/GridContainerNullUndefined"
     ]
 }
