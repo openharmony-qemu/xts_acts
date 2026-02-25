@@ -1684,7 +1684,7 @@ export default function relationalStoreTest() {
         };
         let res = await relationalStore.getRdbStore(context, config1)
         console.info(tag + "getRdbStore success");
-        relationalStore.deleteRdbStore(context, "", async (e) => {
+        relationalStore.deleteRdbStore(context, "", (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
