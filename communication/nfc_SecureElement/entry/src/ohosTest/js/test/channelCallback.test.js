@@ -680,7 +680,7 @@ export default function channelCallbacktest() {
 				})
 			} catch (error) {
 				console.info("[NFC_test]25 createService occurs exception:" + error.code + "---" + JSON.stringify(error));
-				if (error.code == 801){
+				if (error.code === 801){
 					expect(801).assertEqual(error.code);
 				}else{
 					expect().assertFail;
