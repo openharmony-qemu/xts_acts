@@ -89,6 +89,9 @@ let gzHeader_hcrc_undefined: zlib.GzHeader = {};
 let gzHeader_done_empty: zlib.GzHeader = {};
 let gzHeader_done_null: zlib.GzHeader = {};
 let gzHeader_done_undefined: zlib.GzHeader = {};
+let gzHeader_isText_false: zlib.GzHeader = {};
+let gzHeader_hcrc_true: zlib.GzHeader = {};
+let gzHeader_done_false: zlib.GzHeader = {};
 
 async function DoDeflateInit(zip: zlib.Zip) {
     await zip.deflateInit(ZStreamComplete, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED);
@@ -906,6 +909,42 @@ export default function ActsZipTest() {
                 comment: arrayBufferComment,
                 hcrc: false,
                 done: undefined,
+            };
+            gzHeader_isText_false = {
+                isText: false,
+                os: 1,
+                time: 1,
+                xflags: 1,
+                extra: arrayBufferExtra,
+                extraLen: arrayBufferExtra.byteLength,
+                name: arrayBufferFileName,
+                comment: arrayBufferComment,
+                hcrc: false,
+                done: true,
+            };
+            gzHeader_hcrc_true = {
+                isText: true,
+                os: 1,
+                time: 1,
+                xflags: 1,
+                extra: arrayBufferExtra,
+                extraLen: arrayBufferExtra.byteLength,
+                name: arrayBufferFileName,
+                comment: arrayBufferComment,
+                hcrc: true,
+                done: true,
+            };
+            gzHeader_done_false = {
+                isText: true,
+                os: 1,
+                time: 1,
+                xflags: 1,
+                extra: arrayBufferExtra,
+                extraLen: arrayBufferExtra.byteLength,
+                name: arrayBufferFileName,
+                comment: arrayBufferComment,
+                hcrc: false,
+                done: false,
             };
             done();
         })
@@ -17358,6 +17397,187 @@ export default function ActsZipTest() {
             }
 
             console.info("==================actsZipTest125 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest126
+         * @tc.number ACTS_ZipTest_126
+         * @tc.desc   test deflateSetHeader head is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest126', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest126 start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.deflateSetHeader(ZStreamComplete, null).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+            }
+            console.info("==================actsZipTest126 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest127
+         * @tc.number ACTS_ZipTest_127
+         * @tc.desc   test deflateSetHeader head is undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest127', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest127 start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.deflateSetHeader(ZStreamComplete, undefined).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+            }
+            console.info("==================actsZipTest127 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest128
+         * @tc.number ACTS_ZipTest_128
+         * @tc.desc   test deflateSetHeader isText is false.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('actsZipTest128', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================actsZipTest128 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+
+            await zip.deflateInit2(ZStreamComplete, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 28,
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
+
+
+            try {
+                await zip.deflateSetHeader(ZStreamComplete, gzHeader_isText_false).then((data) => {
+                    console.info('deflateSetHeader isText false success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail();
+            }
+            console.info("==================actsZipTest128 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest129
+         * @tc.number ACTS_ZipTest_129
+         * @tc.desc   test deflateSetHeader hcrc is true.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('actsZipTest129', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================actsZipTest129 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+
+            await zip.deflateInit2(ZStreamComplete, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 28,
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
+            try {
+                await zip.deflateSetHeader(ZStreamComplete, gzHeader_hcrc_true).then((data) => {
+                    console.info('deflateSetHeader hcrc true success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail();
+            }
+            console.info("==================actsZipTest129 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest130
+         * @tc.number ACTS_ZipTest_130
+         * @tc.desc   test deflateSetHeader done is false.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('actsZipTest130', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================actsZipTest130 start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+
+            await zip.deflateInit2(ZStreamComplete, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 28,
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY);
+            try {
+                await zip.deflateSetHeader(ZStreamComplete, gzHeader_done_false).then((data) => {
+                    console.info('deflateSetHeader done false success, data: ' + JSON.stringify(data));
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail();
+            }
+            console.info("==================actsZipTest130 end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   actsZipTest131
+         * @tc.number ACTS_ZipTest_131
+         * @tc.desc   test deflatePrime strm is null or undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('actsZipTest131', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.info("==================actsZipTest131 start==================");
+            let zip = zlib.createZipSync();
+            try {
+                await zip.deflatePrime(null, 5, 2).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+            }
+            try {
+                await zip.deflatePrime(undefined, 5, 2).then(() => {
+                    expect().assertFail();
+                })
+            } catch (errData) {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+            }
+            console.info("==================actsZipTest131 end==================");
             done();
         })
     })
