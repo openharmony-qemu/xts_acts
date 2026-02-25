@@ -67,6 +67,7 @@ import ImageSvgFillColorMetricsTest from './ImageSvgFillColorTest/ImageSvgFillCo
 import ImageMatrixUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageMatrixUndefinedAndNull.test';
 import ImageAutoResizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageAutoResizeUndefinedAndNull.test';
 import ImageRenderModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageRenderModeUndefinedAndNull.test';
+import ImageInterpolationUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageInterpolationUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -124,4 +125,5 @@ export default function testsuite() {
   ImageMatrixUndefinedAndNullTest();
   ImageAutoResizeUndefinedAndNullTest();
   ImageRenderModeUndefinedAndNullTest();
+  ImageInterpolationUndefinedAndNullTest();
 }

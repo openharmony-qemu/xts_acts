@@ -80,6 +80,7 @@
         "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColorMetrics",
         "MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageAutoResizeUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageRenderModeUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageRenderModeUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageInterpolationUndefinedAndNull"
     ]
 }
