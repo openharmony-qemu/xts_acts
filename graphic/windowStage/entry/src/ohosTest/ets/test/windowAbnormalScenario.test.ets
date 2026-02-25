@@ -3440,7 +3440,7 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
         statusBarColor: '#ff00ff',
         isStatusBarLightIcon: false,
         enableStatusBarAnimation: true,
-        enableNavigationBarAnimation: true;
+        enableNavigationBarAnimation: true,
         navigationBarColor: '#00ff00',
         statusBarContentColor: '#ffffff',
         navigationBarContentColor: '#00ffff'
