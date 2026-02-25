@@ -56,6 +56,9 @@ import updateMenuNullUndefinedTest from './MenuNullUndefined/updateMenu.test';
 import closeMenuNullUndefinedTest from './MenuNullUndefined/closeMenu.test';
 
 export default function testsuite() {
+  openMenuNullUndefinedTest();
+  updateMenuNullUndefinedTest();
+  closeMenuNullUndefinedTest();
   bindMenuHapticFeedbackMode();
   blurStyleOptions();
   effectOptions();
@@ -92,7 +95,5 @@ export default function testsuite() {
   maskColorTest();
   maskBackgroundBlurStyleTest();
   BindMenuWithResponse();
-  openMenuNullUndefinedTest();
-  updateMenuNullUndefinedTest();
-  closeMenuNullUndefinedTest();
+  
 }
