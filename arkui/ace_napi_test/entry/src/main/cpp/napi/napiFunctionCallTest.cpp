@@ -458,12 +458,10 @@ static napi_value CallGetter(napi_env env, napi_callback_info info)
         }
     }
     NAPI_ASSERT(env, getterResult != nullptr, "success Getter");
-    
     int32_t resultVal = 0;
     NAPI_CALL(env, napi_get_value_int32(env, getterResult, &resultVal));
     const int32_t expectedVal = 88;
-    bool isValueCorrect = (resultVal == expectedVal);
-    
+   
     napi_value modifiedValProp = nullptr;
     NAPI_CALL(env, napi_get_named_property(env, testObj, "_value", &modifiedValProp));
 
@@ -474,7 +472,7 @@ static napi_value CallGetter(napi_env env, napi_callback_info info)
     NAPI_ASSERT(env, modifiedVal == comNum, "compare the modified _value sucess");
 
     napi_value rst;
-    napi_get_boolean(env, isValueCorrect, &rst);
+    napi_get_boolean(env, resultVal == expectedVal, &rst);
     return rst;
 }
 
@@ -497,8 +495,7 @@ static napi_value CreateSafeString1(napi_env env, const std::string& str)
     napi_status status = napi_create_string_utf8(env,
                                                  str.c_str(),
                                                  str.length(),
-                                                 &strVal
-    );
+                                                 &strVal);
     if (status != napi_ok || strVal == nullptr) {
         napi_throw_error(env, nullptr, "Failed to create string");
         return nullptr;
@@ -708,7 +705,7 @@ static napi_value CreatePromiseResolve(napi_env env, napi_callback_info info)
         return nullptr;
     }
 
-    std::thread asyncTaskThread([=]() {
+    std::thread asyncTaskThread([ctx]() {
         try {
             // Simulate asynchronous tasks: network requests, file reading and writing (with a delay of 1 second here)
             std::this_thread::sleep_for(std::chrono::seconds(1));
