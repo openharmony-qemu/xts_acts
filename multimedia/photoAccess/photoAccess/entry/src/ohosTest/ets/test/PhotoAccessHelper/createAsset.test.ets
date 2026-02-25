@@ -138,10 +138,10 @@ export default function createAssetTest () {
       type: photoAccessHelper.PhotoType | undefined, extension: string | undefined) => {
       try {
         await helper.createAsset(type, extension);
-        expect(false).assertTrue();
         done();
       } catch (error) {
-        console.info(`${testNum} failed; error: ${error}`);
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual('401'); 
         done();
       }
     }
