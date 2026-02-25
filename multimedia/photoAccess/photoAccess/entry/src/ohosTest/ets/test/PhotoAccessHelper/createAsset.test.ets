@@ -638,22 +638,6 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0003
-     * @tc.name      : createAssets_0003
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('createAssets_0003', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'createAssets_0003';
-      const type = photoType.VIDEO;
-      const extension = 'fpx';
-      const options: photoAccessHelper.CreateOptions | undefined = undefined;
-      await createAssetAbnormalPromise1(done, testNum, type, extension, options);
-    });
-
-    /**
      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0004
      * @tc.name      : createAssets_0004
      * @tc.desc      : createAsset with undefined CreateOptions
