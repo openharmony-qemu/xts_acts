@@ -133,6 +133,19 @@ export default function createAssetTest () {
         done();
       }
     }
+
+    const createAssetAbnormalPromise2 = async (done: Function, testNum: string,
+      type: photoAccessHelper.PhotoType | undefined, extension: string | undefined) => {
+      try {
+        await helper.createAsset(type, extension);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(true).assertTrue();
+        done();
+      }
+    }
     /**
      * @tc.name   createImage_callback_000
      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_CREATE_IMAGE_0000
