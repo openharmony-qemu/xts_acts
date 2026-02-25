@@ -29,6 +29,7 @@ import LayoutWeightNullUndefinedTest from './CommonAttrs/LayoutWeightNullUndefin
 import SafeAreaPaddingNullUndefinedTest from './CommonAttrs/SafeAreaPaddingNullUndefined.test';
 import ChainWeightNullUndefinedTest from './CommonAttrs/ChainWeightNullUndefined.test';
 import GridContainerNullUndefinedTest from './CommonAttrs/GridContainerNullUndefined.test';
+import FlexLayoutNullUndefinedTest from './CommonAttrs/FlexLayoutNullUndefined.test';
 
 export default function testsuite() {
   Calc01();
@@ -47,4 +48,5 @@ export default function testsuite() {
   SafeAreaPaddingNullUndefinedTest();
   ChainWeightNullUndefinedTest();
   GridContainerNullUndefinedTest();
+  FlexLayoutNullUndefinedTest();
 }

@@ -43,7 +43,7 @@ export default function LayoutWeightNullUndefinedTest() {
     /**
      * @tc.name   LayoutWeightNullUndefinedTest_0100
      * @tc.number LayoutWeightNullUndefinedTest_0100
-     * @tc.desc   test size with null parameter
+     * @tc.desc   test layoutWeight with null parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -81,7 +81,7 @@ export default function LayoutWeightNullUndefinedTest() {
     /**
      * @tc.name   LayoutWeightNullUndefinedTest_0300
      * @tc.number LayoutWeightNullUndefinedTest_0300
-     * @tc.desc   test layoutWeight with null string parameter
+     * @tc.desc   test layoutWeight with empty string parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

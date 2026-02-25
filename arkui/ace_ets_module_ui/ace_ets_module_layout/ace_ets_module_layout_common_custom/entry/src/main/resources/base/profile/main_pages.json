@@ -16,6 +16,7 @@
         "MainAbility/pages/CommonAttrs/LayoutWeightNullUndefined",
         "MainAbility/pages/CommonAttrs/SafeAreaPaddingNullUndefined",
         "MainAbility/pages/CommonAttrs/ChainWeightNullUndefined",
-        "MainAbility/pages/CommonAttrs/GridContainerNullUndefined"
+        "MainAbility/pages/CommonAttrs/GridContainerNullUndefined",
+        "MainAbility/pages/CommonAttrs/FlexLayoutNullUndefined"
     ]
 }
