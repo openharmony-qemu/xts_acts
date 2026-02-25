@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ import { CustomTheme } from '@ohos.arkui.theme';
 
 export const sliderThemeProperty: string = `SliderThemeProperty`;
 
-export const sliderThemeSetProperty: string = `SliderThemeSetProperty`
+export const sliderThemeSetProperty: string = `SliderThemeSetProperty`;
 
 export class SliderKeys {
   public static readonly sliderOutSetSystem: string = `Slider_Out_Set_System`;
@@ -65,8 +65,8 @@ export class SliderKeys {
 @Entry
 @Component
 struct SliderThemePage {
-  @StorageLink(sliderThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(sliderThemeSetProperty) themeSet: boolean | undefined = true
+  @StorageLink('SliderThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('SliderThemeSetProperty') themeSet: boolean | undefined = true
   count: int = 0;
   @State val1: number = 50;
   @State val2: number = 50;
