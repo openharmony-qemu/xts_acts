@@ -68,7 +68,8 @@ export default function swipeGestureTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1/4),Math.round(areaObj1.top + areaHeight1/4),Math.round(areaObj1.left + areaWidth1/2),Math.round(areaObj1.top + areaHeight1/2),800)
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 / 2), Math.round(areaObj1.bottom-areaHeight1 / 4),
+        Math.round(areaObj1.left + areaWidth1 / 2), Math.round(areaObj1.top), 1600)
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('SwipeGesture');
       let obj: ESObject = JSON.parse(strJson);

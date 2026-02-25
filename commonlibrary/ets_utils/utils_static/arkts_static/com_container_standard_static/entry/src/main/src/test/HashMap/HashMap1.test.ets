@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ import Utils from '../Util.test';
 
 export default function HashMapTest1() {
   describe("HashMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -499,7 +499,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(key, value))
       })
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));
@@ -526,7 +526,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number>(key, value))
       })
       arr.sort((a, b) => {
-        return a[0] - b[0];
+        return (a[0] - b[0]).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i])).assertEqual(String([i + 1, (hashMap.get(i + 1)! as int)]));
@@ -751,7 +751,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(key, value))
       })
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));
@@ -798,7 +798,7 @@ export default function HashMapTest1() {
         arr.push(new Array<number | string>(obj[0], obj[1]));
       }
       arr.sort((a, b) => {
-        return (a[0] as number) - (b[0] as number);
+        return ((a[0] as number) - (b[0] as number)).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
         expect(String(arr[i][0])).assertEqual(String(i + 1));

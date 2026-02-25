@@ -46,11 +46,10 @@ import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function zIndexJsunit() {
   describe('zIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("zIndexJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -124,7 +123,7 @@ it('testZIndex_static_02', Level.LEVEL0, async () => {
         }
         console.info("[testZIndex02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -158,7 +157,7 @@ it('testZIndex_static_03', Level.LEVEL0, async () => {
         console.info("[testZIndex03] start to publish emit");
         emitter.emit(innerEvent, eventData);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -191,7 +190,7 @@ it('testZIndex_static_04', Level.LEVEL0, async () => {
         }
         console.info("[testZIndex04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

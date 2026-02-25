@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function textPickerSelectedAreaTest() {
   describe('textPickerSelectedAreaTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerAddApi beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
 

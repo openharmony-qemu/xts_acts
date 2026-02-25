@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function monopolizeTest() {
   describe('monopolizeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("monopolizeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });

@@ -15,11 +15,17 @@
 @Entry
 @Component
 struct SwipeGestureAllowedTypes {
- @State types: Array<SourceTool | undefined | null> = [];
+  @State types: Array<SourceTool | undefined | null> = [];
   @State result: string = 'allowed types default';
+
   build() {
-    Column({space: 10}) {
-      Text('Swipe').fontSize(20).width(240).height(80).margin({left:0,top:0}).padding({left:0,top:0}).backgroundColor(Color.Yellow).key('SwipeGestureAllowedTypes_Text')
+    Column() {
+      Text('Swipe')
+        .fontSize(20)
+        .width('90%')
+        .height('55%')
+        .backgroundColor(Color.Yellow)
+        .key('SwipeGestureAllowedTypes_Text')
         .gesture(
           SwipeGesture({ direction: SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal })
             .allowedTypes(this.types)
@@ -28,24 +34,29 @@ struct SwipeGestureAllowedTypes {
             })
         )
 
-      Text(this.result).key('SwipeGestureAllowedTypes_result')
+      Text(this.result).key('SwipeGestureAllowedTypes_result').height('10%')
 
       Button('Mouse').key('Mouse_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
-        })
+        }).height('10%')
       Button('Finger').key('Finger_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];
-        })
+        }).height('10%')
       Button('Invalid').id('Invalid_type')
-          .onClick(() => {
-            this.result = 'allowed types default';
-            this.types = [null, undefined];
-          })
-    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('SwipeGestureAllowedTypes_Father')
+        .onClick(() => {
+          this.result = 'allowed types default';
+          this.types = [null, undefined];
+        }).height('10%')
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#ffbebaba')
+    .key('SwipeGestureAllowedTypes_Father')
   }
 }
 

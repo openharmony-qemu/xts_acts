@@ -207,12 +207,10 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
-        if (deviceInfo.deviceType !== 'wearable') {
-          let driver: Driver = Driver.create();
-          let onType: On = ON.id('save_click_btn');
-          await getComponent(driver, onType);
-          await delay(500);
-        }
+        let driver: Driver = Driver.create();
+        let onType: On = ON.id('save_click_btn');
+        await getComponent(driver, onType);
+        await delay(500);
         promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data > 0);
@@ -252,14 +250,12 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
-        if (deviceInfo.deviceType !== 'wearable') {
-          let driver: Driver = Driver.create();
-          let onType: On = ON.id('cancel_btn');
-          await getComponent(driver, onType);
-          await delay(500);
-          let onType1: On = ON.text('不保存');
-          await getComponent(driver, onType1);
-        }
+        let driver: Driver = Driver.create();
+        let onType: On = ON.id('cancel_btn');
+        await getComponent(driver, onType);
+        await delay(500);
+        let onType1: On = ON.text('不保存');
+        await getComponent(driver, onType1);
         promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data == -1);
@@ -299,7 +295,7 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactDataNull);
-        promise.then((data: number) => {
+        await promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data != 0);
             done();

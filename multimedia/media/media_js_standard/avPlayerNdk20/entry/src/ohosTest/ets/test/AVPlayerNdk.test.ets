@@ -15,9 +15,47 @@
 
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium'
 import avplayer from 'libavplayerndk.so'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import fs from '@ohos.file.fs'
+import { BusinessError } from '@ohos.base';
+import Utils from './Utils';
+
+function getContext(): Context {
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+  let context = abilityDelegator.getAppContext();
+  return context;
+}
+
+async function copyFile(dir: string, filename: string) {
+  try {
+    let ml_face_model_file = dir + filename;
+    getContext().resourceManager.getRawFileContent(filename, (error, model_buffer) => {
+      if (error) {
+        console.log(
+          `[rawfile_copy_to_sandbox] demo.mp4 is
+          copy failed:${error.code}, message: ${error.message}.`);
+      } else {
+        let file = fs.openSync(ml_face_model_file, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+        fs.writeSync(file.fd, model_buffer.buffer);
+        fs.closeSync(file);
+        console.log("[rawfile_copy_to_sandbox] demo.mp4 is copy success");
+      }
+    });
+  } catch (error) {
+    console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+  }
+}
 
 export default function AVPlayerNdkTest() {
   describe('AVPlayerTest', () => {
+
+    beforeAll(async () => {
+      let context = getContext()
+      let dir = context.filesDir + "/";
+      await copyFile(dir,"H264_AAC.mp4")
+      console.info("[rawfile_copy_to_sandbox] sandbox path:" + dir);
+      await Utils.sleep(2000)
+    })
 
     /**
      * @tc.name   SUB_MULTIMEIDA_OH_AVPlayer_SetURLSource_0100

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,9 +37,9 @@ export default function imageDecodeOptions() {
     let filesDir: string | undefined | null;
     let filePath: string;
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
-    beforeAll(() => {
+    let globalpixelmap: image.PixelMap | undefined;
+    let globalimageSource: image.ImageSource | undefined;
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -48,7 +48,7 @@ export default function imageDecodeOptions() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -56,7 +56,7 @@ export default function imageDecodeOptions() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -445,7 +445,7 @@ export default function imageDecodeOptions() {
             console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 success ");
             expect(pixelmap != undefined).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 error: " + error);
             expect().assertFail();
             done();
@@ -677,7 +677,7 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();
@@ -710,7 +710,7 @@ export default function imageDecodeOptions() {
           console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 success ");
           expect(pixelmap !== undefined).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 error: " + error);
           expect().assertFail();
           done();
@@ -906,7 +906,7 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();
@@ -1081,7 +1081,7 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();

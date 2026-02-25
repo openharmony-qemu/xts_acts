@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function EnvironmentTest0040() {
   describe('EnvironmentTest0040', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EnvironmentTest0040 beforeEach start");
 
 

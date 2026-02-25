@@ -15,9 +15,11 @@
 import blankJsunit from './BlankTest/BlankJsunit.test';
 import blankUIJsunit from './BlankTest/BlankUIJsunit.test.ets';
 import blank3Jsunit from './BlankTest/Blank3Jsunit.test';
+import blankColorNullUndefinedTest from './BlankTest/BlankColorNullUndefined.test';
 
 export default function testsuite() {
   blankJsunit()
   blankUIJsunit();
   blank3Jsunit();
+  blankColorNullUndefinedTest();
 }

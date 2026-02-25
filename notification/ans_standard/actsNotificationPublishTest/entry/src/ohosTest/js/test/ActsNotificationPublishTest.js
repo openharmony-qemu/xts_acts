@@ -104,7 +104,6 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} cancelAll notification success`)
-          expect(true).assertTrue()
           done()
         }
       })
@@ -120,6 +119,7 @@ export default function ActsNotificationPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2700', Level.LEVEL2, async function (done) {
+      let count = 0
       notificationManager.requestEnableNotification(async (err) => {
         if (err) {
           console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -127,7 +127,8 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info("Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification success");
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           await sleep(1000);
           console.info("Sub_Notification_Ans_Enable_Query_2700 ===>requestEnableNotification success 1s");
           done()
@@ -162,7 +163,6 @@ export default function ActsNotificationPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2800', Level.LEVEL2, async function (done) {
-
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 START`)
       await sleep(2000);
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 2s`)
@@ -172,7 +172,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} requestEnableNotification Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 END`)
@@ -187,10 +187,12 @@ export default function ActsNotificationPublishTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_0300', Level.LEVEL2, async function (done) {
+      let count = 0
       console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_0300 START`)
       await notificationManager.requestEnableNotification(undefined).then(() => {
         console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_0300 requestEnableNotification Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} SUB_NOTIFICATION_ANS_REQUEST_ENABLE_TEST_0300 requestEnableNotification Promise err: ${err.code}`)
@@ -319,6 +321,7 @@ export default function ActsNotificationPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Publish_Publish_8400', Level.LEVEL2, async function (done) {
+      let count = 0
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8400 START`)
       let notificationRequest = {
         content: {
@@ -358,7 +361,8 @@ export default function ActsNotificationPublishTest() {
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
 
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }
       })
@@ -376,6 +380,7 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_8450', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8450 START`)
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_LONG_TEXT,
@@ -408,7 +413,8 @@ export default function ActsNotificationPublishTest() {
 
       notification.publish(notificationRequest).then(data => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -429,6 +435,7 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_8500', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8500 START`)
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_MULTILINE,
@@ -466,7 +473,8 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }
       })
@@ -484,6 +492,7 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_8550', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8550 START`)
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_MULTILINE,
@@ -516,7 +525,8 @@ export default function ActsNotificationPublishTest() {
 
       notification.publish(notificationRequest).then(data => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -537,6 +547,7 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_8600', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_8600 START`)
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -577,7 +588,8 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         }
       })
@@ -595,6 +607,7 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_0150', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_0150 START`)
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -630,7 +643,8 @@ export default function ActsNotificationPublishTest() {
 
       notification.publish(notificationRequest).then(data => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -653,7 +667,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_PUBLISH_TEST_01300 START`)
 
       let label = "label"
-
+      let count = 0
       let notificationRequest = {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
@@ -678,7 +692,8 @@ export default function ActsNotificationPublishTest() {
 
       notification.publish(notificationRequest, label).then(data => {
         console.log(`${TAG} notification publish AsyncCallback success: ${data}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch(err => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -701,10 +716,12 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_2850 START`)
       let id = 1
       let label = "label"
+      let count = 0
       await notification.cancel(id, label, (err) => {
         if (err.code) {
           console.info(`${TAG} cancel AsyncCallback err: ${err.code}`)
-          expect(true).assertTrue()
+          count++
+          expect(count).assertEqual(1)
           done()
         } else {
           console.info(`${TAG} cancel AsyncCallback success`)
@@ -733,7 +750,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
 
@@ -743,7 +760,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_2850 END`)
@@ -763,7 +780,7 @@ export default function ActsNotificationPublishTest() {
       await notification.cancel(id, (err) => {
         if (err.code) {
           console.info(`${TAG} cancel id err: ${err.code}`)
-          expect(true).assertTrue()
+          expect(err.code != 0).assertTrue()
           done()
         } else {
           console.info(`${TAG} cancel id success`)
@@ -793,7 +810,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_TEST_0400 END`)
@@ -817,7 +834,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_TEST_0500 END`)
@@ -838,7 +855,7 @@ export default function ActsNotificationPublishTest() {
       await notification.cancel(id, label, (err) => {
         if (err.code) {
           console.info(`${TAG} cancel AsyncCallback err: ${err.code}`)
-          expect(true).assertTrue()
+          expect(err.code != 0).assertTrue()
           done()
         } else {
           console.info(`${TAG} cancel AsyncCallback success`)
@@ -866,7 +883,7 @@ export default function ActsNotificationPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}`)
-        expect(true).assertTrue()
+        expect(err.code != 0).assertTrue()
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_TEST_0700 END`)
@@ -889,7 +906,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} cancelAll AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(err.code == 0).assertTrue()
           done()
         }
       })
@@ -906,9 +923,11 @@ export default function ActsNotificationPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Cancel_3050', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3050 START`)
+      let count = 0
       await notification.cancelAll().then(() => {
         console.info(`${TAG} cancelAll Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelAll Promise err: ${err.code}`)
@@ -928,9 +947,11 @@ export default function ActsNotificationPublishTest() {
      */
     it('SUB_NOTIFICATION_ANS_CANCELAll_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCELAll_TEST_0300 START`)
+      let count = 0
       await notification.cancelAll(undefined).then(() => {
         console.info(`${TAG} cancelAll Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelAll Promise err: ${err.code}`)
@@ -958,7 +979,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} cancelGroup AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(err.code == 0).assertTrue()
           done()
         }
       })
@@ -976,9 +997,11 @@ export default function ActsNotificationPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_2750', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_2750 START`)
       let groupName = "groupName"
+      let count = 0
       await notification.cancelGroup(groupName).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
@@ -998,9 +1021,11 @@ export default function ActsNotificationPublishTest() {
      */
     it('SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_0300 START`)
+      let count = 0
       await notification.cancelGroup(2).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
@@ -1021,9 +1046,11 @@ export default function ActsNotificationPublishTest() {
     it('SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_0400 START`)
       let groupName = "groupName"
+      let count = 0
       await notification.cancelGroup(groupName, undefined).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
@@ -1051,7 +1078,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} getActiveNotificationCount AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(err.code == 0).assertTrue()
           done()
         }
       })
@@ -1070,7 +1097,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_ACTIVE_COUNT_TEST_0200 START`)
       await notification.getActiveNotificationCount().then((data) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
@@ -1138,7 +1165,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_0500 START`)
       await notification.getActiveNotificationCount(undefined).then((data) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
@@ -1160,7 +1187,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_COUNT_TEST_0600 START`)
       await notification.getActiveNotifications(undefined).then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data.length).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
@@ -1259,7 +1286,7 @@ export default function ActsNotificationPublishTest() {
       let templateName = 2
       await notification.isSupportTemplate(templateName).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
@@ -1282,7 +1309,7 @@ export default function ActsNotificationPublishTest() {
       let templateName = 'test_templateName'
       await notification.isSupportTemplate(templateName, undefined).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)

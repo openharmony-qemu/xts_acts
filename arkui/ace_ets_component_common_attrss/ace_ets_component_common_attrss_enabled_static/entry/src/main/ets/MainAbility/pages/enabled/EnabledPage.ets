@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,8 +99,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -142,7 +140,7 @@ struct EnabledPage {
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.log('aboutToAppear routerParamOptions success ' + this.targetView + " key " + this.componentKey +
         " this.referenceComponentKey " + this.referenceComponentKey)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -240,14 +238,6 @@ struct EnabledPage {
         .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
         .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
         .backgroundColor(Color.Black)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Button('StepperItem')
-          }.backgroundColor(Color.Green).applyStyles(this.commonStyle)
-        }
-        .width('100%')
-        .height('70%')
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem() {
@@ -310,14 +300,6 @@ struct EnabledPage {
               Text().width(20).height(100).borderRadius(10)
                 .backgroundColor('#C0C0C0')
             }.width(20).backgroundColor('#ededed').applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem() {
-                Column() {
-                  Text('Page One')
-                }
-              }
-            }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Search') {
             Search({ placeholder: 'Type to search...' })
               .backgroundColor(Color.White)

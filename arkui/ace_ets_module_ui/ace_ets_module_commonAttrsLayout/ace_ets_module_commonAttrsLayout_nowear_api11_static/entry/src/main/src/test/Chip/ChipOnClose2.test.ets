@@ -33,16 +33,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ChipOnClose2() {
   describe('ChipOnClose2', () => {
-
-
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipOnClose beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("ChipOnClose2 beforeEach start");
@@ -73,7 +66,7 @@ export default function ChipOnClose2() {
      * @tc.level    Level.LEVEL0
      */
 it('ChipOnClose2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
+      const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipOnClose2_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipOnClose2Col');
       await CommonFunc.sleep(200);

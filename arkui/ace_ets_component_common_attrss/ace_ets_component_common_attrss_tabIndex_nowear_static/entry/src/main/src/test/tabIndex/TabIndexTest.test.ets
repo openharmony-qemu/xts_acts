@@ -52,8 +52,6 @@ export default function TabIndexTest() {
   let supportView = [
     // 'Web',//外部组件不关注  备注Web领域用例，周硕结论暂不关注
     'SideBarContainer',
-    'Stepper',
-    'StepperItem',
     'Select',
   ]
   //Page config, this param is required.
@@ -86,7 +84,7 @@ export default function TabIndexTest() {
   ]
 
   describe('TabIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('TabIndexTest beforeEach start')
 
       await UtilsTest.msSleep(4000)

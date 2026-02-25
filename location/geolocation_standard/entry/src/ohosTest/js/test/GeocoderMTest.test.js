@@ -19,6 +19,7 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import bundle from '@ohos.bundle'
 import osaccount from '@ohos.account.osAccount'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
+import wifiMg from '@ohos.wifiManager';
 
 let LocationRequestScenario = {
     UNSET: 0x300,
@@ -90,6 +91,35 @@ export default function geolocationTest_geo5() {
         console.log('#start AccessTokenTests#');
         beforeAll(async function (done) {
             console.info('beforeAll case');
+            if(!wifiMg.isWifiActive()){
+                console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+                await sleep(5000);
+              }
+              
+              try {
+                let data = await wifiMg.getLinkedInfo();
+                console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+                console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+                console.info("======> Internet chload : " + JSON.stringify(data.chload));
+                console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+                    
+                if (data.connState == wifiMg.ConnState.CONNECTED) {
+                  console.info("======> WLAN connection established ");
+                } else {
+                  expect().message("======> WLAN Network error").assertFail();
+                  done();
+                }
+                if (data.chload >= 900 || data.rssi <= -80) {
+                  expect().message("======> WLAN Network error").assertFail();
+                  done();
+                } else if (data.chload >= 500) {
+                  console.info("======> The internet connection is poor. ");
+                }
+                    
+              } catch (err) {
+                console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+                done();
+              }
             await applyPermission();
             done();
         })

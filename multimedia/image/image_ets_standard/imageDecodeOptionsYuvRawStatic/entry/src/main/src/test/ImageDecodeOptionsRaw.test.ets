@@ -215,7 +215,7 @@ export default function imageDecodeOptionsRawTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll case');

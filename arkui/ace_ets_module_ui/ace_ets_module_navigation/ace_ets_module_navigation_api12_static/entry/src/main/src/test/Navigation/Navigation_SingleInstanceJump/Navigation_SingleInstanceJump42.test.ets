@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function Navigation_SingleInstanceJump42() {
   describe('Navigation_SingleInstanceJump42', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -46,7 +46,7 @@ export default function Navigation_SingleInstanceJump42() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Navigation_SingleInstanceJump42 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("Navigation_SingleInstanceJump42" == pages.name)) {
           console.info("get Navigation_SingleInstanceJump42 pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_ListDirection() {
 
   describe('List_ListDirection', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_ListDirection beforeAll start111")
             
       await UtilsTest.msSleep(4000)
@@ -116,7 +116,7 @@ it('testListListDirectionAxisVertical_static', Level.LEVEL0, async (done: () => 
       expect(Math.abs(Math.round(List_ListDirection_014.bottom - List_ListDirection_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_ListDirection_013.left + ((List_ListDirection_013.right - List_ListDirection_013.left) / 2))).toInt(),
         (Math.round(List_ListDirection_013.bottom)).toInt(),
         (Math.round(List_ListDirection_012.left + ((List_ListDirection_012.right - List_ListDirection_012.left) / 2))).toInt(),

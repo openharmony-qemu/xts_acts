@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemPadMarTest() {
   describe('Grid_RowCol_ItemPadMarTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("grid_RowCol_ItemPadMarTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")

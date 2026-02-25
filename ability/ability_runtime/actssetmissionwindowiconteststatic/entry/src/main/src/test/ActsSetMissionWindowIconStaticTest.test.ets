@@ -21,10 +21,10 @@ import image from "@ohos.multimedia.image";
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 export default function ActsSetMissionWindowIconStaticTest() {
   describe('ActsSetMissionWindowIconStaticTest', () => {
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info('beforeEach start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.setmissionicon.static")
@@ -60,7 +60,7 @@ export default function ActsSetMissionWindowIconStaticTest() {
         }).then((data) => {
           hilog.info(0x0000, testTag, `${TEST_CASE_NAME}data:${JSON.stringify(data)}`);
           imagePixelMap = data;
-          testAbilityContext.setMissionWindowIcon(imagePixelMap)
+          testAbilityContext?.setMissionWindowIcon(imagePixelMap)
             .then((idata) => {
               hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'setMissionWindowIcon succeed')`);
               hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'data'+JSON.stringify(idata)`);

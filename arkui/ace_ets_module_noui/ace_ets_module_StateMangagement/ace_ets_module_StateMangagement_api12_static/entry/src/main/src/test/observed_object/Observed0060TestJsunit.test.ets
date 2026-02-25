@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function Observed0060TestJsunit() {
   describe('Observed0060TestJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Observed0060TestJsunit beforeEach start");
 
 

@@ -42,7 +42,7 @@ import window from '@ohos.window';
 
 export default function subwindowDialog() {
   describe('subwindowDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")

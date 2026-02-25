@@ -96,7 +96,7 @@ struct GridItemOnSelect {
                   }
                   console.info("onSelect start to emit action state")
                   events_emitter.emit(backEvent, backData)
-                } catch (err: Error) {
+                } catch (err) {
                   console.info("onSelect emit action state err: " + JSON.stringify(err))
                 }
               })

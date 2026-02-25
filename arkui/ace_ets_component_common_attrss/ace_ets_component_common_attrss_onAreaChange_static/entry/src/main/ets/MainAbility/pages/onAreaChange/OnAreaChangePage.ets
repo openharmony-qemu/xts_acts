@@ -19,11 +19,11 @@ import { State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button, Checkbox,CommonMethod,applyStyles,
   CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu,
-  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Scroller, Stepper, Search, Select, Slider,
+  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Scroller, Search, Select, Slider,
   Text, TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Column, Counter, Flex,
   GridRow, Grid, List, RelativeContainer, Row, Refresh, Scroll, SideBarContainer, Stack, Swiper,
   Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, ColumnSplit, RowSplit, Blank,
-  DataPanelType, Color, $r, MenuItem, ProgressType, BarState, StepperItem, SliderStyle, Axis, ToggleType,
+  DataPanelType, Color, $r, MenuItem, ProgressType, BarState, SliderStyle, Axis, ToggleType,
   GridRowDirection, GridCol, GridItem, ListItem, SideBarContainerType, FlexDirection, BadgeStyle,LinearGradient,
   BadgeParamWithString, TextAlign, FlexAlign, TabContent, FlowItem, ColumnOptions, PolylineOptions,Area,
   RectOptions, GridColColumnOption, FlexWrap, GutterOption, NavPathStack, BreakPoints, ForEach,NavDestination,AlignRuleOption,
@@ -82,7 +82,7 @@ struct OnAreaChangePage {
       this.compareButtonKey = routerParamOptions.view.compareButtonKey
       this.compareOldTextKey = routerParamOptions.view.compareOldTextKey
       this.compareNewTextKey = routerParamOptions.view.compareNewTextKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
     let stateChangeEvent3: events_emitter.InnerEvent = {
@@ -177,21 +177,6 @@ struct OnAreaChangePage {
         Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'NavRouter') {
         Navigation({}).applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Button('Button')
-          .width(this._compareButtonWidth)
-          .height(this._compareButtonHeight)
-          .key(this.compareButtonKey)
-        Stepper() {
-          StepperItem()
-            .backgroundColor(Color.Pink)
-            .applyStyles(this.commonStyle)
-        }
-        .width(this._width)
-        .height(this._height)
-        .backgroundColor(Color.Green)
-        .margin(this.parentMargin)
-        .key(this.parentKey)
       } else if (this.targetView == 'FlowItem') {
         Button('Button')
           .width(this._compareButtonWidth)
@@ -409,10 +394,6 @@ struct OnAreaChangePage {
             Slider()
               .backgroundColor(Color.Pink)
               .applyStyles(this.commonStyle)
-          } else if (this.targetView == 'Stepper') {
-            Stepper() {
-              StepperItem()
-            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
           } else if (this.targetView == 'Text') {
             Text('text')
               .fontSize(15)

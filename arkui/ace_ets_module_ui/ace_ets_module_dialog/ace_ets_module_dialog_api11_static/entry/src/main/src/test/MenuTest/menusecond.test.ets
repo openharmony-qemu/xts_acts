@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ function sleep(time: int) {
 
 export default function menuSecondTest() {
   describe('ActsMenuSecondTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsMenuSecondTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -93,7 +93,7 @@ export default function menuSecondTest() {
           await CommonFunc.sleep(2000);
           // console.info("push menusecond success: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push menusecond page error " + JSON.stringify(err));
       }
       await sleep(2000)

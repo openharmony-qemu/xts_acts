@@ -27,7 +27,6 @@ import {
   FlexAlign,
   FlowItem,
   Image,
-  ItemState,
   LazyForEach,
   PlaybackSpeed,
   Position,
@@ -37,8 +36,6 @@ import {
   Shape,
   Slider,
   Stack,
-  Stepper,
-  StepperItem,
   Text,
   TimePicker,
   Toggle,
@@ -57,9 +54,6 @@ let matrix = matrix4.init([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
 @Component
 struct comSizeAbilityTest_27 {
   @State currentIndex: Int = 0
-  @State firstState: ItemState = ItemState.Normal
-  @State secondState: ItemState = ItemState.Normal
-  @State thirdState: ItemState = ItemState.Normal
 
   build() {
     Scroll() {
@@ -97,41 +91,6 @@ struct comSizeAbilityTest_27 {
           })
           .transform(matrix)
         }.key('Shape_Father')
-
-        Column() {
-          Stepper({
-            index: this.currentIndex
-          }) {
-            StepperItem() {
-              Column() {
-                Text('第一页')
-              }
-            }
-            .nextLabel('Next')
-            .status(this.firstState)
-            .offset({ x: 5, y: 5 } as Position)
-          }
-          .backgroundColor('#F1F3F5')
-          .id("Stepper_Size")
-          .size({ width: 214, height: 140 })
-          .translate({ x: 1, y: 1, z: 1 })
-          .scale({
-            x: 1,
-            y: 1,
-            z: 1,
-            centerX: 1,
-            centerY: 1
-          })
-          .rotate({
-            x: 1,
-            y: 1,
-            z: 1,
-            angle: 0,
-            centerX: 1,
-            centerY: 1
-          })
-          .transform(matrix)
-        }.key('Stepper_Father')
       }.width('100%')
     }.height('100%')
   }

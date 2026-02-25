@@ -17,6 +17,7 @@ group("sandbox") {
   if (is_standard_system) {
     deps = [
       "sandboxAPITestStatic:ActsSandboxAPIStaticTest",
+      "sandboxAPITest:ActsSandboxAPITest",
     ]
   }
 }

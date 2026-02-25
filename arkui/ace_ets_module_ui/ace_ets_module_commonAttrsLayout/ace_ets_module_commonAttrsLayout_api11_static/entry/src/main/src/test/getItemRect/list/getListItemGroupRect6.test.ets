@@ -35,13 +35,13 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function getListItemGroupRect6() {
   describe('getListItemGroupRect6', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getListItemGroupRect6 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("getListItemGroupRect6 beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/getItemRect/list/getListItemGroupRect6',
@@ -79,6 +79,7 @@ export default function getListItemGroupRect6() {
 it('getListItemGroupRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect6_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManager")!
       message.notify({ name: 'index', value: 0 });
       message.notify({ name: 'indexInGroup', value: -1 });

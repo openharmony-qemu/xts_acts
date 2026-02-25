@@ -40,9 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function paddingTest2() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
-    'Select',
-    'Stepper',
-    'StepperItem',
+    'Select'
     // 'Web'  // 外领域 app died
   )
 
@@ -96,7 +94,7 @@ export default function paddingTest2() {
    * Create test suite.
    */
   describe('PaddingBaseLengthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });

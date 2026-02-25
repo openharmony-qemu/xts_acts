@@ -37,7 +37,7 @@ import common from '@ohos.app.ability.common';
 
 import deviceInfo from '@ohos.deviceInfo';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = "[RELATIONAL_STORE_ON_ERROR]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -49,7 +49,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RdbStoreSqliteErrorOccurredTest() {
   describe('rdbStoreSqliteErrorOccurredTest', (): void => {
@@ -62,34 +62,34 @@ export default function RdbStoreSqliteErrorOccurredTest() {
     });
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach begin')
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
-      await rdbStore.executeSql(CREATE_TABLE_TEST4);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST4);
       let u8 = new Uint8Array([1, 2, 3])
       const valueBucketUser: relationalStore.ValuesBucket = {
         "username": 'user1',
         "email": 'user1@example.com',
       };
-      await rdbStore.insert("users", valueBucketUser);
+      await rdbStore!.insert("users", valueBucketUser);
       const valueBucket: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
         "salary": 100.5 as long,
         "blobType": u8,
       }
-      await rdbStore.insert("test", valueBucket);
+      await rdbStore!.insert("test", valueBucket);
       console.info(TAG + 'beforeEach end')
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach')
       try {
-        rdbStore.offSqliteErrorOccurred();
-        await rdbStore.close();
+        rdbStore!.offSqliteErrorOccurred();
+        await rdbStore!.close();
       } catch (err) {
         console.log(`afterEach error, failed code:${err.code},message:${err.message}`);
       }
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll')
@@ -108,9 +108,9 @@ export default function RdbStoreSqliteErrorOccurredTest() {
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0001 start *************");
       try {
-        await rdbStore.close();
+        await rdbStore!.close();
         let exceptionMessage: relationalStore.ExceptionMessage;
-        rdbStore.onSqliteErrorOccurred(exceptionMessage => {
+        rdbStore!.onSqliteErrorOccurred(exceptionMessage => {
           console.log(`error log is ${exceptionMessage.code}`)
         });
       } catch (err) {
@@ -134,7 +134,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0002 start *************");
       try {
         let exceptionMessage: relationalStore.ExceptionMessage;
-        rdbStore.onSqliteErrorOccurred(exceptionMessage => {
+        rdbStore!.onSqliteErrorOccurred(exceptionMessage => {
           let sqliteCode = exceptionMessage.code;
           let sqliteMessage = exceptionMessage.message;
           let errSQL = exceptionMessage.sql;
@@ -156,7 +156,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
           "blobType": u8,
           "exsc": 100 as long,
         }
-        await rdbStore.insert("test", valueBucket);
+        await rdbStore!.insert("test", valueBucket);
         expect(true).assertFail();
       } catch (err) {
         console.error(`sqliteErrorOccurred on is failed code:${err.code},message:${err.message}`);
@@ -179,7 +179,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0003 start *************");
       try {
         let exceptionMessage: relationalStore.ExceptionMessage;
-        rdbStore.onSqliteErrorOccurred(exceptionMessage => {
+        rdbStore!.onSqliteErrorOccurred(exceptionMessage => {
           let sqliteCode = exceptionMessage.code;
           let sqliteMessage = exceptionMessage.message;
           let errSQL = exceptionMessage.sql;
@@ -193,7 +193,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
         expect(true).assertFail();
       }
       let u8 = new Uint8Array([1, 2, 3]);
-      let transaction = await rdbStore.createTransaction({
+      let transaction = await rdbStore!.createTransaction({
         transactionType: relationalStore.TransactionType.IMMEDIATE
       });
       try {
@@ -231,10 +231,10 @@ export default function RdbStoreSqliteErrorOccurredTest() {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0005 start *************");
       try {
         let exceptionMessage: relationalStore.ExceptionMessage;
-        rdbStore.onSqliteErrorOccurred(exceptionMessage => {
+        rdbStore!.onSqliteErrorOccurred(exceptionMessage => {
           expect(exceptionMessage.code === 0).assertTrue();
         });
-        rdbStore.offSqliteErrorOccurred();
+        rdbStore!.offSqliteErrorOccurred();
       } catch (err) {
         console.error(`sqliteErrorOccurred on is failed ${err.code}`);
       }
@@ -247,7 +247,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
           "blobType": u8,
           "exsc": 100 as long,
         }
-        await rdbStore.insert("test", valueBucket);
+        await rdbStore!.insert("test", valueBucket);
         expect().assertFail();
       } catch (err) {
         console.error(`sqliteErrorOccurred on is failed code:${err.code},message:${err.message}`);
@@ -276,7 +276,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
         securityLevel: relationalStore.SecurityLevel.S1,
         vector: true,
       };
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1)
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1)
       try{
         rdbStore1.onSqliteErrorOccurred(exceptionMessage => {
           expect().assertFail();
@@ -310,7 +310,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
         securityLevel: relationalStore.SecurityLevel.S1,
         vector: true,
       };
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1)
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1)
       try{
         rdbStore1.offSqliteErrorOccurred();
         expect().assertFail();

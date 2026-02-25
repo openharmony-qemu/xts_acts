@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function QRCodeResourceStrTest() {
   describe('QRCodeResourceStrTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QRCodeResourceStrTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility");
     });

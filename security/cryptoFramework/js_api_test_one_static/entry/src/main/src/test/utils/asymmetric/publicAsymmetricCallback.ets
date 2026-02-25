@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -211,8 +211,8 @@ async function verifyForVerify(verifyGenerator: cryptoFramework.Verify,
 }
 
 async function encryptAndDecryptNormalProcess(asyAlgoName: string, cipherAlgoName: string): Promise<boolean> {
-  let globalCipherText: cryptoFramework.DataBlob;
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
   let globalText: string = "This is a cipher test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
@@ -229,7 +229,7 @@ async function encryptAndDecryptNormalProcess(asyAlgoName: string, cipherAlgoNam
         return initCipher(
           cipherGeneratorEncrypt,
           encryptMode,
-          globalRsaKeyPair.pubKey,
+          globalRsaKeyPair!.pubKey,
           null
         );
       })
@@ -245,7 +245,7 @@ async function encryptAndDecryptNormalProcess(asyAlgoName: string, cipherAlgoNam
         return initCipher(
           cipherGeneratorDecrypt,
           decryptMode,
-          globalRsaKeyPair.priKey,
+          globalRsaKeyPair!.priKey,
           null
         );
       })
@@ -257,7 +257,7 @@ async function encryptAndDecryptNormalProcess(asyAlgoName: string, cipherAlgoNam
         return doFinalCipher(
           cipherGeneratorDecrypt,
           decryptMode,
-          globalCipherText
+          globalCipherText!
         );
       })
       .then((finalOutput: cryptoFramework.DataBlob) => {
@@ -278,8 +278,8 @@ async function encryptAndDecryptNormalProcess(asyAlgoName: string, cipherAlgoNam
 
 async function signAndVerifyNormalProcess(asyAlgoName: string,
   signVerifyAlgoName: string): Promise<boolean> {
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
-  let globalSignBlob: cryptoFramework.DataBlob;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
+  let globalSignBlob: cryptoFramework.DataBlob | undefined;
   let globalText: string = "This is a sign test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
 
@@ -293,7 +293,7 @@ async function signAndVerifyNormalProcess(asyAlgoName: string,
         let encodedPubKey: cryptoFramework.DataBlob = rsaKeyPair.pubKey.getEncoded();
         let encodedPriKey: cryptoFramework.DataBlob = rsaKeyPair.priKey.getEncoded();
         convertAsyKey(rsaGenerator, encodedPubKey, encodedPriKey);
-        return initSign(signGenerator, globalRsaKeyPair.priKey);
+        return initSign(signGenerator, globalRsaKeyPair!.priKey);
       })
       .then<string>((initSignOut: string) => {
         console.log(
@@ -309,7 +309,7 @@ async function signAndVerifyNormalProcess(asyAlgoName: string,
       })
       .then<string>((finalOutput: cryptoFramework.DataBlob) => {
         globalSignBlob = finalOutput;
-        return initVerify(verifyGenerator, globalRsaKeyPair.pubKey);
+        return initVerify(verifyGenerator, globalRsaKeyPair!.pubKey);
       })
       .then<string>((initVerifyOut: string) => {
         console.log(
@@ -322,7 +322,7 @@ async function signAndVerifyNormalProcess(asyAlgoName: string,
           "[Callback] signAndVerifyNormalProcess updateVerifyOut:" +
             updateVerifyOut
         );
-        return verifyForVerify(verifyGenerator, input, globalSignBlob);
+        return verifyForVerify(verifyGenerator, input, globalSignBlob!);
       })
       .then((verifyOutput: boolean) => {
         resolve(verifyOutput);
@@ -339,8 +339,8 @@ async function signAndVerifySetAndGetSpecProcess(
   itemType: cryptoFramework.SignSpecItem,
   itemValue: int | Uint8Array
 ): Promise<boolean> {
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
-  let globalSignBlob: cryptoFramework.DataBlob;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
+  let globalSignBlob: cryptoFramework.DataBlob | undefined;
   let globalText: string = "This is a sign test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
 
@@ -353,7 +353,7 @@ async function signAndVerifySetAndGetSpecProcess(
         globalRsaKeyPair = keyPair;
         signGenerator.setSignSpec(itemType, itemValue);
         verifyGenerator.setVerifySpec(itemType, itemValue);
-        return initSign(signGenerator, globalRsaKeyPair.priKey);
+        return initSign(signGenerator, globalRsaKeyPair!.priKey);
       })
       .then<string>((initSignOut: string) => {
         console.log(
@@ -371,7 +371,7 @@ async function signAndVerifySetAndGetSpecProcess(
       })
       .then<string>((finalOutput: cryptoFramework.DataBlob) => {
         globalSignBlob = finalOutput;
-        return initVerify(verifyGenerator, globalRsaKeyPair.pubKey);
+        return initVerify(verifyGenerator, globalRsaKeyPair!.pubKey);
       })
       .then<string>((initVerifyOut: string) => {
         console.log(
@@ -385,7 +385,7 @@ async function signAndVerifySetAndGetSpecProcess(
           "[Callback] signAndVerifySetAndGetSpecProcess updateVerifyOut:" +
             updateVerifyOut
         );
-        return verifyForVerify(verifyGenerator, input, globalSignBlob);
+        return verifyForVerify(verifyGenerator, input, globalSignBlob!);
       })
       .then((verifyOutput: boolean) => {
         let signSpec: string | int = signGenerator.getSignSpec(itemType);
@@ -406,7 +406,7 @@ async function signAndVerifySetAndGetSpecProcess(
 
 async function encryptAndDecryptBySpecProcess(asyKeyPairSpec: cryptoFramework.KeyPair,
   cipherAlgoName: string): Promise<boolean> {
-  let globalCipherText: cryptoFramework.DataBlob;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
   let globalText: string = "This is a cipher test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
@@ -440,7 +440,7 @@ async function encryptAndDecryptBySpecProcess(asyKeyPairSpec: cryptoFramework.Ke
         return doFinalCipher(
           cipherGeneratorDncrypt,
           decryptMode,
-          globalCipherText
+          globalCipherText!
         );
       })
       .then((finalOutput: cryptoFramework.DataBlob) => {
@@ -486,7 +486,7 @@ async function signAbnormalParameterProcess(
         await signForSign(signGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] signAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }
@@ -494,7 +494,7 @@ async function signAbnormalParameterProcess(
 
 async function encryptSetAndGetSpecInitProcess(asyKeyPairSpec: cryptoFramework.KeyPair,
   cipherAlgoName: string): Promise<boolean> {
-  let globalCipherText: cryptoFramework.DataBlob;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
   let globalText: string = "This is a cipher test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
@@ -549,7 +549,7 @@ async function encryptSetAndGetSpecInitProcess(asyKeyPairSpec: cryptoFramework.K
         return doFinalCipher(
           cipherGeneratorDecrypt,
           decryptMode,
-          globalCipherText
+          globalCipherText!
         );
       })
       .then((finalOutput: cryptoFramework.DataBlob) => {
@@ -568,8 +568,8 @@ async function encryptSetAndGetSpecInitProcess(asyKeyPairSpec: cryptoFramework.K
 
 async function signAndVerifyBySpecProcess(asyKeySpec: cryptoFramework.AsyKeySpec,
   signVerifyAlgoName: string): Promise<boolean> {
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
-  let globalSignBlob: cryptoFramework.DataBlob;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
+  let globalSignBlob: cryptoFramework.DataBlob | undefined;
   let globalText: string = "This is a sign test";
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
 
@@ -583,7 +583,7 @@ async function signAndVerifyBySpecProcess(asyKeySpec: cryptoFramework.AsyKeySpec
     specGenerator.generateKeyPair()
       .then<string>((keyPair: cryptoFramework.KeyPair) => {
         globalRsaKeyPair = keyPair;
-        return initSign(signGenerator, globalRsaKeyPair.priKey);
+        return initSign(signGenerator, globalRsaKeyPair!.priKey);
       })
       .then<string>((initSignOut: string) => {
         console.log(
@@ -600,9 +600,9 @@ async function signAndVerifyBySpecProcess(asyKeySpec: cryptoFramework.AsyKeySpec
       .then<string>((finalOutput: cryptoFramework.DataBlob) => {
         globalSignBlob = finalOutput;
         console.log(
-          "[callback] signOutput: " + uInt8ArrayToShowStr(globalSignBlob.data)
+          "[callback] signOutput: " + uInt8ArrayToShowStr(globalSignBlob!.data)
         );
-        return initVerify(verifyGenerator, globalRsaKeyPair.pubKey);
+        return initVerify(verifyGenerator, globalRsaKeyPair!.pubKey);
       })
       .then<string>((initVerifyOut: string) => {
         console.log(
@@ -615,7 +615,7 @@ async function signAndVerifyBySpecProcess(asyKeySpec: cryptoFramework.AsyKeySpec
           "[Callback] signAndVerifyBySpecProcess updateVerifyOut:" +
             updateVerifyOut
         );
-        let result = verifyForVerify(verifyGenerator, input, globalSignBlob);
+        let result = verifyForVerify(verifyGenerator, input, globalSignBlob!);
         console.log("[callback] verifyForVerify result: " + result);
         resolve(result);
       })
@@ -626,8 +626,8 @@ async function signAndVerifyBySpecProcess(asyKeySpec: cryptoFramework.AsyKeySpec
 }
 
 async function keyGenerationBySpecProcess(asyAlgoName: string): Promise<boolean> {
-  let sk: bigint | string | int;
-  let pk: bigint | string | int;
+  let sk: bigint | string | int = 0;
+  let pk: bigint | string | int = 0;
   let generatorBySpec: cryptoFramework.AsyKeyGeneratorBySpec;
   return new Promise<boolean>((resolve, reject) => {
     let rsaGenerator: cryptoFramework.AsyKeyGenerator = createAsyKeyGenerator(asyAlgoName);
@@ -719,7 +719,7 @@ async function verifyAbnormalParameterProcess (
       default:
         return await verifyForVerify(verifyGenerator, input, signBlob);
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] verifyUpdateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }
@@ -727,8 +727,8 @@ async function verifyAbnormalParameterProcess (
 
 async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
   cipherAlgoName: string, globalTextLen: number): Promise<boolean> {
-  let globalCipherText: cryptoFramework.DataBlob;
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
   let globalText: string = '';
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
   let decryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
@@ -754,7 +754,7 @@ async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
         return initCipher(
           cipherGeneratorEncrypt,
           encryptMode,
-          globalRsaKeyPair.pubKey,
+          globalRsaKeyPair!.pubKey,
           null
         );
       })
@@ -766,12 +766,12 @@ async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
         expect(finalOutput != null).assertTrue();
         globalCipherText = finalOutput;
         console.log(
-          "cipherOutput: " + uInt8ArrayToShowStr(globalCipherText.data)
+          "cipherOutput: " + uInt8ArrayToShowStr(globalCipherText!.data)
         );
         return initCipher(
           cipherGeneratorDecrypt,
           decryptMode,
-          globalRsaKeyPair.priKey,
+          globalRsaKeyPair!.priKey,
           null
         );
       })
@@ -780,7 +780,7 @@ async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
         return doFinalCipher(
           cipherGeneratorDecrypt,
           decryptMode,
-          globalCipherText
+          globalCipherText!
         );
       })
       .then((finalOutput: cryptoFramework.DataBlob) => {
@@ -807,8 +807,8 @@ async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
 
 async function signAndVerifyNormalProcessSuperdata(asyAlgoName: string,
   signVerifyAlgoName: string, globalTextLen: number): Promise<boolean> {
-  let globalSignBlob: cryptoFramework.DataBlob;
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
+  let globalSignBlob: cryptoFramework.DataBlob | undefined;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
   let globalText: string = '';
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz",n = t.length,s="";
   for (let i = 0; i < globalTextLen; i++) {
@@ -828,7 +828,7 @@ async function signAndVerifyNormalProcessSuperdata(asyAlgoName: string,
       .then<string>((rsaKeyPair: cryptoFramework.KeyPair) => {
         expect(rsaKeyPair != null).assertTrue();
         globalRsaKeyPair = rsaKeyPair;
-        return initSign(signGenerator, globalRsaKeyPair.priKey);
+        return initSign(signGenerator, globalRsaKeyPair!.priKey);
       })
       .then<string>((initData: string) => {
         expect(initData === "init success").assertTrue();
@@ -841,8 +841,8 @@ async function signAndVerifyNormalProcessSuperdata(asyAlgoName: string,
       .then<string>((finalOutput: cryptoFramework.DataBlob) => {
         expect(finalOutput != null).assertTrue();
         globalSignBlob = finalOutput;
-        console.log("signOutput: " + uInt8ArrayToShowStr(globalSignBlob.data));
-        return initVerify(verifyGenerator, globalRsaKeyPair.pubKey);
+        console.log("signOutput: " + uInt8ArrayToShowStr(globalSignBlob!.data));
+        return initVerify(verifyGenerator, globalRsaKeyPair!.pubKey);
       })
       .then<string>((initData: string) => {
         expect(initData === "init success").assertTrue();
@@ -850,7 +850,7 @@ async function signAndVerifyNormalProcessSuperdata(asyAlgoName: string,
       })
       .then<boolean>((updateData: string) => {
         expect(updateData === "update success").assertTrue();
-        return verifyForVerify(verifyGenerator, input, globalSignBlob);
+        return verifyForVerify(verifyGenerator, input, globalSignBlob!);
       })
       .then((finalStatus: boolean) => {
         expect(finalStatus).assertTrue();
@@ -879,7 +879,7 @@ async function generateAsySecret(generator: cryptoFramework.KeyAgreement,
 }
 
 async function keyAgreementProcess(ECDHAlgoName: string): Promise<boolean> {
-  let globalRsaKeyPair: cryptoFramework.KeyPair;
+  let globalRsaKeyPair: cryptoFramework.KeyPair | undefined;
 
   return new Promise<boolean>((resolve, reject) => {
     let rsaGenerator: cryptoFramework.AsyKeyGenerator = createAsyKeyGenerator(ECDHAlgoName);
@@ -891,7 +891,7 @@ async function keyAgreementProcess(ECDHAlgoName: string): Promise<boolean> {
       .then<cryptoFramework.DataBlob>((rsaKeyPair: cryptoFramework.KeyPair) => {
         expect(rsaKeyPair != null).assertTrue();
         globalRsaKeyPair = rsaKeyPair;
-        return generateAsySecret(globalECDHData, globalRsaKeyPair.priKey, globalRsaKeyPair.pubKey);
+        return generateAsySecret(globalECDHData, globalRsaKeyPair!.priKey, globalRsaKeyPair!.pubKey);
       })
       .then((result: cryptoFramework.DataBlob) => {
         console.warn("result data is  " + uInt8ArrayToShowStr(result.data));

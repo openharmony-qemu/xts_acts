@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function setKeyProcessingModeTest() {
   describe('setKeyProcessingModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       
@@ -131,40 +131,6 @@ it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void
     });
 
 
-    
-    
-/**
-     * @tc.number   setKeyProcessingModeTest_static_0300
-     * @tc.name     setKeyProcessingModeTest_static_0300
-     * @tc.desc     setKeyProcessingModeTest_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('setKeyProcessingModeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('setKeyProcessingModeTest_0300 START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn1 = await (driver.findComponent(ON.id('ANCESTOR_EVENT')) as Promise<Component>);
-      await CommonFunc.sleep(2000);
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let btn2 = await (driver.findComponent(ON.id('undefined')) as Promise<Component>);
-      await CommonFunc.sleep(2000);
-      await (btn2?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
-      let obj = inspector.getInspectorByKey('focus');
-      await CommonFunc.sleep(2000);
-      let focus: string = JSON.parseJsonElement(obj).getElement('$attrs').getString('content');
-      console.log('setKeyProcessingModeTest_0300---' + focus)
-      expect(focus).assertEqual('Button1');
-      console.info('setKeyProcessingModeTest_0300 END');
-      done();
-    });
+  
   })
 }

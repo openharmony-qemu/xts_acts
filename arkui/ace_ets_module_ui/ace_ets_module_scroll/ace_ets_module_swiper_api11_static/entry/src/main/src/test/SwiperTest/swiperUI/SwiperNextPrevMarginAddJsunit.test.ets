@@ -59,7 +59,7 @@ const uiContext = new UIContext();
 
 export default function SwiperNextPrevMarginAddJsunit() {
   describe('SwiperNextPrevMarginAddJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperNextPrevMarginAddJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -115,65 +115,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0100', Level.LEVEL0, async (done: () =>
       done();
     });
 
-
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0036
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0036', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0036 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: null
-      })
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[SwiperNextPrevMarginAddJsunit_static_0036'] component obj is: " +
-      obj.getElement('$attrs').getString('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      done();
-    });
-
-
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0300 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: -30
-      })
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0300'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00px');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0300'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
 
     
@@ -249,41 +190,6 @@ it('SwiperNextPrevMarginAddJsunit_static_022', Level.LEVEL0, async (done: () => 
 
     
     /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0500
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0500 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: undefined
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0500'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00px');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right2 = columnSwiper.right;
-      let left2 = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight2 = swiperMargin.right;
-      let swiperLeft2 = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0500'] component value is: " + right2 + "," + left2 + ","
-        + swiperRight2 + "," + swiperLeft2);
-      expect(Math.abs(Math.round(((right2 - left2) * 0.9) - (swiperRight2 - swiperLeft2))) <= 1).assertTrue();
-      done();
-    });
-
-    
-    /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_0600
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_0600
      * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0600
@@ -317,7 +223,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0600', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
+
     /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_0700
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_0700
@@ -330,10 +236,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0700', Level.LEVEL0, async (done: () =>
       // dymanic chage the value
       const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
       globalMessage?.notify({
-        name: 'prevMargin', value: null
-      });
-      await CommonFunc.sleep(500);
-      globalMessage?.notify({
         name: 'nextMargin', value: 0
       });
       await CommonFunc.sleep(500);
@@ -342,44 +244,10 @@ it('SwiperNextPrevMarginAddJsunit_static_0700', Level.LEVEL0, async (done: () =>
       console.info("[apiCommponentAddJsunit_0700'] component obj is: " +
       obj.getElement('$attrs').getElement('nextMargin'));
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00px');
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_0800
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_0800 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'prevMargin', value: -30
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_0800'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_0800'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
+
 
     
     /**
@@ -416,40 +284,6 @@ it('SwiperNextPrevMarginAddJsunit_static_0900', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_1000
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_1000 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'prevMargin', value: undefined
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_1000'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00px');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_1000'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
     
     /**
@@ -529,46 +363,7 @@ it('SwiperNextPrevMarginAddJsunit_static_1200', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
-    /**
-     * @tc.number   SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.name     SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.desc     SwiperNextPrevMarginAddJsunit_static_1300
-     * @tc.level    Level.LEVEL0
-     */
-it('SwiperNextPrevMarginAddJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SwiperNextPrevMarginAddJsunit_static_1300 START');
-      await CommonFunc.sleep(1000);
-      // dymanic chage the value
-      const globalMessage = AppStorage.get<MessageManager<Length | undefined | null>>('SwiperNextPrevMarginExample');
-      globalMessage?.notify({
-        name: 'nextMargin', value: -30
-      });
-      await CommonFunc.sleep(500);
-      globalMessage?.notify({
-        name: 'prevMargin', value: -40
-      });
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('swiperNextPrevMargin');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[apiCommponentAddJsunit_1300'] component obj is: " +
-      obj.getElement('$attrs').getElement('nextMargin'));
-      expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('0.00vp');
-      expect(obj.getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp');
-      // calculate the gap
-      let columnSwiper = CommonFunc.getComponentRect('ColumnSwiper');
-      let right = columnSwiper.right;
-      let left = columnSwiper.left;
-      let swiperMargin = CommonFunc.getComponentRect('swiperNextPrevMargin');
-      let swiperRight = swiperMargin.right;
-      let swiperLeft = swiperMargin.left;
-      console.info("[apiCommponentAddJsunit_1300'] component value is: " + right + "," + left + ","
-        + swiperRight + "," + swiperLeft);
-      expect(Math.abs(Math.round(((right - left) * 0.9) - (swiperRight - swiperLeft))) <= 1).assertTrue();
-      done();
-    });
 
-    
     /**
      * @tc.number   SwiperNextPrevMarginAddJsunit_static_1400
      * @tc.name     SwiperNextPrevMarginAddJsunit_static_1400

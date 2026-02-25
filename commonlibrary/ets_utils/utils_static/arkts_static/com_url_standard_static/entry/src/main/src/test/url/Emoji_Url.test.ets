@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ import Utils from '../Util.test';
 
 export default function Url_Emoji() {
   describe('Url_Emoji', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -849,7 +849,8 @@ export default function Url_Emoji() {
           i++;
         }
         expect(arr.length).assertEqual(4);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2014,7 +2015,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2035,7 +2037,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2056,7 +2059,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2077,7 +2081,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2098,7 +2103,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2119,7 +2125,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2140,7 +2147,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2161,7 +2169,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2182,7 +2191,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2203,7 +2213,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2224,7 +2235,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2246,7 +2258,8 @@ export default function Url_Emoji() {
         let keys = Array.from(searchParamsObject.keys());
         console.log(`+++${keys}`);
         expect(keys.toString()).assertEqual("emoji,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2268,7 +2281,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("😊,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2289,7 +2303,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("👤,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2310,7 +2325,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("👫,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2331,7 +2347,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("☎,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2352,7 +2369,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("👹,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2373,7 +2391,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("🕛,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2394,7 +2413,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("🍏,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2415,7 +2435,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("🔃,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2436,7 +2457,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("🍁,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2457,7 +2479,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("♦,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2478,7 +2501,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("👈,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2499,7 +2523,8 @@ export default function Url_Emoji() {
         let values = Array.from(searchParams.values());
         console.log(`+++${values}`);
         expect(values.toString()).assertEqual("🤼‍♂️,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

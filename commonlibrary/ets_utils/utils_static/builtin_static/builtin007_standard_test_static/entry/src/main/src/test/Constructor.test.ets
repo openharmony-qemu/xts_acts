@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ export default function constructorTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -55,7 +55,8 @@ export default function constructorTest() {
         let instance1 = NullValue.INSTANCE;
         let instance2 = NullValue.INSTANCE;
         expect(instance1 === instance2).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -73,7 +74,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0002";
       try {
         expect(NullValue.INSTANCE.getType()).assertEqual(NullType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -91,7 +93,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0003";
       try {
         expect(NullValue.INSTANCE.toString()).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -110,7 +113,8 @@ export default function constructorTest() {
       try {
         let instance = NullValue.INSTANCE;
         expect(instance.toLocaleString()).assertEqual(instance.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -128,7 +132,8 @@ export default function constructorTest() {
       let TAG = "testNullValueConstructor0005";
       try {
         expect(NullValue.INSTANCE.toPrint(0)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -149,7 +154,8 @@ export default function constructorTest() {
         expect(instance.toPrint(0)).assertEqual("null");
         expect(instance.toPrint(1)).assertEqual("null");
         expect(instance.toPrint(2)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -169,7 +175,8 @@ export default function constructorTest() {
         let instance1 = UndefinedValue.INSTANCE;
         let instance2 = UndefinedValue.INSTANCE;
         expect(instance1 === instance2).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -187,7 +194,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0002";
       try {
         expect(UndefinedValue.INSTANCE.getType()).assertEqual(UndefinedType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -205,7 +213,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0003";
       try {
         expect(UndefinedValue.INSTANCE.toString()).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -224,7 +233,8 @@ export default function constructorTest() {
       try {
         let instance = UndefinedValue.INSTANCE;
         expect(instance.toLocaleString()).assertEqual(instance.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -242,7 +252,8 @@ export default function constructorTest() {
       let TAG = "testUndefinedValueConstructor0005";
       try {
         expect(UndefinedValue.INSTANCE.toPrint(0)).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -263,7 +274,8 @@ export default function constructorTest() {
         expect(instance.toPrint(0)).assertEqual("undefined");
         expect(instance.toPrint(1)).assertEqual("undefined");
         expect(instance.toPrint(2)).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -284,6 +296,7 @@ export default function constructorTest() {
         const instance2 = VoidValue.INSTANCE;
         expect(instance1 === instance2).assertTrue();
       } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -302,7 +315,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.getType().toString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -321,7 +335,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -340,7 +355,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toLocaleString()).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -359,7 +375,8 @@ export default function constructorTest() {
       try {
         let instance = new VoidValue();
         expect(instance.toPrint(0)).assertEqual('void');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -398,7 +415,8 @@ export default function constructorTest() {
         let instance2 = new VoidValue();
         expect(instance1 instanceof VoidValue).assertTrue();
         expect(instance2 instanceof VoidValue).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} error msg: ${err}`);
         expect().assertFail();
       }
@@ -423,7 +441,8 @@ export default function constructorTest() {
         }
         const boolObj = new Boolean(result);
         expect(boolObj.valueOf()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -447,7 +466,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(123);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -471,7 +491,8 @@ export default function constructorTest() {
           return;
         }
         expect(result as string).assertEqual("Hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -491,7 +512,8 @@ export default function constructorTest() {
         let nullValue = NullValue.INSTANCE;
         let result = nullValue.getData();
         expect(result === null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -511,7 +533,8 @@ export default function constructorTest() {
         let undefinedValue = UndefinedValue.INSTANCE;
         let result = undefinedValue.getData();
         expect(result === undefined).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -535,7 +558,8 @@ export default function constructorTest() {
           return;
         }
         expect(Byte.valueOf(result)).assertEqual(127);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -559,7 +583,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(127);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -583,7 +608,8 @@ export default function constructorTest() {
           return;
         }
         expect(Number(result)).assertEqual(2147483647);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -607,7 +633,8 @@ export default function constructorTest() {
           return;
         }
         expect(Math.abs(Number(result) - 3.14) < 0.0001).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -626,7 +653,8 @@ export default function constructorTest() {
       try {
         let value = new BooleanValue(BooleanType.REF, true);
         expect(value.getType()).assertEqual(BooleanType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -645,7 +673,8 @@ export default function constructorTest() {
       try {
         let value = new IntValue(IntType.REF, 123);
         expect(value.getType()).assertEqual(IntType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -664,7 +693,8 @@ export default function constructorTest() {
       try {
         let value = new FloatValue(FloatType.REF, 3.14 as float);
         expect(value.getType()).assertEqual(FloatType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -683,7 +713,8 @@ export default function constructorTest() {
       try {
         let value = new StringValue(StringType.REF, "test");
         expect(value.getType()).assertEqual(StringType.REF);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -703,7 +734,8 @@ export default function constructorTest() {
         let arr: FixedArray<boolean> = [true, false];
         let value = reflect.Value.of(arr);
         expect(value.getType()).assertEqual(ArrayType.BOOLEAN_VAL);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -723,7 +755,8 @@ export default function constructorTest() {
         let value = NullValue.INSTANCE;
         const typeName = value.getType().toString();
         expect(typeName === "NullType" || typeName === "null").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -743,7 +776,8 @@ export default function constructorTest() {
         let value = UndefinedValue.INSTANCE;
         const typeName = value.getType().toString();
         expect(typeName === "UndefinedType" || typeName === "undefined").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -763,7 +797,8 @@ export default function constructorTest() {
         let arr: FixedArray<int> = [1, 2, 3];
         let value = reflect.Value.of(arr);
         expect(value.getType()).assertEqual(ArrayType.INT_VAL);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -782,7 +817,8 @@ export default function constructorTest() {
       try {
         let value = NullValue.INSTANCE;
         expect(value.toPrint(0)).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -801,7 +837,8 @@ export default function constructorTest() {
       try {
         let value = new BooleanValue(BooleanType.REF, true);
         expect(value.toPrint(0)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -820,7 +857,8 @@ export default function constructorTest() {
       try {
         let value = new IntValue(IntType.REF, 123);
         expect(value.toPrint(0)).assertEqual("123");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -839,7 +877,8 @@ export default function constructorTest() {
       try {
         let value = new FloatValue(FloatType.REF, 3.14 as float);
         expect(value.toPrint(0)).assertEqual("3.14");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -855,7 +894,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let booleanValue = new BooleanValue(booleanType, true);
       expect(booleanValue.getValueData()).assertTrue();
       expect(booleanValue.getType()).assertEqual(booleanType);
@@ -873,7 +912,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let booleanValue = new BooleanValue(booleanType, false);
       expect(booleanValue.getValueData()).assertFalse();
       expect(booleanValue.getType()).assertEqual(booleanType);
@@ -891,7 +930,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let value1 = new BooleanValue(booleanType, true);
       let value2 = new BooleanValue(booleanType, false);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -910,7 +949,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let trueValue = new BooleanValue(booleanType, true);
       let falseValue = new BooleanValue(booleanType, false);
       expect(trueValue.toString()).assertEqual("true");
@@ -929,7 +968,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, -128);
       expect(byteValue.getValueData()).assertEqual(-128);
       expect(byteValue.toString()).assertEqual("-128");
@@ -947,7 +986,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 127);
       expect(byteValue.getValueData()).assertEqual(127);
       expect(byteValue.toString()).assertEqual("127");
@@ -965,7 +1004,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 0);
       expect(byteValue.getValueData()).assertEqual(0);
       expect(byteValue.toLocaleString()).assertEqual("0");
@@ -983,7 +1022,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let value1 = new ByteValue(byteType, 10);
       let value2 = new ByteValue(byteType, 20);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -1002,7 +1041,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 64);
       expect(byteValue.getValueData()).assertEqual(64);
       expect(byteValue.toLocaleString()).assertEqual("64");
@@ -1020,7 +1059,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let values: byte[] = [-128, 0, 127] as byte[];
       for (let i = 0; i < values.length; i++) {
         let value = values[i];
@@ -1043,7 +1082,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charData: char = 'A'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
@@ -1062,7 +1101,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charData: char = '\n'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
@@ -1081,7 +1120,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charValue1 = new CharValue(charType, 'X'.charAt(0) as char);
       let charValue2 = new CharValue(charType, 'Y'.charAt(0) as char);
       expect(charValue1.getType()).assertEqual(charValue2.getType());
@@ -1099,7 +1138,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let testChars = [
         '\u0000'.charAt(0) as char,
         '\uffff'.charAt(0) as char
@@ -1123,7 +1162,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, 3.1415926);
       expect(doubleValue.getValueData()).assertEqual(3.1415926);
       expect(doubleValue.toString()).assertEqual("3.1415926");
@@ -1141,7 +1180,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, -2.71828);
       expect(doubleValue.getValueData()).assertEqual(-2.71828);
       expect(doubleValue.toPrint(0)).assertEqual("-2.71828");
@@ -1159,7 +1198,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, 0.0);
       expect(doubleValue.getValueData()).assertEqual(0.0);
       expect(doubleValue.toLocaleString()).assertEqual("0");
@@ -1177,7 +1216,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let value1 = new DoubleValue(doubleType, 1.0);
       let value2 = new DoubleValue(doubleType, 2.0);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -1195,7 +1234,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let testValues = [Number.MIN_VALUE, Number.MAX_VALUE, Number.POSITIVE_INFINITY] as double[];
       for (let i = 0; i < testValues.length; i++) {
         let value = testValues[i];
@@ -1298,7 +1337,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, 42);
       expect(intValue.getValueData()).assertEqual(42);
       expect(intValue.toString()).assertEqual("42");
@@ -1316,7 +1355,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, -100);
       expect(intValue.getValueData()).assertEqual(-100);
       expect(intValue.toPrint(0)).assertEqual("-100");
@@ -1334,7 +1373,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, 0);
       expect(intValue.getValueData()).assertEqual(0);
       expect(intValue.toLocaleString()).assertEqual("0");
@@ -1528,7 +1567,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "A";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1547,7 +1586,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "你";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1566,7 +1605,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "\n";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1585,7 +1624,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "";
       try {
         const charValue = new CharValue(charType, testString.charAt(0));
@@ -1608,7 +1647,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "7";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1627,7 +1666,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "AB";
       try {
         const charValue = new CharValue(charType, testString.charAt(0));
@@ -1650,7 +1689,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = -128;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1670,7 +1709,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 127;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1690,7 +1729,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 0;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1710,7 +1749,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 42;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1730,7 +1769,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = -42;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1750,7 +1789,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 100;
       const byteValue = new ByteValue(byteType, testValue);
       const valueData = byteValue.getValueData();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorThreeStrikes001() {
   describe('RichEditorThreeStrikes001', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorThreeStrikes001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -96,7 +96,7 @@ export default function RichEditorThreeStrikes001() {
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>)
         await copy.click()
         await CommonFunc.sleep(1000);
-      }catch(e: Error){}
+      }catch(e){}
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(1000);
@@ -180,7 +180,7 @@ export default function RichEditorThreeStrikes001() {
       try{
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
         await copy.click();
-      }catch(e: Error){}
+      }catch(e){}
       await CommonFunc.sleep(1000);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();

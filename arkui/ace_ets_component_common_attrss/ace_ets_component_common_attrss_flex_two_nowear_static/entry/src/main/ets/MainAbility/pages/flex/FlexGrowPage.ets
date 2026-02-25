@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,6 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -91,7 +90,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -164,7 +162,7 @@ struct FlexGrowPage {
       this.standardComponentKey = routerParamOptions.view.standardComponentKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -238,14 +236,6 @@ struct FlexGrowPage {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
       }.width(20).applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem() {
-          Column() {
-            Text('Page One')
-          }
-        }
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')

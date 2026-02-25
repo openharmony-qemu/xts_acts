@@ -27,7 +27,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 export default function Router1() {
   describe('Router1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

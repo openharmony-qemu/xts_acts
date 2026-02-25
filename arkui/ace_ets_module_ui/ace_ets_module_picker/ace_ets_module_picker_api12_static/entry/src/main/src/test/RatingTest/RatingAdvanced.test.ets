@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RatingAdvancedTest() {
   describe('RatingAdvancedTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RatingAdvancedTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,13 +27,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let bundle_name: string = 'com.example.notificationchangetest.static';
 
 export default function ActsNotificationRequestTest() {
   describe('ActsNotificationRequestTest', () => {
     const TAG = 'ActsNotificationRequestTest ===>';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -78,7 +78,7 @@ export default function ActsNotificationRequestTest() {
           done()
         });
 
-        notificationManager.requestEnableNotification(testAbilityContext,(err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           if (err) {
             console.error(`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
           } else {
@@ -209,7 +209,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(401);
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -283,7 +284,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -338,7 +339,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -410,7 +411,7 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);

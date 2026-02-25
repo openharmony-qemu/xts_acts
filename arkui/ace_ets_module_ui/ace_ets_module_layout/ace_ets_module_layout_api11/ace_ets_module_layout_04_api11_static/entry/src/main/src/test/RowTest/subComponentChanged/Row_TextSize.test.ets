@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextSizeTest() {
   describe('Row_TextSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextSizeTest beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function onGetIrregular7Jsunit() {
   describe('onGetIrregular7Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onGetIrregular7Jsunit beforeAll start");
            
       await UtilsTest.msSleep(4000)

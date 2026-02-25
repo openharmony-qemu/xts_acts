@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function IfElse001Test() {
   describe('IfElse001Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("IfElse001Test beforeEach start");
 
 

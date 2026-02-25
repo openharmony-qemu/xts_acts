@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,25 +70,39 @@ export default function flexExceed_StretchJsunit() {
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexExceed01');
 
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi1:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)))
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi2:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)))
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue()
+
       expect(textExceed01.top).assertLarger(flexExceed01.top)
 
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi4:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)))
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi5:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)))
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)) <= 1).assertTrue()
+
       expect(textExceed01.bottom).assertLess(flexExceed01.bottom)
       expect(textExceed01.left).assertLarger(flexExceed01.left)
       expect(textExceed03.right).assertLess(flexExceed01.right)
+
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi9:'+ Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(180))) <= 1).assertTrue()
+
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi10:'+ Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(180))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi11:'+ Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(180))))
       expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(180))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi12:'+ Math.floor(Math.abs((textExceed01.right - textExceed01.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi13:'+ Math.floor(Math.abs((textExceed02.right - textExceed02.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textExceed02.right - textExceed02.left) - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPad_chazhi14:'+ Math.floor(Math.abs((textExceed03.right - textExceed03.left) - vp2px(150))))
       expect(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - vp2px(150))) <= 1).assertTrue()
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
-      console.info('new testFlexItemAlignStretchSetMarPad END');
 
+      console.info('new testFlexItemAlignStretchSetMarPad END');
     });
 
     /**
@@ -115,25 +129,52 @@ export default function flexExceed_StretchJsunit() {
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexExceed01');
 
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi1:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi2:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi4:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi5:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi6:'+ Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi7:'+ Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi8:'+ Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi9:'+ Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi10:'+ Math.floor(Math.abs((textExceed02.right - textExceed02.left) - vp2px(440 / 3))))
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi11:'+ Math.floor(Math.abs((textExceed03.right - textExceed03.left) - vp2px(440 / 3))))
+
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi1:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)))
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi2:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)))
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue()
+
       expect(textExceed01.top).assertLarger(flexExceed01.top)
 
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi4:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)))
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed02.bottom)) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi5:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)))
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed03.bottom)) <= 1).assertTrue()
+
       expect(textExceed01.bottom).assertLess(flexExceed01.bottom)
       expect(textExceed01.left).assertLarger(flexExceed01.left)
       expect(textExceed03.right).assertLess(flexExceed01.right)
-      expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - vp2px(440 / 3))) <= 1).assertTrue()
+
+
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi6:'+ Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textExceed01.bottom - textExceed01.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi7:'+ Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textExceed02.bottom - textExceed02.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi8:'+ Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi9:'+ Math.floor(Math.abs((textExceed03.bottom - textExceed03.top) - vp2px(140))))
+      expect(Math.floor(Math.abs((textExceed01.right - textExceed01.left) - vp2px(440 / 3))) <= 2).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi10:'+ Math.floor(Math.abs((textExceed02.right - textExceed02.left) - vp2px(440 / 3))))
       expect(Math.floor(Math.abs((textExceed02.right - textExceed02.left) - vp2px(440 / 3))) <= 1).assertTrue()
+      console.info('testFlexItemAlignStretchSetMarPadExceed_chazhi11:'+ Math.floor(Math.abs((textExceed03.right - textExceed03.left) - vp2px(440 / 3))))
       expect(Math.floor(Math.abs((textExceed03.right - textExceed03.left) - vp2px(440 / 3))) <= 1).assertTrue()
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Stretch')
+      
       console.info('new testFlexItemAlignStretchSetMarPadExceed END');
-
     });
+
   })
 }

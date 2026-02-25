@@ -87,7 +87,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     console.info("setArrowStyle start send emitKey");
     console.info("setArrowStyle backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setArrowStyle emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -95,7 +95,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
 
 export default function swiperTest_1() {
   describe('ActSwiperTest_1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperTest_1 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -117,7 +117,7 @@ export default function swiperTest_1() {
           // })
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -155,7 +155,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0100', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("800");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0100 END ');
           done();
-      //   } catch (err: Error) {
+      //   } catch (err) {
       //     expect().assertFail();
       //     console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0100 ERR  ' + JSON.stringify(err));
       //     done();
@@ -191,7 +191,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("200");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -228,7 +228,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("900");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -265,7 +265,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Bolder");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -302,7 +302,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -339,7 +339,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -376,7 +376,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -412,7 +412,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -448,7 +448,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("500");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -485,7 +485,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 END ');
           done();
-      //   } catch (err: Error) {
+      //   } catch (err) {
       //     expect().assertFail();
       //     console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1000 ERR  ' + JSON.stringify(err));
       //     done();
@@ -521,7 +521,7 @@ it('ArkUX_Stage_Swiper_SelectedDigitFont_static_1100', Level.LEVEL0, async (done
           expect(obj2.getString('selectedFontWeight')).assertEqual("600");
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedDigitFont_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -556,7 +556,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("800");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0100 END ');
           done();
-      //   } catch (err: Error) {
+      //   } catch (err) {
       //     expect().assertFail();
       //     console.info('ArkUX_Stage_Swiper_DigitFont_static_0100 ERR  ' + JSON.stringify(err));
       //     done();
@@ -591,7 +591,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0200', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("200");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -627,7 +627,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0300', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("900");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -663,7 +663,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0400', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Bolder");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -699,7 +699,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0500', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -735,7 +735,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0600', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -771,7 +771,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0700', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -806,7 +806,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0800', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -841,7 +841,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_0900', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("500");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -877,7 +877,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_1000', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_1000 ERR  ' + JSON.stringify(err));
           done();
@@ -912,7 +912,7 @@ it('ArkUX_Stage_Swiper_DigitFont_static_1100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('fontWeight')).assertEqual("600");
           console.info('ArkUX_Stage_Swiper_DigitFont_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_DigitFont_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -947,7 +947,7 @@ it('ArkUX_Stage_Swiper_Indicator_static_0100', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('top').substr(obj2.getString('top').length - 2, 2)).assertEqual("vp");
           console.info('ArkUX_Stage_Swiper_Indicator_static_0100 END ');
           done();
-      //   } catch (err: Error) {
+      //   } catch (err) {
       //     expect().assertFail();
       //     console.info('ArkUX_Stage_Swiper_Indicator_static_0100 ERR  ' + JSON.stringify(err));
       //     done();
@@ -980,7 +980,7 @@ it('ArkUX_Stage_Swiper_Indicator_static_0200', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('bottom').substr(obj2.getString('bottom').length - 2, 2)).assertEqual("vp");
           console.info('ArkUX_Stage_Swiper_Indicator_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_Indicator_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1013,7 +1013,7 @@ it('ArkUX_Stage_Swiper_Indicator_static_0300', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('left').substr(obj2.getString('left').length - 2, 2)).assertEqual("vp");
           console.info('ArkUX_Stage_Swiper_Indicator_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_Indicator_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1046,7 +1046,7 @@ it('ArkUX_Stage_Swiper_Indicator_static_0400', Level.LEVEL0, async (done: () => 
           expect(obj2.getString('right').substr(obj2.getString('right').length - 2, 2)).assertEqual("vp");
           console.info('ArkUX_Stage_Swiper_Indicator_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_Indicator_static_0400 ERR  ' + JSON.stringify(err));
           done();

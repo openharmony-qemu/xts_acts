@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function listItemGroupJsunit() {
   describe('listItemGroupTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

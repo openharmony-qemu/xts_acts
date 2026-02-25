@@ -78,11 +78,13 @@ struct styled_string_StyleString {
     Column() {
       Column({ space: 10 }) {
         // 显示配了字体各种样式的属性字符串，Text组件亦配置冲突部分生效属性字符串配置，未冲突区间生效Text组件属性设置值
-        Text(this.styledKey1 + '').fontSize(12).id('gestureId')
-        Text(this.styledKey2 + '').fontSize(12).id('decorationId')
-        Text(this.styledKey3 + '').fontSize(12).id('textShadowId')
-        Text(this.styledKey4 + '').fontSize(12).id('baselineOffsetId')
-        Text(this.styledKey5 + '').fontSize(12).id('letterSpacingId')
+        Row(){
+          Text(this.styledKey1 + '').fontSize(12).id('gestureId').width('20%')
+          Text(this.styledKey2 + '').fontSize(12).id('decorationId').width('20%')
+          Text(this.styledKey3 + '').fontSize(12).id('textShadowId').width('20%')
+          Text(this.styledKey4 + '').fontSize(12).id('baselineOffsetId').width('20%')
+          Text(this.styledKey5 + '').fontSize(12).id('letterSpacingId').width('20%')
+        }.height('5%')
         Text(undefined, this.options)
           .fontColor(this.fontColor1)
           .font({ size: 20, weight: 500, style: FontStyle.Normal })
@@ -115,5 +117,6 @@ struct styled_string_StyleString {
       }.width('100%')
 
     }
+    .height('100%')
   }
 }

@@ -37,7 +37,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 
 export default function pushPageInit() {
   describe('pushPageInit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

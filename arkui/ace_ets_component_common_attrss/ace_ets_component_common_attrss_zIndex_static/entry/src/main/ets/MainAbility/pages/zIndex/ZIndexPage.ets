@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,6 @@ import {
   Radio,
   Rating,
   ScrollBar,
-  Stepper,
   Search,
   Select,
   Slider,
@@ -92,7 +91,6 @@ import {
   MenuItem,
   ProgressType,
   BarState,
-  StepperItem,
   Scroller,
   Axis,
   ToggleType,
@@ -170,7 +168,7 @@ struct ZIndexPage {
       this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -283,14 +281,6 @@ struct ZIndexPage {
           })
             .showTips(true)
             .applyStyles(this.commonStyle)
-        } else if (this.targetView == 'Stepper') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-          }.applyStyles(this.commonStyle)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
@@ -564,19 +554,6 @@ struct ZIndexPage {
               }
             }
           }.applyStyles(this.commonStyle)
-        } else if (this.targetView == 'StepperItem') {
-          Stepper() {
-            StepperItem() {
-              Column() {
-                Text('Page One')
-              }
-            }
-            .backgroundColor(Color.Red)
-            .applyStyles(this.commonStyle)
-          }
-          .backgroundColor(Color.Yellow)
-          .width('100%')
-          .height('100%')
         } else if (this.targetView == 'GridCol') {
           GridRow({
             columns: 1,

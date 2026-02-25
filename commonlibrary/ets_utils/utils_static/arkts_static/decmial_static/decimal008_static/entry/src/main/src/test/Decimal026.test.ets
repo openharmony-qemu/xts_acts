@@ -37,7 +37,7 @@ export default function DecimalTest026() {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(200)
       console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
@@ -56,9 +56,9 @@ export default function DecimalTest026() {
      * @tc.desc   Test dividedToIntegerBy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_dividedToIntegerBy_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_dividedToIntegerBy_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       Decimal.set({
         precision: 100,
         rounding: 4,
@@ -100,9 +100,9 @@ export default function DecimalTest026() {
      * @tc.desc   Test dividedToIntegerBy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_dividedToIntegerBy_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_dividedToIntegerBy_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       test_dividedToIntegerBy_001('761675922203981329104560243.9835854112143', '42099630209991.5141510026559149',
         '1.8092223575474e+13');
       test_dividedToIntegerBy_001('5809679691291868349384510.869889159148782403055857608',

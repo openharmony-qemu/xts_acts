@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function backgroundAndSizeSettingJsunit() {
   describe('backgroundAndSizeSettingTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundAndSizeSettingTest beforeEach start");
 
 
@@ -170,7 +170,7 @@ export default function backgroundAndSizeSettingJsunit() {
         AppStorage.setOrCreate<number>("height1", 200)
         AppStorage.setOrCreate<number>("padding1", 10)
         AppStorage.setOrCreate<number>("margin1", 40)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -197,7 +197,7 @@ export default function backgroundAndSizeSettingJsunit() {
       try {
         AppStorage.setOrCreate<string>("sizeWidth", '80%')
         AppStorage.setOrCreate<string>("sizeHeight", '80%')
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -238,7 +238,7 @@ export default function backgroundAndSizeSettingJsunit() {
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>("layoutWeight1", 3)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

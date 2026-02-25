@@ -36,7 +36,7 @@ import {
 
 export default function routerReplaceJsunit() {
   describe('routerReplaceJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

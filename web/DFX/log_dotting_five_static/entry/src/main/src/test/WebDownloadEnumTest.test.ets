@@ -22,6 +22,7 @@ import{BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import webview from '@ohos.web.webview'
+import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -49,6 +50,40 @@ export default function webDownloadEnumTest() {
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });
+
+    beforeEach(async (done: () => void): Promise<void> => {
+      console.info("web beforeEach start");
+      if(!wifiMg.isWifiActive()){
+        let state:boolean = wifiMg.isWifiActive();
+        console.info("======> wifi_test/enable wifi: enabled " + state);
+        await Utils.msSleep(2000);
+      }
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+        done();
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+    })
 
     /*
     * @tc.number      SUB_WEB_WEBDOWNLOAD_ENUM_0100
@@ -749,6 +784,7 @@ export default function webDownloadEnumTest() {
       await Utils.msSleep(2000);
       done();
     })
+
     /*
     * @tc.number     SUB_WEB_EMITONSWITCHNEXTPAGE_0100
     * @tc.name       testemitonSwitchNextPage

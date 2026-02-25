@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,8 @@ struct UnmarshallingErrorCode401 {
               // console.info('Debug: subStr = ' + subStr.getString())
               this.serializeStr = '序列化'
               console.info('Succeeded unmarshalling.');
-            } catch(err: BusinessError) {
+            } catch(err) {
+              err = err as BusinessError;
               this.textResult = err.code.toString()
               console.info('Get error code: %{public}s', JSON.stringify(err.code));
             }

@@ -138,7 +138,7 @@ export function testProcessUptime008() {
   try {
     console.log(`${TAG} test start`);
     const result1 = StdProcess.uptime();
-    setTimeout(() => {
+    setTimeout(():void => {
       try {
         const result2 = StdProcess.uptime();
         const flag = (result2 - result1) >= 3;

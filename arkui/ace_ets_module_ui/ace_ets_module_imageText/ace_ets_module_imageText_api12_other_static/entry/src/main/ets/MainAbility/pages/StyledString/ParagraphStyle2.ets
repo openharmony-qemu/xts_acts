@@ -63,7 +63,12 @@ class LeadingMarginCreator {
     const coordinate = fontSize * (1 - 1 / 1.5) / 2
     const sideLength = fontSize / 1.5
     this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength)
-    return this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   private clearCanvas() {

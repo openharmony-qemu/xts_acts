@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ interface ObjectType {}
 
 export default function MapTest() {
   describe('mapTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -301,7 +301,8 @@ export default function MapTest() {
         const result = arr;
         console.log(`${TAG} result:` + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual('["foo"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -325,7 +326,8 @@ export default function MapTest() {
         const result = myMap.get("bar");
         console.log(`${TAG} result:` + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual('["foo"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

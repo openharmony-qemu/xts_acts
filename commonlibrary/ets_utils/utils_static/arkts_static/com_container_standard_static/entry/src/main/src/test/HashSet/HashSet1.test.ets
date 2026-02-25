@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ class InfoC {
 
 export default function HashSetTest1() {
   describe("HashSetTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -650,7 +650,7 @@ export default function HashSetTest1() {
         temp = res.next().value;
       }
       arr.sort((a, b) => {
-        return (a as number) - (b as number);
+        return ((a as number) - (b as number)).toInt()
       });
       let arr1 = new Array<number>(1, 2, 3, 4, 5);
       for (let i = 0; i < arr.length; i++) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,7 +111,7 @@ async function normalProcess(signVerifyAlgName: string, isSpec:boolean, spec: cp
     await verifyUpdate(verify, input1);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify update succeed");
     return await verifyVerify(verify, input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -133,7 +133,7 @@ async function ECCCurveProcess(signVerifyAlgName: string, isSpec:boolean, spec: 
     await verifyInit(verify, signVerifyKeyPair.pubKey);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify init succeed");
     return await verifyVerify(verify, input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -157,7 +157,7 @@ async function ECCCurveErrProcess(signVerifyAlgName: string, isSpec:boolean, spe
     await verifyInit(verify, signVerifyKeyPair2.pubKey);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify init succeed");
     return await verifyVerify(verify, input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -193,7 +193,7 @@ async function setUseridProcess(signVerifyAlgName: string,
     await verifyUpdate(verify, input1);
     console.log("[Callback] signVerifySetUseridProcess: verify update succeed");
     return await verifyVerify(verify, input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Callback] signVerifySetUseridProcess: signVerify failed")
     throw err as Error;
   }

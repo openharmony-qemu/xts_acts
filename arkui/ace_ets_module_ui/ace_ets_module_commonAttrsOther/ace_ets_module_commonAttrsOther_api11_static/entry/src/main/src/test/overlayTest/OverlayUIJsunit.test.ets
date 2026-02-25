@@ -47,12 +47,11 @@ import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 
 export default function OverlayUIJsunit() {
   describe('OverlayUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("overLayJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -131,7 +130,7 @@ it('overLayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0200] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -167,7 +166,7 @@ it('overLayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0300] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -213,7 +212,7 @@ it('overLayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0400] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -248,7 +247,7 @@ it('overLayJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0500] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -284,7 +283,7 @@ it('overLayJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0600] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -327,7 +326,7 @@ it('overLayJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0700] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -365,7 +364,7 @@ it('overLayJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0800] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -404,7 +403,7 @@ it('overLayJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_0900] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -440,7 +439,7 @@ it('overLayJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_1000] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -476,7 +475,7 @@ it('overLayJsunit_static_1100', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_1100] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -512,7 +511,7 @@ it('overLayJsunit_static_1200', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_1200] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -548,7 +547,7 @@ it('overLayJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_1300] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -584,7 +583,7 @@ it('overLayJsunit_static_1400', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[overLayJsunit_1400] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

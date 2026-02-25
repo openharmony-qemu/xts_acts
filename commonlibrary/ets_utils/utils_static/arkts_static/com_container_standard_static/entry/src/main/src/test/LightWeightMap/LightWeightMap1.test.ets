@@ -48,7 +48,7 @@ class TestAbc {
 
 export default function LightWeightMapTest1() {
   describe("LightWeightMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -825,8 +825,6 @@ export default function LightWeightMapTest1() {
       let res = lightWeightMap.length;
       expect(res).assertEqual(5);
     });
-
-
     /**
      * @tc.name   testLightWeightMap0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_04400
@@ -1000,8 +998,6 @@ export default function LightWeightMapTest1() {
           .assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 6`);
       }
     });
-
-
     /**
      * @tc.name   testLightWeightMap0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP_0580

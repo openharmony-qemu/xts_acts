@@ -24,7 +24,7 @@ import { startAbility, UtilsTest } from '../../Util.test';
 
 export default function SaveLayerTest() {
   describe('SaveLayerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SaveLayerTest beforeEach start");
 
 

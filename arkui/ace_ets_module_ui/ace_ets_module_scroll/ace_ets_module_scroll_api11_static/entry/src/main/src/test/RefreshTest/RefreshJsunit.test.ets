@@ -42,7 +42,7 @@ import { RefreshStatus } from '@ohos.arkui.component'
 
 export default function refreshJsunit() {
   describe('refreshTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

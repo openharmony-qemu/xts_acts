@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function blendMode1Jsunit() {
   describe('blendMode1Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("blendMode1Jsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

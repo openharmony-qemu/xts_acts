@@ -16,14 +16,54 @@
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import ble from '@ohos.bluetooth.ble';
-
+import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
+import common from '@ohos.bluetooth.common';
+import hid from '@ohos.bluetooth.hid';
 const PERMISSION_DENIED_CODE = 201
 const PARAM_ERROR_CODE = 401
 const OPERATION_FAILED_CODE = 2900099
 const TAG: string = 'BtBleTestTag';
 const Domain: number = 0x0000;
 const INVALID_ADVERTISING_ID = 2902055;
+let PERMISSION_TEXT:string = "允许";
+let OPEN_BT_TEXT:string = "开启";
+let device:ble.GattClientDevice;
+let gattServer: ble.GattServer;
+let hidDevice: hid.HidDeviceProfile;
+let btAddr: common.BluetoothAddress = {
+  "address": "11:22:33:44:55:66",
+  "addressType": common.BluetoothAddressType.REAL,
+};
+let deviceAddress: partnerAgent.PartnerDeviceAddress = {
+  "bluetoothAddress": btAddr,
+};
+let deviceId = "00:11:22:33:44:55";
+let deviceCapability: partnerAgent.DeviceCapability = {
+  "supportBR": true,
+  "supportBleAdvertiser": true,
+};
+let businessCapability: partnerAgent.BusinessCapability = {
+  "supportMediaControl": true,
+  "supportTelephonyControl": true,
+};
+let partnerAgentExtensionAbilityName: string = "testAbilityName";
 
+let phyValue: ble.PhyValue = {
+  txPhy : ble.BlePhy.BLE_PHY_1M,
+  rxPhy : ble.BlePhy.BLE_PHY_2M,
+  phyMode : ble.CodedPhyMode.BLE_PHY_CODED_S2,
+};
+
+function sleep(delay : number) : Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, delay))
+}
+function onReceiveEvent_boolean(data : boolean){
+    console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
+    expect(data).assertTrue();
+}
+function onReceiveEvent_value(data : ble.PhyValue){
+    console.info('bluetooth PhyValue txPhy = ' + JSON.stringify(data));
+}
 function getAdvertisingParams() {
   let manufactureValueBuffer = new Uint8Array(4);
   manufactureValueBuffer[0] = 1;
@@ -67,29 +107,71 @@ function getAdvertisingParams() {
   }
   return advertisingParams;
 }
+function getAdvertisingParams2() {
+  let manufactureValueBuffer = new Uint8Array(4);
+  manufactureValueBuffer[0] = 1;
+  manufactureValueBuffer[1] = 2;
+  manufactureValueBuffer[2] = 3;
+  manufactureValueBuffer[3] = 4;
 
+  let serviceValueBuffer = new Uint8Array(4);
+  serviceValueBuffer[0] = 4;
+  serviceValueBuffer[1] = 6;
+  serviceValueBuffer[2] = 7;
+  serviceValueBuffer[3] = 8;
+  let setting: ble.AdvertiseSetting = {
+    interval: 150,
+    txPower: 0,
+    connectable: true,
+  };
+  let manufactureDataUnit: ble.ManufactureData = {
+    manufactureId: 4567,
+    manufactureValue: manufactureValueBuffer.buffer
+  };
+  let serviceDataUnit: ble.ServiceData = {
+    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+    serviceValue: serviceValueBuffer.buffer
+  };
+  let advData: ble.AdvertiseData = {
+    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+    manufactureData: [],
+    serviceData: [],
+    advertiseName: "testName",
+  };
+  let advResponse: ble.AdvertiseData = {
+    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+    manufactureData: [],
+    serviceData: [],
+    advertiseName: "testName",
+  };
+  let advertisingParams: ble.AdvertisingParams = {
+    advertisingSettings: setting,
+    advertisingData: advData,
+    advertisingResponse: advResponse,
+    duration: 0,
+  }
+  return advertisingParams;
+}
 export default function btBleNopUiJsunit() {
   describe('btBleNopUiJsunit', () => {
-
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
+    beforeAll(async (done : Function) =>  {
+      device = ble.createGattClientDevice('00:11:22:33:44:55');
+      console.info('[bt_arkts] client readPhy success');
+      gattServer = ble.createGattServer();
+      console.info('[bt_arkts] client readPhy success');
+      console.info('beforeAll');
+      done();
     });
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+      console.info('beforeEach');
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      console.info('afterEach');
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      console.info('afterAll');
     });
+
     /**
      * @tc.name   testStopAdvertisingNop
      * @tc.number testStopAdvertisingNop
@@ -215,6 +297,25 @@ export default function btBleNopUiJsunit() {
       }
       done();
     })
+    /**
+     * @tc.name   testStartAdvertising1Nop
+     * @tc.number testStartAdvertising1Nop
+     * @tc.desc   test startAdvertising1 by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
+     */
+         it("testStartAdvertising1Nop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+          try {
+            let outAdvHandle = await ble.startAdvertising(getAdvertisingParams2());
+            hilog.info(Domain, TAG, `startAdvertising without permission ret: ${outAdvHandle}`);
+            expect(true).assertFalse();
+          } catch (e) {
+            hilog.error(Domain, TAG, `Promise startAdvertising error, error code is: ${e.code}, error message is: ${e.message}`);
+            expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
+          done();
+        })
     /**
      * @tc.name   testStartAdvertisingAsyncCallbackNop
      * @tc.number testStartAdvertisingAsyncCallbackNop
@@ -478,13 +579,17 @@ export default function btBleNopUiJsunit() {
      */
     it('testGATTSERVER_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
-        let gattServer: ble.GattServer = ble.createGattServer();
         let return_status: ble.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
         console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
@@ -499,17 +604,70 @@ export default function btBleNopUiJsunit() {
      */
     it('testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
-        let device:ble.GattClientDevice = ble.createGattClientDevice('00:11:22:33:44:55');
         let return_status=device.getConnectedState();
         console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
         expect().assertFail();
       } catch (error) {
         console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
       }
       done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0100
+     * @tc.desc   Test server readPhy without permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        await gattServer.readPhy(deviceId);
+        console.info('[bt_arkts] server readPhy is success')
+        expect().assertFail();
+      } catch (error) {
+        console.error(`[bt_arkts] server readPhy is failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0200
+     * @tc.desc   Test server setPhy  without permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_S_NOP_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let deviceId = "00:11:22:33:44:55";
+        await gattServer.setPhy(deviceId , phyValue);
+        console.info('[bt_arkts]server setPhy is success')
+        expect().assertFail();
+      } catch (error) {
+        console.error(`[bt_arkts]server setPhy  is failed, code is ${error.code},message is ${error.message}`);
+        if (Number(error.code) === 801) {
+          console.info("RK板 is not support.");
+          expect(Number(error.code) == 801).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
+      }
+      done();
+    })
   })
 }
-

@@ -22,7 +22,8 @@ import wantAgent from '@ohos.app.ability.wantAgent';
 import { ConfigurationConstant } from '@kit.AbilityKit';
 import application from '@ohos.app.ability.application';
 import insightIntent from '@ohos.app.ability.insightIntent';
-
+import dialogRequest from '@ohos.app.ability.dialogRequest';
+import completionHandlerForAbilityStartCallback from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
@@ -813,6 +814,97 @@ export default function ApiCoverTest() {
      */
     it('SUB_Ability_AbilityBase_InsightIntent_0200', Level.LEVEL0, async (done: Function) => {
       expect(1).assertEqual(insightIntent.ReturnMode.FUNCTION);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0100
+     * @tc.number SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0100
+     * @tc.desc   Test abilityConstant AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0100', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(completionHandlerForAbilityStartCallback.AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0200
+     * @tc.number SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0200
+     * @tc.desc   Test completionHandlerForAbilityStartCallback AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_completionHandlerForAbilityStartCallback_0200', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(completionHandlerForAbilityStartCallback.AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DialogRequest_0100
+     * @tc.number SUB_Ability_AbilityBase_DialogRequest_0100
+     * @tc.desc   Test dialogRequest ResultCode.RESULT_OK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DialogRequest_0100', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(dialogRequest.ResultCode.RESULT_OK);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DialogRequest_0200
+     * @tc.number SUB_Ability_AbilityBase_DialogRequest_0200
+     * @tc.desc   Test dialogRequest ResultCode.RESULT_CANCEL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DialogRequest_0200', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1900
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_1900
+     * @tc.desc   Test wantConstant Params.CALLER_REQUEST_CODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_1900', Level.LEVEL0, async (done: Function) => {
+      expect('ohos.extra.param.key.callerRequestCode').assertEqual(wantConstant.Params.CALLER_REQUEST_CODE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2600
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2600
+     * @tc.desc   Test abilityConstant PrepareTermination.TERMINATE_IMMEDIATELY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_2600', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(abilityConstant.PrepareTermination.TERMINATE_IMMEDIATELY);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2700
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2700
+     * @tc.desc   Test abilityConstant PrepareTermination.CANCEL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_2700', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(abilityConstant.PrepareTermination.CANCEL);
       done();
     })
 

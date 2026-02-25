@@ -64,8 +64,6 @@ export default function touchableTest() {
     'Search',
     'Select',
     'Slider',
-    'Stepper',
-    'StepperItem',
     'TabContent',
     'Text',
     'TextArea',
@@ -130,7 +128,7 @@ export default function touchableTest() {
    * Create test suite.
    */
   describe('TouchableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TouchableTest beforeEach start");
       
       await UtilsTest.msSleep(4000)

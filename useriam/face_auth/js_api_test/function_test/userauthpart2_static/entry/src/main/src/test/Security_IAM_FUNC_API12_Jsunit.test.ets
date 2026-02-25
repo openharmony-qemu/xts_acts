@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
         }
       });
       userAuthInstance.start();
-    } catch (e: BusinessError) {
+    } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -66,7 +66,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
 
 export default function userauthTest_API12() {
   describe('userauthTest_API12', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -103,9 +103,9 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FACE' + 'e.code:' + e.code);
-          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
+          expect(''+(e as BusinessError).code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
       }
       if (!checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT)){
@@ -113,9 +113,9 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FINGERPRINT);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FINGERPRINT' +  'e.code:' + e.code);
-          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
+          expect(''+(e as BusinessError).code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
       }
       if (!checkSupportOrNot(userAuth.UserAuthType.PIN)){
@@ -123,9 +123,9 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.PIN);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'PIN' + 'e.code:' + e.code);
-          expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
+          expect(''+(e as BusinessError).code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
       }
       done();
@@ -231,10 +231,10 @@ export default function userauthTest_API12() {
             }
           });
           expect(null).assertFail();
-        }catch (error:BusinessError) {
+        }catch (error) {
           hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_API_Static_0130 catch error: ' + JSON.stringify(error));
           hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_API_Static_0130 error.code: ' + error.code);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
       }
 

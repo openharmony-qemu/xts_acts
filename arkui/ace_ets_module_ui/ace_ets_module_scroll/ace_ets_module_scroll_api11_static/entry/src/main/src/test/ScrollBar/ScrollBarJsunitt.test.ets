@@ -26,7 +26,7 @@ import { RecordData } from '@ohos.base';
 
 export default function scrollBarJsunitt() {
   describe('scrollBarJsunitt', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -102,7 +102,7 @@ it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar002_static_02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar002_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -155,7 +155,7 @@ it('testScrollBar004_static_04', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar004_static_04] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar004_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -189,7 +189,7 @@ it('testScrollBar005_static_05', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[testScrollBar005_static_05] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar005_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

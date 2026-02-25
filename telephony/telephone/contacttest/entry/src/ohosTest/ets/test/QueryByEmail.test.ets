@@ -268,7 +268,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -301,7 +301,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -387,7 +387,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success  data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -475,7 +475,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -522,7 +522,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -557,7 +557,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -589,7 +589,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -626,7 +626,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -658,7 +658,7 @@ export default function QueryByEmailTest() {
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length === 0);
+            expect().assertFail();
             done();
           }
         });
@@ -793,7 +793,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -842,7 +842,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -892,7 +892,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -942,7 +942,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -992,7 +992,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1041,7 +1041,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1090,7 +1090,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1135,7 +1135,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1183,7 +1183,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1231,7 +1231,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1279,7 +1279,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1326,7 +1326,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1374,7 +1374,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1423,7 +1423,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1470,7 +1470,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1516,7 +1516,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1566,7 +1566,7 @@ export default function QueryByEmailTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -1614,7 +1614,7 @@ export default function QueryByEmailTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);

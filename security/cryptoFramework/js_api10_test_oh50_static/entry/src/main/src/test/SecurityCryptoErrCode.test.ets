@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,9 +53,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
         await asyKeyGenerator.convertKey(pubKeyBlob, priKeyBlob);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0100 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -78,9 +78,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let generator = cryptoFramework.createAsyKeyGenerator('ECC256');
         generator.convertKeySync(pubKeyBlob, priKeyBlob);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0200 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -99,9 +99,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let generator = cryptoFramework.createAsyKeyGenerator('ECC256');
         generator.convertKeySync(null, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0300 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -123,9 +123,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let KeyBlob: cryptoFramework.DataBlob = { data: keyMaterialBlob };
         await symKeyGenerator.convertKey(KeyBlob);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0400 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -149,9 +149,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let key = symKeyGenerator.convertKeySync(keyBlob);
         key.getEncoded();
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0500 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -178,9 +178,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         console.info("updateSync success");
         cipher.doFinalSync(plainText);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_0900 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -205,9 +205,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let plainText: cryptoFramework.DataBlob = { data: keyMaterialBlob };
         await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
         cipher.updateSync(plainText);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1000 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
       }
       done();
     });
@@ -227,9 +227,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let pSource = new Uint8Array([1,2,3,4]);
         cipher.setCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR, pSource);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1100 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
       }
       done();
     });
@@ -248,9 +248,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let cipher = cryptoFramework.createCipher('AES128|CCM|PKCS7');
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1200 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
       }
       done();
     });
@@ -272,9 +272,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
         sign.initSync(keyPair.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1300 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -314,9 +314,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         console.info("[generateKeyPairSync success]");
         let gX = keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_G_X_BN);
         expect(null).assertFail(); // length is 224, hex : b70e0cbd6bb4bf7f321390b94a03c1d356c21122343280d6115c1d21
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1400 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -357,9 +357,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let gX = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_G_X_BN);
         console.info('--- gX', gX);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_ErrCode_Func_1500 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -385,9 +385,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -414,9 +414,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         };
         kdf.generateSecretSync(spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -446,9 +446,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let returnData = cryptoFramework.ECCKeyUtil.getEncodedPoint('NID_brainpoolP258r1', returnPoint, 'UNCOMPRESSED');
         console.info('returnData: ' + returnData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -468,9 +468,9 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let returnPoint = cryptoFramework.ECCKeyUtil.convertPoint('NID_brainpoolP257r1', pkData);
         console.info('returnPoint: ' + returnPoint.x.toString(16));
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -489,7 +489,7 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
         let generator = cryptoFramework.createSymKeyGenerator("AES128");
         let symKey = await generator.generateSymKey();
         symKey.getEncoded();
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
@@ -512,21 +512,21 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
       let setUint8Array = new Uint8Array([0x20]);
       try {
         sign.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
       }
       try {
         sign.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setUint8Array);
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
       }
       try {
         sign.getSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM);
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
@@ -546,14 +546,14 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec('NID_brainpoolP256r1');
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
       }
       try {
         cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(16);
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
@@ -562,14 +562,14 @@ export default function SecurityCryptoFwErrCodeTestUnit() {
       try {
         cryptoFramework.createAsyKeyGeneratorBySpec({
           algName: "ECC521", specType: cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC});
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }
       }
       try {
         cryptoFramework.createKdf("HKDF");
-      } catch (error: BusinessError) {
+      } catch (error) {
         if (error.code == cryptoFramework.Result.NOT_SUPPORT) {
           console.error(`Not Support ${error}, error code: ${error.code}`);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1489,7 +1489,7 @@ export default function ArrayConstructTest() {
      */
     it('testArrayConstructor0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 4, 2);
-      const sorted = [...arr].sort((a, b) => a - b);
+      const sorted = [...arr].sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([3, 1, 4, 2]));
       expect(JSON.stringify(sorted)).assertDeepEquals(JSON.stringify([1, 2, 3, 4]));
     });
@@ -1522,7 +1522,7 @@ export default function ArrayConstructTest() {
       const date2 = new Date('2023-01-15');
       const date3 = new Date('2023-02-10');
       const arr = new Array<Date>(date1, date2, date3);
-      const sorted = [...arr].sort((a, b) => a.getTime() - b.getTime());
+      const sorted = [...arr].sort((a, b) => (a.getTime() - b.getTime()).toDouble().toInt());
       expect(arr).assertDeepEquals([date1, date2, date3]);
       expect(sorted).assertDeepEquals([date2, date3, date1]);
     });

@@ -56,7 +56,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SwiperChangeIndexTest() {
   describe('SwiperChangeIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperChangeIndexTest beforeEach start");
 
       

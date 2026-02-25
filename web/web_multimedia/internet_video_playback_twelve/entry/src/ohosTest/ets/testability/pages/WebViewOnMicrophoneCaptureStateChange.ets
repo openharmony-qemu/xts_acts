@@ -68,27 +68,6 @@ struct webViewController {
           switch (this.str) {
             case "emitOnMicrophoneCaptureStateChange001": {
               try {
-                this.flag = 1;
-                let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-                try {
-                  let context: Context = getContext(this) as common.UIAbilityContext;
-                  atManager.requestPermissionsFromUser(context, ['ohos.permission.MICROPHONE'],
-                    (err: BusinessError, data: PermissionRequestResult) => {
-                      console.info('data:' + JSON.stringify(data));
-                      console.info('data permissions:' + data.permissions);
-                      console.info('data authResults:' + data.authResults);
-                    })
-                } catch (error) {
-                  let e: business_error.BusinessError = error as business_error.BusinessError;
-                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                }
-                let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
-                await buttonThree.click();
-                let buttonOne = await driver.waitForComponent(ON.text('开启麦克风'),10000);
-                await buttonOne.click();
-                let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
-                await buttonTwo.click();
-                await Utils.sleep(1000)
                 setTimeout(() => {
                   Utils.emitEvent(true, 20260101);
                 },1000)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,7 +108,7 @@ export default function AddUsbManagerTest() {
 
   describe("AddUsbManagerTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -216,7 +216,7 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer001 end');
           let err: BusinessError = error as BusinessError;
@@ -396,7 +396,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         expect(err.code).assertEqual(401);
@@ -420,7 +420,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight035 err : ', err);
@@ -445,7 +445,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight036 err : ', err);
@@ -470,7 +470,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight037 err : ', err);
@@ -495,7 +495,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight038 err : ', err);
@@ -520,7 +520,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -548,7 +548,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -576,7 +576,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -604,7 +604,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -632,7 +632,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -660,7 +660,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -688,7 +688,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -716,7 +716,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -744,7 +744,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        await UsbMgr.requestAccessoryRight(accessInfo);
+        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -864,7 +864,8 @@ export default function AddUsbManagerTest() {
 
           expect(gPipe.busNum < 256).assertTrue();
           expect(gPipe.devAddress < 128).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(error.code).assertEqual(14400001);
         }
         done();
@@ -1153,7 +1154,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer063 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400001);
         }
@@ -1193,7 +1195,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer064 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400008);
         }
@@ -1233,7 +1236,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer065 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400010);
         }
@@ -1330,7 +1334,7 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;
@@ -1379,7 +1383,7 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;
@@ -1428,7 +1432,7 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;

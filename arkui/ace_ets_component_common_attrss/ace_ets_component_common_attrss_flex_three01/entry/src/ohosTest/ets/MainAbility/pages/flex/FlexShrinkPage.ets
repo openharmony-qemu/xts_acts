@@ -60,6 +60,7 @@ struct FlexShrinkPage {
   @Styles
   commonStyle() {
     .margin(0)
+    .padding(0)
     .flexShrink(this._flexShrink)
     .width(this.targetWidth)
     .height(this.targetHeight)

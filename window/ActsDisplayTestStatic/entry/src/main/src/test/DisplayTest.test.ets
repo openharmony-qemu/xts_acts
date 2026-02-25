@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ async function getPermision(): Promise<void> {
             hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
             hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
         });
-    } catch (err: BusinessError) {
+    } catch (err) {
         console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
     }
 }
@@ -106,7 +106,7 @@ async function terminateAbility(caseName: string) {
     }).catch((err: Error):PromiseLike<void>|undefined => {
       hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
     });
-  } catch (e: BusinessError) {
+  } catch (e) {
     hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
   }
   await Utils.msSleep(1000)
@@ -117,7 +117,7 @@ export default function DisplayTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
+        let windowStage: window.WindowStage | undefined;
         let win: window.Window;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -129,7 +129,7 @@ export default function DisplayTest() {
         let orientation:string[];
         let code:number = 0;
         let displayFoldStatus:display.FoldStatus;
-        let context: common.UIAbilityContext;
+        let context: common.UIAbilityContext | undefined;
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, 'beforeAll start');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
@@ -244,7 +244,7 @@ export default function DisplayTest() {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
                     try {
                         expect().assertFail();
-                    } catch (error: Error) {
+                    } catch (error) {
                         hilog.info(0x0000, '[ANI]',`display.getAllDisplays catch error: ${JSON.stringify(error)}`);
                     }
                     done();
@@ -288,14 +288,14 @@ export default function DisplayTest() {
             };
             try {
                 display.onFoldStatusChange(callback);
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
                 display.offFoldStatusChange();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -303,7 +303,7 @@ export default function DisplayTest() {
             try {
                 display.offFoldStatusChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -324,7 +324,7 @@ export default function DisplayTest() {
             try {
                 display.offFoldStatusChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -347,14 +347,14 @@ export default function DisplayTest() {
             };
             try {
                 display.onFoldDisplayModeChange(callback);
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
                 display.offFoldDisplayModeChange();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -362,7 +362,7 @@ export default function DisplayTest() {
             try {
                 display.offFoldDisplayModeChange();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -524,7 +524,7 @@ export default function DisplayTest() {
                 expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_SUB).assertEqual(3);
                 expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_COORDINATION).assertEqual(4);
                 done();
-            } catch (err:Error) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]',tag + 'getFoldDisplayMode failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
@@ -558,7 +558,7 @@ export default function DisplayTest() {
                 expect(dsp.xDPI != null).assertTrue();
                 expect(dsp.yDPI != null).assertTrue();
                 done();
-            } catch (err:Error) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]','getDisplayByIdSyncTest1 error ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -614,7 +614,7 @@ export default function DisplayTest() {
             };
             try {
                 display.onAdd(callback);
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -622,7 +622,7 @@ export default function DisplayTest() {
             }
             try {
                 display.offAdd();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -630,7 +630,7 @@ export default function DisplayTest() {
             try {
                 display.offAdd();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -653,14 +653,14 @@ export default function DisplayTest() {
             };
             try {
                 display.onChange(callback);
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
                 display.offChange();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -669,7 +669,7 @@ export default function DisplayTest() {
                 display.offChange();
                 done();
 
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -692,14 +692,14 @@ export default function DisplayTest() {
             };
             try {
                 display.onRemove(callback);
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
                 display.offRemove();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -707,7 +707,7 @@ export default function DisplayTest() {
             try {
                 display.offRemove();
                 done();
-            } catch (exception:Error) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -728,7 +728,7 @@ export default function DisplayTest() {
                 display.isFoldable();
                 expect(true).assertTrue();
                 done();
-            } catch (err:Error) {
+            } catch (err) {
                 hilog.info(0x0000, '[ANI]',tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
                 expect().assertFail();
                 done();
@@ -780,7 +780,7 @@ export default function DisplayTest() {
             try {
                 display.onFoldAngleChange(callback);
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -789,7 +789,7 @@ export default function DisplayTest() {
                 display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -817,7 +817,7 @@ export default function DisplayTest() {
             try {
                 display.onFoldAngleChange(callback);
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -825,7 +825,7 @@ export default function DisplayTest() {
             try {
                 display.offFoldAngleChange();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -834,7 +834,7 @@ export default function DisplayTest() {
                 display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -856,7 +856,7 @@ export default function DisplayTest() {
                 display.offFoldAngleChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -881,7 +881,7 @@ export default function DisplayTest() {
             try {
                 display.onCaptureStatusChange(callback);
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -890,7 +890,7 @@ export default function DisplayTest() {
                 display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -914,7 +914,7 @@ export default function DisplayTest() {
             try {
                 display.onCaptureStatusChange(callback);
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -922,7 +922,7 @@ export default function DisplayTest() {
             try {
                 display.offCaptureStatusChange();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -931,7 +931,7 @@ export default function DisplayTest() {
                 display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -953,7 +953,7 @@ export default function DisplayTest() {
                 display.offCaptureStatusChange();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -977,7 +977,7 @@ export default function DisplayTest() {
                 expect(status).assertFalse();
                 done();
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
@@ -999,7 +999,7 @@ export default function DisplayTest() {
                 expect(5).assertEqual(display.DisplayState.STATE_VR);
                 expect(6).assertEqual(display.DisplayState.STATE_ON_SUSPEND);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -1021,7 +1021,7 @@ export default function DisplayTest() {
                 expect(display.Orientation.PORTRAIT_INVERTED).assertEqual(2)
                 expect(display.Orientation.LANDSCAPE_INVERTED).assertEqual(3)
                 done()
-            } catch (error: BusinessError) {
+            } catch (error) {
                 expect().assertFail()
                 done()
             }
@@ -1070,7 +1070,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1093,7 +1093,7 @@ export default function DisplayTest() {
             let storage: LocalStorage = new LocalStorage();
             // storage.setOrCreate('storageSimpleProp', 121);
             try {
-                let promise1 = windowStage.createSubWindow('test_getAvailableArea_subWindow');
+                let promise1 = windowStage!.createSubWindow('test_getAvailableArea_subWindow');
                 promise1.then(async (data:window.Window) => {
                     if (data == null) {
                         hilog.error(0x0000, '[ANI]',msgStr + "Failed to create the subWindow. Cause: The data is empty");
@@ -1135,7 +1135,7 @@ export default function DisplayTest() {
                                 }
                             });
                         }
-                        catch (exception: BusinessError) {
+                        catch (exception) {
                             hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                             subWindow.destroyWindow();
                             expect().assertFail();
@@ -1153,7 +1153,7 @@ export default function DisplayTest() {
                     done();
                 });
             }
-            catch (err: BusinessError) {
+            catch (err) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to the case. Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1173,7 +1173,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1214,7 +1214,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1234,7 +1234,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1289,7 +1289,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1317,7 +1317,7 @@ export default function DisplayTest() {
                 displayClass.offAvailableAreaChange();
                 done();
             }
-            catch (err: BusinessError) {
+            catch (err) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1344,7 +1344,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let displayClass: display.Display;
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1382,7 +1382,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1411,7 +1411,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1447,7 +1447,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1476,7 +1476,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1513,7 +1513,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1542,7 +1542,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
             };
             try {
-                let mainWindowClass:window.Window = await windowStage.getMainWindow();
+                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
                 displayClass = display.getDefaultDisplaySync();
                 let promise1 = displayClass.getAvailableArea();
                 promise1.then(async (data:display.Rect) => {
@@ -1578,7 +1578,7 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1603,7 +1603,8 @@ export default function DisplayTest() {
                 expect(true).assertTrue();
                 done();
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1646,7 +1647,7 @@ export default function DisplayTest() {
             }
             done();
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.info(0x0000, '[ANI]',`${caseName} Failed.err:${JSON.stringify(e)}`);
           expect().assertFail();
           done()
@@ -1668,7 +1669,7 @@ export default function DisplayTest() {
           expect(display.ScreenShape.RECTANGLE).assertEqual(0)
           expect(display.ScreenShape.ROUND).assertEqual(1)
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(0x0000, '[ANI]',`jsunittets ${caseName} fail to test_ScreenShape, cause:` + error);
           expect().assertFail();
           done();
@@ -2073,7 +2074,7 @@ export default function DisplayTest() {
         it('test_js_capture_privateWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'test_js_capture_privateWindow_static';
             try{
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 windowClass.setWindowPrivacyMode(true, (err: BusinessError<void> | null) :void => {
                     const errCode: number = err!.code;
                     if (errCode) {
@@ -2143,7 +2144,8 @@ export default function DisplayTest() {
                 display.convertGlobalToRelativeCoordinate(position, displayClass.id);
                 expect(false).assertTrue();
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004);
                 expect(e.message!=null).assertTrue();
@@ -2171,7 +2173,8 @@ export default function DisplayTest() {
                 display.convertGlobalToRelativeCoordinate(position, -1);
                 expect(false).assertTrue();
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004)
                 expect(e.message!=null).assertTrue();
@@ -2210,7 +2213,8 @@ export default function DisplayTest() {
                 expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2252,7 +2256,8 @@ export default function DisplayTest() {
                 expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2298,7 +2303,8 @@ export default function DisplayTest() {
                     expect(region.creaseRects.length).assertEqual(0)
                 }
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2336,7 +2342,8 @@ export default function DisplayTest() {
             display.convertRelativeToGlobalCoordinate(param);
             expect(false).assertTrue();
             done();
-        } catch (e: BusinessError) {
+        } catch (e) {
+            e = e as BusinessError;
             console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
             expect(e.code).assertEqual(1400004)
             done()
@@ -2359,7 +2366,8 @@ export default function DisplayTest() {
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
             done();
-        } catch (e: BusinessError) {
+        } catch (e) {
+            e = e as BusinessError;
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
             if (e.code == 801) {
                 done()
@@ -2380,8 +2388,11 @@ export default function DisplayTest() {
     it('testOnBrightnessInfoChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testOnBrightnessInfoChange_static_0100';
         try {
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            console.info(`${caseName} getMainWindowSync success`);
             await windowClass.setWindowBrightness(1);
+            console.info(`${caseName} setWindowBrightness 1 success`);
+            await Utils.msSleep(100);
             let brightnessChangeCount1:number = 0;
             let brightnessChangeCount2:number = 0;
             let callback1Triggered:boolean = false;
@@ -2414,6 +2425,7 @@ export default function DisplayTest() {
             display.onBrightnessInfoChange(callback2);
             console.info(caseName + ' Brightness change listeners registered successfully');
             await windowClass.setWindowBrightness(0);
+            await Utils.msSleep(100);
             while (!callback1Triggered) {
                 await Utils.msSleep(100);
             }
@@ -2434,9 +2446,11 @@ export default function DisplayTest() {
             expect(brightnessChangeCount1).assertEqual(0);
             expect(brightnessChangeCount2).assertEqual(0);
             await windowClass.setWindowBrightness(-1);
+            await Utils.msSleep(100);
             done();
-        } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
             } else {
@@ -2456,6 +2470,7 @@ export default function DisplayTest() {
      */
     it('testCreateVirtualScreenwithSupportsFocusIsTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testCreateVirtualScreenwithSupportsFocusIsTrue_static';
+        console.log(caseName + 'begin');
         try {
             display.createVirtualScreen({
                 name: 'createVirtualScreen1',
@@ -2465,19 +2480,24 @@ export default function DisplayTest() {
                 surfaceId: '',
                 supportsFocus: true
             }).then(async (displayId: Long) => {
+                console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
                 display.makeUnique(displayId).then(() => {
                     console.log(caseName + 'succeeded in makeUnique');
                     let options: StartOptions = {
                         displayId: displayId
                     }
-                    let windowStageStart = await startAbility(caseName, context, options);
+                    console.log(caseName + 'startAbility start.. ');
+                    let windowStageStart = await startAbility(caseName, context!, options);
+                    console.log(caseName + 'getMainWindowSync start.. ');
                     let windowClass:window.Window = windowStageStart.getMainWindowSync();
+                    console.log(caseName + 'getMainWindowSync ssuccess: '+windowClass);
                     await windowClass.setWindowFocusable(true);
+                    console.log(caseName + 'setWindowFocusable true ssuccess');
                     await terminateAbility(caseName);
                     done();
                 }).catch(async (err: Error) => {
-                    console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+                    console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {
                         expect(err.code).assertEqual(801)
                         done();
@@ -2488,7 +2508,7 @@ export default function DisplayTest() {
                     }
                 })
             }).catch(async (err: Error) => {
-                console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+                console.error(caseName + 'failed in createVirtualScreen, err : ' + err+ err.code);
                 if (err.code == 801) {
                     expect(err.code).assertEqual(801)
                     done();
@@ -2498,8 +2518,9 @@ export default function DisplayTest() {
                     done();
                 }
             })
-        } catch (e: BusinessError) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${e}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
             done();

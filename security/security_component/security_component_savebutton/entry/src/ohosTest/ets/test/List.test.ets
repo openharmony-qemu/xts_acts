@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023-2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,10 +17,12 @@ import saveComponentTest from './SaveComponentTest.test';
 import saveComponentTest_1 from './SaveComponentTest_1.test';
 import saveComponentTest_2 from './SaveComponentTest_2.test';
 import saveComponentUserCancelTest from './SaveComponentUserCancelTest.test';
+import saveCompCustomizeTest from './SaveCompCustomizeTest.test';
 
 export default function testsuite() {
   saveComponentUserCancelTest();
   saveComponentTest();
   saveComponentTest_1();
   saveComponentTest_2();
+  saveCompCustomizeTest();
 }

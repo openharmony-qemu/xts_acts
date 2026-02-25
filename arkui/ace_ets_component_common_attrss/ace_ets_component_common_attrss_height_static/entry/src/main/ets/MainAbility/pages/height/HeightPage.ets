@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -102,8 +102,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -169,7 +167,7 @@ struct heightPage {
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
       console.log('routerParamOptions.view.parentComponentKey==' + routerParamOptions.view.parentComponentKey)
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -568,20 +566,6 @@ struct heightPage {
         WaterFlow()
           .applyStyles(this.commonStyle)
           .backgroundColor(this.BackGroundColor).width(100)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }
-        .applyStyles(this.commonStyle)
-        .width(100)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }
-          .applyStyles(this.commonStyle)
-
-        }.key(this.parentComponentKey).width(this.parentWidth as number).height(this.parentHeight as number)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem()

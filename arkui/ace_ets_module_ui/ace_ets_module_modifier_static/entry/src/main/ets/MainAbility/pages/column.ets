@@ -15,7 +15,7 @@
  */
 import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,
   ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,
-  Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition,
+  Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition,
   Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer, ColumnAttribute,
   HorizontalAlign} from '@ohos.arkui.component';
 import {

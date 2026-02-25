@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function clipContent() {
   describe('clipContent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clipContent beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
@@ -90,7 +90,7 @@ it('clipContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
      * @tc.desc     clipContent_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('clipContent_static_0200', Level.LEVEL1, (done: () => void): Promise<void> => {
+it('clipContent_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[clipContent_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -114,7 +114,7 @@ it('clipContent_static_0200', Level.LEVEL1, (done: () => void): Promise<void> =>
      * @tc.desc     clipContent_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('clipContent_static_0300', Level.LEVEL1, (done: () => void): Promise<void> => {
+it('clipContent_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[clipContent_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

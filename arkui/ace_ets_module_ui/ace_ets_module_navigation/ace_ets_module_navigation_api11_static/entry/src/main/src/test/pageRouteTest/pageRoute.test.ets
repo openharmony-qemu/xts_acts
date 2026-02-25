@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ interface Value {
 }
 export default function pageRouteTest() {
   describe('pageRouteTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
@@ -84,7 +84,7 @@ it('testOnPageHideStatic01', Level.LEVEL0, async (): Promise<void> => {
       try {
         events_emitter.on(innerEvent, callback)
         console.info("testOnPageHideStatic01 click result is: " + JSON.stringify(inspector.sendEventByKey('next', 10, "")));
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testOnPageHideStatic01] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[testOnPageHideStatic01] testSendTouchEvent END');

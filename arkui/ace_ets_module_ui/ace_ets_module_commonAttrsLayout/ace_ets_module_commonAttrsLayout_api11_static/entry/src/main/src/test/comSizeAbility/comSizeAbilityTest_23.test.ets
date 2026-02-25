@@ -39,15 +39,12 @@ export default function comSizeAbilityTest_23() {
   describe('comSizeAbilityTest_23', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("comSizeAbilityTest_23 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("comSizeAbilityTest_23 beforeEach start")
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/comSizeAbility/comSizeAbilityTest_23'
@@ -78,6 +75,8 @@ export default function comSizeAbilityTest_23() {
      */
 it('comSizeAbilityTestJsunit_static_56', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('comSizeAbilityTestJsunit_static_56 START')
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+      const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("ImageAnimator_Size");
       let modePosition1: componentUtils.ComponentInfo = componentUtils1.getRectangleById("ImageAnimator_Father");

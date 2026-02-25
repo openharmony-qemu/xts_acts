@@ -83,9 +83,9 @@ export default function webCookieManagerTest() {
      * @tc.desc   test isCookieAllowed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testIsCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testIsCookieAllowedStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsCookieAllowed002", 10)
         await Utils.msSleep(2000);

@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function searchTest() {
   describe('searchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchTest beforeEach start");
 
 
@@ -64,7 +64,7 @@ export default function searchTest() {
           await CommonFunc.sleep(2000);
           // console.info("push search page result: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search page error: " + err);
       }
     });
@@ -97,7 +97,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -145,7 +145,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -181,7 +181,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -226,7 +226,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -261,7 +261,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -303,7 +303,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -348,7 +348,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -384,7 +384,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -419,7 +419,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -464,7 +464,7 @@ export default function searchTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

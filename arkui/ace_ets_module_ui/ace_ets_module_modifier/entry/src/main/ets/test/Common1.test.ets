@@ -387,7 +387,7 @@ export default function common1Jsunit() {
       console.info('[Common1019] START');
       let strJsonNew = getInspectorByKey('testid');
       console.info("[Common1019] component Common1017 is: " + strJsonNew);
-      expect(strJsonNew).assertNotNull;
+      expect(strJsonNew).not().assertNull();
       done();
     });
 
@@ -402,7 +402,7 @@ export default function common1Jsunit() {
     it('Common1020', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1020] START');
       let strJsonNew = getInspectorByKey('testkey');
-      expect(strJsonNew).assertNotNull;
+      expect(strJsonNew).not().assertNull();
       done();
     });
 

@@ -47,7 +47,7 @@ struct SegBtnSelectBackgrountColor {
   @State tabSelectedIndexes: number[] = [1];
   aboutToAppear(): void {
     const resourceManager = this.getUIContext().getHostContext()?.resourceManager;
-    AppStorage.setOrCreate<string>('selectedBackgroundColor_1', '#' + resourceManager?.getColorSync($r('sys.color.ohos_id_color_foreground_contrary').id).toString(16).toUpperCase())
+    AppStorage.setOrCreate<string>('selectedBackgroundColor_1', '#' + resourceManager?.getColorSync($r('sys.color.segment_button_checked_foreground_color').id).toString(16).toUpperCase())
     AppStorage.setOrCreate<string>('selectedBackgroundColor_2', '#' + resourceManager?.getColorSync($r('sys.color.ohos_id_color_emphasize').id).toString(16).toUpperCase())
   }
   build() {

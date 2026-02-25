@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StyledString() {
   describe('StyledString', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StyledString beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");
@@ -51,7 +51,7 @@ export default function StyledString() {
         console.info("get StyledString state pages: " + JSON.stringify(pages));
         if (!("StyledString" == pages.name)) {
           console.info("get StyledString state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

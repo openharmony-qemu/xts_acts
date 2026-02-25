@@ -26,14 +26,14 @@ export default function imageRaw() {
   const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
   let filePath: string;
   let fdNumber: int;
-  let filesDir: string;
+  let filesDir: string = '';
 
   describe("imageRaw", () => {
     beforeAll(async () => {
       console.info("beforeAll case");
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("beforeEach case");
       await initialize();
       filesDir = Hypium.get('filesDir') as string;

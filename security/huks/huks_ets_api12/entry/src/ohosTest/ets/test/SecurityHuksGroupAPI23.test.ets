@@ -399,7 +399,9 @@ export default function SecurityHuksGroupAPI23Test() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7800";
         let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMinGroupId));
@@ -422,7 +424,9 @@ export default function SecurityHuksGroupAPI23Test() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        await CheckWifiInfo();
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7810";
         let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
           StringToUint8Array(HuksMinGroupId));

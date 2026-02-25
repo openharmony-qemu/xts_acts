@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -98,8 +98,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -186,7 +184,7 @@ struct DisplayPriorityPage {
       this.parentKey = routerParamOptions.view.parentKey ?? ''
 
       console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -314,10 +312,6 @@ struct DisplayPriorityPage {
       Slider()
         .backgroundColor(Color.Pink)
         .applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem()
-      }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
       Text('text')
         .fontSize(15)

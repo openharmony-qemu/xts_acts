@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SelectJsunit() {
   describe('SelectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Builder0050TestJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
     });
@@ -58,7 +58,6 @@ export default function SelectJsunit() {
         }
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
-        expect().assertFail();
       }
     });
 

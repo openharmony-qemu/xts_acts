@@ -14,7 +14,7 @@
 */
 {
   "app": {
-    "bundleName": "com.esmodule.acts",
+    "bundleName": "com.esmodule.ohostestlib",
     "vendor": "open",
     "versionCode": 1000000,
     "versionName": "1.0.0",

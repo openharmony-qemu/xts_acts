@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function blank3Jsunit() {
   describe('blank3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("blank3Jsunit beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

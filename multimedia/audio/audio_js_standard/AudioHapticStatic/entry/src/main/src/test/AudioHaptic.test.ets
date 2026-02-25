@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,11 +46,11 @@ export default function AudioHapticTest() {
     let filePath: string;
     let tag = 'AudioHapticTest:';
     let AudioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
-    let testContext: common.UIAbilityContext;
+    let testContext: common.UIAbilityContext | undefined;
 
     let resourceFile = async (resourcePath: string): Promise<string> => {
       // 1.读取文件
-      let uint8Array: Uint8Array = testContext.resourceManager.getRawFileContentSync(resourcePath);
+      let uint8Array: Uint8Array = testContext!.resourceManager.getRawFileContentSync(resourcePath);
       let fileName = resourcePath.substring(resourcePath.lastIndexOf('/') + 1);
       console.log(`${tag} fileName:${fileName}`);
       // 2.创建沙箱文件
@@ -75,7 +75,7 @@ export default function AudioHapticTest() {
     let sourceId_Notification = 0;
     let sourceId_Ringtone = 0;
 
-    let driveFn = () => {
+    let driveFn = async () => {
       let dr = Driver.create();
       await sleep(1000);
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
@@ -88,17 +88,17 @@ export default function AudioHapticTest() {
     let getPermission = () => {
       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
       let permissions: Array<Permissions> = ['ohos.permission.MICROPHONE'];
-      atManager.requestPermissionsFromUser(testContext, permissions,
+      atManager.requestPermissionsFromUser(testContext!, permissions,
         (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
           console.info("request success permissions" + JSON.stringify(data));
           console.info("getPermissionRequestResult err", JSON.stringify(err));
         })
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       console.log(`beforeall come in`);
       testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      filesDir = testContext.filesDir as string | undefined | null;
+      filesDir = testContext!.filesDir as string | undefined | null;
 
       getPermission();
       driveFn();
@@ -141,9 +141,9 @@ export default function AudioHapticTest() {
      * @tc.desc   registerSource_Ringtone_URI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data = await AudioHapticManager.registerSource(Ringtone_Audio_Uri, Ringtone_Haptic_Uri);
         try {
@@ -169,9 +169,9 @@ export default function AudioHapticTest() {
      * @tc.desc   registerSource_notification_URI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         const data = await AudioHapticManager.registerSource(Notification_Audio_Uri, Notificatio_Haptic_Uri);
         try {
@@ -650,8 +650,9 @@ export default function AudioHapticTest() {
         console.log(`${tag} AudioHapticPlayer release success`);
         expect(true).assertTrue();
         done();
-      } catch(err: BusinessError) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+      } catch(err) {
+        err = err as BusinessError;
+        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
           done();
@@ -659,10 +660,6 @@ export default function AudioHapticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
-        expect(false).assertTrue();
-        done()
       }
     })
     /**
@@ -689,19 +686,21 @@ export default function AudioHapticTest() {
         flag = true;
         expect(flag).assertTrue();
         done();
-      } catch(err: BusinessError) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
-        if (err.code === 5400106) {
-          expect(true).assertTrue();
-          done();
+      } catch(err) {
+        if (err instanceof Error) {
+          console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
+          if (err.code === 5400106) {
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
         } else {
+          console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
           expect(false).assertTrue();
-          done();
+          done()
         }
-      } catch (err) {
-        console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${(err as BusinessError).code}`);
-        expect(false).assertTrue();
-        done()
       }
     })
     /**
@@ -1640,12 +1639,13 @@ export default function AudioHapticTest() {
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           done();
@@ -1670,11 +1670,11 @@ export default function AudioHapticTest() {
       let hapticFd: audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
       let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      let rawFdOgg = testContext!.resourceManager.getRawFdSync('notification.ogg');
       audioFd.fd = rawFdOgg.fd;
       audioFd.length = rawFdOgg.length;
       audioFd.offset = rawFdOgg.offset;
-      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      let rawFdJson = testContext!.resourceManager.getRawFdSync('notification.json');
       hapticFd.fd = rawFdJson.fd;
       hapticFd.length = rawFdJson.length;
       hapticFd.offset = rawFdJson.offset;
@@ -1740,11 +1740,11 @@ export default function AudioHapticTest() {
       let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
       let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
       let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      let rawFdOgg = testContext!.resourceManager.getRawFdSync('notification.ogg');
       audioFd.fd = rawFdOgg.fd;
       audioFd.length = rawFdOgg.length;
       audioFd.offset = rawFdOgg.offset;
-      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      let rawFdJson = testContext!.resourceManager.getRawFdSync('notification.json');
       hapticFd.fd = rawFdJson.fd;
       hapticFd.length = rawFdJson.length;
       hapticFd.offset = rawFdJson.offset;

@@ -49,7 +49,7 @@ export default function albumCommitModifyTest() {
         const testNum = 'album_commitModify_callback_static_000';
         try {
           let fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           let album = await fetchResult.getFirstObject();
           fetchResult.close();
           const newName = Date.now() + album.albumName;
@@ -84,7 +84,7 @@ export default function albumCommitModifyTest() {
         const testNum = 'album_commitModify_callback_static_001';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           album.commitModify((err: BusinessError | null) => {
@@ -117,7 +117,7 @@ export default function albumCommitModifyTest() {
         const testNum = 'album_commitModify_promise_static_000';
         try {
           let fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           const newName = Date.now() + album.albumName;
@@ -125,7 +125,7 @@ export default function albumCommitModifyTest() {
           await album.commitModify();
           const fetchOps = fetchOption(testNum, photoAccessHelper.AlbumKeys.ALBUM_NAME, newName);
           fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
               fetchOps);
           hilog.info(domain, tag, `${testNum} fetchResult: ${fetchResult.getCount()}`);
           const curAlbum = await fetchResult.getFirstObject();
@@ -152,7 +152,7 @@ export default function albumCommitModifyTest() {
         const testNum = 'album_commitModify_promise_static_001';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           await album.commitModify();
@@ -178,7 +178,7 @@ export default function albumCommitModifyTest() {
         const testNum = 'album_commitModify_promise_static_002';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           const invalidName = genRadomStr(256);

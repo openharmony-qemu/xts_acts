@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,8 +15,6 @@
  */
 
 import { ListItemGroupView } from "../../view/offset/ListItemGroupView";
-import { StepperView } from '../../view/offset/StepperView';
-import { StepperItemView } from '../../view/offset/StepperItemView';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import {
@@ -74,7 +72,7 @@ struct Offset {
       this.subassemblyHeight= routerParamOptions.view.subassemblyHeight
       this.parentComponentKey= routerParamOptions.view.parentComponentKey
       this.referenceComponentKey= routerParamOptions.view.referenceComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -163,15 +161,6 @@ struct Offset {
               Text('text').fontSize(12).height('16')
             }.width(this.subassemblyWidth).height(this.subassemblyHeight).key(this.referenceComponentKey)
           }.width(this.parentWidth).height(this.parentHeight).key(this.parentComponentKey)
-        } else if (this.targetView == 'StepperItem') {
-          StepperItemView({
-            _offset: this._offset,
-            componentKey: this.componentKey,
-            parentWidth: this.parentWidth,
-            parentHeight: this.parentHeight,
-            parentComponentKey: this.parentComponentKey,
-            referenceComponentKey: this.referenceComponentKey
-          })
         } else if (this.targetView == 'GridItem') {
           Grid() {
             GridItem() {
@@ -496,8 +485,6 @@ struct Offset {
             } else if (this.targetView == 'TextTimer') {
               TextTimer({ isCountDown: true, count: 30000 })
                 .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
-            } else if (this.targetView == 'Stepper') {
-              StepperView({ _offset: this._offset, componentKey: this.componentKey });
             } else if (this.targetView == 'ScrollBar') {
               ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
                 Text().width(20).height(100).borderRadius(10)

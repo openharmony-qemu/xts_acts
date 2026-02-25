@@ -29,7 +29,7 @@ import { RecordData } from '@ohos.base';
 let emitKey = "emitUserAgent";
 export default function web9Jsunit() {
   describe('web9Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("web9Jsunit beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")

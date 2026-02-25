@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundEffectJsunit() {
   describe('backgroundEffectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundEffectJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")

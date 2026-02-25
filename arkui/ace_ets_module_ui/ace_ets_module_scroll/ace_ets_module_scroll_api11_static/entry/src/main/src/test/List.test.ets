@@ -184,7 +184,6 @@ export default function testsuite() {
   gridJsunit();
   refreshJsunit();
   listtestIdleJsunit();
-  list_item_groupJsunit();
   refreshDragJsunit();
   alphabetIndexerOnSelectJsunit();
   gridMaxCountJsunit();

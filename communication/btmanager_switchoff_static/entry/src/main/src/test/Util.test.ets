@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ let tag: string = 'bt003UtilsTag'; //日志标识字符串,作为tag标识当前
         await permissionButton.click();
         hilog.info(domain, tag, 'clickRequestPermission end');
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
       hilog.info(domain, tag, 'clickRequestPermission get err:' + err);
     }
   }

@@ -13,6 +13,7 @@
         "MainAbility/pages/DataPanel/DatalPanelUIJsunit",
         "MainAbility/pages/DataPanel/DataPanelContentModifier",
         "MainAbility/pages/DataPanel/DataPanelTest",
+        "MainAbility/pages/DataPanel/DataPanelCloseEffect",
 
         "MainAbility/pages/Gauge/Gauge3Jsunit",
         "MainAbility/pages/Gauge/GaugeColorsTest",

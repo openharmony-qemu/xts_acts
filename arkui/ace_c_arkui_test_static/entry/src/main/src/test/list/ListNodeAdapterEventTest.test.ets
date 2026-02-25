@@ -24,7 +24,7 @@ export default function ListNodeAdapterEventTest() {
 
   describe('ListNodeAdapterEventTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

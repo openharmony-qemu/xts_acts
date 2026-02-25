@@ -159,10 +159,6 @@ import {
   SpanAttribute,
   Stack,
   StackAttribute,
-  Stepper,
-  StepperAttribute,
-  StepperItem,
-  StepperItemAttribute,
   Swiper,
   SwiperAttribute,
   TabContent,
@@ -697,22 +693,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.translate(this.mTranslate)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
-    instance.translate(this.mTranslate)
-  }
-}
-
 class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
 
@@ -1124,16 +1104,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1310,8 +1280,6 @@ struct TranslatePage {
   @State _translateSliderModifier: SliderModifier = new SliderModifier()
   @State _translateSpanModifier: SpanModifier = new SpanModifier()
   @State _translateStackModifier: StackModifier = new StackModifier()
-  @State _translateStepperModifier: StepperModifier = new StepperModifier()
-  @State _translateStepperItemModifier: StepperItemModifier = new StepperItemModifier()
   @State _translateSwiperModifier: SwiperModifier = new SwiperModifier()
   @State _translateTabContentModifier: TabContentModifier = new TabContentModifier()
   @State _translateTabsModifier: TabsModifier = new TabsModifier()
@@ -1498,34 +1466,6 @@ struct TranslatePage {
           .showTips(true)
           .commonStyle(this.componentKey)
           .attributeModifier(this._translateSliderModifier)
-      }
-      if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-        }
-        .commonStyle(this.componentKey)
-
-        // .attributeModifier(this._translateStepperModifier)
-      }
-      if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-            }
-          }
-          .backgroundColor(Color.Red)
-          .commonStyle(this.componentKey)
-
-          // .attributeModifier(this._translateStepperItemModifier)
-        }
-        .backgroundColor(Color.Yellow)
-        .width('100%')
-        .height('100%')
       }
       if (this.targetView == 'Text') {
         Text('text1')

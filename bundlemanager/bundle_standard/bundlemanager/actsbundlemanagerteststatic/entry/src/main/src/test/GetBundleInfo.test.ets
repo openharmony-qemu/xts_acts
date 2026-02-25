@@ -18,9 +18,9 @@ export default function getBundleInfo() {
      * @tc.desc   test errCode 201 when call getBundleInfo with userID
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoTestWithUserIdCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoTestWithUserIdCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100,
           (err: BusinessError<void> | null, data: BundleInfo | undefined) => {
@@ -42,9 +42,9 @@ export default function getBundleInfo() {
      * @tc.desc   test errCode 201 when call getBundleInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoTestCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoTestCallBack201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
           (err: BusinessError<void> | null, data: BundleInfo | undefined) => {

@@ -74,9 +74,9 @@ export default function webviewNetworkProxy() {
      * @tc.desc   test ProxySchemeFilter MATCH_HTTP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testNetworkProxySchemeFilterMatchHttp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNetworkProxySchemeFilterMatchHttp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testNetworkProxySchemeFilterMatchHttp', 10);
       await Utils.msSleep(2000);

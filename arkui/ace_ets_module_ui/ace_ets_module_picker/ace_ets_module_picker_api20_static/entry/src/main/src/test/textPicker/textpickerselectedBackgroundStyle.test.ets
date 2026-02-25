@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function TextPickerPage() {
   describe('TextPickerPage', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerPage beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -75,7 +75,7 @@ it('textPickerselectedBackgroundStyle_static_001', Level.LEVEL0, async (done: ()
       let obj = JSON.parseJsonElement(strJson);
       await Utils.sleep(1000);
       let obj1 :string = obj.getElement('$attrs').getElement('selectedBackgroundStyle').getString('color');
-      expect(obj1.toLowerCase()).assertEqual(Color.Red);
+      expect(obj1).assertEqual(Color.Red);
       done();
     });
   })

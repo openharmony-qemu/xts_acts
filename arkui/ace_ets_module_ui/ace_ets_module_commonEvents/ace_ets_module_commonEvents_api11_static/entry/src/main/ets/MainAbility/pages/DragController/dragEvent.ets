@@ -109,7 +109,7 @@ struct DragExample {
               }
               console.info("apple start to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("apple emit action state err: " + JSON.stringify((err as Error)?.message))
             }
             return this.pixelMapBuilder
@@ -225,7 +225,7 @@ struct DragExample {
           }
           console.info("onDragEnter start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragEnter emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -243,7 +243,7 @@ struct DragExample {
           }
           console.info("onDragMove start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragMove emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -261,7 +261,7 @@ struct DragExample {
           }
           console.info("onDragLeave start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDragLeave emit action state err: " + JSON.stringify((err as Error)?.message))
         }
       })
@@ -279,7 +279,7 @@ struct DragExample {
           }
           console.info("onDrop start to emit action state")
           emitter.emit(backEvent, backData)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("onDrop emit action state err: " + JSON.stringify((err as Error)?.message))
         }
         if (this.bool) {

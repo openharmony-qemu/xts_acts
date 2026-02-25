@@ -24,7 +24,7 @@ export default function getType01Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -977,7 +977,7 @@ export default function getType01Test() {
     it('testValueGetType30001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30001';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 42);
         const resultType = shortValue.getType();
         expect(typeof resultType).assertEqual(typeof shortType);
@@ -998,7 +998,7 @@ export default function getType01Test() {
     it('testValueGetType30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30004';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 32767);
         const actualType = shortValue.getType();
         expect(typeof actualType).assertEqual(typeof shortType);
@@ -1019,7 +1019,7 @@ export default function getType01Test() {
     it('testValueGetType30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30005';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, -32768);
         const actualType = shortValue.getType();
         expect(typeof actualType).assertEqual(typeof shortType);
@@ -1040,7 +1040,7 @@ export default function getType01Test() {
     it('testValueGetType30006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30006';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 0);
         const actualType = shortValue.getType();
         expect(typeof actualType).assertEqual(typeof shortType);
@@ -1061,7 +1061,7 @@ export default function getType01Test() {
     it('testValueGetType50001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50001';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const longValue = new LongValue(longType, 123456789);
         const result = longValue.getType();
         expect(typeof result).assertEqual(typeof longType);
@@ -1082,7 +1082,7 @@ export default function getType01Test() {
     it('testValueGetType50002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50002';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const maxValue = new LongValue(longType, 9223372036854775807);
         const result = maxValue.getType();
         expect(typeof result).assertEqual(typeof longType);
@@ -1103,7 +1103,7 @@ export default function getType01Test() {
     it('testValueGetType50003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50003';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const minValue = new LongValue(longType, -9223372036854775808);
         const result = minValue.getType();
         expect(typeof result).assertEqual(typeof longType);
@@ -1124,7 +1124,7 @@ export default function getType01Test() {
     it('testValueGetType50004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50004';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const zeroValue = new LongValue(longType, 0);
         const result = zeroValue.getType();
         expect(typeof result).assertEqual(typeof longType);
@@ -1145,7 +1145,7 @@ export default function getType01Test() {
     it('testValueGetType50005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50005';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const longValue = new LongValue(longType, 123456789);
         const firstCall = longValue.getType();
         const secondCall = longValue.getType();
@@ -1167,8 +1167,8 @@ export default function getType01Test() {
     it('testValueGetType50006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50006';
       try {
-        const longType1: LongType;
-        const longType2: LongType;
+        const longType1: LongType = LongType.REF;
+        const longType2: LongType = LongType.REF;
         const value1 = new LongValue(longType1, 100);
         const value2 = new LongValue(longType2, 200);
         const resultType1 = value1.getType();
@@ -1192,7 +1192,7 @@ export default function getType01Test() {
     it('testValueGetType70001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70001';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const intValue = new IntValue(intType, 42);
         const result = intValue.getType();
         expect(typeof result).assertEqual(typeof intType);
@@ -1213,7 +1213,7 @@ export default function getType01Test() {
     it('testValueGetType70002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70002';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const maxValue = new IntValue(intType, 2147483647);
         const result = maxValue.getType();
         expect(typeof result).assertEqual(typeof intType);
@@ -1234,7 +1234,7 @@ export default function getType01Test() {
     it('testValueGetType70003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70003';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const minValue = new IntValue(intType, -2147483648);
         const result = minValue.getType();
         expect(typeof result).assertEqual(typeof intType);
@@ -1255,7 +1255,7 @@ export default function getType01Test() {
     it('testValueGetType70004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70004';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const zeroValue = new IntValue(intType, 0);
         const result = zeroValue.getType();
         expect(typeof result).assertEqual(typeof intType);
@@ -1276,7 +1276,7 @@ export default function getType01Test() {
     it('testValueGetType70005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70005';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const intValue = new IntValue(intType, 42);
         const firstCall = intValue.getType();
         const secondCall = intValue.getType();
@@ -1298,8 +1298,8 @@ export default function getType01Test() {
     it('testValueGetType70006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70006';
       try {
-        const intType1: IntType;
-        const intType2: IntType;
+        const intType1: IntType = IntType.REF;
+        const intType2: IntType = IntType.REF;
         const value1 = new IntValue(intType1, 100);
         const value2 = new IntValue(intType2, 200);
         const resultType1 = value1.getType();

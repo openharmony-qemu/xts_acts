@@ -29,7 +29,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function ScrollBackToTopTest() {
   describe('ScrollBackToTopTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ScrollBackToTopTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api15.static", "EntryAbility");

@@ -70,9 +70,9 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNormal, Function | Smal
  */
 HWTEST_F(DrawingNativeMatrixTest, testMatrixCreateDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_MatrixDestroy with nullptr parameter
+    OH_Drawing_Matrix *matrix = nullptr;
     OH_Drawing_MatrixDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(matrix, nullptr);
 }
 
 /**

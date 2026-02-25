@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,6 @@
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   Entry,
   Component,
@@ -175,7 +174,7 @@ struct AlignRules {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }
@@ -550,13 +549,6 @@ struct AlignRules {
         } else if (this.targetView == 'TextTimer') {
         TextTimer({ isCountDown: true, count: 30000 })
           .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.commonStyle)
-      } else if (this.targetView == 'Stepper') {
-        StepperView({
-          _alignRules: this._alignRules,
-          subassemblyWidth: this.subassemblyWidth,
-          subassemblyHeight: this.subassemblyHeight,
-          componentKey: this.componentKey
-        });
       } else if (this.targetView == 'ScrollBar') {
         ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
           Text().width(20).height(100).borderRadius(10)

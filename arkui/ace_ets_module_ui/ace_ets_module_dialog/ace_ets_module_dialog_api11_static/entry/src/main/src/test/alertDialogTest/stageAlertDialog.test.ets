@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function stageAlertDialog() {
   describe('stageAlertDialog', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stageAlertDialog beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

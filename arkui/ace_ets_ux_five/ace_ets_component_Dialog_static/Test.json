@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "DialogStaticTest.hap"
+                "ActsAceDialogStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

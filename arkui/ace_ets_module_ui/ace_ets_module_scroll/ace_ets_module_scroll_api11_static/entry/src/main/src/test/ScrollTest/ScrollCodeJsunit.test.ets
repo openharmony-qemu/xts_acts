@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function scrollCodeJsunit() {
   describe('scrollCodeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -56,7 +56,7 @@ export default function scrollCodeJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push ScrollCode page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ScrollCode page error " + JSON.stringify(err));
       }
     });
@@ -113,7 +113,7 @@ it('test_scrollCode_static_002', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_002] change scrollable error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -149,7 +149,7 @@ it('test_scrollCode_static_003', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_003] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -184,7 +184,7 @@ it('test_scrollCode_static_004', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_004] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -219,7 +219,7 @@ it('test_scrollCode_static_005', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("[test_scrollCode_static_005] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_005] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -253,7 +253,7 @@ it('test_scrollCode_static_006', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[test_scrollCode_static_06] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_scrollCode_static_006] sendEventByKey ' +

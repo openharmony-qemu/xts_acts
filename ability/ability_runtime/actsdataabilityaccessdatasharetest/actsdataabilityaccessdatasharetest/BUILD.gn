@@ -20,4 +20,7 @@ ohos_js_app_suite("ActsDataAbilityAccessDataShareTest") {
   hap_name = "ActsDataAbilityAccessDataShareTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [
+    "../datashareserverhap:DataShareServerHap"
+  ]
 }

@@ -42,7 +42,7 @@ export function testArrayOfJs0031() {
     class MyArray extends Array {
         isMyArray() {
         return true;
-    }
+        }
     }
     const arr = MyArray.of(1, 2, 3);
     return [arr instanceof MyArray == true, arr.isMyArray(), arr.length];

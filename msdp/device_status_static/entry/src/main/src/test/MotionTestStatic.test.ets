@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function motionTest() {
           motion.offOperatingHandChanged();
           hilog.info(domain, tag, `${caseName} offOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           if(error.code == 801) {
@@ -71,7 +71,7 @@ export default function motionTest() {
           motion.onOperatingHandChanged((info: motion.OperatingHandStatus) => {});
           hilog.info(domain, tag, `${caseName} onOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           if(error.code == 801) {
@@ -103,7 +103,7 @@ export default function motionTest() {
           motion.offOperatingHandChanged();
           hilog.info(domain, tag, `${caseName} onOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           if(error.code == 801) {
@@ -133,7 +133,7 @@ export default function motionTest() {
           motion.offOperatingHandChanged();
           hilog.info(domain, tag, `${caseName} offOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           if(error.code == 801) {
@@ -168,7 +168,7 @@ export default function motionTest() {
           expect(motion.OperatingHandStatus.RIGHT_HAND_OPERATED == 2).assertTrue();
           hilog.info(domain, tag, `${caseName} getRecentOperatingHandStatus success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           if(error.code == 801) {

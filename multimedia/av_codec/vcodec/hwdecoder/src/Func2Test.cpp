@@ -17,6 +17,7 @@
 #include "native_avcodec_videodecoder.h"
 #include "native_averrors.h"
 #include "videodec_api11_sample.h"
+#include "videodec_ndk_sample.h"
 #include "native_avcodec_base.h"
 #include "avcodec_codec_name.h"
 #include "native_avcapability.h"
@@ -1219,6 +1220,64 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_TRANSFORM_0020, TestSize.Level0)
         ASSERT_EQ(AV_ERR_OK, vDecSample->SetSurface());
         ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
         ASSERT_EQ(vDecSample->DEFAULT_TRANSFORM, vDecSample->GetSurfaceTransform(0));
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_RESOLUTION_0010
+ * @tc.number VIDEO_DECODE_RESOLUTION_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_RESOLUTION_0010, TestSize.Level2)
+{
+    if (g_codecName.find("hisi") != string::npos) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->DEFAULT_WIDTH = 1104;
+        vDecSample->DEFAULT_HEIGHT = 622;
+        vDecSample->DEFAULT_FRAME_RATE = 30;
+        vDecSample->enbleSyncMode = 1;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_LT(0, vDecSample->changeCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_ANOTHER_0010
+ * @tc.number VIDEO_DECODE_ANOTHER_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_ANOTHER_0010, TestSize.Level2)
+{
+    if (cap_hevc != nullptr) {
+        auto vDecSample = make_shared<VDecNdkSample>();
+        vDecSample->INP_DIR = INP_DIR_1080_20;
+        vDecSample->DEFAULT_WIDTH = 1920;
+        vDecSample->DEFAULT_HEIGHT = 1080;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        auto vDecSample2 = make_shared<VDecAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->CreateVideoDecoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Flush());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Stop());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vDecSample2->Reset());
         vDecSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     }

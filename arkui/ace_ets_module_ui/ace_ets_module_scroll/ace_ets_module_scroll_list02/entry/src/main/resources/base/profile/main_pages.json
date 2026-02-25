@@ -55,6 +55,8 @@
         "MainAbility/pages/List/listDid",
         "MainAbility/pages/List/ListFlingCallback",
         "MainAbility/pages/List/ListScrollEdgeCallback",
-        "MainAbility/pages/List/listFrictionRes"
+        "MainAbility/pages/List/listFrictionRes",
+        "MainAbility/pages/ListItem/listItemNullUndefined",
+        "MainAbility/pages/ListItemGroup/listItemGroupNullUndefined"
     ]
 }

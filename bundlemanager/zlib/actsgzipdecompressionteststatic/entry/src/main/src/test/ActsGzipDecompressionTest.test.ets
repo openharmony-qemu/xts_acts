@@ -33,7 +33,7 @@ let allFilePath: string = "";
 
 export default function ActsGzipDecompressionTest() {
   describe('ActsGzipDecompressionTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
@@ -1547,7 +1547,7 @@ export default function ActsGzipDecompressionTest() {
             expect(num).assertEqual(zlib.ReturnStatus.OK);
           })
         } catch (errData) {
-          if (errData instanceof BusinessError<void>
+          if (errData instanceof BusinessError
           )
           {
             hilog.error(domain, tag, `Test_gzclosew_normal_0100 errCode:${errData.code}  message:${errData.message}`);

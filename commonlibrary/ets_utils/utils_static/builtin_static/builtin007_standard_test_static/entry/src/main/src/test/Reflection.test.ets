@@ -25,7 +25,7 @@ export default function reflectionTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -308,7 +308,7 @@ export default function reflectionTest() {
 
    const shortDomain: number = 0xFF01;
    const shortTag: string = "ShortValueTest";
-   const getValidShortType = (): ShortType => {
+   const getValidShortType = () => {
    };
 
     const tag: string = "NullValueTest";
@@ -439,7 +439,7 @@ export default function reflectionTest() {
       console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
     });
 
-    const getValidLongType = (): LongType => {
+    const getValidLongType = () => {
     };
 
     /**
@@ -466,14 +466,14 @@ export default function reflectionTest() {
         console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_ConstructorParams_0006');
       });
 
-    const getValidFloatType = (): FloatType => {
+    const getValidFloatType = () => {
     };
 
 
-    const getValidClassType = (): ClassType => {
+    const getValidClassType = () => {
     };
 
-     const getValidCharType = (): CharType => {
+     const getValidCharType = () => {
      };
 
   const getValidByteType = (): ByteType => {

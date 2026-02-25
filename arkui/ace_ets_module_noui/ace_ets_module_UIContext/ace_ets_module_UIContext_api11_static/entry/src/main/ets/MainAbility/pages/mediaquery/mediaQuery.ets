@@ -35,7 +35,7 @@ struct MediaQueryOff {
   @State color: string = '#000'
   @State text: string = 'Test'
   // listener:mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)')
- listener: mediaquery.MediaQueryListener | undefined = UIContext.getFocusedUIContext()?.getMediaQuery()?.matchMediaSync('(orientation: landscape)');
+ listener: mediaquery.MediaQueryListener | undefined = UIContext.resolveUIContext()?.getMediaQuery()?.matchMediaSync('(orientation: landscape)');
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear MediaQueryOff start`)
@@ -85,7 +85,7 @@ struct MediaQueryOff {
               }
               console.info("onSelect start to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (err:Error) {
+            } catch (err) {
               console.info("onSelect emit action state err: " + JSON.stringify(err.message))
             }
           })
@@ -120,7 +120,7 @@ struct MediaQueryOff {
             }
             console.info("onSelect start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err:Error) {
+          } catch (err) {
             console.info("onSelect emit action state err: " + JSON.stringify(err.message))
           }
 

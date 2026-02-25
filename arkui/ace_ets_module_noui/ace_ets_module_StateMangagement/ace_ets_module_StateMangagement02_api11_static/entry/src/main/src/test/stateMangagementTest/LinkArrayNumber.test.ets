@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function LinkArrayNumber() {
   describe('LinkArrayNumber', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LinkArrayNumber beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

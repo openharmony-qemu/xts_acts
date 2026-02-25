@@ -32,150 +32,160 @@ struct Index {
 
   build() {
     Column() {
-      TextArea({
-        text: '',
-        placeholder: 'textArea boolean'
-       }).width('100%')
-        .id('TextArea1')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea1 ${client.nodeId}`);
-          const customSettings: Record<string, number | string | boolean> = {'bbb': true};
-          console.info(`====> customSettings1: ${JSON.stringify(customSettings)}`);
-          client.setExtraConfig({
-            customSettings: customSettings
+      Row(){
+        TextArea({
+          text: '1'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea1')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea1 ${client.nodeId}`);
+            const customSettings: Record<string, number | string | boolean> = {'bbb': true};
+            console.info(`====> customSettings1: ${JSON.stringify(customSettings)}`);
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'textArea string'
-       }).width('100%')
-        .id('TextArea2')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea2 ${client.nodeId}`);
-          const customSettings: Record<string, number | string | boolean> = {'aaa': 'AAA'};
-          console.info(`====> customSettings2: ${JSON.stringify(customSettings)}`);
-          client.setExtraConfig({
-            customSettings: customSettings
+        TextArea({
+          text: '2'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea2')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea2 ${client.nodeId}`);
+            const customSettings: Record<string, number | string | boolean> = {'aaa': 'AAA'};
+            console.info(`====> customSettings2: ${JSON.stringify(customSettings)}`);
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
+          })  
+      }
+      Row(){
+        TextArea({
+          text: '3'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea3')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea3 ${client.nodeId}`);
+            const customSettings: Record<string, number | string | boolean> = {'name': 123};
+            console.info(`====> customSettings3: ${JSON.stringify(customSettings)}`);
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'textArea number'
-       }).width('100%')
-        .id('TextArea3')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea3 ${client.nodeId}`);
-          const customSettings: Record<string, number | string | boolean> = {'name': 123};
-          console.info(`====> customSettings3: ${JSON.stringify(customSettings)}`);
-          client.setExtraConfig({
-            customSettings: customSettings
+        TextArea({
+          text: '4'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea4')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea4 ${client.nodeId}`);
+            const customSettings: Record<string, number | string | boolean> = {'bbb': true, 'aaa': 'AAA', 'name': 123};
+            console.info(`====> customSettings4: ${JSON.stringify(customSettings)}`);
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
+          })  
+      }
+      Row(){
+        TextArea({
+          text: '5'
+         }).width('50%')
+          .height('15%')
+          .id('TextArea5')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea5 ${client.nodeId}`);
+            console.info(`====> customSettings5: extraConfig undefined`);
+            client.setExtraConfig(
+              undefined
+            )
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'textArea MultipleType'
-       }).width('100%')
-        .id('TextArea4')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea4 ${client.nodeId}`);
-          const customSettings: Record<string, number | string | boolean> = {'bbb': true, 'aaa': 'AAA', 'name': 123};
-          console.info(`====> customSettings4: ${JSON.stringify(customSettings)}`);
-          client.setExtraConfig({
-            customSettings: customSettings
+        TextArea({
+          text: '6'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea6')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea6 ${client.nodeId}`);
+            console.info(`====> customSettings6: customSettings undefined`);
+            client.setExtraConfig({
+              customSettings: undefined
+            })
+          })  
+      }
+      Row(){
+        TextArea({
+          text: '7'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea7')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea7 ${client.nodeId}`);
+            let largeData = generatelargeData(32 * 1024 - 4)
+            console.info(`====> customSettings7: largeData.length: ${largeData.length}`);
+            const customSettings: Record<string, number | string | boolean> = {'text': largeData};
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'extraConfig undefined'
-       }).width('100%')
-        .id('TextArea5')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea5 ${client.nodeId}`);
-          console.info(`====> customSettings5: extraConfig undefined`);
-          client.setExtraConfig(
-            undefined
-          )
-        })
-      TextArea({
-        text: '',
-        placeholder: 'customSettings undefined'
-       }).width('100%')
-        .id('TextArea6')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea6 ${client.nodeId}`);
-          console.info(`====> customSettings6: customSettings undefined`);
-          client.setExtraConfig({
-            customSettings: undefined
+        TextArea({
+          text: '8'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea8')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea8 ${client.nodeId}`);
+            let largeData = generatelargeData(33 * 1024 - 4)
+            console.info(`====> customSettings8: largeData.length: ${largeData.length}`);
+            const customSettings: Record<string, number | string | boolean> = {'text': largeData};
+            client.setExtraConfig({
+              customSettings: customSettings
+            })
+          })  
+      }
+      Row(){
+        TextArea({
+          text: '9'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea9')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea9 ${client.nodeId}`);
+            const customSettings: Record<string, string> = {};
+            let num = 0;
+            for (let i = 0; i < 5645; i++) {
+              const key = 'a' + i;
+              const value: string = 'a';
+              num += (key.length + value.length);
+              customSettings[key] = value;
+            }
+            console.info(`====> Vincent TextArea9, num: ${num}`);
+            client.setExtraConfig({
+              customSettings
+            })
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'record 32k'
-       }).width('100%')
-        .id('TextArea7')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea7 ${client.nodeId}`);
-          let largeData = generatelargeData(32 * 1024 - 4)
-          console.info(`====> customSettings7: largeData.length: ${largeData.length}`);
-          const customSettings: Record<string, number | string | boolean> = {'text': largeData};
-          client.setExtraConfig({
-            customSettings: customSettings
+        TextArea({
+          text: '10'
+        }).width('50%')
+          .height('15%')
+          .id('TextArea10')
+          .onWillAttachIME((client: IMEClient) => {
+            console.info(`====> Vincent TextArea10 ${client.nodeId}`);
+            const customSettings: Record<string, string> = {};
+            let num = 0;
+            for (let i = 0; i < 5650; i++) {
+              const key = 'a' + i;
+              const value: string = 'a';
+              num += (key.length + value.length);
+              customSettings[key] = value;
+            }
+            console.info(`====> Vincent TextArea10, num: ${num}`);
+            client.setExtraConfig({
+              customSettings
+            })
           })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'record 33k'
-       }).width('100%')
-        .id('TextArea8')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea8 ${client.nodeId}`);
-          let largeData = generatelargeData(33 * 1024 - 4)
-          console.info(`====> customSettings8: largeData.length: ${largeData.length}`);
-          const customSettings: Record<string, number | string | boolean> = {'text': largeData};
-          client.setExtraConfig({
-            customSettings: customSettings
-          })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'records 32k'
-       }).width('100%')
-        .id('TextArea9')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea9 ${client.nodeId}`);
-          const customSettings: Record<string, string> = {};
-          let num = 0;
-          for (let i = 0; i < 5645; i++) {
-            const key = 'a' + i;
-            const value: string = 'a';
-            num += (key.length + value.length);
-            customSettings[key] = value;
-          }
-          console.info(`====> Vincent TextArea9, num: ${num}`);
-          client.setExtraConfig({
-            customSettings
-          })
-        })
-      TextArea({
-        text: '',
-        placeholder: 'records 33k'
-       }).width('100%')
-        .id('TextArea10')
-        .onWillAttachIME((client: IMEClient) => {
-          console.info(`====> Vincent TextArea10 ${client.nodeId}`);
-          const customSettings: Record<string, string> = {};
-          let num = 0;
-          for (let i = 0; i < 5650; i++) {
-            const key = 'a' + i;
-            const value: string = 'a';
-            num += (key.length + value.length);
-            customSettings[key] = value;
-          }
-          console.info(`====> Vincent TextArea10, num: ${num}`);
-          client.setExtraConfig({
-            customSettings
-          })
-        })
-    }
+      }
+    }.id('Column1')
   }
 }

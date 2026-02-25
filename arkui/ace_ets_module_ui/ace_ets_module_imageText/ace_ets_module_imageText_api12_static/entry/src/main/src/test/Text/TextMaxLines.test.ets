@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextMaxLines() {
   describe('TextMaxLines', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextMaxLines beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

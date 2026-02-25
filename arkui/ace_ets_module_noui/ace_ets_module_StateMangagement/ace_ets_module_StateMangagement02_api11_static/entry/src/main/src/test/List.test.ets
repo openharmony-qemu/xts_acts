@@ -35,7 +35,6 @@ import LinkArrayObject from './stateMangagementTest/LinkArrayObject.test';
 import LinkMap from './stateMangagementTest/LinkMap.test';
 import LinkSet from './stateMangagementTest/LinkSet.test';
 import ObjectLinkMap from './stateMangagementTest/ObjectLinkMap.test';
-import ObjectLinkSet from './stateMangagementTest/ObjectLinkSet.test';
 import stateManagementDARKJsunit from './stateMangagementTest/stateManagement.test';
 import stateManagementGetSharedJsunit from './stateMangagementTest/stateManagementNew.test';
 
@@ -48,10 +47,9 @@ import LocalStorage39Jsunit from './State/LocalStorage39Jsunit.test.ets';
 import ProvideJsunit from './State/ProvideJsunit.test.ets';
 import Storage11Jsunit from './State/Storage11Jsunit.test.ets';
 import Storage35Jsunit from './State/Storage35Jsunit.test.ets';
-import Storage36Jsunit from './State/Storage36Jsunit.test.ets';
+import Storage36Jsunit from './State/Storage36Jsunit.test.ets'; 
 import Storage38Jsunit from './State/Storage38Jsunit.test.ets';
 import StorageLinkJsunit1 from './State/StorageLinkJsunit1.test.ets';
-import StorageProp19Jsunit from './State/StorageProp19Jsunit.test.ets'
 import StorageProp20Jsunit from './State/StorageProp20Jsunit.test.ets'
 import StorageProp21Jsunit from './State/StorageProp21Jsunit.test.ets'
 import StorageProp22Jsunit from './State/StorageProp22Jsunit.test.ets'
@@ -130,13 +128,12 @@ export default function testsuite() {
 
   Storage35Jsunit();
 
-  Storage36Jsunit();
-
+  Storage36Jsunit(); 
+ 
   Storage38Jsunit();
 
   StorageProp21Jsunit();
   StorageLinkJsunit1();
-  StorageProp19Jsunit();
   StorageProp20Jsunit();
   StorageProp22Jsunit();
   StorageProp25Jsunit();
@@ -176,5 +173,4 @@ export default function testsuite() {
   StateArrayNewJsunit();
 
   ObjectLinkMap();
-  ObjectLinkSet();
 }

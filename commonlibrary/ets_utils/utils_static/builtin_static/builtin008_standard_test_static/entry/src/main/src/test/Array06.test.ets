@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function Array_06Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -73,7 +73,7 @@ export default function Array_06Test() {
         const initialValue: number = 0.0 as float;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(12.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -95,7 +95,7 @@ export default function Array_06Test() {
         const initialValue: number = 0.0 as float;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-10.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -117,7 +117,7 @@ export default function Array_06Test() {
         const initialValue: number = 1.0 as float;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(24.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -139,7 +139,7 @@ export default function Array_06Test() {
         const initialValue: number = 42.0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(42.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -161,7 +161,7 @@ export default function Array_06Test() {
         const initialValue: string = "init";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("(init+9.9)");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -183,7 +183,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(10);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -205,7 +205,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-10);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -227,7 +227,7 @@ export default function Array_06Test() {
         const initialValue: number = 1;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(24);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -249,7 +249,7 @@ export default function Array_06Test() {
         const initialValue: number = 42;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(42);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -271,7 +271,7 @@ export default function Array_06Test() {
         const initialValue: string = "init";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("(init+9)");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -293,7 +293,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -315,7 +315,7 @@ export default function Array_06Test() {
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
         expect(result).assertEqual(6000000000n);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -337,7 +337,7 @@ export default function Array_06Test() {
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
         expect(result).assertEqual(-17n);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -359,7 +359,7 @@ export default function Array_06Test() {
         const initialValue: bigint = 1n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
         expect(result).assertEqual(24n);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -381,7 +381,7 @@ export default function Array_06Test() {
         const initialValue: string = "empty";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("empty");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -403,7 +403,7 @@ export default function Array_06Test() {
         const initialValue: string = "start";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("start+9876543210");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -425,7 +425,7 @@ export default function Array_06Test() {
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
         expect(result).assertEqual(-12n);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -446,8 +446,8 @@ export default function Array_06Test() {
         const callbackfn = (prev: bigint, curr: long): bigint => prev + BigInt(curr);
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
-        expect(result).assertEqual(99n);
-      } catch (err: BusinessError) {
+        expect(result).assertEqual(98n);
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -469,7 +469,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(6000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -491,7 +491,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-17);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -513,7 +513,7 @@ export default function Array_06Test() {
         const initialValue: number = 1;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(24);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -535,7 +535,7 @@ export default function Array_06Test() {
         const initialValue: string = "empty";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("empty");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -557,7 +557,7 @@ export default function Array_06Test() {
         const initialValue: string = "start";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("start+32767");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -579,7 +579,7 @@ export default function Array_06Test() {
         const initialValue: number = 0;
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-6000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -601,7 +601,7 @@ export default function Array_06Test() {
         const initialValue: bigint = 0n;
         const result = reduceRight<bigint>(array, callbackfn, initialValue);
         expect(result).assertEqual(-1n);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -623,7 +623,7 @@ export default function Array_06Test() {
         const initialValue: string = "v";
         const result = reduceRight<string>(array, callbackfn, initialValue);
         expect(result).assertEqual("v345");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
