@@ -662,7 +662,7 @@ export default function PasteboardReturnvalue() {
         expect(text.length == 1025).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Returnvalue_Abnormal_002 end');
       done();
@@ -712,7 +712,7 @@ export default function PasteboardReturnvalue() {
         expect(text.length == 1025).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Returnvalue_Abnormal_004 end');
       done();
@@ -760,7 +760,7 @@ export default function PasteboardReturnvalue() {
         expect(pastedata != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Returnvalue_Abnormal_006 end');
       done();

@@ -341,7 +341,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0120 end');
       done();
@@ -362,7 +362,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0130 end');
       done();
@@ -383,7 +383,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0140 end');
       done();
@@ -427,7 +427,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0160 end');
       done();
@@ -448,7 +448,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0170 end');
       done();
@@ -498,7 +498,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0190 end');
       done();
@@ -519,7 +519,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0200 end');
       done();
@@ -540,7 +540,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0210 end');
       done();
@@ -795,7 +795,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0330 end');
       done();
@@ -816,7 +816,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0340 end');
       done();
@@ -837,7 +837,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0350 end');
       done();
@@ -858,7 +858,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0360 end');
       done();
@@ -879,7 +879,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pasteData != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0370 end');
       done();
@@ -902,7 +902,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(datatest != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0380 end');
       done();
@@ -924,7 +924,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0390 end');
       done();
@@ -946,7 +946,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0400 end');
       done();
@@ -968,7 +968,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0410 end');
       done();
@@ -990,7 +990,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0420 end');
       done();
@@ -1012,7 +1012,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(types.length != 0).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0430 end');
       done();
@@ -1034,7 +1034,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(types.length != 0).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0440 end');
       done();
@@ -1056,7 +1056,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(types.length == 0).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0450 end');
       done();
@@ -1078,7 +1078,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pastedata != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0460 end');
       done();
@@ -1100,7 +1100,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pastedata != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0470 end');
       done();
@@ -1122,7 +1122,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(pastedata != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0480 end');
       done();
@@ -1472,7 +1472,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0630 end');
       done();
@@ -1496,7 +1496,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0640 end');
       done();
@@ -1567,7 +1567,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0670 end');
       done();
@@ -1590,7 +1590,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0680 end');
       done();
@@ -1613,7 +1613,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0690 end');
       done();
@@ -1636,7 +1636,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0700 end');
       done();
@@ -1659,7 +1659,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0710 end');
       done();
@@ -1733,7 +1733,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(newprop != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0740 end');
       done();
@@ -1756,7 +1756,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(newprop != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0750 end');
       done();
@@ -1778,7 +1778,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0760 end');
       done();
@@ -1800,7 +1800,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0770 end');
       done();
@@ -1869,7 +1869,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0800 end');
       done();
@@ -1891,7 +1891,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(record != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0810 end');
       done();
@@ -1914,7 +1914,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(mimetypedata).assertEqual("<html>hello</html>");
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('12900001');
+        expect(err.code).assertEqual(String(12900001));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0820 end');
       done();
@@ -1936,7 +1936,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0830 end');
       done();
@@ -1958,7 +1958,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0840 end');
       done();
@@ -1980,7 +1980,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0850 end');
       done();
@@ -2002,7 +2002,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0860 end');
       done();
@@ -2024,7 +2024,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0870 end');
       done();
@@ -2046,7 +2046,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0880 end');
       done();
@@ -2069,7 +2069,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0890 end');
       done();
@@ -2092,7 +2092,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0900 end');
       done();
@@ -2115,7 +2115,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0910 end');
       done();
@@ -2138,7 +2138,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0920 end');
       done();
@@ -2161,7 +2161,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('12900001');
+        expect(err.code).assertEqual(String(12900001));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0930 end');
       done();
@@ -2253,7 +2253,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(isReplace).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_0970 end');
       done();
@@ -2441,7 +2441,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(hasType).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1050 end');
       done();
@@ -2464,7 +2464,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(isReplace).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1060 end');
       done();
@@ -2487,7 +2487,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(isReplace).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1070 end');
       done();
@@ -2509,7 +2509,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(isReplace).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1080 end');
       done();
@@ -2531,7 +2531,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(isReplace).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1090 end');
       done();
@@ -2552,7 +2552,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(systemPasteboard != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1100 end');
       done();
@@ -2573,7 +2573,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(systemPasteboard != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1110 end');
       done();
@@ -2594,7 +2594,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(systemPasteboard != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1120 end');
       done();
@@ -2615,7 +2615,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(systemPasteboard != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1130 end');
       done();
@@ -2636,7 +2636,7 @@ export default function pasteBoardInvolingAbnormal() {
         expect(systemPasteboard != null).assertTrue();
       }catch(err){
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1140 end');
       done();
@@ -2680,7 +2680,7 @@ export default function pasteBoardInvolingAbnormal() {
         let hasType = systemPasteboard.hasDataType(null);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1160 end');
       done();
@@ -2701,7 +2701,7 @@ export default function pasteBoardInvolingAbnormal() {
         let hasType = systemPasteboard.hasDataType(undefined);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1170 end');
       done();
@@ -2721,7 +2721,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.setPasteData(null);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1180 end');
       done();
@@ -2741,7 +2741,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.setPasteData(undefined);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1190 end');
       done();
@@ -2767,7 +2767,7 @@ export default function pasteBoardInvolingAbnormal() {
         })
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1200 end');
       done();
@@ -2793,7 +2793,7 @@ export default function pasteBoardInvolingAbnormal() {
         })
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1210 end');
       done();
@@ -2813,7 +2813,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.setData(null);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1220 end');
       done();
@@ -2833,7 +2833,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.setData(undefined);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1230 end');
       done();
@@ -2859,7 +2859,7 @@ export default function pasteBoardInvolingAbnormal() {
         })
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1240 end');
       done();
@@ -2885,7 +2885,7 @@ export default function pasteBoardInvolingAbnormal() {
         })
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1250 end');
       done();
@@ -2905,7 +2905,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.getDataWithProgress(null);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1260 end');
       done();
@@ -2925,7 +2925,7 @@ export default function pasteBoardInvolingAbnormal() {
         await systemPasteboard.getDataWithProgress(undefined);
       } catch (err) {
         console.log(TAG+'err.code: ' + err.code+'error.message: '+err.message);
-        expect(err.code).assertEqual('401');
+        expect(err.code).assertEqual(String(401));
       }
       console.info('SUB_Pasteboard_Local_SDK_Abnormal_1270 end');
       done();

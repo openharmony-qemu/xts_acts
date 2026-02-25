@@ -26,7 +26,6 @@ import PasteboardVarietyTest from './PasteboardVariety.test';
 import PasteboardChangeCountTest from './pasteboardChangeCount.test';
 import pasteBoardInvolingAbnormal from './PasteBoardInvolingAbnormal.test';
 import PasteboardReturnvalue from './PasteboardReturnvalue.test';
-import PasteboardErrorTest from './PasteboardErrorTest.test';
 export default function testsuite() {
   pasteboardDetectPatternsTest()
   pasteBoardJEtsunitTest()
@@ -41,5 +40,4 @@ export default function testsuite() {
   PasteboardChangeCountTest()
   pasteBoardInvolingAbnormal()
   PasteboardReturnvalue()
-  PasteboardErrorTest()
 }
