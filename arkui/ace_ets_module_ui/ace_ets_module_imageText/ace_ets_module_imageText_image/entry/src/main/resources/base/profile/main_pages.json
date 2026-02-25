@@ -78,6 +78,7 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImagePrivacySensitiveUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull",
         "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColorMetrics",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageAutoResizeUndefinedAndNull"
     ]
 }
