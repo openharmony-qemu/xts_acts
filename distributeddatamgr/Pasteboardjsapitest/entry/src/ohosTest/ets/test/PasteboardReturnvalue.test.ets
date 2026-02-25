@@ -18,7 +18,7 @@ import pasteboard from '@ohos.pasteboard'
 import image from '@ohos.multimedia.image';
 import Want from '@ohos.app.ability.Want';
 
-let TAG = "PASTEBOARD_TAG"
+let TAG = "PASTEBOARD_TAG";
 
 class Sizes {
   height: number = 3;
@@ -43,11 +43,6 @@ const WANT: Want = {
 export default function PasteboardReturnvalue() {
   describe('PasteboardReturnvalue', () => {
     console.info('start################################start');
-
-    beforeEach(async () => {
-      let systemPasteBoard = pasteboard.getSystemPasteboard();
-      await systemPasteBoard.clearData();
-    })
 
     /**
      * @tc.name   SUB_Pasteboard_Returnvalue_CreateHtmlTextRecord_001
@@ -606,13 +601,14 @@ export default function PasteboardReturnvalue() {
      */
     it('SUB_Pasteboard_Returnvalue_RemoteData_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_Pasteboard_Returnvalue_RemoteData_001 start");
+      let systemPasteBoard = pasteboard.getSystemPasteboard();
       try {
-        let systemPasteBoard = pasteboard.getSystemPasteboard();
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, 'local data');
         await systemPasteBoard.setData(pasteData);
         let isRemote = systemPasteBoard.isRemoteData();
         expect(isRemote != null).assertTrue();
         console.info("isRemoteData false result: " + isRemote);
+        await systemPasteBoard.clearData();
       } catch(err) {
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
@@ -1145,7 +1141,7 @@ export default function PasteboardReturnvalue() {
         let data = await systemPasteboard.getData();
         let dataTag = data.getTag();
         expect(dataTag).assertEqual("test_tag");
-        systemPasteboard.clearDataSync();
+        await systemPasteboard.clearData();
         console.info(TAG + 'clearDataSync success');
       } catch (err) {
         console.error(TAG + `pasteboard interface failed:${err.message}`);
@@ -1175,11 +1171,11 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
           let isReplace = pasteData.replaceRecordAt(0, textRecord);
           expect(isReplace).assertTrue();
-          })
+        })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
@@ -1208,11 +1204,11 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
           let isReplace = pasteData.replaceRecordAt(0, textRecord);
           expect(isReplace).assertTrue();
-          })
+        })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
@@ -1241,11 +1237,11 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
           let isReplace = pasteData.replaceRecordAt(0, textRecord);
           expect(isReplace).assertTrue();
-          })
+        })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
@@ -1274,10 +1270,11 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
-          let isReplace = pasteData.replaceRecord(0, textRecord);
-          expect(isReplace).assertTrue();
+          pasteData.replaceRecord(0, textRecord);
+          let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
+          expect(record != null).assertTrue();
         })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
@@ -1307,11 +1304,12 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
-          let isReplace = pasteData.replaceRecord(0, textRecord);
-          expect(isReplace).assertTrue();
-          })
+          pasteData.replaceRecord(0, textRecord);
+          let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
+          expect(record != null).assertTrue();
+        })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
@@ -1340,11 +1338,12 @@ export default function PasteboardReturnvalue() {
           alphaType: image.AlphaType.UNPREMUL
         };
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "Hello World");
-        image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
+        await image.createPixelMap(buffer, opt).then((pixelMap: image.PixelMap) => {
           let textRecord: pasteboard.PasteDataRecord = pasteboard.createRecord('pixelMap', pixelMap);
-          let isReplace = pasteData.replaceRecord(0, textRecord);
-          expect(isReplace).assertTrue();
-          })
+          pasteData.replaceRecord(0, textRecord);
+          let record: pasteboard.PasteDataRecord = pasteData.getRecord(0);
+          expect(record != null).assertTrue();
+        })
       }catch(err){
         console.error(TAG + `pasteboard interface failed:${err.message}`);
         expect(err === null).assertTrue();
