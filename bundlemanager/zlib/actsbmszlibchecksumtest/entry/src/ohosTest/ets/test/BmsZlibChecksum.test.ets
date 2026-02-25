@@ -102,63 +102,63 @@ export default function bmsZlibChecksumTest() {
     });
 
     /**
-     * @tc.name   Sub_Bms_Zlib_Checksum_Check_0400
-     * @tc.number Sub_Bms_Zlib_Checksum_Check_0400
+     * @tc.name   Sub_Bms_Zlib_Checksum_Checkx_0400
+     * @tc.number Sub_Bms_Zlib_Checksum_Checkx_0400
      * @tc.desc   test createZipSync return value check.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("Sub_Bms_Zlib_Checksum_Checkx_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0400 start`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0400 start`);
         let zip: zlib.Zip = zlib.createZipSync();
         expect(zip !== null || zip !== undefined).assertTrue()
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0400 success`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0400 success`);
       } catch (e) {
-        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0400 error, error code is: ${e.code}, error message is: ${e.message}`);
+        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0400 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.name   Sub_Bms_Zlib_Checksum_Check_0500
-     * @tc.number Sub_Bms_Zlib_Checksum_Check_0500
+     * @tc.name   Sub_Bms_Zlib_Checksum_Checkx_0500
+     * @tc.number Sub_Bms_Zlib_Checksum_Checkx_0500
      * @tc.desc   test createGZip return value check.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("Sub_Bms_Zlib_Checksum_Checkx_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0500 start`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0500 start`);
         let gzip: zlib.GZip = await zlib.createGZip();
         expect(gzip !== null || gzip !== undefined).assertTrue()
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0500 success`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0500 success`);
       } catch (e) {
-        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0500 error, error code is: ${e.code}, error message is: ${e.message}`);
+        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0500 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
       }
       done();
     });
 
     /**
-     * @tc.name   Sub_Bms_Zlib_Checksum_Check_0600
-     * @tc.number Sub_Bms_Zlib_Checksum_Check_0600
+     * @tc.name   Sub_Bms_Zlib_Checksum_Checkx_0600
+     * @tc.number Sub_Bms_Zlib_Checksum_Checkx_0600
      * @tc.desc   test createGZipSync return value check.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("Sub_Bms_Zlib_Checksum_Checkx_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0600 start`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0600 start`);
         let gzip: zlib.GZip = zlib.createGZipSync();
         expect(gzip !== null || gzip !== undefined).assertTrue()
-        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0600 success`);
+        hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0600 success`);
       } catch (e) {
-        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_0600 error, error code is: ${e.code}, error message is: ${e.message}`);
+        hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Checkx_0600 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
       }
       done();
