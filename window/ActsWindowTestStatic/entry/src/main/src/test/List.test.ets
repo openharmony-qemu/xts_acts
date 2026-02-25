@@ -24,6 +24,7 @@ import WindowPCTest from "./WindowPC.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
 import WindowPCAndEventTest from "./WindowPCAndEventTest.test";
+import WindowPCStaticTest from "./WindowPCStatic.test";
 export default function testsuite() {
   WindowLifeCycleTest();
   WindowImmersiveTest();
@@ -37,4 +38,5 @@ export default function testsuite() {
   WindowKeyBoardTest();
   WindowFocusTest();
   WindowPCAndEventTest();
+  WindowPCStaticTest();
 }
