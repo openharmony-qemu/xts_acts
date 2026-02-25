@@ -55,13 +55,13 @@ napi_value MyObject::New(napi_env env, napi_callback_info info)
         napi_value args[1];
         napi_value jsThis;
         napi_get_cb_info(env, info, &argc, args, &jsThis, nullptr);
-        double value = 0.0;
+        double valueTest = 0.0;
         napi_valuetype valuetype;
         napi_typeof(env, args[0], &valuetype);
         if (valuetype != napi_undefined) {
-            napi_get_value_double(env, args[0], &value);
+            napi_get_value_double(env, args[0], &valueTest);
         }
-        MyObject* obj = new MyObject(value);
+        MyObject* obj = new MyObject(valueTest);
         obj->env_ = env;
         napi_status status = napi_wrap(env,
                                        jsThis,
@@ -196,9 +196,10 @@ static napi_value CreateAndCallInOneFunc(napi_env env, napi_callback_info info)
 {
     napi_value createdFunc;
 
-    napi_create_function(env, "dynamicFunc", NAPI_AUTO_LENGTH, 
+    napi_create_function(env, "dynamicFunc", NAPI_AUTO_LENGTH,
         [](napi_env env, napi_callback_info info) -> napi_value {
             size_t argc = 1;
+            size_t num = 2;
             napi_value arg = nullptr;
             napi_get_cb_info(env, info, &argc, &arg, nullptr, nullptr);
             
@@ -206,7 +207,7 @@ static napi_value CreateAndCallInOneFunc(napi_env env, napi_callback_info info)
             napi_get_value_double(env, arg, &val);
             
             napi_value result;
-            napi_create_double(env, val * 2, &result);
+            napi_create_double(env, val * num, &result);
             return result;
         }, nullptr, &createdFunc);
 
@@ -247,7 +248,7 @@ napi_value CallChain(napi_env env, napi_callback_info info)
 
     size_t forNum = 3;
     size_t argcNum = 1;
-    napi_value currentArg = initialArg;    
+    napi_value currentArg = initialArg;
     for (int i = 0; i < forNum; i++) {
         auto status = napi_call_function(env, global, arktsFunc, argcNum, &currentArg, &result);
         if (status != napi_ok) {
@@ -279,8 +280,8 @@ static napi_value RunScriptPath(napi_env env, napi_callback_info info)
     }
 
     char resultStr[10];
-    size_t result_len;
-    status = napi_get_value_string_utf8(env, result, resultStr, sizeof(resultStr), &result_len);
+    size_t resultLen;
+    status = napi_get_value_string_utf8(env, result, resultStr, sizeof(resultStr), &resultLen);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to napi_get_value_string_utf8");
         return nullptr;
@@ -313,11 +314,7 @@ static napi_value GetGlobalObject(napi_env env)
 static napi_value CreateSafeString(napi_env env, const std::string& str)
 {
     napi_value strVal = nullptr;
-    napi_status status = napi_create_string_utf8(env,
-                                                 str.c_str(),
-                                                 str.length(),
-                                                 &strVal
-    );
+    napi_status status = napi_create_string_utf8(env, str.c_str(), str.length(), &strVal);
     if (status != napi_ok || strVal == nullptr) {
         napi_throw_error(env, nullptr, "Failed to create a string");
         return nullptr;
@@ -325,29 +322,10 @@ static napi_value CreateSafeString(napi_env env, const std::string& str)
     return strVal;
 }
 
-static napi_value CreateTestObject(napi_env env)
+static napi_value CreateFunctionTest(napi_env env)
 {
-    napi_value obj = nullptr;
-    napi_status status = napi_create_object(env, &obj);
-    if (status != napi_ok || obj == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create test object");
-        return nullptr;
-    }
-
-    napi_value valueProp = nullptr;
-    status = napi_create_int32(env, 88, &valueProp);
-    if (status != napi_ok || valueProp == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create initial value");
-        return nullptr;
-    }
-    status = napi_set_named_property(env, obj, "_value", valueProp);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to set private variable");
-        return nullptr;
-    }
-
     napi_value getterFunc = nullptr;
-    status = napi_create_function(
+    napi_status status = napi_create_function(
         env,
         "valueGetter",
         NAPI_AUTO_LENGTH,
@@ -359,8 +337,7 @@ static napi_value CreateTestObject(napi_env env)
                                                   &argc,
                                                   nullptr,
                                                   &thisObj,
-                                                  nullptr
-            );
+                                                  nullptr);
             NAPI_ASSERT(env, status == napi_ok, "napi_get_cb_info status is ok");
             NAPI_ASSERT(env, thisObj != nullptr, "Failed to get this with Getter");
 
@@ -385,38 +362,37 @@ static napi_value CreateTestObject(napi_env env)
             return valueVal;
         },
         nullptr,
-        &getterFunc
-    );
+        &getterFunc);
 
-    NAPI_ASSERT(env, status == napi_ok, "Failed to create a Getter function1");
+    return getterFunc;
+}
+static napi_value CreateTestObject(napi_env env)
+{
+    napi_value obj = nullptr;
+    NAPI_CALL(env, napi_create_object(env, &obj));
+
+    napi_value valueProp = nullptr;
+    size_t testNum = 88;
+    NAPI_CALL(env, napi_create_int32(env, testNum, &valueProp));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "_value", valueProp));
+
+    napi_value getterFunc = CreateFunctionTest(env);
     NAPI_ASSERT(env, getterFunc != nullptr, "Failed to create a Getter function2");
 
     napi_value globalObj = GetGlobalObject(env);
     NAPI_ASSERT(env, globalObj != nullptr, "Failed to create a Getter function2");
 
     napi_value objectCtor = nullptr;
-    status = napi_get_named_property(env, globalObj, "Object", &objectCtor);
+    napi_status status = napi_get_named_property(env, globalObj, "Object", &objectCtor);
     NAPI_ASSERT(env, status == napi_ok, "napi_get_named_property status is ok");
     NAPI_ASSERT(env, objectCtor != nullptr, "Failed to obtain the Object constructor");
 
     napi_value definePropFunc = nullptr;
-    status = napi_get_named_property(env, objectCtor, "defineProperty", &definePropFunc);
-    if (status != napi_ok || definePropFunc == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to get defineProperty");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_named_property(env, objectCtor, "defineProperty", &definePropFunc));
     
     napi_value propDescObj = nullptr;
-    status = napi_create_object(env, &propDescObj);
-    if (status != napi_ok || propDescObj == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create property descriptor");
-        return nullptr;
-    }
-    status = napi_set_named_property(env, propDescObj, "get", getterFunc);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to bind the getter to the descriptor");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_create_object(env, &propDescObj));
+    NAPI_CALL(env, napi_set_named_property(env, propDescObj, "get", getterFunc));
     
     napi_value propName = CreateSafeString(env, "value");
     if (propName == nullptr) {
@@ -427,13 +403,7 @@ static napi_value CreateTestObject(napi_env env)
     
     napi_value defineResult = nullptr;
     size_t argcNum = 3;
-    status = napi_call_function(env,
-                                objectCtor,
-                                definePropFunc,
-                                argcNum,
-                                args,
-                                &defineResult
-    );
+    status = napi_call_function(env, objectCtor, definePropFunc, argcNum, args, &defineResult);
     NAPI_ASSERT(env, status == napi_ok, "Failed to call defineProperty");
 
     if (g_testObjRef != nullptr) {
@@ -470,11 +440,7 @@ static napi_value CallGetter(napi_env env, napi_callback_info info)
     napi_status status = napi_ok;
     
     napi_valuetype objType = napi_undefined;
-    status = napi_typeof(env, testObj, &objType);
-    if (status != napi_ok || objType != napi_object) {
-        napi_throw_error(env, nullptr, "The test object is not of Object type");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_typeof(env, testObj, &objType));
     size_t retryNum = 2;
     for (int retry = 0; retry < retryNum; retry++) {
         status = napi_get_named_property(env, testObj, "value", &getterResult);
@@ -491,30 +457,18 @@ static napi_value CallGetter(napi_env env, napi_callback_info info)
             }
         }
     }
-
-    if (status != napi_ok || getterResult == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to call Getter (to retrieve the value property)");
-        return nullptr;
-    }
+    NAPI_ASSERT(env, getterResult != nullptr, "success Getter");
     
     int32_t resultVal = 0;
-    status = napi_get_value_int32(env, getterResult, &resultVal);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to parse the return value of the Getter");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_value_int32(env, getterResult, &resultVal));
     const int32_t expectedVal = 88;
     bool isValueCorrect = (resultVal == expectedVal);
     
     napi_value modifiedValProp = nullptr;
-    status = napi_get_named_property(env, testObj, "_value", &modifiedValProp);
-    if (status != napi_ok || modifiedValProp == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to read the modified _value");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_named_property(env, testObj, "_value", &modifiedValProp));
+
     int32_t modifiedVal = 0;
-    status = napi_get_value_int32(env, modifiedValProp, &modifiedVal);
-    NAPI_ASSERT(env, status == napi_ok, "parse the modified _value sucess");
+    NAPI_CALL(env, napi_get_value_int32(env, modifiedValProp, &modifiedVal));
 
     size_t comNum = 89;
     NAPI_ASSERT(env, modifiedVal == comNum, "compare the modified _value sucess");
@@ -552,29 +506,10 @@ static napi_value CreateSafeString1(napi_env env, const std::string& str)
     return strVal;
 }
 
-static napi_value CreateTestObject1(napi_env env)
+static napi_value CreateTargetFunction(napi_env env)
 {
-    napi_value obj = nullptr;
-    napi_status status = napi_create_object(env, &obj);
-    if (status != napi_ok || obj == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create test object");
-        return nullptr;
-    }
-    
-    napi_value initVal = nullptr;
-    status = napi_create_int32(env, 0, &initVal);
-    if (status != napi_ok || initVal == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create initial value");
-        return nullptr;
-    }
-    status = napi_set_named_property(env, obj, "_value", initVal);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to set the initial value");
-        return nullptr;
-    }
-
     napi_value setterFunc = nullptr;
-    status = napi_create_function(
+    napi_status status = napi_create_function(
         env,
         "valueSetter",
         NAPI_AUTO_LENGTH,
@@ -591,14 +526,12 @@ static napi_value CreateTestObject1(napi_env env)
             int32_t newVal = 0;
             status = napi_get_value_int32(env, args[0], &newVal);
             if (status != napi_ok) {
-                napi_throw_error(env, nullptr, "Failed to parse the new value of Setter");
                 return nullptr;
             }
 
             napi_value oldValProp = nullptr;
             status = napi_get_named_property(env, thisObj, "_value", &oldValProp);
             if (status != napi_ok || oldValProp == nullptr) {
-                napi_throw_error(env, nullptr, "Failed to read the old value");
                 return nullptr;
             }
             int32_t oldVal = 0;
@@ -608,7 +541,6 @@ static napi_value CreateTestObject1(napi_env env)
             napi_value finalValProp = nullptr;
             status = napi_create_int32(env, finalVal, &finalValProp);
             if (status != napi_ok || finalValProp == nullptr) {
-                napi_throw_error(env, nullptr, "Failed to create the final value");
                 return nullptr;
             }
             status = napi_set_named_property(env, thisObj, "_value", finalValProp);
@@ -622,8 +554,22 @@ static napi_value CreateTestObject1(napi_env env)
             return undefinedVal;
         },
         nullptr, &setterFunc);
-    if (status != napi_ok || setterFunc == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create a setter function");
+
+    return setterFunc;
+}
+
+static napi_value CreateTestObject1(napi_env env)
+{
+    napi_value obj = nullptr;
+    NAPI_CALL(env, napi_create_object(env, &obj));
+    
+    napi_value initVal = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, 0, &initVal));
+
+    NAPI_CALL(env, napi_set_named_property(env, obj, "_value", initVal));
+
+    napi_value setterFunc = CreateTargetFunction(env);
+    if (setterFunc == nullptr) {
         return nullptr;
     }
     
@@ -633,48 +579,25 @@ static napi_value CreateTestObject1(napi_env env)
     }
     
     napi_value objectCtor = nullptr;
-    status = napi_get_named_property(env, globalObj, "Object", &objectCtor);
-    if (status != napi_ok || objectCtor == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to obtain the Object constructor");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_named_property(env, globalObj, "Object", &objectCtor));
 
     napi_value definePropFunc = nullptr;
-    status = napi_get_named_property(env, objectCtor, "defineProperty", &definePropFunc);
-    if (status != napi_ok || definePropFunc == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to get defineProperty");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_named_property(env, objectCtor, "defineProperty", &definePropFunc));
     
     napi_value propDescObj = nullptr;
-    status = napi_create_object(env, &propDescObj);
-    if (status != napi_ok || propDescObj == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create property descriptor");
-        return nullptr;
-    }
-    status = napi_set_named_property(env, propDescObj, "set", setterFunc);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to bind Setter to descriptor");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_create_object(env, &propDescObj));
+    NAPI_CALL(env, napi_set_named_property(env, propDescObj, "set", setterFunc));
     
     napi_value propName = CreateSafeString1(env, "value");
-    if (propName == nullptr){
+    if (propName == nullptr) {
         return nullptr;
     }
 
     napi_value args[3] = {obj, propName, propDescObj};
     size_t argcNum = 3;
     napi_value defineResult = nullptr;
-    status = napi_call_function(env,
-                                objectCtor,
-                                definePropFunc,
-                                argcNum,
-                                args,
-                                &defineResult
-    );
+    status = napi_call_function(env, objectCtor, definePropFunc, argcNum, args, &defineResult);
     if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to call defineProperty");
         return nullptr;
     }
     
@@ -683,7 +606,6 @@ static napi_value CreateTestObject1(napi_env env)
     }
     status = napi_create_reference(env, obj, 1, &g_testObjRef1);
     if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to create object reference");
         return nullptr;
     }
 
@@ -701,7 +623,6 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
     } else {
         napi_status status = napi_get_reference_value(env, g_testObjRef1, &testObj);
         if (status != napi_ok || testObj == nullptr) {
-            napi_throw_error(env, nullptr, "Failed to obtain object from reference");
             testObj = CreateTestObject1(env);
             if (testObj == nullptr) {
                 return nullptr;
@@ -711,18 +632,12 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
 
     napi_valuetype objType = napi_undefined;
     napi_status status = napi_typeof(env, testObj, &objType);
-    if (status != napi_ok || objType != napi_object) {
-        napi_throw_error(env, nullptr, "The test object is not of Object type");
-        return nullptr;
-    }
+    NAPI_ASSERT(env, status != napi_ok, "napi_typeof fail.");
 
     napi_value setVal = nullptr;
     size_t testNum = 10;
     status = napi_create_int32(env, testNum, &setVal);
-    if (status != napi_ok || setVal == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to create a setter method for assignment");
-        return nullptr;
-    }
+    NAPI_ASSERT(env, status != napi_ok, "napi_create_int32 fail.");
 
     napi_status setStatus = napi_ok;
     size_t num = 2;
@@ -742,23 +657,11 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
         }
     }
 
-    if (setStatus != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to call Setter (set value property)");
-        return nullptr;
-    }
-
     napi_value modifiedValProp = nullptr;
-    status = napi_get_named_property(env, testObj, "_value", &modifiedValProp);
-    if (status != napi_ok || modifiedValProp == nullptr) {
-        napi_throw_error(env, nullptr, "Failed to read the modified _value");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_named_property(env, testObj, "_value", &modifiedValProp));
+
     int32_t modifiedVal = 0;
-    status = napi_get_value_int32(env, modifiedValProp, &modifiedVal);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to parse the modified _value");
-        return nullptr;
-    }
+    NAPI_CALL(env, napi_get_value_int32(env, modifiedValProp, &modifiedVal));
 
     const int32_t expectedVal = 20;
     bool isValueCorrect = (modifiedVal == expectedVal);
