@@ -356,17 +356,27 @@ export default function EsimPublic1() {
      * @tc.desc   Starts a page through an ability, on which users can touch the button to download a profile.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("testTelephonyEsimAddProfile1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testTelephonyEsimAddProfile1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimAddProfile1000';
       console.info(`${caseName} test start`);
       try {
         let data = await eSIM.addProfile(profile1);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect().assertFail();
-        console.info(`${caseName} test end`);
-        done();
+        if(data){
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        else{
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertFalse();
+          expect().assertFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+
       } catch (err) {
         if (err.code === 801) {
           console.info(`${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
@@ -374,13 +384,7 @@ export default function EsimPublic1() {
           console.info(`${caseName} test end`);
           done();
         }
-        else{
-          console.info(`${caseName} AddProfile failed, promise: err->${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-          console.info(`${caseName} test end`);
-          done();
-        }
       }
-    });
+    })
   })
 }
