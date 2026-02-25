@@ -71,3 +71,5 @@ export const TextTest: (a: string) => void;
 export const TextInputTest: (a: string) => void;
 
 export const TextAreaTest: (a: string) => void;
+
+export const CreateNativeSwiperNode: (a: string) => void;
