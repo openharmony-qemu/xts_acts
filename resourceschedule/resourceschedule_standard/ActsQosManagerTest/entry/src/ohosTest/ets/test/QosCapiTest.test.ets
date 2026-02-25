@@ -231,6 +231,19 @@ export default function QosCapiTest() {
       const result = libQosManagerOps.GewuApiTest(3);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   GewuErrorCodeTest
+     * @tc.number SUB_RESOURCESCHEDULE_QOS_0500
+     * @tc.desc   Verify the Gewu error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('GewuErrorCodeTest', Level.LEVEL1, () => {
+      const result = libQosManagerOps.GewuApiTest(4);
+      expect(result).assertEqual(0);
+    })
   })
 }
 

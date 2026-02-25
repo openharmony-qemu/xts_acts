@@ -92,6 +92,9 @@ static napi_value GewuApiTest(napi_env env, napi_callback_info info)
             case CASE_NUM_3:
                 result = Acts::QosManager::GewuDestroySessionTest();
                 break;
+            case CASE_NUM_4:
+                result = Acts::QosManager::GewuErrorCodeTest();
+                break;
             default:
                 result = RESULT_ERROR;
                 break;

@@ -30,6 +30,7 @@ int GewuCreateSessionTest();
 int GewuSubmitRequestTest();
 int GewuAbortRequestTest();
 int GewuDestroySessionTest();
+int GewuErrorCodeTest();
 
 } // namespace QosManager
 } // namespace Acts
