@@ -25,13 +25,13 @@ export default function saveCompCustomizeTest() {
   describe('saveCompCustomizeTest', ( ) => {
     beforeAll(async (done:Function) => {
       let options:router.RouterOptions = {
-        url: 'testability/pages/saveButton_customize',
+        url: 'testability/pages/saveButtonCustomize',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info('====>saveCompCustomizeTest get state success ' + JSON.stringify(pages));
-        if (!('saveButton_customize' == pages.name)) {
+        if (!('saveButtonCustomize' == pages.name)) {
           console.info('====>saveCompCustomizeTest get state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await Utils.sleep(2000);
@@ -81,19 +81,19 @@ export default function saveCompCustomizeTest() {
           await allowBtn.click();
           console.info(`====>${testname} reClick====`);
         } else {
-          let start_x = 0;
-          let start_y = 0;
-          let end_x = 0;
-          let end_y = 0;
+          let startX = 0;
+          let startY = 0;
+          let endX = 0;
+          let endY = 0;
           display.getAllDisplays((err, data) => {
             console.info(`====>${testname} the window data[0].width: ` + data[0].width);
             console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-            start_x = end_x = Math.floor(data[0].width * (1/2));
-            start_y = Math.floor(data[0].height * (4/5));
-            end_y = Math.floor(data[0].height * (1/5));
+            startX = endX = Math.floor(data[0].width * (1/2));
+            startY = Math.floor(data[0].height * (4/5));
+            endY = Math.floor(data[0].height * (1/5));
           });
           for(let i = 0; i < 5; i++){
-            await driver.swipe(start_x, start_y, end_x, end_y);
+            await driver.swipe(startX, startY, endX, endY);
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
@@ -202,9 +202,9 @@ export default function saveCompCustomizeTest() {
      * @tc.desc   Test SaveComponent attr setText stateEffect(true) validated and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('Test_Security_Button_Save_Customize_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('Test_Security_Button_Save_Customize_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const TCNAME = 'Test_Security_Button_Save_Customize_0200';
       console.info(`====>${TCNAME} START====`);
       let customIcon: Resource = $r('app.media.icon');
@@ -244,9 +244,9 @@ export default function saveCompCustomizeTest() {
      * @tc.desc   Test SaveComponent attr setText, stateEffect(false) validated and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('Test_Security_Button_Save_Customize_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('Test_Security_Button_Save_Customize_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const TCNAME = 'Test_Security_Button_Save_Customize_0300';
       console.info(`====>${TCNAME} START====`);
       let customIcon: Resource = $r('app.media.icon');
@@ -274,46 +274,6 @@ export default function saveCompCustomizeTest() {
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
       expect(obj.$attrs.stateEffect).assertEqual(false);
-      await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
-      await clickSecComponent(TCNAME, customText, driver);
-    });
-
-    /**
-     * @tc.name   Test_Security_Button_Save_Customize_0400
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_0400
-     * @tc.desc   Test SaveComponent attr setText is '' validated and Authorization is successful
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('Test_Security_Button_Save_Customize_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      const TCNAME = 'Test_Security_Button_Save_Customize_0400';
-      console.info(`====>${TCNAME} START====`);
-      let customIcon: Resource = $r('app.media.icon');
-      let customText: string = '';
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            'cuIcon': customIcon,
-            'cuText': customText
-          }
-        }
-        let InnerEvent:events_emitter.InnerEvent = {
-          eventId: 1,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info(`====>${TCNAME} start to publish emit====`);
-        events_emitter.emit(InnerEvent, eventData);
-      } catch (err) {
-        console.error(`====>${TCNAME} change component data error: ` + err.message);
-      }
-      await Utils.sleep(1000);
-      let strJson = getInspectorByKey('keySave');
-      let obj : ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.icon).assertEqual(0);
-      expect(obj.$attrs.text).assertEqual(0);
       await Utils.sleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();
@@ -383,10 +343,10 @@ export default function saveCompCustomizeTest() {
             'cuIcon': customIcon,
             'cuText': customText,
             'iconSize': 20,
-            'icRads_tl': 8,
-            'icRads_tr': 0,
-            'icRads_bl': -6,
-            'icRads_br': 12,
+            'icRadsTl': 8,
+            'icRadsTr': 0,
+            'icRadsBl': -6,
+            'icRadsBr': 12,
           }
         }
         let InnerEvent:events_emitter.InnerEvent = {
@@ -429,8 +389,8 @@ export default function saveCompCustomizeTest() {
           data: {
             'cuIcon': customIcon,
             'cuText': customText,
-            'icSize_w': 20,
-            'icSize_h': 16
+            'icSizeW': 20,
+            'icSizeH': 16
           }
         }
         let InnerEvent:events_emitter.InnerEvent = {

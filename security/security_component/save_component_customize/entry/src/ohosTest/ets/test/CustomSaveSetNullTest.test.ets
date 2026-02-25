@@ -85,19 +85,19 @@ export default function customSaveSetNullTest() {
           await allowBtn.click();
           console.info(`====>${testname} reClick====`);
         } else {
-          let start_x = 0;
-          let start_y = 0;
-          let end_x = 0;
-          let end_y = 0;
+          let startX = 0;
+          let startY = 0;
+          let endX = 0;
+          let endY = 0;
           display.getAllDisplays((err, data) => {
             console.info(`====>${testname} the window data[0].width: ` + data[0].width);
             console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-            start_x = end_x = Math.floor(data[0].width * (1/2));
-            start_y = Math.floor(data[0].height * (4/5));
-            end_y = Math.floor(data[0].height * (1/5));
+            startX = endX = Math.floor(data[0].width * (1/2));
+            startY = Math.floor(data[0].height * (4/5));
+            endY = Math.floor(data[0].height * (1/5));
           });
           for(let i = 0; i < 5; i++){
-            await driver.swipe(start_x, start_y, end_x, end_y);
+            await driver.swipe(startX, startY, endX, endY);
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));

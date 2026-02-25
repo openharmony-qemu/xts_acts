@@ -17,7 +17,8 @@ import events_emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
-struct customSaveSetnull {
+struct customSaveSetNull {
+  @State bgType: ButtonType = ButtonType.Normal
   @State iconSize: number | SizeOptions = 16
   @State customIcon: Resource = $r('app.media.icon')
   @State customText: string = '自定义保存'
@@ -29,7 +30,7 @@ struct customSaveSetnull {
       Column(){
         Row() {
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Normal })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -56,7 +57,7 @@ struct customSaveSetnull {
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Normal })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -83,7 +84,7 @@ struct customSaveSetnull {
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Normal })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -110,7 +111,7 @@ struct customSaveSetnull {
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Normal })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: this.bgType })
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {

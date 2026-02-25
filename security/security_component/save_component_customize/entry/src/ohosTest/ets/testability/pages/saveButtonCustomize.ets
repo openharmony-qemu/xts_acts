@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
-struct savebutton_customize {
+struct saveButtonCustomize {
   @State bgType: ButtonType = ButtonType.Normal
   @State iconSize: number | SizeOptions | undefined = undefined
   @State direct: SecurityComponentLayoutDirection = 0
@@ -50,16 +50,16 @@ struct savebutton_customize {
   @State customText: string | undefined = undefined
   @State iconRadius: number | BorderRadiuses | undefined = undefined
   @State stateEft: boolean | undefined = undefined
-  @State iconSize_w: number | undefined = undefined
-  @State iconSize_h: number | undefined = undefined
-  @State iconRadius_tl: number | undefined = undefined
-  @State iconRadius_tr: number | undefined = undefined
-  @State iconRadius_bl: number | undefined = undefined
-  @State iconRadius_br: number | undefined = undefined
+  @State iconSizeW: number | undefined = undefined
+  @State iconSizeH: number | undefined = undefined
+  @State iconRadiusTl: number | undefined = undefined
+  @State iconRadiusTr: number | undefined = undefined
+  @State iconRadiusBl: number | undefined = undefined
+  @State iconRadiusBr: number | undefined = undefined
 
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
-      console.debug('====>page_saveButton page state change called:' + JSON.stringify(eventData));
+      console.debug('====>saveButtonCustomize page state change called:' + JSON.stringify(eventData));
       if (eventData.data.iconSize != null) {
         this.iconSize = eventData.data.iconSize;
       }
@@ -75,11 +75,17 @@ struct savebutton_customize {
       if (eventData.data.stateEffect != null) {
         this.stateEft = eventData.data.stateEffect;
       }
-      if (eventData.data.icSize_w != null || eventData.data.icSize_h != null) {
-        this.iconSize = {width: eventData.data.icSize_w, height: eventData.data.icSize_h};
+      if (eventData.data.icSizeW != null || eventData.data.icSizeH != null) {
+        this.iconSize = {width: eventData.data.icSizeW, height: eventData.data.icSizeH};
       }
-      if (eventData.data.icRads_tl != null || eventData.data.icRads_tr != null || eventData.data.icRads_bl != null || eventData.data.icRads_br != null) {
-        this.iconRadius = {topLeft: eventData.data.icRads_tl, topRight: eventData.data.icRads_tr, bottomLeft: eventData.data.icRads_bl, bottomRight: eventData.data.icRads_br};
+      if (eventData.data.icRadsTl != null || eventData.data.icRadsTr != null || 
+        eventData.data.icRadsBl != null || eventData.data.icRadsBr != null) {
+        this.iconRadius = {
+          topLeft: eventData.data.icRadsTl, 
+          topRight: eventData.data.icRadsTr, 
+          bottomLeft: eventData.data.icRadsBl, 
+          bottomRight: eventData.data.icRadsBr
+        };
       }
     }
   }
