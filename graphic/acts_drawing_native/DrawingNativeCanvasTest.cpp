@@ -90,6 +90,7 @@ HWTEST_F(DrawingNativeCanvasTest, testCanvasDestroyNull, Function | SmallTest | 
     OH_Drawing_Canvas *canvas = nullptr;
     OH_Drawing_CanvasDestroy(nullptr);
     EXPECT_EQ(canvas, nullptr);
+}
 
 /**
  * @tc.name   testCanvasBindNormal
