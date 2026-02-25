@@ -1684,45 +1684,7 @@ export default function relationalStoreTest() {
         };
         let res = await relationalStore.getRdbStore(context, config1)
         console.info(tag + "getRdbStore success");
-        relationalStore.deleteRdbStore(context, "", (e) => {
-          if (e) {
-            console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
-            expect().assertFail();
-          }else{
-            console.info(tag + 'Delete RdbStore successfully.');
-            let count = 0;
-            await relationalStore.deleteRdbStore(context, "RdbTest111.db");
-            count += 1;
-            expect(count).assertEqual(1);
-            console.info(tag + "deleteRdbStore success");
-            done();
-          }
-        });
-      } catch (err) {
-        console.log(tag + "DeleteRdbStoreErrTest001 err" + err.code + err.message);
-        expect().assertFail();
-      }
-      console.info(tag + "************* DeleteRdbStoreErrTest001 end *************");
-    })
-
-    /**
-     * @tc.name   DeleteRdbStoreErrTest001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoreErrTest_0100
-     * @tc.desc   DeleteRdbStoreErrTest001 test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('DeleteRdbStoreErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info(tag + "************* DeleteRdbStoreErrTest001 start *************");
-      try {
-        const config1: relationalStore.StoreConfig = {
-          name: "RdbTest111.db",
-          securityLevel: relationalStore.SecurityLevel.S2,
-        };
-        let res = await relationalStore.getRdbStore(context, config1)
-        console.info(tag + "getRdbStore success");
-        relationalStore.deleteRdbStore(context, "", (e) => {
+        relationalStore.deleteRdbStore(context, "", async (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1745,7 +1707,7 @@ export default function relationalStoreTest() {
 
     /**
      * @tc.name   DeleteRdbStoreErrTest002
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreErrTest_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoreErrTest_0200
      * @tc.desc   GetRdbStoreErrTest001 test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1800,7 +1762,7 @@ export default function relationalStoreTest() {
 
     /**
      * @tc.name   DeleteRdbStoreErrTest003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRdbStoreErrTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoreErrTest_0300
      * @tc.desc   DeleteRdbStoreErrTest003 test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

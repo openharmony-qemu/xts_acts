@@ -423,21 +423,21 @@ export default function dataSharePredicatesTest() {
     });
 
     /**
-     * @tc.name   testBeginWrap0001
+     * @tc.name   testBeginWrap0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0190
-     * @tc.desc   testBeginWrap0001
+     * @tc.desc   testBeginWrap0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBeginWrap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBeginWrap0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.beginWrap();
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testBeginWrap0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testBeginWrap0002 error " + e.code + "  " + e.message);
       }
     });
 
@@ -480,21 +480,21 @@ export default function dataSharePredicatesTest() {
     });
 
     /**
-     * @tc.name   testAnd0001
+     * @tc.name   testAnd0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0220
-     * @tc.desc   testAnd0001
+     * @tc.desc   testAnd0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testAnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.and();
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testAnd0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testAnd0002 error " + e.code + "  " + e.message);
       }
     });
 
@@ -537,154 +537,154 @@ export default function dataSharePredicatesTest() {
     });
 
     /**
-     * @tc.name   testBetween0001
+     * @tc.name   testBetween0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0250
-     * @tc.desc   testBetween0001
+     * @tc.desc   testBetween0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testBetween0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.between("", 2 as long,4 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testBetween0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testBetween0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testNotBetween0001
+     * @tc.name   testNotBetween0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0260
-     * @tc.desc   testNotBetween0001
+     * @tc.desc   testNotBetween0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testNotBetween0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notBetween("", 2 as long,4 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testNotBetween0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testNotBetween0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testGreaterThan0001
+     * @tc.name   testGreaterThan0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0270
-     * @tc.desc   testGreaterThan0001
+     * @tc.desc   testGreaterThan0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGreaterThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.greaterThan("", 18 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testGreaterThan0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testGreaterThan0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testLessThan0001
+     * @tc.name   testLessThan0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0280
-     * @tc.desc   testLessThan0001
+     * @tc.desc   testLessThan0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLessThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.lessThan("", 18 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testLessThan0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testLessThan0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testGreaterThanOrEqualTo0001
+     * @tc.name   testGreaterThanOrEqualTo0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0290
-     * @tc.desc   testGreaterThanOrEqualTo0001
+     * @tc.desc   testGreaterThanOrEqualTo0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testGreaterThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.greaterThanOrEqualTo("", 18 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testGreaterThanOrEqualTo0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testGreaterThanOrEqualTo0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testLessThanOrEqualTo0001
+     * @tc.name   testLessThanOrEqualTo0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0300
-     * @tc.desc   testLessThanOrEqualTo0001
+     * @tc.desc   testLessThanOrEqualTo0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testLessThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.lessThanOrEqualTo("", 18 as long);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testLessThanOrEqualTo0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testLessThanOrEqualTo0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testOrderByAsc0001
+     * @tc.name   testOrderByAsc0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0310
-     * @tc.desc   testOrderByAsc0001
+     * @tc.desc   testOrderByAsc0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOrderByAsc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testOrderByAsc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.orderByAsc("");
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testOrderByAsc0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testOrderByAsc0002 error " + e.code + "  " + e.message);
       }
     });
 
     /**
-     * @tc.name   testOrderByDesc0001
+     * @tc.name   testOrderByDesc0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0320
-     * @tc.desc   testOrderByDesc0001
+     * @tc.desc   testOrderByDesc0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOrderByDesc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testOrderByDesc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.orderByDesc("");
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testOrderByDesc0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testOrderByDesc0002 error " + e.code + "  " + e.message);
       }
     });
 
@@ -708,21 +708,21 @@ export default function dataSharePredicatesTest() {
     });
 
     /**
-     * @tc.name   testNotInValues0001
+     * @tc.name   testNotInValues0002
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0340
-     * @tc.desc   testNotInValues0001
+     * @tc.desc   testNotInValues0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNotInValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testNotInValues0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try{
         let predicates = new data_dataSharePredicates.DataSharePredicates();
         predicates.notInValues("",[]);
         expect(predicates).assertInstanceOf("Object");
       }catch (e) {
         expect().assertFail()
-        console.error(tag + "testNotInValues0001 error " + e.code + "  " + e.message);
+        console.error(tag + "testNotInValues0002 error " + e.code + "  " + e.message);
       }
     });
 
