@@ -1673,7 +1673,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testSetSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetSystemBarPropertiesPromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1710,7 +1710,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetWindowSystemBarPropertiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetWindowSystemBarPropertiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarPropertiesCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1718,7 +1718,11 @@ export default function windowImmersiveTest() {
           statusBarColor: '#ff00ff',
           navigationBarColor: '#00ff00',
           statusBarContentColor: '#ffffff',
-          navigationBarContentColor: '#00ffff'
+          navigationBarContentColor: '#00ffff',
+          isStatusBarLightIcon:false,
+          isNavigationBarLightIcon:true,
+          enableStatusBarAnimation:true,
+          enableNavigationBarAnimation:true
         };
         windowClass.setWindowSystemBarProperties(SystemBarProperties, (err: BusinessError) => {
           const errCode: number = err.code;
@@ -4553,6 +4557,95 @@ export default function windowImmersiveTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testGetAvoidAreaTypeSystemGesture_callback
+     * @tc.number SUB_BASIC_WMS_GetAvoidArea_JS_API_0100
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetAvoidAreaTypeSystemGesture_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testGetAvoidAreaTypeSystemGesture_callback';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        windowClass.getAvoidArea(window.AvoidAreaType.TYPE_SYSTEM_GESTURE, (err: BusinessError, data) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }else{
+          console.info(`${caseName} Succeeded in obtaining the area. Data: ${JSON.stringify(data)}`);
+          let avoidArea = data;
+          expect(avoidArea.visible).assertTrue();
+          expect(avoidArea.topRect !== null).assertTrue();
+          expect(avoidArea.rightRect !== null).assertTrue();
+          expect(avoidArea.bottomRect !== null).assertTrue();
+          expect(avoidArea.leftRect !== null).assertTrue();
+          if(isFreeWindowMode == true){
+            expect(avoidArea.topRect.width).assertEqual(0);
+            expect(avoidArea.topRect.height).assertEqual(0);
+            expect(avoidArea.rightRect.width).assertEqual(0);
+            expect(avoidArea.rightRect.height).assertEqual(0);
+            expect(avoidArea.bottomRect.width).assertEqual(0);
+            expect(avoidArea.bottomRect.height).assertEqual(0);
+            expect(avoidArea.leftRect.width).assertEqual(0);
+            expect(avoidArea.leftRect.height).assertEqual(0);
+          }
+
+
+          let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM_GESTURE);
+            console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+            expect(avoidArea.topRect.width).assertEqual(avoidArea1.topRect.width);
+            expect(avoidArea.topRect.height).assertEqual(avoidArea1.topRect.height);
+            expect(avoidArea.rightRect.width).assertEqual(avoidArea1.rightRect.width);
+            expect(avoidArea.rightRect.height).assertEqual(avoidArea1.rightRect.height);
+            expect(avoidArea.bottomRect.width).assertEqual(avoidArea1.bottomRect.width);
+            expect(avoidArea.bottomRect.height).assertEqual(avoidArea1.bottomRect.height);
+            expect(avoidArea.leftRect.width).assertEqual(avoidArea1.leftRect.width);
+            expect(avoidArea.leftRect.height).assertEqual(avoidArea1.leftRect.height);
+          done();
+        }
+      });
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testGetWindowAvoidAreaTypeNavigationIndicator_callback
+     * @tc.number SUB_BASIC_WMS_GetAvoidArea_JS_API_0200
+     * @tc.desc   Obtain the area that the window content avoids
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowAvoidAreaTypeNavigationIndicator_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testGetWindowAvoidAreaTypeNavigationIndicator_callback';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        windowClass.getAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR, (err: BusinessError, data) => {
+        const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1003);
+            done();
+          }else{
+            let avoidArea = data;
+            console.info(`${caseName} Succeeded in obtaining the area. Data: ${JSON.stringify(data)}`);
+            console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
 
 
   })
