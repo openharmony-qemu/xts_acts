@@ -1248,7 +1248,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_2900
          * @tc.number SUB_Communication_NFC_nfctage_js_2900
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1271,7 +1271,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_2901
          * @tc.number SUB_Communication_NFC_nfctage_js_2901
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1294,7 +1294,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_2902
          * @tc.number SUB_Communication_NFC_nfctage_js_2902
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1317,7 +1317,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3000
          * @tc.number SUB_Communication_NFC_nfctage_js_3000
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1340,7 +1340,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3100
          * @tc.number SUB_Communication_NFC_nfctage_js_3100
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1363,7 +1363,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3200
          * @tc.number SUB_Communication_NFC_nfctage_js_3200
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1386,7 +1386,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3300
          * @tc.number SUB_Communication_NFC_nfctage_js_3300
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1409,7 +1409,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3400
          * @tc.number SUB_Communication_NFC_nfctage_js_3400
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1432,7 +1432,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3500
          * @tc.number SUB_Communication_NFC_nfctage_js_3500
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1455,7 +1455,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3600
          * @tc.number SUB_Communication_NFC_nfctage_js_3600
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1478,7 +1478,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3700
          * @tc.number SUB_Communication_NFC_nfctage_js_3700
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1501,7 +1501,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3800
          * @tc.number SUB_Communication_NFC_nfctage_js_3800
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1524,7 +1524,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_3900
          * @tc.number SUB_Communication_NFC_nfctage_js_3900
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1547,7 +1547,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_4000
          * @tc.number SUB_Communication_NFC_nfctage_js_4000
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1570,7 +1570,7 @@ export default function nfcTagABFVTest() {
         /**
          * @tc.name   SUB_Communication_NFC_nfctage_js_4100
          * @tc.number SUB_Communication_NFC_nfctage_js_4100
-         * @tc.desc   This set SendDataTimeout api.
+         * @tc.desc   Test setSendDataTimeout api.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
