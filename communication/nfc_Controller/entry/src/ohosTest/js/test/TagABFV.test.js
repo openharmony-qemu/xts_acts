@@ -820,7 +820,7 @@ export default function nfcTagABFVTest() {
                 getTagtest = tag.getTagInfo(Want);
                 console.info('[NFC_test] tag13 Nfcget tagABFV gettaginfo is: ' + getTagtest)
                 expect(getTagtest instanceof Object).assertTrue();
-            } catch (error){
+            } catch (error) {
                 if (error.code === 401) {
                     console.info('[NFC_test] tag13 Nfcget taginfo error' + error);
                     expect(401).assertEqual(error.code);
@@ -974,10 +974,10 @@ export default function nfcTagABFVTest() {
                 expect(MifareClassicTag != null).assertTrue();
                 expect(MifareClassicTag instanceof Object).assertTrue();
             } catch (error) {
-                if (error.code == 801) {
+                if (error.code === 801) {
                     console.info('nfc mifareClassic20 error' + error + "/" + error.code);
                     expect(801).assertEqual(error.code)
-                } else if (error.code == 3100201) {
+                } else if (error.code === 3100201) {
                     console.info('nfc mifareClassic20 error' + error + "/" + error.code);
                     expect(3100201).assertEqual(error.code)
                 } else {
@@ -1054,10 +1054,10 @@ export default function nfcTagABFVTest() {
                 tag.unregisterForegroundDispatch(elementName);
                 console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
             } catch (error) {
-                if (error.code == 201) {
+                if (error.code === 201) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
                     expect(201).assertEqual(error.code)
-                } else if (error.code == 801) {
+                } else if (error.code === 801) {
                     console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
                     expect(801).assertEqual(error.code)
                 } else {
@@ -1135,7 +1135,7 @@ export default function nfcTagABFVTest() {
             try {
                 tag.off('readerMode', elementName, readerModeCb);
             } catch (err) {
-                if (err.code == 3100203) {
+                if (err.code === 3100203) {
                     expect(3100203).assertEqual(err.code);
                     console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 ERROR :  " + err + " - " + err.code);
                     done();
