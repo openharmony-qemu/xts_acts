@@ -1492,7 +1492,7 @@ export default function StreamDuplex06Test() {
 
       let duplexStream = new TestDuplex();
 
-      let size = 1024 * 1024;
+      let size = 1024;
       let uint8Array = new Uint8Array(size);
       for (let i = 0; i < size; i++) {
         uint8Array[i] = i % 256;

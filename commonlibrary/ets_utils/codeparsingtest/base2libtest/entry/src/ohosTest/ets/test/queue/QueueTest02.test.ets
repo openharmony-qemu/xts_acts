@@ -947,7 +947,7 @@ export default function Queue02Test() {
       const TAG = 'testQueue02Chapter0029';
       console.log(TAG + ' start');
       let queue = new Queue<number>();
-      let count = 1000;
+      let count = 100;
       for (let i = 0; i < count; i++) {
         queue.add(i);
       }

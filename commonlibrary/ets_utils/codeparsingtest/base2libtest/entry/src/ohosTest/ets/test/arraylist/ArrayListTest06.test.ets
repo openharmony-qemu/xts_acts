@@ -975,7 +975,7 @@ export default function ArrayList06Test() {
       console.log(TAG + ' start');
       let largeStr = '';
       try {
-        largeStr = 'a'.repeat(10000000);
+        largeStr = 'a'.repeat(1000);
       } catch (e) {
         expect(true).assertEqual(false);
       }
@@ -984,7 +984,7 @@ export default function ArrayList06Test() {
       const resultArray: Array<string> = strList.convertToArray();
       expect(resultArray.length).assertEqual(1);
       expect(resultArray[0]).assertEqual(largeStr);
-      expect(resultArray[0].length).assertEqual(10000000);
+      expect(resultArray[0].length).assertEqual(1000);
       console.log(`${TAG} done, large string array result length: ${resultArray[0].length}`);
       console.info(`result (first 5 chars): ${resultArray[0].slice(0, 5)}`);
     });

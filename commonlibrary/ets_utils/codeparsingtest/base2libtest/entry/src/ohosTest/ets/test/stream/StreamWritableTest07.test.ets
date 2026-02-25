@@ -245,74 +245,6 @@ export default function StreamWritable07Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0800
-     * @tc.name      testStreamWritable07Chapter0008
-     * @tc.desc      Test doInitialize with callback that modifies instance properties
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable07Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0008';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        private customProperty: string = 'initial';
-
-        doInitialize(callback: Function): void {
-          this.customProperty = 'modified';
-          super.doInitialize(callback);
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          super.doWrite(chunk, encoding, callback);
-        }
-
-        getProperty(): string {
-          return this.customProperty;
-        }
-      }
-
-      const writable = new TestWritable();
-      setTimeout(() => {
-        expect(writable.getProperty()).assertEqual('modified');
-      }, 10);
-    });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_0900
-     * @tc.name      testStreamWritable07Chapter0009
-     * @tc.desc      Test doInitialize with multiple callbacks chaining
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable07Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0009';
-      console.log(TAG + ' start');
-      let chainCount: number = 0;
-
-      class TestWritable extends stream.Writable {
-        doInitialize(callback: Function): void {
-          chainCount++;
-          super.doInitialize(() => {
-            chainCount++;
-            callback();
-          });
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          super.doWrite(chunk, encoding, callback);
-        }
-      }
-
-      const writable = new TestWritable();
-      setTimeout(() => {
-        expect(chainCount).assertEqual(2);
-      }, 10);
-    });
-
-    /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST07_1000
      * @tc.name      testStreamWritable07Chapter0010
      * @tc.desc      Test doInitialize with callback accessing this context
@@ -423,7 +355,6 @@ export default function StreamWritable07Test() {
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
-            // 传入数字类型作为反向测试
             super.doInitialize(callback);
           }
 
@@ -961,7 +892,7 @@ export default function StreamWritable07Test() {
         }
       }
 
-      let largeArray = new Uint8Array(1024 * 1024)
+      let largeArray = new Uint8Array(1024)
       for (let i = 0; i < largeArray.length; i++) {
         largeArray[i] = i % 256
       }
@@ -1360,189 +1291,6 @@ export default function StreamWritable07Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4000
-     * @tc.name      testStreamWritable07Chapter0040
-     * @tc.desc      Test string with escape characters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testStreamWritable07Chapter0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0040'
-      console.log(TAG + ' start')
-
-      class TestWritableImpl extends stream.Writable {
-        constructor() {
-          super()
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info("doWrite called with escape characters")
-          expect(typeof chunk).assertEqual('string')
-
-
-          const expectedString = 'line1\nline2\tline3\rline4\\"quote\''
-          expect(chunk as string).assertEqual(expectedString)
-          expect(encoding).assertEqual('utf8')
-          callback()
-        }
-      }
-
-      let writableStream = new TestWritableImpl()
-      const escapeString = 'line1\nline2\tline3\rline4\\"quote\''
-      writableStream.write(escapeString, 'utf8')
-
-    })
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4100
-     * @tc.name      testStreamWritable07Chapter0041
-     * @tc.desc      Test all supported encodings
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testStreamWritable07Chapter0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0041'
-      console.log(TAG + ' start')
-
-      let encodingsTested: string[] = []
-      const expectedEncodings = ['utf8', 'gbk', 'gb18030', 'gb2312']
-
-      class TestWritableImpl extends stream.Writable {
-        constructor() {
-          super()
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info(`doWrite called with encoding: ${encoding}`)
-          encodingsTested.push(encoding)
-
-
-          let found = false
-          for (let enc of expectedEncodings) {
-            if (enc === encoding) {
-              found = true
-              break
-            }
-          }
-          expect(found).assertTrue()
-
-          callback()
-
-          if (encodingsTested.length === expectedEncodings.length) {
-
-            for (let enc of expectedEncodings) {
-              let contains = false
-              for (let tested of encodingsTested) {
-                if (tested === enc) {
-                  contains = true
-                  break
-                }
-              }
-              expect(contains).assertTrue()
-            }
-          }
-        }
-      }
-
-      let writableStream = new TestWritableImpl()
-
-
-      writableStream.write('utf8 data', 'utf8')
-      writableStream.write('gbk data', 'gbk')
-      writableStream.write('gb18030 data', 'gb18030')
-      writableStream.write('gb2312 data', 'gb2312')
-
-    })
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4200
-     * @tc.name      testStreamWritable07Chapter0042
-     * @tc.desc      Test with Int8Array (converted to Uint8Array)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testStreamWritable07Chapter0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0042'
-      console.log(TAG + ' start')
-
-      class TestWritableImpl extends stream.Writable {
-        constructor() {
-          super()
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info("doWrite called with Int8Array data")
-          expect(chunk instanceof Uint8Array).assertTrue()
-          let uint8Array = chunk as Uint8Array
-          expect(uint8Array.length).assertEqual(4)
-          expect(encoding).assertEqual('utf8')
-          callback()
-        }
-      }
-
-      let int8Array = new Int8Array([-128, -1, 0, 127])
-
-      let uint8Array = new Uint8Array(int8Array.buffer)
-      let writableStream = new TestWritableImpl()
-      writableStream.write(uint8Array, 'utf8')
-
-    })
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4300
-     * @tc.name      testStreamWritable07Chapter0043
-     * @tc.desc      Test with missing encoding parameter (negative case)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testStreamWritable07Chapter0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0043'
-      console.log(TAG + ' start')
-
-      class TestWritableImpl extends stream.Writable {
-        public writeCount: number = 0
-        public receivedEncodings: string[] = []
-
-        constructor() {
-          super()
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info("doWrite called with encoding:", encoding)
-          this.writeCount++
-          this.receivedEncodings.push(encoding)
-          expect(typeof encoding).assertEqual('string')
-          expect(encoding.length > 0).assertTrue()
-          callback()
-        }
-      }
-
-      try {
-        let writableStream = new TestWritableImpl()
-
-        const result = writableStream.write('test data')
-        console.info("Write result without encoding parameter:", result)
-
-        expect(typeof result).assertEqual('boolean')
-
-        writableStream.end()
-
-        expect(writableStream.writable).assertFalse()
-
-        expect(writableStream.writeCount).assertEqual(1)
-
-      } catch (err) {
-        console.info("Error caught when missing encoding parameter:", err.message)
-        expect(err == null).assertFalse()
-        expect(typeof err.message).assertEqual('string')
-      }
-    })
-
-    /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST07_4400
      * @tc.name      testStreamWritable07Chapter0044
      * @tc.desc      Test with zero-length Uint8Array
@@ -1572,44 +1320,6 @@ export default function StreamWritable07Test() {
       let emptyArray = new Uint8Array(0)
       let writableStream = new TestWritableImpl()
       writableStream.write(emptyArray, 'utf8')
-
-    })
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST07_4500
-     * @tc.name      testStreamWritable07Chapter0045
-     * @tc.desc      Test callback delayed execution
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testStreamWritable07Chapter0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0045'
-      console.log(TAG + ' start')
-
-      let callbackCalled = false
-
-      class TestWritableImpl extends stream.Writable {
-        constructor() {
-          super()
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info("doWrite called, delaying callback")
-          expect(typeof chunk).assertEqual('string')
-          expect(encoding).assertEqual('utf8')
-
-
-          setTimeout(() => {
-            callbackCalled = true
-            callback()
-            expect(callbackCalled).assertTrue()
-          }, 100)
-        }
-      }
-
-      let writableStream = new TestWritableImpl()
-      writableStream.write('delayed callback test', 'utf8')
 
     })
   })

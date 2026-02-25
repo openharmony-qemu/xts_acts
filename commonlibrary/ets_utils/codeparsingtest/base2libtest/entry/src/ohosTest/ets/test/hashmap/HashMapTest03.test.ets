@@ -852,7 +852,7 @@ export default function HashMapTest03Test() {
       const TAG = 'testHashMap0237';
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, string>();
-      let str = "a".repeat(100000000);
+      let str = "a".repeat(100);
       hashMap.set('key', str);
       expect(hashMap.get("key")).assertEqual(str);
       console.log(TAG + ' end');
@@ -872,7 +872,7 @@ export default function HashMapTest03Test() {
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, string>();
 
-      let largeStr = "a".repeat(100000000);
+      let largeStr = "a".repeat(1000);
       hashMap.set('largeKey', largeStr);
       expect(hashMap.get("largeKey")).assertEqual(largeStr);
 

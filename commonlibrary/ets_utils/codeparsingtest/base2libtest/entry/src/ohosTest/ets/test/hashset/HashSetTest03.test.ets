@@ -749,7 +749,7 @@ export default function HashSet03Test() {
       const TAG = 'testHashSet03Chapter0024';
       console.log(TAG + ' start');
       const hashSet: HashSet<number> = new HashSet<number>();
-      const elementCount: number = 1000;
+      const elementCount: number = 100;
       for (let i: number = 0; i < elementCount; i++) {
         const result: boolean = hashSet.add(i);
         expect(result).assertTrue();

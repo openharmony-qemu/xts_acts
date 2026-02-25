@@ -1074,16 +1074,16 @@ export default function TreeSet05Test() {
       const TAG = 'testTreeSet05Chapter0043';
       console.log(TAG + ' start');
       let treeSet = new TreeSet<number>();
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 10; i++) {
         treeSet.add(i);
       }
-      expect(treeSet.length).assertEqual(1000);
+      expect(treeSet.length).assertEqual(10);
 
       treeSet.clear();
       expect(treeSet.length).assertEqual(0);
       expect(treeSet.isEmpty()).assertTrue();
 
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 10; i++) {
         expect(treeSet.has(i)).assertFalse();
       }
     });

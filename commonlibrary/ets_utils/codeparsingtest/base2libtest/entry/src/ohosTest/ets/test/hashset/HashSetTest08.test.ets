@@ -321,7 +321,7 @@ export default function HashSet08Test() {
       const TAG = 'testHashSet08Chapter0011';
       console.log(TAG + ' start');
       const hashSet = new HashSet<number>();
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         hashSet.add(i);
       }
       let count = 0;
@@ -329,7 +329,7 @@ export default function HashSet08Test() {
         expect(typeof item).assertEqual('number');
         count++;
       }
-      expect(count).assertEqual(1000);
+      expect(count).assertEqual(100);
     });
 
     /**

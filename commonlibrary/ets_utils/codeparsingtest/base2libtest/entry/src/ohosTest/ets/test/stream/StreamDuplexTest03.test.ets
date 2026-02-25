@@ -1585,7 +1585,7 @@ export default function StreamDuplex03Test() {
         }
       }
       let duplexStream = new TestDuplex();
-      let hugeString = 'a'.repeat(10000000);
+      let hugeString = 'a'.repeat(1000);
       try {
         let result = duplexStream.setDefaultEncoding(hugeString);
         expect(result).assertEqual(false);

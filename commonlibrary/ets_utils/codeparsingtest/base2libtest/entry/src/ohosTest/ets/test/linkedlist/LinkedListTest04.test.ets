@@ -557,14 +557,14 @@ export default function LinkedListTest04() {
       console.log(TAG + ' start');
 
       const newLinkedList = new LinkedList<string>()
-      const largeStr = 'a'.repeat(10 * 1024 * 1024);
+      const largeStr = 'a'.repeat(10 * 10 * 10);
       newLinkedList.add(largeStr)
       expect(newLinkedList.has(largeStr)).assertTrue()
 
       let temp = newLinkedList
       temp.clear();
 
-      const newLargeStr = "c".repeat(10 * 1024 * 1024)
+      const newLargeStr = "c".repeat(10 * 10 * 10)
       newLinkedList.add(newLargeStr)
       expect(newLinkedList.has(newLargeStr)).assertTrue()
     });

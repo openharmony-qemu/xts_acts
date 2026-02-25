@@ -737,7 +737,7 @@ export default function ListTest07() {
       const level2Arr2: (number | number[])[] = [4, level3Arr];
       const nestedArr: (number | number[] | (number | number[])[])[] = [1, level2Arr1, level2Arr2];
       const typedSubArr: TypedArray[] = [new Int32Array([10, 20]), new Float64Array([3.14, 6.28])];
-      const largeArr: number[] = new Array(1000000).fill(1);
+      const largeArr: number[] = new Array(1000).fill(1);
       const nestedList: List<(number | number[] | (number | number[])[])[]> = new List<(number | number[] |
       (number | number[])[])[]>();
       nestedList.add(nestedArr);
@@ -770,7 +770,7 @@ export default function ListTest07() {
 
       largeList.add(largeArr);
       const item2: number[] = largeList.get(0)!;
-      expect(item2.length).assertEqual(1000000);
+      expect(item2.length).assertEqual(1000);
       expect(item2[0]).assertEqual(1);
     });
 

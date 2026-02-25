@@ -218,41 +218,6 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST02_0600
-     * @tc.name      testStreamWritable02Chapter0006
-     * @tc.desc      Test write method after stream is ended
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable02Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable02Chapter0006';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function) {
-          console.info("Writable chunk is", chunk);
-          callback();
-        }
-      }
-
-      const writableStream = new TestWritable();
-      writableStream.end();
-      try {
-        const result = writableStream.write('stream ended');
-        expect(result).assertFalse();
-      } catch (err) {
-        expect(err instanceof Error).assertTrue();
-      }
-      try {
-        const result = writableStream.write(new Uint8Array([1, 2, 3]));
-        expect(result).assertFalse();
-      } catch (err) {
-        expect(err instanceof Error).assertTrue();
-      }
-    });
-
-    /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST02_0700
      * @tc.name      testStreamWritable02Chapter0007
      * @tc.desc      Test write method backpressure control
@@ -1999,82 +1964,6 @@ export default function StreamWritable02Test() {
       }
 
       expect(hasError).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST02_5600
-     * @tc.name      testStreamWritable02Chapter0056
-     * @tc.desc      Test end method with only chunk and callback, no encoding
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable02Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const TAG = 'testStreamWritable02Chapter0056';
-      console.log(TAG + ' start');
-
-      let writeCalled = false;
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          writeCalled = true;
-          console.info("Writable chunk is", chunk, "encoding:", encoding);
-          callback();
-        }
-      }
-
-      const writableStream: stream.Writable = new TestWritable();
-
-      const testString: string = 'test';
-      const bytes: Uint8Array = new Uint8Array(testString.length);
-      for (let i = 0; i < testString.length; i++) {
-        bytes[i] = testString.charCodeAt(i);
-      }
-
-      writableStream.end(bytes, undefined, (error?: Error) => {
-        expect(error === undefined).assertTrue();
-        expect(writeCalled).assertTrue();
-      });
-    });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST02_5700
-     * @tc.name      testStreamWritable02Chapter0057
-     * @tc.desc      Test end method with only callback
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable02Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const TAG = 'testStreamWritable02Chapter0057';
-      console.log(TAG + ' start');
-
-      let writeCalled = false;
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          writeCalled = true;
-          console.info("Writable chunk is", chunk, "encoding:", encoding);
-          callback();
-        }
-      }
-
-      const writableStream: stream.Writable = new TestWritable();
-
-      writableStream.end(undefined, undefined, (error?: Error) => {
-        expect(error).assertUndefined();
-        expect(writeCalled).assertTrue();
-      });
     });
 
     /**

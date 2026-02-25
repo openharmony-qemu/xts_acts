@@ -360,7 +360,7 @@ export default function PlainArray09Test() {
       console.log(TAG + ' start');
 
       let plainArray: PlainArray<number> = new PlainArray<number>();
-      const size: number = 1000;
+      const size: number = 100;
 
       for (let i: number = 0; i < size; i++) {
         plainArray.add(i, i * 2);

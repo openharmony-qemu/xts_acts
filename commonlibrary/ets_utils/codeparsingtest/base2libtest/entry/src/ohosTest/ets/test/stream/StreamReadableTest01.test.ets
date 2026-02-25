@@ -1401,15 +1401,15 @@ export default function StreamReadable01Test() {
 
       class TestReadable extends stream.Readable {
         doRead(size: number): void {
-          let largeString = 'a'.repeat(1000);
+          let largeString = 'a'.repeat(100);
           this.push(largeString);
         }
       }
 
       let readableStream = new TestReadable();
-      let largeString = 'a'.repeat(1000);
+      let largeString = 'a'.repeat(100);
       readableStream.push(largeString);
-      let dataChunk = readableStream.read(100);
+      let dataChunk = readableStream.read(10);
       expect(dataChunk !== null && dataChunk !== undefined).assertTrue();
     });
 

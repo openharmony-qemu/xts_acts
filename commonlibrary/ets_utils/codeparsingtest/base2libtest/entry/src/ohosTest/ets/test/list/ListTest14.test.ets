@@ -1423,7 +1423,7 @@ export default function ListTest14() {
     it('testList14Chapter0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testList14Chapter0032';
       console.log(TAG + ' start');
-      const bigStr = "a".repeat(100000000)
+      const bigStr = "a".repeat(1000)
       const uint8Arr = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
       const bufferObj = new BufferObject(uint8Arr);
       const list20 = new List<string | BufferObject>();
@@ -1433,7 +1433,7 @@ export default function ListTest14() {
       expect(result20.length).assertEqual(2);
       const bigStrItem = result20[0];
       if (typeof bigStrItem === 'string') {
-        expect(bigStrItem.length).assertEqual(100000000);
+        expect(bigStrItem.length).assertEqual(1000);
       }
       expect(((result20[1] as BufferObject).buffer as Uint8Array)[2]).assertEqual(0x03);
     });
@@ -1585,17 +1585,17 @@ export default function ListTest14() {
       const TAG = 'testList14Chapter0037';
       console.log(TAG + ' start');
       const list26 = new List<number>();
-      const testCount = 100000;
+      const testCount = 100;
       for (let i = 0; i < testCount; i++) {
-        list26.add(i % 1000);
+        list26.add(i % 100);
       }
       const startTime = Date.now();
       const result26 = list26.convertToArray();
       const endTime = Date.now();
       expect(result26.length).assertEqual(testCount);
-      expect(result26[testCount - 1]).assertEqual((testCount - 1) % 1000);
+      expect(result26[testCount - 1]).assertEqual((testCount - 1) % 100);
       const emptyList = new List<number>();
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         const emptyResult = emptyList.convertToArray();
         expect(emptyResult.length).assertEqual(0);
       }

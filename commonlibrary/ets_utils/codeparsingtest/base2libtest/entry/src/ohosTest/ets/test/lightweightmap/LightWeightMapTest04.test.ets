@@ -573,21 +573,21 @@ export default function testLightWeightMapTest04() {
       const sourceMap = new LightWeightMap<number, string>();
       const targetMap = new LightWeightMap<number, string>();
 
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         sourceMap.set(i, `value${i}`);
       }
 
-      for (let i = 1000; i < 1050; i++) {
+      for (let i = 100; i < 150; i++) {
         targetMap.set(i, `original${i}`);
       }
 
       targetMap.setAll(sourceMap);
 
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         expect(targetMap.get(i)).assertEqual(`value${i}`);
       }
 
-      for (let i = 1000; i < 1050; i++) {
+      for (let i = 100; i < 150; i++) {
         expect(targetMap.get(i)).assertEqual(`original${i}`);
       }
 

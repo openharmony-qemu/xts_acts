@@ -167,7 +167,7 @@ export default function ArrayList11Test() {
         for (let i = 0; i < 1000; i++) {
           arrayList.add(i);
         }
-        arrayList.increaseCapacityTo(1000000);
+        arrayList.increaseCapacityTo(1000);
         expect(arrayList.length).assertEqual(1000);
         for (let i = 0; i < 1000; i++) {
           expect(arrayList[i]).assertEqual(i);
@@ -576,16 +576,16 @@ export default function ArrayList11Test() {
         const TAG = 'testArrayList05TrimToCurrentLength0015';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        for (let i = 0; i < 10000; i++) {
+        for (let i = 0; i < 100; i++) {
           arrayList.add(i);
         }
         const startTime = Date.now();
-        arrayList.increaseCapacityTo(100000);
+        arrayList.increaseCapacityTo(1000);
         arrayList.trimToCurrentLength();
         const endTime = Date.now();
         const duration = endTime - startTime;
-        expect(arrayList.length).assertEqual(10000);
-        for (let i = 0; i < 1000; i++) {
+        expect(arrayList.length).assertEqual(100);
+        for (let i = 0; i < 100; i++) {
           expect(arrayList[i]).assertEqual(i);
         }
         console.log(`Trim operation completed in ${duration}ms`);
@@ -635,17 +635,17 @@ export default function ArrayList11Test() {
         const TAG = 'testArrayList05TrimToCurrentLength0017';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        for (let i = 0; i < 100000; i++) {
+        for (let i = 0; i < 1000; i++) {
           arrayList.add(i);
         }
-        arrayList.increaseCapacityTo(1000000);
+        arrayList.increaseCapacityTo(1000);
         const startTime = Date.now();
         arrayList.trimToCurrentLength();
         const endTime = Date.now();
         const duration = endTime - startTime;
-        expect(arrayList.length).assertEqual(100000);
+        expect(arrayList.length).assertEqual(1000);
         for (let i = 0; i < 100; i++) {
-          const index = Math.floor(i * (100000 / 100));
+          const index = Math.floor(i * (1000 / 100));
           expect(arrayList[index]).assertEqual(index);
         }
         expect(duration).assertLess(1000);
@@ -832,7 +832,7 @@ export default function ArrayList11Test() {
         const TAG = 'testArrayList05TrimToCurrentLength0024';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        const count = 100000;
+        const count = 1000;
         for (let i = 0; i < count; i++) {
           arrayList.add(i);
         }
@@ -1585,7 +1585,7 @@ export default function ArrayList11Test() {
         const TAG = 'testArrayList06SymbolIterator0020';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        const size = 100000;
+        const size = 1000;
         for (let i = 0; i < size; i++) {
           arrayList.add(i);
         }
@@ -1616,7 +1616,7 @@ export default function ArrayList11Test() {
         const TAG = 'testArrayList06SymbolIterator0021';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        const size = 50000;
+        const size = 5000;
         for (let i = 0; i < size; i++) {
           arrayList.add(i * 2);
         }

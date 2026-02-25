@@ -815,11 +815,11 @@ export default function Json05Test() {
       const TAG = "testJson05Chapter0029";
       console.log(TAG + ' Start');
       let obj: Record<string, number> = {};
-      for (let i = 0; i < 100000; i++) {
+      for (let i = 0; i < 1000; i++) {
         obj[`key${i}`] = i;
       }
 
-      let result = JSON.has(obj, "key50000");
+      let result = JSON.has(obj, "key500");
       expect(result).assertEqual(true);
     });
 

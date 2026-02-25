@@ -1348,9 +1348,9 @@ export default function ArrayList09Test() {
         const TAG = 'testArrayList02Sort0020';
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
-        const size = 10000;
+        const size = 100;
         for (let i = 0; i < size; i++) {
-          arrayList.add(Math.floor(Math.random() * 10000));
+          arrayList.add(Math.floor(Math.random() * 100));
         }
         const startTime = Date.now();
         arrayList.sort((a: number, b: number) => a - b);

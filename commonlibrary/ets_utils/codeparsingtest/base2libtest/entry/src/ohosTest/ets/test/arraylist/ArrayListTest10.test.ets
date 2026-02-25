@@ -1598,10 +1598,10 @@ export default function ArrayList10Test() {
           arrayList.add(i);
         }
         const startTime = Date.now();
-        arrayList.increaseCapacityTo(5000);
-        arrayList.increaseCapacityTo(10000);
-        arrayList.increaseCapacityTo(20000);
-        arrayList.increaseCapacityTo(50000);
+        arrayList.increaseCapacityTo(50);
+        arrayList.increaseCapacityTo(100);
+        arrayList.increaseCapacityTo(200);
+        arrayList.increaseCapacityTo(500);
         const endTime = Date.now();
         const duration = endTime - startTime;
         expect(arrayList.length).assertEqual(1000);

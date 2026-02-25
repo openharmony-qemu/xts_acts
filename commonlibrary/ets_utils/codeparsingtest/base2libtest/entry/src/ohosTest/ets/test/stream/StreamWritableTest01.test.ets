@@ -156,7 +156,7 @@ export default function StreamWritable01Test() {
       const TAG = 'testStreamWritable01Chapter0007'
       console.log(TAG + ' start')
       const instances: stream.Writable[] = []
-      const instanceCount = 100
+      const instanceCount = 10
       for (let i = 0; i < instanceCount; i++) {
         let writableStream = new stream.Writable()
         instances.push(writableStream)

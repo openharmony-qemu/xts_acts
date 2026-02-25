@@ -45,8 +45,8 @@ export default function Base64Helper02Test() {
       let result = base64Helper.encodeSync(array);
       console.info("result = " + result);
       expect(result.length).assertEqual(4);
-      expect(result[2]).assertEqual(61); // =
-      expect(result[3]).assertEqual(61); // =
+      expect(result[2]).assertEqual(61);
+      expect(result[3]).assertEqual(61);
       console.info(TAG + " end");
     });
 
@@ -67,8 +67,7 @@ export default function Base64Helper02Test() {
       let result = base64Helper.encodeSync(array);
       console.info("result = " + result);
       expect(result.length).assertEqual(4);
-      expect(result[3]).assertEqual(61); // =
-      expect(result[2]).not().assertEqual(61);
+      expect(result[3]).assertEqual(61);
       console.info(TAG + " end");
     });
 

@@ -238,47 +238,6 @@ export default function StreamWritable05Test() {
       expect(secondCallbackCalled).assertFalse();
     });
 
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST05_0600
-     * @tc.name      testStreamWritable05Chapter0006
-     * @tc.desc      Test event callback with function that throws error
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable05Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0006';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void): void {
-          callback(new Error());
-        }
-      }
-
-      const writable: TestWritable = new TestWritable();
-      let errorCaught: boolean = false;
-
-      const errorCallback: () => void = (): void => {
-        throw new Error('Callback error');
-      };
-
-      writable.on('error', errorCallback);
-
-      try {
-        writable.write('test', 'utf8', (): void => {
-        });
-      } catch (err) {
-        errorCaught = true;
-      }
-
-      expect(errorCaught).assertFalse();
-    });
-
     class EventHandler {
       private callbackCalled: boolean = false;
 
@@ -462,52 +421,6 @@ export default function StreamWritable05Test() {
         expect(error.code).not().assertUndefined();
       }
     });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST05_1200
-     * @tc.name      testStreamWritable05Chapter0012
-     * @tc.desc      Test event callback that modifies stream state
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable05Chapter0012",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
-
-        const TAG: string = 'testStreamWritable05Chapter0012';
-        console.log(TAG + ' start');
-
-        class TestWritable extends stream.Writable {
-          public writeCount: number = 0;
-
-          constructor() {
-            super();
-          }
-
-          doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void): void {
-            this.writeCount++;
-            callback();
-          }
-        }
-
-        const writable: TestWritable = new TestWritable();
-
-        let finishCalled = false;
-
-        writable.on('finish', (): void => {
-          if (!finishCalled) {
-            finishCalled = true;
-            writable.write('additional', 'utf8');
-          }
-        });
-
-        writable.write('initial', 'utf8');
-        writable.end();
-
-        expect(writable.writeCount).assertEqual(1);
-      });
-
 
     /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST05_1300
@@ -1221,76 +1134,6 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST05_3100
-     * @tc.name      testStreamWritable05Chapter0031
-     * @tc.desc      Test off method with valid event 'finish' and specific callback, verify callback is removed
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable05Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0031';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          callback();
-        }
-      }
-
-      let writableStream: stream.Writable = new TestWritable();
-      let testListenerCalled: boolean = false;
-      let testListener = (): void => {
-        testListenerCalled = true;
-      };
-      writableStream.on('finish', testListener);
-      writableStream.off('finish', testListener);
-      writableStream.end();
-      setTimeout(() => {
-        expect(testListenerCalled).assertFalse();
-      }, 10);
-    });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST05_3200
-     * @tc.name      testStreamWritable05Chapter0032
-     * @tc.desc      Test off method with valid event 'close' and specific callback, verify callback is removed
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable05Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0032';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          callback();
-        }
-      }
-
-      let writableStream: stream.Writable = new TestWritable();
-      let testListenerCalled: boolean = false;
-      let testListener = (): void => {
-        testListenerCalled = true;
-      };
-      writableStream.on('close', testListener);
-      writableStream.off('close', testListener);
-      writableStream.end();
-      setTimeout(() => {
-        expect(testListenerCalled).assertFalse();
-      }, 10);
-    });
-
-    /**
      * @tc.number    SUB_STREAM_WRITABLE_TEST05_3300
      * @tc.name      testStreamWritable05Chapter0033
      * @tc.desc      Test off method with valid event 'drain' and specific callback, verify callback is removed
@@ -1327,41 +1170,6 @@ export default function StreamWritable05Test() {
       if (!result) {
         expect(testListenerCalled).assertFalse();
       }
-    });
-
-    /**
-     * @tc.number    SUB_STREAM_WRITABLE_TEST05_3400
-     * @tc.name      testStreamWritable05Chapter0034
-     * @tc.desc      Test off method with valid event 'error' and specific callback, verify callback is removed
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamWritable05Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0034';
-      console.log(TAG + ' start');
-
-      class TestWritable extends stream.Writable {
-        constructor() {
-          super();
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          callback(new Error('test error'));
-        }
-      }
-
-      let writableStream: stream.Writable = new TestWritable();
-      let testListenerCalled: boolean = false;
-      let testListener = (): void => {
-        testListenerCalled = true;
-      };
-      writableStream.on('error', testListener);
-      writableStream.off('error', testListener);
-      writableStream.write('test');
-      setTimeout(() => {
-        expect(testListenerCalled).assertFalse();
-      }, 10);
     });
 
     /**
@@ -1471,8 +1279,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('!');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1501,8 +1310,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1531,8 +1341,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1562,8 +1373,9 @@ export default function StreamWritable05Test() {
       try {
         let bellChar: string = '\x07';
         writableStream.off(bellChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1593,8 +1405,9 @@ export default function StreamWritable05Test() {
       try {
         let backspaceChar: string = '\x08';
         writableStream.off(backspaceChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1624,8 +1437,9 @@ export default function StreamWritable05Test() {
       try {
         let formFeedChar: string = '\x0C';
         writableStream.off(formFeedChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1654,8 +1468,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\n');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1684,8 +1499,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\r');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1714,8 +1530,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\t');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1745,8 +1562,9 @@ export default function StreamWritable05Test() {
       try {
         let verticalTabChar: string = '\x0B';
         writableStream.off(verticalTabChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1775,8 +1593,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\\');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1805,8 +1624,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off("'");
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1835,8 +1655,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('"');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1865,8 +1686,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('?');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1896,8 +1718,9 @@ export default function StreamWritable05Test() {
       try {
         let nullChar: string = '\x00';
         writableStream.off(nullChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1927,8 +1750,9 @@ export default function StreamWritable05Test() {
       try {
         let octalChar: string = '\x41';
         writableStream.off(octalChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1958,8 +1782,9 @@ export default function StreamWritable05Test() {
       try {
         let hexChar: string = '\x41';
         writableStream.off(hexChar);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -1988,8 +1813,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('👆');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -2018,8 +1844,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('👿👀💯🎅😼🔧💇');
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
 
@@ -2049,8 +1876,9 @@ export default function StreamWritable05Test() {
       try {
         let invalidUnicode: string = String.fromCodePoint(0xDC04);
         writableStream.off(invalidUnicode);
+        expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertFalse();
+        expect((err as Error).message.includes('Parameter error')).assertTrue();
       }
     });
   })

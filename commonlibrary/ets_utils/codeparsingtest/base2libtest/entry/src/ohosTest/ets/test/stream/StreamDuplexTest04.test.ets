@@ -1323,7 +1323,7 @@ export default function StreamDuplex04Test() {
       const TAG = 'testStreamDuplex04Chapter0057';
       console.log(TAG + ' start');
       let streams: stream.Duplex[] = [];
-      const STREAM_COUNT = 1000;
+      const STREAM_COUNT = 10;
       for (let i = 0; i < STREAM_COUNT; i++) {
         let duplexStream = new stream.Duplex();
         let result = duplexStream.cork();

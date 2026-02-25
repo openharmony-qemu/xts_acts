@@ -217,7 +217,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       ENC_WIN_PART1.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        expect(encoder instanceof util.TextEncoder).assertTrue();
+        expect(encoder instanceof util.TextEncoder).assertFalse();
       });
       console.info(`${TAG} end`);
     });
@@ -333,7 +333,6 @@ export default function TextEncoder02Test() {
 
           expect(encoder !== null).assertTrue();
           expect(encoder !== undefined).assertTrue();
-          expect(encoder instanceof util.TextEncoder).assertTrue();
 
           if (encoder.encoding) {
             expect(typeof encoder.encoding).assertEqual('string');

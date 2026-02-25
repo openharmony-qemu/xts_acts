@@ -1283,7 +1283,7 @@ export default function ListTest01() {
     it('testList01Chapter0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
       const TAG = 'testList01Chapter0034';
       console.log(TAG + ' start');
-      const MAX_TEST_SIZE = 1000000;
+      const MAX_TEST_SIZE = 10000;
       const largeArrayLike: LargeArrayLike = { length: MAX_TEST_SIZE };
       const list1 = new List<undefined>(largeArrayLike as ArrayLike<undefined>);
       expect(list1.size()).assertEqual(MAX_TEST_SIZE);

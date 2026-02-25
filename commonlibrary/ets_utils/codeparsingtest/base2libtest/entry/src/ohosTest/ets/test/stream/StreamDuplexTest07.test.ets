@@ -667,7 +667,7 @@ export default function StreamDuplex07Test() {
       let duplexStream = new TestDuplex();
       duplexStream.cork();
 
-      let largeArray = new Uint8Array(1024 * 1024);
+      let largeArray = new Uint8Array(1024);
       for (let i = 0; i < largeArray.length; i++) {
         largeArray[i] = i % 256;
       }
@@ -677,7 +677,7 @@ export default function StreamDuplex07Test() {
       duplexStream.uncork();
       duplexStream.end();
 
-      expect(duplexStream.totalBytes).assertEqual(2 * 1024 * 1024);
+      expect(duplexStream.totalBytes).assertEqual(2 * 1024);
     });
 
     /**

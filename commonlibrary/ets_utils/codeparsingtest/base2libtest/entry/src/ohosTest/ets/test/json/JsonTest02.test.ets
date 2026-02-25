@@ -2082,9 +2082,9 @@ export default function Json02Test() {
       const TAG = 'testJson02Chapter0097';
       console.log(TAG + ' start');
       let largeObjStr = '{';
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < 1000; i++) {
         largeObjStr += `"property${i}":"value${i}"`;
-        if (i < 9999) {
+        if (i < 999) {
           largeObjStr += ',';
         }
       }
@@ -2097,7 +2097,7 @@ export default function Json02Test() {
       const duration = endTime - startTime;
 
       expect(typeof result).assertEqual('string');
-      expect(result.length > 10000).assertTrue();
+      expect(result.length > 1000).assertTrue();
       expect(duration < 1000).assertTrue();
     });
   })

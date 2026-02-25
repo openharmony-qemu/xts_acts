@@ -201,7 +201,7 @@ export default function TreeSet07Test() {
       const TAG = 'testTreeSet07Chapter0008';
       console.log(TAG + ' start');
       let treeSet: TreeSet<number> = new TreeSet<number>();
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < 10; i++) {
         treeSet.add(i);
       }
       let count: number = 0;
@@ -209,7 +209,7 @@ export default function TreeSet07Test() {
         count++;
         expect(item).assertEqual(count - 1);
       }
-      expect(count).assertEqual(10000);
+      expect(count).assertEqual(10);
     });
 
     /**

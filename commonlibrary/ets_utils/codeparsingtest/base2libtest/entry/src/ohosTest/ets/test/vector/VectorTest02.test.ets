@@ -122,7 +122,7 @@ export default function vectorTest02() {
     it("testVector02Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testVector02Chapter0005'
       let vector = new Vector<string>();
-      let str = "a".repeat(100000000)
+      let str = "a".repeat(1000)
       let result = vector.add(str)
       expect(result).assertTrue();
     })

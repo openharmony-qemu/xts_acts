@@ -435,7 +435,7 @@ export default function Deque05Test() {
         const TAG = 'testDeque04ForEach0029';
         console.log(TAG + ' start');
         let deque: Deque<number> = new Deque<number>();
-        const largeCount = 1000;
+        const largeCount = 100;
         for (let i = 0; i < largeCount; i++) {
           deque.insertEnd(i);
         }

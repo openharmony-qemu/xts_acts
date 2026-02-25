@@ -1378,10 +1378,10 @@ export default function Queue01Test() {
       const TAG = 'testQueue01Chapter0070';
       console.log(TAG + ' start');
       let queue: Queue<number> = new Queue<number>();
-      for (let i: number = 0; i < 1000; i++) {
+      for (let i: number = 0; i < 100; i++) {
         queue.add(i);
       }
-      for (let j: number = 0; j < 1000; j++) {
+      for (let j: number = 0; j < 100; j++) {
         let result: number = queue.pop();
         expect(result).assertEqual(j);
       }

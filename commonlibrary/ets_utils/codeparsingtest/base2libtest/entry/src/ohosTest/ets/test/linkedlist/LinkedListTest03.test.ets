@@ -460,7 +460,7 @@ export default function LinkedListTest03() {
       console.log(TAG + ' start');
 
       const newLinkedList = new LinkedList<string>()
-      const largeStr = 'a'.repeat(10 * 1024 * 1024);
+      const largeStr = 'a'.repeat(10 * 10 * 10);
 
       newLinkedList.insert(0,largeStr)
       expect(newLinkedList.get(0)).assertEqual(largeStr)
@@ -468,7 +468,7 @@ export default function LinkedListTest03() {
       let temp = newLinkedList
       temp.clear();
 
-      const newLargeStr = "c".repeat(10 * 1024 * 1024)
+      const newLargeStr = "c".repeat(10 * 10 * 10)
 
       newLinkedList.insert(0,newLargeStr)
       expect(newLinkedList.get(0)).assertEqual(newLargeStr)

@@ -132,7 +132,7 @@ export default function HashSet06Test() {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      const size = 1000;
+      const size = 100;
 
       for (let i = 0; i < size; i++) {
         hashSet.add(i);
