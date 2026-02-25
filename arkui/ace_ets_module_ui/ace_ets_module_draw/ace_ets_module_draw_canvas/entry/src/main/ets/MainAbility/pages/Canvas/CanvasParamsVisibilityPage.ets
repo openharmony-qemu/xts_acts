@@ -199,7 +199,6 @@ struct CanvasParamsVisibilityPage {
             this.context = CanvasRenderingContext2D.getContext2DFromDrawingContext(drawingContext);
           }
         })
-      
     }
   }
 }
