@@ -233,8 +233,8 @@ export default function WindowPCStaticTest() {
 
         /**
          * @tc.number     SUB_WMS_START_MOVING_REPEAT_0100
-         * @tc.name       teststartMovingRepeated
-         * @tc.desc       teststartMovingRepeated
+         * @tc.name       teststartMovingStaticRepeated
+         * @tc.desc       teststartMovingStaticRepeated
          * @tc.size       MediumTest
          * @tc.type       Function
          * @tc.level      Level 1
@@ -303,8 +303,8 @@ export default function WindowPCStaticTest() {
 
         /**
          * @tc.number     SUB_WMS_START_MOVING_WITH_OFFSETX_OFFSETY_REPEAT_0100
-         * @tc.name       teststartMovingwithOffsetXandOffsetYRepeated
-         * @tc.desc       teststartMovingwithOffsetXandOffsetYRepeated
+         * @tc.name       teststartMovingParamStaticRepeated
+         * @tc.desc       teststartMovingParamStaticRepeated
          * @tc.size       MediumTest
          * @tc.type       Function
          * @tc.level      Level 1

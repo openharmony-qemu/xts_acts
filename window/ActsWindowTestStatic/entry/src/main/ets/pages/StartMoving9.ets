@@ -39,11 +39,6 @@ struct StartMoving9 {
               let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
               let windowRect = windowClass.getWindowProperties().windowRect;
               console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
-              // let offSetX = Math.round(windowRect.width / 2);
-              // offSetX = int(offSetX)
-              // console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
-              // let offSetY = int(windowRect.height / 2);
-              // console.log(`${caseName}  offSetY: ${JSON.stringify(offSetY)}`);
               windowClass.startMoving(50, 50).then(async () => {
                 await windowClass.startMoving(50, 50);
                 this.message = 'startMoving success'
