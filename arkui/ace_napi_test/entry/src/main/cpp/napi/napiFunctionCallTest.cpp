@@ -62,19 +62,19 @@ napi_value MyObject::New(napi_env env, napi_callback_info info)
             napi_get_value_double(env, args[0], &valueTest);
         }
         MyObject* obj = new MyObject(valueTest);
-        obj->env_ = env;
+        obj->env = env;
         napi_status status = napi_wrap(env,
                                        jsThis,
                                        reinterpret_cast<void*>(obj),
                                        MyObject::Destructor,
                                        nullptr,
-                                       &obj->wrapper_);
+                                       &obj->wrapper);
         if (status != napi_ok) {
             delete obj;
             return jsThis;
         }
         uint32_t refCount = 0;
-        napi_reference_unref(env, obj->wrapper_, &refCount);
+        napi_reference_unref(env, obj->wrapper, &refCount);
         return jsThis;
     } else {
         size_t argc = 1;
@@ -593,7 +593,7 @@ static napi_value CreateTestObject1(napi_env env)
     napi_value args[3] = {obj, propName, propDescObj};
     size_t argcNum = 3;
     napi_value defineResult = nullptr;
-    status = napi_call_function(env, objectCtor, definePropFunc, argcNum, args, &defineResult);
+    napi_status status = napi_call_function(env, objectCtor, definePropFunc, argcNum, args, &defineResult);
     if (status != napi_ok) {
         return nullptr;
     }
@@ -629,12 +629,12 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
 
     napi_valuetype objType = napi_undefined;
     napi_status status = napi_typeof(env, testObj, &objType);
-    NAPI_ASSERT(env, status != napi_ok, "napi_typeof fail.");
+    NAPI_ASSERT(env, status == napi_ok, "napi_typeof success.");
 
     napi_value setVal = nullptr;
     size_t testNum = 10;
     status = napi_create_int32(env, testNum, &setVal);
-    NAPI_ASSERT(env, status != napi_ok, "napi_create_int32 fail.");
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_int32 success.");
 
     napi_status setStatus = napi_ok;
     size_t num = 2;
