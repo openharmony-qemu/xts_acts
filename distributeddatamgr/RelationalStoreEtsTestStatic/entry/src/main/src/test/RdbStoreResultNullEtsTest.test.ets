@@ -110,8 +110,8 @@ const STORE_CONFIG3:data_relationalStore.StoreConfig  = {
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
 
-export default function rdbStoreResultNullEtsTest() {
-  describe('rdbStoreResultNullEtsTest', ():void => {
+export default function RdbStoreResultNullEtsTest() {
+  describe('RdbStoreResultNullEtsTest', ():void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '[RELATIONAL_STORE_JSKITS_TEST] beforeAll');
       await Utils.msSleep(2000)
