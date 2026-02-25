@@ -17,25 +17,25 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 
-export default function TextMinLinesTest() {
-  describe('TextMinLinesTest', () => {
+export default function TextMinLinesNullTest() {
+  describe('TextMinLinesNullTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("TextMinLinesTest beforeEach start");
+      console.info("TextMinLinesNullTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/TextMinLinesNull',
+        url: 'MainAbility/pages/Text/TextMinLinesNull',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get TextMinLinesTest state pages: " + JSON.stringify(pages));
+        console.info("get TextMinLinesNullTest state pages: " + JSON.stringify(pages));
         if (!("TextMinLinesNull" == pages.name)) {
-          console.info("get TextMinLinesTest state pages.name: " + JSON.stringify(pages.name));
+          console.info("get TextMinLinesNullTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextMinLinesTest success: " + JSON.stringify(result));
+          console.info("push TextMinLinesNullTest success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextMinLinesTest page error: " + err);
+        console.error("push TextMinLinesNullTest page error: " + err);
       }
       done();
     })
@@ -46,10 +46,10 @@ export default function TextMinLinesTest() {
      * @tc.desc   测试 Text minLines 属性 - null 参数应恢复默认值
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textMinLines_0100', Level.LEVEL0, async () => {
-      hilog.info(0x0000, 'TextMinLinesTest', 'textMinLines_0100 START');
+    it('textMinLines_0100', Level.LEVEL2, async () => {
+      hilog.info(0x0000, 'TextMinLinesNullTest', 'textMinLines_0100 START');
       
       // 获取默认值组件的minLines属性
       let strJsonDefault: string = getInspectorByKey('text_minlines_default');
@@ -66,7 +66,7 @@ export default function TextMinLinesTest() {
       // 断言null参数时恢复为默认值
       expect(objNull.$attrs.minLines).assertEqual(objDefault.$attrs.minLines);
       expect(objNull.$attrs.minLines).assertEqual('0');
-      hilog.info(0x0000, 'TextMinLinesTest', 'textMinLines_0100 END');
+      hilog.info(0x0000, 'TextMinLinesNullTest', 'textMinLines_0100 END');
     });
 
     /**
@@ -75,10 +75,10 @@ export default function TextMinLinesTest() {
      * @tc.desc   测试 Text minLines 属性 - undefined 参数应恢复默认值
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('textMinLines_0200', Level.LEVEL0, async () => {
-      hilog.info(0x0000, 'TextMinLinesTest', 'textMinLines_0200 START');
+    it('textMinLines_0200', Level.LEVEL2, async () => {
+      hilog.info(0x0000, 'TextMinLinesNullTest', 'textMinLines_0200 START');
       
       // 获取默认值组件的minLines属性
       let strJsonDefault: string = getInspectorByKey('text_minlines_default');
@@ -95,7 +95,7 @@ export default function TextMinLinesTest() {
       // 断言undefined参数时恢复为默认值
       expect(objUndefined.$attrs.minLines).assertEqual(objDefault.$attrs.minLines);
       expect(objUndefined.$attrs.minLines).assertEqual('0');
-      hilog.info(0x0000, 'TextMinLinesTest', 'textMinLines_0200 END');
+      hilog.info(0x0000, 'TextMinLinesNullTest', 'textMinLines_0200 END');
     });
   });
 }

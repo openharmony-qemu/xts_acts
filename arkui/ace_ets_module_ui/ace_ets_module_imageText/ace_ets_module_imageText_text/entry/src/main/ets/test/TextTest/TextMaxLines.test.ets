@@ -1,5 +1,5 @@
-/**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,88 +12,178 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
-import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 
-export default function TextMaxLinesTest() {
-  describe('TextMaxLinesTest', () => {
+import CommonFunc from '../../MainAbility/common/Common';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+export default function TextMaxLines() {
+  describe('TextMaxLines', () => {
     beforeEach(async (done: Function) => {
-      console.info("TextMaxLinesTest beforeEach start");
+      console.info("TextMaxLines beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Text/TextMaxLinesNull',
+        url: 'MainAbility/pages/Text/TextMaxLines',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get TextMaxLinesTest state pages: " + JSON.stringify(pages));
-        if (!("TextMaxLinesNull" == pages.name)) {
-          console.info("get TextMaxLinesTest state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.replaceUrl(options);
+        console.info("get TextMaxLines state pages:" + JSON.stringify(pages));
+        if (!("TextMaxLines" == pages.name)) {
+          console.info("get TextMaxLines pages.name:" + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextMaxLinesTest success: " + JSON.stringify(result));
+          console.info("push TextMaxLines page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextMaxLinesTest page error: " + err);
+        console.error("push TextMaxLines page error:" + err);
       }
+      console.info("TextMaxLines beforeEach end");
       done();
-    })
-    
-    /**
-     * @tc.name   textMaxLines_0100
-     * @tc.number SUB_ARKUI_TEXT_MAXLINES_PARAM_0100
-     * @tc.desc   测试 Text maxLines 属性 - null 参数应恢复默认值
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('textMaxLines_0100', Level.LEVEL0, async () => {
-      console.info('TextMaxLinesTest', 'textMaxLines_0100 START');
-      
-      // 获取默认值组件的maxLines属性
-      let strJsonDefault: string = getInspectorByKey('text_maxlines_default');
-      let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
-      
-      // 获取null参数组件的maxLines属性
-      let strJsonNull: string = getInspectorByKey('text_maxlines_null');
-      let objNull: Record<string, ESObject> = JSON.parse(strJsonNull);
-      
-      // 确保属性读取成功
-      expect(objNull.$attrs.maxLines).not().assertUndefined();
-      console.info('textMaxLines_0100 objDefault: ' + objDefault.$attrs.maxLines);
-      console.info('textMaxLines_0100 objNull:' + objNull.$attrs.maxLines);
-      // 断言null参数时恢复为默认值
-      expect(objNull.$attrs.maxLines).assertLarger(0);
-      
-      console.info('TextMaxLinesTest', 'textMaxLines_0100 END');
     });
 
     /**
-     * @tc.name   textMaxLines_0200
-     * @tc.number SUB_ARKUI_TEXT_MAXLINES_PARAM_0200
-     * @tc.desc   测试 Text maxLines 属性 - undefined 参数应恢复默认值
+     * @tc.name   TextMaxLines_0010
+     * @tc.number TextMaxLines_0010
+     * @tc.desc   set Text: TextMaxLines
      * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('textMaxLines_0200', Level.LEVEL0, async () => {
-      console.info('TextMaxLinesTest', 'textMaxLines_0200 START');
-      
-      // 获取默认值组件的maxLines属性
-      let strJsonDefault: string = getInspectorByKey('text_maxlines_default');
-      let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
-      
-      // 获取undefined参数组件的maxLines属性
-      let strJsonUndefined: string = getInspectorByKey('text_maxlines_undefined');
-      let objUndefined: Record<string, ESObject> = JSON.parse(strJsonUndefined);
-      
-      // 确保属性读取成功
-      expect(objUndefined.$attrs.maxLines).not().assertUndefined();
-      
-      // 断言undefined参数时恢复为默认值  expect 1000000 equals 4294967295
-      expect(objUndefined.$attrs.maxLines).assertLarger(0);
-      
-      console.info('TextMaxLinesTest', 'textMaxLines_0200 END');
+    it('TextMaxLines_0010',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextMaxLines_0010 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.maxLines).assertEqual('4');
+      console.info('TextMaxLines_0010 END');
+      done();
     });
-  });
+	
+    /**
+     * @tc.name   TextLineHeight_0020
+     * @tc.number TextLineHeight_0020
+     * @tc.desc   set Text: TextLineHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextLineHeight_0020',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextLineHeight_0020 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.lineHeight).assertEqual('10.00fp');
+      console.info('TextLineHeight_0020 END');
+      done();
+    });
+	
+    /**
+     * @tc.name   TextBaselineOffset_0030
+     * @tc.number TextBaselineOffset_0030
+     * @tc.desc   set Text: TextBaselineOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextBaselineOffset_0030',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextBaselineOffset_0030 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.baselineOffset).assertEqual('10');
+      console.info('TextBaselineOffset_0030 END');
+      done();
+    });
+	
+    /**
+     * @tc.name   TextFontStyle_0040
+     * @tc.number TextFontStyle_0040
+     * @tc.desc   set Text: TextFontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextFontStyle_0040',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextFontStyle_0040 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.fontStyle).assertEqual('FontStyle.Italic');
+      console.info('TextFontStyle_0040 END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextLetterSpacing_0050
+     * @tc.number TextLetterSpacing_0050
+     * @tc.desc   set Text: TextLetterSpacing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextLetterSpacing_0050',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextLetterSpacing_0050 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.letterSpacing).assertEqual('5.00fp');
+      console.info('TextLetterSpacing_0050 END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextTextAlign_0060
+     * @tc.number TextTextAlign_0060
+     * @tc.desc   set Text: TextTextAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextTextAlign_0060',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextTextAlign_0060 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(TextMaxLines_1).$attrs.textAlign).assertEqual('TextAlign.Center');
+      console.info('TextTextAlign_0060 END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextConstraintSize_0070
+     * @tc.number TextConstraintSize_0070
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextConstraintSize_0070',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextConstraintSize_0070 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(JSON.parse(TextMaxLines_1).$attrs.constraintSize).minWidth).assertEqual('100.00vp');
+      console.info('TextConstraintSize_0070 END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextConstraintSize_0080
+     * @tc.number TextConstraintSize_0080
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextConstraintSize_0080',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextConstraintSize_0080 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(JSON.parse(TextMaxLines_1).$attrs.constraintSize).maxWidth).assertEqual('200.00vp');
+      console.info('TextConstraintSize_0080 END');
+      done();
+    });
+
+    /**
+     * @tc.name   TextConstraintSize_0090
+     * @tc.number TextConstraintSize_0090
+     * @tc.desc   set Text: TextConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextConstraintSize_0090',  Level.LEVEL0, async (done: Function) => {
+      console.info('TextConstraintSize_0090 START');
+      let TextMaxLines_1 = getInspectorByKey('textMaxLines1');
+      expect(''+JSON.parse(JSON.parse(TextMaxLines_1).$attrs.constraintSize).minHeight).assertEqual('100.00vp');
+      console.info('TextConstraintSize_0090 END');
+      done();
+    });
+  })
 }

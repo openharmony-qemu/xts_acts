@@ -119,8 +119,8 @@ import TextMinMaxLineHeightTest from './TextTest/TextMinMaxLineHeight.test';
 import TextTextVerticalAlignContentAlignTest from './TextTest/TextTextVerticalAlignContentAlign.test';
 import TextTextOverflowTest from './TextTest/TextTextOverflow.test';
 import TextFontFamilyTest from './TextTest/TextFontFamily.test';
-import TextMaxLinesTest from './TextTest/TextMaxLines.test';
-import TextMinLinesTest from './TextTest/TextMinLines.test';
+import TextMaxLinesNullTest from './TextTest/TextMaxLinesNull.test';
+import TextMinLinesNullTest from './TextTest/TextMinLinesNull.test';
 import TextDecorationTest from './TextTest/TextDecoration.test';
 import TextLetterSpacingTest from './TextTest/TextLetterSpacing.test';
 import TextTextCaseNullTest from './TextTest/TextTextCaseNull.test';
@@ -131,6 +131,7 @@ import TextHeightAdaptivePolicyNullTest from './TextTest/TextHeightAdaptivePolic
 import TextWordBreakNullTest from './TextTest/TextWordBreakNull.test';
 import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.test';
 import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -240,8 +241,8 @@ export default function testsuite() {
   TextTextVerticalAlignContentAlignTest();
   TextTextOverflowTest();
   TextFontFamilyTest();
-  TextMaxLinesTest();
-  TextMinLinesTest();
+  TextMaxLinesNullTest();
+  TextMinLinesNullTest();
   TextDecorationTest();
   TextLetterSpacingTest();
   TextTextCaseNullTest();
