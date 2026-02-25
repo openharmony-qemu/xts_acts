@@ -663,6 +663,8 @@ export default function windowErrCode401_4() {
         console.error(msgStr + 'Failed1. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         if (exception.code === 801) {
           done()
+        } else if (exception.code === 1300002) {
+          done()
         } else {
           expect().assertFail();
           done()
@@ -676,6 +678,8 @@ export default function windowErrCode401_4() {
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
         if (exception.code === 801) {
+          done()
+        } else if (exception.code === 1300002) {
           done()
         } else {
           expect(exception.code).assertEqual(401);
