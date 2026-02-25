@@ -199,22 +199,7 @@ struct CanvasParamsVisibilityPage {
             this.context = CanvasRenderingContext2D.getContext2DFromDrawingContext(drawingContext);
           }
         })
-      Canvas({} as CanvasParams)
-        .borderWidth(1)
-        .visibility(this.vis1)
-        .onReady((drawingContext?: DrawingRenderingContext): void => {
-          if (drawingContext != undefined) {
-            this.context = CanvasRenderingContext2D.getContext2DFromDrawingContext(null,null);
-          }
-        })
-      Canvas({} as CanvasParams)
-        .borderWidth(1)
-        .visibility(this.vis1)
-        .onReady((drawingContext?: DrawingRenderingContext): void => {
-          if (drawingContext != undefined) {
-            this.context = CanvasRenderingContext2D.getContext2DFromDrawingContext(undefined,undefined);
-          }
-        })
+      
     }
   }
 }
