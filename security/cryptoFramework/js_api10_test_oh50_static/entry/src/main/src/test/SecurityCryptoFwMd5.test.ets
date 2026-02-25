@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let message: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let macResult: cryptoFramework.DataBlob = await md5Utils.doHmac(symKeyAlgName, macAlgName, message);
         expect(macResult.data.byteLength).assertEqual(16);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -77,7 +77,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let macResult2: cryptoFramework.DataBlob = await md5Utils.doHmacWithKey(key, macAlgName, message);
         let ret: boolean = commonUtils.compareDataBlob(macResult1, macResult2);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -98,7 +98,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let macAlgName:string = "MD5";
         let macResult: cryptoFramework.DataBlob = await md5Utils.doHmacNoUpdate(symKeyAlgName, macAlgName);
         expect(macResult.data.byteLength).assertEqual(16);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -120,9 +120,9 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let message: cryptoFramework.DataBlob = {data: new Uint8Array()};
         await md5Utils.doHmac(symKeyAlgName, macAlgName, message);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -143,7 +143,7 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let message: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
         let macResult: cryptoFramework.DataBlob = await md5Utils.doHmac(symKeyAlgName, macAlgName, message);
         expect(macResult.data.byteLength).assertEqual(16);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -166,17 +166,17 @@ export default function SecurityCryptoFwMd5TestUnit() {
         let mac: cryptoFramework.Mac = cryptoFramework.createMac(macAlgName);
         try {
           await mac.update(message);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`HKDF No INIT “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(17630001);
+          expect((error as BusinessError).code).assertEqual(17630001);
         }
         try {
           await mac.doFinal();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`HKDF No INIT “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(17630001);
+          expect((error as BusinessError).code).assertEqual(17630001);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

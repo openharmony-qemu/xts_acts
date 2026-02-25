@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchApi1() {
   describe('SearchApi1', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FontSettingOptions beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

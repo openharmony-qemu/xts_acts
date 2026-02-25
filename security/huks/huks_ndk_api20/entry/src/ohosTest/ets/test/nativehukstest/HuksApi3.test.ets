@@ -33,7 +33,7 @@ export default function HuksApiTest3() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT0100 start====");
@@ -56,7 +56,7 @@ export default function HuksApiTest3() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT0100 start====");

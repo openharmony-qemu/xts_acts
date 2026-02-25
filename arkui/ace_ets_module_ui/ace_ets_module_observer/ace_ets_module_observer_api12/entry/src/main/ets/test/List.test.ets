@@ -26,6 +26,8 @@ import onTabUpdate from './observerTest/onTabUpdate.test'
 import uiScrollEvent from './observerTest/uiScrollEvent.test';
 import uiTabUpdate from './observerTest/uiTabUpdate.test'
 import uiIdUpdate from './observerTest/uiIdUpdate.test'
+import scrollEventNullUndefinedTest from './observerTest/scrollEventNullUndefined.test'
+import uiContextScrollEventNullUnTest from './observerTest/uiContextScrollEventNullUn.test'
 
 export default function testsuite() {
   observerScrollTest()
@@ -42,4 +44,6 @@ export default function testsuite() {
   uiScrollEvent();
   uiTabUpdate();
   uiIdUpdate();
+  scrollEventNullUndefinedTest();
+  uiContextScrollEventNullUnTest();
 }

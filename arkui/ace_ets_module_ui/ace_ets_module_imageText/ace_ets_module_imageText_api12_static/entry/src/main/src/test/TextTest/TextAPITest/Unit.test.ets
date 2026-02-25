@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function UnitTest() {
   describe('UnitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UnitTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -70,7 +70,7 @@ export default function UnitTest() {
      * @tc.desc     UnitTest_static_001
      * @tc.level   Level.LEVEL0
      */
-    it('UnitTest_static_001', Level.LEVEL0, (done: () => void): Promise<void> => {
+    it('UnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UnitTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

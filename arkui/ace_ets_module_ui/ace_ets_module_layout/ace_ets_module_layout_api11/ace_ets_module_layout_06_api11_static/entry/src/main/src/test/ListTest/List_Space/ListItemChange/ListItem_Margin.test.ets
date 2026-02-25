@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_Margin() {
 
   describe('ListItem_MarginTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_MarginTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -127,7 +127,7 @@ it('testListItemMargin_static', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.abs(locationText1.right - TextTest1.right) <= 1).assertTrue();
       expect(Math.abs(locationText1.bottom - TextTest1.bottom) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest14');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemMargin END');

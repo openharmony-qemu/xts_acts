@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function SliderAttrs2() {
   describe('SliderAttrs2', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SliderAttrs2 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

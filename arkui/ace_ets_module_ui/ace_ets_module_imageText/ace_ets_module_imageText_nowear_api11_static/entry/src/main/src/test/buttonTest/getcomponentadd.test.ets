@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ActsgetcomponentaddTest() {
   describe('ActsgetcomponentaddTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Builder0050TestJsunit beforeEach start");
 
      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
@@ -72,7 +72,6 @@ export default function ActsgetcomponentaddTest() {
 it('ArkUX_Get_component_add_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0010 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0010');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -83,10 +82,6 @@ it('ArkUX_Get_component_add_static_0010', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0010 END ');
-        } catch (err: Error) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0010 ERR  ' + err + err.stack);
-        }
         done();
       }, 500)
     });
@@ -103,7 +98,6 @@ it('ArkUX_Get_component_add_static_0010', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0020 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0020');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -114,10 +108,6 @@ it('ArkUX_Get_component_add_static_0020', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0020 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0020 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -134,7 +124,6 @@ it('ArkUX_Get_component_add_static_0020', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0030 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0030');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -145,10 +134,6 @@ it('ArkUX_Get_component_add_static_0030', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0030 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0030 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -165,7 +150,6 @@ it('ArkUX_Get_component_add_static_0030', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0040 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0040');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -176,10 +160,6 @@ it('ArkUX_Get_component_add_static_0040', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0040 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0040 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -196,7 +176,6 @@ it('ArkUX_Get_component_add_static_0040', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0050 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0050');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -207,10 +186,6 @@ it('ArkUX_Get_component_add_static_0050', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0050 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0050 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -227,7 +202,6 @@ it('ArkUX_Get_component_add_static_0050', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0060 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0060');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -238,10 +212,6 @@ it('ArkUX_Get_component_add_static_0060', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0060 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0060 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -258,7 +228,6 @@ it('ArkUX_Get_component_add_static_0060', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0070 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0070');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -269,10 +238,6 @@ it('ArkUX_Get_component_add_static_0070', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0070 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0070 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -289,7 +254,6 @@ it('ArkUX_Get_component_add_static_0070', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0080 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0080');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -300,10 +264,6 @@ it('ArkUX_Get_component_add_static_0080', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0080 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0080 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -320,7 +280,6 @@ it('ArkUX_Get_component_add_static_0080', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0090 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0090');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -331,10 +290,6 @@ it('ArkUX_Get_component_add_static_0090', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0090 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0090 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });
@@ -351,7 +306,6 @@ it('ArkUX_Get_component_add_static_0090', Level.LEVEL0, async (done: () => void)
 it('ArkUX_Get_component_add_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Get_component_add_0100 START');
       setTimeout(() => {
-        try {
           let strJson = Utils.getComponentRect('ArkUX_Get_component_add_0100');
           expect(strJson.width instanceof number).assertTrue();
           expect(strJson.height instanceof number).assertTrue();
@@ -362,10 +316,6 @@ it('ArkUX_Get_component_add_static_0100', Level.LEVEL0, async (done: () => void)
           expect(strJson.screenOffsetX instanceof number).assertTrue();
           expect(strJson.screenOffsetY instanceof number).assertTrue();
           console.info('ArkUX_Get_component_add_0100 END ');
-        } catch (err) {
-          expect().assertFail()
-          console.info('ArkUX_Get_component_add_0100 ERR  ' + JSON.stringify(err));
-        }
         done();
       }, 500)
     });

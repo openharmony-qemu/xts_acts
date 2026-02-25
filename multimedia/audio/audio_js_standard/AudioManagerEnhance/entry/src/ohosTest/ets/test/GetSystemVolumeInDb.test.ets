@@ -794,17 +794,29 @@ export default function audioManagerTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETSYSTEMVOLUMEINDB_CALLBACK_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      let lineDigitalDevice: boolean = false;
+      console.info(`GETSYSTEMVOLUMEINDB_CALLBACK_1600 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      lineDigitalDevice = outputDeviceDescription.some(device => 
+        device.deviceType === audio.DeviceType.DISPLAY_PORT || device.deviceType === audio.DeviceType.LINE_DIGITAL
+      );
+      console.info(`lineDigitalDevice is: ${lineDigitalDevice}`)
+      await sleep(1000);
       audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 0, audio.DeviceType.SPEAKER, (err: BusinessError, data: number) => {
         if (err) {
           console.log(`${TagFrmwk}:getSystemVolumeInDb : error ${err.message} ${err.code}`);
           expect(false).assertTrue();
           done();
+        } else if (lineDigitalDevice) {          
+          console.log(`${TagFrmwk}:getSystemVolumeInDb SUCCESS dB:${data}`);
+          expect(data).assertEqual(1);
         } else {
           console.log(`${TagFrmwk}:getSystemVolumeInDb SUCCESS dB:${data}`);
           expect(data).assertEqual(0);
-          done();
         }
       })
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500

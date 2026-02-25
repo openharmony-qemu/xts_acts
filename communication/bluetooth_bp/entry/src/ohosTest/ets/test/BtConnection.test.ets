@@ -43,21 +43,13 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
             console.info('pin required = '+ JSON.stringify(data));
         }
     function sleep(delay : number) : Promise<void> {
-            return new Promise(resovle => setTimeout(resovle, delay))
+            return new Promise(resolve => setTimeout(resolve, delay));
         }
-    async function openPhone() {
-        try{
-            let drivers = Driver.create();
-            console.info('[bluetooth_js] bt driver create:'+ drivers);            
-            await drivers.delayMs(1000);
-            await drivers.wakeUpDisplay();
-            await drivers.delayMs(5000);
-            await drivers.swipe(1500, 1000, 1500, 100);
-            await drivers.delayMs(10000);
-        } catch (error) {
-            console.info('[bluetooth_js] driver error info:'+ error);
-        }
+    function onReceiveEvent_ScanMode(data : bluetooth.ScanMode){
+        console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
+        expect(data).not().assertUndefined();
     }
+
     async function tryToEnableBt() {
         let sta = btAccess.getState();
         switch (sta) {
@@ -157,7 +149,6 @@ describe('btConnectionTest', () => {
     beforeAll(async (done : Function) => {
         console.info('beforeAll called')
         await clickRequestPermission(PERMISSION_TEXT);
-        await openPhone();
         done();
     })
     beforeEach(async (done : Function) => {
@@ -168,8 +159,10 @@ describe('btConnectionTest', () => {
     afterEach(() => {
         console.info('afterEach called')
     })
-    afterAll(() => {
+    afterAll(async (done : Function) => {
         console.info('afterAll called')
+        await tryToEnableBt()
+        done()
     })
 
     /**
@@ -2319,5 +2312,45 @@ describe('btConnectionTest', () => {
         expect(REAL).assertEqual(2);
         done();
     })
+
+    /**
+    * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
+    * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100
+    * @tc.desc   Test common onScanModeChange api23
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.onScanModeChange(onReceiveEvent_ScanMode);
+            bluetooth.offScanModeChange(onReceiveEvent_ScanMode);
+            console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0200
+     * @tc.desc   Test common 入参不一致 api23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.onScanModeChange(onReceiveEvent_ScanMode);
+            bluetooth.offScanModeChange();
+            console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
+
 })
 }

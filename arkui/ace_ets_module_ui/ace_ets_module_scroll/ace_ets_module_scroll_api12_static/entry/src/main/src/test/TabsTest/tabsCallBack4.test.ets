@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsCallBack4() {
   describe('tabsCallBack4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

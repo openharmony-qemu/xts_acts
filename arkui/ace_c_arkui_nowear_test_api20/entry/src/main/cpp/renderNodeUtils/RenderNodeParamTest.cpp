@@ -76,6 +76,7 @@ static napi_value RenderNodeParam001(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam001 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_OBJ_NE(property4, nullptr);
     NAPI_END;
 }
 
@@ -111,6 +112,7 @@ static napi_value RenderNodeParam002(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam002 result1=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_OBJ_NE(property4, nullptr);
 
     NAPI_END;
 }

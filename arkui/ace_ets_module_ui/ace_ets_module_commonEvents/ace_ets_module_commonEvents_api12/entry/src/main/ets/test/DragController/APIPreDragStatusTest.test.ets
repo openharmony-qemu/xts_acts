@@ -59,7 +59,8 @@ export default function APIPreDragStatusTest() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let obj1 = await driver.findComponent(ON.id('APIPreDragStatusColumn'));
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let obj1 = await scrollBar.scrollSearch(ON.id('APIPreDragStatusColumn'));
       await obj1.longClick();
       await CommonFunc.sleep(2000);
       let text2 = getInspectorByKey('APIPreDragStatusText01');

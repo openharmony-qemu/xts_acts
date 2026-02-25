@@ -59,7 +59,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindPopupTest() {
   describe('bindPopupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindPopupTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -84,7 +84,7 @@ export default function bindPopupTest() {
           await CommonFunc.sleep(2000);
           // console.info("push bindPopup success: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push bindPopup page error: " + err);
       }
 
@@ -120,7 +120,7 @@ it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0100 click result is: " +
@@ -159,7 +159,7 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
         }
         console.info("bindPopupTest_static_0200 start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("bindPopupTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1500);
@@ -174,7 +174,7 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEventOne, callbackOne);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0200 click result is: " +
@@ -209,7 +209,7 @@ it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0300 click result is: " +

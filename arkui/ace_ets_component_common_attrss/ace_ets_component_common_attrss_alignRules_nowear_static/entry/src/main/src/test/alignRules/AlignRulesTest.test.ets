@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function AlignRulesTest() {
   //A list of components that support the position attribute, which is required.
-  let supportView = ['Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper']
+  let supportView = ['Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit']
 
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;
@@ -259,7 +259,7 @@ export default function AlignRulesTest() {
 
   describe('AlignRulesTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SizeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.alignRules.nowear.test.static",

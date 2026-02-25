@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -128,7 +128,7 @@ function numberArrayToDataBlob(data: number[]): cryptoFramework.DataBlob {
     return {
       data: new Uint8Array(data)
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('error code: ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -139,7 +139,7 @@ function uint8ArrayToDataBlob(data: Uint8Array): cryptoFramework.DataBlob {
     return {
       data: data
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('error code: ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -152,7 +152,7 @@ async function convertSymKey(algName: string, vector: macVectorSpec|symVectorSpe
     let symKey: cryptoFramework.SymKey = await symGenerator.convertKey(keyDataBlob);
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('error code: ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -169,7 +169,7 @@ function getKdfSpec(password: number[], salt: number[], iterations: int, keySize
     }
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -186,7 +186,7 @@ function getHkdfSpec(key: number[], salt: number[], info: number[], keySize: int
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }

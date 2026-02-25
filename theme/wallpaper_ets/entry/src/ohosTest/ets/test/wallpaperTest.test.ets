@@ -69,7 +69,7 @@ export default function wallpaperJSUnit() {
          */
         it('testGetIdCallbackSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetIdCallbackSystem101 start-----------------');
-            wallpaper.getId(WALLPAPER_SYSTEM, (err, data) => {
+            wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testGetIdCallbackSystem101 err : ' + JSON.stringify(err));
@@ -97,7 +97,7 @@ export default function wallpaperJSUnit() {
          */
         it('testGetIdPromiseSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetIdCallbackSystem101 start-----------------');
-            await wallpaper.getId(WALLPAPER_SYSTEM).then((data) => {
+            await wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_SYSTEM).then((data) => {
                 console.info('====>testGetIdCallbackSystem101 data : ' + JSON.stringify(data));
                 expect(Number.isInteger(data)).assertTrue();
                 done();
@@ -119,7 +119,7 @@ export default function wallpaperJSUnit() {
          */
         it('testGetIdCallbackLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetIdCallbackLock102 start-----------------');
-            wallpaper.getId(WALLPAPER_LOCKSCREEN, (err, data) => {
+            wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testGetIdCallbackLock102 err : ' + JSON.stringify(err));
@@ -147,7 +147,7 @@ export default function wallpaperJSUnit() {
          */
         it('testGetIdPromiseLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetIdPromiseLock102 start-----------------');
-            await wallpaper.getId(WALLPAPER_LOCKSCREEN).then((data) => {
+            await wallpaper.getId(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN).then((data) => {
                 console.info('====>testGetIdPromiseLock102 data : ' + JSON.stringify(data));
                 expect(Number.isInteger(data)).assertTrue();
                 done();

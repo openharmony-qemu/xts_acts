@@ -30,7 +30,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function tabContentState() {
   describe('tabContentState', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tabContentState beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");
@@ -98,7 +98,8 @@ it('tabContentState_static_001', Level.LEVEL0, async (done: () => void): Promise
       let strJson = inspector.getInspectorByKey('tabs_state');
       console.info("+++++++++++++++++++++++++++++3 ");
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[tabContentState_001] component obj is: " + JSON.stringify(obj));
+      console.info("[tabContentState_001] component obj is: " + JSON.stringifyJsonElement(obj));
+      console.info("[tabContentState_001] component obj is: " + JSON.stringifyJsonElement(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('HideShow');
       console.info('[tabContentState_001] END');
       done();

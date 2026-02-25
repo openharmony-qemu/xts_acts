@@ -23,7 +23,7 @@ let libUtil:LibUtil = new LibUtil();
 
 export default function customDialogBackGroundTest(){
   describe('customDialogBackGroundTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.log('customDialogBackGroundTest beforeAll start')
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
       console.log('customDialogBackGroundTest beforeAll end')

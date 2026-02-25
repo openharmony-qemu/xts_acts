@@ -34,7 +34,6 @@ import {
   Margin,
   PickerTextStyle,
   CalendarAlign,
-  Date,
   CalendarPicker,
   Toggle,
   ToggleType,

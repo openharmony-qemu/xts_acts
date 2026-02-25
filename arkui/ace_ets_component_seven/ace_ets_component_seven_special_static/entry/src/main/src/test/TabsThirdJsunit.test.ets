@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function tabsThirdJsunit() {
   describe('tabsThirdTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("tabsThirdTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

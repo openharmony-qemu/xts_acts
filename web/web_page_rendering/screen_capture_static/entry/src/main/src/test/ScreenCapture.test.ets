@@ -53,9 +53,9 @@ export default function screenCapture() {
      * @tc.desc   test ScreenCaptureConfigGetOrigin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testScreenCaptureConfigGetOriginStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testScreenCaptureConfigGetOriginStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitScreenCaptureConfigGetOrigin001", 10)
       await Utils.msSleep(3000);
       Utils.registerEvent("testScreenCaptureConfigGetOriginStatic001", true, 4202, done);

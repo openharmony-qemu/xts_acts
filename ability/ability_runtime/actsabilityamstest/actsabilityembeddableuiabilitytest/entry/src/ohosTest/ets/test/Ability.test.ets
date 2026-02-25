@@ -20,6 +20,9 @@ import{ data } from '@kit.TelephonyKit';
 import { systemParameterEnhance } from '@kit.BasicServicesKit';
 import { Driver, ON ,Component } from '@kit.TestKit';
 import startability from '../../../main/ets/startability/startAbility';
+import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+import eventBus from '../lib/EventBus';
+
 const DOMAIN_NUMBER: number = 0xFF00;
 
 function sleep(time: number){
@@ -27,6 +30,8 @@ function sleep(time: number){
 }
 
 export default function abilityTest() {
+  let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+
   describe('SUB_Ability_AbilityRuntime_deeplink', () => {
     const TEST_SUITE_NAME: string = 'SUB_Ability_AbilityRuntime_deeplink_Tset';
     const TAG: string = 'SUB_Ability_AbilityRuntime_deeplink';
@@ -507,6 +512,12 @@ export default function abilityTest() {
             done();
           }
         })
+
+        if (globalThis.testAbilityOnBackground) {
+          abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+          await eventBus.onWait('TestAbility_onForeground');
+        }
+
         let want: Want = {
           deviceId: '',
           bundleName: 'com.example.appa',
@@ -514,9 +525,12 @@ export default function abilityTest() {
           parameters:{
             'wantConstant.Params.SHOW_MODE_KEY':wantConstant.ShowMode.EMBEDDED_FULL
           }
-
         }
-        context.startAbilityForResult(want);
+        context.startAbilityForResult(want).then(() => {
+          hilog.info(0x0000, TAG, '%{public}s', 'startAbilityForResult success.');
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, TAG, '%{public}s', `startAbilityForResult err. ${JSON.stringify(err)}`);
+        })
       })
 
     })
@@ -558,6 +572,12 @@ export default function abilityTest() {
             done();
           }
         })
+
+        if (globalThis.testAbilityOnBackground) {
+          abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+          await eventBus.onWait('TestAbility_onForeground');
+        }
+
         let want: Want = {
           deviceId: '',
           bundleName: 'com.example.appa',
@@ -566,7 +586,11 @@ export default function abilityTest() {
             'wantConstant.Params.SHOW_MODE_KEY':wantConstant.ShowMode.EMBEDDED_FULL
           }
         }
-        context.startAbility(want);
+        context.startAbility(want).then(() => {
+          hilog.info(0x0000, TAG, '%{public}s', 'startAbility success.');
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, TAG, '%{public}s', `startAbility err. ${JSON.stringify(err)}`);
+        })
       })
 
     })
@@ -582,6 +606,12 @@ export default function abilityTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200';
       console.info('enter into test');
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} =========`);
+
+      if (globalThis.testAbilityOnBackground) {
+        abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+        await eventBus.onWait('TestAbility_onForeground');
+      }
+
       let want: Want = {
         deviceId: '',
         bundleName: 'com.example.appa',

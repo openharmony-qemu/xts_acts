@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function UIObserverUpdateContextTest() {
   describe('UIObserverUpdateContextTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -92,7 +92,7 @@ it('UIObserverUpdateContextTest_static_0100', Level.LEVEL2, async (done: () => v
 
       console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount is: ' + AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount'));
       console.info('UIObserverUpdateContextTest_static_0100 UIObserverUpdateContextPage_callBackFuncOnCount_2 is: ' + AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
-      expect(AppStorage.get('UIObserverUpdateContextPage_callBackFuncOnCount')).assertEqual(AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
+      expect(AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount')).assertEqual(AppStorage.get<int>('UIObserverUpdateContextPage_callBackFuncOnCount_2'));
       AppStorage.delete('UIObserverUpdateContextPage_callBackFuncOnCount')
       AppStorage.delete('UIObserverUpdateContextPage_callBackFuncOnCount_2')
 

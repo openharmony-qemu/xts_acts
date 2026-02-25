@@ -1638,9 +1638,9 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNormal, Function 
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShaderEffectDestroy parameter is null
+    OH_Drawing_ShaderEffect *shaderEffect = nullptr;
     OH_Drawing_ShaderEffectDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(shaderEffect, nullptr);
 }
 
 /**

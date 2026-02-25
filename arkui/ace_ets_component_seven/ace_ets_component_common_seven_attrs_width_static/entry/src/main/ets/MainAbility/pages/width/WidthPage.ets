@@ -50,7 +50,6 @@ import {
   Select,
   MenuItemOptions,
   Slider,
-  Stepper,
   TextArea,
   TextClock,
   TextInput,
@@ -92,7 +91,6 @@ import {
   BarState,
   Search,
   SliderStyle,
-  StepperItem,
   TextTimer,
   ToggleType,
   TextAlign,
@@ -173,9 +171,7 @@ import {
   SliderAttribute,
   SpanAttribute,
   StackAttribute,
-  StepperAttribute,
   CommonMethod,
-  StepperItemAttribute,
   SwiperAttribute,
   SideBarContainerAttribute,
   ToggleAttribute,
@@ -653,22 +649,6 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: StackAttribute): void {
-    instance.width(this.mWidth)
-  }
-}
-
-class StepperModifier implements AttributeModifier<StepperAttribute> {
-  mWidth: number | string = 10
-
-  applyNormalAttribute(instance: StepperAttribute): void {
-    instance.width(this.mWidth)
-  }
-}
-
-class StepperItemModifier implements AttributeModifier<StepperItemAttribute> {
-  mWidth: number | string = 10
-
-  applyNormalAttribute(instance: StepperItemAttribute): void {
     instance.width(this.mWidth)
   }
 }
@@ -1215,20 +1195,6 @@ function commonStyle(this: StackAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string) {
-  this.width(50)
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: StepperItemAttribute, componentKey: string) {
-  this.width(50)
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.width(50)
   this.height('100%')
@@ -1469,8 +1435,6 @@ struct WidthPage {
   @State _widthSideBarContainerMod: SideBarContainerModifier = new SideBarContainerModifier()
   @State _widthSliderMod: SliderModifier = new SliderModifier()
   @State _widthStackMod: StackModifier = new StackModifier()
-  @State _widthStepperMod: StepperModifier = new StepperModifier()
-  @State _widthStepperItemMod: StepperItemModifier = new StepperItemModifier()
   @State _widthSwiperMod: SwiperModifier = new SwiperModifier()
   @State _widthTabContentMod: TabContentModifier = new TabContentModifier()
   @State _widthTabsMod: TabsModifier = new TabsModifier()
@@ -1737,16 +1701,6 @@ struct WidthPage {
           .backgroundColor(this.BackGroundColor)
           .height(100)
           .attributeModifier(this._widthWaterFlowMod)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem()
-        }.commonStyle(this.componentKey).height(100).attributeModifier(this._widthStepperMod)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Text('Page One')
-          }.commonStyle(this.componentKey).attributeModifier(this._widthStepperItemMod)
-        }.key(this.parentComponentKey).width(this.parentWidth).height(this.parentHeight)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem().commonStyle(this.componentKey).attributeModifier(this._widthFlowItemMod)

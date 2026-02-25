@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundJsunit() {
   describe('backgroundTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
@@ -109,7 +109,7 @@ it('testBackground_static_0200', Level.LEVEL0, async (done: () => void): Promise
         }
         console.info("testBackground_0200 start pages");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testBackground_0200 change component data error: " + err.message);
       }
       await Utils.sleep(3000);

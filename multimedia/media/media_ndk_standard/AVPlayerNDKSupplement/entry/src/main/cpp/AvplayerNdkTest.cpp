@@ -2493,12 +2493,16 @@ static napi_value NAPI_AVLoadingRequestError(napi_env env, napi_callback_info in
     int32_t denied = 4;
     int32_t timeout = 5;
     int32_t failed = 6;
+    int32_t success = 0;
+    int32_t notReady = 1;
     int32_t res = 1;
     if (AVLoadingRequestError::AV_LOADING_ERROR_NO_RESOURCE == resource &&
         AVLoadingRequestError::AV_LOADING_ERROR_INVALID_HANDLE == handle &&
         AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_DENIED == denied &&
         AVLoadingRequestError::AV_LOADING_ERROR_ACCESS_TIMEOUT == timeout &&
-        AVLoadingRequestError::AV_LOADING_ERROR_AUTHORIZE_FAILED == failed) {
+        AVLoadingRequestError::AV_LOADING_ERROR_AUTHORIZE_FAILED == failed &&
+        AVLoadingRequestError::AV_LOADING_ERROR_SUCCESS == success &&
+        AVLoadingRequestError::AV_LOADING_ERROR_NOT_READY == notReady) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
@@ -2514,7 +2518,6 @@ static napi_value NAPI_AVHttpHeaderDestroy(napi_env env, napi_callback_info info
     if (errorCode == AV_ERR_OK) {
         res = 0;
     }
-    OH_AVHttpHeader_Destroy(header);
     napi_create_int32(env, res, &result);
     return result;
 }
@@ -2583,6 +2586,124 @@ static napi_value NAPI_AVErrCode(napi_env env, napi_callback_info info)
     if (OH_AVErrCode::AV_ERR_SUPER_RESOLUTION_UNSUPPORTED == unsupported &&
         OH_AVErrCode::AV_ERR_IO_CLEARTEXT_NOT_PERMITTED == permitted &&
         OH_AVErrCode::AV_ERR_SUPER_RESOLUTION_NOT_ENABLED == enabled) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlayerSetMediaMutedErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int type = 1;
+    napi_value args[PARAM_3] = {nullptr};
+    OH_MediaType mediaType = static_cast<OH_MediaType>(type);
+    bool muted;
+    napi_get_value_bool(env, args[PARAM_1], &muted);
+    OH_AVErrCode errCode = OH_AVPlayer_SetMediaMuted(nullptr, mediaType, muted);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlayerSetMediaMutedErr1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 2;
+    int type = 1;
+    napi_value args[PARAM_3] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_MediaType mediaType = static_cast<OH_MediaType>(type);
+    bool muted;
+    napi_get_value_bool(env, args[PARAM_1], &muted);
+    NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
+    AVPlayerState state = AVPlayerState::AV_IDLE;
+    OH_AVErrCode getStateErr = OH_AVPlayer_GetState(ndkAVPlayerUser->player, &state);
+    if (getStateErr != AV_ERR_OK) {
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    OH_AVErrCode errCode = OH_AVPlayer_SetMediaMuted(ndkAVPlayerUser->player, mediaType, muted);
+    int32_t res = 1;
+    if (errCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlayerSetSeiReceivedCallbackErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    uint32_t typeSize = 0;
+    napi_get_array_length(env, args[PARAM_0], &typeSize);
+    int32_t *typeList = static_cast<int32_t *>(malloc((typeSize + 1) * sizeof(int32_t)));
+    if (typeList == nullptr) {
+        return nullptr;
+    }
+    int32_t num = 0;
+    for (size_t i = 0; i < typeSize; i++) {
+        napi_value item1;
+        napi_get_element(env, args[PARAM_0], i, &item1);
+        napi_get_value_int32(env, item1, &num);
+        typeList[i] = num;
+        LOG("typeList[%{public}zu]=%{public}d", i, typeList[i]);
+    }
+    int32_t typeNum;
+    napi_get_value_int32(env, args[PARAM_1], &typeNum);
+    int backParam = FAIL;
+    int32_t userData;
+    OH_AVErrCode errCode = OH_AVPlayer_SetSeiReceivedCallback(nullptr, const_cast<const int32_t*>(typeList), typeNum,
+        TestOH_AVPlayerOnSeiMessageReceived, (void*)&userData);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    free(typeList);
+    typeList = nullptr;
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVMediaSourceLoaderCreate(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVMediaSourceLoader* loader = OH_AVMediaSourceLoader_Create();
+    int32_t res = 1;
+    if (loader != nullptr) {
+        res = 0;
+    }
+    OH_AVMediaSourceLoader_Destroy(loader);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVPlaybackStrategyDestoy(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = OH_AVPlaybackStrategy_Create();
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_Destroy(strategy);
+    int32_t res = 1;
+    if (errCode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value NAPI_AVPlaybackStrategyDestoyErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_Destroy(strategy);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
@@ -2733,6 +2854,18 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"AVPlayerSeekMode", nullptr, NAPI_AVPlayerSeekMode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AVErrCode", nullptr, NAPI_AVErrCode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AVPlayerSetMediaMutedErr", nullptr, OhAVPlayerSetMediaMutedErr, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVPlayerSetMediaMutedErr1", nullptr, OhAVPlayerSetMediaMutedErr1, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVPlayerSetSeiReceivedCallbackErr", nullptr, OhAVPlayerSetSeiReceivedCallbackErr, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"AVMediaSourceLoaderCreate", nullptr, NAPI_AVMediaSourceLoaderCreate, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"AVPlaybackStrategyDestoy", nullptr, NAPI_AVPlaybackStrategyDestoy, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVPlaybackStrategyDestoyErr", nullptr, NAPI_AVPlaybackStrategyDestoyErr, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     SampleManager::GetInstance()->Export(env, exports);

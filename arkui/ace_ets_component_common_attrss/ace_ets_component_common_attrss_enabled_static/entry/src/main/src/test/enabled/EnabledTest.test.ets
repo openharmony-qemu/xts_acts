@@ -29,7 +29,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 function expectEvent(data: BasePageConfig, event: string) {
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
-  await Utils.sleep(2000)
+  waitForCompletion(async ()=>{await Utils.sleep(2000)})
   console.info(JSON.stringify(referenceComponent) + ' verify onHover11.')
   if (isEnabledTrue(data)) {
     console.info('isEnabledTrue == true -> ' + referenceComponent.getElement('$attrs').getString('content'))
@@ -70,8 +70,6 @@ export default function enabledTest() {
     'RelativeContainer',
     'GridItem',
     'TextTimer',
-    'Stepper',
-    'StepperItem',
     'Flex',
     'Progress',
     'QRCode',
@@ -203,7 +201,7 @@ export default function enabledTest() {
    * Create test suite.
    */
   describe('EnabledTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info("enabledTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility");
     });

@@ -66,7 +66,7 @@ int32_t ActsGameDeviceDeviceEventGetChangedType01()
     GameDevice_StatusChangedType type;
 
     GameController_ErrorCode code = OH_GameDevice_DeviceEvent_GetChangedType(event, &type);
-    if (type != ONLINE) {
+    if (type != ONLINE && type != OFFLINE) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
     DestroyDeviceEvent(event);

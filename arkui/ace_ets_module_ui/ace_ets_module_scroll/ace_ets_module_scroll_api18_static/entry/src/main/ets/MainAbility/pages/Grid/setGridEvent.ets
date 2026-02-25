@@ -15,7 +15,7 @@
  */
 import { LocalStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { FrameNode, NodeController } from '@ohos.arkui.node';
+import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
 import {
   Button,
   ClickEvent,
@@ -31,6 +31,7 @@ import {
   ScrollSource,
   ScrollState,
   Text,
+  UIGridEvent,
   NodeContainer
 } from '@ohos.arkui.component';
 
@@ -55,40 +56,40 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    // let listEvent: UIGridEvent | undefined = typeNode.getEvent(frameNode, 'Grid');
-    // listEvent?.setOnWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource)=>{
-    //   storage.set('Grid_setOnWillScroll', 'setOnWillScroll');
-    //   console.log(`Grid:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
-    // })
-    // listEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState)=>{
-    //   storage.set('Grid_setOnDidScroll', 'setOnDidScroll');
-    //   console.log(`Grid:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
-    // })
-    // listEvent?.setOnReachStart(()=>{
-    //   storage1.set('Grid_setOnReachStart', 'setOnReachStart');
-    //   console.log(`Grid:: setOnReachStart`)
-    // })
-    // listEvent?.setOnReachEnd(()=>{
-    //   storage1.set('Grid_setOnReachEnd', 'setOnReachEnd');
-    //   console.log(`Grid:: setOnReachEnd`)
-    // })
-    // listEvent?.setOnScrollStart(()=>{
-    //   storage2.set('Grid_setOnScrollStart', 'setOnScrollStart');
-    //   console.log(`Grid:: setOnScrollStart`)
-    // })
-    // listEvent?.setOnScrollStop(()=>{
-    //   storage2.set('Grid_setOnScrollStop', 'setOnScrollStop');
-    //   console.log(`Grid:: setOnScrollStop`)
-    // })
-    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
-    //   storage3.set('Grid_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
-    //   console.log(`Grid:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
-    //   return undefined;
-    // })
-    // listEvent?.setOnScrollIndex((first: number, last: number)=>{
-    //   storage3.set('Grid_setOnScrollIndex', 'setOnScrollIndex');
-    //   console.log(`Grid:: setOnScrollIndex start=${first}, end=${last}`)
-    // })
+    let listEvent: UIGridEvent | undefined = typeNode.getGridEvent(frameNode);
+    listEvent?.setOnWillScroll((scrollOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource)=>{
+      storage.set('Grid_setOnWillScroll', 'setOnWillScroll');
+      console.log(`Grid:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    })
+    listEvent?.setOnDidScroll((scrollOffset: Double, scrollState: ScrollState)=>{
+      storage.set('Grid_setOnDidScroll', 'setOnDidScroll');
+      console.log(`Grid:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
+    })
+    listEvent?.setOnReachStart(()=>{
+      storage1.set('Grid_setOnReachStart', 'setOnReachStart');
+      console.log(`Grid:: setOnReachStart`)
+    })
+    listEvent?.setOnReachEnd(()=>{
+      storage1.set('Grid_setOnReachEnd', 'setOnReachEnd');
+      console.log(`Grid:: setOnReachEnd`)
+    })
+    listEvent?.setOnScrollStart(()=>{
+      storage2.set('Grid_setOnScrollStart', 'setOnScrollStart');
+      console.log(`Grid:: setOnScrollStart`)
+    })
+    listEvent?.setOnScrollStop(()=>{
+      storage2.set('Grid_setOnScrollStop', 'setOnScrollStop');
+      console.log(`Grid:: setOnScrollStop`)
+    })
+    listEvent?.setOnScrollFrameBegin((offset: Double, state: ScrollState) => {
+      storage3.set('Grid_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+      console.log(`Grid:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+       return {offsetRemain: offset};
+    })
+    listEvent?.setOnScrollIndex((first: Int, last: Int)=>{
+      storage3.set('Grid_setOnScrollIndex', 'setOnScrollIndex');
+      console.log(`Grid:: setOnScrollIndex start=${first}, end=${last}`)
+    })
   }
 }
 
@@ -96,7 +97,7 @@ class MyNodeController extends NodeController {
 @Component
 struct setOnGridIndex01 {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index: number = 0;
+  @State index: int = 0;
   @State text: string = 'start';
   @State text1: string = 'start';
   @State text2: string = 'start';
@@ -108,7 +109,7 @@ struct setOnGridIndex01 {
         .id('Grid_addCommonEvent_01')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          // this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
+          this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
         })
       Text(this.text)
         .id('Grid_setOnWill_01')
@@ -161,10 +162,10 @@ struct setOnGridIndex01 {
       .id('key_gridItem_set')
       .columnsTemplate('1r')
       .edgeEffect(EdgeEffect.None)
-      .onWillScroll((scrollOff: number, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
+      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
         console.log(`Grid:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
       })
-      .onDidScroll((scrollOff: number, scrollState: ScrollState): void => {
+      .onDidScroll((scrollOff: Double, scrollState: ScrollState): void => {
         console.log(`Grid:: onDidScroll 1  scrollOff=${scrollOff}, scrollState=${scrollState}`)
       })
       .onReachStart((): void => {
@@ -179,8 +180,9 @@ struct setOnGridIndex01 {
       .onScrollStop((): void => {
         console.log(`Grid:: onScrollStop 1 `)
       })
-      .onScrollFrameBegin((offset: number, state: ScrollState): OnScrollFrameBeginHandlerResult => {
+      .onScrollFrameBegin((offset: Double, state: ScrollState): OnScrollFrameBeginHandlerResult => {
         console.log(`Grid:: onScrollFrameBegin 1 off=${offset}, state=${state}`)
+        return {offsetRemain: offset};
       })
       .onScrollIndex((first: int, last: int): void => {
         console.log(`Grid:: onScrollIndex 1 start=${first}, end=${last}`)

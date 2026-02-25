@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MarqueeNodeTest() {
   describe('MarqueeNodeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MarqueeNodeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

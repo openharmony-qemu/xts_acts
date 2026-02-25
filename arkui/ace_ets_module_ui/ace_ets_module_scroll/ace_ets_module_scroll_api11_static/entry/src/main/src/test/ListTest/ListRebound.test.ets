@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ export default function ListReboundTest() {
 
   describe('ListReboundTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -69,7 +69,7 @@ export default function ListReboundTest() {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -98,7 +98,7 @@ it('ArkUI_Rebound_static_0100', Level.LEVEL1, async (done: () => void): Promise<
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.Spring')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -131,7 +131,7 @@ it('ArkUI_Rebound_static_0200', Level.LEVEL1, async (done: () => void): Promise<
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.Fade')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -162,7 +162,7 @@ it('ArkUI_Rebound_static_0300', Level.LEVEL1, async (done: () => void): Promise<
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.None')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }

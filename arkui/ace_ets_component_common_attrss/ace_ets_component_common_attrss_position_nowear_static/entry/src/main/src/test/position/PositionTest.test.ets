@@ -49,13 +49,11 @@ export default function positionTest() {
     'ColumnSplit',
     'Select',
     'SideBarContainer',
-    'Stepper',
-    'StepperItem',
     'FlowItem',
     'WaterFlow'
   )
 
-  // 存在问题的自定义组件 StepperView StepperItemView FlowItemView WaterFlowView
+  // 存在问题的自定义组件 FlowItemView WaterFlowView
   // 总共4个导致16个报错， 报错原因inspector.getInspectorByKey()取不到值
 
   //Page related configuration, this parameter is required.
@@ -119,7 +117,7 @@ export default function positionTest() {
    * Create test suite.
    */
   describe('PositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.position.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -136,8 +134,8 @@ export default function positionTest() {
         data.testValue.expectValue.left = Number(uiContext!.vp2px(parentWidth)) * 0.2
       }
       if (data.testValue.describe == "SetResource" ){
-        data.testValue.expectValue.top = Number(uiContext!.vp2px(200))
-        data.testValue.expectValue.left = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
       }
 
       //Obtain the region information of the reference component.
@@ -168,11 +166,11 @@ export default function positionTest() {
       console.info('[' + data.caseTag + '] check actual position.');
       let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey ?? '');
 
-      //When the target component is TabContent or StepperItem,
-      //the parent component is the Swiper on the outer layer of Tabs or Stepper.
+      //When the target component is TabContent,
+      //the parent component is the Swiper on the outer layer of Tabs.
       let rectParent = parentRectAfter;
       let benchmarkChanged = false;
-      if ('TabContent' == data.pageConfig.targetView || 'StepperItem' == data.pageConfig.targetView) {
+      if ('TabContent' == data.pageConfig.targetView) {
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]

@@ -51,7 +51,7 @@ async function executeTouch(data: BasePageConfig, hitTestBehavior: string, refer
   //And the parent component can not be stack or relativeContainer
   if (data.pageConfig.targetView == 'Blank') {
     console.info('[' + data.caseTag + ']  targetView is Blank');
-    // return '';
+    return;
   }
 
   //Determine if the sibling component responds to touch test control.
@@ -156,7 +156,7 @@ export default function hitTestBehaviorTest() {
    * Create test suite.
    */
   describe('HitTestBehaviorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("hitTestBehaviorTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

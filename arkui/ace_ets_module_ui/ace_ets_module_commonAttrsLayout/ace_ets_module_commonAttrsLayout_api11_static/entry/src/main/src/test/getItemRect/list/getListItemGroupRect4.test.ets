@@ -38,13 +38,10 @@ export default function getListItemGroupRect4() {
   describe('getListItemGroupRect4', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
-
-    const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getListItemGroupRect4 beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
     });
     beforeEach(() => {
       console.info("getListItemGroupRect4 beforeEach start");
@@ -84,6 +81,7 @@ export default function getListItemGroupRect4() {
 it('getListItemGroupRect4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect4_static_0100] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
@@ -149,6 +147,7 @@ it('getListItemGroupRect4_static_0100', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect4_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect4_static_0200] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
@@ -212,6 +211,7 @@ it('getListItemGroupRect4_static_0200', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect4_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect4_static_0300] START');
+      let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =

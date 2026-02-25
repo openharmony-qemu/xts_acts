@@ -31,7 +31,7 @@ import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })
@@ -51,7 +51,7 @@ export default function calendarJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push calendar page error: " + err);
       }
     });
@@ -85,7 +85,7 @@ it('ACE_calendar_CurrentDayStyle_colSpace', Level.LEVEL2, async (done: () => voi
           }
           console.info("[ACE_calendar_CurrentDayStyle_colSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_colSpace] change component data error: " + err.message);
         }
         done();
@@ -118,7 +118,7 @@ it('ACE_calendar_CurrentDayStyle_dailyFiveRowSpace', Level.LEVEL2, async (done: 
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] change component data error: " + err.message);
         }
         done();
@@ -152,7 +152,7 @@ it('ACE_calendar_CurrentDayStyle_dailySixRowSpace', Level.LEVEL2, async (done: (
           }
           console.info("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_dailySixRowSpace] change component data error: " + err.message);
         }
         done();
@@ -186,7 +186,7 @@ it('ACE_calendar_CurrentDayStyle_lunarHeight', Level.LEVEL2, async (done: () => 
           }
           console.info("[ACE_calendar_CurrentDayStyle_lunarHeight] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_lunarHeight] change component data error: " + err.message);
         }
         done();
@@ -220,7 +220,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreWidth', Level.LEVEL2, async (done: ()
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreWidth] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreWidth] change component data error: " + err.message);
         }
         done();
@@ -254,7 +254,7 @@ it('ACE_calendar_CurrentDayStyle_underscoreLength', Level.LEVEL2, async (done: (
           }
           console.info("[ACE_calendar_CurrentDayStyle_underscoreLength] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_underscoreLength] change component data error: " + err.message);
         }
         done();
@@ -288,7 +288,7 @@ it('ACE_calendar_CurrentDayStyle_scheduleMarkerRadius', Level.LEVEL2, async (don
           }
           console.info("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] change component data error: " + err.message);
         }
         done();
@@ -322,7 +322,7 @@ it('ACE_calendar_CurrentDayStyle_boundaryRowOffset', Level.LEVEL2, async (done: 
           }
           console.info("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CurrentDayStyle_boundaryRowOffset] change component data error: " + err.message);
         }
         done();
@@ -355,7 +355,7 @@ it('ACE_calendar_WeekStyle_weekAndDayRowSpace', Level.LEVEL2, async (done: () =>
           }
           console.info("[ACE_calendar_WeekStyle_weekAndDayRowSpace] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_WeekStyle_weekAndDayRowSpace] change component data error: " + err.message);
         }
         done();
@@ -389,7 +389,7 @@ it('ACE_calendar_CalendarAttribute_direction', Level.LEVEL2, async (done: () => 
           }
           console.info("[ACE_calendar_CalendarAttribute_direction] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[ACE_calendar_CalendarAttribute_direction] change component data error: " + err.message);
         }
         done();

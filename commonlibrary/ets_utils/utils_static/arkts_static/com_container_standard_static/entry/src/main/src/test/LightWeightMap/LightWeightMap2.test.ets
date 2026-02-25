@@ -43,7 +43,7 @@ interface ComplexKey {
 
 export default function LightWeightMapTest2() {
   describe('lightWeightMapTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

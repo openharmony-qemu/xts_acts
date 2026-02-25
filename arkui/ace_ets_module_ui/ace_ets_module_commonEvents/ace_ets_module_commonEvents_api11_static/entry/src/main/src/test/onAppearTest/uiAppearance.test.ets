@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function uiAppearanceALWAYS_DARKJsunit() {
   describe('uiAppearanceALWAYS_DARKTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -97,7 +97,7 @@ it('testuiAppearanceALWAYS_DARK_static_0001', Level.LEVEL0, async (done: () => v
         console.info("testuiAppearanceALWAYS_DARK0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('ALWAYS_DARKText', 10, "")));
         emitter.on(event, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testuiAppearanceALWAYS_DARK0001 on emitter err : " + JSON.stringify(err));
       }
     });
@@ -127,7 +127,7 @@ it('testuiAppearanceALWAYS_LIGHT0001', Level.LEVEL0, async (done: () => void): P
         console.info("testuiAppearanceALWAYS_LIGHT0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('ALWAYS_LIGHTText', 10, "")));
         emitter.on(event, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testuiAppearanceALWAYS_LIGHT0001 on emitter err : " + JSON.stringify(err));
       }
     });

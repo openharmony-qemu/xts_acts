@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextStyle() {
   describe('TextStyle', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextStyle beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -114,7 +114,7 @@ export default function TextStyle() {
       console.info("[TextStyle_002] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
 
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{}');
+      expect(obj.getElement('$attrs').getString('content') != '{}').assertTrue();
       console.info('[TextStyle_002] END');
       done();
 

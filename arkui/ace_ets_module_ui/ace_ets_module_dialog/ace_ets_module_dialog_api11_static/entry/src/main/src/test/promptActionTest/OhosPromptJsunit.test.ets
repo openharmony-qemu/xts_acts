@@ -60,7 +60,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_3 beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

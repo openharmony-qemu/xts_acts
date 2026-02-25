@@ -79,7 +79,7 @@ export default function BorderImageTest() {
    * Create test suite.
    */
   describe('borderImageTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('1111111111')
       await UtilsTest.msSleep(4000)
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

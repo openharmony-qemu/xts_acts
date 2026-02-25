@@ -37,8 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function OffsetTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
-	'Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'Stepper', 'FlowItem',
-    'StepperItem'
+	'Select', 'SideBarContainer', 'WaterFlow', 'RowSplit', 'ColumnSplit', 'FlowItem'
   )
 
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
@@ -107,7 +106,7 @@ export default function OffsetTest() {
    */
 
   describe('OffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.offset.nowear.test.static", "EntryAbility")
     });
@@ -192,10 +191,10 @@ export default function OffsetTest() {
       expect(viewObj.getElement('$attrs').getElement('offset').getString('x')).assertEqual(testData.testValue.expectValue.x);
       expect(viewObj.getElement('$attrs').getElement('offset').getString('y')).assertEqual(testData.testValue.expectValue.y);
 
-      if ('TabContent' == testData.pageConfig.targetView || 'StepperItem' == testData.pageConfig.targetView) {
+      if ('TabContent' == testData.pageConfig.targetView) {
         console.log('testData.pageConfig.targetView',testData.pageConfig.targetView)
-        //When the target component is TabContent or StepperItem,
-        //the parent component is the Swiper on the outer layer of Tabs or Stepper.
+        //When the target component is TabContent,
+        //the parent component is the Swiper on the outer layer of Tabs.
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray('$children')[0]
           .getArray('$children')[0]

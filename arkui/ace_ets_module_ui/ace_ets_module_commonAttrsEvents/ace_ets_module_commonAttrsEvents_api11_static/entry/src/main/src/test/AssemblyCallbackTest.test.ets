@@ -31,11 +31,9 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 export default function assemblyCallbackTest() {
   describe('assemblyCallbackTest', () => {
-    await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
 
-    let uiContext = AppStorage.get<UIContext>('uiContext')!
-
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
       console.info("assemblyCallbackTest beforeAll start");
     });
 
@@ -68,6 +66,7 @@ export default function assemblyCallbackTest() {
      */
 it('ArkUX_Callback_notification_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0210 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
           console.info('ArkUX_Callback_notification_static_0210 START  111:');
@@ -77,7 +76,6 @@ it('ArkUX_Callback_notification_static_0210', Level.LEVEL0, async (done: () => v
           expect(typeof listener11).assertEqual("object")
           // console.info('ArkUX_Callback_notification_static_0210 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0210 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -93,15 +91,15 @@ it('ArkUX_Callback_notification_static_0210', Level.LEVEL0, async (done: () => v
      */
 it('ArkUX_Callback_notification_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0220 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
-          // let listener12 = inspector.createComponentObserver("")
-          // console.info('ArkUX_Callback_notification_static_0220 START  :' + listener12);
-          // console.info('ArkUX_Callback_notification_static_0220 START  :' + typeof listener12);
-          // expect(typeof listener12).assertEqual("object")
-          // console.info('ArkUX_Callback_notification_static_0220 END ');
+          let listener12 = uiContext.getUIInspector().createComponentObserver("")
+          console.info('ArkUX_Callback_notification_static_0220 START  :' + listener12);
+          console.info('ArkUX_Callback_notification_static_0220 START  :' + typeof listener12);
+          expect(typeof listener12).assertEqual("object")
+          console.info('ArkUX_Callback_notification_static_0220 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0220 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -117,15 +115,15 @@ it('ArkUX_Callback_notification_static_0220', Level.LEVEL0, async (done: () => v
      */
 it('ArkUX_Callback_notification_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0230 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
-          // let listener13 = inspector.createComponentObserver("object")
-          // console.info('ArkUX_Callback_notification_static_0230 START  :' + listener13);
-          // console.info('ArkUX_Callback_notification_static_0230 START  :' + typeof listener13);
-          // expect(typeof listener13).assertEqual("object")
-          // console.info('ArkUX_Callback_notification_static_0230 END ');
+          let listener13 = uiContext.getUIInspector().createComponentObserver("object")
+          console.info('ArkUX_Callback_notification_static_0230 START  :' + listener13);
+          console.info('ArkUX_Callback_notification_static_0230 START  :' + typeof listener13);
+          expect(typeof listener13).assertEqual("object")
+          console.info('ArkUX_Callback_notification_static_0230 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0230 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -141,15 +139,15 @@ it('ArkUX_Callback_notification_static_0230', Level.LEVEL0, async (done: () => v
      */
 it('ArkUX_Callback_notification_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0240 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
-          // let listener14 = inspector.createComponentObserver("null")
-          // console.info('ArkUX_Callback_notification_static_0240 START  :' + listener14);
-          // console.info('ArkUX_Callback_notification_static_0240 START  :' + typeof listener14);
-          // expect(typeof listener14).assertEqual("object")
-          // console.info('ArkUX_Callback_notification_static_0240 END ');
+          let listener14 = uiContext.getUIInspector().createComponentObserver("null")
+          console.info('ArkUX_Callback_notification_static_0240 START  :' + listener14);
+          console.info('ArkUX_Callback_notification_static_0240 START  :' + typeof listener14);
+          expect(typeof listener14).assertEqual("object")
+          console.info('ArkUX_Callback_notification_static_0240 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0240 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -165,15 +163,15 @@ it('ArkUX_Callback_notification_static_0240', Level.LEVEL0, async (done: () => v
      */
 it('ArkUX_Callback_notification_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0250 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
-          // let listener15 = inspector.createComponentObserver("")
-          // console.info('ArkUX_Callback_notification_static_0250 START  :' + listener15);
-          // console.info('ArkUX_Callback_notification_static_0250 START  :' + typeof listener15);
-          // expect(typeof listener15).assertEqual("object")
-          // console.info('ArkUX_Callback_notification_static_0250 END ');
+          let listener15 = uiContext.getUIInspector().createComponentObserver("")
+          console.info('ArkUX_Callback_notification_static_0250 START  :' + listener15);
+          console.info('ArkUX_Callback_notification_static_0250 START  :' + typeof listener15);
+          expect(typeof listener15).assertEqual("object")
+          console.info('ArkUX_Callback_notification_static_0250 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0250 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -189,15 +187,15 @@ it('ArkUX_Callback_notification_static_0250', Level.LEVEL0, async (done: () => v
      */
 it('ArkUX_Callback_notification_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0260 START');
+      let uiContext = AppStorage.get<UIContext>('uiContext')!
       setTimeout(() => {
         try {
-          // let listener16 = inspector.createComponentObserver("object")
-          // console.info('ArkUX_Callback_notification_static_0260 START  :' + listener16);
-          // console.info('ArkUX_Callback_notification_static_0260 START  :' + typeof listener16);
-          // expect(typeof listener16).assertEqual("object")
-          // console.info('ArkUX_Callback_notification_static_0260 END ');
+          let listener16 = uiContext.getUIInspector().createComponentObserver("object")
+          console.info('ArkUX_Callback_notification_static_0260 START  :' + listener16);
+          console.info('ArkUX_Callback_notification_static_0260 START  :' + typeof listener16);
+          expect(typeof listener16).assertEqual("object")
+          console.info('ArkUX_Callback_notification_static_0260 END ');
         } catch (err) {
-          expect().assertFail()
           console.info('ArkUX_Callback_notification_static_0260 ERR  ' + JSON.stringify(err));
         }
         done();

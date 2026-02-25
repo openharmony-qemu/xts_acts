@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -911,7 +911,7 @@ export default function ArrayLastIndexOfTest() {
      */
     it("testArrayLastIndexOf0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint32Array = new Uint32Array([4, 1, 3, 1]);
-      const sortedArr: number[] = Array.from(arr).sort((a: number, b: number) => a - b);
+      const sortedArr: number[] = Array.from(arr).sort((a: number, b: number) => (a - b).toInt());
       const result: number = sortedArr.lastIndexOf(1);
       expect(result).assertEqual(1);
     });

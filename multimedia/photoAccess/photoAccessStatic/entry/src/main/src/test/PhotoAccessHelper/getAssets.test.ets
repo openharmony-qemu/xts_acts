@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ export default function getAssetsTest() {
     const getAssetsCallbackTest = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
       expectCount: number): Promise<void> => {
       try {
-        helper.getAssets(fetchOps, (err: BusinessError<void> | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps, (err: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           try {
             if (err?.code !== 0) {
@@ -48,13 +48,13 @@ export default function getAssetsTest() {
               expect(fetchResult?.getCount()).assertEqual(expectCount);
               fetchResult?.close();
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag,
               testNum + ' getAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -65,7 +65,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | undefined): Promise<void> => {
       try {
-        helper.getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError<void> | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined): void => {
           try {
             if (err?.code !== 0) {
@@ -76,13 +76,13 @@ export default function getAssetsTest() {
               fetchResult?.close();
               expect(false).assertTrue();
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag,
               testNum + ' getAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         done();
@@ -92,11 +92,11 @@ export default function getAssetsTest() {
     const getAssetsPromiseTest = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
       expectCount: number): Promise<void> => {
       try {
-        const fetchResult = await helper.getAssets(fetchOps);
+        const fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount()).assertEqual(expectCount);
         fetchResult.close();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -107,10 +107,10 @@ export default function getAssetsTest() {
     const getAssetsAbnormalPromiseTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | undefined): Promise<void> => {
       try {
-        await helper.getAssets(fetchOps as photoAccessHelper.FetchOptions);
+        await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         done();
@@ -120,7 +120,7 @@ export default function getAssetsTest() {
     const getAssetsAbnormalCallbackWithInvalidTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | "invalid"): Promise<void> => {
       try {
-        helper.getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError | null,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions, (err: BusinessError | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           try {
             if (err?.code !== 0) {
@@ -131,13 +131,15 @@ export default function getAssetsTest() {
               fetchResult?.close();
               expect(false).assertTrue();
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${testNum} getAssets failed; error: ${error},  ${error.code}`);
             expect(error.code).assertEqual('14000011');
           }
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${testNum} failed; error: ${error},  ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();
@@ -147,10 +149,11 @@ export default function getAssetsTest() {
     const getAssetsAbnormalPromiseWithInvalidTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions | "invalid"): Promise<void> => {
       try {
-        await helper.getAssets(fetchOps as photoAccessHelper.FetchOptions);
+        await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${testNum} failed; error: ${error}, ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();

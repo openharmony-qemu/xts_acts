@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Row_MarginPadding() {
 
   describe('Row_MarginPadding', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_MarginPadding beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

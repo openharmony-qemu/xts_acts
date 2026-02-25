@@ -206,8 +206,9 @@ export default function swiperThemeTest() {
 
         expect(indicatorColor).assertEqual(checkIndicatorColor);
         expect(indicatorSelectedColor).assertEqual(checkIndicatorSelectedColor);
-        expect(arrowColor, checkArrowColor);
-        expect(arrowBackgroundColor, checkArrowBackgroundColor);
+        expect(arrowColor).assertEqual(checkArrowColor);
+        expect(arrowBackgroundColor).assertEqual(checkArrowBackgroundColor);
+
       }
 
       {
@@ -220,8 +221,9 @@ export default function swiperThemeTest() {
         const checkSelectedFontColor: string = localTheme?.colors?.fontPrimary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
 
-        expect(fontColor, checkFontColor);
-        expect(selectedFontColor, checkSelectedFontColor);
+        expect(fontColor).assertEqual(checkFontColor);
+        expect(selectedFontColor).assertEqual(checkSelectedFontColor);
+
       }
 
       changeTheme = true;

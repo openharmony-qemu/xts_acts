@@ -19,7 +19,6 @@ import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlig
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 function callbackFunc(info: observer.TabContentInfo) {
-  console.info('tabContentUpdate', JSON.stringify(info));
   if(info.id) {
     if (info.state == observer.TabContentState.ON_SHOW){
       AppStorage.setOrCreate<string>('Observer_SHOW', 'Show')
@@ -53,13 +52,10 @@ struct TabsStateExample {
         .id('observer_getState')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          console.log('+++++++++++++++++++++++++++++getText 1')
-          let text1=AppStorage.get<string>('Observer_HIDE') as string
-          console.log('+++++++++++++++++++++++++++++2')
-          let text2=AppStorage.get<string>('Observer_SHOW') as string
-          console.log('+++++++++++++++++++++++++++++3')
-          this.text = text1 + text2 + ''
-          console.log('+++++++++++++++++++++++++++++4')
+          let text1=AppStorage.get<string>('Observer_HIDE')
+          let text2=AppStorage.get<string>('Observer_SHOW')
+          this.text =`${text1}${text2}`
+          console.log('+++++++++++++++++++++++++++++4 ' + this.text)
         })
       Tabs() {
         TabContent() {

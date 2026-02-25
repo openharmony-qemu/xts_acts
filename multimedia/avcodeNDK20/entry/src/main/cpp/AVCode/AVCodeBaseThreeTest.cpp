@@ -41,6 +41,11 @@ napi_value VideoEncoder_FreeOutputBuffer_Test(napi_env env, napi_callback_info i
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -61,6 +66,11 @@ napi_value VideoEncoder_RegisterParameterCallback_Test(napi_env env, napi_callba
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -81,6 +91,11 @@ napi_value VideoEncoder_SetParameter_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -100,6 +115,11 @@ napi_value VideoEncoder_SetParameter_Test(napi_env env, napi_callback_info info)
 napi_value VideoEncoder_NotifyEndOfStream_Test(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     OH_AVErrCode ret = OH_VideoEncoder_NotifyEndOfStream(videoEnc);
@@ -113,6 +133,11 @@ napi_value VideoEncoder_PushInputData_Test(napi_env env, napi_callback_info info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -138,6 +163,11 @@ napi_value VideoEncoder_PushInputBuffer_Test(napi_env env, napi_callback_info in
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -158,6 +188,11 @@ napi_value VideoEncoder_PushInputParameter_Test(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -182,6 +217,11 @@ napi_value VideoEncoder_QueryInputBuffer_Test(napi_env env, napi_callback_info i
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -203,6 +243,11 @@ napi_value VideoEncoder_QueryInputBuffer_Test2(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -231,6 +276,11 @@ napi_value VideoEncoder_QueryInputBuffer_Test3(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -253,6 +303,11 @@ napi_value VideoEncoder_QueryOutputBuffer_Test(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -274,6 +329,11 @@ napi_value VideoEncoder_QueryOutputBuffer_Test2(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -302,6 +362,11 @@ napi_value VideoEncoder_QueryOutputBuffer_Test3(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -326,6 +391,17 @@ napi_value VideoDecoder_SetSurface_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
+    OH_AVCapability *capability1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (capability1 == nullptr) {
+        napi_value retNullValue2;
+        napi_create_int32(env, 1, &retNullValue2);
+        return retNullValue2;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -333,7 +409,6 @@ napi_value VideoDecoder_SetSurface_Test(napi_env env, napi_callback_info info)
     OH_AVFormat_SetIntValue(format.get(), OH_MD_KEY_HEIGHT, HEIGHT);
     OH_AVFormat_SetIntValue(format.get(), OH_MD_KEY_PIXEL_FORMAT, pixelFormat);
     OH_AVFormat_SetIntValue(format.get(), OH_MD_KEY_ENABLE_SYNC_MODE, 1);
-    OH_AVCapability *capability1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *name1 = OH_AVCapability_GetName(capability1);
     OH_AVCodec *videoEnc = OH_VideoEncoder_CreateByName(name1);
     OH_VideoEncoder_Configure(videoEnc, format.get());
@@ -351,6 +426,11 @@ napi_value VideoDecoder_SetParameter_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -371,6 +451,11 @@ napi_value VideoDecoder_PushInputData_Test(napi_env env, napi_callback_info info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -396,6 +481,11 @@ napi_value VideoDecoder_RenderOutputData_Test(napi_env env, napi_callback_info i
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -416,6 +506,11 @@ napi_value VideoDecoder_FreeOutputData_Test(napi_env env, napi_callback_info inf
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -436,6 +531,11 @@ napi_value VideoDecoder_PushInputBuffer_Test(napi_env env, napi_callback_info in
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -456,6 +556,11 @@ napi_value VideoDecoder_RenderOutputBuffer_Test(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -474,6 +579,11 @@ napi_value VideoDecoder_RenderOutputBufferAtTime_Test(napi_env env, napi_callbac
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -492,6 +602,11 @@ napi_value VideoDecoder_FreeOutputBuffer_Test(napi_env env, napi_callback_info i
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -512,6 +627,11 @@ napi_value VideoDecoder_QueryInputBuffer_Test(napi_env env, napi_callback_info i
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -533,6 +653,11 @@ napi_value VideoDecoder_QueryInputBuffer_Test2(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -561,6 +686,11 @@ napi_value VideoDecoder_QueryInputBuffer_Test3(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -583,6 +713,11 @@ napi_value VideoDecoder_QueryOutputBuffer_Test(napi_env env, napi_callback_info 
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -604,6 +739,11 @@ napi_value VideoDecoder_QueryOutputBuffer_Test2(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -626,6 +766,11 @@ napi_value VideoDecoder_QueryOutputBuffer_Test3(napi_env env, napi_callback_info
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -648,6 +793,11 @@ napi_value VideoDecoder_Configure_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -659,7 +809,13 @@ napi_value VideoDecoder_Configure_Test(napi_env env, napi_callback_info info)
     OH_AVErrCode ret = OH_VideoDecoder_Configure(videoDec, format.get());
     OH_VideoDecoder_Destroy(videoDec);
     napi_value ret2;
-    napi_create_int32(env, (ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION || ret == AV_ERR_OK) ? 1: 0, &ret2);
+    napi_create_int32(env, 0, &ret2);
+    if (ret == AV_ERR_VIDEO_UNSUPPORTED_COLOR_SPACE_CONVERSION) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if (ret == AV_ERR_OK) {
+        napi_create_int32(env, 1, &ret2);
+    }
     return ret2;
 }
 
@@ -667,6 +823,11 @@ napi_value VideoDecoder_Prepare_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -678,15 +839,26 @@ napi_value VideoDecoder_Prepare_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Configure(videoDec, format.get());
     OH_AVErrCode ret = OH_VideoDecoder_Prepare(videoDec);
     OH_VideoDecoder_Destroy(videoDec);
-    napi_value retValue;
-    napi_create_int32(env, (ret == AV_ERR_OPERATE_NOT_PERMIT || ret == AV_ERR_OK) ? 1: 0, &retValue);
-    return retValue;
+    napi_value ret2;
+    napi_create_int32(env, 0, &ret2);
+    if (ret == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if (ret == AV_ERR_OK) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    return ret2;
 }
 
 napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info)
 {
     OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, HARDWARE);
+    if (capability == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 1, &retNullValue);
+        return retNullValue;
+    }
     const char *name = OH_AVCapability_GetName(capability);
     OH_AVCodec *videoDec = OH_VideoDecoder_CreateByName(name);
     auto format = std::shared_ptr<OH_AVFormat>(OH_AVFormat_Create(), OH_AVFormat_Destroy);
@@ -698,17 +870,28 @@ napi_value VideoDecoder_Start_Test(napi_env env, napi_callback_info info)
     OH_VideoDecoder_Configure(videoDec, format.get());
     OH_AVErrCode ret = OH_VideoDecoder_Start(videoDec);
     OH_VideoDecoder_Destroy(videoDec);
-    napi_value retValue;
-    napi_create_int32(env, (ret == AV_ERR_OPERATE_NOT_PERMIT || ret == AV_ERR_INVALID_STATE) ? 1: 0, &retValue);
-    return retValue;
+    napi_value ret2;
+    napi_create_int32(env, 0, &ret2);
+    if (ret == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    if (ret == AV_ERR_INVALID_STATE) {
+        napi_create_int32(env, 1, &ret2);
+    }
+    return ret2;
 }
 
 napi_value VideoEncoder_QueryOutputBuffer(napi_env env, napi_callback_info info)
 {
+    OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 0, &retNullValue);
+        return retNullValue;
+    }
     auto vEncSample = std::make_unique<OHOS::Media::AVEncodeTest>();
     vEncSample->enbleSyncMode = 1;
     vEncSample->syncOutputWaitTime = INT64_MIN;
-    OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     const char *enName = OH_AVCapability_GetName(cap);
     int32_t ret = vEncSample->CreateVideoEncoder(enName);
     ret = vEncSample->ConfigureVideoEncoder();
@@ -725,6 +908,11 @@ napi_value VideoEncoder_QueryInputBuffer(napi_env env, napi_callback_info info)
     auto vEncSample = std::make_unique<OHOS::Media::AVEncodeTest>();
     vEncSample->enbleSyncMode = 0;
     OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 0, &retNullValue);
+        return retNullValue;
+    }
     const char *enName = OH_AVCapability_GetName(cap);
     int32_t ret = vEncSample->CreateVideoEncoder(enName);
     ret = vEncSample->ConfigureVideoEncoder();
@@ -740,6 +928,11 @@ napi_value VideoDecoder_AVDecodeSync(napi_env env, napi_callback_info info)
 {
     int32_t ret = 0;
     OH_AVCapability* cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
+    if (cap == nullptr) {
+        napi_value retNullValue;
+        napi_create_int32(env, 0, &retNullValue);
+        return retNullValue;
+    }
     const char* capName = OH_AVCapability_GetName(cap);
     if (cap == nullptr) {
         napi_value retValue;

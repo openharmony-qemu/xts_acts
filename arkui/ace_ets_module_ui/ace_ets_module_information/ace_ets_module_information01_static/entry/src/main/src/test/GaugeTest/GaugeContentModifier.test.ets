@@ -34,7 +34,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 
 export default function gaugeTest() {
   describe('ActsGaugeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.information01.static', 'EntryAbility');
     })
@@ -75,7 +75,7 @@ export default function gaugeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_Gauge', Level.LEVEL0, (done: () => void) => {
+    it('test_Gauge', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Gauge] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('gauge_contentModifier');
@@ -92,7 +92,7 @@ export default function gaugeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_Gauge_01', Level.LEVEL0, (done: () => void) => {
+    it('test_Gauge_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Gauge_01] START');
       await Utils.sleep(1000);
       let driver = Driver.create();
@@ -113,7 +113,7 @@ export default function gaugeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_Gauge_02', Level.LEVEL0, (done: () => void) => {
+    it('test_Gauge_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_Gauge_02] START');
       await Utils.sleep(1000);
       let driver = Driver.create();

@@ -29,7 +29,7 @@ const SLEEP_TIME_S = 100;
 
 export default function ImageContentTransitionTest() {
   describe('ImageContentTransitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageContentTransitionTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

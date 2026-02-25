@@ -75,7 +75,7 @@ async function forKey(Key: string, text: string, icon?: PasswordIcon) {
 }
 export default function textinputSec() {
   describe('textinputSec', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textinputSec beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
@@ -109,18 +109,13 @@ export default function textinputSec() {
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolTrue", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 err  :' + JSON.stringify(err))
-        done()
-      }
+
     })
 
     /**
@@ -131,18 +126,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0100', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolFalse", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -153,7 +142,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0200', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrNull", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0300 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -161,11 +149,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0300', Level.LEVEL1, async (done:
         await UtilsTest.msSleep(5000)
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0300 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -176,18 +159,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0300', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrUndefined", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -198,18 +175,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0400', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrStr", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -221,18 +192,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0500', Level.LEVEL1, async (done:
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolFalse", "");
       await forKey("BoolTrue", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -244,18 +209,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0600', Level.LEVEL1, async (done:
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolTrue", "");
       await forKey("BoolErrStr", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -267,18 +226,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0700', Level.LEVEL1, async (done:
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrStr", "");
       await forKey("BoolTrue", "");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -290,18 +243,12 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0800', Level.LEVEL1, async (done:
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrNum", "1");
       await UtilsTest.msSleep(2000)
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -312,7 +259,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0900', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0100', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextStr", "string");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0100 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -325,11 +271,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0100', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
 
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0100 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -340,7 +281,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0100', Level.LEVEL1, async (done: ()=
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextErr", "undefined");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0200 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -352,11 +292,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0200', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0200 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -367,7 +302,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0200', Level.LEVEL1, async (done: ()=
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0300', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextNum", "10");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0300 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -379,11 +313,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0300', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0300 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -393,7 +322,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0300', Level.LEVEL1, async (done: ()=
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=>void) => {
-      try {
         let strJson = inspector.getInspectorByKey('TextInputResources');
         console.info('ArkUX_Stage_TextInput_ShowError_0400 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -405,11 +333,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('string');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0400 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -420,7 +343,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0500', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextStr", '');
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0500 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -432,11 +354,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0500', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0500 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -447,7 +364,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0500', Level.LEVEL1, async (done: ()=
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0600', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextErr", "null");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0600 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -459,11 +375,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0600', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0600 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -474,7 +385,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0600', Level.LEVEL1, async (done: ()=
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0700', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextNum", "-1");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0700 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -486,11 +396,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0700', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0700 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -502,7 +407,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0700', Level.LEVEL1, async (done: ()=
 it('ArkUX_Stage_TextInput_ShowError_static_0800', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextStr", "string");
       await forKey("TextStr", "showError");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0800 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -514,11 +418,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0800', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('showError');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('showError');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0800 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -530,7 +429,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0800', Level.LEVEL1, async (done: ()=
 it('ArkUX_Stage_TextInput_ShowError_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextStr", "string");
       await forKey("TextErr", "null");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0900 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -542,11 +440,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0900', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_0900 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -558,7 +451,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0900', Level.LEVEL1, async (done: ()=
 it('ArkUX_Stage_TextInput_ShowError_static_1000', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("TextErr", "null");
       await forKey("TextStr", "string");
-      try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_1000 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
@@ -570,11 +462,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_1000', Level.LEVEL1, async (done: ()=
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('string');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_ShowError_1000 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -588,7 +475,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: 
         onIconSrc: $r("app.media.ohos_app_bar_fa"),
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0100 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -596,11 +482,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: 
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_app_bar_fa").id.toString() + ".svg")) != -1).assertTrue();
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0100 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -614,7 +495,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: 
         offIconSrc: $r("app.media.ohos_app_bar_back"),
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0200 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -622,11 +502,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0200 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -641,7 +516,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0300', Level.LEVEL1, async (done: 
         offIconSrc: $r("app.media.ohos_close"),
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0300 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -649,11 +523,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0300', Level.LEVEL1, async (done: 
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_correct").id.toString() + ".svg")) != -1).assertTrue();
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_close").id.toString() + ".svg")) != -1).assertTrue();
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0300 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -668,7 +537,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: 
         offIconSrc: undefined,
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0400 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -677,11 +545,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: 
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
 
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0400 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -696,7 +559,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: 
         offIconSrc: undefined,
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0500 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -704,11 +566,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0500 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -723,7 +580,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: 
         offIconSrc: "",
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0600 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -731,11 +587,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0600 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -750,7 +601,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: 
         offIconSrc: undefined,
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0700 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -758,11 +608,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0700 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -777,7 +622,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: 
         offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0800 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -785,11 +629,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: 
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_correct").id.toString() + ".svg")) != -1).assertTrue();
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0800 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -803,7 +642,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: 
         onIconSrc: undefined, offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0900 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -812,11 +650,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: 
         expect((Icon.getString('offIconSrc').indexOf($r("app.media.ohos_close").id.toString() + ".svg")) != -1).assertTrue();
 
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_0900 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -835,7 +668,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: 
       }
       await forKey("passWordIcon", "", passwordIcon);
       await UtilsTest.msSleep(1000)
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1000 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -843,11 +675,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: 
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_app_bar_fa").id.toString() + ".svg")) != -1).assertTrue();
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1000 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -865,7 +692,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: 
         onIconSrc: undefined, offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1100 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -873,11 +699,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1100 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -895,7 +716,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1200', Level.LEVEL1, async (done: 
         onIconSrc: $r('app.media.ohos_correct'), offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1200 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -903,11 +723,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1200', Level.LEVEL1, async (done: 
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_correct").id.toString() + ".svg")) != -1).assertTrue();
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_close").id.toString() + ".svg")) != -1).assertTrue();
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1200 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -925,7 +740,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: 
         onIconSrc: undefined, offIconSrc: $r('app.media.ohos_app_bar_back')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1200 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -933,11 +747,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect((Icon.getString('offIconSrc').indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1300 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -955,7 +764,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
         onIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIconSec);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1400 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -963,11 +771,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1400 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -977,7 +780,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: ()=>void) => {
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInputNO'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1500 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -988,13 +790,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: 
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
-
+        
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1500 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -1008,7 +805,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1600', Level.LEVEL1, async (done: 
         onIconSrc: $r('app.media.icon'), offIconSrc: $r('app.media.icon')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1600 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -1017,11 +813,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1600', Level.LEVEL1, async (done: 
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.icon").id.toString() + ".png")) != -1).assertTrue();
 
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1600 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -1035,7 +826,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: 
         onIconSrc: "../../resources/base/media/icon.png", offIconSrc: "../../resources/base/media/icon.png"
       }
       await forKey("passWordIcon", "", passwordIcon);
-      try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1700 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
@@ -1043,11 +833,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: 
         expect(Icon.getString('onIconSrc')).assertEqual("../../resources/base/media/icon.png");
         expect(Icon.getString('offIconSrc')).assertEqual("../../resources/base/media/icon.png");
         done()
-      } catch (err) {
-        expect().assertFail()
-        console.info('ArkUX_Stage_TextInput_PasswordIcon_1700 err  :' + JSON.stringify(err))
-        done()
-      }
     })
 
     /**
@@ -1058,15 +843,10 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: 
      */
 it('ArkUX_Stage_TextInput_barState_static_0100', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0100');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0100 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.OFF');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1079,15 +859,10 @@ it('ArkUX_Stage_TextInput_barState_static_0100', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0200', Level.LEVEL1, (done: ()=>void)  :void=> {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0200');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0200 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1100,15 +875,10 @@ it('ArkUX_Stage_TextInput_barState_static_0200', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0300', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0300');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0300 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.ON');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1121,15 +891,10 @@ it('ArkUX_Stage_TextInput_barState_static_0300', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0400', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0400');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0400 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1142,15 +907,10 @@ it('ArkUX_Stage_TextInput_barState_static_0400', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0500', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0500');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0500 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.OFF');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1163,15 +923,10 @@ it('ArkUX_Stage_TextInput_barState_static_0500', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0600', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0600');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0600 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1184,15 +939,10 @@ it('ArkUX_Stage_TextInput_barState_static_0600', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0700', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0700');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0700 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1205,15 +955,10 @@ it('ArkUX_Stage_TextInput_barState_static_0700', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0800', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0800');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0800 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1226,15 +971,10 @@ it('ArkUX_Stage_TextInput_barState_static_0800', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_0900', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_0900');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_0900 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1247,15 +987,10 @@ it('ArkUX_Stage_TextInput_barState_static_0900', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_1000', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_1000');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_1000 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1268,15 +1003,10 @@ it('ArkUX_Stage_TextInput_barState_static_1000', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_1100', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_1100');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_1100 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1289,15 +1019,10 @@ it('ArkUX_Stage_TextInput_barState_static_1100', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_1200', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_barState_1200');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_1200 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.ON');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1310,15 +1035,10 @@ it('ArkUX_Stage_TextInput_barState_static_1200', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_1300', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('TextInputInlineNO');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_1300 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.AUTO');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_1300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1331,15 +1051,10 @@ it('ArkUX_Stage_TextInput_barState_static_1300', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_barState_static_1400', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('TextInputStyleDefault');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_barState_1400 barState:' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
           expect(obj.getElement('$attrs').getString('barState')).assertEqual('BarState.ON');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_barState_1400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1352,15 +1067,10 @@ it('ArkUX_Stage_TextInput_barState_static_1400', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0100', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0100');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0100 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('10');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1373,15 +1083,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0100', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0200', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0200');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0200 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1394,15 +1099,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0200', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0300', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0300');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0300 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1415,15 +1115,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0300', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0400', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0400');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0400 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1436,15 +1131,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0400', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0500', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0500');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0500 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1457,15 +1147,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0500', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0600', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0600');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0600 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1478,15 +1163,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0600', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0700', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0700');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0700 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1499,15 +1179,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0700', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0800', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0800');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0800 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('10');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1520,15 +1195,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0800', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_0900', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_0900');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_0900 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1541,15 +1211,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_0900', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_1000', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_TextInput_maxLines_1000');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_1000 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('10');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1562,15 +1227,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_1000', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_1100', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('TextInputInlineNO');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_1100 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('3');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })
@@ -1583,15 +1243,10 @@ it('ArkUX_Stage_TextInput_maxLines_static_1100', Level.LEVEL1, (done: ()=>void) 
      */
 it('ArkUX_Stage_TextInput_maxLines_static_1200', Level.LEVEL1, (done: ()=>void) :void => {
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('TextInputStyleDefault');
           let obj = JSON.parseJsonElement(strJson);
           console.info('ArkUX_Stage_TextInput_maxLines_1200 maxLines:' + JSON.stringify(obj.getElement('$attrs').getString('maxLines')));
           expect(obj.getElement('$attrs').getString('maxLines')).assertEqual('1');
-        } catch (err) {
-          console.info('ArkUX_Stage_TextInput_maxLines_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done()
       }, 500);
     })

@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignSpaceEvenly_AddLayoutWeight() {
   describe('AlignSpaceEvenly_AddLayoutWeight', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignSpaceEvenly_AddLayoutWeight beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

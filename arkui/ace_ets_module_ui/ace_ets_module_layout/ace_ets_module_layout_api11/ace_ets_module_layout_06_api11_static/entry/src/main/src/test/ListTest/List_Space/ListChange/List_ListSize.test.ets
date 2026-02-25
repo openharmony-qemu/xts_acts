@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_ListSize() {
 
   describe('List_ListSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_ListSizeTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -116,7 +116,7 @@ it('testListListSizeMeet_static', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.round(List_ListSize_014.bottom - List_ListSize_014.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(100)));
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_ListSize_013.left + ((List_ListSize_013.right - List_ListSize_013.left) / 2))).toInt(),
         (Math.round(List_ListSize_013.bottom)).toInt(),
         (Math.round(List_ListSize_012.left + ((List_ListSize_012.right - List_ListSize_012.left) / 2))).toInt(),

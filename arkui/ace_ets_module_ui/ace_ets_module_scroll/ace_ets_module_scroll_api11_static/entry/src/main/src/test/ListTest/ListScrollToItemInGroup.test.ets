@@ -49,7 +49,7 @@ export default function ListScrollToItemInGroup() {
   const waitUiReadyMs: int = 2000;
 
   describe('ListScrollToItemInGroup', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 
@@ -88,9 +88,16 @@ export default function ListScrollToItemInGroup() {
      */
 it('ArkUI_List_Scroll_To_Item_In_Group_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0001] START');
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      let btn: Component = await driver.findComponent(ON.id('Btn_0_0')) as Component;
+      await btn.click();
+      await CommonFunc.sleep(1500);
       let List: RectValue = CommonFunc.getComponentRect('MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group0_Index0');
-      expect(ListItem.top).assertEqual(List.top);
+      console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] List' + JSON.stringify(List));
+      console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] ListItem' + JSON.stringify(ListItem));
+      expect(Math.abs(ListItem.top - List.top) <= 1).assertEqual(true);
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0001] END');
       done();
     });

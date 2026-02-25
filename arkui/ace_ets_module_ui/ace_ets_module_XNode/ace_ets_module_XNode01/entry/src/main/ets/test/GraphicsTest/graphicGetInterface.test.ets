@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import CommonFunc, { RectValue } from '../../MainAbility/common/Common';
+
 export default function graphicGetInterfaceTest() {
   describe('graphicGetInterfaceTest', () => {
     beforeEach(async (done: Function) => {
@@ -58,10 +60,13 @@ export default function graphicGetInterfaceTest() {
       let strJson: string = getInspectorByKey('overLay');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[graphicTestInterfaceTest_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual('150.00vp');
-      let strJson2 = getInspectorByKey('overLay2');
-      let obj2: ESObject = JSON.parse(strJson2);
-      expect(obj2.$attrs.content).assertEqual('150.00vp');
+
+      let graphic: RectValue = CommonFunc.getComponentRect('NodeContainerTest');
+      let graphic_width = graphic.right - graphic.left;
+      let graphic_height = graphic.bottom - graphic.top;
+      expect(Math.floor(Math.abs(graphic_width - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(graphic_height - vp2px(150))) <= 1).assertTrue();
+      
       console.info('[graphicTestInterfaceTest_0100 ] END');
       done();
     });

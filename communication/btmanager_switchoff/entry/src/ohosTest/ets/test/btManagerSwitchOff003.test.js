@@ -28,7 +28,7 @@ let gattClient = null;
 let BleScanner = null;
 let closeUnsupport = false;
 function sleep(delay) {
-    return new Promise(resovle => setTimeout(resovle, delay));
+    return new Promise(resolve => setTimeout(resolve, delay));
 }
 
 async function tryToDisableBt() {
@@ -85,20 +85,6 @@ async function tryToEnableBt() {
     }
   }
 
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);            
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
-
 let CLOSE_BT_TEXT = "关闭";
 let OPEN_BT_TEXT = "开启";
 
@@ -121,7 +107,6 @@ export default function btManagerError003Test() {
             console.info('beforeAll start');
             let PERMISSION_TEXT = "允许";
             await sleep(2000);
-            await openPhone();
             await clickTheWindow(PERMISSION_TEXT);
             gattServer = ble.createGattServer();
             gattClient = ble.createGattClientDevice("11:22:33:44:55:66");
@@ -171,7 +156,7 @@ export default function btManagerError003Test() {
                     let sta = bluetoothManager.getState();
                     console.info('[bluetooth_js] bt getState:'+ JSON.stringify(sta));
                     let connState = bluetoothManager.getBtConnectionState();
-                    console.info('[bluetooth_js] get bt connection state result' 
+                    console.info('[bluetooth_js] get bt connection state result'
                                 + JSON.stringify(connState));
                     expect(true).assertFalse();
                     done();
@@ -253,8 +238,8 @@ export default function btManagerError003Test() {
             if (!closeUnsupport) {
                 try {
                     let DeviceClass = bluetoothManager.getRemoteDeviceClass("00:00:00:00:00:00");
-                    console.info('[bluetooth_js] getRemoteDeviceClass ret2 :' + JSON.stringify(DeviceClass) 
-                    + 'majorClass:' +DeviceClass.majorClass + 'majorMinorClass:'+ DeviceClass.majorMinorClass 
+                    console.info('[bluetooth_js] getRemoteDeviceClass ret2 :' + JSON.stringify(DeviceClass)
+                    + 'majorClass:' +DeviceClass.majorClass + 'majorMinorClass:'+ DeviceClass.majorMinorClass
                     + 'classOfDevice:' + DeviceClass.classOfDevice);
                     expect(true).assertFalse();
                     done()
@@ -565,7 +550,7 @@ export default function btManagerError003Test() {
             done();
         })
 
-    
+
         /**
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1900
@@ -633,7 +618,7 @@ export default function btManagerError003Test() {
         it('SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             if (!closeUnsupport) {
                 try {
-                    let hfpSrc = 
+                    let hfpSrc =
                         bluetoothManager.getProfileInst(bluetoothManager.ProfileId.PROFILE_HANDS_FREE_AUDIO_GATEWAY);
                     hfpSrc.connect('11:22:33:44:55:77');
                     expect(true).assertFalse();
@@ -649,7 +634,7 @@ export default function btManagerError003Test() {
             }
             done();
         })
-    
+
         /**
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2200
@@ -661,7 +646,7 @@ export default function btManagerError003Test() {
         it('SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             if (!closeUnsupport) {
                 try {
-                    let hfpSrc = 
+                    let hfpSrc =
                     bluetoothManager.getProfileInst(bluetoothManager.ProfileId.PROFILE_HANDS_FREE_AUDIO_GATEWAY);
                     hfpSrc.disconnect('11:22:33:44:55:77');
                     expect(true).assertFalse();
@@ -883,7 +868,7 @@ export default function btManagerError003Test() {
                     let cccV = new Uint8Array(arrayBufferC);
                     cccV[0] = 1;
                     let characteristic = {serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
-                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', 
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
                     characteristicValue: arrayBufferC, descriptors:descriptors};
                     characteristics[0] = characteristic;
                     let gattService = {serviceUuid:'00001810-0000-1000-8000-00805F9B34FB', isPrimary: true,
@@ -896,7 +881,7 @@ export default function btManagerError003Test() {
                         message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(2900003);
                     done()
-                }      
+                }
             } else {
                 expect(true).assertTrue();
             }
@@ -922,7 +907,7 @@ export default function btManagerError003Test() {
                         message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(401);
                     done()
-                }    
+                }
             } else {
                 expect(true).assertTrue();
             }
@@ -948,7 +933,7 @@ export default function btManagerError003Test() {
                         message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(2900003);
                     done()
-                }     
+                }
             } else {
                 expect(true).assertTrue();
             }
@@ -1001,7 +986,7 @@ export default function btManagerError003Test() {
                     await sleep(2000);
                     expect(true).assertFalse();
                 } catch(error) {
-                    console.error(`[bluetooth_js]connect failed, code is ${error.code}, 
+                    console.error(`[bluetooth_js]connect failed, code is ${error.code},
                     message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(2900003);
                 }
@@ -1025,7 +1010,7 @@ export default function btManagerError003Test() {
                     gattClient.disconnect();
                     expect(true).assertFalse();
                 } catch(error) {
-                    console.error(`[bluetooth_js]disconnect failed, code is ${error.code}, 
+                    console.error(`[bluetooth_js]disconnect failed, code is ${error.code},
                     message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(2900003);
                 }
@@ -1049,7 +1034,7 @@ export default function btManagerError003Test() {
                     gattClient.close();
                     expect(true).assertFalse();
                 } catch(error) {
-                    console.error(`[bluetooth_js]gattClient close failed, code is ${error.code}, 
+                    console.error(`[bluetooth_js]gattClient close failed, code is ${error.code},
                     message is ${error.message}`);
                     expect(Number(error.code)).assertEqual(2900003);
                 }
@@ -1195,7 +1180,7 @@ export default function btManagerError003Test() {
                     expect().assertFail();
                 } catch (err) {
                     console.info("bluetooth a2dp getPlayingState errCode:" + err.code + ",bluetooth a2dp getPlayingState errMessage:" + err.message);
-                    expect(Number(err.code)).assertEqual(2900003);   
+                    expect(Number(err.code)).assertEqual(2900003);
                 }
             } else {
                 expect(true).assertTrue();
@@ -1409,7 +1394,7 @@ export default function btManagerError003Test() {
                 } catch (error) {
                     console.info("sppAccept errCode:" + error.code + ",errMessage:" + error.message);
                     expect(true).assertEqual(Number(error.code) == 2900003 || Number(error.code) == 401);
-                } 
+                }
             } else {
                 expect(true).assertTrue();
             }
@@ -2566,8 +2551,8 @@ export default function btManagerError003Test() {
                 expect(true).assertTrue();
             }
             done();
-        })        
-		
+        })
+
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
@@ -2641,7 +2626,7 @@ export default function btManagerError003Test() {
             }
             done();
         })
-	
+
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
@@ -2688,5 +2673,103 @@ export default function btManagerError003Test() {
             }
             done();
         })
-})
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let deviceId = "00:11:22:33:44:55";
+                    let phyValue = {
+                        txPhy : ble.BlePhy.BLE_PHY_1M,
+                        rxPhy : ble.BlePhy.BLE_PHY_2M,
+                        phyMode : ble.CodedPhyMode.BLE_PHY_CODED_S2,
+                    };
+                    await gattServer.setPhy(deviceId , phyValue);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_S_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let deviceId = "00:11:22:33:44:55";
+                    await gattServer.readPhy(deviceId);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let phyValue = {
+                        txPhy : ble.BlePhy.BLE_PHY_1M,
+                        rxPhy : ble.BlePhy.BLE_PHY_2M,
+                        phyMode : ble.CodedPhyMode.BLE_PHY_CODED_S2,
+                    };
+                    await gattClient.setPhy(phyValue);
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLE_C_OFF_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await gattClient.readPhy();
+                    console.info('[bt_arkts]不应该成功');
+                    expect().assertFail();
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
+
+    })
 }

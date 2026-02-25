@@ -45,7 +45,7 @@ function mockTaskpoolTest(data: MockSharedData): void {
 
 export default function TimerTest1() {
   describe('TimerTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**

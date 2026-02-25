@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeight_flexShrink() {
   describe('layoutWeight_flexShrink', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("layoutWeight_flexShrink beforeEach start");
 
 

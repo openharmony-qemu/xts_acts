@@ -167,6 +167,30 @@ export default function applicationContextTest() {
     });
 
     /**
+     * @tc.name   testSetLanguageEmptyString0100
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0400
+     * @tc.desc   The application parameter is empty string calling the interface to set the language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetLanguageEmptyString0100', Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'applicationContextTag', '%{public}s',
+        'testSetLanguageEmptyString0100 begin');
+      try {
+        let applicationContext: common.ApplicationContext = testAbilityContext?.getApplicationContext();
+        let result = applicationContext.setLanguage('');
+        expect(result).assertEqual(undefined);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'applicationContextTag', '%{public}s',
+          'testSetLanguageEmptyString0100 failed ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0300
      * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0300
      * @tc.desc   Using the on method set color mode

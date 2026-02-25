@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003 cancelReminder error.code:" + error.code);
         }
       })
@@ -101,7 +101,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004 cancelReminder error.code:" + error.code);
         }
       })
@@ -133,7 +133,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005 addExcludeDate error.code:" + error.code);
         }
       })
@@ -164,7 +164,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006 deleteExcludeDates error.code:" + error.code);
         }
       })
@@ -195,7 +195,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007 getExcludeDates error.code:" + error.code);
         }
       })

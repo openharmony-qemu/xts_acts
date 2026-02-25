@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function Array_04Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -71,7 +71,7 @@ export default function Array_04Test() {
         let array: FixedArray<long> = [123];
         let result = join(array);
         expect(result).assertEqual("123");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -91,7 +91,7 @@ export default function Array_04Test() {
         let array: FixedArray<long> = [123, 456, 789];
         let result = join(array);
         expect(result).assertEqual("123,456,789");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -111,7 +111,7 @@ export default function Array_04Test() {
         let array: FixedArray<long> = [123, 456, 789];
         let result = join(array, "-");
         expect(result).assertEqual("123-456-789");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -131,7 +131,7 @@ export default function Array_04Test() {
         let array: FixedArray<long> = [123, 456, 789];
         let result = join(array, undefined);
         expect(result).assertEqual("123,456,789");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -151,7 +151,7 @@ export default function Array_04Test() {
         let array: FixedArray<long> = [];
         let result = join(array);
         expect(result).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -171,7 +171,7 @@ export default function Array_04Test() {
         let self: FixedArray<short> = [1];
         let result = join(self);
         expect(result).assertEqual("1");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -191,7 +191,7 @@ export default function Array_04Test() {
         let self: FixedArray<short> = [1, 2, 3];
         let result = join(self);
         expect(result).assertEqual("1,2,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -211,7 +211,7 @@ export default function Array_04Test() {
         let self: FixedArray<short> = [1, 2, 3];
         let result = join(self, "-");
         expect(result).assertEqual("1-2-3");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -231,7 +231,7 @@ export default function Array_04Test() {
         let self: FixedArray<short> = [1, 2, 3];
         let result = join(self, undefined);
         expect(result).assertEqual("1,2,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -251,7 +251,7 @@ export default function Array_04Test() {
         let self: FixedArray<short> = [];
         let result = join(self);
         expect(result).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -273,7 +273,7 @@ export default function Array_04Test() {
         let fromIndex = 3;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -295,7 +295,7 @@ export default function Array_04Test() {
         let fromIndex = 2;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -317,7 +317,7 @@ export default function Array_04Test() {
         let fromIndex = 0;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -339,7 +339,7 @@ export default function Array_04Test() {
         let fromIndex = -2;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -361,7 +361,7 @@ export default function Array_04Test() {
         let fromIndex = 10;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -383,7 +383,7 @@ export default function Array_04Test() {
         let fromIndex = 3;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -405,7 +405,7 @@ export default function Array_04Test() {
         let fromIndex = 4;
         let result = lastIndexOf(arr, element, fromIndex);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -425,7 +425,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [true, false, true, false];
         let index = lastIndexOf(arr, true);
         expect(String(index)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
@@ -445,7 +445,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [true, false, true, false];
         let index = lastIndexOf(arr, true, 2);
         expect(String(index)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
@@ -465,7 +465,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, false];
         let index = lastIndexOf(arr, true);
         expect(String(index)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
@@ -485,7 +485,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [true, false, true, false];
         let index = lastIndexOf(arr, true, -2);
         expect(String(index)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
@@ -505,7 +505,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [];
         let index = lastIndexOf(arr, true);
         expect(String(index)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} err is ${err}`);
         expect().assertFail();
       }
@@ -525,7 +525,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 2, 5];
         const result = lastIndexOf(arr, 2, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -545,7 +545,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 6, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -565,7 +565,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -585,7 +585,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -605,7 +605,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [];
         const result = lastIndexOf(arr, 4, 2);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -625,7 +625,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [100, 110, 120, 111, 101];
         const result = lastIndexOf(arr, 100);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -645,7 +645,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [100, 110, 120, 111, 101];
         const result = lastIndexOf(arr, 100, -2);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -665,7 +665,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [100, 110, 120, 111, 101];
         const result = lastIndexOf(arr, 100, 10);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -685,7 +685,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [100, 110, 120, 111, 101];
         const result = lastIndexOf(arr, 100, 2);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -705,7 +705,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 2.2, 5.5];
         let result = lastIndexOf(arr, 2.2, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -725,7 +725,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         let result = lastIndexOf(arr, 6.6, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -745,7 +745,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [];
         let result = lastIndexOf(arr, 1.1, 0);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -765,7 +765,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 2.2, 5.5];
         let result = lastIndexOf(arr, 2.2, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -785,7 +785,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 2.2, 5.5];
         let result = lastIndexOf(arr, 2.2, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -805,7 +805,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 2.2, 5.5];
         let result = lastIndexOf(arr, 2.2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -825,7 +825,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -845,7 +845,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -865,7 +865,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -885,7 +885,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0, 3);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -905,7 +905,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.6, 7.7, 11.0, 8.8, 5.5];
         let result = lastIndexOf(arr, 8.8, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -925,7 +925,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.6, 7.7, 11.0, 8.8, 5.5];
         let result = lastIndexOf(arr, 2.2, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -945,7 +945,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lastIndexOf(arr, 1.1, 0);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -965,7 +965,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.6, 7.7, 11.0, 8.8, 5.5];
         let result = lastIndexOf(arr, 8.8, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -985,7 +985,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.6, 7.7, 11.0, 8.8, 5.5];
         let result = lastIndexOf(arr, 8.8, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1005,7 +1005,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.6, 7.7, 11.0, 8.8, 5.5];
         let result = lastIndexOf(arr, 8.8);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1025,7 +1025,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [3.0, 9.0, 3.0, 2.0, 8.0];
         let result = lastIndexOf(arr, 2.0, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1045,7 +1045,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [8.0, 9.0, 1.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1065,7 +1065,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.0, 9.0, 8.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1085,7 +1085,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [6.0, 9.0, 8.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0, 3);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1105,7 +1105,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1, 2, 3, 4, 5];
         let result = lastIndexOf(arr, 2, 4);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1125,7 +1125,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 6, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1145,7 +1145,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1165,7 +1165,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1185,7 +1185,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [];
         const result = lastIndexOf(arr, 4, 2);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1205,7 +1205,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1225,7 +1225,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1245,7 +1245,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1265,7 +1265,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1285,7 +1285,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1, 2, 3, 4, 5];
         let result = lastIndexOf(arr, 2, 4);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1305,7 +1305,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 6, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1325,7 +1325,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1345,7 +1345,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1365,7 +1365,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [];
         const result = lastIndexOf(arr, 4, 2);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1385,7 +1385,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1405,7 +1405,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, -2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1425,7 +1425,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1445,7 +1445,7 @@ export default function Array_04Test() {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1465,7 +1465,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, 3);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1485,7 +1485,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 6000, 3);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1505,7 +1505,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lastIndexOf(arr, 3000, 0);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1525,7 +1525,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, -2);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1545,7 +1545,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, 10);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1565,7 +1565,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, 4);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1585,7 +1585,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 6000, 4);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1605,7 +1605,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lastIndexOf(arr, 6000, 0);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1625,7 +1625,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, -2);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1645,7 +1645,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000, 10);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1665,7 +1665,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1000, 2000, 3000, 4000, 5000];
         let result = lastIndexOf(arr, 3000);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1685,7 +1685,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, true, true];
         let result = lowerBoundSearch(arr, true);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1705,7 +1705,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, false];
         let result = lowerBoundSearch(arr, true);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1725,7 +1725,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [true, true, true];
         let result = lowerBoundSearch(arr, false);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1745,7 +1745,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [];
         let result = lowerBoundSearch(arr, true);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1765,7 +1765,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, true, true];
         let result = lowerBoundSearch(arr, true);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1785,7 +1785,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, true, true];
         let result = lowerBoundSearch(arr, false);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1805,7 +1805,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, true, true];
         let result = lowerBoundSearch(arr, true, 0, arr.length);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1825,7 +1825,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, false, false];
         let result = lowerBoundSearch(arr, true, 0, arr.length);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1845,7 +1845,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [];
         let result = lowerBoundSearch(arr, true, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1865,7 +1865,7 @@ export default function Array_04Test() {
         let arr: FixedArray<boolean> = [false, true, false, true];
         let result = lowerBoundSearch(arr, true, 2, 4);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1885,7 +1885,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 30);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1905,7 +1905,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 5);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1925,7 +1925,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 60);
         expect(result).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1945,7 +1945,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 25);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1965,7 +1965,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 20, 20, 30];
         let result = lowerBoundSearch(arr, 20);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1985,7 +1985,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lowerBoundSearch(arr, 10);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2005,7 +2005,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 30, 0, 5);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2025,7 +2025,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 60, 0, 5);
         expect(result).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2045,7 +2045,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 5, 0, 5);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2065,7 +2065,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 10, 0, 5);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2085,7 +2085,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 50, 0, 5);
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2105,7 +2105,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 45, 0, 4); // Searching up to index 3 (value 40)
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2125,7 +2125,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lowerBoundSearch(arr, 10, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2145,7 +2145,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 20, 20, 30];
         let result = lowerBoundSearch(arr, 20, 0, 5);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2165,7 +2165,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 35, 1, 4); // Searching from index 1 to 3
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2185,7 +2185,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2205,7 +2205,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 6.0);
         expect(result).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2225,7 +2225,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 0.0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2245,7 +2245,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 2.0, 2.0, 3.0];
         let result = lowerBoundSearch(arr, 2.0);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2265,7 +2265,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [];
         let result = lowerBoundSearch(arr, 5.0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2285,7 +2285,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 5.0);
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2305,7 +2305,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         let result = lowerBoundSearch(arr, 3.3, 0, arr.length - 1);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2325,7 +2325,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         let result = lowerBoundSearch(arr, 3.5, 0, arr.length - 1);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2345,7 +2345,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         let result = lowerBoundSearch(arr, 0.5, 0, arr.length - 1);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2365,7 +2365,7 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [];
         let result = lowerBoundSearch(arr, 1.0, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2385,7 +2385,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0 as float);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2405,7 +2405,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 2.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0 as float);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2425,7 +2425,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 6.0 as float);
         expect(result).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2445,7 +2445,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [2.0, 3.0, 4.0, 5.0, 6.0];
         let result = lowerBoundSearch(arr, 1.0 as float);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2465,7 +2465,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 2.0, 2.0, 2.0, 3.0];
         let result = lowerBoundSearch(arr, 2.0 as float);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2485,7 +2485,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [];
         let result = lowerBoundSearch(arr, 1.0 as float);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2505,7 +2505,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 3.0, 5.0, 7.0, 9.0];
         let result = lowerBoundSearch(arr, 9.0 as float);
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2525,7 +2525,7 @@ export default function Array_04Test() {
         let arr: FixedArray<float> = [1.0, 3.0, 5.0, 7.0, 9.0];
         let result = lowerBoundSearch(arr, 1.0 as float);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2545,7 +2545,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0, 0, arr.length);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2565,7 +2565,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0, 0, arr.length);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2585,7 +2585,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [];
         let result = lowerBoundSearch(arr, 3.0, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2605,7 +2605,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 3.0];
         let result = lowerBoundSearch(arr, 4.0, 0, arr.length);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2625,7 +2625,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 2.0, 0, arr.length);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2645,7 +2645,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 2.0, 2.0, 3.0];
         let result = lowerBoundSearch(arr, 2.0, 0, arr.length);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2665,7 +2665,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0, 2, arr.length);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2685,7 +2685,7 @@ export default function Array_04Test() {
         let arr: FixedArray<number> = [1.0, 2.0, 3.0, 4.0, 5.0];
         let result = lowerBoundSearch(arr, 3.0, 0, 3);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2705,7 +2705,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 30 as int);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2725,7 +2725,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 40, 50];
         let result = lowerBoundSearch(arr, 30 as int);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2745,7 +2745,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 60 as int);
         expect(result).assertEqual(arr.length);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2765,7 +2765,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [20, 30, 40, 50, 60];
         let result = lowerBoundSearch(arr, 10 as int);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2785,7 +2785,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 20, 20, 30];
         let result = lowerBoundSearch(arr, 20 as int);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2805,7 +2805,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [];
         let result = lowerBoundSearch(arr, 10 as int);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2825,7 +2825,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 10 as int);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2845,7 +2845,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [10, 20, 30, 40, 50];
         let result = lowerBoundSearch(arr, 50 as int);
         expect(result).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2865,7 +2865,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [-50, -30, 0, 20, 40];
         let result = lowerBoundSearch(arr, -10 as int);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2885,7 +2885,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [1000000, 2000000, 3000000];
         let result = lowerBoundSearch(arr, 2500000 as int);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2905,7 +2905,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [1, 3, 5, 7, 9];
         let result = lowerBoundSearch(arr, 5, 0, arr.length);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2925,7 +2925,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [1, 3, 5, 7, 9];
         let result = lowerBoundSearch(arr, 6, 0, arr.length);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2945,7 +2945,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [3, 5, 7, 9, 11];
         let result = lowerBoundSearch(arr, 2, 0, arr.length);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2965,7 +2965,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [3, 5, 7, 9, 11];
         let result = lowerBoundSearch(arr, 12, 0, arr.length);
         expect(result).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2985,7 +2985,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [];
         let result = lowerBoundSearch(arr, 5, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3005,7 +3005,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [1, 3, 3, 3, 5];
         let result = lowerBoundSearch(arr, 3, 0, arr.length);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3025,7 +3025,7 @@ export default function Array_04Test() {
         let arr: FixedArray<int> = [1, 3, 5, 7, 9, 11];
         let result = lowerBoundSearch(arr, 7, 2, 5); // Search in [5, 7, 9]
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3045,7 +3045,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [1, 3, 5, 7, 9];
         let index = lowerBoundSearch(arr, 5 as short);
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3065,7 +3065,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [5, 10, 15];
         let index = lowerBoundSearch(arr, 5 as short)
         expect(index).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3085,7 +3085,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [10];
         let index = lowerBoundSearch(arr, 10 as short);
         expect(index).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3105,7 +3105,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [10, 20, 30];
         let index = lowerBoundSearch(arr, 30 as short)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3125,7 +3125,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [2, 4, 6, 8];
         let index = lowerBoundSearch(arr, 10 as short);
         expect(index).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3145,7 +3145,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [10, 20, 20, 30];
         let index = lowerBoundSearch(arr, 20 as short);
         expect(index).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3165,7 +3165,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [10, 20, 30, 40, 50];
         let index = lowerBoundSearch(arr, 30 as short, 2, 4)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3185,7 +3185,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [10, 20];
         lowerBoundSearch(arr, 10 as short, 3, 1);
         expect().assertFail();
-      } catch (err: RangeError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(err.message).assertEqual("lowerBoundSearch: bounds verification failed")
       }
@@ -3225,7 +3225,7 @@ export default function Array_04Test() {
         let arr: FixedArray<short> = [-32768, 0, 32767];
         let index = lowerBoundSearch(arr, 32767 as short)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3245,7 +3245,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [1, 3, 5, 7, 9];
         let index = lowerBoundSearch(arr, 5 as long);
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3265,7 +3265,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [5, 10, 15];
         let index = lowerBoundSearch(arr, 5 as long)
         expect(index).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3285,7 +3285,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [10];
         let index = lowerBoundSearch(arr, 10 as long);
         expect(index).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3305,7 +3305,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [10, 20, 30];
         let index = lowerBoundSearch(arr, 30 as long)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3325,7 +3325,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [2, 4, 6, 8];
         let index = lowerBoundSearch(arr, 10 as long);
         expect(index).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3345,7 +3345,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [10, 20, 20, 30];
         let index = lowerBoundSearch(arr, 20 as long);
         expect(index).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3365,7 +3365,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [10, 20, 30, 40, 50];
         let index = lowerBoundSearch(arr, 30 as long, 2, 4)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -3385,7 +3385,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [10, 20];
         lowerBoundSearch(arr, 10 as long, 3, 1);
         expect().assertFail();
-      } catch (err: RangeError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(err.message).assertEqual("lowerBoundSearch: bounds verification failed")
       }
@@ -3425,7 +3425,7 @@ export default function Array_04Test() {
         let arr: FixedArray<long> = [-9223372036854775808, 0, 9223372036854775807];
         let index = lowerBoundSearch(arr, 9223372036854775807 as long)
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }

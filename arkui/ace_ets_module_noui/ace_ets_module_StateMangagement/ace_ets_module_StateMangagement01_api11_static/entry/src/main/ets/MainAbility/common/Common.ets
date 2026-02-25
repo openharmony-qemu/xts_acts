@@ -88,7 +88,7 @@ export default class CommonFunc {
       }else if(value instanceof Date){
         console.log('this.Array 是日期');
         result = '[object Date]';
-      }else if(value instanceof Int){
+      }else if(value instanceof Int || value instanceof Double){
         console.log('this.Array 是number');
         result = '[object Number]';
       }else if(value instanceof String){

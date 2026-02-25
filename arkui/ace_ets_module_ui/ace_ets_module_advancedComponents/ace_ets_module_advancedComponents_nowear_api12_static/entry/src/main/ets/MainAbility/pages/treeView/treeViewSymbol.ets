@@ -103,16 +103,16 @@ struct TreeViewDemo {
 
   aboutToAppear(): void {
     this.treeListener.on(TreeListenType.NODE_CLICK, (CallbackParam: CallbackParam) => {
-      this.clickNodeId = CallbackParam.currentNodeId
+      this.clickNodeId = CallbackParam.currentNodeId;
     })
     this.treeListener.on(TreeListenType.NODE_ADD, (CallbackParam: CallbackParam) => {
-      this.clickNodeId = CallbackParam.currentNodeId
+      this.clickNodeId = CallbackParam.currentNodeId;
     })
     this.treeListener.on(TreeListenType.NODE_DELETE, (CallbackParam: CallbackParam) => {
-      this.clickNodeId = CallbackParam.currentNodeId
+      this.clickNodeId = CallbackParam.currentNodeId;
     })
     this.treeListener.once(TreeListenType.NODE_MOVE, (CallbackParam: CallbackParam) => {
-      this.clickNodeId = CallbackParam.currentNodeId
+      this.clickNodeId = CallbackParam.currentNodeId;
     })
 
     let normalResource: Resource = $r('sys.symbol.house');

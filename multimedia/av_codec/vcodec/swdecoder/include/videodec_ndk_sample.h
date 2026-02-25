@@ -97,7 +97,6 @@ public:
     void OutputFunc();
     void WriteOutputFrame(uint32_t index, OH_AVMemory *buffer, OH_AVCodecBufferAttr attr, FILE *outFile);
     void InputFunc_AVCC();
-    OH_AVErrCode InputFunc_FUZZ(const uint8_t *data, size_t size);
     void ReleaseSignal();
     void ReleaseInFile();
     void StopInloop();

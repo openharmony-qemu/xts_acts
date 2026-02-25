@@ -19,10 +19,10 @@ import { State } from '@ohos.arkui.stateManagement';
 import { RouterParams } from '../../common/Utils';
 import { Entry, Component, TextTimerController, Scroller, Builder, AlphabetIndexer, Blank, Button, Checkbox,
   CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu,
-  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Search, Select, Slider, Stepper, Text, TextArea,
+  Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Search, Select, Slider, Text, TextArea,
   TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Column, ColumnSplit, Counter, Flex, GridRow,
   Grid, List, Refresh, RelativeContainer, Row, RowSplit, Scroll, SideBarContainer, Stack, Swiper,
-  Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, $r, StepperItem, ToggleType,
+  Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, $r, ToggleType,
   BadgeStyle, BadgeParamWithString, SideBarContainerType, TextAlign, Color, FlexDirection, MenuItem, NavPathStack,
   MenuItemOptions, CommonMethod, applyStyles } from '@ohos.arkui.component';
 
@@ -122,10 +122,6 @@ struct DefaultFlexPage {
       Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }]).applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'Stepper') {
-      Stepper() {
-        StepperItem()
-      }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
       Text('text').applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {

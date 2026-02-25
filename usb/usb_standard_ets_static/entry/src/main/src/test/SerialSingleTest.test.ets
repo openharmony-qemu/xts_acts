@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ function checkDevice(): boolean {
       hilog.error(domain, TAG, '%{public}s', `Failed! getPortList, did not return an array: ${typeof portList}`);
       haveDevice = false;
     }
-  } catch (error : BusinessError) {
+  } catch (error) {
     hilog.error(domain, TAG, '%{public}s', `Failed! getPortList, error code: ${error}`);
     haveDevice = false;
   }
@@ -51,7 +51,7 @@ function checkDevice(): boolean {
 export default function SerialSingleTest() {
   describe('SerialSingleTest', () => {
     let openPortId: int = -1;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         if (checkDevice()) {
           openPortId = portIds[0];
@@ -62,14 +62,14 @@ export default function SerialSingleTest() {
             try {
               let hasRight: boolean = await futureRes;
               hilog.info(domain, TAG, 'getPermission isAgree: ', hasRight);
-            } catch (err : BusinessError) {
+            } catch (err) {
               hilog.error(domain, TAG, 'getPermission catch err name: ', err.name, ', message: ', err.message);
             }
           }
         } else {
           hilog.error(domain, TAG, 'no device');
         }
-      } catch(error : BusinessError){
+      } catch(error){
         hilog.info(domain, TAG, 'beforeAll error: ', JSON.stringify(error));
       }
     })
@@ -102,9 +102,9 @@ export default function SerialSingleTest() {
           let readBuffer: Uint8Array = new Uint8Array(8192);
           await serialManager.read(openPortId, readBuffer, 10);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testRead001 catch err name: ', error);
-          expect(error.code).assertEqual(31400006);
+          expect((error as BusinessError).code).assertEqual(31400006);
           done();
         }
       }
@@ -128,9 +128,9 @@ export default function SerialSingleTest() {
           let readSyncBuffer: Uint8Array = new Uint8Array(8192);
           let length: int = serialManager.readSync(openPortId, readSyncBuffer, 10);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
           hilog.error(domain, TAG, 'testReadSync001 catch err code: ', error.code, ', message: ', error.message);
-          expect(error.code).assertEqual(31400006);
+          expect((error as BusinessError).code).assertEqual(31400006);
           serialManager.close(openPortId);
           done();
         }

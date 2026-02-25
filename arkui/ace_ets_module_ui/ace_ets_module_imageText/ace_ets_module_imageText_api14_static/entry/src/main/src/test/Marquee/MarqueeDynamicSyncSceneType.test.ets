@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MarqueeDynamicSyncSceneTest() {
   describe('MarqueeDynamicSyncSceneTest', ():void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MarqueeDynamicSyncSceneTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

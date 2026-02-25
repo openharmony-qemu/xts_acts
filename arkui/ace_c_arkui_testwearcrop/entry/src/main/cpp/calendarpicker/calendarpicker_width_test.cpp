@@ -58,4 +58,17 @@ static napi_value TestCalendarPickerWidth003(napi_env env, napi_callback_info in
     NAPI_END;
 }
 
+static napi_value TestCalendarPickerWidth004(napi_env env, napi_callback_info info)
+{
+    napi_value retValue;
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    // 获取ArkUI Native Node API接口
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    // 创建指定类型的节点
+    auto g_handle = nodeAPI->createNode(ARKUI_NODE_CALENDAR_PICKER);
+    int result = OH_ArkUI_NodeUtils_GetNodeType(g_handle);
+    napi_create_int32(env, result == ARKUI_NODE_CALENDAR_PICKER ? 0 : 1, &retValue);
+    return retValue;
+}
+
 } // namespace ArkUICapiTest

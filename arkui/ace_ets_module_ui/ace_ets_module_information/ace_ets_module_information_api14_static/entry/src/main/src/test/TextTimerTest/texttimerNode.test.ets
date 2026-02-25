@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function TextTimerNodeTest() {
   describe('TextTimerNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextTimerNodeTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

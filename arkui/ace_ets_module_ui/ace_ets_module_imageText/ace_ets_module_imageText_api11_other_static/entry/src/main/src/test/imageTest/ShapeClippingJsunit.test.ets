@@ -83,7 +83,7 @@ export default function shapeClippingJsunit() {
           // console.info("push shapeClipping page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push shapeClipping page error:" + err);
       }
 
@@ -156,7 +156,7 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testShapeClipping_static_003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -191,7 +191,7 @@ it('testShapeClipping_static_004', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testShapeClipping_static_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

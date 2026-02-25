@@ -33,7 +33,7 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let fileDescriptor: media.AVFileDescriptor;
+let fileDescriptor: media.AVFileDescriptor | undefined;
 let avPlayer: media.AVPlayer | undefined;
 let mediaTestBase = new MediaTestBase()
 
@@ -164,7 +164,7 @@ export default function AVPlayerPostProcessorTest() {
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await mediaTestBase.closeFdNumber(fileDescriptor.fd)
+      await mediaTestBase.closeFdNumber(fileDescriptor!.fd)
     });
 
     /**
@@ -219,7 +219,7 @@ export default function AVPlayerPostProcessorTest() {
         await resetAndCallbackOff();
         done();
       }
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
 
     /**
@@ -270,7 +270,7 @@ export default function AVPlayerPostProcessorTest() {
         done();
       }
 
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
 
 
@@ -311,7 +311,7 @@ export default function AVPlayerPostProcessorTest() {
         done();
       }
 
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
   })
 }

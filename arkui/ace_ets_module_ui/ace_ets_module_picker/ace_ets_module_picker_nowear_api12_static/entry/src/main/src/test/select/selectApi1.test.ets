@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function selectApi1() {
   describe('selectApi1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectApi1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

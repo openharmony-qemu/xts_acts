@@ -48,11 +48,10 @@ let domain: number = 0x0000;
 let tag: String = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-const uiContext = new UIContext();
 
 export default function visibilityJsunit() {
   describe('visibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("visibilityJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
@@ -127,7 +126,7 @@ it('testVisibility_static_02', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility02] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -162,7 +161,7 @@ it('testVisibility_static_03', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility03] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -197,7 +196,7 @@ it('testVisibility_static_04', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility04] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -231,7 +230,7 @@ it('testVisibility_static_05', Level.LEVEL0, async () => {
         }
         console.info("[testVisibility05] start to publish emit:" + JSON.stringify(eventData.data));
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

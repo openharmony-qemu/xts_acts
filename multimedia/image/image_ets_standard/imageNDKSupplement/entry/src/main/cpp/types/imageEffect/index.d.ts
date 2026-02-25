@@ -215,7 +215,6 @@ export const ImageModifyImagePropertyShortSupp:(a: number,b:number,c:string,d:nu
 export const OHImageNativeGetColorSpaceSupp:(a: number,b:Callback<image.ImageReceiver>) => number;
 export const OHImageSourceNativeGetImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
 export const OHImageSourceNativeGetImagePropertyStringSupp:(a: number,b:number,c:string,d:number) => number;
-
 export const SetDesiredPixelFormatTest:(a: number) => number;
 export const GetDesiredPixelFormatTest:(a: number) => number;
 export const ComposeOptionsReleaseTest:(a: number) => number;
@@ -225,3 +224,10 @@ export const OHImageSourceNativeGetImagePropertyIntArraySupp:(a: number, b:numbe
 export const OHImageSourceNativeModifyImagePropertyLongSupp:(a: number, b:number,c:string, d:number) => number;
 export const ImageSourceNativeGetImagePropertyDoubleArraySupp:(a: number, b:number, c:string, d:number) => number;
 export const ImageErrCodeSupp:(a: number) => number;
+export const OHImageSourceInfoCreateTest:(a: number) => number;
+export const OHImageNativeGetBufferDataTest:(a: number,b: Callback<image.ImageReceiver>) => number;
+export const OHImageNativeGetFormatTest:(a: number,b: Callback<image.ImageReceiver>) => number;
+export const OHPixelmapNativeWritePixelsTest:(a: number) => number;
+export const OHPixelmapNativeReadPixelsTest:(a: number) => number;
+export const OHImageNativeGetBufferDataValueTest:(a: number,b: Callback<image.ImageReceiver>) => number;
+export const OHImageNativeGetColorSpaceTest:(a: number,b: Callback<image.ImageReceiver>) => number;

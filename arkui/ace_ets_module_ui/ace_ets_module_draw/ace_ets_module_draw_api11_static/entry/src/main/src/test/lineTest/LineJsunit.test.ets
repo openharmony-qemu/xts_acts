@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function LineJsunit() {
   describe('LineTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       
@@ -65,7 +65,8 @@ export default function LineJsunit() {
           line.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push line page error: " + err);
       }
     });
@@ -169,7 +170,8 @@ it('lineTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0500 change component error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -208,7 +210,8 @@ it('lineTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0600 change component error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -248,7 +251,8 @@ it('lineTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void>
         } as emitter.InnerEvent
         console.info("lineTest_static_0700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0700 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -287,7 +291,8 @@ it('lineTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("lineTest_static_0800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0800 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);

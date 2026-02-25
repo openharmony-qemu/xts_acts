@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function colorMetricsTest() {
   describe('colorMetricsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("colorMetricsTest beforeAll start");
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi20.static", "EntryAbility")
@@ -83,8 +83,8 @@ it('colorMetricsTest_0010', Level.LEVEL1, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
 
-      console.info('[colorMetricsTest_0010] backgroundColor: ' + JSON.stringify(obj.getElement('$attrs').getString('$attrs')));
-      expect(obj.getElement('$attrs').getString('$attrs')).assertEqual('#FF00FF00');
+      console.info('[colorMetricsTest_0010] backgroundColor: ' + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
       console.info('[colorMetricsTest_0010] END');
       done();
     });
@@ -107,8 +107,8 @@ it('colorMetricsTest_0020', Level.LEVEL1, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
 
-      console.info('[colorMetricsTest_0020] SweepGradient: ' + JSON.stringify(obj.getElement('$attrs').getString('colors')));
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('$attrs').getString('colors'))).assertEqual('[["#FF00FF00","0.000000"],["#FF00FF00","0.500000"],["#FF00FF00","1.000000"]]');
+      console.info('[colorMetricsTest_0020] SweepGradient: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('sweepGradient').getElement('colors')));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('sweepGradient').getElement('colors'))).assertEqual('[["#FF00FF00","0.000000"],["#FF00FF00","0.500000"],["#FF00FF00","1.000000"]]');
       console.info('[colorMetricsTest_0020] END');
       done();
     });

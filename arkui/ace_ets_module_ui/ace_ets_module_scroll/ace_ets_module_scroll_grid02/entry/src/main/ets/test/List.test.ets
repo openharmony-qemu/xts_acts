@@ -52,6 +52,12 @@ import gridRepeatUn from './emptyBranch/gridRepeatUn.test';
 import gridRepeatNull from './emptyBranch/gridRepeatNull.test';
 import editModeGrid from './Grid/editModeGrid.test';
 import editBadgeGrid from './Grid/editBadgeGrid.test';
+import gridDefaultTest1 from './gridDefault/gridDefault1.test';
+import gridDefaultTest2 from './gridDefault/gridDefault2.test';
+import gridDefaultTest3 from './gridDefault/gridDefault3.test';
+import gridItemNullUndefinedTest from './gridItemDefault/gridItemNullUndefined.test';
+import columnsTemplateNullUndefined from './LazyVGridLayout/columnsTemplateNullUndefined.test';
+import columnsRowsGapNullUndefined from './LazyVGridLayout/columnsRowsGapNullUndefined.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -93,4 +99,10 @@ export default function testsuite() {
   gridRepeatNull()
   editModeGrid()
   editBadgeGrid()
+  gridDefaultTest1()
+  gridDefaultTest2()
+  gridDefaultTest3()
+  gridItemNullUndefinedTest()
+  columnsTemplateNullUndefined()
+  columnsRowsGapNullUndefined()
 }

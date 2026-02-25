@@ -35,7 +35,7 @@ export default function columnSplitJsunit() {
 
 
   describe('columnSplitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("columnSplitTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")

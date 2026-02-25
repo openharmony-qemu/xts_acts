@@ -73,7 +73,7 @@ struct GlobalExample {
 
   testImageData() {
     let imageData = this.offContext.createImageData(100, 100);
-    let imgData = imageData.data;
+    let imgData = imageData.data!;
     console.log("imageData_width=" + imageData.width);
     console.log("imageData_height=" + imageData.height);
   }

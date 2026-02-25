@@ -45,7 +45,7 @@ struct ScrollAddExample {
       .edgeEffect(EdgeEffect.None)
       .enableScrollInteraction(true)
       .key('scrollAdd')
-      .scrollSnap({snapAlign:ScrollSnapAlign.START})
+      .scrollSnap({snapAlign:ScrollSnapAlign.START,snapPagination:null,enableSnapToStart:false,enableSnapToEnd:false})
       .nestedScroll({
         scrollForward:NestedScrollMode.PARENT_FIRST,
         scrollBackward:NestedScrollMode.SELF_FIRST

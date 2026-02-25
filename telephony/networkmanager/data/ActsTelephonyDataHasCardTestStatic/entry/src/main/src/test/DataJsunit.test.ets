@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,14 +23,14 @@ let tag: string = 'DataTag'; //日志标识字符串,作为tag标识当前runner
 const ExpectFail = () => {
     try {
         expect().assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
         console.info("expectInfo", `test failed`);
     }
 }
 const ExpectTrue = (n: boolean) => {
     try {
         expect(n).assertTrue();
-    } catch (err: BusinessError) {
+    } catch (err) {
         console.info("expectInfo", `test sucess`);
     }
 }
@@ -56,7 +56,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataFlowType.DATA_FLOW_TYPE_NONE == 0);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -81,7 +81,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataFlowType.DATA_FLOW_TYPE_DOWN == 1);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -106,7 +106,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataFlowType.DATA_FLOW_TYPE_UP == 2);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -130,7 +130,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataFlowType.DATA_FLOW_TYPE_UP_DOWN == 3);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -153,7 +153,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataFlowType.DATA_FLOW_TYPE_DORMANT == 4);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -178,7 +178,7 @@ export default function dataJsunit() {
             ExpectTrue(data.DataConnectState.DATA_STATE_CONNECTED == 2);
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -202,7 +202,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataConnectState.DATA_STATE_UNKNOWN == -1);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -226,7 +226,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataConnectState.DATA_STATE_DISCONNECTED == 0);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -250,7 +250,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataConnectState.DATA_STATE_CONNECTING == 1);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -274,7 +274,7 @@ export default function dataJsunit() {
                 ExpectTrue(data.DataConnectState.DATA_STATE_SUSPENDED == 3);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

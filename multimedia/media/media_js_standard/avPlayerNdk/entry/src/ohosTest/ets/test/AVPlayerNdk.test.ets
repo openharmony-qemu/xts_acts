@@ -2269,9 +2269,9 @@ export default function AVPlayerNdkTest() {
       expect(parseInt(result["resource_connection_duration"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["first_frame_decapsulation_duration"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_playback_time"].toString())).assertLargerOrEqual(0);
-      expect(parseInt(result["loading_count"].toString())).assertLargerOrEqual(0);
+      expect(parseInt(result["loading_requests_count"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_loading_time"].toString())).assertLargerOrEqual(0);
-      expect(parseInt(result["total_loading_Bytes"].toString())).assertLargerOrEqual(0);
+      expect(parseInt(result["total_loading_bytes"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["stalling_count"].toString())).assertLargerOrEqual(0);
       expect(parseInt(result["total_stalling_time"].toString())).assertLargerOrEqual(0);
       await context.resourceManager.closeRawFd("H264_AAC.mp4");
@@ -2289,6 +2289,51 @@ export default function AVPlayerNdkTest() {
     it('testOhAVPlayerGetPlaybackStatisticMetrics002', Level.LEVEL0,async (done: Function) => {
       let result: number = avplayer.getPlaybackStatisticMetricsAbnormal();
       console.info(`testOhAvPlayerGetPlaybackStatisticMetricsAbnormal001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAVPlayerOnInfoTypeEnum001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_ONINFOTYPEENUM_0100
+     * @tc.desc   test OH_AVPlayer_OnInfoTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerOnInfoTypeEnum001', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerOnInfoTypeEnum();
+      console.info(`testOhAVPlayerOnInfoTypeEnum001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAVPlayerOnInfoTypeEnum002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_ONINFOTYPEENUM_0200
+     * @tc.desc   test OH_AVPlayer_OnInfoTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerOnInfoTypeEnum002', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerOnInfoTypeEnum1();
+      console.info(`testOhAVPlayerOnInfoTypeEnum002 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAVPlayerBufferingTypeEnum001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_BUFFERINGTYPE_0100
+     * @tc.desc   test OH_AVPlayer_BufferingTypeEnum, input null avplayer
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerBufferingTypeEnum001', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerBufferingTypeEnum();
+      console.info(`testOhAVPlayerBufferingTypeEnum001 result = ${result}`);
       expect(result).assertEqual(0);
       done();
     });

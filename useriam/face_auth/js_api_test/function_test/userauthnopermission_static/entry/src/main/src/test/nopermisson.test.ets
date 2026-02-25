@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function userAuthTestExecute() {
   describe('userAuthTestExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -74,9 +74,9 @@ export default function userAuthTestExecute() {
           userAuth.getAvailableStatus(authType[idx0], userAuth.AuthTrustLevel.ATL1);
           hilog.info(domain, tag, format,"Security_IAM_Nopermission_API9_Func_static_0104  success " );
           done()
-        } catch (e:BusinessError) {
+        } catch (e) {
           hilog.info(domain, tag, format,"Security_IAM_Nopermission_API9_Func_static_0104  fail " + e.code);
-          expect(e.code).assertEqual(201);
+          expect((e as BusinessError).code).assertEqual(201);
           done()
         }
       }

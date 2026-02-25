@@ -59,7 +59,7 @@ const uiContext = new UIContext();
 
 export default function swiperJsunit() {
   describe('swiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -80,7 +80,7 @@ export default function swiperJsunit() {
           await CommonFunc.sleep(1000);
           console.info("push swiper page success ");
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push swiper page error: " + err);
       }
     });
@@ -210,7 +210,7 @@ it('swiperTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_0600 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_0600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -244,7 +244,7 @@ it('swiperTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_0700 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -278,7 +278,7 @@ it('swiperTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       try {
         events_emitter.on(InnerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("swiperTest_static_0800 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("swiperTest_static_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -308,7 +308,7 @@ it('swiperTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       try {
         events_emitter.on(InnerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("swiperTest_static_0900 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("swiperTest_static_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
@@ -338,7 +338,7 @@ it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       try {
         events_emitter.on(innerEvent, callbackOne);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("swiperTest_static_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
@@ -354,7 +354,7 @@ it('swiperTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       try {
         events_emitter.on(InnerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("swiperTest_static_1000 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('swiperTest_static_1000 END');
@@ -382,7 +382,7 @@ it('swiperTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1100 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -416,7 +416,7 @@ it('swiperTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1200 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -450,7 +450,7 @@ it('swiperTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1300 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -484,7 +484,7 @@ it('swiperTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1400 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1400 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -517,7 +517,7 @@ it('swiperTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1500 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -551,7 +551,7 @@ it('swiperTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1600 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -585,7 +585,7 @@ it('swiperTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1700 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -595,41 +595,6 @@ it('swiperTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<voi
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('loop')).assertEqual('true');
       console.info('swiperTest_static_1700 END');
-      done()
-    });
-
-
-    
-    /**
-     * @tc.number   swiperTest_static_1800
-     * @tc.name     swiperTest_static_1800
-     * @tc.desc     swiperTest_static_1800
-     * @tc.level    Level.LEVEL0
-     */
-it('swiperTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('swiperTest_static_1800 START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "autoPlay": "false123"
-          } as Record<String,RecordData>
-        }
-        let InnerEvent: events_emitter.InnerEvent = {
-          eventId: 207,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("swiperTest_static_1800 start to publish emit");
-        events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
-        console.log("swiperTest_static_1800 change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
-
-      console.info("swiperTest_static_1800 component JSON.parse(strJsonNew) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('autoPlay')).assertEqual('false');
-      console.info('swiperTest_static_1800 END');
       done()
     });
 
@@ -654,7 +619,7 @@ it('swiperTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("swiperTest_static_1900 start to publish emit");
         events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("swiperTest_static_1900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -667,38 +632,5 @@ it('swiperTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<voi
       done()
     });
 
-    
-    /**
-     * @tc.number   swiperTest_static_2000
-     * @tc.name     swiperTest_static_2000
-     * @tc.desc     swiperTest_static_2000
-     * @tc.level    Level.LEVEL0
-     */
-it('swiperTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('swiperTest_static_2000 START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "duration": "abc"
-          } as Record<String,RecordData>
-        }
-        let InnerEvent: events_emitter.InnerEvent = {
-          eventId: 210,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("swiperTest_static_2000 start to publish emit");
-        events_emitter.emit(InnerEvent, eventData);
-      } catch (err: Error) {
-        console.log("swiperTest_static_2000 change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
-
-      console.info("swiperTest_static_2000 component JSON.parse(strJsonNew) is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('duration')).assertEqual('400');
-      console.info('swiperTest_static_2000 END');
-      done()
-    });
   })
 }

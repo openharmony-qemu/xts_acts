@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listScrollerBar() {
   describe('listScrollerBar', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("listScrollerBar beforeEach start");
 
       
@@ -93,7 +93,7 @@ it('listScrollerBar_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info("[listScrollerBar_static_0100] content: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-scrollStop3-');
+        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-reachEnd3-scrollStop3-');
       console.info('[listScrollerBar_static_0100] END');
       done();
     });

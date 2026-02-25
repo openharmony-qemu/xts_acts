@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function pathJsunit() {
   describe('pathJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       
@@ -119,7 +119,8 @@ it('testPath_static_02', Level.LEVEL0, async (done: () => void): Promise<void> =
         } as emitter.InnerEvent
         console.info("[testPath_static_02_static] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testPath_static_02_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

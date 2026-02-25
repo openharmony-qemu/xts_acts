@@ -7,6 +7,13 @@
     "MainAbility/pages/layoutInspector/layoutInspector",
     "MainAbility/pages/pluginComponent",
     "MainAbility/pages/assemblyCallback",
-    "MainAbility/pages/enumTest/enumTest"
+    "MainAbility/pages/enumTest/enumTest",
+    "MainAbility/pages/LayoutChildren",
+    "MainAbility/pages/CreateComponentObserver/drawChildren",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityTextNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityStateDescriptionNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityActionOptionsNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityDefaultFocusFalse",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityGroupNullUndefined"
   ]
 }

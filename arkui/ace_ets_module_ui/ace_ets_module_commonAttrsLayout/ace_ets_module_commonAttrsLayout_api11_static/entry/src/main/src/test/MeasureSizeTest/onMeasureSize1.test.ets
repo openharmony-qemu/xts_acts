@@ -35,15 +35,14 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function onMeasureSize1() {
 
-
-  await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
+  waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
 
 
   let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
   const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
 
   describe('onMeasureSize1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onMeasureSize1 beforeAll start");
     });
     beforeEach(() => {

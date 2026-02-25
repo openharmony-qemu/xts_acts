@@ -70,7 +70,8 @@ struct VideoOnFullscreenChange {
             }
             console.info("video_101 onClick start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError
             console.info("video_101 onClick emit action state err: " + JSON.stringify((err as BusinessError)?.message))
           }
         })

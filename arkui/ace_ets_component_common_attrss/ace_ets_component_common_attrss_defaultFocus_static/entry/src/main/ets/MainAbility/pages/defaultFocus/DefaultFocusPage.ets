@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,8 +97,6 @@ import {
   Slider,
   SliderStyle,
   Stack,
-  Stepper,
-  StepperItem,
   Swiper,
   TabContent,
   Tabs,
@@ -160,7 +158,7 @@ struct DefaultFocusPage {
       console.log('routerParamOptions.textComponentKey: ' + this.textComponentKey)
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 
@@ -286,27 +284,6 @@ struct DefaultFocusPage {
           .width(200)
           .height(300)
           .applyStyles(this.commonStyle)
-      } else if (this.targetView == 'Stepper') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One').focusable(true)
-            }
-          }
-        }.applyStyles(this.commonStyle)
-      } else if (this.targetView == 'StepperItem') {
-        Stepper() {
-          StepperItem() {
-            Column() {
-              Text('Page One')
-                .focusable(true)
-            }
-          }
-          .applyStyles(this.commonStyle)
-          .backgroundColor(Color.Red)
-          .width('100%')
-          .height('100%')
-        }.backgroundColor(Color.Yellow).width(200).height(100)
       } else if (this.targetView == 'TextPicker') {
         TextPicker({ range: ['apple1', 'orange2', 'peach3', 'grape4'] })
           .width(200)

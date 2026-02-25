@@ -116,6 +116,21 @@ bool IsSupportImageSR()
  */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_01, TestSize.Level1)
 {
+    ASSERT_EQ(param_srgb.metadataType, 0);
+    ASSERT_EQ(param_srgb.colorSpace, OH_COLORSPACE_SRGB_FULL);
+    ASSERT_EQ(param_srgb.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_p3.metadataType, 0);
+    ASSERT_EQ(param_p3.colorSpace, OH_COLORSPACE_P3_FULL);
+    ASSERT_EQ(param_p3.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_bt709.metadataType, 0);
+    ASSERT_EQ(param_bt709.colorSpace, OH_COLORSPACE_BT709_FULL);
+    ASSERT_EQ(param_bt709.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_8888);
+    ASSERT_EQ(param_not_support.metadataType, 0);
+    ASSERT_EQ(param_not_support.colorSpace, OH_COLORSPACE_BT601_EBU_FULL);
+    ASSERT_EQ(param_not_support.pixelFormat, NATIVEBUFFER_PIXEL_FMT_BGRX_8888);
+    ASSERT_EQ(param5.metadataType, 0);
+    ASSERT_EQ(param5.colorSpace, OH_COLORSPACE_BT2020_PQ_LIMIT);
+    ASSERT_EQ(param5.pixelFormat, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_InitializeEnvironment();
     EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
     OH_ImageProcessing_DeinitializeEnvironment();

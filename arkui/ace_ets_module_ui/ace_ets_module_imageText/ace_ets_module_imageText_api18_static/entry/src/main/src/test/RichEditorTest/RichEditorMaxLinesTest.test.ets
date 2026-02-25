@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorMaxLinesTest() {
   describe('RichEditorMaxLinesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorMaxLinesTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")

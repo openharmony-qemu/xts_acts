@@ -53,7 +53,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function LifeCycle0120TestJsunit() {
   describe('LifeCycle0120TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LifeCycle0120TestJsunit beforeEach start");
 
 

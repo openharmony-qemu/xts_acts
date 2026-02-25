@@ -41,7 +41,6 @@ export default function defaultFlexTest() {
   let supportView: Array<string> = new Array<string>(
      'SideBarContainer',
      'WaterFlow',
-     'Stepper',
      'Select',
      'RowSplit',
      'ColumnSplit',
@@ -84,7 +83,7 @@ export default function defaultFlexTest() {
     }]
 
   describe('DefaultFlexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("defaultFlexTest beforeAll start");
       
       console.info("startAbility start");

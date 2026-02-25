@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function marqueeJsunit() {
   describe('marqueeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("marqueeJsunit beforeEach start");
 
 
@@ -59,7 +59,7 @@ export default function marqueeJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push marquee page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push marquee page error " + JSON.stringify(err));
       }
     });
@@ -89,7 +89,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -105,7 +105,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(innerEventOne, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0100 END');
@@ -132,7 +132,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -148,7 +148,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(innerEventOne, callback1)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0200 END');
@@ -175,7 +175,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -191,7 +191,7 @@ export default function marqueeJsunit() {
       }
       try {
         emitter.on(innerEventOne, callback1)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0300 END');

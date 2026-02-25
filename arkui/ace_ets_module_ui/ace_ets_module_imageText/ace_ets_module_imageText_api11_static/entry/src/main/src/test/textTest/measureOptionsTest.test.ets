@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function measureOptionsTest() {
   describe('measureOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("measureOptionsTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

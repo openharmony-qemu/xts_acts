@@ -80,6 +80,7 @@
         },
         {
             "test-file-name": [
+                "ActsPhotoAccessXtsSuppMainTest.hap",
                 "ActsPhotoAccessXtsSuppTest.hap"
             ],
             "type": "AppInstallKit",

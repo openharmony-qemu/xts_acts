@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
   let TEST_SUITE_NAME: string = 'SUB_NOTIFICATION_ANS_REDUCE_ALERTS_TEST ===>'
 
   describe('SUB_NOTIFICATION_ANS_REDUCE_ALERTS_TEST', () => {
-    beforeAll( () => {
+    beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
@@ -65,7 +65,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await notificationManager.cancelAll().then(() => {
         console.info(TEST_SUITE_NAME + `Succeeded in canceling all notification.`);
       }).catch((err: Error):void => {
@@ -128,7 +128,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -190,7 +190,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -252,7 +252,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()
@@ -314,7 +314,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             expect(false).assertTrue();
             done()
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done()

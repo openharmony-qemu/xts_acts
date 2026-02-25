@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ export default function progressJsunit() {
           // console.info("push progress page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push progress page error " + err);
       }
 
@@ -93,6 +93,10 @@ export default function progressJsunit() {
       await CommonFunc.sleep(2000);
       console.info("progress after each called");
     });
+
+    afterAll(async () => {
+      AppStorage.setOrCreate<number>('value', 20);
+    })
 
     
 /**
@@ -108,7 +112,7 @@ it('testProgress_static_100', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_100 component objLP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       try {
         AppStorage.setOrCreate<number>('value', 100);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -152,7 +156,7 @@ it('testProgress_static_300', Level.LEVEL1, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', 100);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -195,7 +199,7 @@ it('testProgress_static_500', Level.LEVEL1, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', 100);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -238,7 +242,7 @@ it('testProgress_static_700', Level.LEVEL1, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', 0);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -264,7 +268,7 @@ it('testProgress_static_800', Level.LEVEL1, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', 0);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -290,7 +294,7 @@ it('testProgress_static_900', Level.LEVEL1, async (done: () => void): Promise<vo
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', 0);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -316,7 +320,7 @@ it('testProgress_static_1000', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value', -5);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -343,7 +347,7 @@ it('testProgress_static_1100', Level.LEVEL1, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('value',121212121);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

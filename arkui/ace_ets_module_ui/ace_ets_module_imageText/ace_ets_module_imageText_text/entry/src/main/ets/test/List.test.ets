@@ -108,6 +108,30 @@ import TextDirectionTest from './TextTest/TextDirection.test';
 import TextTextDirectionTest from './TextTest/TextTextDirection.test';
 import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
 import TextMarqueeOptionsTest from './TextTest/TextMarqueeOptionsTest.test';
+import TextSpecialAttributesTest from './TextTest/TextSpecialAttributes.test';
+import TextDataDetectorDateTimeTest from './TextTest/TextDataDetectorDateTime.test';
+import TextFontNullTest from './TextTest/TextFontNull.test';
+import TextMinMaxFontSizeNullTest from './TextTest/TextMinMaxFontSizeNull.test';
+import TextMinFontScaleMaxFontScaleTest from './TextTest/TextMinFontScaleMaxFontScale.test';
+import TextFontStyleLineSpacingNullTest from './TextTest/TextFontStyleLineSpacingNull.test';
+import TextLineHeightMultipleLineSpacingTest from './TextTest/TextLineHeightMultipleLineSpacing.test';
+import TextMinMaxLineHeightTest from './TextTest/TextMinMaxLineHeight.test';
+import TextTextVerticalAlignContentAlignTest from './TextTest/TextTextVerticalAlignContentAlign.test';
+import TextTextOverflowTest from './TextTest/TextTextOverflow.test';
+import TextFontFamilyTest from './TextTest/TextFontFamily.test';
+import TextMaxLinesNullTest from './TextTest/TextMaxLinesNull.test';
+import TextMinLinesNullTest from './TextTest/TextMinLinesNull.test';
+import TextDecorationTest from './TextTest/TextDecoration.test';
+import TextLetterSpacingTest from './TextTest/TextLetterSpacing.test';
+import TextTextCaseNullTest from './TextTest/TextTextCaseNull.test';
+import TextBaselineOffsetTest from './TextTest/TextBaselineOffset.test';
+import TextCopyOptionNullTest from './TextTest/TextCopyOptionNull.test';
+import TextShadowNullTest from './TextTest/TextShadowNull.test';
+import TextHeightAdaptivePolicyNullTest from './TextTest/TextHeightAdaptivePolicyNull.test';
+import TextWordBreakNullTest from './TextTest/TextWordBreakNull.test';
+import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.test';
+import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
+
 
 export default function testsuite() {
   InputPresetTest()
@@ -206,4 +230,27 @@ export default function testsuite() {
   TextTextDirectionTest();
   SelectedDragPreviewStyle();
   TextMarqueeOptionsTest();
+  TextSpecialAttributesTest();
+  TextDataDetectorDateTimeTest();
+  TextFontNullTest();
+  TextMinMaxFontSizeNullTest();
+  TextMinFontScaleMaxFontScaleTest();
+  TextFontStyleLineSpacingNullTest();
+  TextLineHeightMultipleLineSpacingTest();
+  TextMinMaxLineHeightTest();
+  TextTextVerticalAlignContentAlignTest();
+  TextTextOverflowTest();
+  TextFontFamilyTest();
+  TextMaxLinesNullTest();
+  TextMinLinesNullTest();
+  TextDecorationTest();
+  TextLetterSpacingTest();
+  TextTextCaseNullTest();
+  TextBaselineOffsetTest();
+  TextCopyOptionNullTest();
+  TextShadowNullTest();
+  TextHeightAdaptivePolicyNullTest();
+  TextWordBreakNullTest();
+  TextLineBreakStrategyNullTest();
+  TextSelectionPropertiesTest();
 }

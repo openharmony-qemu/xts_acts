@@ -235,6 +235,133 @@ export default function abilityTest() {
       }
       console.log(`[${caseName}]: end`)
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5400
+     * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5400
+     * @tc.desc   Test sendExecuteResult with instanceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRunTime_InsightIntentProvider_5400', Level.LEVEL1, async (done: Function) => {
+      let caseName = 'SUB_Ability_AbilityRunTime_InsightIntentProvider_5400';
+      console.log(`[${caseName}] create`);
+      try {
+        let result: insightIntent.ExecuteResult = {
+          code: 404,
+          result: {
+            message: 'Nothing',
+          }
+        };
+        insightIntentProvider.sendExecuteResult(null, result).then(()=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        })
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`[${caseName}]: error` + error.code + error.message);
+        expect(error?.code).assertEqual(401);
+        done();
+      }
+      console.log(`[${caseName}]: end`)
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5500
+     * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5500
+     * @tc.desc   Test sendIntentResult with instanceId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRunTime_InsightIntentProvider_5500', Level.LEVEL1, async (done: Function) => {
+      let caseName = 'SUB_Ability_AbilityRunTime_InsightIntentProvider_5500';
+      console.log(`[${caseName}] create`);
+      try {
+        let result: insightIntent.ExecuteResult = {
+          code: 404,
+          result: {
+            message: 'Nothing',
+          }
+        };
+        insightIntentProvider.sendIntentResult(null, result).then(()=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        }).catch((err:BusinessError)=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        })
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`[${caseName}]: error` + error.code + error.message);
+        expect(error?.code).assertEqual(401);
+        done();
+      }
+      console.log(`[${caseName}]: end`)
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5600
+     * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5600
+     * @tc.desc   Test sendExecuteResult with result is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRunTime_InsightIntentProvider_5600', Level.LEVEL1, async (done: Function) => {
+      let caseName = 'SUB_Ability_AbilityRunTime_InsightIntentProvider_5600';
+      console.log(`[${caseName}] create`);
+      try {
+        insightIntentProvider.sendExecuteResult(10010, null).then(()=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        }).catch((err:BusinessError)=>{
+          console.error(`[${caseName}]: error ` + err.code + err.message);
+          try{ expect().assertFail();}catch{}
+          done();
+        })
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`[${caseName}]: catch ` + error.code + error.message);
+        expect(error?.code).assertEqual(16000050);
+        done();
+      }
+      console.log(`[${caseName}]: end`)
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_5700
+     * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_5700
+     * @tc.desc   Test sendIntentResult with result is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRunTime_InsightIntentProvider_5700', Level.LEVEL1, async (done: Function) => {
+      let caseName = 'SUB_Ability_AbilityRunTime_InsightIntentProvider_5700';
+      console.log(`[${caseName}] create`);
+      try {
+        insightIntentProvider.sendIntentResult(10010, null).then(()=>{
+          try{ expect().assertFail();}catch{}
+          done();
+        }).catch((err:BusinessError)=>{
+          console.error(`[${caseName}]: error ` + err.code + err.message);
+          try{ expect().assertFail();}catch{}
+          done();
+        })
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`[${caseName}]: catch ` + error.code + error.message);
+        expect(error?.code).assertEqual(16000050);
+        done();
+      }
+      console.log(`[${caseName}]: end`)
+    })
+
   })
 }
 

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function alphabetIndexerJsunit() {
   describe('alphabetIndexerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

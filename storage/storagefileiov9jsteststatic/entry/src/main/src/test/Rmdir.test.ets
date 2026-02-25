@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ export default function fileIORmdir() {
         expect(!fs.accessSync(dpath)).assertTrue();
         expect(!fs.accessSync(ddpath)).assertTrue();
         expect(!fs.accessSync(fffpath)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -77,7 +77,8 @@ export default function fileIORmdir() {
         let dpath = await Utils.nextFileName('fileIO_test_rmdir_sync_static_001');
         fs.rmdirSync(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_001 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -99,9 +100,29 @@ export default function fileIORmdir() {
         expect(fs.accessSync(dpath)).assertTrue();
         fs.rmdirSync(dpath);
         expect(!fs.accessSync(dpath)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_rmdir_sync_static_003
+     * @tc.number SUB_STORAGE_FILEIO_RMDIR_SYNC_0300
+     * @tc.desc   Test rmdirSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_rmdir_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_003 start');
+      try {
+        fs.rmdirSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_sync_static_003 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -133,7 +154,7 @@ export default function fileIORmdir() {
         expect(!fs.accessSync(ddpath)).assertTrue();
         expect(!fs.accessSync(fffpath)).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -168,7 +189,7 @@ export default function fileIORmdir() {
           expect(!fs.accessSync(fffpath)).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -188,7 +209,8 @@ export default function fileIORmdir() {
         let dpath = await Utils.nextFileName('fileIO_test_rmdir_async_static_002');
         await fs.rmdir(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_002 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -214,7 +236,7 @@ export default function fileIORmdir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -237,9 +259,55 @@ export default function fileIORmdir() {
         await fs.rmdir(dpath);
         expect(!fs.accessSync(dpath)).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_rmdir_async_static_005
+     * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0500
+     * @tc.desc   Test rmdir() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_rmdir_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_005 start');
+      try {
+        fs.rmdir("", (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_005 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_rmdir_async_static_006
+     * @tc.number SUB_STORAGE_FILEIO_RMDIR_ASYNC_0600
+     * @tc.desc   Test rmdir() promise interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_rmdir_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_006 start');
+      try {
+        await fs.rmdir("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_rmdir_async_static_006 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
       }
     });
 

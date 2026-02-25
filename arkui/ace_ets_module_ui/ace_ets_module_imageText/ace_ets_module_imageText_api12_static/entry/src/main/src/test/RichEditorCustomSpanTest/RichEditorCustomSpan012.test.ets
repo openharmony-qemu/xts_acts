@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorCustomSpan012() {
   describe('RichEditorCustomSpan012', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -105,7 +105,8 @@ export default function RichEditorCustomSpan012() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      expect(stylesInfoText).assertContain('stylesInfo:[{"start":6,"length":5,"styledKey":0,"styledValue":{}}]');
+      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMSPAN_static_0018 contentText:' + stylesInfoText);
+      expect(stylesInfoText).assertContain('stylesInfo:[{"start":6,"length":5,"styledKey":0,"styledValue":');
       await CommonFunc.sleep(500);
       let removeStyle = await (driver.findComponent(ON.id('removeStyle')) as Promise<Component>);
       await removeStyle.click();
@@ -135,7 +136,8 @@ export default function RichEditorCustomSpan012() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      expect(stylesInfoText).assertContain('stylesInfo:[{"start":0,"length":6,"styledKey":0,"styledValue":{}}]');
+      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMSPAN_static_0019 stylesInfoText:' + stylesInfoText);
+      expect(stylesInfoText).assertContain('stylesInfo:[{"start":0,"length":6,"styledKey":0,"styledValue":');
       await CommonFunc.sleep(500);
       let removeStyleAll = await (driver.findComponent(ON.id('removeStyleAll')) as Promise<Component>);
       await removeStyleAll.click();

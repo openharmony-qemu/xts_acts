@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function BuiltinArrayFill02Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -1831,7 +1831,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float,2.2 as float,3.3 as float,2.2 as float] as FixedArray<float>;
         let result = includes(arr, 2.2 as float, 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1851,7 +1851,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = includes(arr, 1.1 as float, 1);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1871,7 +1871,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [] as FixedArray<float>;
         let result = includes(arr, 1.1 as float);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1891,7 +1891,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = includes(arr, 2.2 as float, -2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1911,7 +1911,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = includes(arr, 2.2 as float, 5);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1931,7 +1931,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = includes(arr, 1.1 as float);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1951,7 +1951,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = includes(arr, 3.3 as float);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1971,7 +1971,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
         let result = includes(arr, 3);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1991,7 +1991,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [10, 20, 30] as FixedArray<int>;
         let result = includes(arr, 40);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2011,7 +2011,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [5, 10, 15, 10, 20] as FixedArray<int>;
         let result = includes(arr, 10, 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2031,7 +2031,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [1, 2, 3] as FixedArray<int>;
         let result = includes(arr, 2, 5);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2051,7 +2051,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [] as FixedArray<int>;
         let result = includes(arr, 1);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2071,7 +2071,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [10, 20, 30, 40, 50] as FixedArray<int>;
         let result = includes(arr, 30, -3);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2091,7 +2091,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [100, 200, 300] as FixedArray<int>;
         let result = includes(arr, 100);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2111,7 +2111,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [5, 10, 15, 20] as FixedArray<int>;
         let result = includes(arr, 20);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2131,7 +2131,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
         let result = includes(arr, 1, 0);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2151,7 +2151,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 2.2 as float);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2171,7 +2171,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 4.4 as float);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2191,7 +2191,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 2.2 as float] as FixedArray<float>;
         let result = indexOf(arr, 2.2 as float, 2);
         expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2211,7 +2211,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 1.1 as float, 1);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2231,7 +2231,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [] as FixedArray<float>;
         let result = indexOf(arr, 1.1 as float);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2251,7 +2251,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 2.2 as float, -2);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2271,7 +2271,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 2.2 as float, 5);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2291,7 +2291,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 1.1 as float);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2311,7 +2311,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
         let result = indexOf(arr, 3.3 as float);
         expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2331,7 +2331,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [1, 2, 3] as FixedArray<int>;
         let result = includes(arr, 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2351,7 +2351,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<int> = [1, 2, 3] as FixedArray<int>;
         let result = indexOf(arr, 2);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2371,7 +2371,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: string[] = ['a', 'b', 'c'];
         let result = arr.includes('b');
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2391,7 +2391,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: Array<string> = ['a', 'b', 'c'];
         let result = arr.indexOf('b');
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2411,7 +2411,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<boolean> = [false, true, false] as FixedArray<boolean>;
         let result = includes(arr, true);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2431,7 +2431,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<boolean> = [false, true, false] as FixedArray<boolean>;
         let result = indexOf(arr, true);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2451,7 +2451,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<byte> = [0x01 as byte, 0x02 as byte, 0x03 as byte] as FixedArray<byte>;
         let result = includes(arr, 0x02 as byte);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2471,7 +2471,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<byte> = [0x01 as byte, 0x02 as byte, 0x03 as byte] as FixedArray<byte>;
         let result = indexOf(arr, 0x02 as byte);
         expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2491,7 +2491,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [10000000000, 20000000000, 30000000000] as FixedArray<long>;
         let result = includes(arr, 20000000000);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2511,7 +2511,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300] as FixedArray<long>;
         let result = includes(arr, 200);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2531,7 +2531,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300] as FixedArray<long>;
         let result = includes(arr, 400);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2551,7 +2551,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300, 200] as FixedArray<long>;
         let result = includes(arr, 200, 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2571,7 +2571,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300] as FixedArray<long>;
         let result = includes(arr, 100, 1);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2591,7 +2591,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300, 400] as FixedArray<long>;
         let result = includes(arr, 300, -2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2611,7 +2611,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [] as FixedArray<long>;
         let result = includes(arr, 100);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2631,7 +2631,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [-9007199254740991, 0, 100] as FixedArray<long>;
         let result = includes(arr, -9007199254740991 as long);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2651,7 +2651,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [0, 9007199254740991, 100] as FixedArray<long>;
         let result = includes(arr, 9007199254740991 as long);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2671,7 +2671,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<long> = [100, 200, 300] as FixedArray<long>;
         let result = includes(arr, 200 as long, 5);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2691,7 +2691,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<short> = [10 as short, 20 as short, 30 as short] as FixedArray<short>;
         let result = includes(arr, 20 as short);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2711,7 +2711,7 @@ export default function BuiltinArrayFill02Test() {
         let arr: FixedArray<short> = [100 as short, 200 as short, 300 as short] as FixedArray<short>;
         let result = includes(arr, 400 as short);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }

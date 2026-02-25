@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Scroller,GridRow,Scroll,ButtonType,CommonAttrib
   BreakpointsReference,GridRowDirection,GridCol,GridItem,Grid,List,Video,Image,BarPosition,
   ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,
   PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,
-  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
   CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,Alignment,AlignRuleOption,RenderFit,
   Direction,OutlineStyle,ShadowOptions,Position,Rect,ClickEffectLevel,DragPreviewMode,VerticalAlign,HorizontalAlign,
   AdaptiveColor, HoverEffect, ThemeColorMode, SafeAreaType,SafeAreaEdge,GradientDirection,EdgeOutlineStyles,

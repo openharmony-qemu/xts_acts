@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,7 +71,7 @@ export default function imageGif() {
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       isSupportHEICDecode =
@@ -207,7 +207,8 @@ export default function imageGif() {
               console.info(`${testNum} disposalTypes[ ${i} ]= ${disposalTypes[i]}`);
             }
             console.info(`${testNum} disposalTypes show end`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${testNum} testGetDisposalTypePromise getDisposalTypeList failed err: code is ${err.code},message is ${err.message}`);
             expect(err.code == ERR_CODE).assertTrue();
           }
@@ -368,7 +369,8 @@ export default function imageGif() {
           logger.log('create pixel map list failed');
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log('createPixelMapListErrPromise error.code: ' + error.code);
           logger.log('createPixelMapListErrPromise error: ' + error);
           checkErrCode(error.code as int);
@@ -521,7 +523,8 @@ export default function imageGif() {
         }
         logger.log("createPictureAtIndex is succ!");
         return false;
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("gifInCompleteFrameTestError failed error is: " + JSON.stringify(error));
         return (error.code == errorCode);
       }
@@ -971,7 +974,8 @@ export default function imageGif() {
           expect().assertFail();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("createPictureAtIndex failed, error is: " + JSON.stringify(error));
         expect(error.code == UNSUPPORTED_OPTIONS).assertTrue();
         done();

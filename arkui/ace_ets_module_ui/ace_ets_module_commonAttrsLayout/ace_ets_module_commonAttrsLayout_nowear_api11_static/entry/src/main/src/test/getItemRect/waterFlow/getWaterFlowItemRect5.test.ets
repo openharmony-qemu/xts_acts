@@ -43,12 +43,12 @@ interface MyParams {
 
 export default function getWaterFlowItemRect5() {
   describe('getWaterFlowItemRect5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getWaterFlowItemRect5 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
 
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("getWaterFlowItemRect5 beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect5',

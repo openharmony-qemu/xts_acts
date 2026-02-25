@@ -15,7 +15,6 @@
  */
 import { attrsManager } from '../../common/AttrsManager';
 import router from '@ohos.router'
-import { StepperView } from '../../view/alignRules/StepperView';
 import {
   Entry,
   Component,
@@ -529,13 +528,6 @@ struct AlignRules {
         } else if (this.targetView == 'TextTimer') {
         TextTimer({ isCountDown: true, count: 30000 })
           .width(this.subassemblyWidth).height(this.subassemblyHeight).applyStyles(this.globalFancy)
-      } else if (this.targetView == 'Stepper') {
-        StepperView({
-          _alignRules: this._alignRules,
-          subassemblyWidth: this.subassemblyWidth,
-          subassemblyHeight: this.subassemblyHeight,
-          componentKey: this.componentKey
-        });
       } else if (this.targetView == 'ScrollBar') {
         ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
           Text().width(20).height(100).borderRadius(10)

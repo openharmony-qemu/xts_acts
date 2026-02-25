@@ -594,39 +594,6 @@ void VDecNdkSample::InputFunc_AVCC()
     }
 }
 
-OH_AVErrCode VDecNdkSample::InputFunc_FUZZ(const uint8_t *data, size_t size)
-{
-    uint32_t index;
-    unique_lock<mutex> lock(signal_->inMutex_);
-    signal_->inCond_.wait(lock, [this]() {
-        if (!isRunning_.load() && g_fuzzError) {
-            return true;
-        }
-        return signal_->inIdxQueue_.size() > 0;
-    });
-    if (g_fuzzError)
-        return AV_ERR_TIMEOUT;
-    index = signal_->inIdxQueue_.front();
-    auto buffer = signal_->inBufferQueue_.front();
-    lock.unlock();
-    int32_t buffer_size = OH_AVMemory_GetSize(buffer);
-    uint8_t *buffer_addr = OH_AVMemory_GetAddr(buffer);
-
-    if (memcpy_s(buffer_addr, buffer_size, data, size) != EOK) {
-        cout << "Fatal: memcpy fail" << endl;
-        return AV_ERR_NO_MEMORY;
-    }
-    OH_AVCodecBufferAttr attr;
-    attr.pts = GetSystemTimeUs();
-    attr.size = buffer_size;
-    attr.offset = 0;
-    attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
-    OH_AVErrCode ret = OH_VideoDecoder_PushInputData(vdec_, index, attr);
-    signal_->inIdxQueue_.pop();
-    signal_->inBufferQueue_.pop();
-    return ret;
-}
-
 void VDecNdkSample::SetEOS(uint32_t index)
 {
     OH_AVCodecBufferAttr attr;

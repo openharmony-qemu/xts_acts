@@ -15,12 +15,12 @@
 
 import { Entry, Text,Column, Component, Button, ClickEvent, Web, Row, Stack } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { BusinessError, Area, OnPageBeginEvent } from '@ohos.arkui.component'
+import { Area, OnPageBeginEvent } from '@ohos.arkui.component'
 import Utils from '../../src/test/Utils.test';
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
+import { Callback, RecordData, BusinessError } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

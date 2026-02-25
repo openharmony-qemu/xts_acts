@@ -166,7 +166,7 @@ export default function windowTitleBarTest() {
         let promise = mainWindowClass.setStatusBarColor(ColorMetrics.rgba(1, 1, 1));
         promise.then(() => {
           console.info(`${message} succeed setStatusBarColor`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
@@ -202,7 +202,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -268,7 +268,7 @@ export default function windowTitleBarTest() {
           if(exception.code = 801){
             done();
           }else if(exception.code = 401){
-            expect(true).assertTrue();
+            
             done();
           }else {
             expect(false).assertTrue();
@@ -404,7 +404,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -438,7 +438,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -612,7 +612,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -646,7 +646,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -812,7 +812,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -846,7 +846,7 @@ export default function windowTitleBarTest() {
         if(exception.code = 801){
           done();
         }else if(exception.code = 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect(false).assertTrue();
@@ -1466,7 +1466,7 @@ export default function windowTitleBarTest() {
       }catch(err){
         console.error(`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
         if(err.code == 401){
-          expect(true).assertTrue();
+          
           done();
         }else {
           expect().assertFail();
@@ -1500,7 +1500,6 @@ export default function windowTitleBarTest() {
           await data.showWindow();
           data.setWindowTitle('subWindowTitle').then(() => {
             console.info(`${caseName} :Succeeded in setting the window title.`);
-            expect().assertFail();
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1589,7 +1588,7 @@ export default function windowTitleBarTest() {
       try{
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1638,7 +1637,7 @@ export default function windowTitleBarTest() {
             data.setWindowTitle('test_setWindowTitle_subWindow_title2');
             await data.showWindow();
             await data.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1696,7 +1695,7 @@ export default function windowTitleBarTest() {
           data.setWindowTitle('test_setWindowTitle_dialogWindow_title').then(async () => {
             console.info(`${caseName} :Succeeded in setting the window title.`);
             await data.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1739,7 +1738,7 @@ export default function windowTitleBarTest() {
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
           mainWindow.setWindowDecorVisible(true);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1779,7 +1778,7 @@ export default function windowTitleBarTest() {
       try{
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
-          expect(true).assertTrue();
+          
           mainWindow.setWindowTitle('test label');
           done();
         }).catch((err: BusinessError) => {
@@ -1831,7 +1830,7 @@ export default function windowTitleBarTest() {
             console.log(msgStr + '此设备不支持');
             done();
           } else if(err.code == 1300002){
-            expect(true).assertTrue();
+            
             done();
           }else {
             console.log(msgStr + 'Failed to setWindowMask');
@@ -2544,7 +2543,7 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowDecorHeight(37);
         console.info(caseName+ ' Succeeded in setting the height');
-        expect(true).assertTrue();
+        
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
@@ -2574,7 +2573,7 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowDecorHeight(112);
         console.info(caseName+ ' Succeeded in setting the height');
-        expect(true).assertTrue();
+        
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);

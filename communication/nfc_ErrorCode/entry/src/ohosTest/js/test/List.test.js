@@ -13,22 +13,28 @@
  * limitations under the License.
  */
 
-
 import nfcIsoDepErrorTest from './IsoDepTag.test.js'
 import MifareClassicErrorTest from './MifareClassicTag.test.js'
 import UltralightTagErrorTest from './MifareUltralightTag.test.js'
 import nfcNDEFErrorTest from './NDEFTag.test.js'
 import nfcTagABFVErrorTest from './TagABFV.test.js'
-import EmptyTest from './Empty.test.js'	
+import EmptyTest from './Empty.test.js';
+import GetParam from './GetParam.test.js'
 let info = canIUse("SystemCapability.Communication.NFC.Core");
 export default function testsuite() {
 if (info)
 {
-    nfcIsoDepErrorTest();
-    MifareClassicErrorTest();
-    UltralightTagErrorTest();
-    nfcNDEFErrorTest();
-    nfcTagABFVErrorTest();
+    let infoNfc = GetParam("const.nfc.not_support", "false");
+    if (infoNfc == "false") {
+        nfcIsoDepErrorTest();
+        MifareClassicErrorTest();
+        UltralightTagErrorTest();
+        nfcNDEFErrorTest();
+        nfcTagABFVErrorTest();
+    } else {
+        EmptyTest();
+    }
+    
 } else {
     EmptyTest();
 }

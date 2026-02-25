@@ -26,7 +26,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function getStateByIndex1() {
   describe('getStateByIndex1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getStateByIndex1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

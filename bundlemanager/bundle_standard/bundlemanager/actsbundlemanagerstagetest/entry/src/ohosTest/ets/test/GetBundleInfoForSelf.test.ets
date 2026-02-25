@@ -47,6 +47,7 @@ export default function getBundleInfoForSelf() {
         expect(data.vendor).assertEqual(VENDOR);
         expect(data.versionCode).assertEqual(1000000);
         expect(data.versionName).assertEqual("1.0.0");
+        expect(data.buildVersion).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode).assertEqual(1000000);
         expect(data.targetVersion).assertLarger(16);
         expect(data.installTime).assertLarger(0);
@@ -80,6 +81,7 @@ export default function getBundleInfoForSelf() {
         expect(data.vendor).assertEqual(VENDOR);
         expect(data.versionCode).assertEqual(1000000);
         expect(data.versionName).assertEqual("1.0.0");
+        expect(data.buildVersion).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode).assertEqual(1000000);
         expect(data.targetVersion).assertLarger(16);
         expect(data.installTime).assertLarger(0);
@@ -120,7 +122,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -175,7 +177,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -552,7 +554,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(30);
+        expect(extensionList.length).assertEqual(31);
         let count = 0;
         for (let i = 0;i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -728,10 +730,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+            case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
           }
           console.info("count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(465);
+        expect(count).assertEqual(501);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
@@ -762,7 +769,7 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo).assertEqual(null);
           expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
           let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-          expect(extensionList.length).assertEqual(30);
+          expect(extensionList.length).assertEqual(31);
           let count = 0;
           for (let i = 0;i < extensionList.length; i++) {
             switch (extensionList[i].name) {
@@ -938,10 +945,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+            case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
             }
             console.info("count" + JSON.stringify(count));
           }
-          expect(count).assertEqual(465);
+          expect(count).assertEqual(501);
           expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
           expect(data.reqPermissionDetails.length).assertEqual(0);
           expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1325,6 +1337,7 @@ export default function getBundleInfoForSelf() {
       expect(data.vendor).assertEqual(VENDOR);
       expect(data.versionCode).assertEqual(1000000);
       expect(data.versionName).assertEqual("1.0.0");
+      expect(data.buildVersion).assertEqual("1.0.0");
       expect(data.minCompatibleVersionCode).assertEqual(1000000);
       expect(data.targetVersion).assertLarger(16);
       expect(data.installTime).assertLarger(0);
@@ -1363,7 +1376,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -1535,7 +1548,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo).assertEqual(null);
       expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
       let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-      expect(extensionList.length).assertEqual(30);
+      expect(extensionList.length).assertEqual(31);
       let count = 0;
       for (let i = 0;i < extensionList.length; i++) {
         switch (extensionList[i].name) {
@@ -1713,10 +1726,15 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
               count = count + 35
               break;
+          case 'partnerAgent':
+              console.info("partnerAgent" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.PARTNER_AGENT)
+              count = count + 36
+              break;
         }
         console.info("count" + JSON.stringify(count));
       }
-      expect(count).assertEqual(465);
+      expect(count).assertEqual(501);
       expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
       expect(data.reqPermissionDetails.length).assertEqual(0);
       expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1900,6 +1918,7 @@ export default function getBundleInfoForSelf() {
       expect(data.vendor).assertEqual(VENDOR);
       expect(data.versionCode).assertEqual(1000000);
       expect(data.versionName).assertEqual("1.0.0");
+      expect(data.buildVersion).assertEqual("1.0.0");
       expect(data.minCompatibleVersionCode).assertEqual(1000000);
       expect(data.targetVersion).assertLarger(16);
       expect(data.installTime).assertLarger(0);
@@ -1920,7 +1939,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
