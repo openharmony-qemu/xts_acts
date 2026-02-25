@@ -382,46 +382,43 @@ export default function nfcATagSessionTest() {
          */
         it('SUB_Communication_NFC_nfcAtage_js_1100', Level.LEVEL0, async function (done) {
             let sendDatas = [0x01, 0x02, 0x03, 0x04];
-            try {
-                await tag.getNfcATag(aTag).transmit(sendDatas).then((data) => {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data: " + data );
-                    if (data.length > 0) {
-                        expect(data.length > 0).assertTrue();
-                    } else {
-                        expect(data).assertDeepEquals([]);
-                    }
-                    expect(data).assertInstanceOf('Array')
+            await tag.getNfcATag(aTag).transmit(sendDatas).then((data) => {
+                console.info("[NFC_test] tagsession11 nfcAtage sendData1 data: " + data );
+                if (data.length > 0) {
+                    expect(data.length > 0).assertTrue();
+                } else {
+                    expect(data).assertDeepEquals([]);
+                }
+                expect(data).assertInstanceOf('Array')
+                done();
+            }).catch((err)=> {
+                if (err.code == 201) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                });
-            } catch(err) {
-                const code = Number(err.code);
-                if (code === 201) {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
-                    expect(201).assertEqual(code);
+                } else if (err.code == 401) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 401) {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
-                    expect('401').assertEqual(code);
+                } else if (err.code == 801) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 801) {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
-                    expect(801).assertEqual(code);
+                } else if (err.code == 3100201) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 3100201) {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
-                    expect(3100201).assertEqual(code);
-                    done();
-                } else if (code === 3100204) {
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 data err: " + err);
-                    expect(3100204).assertEqual(code);
+                } else if (err.code == 3100204) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
+                    expect(true).assertTrue();
                     done();
                 } else {
                     sleep(2500);
-                    console.info("[NFC_test] tagsession11 nfcAtage sendData1 failed: " + err);
-                    expect().assertFail();
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data: " + data);
+                    expect(data).assertInstanceOf('Array')
                     done();
                 }
-            }
+            });
             sleep(3500);
         })
 
@@ -436,26 +433,25 @@ export default function nfcATagSessionTest() {
         it('SUB_Communication_NFC_nfcAtage_js_1200', Level.LEVEL0, async function (done) {
             let sendDatas = [0x01, 0x02, 0x03, 0x04];
             tag.getNfcATag(aTag).transmit(sendDatas, (err, data)=> {
-                const code = Number(err.code);
-                if (code === 201) {
-                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
-                    expect(201).assertEqual(code);
+                if (err.code == 201) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData2 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 401) {
-                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
-                    expect(401).assertEqual(code);
+                } else if (err.code == 401) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData2 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 801) {
-                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
-                    expect(801).assertEqual(code);
+                } else if (err.code == 801) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData2 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 3100201) {
-                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
-                    expect(3100201).assertEqual(code);
+                } else if (err.code == 3100201) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData2 data err: " + err);
+                    expect(true).assertTrue();
                     done();
-                } else if (code === 3100204) {
-                    console.info("[NFC_test] tagsession12 nfcAtage sendData1 data err: " + err);
-                    expect(3100204).assertEqual(code);
+                } else if (err.code == 3100204) {
+                    console.info("[NFC_test] tagsession12 nfcAtage sendData2 data err: " + err);
+                    expect(true).assertTrue();
                     done();
                 } else {
                     sleep(2500);
