@@ -17,7 +17,7 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 import intelligentSceneJsunit from './IntelligentSceneUiJsunit.test.ets';
 import canNotUse from './CanNotUse.test.ets';
 
-function isDeviceSupport(): boolean {
+export function isDeviceSupport(): boolean {
   let deviceType: string = deviceInfo.deviceType;
   console.log(`current deviceType is ${deviceType}`);
   return deviceType === 'phone' || deviceType === 'tablet';
