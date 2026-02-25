@@ -69,7 +69,9 @@ import RdbSetdistributedtableTest from "./RdbSetdistributedTableEts.test"
 import RdbPredicatesTest from "./RdbPredicatesTest.test";
 import ResultSetTest from "./ResultSetTest.test";
 import RdbStoreTest from "./RdbStoreTest.test";
-import TransactionTest from "./TransactionTest.test";
+import RdbStoreCallbackNullTest from "./RdbStoreCallbackNullTest.test";
+import rdbStoreResultNullEtsTest from "./rdbStoreResultNullEtsTest.test";
+import RdbStoreSqlInfoEnumTestEts from "./RdbStoreSqlInfoEnumTestEts.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -142,4 +144,9 @@ export default function testsuite() {
   ResultSetTest();
   RdbStoreTest();
   TransactionTest();
+  
+  RdbStoreCallbackNullTest();
+  rdbStoreResultNullEtsTest();
+  RdbStoreSqlInfoEnumTestEts();
+  
 }
