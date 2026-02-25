@@ -60,6 +60,9 @@ import AnimatorNullUndefinedTest from './animator/AnimatorNullUndefined.test';
 import CreateNullUndefinedTest from './animator/CreateNullUndefined.test';
 import Matrix4TransitNullTest from './matrix4/Matrix4TransitNull.test';
 import Matrix4TransitUndefinedTest from './matrix4/Matrix4TransitUndefined.test';
+import GlobalPxNullUndefined from './global/GlobalPxNullUndefined.test';
+import AnimateToImmediatelyNullUndefined from './global/AnimateToImmediatelyNullUndefined.test';
+import AnimateToNullUndefined from './global/AnimateToNullUndefined.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -109,4 +112,7 @@ export default function testsuite() {
   CreateNullUndefinedTest();
   Matrix4TransitNullTest();
   Matrix4TransitUndefinedTest();
+  GlobalPxNullUndefined();
+  AnimateToImmediatelyNullUndefined();
+  AnimateToNullUndefined();
 }
