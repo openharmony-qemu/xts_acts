@@ -2318,7 +2318,7 @@ export default function DeviceKvStoreGetCoverageAdd(){
 
     /**
      * @tc.number SUB_DistributedData_KVStore_SDK_GetCoverageAdd_getResultSize01_0200
-     * @tc.name GetCoverageAdd_getResultSize01_001
+     * @tc.name GetCoverageAdd_getResultSize01_002
      * @tc.type FUNC
      * @tc.size MediumTest
      * @tc.level Level 2
