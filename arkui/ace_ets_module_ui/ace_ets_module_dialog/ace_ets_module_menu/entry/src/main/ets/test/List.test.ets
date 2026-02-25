@@ -51,6 +51,9 @@ import selectModalModeTest from './MenuTest/selectModalMode.test';
 import PreviewScaleModeTest from './MenuTest/PreviewScaleModeTest.test';
 import AvailableLayoutAreaTest from './MenuTest/AvailableLayoutAreaTest.test';
 import BindMenuWithResponse from './Menu/BindMenuWithResponse.test';
+import openMenuNullUndefinedTest from './MenuNullUndefined/openMenu.test';
+import updateMenuNullUndefinedTest from './MenuNullUndefined/updateMenu.test';
+import closeMenuNullUndefinedTest from './MenuNullUndefined/closeMenu.test';
 
 export default function testsuite() {
   bindMenuHapticFeedbackMode();
@@ -89,4 +92,7 @@ export default function testsuite() {
   maskColorTest();
   maskBackgroundBlurStyleTest();
   BindMenuWithResponse();
+  openMenuNullUndefinedTest();
+  updateMenuNullUndefinedTest();
+  closeMenuNullUndefinedTest();
 }
