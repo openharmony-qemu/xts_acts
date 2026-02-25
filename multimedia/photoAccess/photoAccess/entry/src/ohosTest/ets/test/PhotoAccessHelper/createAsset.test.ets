@@ -590,12 +590,12 @@ export default function createAssetTest () {
       await createAssetAbnormalPromise1(done, testNum, type, extension, options);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0001
-     * @tc.name      : createAssets_0001
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0001
+     * @tc.name       createAssets_0001
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0001';
@@ -606,12 +606,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0002
-     * @tc.name      : createAssets_0002
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0002
+     * @tc.name       createAssets_0002
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0002';
@@ -622,12 +622,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0003
-     * @tc.name      : createAssets_0003
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0003
+     * @tc.name       createAssets_0003
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0003';
@@ -638,12 +638,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0004
-     * @tc.name      : createAssets_0004
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0004
+     * @tc.name       createAssets_0004
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0004';
@@ -654,12 +654,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0005
-     * @tc.name      : createAssets_0005
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0005
+     * @tc.name       createAssets_0005
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0005';
@@ -670,12 +670,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0006
-     * @tc.name      : createAssets_0006
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0006
+     * @tc.name       createAssets_0006
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0006';
@@ -686,12 +686,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0007
-     * @tc.name      : createAssets_0007
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0007
+     * @tc.name       createAssets_0007
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0007';
@@ -702,12 +702,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0008
-     * @tc.name      : createAssets_0008
-     * @tc.desc      : createAsset CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0008
+     * @tc.name       createAssets_0008
+     * @tc.desc       createAsset CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0008';
@@ -720,12 +720,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0009
-     * @tc.name      : createAssets_0009
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0009
+     * @tc.name       createAssets_0009
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0009';
@@ -738,12 +738,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0010
-     * @tc.name      : createAssets_0010
-     * @tc.desc      : createAsset with undefined CreateOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0010
+     * @tc.name       createAssets_0010
+     * @tc.desc       createAsset with undefined CreateOptions
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0010', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0010';
@@ -756,12 +756,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0011
-     * @tc.name      : createAssets_0011
-     * @tc.desc      : createAsset with CreateOptions whitespace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0011
+     * @tc.name       createAssets_0011
+     * @tc.desc       createAsset with CreateOptions whitespace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0011', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0011';
@@ -774,12 +774,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0012
-     * @tc.name      : createAssets_0012
-     * @tc.desc      : createAsset with Invalid characters of title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0012
+     * @tc.name       createAssets_0012
+     * @tc.desc       createAsset with Invalid characters of title
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0012', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0012';
@@ -794,12 +794,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0013
-     * @tc.name      : createAssets_0013
-     * @tc.desc      : createAsset too long title 255
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0013
+     * @tc.name       createAssets_0013
+     * @tc.desc       createAsset too long title 255
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0013', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0013';
@@ -816,12 +816,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0014
-     * @tc.name      : createAssets_0014
-     * @tc.desc      : createAsset long title 255
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0014
+     * @tc.name       createAssets_0014
+     * @tc.desc       createAsset long title 255
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0014', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0014';
@@ -838,12 +838,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0015
-     * @tc.name      : createAssets_0015
-     * @tc.desc      : createAsset with MOVING_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0015
+     * @tc.name       createAssets_0015
+     * @tc.desc       createAsset with MOVING_PHOTO
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0015', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0015';
@@ -857,12 +857,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0016
-     * @tc.name      : createAssets_0016
-     * @tc.desc      : createAsset with BURST
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0016
+     * @tc.name       createAssets_0016
+     * @tc.desc       createAsset with BURST
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0016', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0016';
@@ -876,12 +876,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0017
-     * @tc.name      : createAssets_0017
-     * @tc.desc      : createAsset with createOptions: null object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0017
+     * @tc.name       createAssets_0017
+     * @tc.desc       createAsset with createOptions: null object
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('createAssets_0017', Level.LEVEL2, async (done: Function) => {
       const testNum = 'createAssets_0017';
@@ -893,12 +893,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0180
-     * @tc.name      : createAssets_0018
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0180
+     * @tc.name       createAssets_0018
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0018', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0018';
@@ -908,12 +908,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0190
-     * @tc.name      : createAssets_0019
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0190
+     * @tc.name       createAssets_0019
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0019', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0019';
@@ -923,12 +923,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0200
-     * @tc.name      : createAssets_0020
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0200
+     * @tc.name       createAssets_0020
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0020', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0020';
@@ -938,12 +938,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0210
-     * @tc.name      : createAssets_0021
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0210
+     * @tc.name       createAssets_0021
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0021', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0021';
@@ -953,12 +953,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0220
-     * @tc.name      : createAssets_0022
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0220
+     * @tc.name       createAssets_0022
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0022', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0022';
@@ -968,12 +968,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0230
-     * @tc.name      : createAssets_0023
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0230
+     * @tc.name       createAssets_0023
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0023', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0023';
@@ -983,12 +983,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0240
-     * @tc.name      : createAssets_0024
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0240
+     * @tc.name       createAssets_0024
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0024', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0024';
@@ -998,12 +998,12 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0250
-     * @tc.name      : createAssets_0025
-     * @tc.desc      : createAsset with Abnormal Parameters
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_IMAGE_0250
+     * @tc.name       createAssets_0025
+     * @tc.desc       createAsset with Abnormal Parameters
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('createAssets_0025', Level.LEVEL0, async (done: Function) => {
       const testNum = 'createAssets_0025';
