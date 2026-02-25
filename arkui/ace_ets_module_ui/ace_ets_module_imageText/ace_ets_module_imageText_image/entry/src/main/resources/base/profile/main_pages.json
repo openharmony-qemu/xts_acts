@@ -81,6 +81,7 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageAutoResizeUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageRenderModeUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageInterpolationUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageInterpolationUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageSourceSizeUndefinedAndNull"
     ]
 }

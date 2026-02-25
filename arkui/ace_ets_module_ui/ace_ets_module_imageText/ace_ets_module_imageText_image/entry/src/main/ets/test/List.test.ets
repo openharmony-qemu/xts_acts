@@ -68,6 +68,7 @@ import ImageMatrixUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageMa
 import ImageAutoResizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageAutoResizeUndefinedAndNull.test';
 import ImageRenderModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageRenderModeUndefinedAndNull.test';
 import ImageInterpolationUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageInterpolationUndefinedAndNull.test';
+import ImageSourceSizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageSourceSizeUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -126,4 +127,5 @@ export default function testsuite() {
   ImageAutoResizeUndefinedAndNullTest();
   ImageRenderModeUndefinedAndNullTest();
   ImageInterpolationUndefinedAndNullTest();
+  ImageSourceSizeUndefinedAndNullTest();
 }
