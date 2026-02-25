@@ -164,7 +164,7 @@ describe('fileIO_fs_close', function () {
 
     try {
       fileIO.closeSync(null);
-      expect().assertFail();
+      expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_close_sync_006 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -183,7 +183,7 @@ describe('fileIO_fs_close', function () {
 
     try {
       fileIO.closeSync(undefined);
-      expect().assertFail();
+      expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_close_sync_007 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -458,7 +458,7 @@ describe('fileIO_fs_close', function () {
     try {
       let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
       await fileIO.close(null);
-      expect().assertFail();
+      expect(false).assertTrue();
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
@@ -483,7 +483,7 @@ describe('fileIO_fs_close', function () {
     try {
       let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
       await fileIO.close(undefined);
-      expect().assertFail();
+      expect(false).assertTrue();
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
@@ -513,7 +513,7 @@ describe('fileIO_fs_close', function () {
       });
     } catch (e) {
       console.log('fileIO_test_close_async_012 has failed for ' + e.message + ', code: ' + e.code);
-      expect().assertFail();
+      expect(false).assertTrue();
       done();
     }
   });
@@ -532,7 +532,7 @@ describe('fileIO_fs_close', function () {
       fileIO.close(null, (err) => {
         if(err) {
           console.log('fileIO_test_close_async_013 error package: ' + err.message + ', code: ' + err.code);
-          expect().assertFail();
+          expect(false).assertTrue();
         }
         done();
       });
@@ -557,7 +557,7 @@ describe('fileIO_fs_close', function () {
       fileIO.close(undefined, (err) => {
         if(err) {
           console.log('fileIO_test_close_async_014 error package: ' + err.message + ', code: ' + err.code);
-          expect().assertFail();
+          expect(false).assertTrue();
         }
         done();
       });
@@ -565,6 +565,137 @@ describe('fileIO_fs_close', function () {
       console.log('fileIO_test_close_async_014 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_close_async_015
+  * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1500
+  * @tc.desc   Test close() interfaces with file that has been written to.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_close_async_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_close_async_015');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.writeSync(file.fd, new ArrayBuffer(100));
+      await fileIO.close(file);
+      try {
+        fileIO.readSync(file.fd, new ArrayBuffer(100));
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_close_async_015 error: ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_close_async_015 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+  
+  /**
+  * @tc.name   fileIO_test_close_sync_008
+  * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0800
+  * @tc.desc   Test closeSync() interfaces with file that has been read from.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_close_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_close_sync_008');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      let readLen = fileIO.readSync(file.fd, new ArrayBuffer(100));
+      expect(readLen > 0).assertTrue();
+      fileIO.closeSync(file);
+      try {
+        fileIO.writeSync(file.fd, new ArrayBuffer(100));
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_close_sync_008 error: ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_close_sync_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_close_async_016
+  * @tc.number SUB_DF_FILEIO_CLOSE_ASYNC_1600
+  * @tc.desc   Test close() interfaces with invalid file descriptor.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_close_async_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.close(9999);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_close_async_016 error: ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      done();
+    }
+  });
+  
+  /**
+   * @tc.name   fileIO_test_close_sync_009
+   * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_0900
+   * @tc.desc   Test closeSync() interfaces with invalid file descriptor.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_sync_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.closeSync(9999);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_close_sync_009 error: ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900008 && e.message == 'Bad file descriptor').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_close_sync_010
+   * @tc.number SUB_DF_FILEIO_CLOSE_SYNC_1000
+   * @tc.desc   Test closeSync() interfaces with file operation verification.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_close_sync_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_close_sync_010');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      let writeLen = fileIO.writeSync(file.fd, new ArrayBuffer(100));
+      expect(writeLen == 100).assertTrue();
+      
+      fileIO.closeSync(file);
+      try {
+        fileIO.writeSync(file.fd, new ArrayBuffer(50));
+        expect(false).assertTrue(); // Should not reach here
+      } catch (e) {
+        console.log('fileIO_test_close_sync_010 error: ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_test_close_sync_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
     }
   });
 });
