@@ -22,7 +22,7 @@ export default function TextDecorationTest() {
     beforeEach(async (done: Function) => {
       console.info("TextDecorationTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/text/TextDecorationNull',
+        url: 'MainAbility/pages/Text/TextDecorationNull',
       }
       try {
         router.clear();
