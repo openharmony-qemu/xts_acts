@@ -54,7 +54,17 @@
         
         "MainAbility/pages/CanvasNullUndefined/canvasGetImageDataNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasGetPixelMapNullUndefined",
-        "MainAbility/pages/CanvasNullUndefined/canvasPutImageDataNullUndefined"
-        
+        "MainAbility/pages/CanvasNullUndefined/canvasPutImageDataNullUndefined",
+
+        "MainAbility/pages/CanvasNullUndefined/canvasClearRectNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreateLinearGradientNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasCreateRadialGradientNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasFillRectNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasFillTextNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasMeasureTextNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasRotateNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasSetLineDashNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasStrokeRectNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasStrokeTextNullUndefined"
     ]
 }
