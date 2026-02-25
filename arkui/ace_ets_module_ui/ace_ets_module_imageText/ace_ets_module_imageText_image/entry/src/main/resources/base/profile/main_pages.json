@@ -76,6 +76,7 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageObjectRepeatUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageOrientationUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImagePrivacySensitiveUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull",
+        "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColorMetrics"
     ]
 }

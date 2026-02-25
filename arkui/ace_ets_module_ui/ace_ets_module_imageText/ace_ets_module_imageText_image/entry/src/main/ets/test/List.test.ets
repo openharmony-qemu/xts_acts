@@ -63,6 +63,7 @@ import ImagePrivacySensitiveUndefinedAndNullTest from './ImageUndefinedAndNullTe
 import ImageCopyOptionUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageCopyOptionUndefinedAndNull.test';
 import ImageDynamicRangeModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDynamicRangeModeUndefinedAndNull.test';
 import ImageSyncLoadUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageSyncLoadUndefinedAndNull.test';
+import ImageSvgFillColorMetricsTest from './ImageSvgFillColorTest/ImageSvgFillColorMetrics.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -116,4 +117,5 @@ export default function testsuite() {
   ImageCopyOptionUndefinedAndNullTest();
   ImageDynamicRangeModeUndefinedAndNullTest();
   ImageSyncLoadUndefinedAndNullTest();
+  ImageSvgFillColorMetricsTest();
 }
