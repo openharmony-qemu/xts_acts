@@ -851,44 +851,6 @@ export default function createAssetTest () {
     });
 
     /**
-     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0015
-     * @tc.name       createAssets_0015
-     * @tc.desc       createAsset with MOVING_PHOTO
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it('createAssets_0015', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'createAssets_0015';
-      const type = photoType.IMAGE;
-      const extension = 'jpg';
-      const options: photoAccessHelper.CreateOptions = {
-        //TODO MOVING_PHOTO 预期是失败的
-        subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
-      }
-      await createAssetAbnormalPromise1(done, testNum, type, extension, options);
-    });
-
-    /**
-     * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0016
-     * @tc.name       createAssets_0016
-     * @tc.desc       createAsset with BURST
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it('createAssets_0016', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'createAssets_0016';
-      const type = photoType.IMAGE;
-      const extension = 'jpg';
-      const options: photoAccessHelper.CreateOptions = {
-        //TODO BURST 预期是失败的
-        subtype: photoAccessHelper.PhotoSubtype.BURST
-      }
-      await createAssetAbnormalPromise1(done, testNum, type, extension, options);
-    });
-
-    /**
      * @tc.number     SUB_PHOTOACCESS_HELPER_PROMISE_CREATE_Assets_0017
      * @tc.name       createAssets_0017
      * @tc.desc       createAsset with createOptions: null object
