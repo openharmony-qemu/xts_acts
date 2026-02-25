@@ -880,7 +880,7 @@ struct pasteButtonSetNull {
                 }
               })
               .maxFontSize('')
-              .maxFontSize('')
+              .minFontSize('')
               .key('setNullStr01-2')
           }
           .visibility(this.isShow === 33 ? Visibility.Visible : Visibility.None)
