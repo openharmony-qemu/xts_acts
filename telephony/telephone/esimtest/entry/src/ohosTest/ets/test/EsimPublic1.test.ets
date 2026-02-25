@@ -96,9 +96,9 @@ export default function EsimPublic1() {
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           console.info(`eSIM is supported`);
           expect(isEsimSupport).assertTrue();
-          console.info(`${caseName} test end`); 
+          console.info(`${caseName} test end`);
           done();
-        } else { 
+        } else {
           expect(isEsimSupport).assertFalse();
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           expect(true).assertTrue();
