@@ -211,25 +211,27 @@ export default function AVSessionJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200]";
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
 			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200 Send common command error " + JSON.stringify(err));
+				console.error(TAG + "Send common command error " + JSON.stringify(err));
 				expect().assertFail();
-				done();
 			});
 			await sleep(200);
-			if (receivedCallback && receivedCallback2) {
-				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200 Received common command");
-				expect(receivedString == COMMON_COMMAND_STRING).assertTrue();
-				expect(receivedParam.command == COMMON_COMMAND_PARAMS.command).assertTrue();
-				expect(receivedString2 == COMMON_COMMAND_STRING).assertTrue();
-				expect(receivedParam2.command == COMMON_COMMAND_PARAMS.command).assertTrue();
-				expect(true).assertTrue();
-			} else {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_0200 Common command not received");
-				expect().assertFail();
-			}
+			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
+			expect(receivedCallback).assertTrue();
+			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
+			expect(receivedCallback2).assertTrue();
+			console.log(TAG + "Received common command");
+			console.info(`${TAG}Testlog:receivedString = ${receivedString}`);
+			expect(receivedString).assertEqual(COMMON_COMMAND_STRING);
+			console.info(`${TAG}Testlog:receivedParam.command = ${receivedParam.command}`);
+			expect(receivedParam.command).assertEqual(COMMON_COMMAND_PARAMS.command);
+			console.info(`${TAG}Testlog:receivedString2 = ${receivedString2}`);
+			expect(receivedString2).assertEqual(COMMON_COMMAND_STRING);
+			console.info(`${TAG}Testlog:receivedParam2.command = ${receivedParam2.command}`);
+			expect(receivedParam2.command).assertEqual(COMMON_COMMAND_PARAMS.command)
 			receivedCallback = false;
 			receivedString = null;
 			receivedParam = null;
@@ -248,24 +250,24 @@ export default function AVSessionJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100]";
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
 			session.off('commonCommand', commonCommandCallback2);
 			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100 Send common command error" + JSON.stringify(err));
+				console.error(TAG + "Send common command error" + JSON.stringify(err));
 				expect().assertFail();
-				done();
 			});
 			await sleep(200);
-			if (receivedCallback && !receivedCallback2) {
-				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100 finished");
-				expect(receivedString == COMMON_COMMAND_STRING).assertTrue();
-				expect(receivedParam.command == COMMON_COMMAND_PARAMS.command).assertTrue();
-				expect(true).assertTrue();
-			} else {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0100 failed");
-				expect().assertFail();
-			}
+			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
+			expect(receivedCallback).assertTrue();
+			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
+			expect(receivedCallback2).assertFalse();
+			console.log(TAG + "finished");
+			console.info(`${TAG}Testlog:receivedString = ${receivedString}`);
+			expect(receivedString).assertEqual(COMMON_COMMAND_STRING);
+			console.info(`${TAG}Testlog:receivedParam.command = ${receivedParam.command}`);
+			expect(receivedParam.command).assertEqual(COMMON_COMMAND_PARAMS.command);
 			receivedCallback = false;
 			receivedString = null;
 			receivedParam = null;
@@ -281,23 +283,21 @@ export default function AVSessionJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200]";
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
 			session.off('commonCommand', commonCommandCallback1);
 			session.off('commonCommand', commonCommandCallback2);
 			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200 Send common command error" + JSON.stringify(err));
+				console.error(TAG + "Send common command error" + JSON.stringify(err));
 				expect().assertFail();
-				done();
 			});
 			await sleep(200);
-			if (!receivedCallback && !receivedCallback2) {
-				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200 finished");
-				expect(true).assertTrue();
-			} else {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0200 failed");
-				expect().assertFail();
-			}
+			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
+			expect(receivedCallback).assertFalse();
+			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
+			expect(receivedCallback2).assertFalse();
+			console.log(TAG + "finished");
 			receivedCallback = false;
 			done();
 		})
@@ -311,23 +311,21 @@ export default function AVSessionJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300]";
 			session.on('commonCommand', commonCommandCallback1);
 			session.on('commonCommand', commonCommandCallback2);
 			session.off('commonCommand');
 
 			await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS).catch((err) => {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300 Send common command error" + JSON.stringify(err));
+				console.error(TAG + "Send common command error" + JSON.stringify(err));
 				expect().assertFail();
-				done();
 			});
 			await sleep(200);
-			if (!receivedCallback && !receivedCallback2) {
-				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300 finished");
-				expect(true).assertTrue();
-			} else {
-				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_0300 failed");
-				expect().assertFail();
-			}
+			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
+			expect(receivedCallback).assertFalse();
+			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
+			expect(receivedCallback2).assertFalse();
+			console.log(TAG + "finished");
 			receivedCallback = false;
 			done();
 		})
