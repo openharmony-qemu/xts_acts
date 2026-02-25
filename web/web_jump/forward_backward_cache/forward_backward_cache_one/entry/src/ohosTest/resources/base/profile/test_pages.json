@@ -9,7 +9,8 @@
     "testability/pages/WebStorageDeleteOriginError",
     "testability/pages/WebStorageGetOriginQuotaError",
     "testability/pages/WebStorageGetOriginQuotaCallbackError",
-    "testability/pages/WebStorageGetOriginUsageError"
+    "testability/pages/WebStorageGetOriginUsageError",
+    "testability/pages/WebStorageGetOriginUsageCallbackError"
   ]
 }
 
