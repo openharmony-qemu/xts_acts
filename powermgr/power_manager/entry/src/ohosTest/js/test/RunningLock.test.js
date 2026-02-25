@@ -1633,7 +1633,7 @@ export default function RunningLockTest() {
           expect(isRunningLockTypeSupported).assertFalse();
         }
       } catch (e) {
-        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        console.error(`${TAG} error: ${JSON.stringify(e)}`);
         expect().assertFail();
       } finally {
         console.info(`${TAG} finally`);
@@ -1654,7 +1654,7 @@ export default function RunningLockTest() {
       runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE,
         (err, isRunningLockTypeSupported) => {
           if (err) {
-            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            console.error(`${TAG} error: ${JSON.stringify(err)}`);
             expect().assertFail();
             done();
           } else {
