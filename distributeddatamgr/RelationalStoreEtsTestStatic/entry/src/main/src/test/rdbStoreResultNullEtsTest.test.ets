@@ -195,15 +195,15 @@ export default function rdbStoreResultNullEtsTest() {
     })
 
     /**
-     * @tc.name        testGetColumnIndex0001
+     * @tc.name        testisAtFirstRow0001
      * @tc.number      SUB_DistributedData_RelationalStore_SDK_rdbStoreResultNullEtsTest_0200
      * @tc.desc        isAtFirstRow test
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 2
      */
-    it('testGetColumnIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 start *************');
+    it('testisAtFirstRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testisAtFirstRow0001 start *************');
       let resultSet = await rdbStore!.querySql("SELECT * FROM test");
       console.log(tag + "isAtFirstRow is " + resultSet.isAtFirstRow + ",isAtLastRow is " + resultSet.isAtLastRow + ",isEnded is " + resultSet.isEnded + ",isStarted is " + resultSet.isStarted + ",isClosed is " + resultSet.isClosed);
       expect(resultSet.isAtFirstRow).assertFalse();
@@ -213,7 +213,7 @@ export default function rdbStoreResultNullEtsTest() {
       expect(resultSet.isClosed).assertFalse();
       resultSet!.close();
       done();
-      hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 end *************');
+      hilog.info(domain, tag, '%{public}s', '************* testisAtFirstRow0001 end *************');
     })
 
     /**
