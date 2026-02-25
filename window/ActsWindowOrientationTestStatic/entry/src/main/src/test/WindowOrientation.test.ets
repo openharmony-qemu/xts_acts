@@ -54,9 +54,9 @@ export default function WindowOrientationTest() {
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-            //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
-            //isPCStatus == '0' PC设备状态栏dock融合
+            //isPCStatus === '' 非PC设备
+            //isPCStatus === '1' PC设备状态栏dock未融合
+            //isPCStatus === '0' PC设备状态栏dock融合
             //console.info(`beforeAll isPCStatus: `+ isPCStatus);
         })
 
@@ -484,7 +484,7 @@ export default function WindowOrientationTest() {
                 err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002)
-                expect(err.message != null).assertTrue();
+                expect(err.message !== null).assertTrue();
                 done();
             }
         })
