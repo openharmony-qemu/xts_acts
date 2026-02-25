@@ -111,10 +111,8 @@ struct onSurfaceCreated1 {
         XComponent({
           id: 'xcomponent_onSurface',
           type: XComponentType.TEXTURE,
-          nativeXComponentHandler: ((value0: long): void => {
-          }),
           controller: this.xComponentController
-        } as XComponentParameters)
+        } as XComponentOptions)
           .width(this.xcWidth)
           .height(this.xcHeight)
       }

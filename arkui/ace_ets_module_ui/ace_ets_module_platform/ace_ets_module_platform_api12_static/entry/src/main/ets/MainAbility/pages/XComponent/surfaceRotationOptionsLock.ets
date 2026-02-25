@@ -31,9 +31,8 @@ struct SurfaceRotationOptionsLock{
         id: 'xComponentId',
         type: XComponentType.SURFACE,
         //libraryname: 'nativerender',
-        nativeXComponentHandler: ((value0: long): void => {}),
         controller: this.myXComponentController
-      } as XComponentParameters)
+      } as XComponentOptions)
         .width(this.xc_width)
         .height(this.xc_height)
         .onLoad((): void => {
