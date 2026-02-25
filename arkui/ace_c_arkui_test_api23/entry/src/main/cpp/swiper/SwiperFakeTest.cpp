@@ -27,7 +27,7 @@
 
 namespace ConstIde {
 const float TEXT_WIDTH_VP = 200.0f;        // 宽度
-const float TEXT_HEIGHT_VP = 100.0f;       // 高度
+const float TEXT_HEIGHT_VP = 60.0f;       // 高度
 const uint32_t TEXT_BG_COLOR = 0xFFAFEEEE; // 淡蓝色
 const int32_t TEXT_ALIGN_CENTER = 1;       // 居中
 const float TEXT_FONT_SIZE_VP = 30.0f;     // 字体大小
@@ -56,12 +56,12 @@ ArkUI_NodeHandle root_ = nodeAPI_->createNode(ARKUI_NODE_COLUMN);
 ArkUI_NumberValue value[] = {0};
 ArkUI_AttributeItem item = {.value = value, .size = 1};
 typedef void (*FakeCallback)(uint64_t nanoTimestamp, uint32_t frameCount, void *userData);
-FakeCallback callback = [](uint64_t nanoTimestamp, uint32_t frameCount, void *userData) {
+FakeCallback g_callback = [](uint64_t nanoTimestamp, uint32_t frameCount, void *userData) {
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq g_dragCount %{public}d", g_dragCount);
     if (g_dragCount > 0) {
         bool ret = false;
         OH_ArkUI_Swiper_FakeDragBy(swiper, PARAM_NEGATIVE_3, &ret);
-        OH_ArkUI_PostFrameCallback(g_contextHandle, nullptr, callback);
+        OH_ArkUI_PostFrameCallback(g_contextHandle, nullptr, g_callback);
         --g_dragCount;
     } else {
         bool ret = false;
@@ -245,16 +245,16 @@ static auto TestInvalidateCode()
     bool ret = false;
     int32_t codeErr1 = OH_ArkUI_Swiper_StartFakeDrag(nullptr, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-                    "hzq OH_ArkUI_Swiper_StartFakeDrag %{public}d %{public}d", ret, codeErr1);
+        "hzq OH_ArkUI_Swiper_StartFakeDrag %{public}d %{public}d", ret, codeErr1);
     int32_t codeErr2 = OH_ArkUI_Swiper_FakeDragBy(nullptr, PARAM_100, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-                    "hzq OH_ArkUI_Swiper_FakeDragBy %{public}d %{public}d", ret, codeErr2);
+        "hzq OH_ArkUI_Swiper_FakeDragBy %{public}d %{public}d", ret, codeErr2);
     int32_t codeErr3 = OH_ArkUI_Swiper_StopFakeDrag(nullptr, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-                    "hzq OH_ArkUI_Swiper_StopFakeDrag %{public}d %{public}d", ret, codeErr3);
+        "hzq OH_ArkUI_Swiper_StopFakeDrag %{public}d %{public}d", ret, codeErr3);
     int32_t codeErr4 = OH_ArkUI_Swiper_IsFakeDragging(nullptr, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
-                    "hzq OH_ArkUI_Swiper_IsFakeDragging %{public}d %{public}d", ret, codeErr4);
+        "hzq OH_ArkUI_Swiper_IsFakeDragging %{public}d %{public}d", ret, codeErr4);
     int32_t codeErr5 = OH_ArkUI_Swiper_ShowPrevious(nullptr);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_Swiper_ShowPrevious %{public}d", codeErr5);
     int32_t codeErr6 = OH_ArkUI_Swiper_ShowNext(nullptr);
@@ -273,10 +273,10 @@ static auto TestParam1()
     int32_t codeErr = OH_ArkUI_Swiper_StartFakeDrag(swiper, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
         "hzq OH_ArkUI_Swiper_StartFakeDrag %{public}d %{public}d", ret, codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText, NODE_TEXT_CONTENT, &content);
-    } 
+    }
 }
 
 static auto TestParam2()
@@ -285,10 +285,10 @@ static auto TestParam2()
     int32_t codeErr = OH_ArkUI_Swiper_FakeDragBy(swiper, PARAM_100, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
         "hzq OH_ArkUI_Swiper_FakeDragBy100 %{public}d %{public}d", ret, codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText2, NODE_TEXT_CONTENT, &content);
-    } 
+    }
 }
 
 static auto TestParam3()
@@ -297,10 +297,10 @@ static auto TestParam3()
     int32_t codeErr = OH_ArkUI_Swiper_FakeDragBy(swiper, PARAM_NEGATIVE_100, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
         "hzq OH_ArkUI_Swiper_FakeDragBy-100 %{public}d %{public}d", ret, codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText3, NODE_TEXT_CONTENT, &content);
-    } 
+    }
 }
 
 static auto TestParam4()
@@ -309,10 +309,10 @@ static auto TestParam4()
     int32_t codeErr = OH_ArkUI_Swiper_StopFakeDrag(swiper, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_Swiper_StopFakeDrag %{public}d %{public}d",
         ret, codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText4, NODE_TEXT_CONTENT, &content);
-    } 
+    }
 }
 
 static auto TestParam5()
@@ -320,31 +320,30 @@ static auto TestParam5()
     bool ret = true;
     int32_t codeErr = OH_ArkUI_Swiper_StartFakeDrag(swiper, &ret);
     g_dragCount = PARAM_10;
-    int32_t PostFrameCallbackRet;
-    PostFrameCallbackRet = OH_ArkUI_PostFrameCallback(g_contextHandle, nullptr, callback);
+    int32_t postFrameCallbackRet = OH_ArkUI_PostFrameCallback(g_contextHandle, nullptr, g_callback);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_PostFrameCallback %{public}d",
-        PostFrameCallbackRet);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+        postFrameCallbackRet);
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText5, NODE_TEXT_CONTENT, &content);
-    }                
+    }
 }
 
 static auto TestParam6()
 {
     int32_t codeErr = OH_ArkUI_Swiper_ShowPrevious(swiper);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_Swiper_StopFakeDrag %{public}d", codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
         ArkUI_AttributeItem content = {.string = "0Code"};
         nodeAPI_->setAttribute(buttonText6, NODE_TEXT_CONTENT, &content);
-    }                
+    }
 }
 
 static auto TestParam7()
 {
     int32_t codeErr = OH_ArkUI_Swiper_ShowNext(swiper);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_Swiper_StopFakeDrag %{public}d", codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
             ArkUI_AttributeItem content = {.string = "0Code"};
             nodeAPI_->setAttribute(buttonText7, NODE_TEXT_CONTENT, &content);
         }
@@ -355,14 +354,14 @@ static auto TestParam9()
     int32_t codeErr = OH_ArkUI_Swiper_IsFakeDragging(swiper, &ret);
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager",
         "hzq OH_ArkUI_Swiper_IsFakeDragging %{public}d %{public}d", ret, codeErr);
-    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR ) {
+    if (codeErr == ARKUI_ERROR_CODE_NO_ERROR) {
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "Manager", "hzq OH_ArkUI_Swiper11_IsFakeDragging", codeErr);
             ArkUI_AttributeItem content = {.string = "0Code"};
             nodeAPI_->setAttribute(buttonText9, NODE_TEXT_CONTENT, &content);
         }
 }
 
-static auto registerOnClickForBtn()
+static auto RegisterOnClickForBtn()
 {
     auto onclick = [](ArkUI_NodeEvent *event) {
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == PARAM_1) {
@@ -375,7 +374,7 @@ static auto registerOnClickForBtn()
             TestParam3();
         }
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == PARAM_4) {
-            TestParam4();             
+            TestParam4();
         }
         if (OH_ArkUI_NodeEvent_GetTargetId(event) == PARAM_5) {
             TestParam5();
@@ -442,7 +441,7 @@ namespace ArkUICapiTest {
     CreateButton8();
     CreateButton9();
 
-    registerOnClickForBtn();
+    RegisterOnClickForBtn();
     size_t length = PARAM_64;
     size_t strLength = 0;
     char xComponentID[PARAM_64] = {0};
