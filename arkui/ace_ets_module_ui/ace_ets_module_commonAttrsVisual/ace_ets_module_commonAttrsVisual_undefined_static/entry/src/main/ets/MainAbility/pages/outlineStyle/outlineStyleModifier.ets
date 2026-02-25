@@ -21,7 +21,6 @@ import {
   ClickEvent,
   CommonAttribute,
   OutlineStyle,
-  Row,
   AttributeModifier,
   Image,
   $r,
@@ -48,44 +47,41 @@ struct OutlineStyleModifier {
   @State modifier: MyOutlineStyleModifier = new MyOutlineStyleModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('outlineStyleModifierTest')
-          .outline({
-            width: {
-              left: 3,
-              right: 6,
-              top: 10,
-              bottom: 15
-            },
-            color: {
-              left: '#e3bbbb',
-              right: Color.Blue,
-              top: Color.Red,
-              bottom: Color.Green
-            },
-            radius: {
-              topLeft: 10,
-              topRight: 20,
-              bottomLeft: 40,
-              bottomRight: 80
-            },
-            style: {
-              left: OutlineStyle.DOTTED,
-              right: OutlineStyle.DOTTED,
-              top: OutlineStyle.SOLID,
-              bottom: OutlineStyle.DASHED
-            }
-          })
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('outlineStyleModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(150)
+        .height(150)
+        .id('outlineStyleModifierTest')
+        .outline({
+          width: {
+            left: 3,
+            right: 6,
+            top: 10,
+            bottom: 15
+          },
+          color: {
+            left: '#e3bbbb',
+            right: Color.Blue,
+            top: Color.Red,
+            bottom: Color.Green
+          },
+          radius: {
+            topLeft: 10,
+            topRight: 20,
+            bottomLeft: 40,
+            bottomRight: 80
+          },
+          style: {
+            left: OutlineStyle.DOTTED,
+            right: OutlineStyle.DOTTED,
+            top: OutlineStyle.SOLID,
+            bottom: OutlineStyle.DASHED
+          }
         })
-      }
-      .width('100%')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('outlineStyleModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }

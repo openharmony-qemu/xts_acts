@@ -20,7 +20,6 @@ import {
   Button,
   ClickEvent,
   CommonAttribute,
-  Row,
   AttributeModifier,
   Image,
   $r
@@ -47,18 +46,15 @@ struct SepiaModifier {
   @State modifier: MySepiaModifier = new MySepiaModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('sepiaModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('sepiaModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(200)
+        .height(200)
+        .id('sepiaModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('sepiaModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }

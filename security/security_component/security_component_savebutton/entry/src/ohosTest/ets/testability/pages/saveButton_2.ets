@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,6 +52,10 @@ struct SaveButton_2 {
   @State maxWidth: number = 25
   @State minHeight: number = 30
   @State maxHeight: number = 35
+  @State maxFontSize: number | undefined = undefined
+  @State minFontSize: number | undefined = undefined
+  @State enable: boolean = true
+  @State saveId: string = ''
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       console.info("====>page_SaveButton_2 page state change called:" + JSON.stringify(eventData));
@@ -157,6 +161,18 @@ struct SaveButton_2 {
       if (eventData.data.maxHeight != null) {
         this.maxHeight = eventData.data.maxHeight;
       }
+      if (eventData.data.maxFontSize != null) {
+        this.maxFontSize = eventData.data.maxFontSize;
+      }
+      if (eventData.data.minFontSize != null) {
+        this.minFontSize = eventData.data.minFontSize;
+      }
+      if (eventData.data.enable != null) {
+        this.enable = eventData.data.enable;
+      }
+      if (eventData.data.id != null) {
+        this.saveId = eventData.data.id;
+      }
     }
   }
 
@@ -214,7 +230,6 @@ struct SaveButton_2 {
             .borderRadius(this.borderRad)
             .padding({ left: this.left, right: this.right, top: this.top, bottom: this.bottom })
             .textIconSpace(this.middle)
-            .key("keySave11")
             .width(this.widthT)
             .height(this.heightT)
             .size({ width: this.widthT, height: this.heightT })
@@ -224,6 +239,11 @@ struct SaveButton_2 {
               minHeight: this.minHeight,
               maxHeight: this.maxHeight
             })
+            .maxFontSize(this.maxFontSize)
+            .minFontSize(this.minFontSize)
+            .enabled(this.enable)
+            .id(this.saveId)
+            .key("keySave11")
         }.width(100)
       }.width('100%').alignItems(HorizontalAlign.Center)
     }.height('100%')

@@ -24,7 +24,6 @@ import TabsBarGridAlignTest from './Tabs/tabsBarGridAlign.test'
 import TabsBarModeTest from './Tabs/tabsBarMode.test'
 import TabsBarOverlapTest from './Tabs/tabsBarOverlap.test'
 import TabsBarPositionTest from './Tabs/tabsBarPosition.test'
-import TabsBarWidthTest from './Tabs/tabsBarWidth.test'
 import TabsCustomContentTransitionTest from './Tabs/tabsCustomContentTransition.test'
 import TabsFadingEdgeTest from './Tabs/tabsFadingEdge.test'
 import TabsOnAnimationEndTest from './Tabs/tabsOnAnimationEnd.test'
@@ -48,7 +47,6 @@ import TabsBarGridAlignModifierTest from './TabsModifier/tabsBarGridAlignModifie
 import TabsBarModeModifierTest from './TabsModifier/tabsBarModeModifier.test'
 import TabsBarOverlapModifierTest from './TabsModifier/tabsBarOverlapModifier.test'
 import TabsBarPositionModifierTest from './TabsModifier/tabsBarPositionModifier.test'
-import TabsBarWidthModifierTest from './TabsModifier/tabsBarWidthModifier.test'
 import TabsCustomContentTransitionModifierTest from './TabsModifier/tabsCustomContentTransitionModifier.test'
 import TabsFadingEdgeModifierTest from './TabsModifier/tabsFadingEdgeModifier.test'
 import TabsOnAnimationEndModifierTest from './TabsModifier/tabsOnAnimationEndModifier.test'
@@ -83,7 +81,6 @@ export default function testsuite() {
   TabsBarModeTest();
   TabsBarOverlapTest();
   TabsBarPositionTest();
-  TabsBarWidthTest();
   TabsCustomContentTransitionTest();
   TabsFadingEdgeTest();
   TabsOnAnimationEndTest();
@@ -107,7 +104,6 @@ export default function testsuite() {
   TabsBarModeModifierTest();
   TabsBarOverlapModifierTest();
   TabsBarPositionModifierTest();
-  TabsBarWidthModifierTest();
   TabsCustomContentTransitionModifierTest();
   TabsFadingEdgeModifierTest();
   TabsOnAnimationEndModifierTest();

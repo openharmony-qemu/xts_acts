@@ -276,15 +276,10 @@ export default function bluetoothAdvertisingTest() {
       }
       let advHandle = 0xFF;
       try {
-        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-          console.info('[bluetooth_js]startAdvertising promise info03:' + JSON.stringify(outAdvHandle));
-          advHandle = outAdvHandle;
-          console.info('[bluetooth_js]startAdvertising promise info03:'+JSON.stringify(advHandle));
-        });
-        await sleep(655350);
-        await bluetooth.stopAdvertising(advHandle).then((data) => {
-          console.info('[bluetooth_js] stopAdvertising promise result03:' + JSON.stringify(data));
-        });
+        advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info('[bluetooth_js] startAdvertising promise result03:' + JSON.stringify(advHandle));
+        let data = await bluetooth.stopAdvertising(advHandle);
+        console.info('[bluetooth_js] stopAdvertising promise result03:' + JSON.stringify(data));
       } catch (err) {
         console.info("03errCode:" + err.code + ",03errMessage:" + err.message);
         if (err.code == 801) {

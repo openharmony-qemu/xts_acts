@@ -227,6 +227,10 @@ group("multimedia") {
       "av_codec/ActsCapabilityTest:ActsCapabilityHapTest",
       "av_codec/ActsAvcencInfoTest:ActsAvcencInfoHapTest",
       "av_codec/ActsAudioHapTest:ActsAudioHapTest",
+      "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplate:ActsAVMusicTemplateTest",
+      "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateNoPermission:ActsAVMusicTemplateNoPermissionTest",
+      "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateStatic:ActsAVMusicTemplateStaticTest",
+      "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateNoPermissionStatic:ActsAVMusicTemplateNoPermissionStaticTest",
     ]
   } else {
     deps += [

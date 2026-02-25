@@ -649,6 +649,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -706,6 +707,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -762,6 +764,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -818,6 +821,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -875,6 +879,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -932,6 +937,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -989,6 +995,7 @@ export default function UDMFAddApiStaticTest() {
           if (ret !== undefined) {
             let size = ret.length;
             console.log(tag, `data.size = ${size}`);
+            expect(size > 0).assertTrue();
             for (let i = 0; i < size; i++) {
               let records = ret[i].getRecords();
               let size = records.length;
@@ -1350,6 +1357,79 @@ export default function UDMFAddApiStaticTest() {
       expect(sdr.details!['version']).assertEqual(1);
       expect(JSON.stringify(sdr.details!['content'])).assertEqual(JSON.stringify(new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])));
       console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFDataTypeStaticTest_0100 end');
+    })
+
+    /**
+    * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100
+    * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100
+    * @tc.desc   uniformDataStruct hyperlink test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('SUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100 start');
+      let hyperlinkDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2'
+      };
+      let hyperlink: uniformDataStruct.Hyperlink = {
+        uniformDataType: 'general.hyperlink',
+        url: 'www.XXX.com',
+        description: 'This is the description of this hyperlink',
+        details: hyperlinkDetails
+      };
+      expect(hyperlink.details!['attr1']).assertEqual('value1');
+      expect(hyperlink.details!['attr2']).assertEqual('value2');
+
+      let htmlObjDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2'
+      }
+      let htmlObj: uniformDataStruct.HTML = {
+        uniformDataType: 'general.html',
+        htmlContent: '<div><p>标题</p></div>',
+        plainContent: 'this is plainContent',
+        details: htmlObjDetails
+      }
+      expect(htmlObj.details!['attr1']).assertEqual('value1');
+      expect(htmlObj.details!['attr2']).assertEqual('value2');
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100 end');
+    })
+
+    /**
+    * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFTypeDescriptorStaticTest_0100
+    * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFTypeDescriptorStaticTest_0100
+    * @tc.desc   uniformDataStruct hyperlink test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('SUB_DistributedData_UDMF_SDK_UDMFTypeDescriptorStaticTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFTypeDescriptorStaticTest_0100 start');
+      let typeDescriptor = new uniformTypeDescriptor.TypeDescriptor();
+      typeDescriptor.typeId = 'com.example.myHap.image';
+      typeDescriptor.belongingToTypes = ['general.image'];
+      typeDescriptor.filenameExtensions = ['.myImage'];
+      typeDescriptor.mimeTypes = ['application/myImage'];
+      typeDescriptor.description = 'myHap defined image type';
+      typeDescriptor.referenceURL = 'typeDescriptor referenceURL';
+      typeDescriptor.iconFile = 'typeDescriptor iconFile';
+      console.log(tag, `typeId: ${typeDescriptor.typeId}`);
+      console.log(tag, `belongingToTypes: ${typeDescriptor.belongingToTypes}`);
+      console.log(tag, `filenameExtensions: ${typeDescriptor.filenameExtensions}`);
+      console.log(tag, `mimeTypes: ${typeDescriptor.mimeTypes}`);
+      console.log(tag, `description: ${typeDescriptor.description}`);
+      console.log(tag, `referenceURL: ${typeDescriptor.referenceURL}`);
+      console.log(tag, `iconFile: ${typeDescriptor.iconFile}`);
+      expect(typeDescriptor.typeId).assertEqual('com.example.myHap.image');
+      expect(typeDescriptor.belongingToTypes[0]).assertEqual('general.image');
+      expect(typeDescriptor.filenameExtensions[0]).assertEqual('.myImage');
+      expect(typeDescriptor.mimeTypes[0]).assertEqual('application/myImage');
+      expect(typeDescriptor.description).assertEqual('myHap defined image type');
+      expect(typeDescriptor.referenceURL).assertEqual('typeDescriptor referenceURL');
+      expect(typeDescriptor.iconFile).assertEqual('typeDescriptor iconFile');
+      console.log(tag + 'SUB_DistributedData_UDMF_SDK_UDMFUniformDataStructStaticTest_0100 end');
     })
   });
 }

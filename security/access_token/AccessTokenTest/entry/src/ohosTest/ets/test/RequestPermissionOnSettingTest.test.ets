@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
+const ERR_PARAM_ERROR = 401;
 
 export default function RequestPermissionOnSettingTest() {
   describe('RequestPermissionOnSettingTest', () => {
@@ -107,6 +108,156 @@ export default function RequestPermissionOnSettingTest() {
       } catch (error) {
         hilog.info(domain,tag,"Test_requestPermissionOnSetting_001 catch err" + error.code);
         expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestPermissionOnSetting_002
+     * @tc.number Test_requestPermissionOnSetting_002
+     * @tc.desc   test requestPermissionOnSetting context is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestPermissionOnSetting_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | null = null;
+      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.READ_CALENDAR");
+      try {
+        atManager.requestPermissionOnSetting(testContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 data " + JSON.stringify(data));
+          expect(false).assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 catch err" + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestPermissionOnSetting_003
+     * @tc.number Test_requestPermissionOnSetting_003
+     * @tc.desc   test requestPermissionOnSetting context is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestPermissionOnSetting_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | undefined = undefined;
+      let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.READ_CALENDAR");
+      try {
+        atManager.requestPermissionOnSetting(testContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 data " + JSON.stringify(data));
+          expect(false).assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 catch err" + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestPermissionOnSetting_004
+     * @tc.number Test_requestPermissionOnSetting_004
+     * @tc.desc   test requestPermissionOnSetting permissionList is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestPermissionOnSetting_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 start");
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testPermissionList: Array<Permissions> | null = null;
+      try {
+        atManager.requestPermissionOnSetting(context, testPermissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 data " + JSON.stringify(data));
+          expect(false).assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 catch err" + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestPermissionOnSetting_005
+     * @tc.number Test_requestPermissionOnSetting_005
+     * @tc.desc   test requestPermissionOnSetting permissionList is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestPermissionOnSetting_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 start");
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testPermissionList: Array<Permissions> | undefined = undefined;
+      try {
+        atManager.requestPermissionOnSetting(context, testPermissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 data " + JSON.stringify(data));
+          expect(false).assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 catch err" + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestPermissionOnSetting_006
+     * @tc.number Test_requestPermissionOnSetting_006
+     * @tc.desc   test requestPermissionOnSetting permissionList is empty array, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestPermissionOnSetting_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 start");
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testPermissionList: Array<Permissions> = [];
+      try {
+        atManager.requestPermissionOnSetting(context, testPermissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 data " + JSON.stringify(data));
+          expect(false).assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ERROR);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 catch err" + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })

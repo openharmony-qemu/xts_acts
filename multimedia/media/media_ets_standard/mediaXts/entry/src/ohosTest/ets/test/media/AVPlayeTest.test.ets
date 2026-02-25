@@ -806,6 +806,8 @@ async function setMediaMutedPromise(src: string | media.AVFileDescriptor, avPlay
     }
     expect(true).assertTrue();
   }).catch(mediaTestBase.catchCallback);
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -835,6 +837,8 @@ async function setMediaMutedPromiseAbnormal(src: string | media.AVFileDescriptor
     expect(error.code).assertEqual(MediaErrorCode.PARAMETER_ERROR);
     done();
   });
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -866,6 +870,8 @@ async function getSeekContinuousSupported(src: string | media.AVFileDescriptor, 
   if (!isSupported1 && !isSupported2) {
     console.error(TAG, testName + ' No supported SEEK_CONTINUOUS mode.');
   }
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -886,6 +892,8 @@ async function setPlaybackStrategyPromise(src: string | media.AVFileDescriptor, 
   avPlayer?.setPlaybackStrategy(strategy).then(() => {
     console.info(TAG, testName + ' succeed to set PlaybackStrategy');
   }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -903,6 +911,8 @@ async function setPlaybackRangePromise(src: string | media.AVFileDescriptor, avP
   console.info(TAG, testName + ' surfaceId: ' + avPlayer?.surfaceId);
   await avPlayer?.setPlaybackRange(startTimeMs, endTimeMs, mode).then(() => {
     console.info(TAG, testName + ' succeed to set PlaybackRange');
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+  await avPlayer?.release().then(() => {
   }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
@@ -989,8 +999,12 @@ async function setSuperResolutionPromiseAbnormal(src: string | media.AVFileDescr
   }).catch((error: BusinessError) => {
     console.error(TAG, testName + ' Failed to set SuperResolution, code: ' + error.code + ', msg: ' + error.message);
     expect(error.code).assertEqual(MediaErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED);
+    avPlayer?.release().then(() => {
+    }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
     done();
   });
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -1081,8 +1095,12 @@ async function setVideoWindowSizePromiseAbnormal(src: string | media.AVFileDescr
   }).catch((error: BusinessError) => {
     console.error(TAG, testName + ' Failed to set VideoWindowSize, code: ' + error.code + ', msg: ' + error.message);
     expect(error.code).assertEqual(MediaErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED);
+    avPlayer?.release().then(() => {
+    }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
     done();
   });
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -1113,13 +1131,19 @@ async function superResolutionChangedListen(src: string | media.AVFileDescriptor
     console.error(TAG, testName + ' Failed to set VideoWindowSize, code: ' + error.code + ', msg: ' + error.message);
     if (error.code == MediaErrorCode.AVERR_SUPER_RESOLUTION_UNSUPPORTED) {
       console.info(TAG, testName + ' This device does not super resolution.');
+      avPlayer?.release().then(() => {
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
       done();
       return;
     } else {
       expect().assertFail();
+      avPlayer?.release().then(() => {
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
       done();
     }
   });
+  await avPlayer?.release().then(() => {
+  }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
   done();
 }
 
@@ -1711,6 +1735,8 @@ export default function AVPlayerTest() {
           console.error(TAG, testName + `Failed to create AVPlayer, error message:${error.message}`);
           expect().assertFail();
         }
+        avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         done();
       });
     })
@@ -1734,6 +1760,8 @@ export default function AVPlayerTest() {
           console.error(TAG, testName + ' Failed to create AVPlayer');
           expect().assertFail();
         }
+        avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         done();
       }).catch((error: BusinessError) => {
         console.error(TAG, testName + ` Failed to create AVPlayer, error message:${error.message}`);
@@ -2007,6 +2035,8 @@ export default function AVPlayerTest() {
         await sleep(SLEEP_TIME_20);
         console.info(TAG, testName + ' selectTrack currentTrack: ' + currentTrack);
         expect(currentTrack).assertLargerOrEqual(0);
+        await avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         done();
       }
     })
@@ -2030,6 +2060,8 @@ export default function AVPlayerTest() {
         await sleep(SLEEP_TIME_20);
         console.info(TAG, testName + ' deselectTrack currentTrack: ' + currentTrack);
         expect(currentTrack).assertLargerOrEqual(0);
+        await avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
         done();
       }
     })

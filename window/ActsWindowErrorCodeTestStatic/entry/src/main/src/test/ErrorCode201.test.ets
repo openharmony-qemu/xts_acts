@@ -490,10 +490,37 @@ export default function ErrorCode201() {
       })
 
 
-
-
-
-
+      /**
+         * @tc.number     testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.name       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.desc       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+      it('testSetWindowTopmostPromiseErrCode201_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName :string = "testSetWindowTopmostPromiseErrCode201_static_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin.');
+        try {
+            win!.setWindowTopmost(true).then(() => {
+                hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
+                expect(false).assertTrue();
+                done()
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
+                expect(err.code == 201 || err.code == 801).assertTrue();
+                done()
+            });
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+            expect(false).assertTrue();
+            done()
+        }
+    
+    
+    })
 
 
 

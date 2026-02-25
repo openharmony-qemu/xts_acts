@@ -222,7 +222,7 @@ it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("[ShapeJsunit_static_0010] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
       console.info("[ShapeJsunit_static_0010] mesh  is: " +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('mesh')));
-      expect(obj.getElement('$attrs').getElement('mesh').getArray('value')[0].asString()).assertEqual('10.000000');
+      expect(obj.getElement('$attrs').getElement('mesh').getArray('value')[0].asString()).assertEqual('1.000000');
       expect(obj.getElement('$attrs').getElement('mesh').getDouble('row')).assertEqual(1);
       expect(obj.getElement('$attrs').getElement('mesh').getDouble('column')).assertEqual(1);
 

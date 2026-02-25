@@ -253,6 +253,34 @@ export default function DeviceManagerTest() {
     })
 
     /**
+     * @tc.name   testQueryDevices005
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_4000
+     * @tc.desc   verify queryDevice undefined param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testQueryDevices005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:()=>void) : Promise<void> => {
+      hilog.info(TAG, 'testTag', '----------------------testQueryDevices005---------------------------');
+      if (deviceId == 0) {
+        hilog.info(TAG, 'testTag', 'Device ID has not been set.');
+        return done();
+      } else {
+        try {
+          let devices = deviceManager.queryDevices(undefined);
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices005 ret : ' + JSON.stringify(devices));
+          expect(devices != null).assertEqual(true);
+          done();
+        } catch (err) {
+          hilog.info(TAG, 'testTag', 'Test case testQueryDevices005 catch err: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
      * @tc.name   testBindDriverWithDeviceId001
      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0500
      * @tc.desc   verify bindDriverWithDeviceId promise
@@ -373,6 +401,9 @@ export default function DeviceManagerTest() {
             expect(data != null).assertTrue();
             hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
             hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
+            expect(typeof(data.deviceId)).assertEqual('long');
+            expect(data.deviceId > 0).assertTrue();
+            expect(data.remote != null).assertTrue();
             done();
           } catch (error) {
             error = error as BusinessError;
@@ -401,6 +432,8 @@ export default function DeviceManagerTest() {
           try {
             let data = await deviceManager.unbindDriverWithDeviceId(deviceId);
             expect(data != null).assertTrue();
+            expect(typeof(data)).assertEqual('int');
+            expect(data >= 0).assertTrue();
             await Utils.msSleep(2000);
             done();
           } catch (error) {

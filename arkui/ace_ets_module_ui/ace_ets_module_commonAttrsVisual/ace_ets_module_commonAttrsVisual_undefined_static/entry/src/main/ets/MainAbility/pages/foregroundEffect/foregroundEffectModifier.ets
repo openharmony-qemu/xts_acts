@@ -20,7 +20,6 @@ import {
   Button,
   ClickEvent,
   CommonAttribute,
-  Row,
   ForegroundEffectOptions,
   AttributeModifier,
   Image,
@@ -48,18 +47,15 @@ struct ForegroundEffectModifierPage {
   @State modifier: MyForegroundEffectModifier = new MyForegroundEffectModifier();
 
   build() {
-    Row() {
-      Column() {
-        Image($r('app.media.startIcon'))
-          .width('100%')
-          .id('foregroundEffectModifierTest')
-          .attributeModifier(this.modifier)
-        Button('点击切换Undefined').id('foregroundEffectModifier').onClick((event: ClickEvent) => {
-          this.modifier.isChange = !this.modifier.isChange
-        })
-      }
-      .width('100%')
+    Column() {
+      Image($r('app.media.startIcon'))
+        .width(150)
+        .height(150)
+        .id('foregroundEffectModifierTest')
+        .attributeModifier(this.modifier)
+      Button('点击切换Undefined').id('foregroundEffectModifier').onClick((event: ClickEvent) => {
+        this.modifier.isChange = !this.modifier.isChange
+      })
     }
-    .height('100%')
   }
 }
