@@ -43,6 +43,7 @@ export const OhAVMetadataExtractorFetchFramesByTimes: (a:number,b:number,c:numbe
 export const OhAVMetadataExtractorFetchFramesByTimesErr: () => number;
 export const OhAVMetadataExtractorFetchFramesByTimesErr1: () => number;
 export const OhAVMetadataExtractorFetchFramesByTimesErr2: () => number;
+export const OhAVMetadataExtractorFetchFramesByTimesErr3: (a:number,b:number,c:number,d:number,e:number,f:number, timeUs: number[]) => number;
 export const OHAVMetadataExtractorUserDataGetTestResult: (a: CustomUserData) => boolean;
 export const OhAVMetadataExtractorCancelAllFetchFrames: () => number;
 export const OhAVMetadataExtractorSetMediaSourceError: (params: number) => number;
