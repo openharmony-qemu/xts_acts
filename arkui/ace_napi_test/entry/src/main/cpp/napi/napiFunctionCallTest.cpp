@@ -211,7 +211,8 @@ static napi_value CreateAndCallInOneFunc(napi_env env, napi_callback_info info)
         }, nullptr, &createdFunc);
 
     napi_value callArg;
-    napi_create_double(env, 10.5, &callArg);
+    double testNum = 10.5;
+    napi_create_double(env, testNum, &callArg);
 
     napi_value global;
     napi_get_global(env, &global);
@@ -249,7 +250,7 @@ napi_value CallChain(napi_env env, napi_callback_info info)
     napi_value currentArg = initialArg;    
     for (int i = 0; i < forNum; i++) {
         auto status = napi_call_function(env, global, arktsFunc, argcNum, &currentArg, &result);
-        if (status != napi_ok){
+        if (status != napi_ok) {
             return nullptr;
         }
         currentArg = result;
@@ -312,11 +313,10 @@ static napi_value GetGlobalObject(napi_env env)
 static napi_value CreateSafeString(napi_env env, const std::string& str)
 {
     napi_value strVal = nullptr;
-    napi_status status = napi_create_string_utf8(
-        env,
-        str.c_str(),
-        str.length(),
-        &strVal
+    napi_status status = napi_create_string_utf8(env,
+                                                 str.c_str(),
+                                                 str.length(),
+                                                 &strVal
     );
     if (status != napi_ok || strVal == nullptr) {
         napi_throw_error(env, nullptr, "Failed to create a string");
@@ -419,7 +419,7 @@ static napi_value CreateTestObject(napi_env env)
     }
     
     napi_value propName = CreateSafeString(env, "value");
-    if (propName == nullptr){
+    if (propName == nullptr) {
         return nullptr;
     }
 
@@ -514,15 +514,10 @@ static napi_value CallGetter(napi_env env, napi_callback_info info)
     }
     int32_t modifiedVal = 0;
     status = napi_get_value_int32(env, modifiedValProp, &modifiedVal);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to parse the modified _value");
-        return nullptr;
-    }
+    NAPI_ASSERT(env, status == napi_ok, "parse the modified _value sucess");
+
     size_t comNum = 89;
-    if(modifiedVal != comNum) {
-        napi_throw_error(env, nullptr, "Failed to parse the modified _value");
-        return nullptr; 
-    }
+    NAPI_ASSERT(env, modifiedVal == comNum, "compare the modified _value sucess");
 
     napi_value rst;
     napi_get_boolean(env, isValueCorrect, &rst);
@@ -633,7 +628,7 @@ static napi_value CreateTestObject1(napi_env env)
     }
     
     napi_value globalObj = GetGlobalObject1(env);
-    if (globalObj == nullptr){
+    if (globalObj == nullptr) {
         return nullptr;
     }
     
@@ -714,14 +709,13 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
         }
     }
 
-
     napi_valuetype objType = napi_undefined;
     napi_status status = napi_typeof(env, testObj, &objType);
     if (status != napi_ok || objType != napi_object) {
         napi_throw_error(env, nullptr, "The test object is not of Object type");
         return nullptr;
     }
-    
+
     napi_value setVal = nullptr;
     size_t testNum = 10;
     status = napi_create_int32(env, testNum, &setVal);
@@ -729,7 +723,7 @@ static napi_value CallSetter(napi_env env, napi_callback_info info)
         napi_throw_error(env, nullptr, "Failed to create a setter method for assignment");
         return nullptr;
     }
-    
+
     napi_status setStatus = napi_ok;
     size_t num = 2;
     for (int retry = 0; retry < num; retry++) {
