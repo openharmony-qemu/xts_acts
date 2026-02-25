@@ -374,6 +374,7 @@ export default function dataSharePredicatesTest() {
     it("testOffDataChange0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       console.info(tag + "testOffDataChange0001");
       try {
+        dsProxyHelper = await dataShare.createDataShareHelper(context, uri, { isProxy: true });
         dsProxyHelper!.offDataChange("");
         console.info("TestDataShare going off");
         expect().assertFail();
