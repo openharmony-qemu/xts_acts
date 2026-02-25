@@ -198,19 +198,18 @@ export default function nfcIsoDepTagTest() {
                     done();
                 }).catch((err)=> {
                     console.info("[NFC_test] Isodep3 isExtendedApduSupported data");
-                    const code = Number(err.code);
-                    if (code === 201) {
+                    if (err.code == 201) {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(201).assertEqual(code);
-                    } else if (code=== 401) {
+                        expect(true).assertTrue();
+                    } else if (err.code == 401) {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(401).assertEqual(code);
-                    } else if (code === 3100201) {
+                        expect(true).assertTrue();
+                    } else if (err.code == 3100201) {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect('3100201').assertEqual(code);
-                    } else if (code === 3100204) {
+                        expect(true).assertTrue();
+                    } else if (err.code == 3100204) {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
-                        expect(3100204).assertEqual(code);
+                        expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] Isodep3 isExtendedApduSupported err: " + err + err.code);
                         expect().assertFail();
@@ -236,16 +235,15 @@ export default function nfcIsoDepTagTest() {
                 console.info("[NFC_test] Isodep4 00isExtendedApduSupported: " );
                 IsoDepTag.isExtendedApduSupported((err, data)=> {
                     console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                    const code = Number(err);
-                    if (code === 201) {
+                    if (err== 201) {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(201).assertEqual(code);
-                    } else if (code === 3100201) {
+                        expect(true).assertTrue();
+                    } else if (err == 3100201) {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(3100201).assertEqual(code);
-                    } else if (code === 3100204) {
+                        expect(true).assertTrue();
+                    } else if (err == 3100204) {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
-                        expect(3100204).assertEqual(code);
+                        expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
                         if (data == true) {
