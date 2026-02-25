@@ -141,7 +141,7 @@ export default function createAssetTest () {
         done();
       } catch (error) {
         console.info(`${testNum} failed; error: ${error.code}`);
-        expect(error.code).assertEqual('401'); 
+        expect(Number(error.code)).assertEqual(401);
         done();
       }
     }
