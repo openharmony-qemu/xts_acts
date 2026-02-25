@@ -27,13 +27,13 @@ export default function webCreatePdfCallbackError() {
   describe('createPdfCallbackErrorTest', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/createPdfCallbackError',
+        url: 'testability/pages/CreatePdfCallbackError',
       };
       try {
         router.clear();
         let pages = router.getState();
         console.info("get createPdfCallbackError state success " + JSON.stringify(pages));
-        if (!("createPdfCallbackError" == pages.name)) {
+        if (!("CreatePdfCallbackError" == pages.name)) {
           console.info("get createPdfCallbackError state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info("push createPdfCallbackError page success " + JSON.stringify(result));

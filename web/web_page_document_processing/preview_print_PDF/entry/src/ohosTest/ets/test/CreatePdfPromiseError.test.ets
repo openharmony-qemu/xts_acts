@@ -27,13 +27,13 @@ export default function webCreatePdfPromiseError() {
   describe('createPdfPromiseErrorTest', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/createPdfPromiseError',
+        url: 'testability/pages/CreatePdfPromiseError',
       };
       try {
         router.clear();
         let pages = router.getState();
         console.info("get createPdfPromiseError state success " + JSON.stringify(pages));
-        if (!("createPdfPromiseError" == pages.name)) {
+        if (!("CreatePdfPromiseError" == pages.name)) {
           console.info("get createPdfPromiseError state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info("push createPdfPromiseError page success " + JSON.stringify(result));
