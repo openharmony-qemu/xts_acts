@@ -1516,5 +1516,158 @@ export default function RunningLockTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0530
+     * @tc.name testRunningLockTest_5300
+     * @tc.desc test lock when parameter is null
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5300';
+      try {
+        let lock = await runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        lock.lock(null);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error.message)}`);
+        expect(error.message).assertContain('Wrong argument');
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0540
+     * @tc.name testRunningLockTest_5400
+     * @tc.desc test lock when parameter is undefined
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5400';
+      try {
+        let lock = await runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        lock.lock(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error.message)}`);
+        expect(error.message).assertContain('Wrong argument');
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0550
+     * @tc.name testRunningLockTest_5500
+     * @tc.desc test hold when parameter is null
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5500';
+      try {
+        let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        lock.hold(null);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0560
+     * @tc.name testRunningLockTest_5600
+     * @tc.desc test hold when parameter is undefined
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5600';
+      try {
+        let lock = await runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+        console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+        lock.hold(undefined);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0570
+     * @tc.number testRunningLockTest_5700
+     * @tc.desc   test isRunningLockTypeSupported when runningLock type is BACKGROUND_USER_IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5700';
+      try {
+        let isRunningLockTypeSupported =
+          await runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
+        if (deviceInfo.deviceType == '2in1') {
+          expect(isRunningLockTypeSupported).assertTrue();
+        } else {
+          expect(isRunningLockTypeSupported).assertFalse();
+        }
+      } catch (e) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0580
+     * @tc.number testRunningLockTest_5800
+     * @tc.desc   test isRunningLockTypeSupported when runningLock type is BACKGROUND_USER_IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRunningLockTest_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5800';
+      runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+        (err, isRunningLockTypeSupported) => {
+          if (err) {
+            console.error(`${TAG} error: ${JSON.stringify(error)}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
+            if (deviceInfo.deviceType == '2in1') {
+              expect(isRunningLockTypeSupported).assertTrue();
+              done();
+            } else {
+              expect(isRunningLockTypeSupported).assertFalse();
+              done();
+            }
+          }
+        });
+    })
   })
 } 
