@@ -44,6 +44,7 @@ add_library(nativerender SHARED
     textTest/TexeTest.cpp
     textTest/TextInputTest.cpp
     textTest/TextAreaTest.cpp
+    swiper/SwiperFakeTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -30,6 +30,7 @@
     "MainAbility/pages/textTest/TextInputTest",
     "MainAbility/pages/textTest/TextAreaTest",
     "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
-    "MainAbility/pages/ScrollToVisible/ScrollToVisible"
+    "MainAbility/pages/ScrollToVisible/ScrollToVisible",
+    "MainAbility/pages/swiper/SwiperFakeTest"
   ]
 }
