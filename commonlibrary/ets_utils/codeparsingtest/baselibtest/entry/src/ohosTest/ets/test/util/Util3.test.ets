@@ -710,9 +710,9 @@ export default function Util3Test() {
         expect(err.code).assertEqual(undefined);
       }
       try {
-        let result4 = range.intersect(undefined, tempMidS);
+        let result4 = range.intersect(tempMiDF, undefined);
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     })
 
@@ -2330,5 +2330,182 @@ export default function Util3Test() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testGetHash_067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3532
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      pro.put(2, 10);
+      try {
+        let result1 = pro.get(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = pro.get(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.name   testGetHash_068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3533
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      pro.put(2, 10);
+      try {
+        let result1 = pro.put(null, 1);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = pro.put(undefined, 1);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result3 = pro.put(1, null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result4 = pro.put(1, undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetHash_069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3535
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      pro.put(2, 10);
+      try {
+        let result1 = pro.remove(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = pro.remove(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetHash_070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3536
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let pro = new util.LRUCache<number, number>();
+      pro.put(2, 10);
+      let result1 = pro.createDefault(null);
+      expect(result1).assertEqual(undefined);
+      try {
+        let result2 = pro.createDefault(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testGetHash_071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3537
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let tempLower = new TemperatureScope(30);
+      let tempUpper = new TemperatureScope(40);
+      let range = new util.Scope(tempLower, tempUpper);
+      try {
+        let result1 = range.intersect(null);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        let result2 = range.intersect(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
+
+    /**
+     * @tc.name   testGetHash_072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3538
+     * @tc.desc   Testing the getHash interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetHash_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let tempLower = new TemperatureScope(30);
+      let tempUpper = new TemperatureScope(40);
+      let range = new util.Scope(tempLower, tempUpper);
+      let tempMiDF = new TemperatureScope(35);
+      let tempMidS = new TemperatureScope(39);
+      try {
+        let result1 = range.intersect(null, tempMidS);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        let result2 = range.intersect(undefined, tempMidS);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        let result3 = range.intersect(tempMiDF, null);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        let result4 = range.intersect(tempMiDF, undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
   })
+}
+
+class TemperatureScope implements util.ScopeComparable {
+  private readonly _temp: number;
+
+  constructor(value: number) {
+    this._temp = value;
+  }
+
+  compareTo(value: Temperature) {
+    return this._temp >= value.getTemp();
+  }
+
+  getTemp() {
+    return this._temp;
+  }
+
+  toString(): string {
+    return this._temp.toString();
+  }
 }

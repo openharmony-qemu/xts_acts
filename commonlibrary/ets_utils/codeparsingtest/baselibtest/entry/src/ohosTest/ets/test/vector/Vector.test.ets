@@ -352,7 +352,7 @@ export default function Vector1Test() {
     it('testVectorRemoveByIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorRemoveByIndex0001';
 
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
@@ -622,28 +622,28 @@ export default function Vector1Test() {
      */
     it('testVectorGetLastIndexFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorGetLastIndexFrom0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
       vector.add(4);
 
-      let result1 = vector.getLastIndexFrom(null,3);
+      let result1 = vector.getLastIndexFrom(null, 3);
       expect(result1).assertEqual(-1);
 
       try {
-        vector.getLastIndexFrom(4,null);
+        vector.getLastIndexFrom(4, null);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
 
-      let result3 = vector.getLastIndexFrom(undefined,3);
+      let result3 = vector.getLastIndexFrom(undefined, 3);
       expect(result3).assertEqual(-1);
 
       try {
-        vector.getLastIndexFrom(4,undefined);
+        vector.getLastIndexFrom(4, undefined);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
@@ -660,27 +660,27 @@ export default function Vector1Test() {
      */
     it('testVectorGetIndexFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorGetIndexFrom0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
       vector.add(4);
 
-      let result1 = vector.getIndexFrom(null,3);
+      let result1 = vector.getIndexFrom(null, 3);
       expect(result1).assertEqual(-1);
 
       try {
-        vector.getIndexFrom(4,null);
+        vector.getIndexFrom(4, null);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
-      let result2 = vector.getIndexFrom(undefined,3);
+      let result2 = vector.getIndexFrom(undefined, 3);
       expect(result2).assertEqual(-1);
 
       try {
-        vector.getIndexFrom(4,undefined);
+        vector.getIndexFrom(4, undefined);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
@@ -697,35 +697,35 @@ export default function Vector1Test() {
      */
     it('testVectorRemoveByRange0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorRemoveByRange0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
       vector.add(4);
 
       try {
-        vector.removeByRange(null,3);
+        vector.removeByRange(null, 3);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.removeByRange(4,null);
+        vector.removeByRange(4, null);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.removeByRange(undefined,3);
+        vector.removeByRange(undefined, 3);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.removeByRange(4,undefined);
+        vector.removeByRange(4, undefined);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
@@ -823,7 +823,7 @@ export default function Vector1Test() {
      */
     it('testVectorSubVector0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorSubVector0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
@@ -832,28 +832,28 @@ export default function Vector1Test() {
       vector.add(8);
 
       try {
-        vector.subVector(null,3);
+        vector.subVector(null, 3);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.subVector(4,null);
+        vector.subVector(4, null);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.subVector(undefined,3);
+        vector.subVector(undefined, 3);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
 
       try {
-        vector.subVector(4,undefined);
+        vector.subVector(4, undefined);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
@@ -871,7 +871,7 @@ export default function Vector1Test() {
      */
     it('testVectorSetLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorSetLength0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
@@ -905,7 +905,7 @@ export default function Vector1Test() {
      */
     it('testVectorIncreaseCapacityTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorIncreaseCapacityTo0001';
-      let vector : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
@@ -939,8 +939,8 @@ export default function Vector1Test() {
      */
     it('testVectorCopyToArrayTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testVectorCopyToArrayTo0001';
-      let vector : Vector<number | null | undefined> = new Vector();
-      let vector1 : Vector<number | null | undefined> = new Vector();
+      let vector: Vector<number | null | undefined> = new Vector();
+      let vector1: Vector<number | null | undefined> = new Vector();
       vector.add(2);
       vector.add(4);
       vector.add(5);
@@ -958,6 +958,46 @@ export default function Vector1Test() {
       expect(result1).assertDeepEquals([]);
 
     });
-
+    /**
+     * @tc.name   testVectorCopyToArrayTo0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Vector_CASE_3000
+     * @tc.desc   Testing Vector forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testVectorCopyToArrayTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testVectorCopyToArrayTo0002';
+      let vector: Vector<number | null | undefined> = new Vector();
+      let vector1: Vector<number | null | undefined> = new Vector();
+      vector.add(2);
+      vector.add(4);
+      vector.add(5);
+      try {
+        vector.get(null);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        vector.get(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        vector.set(null, 1);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      try {
+        vector.set(undefined, 1);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+      vector.set(1, null);
+      expect(vector.get(1)).assertNull();
+      vector.set(2, undefined);
+      expect(vector.get(1)).assertNull();
+    });
   });
 }

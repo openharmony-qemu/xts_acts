@@ -513,7 +513,7 @@ export default function DequeTest() {
           let itemIndex = index;
           expect(result).assertEqual(item);
           expect(itemIndex).assertEqual(itemIndex);
-        },res)
+        }, res)
         expect(JSON.stringify(deque)).assertEqual('{"0":{"name":"Dylon","age":"13"},"1":"a","2":1}')
         expect(JSON.stringify(res)).assertEqual("{}");
       } catch (err) {
@@ -570,6 +570,31 @@ export default function DequeTest() {
         num++;
       }, undefined);
       expect(num).assertEqual(4);
+    });
+
+
+    /**
+     * @tc.name   testDequeCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDequeCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let deque = new Deque<number>();
+      deque.insertFront(2);
+      deque.insertEnd(3);
+      deque.insertFront(1);
+      deque.insertEnd(4);
+      deque.forEach((value: number, index: number): void => {
+        value = value + index;
+      }, null);
+      expect(JSON.stringify(deque)).assertEqual('{"0":3,"1":4,"6":1,"7":2}');
+      deque.forEach((value: number, index: number): void => {
+        value = value + 1;
+      }, undefined);
+      expect(JSON.stringify(deque)).assertEqual('{"0":3,"1":4,"6":1,"7":2}');
     });
   })
 }
