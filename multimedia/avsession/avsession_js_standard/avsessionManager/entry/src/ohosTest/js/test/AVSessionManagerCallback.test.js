@@ -54,24 +54,26 @@ export default function AVSessionManagerCallback() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            let TAG = "[SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_0100]";
             let session;
             avSession.createAVSession(context, tag, "audio", (err, value) => {
                 if (err) {
-                    console.info(`${TAG}TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
+                    console.info(`TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue()
-                } else {
-                    console.info(`${TAG}TestLog: AVSession :${session.sessionId}created successfully,length = ${value.sessionId.length}`);
-                    expect(value.sessionId.length).assertEqual(64);
+                } else if (value.sessionId.length === 64){
                     session = value;
+                    console.info(`TestLog: AVSession :${session.sessionId}created successfully`);
+                    expect(true).assertTrue()
+                } else {
+                    console.info('TestLog: AVSession created failed');
+                    expect(false).assertTrue();
                 }
             });
             await sleep(500);
             await session.destroy().then(() => {
-                console.info(`${TAG}TestLog: Session Destroy SUCCESS`);
-                console.info(`${TAG}TestLog: AVSession :${session.sessionId}destroyed successfully`);
+                console.info('TestLog: Session Destroy SUCCESS');
+                console.info(`TestLog: AVSession :${session.sessionId}destroyed successfully`);
             }).catch((err) => {
-                console.info(`${TAG}TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
+                console.info(`TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();
@@ -128,24 +130,26 @@ export default function AVSessionManagerCallback() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            let TAG = "[SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_CALLBACK_0400]";
             let session;
             avSession.createAVSession(context, tag, "video", (err, value) => {
                 if (err) {
-                    console.info(`${TAG}TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
+                    console.info(`TestLog: AVSession created error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue()
-                } else {
-                    console.info(`${TAG}TestLog: AVSession :${session.sessionId}created successfully,length = ${value.sessionId.length}`);
-                    expect(value.sessionId.length).assertEqual(64);
+                } else if (value.sessionId.length === 64){
                     session = value;
+                    console.info(`TestLog: AVSession :${session.sessionId}created successfully`);
+                    expect(true).assertTrue()
+                } else {
+                    console.info('TestLog: AVSession created failed');
+                    expect(false).assertTrue();
                 }
             });
             await sleep(500);
             await session.destroy().then(() => {
-                console.info(`${TAG}TestLog: Session Destroy SUCCESS`);
-                console.info(`${TAG}TestLog: AVSession :${session.sessionId}destroyed successfully`);
+                console.info('TestLog: Session Destroy SUCCESS');
+                console.info(`TestLog: AVSession :${session.sessionId}destroyed successfully`);
             }).catch((err) => {
-                console.info(`${TAG}TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
+                console.info(`TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
             done();

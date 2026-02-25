@@ -335,27 +335,25 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_0200]";
 			controller.on('sessionEvent', dynamicLyricsCallback1);
 			controller.on('sessionEvent', dynamicLyricsCallback2);
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).catch((err) => {
-				console.error(TAG + "Set session event error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_0200 Set session event error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertTrue();
-			console.log(TAG + "Received session event change event");
-			console.info(`${TAG}Testlog:receivedString = ${receivedString}`);
-			expect(receivedString).assertEqual(UPDATE_LYRICS_EVENT);
-			console.info(`${TAG}Testlog:receivedParam.lyrics = ${receivedParam.lyrics}`);
-			expect(receivedParam.lyrics).assertEqual(UPDATE_LYRICS_WANT_PARAMS.lyrics);
-			console.info(`${TAG}Testlog:receivedString2 = ${receivedString2}`);
-			expect(receivedString2).assertEqual(UPDATE_LYRICS_EVENT);
-			console.info(`${TAG}Testlog:receivedParam2.lyrics = ${receivedParam2.lyrics}`);
-			expect(receivedParam2.lyrics).assertEqual(UPDATE_LYRICS_WANT_PARAMS.lyrics);
+			if (receivedCallback && receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_0200 Received session event change event");
+				expect(receivedString == UPDATE_LYRICS_EVENT).assertTrue();
+				expect(receivedParam.lyrics == UPDATE_LYRICS_WANT_PARAMS.lyrics).assertTrue();
+				expect(receivedString2 == UPDATE_LYRICS_EVENT).assertTrue();
+				expect(receivedParam2.lyrics == UPDATE_LYRICS_WANT_PARAMS.lyrics).assertTrue();
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_0200 Session event change event not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedCallback2 = false;
 			receivedString2 = null;
@@ -374,24 +372,24 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0100]";
 			controller.on('sessionEvent', dynamicLyricsCallback1);
 			controller.on('sessionEvent', dynamicLyricsCallback2);
 			controller.off('sessionEvent', dynamicLyricsCallback2);
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).catch((err) => {
 				console.error(TAG + "Set session event error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received session event change event");
-			console.info(`${TAG}Testlog:receivedString = ${receivedString}`);
-			expect(receivedString).assertEqual(UPDATE_LYRICS_EVENT);
-			console.info(`${TAG}Testlog:receivedParam.lyrics = ${receivedParam.lyrics}`);
-			expect(receivedParam.lyrics).assertEqual(UPDATE_LYRICS_WANT_PARAMS.lyrics);
+			if (receivedCallback && !receivedCallback2) {
+				console.log(TAG + "Received session event change event");
+				expect(receivedString == UPDATE_LYRICS_EVENT).assertTrue();
+				expect(receivedParam.lyrics == UPDATE_LYRICS_WANT_PARAMS.lyrics).assertTrue();
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "Session event change event not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedString = null;
 			receivedParam = null;
@@ -407,7 +405,6 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0200]";
 			controller.on('sessionEvent', dynamicLyricsCallback1);
 			controller.on('sessionEvent', dynamicLyricsCallback2);
 			controller.off('sessionEvent', dynamicLyricsCallback1);
@@ -416,13 +413,16 @@ export default function AVSessionControllerJsTest() {
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).catch((err) => {
 				console.error(TAG + "Set session event error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received session event change event");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "Received session event change event");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "Session event change event not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -436,7 +436,6 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFSESSIONEVENT_0300]";
 			controller.on('sessionEvent', dynamicLyricsCallback1);
 			controller.on('sessionEvent', dynamicLyricsCallback2);
 			controller.off('sessionEvent');
@@ -444,13 +443,16 @@ export default function AVSessionControllerJsTest() {
 			await session.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS).catch((err) => {
 				console.error(TAG + "Set session event error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received session event change event");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "Received session event change event");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "Session event change event not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -621,25 +623,26 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0100]";
 			controller.on('extrasChange', extrasChangeCallback1);
 			controller.on('extrasChange', extrasChangeCallback2);
 			controller.off('extrasChange', extrasChangeCallback2);
 			await session.setExtras(CUSTOM_EXTRAS).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0100 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received extras change event");
-			console.info(`${TAG}Tsetlog:receivedExtras.extrasKey = ${receivedExtras.extrasKey}`);
-			expect(receivedExtras.extrasKey).assertEqual(CUSTOM_EXTRAS.extrasKey);
+			if (receivedCallback && !receivedCallback2) {
+				console.log(TAG + "Received extras change event");
+				expect(receivedExtras.extrasKey == CUSTOM_EXTRAS.extrasKey).assertTrue();
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0100 Extras change event not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedExtras = null;
-			console.info(TAG + "finished");
+			console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0100 finished");
 			done();
 		})
 
@@ -652,22 +655,24 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200]";
 			controller.on('extrasChange', extrasChangeCallback1);
 			controller.on('extrasChange', extrasChangeCallback2);
 			controller.off('extrasChange', extrasChangeCallback1);
 			controller.off('extrasChange', extrasChangeCallback2);
 			await session.setExtras(CUSTOM_EXTRAS).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Success, not received extras change event");
-			console.info(TAG + "finished");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200 Success, not received extras change event");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200 failed, extras change event received");
+				expect().assertFail();
+			}
+			console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0200 finished");
 			done();
 		})
 
@@ -680,21 +685,23 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300]";
 			controller.on('extrasChange', extrasChangeCallback1);
 			controller.on('extrasChange', extrasChangeCallback2);
 			controller.off('extrasChange');
 			await session.setExtras(CUSTOM_EXTRAS).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + ", not received extras change event");
-			console.info(TAG + "finished");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300Success, not received extras change event");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300 failed, extras change event received");
+				expect().assertFail();
+			}
+			console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_0300 finished");
 			done();
 		})
 
@@ -707,16 +714,20 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0100]";
 			controller.on('queueItemsChange', queueItemsCallback1);
 			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "setAVQueueItems error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0100 setAVQueueItems error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			sleep(200).then(() => {
-				console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-				expect(receivedCallback).assertTrue();
-				console.log(TAG + "Received queue items change");
+				if (receivedCallback) {
+					console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0100 Received queue items change");
+					expect(true).assertTrue();
+				} else {
+					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0100 Session queue items change  not received");
+					expect().assertFail();
+				}
 				receivedCallback = false;
 				done();
 			});
@@ -731,19 +742,21 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0200]";
 			controller.on('queueItemsChange', queueItemsCallback1);
 			controller.on('queueItemsChange', queueItemsCallback2);
 			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0200 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertTrue();
-			console.log(TAG + "Received queue items change");
+			if (receivedCallback && receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0200 Received queue items change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_0200 Session queue items change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedCallback2 = false;
 			done();
@@ -758,16 +771,20 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100]";
 			controller.on('queueTitleChange', queueTitleCallback1);
 			await session.setAVQueueTitle(QUEUE_TITLE).catch((err) => {
-				console.error(TAG + "setAVQueueTitle error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100 setAVQueueTitle error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			sleep(200).then(() => {
-				console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-				expect(receivedCallback).assertTrue();
-				console.log(TAG + "Received queue Title change");
+				if (receivedCallback) {
+					console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100 Received queue Title change");
+					expect(true).assertTrue();
+				} else {
+					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100 Session queue Title change  not received");
+					expect().assertFail();
+				}
 				receivedCallback = false;
 				done();
 			});
@@ -782,19 +799,21 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200]";
 			controller.on('queueTitleChange', queueTitleCallback1);
 			controller.on('queueTitleChange', queueTitleCallback2);
 			await session.setAVQueueTitle(QUEUE_TITLE).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertTrue();
-			console.log(TAG + "Received queue Title change");
+			if (receivedCallback && receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200 Received queue Title change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200 Session queue Title change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedCallback2 = false;
 			done();
@@ -809,20 +828,22 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0100]";
 			controller.on('queueItemsChange', queueItemsCallback1);
 			controller.on('queueItemsChange', queueItemsCallback2);
 			controller.off('queueItemsChange', queueItemsCallback2);
 			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "setAVQueueItems error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0100 setAVQueueItems error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue items change");
+			if (receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0100 Received queue items change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0100 Session queue items change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -836,21 +857,23 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0200]";
 			controller.on('queueItemsChange', queueItemsCallback1);
 			controller.on('queueItemsChange', queueItemsCallback2);
 			controller.off('queueItemsChange', queueItemsCallback1);
 			controller.off('queueItemsChange', queueItemsCallback2);
 			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "setAVQueueItems error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0200 setAVQueueItems error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue items change");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0200 Received queue items change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0200 Session queue items change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -864,20 +887,22 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0300]";
 			controller.on('queueItemsChange', queueItemsCallback1);
 			controller.on('queueItemsChange', queueItemsCallback2);
 			controller.off('queueItemsChange');
 			await session.setAVQueueItems(ITEMS_ARRAY).catch((err) => {
-				console.error(TAG + "setAVQueueItems error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0300 setAVQueueItems error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue items change");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0300 Received queue items change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_0300 Session queue items change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -891,20 +916,22 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0100]";
 			controller.on('queueTitleChange', queueTitleCallback1);
 			controller.on('queueTitleChange', queueTitleCallback2);
 			controller.off('queueTitleChange', queueTitleCallback2);
 			await session.setAVQueueTitle(QUEUE_TITLE).catch((err) => {
-				console.error(TAG + "setAVQueueTitle error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0100 setAVQueueTitle error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue Title change");
+			if (receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0100 Received queue Title change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0100 Session queue Title change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -918,22 +945,24 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0200]";
 			controller.on('queueTitleChange', queueTitleCallback1);
 			controller.on('queueTitleChange', queueTitleCallback2);
 			controller.off('queueTitleChange', queueTitleCallback1);
 			controller.off('queueTitleChange', queueTitleCallback2);
 
 			await session.setAVQueueTitle(QUEUE_TITLE).catch((err) => {
-				console.error(TAG + "setAVQueueTitle error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0200 setAVQueueTitle error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue Title change");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0200 Received queue Title change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0200 Session queue Title change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -947,21 +976,23 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0300]";
 			controller.on('queueTitleChange', queueTitleCallback1);
 			controller.on('queueTitleChange', queueTitleCallback2);
 			controller.off('queueTitleChange');
 
 			await session.setAVQueueTitle(QUEUE_TITLE).catch((err) => {
-				console.error(TAG + "setAVQueueTitle error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0300 setAVQueueTitle error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertFalse();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertFalse();
-			console.log(TAG + "Received queue Title change");
+			if (!receivedCallback && !receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0300 Received queue Title change");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_0300 Session queue Title change  not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			done();
 		})
@@ -1092,16 +1123,20 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0100]";
 			session.on('skipToQueueItem', skipToQueueItemCallback1);
 			await controller.skipToQueueItem(SKIP_ITEM_ID).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0100 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			sleep(200).then(() => {
-				console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-				expect(receivedCallback).assertTrue();
-				console.log(TAG + "Received skipToQueueItem ");
+				if (receivedCallback) {
+					console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0100 Received skipToQueueItem ");
+					expect(true).assertTrue();
+				} else {
+					console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0100 skipToQueueItem not received");
+					expect().assertFail();
+				}
 				receivedCallback = false;
 				done();
 			})
@@ -1116,19 +1151,21 @@ export default function AVSessionControllerJsTest() {
    * @tc.level  LEVEL0
    */
 		it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-			let TAG = "[SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0200]";
 			session.on('skipToQueueItem', skipToQueueItemCallback1);
 			session.on('skipToQueueItem', skipToQueueItemCallback2);
 			await controller.skipToQueueItem(SKIP_ITEM_ID).catch((err) => {
-				console.error(TAG + "error " + JSON.stringify(err));
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0200 error " + JSON.stringify(err));
 				expect().assertFail();
+				done();
 			});
 			await sleep(200);
-			console.info(`${TAG}Testlog:receivedCallback = ${receivedCallback}`);
-			expect(receivedCallback).assertTrue();
-			console.info(`${TAG}Testlog:receivedCallback2 = ${receivedCallback2}`);
-			expect(receivedCallback2).assertTrue();
-			console.log(TAG + "Received skipToQueueItem ");
+			if (receivedCallback && receivedCallback2) {
+				console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0200 Received skipToQueueItem ");
+				expect(true).assertTrue();
+			} else {
+				console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_0200skipToQueueItem not received");
+				expect().assertFail();
+			}
 			receivedCallback = false;
 			receivedCallback2 = false;
 			done();
@@ -1410,15 +1447,19 @@ export default function AVSessionControllerJsTest() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0300]";
-			await session.setAVQueueItems(ITEMS_ARRAY).then(async () => {
+            await session.setAVQueueItems(ITEMS_ARRAY).then(async () => {
                 await controller.getAVQueueItems().then((items) => {
-                    console.info(TAG + "data " + JSON.stringify(items));
-					console.info(`${TAG}Testlog:drmScheme = ${items[0].description.drmScheme}`);
-					expect(items[0].description.drmScheme).assertEqual(ITEMS_ARRAY[0].description.drmScheme);
+                    console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0300 data " + JSON.stringify(items));
+                    if (items[0].description.drmScheme === ITEMS_ARRAY[0].description.drmScheme){
+                        expect(true).assertTrue();
+                    }else{
+                        expect().assertFail();
+                        done();
+                    }
+                    done();
                 });
             }).catch((err) => {
-                console.error(TAG + "error " + JSON.stringify(err));
+                console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0300 error " + JSON.stringify(err));
                 expect().assertFail();
                 done();
             });
