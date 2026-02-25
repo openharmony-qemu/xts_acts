@@ -2552,7 +2552,7 @@ export default function DisplayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetRoundedCorner', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testGetRoundedCorner_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName : string = 'testGetRoundedCorner_static_0100';
         let msgStr : string = 'jsunittest ' + caseName + ' ';
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
