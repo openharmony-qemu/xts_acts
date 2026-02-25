@@ -22,6 +22,7 @@ import webStorageDeleteOriginError from './WebStorageDeleteOriginError.test'
 import webStorageGetOriginQuotaError from './WebStorageGetOriginQuotaError.test'
 import webStorageGetOriginQuotaCallbackError from './WebStorageGetOriginQuotaCallbackError.test'
 import webStorageGetOriginUsageError from './WebStorageGetOriginUsageError.test'
+import webStorageGetOriginUsageCallbackError from './WebStorageGetOriginUsageCallbackError.test'
 
 export default function testsuite() {
   webStorage()
@@ -33,4 +34,5 @@ export default function testsuite() {
   webStorageGetOriginQuotaError()
   webStorageGetOriginQuotaCallbackError()
   webStorageGetOriginUsageError()
+  webStorageGetOriginUsageCallbackError()
 }
