@@ -100,7 +100,7 @@ it('ImageAttachment_static_0001', Level.LEVEL1, async (done: () => void): Promis
       AppStorage.get<double>('marginRight'));
       expect('' + AppStorage.get<double>('marginRight')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginBottom ' +
-      AppStorage.get<string>('marginBottom'));
+      AppStorage.get<double>('marginBottom'));
       expect('' + AppStorage.get<double>('marginBottom')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginLeft ' +
       AppStorage.get<double>('marginLeft'));
