@@ -389,7 +389,6 @@ export default function DisplayTest() {
                     expect(region.creaseRects != null).assertTrue()
                     done()
                 } else {
-                    expect(true).assertTrue();
                     done();
                 }
             } catch (err) {
@@ -419,7 +418,6 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',`${caseName} CutoutInfo.waterfallDisplayAreaRects.top: ${info.waterfallDisplayAreaRects.top}`);
                 hilog.info(0x0000, '[ANI]',`${caseName} CutoutInfo.waterfallDisplayAreaRects.right: ${info.waterfallDisplayAreaRects.right}`);
                 hilog.info(0x0000, '[ANI]',`${caseName} CutoutInfo.waterfallDisplayAreaRects.bottom: ${info.waterfallDisplayAreaRects.bottom}`);
-                expect(true).assertTrue();
                 done();
             } catch (error) {
                 hilog.error(0x0000, '[ANI]',`jsunittets ${caseName} fail to get display available info :` + error);
@@ -448,7 +446,6 @@ export default function DisplayTest() {
                     done()
                 } else {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
-                    expect(true).assertTrue();
                     done();
                 }
             })
@@ -587,7 +584,6 @@ export default function DisplayTest() {
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 if (err.code == 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-                    expect(true).assertTrue();
                     done();
                 } else {
                     hilog.error(0x0000, '[ANI]',`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -726,7 +722,6 @@ export default function DisplayTest() {
             let tag:string = 'isFoldable_Test_001_static_0100 '
             try {
                 display.isFoldable();
-                expect(true).assertTrue();
                 done();
             } catch (err) {
                 hilog.info(0x0000, '[ANI]',tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
@@ -1600,7 +1595,6 @@ export default function DisplayTest() {
             try {
                 displayClass = display.getDefaultDisplaySync();
                 displayClass.offAvailableAreaChange();
-                expect(true).assertTrue();
                 done();
             }
             catch (err) {
@@ -2282,15 +2276,16 @@ export default function DisplayTest() {
             hilog.info(domain, tag,msgStr + 'begin.');
             try {
                 let result:boolean = display.isFoldable();
+                let isExpand:number = display.getFoldDisplayMode()
                 hilog.info(domain, tag,`${caseName} isFoldable: ${result}`);
                 let defaultDisplay:display.Display = display.getDefaultDisplaySync();
                 hilog.info(domain, tag,`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
                 expect(region.displayId).assertEqual(0)
-                if (result) {
-                    if (region.creaseRects.length == 0) {
-                        expect(true).assertTrue();
+                if (result && isExpand === 1) {
+                    if (region.creaseRects.length === 0) {
+                        done();
                     } else {
                         for (let i = 0; i < region.creaseRects.length; i++) {
                             expect(region.creaseRects[i].left).assertLargerOrEqual(0);
@@ -2526,6 +2521,124 @@ export default function DisplayTest() {
             done();
         }
     });
+    /**
+    * @tc.number    SUB_BASIC_WMS_GETDISPLAYBYIDSYNC_ERRORCODE_static_0100
+    * @tc.name      test_GetDisplayByIdSyncErrorcode_401_static_0100
+    * @tc.desc      test_GetDisplayByIdSyncErrorcode_401 when input is -1
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level2
+    */
+    it('test_GetDisplayByIdSyncErrorcode_401_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_GetDisplayByIdSyncErrorcode_401_static_0100';
+        try {
+            display.getDisplayByIdSync(-1);
+            hilog.info(domain, tag, caseName + 'Succeeded in getDisplayByIdSync with -1');
+            expect(false).assertTrue();
+            done();
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag, caseName + 'error in getDisplayByIdSync, err : ' + JSON.stringify(err));
+            expect(err.code === 401).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.number SUB_BASIC_DMS_GET_ROUNDED_CORNER_0100
+     * @tc.name   testGetRoundedCorner_static_0100
+     * @tc.desc   逻辑屏getRoundedCorner接口查询屏幕圆角信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetRoundedCorner', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName : string = 'testGetRoundedCorner_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        try {
+            let displayInfo = display.getDefaultDisplaySync();
+            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+            let roundedCorner = displayInfo.getRoundedCorner();
+            console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
+            console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
+            if (roundedCorner.length != 0) {
+                expect(roundedCorner.length).assertLarger(0)
+                expect(roundedCorner[0].type).assertEqual(0)
+                expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
+                expect(roundedCorner[0].position.y).assertEqual(roundedCorner[0].radius)
+                expect(roundedCorner[1].type).assertEqual(1)
+                expect(roundedCorner[1].position.x).assertEqual(displayInfo.width - roundedCorner[1].radius)
+                expect(roundedCorner[1].position.y).assertEqual(roundedCorner[1].radius)
+                expect(roundedCorner[2].type).assertEqual(2)
+                expect(roundedCorner[2].position.x).assertEqual(displayInfo.width - roundedCorner[2].radius)
+                expect(roundedCorner[2].position.y).assertEqual(displayInfo.height - roundedCorner[2].radius)
+                expect(roundedCorner[3].type).assertEqual(3)
+                expect(roundedCorner[3].position.x).assertEqual(roundedCorner[3].radius)
+                expect(roundedCorner[3].position.y).assertEqual(displayInfo.height - roundedCorner[3].radius)
+                expect(display.CornerType.TOP_LEFT).assertEqual(0);
+                expect(display.CornerType.TOP_RIGHT).assertEqual(1);
+                expect(display.CornerType.BOTTOM_RIGHT).assertEqual(2);
+                expect(display.CornerType.BOTTOM_LEFT).assertEqual(3);
+                done();
+            } else {
+                expect(roundedCorner.length).assertEqual(0)
+                done();
+            }
+        } catch (err) {
+            console.error(0x0000, '[ANI]', msgStr + 'Failed. case ：' + JSON.stringify(err));
+            if (err.code === 801) {
+                done();
+            } else {
+                expect().assertFail()
+                done();
+            }
+        }
+    })
+
+    /**
+    * @tc.number SUB_DMS_GET_ROUNDED_CORNER_0200
+    * @tc.name   testGetRoundedCornerwithVirtualDisplay_static_0100
+    * @tc.desc   虚拟屏getRoundedCorner接口查询屏幕圆角信息返回空数组
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('testGetRoundedCornerwithVirtualDisplay_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testGetRoundedCornerwithVirtualDisplay_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 100,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            };
+        try {
+            // 创建虚拟屏
+            let vid = await display.createVirtualScreen(option);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+            await Utils.msSleep(500);
+            let displayInfo = display.getDisplayByIdSync(vid);
+            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+            await Utils.msSleep(300);
+            let roundedCorner = displayInfo.getRoundedCorner();
+            console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
+            console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
+            expect(roundedCorner.length).assertEqual(0)
+            await Utils.msSleep(300);
+            await display.destroyVirtualScreen(vid);
+            done()
+        } catch (err) {
+            console.error(0x0000, '[ANI]', msgStr + 'Failed. case ：' + JSON.stringify(err));
+            if (err.code === 801) {
+                done();
+            } else {
+                expect().assertFail()
+            }
+        }
+    })
 
 
 
