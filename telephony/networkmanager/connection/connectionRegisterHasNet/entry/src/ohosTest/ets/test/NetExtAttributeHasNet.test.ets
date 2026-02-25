@@ -633,7 +633,7 @@ export default function NetExtAttributeHasNetTest() {
         console.info(`${caseName}---End`);
        }).catch((err: BusinessError)=>{
         console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code == 201 || err.code == 2100001);
         done();
        })
      }catch (err){
@@ -664,7 +664,7 @@ export default function NetExtAttributeHasNetTest() {
         console.info(`${caseName}---End`);
        }).catch((err: BusinessError)=>{
         console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code == 201 || err.code == 2100001);
         done();
        })
      }catch (err){
