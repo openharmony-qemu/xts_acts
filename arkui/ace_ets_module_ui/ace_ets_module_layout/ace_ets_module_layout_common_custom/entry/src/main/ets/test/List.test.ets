@@ -24,6 +24,12 @@ import borderJsunit from './CommonAttrs/BorderJsunit.test';
 import BorderRadiusRenderStrategyTest from './CommonAttrs/BorderRadiusRenderStrategyTest.ets';
 import FlexFourBoundaryTest from './CommonAttrs/FlexFourBoundaryTest.ets';
 import LayoutFourReturnTest from './CommonCustom/LayoutFourReturnTest.ets';
+import ConstraintSizeNullUndefinedTest from './CommonAttrs/ConstraintSizeNullUndefined.test';
+import LayoutWeightNullUndefinedTest from './CommonAttrs/LayoutWeightNullUndefined.test';
+import SafeAreaPaddingNullUndefinedTest from './CommonAttrs/SafeAreaPaddingNullUndefined.test';
+import ChainWeightNullUndefinedTest from './CommonAttrs/ChainWeightNullUndefined.test';
+import GridContainerNullUndefinedTest from './CommonAttrs/GridContainerNullUndefined.test';
+import FlexLayoutNullUndefinedTest from './CommonAttrs/FlexLayoutNullUndefined.test';
 
 export default function testsuite() {
   Calc01();
@@ -37,4 +43,10 @@ export default function testsuite() {
   BorderRadiusRenderStrategyTest();
   FlexFourBoundaryTest();
   LayoutFourReturnTest();
+  ConstraintSizeNullUndefinedTest();
+  LayoutWeightNullUndefinedTest();
+  SafeAreaPaddingNullUndefinedTest();
+  ChainWeightNullUndefinedTest();
+  GridContainerNullUndefinedTest();
+  FlexLayoutNullUndefinedTest();
 }
