@@ -425,6 +425,114 @@ export default function documentPickerCallback(abilityContext: Context) {
       option.pickerMode = picker.DocumentPickerMode.DEFAULT;
       await saveWithOption(testNum, done, option);
     });
+
+    /**
+     * @tc.name   DocumentViewPicker_select_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0000
+     * @tc.desc   Test DocumentViewPicker.elect() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_select_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_select_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_select_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_select_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0010
+     * @tc.desc   Test DocumentViewPicker.select() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_sDocumentViewPicker_select_callback_001ave_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0000
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0010
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   });
 }
 
