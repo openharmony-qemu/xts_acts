@@ -1075,6 +1075,66 @@ export default function observerManagerCallStateTest() {
     })
 
     /**
+     * @tc.name   Telephony_observer_on_cCallStateInfo_1000
+     * @tc.number Telephony_observer_on_cCallStateInfo_1000
+     * @tc.desc   call the on method of cCallStateInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_on_cCallStateInfo_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName: string = 'Telephony_observer_on_cCallStateInfo_1000';
+      console.log("************* Telephony_observer_on_cCallStateInfo_1000 Test start *************");
+      try {
+        let callback = (value: observer.CCallStateInfo) => {
+          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
+          expect(false).assertTrue();
+          observer.offCCallStateChange();
+          done();
+        }
+        let options: observer.ObserverOptions = {
+          slotId: 0
+        }
+        observer.onCCallStateChange(callback, undefined);
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.log("************* Telephony_observer_on_cCallStateInfo_1000 Test end *************");
+    })
+
+    /**
+     * @tc.name   Telephony_observer_on_cCallStateInfo_1100
+     * @tc.number Telephony_observer_on_cCallStateInfo_1100
+     * @tc.desc   call the on method of cCallStateInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_on_cCallStateInfo_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName: string = 'Telephony_observer_on_cCallStateInfo_1100';
+      console.log("************* Telephony_observer_on_cCallStateInfo_1100 Test start *************");
+      try {
+        let callback = (value: observer.CCallStateInfo) => {
+          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
+          expect(false).assertTrue();
+          observer.offCCallStateChange();
+          done();
+        }
+        let options: observer.ObserverOptions = {
+          slotId: 0
+        }
+        observer.onCCallStateChange(callback, null);
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+        ExpectTrue(err.code === 401);
+        done();
+      }
+      console.log("************* Telephony_observer_on_cCallStateInfo_1100 Test end *************");
+    })
+
+    /**
      * @tc.name   Telephony_observer_off_cCallStateInfo_0100
      * @tc.number Telephony_observer_off_cCallStateInfo_0100
      * @tc.desc   call the on method of cCallStateInfo
