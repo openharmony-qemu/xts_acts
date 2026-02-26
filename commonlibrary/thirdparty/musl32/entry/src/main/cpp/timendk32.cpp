@@ -69,10 +69,8 @@ static napi_value Timer_getTime64_One(napi_env env, napi_callback_info info)
 
     struct itimerspec tmp;
     ret = __timer_gettime64(timerid, &tmp);
-    NAPI_ASSERT(env, tmp.it_value.tv_sec < PARAM_1,
-        "Timer_getTime64_One: tv_sec too large (>= PARAM_1)");
-    NAPI_ASSERT(env, tmp.it_value.tv_nsec < NANOSECONDS,
-        "Timer_getTime64_One: tv_nsec too large (>= NANOSECONDS)");
+    NAPI_ASSERT(env, !(!(tmp.it_value.tv_sec < PARAM_1) && !(tmp.it_value.tv_nsec < NANOSECONDS)),
+            "Timer_getTime64_One--__timer_gettime64 failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, ret == PARAM_0, &result);
@@ -110,10 +108,8 @@ static napi_value Timer_setTime64_One(napi_env env, napi_callback_info info)
 
     struct itimerspec tmp;
     ret = __timer_gettime64(timerid, &tmp);
-    NAPI_ASSERT(env, tmp.it_value.tv_sec < PARAM_1,
-        "Timer_setTime64_One: tv_sec too large (>= PARAM_1)");
-    NAPI_ASSERT(env, tmp.it_value.tv_nsec < NANOSECONDS,
-        "Timer_setTime64_One: tv_nsec too large (>= NANOSECONDS)");
+    NAPI_ASSERT(env, !(!(tmp.it_value.tv_sec < PARAM_1) && !(tmp.it_value.tv_nsec < NANOSECONDS)),
+            "Timer_setTime64_One--__timer_gettime64 failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, ret == PARAM_0, &result);
