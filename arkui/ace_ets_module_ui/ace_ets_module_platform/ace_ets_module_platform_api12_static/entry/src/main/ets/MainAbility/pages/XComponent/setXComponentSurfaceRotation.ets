@@ -41,7 +41,7 @@ import {
   XComponentController,
   XComponentParameters,
   XComponentType
-} from '@ohos.arkui.component';
+} from '@kit.ArkUI';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
