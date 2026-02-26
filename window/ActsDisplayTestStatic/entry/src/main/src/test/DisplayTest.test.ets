@@ -385,10 +385,17 @@ export default function DisplayTest() {
                 let region:display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
                 hilog.info(0x0000, '[ANI]',tag + "region : " + JSON.stringify(region))
                 if (region != null) {
-                    expect(region.displayId != null).assertTrue()
+                    expect(region.displayId).assertEqual(0)
                     expect(region.creaseRects != null).assertTrue()
+                    for (let i = 0; i < region.creaseRects.length; i++) {
+                            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+                        }
                     done()
                 } else {
+                    expect(region === null).assertTrue()
                     done();
                 }
             } catch (err) {
@@ -2562,7 +2569,7 @@ export default function DisplayTest() {
             let roundedCorner = displayInfo.getRoundedCorner();
             console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
             console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-            if (roundedCorner.length != 0) {
+            if (roundedCorner.length !== 0) {
                 expect(roundedCorner.length).assertLarger(0)
                 expect(roundedCorner[0].type).assertEqual(0)
                 expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
