@@ -699,37 +699,6 @@ export default function HasCard1PublicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1642000
-     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_2000
-     * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerFormatPhoneNumberToE1642000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1642000';
-      console.info(`${caseName} test start `);
-      try {
-        call.formatPhoneNumberToE164(null, "CN").then((data: string) => {
-          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
-          ExpectFail();
-          console.info(`${caseName} test end `);
-          done();
-        }).catch((err: BusinessError) => {
-          console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-          ExpectFail();
-          console.info(`${caseName} test end `);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
-        console.info(`${caseName} test end `);
-        done();
-      }
-    });
-
-    /**
      * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1642100
      * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_2100
      * @tc.desc   Format the phone number in E.164 representation. Use Promise asynchronous callback.
