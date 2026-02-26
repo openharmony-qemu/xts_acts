@@ -433,6 +433,7 @@ export default function CameraPhotoSessionTest() {
         await sleep(500);
       }
       isSupportHEICEncode = image.createImagePacker().supportedFormats.includes("image/heic");
+      console.info('isSupportHEICEncode result is ' + isSupportHEICEncode);
     })
 
     beforeEach(async () => {
@@ -2039,11 +2040,7 @@ export default function CameraPhotoSessionTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100--------------");
-      if (!isSupportHEICEncode) {
-        console.info("device is not support heif encode");
-        done();
-        return
-      }
+
       if (mCameraNum == 0) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 FAILED with NoCamera");
         expect().assertFail();
@@ -2054,6 +2051,11 @@ export default function CameraPhotoSessionTest() {
         while(i != -1){
           try{            
             createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+            if (!isSupportHEICEncode) {
+              console.info("device is not support heif encode");
+              done();
+              return
+            }
             i = await startHeifCameraSession(0, i);
             await sleep(100);
             if(i!= -1){
@@ -2069,33 +2071,5 @@ export default function CameraPhotoSessionTest() {
       }
     })
 
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100
-     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100
-     * @tc.desc   Create photo session setSmoothZoom errorcode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
-    //     console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100--------------");
-    //     if (mCameraNum == 0) {
-    //     console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100 FAILED with NoCamera");
-    //     expect(true).assertFail();
-    //     done();
-    //     return;
-    //     }
-    //     createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
-    //     //await startCameraSession(0);
-    //     try {
-    //         mCameraSession.setSmoothZoom(nzoomRatioRange[0]+0.1,camera.SmoothZoomMode.NORMAL);
-    //         console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100 FAILED " );
-    //         expect(true).assertFalse();
-    //     } catch (err) {
-    //         console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100  err.code = " + err.code);
-    //         expect(err.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-    //     } 
-    //     done();
-    // })
   })
 }
