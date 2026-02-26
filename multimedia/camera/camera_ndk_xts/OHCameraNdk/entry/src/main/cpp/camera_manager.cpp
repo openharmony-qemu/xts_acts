@@ -1147,7 +1147,7 @@ Camera_ErrorCode NDKCamera::PhotoOutputUnRegisterCallback(int useCaseCode)
     }
     return ret_;
 }
-Camera_ErrorCode NDKCamera::IsMovintgPhotoSupported(int useCaseCode)
+Camera_ErrorCode NDKCamera::IsMovingPhotoSupported(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_PhotoOutput_IsMovingPhotoSupported(photoOutput_, &isMovingPhotoSupported_);
@@ -1157,7 +1157,7 @@ Camera_ErrorCode NDKCamera::IsMovintgPhotoSupported(int useCaseCode)
         ret_ = OH_PhotoOutput_IsMovingPhotoSupported(nullptr, &isMovingPhotoSupported_);
     }
     if (ret_ != CAMERA_OK) {
-        LOG("OH_PhotoOutput_isMovingPhotoSupported failed. %d", ret_);
+        LOG("OH_PhotoOutput_IsMovingPhotoSupported failed. %d", ret_);
     } else {
         if (!isMovingPhotoSupported_) {
             LOG("moving photo is not supported.");
