@@ -606,37 +606,6 @@ export default function HasCard1PublicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641700
-     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1700
-     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerFormatPhoneNumberToE1641700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641700';
-      console.info(`${caseName} test start `);
-      try {
-        call.formatPhoneNumberToE164(rightPhone, "", (err: BusinessError, data: string) => {
-          if (err) {
-            console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code == 8300001);
-          } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
-            ExpectFail();
-          }
-          console.info(`${caseName} test end `);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-        ExpectFail();
-        console.info(`${caseName} test end `);
-        done();
-      }
-    });
-
-    /**
      * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641800
      * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1800
      * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
@@ -817,6 +786,38 @@ export default function HasCard1PublicTest() {
       } catch (err) {
         console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1642500
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_2500
+     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumberToE1642500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1642500';
+      console.info(`${caseName} test start `);
+      try {
+        call.formatPhoneNumberToE164(rightPhone, "", (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 8300001);
+          } else {
+            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            ExpectFail();
+          }
+          console.info(`${caseName} test end `);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
         console.info(`${caseName} test end `);
         done();
       }
