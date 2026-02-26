@@ -3482,6 +3482,7 @@ export default function WindowLifecycle() {
         done()
       }
     });
+    
 
   })
 

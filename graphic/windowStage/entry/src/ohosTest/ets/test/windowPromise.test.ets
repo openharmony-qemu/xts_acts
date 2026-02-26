@@ -1654,7 +1654,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
         statusBarColor: '#FF0000FF',
         navigationBarColor: '#FF00FF00',
         statusBarContentColor: '#FF00FFAA',
-        navigationBarContentColor: '#FF00FFFF'
+        navigationBarContentColor: '#FF00FFFF',
+        enableStatusBarAnimation:false,
+        enableNavigationBarAnimation:false,
       };
       console.log(msgStr + " begin");
       ohosWindow.getLastWindow(context).then(async wnd => {
