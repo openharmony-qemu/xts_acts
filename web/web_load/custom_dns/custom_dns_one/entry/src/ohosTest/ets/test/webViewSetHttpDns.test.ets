@@ -155,7 +155,8 @@ export default function webViewSetHttpDns() {
       try {
         webview.WebviewController.clearHostIP(null)
       } catch(error) {
-        expect(true).assertEqual(error.code == 401)
+        let errorCode = Number(error.code)
+        expect(errorCode).assertEqual(401)
       }
       done();
     })
@@ -171,7 +172,8 @@ export default function webViewSetHttpDns() {
       try {
         webview.WebviewController.clearHostIP(undefined)
       } catch(error) {
-        expect(true).assertEqual(error.code == 401)
+        let errorCode = Number(error.code)
+        expect(errorCode).assertEqual(401)
       }
       done();
     })
