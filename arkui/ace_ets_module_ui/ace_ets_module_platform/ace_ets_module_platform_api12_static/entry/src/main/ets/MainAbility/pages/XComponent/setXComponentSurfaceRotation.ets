@@ -57,10 +57,9 @@ struct SetXComponentSurfaceRotation1 {
       Text(JSON.stringify(this.SurfaceRotation)).id("setXComponentSurfaceRotation_text")
         .fontSize(12)
       XComponent({
-        id: 'xcomponent',
         type: XComponentType.TEXTURE,
         controller: this.xComponentController
-      } as XComponentParameters)
+      } as XComponentOptions)
         .onLoad((): void => {
           this.SurfaceRotation = { lock: false }
           this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)
