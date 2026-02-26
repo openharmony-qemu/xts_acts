@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include <fstream>
-
+#include <dlfcn.h>
 #include "OhosCommonTest.h"
 #include "nncore_utils.h"
 
