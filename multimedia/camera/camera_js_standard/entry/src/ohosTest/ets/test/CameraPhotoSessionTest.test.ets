@@ -40,6 +40,7 @@ let nzoomRatioRange: Array<number> = [];
 
 let receiver: image.ImageReceiver;
 let context = getContext();
+let isSupportHEICEncode: boolean;
 
 let permission = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
   'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
@@ -431,6 +432,7 @@ export default function CameraPhotoSessionTest() {
         power = null;
         await sleep(500);
       }
+      isSupportHEICEncode = image.createImagePacker().supportedFormats.includes("image/heic");
     })
 
     beforeEach(async () => {
@@ -2030,14 +2032,18 @@ export default function CameraPhotoSessionTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
-     * @tc.desc   white balance api
+     * @tc.desc   test heif camera session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100--------------");
-
+      if (!isSupportHEICEncode) {
+        console.info("device is not support heif encode");
+        done();
+        return
+      }
       if (mCameraNum == 0) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 FAILED with NoCamera");
         expect().assertFail();
