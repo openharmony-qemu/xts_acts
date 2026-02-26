@@ -203,6 +203,29 @@ export default function NetworkManagerVpnTest() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_VPN_startVpnExtensionAbility_Promise_0300
+     * @tc.number SUB_NetworkManager_VPN_startVpnExtensionAbility_Promise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_startVpnExtensionAbility_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_startVpnExtensionAbility_Promise_0300';
+      try {
+        vpnExtension.startVpnExtensionAbility(undefined);
+        console.log(`${caseName} startVpnExtensionAbility success`);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} startVpnExtensionAbility fail ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerVPNcreateVpnConnectionAsync0100
      * @tc.number SUB_NetworkManager_VPN_createVpnConnection_Async_0100
      * @tc.desc   Function test
@@ -215,6 +238,7 @@ export default function NetworkManagerVpnTest() {
       try {
         let vpnInstance = vpnExtension.createVpnConnection(context2);
         console.log(`${caseName} create success`);
+        expect(vpnInstance != undefined).assertTrue();
         expect().assertTrue();
         done();
       }
@@ -236,6 +260,28 @@ export default function NetworkManagerVpnTest() {
       let caseName = 'SUB_NetworkManager_VPN_createVpnConnection_Async_0200';
       try {
         let vpnInstance = vpnExtension.createVpnConnection(null);
+        console.log(`${caseName} create success`);
+        expect().assertTrue();
+        done();
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_createVpnConnection_Async_0300
+     * @tc.number SUB_NetworkManager_VPN_createVpnConnection_Async_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_createVpnConnection_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_createVpnConnection_Async_0300';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(undefined);
         console.log(`${caseName} create success`);
         expect().assertTrue();
         done();
@@ -357,6 +403,118 @@ export default function NetworkManagerVpnTest() {
       let caseName = 'SUB_NetworkManager_VPN_create_Promise_0300';
       try {
         let vpnInstance = vpnExtension.createVpnConnection(context2);
+        vpnInstance.create(vpnConfig).then(() => {
+          console.log(`${caseName} create success`);
+          expect().assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} create fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_create_Promise_0400
+     * @tc.number SUB_NetworkManager_VPN_create_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_create_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_create_Promise_0400';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        vpnInstance.create(undefined).then(() => {
+          console.log(`${caseName} create success`);
+          expect().assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} create fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_create_Promise_0500
+     * @tc.number SUB_NetworkManager_VPN_create_Promise_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_create_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_create_Promise_0500';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        let vpnConfig: vpnExtension.VpnConfig = {
+          vpnId: '123456',
+          addresses: [],
+          routes: [],
+          dnsAddresses: [],
+          searchDomains: [""],
+          mtu: 1400,
+          isIPv4Accepted: false,
+          isIPv6Accepted: true,
+          isInternal: false,
+          isBlocking: true,
+          trustedApplications: [""],
+          blockedApplications: []
+        }
+        vpnInstance.create(vpnConfig).then(() => {
+          console.log(`${caseName} create success`);
+          expect().assertTrue();
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} create fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_create_Promise_0600
+     * @tc.number SUB_NetworkManager_VPN_create_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_create_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_create_Promise_0600';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        let vpnConfig: vpnExtension.VpnConfig = {
+          vpnId: '123456',
+          addresses: [],
+          routes: [],
+          dnsAddresses: [],
+          searchDomains: [""],
+          mtu: 1400,
+          isIPv4Accepted: false,
+          isIPv6Accepted: true,
+          isInternal: false,
+          isBlocking: true,
+          trustedApplications: [""],
+          blockedApplications: []
+        }
         vpnInstance.create(vpnConfig).then(() => {
           console.log(`${caseName} create success`);
           expect().assertTrue();
