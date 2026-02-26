@@ -20,5 +20,8 @@ ohos_js_app_static_suite("ActsStartUiServiceExtensionStaticTest") {
   hap_name = "ActsStartUiServiceExtensionStaticTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [
+    "../actsstartuiserviceextensionrelystatic:ActsStartUiServiceExtensionStaticRely",
+  ]
 }
 

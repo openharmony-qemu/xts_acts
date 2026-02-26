@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function GridColJsunit() {
   describe('gridColOffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -69,7 +69,7 @@ export default function GridColJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push gridCol page result: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push gridCol page error: " + err);
       }
     });
@@ -110,7 +110,7 @@ it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -133,7 +133,7 @@ it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -178,7 +178,7 @@ it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -201,7 +201,7 @@ it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<
         }
         console.info('[' + tagName + '] start to publish emit3');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -252,7 +252,7 @@ it('testGridColOrder_static_03', Level.LEVEL1, async (done: () => void): Promise
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);

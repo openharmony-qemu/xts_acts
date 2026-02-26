@@ -22,20 +22,6 @@ function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay));
 }
 
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);            
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
-
 let OPEN_BT_TEXT = "开启";
 
 async function clickTheWindow(text) {
@@ -84,7 +70,6 @@ export default function btManagerMError401Test() {
             console.info('beforeAll start');
             let PERMISSION_TEXT = "允许";
             await sleep(2000);
-            await openPhone();
             await clickTheWindow(PERMISSION_TEXT);
             gattClient = bluetooth.BLE.createGattClientDevice("11:22:33:44:55:66");
             console.info('beforeAll end');

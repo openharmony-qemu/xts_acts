@@ -64,7 +64,7 @@ function spliceBgColor(sysColor: Resource, sysColor1: Resource) {
 
 export default function outliersAlphabet() {
   describe('outliersAlphabet', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")

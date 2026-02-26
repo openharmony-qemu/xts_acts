@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Text_lineBreakStrategyTest() {
   describe('Text_lineBreakStrategyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Text_lineBreakStrategyTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -70,7 +70,7 @@ export default function Text_lineBreakStrategyTest() {
      * @tc.desc     Text_lineBreakStrategyTest_static_001
      * @tc.level   Level.LEVEL0
      */
-    it('Text_lineBreakStrategyTest_static_001', Level.LEVEL0, (done: () => void): Promise<void> => {
+    it('Text_lineBreakStrategyTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Text_lineBreakStrategyTest_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

@@ -29,7 +29,6 @@ import {
   PopupCommonOptions,
   Scroll,
   Scroller,
-  ESObject,
   Margin,
   ForEach
 } from '@ohos.arkui.component'

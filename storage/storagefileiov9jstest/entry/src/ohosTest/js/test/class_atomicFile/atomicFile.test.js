@@ -287,14 +287,14 @@ import {
 	  }
 	});
 
- /**
-  * @tc.name   fileIO_test_atomicFile_010
-  * @tc.number SUB_DF_ATOMIC_FILE_1000
-  * @tc.desc   Test the getBaseFile() interface of class AtomicFile
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.name   fileIO_test_atomicFile_010
+	 * @tc.number SUB_DF_ATOMIC_FILE_1000
+	 * @tc.desc   Test the getBaseFile() interface of class AtomicFile
+	 * @tc.type   FUNCTION
+	 * @tc.size   MEDIUMTEST
+	 * @tc.level  LEVEL0
+	 */
 	it('fileIO_test_atomicFile_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
 		let filesDir = await featureAbility.getContext().getCacheDir();
 		let fpath = filesDir + '/test10.txt';
@@ -313,5 +313,52 @@ import {
 			expect(false).assertTrue();
 		}
 	});
+
+	/**
+	 * @tc.name   fileIO_test_atomicFile_011
+	 * @tc.number SUB_DF_ATOMIC_FILE_1100
+	 * @tc.desc   Test the startWrite() interface of class AtomicFile
+	 * @tc.type   FUNCTION
+	 * @tc.size   MEDIUMTEST
+	 * @tc.level  LEVEL0
+	 */
+	it('fileIO_test_atomicFile_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+		let fpath = await nextFileName('fileIO_test_atomicFile_011');
+		expect(prepareFile(fpath, "")).assertTrue();
+	
+		try{
+		let file = new fileIO.AtomicFile(fpath);
+		let WriteStream = file.startWrite();
+		WriteStream.write("hello, world");
+		await sleep(WAIT_ONE_SECOND);
+		expect(WriteStream.bytesWritten == "hello, world".length).assertTrue();
+		expect(WriteStream.path).assertContain(fpath);
+		} catch (e) {
+		console.log('fileIO_test_atomicFile_011 has failed for ' + e.message);
+		expect(false).assertTrue();
+		}
+	});
+
+	/**
+	 * @tc.name   fileIO_test_atomicFile_012
+	 * @tc.number SUB_DF_ATOMIC_FILE_1200
+	 * @tc.desc   Test the openRead() interface of class AtomicFile
+	 * @tc.type   FUNCTION
+	 * @tc.size   MEDIUMTEST
+	 * @tc.level  LEVEL0
+	 */
+	it('fileIO_test_atomicFile_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+		let fpath = await nextFileName('fileIO_test_atomicFile_012');
+		expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+	
+		try {
+		  let file = new fileIO.AtomicFile(fpath);
+		  let readStream = file.openRead();
+		  expect(readStream.path === fpath).assertTrue();
+		} catch (e) {
+		  console.log('fileIO_test_atomicFile_012 has failed for ' + e.message);
+		  expect(false).assertTrue();
+		}
+	  });
   })
-  }
+}

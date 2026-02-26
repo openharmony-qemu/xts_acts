@@ -52,7 +52,7 @@ export default function MenuPolicy_HIDE_APITest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('Search'));
+      let textComponent = await driver.findComponent(ON.id('SearchMenuPolicyHIDE'));
       await textComponent.click()
       await CommonFunc.sleep(500);
 	    await driver.triggerKey(2070);

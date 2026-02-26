@@ -27,21 +27,21 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraSessionFlashTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.VideoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.VideoSession | undefined;
 let mVideoRecorder: media.AVRecorder | undefined;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let AVRecorder: media.AVRecorder;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
 let mCameraNum: number;
-let mHasFlashArray: Array<boolean>;
-let mIsFlashModeSupportedArray: Array<boolean>;
+let mHasFlashArray: Array<boolean> = [];
+let mIsFlashModeSupportedArray: Array<boolean> = [];
 
 let mVideoProfileCfg: media.AVRecorderProfile = {
   audioBitrate: 48000,
@@ -142,7 +142,7 @@ export default function cameraSessionFlashTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         console.info(TAG + "Entering getCameraSupportDevicesArray callback");
@@ -180,7 +180,7 @@ export default function cameraSessionFlashTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -190,7 +190,7 @@ export default function cameraSessionFlashTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -198,7 +198,7 @@ export default function cameraSessionFlashTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -209,14 +209,14 @@ export default function cameraSessionFlashTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -231,7 +231,7 @@ export default function cameraSessionFlashTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -242,13 +242,13 @@ export default function cameraSessionFlashTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -265,7 +265,7 @@ export default function cameraSessionFlashTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -310,11 +310,11 @@ export default function cameraSessionFlashTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -337,17 +337,17 @@ export default function cameraSessionFlashTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -357,7 +357,7 @@ export default function cameraSessionFlashTest() {
     */
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     /*
     await mCameraSession.start(async (err) => {
@@ -379,7 +379,7 @@ export default function cameraSessionFlashTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     /*
     mCameraSession.stop(async (err) => {
@@ -396,17 +396,17 @@ export default function cameraSessionFlashTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
 
     // await mCameraSession.commitConfig();
@@ -426,7 +426,7 @@ export default function cameraSessionFlashTest() {
 
   describe('cameraSessionFlashTest', () => {
     console.info(TAG + '----------cameraSessionFlashTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -447,7 +447,7 @@ export default function cameraSessionFlashTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
@@ -476,7 +476,7 @@ export default function cameraSessionFlashTest() {
 
           await startCameraSession(i);
 
-          let hasFlashPromise = mCameraSession.hasFlash();
+          let hasFlashPromise = mCameraSession!.hasFlash();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HAS_FLASH_PROMISE_STATIC_0100 finish");
           if (hasFlashPromise != null || hasFlashPromise != undefined) {
             console.info(TAG +
@@ -524,7 +524,7 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if (mHasFlashArray.length > mCameraNum) {
-            let isFlashModeSupported = mCameraSession.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_CLOSE);
+            let isFlashModeSupported = mCameraSession!.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_CLOSE);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_STATIC_0100 finish");
             if (isFlashModeSupported != null || isFlashModeSupported != undefined) {
               console.info(TAG +
@@ -578,13 +578,13 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if ((mHasFlashArray.length > mCameraNum) && (mIsFlashModeSupportedArray.length > mCameraNum)) {
-            mCameraSession.setFlashMode(cameraObj.FlashMode.FLASH_MODE_CLOSE);
+            mCameraSession!.setFlashMode(cameraObj.FlashMode.FLASH_MODE_CLOSE);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0100 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0100 PASSED with FlashMode is: " +
             cameraObj.FlashMode.FLASH_MODE_CLOSE);
 
-            let flashMode = mCameraSession.getFlashMode();
+            let flashMode = mCameraSession!.getFlashMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0100 finish");
             if (flashMode == cameraObj.FlashMode.FLASH_MODE_CLOSE) {
               console.info(TAG +
@@ -635,7 +635,7 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if (mHasFlashArray.length > mCameraNum) {
-            let isFlashModeSupported = mCameraSession.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_OPEN);
+            let isFlashModeSupported = mCameraSession!.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_OPEN);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_STATIC_0200 finish");
             if (isFlashModeSupported != null || isFlashModeSupported != undefined) {
               console.info(TAG +
@@ -686,13 +686,13 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if ((mHasFlashArray.length > mCameraNum) && (mIsFlashModeSupportedArray.length > mCameraNum)) {
-            mCameraSession.setFlashMode(cameraObj.FlashMode.FLASH_MODE_OPEN);
+            mCameraSession!.setFlashMode(cameraObj.FlashMode.FLASH_MODE_OPEN);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0200 PASSED with FlashMode is: " +
             cameraObj.FlashMode.FLASH_MODE_OPEN);
 
-            let flashMode = mCameraSession.getFlashMode();
+            let flashMode = mCameraSession!.getFlashMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0200 finish");
             if (flashMode == cameraObj.FlashMode.FLASH_MODE_OPEN) {
               console.info(TAG +
@@ -743,7 +743,7 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if (mHasFlashArray.length > mCameraNum) {
-            let isFlashModeSupported = mCameraSession.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_AUTO);
+            let isFlashModeSupported = mCameraSession!.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_AUTO);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_STATIC_0300 finish");
             if (isFlashModeSupported != null || isFlashModeSupported != undefined) {
               console.info(TAG +
@@ -794,12 +794,12 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if ((mHasFlashArray.length > mCameraNum) && (mIsFlashModeSupportedArray.length > mCameraNum)) {
-            mCameraSession.setFlashMode(cameraObj.FlashMode.FLASH_MODE_AUTO);
+            mCameraSession!.setFlashMode(cameraObj.FlashMode.FLASH_MODE_AUTO);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0300 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0300 PASSED with FlashMode is: " +
             cameraObj.FlashMode.FLASH_MODE_AUTO);
-            let flashMode = mCameraSession.getFlashMode();
+            let flashMode = mCameraSession!.getFlashMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0300 finish");
             if (flashMode == cameraObj.FlashMode.FLASH_MODE_AUTO) {
               console.info(TAG +
@@ -849,7 +849,7 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if (mHasFlashArray.length > mCameraNum) {
-            let isFlashModeSupported = mCameraSession.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN);
+            let isFlashModeSupported = mCameraSession!.isFlashModeSupported(cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FLASH_MODE_SUPPORT_PROMISE_STATIC_0400 finish");
             if (isFlashModeSupported != null || isFlashModeSupported != undefined) {
               console.info(TAG +
@@ -900,12 +900,12 @@ export default function cameraSessionFlashTest() {
           await startCameraSession(i);
 
           if ((mHasFlashArray.length > mCameraNum) && (mIsFlashModeSupportedArray.length > mCameraNum)) {
-            mCameraSession.setFlashMode(cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN);
+            mCameraSession!.setFlashMode(cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0400 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0400 PASSED with FlashMode is: " +
             cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN);
-            let flashMode = mCameraSession.getFlashMode();
+            let flashMode = mCameraSession!.getFlashMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FLASH_MODE_PROMISE_STATIC_0400 finish");
             if (flashMode == cameraObj.FlashMode.FLASH_MODE_ALWAYS_OPEN) {
               console.info(TAG +

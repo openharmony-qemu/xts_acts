@@ -60,6 +60,68 @@ export default function getTargetOverlayModuleInfos() {
     })
 
     /**
+     * @tc.name   getTargetOverlayModuleInfosTargetModuleNameIsNullParam
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0650
+     * @tc.desc   The query fails when the incoming targetModuleName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getTargetOverlayModuleInfosTargetModuleNameIsNullParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.getTargetOverlayModuleInfos(null).then(data => {
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsNullParam result" + JSON.stringify(data));
+          expect().assertFail();
+        })
+      } catch (e) {
+        console.info("getTargetOverlayModuleInfosTargetModuleNameIsNullParam catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.getTargetOverlayModuleInfos(null, (err, data) => {
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsNullParam result" + JSON.stringify(data));
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsNullParam fail" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("getTargetOverlayModuleInfosTargetModuleNameIsNullParam callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+    /**
+     * @tc.name   getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0700
+     * @tc.desc   The query fails when the incoming targetModuleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.getTargetOverlayModuleInfos(undefined).then(data => {
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam result" + JSON.stringify(data));
+          expect().assertFail();
+        })
+      } catch (e) {
+        console.info("getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.getTargetOverlayModuleInfos(undefined, (err, data) => {
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam result" + JSON.stringify(data));
+          console.info("getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam fail" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("getTargetOverlayModuleInfosTargetModuleNameIsUndefinedParam callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+    /**
      * @tc.name   GetTargetOverlayModuleInfosModuleNameNotInstall
      * @tc.number Sub_Bms_Framework_Overlay_Query_0800
      * @tc.desc   The query fails when the incoming moduleName is not installed

@@ -43,9 +43,9 @@ export default function webViewSrollableJsunit() {
      * @tc.desc   test bindSelectionMenuType01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('bindSelectionMenuTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('bindSelectionMenuTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent("bindSelectionMenuType01", 10)
       await Utils.msSleep(1000)

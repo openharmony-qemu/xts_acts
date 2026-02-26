@@ -39,9 +39,11 @@ import CameraManagerCreateMetadataOutputTest from './camera/CameraManagerCreateM
 import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhotoOutputTest.test';
 import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
 import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
+import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
 import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
 import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
+import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -84,7 +86,9 @@ export default function testsuite() {
   CameraManagerCreatePhotoOutputTest();
   CameraManagerCreateVideoOutputTest();
   CameraManagerGetSupportedOutputCapabilityTest();
+  CameraInputOnerrorTest();
   createCameraInput();
   CameraSessionSetWhiteBalanceModeTest();
   CameraGetActiveProfileTest();
+  CameraSessionBandSuppTest();
 }

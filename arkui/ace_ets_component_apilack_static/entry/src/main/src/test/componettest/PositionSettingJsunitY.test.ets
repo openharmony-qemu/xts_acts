@@ -51,7 +51,7 @@ interface Data {
 
 export default function positionSettingJsunit() {
   describe('borderTest_five_3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -71,7 +71,7 @@ export default function positionSettingJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push positionSetting page error:" + err);
       }
     });
@@ -141,7 +141,7 @@ it('testPositionSetting_static_003', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting003] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -176,7 +176,7 @@ it('testPositionSetting_static_004', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting004] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
@@ -246,7 +246,7 @@ it('testPositionSetting_static_006', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting006] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
@@ -316,7 +316,7 @@ it('testPositionSetting_static_008', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting008] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
@@ -380,7 +380,7 @@ it('testPositionSetting_static_010', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting010] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
@@ -435,7 +435,7 @@ it('testPositionSetting_static_012', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting012] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testPositionSetting012] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

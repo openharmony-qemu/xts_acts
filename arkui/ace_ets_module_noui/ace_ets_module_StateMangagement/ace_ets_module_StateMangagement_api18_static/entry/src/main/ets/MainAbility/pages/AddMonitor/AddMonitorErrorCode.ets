@@ -1,6 +1,6 @@
 'use static'
 import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable, Param, Event, Computed, Monitor } from '@ohos.arkui.stateManagement';
-import { ComponentV2, Component, ClickEvent, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, Set, DatePicker, TextAlign, Margin, Color } from '@ohos.arkui.component';
+import { ComponentV2, Component, ClickEvent, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, DatePicker, TextAlign, Margin, Color } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 
 @Component
@@ -12,7 +12,8 @@ struct Test {
     let callbackArray = this.array.map((_: int, index: int): (() => Any) => (() => this.array[Double.toInt(index)]));
     try {
       this.arrayMonitor = UIUtils.addMonitor(callbackArray, this.onChange, { owner: this });
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       console.log(`Error code: ${error.code}, Error message: ${error.message}.`)
       if (error.code == 130000) {
  	         this.a = 130000;

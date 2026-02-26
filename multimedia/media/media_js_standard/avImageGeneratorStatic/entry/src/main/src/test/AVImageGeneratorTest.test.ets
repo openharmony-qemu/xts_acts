@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
 const VIDEO_SOURCE = 'H264_AAC.mp4';
-let fileDescriptor: media.AVFileDescriptor;
+let fileDescriptor: media.AVFileDescriptor | undefined;
 
 async function getFdRead(pathName: string, done: () => void) {
     let fdReturn: number = 0;
@@ -39,13 +39,13 @@ async function getFdRead(pathName: string, done: () => void) {
 }
 
 async function getFileDescriptorFromFileDir(filename: string, done: () => void): Promise< media.AVFileDescriptor> {
-    let fileDescriptor: media.AVFileDescriptor;
+    let fileDescriptor: media.AVFileDescriptor | undefined;
     let fd = await getFdRead(filename, done)
     fileDescriptor = {
         fd: fd as int
     }
     return new Promise<media.AVFileDescriptor>((resolve, reject) => {
-    resolve(fileDescriptor)
+    resolve(fileDescriptor!)
     });
 }
 function openFileFailed() {
@@ -81,7 +81,7 @@ export default function AVImageGeneratorTest() {
 
         afterAll(async () => {
             console.info('afterAll case');
-            await closeFdNumber(fileDescriptor.fd);
+            await closeFdNumber(fileDescriptor!.fd);
         })
 
         /**
@@ -101,7 +101,7 @@ export default function AVImageGeneratorTest() {
                 if (generator != null) {
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     expect(avImageGenerator?.fdSrc != null && avImageGenerator.fdSrc != undefined).assertTrue();
                     let fd: int|undefined = avImageGenerator.fdSrc?.fd
                     if(fd == undefined || fd == null || fd < 0) {
@@ -128,7 +128,7 @@ export default function AVImageGeneratorTest() {
                 if (generator != null) {
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     expect(avImageGenerator?.fdSrc != null && avImageGenerator.fdSrc != undefined).assertTrue();
                     let fd: int | undefined = avImageGenerator.fdSrc?.fd
                     if(fd == undefined || fd == null || fd < 0) {
@@ -184,7 +184,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption, param, (error: BusinessError|null, pixelMap: undefined|image.PixelMap) => {
                         if (error) {
                             console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
@@ -214,7 +214,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap|undefined) => {
                         let pixel_map = pixelMap;
                         expect(pixel_map).not().assertNull()
@@ -242,7 +242,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC, param)
                         .then((pixelMap: image.PixelMap|undefined) => {
                             let pixel_map = pixelMap;
@@ -271,7 +271,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
                         .then((pixelMap: image.PixelMap|undefined) => {
                             let pixel_map = pixelMap;
@@ -300,7 +300,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
                         .then((pixelMap: image.PixelMap|undefined) => {
                             let pixel_map = pixelMap;
@@ -334,7 +334,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption, tmpParam, (error: BusinessError|null, pixelMap: image.PixelMap|undefined) => {
                         if (error) {
                             console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
@@ -369,7 +369,7 @@ export default function AVImageGeneratorTest() {
                 if(generator != null){
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption, tmpParam, (error: BusinessError|null, pixelMap: image.PixelMap|undefined) => {
                         if (error) {
                             console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
@@ -405,7 +405,7 @@ export default function AVImageGeneratorTest() {
                 if (generator != null) {
                     let avImageGenerator = generator;
                     console.info(`createAVImageGenerator success`);
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchFrameByTime(timeUs, queryOption, tmpParam,
                         (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
                             if (error) {
@@ -442,7 +442,7 @@ export default function AVImageGeneratorTest() {
                         width : 300,
                         height : 300,
                     }
-                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fdSrc = fileDescriptor!;
                     avImageGenerator.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
                         .then((pixelMap: image.PixelMap | undefined) => {
                             let pixel_map = pixelMap;

@@ -52,9 +52,9 @@ export default function webOnPermissionRequest() {
      * @tc.desc   test permissionRequest deny
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPermissionRequestDenyGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testPermissionRequestDenyGroupStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility(bundleName, 'EntryAbility');
       await Utils.msSleep(1000);

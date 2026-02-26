@@ -56,7 +56,7 @@ import { sleep } from '../testability/pages/utils';
 export default function LockTest() {
   let printLog = 'LockTest:';
   describe('LockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await sleep(20);
     })
 

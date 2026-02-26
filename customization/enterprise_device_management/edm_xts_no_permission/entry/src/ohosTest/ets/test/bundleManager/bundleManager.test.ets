@@ -275,7 +275,7 @@ export default function bundleManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO;
-        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID);
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID, bundleInfoGetFlag);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();

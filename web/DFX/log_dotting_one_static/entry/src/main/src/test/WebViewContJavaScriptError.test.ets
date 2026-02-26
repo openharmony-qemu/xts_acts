@@ -62,9 +62,9 @@ export default function webViewContJavaScriptError() {
      * @tc.desc   test interface of runJavaScript (callback) with not been associated with specific Web Components
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testRunJavaScriptCallbackInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testRunJavaScriptCallbackInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       emitKey = 'emitRunJavaScriptCallbackInitErr';
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(2000);

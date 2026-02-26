@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function BuiltinArrayFindIndexTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -56,7 +56,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<boolean> = [false, false, true, false, true];
         const index = findIndex(arr, (v: boolean) => v === true);
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -76,7 +76,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<boolean> = [false, false, false];
         const index = findIndex(arr, (v: boolean) => v === true);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -96,7 +96,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<boolean> = [true, false, false];
         const index = findIndex(arr, (v: boolean) => v === true);
         expect(index).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -116,7 +116,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<boolean> = [false, false, true];
         const index = findIndex(arr, (v: boolean) => v === true);
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -136,7 +136,7 @@ export default function BuiltinArrayFindIndexTest() {
         const emptyArr: FixedArray<boolean> = [];
         const index = findIndex(emptyArr, (v: boolean) => v === true);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -163,7 +163,7 @@ export default function BuiltinArrayFindIndexTest() {
           return false;
         });
         expect(index).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -197,7 +197,7 @@ export default function BuiltinArrayFindIndexTest() {
           return false;
         });
         expect(notFoundIndex).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -222,7 +222,7 @@ export default function BuiltinArrayFindIndexTest() {
         });
         expect(index).assertEqual(1);
         expect(operations).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -242,7 +242,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<byte> = [0x01, 0x02, 0x03, 0x04];
         const index = findIndex(arr, (v: byte) => v === 0x03 as byte);
         expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -262,7 +262,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<byte> = [0x10, 0x20, 0x30];
         const index = findIndex(arr, (v: byte) => v === 0x40 as byte);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -282,7 +282,7 @@ export default function BuiltinArrayFindIndexTest() {
         const arr: FixedArray<byte> = [0x11, 0x22, 0x33, 0x44];
         const index = findIndex(arr, (v: byte) => v === 0x44 as byte);
         expect(index).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -302,7 +302,7 @@ export default function BuiltinArrayFindIndexTest() {
         const emptyArr: FixedArray<byte> = [];
         const index = findIndex(emptyArr, (v: byte) => v === 0x00 as byte);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -322,7 +322,7 @@ export default function BuiltinArrayFindIndexTest() {
         const emptyArr: FixedArray<char> = new FixedArray<char>(0);
         const index = findIndex(emptyArr, (v: char) => v === 'a'.charCodeAt(0));
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -347,7 +347,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(1);
         expect(result[4]).assertEqual(2);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -372,7 +372,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -393,7 +393,7 @@ export default function BuiltinArrayFindIndexTest() {
         let result = copyWithin(arr, 0);
         expect(result.length).assertEqual(0);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -418,7 +418,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -439,7 +439,7 @@ export default function BuiltinArrayFindIndexTest() {
         let result = copyWithin(arr, 0);
         expect(result[0]).assertEqual(42);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -464,7 +464,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(5);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -489,7 +489,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(4);
         expect(result[4]).assertEqual(1);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -514,7 +514,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(originalRef[4]).assertEqual(3);
         expect(arr === originalRef).assertTrue();
         expect(result === originalRef).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -539,7 +539,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[3]).assertEqual(1);
         expect(isNaN(result[4] as number)).assertTrue();
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -562,7 +562,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(1.0);
         expect(result[3]).assertEqual(4.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -584,7 +584,7 @@ export default function BuiltinArrayFindIndexTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(2);
         expect(result[1]).assertEqual(2.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -607,7 +607,7 @@ export default function BuiltinArrayFindIndexTest() {
         const result = concat(arr1, arr2, arr3);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(3.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -629,7 +629,7 @@ export default function BuiltinArrayFindIndexTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(2);
         expect(result[1]).assertEqual(-2.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -653,7 +653,7 @@ export default function BuiltinArrayFindIndexTest() {
         expect(result[1]).assertEqual(2.2);
         expect(result[2]).assertEqual(3.3);
         expect(result[3]).assertEqual(4.4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }

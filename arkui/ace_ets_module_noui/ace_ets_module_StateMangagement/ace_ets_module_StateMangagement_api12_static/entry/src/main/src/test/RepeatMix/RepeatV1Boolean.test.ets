@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatV1Boolean() {
   describe('RepeatV1Boolean', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatV1Boolean beforeEach start");
 
 

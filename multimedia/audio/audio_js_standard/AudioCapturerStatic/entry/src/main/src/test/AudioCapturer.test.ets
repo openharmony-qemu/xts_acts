@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import { Callback } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let audioManager: audio.AudioManager;
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 
 interface renderInfoType {
   MUSIC: renderInfoChild,
@@ -51,7 +51,7 @@ interface renderInfoChild {
 export default function audioCapturer() {
   describe('audioCapturer', () => {
     let Tag: string = 'AudioCapturer';
-    let dirPath: string;
+    let dirPath: string = "";
     let bufferSize: long;
     let LE24: number = -1;
     let LE32: number = -1;
@@ -132,7 +132,7 @@ export default function audioCapturer() {
     }
 
     let getFd = async (fileName: string) => {
-      dirPath = testContext.filesDir + '/' + fileName;
+      dirPath = testContext!.filesDir + '/' + fileName;
       console.info(`${Tag} getFd dirPath is  ${JSON.stringify(dirPath)}`);
     }
 
@@ -154,7 +154,7 @@ export default function audioCapturer() {
 
     let recPromise =
       async (AudioCapturerOptions: audio.AudioCapturerOptions, AudioRendererOptions: audio.AudioRendererOptions, done: () => void) => {
-        let audioCap: audio.AudioCapturer | null;
+        let audioCap: audio.AudioCapturer | null = null;
         try {
           audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
            console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
@@ -239,7 +239,7 @@ export default function audioCapturer() {
       }
 
     let recCapturerPromise4 = async (AudioCapturerOptions: audio.AudioCapturerOptions, fileName: string, done: () => void) => {
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info(`${Tag} recCapturerPromise4 Created : Success`);
@@ -266,7 +266,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let capturerDirPath = testContext.filesDir + '/' + fileName;
+        let capturerDirPath = testContext!.filesDir + '/' + fileName;
         console.info(`${Tag} recCapturerPromise4 capturerDirPath is  ${JSON.stringify(capturerDirPath)}`);
         let capturerFile = fs.openSync(capturerDirPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
 
@@ -344,7 +344,7 @@ export default function audioCapturer() {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag}: resRendererPromise5 Created : Success`);
 
-        let rendererDirPath = testContext.filesDir + '/' + fileName;
+        let rendererDirPath = testContext!.filesDir + '/' + fileName;
         console.info(`${Tag} resRendererPromise5 rendererDirPath: `+ rendererDirPath);
         let musicFile = fs.openSync(rendererDirPath, fs.OpenMode.READ_ONLY);
 
@@ -423,7 +423,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCapPromise = data;
@@ -466,7 +466,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCapPromise = data;
@@ -508,7 +508,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCapPromise = data;
@@ -550,7 +550,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
@@ -586,7 +586,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         await audioCapPromise!.start();
@@ -623,7 +623,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         await audioCapPromise!.start();
@@ -662,7 +662,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         await audioCapPromise!.start();
@@ -700,7 +700,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -753,7 +753,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -807,7 +807,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -1850,7 +1850,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -1935,7 +1935,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -2025,7 +2025,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2075,7 +2075,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2126,7 +2126,7 @@ export default function audioCapturer() {
           capturerInfo: AudioCapturerInfo
         }
 
-        let audioCapPromise: audio.AudioCapturer | null;
+        let audioCapPromise: audio.AudioCapturer | null = null;
         try {
           audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         } catch (err) {
@@ -2177,7 +2177,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -2229,7 +2229,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2279,7 +2279,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2330,7 +2330,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2380,7 +2380,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2431,7 +2431,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2485,7 +2485,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2535,7 +2535,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2586,7 +2586,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer | null;
+      let audioCap: audio.AudioCapturer | null = null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2636,7 +2636,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         audioCapPromise!.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
@@ -2721,7 +2721,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer | null;
+      let audioCapPromise: audio.AudioCapturer | null = null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
@@ -3195,7 +3195,7 @@ export default function audioCapturer() {
       try {
         let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`error : ${error.message},Code:${error.code}`);
         expect().assertFail();
         done();

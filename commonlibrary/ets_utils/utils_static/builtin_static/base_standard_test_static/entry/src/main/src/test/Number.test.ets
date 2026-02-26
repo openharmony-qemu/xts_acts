@@ -33,7 +33,7 @@ function eArabic1(x: string): string {
 
 export default function numberTest() {
   describe("numberTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_End_Default() {
   describe('ListItem_Delete_End_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_End_Default beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -148,7 +148,7 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0300', Level.LEVEL0, async (done:
 
 
       console.log('slide ')
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(30))).toInt(),

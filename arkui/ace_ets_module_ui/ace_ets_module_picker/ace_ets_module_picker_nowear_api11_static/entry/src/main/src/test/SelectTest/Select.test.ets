@@ -33,7 +33,7 @@ import { ArrowPosition, Resource } from '@ohos.arkui.component';
 
 export default function SelectTest() {
   describe('SelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

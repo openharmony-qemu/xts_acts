@@ -601,7 +601,7 @@ export default function QueryContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContact: success data->${JSON.stringify(data)}`);
-                    ExpectTrue(data === undefined);
+                    expect().assertFail();
                     done();
                   }
                 });
@@ -1016,7 +1016,7 @@ export default function QueryContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContact: success data->${JSON.stringify(data)}`);
-                    ExpectTrue(data === undefined);
+                    expect().assertFail();
                     done();
                   }
                 });
@@ -1136,7 +1136,7 @@ export default function QueryContactTest() {
         let promise = contact.queryContact(context, 'xxxx', holder, {
           attributes: [contact.Attribute.ATTR_NAME, contact.Attribute.ATTR_PHONE]
         });
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectTrue(data === undefined);
           done();
@@ -1168,7 +1168,7 @@ export default function QueryContactTest() {
       try {
         sleep(500);
         let promise = contact.queryContact(context, '!@#abc', holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectTrue(data === undefined);
           done();
@@ -1199,7 +1199,7 @@ export default function QueryContactTest() {
       try {
         sleep(500);
         let promise = contact.queryContact(context, 'null', holder, attr);
-        promise.then((data) => {
+        await promise.then((data) => {
           console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
           ExpectTrue(data === undefined);
           done();
@@ -1309,7 +1309,7 @@ export default function QueryContactTest() {
                 }, attr);
                 promise.then((data) => {
                   console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                  ExpectTrue(data === undefined);
+                  expect().assertFail();
                   done();
                 }).catch((err: BusinessError) => {
                   console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -2939,7 +2939,7 @@ export default function QueryContactTest() {
                     done();
                   } else {
                     console.info(`${caseName} callback: queryContact success data->${JSON.stringify(data)}`);
-                    ExpectTrue(data === undefined);
+                    expect().assertFail();
                     done();
                   }
                 });
@@ -2987,7 +2987,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data === undefined);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -5734,7 +5734,7 @@ export default function QueryContactTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -5829,7 +5829,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -5878,7 +5878,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -5972,7 +5972,7 @@ export default function QueryContactTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -6021,7 +6021,7 @@ export default function QueryContactTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -6066,7 +6066,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -6119,7 +6119,7 @@ export default function QueryContactTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0);
+                expect().assertFail();
                 done();
               }
             });
@@ -6164,7 +6164,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0);
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -6216,7 +6216,7 @@ export default function QueryContactTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length === 0)
+                expect().assertFail();
                 done();
               }
             });
@@ -6260,7 +6260,7 @@ export default function QueryContactTest() {
             });
             promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-              ExpectTrue(data.length === 0)
+              expect().assertFail();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} callback: err->${JSON.stringify(err)}`);

@@ -59,6 +59,12 @@ add_library(nativeSourceType SHARED
     sourceType/SourceTypeTest.cpp
     NativeSourceTypeTest.cpp )
 
+add_library(nativeAccessibilityCustom SHARED
+    accessibilityCustom/Manager.cpp
+    accessibilityCustom/AccessibilityMaker.cpp
+    accessibilityCustom/AccessibilityDialog.cpp
+    accessibilityCustom/AccessibilityDialogSubWindow.cpp
+    NativeAccessibilityCustomTest.cpp)
 
 find_library(
     # Sets the name of the path variable.
@@ -138,3 +144,11 @@ target_link_libraries(nativeDragAction PUBLIC libace_napi.z.so libhilog_ndk.z.so
 target_link_libraries(nativeDragAction PUBLIC libhilog_ndk.z.so libpixelmap.so)
 target_link_libraries(nativeDragAction PUBLIC libudmf.so)
 target_link_libraries(nativeDragAction PUBLIC libohfileio.so)
+
+target_link_libraries(nativeAccessibilityCustom PUBLIC 
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} libability_base_want.so)
+target_link_libraries(nativeAccessibilityCustom PUBLIC 
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} libability_base_want.so)
+
+target_link_libraries(nativeAccessibilityCustom PUBLIC libace_ndk.z.so)
+target_link_libraries(nativeAccessibilityCustom PUBLIC libace_napi.z.so)

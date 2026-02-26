@@ -244,7 +244,7 @@ struct Index {
                 webView.WebCookieManager.fetchCookie('', (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113690)
+                    Utils.emitEvent(error.code + error.message, 113690)
                     return;
                   }
                   console.log('fetchCookie cookie = ' + cookie);
@@ -252,7 +252,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113690)
+                Utils.emitEvent(error.code + error.message, 113690)
               }
               break;
             }
@@ -262,7 +262,7 @@ struct Index {
                 webView.WebCookieManager.fetchCookie(',https://ww.OpenHarmony.cn', (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113700)
+                    Utils.emitEvent(error.code + error.message, 113700)
                     return;
                   }
                   console.log('fetchCookie cookie = ' + cookie);
@@ -270,7 +270,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113700)
+                Utils.emitEvent(error.code + error.message, 113700)
               }
               break;
             }
@@ -280,7 +280,7 @@ struct Index {
                 webView.WebCookieManager.fetchCookie('h,ttp://ww.OpenHarmony.cn', (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113710)
+                    Utils.emitEvent(error.code + error.message, 113710)
                     return;
                   }
                   console.log('fetchCookie cookie = ' + cookie);
@@ -288,7 +288,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113710)
+                Utils.emitEvent(error.code + error.message, 113710)
               }
               break;
             }
@@ -298,7 +298,7 @@ struct Index {
                 webView.WebCookieManager.fetchCookie('123', (error, cookie) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113720)
+                    Utils.emitEvent(error.code + error.message, 113720)
                     return;
                   }
                   console.log('fetchCookie cookie = ' + cookie);
@@ -306,7 +306,7 @@ struct Index {
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113720)
+                Utils.emitEvent(error.code + error.message, 113720)
               }
               break;
             }
@@ -319,12 +319,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113730)
+                    Utils.emitEvent(error.code + error.message, 113730)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113730)
+                Utils.emitEvent(error.code + error.message, 113730)
               }
               break;
             }
@@ -337,12 +337,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113740)
+                    Utils.emitEvent(error.code + error.message, 113740)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113740)
+                Utils.emitEvent(error.code + error.message, 113740)
               }
               break;
             }
@@ -355,12 +355,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113750)
+                    Utils.emitEvent(error.code + error.message, 113750)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113750)
+                Utils.emitEvent(error.code + error.message, 113750)
               }
               break;
             }
@@ -373,12 +373,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113760)
+                    Utils.emitEvent(error.code + error.message, 113760)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113760)
+                Utils.emitEvent(error.code + error.message, 113760)
               }
               break;
             }
@@ -448,14 +448,14 @@ struct Index {
                 webView.WebCookieManager.configCookie('', "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113820)
+                    Utils.emitEvent(error.code + error.message, 113820)
                     return;
                   }
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113820)
+                Utils.emitEvent(error.code + error.message, 113820)
               }
               break;
             }
@@ -465,14 +465,14 @@ struct Index {
                 webView.WebCookieManager.configCookie(',https://ww.OpenHarmony.cn', "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113830)
+                    Utils.emitEvent(error.code + error.message, 113830)
                     return;
                   }
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113830)
+                Utils.emitEvent(error.code + error.message, 113830)
               }
               break;
             }
@@ -482,14 +482,14 @@ struct Index {
                 webView.WebCookieManager.configCookie('h,ttp://ww.OpenHarmony.cn', "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113840)
+                    Utils.emitEvent(error.code + error.message, 113840)
                     return;
                   }
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113840)
+                Utils.emitEvent(error.code + error.message, 113840)
               }
               break;
             }
@@ -499,14 +499,14 @@ struct Index {
                 webView.WebCookieManager.configCookie('123', "a=d", (error) => {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113850)
+                    Utils.emitEvent(error.code + error.message, 113850)
                     return;
                   }
                 })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113850)
+                Utils.emitEvent(error.code + error.message, 113850)
               }
               break;
             }
@@ -536,12 +536,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113870)
+                    Utils.emitEvent(error.code + error.message, 113870)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113870)
+                Utils.emitEvent(error.code + error.message, 113870)
               }
               break;
             }
@@ -554,12 +554,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113880)
+                    Utils.emitEvent(error.code + error.message, 113880)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113880)
+                Utils.emitEvent(error.code + error.message, 113880)
               }
               break;
             }
@@ -572,12 +572,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113890)
+                    Utils.emitEvent(error.code + error.message, 113890)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113890)
+                Utils.emitEvent(error.code + error.message, 113890)
               }
               break;
             }
@@ -590,12 +590,12 @@ struct Index {
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
-                    Utils.emitEvent(String(error.code), 113900)
+                    Utils.emitEvent(error.code + error.message, 113900)
                   })
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 113900)
+                Utils.emitEvent(error.code + error.message, 113900)
               }
               break;
             }

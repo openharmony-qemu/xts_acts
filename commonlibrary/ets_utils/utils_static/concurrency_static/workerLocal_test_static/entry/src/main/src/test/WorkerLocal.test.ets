@@ -49,7 +49,7 @@ class TestObject {
 
 export default function workerLocalTest() {
   describe('workerLocalTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**

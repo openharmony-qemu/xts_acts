@@ -14,12 +14,12 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import commonEventManager from '@ohos.commonEventManager'
-
+ 
 export default function ActsCommonEventManagerTest() {
   describe('SUB_NOTIFICATION_CES_MANAGER_TEST', function () {
     let TAG = 'SUB_NOTIFICATION_CES_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_TEST START`)
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_4700
      * @tc.number Sub_Notification_Ans_Publish_Publish_4700
@@ -30,6 +30,7 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Publish_Publish_4700', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4700 START`)
+ 
       try {
         commonEventManager.publish("EVENT01", (err) => {
           if (err) {
@@ -39,6 +40,7 @@ export default function ActsCommonEventManagerTest() {
           } else {
             console.info("Sub_Notification_Ans_Publish_Publish_4700 success")
             expect(true).assertTrue()
+ 
             done()
           }
         })
@@ -49,7 +51,7 @@ export default function ActsCommonEventManagerTest() {
       }
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4700 END`)
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_4800
      * @tc.number Sub_Notification_Ans_Publish_Publish_4800
@@ -65,7 +67,7 @@ export default function ActsCommonEventManagerTest() {
         data: "initial data",
         isOrdered: true
       }
-
+ 
       try {
         commonEventManager.publish("EVENT02", options, (err) => {
           if (err) {
@@ -75,6 +77,7 @@ export default function ActsCommonEventManagerTest() {
           } else {
             console.info("Sub_Notification_Ans_Publish_Publish_4800 success")
             expect(true).assertTrue()
+ 
             done()
           }
         })
@@ -83,11 +86,11 @@ export default function ActsCommonEventManagerTest() {
         expect(false).assertTrue()
         done()
       }
-
+ 
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4800 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1500
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1500
@@ -98,13 +101,13 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1500', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1500 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event03"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
           if (err) {
@@ -115,6 +118,7 @@ export default function ActsCommonEventManagerTest() {
             console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1500 success ${commonEventSubscriber}`)
             subscriber = commonEventSubscriber
             expect(true).assertTrue()
+ 
             done()
           }
         })
@@ -123,11 +127,11 @@ export default function ActsCommonEventManagerTest() {
         expect(false).assertTrue()
         done()
       }
-
+ 
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1500 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1600
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1600
@@ -138,28 +142,28 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1600', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1600 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event04"]
       }
-
       await commonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber) => {
         console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1600 success ${commonEventSubscriber}`)
         subscriber = commonEventSubscriber
         expect(true).assertTrue()
+ 
         done()
       }).catch((err) => {
         console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1600 err, error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
       })
-
+ 
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1600 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_0400
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_0400
@@ -170,13 +174,13 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_0400', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event05"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
           if (err) {
@@ -195,6 +199,7 @@ export default function ActsCommonEventManagerTest() {
                 } else {
                   console.info(`subscribe_1 success`)
                   expect(true).assertTrue()
+ 
                   done()
                 }
               })
@@ -210,11 +215,11 @@ export default function ActsCommonEventManagerTest() {
         expect(false).assertTrue()
         done()
       }
-
+ 
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
      * @tc.number Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401
@@ -225,13 +230,13 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event05"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
           if (err) {
@@ -249,6 +254,7 @@ export default function ActsCommonEventManagerTest() {
               }).then(() => {
                 console.info(`subscribe_1 success`)
                 expect(true).assertTrue()
+ 
                 done()
               }).catch((err) => {
                 console.error(`subscribe_1 err, code is ${err.code}, message is ${err.message}`)
@@ -267,12 +273,12 @@ export default function ActsCommonEventManagerTest() {
         expect(false).assertTrue()
         done()
       }
-
+ 
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0400 END`)
-
+ 
     })
-
-
+ 
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Unsubscribe_0200
      * @tc.number Sub_Notification_Ans_Subscriber_Unsubscribe_0200
@@ -284,11 +290,11 @@ export default function ActsCommonEventManagerTest() {
     it('Sub_Notification_Ans_Subscriber_Unsubscribe_0200', Level.LEVEL0, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0200 START`)
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event06"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
           if (err) {
@@ -307,6 +313,7 @@ export default function ActsCommonEventManagerTest() {
                 } else {
                   console.info(`subscribe_2 success`)
                   expect(true).assertTrue()
+ 
                   done()
                 }
               })
@@ -316,6 +323,7 @@ export default function ActsCommonEventManagerTest() {
             setTimeout(() => {
               try {
                 commonEventManager.unsubscribe(subscriber, (err) => {
+ 
                   if (err) {
                     console.info(`unsubscribe err, code is ${err.code}, message is ${err.message}`)
                     expect(false).assertTrue()
@@ -323,6 +331,7 @@ export default function ActsCommonEventManagerTest() {
                   } else {
                     console.info(`unsubscribe success`)
                     expect(true).assertTrue()
+ 
                     done()
                   }
                 })
@@ -341,7 +350,7 @@ export default function ActsCommonEventManagerTest() {
         expect(false).assertTrue()
         done()
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
           if (err) {
@@ -353,6 +362,7 @@ export default function ActsCommonEventManagerTest() {
             subscriber = commonEventSubscriber
             try {
               commonEventManager.subscribe(subscriber, (err, data) => {
+ 
                 if (err) {
                   console.info(`subscribe_2 err, code is ${err.code}, message is ${err.message}`)
                   expect(false).assertTrue()
@@ -360,6 +370,7 @@ export default function ActsCommonEventManagerTest() {
                 } else {
                   console.info(`subscribe_2 success`)
                   expect(true).assertTrue()
+ 
                   done()
                 }
               })
@@ -385,9 +396,9 @@ export default function ActsCommonEventManagerTest() {
         done()
       }
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0200 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1700
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1700
@@ -398,13 +409,13 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1700', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1700 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event07"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, async (err, commonEventSubscriber) => {
           if (err) {
@@ -416,7 +427,7 @@ export default function ActsCommonEventManagerTest() {
             subscriber = commonEventSubscriber
             expect(true).assertTrue()
             done()
-
+ 
             await subscriber.setCode(1, (err) => {
               if (err) {
                 console.info(`setCode_1 err, error code: ${err.code}, message: ${err.message}`)
@@ -425,6 +436,7 @@ export default function ActsCommonEventManagerTest() {
               } else {
                 console.info(`setCode_1 success `)
                 expect(true).assertTrue()
+ 
                 subscriber.getCode((err, Code) => {
                   if (err) {
                     console.info(`getCode_1 err, error code: ${err.code}, message: ${err.message}`)
@@ -438,8 +450,9 @@ export default function ActsCommonEventManagerTest() {
                 })
               }
             })
-
+ 
             await subscriber.setData('data01', (err) => {
+ 
               if (err) {
                 console.info(`setData_1 err, error code: ${err.code}, message: ${err.message}`)
                 expect(false).assertTrue()
@@ -447,6 +460,7 @@ export default function ActsCommonEventManagerTest() {
               } else {
                 console.info(`setData_1 success `)
                 expect(true).assertTrue()
+ 
                 done()
                 subscriber.getData((err, data) => {
                   if (err) {
@@ -461,8 +475,9 @@ export default function ActsCommonEventManagerTest() {
                 })
               }
             })
-
+ 
             await subscriber.setCodeAndData(2, 'data02', (err) => {
+ 
               if (err) {
                 console.info(`setCodeAndData_1 err, error code: ${err.code}, message: ${err.message}`)
                 expect(false).assertTrue()
@@ -470,10 +485,11 @@ export default function ActsCommonEventManagerTest() {
               } else {
                 console.info(`setCodeAndData_1 success `)
                 expect(true).assertTrue()
+ 
                 done()
               }
             })
-
+ 
             await subscriber.getSubscribeInfo((err, CommonEventSubscribeInfo) => {
               if (err) {
                 console.info(`getSubscribeInfo_1 err, error code: ${err.code}, message: ${err.message}`)
@@ -485,8 +501,9 @@ export default function ActsCommonEventManagerTest() {
                 done()
               }
             })
-
+ 
             await subscriber.finishCommonEvent((err) => {
+ 
               if (err) {
                 console.info(`finishCommonEvent_1 err, error code: ${err.code}, message: ${err.message}`)
                 expect(false).assertTrue()
@@ -494,10 +511,11 @@ export default function ActsCommonEventManagerTest() {
               } else {
                 console.info(`finishCommonEvent_1 success `)
                 expect(true).assertTrue()
+ 
                 done()
               }
             })
-
+ 
           }
         })
       } catch (err) {
@@ -506,9 +524,9 @@ export default function ActsCommonEventManagerTest() {
         done()
       }
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1700 END`)
-
+ 
     })
-
+ 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_1800
      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_1800
@@ -519,13 +537,13 @@ export default function ActsCommonEventManagerTest() {
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_1800', Level.LEVEL3, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 START`)
-
+ 
       let subscriber
-
+ 
       let subscribeInfo = {
         events: ["event08"]
       }
-
+ 
       try {
         commonEventManager.createSubscriber(subscribeInfo, async (err, commonEventSubscriber) => {
           if (err) {
@@ -537,17 +555,18 @@ export default function ActsCommonEventManagerTest() {
             subscriber = commonEventSubscriber
             expect(true).assertTrue()
             done()
-
+ 
             await subscriber.setCode(3).then(() => {
               console.info(`setCode_2 success `)
               expect(true).assertTrue()
+ 
               done()
             }).catch((err) => {
               console.info(`setCode_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
-
+ 
             await subscriber.getCode().then((Code) => {
               console.info(`getCode_2 success ${Code}`)
               expect(Code).assertEqual(3)
@@ -557,10 +576,11 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             })
-
+ 
             await subscriber.setData('data03').then(() => {
               console.info(`setData_2 success `)
               expect(true).assertTrue()
+ 
               done()
               subscriber.getData().then((data) => {
                 console.info(`getData_2 success ${data}`)
@@ -576,17 +596,18 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             })
-
+ 
             await subscriber.setCodeAndData(4, 'data04').then(() => {
               console.info(`setCodeAndData_2 success `)
               expect(true).assertTrue()
+ 
               done()
             }).catch((err) => {
               console.info(`setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
-
+ 
             await subscriber.getSubscribeInfo().then((CommonEventSubscribeInfo) => {
               console.info(`getSubscribeInfo_2 success ${CommonEventSubscribeInfo}`)
               expect(true).assertTrue()
@@ -596,17 +617,18 @@ export default function ActsCommonEventManagerTest() {
               expect(false).assertTrue()
               done()
             })
-
+ 
             await subscriber.finishCommonEvent().then(() => {
               console.info(`finishCommonEvent_2 success `)
               expect(true).assertTrue()
+ 
               done()
             }).catch((err) => {
               console.info(`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
-
+ 
           }
         })
       } catch (err) {
@@ -616,8 +638,8 @@ export default function ActsCommonEventManagerTest() {
       }
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1800 END`)
     })
-
+ 
     console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_TEST END`)
-
+ 
   })
 }

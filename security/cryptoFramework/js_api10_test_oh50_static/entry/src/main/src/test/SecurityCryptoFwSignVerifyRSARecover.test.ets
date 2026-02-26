@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -107,7 +107,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -134,7 +134,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -160,7 +160,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -186,7 +186,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -212,7 +212,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -238,7 +238,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -264,7 +264,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -290,7 +290,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -316,7 +316,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -342,7 +342,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         let ret: boolean = await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(ret).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -368,9 +368,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
-        expect(err.code).assertEqual(17630001);
+        expect((err as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -394,9 +394,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
-        expect(err.code).assertEqual(17630001);
+        expect((err as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -420,9 +420,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let isPadding: boolean = true;
         await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
-        expect(err.code).assertEqual(401);
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -445,9 +445,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let signAlg: string = algName + "|SM3|OnlySign";
         await rsaTest.signPromise(signAlg, keyPair.priKey, rawData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -472,9 +472,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecoverWithUpdate(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -497,9 +497,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.signPromiseWithUpdate(signAlg, keyPair.priKey, rawData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -523,9 +523,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         let mdName: string = "SHA256";
         await rsaTest.createSignRecover(algName, paddingName, mdName, dataLen, isOnlySign, isSync, isPadding);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`“${err}“, error code: ${err.code}`);
-        expect(err.code).assertEqual(801);
+        expect((err as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -550,9 +550,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecover(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -577,9 +577,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecoverWithUpdate(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -604,9 +604,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecover(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -631,9 +631,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecoverWithUpdate(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -667,7 +667,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -694,9 +694,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecover(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -719,9 +719,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.signPromise(signAlg, keyPair.priKey, rawData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -746,9 +746,9 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
       try {
         await rsaTest.verifyRSARecover(verifyAlg, keyPair.pubKey, signData);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -792,7 +792,7 @@ export default function SecurityCryptoFwSignRecoverRSARecoverTestUnit() {
         await verifier2.init(keyPair.pubKey);
         rawSignData = verifier2.recoverSync(signData);
         expect(rawSignData).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

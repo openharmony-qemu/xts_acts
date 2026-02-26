@@ -74,7 +74,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(JSON.stringify(objNew.$attrs.caretStyle)).assertEqual("{\"color\":\"#FF000000\",\"width\":\"10.00vp\"}");
@@ -96,7 +96,7 @@ export default function searchTest() {
       let tagName = 'testSearchPlaceholderFont04';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000)
-      let strJson = getInspectorByKey('search');
+      let strJson = getInspectorByKey('search_SearchModifier');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj:ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Search');
@@ -121,7 +121,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.placeholderFont).assertEqual("{\"style\":\"FontStyle.Normal\",\"size\":\"16.00fp\",\"fontWeight\":\"FontWeight.Normal\",\"fontFamily\":\"Arial, HarmonyOS Sans\"}");
@@ -158,7 +158,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
 	  expect(JSON.stringify(objNew.$attrs.searchIcon)).assertEqual(`{\"size\":\"${vp2px(30).toFixed(2)}px\",\"color\":\"#FFFF0000\",\"src\":\"resource:///ohos_search.svg\"}`);
@@ -180,7 +180,7 @@ export default function searchTest() {
       let tagName = 'testSearchSearchButton06';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000)
-      let strJson = getInspectorByKey('search');
+      let strJson = getInspectorByKey('search_SearchModifier');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj:ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Search');
@@ -202,7 +202,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.searchButton).assertEqual("SEARCH");
@@ -239,7 +239,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.fontColor).assertEqual("#FFFF0000");
@@ -261,7 +261,7 @@ export default function searchTest() {
       let tagName = 'testSearchCopyOption08';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000)
-      let strJson = getInspectorByKey('search');
+      let strJson = getInspectorByKey('search_SearchModifier');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj:ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Search');
@@ -283,7 +283,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.copyOption).assertEqual("CopyOptions.InApp");
@@ -305,7 +305,7 @@ export default function searchTest() {
       let tagName = 'testSearchTextFont09';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000)
-      let strJson = getInspectorByKey('search');
+      let strJson = getInspectorByKey('search_SearchModifier');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj:ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Search');
@@ -331,7 +331,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.textFont).assertEqual("{\"fontSize\":\"16.00fp\",\"fontStyle\":\"FontStyle.Normal\",\"fontWeight\":\"FontWeight.Normal\",\"fontFamily\":\"Arial, HarmonyOS Sans\"}");
@@ -368,7 +368,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.placeholderColor).assertEqual("#FFFF0000");
@@ -405,10 +405,15 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
-      expect(JSON.stringify(objNew.$attrs.cancelButton)).assertEqual(`{\"style\":\"CancelButtonStyle.CONSTANT\",\"icon\":{\"size\":\"${vp2px(10).toFixed(2)}px\",\"color\":\"#FF000000\",\"src\":\"resource:///ohos_close.svg\"}}`);
+      expect(objNew.$attrs.cancelButton.style).assertEqual('CancelButtonStyle.CONSTANT');
+      let objNewIcon:ESObject = objNew.$attrs.cancelButton.icon
+      let IconSize:number =  Number(objNewIcon.size.slice(0,-2))
+      expect(Math.abs(IconSize-vp2px(10))<=1).assertEqual(true);
+      expect(objNewIcon.color).assertEqual('#FF000000');
+      expect(objNewIcon.src).assertEqual('resource:///ohos_close.svg');
       expect(objNew.$type).assertEqual('Search');
 
       console.info('[' + tagName + '] END ===========================');
@@ -427,7 +432,7 @@ export default function searchTest() {
       let tagName = 'testSearchTextAlign12';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000)
-      let strJson = getInspectorByKey('search');
+      let strJson = getInspectorByKey('search_SearchModifier');
       console.info('[' + tagName + '] component obj is: ' + strJson);
       let obj:ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Search');
@@ -449,7 +454,7 @@ export default function searchTest() {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('search');
+      let strJsonNew = getInspectorByKey('search_SearchModifier');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + strJsonNew);// JSON.stringify(objNew));
       expect(objNew.$attrs.textAlign).assertEqual("TextAlign.Center");

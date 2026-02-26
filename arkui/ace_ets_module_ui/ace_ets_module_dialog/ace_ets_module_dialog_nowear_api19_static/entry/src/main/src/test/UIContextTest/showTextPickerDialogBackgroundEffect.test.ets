@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 
 export default function showTextPickerDialogBackgroundEffectTest() {
   describe('ShowTextPickerDialogBackgroundEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showTextPickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

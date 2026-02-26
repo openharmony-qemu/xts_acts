@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,8 @@ struct webViewController {
                   this.controller.loadUrl('resource://rawfile/HistoryItem.html');
                   let list: webview.BackForwardList = this.controller.getBackForwardEntries();
                   Utils.emitEvent(list.currentIndex, 31027)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 31027)
                 }
@@ -91,7 +92,8 @@ struct webViewController {
                   this.controller.loadUrl('resource://rawfile/HistoryItem.html');
                   let list: webview.BackForwardList = this.controller.getBackForwardEntries();
                   Utils.emitEvent(list.size, 31028)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 31028)
                 }

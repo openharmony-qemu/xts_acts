@@ -23,7 +23,7 @@ let libUtil:LibUtil = new LibUtil();
 export default function listSpaceTest() {
 
   describe('ListSpaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

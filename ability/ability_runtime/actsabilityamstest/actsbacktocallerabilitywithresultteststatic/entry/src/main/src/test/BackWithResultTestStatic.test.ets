@@ -42,7 +42,7 @@ export default function BackWithResultStaticTest() {
       }
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.backwithresulttest.static")
@@ -56,12 +56,50 @@ export default function BackWithResultStaticTest() {
      * @tc.desc   Test backToCallerAbleWithResult when requestCode is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_static_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackWithResult_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_BackWithResult_static_2900`;
       hilog.info(domain, tag, `it begin`);
       let requestCode: string = '23124asjdja';
+      let want: Want = {};
+      let resultCode = 100;
+      let abilityResult: common.AbilityResult = {
+        want,
+        resultCode
+      };
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      try {
+        context.backToCallerAbilityWithResult(abilityResult, requestCode).then(() => {
+          hilog.info(domain, tag, 'backToCallerAbilityWithResult succeed');
+          expect().assertFail();
+          done();
+        }).catch((err): void => {
+          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${err.code}`);
+          expect(err.code).assertEqual(16000074);
+          done();
+        });
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_static_3000
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_static_3000
+     * @tc.desc   Test backToCallerAbleWithResult when requestCode is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_BackWithResult_static_3000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      tag = `SUB_Ability_AbilityRuntime_BackWithResult_static_3000`;
+      hilog.info(domain, tag, `it begin`);
+      let requestCode: string = '';
       let want: Want = {};
       let resultCode = 100;
       let abilityResult: common.AbilityResult = {

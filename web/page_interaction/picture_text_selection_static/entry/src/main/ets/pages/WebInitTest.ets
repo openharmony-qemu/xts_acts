@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,7 +104,7 @@ struct WebInitTest {
               case 'emitContextMenuEditStateFlags': {
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.NONE, 37);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -114,7 +114,7 @@ struct WebInitTest {
 
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.CAN_CUT, 38);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -124,7 +124,7 @@ struct WebInitTest {
 
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.CAN_COPY, 39);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -133,7 +133,7 @@ struct WebInitTest {
               case 'emitContextMenuEditStateFlags3': {
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.CAN_PASTE, 40);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -142,7 +142,7 @@ struct WebInitTest {
               case 'emitContextMenuEditStateFlags4': {
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.CAN_SELECT_ALL, 41);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

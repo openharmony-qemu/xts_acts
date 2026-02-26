@@ -15,13 +15,13 @@
  */
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -102,7 +102,7 @@ struct OhosRouterB {
       }
       console.info("[OhosRouterB] start to emit params");
       events_emitter.emit(paramsEvent, paramsData);
-    } catch (err: Error) {
+    } catch (err) {
       console.info("[OhosRouterB] emit params err: " + JSON.stringify((err as Error)?.message));
     }
   }

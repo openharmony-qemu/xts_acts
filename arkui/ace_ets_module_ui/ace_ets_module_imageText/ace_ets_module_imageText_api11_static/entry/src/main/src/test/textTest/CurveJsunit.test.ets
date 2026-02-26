@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CurveJsunit() {
   describe('CurveTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CurveJsunit beforeEach start");
 
 

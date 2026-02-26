@@ -42,7 +42,7 @@ export default function PanGesture3Jsunit() {
   describe('PanGesture3Jsunit', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -99,13 +99,13 @@ it('testPanGesture_static_01', Level.LEVEL0, async (done: () => void): Promise<v
           }
           console.info("[testPanGesture01] start to publish emit:" + JSON.stringify(eventData.data));
           emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testPanGesture01] change component data error: " + err.message);
         }
         await CommonFunc.sleep(1000);
         console.info('[testPanGesture01] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -147,7 +147,7 @@ it('testPanGesture_static_02', Level.LEVEL0, async (done: () => void): Promise<v
       }
       try {
         emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testPanGesture02] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testPanGesture02] testSendTouchEvent ' + sendTouchEvent(point));

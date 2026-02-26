@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function Array_05Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -73,7 +73,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const arr: FixedArray<boolean> = [true, false, true];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -95,7 +95,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const arr: FixedArray<boolean> = [false, true];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -117,7 +117,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -139,7 +139,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -161,7 +161,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -184,7 +184,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [false, true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -207,7 +207,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -230,7 +230,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<boolean> = [false, true, false];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -253,7 +253,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [true, false, true];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -276,7 +276,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -299,7 +299,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -322,7 +322,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString()); // Expected output: []
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -345,7 +345,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -368,7 +368,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -391,7 +391,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [false, true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -414,7 +414,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -437,7 +437,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [false, true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -460,7 +460,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [false, true, false];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -483,7 +483,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -506,7 +506,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<boolean> = [true, false, true];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -529,7 +529,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -552,7 +552,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const arr: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(arr.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -573,7 +573,7 @@ export default function Array_05Test() {
         const result = slice(array); //start,endΪĬ  ֵ
         const expected: FixedArray<boolean> = [true, false, true, false, true];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -596,7 +596,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<boolean> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -618,7 +618,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<byte> = [3, 4, 5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -640,7 +640,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<byte> = [4, 5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -662,7 +662,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -684,7 +684,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -706,7 +706,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -729,7 +729,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [2, 3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -752,7 +752,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -775,7 +775,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -798,7 +798,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [2, 3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -821,7 +821,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -844,7 +844,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -867,7 +867,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4, 5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -890,7 +890,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -913,7 +913,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -936,7 +936,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [2, 3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -959,7 +959,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -982,7 +982,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [2, 3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1005,7 +1005,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1028,7 +1028,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1051,7 +1051,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [3, 4, 5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1074,7 +1074,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1097,7 +1097,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1120,7 +1120,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1141,7 +1141,7 @@ export default function Array_05Test() {
         const result = slice(array); //start,endΪĬ  ֵ
         const expected: FixedArray<byte> = [1, 2, 3, 4, 5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1163,7 +1163,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<char> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1186,7 +1186,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<char> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1209,7 +1209,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<char> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1231,7 +1231,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<double> = [3.3, 4.4, 5.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1253,7 +1253,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<double> = [3.3, 4.4, 5.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1275,7 +1275,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1297,7 +1297,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1319,7 +1319,7 @@ export default function Array_05Test() {
         const result = slice(array, start);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1342,7 +1342,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1365,7 +1365,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1388,7 +1388,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1411,7 +1411,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1434,7 +1434,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1457,7 +1457,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [3.3, 4.4, 5.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1480,7 +1480,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1503,7 +1503,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1526,7 +1526,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1547,7 +1547,7 @@ export default function Array_05Test() {
         const result = slice(array); //start,endΪĬ  ֵ
         const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1570,7 +1570,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1593,7 +1593,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1616,7 +1616,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1639,7 +1639,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1662,7 +1662,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1685,7 +1685,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [3.3, 4.4, 5.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1708,7 +1708,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1731,7 +1731,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1754,7 +1754,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1777,7 +1777,7 @@ export default function Array_05Test() {
         const result = slice(array, start, end);
         const expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }

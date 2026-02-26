@@ -31,11 +31,11 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let movFd: media.AVFileDescriptor;
-let mkvFd: media.AVFileDescriptor;
-let mp3Fd: media.AVFileDescriptor;
-let aacFd: media.AVFileDescriptor;
-let wavFd: media.AVFileDescriptor;
+let movFd: media.AVFileDescriptor | undefined;
+let mkvFd: media.AVFileDescriptor | undefined;
+let mp3Fd: media.AVFileDescriptor | undefined;
+let aacFd: media.AVFileDescriptor | undefined;
+let wavFd: media.AVFileDescriptor | undefined;
 const VIDEO_SOURCE_MOV = "No_Support_Format.mov";
 const VIDEO_SOURCE_MKV = "H264_AAC.mkv";
 const AUDIO_SOURCE_MP3 = "01.mp3";
@@ -180,11 +180,11 @@ export default function AVPlayerSetPlaybackRateTest() {
     afterAll(async () => {
       console.info('afterAll case');
       try {
-        await mediaTestBase.closeFdNumber(movFd.fd)
-        await mediaTestBase.closeFdNumber(mkvFd.fd)
-        await mediaTestBase.closeFdNumber(mp3Fd.fd)
-        await mediaTestBase.closeFdNumber(aacFd.fd)
-        await mediaTestBase.closeFdNumber(wavFd.fd)
+        await mediaTestBase.closeFdNumber(movFd!.fd)
+        await mediaTestBase.closeFdNumber(mkvFd!.fd)
+        await mediaTestBase.closeFdNumber(mp3Fd!.fd)
+        await mediaTestBase.closeFdNumber(aacFd!.fd)
+        await mediaTestBase.closeFdNumber(wavFd!.fd)
       } catch (e) {
         console.info(`afterAll error: ${JSON.stringify(e)}`)
       }
@@ -210,7 +210,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(movFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(movFd!, done, callback, operationRecord)
     });
 
     /**
@@ -233,7 +233,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -256,7 +256,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -279,7 +279,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -302,7 +302,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -325,7 +325,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -348,7 +348,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -371,7 +371,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -400,7 +400,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -429,7 +429,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -452,7 +452,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(Math.abs(setrate - rate) < 0.0000001).assertTrue();
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
   })
 }

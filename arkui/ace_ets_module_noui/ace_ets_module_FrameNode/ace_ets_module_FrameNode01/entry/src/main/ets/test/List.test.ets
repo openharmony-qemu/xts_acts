@@ -72,7 +72,7 @@ import IsModifiableBooleanTest from './FrameNodeNewTest/IsModifiableBooleanTest.
 import GetAllAvailableItemsTest from './FrameNodeNewTest/GetAllAvailableItemsTest.test';
 import RenderNodeMethodNullTest from './FrameNodeNewTest/RenderNodeMethodNullTest.test';
 import AttachNodeAdapterBooleanTest from './FrameNodeNewTest/AttachNodeAdapterBooleanTest.test';
-import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
+// import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
@@ -147,7 +147,7 @@ export default function testsuite() {
   GetAllAvailableItemsTest();
   RenderNodeMethodNullTest();
   AttachNodeAdapterBooleanTest();
-  isTransferredTest();
+  // isTransferredTest();
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();

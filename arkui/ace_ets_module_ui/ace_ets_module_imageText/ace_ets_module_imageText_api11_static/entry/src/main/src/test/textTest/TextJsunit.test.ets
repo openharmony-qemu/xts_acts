@@ -50,7 +50,7 @@ function sleep(time: number) {
 
 export default function textJsunit() {
   describe('textTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SpanTextShadowTest beforeEach start");
 
 

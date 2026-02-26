@@ -46,7 +46,7 @@ group("storage") {
       "storagestatfsjstest:storagestatfs_js_test",
       "storagestatfsjsteststatic:storagestatfs_js_test_static",
       "storagestatisticsjstest:storagestatistics_js_test",
-      "storagestoragestatisticsteststatic:storage_statistics_test_static"
+      "storagestatisticsteststatic:storage_statistics_test_static"
     ]
   }
 }

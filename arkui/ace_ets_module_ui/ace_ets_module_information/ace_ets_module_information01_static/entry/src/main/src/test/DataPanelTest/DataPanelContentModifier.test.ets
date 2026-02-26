@@ -34,7 +34,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 
 export default function dataPanelTest() {
   describe('ActsDataPanelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.information01.static', 'EntryAbility');
     })

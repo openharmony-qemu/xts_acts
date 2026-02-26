@@ -31,11 +31,11 @@ export default function SecurityKeyAgreementJsunit() {
      * @tc.desc   the type of secret key is "ECC"(No length), use promise style of interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_KeyAgreement_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyPromise
           .keyAgreementProcess("ECC")

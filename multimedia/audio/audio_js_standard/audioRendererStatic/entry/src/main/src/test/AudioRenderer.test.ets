@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ export default function audioRendererTest() {
     let TagFrmwk = "AudioFrameworkTest";
     let TagFrmwkAudioScene = "AudioFrameworkAudioScene";
     let fdPath: string;
-    let filePath: string;
+    let filePath: string = '';
     let stringParameter = "invalid_parameter";
     let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
     let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -47,7 +47,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: beforeEach: Prerequisites at the test case level`);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info(`${TagFrmwkRender}: afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(1000);
     })
@@ -80,7 +80,7 @@ export default function audioRendererTest() {
 
     let play = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Promise : Audio Play Function`);
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let speed: number = 0;
       await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
@@ -160,7 +160,7 @@ export default function audioRendererTest() {
 
     let playWithVideoStream = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Play with Video Stream Function`);
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null) => {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
@@ -266,7 +266,7 @@ export default function audioRendererTest() {
     let playbackPromise_92 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
@@ -387,7 +387,7 @@ export default function audioRendererTest() {
       let resultFlag = false;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -548,7 +548,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -667,7 +667,7 @@ export default function audioRendererTest() {
       let resultFlag = false;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -809,7 +809,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions)
@@ -926,7 +926,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1042,7 +1042,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1160,7 +1160,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_102 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1259,7 +1259,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_103 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       let rlen = 0;
       try {
@@ -1364,7 +1364,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_104 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1464,7 +1464,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_105 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1560,7 +1560,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_106 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1669,7 +1669,7 @@ export default function audioRendererTest() {
 
     let playbackPromise_107 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1777,7 +1777,7 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: CALLBACK : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
 
       audio.createAudioRenderer(AudioRendererOptions, (err, data) => {
         if (err) {
@@ -1818,7 +1818,7 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let samplingRate: audio.AudioSamplingRate;
+      let samplingRate: audio.AudioSamplingRate | undefined;
       audioRen!.getStreamInfo((err, audioParamsGet) => {
         await Utils.msSleep(100);
         if (err) {
@@ -1881,7 +1881,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: File size : Removing header: ${totalSize}`);
       await Utils.msSleep(100);
       let waitTime: int;
-      switch (samplingRate as int) {
+      switch (samplingRate! as int) {
         case 44100:
           waitTime = 45;
           break;
@@ -1993,7 +1993,7 @@ export default function audioRendererTest() {
 
      let playbackWriteDataCallback_001 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let speed: number = 0;
       await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
@@ -2063,7 +2063,7 @@ export default function audioRendererTest() {
 
     let playbackWriteDataCallback_002 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let speed: number = 0;
       await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
@@ -2133,7 +2133,7 @@ export default function audioRendererTest() {
 
     let playbackWriteDataCallback_003 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let speed: number = 0;
       await audio.createAudioRenderer(AudioRendererOptions).then( (data: audio.AudioRenderer | null)=> {
         audioRen = data;
@@ -3038,7 +3038,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3079,7 +3079,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3136,7 +3136,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3176,7 +3176,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3232,7 +3232,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3272,7 +3272,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3328,7 +3328,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3368,7 +3368,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3424,7 +3424,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3464,7 +3464,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null) => {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3520,7 +3520,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3558,7 +3558,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3615,7 +3615,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3653,7 +3653,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3710,7 +3710,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer | null;
+        let audioRen: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -3750,7 +3750,7 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer | null;
+        let audioRen_interrupt: audio.AudioRenderer | null = null;
         await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
@@ -4091,7 +4091,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -4149,7 +4149,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -4207,7 +4207,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -4270,7 +4270,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -4329,7 +4329,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -4388,7 +4388,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -6098,7 +6098,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6178,7 +6178,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6260,7 +6260,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6342,7 +6342,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6424,7 +6424,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6506,7 +6506,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6588,7 +6588,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6670,7 +6670,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6752,7 +6752,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6834,7 +6834,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6916,7 +6916,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6998,7 +6998,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7080,7 +7080,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7162,7 +7162,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7244,7 +7244,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7326,7 +7326,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7408,7 +7408,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7490,7 +7490,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7572,7 +7572,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7654,7 +7654,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7736,7 +7736,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7818,7 +7818,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7900,7 +7900,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7982,7 +7982,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8063,7 +8063,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8137,7 +8137,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8226,7 +8226,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8317,7 +8317,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8409,7 +8409,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8516,7 +8516,7 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8599,7 +8599,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
       let isPass = false;
-      let audioRenderer: audio.AudioRenderer | null;
+      let audioRenderer: audio.AudioRenderer | null = null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
@@ -8676,7 +8676,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8773,7 +8773,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8872,7 +8872,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8971,7 +8971,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9130,7 +9130,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9292,7 +9292,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9374,7 +9374,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9544,7 +9544,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9602,7 +9602,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9660,7 +9660,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9723,7 +9723,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9782,7 +9782,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9841,7 +9841,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9905,7 +9905,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -9963,7 +9963,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10026,7 +10026,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10084,7 +10084,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10147,7 +10147,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10206,7 +10206,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10270,7 +10270,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10329,7 +10329,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10459,7 +10459,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10520,7 +10520,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10581,7 +10581,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10642,7 +10642,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10694,7 +10694,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10756,7 +10756,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10818,7 +10818,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
@@ -10883,7 +10883,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer | null;
+      let audioRen: audio.AudioRenderer | null = null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -11084,7 +11084,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer | null;
+      let audioRenderer: audio.AudioRenderer | null = null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       } catch (err) {
@@ -11131,7 +11131,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer | null;
+      let audioRenderer: audio.AudioRenderer | null = null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       } catch (err) {
@@ -11178,7 +11178,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer | null;
+      let audioRenderer: audio.AudioRenderer | null = null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`AudioRenderer create : SUCCESS`);
@@ -11350,7 +11350,8 @@ export default function audioRendererTest() {
         console.info(`${TAG},audioVolumeManager_off SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError){
+      } catch (error){
+        error = error as BusinessError;
         console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
         expect(Number(error.code)).assertEqual(6800101);
         done();
@@ -11513,6 +11514,7 @@ export default function audioRendererTest() {
               console.info('Renderer drained.');
             }
           });
+          await Utils.msSleep(1000);
           data?.stop((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer stop failed');
@@ -11603,6 +11605,7 @@ export default function audioRendererTest() {
               expect(timestamp).assertLargerOrEqual(0);
             }
           });
+          await Utils.msSleep(1000);
           audioRenderer?.release((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer release failed');
@@ -11625,77 +11628,178 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      };
-
-      let audioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
-      };
-
-      let audioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: audioStreamInfo,
-        rendererInfo: audioRendererInfo
-      };
-
-      let audioRenderer: audio.AudioRenderer | null | undefined;
       let audioManager = audio.getAudioManager();
       let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
-        if (err) {
-          console.error(`AudioRenderer Created: Error: ${err}`);
-          expect(true).assertFail();
-        } else {
-          console.info('AudioRenderer Created: SUCCESS');
-          audioRenderer = data;
-          audioRenderer?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
-            if (err) {
-              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-              expect(audioRendererInfo?.volumeMode).assertEqual(1);
-              expect(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
-
-              let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-                console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-                console.info(`Volume level: ${volumeEvent.volume} `);
-                console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
-              };
-              audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
-              audioVolumeManager.setAppVolumePercentage(20).then(() => {
-                console.info(`set app volume success.`);
-              });
-              audioVolumeManager.offAppVolumeChange();
-            }
-          });
-          audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {
-            if (err) {
-              console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info(`Current timestamp: ${timestamp}`);
-              expect(timestamp).assertLargerOrEqual(0);
-            }
-          });
-          audioRenderer?.release((err: BusinessError | null) => {
-            if (err) {
-              console.error('Renderer release failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer released.');
-            }
+      let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+        console.info(`STATIC_10000 VolumeType of stream: ${volumeEvent.volumeType} `);
+        console.info(`STATIC_10000 Volume level: ${volumeEvent.volume} `);
+        console.info(`STATIC_10000 Whether to updateUI: ${volumeEvent.updateUi} `);
+        audioVolumeManager.offAppVolumeChange();
+        done();
+      };
+      try {
+        audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
+        await audioVolumeManager.setAppVolumePercentage(20);
+      } catch (error) {
+        error = error as BusinessError;
+        console.info("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000 error:" + error);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100
+     * @tc.desc   clear-inputAudioDevice -6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+      console.info(`SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100 data is ${JSON.stringify(data)}`);
+      let flag = true;
+      try{
+        if (data[0]){
+          audioSessionManager.selectMediaInputDevice(data[0]);
+          audioSessionManager.clearSelectedMediaInputDevice().then(() => {
+            console.info(`Successed in doing selectMediaInputDevice.`);
+            expect(flag).assertEqual(true);
+            done();
+          }).catch((error:Error) => {
+              expect(flag).assertEqual(false);
+              console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+              done();
           });
         }
-      });
+      } catch (error) {
+        expect(flag).assertEqual(false);
+        console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+        done();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0100
+     * @tc.desc   on_off_availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+        audioSessionManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_INPUT_DEVICES, availableDeviceChangeCallback);
+        audioSessionManager.offAvailableDeviceChange();
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0100 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+        /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0200
+     * @tc.desc   on_off_availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+        audioSessionManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_INPUT_DEVICES, availableDeviceChangeCallback);
+        audioSessionManager.offAvailableDeviceChange();
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_AVAILABLEDEVICE_STATIC_0200 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100
+     * @tc.desc   on/offcurrentInputDeviceChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        audioSessionManager.offCurrentInputDeviceChanged();
+        let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
+          console.info(`reason of currentInputDeviceChanged: ${currentInputDeviceChangedEvent.changeReason} `);
+        };
+        audioSessionManager.onCurrentInputDeviceChanged(currentInputDeviceChangedCallback);
+        audioSessionManager.offCurrentInputDeviceChanged(currentInputDeviceChangedCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0100 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200
+     * @tc.desc   on/offcurrentInputDeviceChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let currentInputDeviceChangedCallback = (currentInputDeviceChangedEvent: audio.CurrentInputDeviceChangedEvent) => {
+          console.info(`reason of currentInputDeviceChanged: ${currentInputDeviceChangedEvent.changeReason} `);
+        };
+        audioSessionManager.onCurrentInputDeviceChanged(currentInputDeviceChangedCallback);
+
+        audioSessionManager.offCurrentInputDeviceChanged();
+        flag = true;
+      } catch (error) {
+        console.info(`$SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_ON_OFF_CURRENTINPUTDEVICECHANGED_STATIC_0200 FAIL: ${error.message},Code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
   })
 }

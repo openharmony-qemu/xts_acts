@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextLayoutWeightTest() {
   describe('Row_TextLayoutWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextLayoutWeightTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

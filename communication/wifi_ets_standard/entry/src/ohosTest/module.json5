@@ -31,6 +31,9 @@
 		  },
       {
         "name" : "ohos.permission.GET_WIFI_LOCAL_MAC"
+      },
+ 	    {
+ 	      "name" : "ohos.permission.GET_WIFI_CONFIG"
 		  }
     ],
     "deliveryWithInstall": true,

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function alphabetIndexerJsunit() {
 
 
   describe('alphabetIndexerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -66,7 +66,7 @@ export default function alphabetIndexerJsunit() {
           console.info("get AlphabetIndexer state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push AlphabetIndexer page error " + JSON.stringify(err));
       }
       await Utils.sleep(2000);

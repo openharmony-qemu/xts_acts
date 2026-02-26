@@ -45,6 +45,8 @@ import PolygonResourceTest from './Polygon/PolygonResourceTest';
 import PolylineResourceTest from './Polyline/PolylineResourceTest';
 import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
+import shapeNullUndefinedTest from './Shape/ShapeNullUndefined.test';
+import shapeNullUndefined2Test from './Shape/ShapeNullUndefined2.test';
 
 export default function testsuite() {
 
@@ -80,5 +82,8 @@ export default function testsuite() {
   PolylineResourceTest();
   RectResourceTest();
   ShapeResourceTest();
+
+  shapeNullUndefinedTest();
+  shapeNullUndefined2Test();
 
 }

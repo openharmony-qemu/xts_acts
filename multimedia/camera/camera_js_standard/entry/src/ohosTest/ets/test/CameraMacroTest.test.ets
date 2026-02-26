@@ -173,10 +173,10 @@ export default function CameraPhotoSessionTest() {
     return true;
   }
 
-  let createOutput = (idx: number) => {
+  let createOutput = (idx: number, sceneMode: camera.SceneMode) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx]);
+    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], sceneMode);
 
     if (!isEmpty(cameraOutputCap)) {
       if (!isEmpty(cameraOutputCap.previewProfiles)) {
@@ -262,11 +262,11 @@ export default function CameraPhotoSessionTest() {
     return true;
   }
 
-  let startCameraSession = async (idx: number,mode: number) => {
+  let startCameraSession = async (idx: number, sceneMode: camera.SceneMode) => {
     console.info(TAG + "Enter startCameraSession");
 
     await createInput(idx);
-    createOutput(idx);
+    createOutput(idx, sceneMode);
 
     await sleep(1);
 
@@ -281,7 +281,7 @@ export default function CameraPhotoSessionTest() {
       mCameraSession.addOutput(mPreviewOutput);
     }
 
-    if(mode == camera.SceneMode.NORMAL_PHOTO){
+    if(sceneMode == camera.SceneMode.NORMAL_PHOTO){
       if (!isEmpty(mPhotoOutput)) {
         console.info(TAG + "Start to addOutput mPhotoOutput");
         mCameraSession.addOutput(mPhotoOutput);
@@ -556,18 +556,18 @@ export default function CameraPhotoSessionTest() {
         }
         createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
         await createInput(0);
-        createOutput(0);
+        createOutput(0, camera.SceneMode.NORMAL_PHOTO);
         await sleep(1);
         if (!isEmpty(mCameraInput)) {
           console.info(TAG + "Start to addInput");
           mCameraSession.addInput(mCameraInput);
         }
-    
+
         if (!isEmpty(mPreviewOutput)) {
           console.info(TAG + "Start to addOutput mPreviewOutput");
           mCameraSession.addOutput(mPreviewOutput);
         }
-    
+
         if (!isEmpty(mPhotoOutput)) {
           console.info(TAG + "Start to addOutput mPhotoOutput");
           mCameraSession.addOutput(mPhotoOutput);
@@ -764,18 +764,18 @@ export default function CameraPhotoSessionTest() {
         }
         createCameraSessionInstance(camera.SceneMode.NORMAL_VIDEO);
         await createInput(0);
-        createOutput(0);
+        createOutput(0, camera.SceneMode.NORMAL_VIDEO);
         await sleep(1);
         if (!isEmpty(mCameraInput)) {
           console.info(TAG + "Start to addInput");
           mCameraSession.addInput(mCameraInput);
         }
-    
+
         if (!isEmpty(mPreviewOutput)) {
           console.info(TAG + "Start to addOutput mPreviewOutput");
           mCameraSession.addOutput(mPreviewOutput);
         }
-    
+
         if (!isEmpty(mPhotoOutput)) {
           console.info(TAG + "Start to addOutput mPhotoOutput");
           mCameraSession.addOutput(mPhotoOutput);

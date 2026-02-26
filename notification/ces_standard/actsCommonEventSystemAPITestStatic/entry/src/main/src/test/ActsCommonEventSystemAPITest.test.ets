@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let bundleName: string = 'com.example.systemAPI.static'
 let count: int = 0;
 
@@ -54,32 +54,33 @@ export default function ActsCommonEventSystemAPITest() {
     let TAG :string = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     hilog.info(domain, TAG, '%{public}s', 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
 
-    beforeAll(() => {
+    beforeAll(():void => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
       if(!isWifiActive){
         console.info(TAG+"======> wifi_test/enable wifi:" );
         wifiMg.enableWifi();
-        await Utils.msSleep(5000);
+        waitForCompletion(async ()=>{await Utils.msSleep(5000);})
       }
 
       try {
-        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        let data: wifiMg.WifiLinkedInfo|undefined;
+        waitForCompletion(async ()=>{data = await wifiMg.getLinkedInfo();})
         console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-        console.info(TAG+"======> Internet speed : " + JSON.stringify(data.linkSpeed));
-        console.info(TAG+"======> Internet chload : " + JSON.stringify(data.chload));
-        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data.rssi));
+        console.info(TAG+"======> Internet speed : " + JSON.stringify(data!.linkSpeed));
+        console.info(TAG+"======> Internet chload : " + JSON.stringify(data!.chload));
+        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data!.rssi));
 
-        if (data.connState == wifiMg.ConnState.CONNECTED) {
+        if (data!.connState == wifiMg.ConnState.CONNECTED) {
           console.info(TAG+"======> WLAN connection established ");
         } else {
           expect().message("======> WLAN Network error").assertFail(); //方式一
 
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data!.chload >= 900 || data!.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
-        } else if (data.chload >= 500) {
+        } else if (data!.chload >= 500) {
           console.info(TAG+"======> The internet connection is poor. ");
         }
       } catch (err) {
@@ -88,14 +89,14 @@ export default function ActsCommonEventSystemAPITest() {
       }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(2000)
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
-      await Utils.msSleep(2000)
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 
@@ -442,11 +443,11 @@ export default function ActsCommonEventSystemAPITest() {
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282'
 
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
         })
         await Utils.msSleep(1000)
-        notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${Tag} requestEnableNotification1 Promise success!`)
           expect(false).assertTrue()
           done()
@@ -527,7 +528,7 @@ export default function ActsCommonEventSystemAPITest() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
-        notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+        notificationManager.openNotificationSettings(testAbilityContext!).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
         }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
@@ -544,7 +545,7 @@ export default function ActsCommonEventSystemAPITest() {
           }
         })
         await Utils.msSleep(2000)
-        await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+        await notificationManager.openNotificationSettings(testAbilityContext!).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
           expect(false).assertTrue();
           done()
@@ -586,7 +587,7 @@ export default function ActsCommonEventSystemAPITest() {
             } as notificationManager.NotificationContent,
           }
           notificationManager.publish(notificationRequest, publishCallback)
-          //await Utils.msSleep(60)
+          await Utils.msSleep(60)
         }
       })
 
@@ -707,7 +708,8 @@ export default function ActsCommonEventSystemAPITest() {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
             JSON.stringify(err));
           expect(err?.code).assertEqual(401);

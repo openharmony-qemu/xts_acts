@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function radioGroupJsunit() {
   describe('radioGroupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("radioGroupTest beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

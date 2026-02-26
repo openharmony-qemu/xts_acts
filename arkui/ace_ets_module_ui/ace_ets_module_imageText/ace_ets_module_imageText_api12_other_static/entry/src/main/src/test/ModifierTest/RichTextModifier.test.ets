@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RichTextModifierTest() {
   describe('RichTextModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichTextModifierTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

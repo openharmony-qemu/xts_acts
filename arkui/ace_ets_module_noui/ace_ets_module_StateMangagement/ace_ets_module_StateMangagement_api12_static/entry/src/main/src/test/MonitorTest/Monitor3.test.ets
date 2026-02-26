@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Monitor3Test() {
   describe('Monitor3Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Monitor3Test beforeEach start");
 
 
@@ -68,7 +68,7 @@ export default function Monitor3Test() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Monitor3Test state pages:" + JSON.stringify(pages));
-        if (!("Monitor3Test" == pages.name)) {
+        if (!("Monitor3" == pages.name)) {
           console.info("get Monitor3Test pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

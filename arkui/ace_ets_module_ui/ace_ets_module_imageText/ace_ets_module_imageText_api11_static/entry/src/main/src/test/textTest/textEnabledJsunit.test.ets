@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textEnabledJsunit() {
   describe('textEnabledJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textEnabledJsunit beforeEach start");
 
 

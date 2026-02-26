@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function fileIOStreamFlush() {
         sr.flushSync();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_sync_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -73,7 +73,7 @@ export default function fileIOStreamFlush() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -100,7 +100,7 @@ export default function fileIOStreamFlush() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_async_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }

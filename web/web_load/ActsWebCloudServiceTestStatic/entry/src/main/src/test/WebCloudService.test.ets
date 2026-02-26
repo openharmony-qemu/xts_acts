@@ -18,7 +18,7 @@ export default function webCloudServiceTest() {
 
     describe("webCloudServiceTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
             await Utils.msSleep(2000);
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -52,9 +52,9 @@ export default function webCloudServiceTest() {
          * @tc.desc   test OnPageBegin
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('testOnPageBegin_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('testOnPageBegin_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             Utils.emitEvent("OnPageBegin", 10);
             Utils.registerEvent("testOnPageBegin_static", "resource://rawfile/first.html", 100, done);
             await Utils.msSleep(2000);

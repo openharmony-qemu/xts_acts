@@ -27,6 +27,7 @@ import MarqueeOptionsTest1 from './MarqueeTest/MarqueeOptions1.test';
 import MarqueeOptionsTest2 from './MarqueeTest/MarqueeOptions2.test';
 import MarqueeUIJsunit from './MarqueeTest/MarqueeUIJsunit.test';
 import MarqueeUpdatePolicyTest from './MarqueeTest/MarqueeUpdatePolicy.test';
+import MarqueeOptionsTest03 from './MarqueeTest/MarqueeOptionsTest03.test';
 
 import BounceSymbolEffectTest from './SymbolGlyphTest/BounceSymbolEffect.test';
 import EffectFillStyle from './SymbolGlyphTest/EffectFillStyle.test';
@@ -42,6 +43,7 @@ import SymbolGlyphApi4 from './SymbolGlyphTest/SymbolGlyphApi4.test';
 import SymbolGlyphApi5 from './SymbolGlyphTest/SymbolGlyphApi5.test';
 import SymbolGlyphFontScaleTest from './SymbolGlyphTest/SymbolGlyphFontScaleTest.test';
 import SymbolGlyphNodeTest from './SymbolGlyphTest/SymbolGlyphNode.test';
+import SymbolEffectNullUndefinedTest from './SymbolGlyphTest/SymbolEffectNullUndefinedTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -59,6 +61,7 @@ export default function testsuite() {
   MarqueeOptionsTest2()
   MarqueeUIJsunit()
   MarqueeUpdatePolicyTest()
+  MarqueeOptionsTest03()
   //SymbolGlyphTest
   BounceSymbolEffectTest()
   EffectFillStyle()
@@ -74,4 +77,5 @@ export default function testsuite() {
   SymbolGlyphApi5()
   SymbolGlyphFontScaleTest()
   SymbolGlyphNodeTest()
+  SymbolEffectNullUndefinedTest()
 }

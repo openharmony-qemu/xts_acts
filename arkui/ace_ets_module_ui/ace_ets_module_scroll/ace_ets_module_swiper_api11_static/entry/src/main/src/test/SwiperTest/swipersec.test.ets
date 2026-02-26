@@ -78,7 +78,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     console.info("setArrowStyle start send emitKey");
     console.info("setArrowStyle backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setArrowStyle emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -102,7 +102,7 @@ async function setBoolean(type: string, displayArrow: undefined | null | string 
     console.info("setBoolean start send emitKey");
     console.info("setBoolean backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setBoolean emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -114,7 +114,7 @@ const waitUiReadyMs: number = 500;
 export default function swiperSecTest() {
 
   describe('swiperSecTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperSecTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -134,7 +134,7 @@ export default function swiperSecTest() {
             console.error(`SwiperSec router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`SwiperSec beforeEach error:` + JSON.stringify(err));
       }
     });

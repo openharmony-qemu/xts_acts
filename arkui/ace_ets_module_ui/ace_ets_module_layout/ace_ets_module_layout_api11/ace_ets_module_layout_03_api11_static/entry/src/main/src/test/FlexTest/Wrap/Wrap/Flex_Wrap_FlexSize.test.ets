@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flex_Wrap_FlexSizeTest() {
   describe('flex_Wrap_FlexSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flex_Wrap_FlexSizeTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

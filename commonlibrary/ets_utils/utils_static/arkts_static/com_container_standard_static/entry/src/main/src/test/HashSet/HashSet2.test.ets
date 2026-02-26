@@ -25,7 +25,7 @@ class Temp1 {
 
 export default function hasSetTest2() {
   describe('hasSetTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

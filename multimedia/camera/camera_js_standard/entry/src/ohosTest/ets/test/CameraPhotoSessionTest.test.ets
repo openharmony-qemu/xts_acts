@@ -368,6 +368,10 @@ export default function CameraPhotoSessionTest() {
  
     mCameraSession.beginConfig();
  
+    if (mCameraInput == undefined && mPreviewOutput == undefined) {
+      console.info(TAG + "no supported output");
+      return -1;
+    }
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
       mCameraSession.addInput(mCameraInput);

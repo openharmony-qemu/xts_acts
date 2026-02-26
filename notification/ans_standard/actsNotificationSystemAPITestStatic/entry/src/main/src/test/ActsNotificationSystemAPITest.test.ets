@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ let bundle: string = 'com.example.systemAPI.static'
 export default function ActsNotificationSystemAPITest() {
   describe('SUB_NOTIFICATION_ANS_SYSTEM_API_TEST', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -113,7 +113,7 @@ export default function ActsNotificationSystemAPITest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()

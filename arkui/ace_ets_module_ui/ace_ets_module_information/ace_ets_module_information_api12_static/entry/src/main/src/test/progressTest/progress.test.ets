@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function progressStyleJsunit() {
   describe('progressStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressStyleTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

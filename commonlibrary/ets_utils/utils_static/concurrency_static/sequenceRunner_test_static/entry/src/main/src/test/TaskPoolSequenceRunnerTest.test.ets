@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -216,12 +216,14 @@ export default function TaskPoolSequenceRunnerTest() {
         let task2: taskpool.Task = new taskpool.Task(printArgs6, 1.0);
 
         sequenceRunner.execute(task1).then((): void => {
+          Count1.count++
         }).catch((err: Object | null | undefined) => {
           Count1.count++
           console.log('count1:' + Count1.count)
           console.log('error message1' + err)
         })
         sequenceRunner.execute(task2).then((): void => {
+          Count2.count++
         }).catch((err: Object | null | undefined) => {
           Count2.count++
           console.log('count2:' + Count2.count)

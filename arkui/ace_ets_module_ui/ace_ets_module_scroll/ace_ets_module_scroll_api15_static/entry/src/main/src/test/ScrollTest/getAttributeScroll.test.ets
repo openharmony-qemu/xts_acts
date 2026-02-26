@@ -36,7 +36,7 @@ const waitUiReadyMs = 1000;
 export default function getAttributeScroll() {
   describe('getAttributeScroll', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       

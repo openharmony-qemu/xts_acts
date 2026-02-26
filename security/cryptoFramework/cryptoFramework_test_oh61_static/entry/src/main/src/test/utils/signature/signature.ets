@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ export async function doSignature(algName: string,
     let data: cryptoFramework.DataBlob = await sign.sign(message);
 
     return data;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] doSignature ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -37,7 +37,7 @@ export async function doVerify(algName: string, signData: cryptoFramework.DataBl
     let ret: boolean = await verify.verify(message, signData);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`[XTS] doVerify ${error}, error code: ${error.code}`);
     throw error as Error;
   }

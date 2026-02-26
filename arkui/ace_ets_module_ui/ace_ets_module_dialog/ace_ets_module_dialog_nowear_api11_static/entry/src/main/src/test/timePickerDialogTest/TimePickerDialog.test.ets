@@ -28,7 +28,6 @@ import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { Error } from '@ohos.arkui.component'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -37,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TimePickerDialog() {
   describe('TimePickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })
@@ -45,7 +44,7 @@ export default function TimePickerDialog() {
     beforeEach(async () => {
       console.info("TimePickerDialog beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/DatePickerDialog',
+        url: 'MainAbility/pages/timePickerDialog/TimePickerDialog',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -69,8 +68,8 @@ export default function TimePickerDialog() {
 
 
 
-    
-    
+
+
 
     /**
      * @tc.number   TimePickerDialog_static_0100

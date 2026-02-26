@@ -28,7 +28,6 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
-import { Error } from '@ohos.arkui.component'
 
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 let domain: number = 0x0000;
@@ -39,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextPickerDialog() {
   describe('TextPickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })
@@ -47,7 +46,7 @@ export default function TextPickerDialog() {
     beforeEach(async () => {
       console.info("TextPickerDialog beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/DatePickerDialog',
+        url: 'MainAbility/pages/textPickerDialog/TextPickerDialog',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -71,8 +70,8 @@ export default function TextPickerDialog() {
 
 
 
-    
-    
+
+
 
     /**
      * @tc.number   TextPickerDialog_static_0100

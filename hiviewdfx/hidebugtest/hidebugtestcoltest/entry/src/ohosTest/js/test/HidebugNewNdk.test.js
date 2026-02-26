@@ -121,5 +121,47 @@ describe('HidebugNewNdkTest', function () {
             done();
         }
     })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0100
+     * @tc.number SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0100
+     * @tc.desc   setProcDumpInSharedOOM调用（true）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0100 start');
+        try{
+            hidebug.setProcDumpInSharedOOM(true);
+            done();
+        } catch (error){
+            console.log(`testHilogJsApi01 got an error: ${JSON.stringify(error)}`)
+            expect().assertFail()
+            done();
+        }
+        console.info('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0100 end');
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0200
+     * @tc.number SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0200
+     * @tc.desc   setProcDumpInSharedOOM调用（false）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        console.info('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0200 start');
+        try{
+            hidebug.setProcDumpInSharedOOM(false);
+            done();
+        } catch (error){
+            console.log(`testHilogJsApi01 got an error: ${JSON.stringify(error)}`)
+            expect().assertFail()
+            done();
+        }
+        console.info('SUB_DFX_DFR_Hidebug_setProcDumpInSharedOOM_TS_0200 end');
+    })
 })
 }

@@ -32,7 +32,7 @@ import { BaseClass, Event } from '../utils/Model';
 
 export default function RWLockTest() {
   describe('RWLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**

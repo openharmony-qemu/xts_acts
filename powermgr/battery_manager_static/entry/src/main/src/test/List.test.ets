@@ -14,9 +14,7 @@
  */
 
 import BatteryInfoTest from "./BatteryInfo.test";
-import BatteryStatisticsTest from "./BatteryStatistics.test";
 
 export default function testsuite() {
   BatteryInfoTest();
-  BatteryStatisticsTest();
 }

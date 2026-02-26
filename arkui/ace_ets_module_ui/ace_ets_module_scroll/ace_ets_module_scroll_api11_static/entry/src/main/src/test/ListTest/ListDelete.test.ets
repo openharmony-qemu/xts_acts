@@ -52,7 +52,7 @@ export default function ListDeleteTest() {
 
   describe('ListDeleteTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

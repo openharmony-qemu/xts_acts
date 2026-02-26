@@ -21,22 +21,8 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 let gattServer = null;
 
 function sleep(delay) {
-     return new Promise(resovle => setTimeout(resovle, delay));
+    return new Promise(resolve => setTimeout(resolve, delay));
 }
-
-async function openPhone() {
-     try{
-         let drivers = Driver.create();
-         console.info('[bluetooth_js] bt driver create:'+ drivers);            
-         await drivers.delayMs(1000);
-         await drivers.wakeUpDisplay();
-         await drivers.delayMs(5000);
-         await drivers.swipe(1500, 1000, 1500, 100);
-         await drivers.delayMs(10000);
-     } catch (error) {
-         console.info('[bluetooth_js] driver error info:'+ error);
-     }
- }
 
 let OPEN_BT_TEXT = "开启";
 
@@ -86,7 +72,6 @@ export default function btBleError401Test() {
                console.info('beforeAll start');
                let PERMISSION_TEXT = "允许";
                await sleep(2000);
-               await openPhone();
                await clickTheWindow(PERMISSION_TEXT);
                gattServer = bluetooth.BLE.createGattServer();
                console.info('beforeAll end');
@@ -95,7 +80,7 @@ export default function btBleError401Test() {
           beforeEach(async function (done) {
                console.info('beforeEach start');
                await tryToEnableBt();
-               console.info('beforeAll end');
+               console.info('beforeEach end');
                done();
           })
           afterEach(function () {
@@ -104,7 +89,11 @@ export default function btBleError401Test() {
           afterAll(async function (done) {
                console.info('afterAll start');
                await sleep(900);
-               gattServer.close();
+               if(gattServer !=null){
+                 gattServer.close();
+                 console.info('delete gattServer');
+               };
+               await tryToEnableBt();
                console.info('afterAll end');
                done();
           })

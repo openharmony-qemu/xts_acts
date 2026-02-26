@@ -40,7 +40,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function column_Margin_ChangeParent() {
 
   describe('Column_Margin_ChangeParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Column_Margin_ChangeParentTest beforeEach start");
 
 

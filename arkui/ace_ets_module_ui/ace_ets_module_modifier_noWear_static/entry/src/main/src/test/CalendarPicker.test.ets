@@ -46,7 +46,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function calendarPickerJsunit() {
   describe('calendarPickerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

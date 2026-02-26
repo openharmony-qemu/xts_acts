@@ -31,9 +31,9 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 const TAG = "[RdbLockRowTest]";
 
@@ -138,14 +138,14 @@ export default function RdbLockRowTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       try {
         let tableArray = [TABLE];
         const setConfig: relationalStore.DistributedConfig = {
           autoSync: false,
         }
-        await rdbStore.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD,
+        await rdbStore!.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD,
           setConfig);
         console.log(TAG + "set test to be distributed table success");
       } catch (err) {
@@ -164,7 +164,7 @@ export default function RdbLockRowTest() {
 
     afterAll(async () => {
       console.log(TAG + 'afterAll');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     console.log(TAG + "*************JS Test Begin*************");
 
@@ -190,16 +190,16 @@ export default function RdbLockRowTest() {
             "data1": asset3,
             "data2": assets
           }
-          let ret = await rdbStore.insert(TABLE, valueBucket);
+          let ret = await rdbStore!.insert(TABLE, valueBucket);
           console.log(TAG + `insert end: ` + ret);
           expect(1).assertEqual(ret);
-          await checkStatus(rdbStore, checkName, UNLOCK);
+          await checkStatus(rdbStore!, checkName, UNLOCK);
           console.log(TAG + `checkStatus end`);
         } catch (err) {
           console.log(TAG + `init failed, err: ${JSON.stringify(err)}`);
           expect().assertFail();
         }
-        await queryLockedData(rdbStore, 0, checkName);
+        await queryLockedData(rdbStore!, 0, checkName);
         try {
           let u8 = new Uint8Array([4, 5, 6]);
           const valueBucket: relationalStore.ValuesBucket = {
@@ -212,14 +212,14 @@ export default function RdbLockRowTest() {
           }
           let predicates = new relationalStore.RdbPredicates(TABLE);
           predicates.equalTo("name", checkName);
-          let ret: long = await rdbStore.update(valueBucket, predicates);
+          let ret: long = await rdbStore!.update(valueBucket, predicates);
           expect(1).assertEqual(ret);
-          await checkStatus(rdbStore, checkName, UNLOCK);
+          await checkStatus(rdbStore!, checkName, UNLOCK);
         } catch (err) {
           console.log(TAG + `failed, err: ${JSON.stringify(err)}`);
           expect().assertFail();
         }
-        await queryLockedData(rdbStore, 0, checkName);
+        await queryLockedData(rdbStore!, 0, checkName);
         done();
         console.log(TAG + "************* testRdbStoreLockRow0001 end   *************");
       })
@@ -237,7 +237,7 @@ export default function RdbLockRowTest() {
         console.log(TAG + "************* testRdbStoreLockRow0002 start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("");
-          await rdbStore.lockRow(predicates);
+          await rdbStore!.lockRow(predicates);
           expect().assertFail();
         } catch (err) {
           console.log(TAG + `failed, err: ${JSON.stringify(err)}`);
@@ -260,7 +260,7 @@ export default function RdbLockRowTest() {
         console.log(TAG + "************* testRdbStoreLockRow0003 start *************");
         try {
           let predicates = new relationalStore.RdbPredicates("");
-          await rdbStore.unlockRow(predicates);
+          await rdbStore!.unlockRow(predicates);
           expect().assertFail();
         } catch (err) {
           console.log(TAG + `failed, err: ${JSON.stringify(err)}`);

@@ -38,7 +38,7 @@ const waitUiReadyMs = 1000;
 
 export default function dividerUIJsunit() {
   describe('dividerUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dividerUIJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

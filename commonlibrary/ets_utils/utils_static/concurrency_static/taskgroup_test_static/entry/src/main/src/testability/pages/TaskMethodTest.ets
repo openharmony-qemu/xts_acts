@@ -375,13 +375,13 @@ export function printArgs1012(args: Number): Number {
   return args;
 }
 
-export function printArgs1013(args: Number): Number {
+export async function printArgs1013(args: Number): Promise<Number> {
   console.info('printArgs: ' + args);
   await asyncMethod(1);
   return args;
 }
 
-export function printArgs1014(args: Number): Number {
+export async function printArgs1014(args: Number): Promise<Number> {
   console.info('printArgs: ' + args);
   await asyncMethod(2);
   return args;

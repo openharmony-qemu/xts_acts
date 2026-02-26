@@ -44,13 +44,13 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "RdbTest.db",
   securityLevel: relationalStore.SecurityLevel.S3
 };
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 const CREATE_TABLE_TEST =
   "CREATE TABLE IF NOT EXISTS test  (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
 
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 
 export default function relationalStoreBatchInsertTest() {
@@ -65,16 +65,16 @@ export default function relationalStoreBatchInsertTest() {
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach')
       try {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG)
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG)
         console.info(TAG + 'Get RdbStore successfully.');
-        await rdbStore.executeSql(CREATE_TABLE_TEST);
+        await rdbStore!.executeSql(CREATE_TABLE_TEST);
       } catch (err) {
         console.error(TAG + `Get RdbStore failed, code is ${err.code},message is ${err.message}`);
       }
     })
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach')
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll')
@@ -104,11 +104,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 2; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution001 batch num1 " + num)
           expect(2).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution001 result count " + resultSet.rowCount)
           expect(2).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -146,11 +146,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0200 batch num1 " + num);
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0200 result count " + resultSet.rowCount);
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -188,11 +188,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0300 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0300 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -230,11 +230,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0400 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0400 result count " + resultSet.rowCount);
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -272,11 +272,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0500 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0500 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -314,11 +314,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0600 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution0600 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -356,7 +356,7 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < rows; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          let num = await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolution1000 failed num " + num);
           expect(null).assertFail();
@@ -383,7 +383,7 @@ export default function relationalStoreBatchInsertTest() {
     it('testRdbStoreBatchInsertWithConflictResolution1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution1100 start *************");
-        let transaction = await rdbStore.createTransaction({
+        let transaction = await rdbStore!.createTransaction({
           transactionType: relationalStore.TransactionType.IMMEDIATE
         });
         try {
@@ -396,7 +396,7 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 2; i++) {
             valueBucketArray.push(valueBucket);
           }
-          await rdbStore.batchInsertWithConflictResolution("test", valueBucketArray,
+          await rdbStore!.batchInsertWithConflictResolution("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           await transaction.rollback();
           expect(null).assertFail();
@@ -440,11 +440,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 2; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync001 batch num1 " + num)
           expect(2).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync001 result count " + resultSet.rowCount)
           expect(2).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -482,11 +482,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0200 batch num1 " + num);
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0200 result count " + resultSet.rowCount);
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -524,11 +524,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0300 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0300 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -566,11 +566,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0400 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0400 result count " + resultSet.rowCount);
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -608,11 +608,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0500 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0500 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -650,11 +650,11 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 3; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0600 batch num1 " + num)
           expect(3).assertEqual(num);
-          let resultSet = await rdbStore.querySql("select * from test")
+          let resultSet = await rdbStore!.querySql("select * from test")
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync0600 result count " + resultSet.rowCount)
           expect(3).assertEqual(resultSet.rowCount);
           resultSet.close();
@@ -692,7 +692,7 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < rows; i++) {
             valueBucketArray.push(valueBucket);
           }
-          let num = rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          let num = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           console.log(TAG + "testRdbStoreBatchInsertWithConflictResolutionSync1000 failed num " + num);
           expect(null).assertFail();
@@ -719,7 +719,7 @@ export default function relationalStoreBatchInsertTest() {
     it('testRdbStoreBatchInsertWithConflictResolutionSync1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSync1100 start *************");
-        let transaction = await rdbStore.createTransaction({
+        let transaction = await rdbStore!.createTransaction({
           transactionType: relationalStore.TransactionType.IMMEDIATE
         });
         try {
@@ -732,7 +732,7 @@ export default function relationalStoreBatchInsertTest() {
           for (let i = 0; i < 2; i++) {
             valueBucketArray.push(valueBucket);
           }
-          rdbStore.batchInsertWithConflictResolutionSync("test", valueBucketArray,
+          rdbStore!.batchInsertWithConflictResolutionSync("test", valueBucketArray,
             relationalStore.ConflictResolution.ON_CONFLICT_NONE);
           await transaction.rollback();
           expect(null).assertFail();

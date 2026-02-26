@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatListNumber() {
   describe('RepeatListNumber', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatListNumber beforeEach start");
 
 

@@ -2451,6 +2451,7 @@ export default function webgl1_common() {
             console.info("gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);");
             gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
             console.info("webgltest gl.readPixels ", pixels);
+            console.info("www data webgltest gl.readPixels ", pixels[0],pixels[1],pixels[2],pixels[3]);
             expect(pixels[0]).assertEqual(255);
             expect(pixels[1]).assertEqual(0);
             expect(pixels[2]).assertEqual(0);
@@ -2474,24 +2475,25 @@ export default function webgl1_common() {
             console.info("webgltest [webgl_test_lineWidthError] readPixels(x=undefined) ");
             gl.readPixels(undefined, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
             expect(checkError(gl)).assertEqual(gl.NO_ERROR)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(y=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(y=undefined) 111 ", checkError(gl));
             gl.readPixels(0, undefined, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
             expect(checkError(gl)).assertEqual(gl.NO_ERROR)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(width=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(width=undefined) 222 ", checkError(gl));
             gl.readPixels(0, 0, undefined, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
             expect(checkError(gl)).assertEqual(gl.NO_ERROR)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(height=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(height=undefined) 333 ", checkError(gl));
             gl.readPixels(0, 0, gl.drawingBufferWidth, undefined, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
             expect(checkError(gl)).assertEqual(gl.NO_ERROR)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(format=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(format=undefined) 444 ", checkError(gl));
             gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, undefined, gl.UNSIGNED_BYTE, pixels);
             expect(checkError(gl)).assertEqual(gl.INVALID_ENUM)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(type=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(type=undefined) 555 ", checkError(gl));
             gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, undefined, pixels);
             expect(checkError(gl)).assertEqual(gl.INVALID_ENUM)
-            console.info("webgltest [webgl_test_lineWidthError] readPixels(type=undefined) ");
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(type=undefined) 666 ", checkError(gl));
             gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, undefined);
             expect(checkError(gl)).assertEqual(gl.INVALID_VALUE)
+            console.info("webgltest [webgl_test_lineWidthError] readPixels(type=undefined) 777 ", checkError(gl));
             gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT | gl.STENCIL_BUFFER_BIT);
             done();
         })

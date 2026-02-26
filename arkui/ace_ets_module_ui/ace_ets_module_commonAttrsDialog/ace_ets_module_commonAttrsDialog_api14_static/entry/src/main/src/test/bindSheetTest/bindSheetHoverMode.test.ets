@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function bindSheetHoverMode() {
   describe('bindSheetHoverMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindSheetHoverMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

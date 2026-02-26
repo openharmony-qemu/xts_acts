@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listItemJsunit2() {
   describe('listItemJsunit2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       
@@ -69,7 +69,7 @@ export default function listItemJsunit2() {
           await CommonFunc.sleep(2000);
           // console.info("push listItem page result:" + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listItem page error:" + err);
       }
     });
@@ -120,7 +120,7 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
         }
         console.info("[testListItem_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -173,7 +173,7 @@ it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<voi
         }
         console.info("[testListItem_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_04] change component data error: " + err.message);
       }
       console.info("[testListItem_static_04] xyb000");

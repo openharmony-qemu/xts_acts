@@ -59,6 +59,7 @@ export default function KeyboardAvoidModeNone() {
         let driver = await Driver.create()
         await CommonFunc.sleep(1000);
         let button = await driver.findComponent(ON.id('showId'));
+        let hideBtn = await driver.findComponent(ON.id('hideBtn'));
         await button.click();
         console.info('[KeyboardAvoidModeNone_0100] button click');
         await CommonFunc.sleep(1000);
@@ -68,6 +69,9 @@ export default function KeyboardAvoidModeNone() {
         let menuItemContent52 = await driver.findComponent(ON.text('5MenuItemNone'));
         expect(menuItemContent52 == null ).assertTrue();
         await CommonFunc.sleep(1000);
+        await hideBtn.click()
+        await CommonFunc.sleep(2000);
+        await hideBtn.click()
       }
       console.info('KeyboardAvoidModeNone_0100 END');
       done();

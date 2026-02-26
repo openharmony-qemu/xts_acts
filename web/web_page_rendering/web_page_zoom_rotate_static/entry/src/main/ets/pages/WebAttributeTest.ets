@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,7 +82,7 @@ struct WebAttributeTest {
                   setTimeout(() => {
                     Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70001)
                   }, 2000);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`==> ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -94,7 +94,7 @@ struct WebAttributeTest {
                   setTimeout(() => {
                     Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70003)
                   }, 2000);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`==> ${error.code},  Message: ${error.message}`);
                 }
                 break;

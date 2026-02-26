@@ -146,6 +146,16 @@ struct CanvasGradientPage {
               this.context.fillStyle = grad
               this.context.fillRect(0, 0, 150, 150)
             })
+          Button('空串').key('CanvasGradientPage_color_null_str')
+            .onClick(() => {
+              let grad = this.context.createLinearGradient(75, 0, 150, 100)
+              grad.addColorStop(0.0, ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 1, 0, 1.0))
+              grad.addColorStop(0.5, '')
+              grad.addColorStop(1.0, ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 0, 1, 1.0))
+              this.context.reset()
+              this.context.fillStyle = grad
+              this.context.fillRect(0, 0, 150, 150)
+            })
         }.height('10%')
 
         Row() {

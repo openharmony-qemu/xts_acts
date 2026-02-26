@@ -23,8 +23,8 @@ import Utils from './Util.test';
 
 const TAG = "CameraConcurrentTest: ";
 
-let mCameraManager: camera.CameraManager;
-let mCameraDevicesArray: Array<camera.CameraDevice>;
+let mCameraManager: camera.CameraManager | undefined;
+let mCameraDevicesArray: Array<camera.CameraDevice> = [];
 let mCameraSession: camera.PhotoSession;
 
 let mPhotoSurface: string = '';
@@ -88,7 +88,7 @@ export default function cameraConcurrentTest() {
     let appContext: Context = Hypium.get("Context") as Context;
     console.info('get Context end');
     mCameraManager = camera.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
@@ -98,7 +98,7 @@ export default function cameraConcurrentTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -114,7 +114,7 @@ export default function cameraConcurrentTest() {
   describe('CameraConcurrentTest', () => {
     console.info(TAG + '----------CameraConcurrentTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
@@ -122,7 +122,7 @@ export default function cameraConcurrentTest() {
       await Utils.msSleep(500);
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
       await Utils.msSleep(100);
@@ -154,7 +154,7 @@ export default function cameraConcurrentTest() {
         for (let i = 0; i < mCameraDevicesArray.length; i++) {
           let cameraPosition = mCameraDevicesArray[i].cameraPosition;
           let cameraType = mCameraDevicesArray[i].cameraType;
-          let curCameraDev: camera.CameraDevice = mCameraManager.getCameraDevice(cameraPosition, cameraType);
+          let curCameraDev: camera.CameraDevice = mCameraManager!.getCameraDevice(cameraPosition, cameraType);
           console.info(TAG + " SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100 Success camera[" + i +"] curCameraDev: " + JSON.stringify(curCameraDev));
           if (!isEmpty03(curCameraDev)) {
             console.info(TAG + " SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICE_BY_POSITION_TYPE_STATIC_0100 Success camera[" + i +"]");
@@ -183,7 +183,7 @@ export default function cameraConcurrentTest() {
           expect().assertFail();
           done();
         }
-        let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(mCameraDevicesArray);
+        let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager!.getCameraConcurrentInfos(mCameraDevicesArray);
         console.info(TAG + " SUB_MULTIMEDIA_CAMERA_GET_CAMERA_CONCURRENT_INFOS_STATIC_0100 Success  cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
         if (!isEmpty04(cameraConcurrentInfos)) {
           for (let i = 0; i < cameraConcurrentInfos.length; i++) {
@@ -215,11 +215,11 @@ export default function cameraConcurrentTest() {
         expect().assertFail();
         done();
       }
-      let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager.getCameraConcurrentInfos(mCameraDevicesArray);
+      let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = mCameraManager!.getCameraConcurrentInfos(mCameraDevicesArray);
       console.info(TAG + " SUB_MULTIMEDIA_CAMERA_INPUT_OPEN_BY_CONCURRENT_TYPE_STATIC_0100 Success  cameraConcurrentInfos: " + JSON.stringify(cameraConcurrentInfos));
       if (!isEmpty04(cameraConcurrentInfos)) {
         for (let i = 0; i < cameraConcurrentInfos.length; i++) {
-            let cameraInput: camera.CameraInput = mCameraManager.createCameraInput(cameraConcurrentInfos[i].device);
+            let cameraInput: camera.CameraInput = mCameraManager!.createCameraInput(cameraConcurrentInfos[i].device);
             cameraInput.open(cameraConcurrentInfos[i].type);
             await cameraInput.close();
         }

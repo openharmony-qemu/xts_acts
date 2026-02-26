@@ -56,7 +56,7 @@ function sleep(time: number) {
 
 export default function listItemJsunit() {
   describe('listItemTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 

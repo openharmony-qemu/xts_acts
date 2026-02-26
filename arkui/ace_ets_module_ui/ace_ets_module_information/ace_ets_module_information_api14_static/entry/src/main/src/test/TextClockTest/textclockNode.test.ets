@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function TextClockNodeTest() {
   describe('TextClockNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextClockNodeTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

@@ -76,15 +76,15 @@ export default function ActsAcewebViewCookieTrack() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_REMOVEINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
-    * @tc.name       : testRemoveIntelligentTrackingPreventionBypassingListError001
-    * @tc.desc       : test removeIntelligentTrackingPreventionBypassingList error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testRemoveIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.name        testRemoveIntelligentTrackingPreventionBypassingListError001
+     * @tc.number      SUB_WEB_ERRORCODE_REMOVEINTELLIGENTTRACKINGPREVENTIONBYPASSINGLIST_0100
+     * @tc.desc        test removeIntelligentTrackingPreventionBypassingList error
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testRemoveIntelligentTrackingPreventionBypassingListError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testRemoveIntelligentTrackingPreventionBypassingListError001", '401', 202503208, done);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveProcess(signVerifyAlg, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -84,7 +84,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveProcess(signVerifyAlg, true, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -113,7 +113,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.ECCCurveProcess(signVerifyAlg, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -142,7 +142,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveErrProcess(signVerifyAlg, false, spec, param);
         expect(!res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -171,7 +171,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.ECCCurveErrProcess(signVerifyAlg, false, spec, param);
         expect(!res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -196,7 +196,7 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(sign.algName == signVerifyAlg).assertTrue();
         expect(verify.algName == signVerifyAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -219,15 +219,15 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
       try {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -249,16 +249,16 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
       try {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(testNumber + ": " + err.code);
-        expect(err.code).assertEqual(801);
+        expect((err as BusinessError).code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(801);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");
@@ -287,17 +287,17 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         await sign.init(keyPair.priKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(testNumber + ": " + err.code);
-        expect(err.code == 17630001).assertTrue();
+        expect((err as BusinessError).code == 17630001).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         await verify.init(keyPair.pubKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == 17630001).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 17630001).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       console.log(testNumber + ": succeed");

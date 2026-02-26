@@ -137,7 +137,9 @@ struct ParticleEmitter {
 
       Button('GetInspector').id('getInspectorId').onClick((e: ClickEvent) => {
         let filterTree = inspector.getInspectorByKey('particle');
-        await CommonFunc.sleep(2000)
+        waitForCompletion(async ()=>{
+          await CommonFunc.sleep(2000)
+        })
         if (filterTree) {
           let myjson: string =
             'XHQ' + JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles'))

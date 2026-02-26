@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ interface KeyTestCase {
 
 export default function urlTest1() {
   describe('urlTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -582,7 +582,8 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("");
         let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
         expect(newArrayValue.toString()).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -603,7 +604,8 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4");
         let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
         expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -634,7 +636,8 @@ export default function urlTest1() {
           expect(String(newArrayValue[i][1])).assertEqual(String(expectedPairs[i][1]));
         }
         expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,d,5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -658,7 +661,8 @@ export default function urlTest1() {
           entriesArray.push([name, value, myURLObject.params === searchParams]);
         });
         expect(String(entriesArray.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -688,7 +692,8 @@ export default function urlTest1() {
           ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true]
         ];
         expect(entriesArray.toString()).assertEqual(expectedArray.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -716,7 +721,8 @@ export default function urlTest1() {
           ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true], ['d', '5', true]
         ];
         expect(entriesArray.toString()).assertEqual(expectedArray.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -740,7 +746,8 @@ export default function urlTest1() {
           pairs.push(entry);
         }
         expect(String(pairs.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1543,7 +1550,8 @@ export default function urlTest1() {
         const keysIterator = paramsObject.keys();
         const keysArray = Array.from(keysIterator);
         expect(keysArray.toString()).assertEqual('key@1,key#2,key*3,key(4),key$5,key&6,key%7');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1574,7 +1582,8 @@ export default function urlTest1() {
         keysIterator = paramsObject.keys();
         keysArray = Array.from(keysIterator);
         expect(keysArray.toString()).assertEqual('key1,key3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1602,7 +1611,8 @@ export default function urlTest1() {
         const valuesIterator = paramsObject.values();
         const valuesArray = Array.from(valuesIterator);
         expect(valuesArray.toString()).assertEqual('value@#1,value*2,value(3),value$4,value&5,value%6,value^7');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1633,7 +1643,8 @@ export default function urlTest1() {
         valuesIterator = paramsObject.values();
         valuesArray = Array.from(valuesIterator);
         expect(valuesArray.toString()).assertEqual('value1,value3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1896,7 +1907,8 @@ export default function urlTest1() {
           "'(())**  ,,--..//::;;<<")
         expect(key3.toString()).assertEqual("key1,!!\"\"##$$%%&&" +
           "(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }

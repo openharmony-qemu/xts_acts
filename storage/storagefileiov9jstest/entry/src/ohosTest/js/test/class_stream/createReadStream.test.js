@@ -386,8 +386,8 @@ export default function fscreateReadStream() {
       try {
         let WriteStream = fs.createWriteStream(fpath);
         let curOff = WriteStream.seek(5, fs.WhenceType.SEEK_SET);
-        console.log('fileIO_test_create_ReadStream_014 has failed for ' + curOff);
-        expect(true).assertTrue();
+        console.log('fileIO_test_create_ReadStream_014 curOff: ' + curOff);
+        expect(curOff == 5).assertTrue();
         fs.unlinkSync(fpath);
       } catch (e) {
         console.log('fileIO_test_create_ReadStream_014 has failed for ' + e.message + ', code: ' + e.code);
@@ -487,6 +487,54 @@ export default function fscreateReadStream() {
       } catch (e) {
         console.log('fileIO_test_create_ReadStream_016 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_ReadStream_017
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1700
+     * @tc.desc   Test the createWriteStream() interface of class Stream. WriteStream.seek is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_ReadStream_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_create_ReadStream_017');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(null, fs.WhenceType.SEEK_SET);
+        console.log('fileIO_test_create_ReadStream_017 curOff: ' + curOff);
+        expect().assertFail();
+      } catch (e) {
+        fs.unlinkSync(fpath);
+        console.log('fileIO_test_create_ReadStream_017 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_create_ReadStream_018
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1800
+     * @tc.desc   Test the createWriteStream() interface of class Stream. WriteStream.seek is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_create_ReadStream_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_create_ReadStream_018');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(undefined, fs.WhenceType.SEEK_SET);
+        console.log('fileIO_test_create_ReadStream_018 curOff: ' + curOff);
+        expect().assertFail();
+      } catch (e) {
+        fs.unlinkSync(fpath);
+        console.log('fileIO_test_create_ReadStream_018 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
   })

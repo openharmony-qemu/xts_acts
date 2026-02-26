@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -86,13 +86,13 @@ function getWantAgentByUri(uri: string): WantAgent | undefined {
         `${TEST_SUITE_NAME}#getWantAgentByUri getWantAgent failed, code:${err.code} message:${err.message}`);
     }
   });
-  await Utils.msSleep(WAIT_TIME4000);
+  waitForCompletion(async()=> {await Utils.msSleep(WAIT_TIME4000);});
   return wantAgent1;
 }
 
 export default function ActsNotificationWantUriTest() {
   describe('ActsNotificationWantUriTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(WAIT_TIME2000);
@@ -194,7 +194,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -221,7 +221,7 @@ export default function ActsNotificationWantUriTest() {
         hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
         let uri: string = '';
         let wantAgent1: WantAgent | undefined = getWantAgentByUri(uri);
-        if (wantAgent1) {          
+        if (wantAgent1) {
           let uri2: string = '_____WantAgent2____';
           let wantAgent2: WantAgent | undefined = getWantAgentByUri(uri2);
           let actionButton: notificationManager.NotificationActionButton = {
@@ -254,8 +254,15 @@ export default function ActsNotificationWantUriTest() {
                     expect(dataArray.length).assertLarger(PARAM_0);
                     let testUri: Record<string, RecordData> = dataArray[0].extraInfo as Record<string, RecordData>;
                     hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${testUri[KEY_URI]}`);
-                    expect(Object.keys(testUri).includes(KEY_URI)).assertFalse();
-                    done();
+                    hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} wantUri:${JSON.stringify(testUri)}`);
+                    if (JSON.stringify(testUri)) {
+                      expect(JSON.stringify(testUri).includes(KEY_URI)).assertTrue();
+                      expect(testUri[KEY_URI] as string).assertEqual(uri);
+                      done()
+                    } else {
+                      expect().assertFail();
+                      done();
+                    }
                   } else {
                     hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} getActiveNotifications failed,
                       code:${err.code} message:${err.message}`);
@@ -270,7 +277,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -351,7 +358,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -435,7 +442,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -518,7 +525,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -604,7 +611,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -687,7 +694,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -773,7 +780,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -877,7 +884,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -984,7 +991,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -1076,7 +1083,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();
@@ -1161,7 +1168,7 @@ export default function ActsNotificationWantUriTest() {
                 done();
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(DOMAIN, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish notification failed,
               code:${err.code} message:${err.message}`);
             expect().assertFail();

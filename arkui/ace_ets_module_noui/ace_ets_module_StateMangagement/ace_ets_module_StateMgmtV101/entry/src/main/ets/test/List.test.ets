@@ -29,11 +29,11 @@ import StorageProp26Jsunit from './AppStorage/StorageProp26Jsunit.test.ets'
 import AbstractPropertyRefTest from './AppStorage/AbstractPropertyRefTest.test';
 import appStorageRefJsunit from './AppStorage/appStorageRefJsunit.test';
 import SubAbstractPropertyLinkTest from './AppStorage/SubAbstractPropertyLinkTest.test';
-
+import appStorageNullUndefinedTest from './AppStorage/AppStorageNullUndefinedTest.test';
 import PersistentTest0040 from './persistentStorage/PersistentTest0040.test';
 import PersistentStorageReturnValue from './persistentStorage/PersistentStorageReturnValue.test';
 import PersistentStorageGlobalConnect from './persistentStorage/PersistentStorageGlobalConnect.test';
-
+import stateManagementNullUndefinedTest from './persistentStorage/StateManagementNullUndefinedTest.test';
 
 import LocalStorageReturnValue from './localStorage/LocalStorageReturnValue.test';
 import localStorageRefJsunit from './localStorage/localStorageRefJsunit.test';
@@ -69,6 +69,7 @@ export default function testsuite() {
     AbstractPropertyRefTest();
     appStorageRefJsunit();
     SubAbstractPropertyLinkTest();
+    appStorageNullUndefinedTest();
     PersistentTest0040();
     PersistentStorageReturnValue();
     PersistentStorageGlobalConnect();
@@ -85,6 +86,6 @@ export default function testsuite() {
     LocalStorageProp0320TestJsunit();
     LocalStorageAbsTestJsunit();
     PersistentStoragePersistPropJsunit();
-
+    stateManagementNullUndefinedTest();
 
 }

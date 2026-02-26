@@ -30,7 +30,7 @@ import { BorderRadiuses } from '@ohos.arkui.component'
 export default function SegmentButtonBorderTest() {
   describe('SegmentButtonBorderTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SegmentButtonBorderTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
     });

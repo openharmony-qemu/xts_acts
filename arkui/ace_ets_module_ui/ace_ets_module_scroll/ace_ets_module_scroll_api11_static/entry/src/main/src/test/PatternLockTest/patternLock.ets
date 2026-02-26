@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ let emitKey = "emitUserAgent";
 export default function patternLockTest() {
 
   describe('ActsPatternLockInterfaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -66,7 +66,7 @@ export default function patternLockTest() {
           
           // console.info("push PatternLockIndex page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push PatternLockIndex page error " + JSON.stringify(err));
       }
     });
@@ -88,7 +88,7 @@ it('ArkUX_Stage_PatternLock_setChallengeResult_static_0100', Level.LEVEL1, async
           console.info("ArkUX_Stage_PatternLock_setChallengeResult_static_0100 component obj.getElement('$attrs').getElement('setChallengeResult') is: " +
           obj.getElement('$attrs').tryGetElement('setChallengeResult') ?? '');
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 ERR  ' + JSON.stringify(err));
         }
@@ -112,7 +112,7 @@ it('ArkUX_Stage_PatternLock_onDotConnect_0100', Level.LEVEL1, async (done: () =>
         console.info("ArkUX_Stage_PatternLock_onDotConnect_0100 component obj.$attrs.onDotConnect is: " +
         obj.getElement('$attrs').tryGetElement('onDotConnect') ?? '');
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 END ');
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 ERR  ' + JSON.stringify(err));
       }

@@ -1475,5 +1475,364 @@ export default function ArrayListTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testArrayListCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase001';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.insert(null, 0);
+      expect(arrayList[0]).assertNull();
+
+      arrayList.insert(undefined, 1);
+      expect(arrayList[1]).assertUndefined();
+    });
+
+    /**
+     * @tc.name   testArrayListCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase002';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      try {
+        arrayList.insert('A', null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.insert('B', undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase003';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(null);
+      arrayList.add(undefined);
+      let val1 = arrayList.getIndexOf(null);
+      expect(val1).assertEqual(2);
+
+      let val2 = arrayList.getIndexOf(undefined);
+      expect(val2).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   testArrayListCase004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0400
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase004';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(null);
+      arrayList.add(undefined);
+      try {
+        arrayList.removeByIndex(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.removeByIndex(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0500
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase005';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(null);
+      arrayList.add(undefined);
+      let val1 = arrayList.getLastIndexOf(null);
+      expect(val1).assertEqual(2);
+
+      let val2 = arrayList.getLastIndexOf(undefined);
+      expect(val2).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   testArrayListCase006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0600
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase006';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(null);
+      arrayList.add(undefined);
+      try {
+        arrayList.removeByRange(null, 2);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.removeByRange(undefined, 2);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0700
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase007';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(null);
+      arrayList.add(undefined);
+      try {
+        arrayList.removeByRange(0, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.removeByRange(0, undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0800
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase008';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.replaceAllElements((value: number): number => {
+        return value - 1;
+      }, null);
+      expect(arrayList[0]).assertEqual(1);
+
+      arrayList.replaceAllElements((value: number): number => {
+        return value + 2;
+      }, undefined);
+      expect(arrayList[0]).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   testArrayListCase009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_0900
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase009';
+      let num = 0;
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.forEach((value: number | string | boolean | Array<number | string | boolean> | undefined | null | Object,
+        index?: number) => {
+        num++;
+      }, null);
+
+      arrayList.forEach((value: number | string | boolean | Array<number | string | boolean> | undefined | null | Object,
+        index?: number) => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   testArrayListCase010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_1000
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase010';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.sort(null);
+      expect(arrayList[0]).assertEqual(2);
+
+      arrayList.sort(undefined);
+      expect(arrayList[0]).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   testArrayListCase011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_1100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase011';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      try {
+        arrayList.subArrayList(null, 1);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.subArrayList(undefined, 1);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_1200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase012';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      try {
+        arrayList.subArrayList(0, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.subArrayList(0, undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testArrayListCase013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CASE_1300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListCase013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testArrayListCase013';
+      let arrayList: ArrayList<number | string | boolean | Array<number | string | boolean> | undefined | null | Object> =
+        new ArrayList();
+      arrayList.add(2);
+      arrayList.add(4);
+      try {
+        arrayList.increaseCapacityTo(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        arrayList.increaseCapacityTo(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
   });
 }

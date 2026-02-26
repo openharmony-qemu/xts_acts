@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,14 +26,14 @@ let tag: string = 'WebSocketTag'; //日志标识字符串,作为tag标识当前r
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.info("expectInfo", `test failed`);
   }
 }
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.info("expectInfo", `test failed`);
   }
 }
@@ -73,7 +73,7 @@ export default function WebSocketTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -106,7 +106,7 @@ export default function WebSocketTest() {
           done();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -139,7 +139,7 @@ export default function WebSocketTest() {
           done();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -182,7 +182,7 @@ export default function WebSocketTest() {
             })
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +' catch error is '+JSON.stringify(err));
         ExpectTrue(false)
         done();

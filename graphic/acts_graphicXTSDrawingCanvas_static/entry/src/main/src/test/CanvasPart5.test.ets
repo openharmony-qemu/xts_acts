@@ -21,9 +21,9 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart5Test() {
   describe('DrawingTsCanvasPart5Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
-    let pixelMap: image.PixelMap;
+    let pixelMap: image.PixelMap | undefined;
 
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -63,23 +63,23 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageRectNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const maxVal = Number.MAX_VALUE;
 
       try {
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: 0, top: 0, right: 600, bottom: 600
         });
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: 100.1, top: 10.10, right: 900.1, bottom: 900.1
         }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST));
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: -200, top: -200, right: 1000, bottom: 1000
         }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: 200, top: 200, right: -1000, bottom: -1000
         }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: maxVal, top: maxVal, right: maxVal, bottom: maxVal
         });
         console.info(msg + 'test successes');
@@ -101,12 +101,12 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageRectMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let itemList1: drawing.FilterMode[]= [drawing.FilterMode.FILTER_MODE_NEAREST, drawing.FilterMode.FILTER_MODE_LINEAR];
           const randomEnum1 = Math.round(Math.random()).toInt();
-          canvas.drawImageRect(pixelMap, {
+          canvas.drawImageRect(pixelMap!, {
             left: Math.random(), top: Math.random(), right: Math.random(), bottom: Math.random()
           }, new drawing.SamplingOptions(itemList1[randomEnum1]));
         }
@@ -127,9 +127,9 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectToNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageRectToNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
-        canvas.drawImageRect(pixelMap, {
+        canvas.drawImageRect(pixelMap!, {
           left: 0, top: 0, right: 600, bottom: 600
         }, undefined);
         console.info(msg + `drawImageRect test successes`);
@@ -149,7 +149,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasIsClipEmptyNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasIsClipEmptyNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let result = canvas.isClipEmpty();
         console.info(msg + " isClipEmpty 1 -----result:  "+ result);
@@ -178,7 +178,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasIsClipEmptyMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasIsClipEmptyMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           canvas.isClipEmpty();
@@ -202,7 +202,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasClipRegionNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRegionNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let region1 = new drawing.Region();
         canvas.clipRegion(region1);
@@ -227,7 +227,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasClipRegionMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRegionMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; ++i) {
           let region1 = new drawing.Region();
@@ -250,7 +250,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasClipRegionToNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRegionToNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       let region1 = new drawing.Region();
       try {
         canvas.clipRegion(region1, undefined);
@@ -272,7 +272,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasClipRoundRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClipRoundRectNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let rectOne: common2D.Rect = {
           left: 10, top: 100, right: 200, bottom: 300
@@ -304,7 +304,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasClipRoundRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRoundRectMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let itemList: drawing.ClipOp[]= [drawing.ClipOp.DIFFERENCE, drawing.ClipOp.INTERSECT];
@@ -332,7 +332,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasResetMatrixNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasResetMatrixNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let matrix = new drawing.Matrix();
         matrix.preRotate(-30, 10, 20)
@@ -361,7 +361,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasResetMatrixMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasResetMatrixMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let matrix = new drawing.Matrix();
@@ -396,7 +396,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawSingleCharacterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawSingleCharacterNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const font = new drawing.Font();
       try {
         canvas.drawSingleCharacter("你", font, 100, 100);
@@ -422,7 +422,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawSingleCharacterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawSingleCharacterMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const font = new drawing.Font();
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -445,7 +445,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawSingleCharacterAbNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawSingleCharacterAbNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const font = new drawing.Font();
 
       try {
@@ -481,15 +481,15 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectWithSrcNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawImageRectWithSrcNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const maxVal = Number.MAX_VALUE;
       try {
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 0, top: 0, right: 600, bottom: 600
         }, {
           left: 0, top: 0, right: 600, bottom: 600
         });
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 100.1, top: 100.2, right: 700.1, bottom: 700.2
         }, {
           left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
@@ -498,7 +498,7 @@ export default function drawingTsCanvasPart5Test() {
         let itemList2: drawing.SrcRectConstraint[]= [drawing.SrcRectConstraint.STRICT, drawing.SrcRectConstraint.FAST];
         for (let i = 0; i < itemList1.length; i += 1) {
           for (let j = 0; j < itemList2.length; j += 1) {
-            canvas.drawImageRectWithSrc(pixelMap, {
+            canvas.drawImageRectWithSrc(pixelMap!, {
               left: 100, top: 100.2, right: 700, bottom: 700.2
             }, {
               left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
@@ -506,22 +506,22 @@ export default function drawingTsCanvasPart5Test() {
             //枚举值samplingOptions和constraint交叉遍历验证
           }
         }
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 0, top: 0, right: -600, bottom: -600
         }, {
           left: -100, top: -100, right: 600, bottom: 600
         });
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 100, top: 100, right: 100, bottom: 600
         }, {
           left: -100, top: -100, right: -100, bottom: 700
         });
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 100, top: 100, right: 100, bottom: 100
         }, {
           left: 700, top: 700, right: 700, bottom: 700
         });
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: maxVal, top: maxVal, right: maxVal, bottom: maxVal
         }, {
           left: maxVal, top: maxVal, right: maxVal, bottom: maxVal
@@ -546,14 +546,14 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectWithSrcMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageRectWithSrcMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let itemList1: drawing.FilterMode[]= [drawing.FilterMode.FILTER_MODE_NEAREST, drawing.FilterMode.FILTER_MODE_LINEAR];
           const randomEnum1 = Math.round(Math.random()).toInt();
           let itemList2: drawing.SrcRectConstraint[]= [drawing.SrcRectConstraint.STRICT, drawing.SrcRectConstraint.FAST];
           const randomEnum2 = Math.round(Math.random()).toInt();
-          canvas.drawImageRectWithSrc(pixelMap, {
+          canvas.drawImageRectWithSrc(pixelMap!, {
             left: Math.random(), top: Math.random(), right: Math.random(), bottom: Math.random()
           }, {
             left: Math.random(), top: Math.random(), right: Math.random(), bottom: Math.random()
@@ -576,9 +576,9 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawImageRectWithSrcToNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawImageRectWithSrcToNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 100, top: 100.2, right: 700, bottom: 700.2
         }, {
           left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
@@ -590,7 +590,7 @@ export default function drawingTsCanvasPart5Test() {
         expect().assertFail();
       }
       try {
-        canvas.drawImageRectWithSrc(pixelMap, {
+        canvas.drawImageRectWithSrc(pixelMap!, {
           left: 100, top: 100.2, right: 700, bottom: 700.2
         }, {
           left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
@@ -613,7 +613,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawRoundRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawRoundRectNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         let rectOne: common2D.Rect = {
@@ -640,7 +640,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawRoundRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawRoundRectMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -667,7 +667,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasGetLocalClipBoundsNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasGetLocalClipBoundsNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         let rect: common2D.Rect | undefined = canvas.getLocalClipBounds();
@@ -677,7 +677,10 @@ export default function drawingTsCanvasPart5Test() {
           expect(rect.top).assertEqual(-1)
           expect(rect.bottom).assertEqual(101)
         }
-
+        if(rect == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         canvas.clipRect({
           left: 10, right: 50, top: 30, bottom: 90
         }, drawing.ClipOp.DIFFERENCE, true);
@@ -687,6 +690,10 @@ export default function drawingTsCanvasPart5Test() {
           expect(rect.right).assertEqual(101)
           expect(rect.top).assertEqual(-1)
           expect(rect.bottom).assertEqual(101)
+        }
+        if(rect == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
         }
         console.info(msg + 'test successes');
       } catch (e) {
@@ -707,7 +714,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasGetLocalClipBoundsMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasGetLocalClipBoundsMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -738,7 +745,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasGetTotalMatrixNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasGetTotalMatrixNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         let matrix1 = new drawing.Matrix();
@@ -747,12 +754,20 @@ export default function drawingTsCanvasPart5Test() {
         if( matrixResult1 ){
           expect(matrixResult1.getAll()).assertDeepEquals(matrix1.getAll());
         }
+        if( matrixResult1 == undefined ){
+          console.info(msg + ' matrixResult1 test failed');
+          expect().assertFail();
+        }
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         canvas.setMatrix(matrix2);
         let matrixResult2 = canvas.getTotalMatrix();
         if( matrixResult2 ){
           expect(matrixResult2.getAll()).assertDeepEquals(matrix2.getAll());
+        }
+        if( matrixResult2 == undefined ){
+          console.info(msg + ' matrixResult2 test failed');
+          expect().assertFail();
         }
         console.info(msg + 'test successes');
       } catch (e) {
@@ -773,7 +788,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasGetTotalMatrixMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasGetTotalMatrixMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -802,7 +817,7 @@ export default function drawingTsCanvasPart5Test() {
      */
     it('testCanvasDrawShadowNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawShadowNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const path = new drawing.Path();
       try {
         canvas.drawShadow(path, {

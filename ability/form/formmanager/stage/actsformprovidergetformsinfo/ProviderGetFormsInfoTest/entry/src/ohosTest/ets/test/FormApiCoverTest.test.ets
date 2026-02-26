@@ -412,5 +412,31 @@ export default function formApiCoverTest() {
       }
       hilog.info(domain, tag, `${itName} end`);
     });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0200
+     * @tc.desc   createFormBindingData test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0200';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        hilog.info(domain, tag, `${itName} createFormBindingData`);
+        let bindingData: formBindingData.FormBindingData  = formBindingData.createFormBindingData(null);
+        hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${JSON.stringify(bindingData)}`);
+        expect(bindingData?.data).assertEqual("");
+        expect(bindingData?.proxies).assertUndefined();
+        done();
+      } catch(error) {
+        hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+        expect(error?.code).assertEqual(ERROR_CODE1);
+        done();
+      }
+      hilog.info(domain, tag, `${itName} end`);
+    });
   })
 }

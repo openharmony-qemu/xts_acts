@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignEnd_NoSpace() {
   describe('AlignEnd_NoSpace', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignEnd_NoSpace beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

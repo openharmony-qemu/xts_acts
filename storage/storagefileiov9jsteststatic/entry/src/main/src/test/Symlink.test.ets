@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,8 @@ export default function fileIOSymlink() {
       try {
         fs.symlinkSync(fpath, fpath + 'link01');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_000 has failed for' + JSON.stringify(e));
         expect(e.message == 'Permission denied').assertTrue();
         fs.unlinkSync(fpath);
@@ -67,7 +68,8 @@ export default function fileIOSymlink() {
       try {
         await fs.symlink(fpath, fpath + 'link2');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_001 has failed for' + JSON.stringify(e));
         expect(e.message == 'Permission denied').assertTrue();
         fs.unlinkSync(fpath);
@@ -97,11 +99,162 @@ export default function fileIOSymlink() {
           }
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_002 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_symlink_async_static_003
+     * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0300
+     * @tc.desc   Test symlink() promise interface with empty target.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_003 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_003');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fs.symlink("", fpath + 'link4');
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_003 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_symlink_async_static_004
+     * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0400
+     * @tc.desc   Test symlink() promise interface with empty srcPath.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_004 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_004');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fs.symlink(fpath, "");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_004 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_symlink_async_static_005
+     * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0500
+     * @tc.desc   Test symlink() callback interface with empty target.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_005 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_005');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.symlink("", fpath + 'link5', (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            fs.unlinkSync(fpath);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_005 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_005 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_symlink_async_static_006
+     * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0600
+     * @tc.desc   Test symlink() callback interface with empty srcPath.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_006 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_async_static_006');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.symlink(fpath, "", (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            fs.unlinkSync(fpath);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_006 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_006 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_symlink_sync_static_001
+     * @tc.number SUB_DF_FILEIO_SYMLINK_SYNC_0100
+     * @tc.desc   Test symlinkSync() interface with empty target.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_001 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_sync_static_001');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.symlinkSync("", fpath + 'link6');
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_001 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_symlink_sync_static_002
+     * @tc.number SUB_DF_FILEIO_SYMLINK_SYNC_0200
+     * @tc.desc   Test symlinkSync() interface with empty srcPath.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_symlink_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_002 start');
+      let fpath = await Utils.nextFileName('fileIO_test_symlink_sync_static_002');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fs.symlinkSync(fpath, "");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        fs.unlinkSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_002 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_symlink end');
+
 }

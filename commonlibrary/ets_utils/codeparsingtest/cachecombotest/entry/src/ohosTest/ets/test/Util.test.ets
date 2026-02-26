@@ -423,19 +423,7 @@ export default function Util1Test() {
       };
       expect(type.isAsyncFunction(asyncFunc2)).assertEqual(true);
     });
-    /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_2400
-     * @tc.name Util1Test024
-     * @tc.desc test Util types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('Util1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const type = new util.types();
-    //   const genFunc1 = new Function();
-    //   expect(type.isAsyncFunction(genFunc1)).assertEqual(false);
-    // });
+
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_2500
      * @tc.name Util1Test025
@@ -449,7 +437,7 @@ export default function Util1Test() {
       const obj3 = {
         func:  () => {}
       } as AsyncFunctionObj1;
-      expect(type.isAsyncFunction(obj3.func)).assertEqual(true);
+      expect(type.isAsyncFunction(obj3.func)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_2600
@@ -1456,7 +1444,7 @@ export default function Util1Test() {
         const values = [1];
         return values[Symbol.iterator]();
       };
-      expect(type.isGeneratorFunction(genFunc2)).assertEqual(true);
+      expect(type.isGeneratorFunction(genFunc2)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10200
@@ -1469,7 +1457,7 @@ export default function Util1Test() {
     it('Util1Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
       const genFunc3 = () => 2;
-      expect(type.isGeneratorFunction(genFunc3)).assertEqual(true);
+      expect(type.isGeneratorFunction(genFunc3)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10300
@@ -1508,7 +1496,7 @@ export default function Util1Test() {
     it('Util1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
       const obj11 = { gen: () => 2 } as numberObj;
-      expect(type.isGeneratorFunction(obj11.gen)).assertEqual(true);
+      expect(type.isGeneratorFunction(obj11.gen)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10600
@@ -1547,7 +1535,7 @@ export default function Util1Test() {
     it('Util1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
       const arr9 = [() => 2, 1, 2];
-      expect(type.isGeneratorFunction(arr9[0])).assertEqual(true);
+      expect(type.isGeneratorFunction(arr9[0])).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10900

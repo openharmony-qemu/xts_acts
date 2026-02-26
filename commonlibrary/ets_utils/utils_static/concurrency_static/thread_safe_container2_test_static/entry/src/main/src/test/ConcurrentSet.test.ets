@@ -363,12 +363,15 @@ export default function ConcurrentSetTest() {
      */
     it("concurrent_Set_Constructor_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const set: Set<number> = new Set<number>();
-      set.add(0);
+      let result = set.add(0);
+      expect(result).assertEqual(set);
       const iter = set.values();
       const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
       const res = concurrentSet.delete(0);
       expect(res).assertTrue();
+      const res2 = concurrentSet.delete(0);
+      expect(res2).assertFalse();
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
     })
 

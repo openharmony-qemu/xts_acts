@@ -199,7 +199,7 @@ export function cameraPicker() {
       await Utils.msSleep(1000);
     }
     let appContext: Context | null = null;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         console.info('  picker beforeAll start');
         appContext = Hypium.get("Context") as Context;
@@ -209,15 +209,15 @@ export function cameraPicker() {
         console.error('  picker beforeAll error: ' + err);
       }
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('  picker beforeEach case');
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('  picker afterEach case');
       await Utils.msSleep(3000);
     });
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('  picker afterAll case');
     });

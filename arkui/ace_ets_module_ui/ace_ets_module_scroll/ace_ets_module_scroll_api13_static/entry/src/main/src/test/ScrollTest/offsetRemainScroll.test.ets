@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 
 export default function offsetRemainScroll() {
   describe('offsetRemainScroll', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       // await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
@@ -87,7 +87,7 @@ it('offsetRemainScroll_static_0100', Level.LEVEL1, async (done: () => void): Pro
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      driver.swipe((Math.round(left + width/2)).toInt(),(Math.round(top + height*0.8)).toInt(),(Math.round(left + width/2)).toInt(),(Math.round(top + height*0.2)).toInt());
+      await driver.swipe((Math.round(left + width/2)).toInt(),(Math.round(top + height*0.8)).toInt(),(Math.round(left + width/2)).toInt(),(Math.round(top + height*0.2)).toInt());
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('scroll_offsetRemain_text');
       console.info("[offsetRemainScroll_static_0100] component obj is: " + strJson);

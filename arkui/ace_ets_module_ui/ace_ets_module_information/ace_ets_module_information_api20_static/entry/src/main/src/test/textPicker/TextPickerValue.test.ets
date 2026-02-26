@@ -33,7 +33,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function TextPickerValue() {
   describe('TextPickerValue', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerValue beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information.api20.static", "EntryAbility")
     });

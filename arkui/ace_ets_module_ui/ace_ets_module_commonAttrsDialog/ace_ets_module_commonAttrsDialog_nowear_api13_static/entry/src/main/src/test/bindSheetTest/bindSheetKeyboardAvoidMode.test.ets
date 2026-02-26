@@ -30,7 +30,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function bindSheetKeyboardAvoidMode() {
   describe('bindSheetKeyboardAvoidMode', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindSheetKeyboardAvoidMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.nowear.api13.static", "EntryAbility")
     });

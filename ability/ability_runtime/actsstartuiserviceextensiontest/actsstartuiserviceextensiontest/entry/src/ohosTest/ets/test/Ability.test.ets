@@ -252,6 +252,116 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0400
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0400
+     * @tc.desc   Function test for startUIServiceExtensionAbility with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_0400', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0400";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0400] isSupportCapability: ' + isSupportCapability);
+      try{
+        testAbilityContext.startUIServiceExtensionAbility(undefined).then((data)=>{
+          console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
+          try{expect().assertFail();}catch{};
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch{};
+          done();
+        })
+      }catch(err){
+        if(err?.code === 801){
+          console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(err));
+        }else{
+          expect(err?.code).assertEqual(ERR_CODE);
+        }
+        done();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0500
+     * @tc.desc   Function test for startUIServiceExtensionAbility with empty object parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_0500', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0500";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0500] isSupportCapability: ' + isSupportCapability);
+      try{
+        testAbilityContext.startUIServiceExtensionAbility({}).then((data)=>{
+          console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
+          try{expect().assertFail();}catch{};
+          done();
+        }).catch((err:BusinessError)=>{
+          console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(err));
+          if(err?.code === 801){
+            console.info(tag + '====> startUIServiceExtensionAbility not support: ' + JSON.stringify(err));
+          }else{
+            try{expect(err?.code).assertEqual(16000001);}catch{};
+          }
+          done();
+        })
+      }catch(err){
+        if(err?.code === 801){
+          console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(err));
+        }else{
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_0600
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_0600
+     * @tc.desc   Function test for connectUIServiceExtensionAbility with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_0600', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_0600";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0600] isSupportCapability: ' + isSupportCapability);
+      let dataCallBack : common.UIServiceExtensionConnectCallback = {
+        // 接收数据
+        onData: (data: Record<string, Object>) => {
+          console.log(tag + `dataCallBack received data`, JSON.stringify(data));
+          try{expect().assertFail();}catch{};
+          done();
+        },
+        // 连接断开
+        onDisconnect: () => {
+          console.log(tag + `dataCallBack onDisconnect`);
+          try{expect().assertFail();}catch{};
+          done();
+        }
+      }
+      try{
+        testAbilityContext.connectUIServiceExtensionAbility(undefined, dataCallBack).then((proxy: common.UIServiceProxy)=>{
+          console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(proxy));
+          try{expect().assertFail();}catch{};
+          done();
+        }).catch((err:BusinessError)=>{
+          try{expect().assertFail();}catch{};
+          done();
+        })
+      }catch(err){
+        if(err?.code === 801){
+          console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(err));
+        }else{
+          expect(err?.code).assertEqual(ERR_CODE);
+        }
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_WantConstant_0100
      * @tc.number SUB_Ability_AbilityRuntime_WantConstant_0100
      * @tc.desc   Get APP_INSTANCE_KEY CREATE_APP_INSTANCE_KEY CALLER_APP_CLONE_INDEX.
@@ -376,7 +486,8 @@ export default function abilityTest() {
           abilityName: "TestAbility2",
           parameters:{
             "case":"startUIService",
-            "caseName":tag
+            "caseName":tag,
+            "param":null
           }
         },(err, data)=>{
           console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0700] startAbility result ' + err?.code);
@@ -429,7 +540,8 @@ export default function abilityTest() {
           abilityName:"TestAbility2",
           parameters:{
             "case":"connectUIService",
-            "caseName":tag
+            "caseName":tag,
+            "param":null
           }
         },(err, data)=>{
           console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0800] startAbility result ' + err?.code);
@@ -441,6 +553,89 @@ export default function abilityTest() {
       } else {
         console.log(`${tag} wrong param`);
         expect(true).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1200
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1200
+     * @tc.desc   Function test for connectUIServiceExtensionAbility with empty object parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1200', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1200";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1200] isSupportCapability: ' + isSupportCapability);
+      let dataCallBack : common.UIServiceExtensionConnectCallback = {
+        // 接收数据
+        onData: (data: Record<string, Object>) => {
+          console.log(tag + `dataCallBack received data`, JSON.stringify(data));
+          try{expect().assertFail();}catch{};
+          done();
+        },
+        // 连接断开
+        onDisconnect: () => {
+          console.log(tag + `dataCallBack onDisconnect`);
+          try{expect().assertFail();}catch{};
+          done();
+        }
+      }
+      try{
+        testAbilityContext.connectUIServiceExtensionAbility({}, dataCallBack).then((proxy: common.UIServiceProxy)=>{
+          console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(proxy));
+          try{expect().assertFail();}catch{};
+          done();
+        }).catch((err:BusinessError)=>{
+          console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(err));
+          try{expect(err?.code).assertEqual(16000001);}catch{};
+          done();
+        })
+      }catch(err){
+        if(err?.code === 801){
+          console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(err));
+        }else{
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1300
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1300
+     * @tc.desc   Function test for disconnectUIServiceExtensionAbility with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1300', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1300";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1300] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability === true) {
+        try{
+          testAbilityContext.disconnectUIServiceExtensionAbility(undefined)
+            .then(() => {
+              console.log(tag + `disconnectUIServiceExtensionAbility succeed`);
+              try{expect().assertFail();}catch{};
+              done();
+            }).catch((err: BusinessError) => {
+              console.log(tag + `disconnectUIServiceExtensionAbility failed, code is ${err?.code}`);
+              try{expect(err?.code).assertEqual(ERR_CODE);}catch{};
+              done();
+            });
+        }catch(err){
+          expect(err?.code).assertEqual(ERR_CODE);
+          done();
+        }
+      } else if (isSupportCapability === false) {
+        console.log(`${tag} function not enable.`);
+        expect(isSupportCapability).assertFalse();
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
         done();
       }
     })
@@ -481,11 +676,12 @@ export default function abilityTest() {
           bundleName:"com.acts.startuiserviceextensiontest",
           abilityName:"TestAbility2",
           parameters:{
-            "case":"disconnectUIService",
-            "caseName":tag
+            "case":"disconnectUIServiceNull",
+            "caseName":tag,
+            "param":null
           }
         },(err, data)=>{
-          console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] startAbility result ' + err?.code);
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_0900] startAbility result ' + err?.code);
         })
       } else if ((isSupportCapability == false) || (mpEnable == false)) {
         console.log(`${tag} function not enable.`);
@@ -493,5 +689,257 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1500
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1500
+     * @tc.desc   Function test for startUIServiceExtensionAbility with undefined parameter(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1500', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1500";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1500] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability && mpEnable) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [tag]
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
+          commonEventManager.subscribe(sub, (err, commonEventData) => {
+            hilog.info(0x0000, tag, '%{public}s',
+              `tag onConnect=338=` + JSON.stringify(commonEventData));
+            hilog.info(0x0000, tag, '%{public}s',
+              `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            try {
+              expect(commonEventData.parameters?.result).assertEqual(401);
+            } catch {
+            }
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+        });
+        testAbilityContext.startAbility({
+          bundleName: "com.acts.startuiserviceextensiontest",
+          abilityName: "TestAbility2",
+          parameters:{
+            "case":"startUIService",
+            "caseName":tag,
+            "param":"undefined"
+          }
+        },(err, data)=>{
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1500] startAbility result ' + err?.code);
+        })
+      } else if ((isSupportCapability == false) || (mpEnable == false)) {
+        console.log(`${tag} function not enable.`);
+        expect(true).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1600
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1600
+     * @tc.desc   Function test for startUIServiceExtensionAbility with empty object parameter(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1600', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1600";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1600] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability && mpEnable) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [tag]
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
+          commonEventManager.subscribe(sub, (err, commonEventData) => {
+            hilog.info(0x0000, tag, '%{public}s',
+              `tag onConnect=338=` + JSON.stringify(commonEventData));
+            hilog.info(0x0000, tag, '%{public}s',
+              `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            try {
+              expect(commonEventData.parameters?.result).assertEqual(16000001);
+            } catch {
+            }
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+        });
+        testAbilityContext.startAbility({
+          bundleName: "com.acts.startuiserviceextensiontest",
+          abilityName: "TestAbility2",
+          parameters:{
+            "case":"startUIService",
+            "caseName":tag,
+            "param":"{}"
+          }
+        },(err, data)=>{
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1600] startAbility result ' + err?.code);
+        })
+      } else if ((isSupportCapability == false) || (mpEnable == false)) {
+        console.log(`${tag} function not enable.`);
+        expect(true).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1700
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1700
+     * @tc.desc   Function test for connectUIServiceExtensionAbility with undefined parameter(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1700', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1700";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1700] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability && mpEnable) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [tag]
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
+          commonEventManager.subscribe(sub, (err, commonEventData) => {
+            hilog.info(0x0000, tag, '%{public}s',
+              `tag onConnect=338=` + JSON.stringify(commonEventData));
+            hilog.info(0x0000, tag, '%{public}s',
+              `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            try {
+              expect(commonEventData.parameters?.result).assertEqual(401);
+            } catch {
+            }
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+        });
+        testAbilityContext.startAbility({
+          bundleName: "com.acts.startuiserviceextensiontest",
+          abilityName: "TestAbility2",
+          parameters:{
+            "case":"connectUIService",
+            "caseName":tag,
+            "param":"undefined"
+          }
+        },(err, data)=>{
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1700] startAbility result ' + err?.code);
+        })
+      } else if ((isSupportCapability == false) || (mpEnable == false)) {
+        console.log(`${tag} function not enable.`);
+        expect(true).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1800
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1800
+     * @tc.desc   Function test for connectUIServiceExtensionAbility with empty object parameter(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1800', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1800";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1800] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability && mpEnable) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [tag]
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
+          commonEventManager.subscribe(sub, (err, commonEventData) => {
+            hilog.info(0x0000, tag, '%{public}s',
+              `tag onConnect=338=` + JSON.stringify(commonEventData));
+            hilog.info(0x0000, tag, '%{public}s',
+              `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            try {
+              expect(commonEventData.parameters?.result).assertEqual(16000001);
+            } catch {
+            }
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+        });
+        testAbilityContext.startAbility({
+          bundleName: "com.acts.startuiserviceextensiontest",
+          abilityName: "TestAbility2",
+          parameters:{
+            "case":"connectUIService",
+            "caseName":tag,
+            "param":"{}"
+          }
+        },(err, data)=>{
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1800] startAbility result ' + err?.code);
+        })
+      } else if ((isSupportCapability == false) || (mpEnable == false)) {
+        console.log(`${tag} function not enable.`);
+        expect(true).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIServiceExtension_1900
+     * @tc.number SUB_Ability_AbilityRuntime_UIServiceExtension_1900
+     * @tc.desc   Function test for disconnectUIServiceExtensionAbility with undefined parameter(UIExtension).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIServiceExtension_1900', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_UIServiceExtension_1900";
+      console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1900] isSupportCapability: ' + isSupportCapability);
+      if (isSupportCapability && mpEnable) {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [tag]
+        };
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+          sub = subscriber;
+          hilog.info(0x0000, tag, '%{public}s', `createSubscriber ok`);
+          commonEventManager.subscribe(sub, (err, commonEventData) => {
+            hilog.info(0x0000, tag, '%{public}s',
+              `tag onConnect=338=` + JSON.stringify(commonEventData));
+            hilog.info(0x0000, tag, '%{public}s',
+              `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
+            try {
+              expect(commonEventData.parameters?.result).assertEqual(401);
+            } catch {
+            }
+            commonEventManager.unsubscribe(subscriber, (err, data) => {
+              done();
+            });
+          });
+        });
+        testAbilityContext.startAbility({
+          bundleName: "com.acts.startuiserviceextensiontest",
+          abilityName: "TestAbility2",
+          parameters:{
+            "case":"disconnectUIServiceUndefined",
+            "caseName":tag,
+            "param":undefined
+          }
+        },(err, data)=>{
+          console.info('====> [SUB_Ability_AbilityRuntime_UIServiceExtension_1900] startAbility result ' + err?.code);
+        })
+      } else if ((isSupportCapability == false) || (mpEnable == false)) {
+        console.log(`${tag} function not enable.`);
+        expect(true).assertTrue();
+        done();
+      }
+    })
+
+
   })
 }

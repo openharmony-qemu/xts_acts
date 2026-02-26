@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function onScrollStopTest(){
   describe('onScrollStopTest',  () =>{
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerTextStyle beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

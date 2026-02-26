@@ -14,9 +14,11 @@
  */
 
 import toolBarItemState from './toolBar/toolBarItemState.test';
+import toolBarModifierTest from './toolBar/toolBarModifierTest.test';
 import toolBarPageTest from './toolBar/toolBarPageTest.test';
 
 export default function testsuite() {
   toolBarItemState();
   toolBarPageTest();
+  toolBarModifierTest();
 }

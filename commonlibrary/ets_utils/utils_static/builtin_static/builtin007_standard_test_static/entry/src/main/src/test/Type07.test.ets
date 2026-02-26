@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ export default function type_07Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -61,7 +61,7 @@ export default function type_07Test() {
         const instance1 = NullType.REF;
         const instance2 = NullType.REF;
         expect(instance1.equals(instance2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -82,7 +82,7 @@ export default function type_07Test() {
 
         const stringType = Type.of("test") as StringType;
         expect(nullType.equals(stringType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -103,7 +103,7 @@ export default function type_07Test() {
 
         const intType = Type.of(123);
         expect(nullType.equals(intType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -124,7 +124,7 @@ export default function type_07Test() {
 
         const undefinedType = Type.of(undefined);
         expect(nullType.equals(undefinedType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -145,7 +145,7 @@ export default function type_07Test() {
 
         const classType = Type.of(new Object());
         expect(nullType.equals(classType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -164,7 +164,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.getLiteral()).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -187,7 +187,7 @@ export default function type_07Test() {
         expect(firstCall).assertEqual("null");
         expect(secondCall).assertEqual("null");
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -207,7 +207,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const literal = nullType.getLiteral();
         expect(typeof literal === "string").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -226,7 +226,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.getLiteral()).assertEqual(nullType.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -246,7 +246,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const literal = nullType.getLiteral();
         expect(literal.length).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -265,7 +265,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.getName()).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -288,7 +288,7 @@ export default function type_07Test() {
         expect(firstCall).assertEqual("null");
         expect(secondCall).assertEqual("null");
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -308,7 +308,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const name = nullType.getName();
         expect(typeof name === "string").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -328,7 +328,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const name = nullType.getName();
         expect(name.length).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -351,7 +351,7 @@ export default function type_07Test() {
         const modifiedName = name + "_modified";
         expect(nullType.getName()).assertEqual("null");
         expect(modifiedName).assertEqual("null_modified");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -370,7 +370,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -393,7 +393,7 @@ export default function type_07Test() {
         expect(firstCall).assertTrue();
         expect(secondCall).assertTrue();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -413,7 +413,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const result = nullType.hasName();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -437,7 +437,7 @@ export default function type_07Test() {
         expect(nullType.hasName()).assertTrue();
         expect(booleanType.hasName()).assertFalse();
         expect(stringType.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -461,7 +461,7 @@ export default function type_07Test() {
         } else {
           expect().assertFail();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -480,7 +480,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -503,7 +503,7 @@ export default function type_07Test() {
         expect(firstCall).assertTrue();
         expect(secondCall).assertTrue();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -523,7 +523,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const result = nullType.isPrimitive();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -547,7 +547,7 @@ export default function type_07Test() {
         expect(nullType.isPrimitive()).assertTrue();
         expect(booleanType.isPrimitive()).assertTrue();
         expect(stringType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -566,7 +566,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -589,7 +589,7 @@ export default function type_07Test() {
         expect(firstCall).assertTrue();
         expect(secondCall).assertTrue();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -609,7 +609,7 @@ export default function type_07Test() {
         const nullType = NullType.REF;
         const result = nullType.isReference();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -633,7 +633,7 @@ export default function type_07Test() {
         expect(nullType.isReference()).assertTrue();
         expect(intValType.isReference()).assertFalse();
         expect(booleanValType.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -652,7 +652,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.equals(stringType)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -672,7 +672,7 @@ export default function type_07Test() {
         const stringType1 = StringType.REF;
         const stringType2 = StringType.REF;
         expect(stringType1.equals(stringType2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -692,7 +692,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const nullType = NullType.REF;
         expect(stringType.equals(nullType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -712,7 +712,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const intType = IntType.VAL;
         expect(stringType.equals(intType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -732,7 +732,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const classType = ObjectType;
         expect(stringType.equals(classType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -752,7 +752,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const arrayType = ArrayType.INT_REF;
         expect(stringType.equals(arrayType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -772,7 +772,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const undefinedType = UndefinedType.REF;
         expect(stringType.equals(undefinedType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -791,7 +791,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.getLiteral()).assertEqual("string");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -814,7 +814,7 @@ export default function type_07Test() {
         expect(firstCall).assertEqual("string");
         expect(secondCall).assertEqual("string");
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -834,7 +834,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const literal = stringType.getLiteral();
         expect(typeof literal === "string").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -854,7 +854,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const literal = stringType.getLiteral();
         expect(literal.length).assertEqual(6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -878,7 +878,7 @@ export default function type_07Test() {
 
         expect(stringType.getLiteral()).assertEqual("string");
         expect(modifiedLiteral).assertEqual("string_modified");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -897,7 +897,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -920,7 +920,7 @@ export default function type_07Test() {
         expect(firstCall).assertEqual("");
         expect(secondCall).assertEqual("");
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -940,7 +940,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const name = stringType.getName();
         expect(typeof name === "string").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -960,7 +960,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const name = stringType.getName();
         expect(name.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -984,7 +984,7 @@ export default function type_07Test() {
         expect(stringType.getName()).assertEqual("");
         expect(nullType.getName()).assertEqual("null");
         expect(intType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1007,7 +1007,7 @@ export default function type_07Test() {
         const modifiedName = name + "modified";
         expect(stringType.getName()).assertEqual("");
         expect(modifiedName).assertEqual("modified");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1026,7 +1026,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1049,7 +1049,7 @@ export default function type_07Test() {
         expect(firstCall).assertFalse();
         expect(secondCall).assertFalse();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1069,7 +1069,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const result = stringType.hasName();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1093,7 +1093,7 @@ export default function type_07Test() {
         expect(stringType.hasName()).assertFalse();
         expect(nullType.hasName()).assertTrue();
         expect(classType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1118,7 +1118,7 @@ export default function type_07Test() {
           const name = stringType.getName();
           expect(name).assertEqual("");
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1144,7 +1144,7 @@ export default function type_07Test() {
         expect(booleanType.hasName()).assertFalse();
         expect(intType.hasName()).assertFalse();
         expect(doubleType.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1163,7 +1163,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1186,7 +1186,7 @@ export default function type_07Test() {
         expect(firstCall).assertTrue();
         expect(secondCall).assertTrue();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1206,7 +1206,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const result = stringType.isPrimitive();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1232,7 +1232,7 @@ export default function type_07Test() {
         expect(booleanType.isPrimitive()).assertTrue();
         expect(intType.isPrimitive()).assertTrue();
         expect(doubleType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1256,7 +1256,7 @@ export default function type_07Test() {
         expect(stringType.isPrimitive()).assertTrue();
         expect(arrayType.isPrimitive()).assertFalse();
         expect(objectType.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1280,7 +1280,7 @@ export default function type_07Test() {
         expect(stringType.isPrimitive()).assertTrue();
         expect(nullType.isPrimitive()).assertTrue();
         expect(undefinedType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1300,7 +1300,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         expect(stringType.isPrimitive()).assertTrue();
         expect(stringType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1319,7 +1319,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1342,7 +1342,7 @@ export default function type_07Test() {
         expect(firstCall).assertTrue();
         expect(secondCall).assertTrue();
         expect(firstCall === secondCall).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1362,7 +1362,7 @@ export default function type_07Test() {
         const stringType = StringType.REF;
         const result = stringType.isReference();
         expect(typeof result === "boolean").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1388,7 +1388,7 @@ export default function type_07Test() {
         expect(intValType.isReference()).assertFalse();
         expect(booleanValType.isReference()).assertFalse();
         expect(doubleValType.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1416,7 +1416,7 @@ export default function type_07Test() {
         expect(objectType.isReference()).assertTrue();
         expect(nullType.isReference()).assertTrue();
         expect(undefinedType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1442,7 +1442,7 @@ export default function type_07Test() {
         expect(intRefType.isReference()).assertTrue();
         expect(booleanRefType.isReference()).assertTrue();
         expect(doubleRefType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1461,7 +1461,7 @@ export default function type_07Test() {
       try {
         const intType = IntType.VAL;
         expect(intType.getLiteral()).assertEqual("int");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1480,7 +1480,7 @@ export default function type_07Test() {
       try {
         const intType = IntType.REF;
         expect(intType.getLiteral()).assertEqual("Int");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1502,7 +1502,7 @@ export default function type_07Test() {
         const secondCall = intType.getLiteral();
         expect(firstCall).assertEqual("int");
         expect(secondCall).assertEqual("int");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1522,7 +1522,7 @@ export default function type_07Test() {
         const intType = IntType.VAL;
         const literal = intType.getLiteral();
         expect(typeof literal === "string").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1542,7 +1542,7 @@ export default function type_07Test() {
         const doubleType1 = DoubleType.VAL;
         const doubleType2 = DoubleType.VAL;
         expect(doubleType1.equals(doubleType2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1562,7 +1562,7 @@ export default function type_07Test() {
         const doubleType1 = DoubleType.REF;
         const doubleType2 = DoubleType.REF;
         expect(doubleType1.equals(doubleType2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1582,7 +1582,7 @@ export default function type_07Test() {
         const doubleType = DoubleType.VAL;
         const floatType = FloatType.VAL;
         expect(doubleType.equals(floatType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1602,7 +1602,7 @@ export default function type_07Test() {
         const doubleType = DoubleType.REF;
         const intType = IntType.REF;
         expect(doubleType.equals(intType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1622,7 +1622,7 @@ export default function type_07Test() {
         const doubleType = DoubleType.VAL;
         const stringType = Type.of("test") as StringType;
         expect(doubleType.equals(stringType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1641,7 +1641,7 @@ export default function type_07Test() {
       try {
         const doubleValFromTypeOf = Type.of(3.14);
         expect(doubleValFromTypeOf.equals(DoubleType.VAL)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1661,7 +1661,7 @@ export default function type_07Test() {
         const doubleVal = DoubleType.VAL;
         const doubleRefFromTypeOf = Type.of(new Double(3.14));
         expect(doubleVal.equals(doubleRefFromTypeOf)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1680,7 +1680,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.VAL;
         expect(doubleType.getLiteral()).assertEqual("double");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1699,7 +1699,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.REF;
         expect(doubleType.getLiteral()).assertEqual("Double");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1718,7 +1718,7 @@ export default function type_07Test() {
       try {
         const doubleVal = Type.of(3.14);
         expect(doubleVal.getLiteral()).assertEqual("double");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1737,7 +1737,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.VAL;
         expect(doubleType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1756,7 +1756,7 @@ export default function type_07Test() {
       try {
         const doubleVal = Type.of(3.14);
         expect(doubleVal.getName()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1775,7 +1775,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.VAL;
         expect(doubleType.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1794,7 +1794,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.REF;
         expect(doubleType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1813,7 +1813,7 @@ export default function type_07Test() {
       try {
         const doubleVal = Type.of(3.14);
         expect(doubleVal.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1832,7 +1832,7 @@ export default function type_07Test() {
       try {
         const doubleRef = Type.of(new Double(3.14));
         expect(doubleRef.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1857,7 +1857,7 @@ export default function type_07Test() {
 
         const booleanType = Type.of(true);
         expect(booleanType.hasName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1876,7 +1876,7 @@ export default function type_07Test() {
       try {
         const voidType = VoidType.REF;
         expect(voidType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1895,7 +1895,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.VAL;
         expect(doubleType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1914,7 +1914,7 @@ export default function type_07Test() {
       try {
         const doubleVal = Type.of(3.14);
         expect(doubleVal.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1939,7 +1939,7 @@ export default function type_07Test() {
 
         const charType = Type.of('a');
         expect(charType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1964,7 +1964,7 @@ export default function type_07Test() {
 
         const arrayType = Type.of([1, 2, 3]);
         expect(arrayType.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1983,7 +1983,7 @@ export default function type_07Test() {
       try {
         const voidType = VoidType.VAL;
         expect(voidType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2002,7 +2002,7 @@ export default function type_07Test() {
       try {
         const voidType = VoidType.REF;
         expect(voidType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2021,7 +2021,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2040,7 +2040,7 @@ export default function type_07Test() {
       try {
         const undefinedType = UndefinedType.REF;
         expect(undefinedType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2059,7 +2059,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.VAL;
         expect(doubleType.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2078,7 +2078,7 @@ export default function type_07Test() {
       try {
         const doubleType = DoubleType.REF;
         expect(doubleType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2097,7 +2097,7 @@ export default function type_07Test() {
       try {
         const doubleVal = Type.of(3.14);
         expect(doubleVal.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2116,7 +2116,7 @@ export default function type_07Test() {
       try {
         const doubleRef = Type.of(new Double(3.14));
         expect(doubleRef.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2141,7 +2141,7 @@ export default function type_07Test() {
 
         const booleanType = Type.of(true);
         expect(booleanType.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2166,7 +2166,7 @@ export default function type_07Test() {
 
         const arrayType = Type.of([1, 2, 3]);
         expect(arrayType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2185,7 +2185,7 @@ export default function type_07Test() {
       try {
         const voidType = VoidType.VAL;
         expect(voidType.isReference()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2204,7 +2204,7 @@ export default function type_07Test() {
       try {
         const voidType = VoidType.REF;
         expect(voidType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2223,7 +2223,7 @@ export default function type_07Test() {
       try {
         const nullType = NullType.REF;
         expect(nullType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2242,7 +2242,7 @@ export default function type_07Test() {
       try {
         const undefinedType = UndefinedType.REF;
         expect(undefinedType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -2261,7 +2261,7 @@ export default function type_07Test() {
       try {
         const stringType = StringType.REF;
         expect(stringType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }

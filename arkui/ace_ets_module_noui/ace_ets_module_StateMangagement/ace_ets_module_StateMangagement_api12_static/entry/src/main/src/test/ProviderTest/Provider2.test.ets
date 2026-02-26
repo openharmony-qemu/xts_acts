@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Provider2Test() {
   describe('Provider2Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Provider2Test beforeEach start");
 
 
@@ -71,7 +71,8 @@ export default function Provider2Test() {
         if (!("Provider2" == pages.name)) {
           console.info("get Provider2Test pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
+          console.info("get Provider2Test pages.name:" + JSON.stringify(routerInstance.getState().name));
           await CommonFunc.sleep(2000);
 
         }

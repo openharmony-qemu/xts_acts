@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function textPickerDialogBlurStyleOptionsTest() {
   describe('TextPickerDialogBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

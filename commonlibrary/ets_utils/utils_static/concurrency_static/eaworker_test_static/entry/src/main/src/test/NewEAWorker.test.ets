@@ -47,7 +47,7 @@ export const Sleep = (ms: int) => {
 
 export default function NewEAWorkerTest() {
   describe('NewEAWorkerTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -707,7 +707,7 @@ export default function NewEAWorkerTest() {
           EAWorker.main().start();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot be started');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot be started');
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -735,7 +735,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Worker already started');
+          expect(error.message).assertContain('EAWorker:: Worker already started or quit');
         } finally {
           try {
             worker.quit();
@@ -766,7 +766,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -797,7 +797,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -828,7 +828,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Cannot stop worker before start');
+          expect(error.message).assertContain('EAWorker:: Cannot stop worker before start');
         } finally {
           try {
             worker.quit();
@@ -860,7 +860,7 @@ export default function NewEAWorkerTest() {
           worker.start();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not run task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot run task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -892,7 +892,7 @@ export default function NewEAWorkerTest() {
           }).Await();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not run task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot run task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -925,7 +925,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail()
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Can not post task when worker is not started');
+          expect(error.message).assertContain('EAWorker:: Cannot post task when worker is not started');
         } finally {
           try {
             worker.quit();
@@ -1380,10 +1380,8 @@ export default function NewEAWorkerTest() {
         console.info(`${TAG} test start`);
         let worker: EAWorker | null = null;
         let taskExecuted = false;
-        let isWorkerAlive = false;
         try {
           const task = (): void => {
-            isWorkerAlive = worker!.isAlive();
             taskExecuted = true;
           }
           worker = new EAWorker(task);
@@ -1392,7 +1390,7 @@ export default function NewEAWorkerTest() {
             await Utils.msSleep(100);
           }
           expect(taskExecuted).assertTrue();
-          expect(isWorkerAlive).assertFalse();
+          expect(worker!.isAlive()).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1687,7 +1685,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot set priority');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot set priority');
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -1711,7 +1709,7 @@ export default function NewEAWorkerTest() {
           expect(false).assertFail();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(error.message).assertContain('Main worker cannot be stopped');
+          expect(error.message).assertContain('EAWorker:: Main worker cannot be stopped');
         } finally {
           console.info(`${TAG} test end`);
           done();

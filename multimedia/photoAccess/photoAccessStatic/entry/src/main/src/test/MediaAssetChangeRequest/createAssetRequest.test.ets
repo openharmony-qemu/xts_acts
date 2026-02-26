@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create image without options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -98,7 +98,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create image with options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -137,7 +137,7 @@ export default function createAssetRequest() {
           hilog.info(0x0000, 'testTag', 'count   ' + resultTwo.getCount() + count);
           console.info(`${testNum} succeed to create video without options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           hilog.info(0x0000, 'testTag', 'create_asset_request_static_002 failed' + err.name + err.message);
           expect(false).assertTrue();
@@ -178,7 +178,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create video with options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           hilog.info(0x0000, 'testTag', 'create_asset_request_static_002 failed' + err.name + err.message);
           expect(false).assertTrue();
@@ -209,7 +209,8 @@ export default function createAssetRequest() {
           console.info(`${testNum} succeed to create image with options`);
           expect(false).assertTrue()
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}, ${error.code}`);
           expect(error.code).assertEqual(401)
           done();

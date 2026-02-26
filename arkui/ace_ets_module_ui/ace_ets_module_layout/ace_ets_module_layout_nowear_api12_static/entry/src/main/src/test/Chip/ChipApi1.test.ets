@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ChipApi1() {
   describe('ChipApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipApi1 beforeAll start");
 
 
@@ -102,12 +102,12 @@ export default function ChipApi1() {
 
 
       inspector.sendEventByKey('ChipApi1_btn1', 10, "")
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       console.info('Activated click after')
 
       let text = inspector.getInspectorByKey('ChipApi1_text');
-      expect(JSON.stringify(JSON.parseJsonElement(text).getElement('$attrs').getString('content')))
-        .assertEqual('\"#FFFF0000\"');
+      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content'))
+        .assertEqual('#FFFF0000');
       await CommonFunc.sleep(1000);
 
       console.info('ChipApi1_static_0100 END');
