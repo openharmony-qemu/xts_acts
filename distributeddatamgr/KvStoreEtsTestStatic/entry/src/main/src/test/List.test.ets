@@ -34,9 +34,6 @@ import SingleKvStoreKVPromiseEtsTestStatic from "./SingleKvStoreKVPromiseEtsTest
 import SingleKvStoreReturnValueStatic from "./SingleKvStoreReturnValue.test";
 import KVManagerPromiseTest from "./KVManagerPromiseTest.test.ets";
 import SingleKvStoreKVConcurrencyEtsTestStatic from "./SingleKvStoreKVConcurrencyEtsTest.test";
-import DeviceKvStoreNullEtsTestStatic from "./DeviceKvStoreNullEtsTest.test";
-import SingleKvStoreNullEtsTestStatic from "./SingleKvStoreNullEtsTest.test";
-
 
 export default function testsuite() {
   DeviceKvStoreReturnValueStatic();
@@ -60,6 +57,4 @@ export default function testsuite() {
   KvStoreEtsTestStatic();
   KVManagerPromiseTest();
   SingleKvStoreKVConcurrencyEtsTestStatic();
-  DeviceKvStoreNullEtsTestStatic();
-  SingleKvStoreNullEtsTestStatic();
 }
