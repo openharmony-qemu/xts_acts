@@ -45,13 +45,6 @@ import showActionSheetNullTest from './UIContextTest/showActionSheetNullTest.tes
 import updateBindSheetNullTest from './UIContextTest/updateBindSheetNullTest.test'
 
 export default function testsuite() {
-    addComponentContentWithOrderNullTest()
-    hideComponentContentNullTest()
-    removeComponentContentNullTest()
-    closeBindSheetNullTest()
-    openBindSheetNullTest()
-    showActionSheetNullTest()
-    updateBindSheetNullTest()
     isVisible()
     getDialogControllerTest()
     DialogOptions()
@@ -76,4 +69,11 @@ export default function testsuite() {
     openToastTest()
     PromptActionToastErrorCodeTest()
     getDialogControllerReturnTest()
+    addComponentContentWithOrderNullTest()
+    hideComponentContentNullTest()
+    removeComponentContentNullTest()
+    closeBindSheetNullTest()
+    openBindSheetNullTest()
+    showActionSheetNullTest()
+    updateBindSheetNullTest()
 }
