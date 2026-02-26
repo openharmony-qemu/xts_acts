@@ -1858,9 +1858,11 @@ export default function relationalStoreTest() {
         if(err.code === 801) {
           console.log(tag + " err" + err.code + err.message);
           expect(err.code).assertEqual(801);
+          done();
         } else {
           console.log(tag + " err" + err.code + err.message);
           expect().assertFail();
+          done();
         }
       }
       console.info(tag + "************* DeleteRdbStoreErrTest004 end *************");
