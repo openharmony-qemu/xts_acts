@@ -451,5 +451,421 @@ export default function pasteComponentSetUndefinedTest() {
       sucCallback(TCNAME, done);
       await clickSecComponent(TCNAME, driver, 0);
     });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_1600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_1600
+     * @tc.desc   Test SecurityComponent borderRadius(BorderRadiuses) set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_1600';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined15');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.borderRadius).assertEqual('0.00vp');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_1700
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_1700
+     * @tc.desc   Test SecurityComponent padding set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_1700';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined16');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.padding.left).assertEqual('16.00vp');
+      expect(obj.$attrs.padding.right).assertEqual('16.00vp');
+      expect(obj.$attrs.padding.top).assertEqual('8.00vp');
+      expect(obj.$attrs.padding.bottom).assertEqual('8.00vp');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_1800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_1800
+     * @tc.desc   Test SecurityComponent textIconSpace set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_1800';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined17');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.textIconSpace).assertEqual('4.00vp');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+  /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_1900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_1900
+     * @tc.desc   Test SecurityComponent width set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_1900';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined18-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_width: string = obj1.$attrs.width;
+      let strJson2: string = getInspectorByKey('setUndefined18-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.width).assertEqual(expect_width);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2000
+     * @tc.desc   Test SecurityComponent height set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2000';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined19-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_height: string = obj1.$attrs.height;
+      let strJson2: string = getInspectorByKey('setUndefined19-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.height).assertEqual(expect_height);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2100
+     * @tc.desc   Test SecurityComponent size set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2100';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined20-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_size_width: string = obj1.$attrs.size.width;
+      let expect_size_height: string = obj1.$attrs.size.height;
+      let strJson2: string = getInspectorByKey('setUndefined20-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.size.width).assertEqual(expect_size_width);
+      expect(obj2.$attrs.size.height).assertEqual(expect_size_height);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2200
+     * @tc.desc   Test SecurityComponent constraintSize set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2200';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined21-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_constraintSize: string = obj1.$attrs.constraintSize;
+      let strJson2: string = getInspectorByKey('setUndefined21-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.constraintSize).assertEqual(expect_constraintSize);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2300
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2300
+     * @tc.desc   Test SecurityComponent align set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2300';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined22');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.align).assertEqual('Alignment.Center');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2400
+     * @tc.desc   Test SecurityComponent alignRules set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2400';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined23-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_alignRules: string = obj1.$attrs.alignRules;
+      let strJson2: string = getInspectorByKey('setUndefined23-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.alignRules).assertEqual(expect_alignRules);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2500
+     * @tc.desc   Test SecurityComponent id set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2500';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined24');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.id).assertEqual('setUndefined24');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2600
+     * @tc.desc   Test SecurityComponent chainMode set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2600';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined25-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_chainMode: string | undefined = obj1.$attrs.chainMode;
+      let strJson2: string = getInspectorByKey('setUndefined25-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.chainMode).assertEqual(expect_chainMode);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2700
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2700
+     * @tc.desc   Test SecurityComponent minFontScale set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2700';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined26-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_minFontScale: string = obj1.$attrs.minFontScale;
+      let strJson2: string = getInspectorByKey('setUndefined26-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.minFontScale).assertEqual(expect_minFontScale);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2800
+     * @tc.desc   Test SecurityComponent maxFontScale set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2800';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined27-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_maxFontScale: string = obj1.$attrs.maxFontScale;
+      let strJson2: string = getInspectorByKey('setUndefined27-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.maxFontScale).assertEqual(expect_maxFontScale);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_2900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_2900
+     * @tc.desc   Test SecurityComponent minFontSize set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_2900';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined28-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_minFontSize: string = obj1.$attrs.minFontSize;
+      let strJson2: string = getInspectorByKey('setUndefined28-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.minFontSize).assertEqual(expect_minFontSize);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_3000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_3000
+     * @tc.desc   Test SecurityComponent maxFontSize set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_3000';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined29-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_maxFontSize: string = obj1.$attrs.maxFontSize;
+      let strJson2: string = getInspectorByKey('setUndefined29-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.maxFontSize).assertEqual(expect_maxFontSize);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_3100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_3100
+     * @tc.desc   Test SecurityComponent maxLines set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_3100';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined30');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.maxLines).assertEqual('1000000');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_3200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_3200
+     * @tc.desc   Test SecurityComponent heightAdaptivePolicy set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_3200';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = getInspectorByKey('setUndefined31');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.heightAdaptivePolicy).assertEqual('TextHeightAdaptivePolicy.MAX_LINES_FIRST');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_3300
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_3300
+     * @tc.desc   Test SecurityComponent focusBox set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_3300';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson1: string = getInspectorByKey('setUndefined32-1');
+      let obj1 : ESObject = JSON.parse(strJson1);
+      let expect_focusBox: string | undefined = obj1.$attrs.focusBox;
+      let strJson2: string = getInspectorByKey('setUndefined32-2');
+      let obj2 : ESObject = JSON.parse(strJson2);
+      expect(obj2.$attrs.focusBox).assertEqual(expect_focusBox);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 1);
+    });
   })
 }
