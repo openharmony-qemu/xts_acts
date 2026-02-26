@@ -575,46 +575,15 @@ export default function HasCard1PublicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641500
-     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1500
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641700
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1700
      * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyCallManagerFormatPhoneNumberToE1641500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641500';
-      console.info(`${caseName} test start `);
-      try {
-        call.formatPhoneNumberToE164(null, "CN", (err: BusinessError, data: string) => {
-          if (err) {
-            console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-            ExpectFail();
-          } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
-            ExpectFail();
-          }
-          console.info(`${caseName} test end `);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
-        console.info(`${caseName} test end `);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testTelephonyCallManagerFormatPhoneNumberToE1641600
-     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumberToE164_1600
-     * @tc.desc   Format the phone number in E.164 representation. Use callback for asynchronous callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerFormatPhoneNumberToE1641600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641600';
+    it('testTelephonyCallManagerFormatPhoneNumberToE1641700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumberToE1641700';
       console.info(`${caseName} test start `);
       try {
         call.formatPhoneNumberToE164(undefined, "CN", (err: BusinessError, data: string) => {
