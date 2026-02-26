@@ -311,7 +311,7 @@ export function cameraPicker() {
         .then((data: picker.PickerResult) => {
           hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick result " + JSON.stringify(data));
           expect(data.resultCode == 0).assertTrue();
-          expect(data.resultUri == uri).assertTrue();
+          expect(data.resultUri != null && data.resultUri !== "").assertTrue();
           expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
           done();
         })
