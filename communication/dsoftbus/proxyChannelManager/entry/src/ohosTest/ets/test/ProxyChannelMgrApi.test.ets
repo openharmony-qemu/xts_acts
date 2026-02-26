@@ -964,7 +964,7 @@ export default function proxyChannelMgr() {
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 channelId is " + channelId);
         await proxyChannelManager.sendData(channelId, null)
           .then(() => {
-             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 sendData success);
+             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2410 sendData success");
           })
       }catch (error) {
         flag = true;
@@ -995,7 +995,7 @@ export default function proxyChannelMgr() {
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 channelId is " + channelId);
         await proxyChannelManager.sendData(channelId, undefined)
           .then(() => {
-             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 sendData success);
+             console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_2420 sendData success");
           })
       }catch (error) {
         flag = true;
