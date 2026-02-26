@@ -16,6 +16,7 @@
 
 #include "OhosCommonTest.h"
 #include "nncore_utils.h"
+#include <dlfcn.h>
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
@@ -232,6 +233,18 @@ void FreeTensorDescVec(std::vector<NN_TensorDesc*> tensorDescVec)
         }
     }
 }
+
+bool IsSupportNPU()
+{
+    static std::string nnrtLibraryName = "libneural_network_runtime_ext.so";
+    void* handle = dlopen(nnrtLibraryName.c_str(), RTLD_LAZY | RTLD_NODELETE);
+    if (handle == nullptr) {
+        LOGE("is not support NPU");
+        return false;
+    }
+    return true;
+}
+
 } // namespace Test
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS

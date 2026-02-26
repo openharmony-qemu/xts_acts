@@ -18,7 +18,6 @@
 #include <hilog/log.h>
 #include <stdexcept>
 #include "const.h"
-#include <dlfcn.h>
 
 // 日志宏定义
 #undef LOG_DOMAIN
@@ -539,13 +538,6 @@ bool IsNPU()
         LOGE("[NNRtTest] devicesCount <= 0  devicesCount=%d\n", devicesCount);
         return false;
     }
-
-    void* handle = dlopen(NNRT_EXT_PATH, RTLD_LAZY);
-    if (handle == nullptr) {
-        LOGE("is not NPU");
-        return false;
-    }
-
     return true;
 }
 

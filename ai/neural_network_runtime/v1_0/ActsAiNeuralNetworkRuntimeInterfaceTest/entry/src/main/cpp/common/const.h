@@ -40,7 +40,6 @@ const size_t INVALID_DEVICE_ID = 100000;
 const int ERROR_CODE_NEGATIVE_ONE = -1;
 const int ERROR_CODE_NEGATIVE_TWO = -2;
 const int SUCCESS_CODE = 0;
-const char* NNRT_EXT_PATH = "/system/lib64/platformsdk/libneural_network_runtime_ext.so";
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime
