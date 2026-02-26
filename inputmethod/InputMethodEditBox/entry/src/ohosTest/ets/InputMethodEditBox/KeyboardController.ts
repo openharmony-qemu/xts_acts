@@ -315,7 +315,7 @@ export class KeyboardController {
           that.Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0400();
           break;
       }
-    }
+    };
 
     let unSubscriberCallback = (err): void => {
       console.info(TAG + '====>unSubscriberCallback start');
