@@ -2584,7 +2584,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     await Utils.msSleep(300);
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.left).assertEqual(1000);
                     expect(properties.windowRect.top).assertEqual(1000);
                     done();
@@ -2632,7 +2632,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     await Utils.msSleep(300);
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.left).assertEqual(1000);
                     expect(properties.windowRect.top).assertEqual(1000);
                     done();
@@ -2857,7 +2857,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     await Utils.msSleep(300);
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.left).assertEqual(1000);
                     expect(properties.windowRect.top).assertEqual(1000);
                     done();
@@ -2905,7 +2905,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     await Utils.msSleep(300);
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.left).assertEqual(1000);
                     expect(properties.windowRect.top).assertEqual(1000);
                     done();
@@ -3038,7 +3038,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     await Utils.msSleep(300);
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.left).assertEqual(1000);
                     expect(properties.windowRect.top).assertEqual(1000);
                     done();
@@ -3127,13 +3127,13 @@ export default function WindowLayoutTest() {
                 expect(!!win).assertTrue();
                 await win.setUIContent('pages/Index');
                 await win.showWindow();
-                await Utils.mSleep(300);
+                await Utils.msSleep(300);
                 try {
                     (win as window.Window).moveWindowTo(1000, 1000).then(async() => {
-                        await Utils.mSleep(200);
+                        await Utils.msSleep(200);
                         hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in moving the window.');
                         let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                         expect(properties.windowRect.left).assertEqual(1000);
                         expect(properties.windowRect.top).assertEqual(1000);
                         done();
@@ -3169,7 +3169,7 @@ export default function WindowLayoutTest() {
                 expect(!!win).assertTrue();
                 await win.setUIContent('pages/Index');
                 await win.showWindow();
-                await Utils.mSleep(300);
+                await Utils.msSleep(300);
                 try {
                     (win as window.Window).moveWindowTo(300, 300, (err: BusinessError<void>|null):void => {
                         const errCode: number = err!.code;
@@ -3180,9 +3180,9 @@ export default function WindowLayoutTest() {
                             return;
                         }
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
-                        await Utils.mSleep(200);
+                        await Utils.msSleep(200);
                         let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                        hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                         expect(properties.windowRect.left).assertEqual(300);
                         expect(properties.windowRect.top).assertEqual(300);
                         done();
@@ -3219,7 +3219,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     await Utils.msSleep(300)
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.width).assertEqual(500);
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
@@ -3267,7 +3267,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     await Utils.msSleep(300)
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.width).assertEqual(500);
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
@@ -3304,7 +3304,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     await Utils.msSleep(300)
                     let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
-                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringify(properties));
                     expect(properties.windowRect.width).assertEqual(500);
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
