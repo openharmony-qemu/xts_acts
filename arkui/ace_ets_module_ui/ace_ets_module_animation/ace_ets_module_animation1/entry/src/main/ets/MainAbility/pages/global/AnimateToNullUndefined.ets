@@ -37,9 +37,6 @@ struct AnimateToNullUndefined {
               playMode: PlayMode.Normal,
               onFinish: () => {
                 this.count--;
-                if (this.count == 0 && !this.isToBottom) { // 组件只有在向下做完动画才会消失
-                  // this.isShow = false;
-                }
               }
             }, () => {
               this.count++;

@@ -90,8 +90,8 @@ export default function GlobalPxNullUndefined() {
     })
 
     /**
-     * @tc.name   GlobalPxNullUndefined_0100
-     * @tc.number GlobalPxNullUndefined_0100
+     * @tc.name   GlobalPxNullUndefined_0200
+     * @tc.number GlobalPxNullUndefined_0200
      * @tc.desc   test px2vp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
