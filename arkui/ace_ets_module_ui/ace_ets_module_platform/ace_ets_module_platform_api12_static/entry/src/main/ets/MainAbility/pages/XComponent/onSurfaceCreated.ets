@@ -38,7 +38,8 @@ import {
   XComponent,
   XComponentController,
   XComponentParameters,
-  XComponentType
+  XComponentType,
+  XComponentOptions
 } from '@ohos.arkui.component';
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 

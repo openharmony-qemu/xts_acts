@@ -37,6 +37,7 @@ import {
   Video,
   VideoController,
   XComponent,
+  XComponentOptions,
   XComponentController,
   XComponentParameters,
   XComponentType
@@ -58,10 +59,8 @@ struct SetXComponentSurfaceRotation1 {
       XComponent({
         id: 'xcomponent',
         type: XComponentType.TEXTURE,
-        nativeXComponentHandler: ((value0: long): void => {
-        }),
         controller: this.xComponentController
-      } as XComponentParameters)
+      } as XComponentOptions)
         .onLoad((): void => {
           this.SurfaceRotation = { lock: false }
           this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)
