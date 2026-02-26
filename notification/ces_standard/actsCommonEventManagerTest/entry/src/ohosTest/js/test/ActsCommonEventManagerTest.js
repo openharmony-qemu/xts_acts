@@ -51,67 +51,67 @@ export default function ActsCommonEventManagerTest() {
             subscriber = commonEventSubscriber
 
             await subscriber.setCode(3).then(() => {
-              console.info(`setCode_2 success `)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setCode_2 success `)
               count++
               expect(count).assertEqual(1)
             }).catch((err) => {
-              console.info(`setCode_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setCode_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
 
             await subscriber.getCode().then((Code) => {
-              console.info(`getCode_2 success ${Code}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getCode_2 success ${Code}`)
               expect(Code).assertEqual(0)
             }).catch((err) => {
-              console.info(`getCode_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getCode_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
 
             await subscriber.setData('data03').then(() => {
-              console.info(`setData_2 success `)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setData_2 success `)
               count++
               expect(count).assertEqual(2)
               subscriber.getData().then((data) => {
-                console.info(`getData_2 success ${data}`)
+                console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getData_2 success ${data}`)
                 expect(data).assertEqual('')
               }).catch((err) => {
-                console.info(`getData_2 err, error code: ${err.code}, message: ${err.message}`)
+                console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getData_2 err, error code: ${err.code}, message: ${err.message}`)
                 expect(false).assertTrue()
                 done()
               })
             }).catch((err) => {
-              console.info(`setData_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setData_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
 
             await subscriber.setCodeAndData(4, 'data04').then(() => {
-              console.info(`setCodeAndData_2 success `)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setCodeAndData_2 success `)
               count++
               expect(count).assertEqual(3)
             }).catch((err) => {
-              console.info(`setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
 
             await subscriber.getSubscribeInfo().then((CommonEventSubscribeInfo) => {
-              console.info(`getSubscribeInfo_2 success ${JSON.stringify(CommonEventSubscribeInfo)}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getSubscribeInfo_2 success ${JSON.stringify(CommonEventSubscribeInfo)}`)
               expect(JSON.stringify(CommonEventSubscribeInfo)).assertContain("event08")
             }).catch((err) => {
-              console.info(`getSubscribeInfo_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 getSubscribeInfo_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
 
             await subscriber.finishCommonEvent().then(() => {
-              console.info(`finishCommonEvent_2 success `)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 finishCommonEvent_2 success `)
               count++
               expect(count).assertEqual(4)
             }).catch((err) => {
-              console.info(`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
+              console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1800 finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
             })
