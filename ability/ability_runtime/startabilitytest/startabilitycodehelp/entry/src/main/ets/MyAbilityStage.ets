@@ -5,7 +5,7 @@ export default class MyAbilityStage extends AbilityStage {
     console.log('MyAbilityStage.onCreate is called');
   }
   onPrepareTermination(): AbilityConstant.PrepareTermination{
-    hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage onPrepareTermination');
+    console.log('MyAbilityStage.onPrepareTermination is called');
     return AbilityConstant.PrepareTermination.CANCEL
   }
   async onPrepareTerminationAsync(): Promise<AbilityConstant.PrepareTermination> {
