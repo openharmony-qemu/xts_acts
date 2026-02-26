@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ export default function fileIOStreamClose() {
         expect(sr !== null).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_close_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -69,7 +69,8 @@ export default function fileIOStreamClose() {
         sr.closeSync();
         sr.closeSync();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_close_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
@@ -94,7 +95,7 @@ export default function fileIOStreamClose() {
         await sr.close();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_close_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -119,7 +120,7 @@ export default function fileIOStreamClose() {
           fs.unlinkSync(fpath);
         })
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_close_async_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -143,7 +144,8 @@ export default function fileIOStreamClose() {
         await sr.close();
         await sr.close();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_close_async_static_002 has failed for ' + JSON.stringify(e));
         expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();

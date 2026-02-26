@@ -40,7 +40,7 @@ interface Action {
 export default function touchAbleJsunit() {
   describe('touchAbleTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("touchAbleJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });

@@ -121,15 +121,10 @@ export default function displayAndWindowRefactorInterfaceTest() {
         };
         console.log(msg + ' www data ' + range);
         backDisplaySyncBigger.setExpectedFrameRateRange(range);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msg + ' www data Failed to create the subwindow. Cause: ' + JSON.stringify(error));
-        if (error.code) {
-          expect().assertFail();
-        } else {
-          expect(true).assertTrue();
-        }
+        expect().assertFail();
         done();
       }
     });
@@ -150,15 +145,10 @@ export default function displayAndWindowRefactorInterfaceTest() {
           let a = frameInfo.targetTimestamp;
           console.log(msg + ' www data' + JSON.stringify(a));
         };
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msg + ' www data Failed to Cause: ' + JSON.stringify(error));
-        if (error.code) {
-          expect().assertFail();
-        } else {
-          expect(true).assertTrue();
-        }
+        expect().assertFail();
         done();
       }
     });

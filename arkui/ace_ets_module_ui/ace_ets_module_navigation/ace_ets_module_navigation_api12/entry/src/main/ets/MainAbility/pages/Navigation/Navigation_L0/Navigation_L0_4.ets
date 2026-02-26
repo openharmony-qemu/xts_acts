@@ -23,27 +23,28 @@ struct Navigation_L0_4 {
 
   build() {
     Navigation() {
-      Text(this.text).id('Navigation_L0_4_text1')
-
-      List({ space: 12, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number) => {
-          ListItem() {
-            Text('' + item)
-              .width('90%')
-              .height('20%')
-              .backgroundColor('#FFFFFF')
-              .borderRadius(24)
-              .fontSize(16)
-              .fontWeight(500)
-              .textAlign(TextAlign.Center)
-          }.border({width:1})
-        }, (item: number) => item.toString())
+      Column() {
+        Text(this.text).id('Navigation_L0_4_text1')
+        List({ space: 12, initialIndex: 0 }) {
+          ForEach(this.arr, (item: number) => {
+            ListItem() {
+              Text('' + item)
+                .width('90%')
+                .height('20%')
+                .backgroundColor('#FFFFFF')
+                .borderRadius(24)
+                .fontSize(16)
+                .fontWeight(500)
+                .textAlign(TextAlign.Center)
+            }.border({ width: 1 })
+          }, (item: number) => item.toString())
+        }
+        .id('Navigation_L0_4_list')
+        .height('100%')
+        .width('100%')
+        .margin({ top: 12, left: '10%' })
       }
-      .id('Navigation_L0_4_list')
       .height('100%')
-      .width('100%')
-      .margin({ top: 12, left: '10%' })
-
     }
     .onTitleModeChange((titleMode:NavigationTitleMode) => {
       this.text = 'onTitleModeChange'

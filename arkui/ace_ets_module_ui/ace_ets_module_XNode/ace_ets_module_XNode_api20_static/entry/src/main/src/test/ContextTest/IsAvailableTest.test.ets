@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function IsAvailableTest() {
   describe('IsAvailableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("IsAvailableTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
       
@@ -74,7 +74,7 @@ it('IsAvailableTest_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btn_isAvailable'));
-      await button!.click();
+      await (button!.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson1: string = inspector.getInspectorByKey('isAvailable1_id');

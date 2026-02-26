@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -117,7 +117,7 @@ export default function ImageReceiver() {
     height: HEIGHT,
     width: WIDTH
   }
-  let cameraManager: camera.CameraManager;
+  let cameraManager: camera.CameraManager | undefined;
 
   describe("ImageReceiver", (): void => {
     beforeAll(async () => {
@@ -244,7 +244,7 @@ export default function ImageReceiver() {
           );
           expect(isString(id)).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100 error: " + error);
           expect(false).assertTrue();
           done();
@@ -369,8 +369,8 @@ export default function ImageReceiver() {
             done();
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-        } catch (error: BusinessError) {
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
@@ -398,7 +398,7 @@ export default function ImageReceiver() {
         try {
           receiver.offImageArrival();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
@@ -433,10 +433,11 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let latestImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readLatestImage();})
+            let latestImage: image.Image | undefined;
+            waitForCompletion(async () => {latestImage = await receiver1!.readLatestImage();})
             globalImg = latestImage;
             if (latestImage != undefined) {
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage!.size.width}, ${latestImage!.size.height})`);
               expect(latestImage != undefined).assertTrue();
               done();
             } else {
@@ -446,8 +447,8 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-        } catch (error: BusinessError) {
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
@@ -497,8 +498,8 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-        } catch (error: BusinessError) {
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
@@ -533,10 +534,11 @@ export default function ImageReceiver() {
 
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-            let nextImage = waitForCompletion<image.Image>(async ():Promise<image.Image> => {await receiver1!.readNextImage();})
+            let nextImage: image.Image | undefined;
+            waitForCompletion(async () => {nextImage = await receiver1!.readNextImage();})
             globalImg = nextImage;
             if (nextImage != undefined) {
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage!.size.width}, ${nextImage!.size.height})`);
               expect(nextImage != undefined).assertTrue();
               done();
             } else {
@@ -546,8 +548,8 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-        } catch (error: BusinessError) {
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
@@ -597,8 +599,8 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-        } catch (error: BusinessError) {
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+        } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();

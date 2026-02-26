@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ImageOnErrorTest() {
   describe('ImageOnErrorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
 

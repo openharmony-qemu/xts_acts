@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Extend0010TestJsunit() {
   describe('Extend0010TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Extend0010TestJsunit beforeEach start");
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function formProviderTest() {
       hilog.error(DOMAIN, TAG, `addForm error, set formId manually error error, code: ${error?.code}, message: ${error?.message}`);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -816,7 +816,7 @@ export default function formProviderTest() {
           hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
           expect(error.code).assertEqual(202);
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
         expect().assertFail();
       }
@@ -850,7 +850,7 @@ export default function formProviderTest() {
             expect().assertFail();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
         expect().assertFail();
       }

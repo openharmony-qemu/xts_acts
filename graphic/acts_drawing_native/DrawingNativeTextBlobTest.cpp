@@ -98,9 +98,9 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNormal, Func
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TextBlobBuilderDestroy with nullptr parameter
+    OH_Drawing_TextBlobBuilder *builder = nullptr;
     OH_Drawing_TextBlobBuilderDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(builder, nullptr);
 }
 
 /**
@@ -996,9 +996,9 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobDestroyNormal, Function | SmallT
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TextBlobDestroy with null parameter
+    OH_Drawing_TextBlob *textBlob = nullptr;
     OH_Drawing_TextBlobDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(textBlob, nullptr);
 }
 
 } // namespace Drawing

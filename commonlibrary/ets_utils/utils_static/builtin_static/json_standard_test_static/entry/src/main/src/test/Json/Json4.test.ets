@@ -1484,7 +1484,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "k" at 1:3');
+        expect(error.message).assertContain('Unterminated string at 13 at 2..13');
       }
     });
 
@@ -1531,7 +1531,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "T" at 1:12');
+        expect(error.message).assertContain('Unexpected character \'T\' at 10 at 10..10');
       }
 
     });
@@ -1605,8 +1605,8 @@ export default function Json4Test() {
         JSON.parseJsonElement(invalidJson);
         expect().assertFail();
       } catch (error) {
-        expect(error.name).assertEqual("Error");
-        expect(error.message).assertContain("Unexpected end of input at 0..0");
+        expect(error.name).assertEqual("SyntaxError");
+        expect(error.message).assertContain("Expected \',\' or \']\' at 8 at 8..8");
       }
     });
 
@@ -1653,7 +1653,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "a" at 1:10');
+        expect(error.message).assertContain('Unexpected character \'a\' at 8 at 8..8');
       }
     });
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ async function terminateAbility(caseName: string) {
         }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -77,9 +77,9 @@ export default function WindowLayoutTest() {
 
     describe("WindowLayoutTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowLayoutTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         let isFreeWindowMode:boolean = false;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -103,12 +103,12 @@ export default function WindowLayoutTest() {
 
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+            isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
             //isPCStatus == '' 非PC设备
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
-            let mainWindowClass:window.Window = windowStage.getMainWindowSync();
+            let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
             isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
             //isFreeWindowMode == true 自由窗口模式
             //isFreeWindowMode == false 非自由窗口模式
@@ -127,7 +127,7 @@ export default function WindowLayoutTest() {
             let caseName : string = 'testOnOffWindowStatusChange_OnSubWindow_static_0100';
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWin:window.Window = await windowStage.createSubWindow('testOnOffWindowStatusChange_OnSubWindow');
+            let subWin:window.Window = await windowStage!.createSubWindow('testOnOffWindowStatusChange_OnSubWindow');
             expect(!!subWin).assertTrue();
             const callback = (data:window.WindowStatusType) => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
@@ -135,7 +135,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -148,7 +149,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -161,7 +163,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -186,7 +189,7 @@ export default function WindowLayoutTest() {
             let caseName : string = 'testOnOffWindowStatusChange_OnMainWindow_static_0200';
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let mainWin:window.Window = windowStage.getMainWindowSync();
+            let mainWin:window.Window = windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             const callback = (data:window.WindowStatusType) => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(data));
@@ -194,7 +197,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -207,7 +211,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -220,7 +225,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -246,7 +252,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testShowWindow_WindowStateAbnormal_Callback_static_0100');
+            win = await windowStage!.createSubWindow('testShowWindow_WindowStateAbnormal_Callback_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -276,7 +282,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testShowWindow_WindowStateAbnormal_Promise_static_0100');
+            win = await windowStage!.createSubWindow('testShowWindow_WindowStateAbnormal_Promise_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -304,7 +310,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testDestroyWindow_WindowStateAbnormal_Promise_static_0100');
+            win = await windowStage!.createSubWindow('testDestroyWindow_WindowStateAbnormal_Promise_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -331,7 +337,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testDestroyWindow_WindowStateAbnormal_Callback_static_0100');
+            win = await windowStage!.createSubWindow('testDestroyWindow_WindowStateAbnormal_Callback_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -361,7 +367,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testMoveWindowTo_WindowStateAbnormal_Promise_static_0100');
+            win = await windowStage!.createSubWindow('testMoveWindowTo_WindowStateAbnormal_Promise_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -375,7 +381,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -395,7 +402,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testMoveWindowTo_WindowStateAbnormal_Callback_static_0100');
+            win = await windowStage!.createSubWindow('testMoveWindowTo_WindowStateAbnormal_Callback_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -412,7 +419,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done()
@@ -431,7 +439,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testResize_WindowStateAbnormal_Promise_static_0100');
+            win = await windowStage!.createSubWindow('testResize_WindowStateAbnormal_Promise_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -445,7 +453,8 @@ export default function WindowLayoutTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -464,7 +473,7 @@ export default function WindowLayoutTest() {
             let msgStr :string ='jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testResize_WindowStateAbnormal_Callback_static_0100');
+            win = await windowStage!.createSubWindow('testResize_WindowStateAbnormal_Callback_static_0100');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -481,7 +490,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -500,7 +510,7 @@ export default function WindowLayoutTest() {
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
+            windowStage!.createSubWindow('testGetGlobalRectErrCode1300002_static_0100')
                 .then((data:window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -511,7 +521,8 @@ export default function WindowLayoutTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -535,7 +546,7 @@ export default function WindowLayoutTest() {
         it('testgetGlobalRect_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName :string = 'testgetGlobalRect_static_0200';
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 let rect :window.Rect = windowClass.getGlobalRect();
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in getting global rect: ${JSON.stringify(rect)}`);
                 expect(rect.left != null).assertTrue();
@@ -543,7 +554,8 @@ export default function WindowLayoutTest() {
                 expect(rect.width).assertLarger(0);
                 expect(rect.height).assertLarger(0);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName} The current device type does not support to getting the global rect.`);
                     done();
@@ -564,7 +576,7 @@ export default function WindowLayoutTest() {
          */
         it('test_startMoving_ErrorCode_1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let CaseName:string = 'test_startMoving_ErrorCode_1300002_static_0100';
-            let subWindow = await windowStage.createSubWindow('test_startMoving_ErrorCode_1300002_static_0100');
+            let subWindow = await windowStage!.createSubWindow('test_startMoving_ErrorCode_1300002_static_0100');
             await Utils.msSleep(200);
             await subWindow.destroyWindow();
             try {
@@ -598,7 +610,7 @@ export default function WindowLayoutTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                let mainWindow = windowStage.getMainWindowSync();
+                let mainWindow = windowStage!.getMainWindowSync();
                 let promise = mainWindow.startMoving(100, 50)
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded startMoving ` );
@@ -635,7 +647,7 @@ export default function WindowLayoutTest() {
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testStartMovingPromiseErrCode1300002_SubWindow_Promise')
+            windowStage!.createSubWindow('testStartMovingPromiseErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -667,81 +679,7 @@ export default function WindowLayoutTest() {
                 });
             
         })
-        /**
-         * @tc.number       testOnWindowHighlightChangeErrCode1300002_0100
-         * @tc.name         testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc         testOnWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
-        it('testOnWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOnWindowHighlightChangeErrCode1300002_static_0100";
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnWindowHighlightChangeErrCode1300002_static_0100')
-                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
-                await Utils.msSleep(300);
-                expect(!!tempWnd).assertTrue();
-                await tempWnd.destroyWindow();
-                hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.onWindowHighlightChange((data) => {
-                    console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
-                });
-                hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect(false).assertTrue();
-                done()
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                if (exception.code != 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
-                } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
-                }
-                done()
-            }
-        })
-        /**
-         * @tc.number      testOffWindowHighlightChangeErrCode1300002_0100
-         * @tc.name        testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.desc        testOffWindowHighlightChangeErrCode1300002_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testOffWindowHighlightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOffWindowHighlightChangeErrCode1300002_static_0100";
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffWindowHighlightChangeErrCode1300002_static_0100')
-                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
-                await Utils.msSleep(300);
-                expect(!!tempWnd).assertTrue();
-                await tempWnd.destroyWindow();
-                hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.offWindowHighlightChange((data) => {
-                    console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
-                });
-                hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-            } catch (exception) {
-                exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                if (exception.code != 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
-                    done()
-                } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
-                    done()
-                }
-                
-            }
-        })
+        
         /**
          * @tc.number     testOnRectChangeOptionsMoveErrorCode1300002_static_0100
          * @tc.name       testOnRectChangeOptionsMoveErrorCode1300002_static_0100
@@ -752,7 +690,7 @@ export default function WindowLayoutTest() {
          */
         it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
-                let subWindowClass : window.Window = await windowStage.createSubWindow("TestOnRectChangeOptionsMove");
+                let subWindowClass : window.Window = await windowStage!.createSubWindow("TestOnRectChangeOptionsMove");
                 hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
             try {
                 await subWindowClass.showWindow();
@@ -797,7 +735,7 @@ export default function WindowLayoutTest() {
         it("testOnRectChangeOptionsResizeSubWindow_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "TestOnRectChangeOptionsResizeSubWindow_static_0100";
             try {
-                let subWindowClass:window.Window = await windowStage.createSubWindow("TestOnRectChangeOptionsResizeSubWindow_static_0100");
+                let subWindowClass:window.Window = await windowStage!.createSubWindow("TestOnRectChangeOptionsResizeSubWindow_static_0100");
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in creating the sub window.`);
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
@@ -812,7 +750,7 @@ export default function WindowLayoutTest() {
                 });
                 await subWindowClass.resize(500, 500);
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in changing the sub window size.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
                 expect(false).assertTrue();
                 done();
@@ -831,7 +769,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = "testRectChangeOptions_on_static_0200";
             hilog.info(0x0000, '[ANI]',msgStr + "begin");
             try {
-                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_on_static_0200");
+                let windowClass: window.Window = await windowStage!.createSubWindow("testRectChangeOptions_on_static_0200");
                 await windowClass.destroyWindow();
                 windowClass.onWindowRectChange((data: window.RectChangeOptions) => {
                     hilog.info(0x0000, '[ANI]',`Succeeded window rect changes. Data: ` + JSON.stringify(data));
@@ -839,7 +777,8 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -864,13 +803,14 @@ export default function WindowLayoutTest() {
             let msgStr:string = "testRectChangeOptions_off_static_0100";
             hilog.info(0x0000, '[ANI]',msgStr + "begin");
             try {
-                let windowClass: window.Window = await windowStage.createSubWindow("testRectChangeOptions_off_static_0100");
+                let windowClass: window.Window = await windowStage!.createSubWindow("testRectChangeOptions_off_static_0100");
                 await windowClass.destroyWindow();
                 windowClass.offWindowRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -895,7 +835,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: message,
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             }
             try {
                 let promise = window.createWindow(config)
@@ -955,7 +895,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: message,
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             }
             try {
                 let promise = window.createWindow(config)
@@ -1009,7 +949,7 @@ export default function WindowLayoutTest() {
         it('test_setSystemAvoidAreaEnabled_ErrorCode_1300004_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'test_setSystemAvoidAreaEnabled_ErrorCode_1300004_static!'
             try {
-                let promise = windowStage.createSubWindow(message)
+                let promise = windowStage!.createSubWindow(message)
                 promise.then((data:window.Window) => {
                     hilog.info(domain, tag,`${message} succeed createWindow`);
                     let subWindowClass:window.Window = data;
@@ -1066,7 +1006,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: message,
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             }
             try {
                 let promise = window.createWindow(config)
@@ -1114,7 +1054,7 @@ export default function WindowLayoutTest() {
         it('test_isSystemAvoidAreaEnabled_1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message = 'test_isSystemAvoidAreaEnabled_1300004_static!'
             try {
-                let promise = windowStage.createSubWindow(message)
+                let promise = windowStage!.createSubWindow(message)
                 promise.then((data:window.Window) => {
                     hilog.info(domain, tag,`${message} succeed createWindow`);
                     let dialogWindowClass = data;
@@ -1164,7 +1104,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: message,
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             }
             try {
                 let promise = window.createWindow(config)
@@ -1212,7 +1152,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
             let subWin: window.Window;
-            windowStage.createSubWindow('testGetWindowSystemBarPropertiesErrCode1300002_SubWindow_Promise')
+            windowStage!.createSubWindow('testGetWindowSystemBarPropertiesErrCode1300002_SubWindow_Promise')
                 .then((data: window.Window) => {
                     subWin = data;
                     expect(!!subWin).assertTrue();
@@ -1250,7 +1190,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = "test_subWindow_GetWindowSystemBarProperties_1300004_static";
             hilog.info(domain, tag,msgStr + " begin");
             let SubWindowClass: window.Window;
-            SubWindowClass = await windowStage.createSubWindow('test_subWindow_GetWindowSystemBarProperties_1300004')
+            SubWindowClass = await windowStage!.createSubWindow('test_subWindow_GetWindowSystemBarProperties_1300004')
             hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
             expect(!!SubWindowClass).assertTrue();
             try {
@@ -1276,7 +1216,7 @@ export default function WindowLayoutTest() {
         it('test_setStatusBarColor_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'test_setStatusBarColor_801_static!'
             try {
-                let mainWindowClass:window.Window = windowStage.getMainWindowSync();
+                let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
                 let promise = mainWindowClass.setStatusBarColor(ColorMetrics.rgba(1, 1, 1));
                 promise.then(() => {
                     hilog.info(domain, tag,`${message} succeed setStatusBarColor`);
@@ -1309,7 +1249,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: "systemWindow",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             };
             let subWindowClass:window.Window = await window.createWindow(config);
             await subWindowClass.destroyWindow();
@@ -1345,7 +1285,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: "systemWindow",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             };
             let subWindowClass = await window.createWindow(config);
             await subWindowClass.destroyWindow();
@@ -1378,14 +1318,15 @@ export default function WindowLayoutTest() {
         it('testGlobalDisplayToClientwithDestroyedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName :string = 'testGlobalDisplayToClientwithDestroyedWindow_Static';
             hilog.info(domain, tag,caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithDestroyedWindow')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testGlobalDisplayToClientwithDestroyedWindow')
             await windowClass.destroyWindow()
             try {
                 let position:window.Position = windowClass.globalDisplayToClient(100, 100);
                 hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message!=null).assertTrue();
@@ -1403,7 +1344,7 @@ export default function WindowLayoutTest() {
         it('testGlobalDisplayToClientwithOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName :string = 'testGlobalDisplayToClientwithOutofRange_Static';
             hilog.info(domain, tag,caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithOutofRange')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testGlobalDisplayToClientwithOutofRange')
             await Utils.msSleep(200);
             await windowClass.setUIContent('pages/index2');
             await windowClass.showWindow();
@@ -1416,7 +1357,8 @@ export default function WindowLayoutTest() {
                 await windowClass.destroyWindow()
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1439,14 +1381,15 @@ export default function WindowLayoutTest() {
         it('testClientToGlobalDisplaywithDestoryedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName :string = 'testClientToGlobalDisplaywithDestoryedWindow_Static';
             hilog.info(domain, tag,caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow')
             await windowClass.destroyWindow();
             try {
                 let position:window.Position = windowClass.clientToGlobalDisplay(100, 100);
                 hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message!=null).assertTrue();
@@ -1465,7 +1408,7 @@ export default function WindowLayoutTest() {
         it('testClientToGlobalDisplaywithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             const caseName :string = 'testClientToGlobalDisplaywithPositionOutofRange_Static';
             hilog.info(domain, tag,caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
             await windowClass.setUIContent('pages/index2');
             await windowClass.showWindow();
             windowClass.moveWindowToAsync(50,50);
@@ -1477,7 +1420,8 @@ export default function WindowLayoutTest() {
                 await windowClass.destroyWindow();
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await windowClass.destroyWindow();
                 expect(err.message!=null).assertTrue();
@@ -1504,7 +1448,7 @@ export default function WindowLayoutTest() {
                 expect(window.PixelUnit.PX).assertEqual(0);
                 expect(window.PixelUnit.VP).assertEqual(1);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1521,13 +1465,13 @@ export default function WindowLayoutTest() {
         it('testGetWindowLimitsVPSetWindowLimitsVP_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsVP_static';
             console.log(caseName + 'begin');
-            let windowClass: window.Window;
-            let windowStageStart = await startAbility(caseName, context);
+            let windowClass: window.Window | undefined;
+            let windowStageStart = await startAbility(caseName, context!);
 
             try {
                 windowClass = windowStageStart.getMainWindowSync();
-                await windowClass.setUIContent('pages/index2');
-                await windowClass.showWindow();
+                await windowClass!.setUIContent('pages/index2');
+                await windowClass!.showWindow();
                 let windowLimits = windowClass?.getWindowLimitsVP();
                 console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
                 let setWindowLimits: window.WindowLimits = {
@@ -1537,7 +1481,7 @@ export default function WindowLayoutTest() {
                     maxHeight: windowLimits?.maxHeight as int - 10,
                     pixelUnit: window.PixelUnit.VP
                 }
-                await windowClass.setWindowLimits(setWindowLimits);
+                await windowClass!.setWindowLimits(setWindowLimits);
                 let windowLimits2 = windowClass?.getWindowLimitsVP();
                 console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
@@ -1547,9 +1491,10 @@ export default function WindowLayoutTest() {
                 expect(windowLimits2?.maxHeight).assertEqual(setWindowLimits?.maxHeight)
                 await terminateAbility(caseName);
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-                await windowClass.destroyWindow();
+                await windowClass!.destroyWindow();
                 await terminateAbility(caseName);
                 if (err.code === 801) {
                     done()
@@ -1570,7 +1515,7 @@ export default function WindowLayoutTest() {
         it('testClientToGlobalDisplayandGlobalDisplayToClient_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testClientToGlobalDisplayandGlobalDisplayToClient_static';
             console.log(caseName + 'begin.');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('testClientToGlobalDisplayandGlobalDisplayToClient_static')
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('testClientToGlobalDisplayandGlobalDisplayToClient_static')
             await Utils.msSleep(200);
             await subWindowClass.setUIContent('pages/index2');
             await subWindowClass.showWindow();
@@ -1586,7 +1531,8 @@ export default function WindowLayoutTest() {
                 expect(position2.y).assertEqual(100);
                 await subWindowClass.destroyWindow()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await subWindowClass.destroyWindow()
                 if (err.code == 801) {
@@ -1620,7 +1566,7 @@ export default function WindowLayoutTest() {
                         height: 300
                     }
                 };
-                let promise = windowStage.createSubWindowWithOptions('subwindow0', options);
+                let promise = windowStage!.createSubWindowWithOptions('subwindow0', options);
                 promise.then(async (data:window.Window) => {
                     console.info('succeed in create the subwindow');
                     let subWindowClass:window.Window = data;
@@ -1648,7 +1594,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
                 expect(true).assertFail()
                 done();
@@ -1672,7 +1618,7 @@ export default function WindowLayoutTest() {
                 expect(window.OcclusionState.PARTIAL_OCCLUSION).assertEqual(1);
                 expect(window.OcclusionState.FULL_OCCLUSION).assertEqual(2);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(false).assertTrue();
                 done();
@@ -1694,7 +1640,7 @@ export default function WindowLayoutTest() {
                 minWidth: 100,
                 minHeight: 100
             };
-            let subWindow = await windowStage.createSubWindow('test_setWindowLimits_ErrorCode_1300002');
+            let subWindow = await windowStage!.createSubWindow('test_setWindowLimits_ErrorCode_1300002');
             await Utils.msSleep(200);
             await subWindow.destroyWindow();
             try {
@@ -1709,7 +1655,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                     done();
                 })
-            }catch (err: BusinessError) {
+            }catch (err) {
                 console.error(CaseName + ' failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                 expect(false).assertTrue();
                 done();
@@ -1728,7 +1674,7 @@ export default function WindowLayoutTest() {
             let caseName: string = 'testsetSeparationTouchEnabled_1300002_static ';
             console.log(caseName + 'begin');
             try {
-                let subWindow:window.Window = await windowStage.createSubWindow('testsetSeparationTouchEnabled_1300002');
+                let subWindow:window.Window = await windowStage!.createSubWindow('testsetSeparationTouchEnabled_1300002');
                 await Utils.msSleep(200);
                 await subWindow.destroyWindow();
                 subWindow.setSeparationTouchEnabled(false).then(()=> {
@@ -1745,7 +1691,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -1767,7 +1713,7 @@ export default function WindowLayoutTest() {
                         title: 'subWindow',
                         decorEnabled: true
                     };
-                    windowStage.createSubWindowWithOptions('testSetResizeByDragEnabledTrueTest_1300002_static_0200', options).then(async (subWindowClass:window.Window) => {
+                    windowStage!.createSubWindowWithOptions('testSetResizeByDragEnabledTrueTest_1300002_static_0200', options).then(async (subWindowClass:window.Window) => {
                         subWindowClass.setUIContent("pages/index2");
                         await subWindowClass.resizeAsync(1000, 1200)
                         await subWindowClass.moveWindowToAsync(300, 200)
@@ -1802,7 +1748,7 @@ export default function WindowLayoutTest() {
                             }
                         });
                     })
-                } catch (exception: BusinessError) {
+                } catch (exception) {
                     console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
                     expect(false).assertTrue();
                     done();
@@ -1824,7 +1770,7 @@ export default function WindowLayoutTest() {
             let caseName: string = 'testsetReceiveDragEventEnabled_1300002_static ';
             console.log(caseName + 'begin');
             try {
-                let subWindow:window.Window = await windowStage.createSubWindow('testsetReceiveDragEventEnabled_1300002_static');
+                let subWindow:window.Window = await windowStage!.createSubWindow('testsetReceiveDragEventEnabled_1300002_static');
                 await Utils.msSleep(200);
                 await subWindow.destroyWindow();
                 subWindow.setReceiveDragEventEnabled(false).then(()=> {
@@ -1841,7 +1787,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -1858,14 +1804,14 @@ export default function WindowLayoutTest() {
         it("test_SetFollowParentWindowLayoutEnabled_1300002_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "test_SetFollowParentWindowLayoutEnabled_1300002_static";
             console.log(msgStr + "begin");
-            let subWindowClass: window.Window;
+            let subWindowClass: window.Window | undefined;
             try {
-                let promise = windowStage.createSubWindow('test_SetFollowParentWindowLayoutEnabled_1300002_static');
+                let promise = windowStage!.createSubWindow('test_SetFollowParentWindowLayoutEnabled_1300002_static');
                 promise.then(async (data: window.Window) => {
                     subWindowClass = data;
                     console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-                    await subWindowClass.destroyWindow();
-                    let promise2 = subWindowClass.setFollowParentWindowLayoutEnabled(true);
+                    await subWindowClass!.destroyWindow();
+                    let promise2 = subWindowClass!.setFollowParentWindowLayoutEnabled(true);
                     promise2.then(()=> {
                         console.info(msgStr + 'Succeeded in setFollowParentWindowLayoutEnabled ');
                         expect(false).assertTrue();
@@ -1879,7 +1825,7 @@ export default function WindowLayoutTest() {
                     });
                 }).catch(async (err: Error):PromiseLike<void>|undefined => {
                     console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-                    await subWindowClass.destroyWindow();
+                    await subWindowClass!.destroyWindow();
                     if (err.code == 801) {
                         expect(err.message != null).assertTrue();
                         console.log(msgStr + '此设备不支持');
@@ -1891,7 +1837,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
                 expect(false).assertTrue();
                 done();
@@ -1909,7 +1855,7 @@ export default function WindowLayoutTest() {
             let caseName:string = "test_setFollowParentMultiScreenPolicy_1300002_static";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
-            let subWindow:window.Window = await windowStage.createSubWindow('test_setFollowParentMultiScreenPolicy_1300002_static');
+            let subWindow:window.Window = await windowStage!.createSubWindow('test_setFollowParentMultiScreenPolicy_1300002_static');
             await subWindow.setUIContent('pages/index2');
             await subWindow.showWindow();
             try {
@@ -1930,7 +1876,7 @@ export default function WindowLayoutTest() {
                         done()
                     }
                 });
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
                 await subWindow.destroyWindow();
                 expect(true).assertFail();
@@ -1952,7 +1898,7 @@ export default function WindowLayoutTest() {
             console.log(caseName + 'begin.');
             let subWindowClass: window.Window | undefined;
             try {
-                subWindowClass = await windowStage.createSubWindow('testSetContentAspectRatio_static_0400');
+                subWindowClass = await windowStage!.createSubWindow('testSetContentAspectRatio_static_0400');
                 await Utils.msSleep(200);
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
@@ -1961,7 +1907,8 @@ export default function WindowLayoutTest() {
                 await subWindowClass.destroyWindow()
                 expect(true).assertFail();
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 await subWindowClass!.destroyWindow()
                 if (err.code == 801) {
@@ -1977,7 +1924,7 @@ export default function WindowLayoutTest() {
             let config: window.Configuration = {
                 name: "testSetContentAspectRatio_0400_dialog_window",
                 windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context
+                ctx: context!
             };
             try {
                 dialogWindowClass = await window.createWindow(config);
@@ -1989,7 +1936,8 @@ export default function WindowLayoutTest() {
                 await dialogWindowClass.destroyWindow()
                 expect(true).assertFail();
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed2, err: ${JSON.stringify(err)}`);
                 await dialogWindowClass!.destroyWindow()
                 if (err.code == 801) {
@@ -2015,7 +1963,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let ratio:int = 1;
-            let subWin: window.Window = await windowStage.createSubWindow('testSetAspectRatioCallbackErrCode1300002_SubWindow_Promise');
+            let subWin: window.Window = await windowStage!.createSubWindow('testSetAspectRatioCallbackErrCode1300002_SubWindow_Promise');
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin.setAspectRatio(ratio, (err: BusinessError<void>|null) => {
@@ -2032,7 +1980,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2052,7 +2000,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
-            subWin = await windowStage.createSubWindow('testSetAspectRatioPromiseErrCode1300002_SubWindow_Promise');
+            subWin = await windowStage!.createSubWindow('testSetAspectRatioPromiseErrCode1300002_SubWindow_Promise');
             await (subWin! as window.Window).destroyWindow();
             try {
                 (subWin! as window.Window).setAspectRatio(1).then(async ()=> {
@@ -2064,7 +2012,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2083,7 +2031,7 @@ export default function WindowLayoutTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
-            subWin = await windowStage.createSubWindow('testResetAspectRatioCallbackErrCode1300002_SubWindow_Promise')
+            subWin = await windowStage!.createSubWindow('testResetAspectRatioCallbackErrCode1300002_SubWindow_Promise')
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin.resetAspectRatio((err: BusinessError<void>|null) => {
@@ -2100,7 +2048,7 @@ export default function WindowLayoutTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2118,7 +2066,7 @@ export default function WindowLayoutTest() {
             let caseName:string = "testResetAspectRatioPromiseErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
-            let subWin: window.Window = await windowStage.createSubWindow('testResetAspectRatioPromiseErrCode1300002_SubWindow_Promise_static');
+            let subWin: window.Window = await windowStage!.createSubWindow('testResetAspectRatioPromiseErrCode1300002_SubWindow_Promise_static');
             await (subWin! as window.Window).destroyWindow();
             try {
                 (subWin! as window.Window).resetAspectRatio().then(async ()=> {
@@ -2130,7 +2078,7 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
                 done()
@@ -2147,7 +2095,7 @@ export default function WindowLayoutTest() {
         it('testOnandOffRectChangeInGlobalDisplaywithMainWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
             const caseName:string = 'testOnandOffRectChangeInGlobalDisplaywithMainWindow_static';
             console.log(caseName + 'begin.');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             let windowClass:window.Window = windowStageStart.getMainWindowSync();
             let timer = 0;
             try {
@@ -2169,7 +2117,8 @@ export default function WindowLayoutTest() {
                 windowClass.offRectChangeInGlobalDisplay();
                 await terminateAbility(caseName);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 await terminateAbility(caseName);
                 if (err.code == 801) {
@@ -2193,7 +2142,7 @@ export default function WindowLayoutTest() {
         it('testOnOcclusionStatewithDestoryedSubwindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnOcclusionStatewithDestoryedSubwindow_static ';
             console.log(caseName + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow(caseName);
+            let subWindowClass:window.Window = await windowStage!.createSubWindow(caseName);
             await subWindowClass.destroyWindow();
             try {
                 const callback = (res: window.OcclusionState) => {
@@ -2203,7 +2152,8 @@ export default function WindowLayoutTest() {
                 console.log(caseName + 'success. ');
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code !== 801) {
                     expect(err.code).assertEqual(1300002);
@@ -2227,7 +2177,7 @@ export default function WindowLayoutTest() {
         it('testOffOcclusionStatewithDestoryedSubwindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow_static ';
             console.log(caseName + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow(caseName);
+            let subWindowClass:window.Window = await windowStage!.createSubWindow(caseName);
             await subWindowClass.destroyWindow();
             try {
                 const callback = (res: window.OcclusionState) => {
@@ -2237,7 +2187,8 @@ export default function WindowLayoutTest() {
                 console.log(caseName + 'success. ');
                 expect(true).assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code!==801) {
                     expect(err.code).assertEqual(1300002);
@@ -2260,7 +2211,7 @@ export default function WindowLayoutTest() {
         it("test_on_windowRectChange_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = "test_on_windowRectChange_static";
             console.log(msgStr + "begin");
-            let windowClass:window.Window = await windowStage.getMainWindow();
+            let windowClass:window.Window = await windowStage!.getMainWindow();
             try {
                 windowClass.onWindowRectChange((data: window.RectChangeOptions) => {
                     console.info(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
@@ -2270,7 +2221,8 @@ export default function WindowLayoutTest() {
                 console.log(msgStr + 'Succeeded to off the windowRectChange');
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code === 801) {
                     console.info(`${msgStr} The current device type does not support to windowRectChange`);
                     done();
@@ -2292,14 +2244,15 @@ export default function WindowLayoutTest() {
         it('testMoveWindowToGlobalDisplaywithDestoryedWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testMoveWindowToGlobalDisplaywithDestoryedWindow_static';
             console.log(caseName + 'begin.');
-            let windowClass:window.Window = await windowStage.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow_static')
+            let windowClass:window.Window = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow_static')
             await windowClass.destroyWindow();
             try {
                 await windowClass.moveWindowToGlobalDisplay(30, 30);
                 await Utils.msSleep(200);
                 expect(true).assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(1300002)
                 expect(err.message != null).assertTrue();
@@ -2322,7 +2275,7 @@ export default function WindowLayoutTest() {
                 decorEnabled: true,
             };
             try {
-                let promise = windowStage.createSubWindowWithOptions(message, options)
+                let promise = windowStage!.createSubWindowWithOptions(message, options)
                 promise.then(async (data:window.Window) => {
                     subWindowClass = data;
                     await subWindowClass.setUIContent('pages/index2');
@@ -2355,7 +2308,7 @@ export default function WindowLayoutTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(`${message} Failed to test MoveConfiguration.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
                 expect(true).assertFail();
                 done();
@@ -2374,13 +2327,14 @@ export default function WindowLayoutTest() {
             let caseName:string= 'testGetWindowLimits_MainWindow_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let mainWin :window.Window= windowStage.getMainWindowSync();
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             try {
                 let windowLimits: window.WindowLimits = mainWin.getWindowLimits();
                 console.info(msgStr + 'Succeeded in getWindowLimits ' + JSON.stringify(windowLimits));
                 expect(!!windowLimits).assertTrue();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     console.error(msgStr + `Failed to obtain the window limits of window. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(true).assertFail();
@@ -2404,7 +2358,7 @@ export default function WindowLayoutTest() {
             const caseName = 'testWindowEnableDragTruewithFullScreenMainWindow_static';
             console.log(caseName + 'begin.');
             try {
-                let windowClass :window.Window= windowStage.getMainWindowSync();
+                let windowClass :window.Window= windowStage!.getMainWindowSync();
                 let windowStatusType:window.WindowStatusType = windowClass.getWindowStatus();
                 console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
 
@@ -2414,7 +2368,8 @@ export default function WindowLayoutTest() {
                     done();
                 }
 
-            } catch (err: BusinessError){
+            } catch (err){
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
                 if (err.code == 801) {
                     expect(err.message != null).assertTrue();

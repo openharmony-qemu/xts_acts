@@ -36,6 +36,13 @@
 
 #define NUMBER_1 1
 #define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_5 5
+#define NUMBER_11 11
+#define NUMBER_12 12
+#define NUMBER_13 13
+#define NUMBER_14 14
+#define NUMBER_21 21
 #define ERRORCODE_0 0
 #define ERRORCODE_30001000 30001000
 #define ERRORCODE_40001000 40001000

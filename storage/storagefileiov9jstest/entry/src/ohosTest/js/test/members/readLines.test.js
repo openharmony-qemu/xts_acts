@@ -16,7 +16,8 @@
 import {
     fileIO,prepareFile, nextFileName, describe, it, expect,
   } from '../Common';
-  import { Level } from '@ohos/hypium';
+import { Level } from '@ohos/hypium';
+import fs from '@ohos.file.fs';
 
 const FILE_CONTENTS = 'hello world\nhello js\nhello world1';
   
@@ -218,6 +219,29 @@ describe('fileIO_fs_readLines', function () {
             fileIO.unlinkSync(fpath);
         } catch (e) {
             console.log('fileIO_test_readLines_sync_008 has failed for ' + e.message + ', code: ' + e.code);
+            expect(false).assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_sync_009
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0900
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_readLines_sync_009', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_test_readLines_sync_009');
+        expect(prepareFile(fpath, "")).assertTrue();
+    
+        try {
+            let ReaderIterator = fs.readLinesSync(fpath);
+            let it = ReaderIterator.next();
+            expect(it.done == true).assertTrue();
+            fs.unlinkSync(fpath);
+        } catch (e) {
+            console.log('fileIO_test_readLines_sync_009 has failed for ' + e.message + ', code: ' + e.code);
             expect(false).assertTrue();
         }
     });

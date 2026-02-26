@@ -125,7 +125,7 @@ struct PanGestureExample {
         }
         console.info("[PanGesture] start to emit action state")
         emitter.emit(backEvent, backData)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[PanGesture] emit action state err: " + JSON.stringify((err as Error)?.message))
       }
     })

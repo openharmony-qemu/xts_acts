@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function FocusScopeId011() {
   describe('FocusScopeId011', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function ImageCreator() {
 
     let globalCreator: image.ImageCreator | undefined = undefined;
     let globalImg: image.Image | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -85,7 +85,7 @@ export default function ImageCreator() {
           creator.release();
           logger.log('creator release success');
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           logger.log('creator release failed error.code: ' + error.code);
           expect(false).assertTrue();
           done();
@@ -143,7 +143,7 @@ export default function ImageCreator() {
           expect(img != undefined).assertTrue();
           globalImg = img;
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100 error: ' + error);
           expect(false).assertTrue();
           done();
@@ -215,17 +215,17 @@ export default function ImageCreator() {
               console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 queueImage Success');
               // creator.test;
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 queueImage error: ' + error);
               expect(false).assertTrue();
               done();
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             expect(false).assertTrue();
             console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 getComponent error:' + error);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 dequeueImage error: ' + error);
           expect(false).assertTrue();
           done();
@@ -369,7 +369,7 @@ export default function ImageCreator() {
         creator.offImageRelease();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off success');
         registered = true;
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off failed');
       }
       expect(registered).assertTrue();

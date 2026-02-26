@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CrownEventTest() {
 
   describe('CrownEventTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventnowearapi18.static", "EntryAbility")

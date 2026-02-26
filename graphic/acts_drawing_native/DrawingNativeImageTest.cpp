@@ -71,9 +71,9 @@ HWTEST_F(DrawingNativeImageTest, testImageCreateDestroyNormal, Function | SmallT
  */
 HWTEST_F(DrawingNativeImageTest, testImageCreateDestroyNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ImageDestroy with a NULL parameter
+    OH_Drawing_Image *image = nullptr;
     OH_Drawing_ImageDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(image, nullptr);
 }
 
 /**

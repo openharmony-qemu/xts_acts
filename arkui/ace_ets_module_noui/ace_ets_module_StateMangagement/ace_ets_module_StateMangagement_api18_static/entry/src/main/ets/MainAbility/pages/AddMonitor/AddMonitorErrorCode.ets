@@ -12,7 +12,8 @@ struct Test {
     let callbackArray = this.array.map((_: int, index: int): (() => Any) => (() => this.array[Double.toInt(index)]));
     try {
       this.arrayMonitor = UIUtils.addMonitor(callbackArray, this.onChange, { owner: this });
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       console.log(`Error code: ${error.code}, Error message: ${error.message}.`)
       if (error.code == 130000) {
  	         this.a = 130000;

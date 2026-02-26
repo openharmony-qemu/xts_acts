@@ -42,7 +42,7 @@ import {
 
 export default function aboutToAppearRouterTest2() {
   describe('aboutToAppearRouterTest2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

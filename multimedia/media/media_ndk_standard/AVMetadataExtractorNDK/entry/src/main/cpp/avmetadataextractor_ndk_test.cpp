@@ -129,7 +129,11 @@ static napi_value OhAvMetadataExtractorSetFdPathSource(napi_env env, napi_callba
     OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
 
     OH_AVErrCode avErrCode = OH_AVMetadataExtractor_SetFDSource(mainExtractor, fileDescribe, PARAM_0, PARAM_END);
-    napi_create_int32(env, avErrCode, &result);
+    if (avErrCode == AV_ERR_OK) {
+        napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, avErrCode, &result);
+    }
 
     OH_AVMetadataExtractor_Release(mainExtractor);
     mainExtractor = nullptr;
@@ -156,7 +160,11 @@ static napi_value OhAvMetadataExtractorFetchMetadata(napi_env env, napi_callback
     OH_AVFormat* avMetadata = OH_AVFormat_Create();
 
     avErrCode = OH_AVMetadataExtractor_FetchMetadata(mainExtractor, avMetadata);
-    napi_create_int32(env, avErrCode, &result);
+    if (avErrCode == AV_ERR_OK) {
+        napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, avErrCode, &result);
+    }
 
     OH_AVMetadataExtractor_Release(mainExtractor);
     OH_AVFormat_Destroy(avMetadata);
@@ -386,12 +394,46 @@ static napi_value OhAvMetadataExtractorFetchAlbumCover(napi_env env, napi_callba
     return result;
 }
 
+static napi_value OhAvMetadataExtractorFetchAlbumCoverError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value argv[1];
+    int32_t fileDescribe = -1;
+    int64_t offset = -1;
+    int64_t size = -1;
+    OH_AVErrCode avErrCode = AV_ERR_INVALID_VAL;
+    napi_create_int32(env, 0, &result);
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_get_value_int32(env, argv[0], &fileDescribe);
+
+    OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
+    avErrCode = OH_AVMetadataExtractor_SetFDSource(mainExtractor, fileDescribe, PARAM_0, PARAM_END);
+    if (avErrCode != AV_ERR_OK) {
+        napi_create_int32(env, avErrCode, &result);
+    }
+    OH_PixelmapNative *pixelmapNative = nullptr;
+    avErrCode = OH_AVMetadataExtractor_FetchAlbumCover(mainExtractor, &pixelmapNative);
+    if (avErrCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 0, &result);
+    }
+    OH_AVMetadataExtractor_Release(mainExtractor);
+    OH_PixelmapNative_Release(pixelmapNative);
+    mainExtractor = nullptr;
+
+    return result;
+}
+
 static napi_value OhAvMetadataExtractorRelease(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
     OH_AVErrCode errCode = OH_AVMetadataExtractor_Release(mainExtractor);
-    napi_create_int32(env, errCode, &result);
+    if (errCode == AV_ERR_OK) {
+        napi_create_int32(env, errCode, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     return result;
 }
 
@@ -900,7 +942,12 @@ static napi_value OhAvMetadataExtractorSetDataSourceMediaSource(napi_env env, na
     OH_AVMediaSource *mediaSource = OH_AVMediaSource_CreateWithDataSource(&dataSource);
     OH_AVMetadataExtractor* mainExtractor = OH_AVMetadataExtractor_Create();
     OH_AVErrCode avErrCode = OH_AVMetadataExtractor_SetMediaSource(mainExtractor, mediaSource);
-    napi_create_int32(env, avErrCode, &result);
+    if (avErrCode == AV_ERR_OK) {
+        napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, avErrCode, &result);
+    }
+
     OH_AVMetadataExtractor_Release(mainExtractor);
     return result;
 }
@@ -1248,8 +1295,12 @@ static napi_value OhAvMetadataExtractorSetMediaSourceError(napi_env env, napi_ca
     } else {
         errCode = OH_AVMetadataExtractor_SetMediaSource(mainExtractor, nullptr);
     }
+    if (errCode == AV_ERR_INVALID_VAL) {
+        napi_create_int32(env, AV_ERR_INVALID_VAL, &result);
+    } else {
+        napi_create_int32(env, errCode, &result);
+    }
     OH_AVHttpHeader_Destroy(header);
-    napi_create_int32(env, errCode, &result);
     return result;
 }
 
@@ -1298,6 +1349,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"ohAvMetadataExtractorFetchAlbumCover", nullptr, OhAvMetadataExtractorFetchAlbumCover, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"ohAvMetadataExtractorFetchAlbumCoverError", nullptr, OhAvMetadataExtractorFetchAlbumCoverError,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ohAvMetadataExtractorRelease", nullptr, OhAvMetadataExtractorRelease, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"ohAvMetadataExtractorReleaseTwo", nullptr, OhAvMetadataExtractorReleaseTwo, nullptr, nullptr, nullptr,

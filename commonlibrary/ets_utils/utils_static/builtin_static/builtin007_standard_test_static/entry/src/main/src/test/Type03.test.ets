@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -275,7 +275,7 @@ export default function type_03Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -305,7 +305,7 @@ export default function type_03Test() {
         const error = new ArgumentsUnderapplicationError();
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -326,7 +326,7 @@ export default function type_03Test() {
         const error = new ArgumentsUnderapplicationError(customMessage);
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
         expect(error.message).assertEqual(customMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -348,7 +348,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
         expect(error.message).assertEqual("Custom message");
         expect(error.cause).assertEqual(cause);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -369,7 +369,7 @@ export default function type_03Test() {
         const error2 = new ArgumentsUnderapplicationError();
         expect(error1.message).assertEqual("");
         expect(error2.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -390,7 +390,7 @@ export default function type_03Test() {
         const error = new ExceptionInInitializerError();
         expect(error.name).assertEqual("ExceptionInInitializerError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -411,7 +411,7 @@ export default function type_03Test() {
         const error = new ExceptionInInitializerError(msg);
         expect(error.message).assertEqual(msg);
         expect(error.stack).not().assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -432,7 +432,7 @@ export default function type_03Test() {
         const error = new ExceptionInInitializerError("Initialization failed", { cause: rootCause });
         expect(error.cause).assertEqual(rootCause);
         expect(error.toString()).assertContain("ExceptionInInitializerError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -454,7 +454,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("NegativeArraySizeError");
         expect(error.message).assertEqual("");
         expect(error.stack).not().assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -475,7 +475,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("NegativeArraySizeError");
         expect(error.message).assertEqual("Array size cannot be negative");
         expect(error.stack).not().assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -496,7 +496,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("ArrayStoreError");
         expect(error.message).assertEqual("");
         expect(error.stack).not().assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -523,7 +523,7 @@ export default function type_03Test() {
         expect(error.message).assertEqual(customMessage);
         expect(error.cause).assertEqual(customOptions.cause);
         expect(error.stack).not().assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -544,7 +544,7 @@ export default function type_03Test() {
         const error = new ArgumentsUnderapplicationError(customMessage);
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
         expect(error.message).assertEqual(customMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -566,7 +566,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
         expect(error.message).assertEqual("Custom message");
         expect(error.cause).assertEqual(cause);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -587,7 +587,7 @@ export default function type_03Test() {
         const error2 = new ArgumentsUnderapplicationError();
         expect(error1.message).assertEqual("");
         expect(error2.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -608,7 +608,7 @@ export default function type_03Test() {
         const error = new ArrayIndexOutOfBoundsError(customMessage);
         expect(error.name).assertEqual("ArrayIndexOutOfBoundsError");
         expect(error.message).assertEqual(customMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -630,7 +630,7 @@ export default function type_03Test() {
         expect(error.name).assertEqual("ArrayIndexOutOfBoundsError");
         expect(error.message).assertEqual("Index out of bounds");
         expect(error.cause).assertEqual(cause);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -649,7 +649,7 @@ export default function type_03Test() {
       try {
         const error = new ArrayIndexOutOfBoundsError();
         expect(error instanceof Error).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -669,7 +669,7 @@ export default function type_03Test() {
         const error = new ArrayIndexOutOfBoundsError();
         expect(error.stack).not().assertUndefined();
         expect(typeof error.stack).assertEqual("string");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} test failed, error info: ${err}`);
         expect().assertFail();
       }
@@ -689,7 +689,7 @@ export default function type_03Test() {
         let classType = Type.of(new TestClass8()) as ClassType;
         let interfacesNum = classType.getInterfacesNum();
         expect(interfacesNum).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -709,7 +709,7 @@ export default function type_03Test() {
         let classType = Type.of(new TestClass9()) as ClassType;
         let interfacesNum = classType.getInterfacesNum();
         expect(interfacesNum).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -729,7 +729,7 @@ export default function type_03Test() {
         let classType = Type.of(new TestClass4()) as ClassType;
         let interfacesNum = classType.getInterfacesNum();
         expect(interfacesNum).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -756,7 +756,7 @@ export default function type_03Test() {
           }
         }
         expect(foundParentMethod).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -800,7 +800,7 @@ export default function type_03Test() {
         expect(hasParentMethod2).assertTrue();
         expect(hasChildMethod1).assertTrue();
         expect(hasChildMethod2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -829,7 +829,7 @@ export default function type_03Test() {
           }
         }
         expect(hasToString).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -863,7 +863,7 @@ export default function type_03Test() {
         expect(hasStaticMethod).assertTrue();
         expect(hasInstanceMethod).assertTrue();
 
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -902,7 +902,7 @@ export default function type_03Test() {
         expect(hasParentMethod).assertTrue();
         expect(hasChildMethod).assertTrue();
 
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -935,7 +935,7 @@ export default function type_03Test() {
         }
         expect(hasInterfaceMethod).assertTrue();
         expect(hasClassMethod).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -957,7 +957,7 @@ export default function type_03Test() {
         let type1 = Type.of(obj1);
         let type2 = Type.of(obj2);
         expect(type1.equals(type2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -977,7 +977,7 @@ export default function type_03Test() {
         let testObj = new TestClass5();
         let type = Type.of(testObj);
         expect(type.getLiteral()).assertEqual("class{...}");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -997,7 +997,7 @@ export default function type_03Test() {
         let type1 = Type.of(new TestInterfaceImpl1());
         let type2 = Type.of(new TestInterfaceImpl2());
         expect(type1.getLiteral()).assertEqual(type2.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1017,7 +1017,7 @@ export default function type_03Test() {
         let firstType = Type.of(new FirstInterfaceImpl());
         let secondType = Type.of(new SecondInterfaceImpl());
         expect(firstType.getLiteral()).assertEqual(secondType.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1038,7 +1038,7 @@ export default function type_03Test() {
         let type = Type.of(testObj);
         let className = Class.of(testObj).getName();
         expect(type.getName()).assertEqual(className);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1058,7 +1058,7 @@ export default function type_03Test() {
         let firstType = Type.of(new FirstInterfaceImpl());
         let secondType = Type.of(new SecondInterfaceImpl());
         expect(firstType.getName() === secondType.getName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1078,7 +1078,7 @@ export default function type_03Test() {
         let testObj = new TestClass5();
         let type = Type.of(testObj);
         expect(type.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1099,7 +1099,7 @@ export default function type_03Test() {
         let secondType = Type.of(new SecondInterfaceImpl());
         expect(firstType.hasName()).assertTrue();
         expect(secondType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1119,7 +1119,7 @@ export default function type_03Test() {
         let testObj = new TestClass5();
         let type = Type.of(testObj);
         expect(type.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1140,7 +1140,7 @@ export default function type_03Test() {
         let secondType = Type.of(new SecondInterfaceImpl());
         expect(firstType.isPrimitive()).assertFalse();
         expect(secondType.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1161,7 +1161,7 @@ export default function type_03Test() {
         let primitiveType = Type.of(123);
         expect(interfaceType.isPrimitive()).assertFalse();
         expect(primitiveType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1181,7 +1181,7 @@ export default function type_03Test() {
         let testObj = new TestClass5();
         let type = Type.of(testObj);
         expect(type.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1201,7 +1201,7 @@ export default function type_03Test() {
         let type1 = Type.of(new TestInterfaceImpl1());
         let type2 = Type.of(new TestInterfaceImpl2());
         expect(type1.isReference()).assertEqual(type2.isReference());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1222,7 +1222,7 @@ export default function type_03Test() {
         let secondType = Type.of(new SecondInterfaceImpl());
         expect(firstType.isReference()).assertTrue();
         expect(secondType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1242,7 +1242,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass1()) as ClassType;
         const field = testClassType.getField(0);
         expect(field.getName()).assertEqual("field1");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1264,7 +1264,7 @@ export default function type_03Test() {
         const childField = childClassType.getField(1);
         expect(parentField.getName()).assertEqual("parentField");
         expect(childField.getName()).assertEqual("childField");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1284,7 +1284,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass1()) as ClassType;
         const field = testClassType.getFieldByName("field1");
         expect(field.getName()).assertEqual("field1");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1304,7 +1304,7 @@ export default function type_03Test() {
         const childClassType = Type.of(new ChildClass()) as ClassType;
         expect(childClassType.getFieldsNum() >= 2).assertTrue();
         expect(childClassType.getOwnFieldsNum()).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1324,7 +1324,7 @@ export default function type_03Test() {
         const emptyClassType = Type.of(new EmptyClass()) as ClassType;
         expect(emptyClassType.getFieldsNum() >= 0).assertTrue();
         expect(emptyClassType.getOwnFieldsNum()).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1344,7 +1344,7 @@ export default function type_03Test() {
         const staticClassType = Type.of(new StaticFieldClass()) as ClassType;
         expect(staticClassType.getFieldsNum() >= 2).assertTrue();
         expect(staticClassType.getOwnFieldsNum()).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1366,7 +1366,7 @@ export default function type_03Test() {
         expect(interfaceCount).assertEqual(1);
         const interfaceType = testClassType.getInterface(0);
         expect(interfaceType instanceof InterfaceType).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1386,7 +1386,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass3()) as ClassType;
         const interfaceCount = testClassType.getInterfacesNum();
         expect(interfaceCount).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1406,7 +1406,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass4()) as ClassType;
         const interfaceCount = testClassType.getInterfacesNum();
         expect(interfaceCount).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1426,7 +1426,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass()) as ClassType;
         const interfaceCount = testClassType.getInterfacesNum();
         expect(interfaceCount).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1447,7 +1447,7 @@ export default function type_03Test() {
         const method = classType.getMethod(0);
         expect(method !== undefined).assertTrue();
         expect(method.getName().length > 0).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1472,7 +1472,7 @@ export default function type_03Test() {
           hasError = true;
         }
         expect(hasError).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1498,7 +1498,7 @@ export default function type_03Test() {
           }
         }
         expect(foundParentMethod).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1517,7 +1517,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestBasic()) as ClassType;
         expect(classType.getMethodsNum() >= 2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1536,7 +1536,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new ChildClass1()) as ClassType;
         expect(classType.getMethodsNum() >= 2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1556,7 +1556,7 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass6()) as ClassType;
         const methodsNum = testClassType.getMethodsNum();
         expect(methodsNum >= 3).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1575,7 +1575,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new EmptyClass()) as ClassType;
         expect(classType.getMethodsNum() > 0).assertTrue(); // Should at least have Object methods
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1594,7 +1594,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestClassWithInterface()) as ClassType;
         expect(classType.getMethodsNum() >= 1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1615,7 +1615,7 @@ export default function type_03Test() {
         const baseType = Type.of(new ParentClass1()) as ClassType;
         const actualBaseType = derivedType.getBaseType();
         expect(actualBaseType.equals(baseType)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1635,7 +1635,7 @@ export default function type_03Test() {
         const objectType = Type.of(new Object()) as ClassType;
         const actualBaseType = objectType.getBaseType();
         expect(actualBaseType.equals(objectType)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1661,7 +1661,7 @@ export default function type_03Test() {
           expect(err instanceof Error).assertTrue();
         }
         expect(hasError).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1681,7 +1681,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass7(0, "test")) as ClassType;
         const constructorsNum = classType.getConstructorsNum();
         expect(constructorsNum).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1701,7 +1701,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass4()) as ClassType;
         const constructorsNum = classType.getConstructorsNum();
         expect(constructorsNum).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1727,7 +1727,7 @@ export default function type_03Test() {
         expect(field1 !== undefined).assertTrue();
         expect(field1.getName()).assertEqual("field2");
         expect(field1.getType().getLiteral()).assertEqual("string");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1747,7 +1747,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass1()) as ClassType;
         const fieldsNum = classType.getOwnFieldsNum();
         expect(fieldsNum).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1767,7 +1767,7 @@ export default function type_03Test() {
         const classType = Type.of(new EmptyClass()) as ClassType;
         const fieldsNum = classType.getOwnFieldsNum();
         expect(fieldsNum).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1787,7 +1787,7 @@ export default function type_03Test() {
         const classType = Type.of(new ChildClass()) as ClassType;
         const fieldsNum = classType.getOwnFieldsNum();
         expect(fieldsNum).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1806,7 +1806,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestClass4()) as ClassType;
         expect(classType.isFinal()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1825,7 +1825,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestClass5()) as ClassType;
         expect(classType.hasEmptyConstructor()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1844,7 +1844,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
         expect(classType.hasEmptyConstructor()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1863,7 +1863,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestClass2()) as ClassType;
         expect(classType.hasField("field1")).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1882,7 +1882,7 @@ export default function type_03Test() {
       try {
         const classType = Type.of(new TestClass4()) as ClassType;
         expect(classType.hasField("nonExistentField")).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1902,7 +1902,7 @@ export default function type_03Test() {
         const classType = Type.of(new ChildClass()) as ClassType;
         expect(classType.hasField("parentField")).assertTrue();
         expect(classType.hasField("childField")).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1922,7 +1922,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass5()) as ClassType;
         const instance = classType.make();
         expect(instance instanceof TestClass5).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1943,7 +1943,7 @@ export default function type_03Test() {
         const instance = classType.make();
         expect(instance instanceof ChildClass2).assertTrue();
         expect(instance instanceof ParentClass2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1965,7 +1965,7 @@ export default function type_03Test() {
         expect(instance instanceof TestClassWithArgs).assertTrue();
         expect((instance as TestClassWithArgs).name).assertEqual("test");
         expect((instance as TestClassWithArgs).age).assertEqual(10);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1985,7 +1985,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClassMultipleCtors("test")) as ClassType;
         const instance = classType.make([new String("specific")]);
         expect(instance instanceof TestClassMultipleCtors).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2005,7 +2005,7 @@ export default function type_03Test() {
         const classType1 = Type.of(new TestClass4()) as ClassType;
         const classType2 = Type.of(new TestClass4()) as ClassType;
         expect(classType1.equals(classType2)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2025,7 +2025,7 @@ export default function type_03Test() {
         const classType1 = Type.of(new TestClass4()) as ClassType;
         const classType2 = Type.of(new EmptyClass()) as ClassType;
         expect(classType1.equals(classType2)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2045,7 +2045,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass4()) as ClassType;
         const stringType = Type.of("test") as StringType;
         expect(classType.equals(stringType)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2065,7 +2065,7 @@ export default function type_03Test() {
         const classType = Type.of(new TestClass4()) as ClassType;
         const literal = classType.getLiteral();
         expect(literal).assertEqual("class{...}");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2085,7 +2085,7 @@ export default function type_03Test() {
         const classType = Type.of(new Object()) as ClassType;
         const literal = classType.getLiteral();
         expect(literal).assertEqual("class{...}");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2106,7 +2106,7 @@ export default function type_03Test() {
         const literal1 = classType.getLiteral();
         const literal2 = classType.getLiteral();
         expect(literal1).assertEqual(literal2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2127,7 +2127,7 @@ export default function type_03Test() {
         let type = Type.of(testObj);
         let className = Class.of(testObj).getName();
         expect(type.getName()).assertEqual(className);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2147,7 +2147,7 @@ export default function type_03Test() {
         let type1 = Type.of(new TestClass4());
         let type2 = Type.of(new TestClass4());
         expect(type1.getName()).assertEqual(type2.getName());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2167,7 +2167,7 @@ export default function type_03Test() {
         let firstType = Type.of(new EmptyClass());
         let secondType = Type.of(new TestClass4());
         expect(firstType.getName() === secondType.getName()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2187,7 +2187,7 @@ export default function type_03Test() {
         let testObj = new TestClass4();
         let type = Type.of(testObj);
         expect(type.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2208,7 +2208,7 @@ export default function type_03Test() {
         let secondType = Type.of(new TestClass4());
         expect(firstType.hasName()).assertTrue();
         expect(secondType.hasName()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2228,7 +2228,7 @@ export default function type_03Test() {
         let testObj = new TestClass4();
         let type = Type.of(testObj);
         expect(type.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2249,7 +2249,7 @@ export default function type_03Test() {
         let secondType = Type.of(new TestClass4());
         expect(firstType.isPrimitive()).assertFalse();
         expect(secondType.isPrimitive()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2270,7 +2270,7 @@ export default function type_03Test() {
         let primitiveType = Type.of(123);
         expect(classType.isPrimitive()).assertFalse();
         expect(primitiveType.isPrimitive()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2290,7 +2290,7 @@ export default function type_03Test() {
         let testObj = new Object();
         let type = Type.of(testObj);
         expect(type.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2310,7 +2310,7 @@ export default function type_03Test() {
         let type1 = Type.of(new EmptyClass());
         let type2 = Type.of(new TestClass4());
         expect(type1.isReference()).assertEqual(type2.isReference());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2331,7 +2331,7 @@ export default function type_03Test() {
         let dateType = Type.of(new Date());
         expect(arrayType.isReference()).assertTrue();
         expect(dateType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }

@@ -35,7 +35,7 @@ interface Action {
 }
 export default function listNestedScrollJsunit() {
   describe('list_NestedScrollTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

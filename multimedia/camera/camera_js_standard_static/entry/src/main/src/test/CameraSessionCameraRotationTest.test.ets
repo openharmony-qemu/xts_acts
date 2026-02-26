@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,18 +27,18 @@ import Utils from './Util.test';
 
 const TAG = "CameraSessionCameraRotationTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.Session;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.Session | undefined;
 let mPhotoSurface: string;
 let mVideoRecorder: media.AVRecorder | null;
 let mVideoSurface: string | undefined;
 let AVRecorder: media.AVRecorder | undefined;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
-let mVideoOutput: cameraObj.VideoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
+let mVideoOutput: cameraObj.VideoOutput | undefined;
 let mIsVideoStabilizationModeSupportedArray: Array<number>;
 let assertmPreviewOutput: boolean = false;
 let assertmPhotoOutput: boolean = false;
@@ -77,7 +77,7 @@ let surfaceId: string = '';
 export default function cameraSessionCameraRotationTest() {
 
   let fdNumber: int;
-  let fdPath: string;
+  let fdPath: string = '';
 
   let getFd = async (pathName: string) => {
     let fileDir: string = Hypium.get('pathDir') as string;
@@ -189,7 +189,7 @@ export default function cameraSessionCameraRotationTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
 
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
@@ -210,9 +210,9 @@ export default function cameraSessionCameraRotationTest() {
   let createCameraSessionInstance = (mode: cameraObj.SceneMode) => {
     console.info('Enter createCameraSessionInstance');
     if (mode == cameraObj.SceneMode.NORMAL_PHOTO) {
-      mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
     } else if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
     } else {
       console.info('createSession FAILED,SceneMode is err');
       expect().assertFail();
@@ -223,7 +223,7 @@ export default function cameraSessionCameraRotationTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -231,7 +231,7 @@ export default function cameraSessionCameraRotationTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean>  => {
@@ -242,7 +242,7 @@ export default function cameraSessionCameraRotationTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
@@ -251,7 +251,7 @@ export default function cameraSessionCameraRotationTest() {
       assertmCameraInput = true;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -284,7 +284,7 @@ export default function cameraSessionCameraRotationTest() {
     let j:int = 0;
     let k:int = 0;
     let equalFlag:boolean = false;
-    let cameraOutputCap: cameraObj.CameraOutputCapability = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], mode);
+    let cameraOutputCap: cameraObj.CameraOutputCapability = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], mode);
     console.info(TAG + 'getSupportedOutputCapability is: ' + JSON.stringify(cameraOutputCap));
     let ratio = 4 / 3;
     if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
@@ -315,7 +315,7 @@ export default function cameraSessionCameraRotationTest() {
           }
         }
         if (equalFlag) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput == undefined) {
             console.info(TAG + "createPreviewOutput FAILED");
           } else { 
@@ -323,14 +323,14 @@ export default function cameraSessionCameraRotationTest() {
           }
           console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
 
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[j]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[j]);
           if (mPhotoOutput == undefined) {
             console.info(TAG + "createPhotoOutput FAILED");
           } else {
             assertmPhotoOutput = true;
           }
           console.info(TAG + "createPhotoOutput is: " + mPhotoOutput);
-          mVideoOutput = mCameraManager.createVideoOutput(cameraOutputCap.videoProfiles[k], mVideoSurface!);
+          mVideoOutput = mCameraManager!.createVideoOutput(cameraOutputCap.videoProfiles[k], mVideoSurface!);
           if (mVideoOutput == null || mVideoOutput == undefined) {
             console.info(TAG + "createVideoOutput FAILED");
           } else {
@@ -338,7 +338,7 @@ export default function cameraSessionCameraRotationTest() {
             console.info(TAG + "createVideoOutput is: " + mVideoOutput);
           }
         } else {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
           if (mPreviewOutput == undefined) {
             console.info(TAG + "createPreviewOutput FAILED");
           } else { 
@@ -346,7 +346,7 @@ export default function cameraSessionCameraRotationTest() {
           }
           console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
 
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
           if (mPhotoOutput == undefined) {
             console.info(TAG + "createPhotoOutput FAILED");
           } else {
@@ -356,7 +356,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "no equal profile  in this device");
         }
       } else if (mode == cameraObj.SceneMode.NORMAL_PHOTO && cameraOutputCap.previewProfiles != null && cameraOutputCap.photoProfiles != null) {
-        mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
+        mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
         if (mPreviewOutput == undefined) {
           console.info(TAG + "createPreviewOutput FAILED");
         } else { 
@@ -364,7 +364,7 @@ export default function cameraSessionCameraRotationTest() {
         }
         console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
 
-        mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+        mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
         if (mPhotoOutput == undefined) {
           console.info(TAG + "createPhotoOutput FAILED");
         } else {
@@ -384,14 +384,14 @@ export default function cameraSessionCameraRotationTest() {
 
     if (assertmPreviewOutput == true) {
       if (mPreviewOutput != undefined) {
-        await mPreviewOutput.release();
+        await mPreviewOutput!.release();
         assertmPreviewOutput = false;
       }
     }
 
     if (assertmPhotoOutput == true) {
       if (mPhotoOutput != undefined) {
-        await mPhotoOutput.release();
+        await mPhotoOutput!.release();
         assertmPhotoOutput = false;
       }
     }
@@ -417,16 +417,16 @@ export default function cameraSessionCameraRotationTest() {
 
     if (assertmCameraInput == true && mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (assertmPreviewOutput == true) {
       if (mPreviewOutput != undefined) {
         console.info(TAG + "Start to addOutput mPreviewOutput");
-        let canAdd: boolean = mCameraSession.canAddOutput(mPreviewOutput);
+        let canAdd: boolean = mCameraSession!.canAddOutput(mPreviewOutput!);
         if (canAdd) {
         console.info(TAG + "Start to addOutput mPreviewOutput");
-        mCameraSession.addOutput(mPreviewOutput);
+        mCameraSession!.addOutput(mPreviewOutput!);
         console.info(TAG + "End to addOutput mPreviewOutput");
         } else {
           console.info(TAG + "addOutput mPreviewOutput error");
@@ -436,10 +436,10 @@ export default function cameraSessionCameraRotationTest() {
 
     if (assertmPhotoOutput == true) {
       if (mPhotoOutput != undefined) {
-        let canAdd: boolean = mCameraSession.canAddOutput(mPhotoOutput);
+        let canAdd: boolean = mCameraSession!.canAddOutput(mPhotoOutput!);
         if (canAdd) {
           console.info(TAG + "C ddOutput mPhotoOutput");
-          mCameraSession.addOutput(mPhotoOutput);
+          mCameraSession!.addOutput(mPhotoOutput!);
           console.info(TAG + "End to addOutput mPhotoOutput");
         } else {
           console.info(TAG + "addOutput mPhotoOutput error");
@@ -449,10 +449,10 @@ export default function cameraSessionCameraRotationTest() {
 
     if (assertmVideoOutput == true) {
       if (mVideoOutput != undefined) {
-        let canAdd: boolean = mCameraSession.canAddOutput(mVideoOutput);
+        let canAdd: boolean = mCameraSession!.canAddOutput(mVideoOutput!);
         if (canAdd) {
           console.info(TAG + "canAddOutput mVideoOutput");
-          mCameraSession.addOutput(mVideoOutput!);
+          mCameraSession!.addOutput(mVideoOutput!);
           console.info(TAG + "End to addOutput mVideoOutput");
         } else {
           console.info(TAG + "addOutput mVideoOutput error");
@@ -461,7 +461,7 @@ export default function cameraSessionCameraRotationTest() {
     }
     await Utils.msSleep(1000);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     console.info(TAG + "Exit startCameraSession");
 
@@ -471,31 +471,31 @@ export default function cameraSessionCameraRotationTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     if (assertmCameraInput == true && mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (assertmPreviewOutput == true) {
       if (mPreviewOutput != undefined) {
         console.info(TAG + "Start to removeOutput mPreviewOutput");
-        mCameraSession.removeOutput(mPreviewOutput);
+        mCameraSession!.removeOutput(mPreviewOutput!);
       }
     }
 
     if (assertmPhotoOutput == true) {
       if (mPhotoOutput != undefined) {
         console.info(TAG + "Start to removeOutput mPhotoOutput");
-        mCameraSession.removeOutput(mPhotoOutput);
+        mCameraSession!.removeOutput(mPhotoOutput!);
       }
     }
     
     if (assertmVideoOutput == true) {
       if (mVideoOutput != undefined) {
         console.info(TAG + "Start to removeOutput mVideoOutput");
-        mCameraSession.removeOutput(mVideoOutput);
+        mCameraSession!.removeOutput(mVideoOutput!);
       }
     }
     await releaseInput();
@@ -508,7 +508,7 @@ export default function cameraSessionCameraRotationTest() {
 
   describe('cameraSessionCameraRotationTest', () => {
     console.info(TAG + '----------cameraSessionCameraRotationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
       await getVideoReceiveSurface();
@@ -526,7 +526,7 @@ export default function cameraSessionCameraRotationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await stopCameraSession();
       await releaseCameraSessionInstance();
@@ -577,7 +577,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -606,9 +606,9 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 start for camera");
           await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO);
-          let cameraPreviewRotation = mPreviewOutput.getPreviewRotation(cameraObj.ImageRotation.ROTATION_0);
+          let cameraPreviewRotation = mPreviewOutput!.getPreviewRotation(cameraObj.ImageRotation.ROTATION_0);
           console.info(TAG + "  cameraPreviewRotation: " + cameraPreviewRotation);
-          mPreviewOutput.setPreviewRotation(cameraObj.ImageRotation.ROTATION_0, false);
+          mPreviewOutput!.setPreviewRotation(cameraObj.ImageRotation.ROTATION_0, false);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 finish");
           if (cameraPreviewRotation == cameraObj.ImageRotation.ROTATION_90 ||
             cameraPreviewRotation == cameraObj.ImageRotation.ROTATION_270 ||
@@ -629,7 +629,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -658,7 +658,7 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 start for camera");
           await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO);
-          let cameraPhotoRotation = mPhotoOutput.getPhotoRotation(cameraObj.ImageRotation.ROTATION_0);
+          let cameraPhotoRotation = mPhotoOutput!.getPhotoRotation(cameraObj.ImageRotation.ROTATION_0);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 finish");
           if (cameraPhotoRotation == cameraObj.ImageRotation.ROTATION_90 ||
             cameraPhotoRotation == cameraObj.ImageRotation.ROTATION_270 ||
@@ -679,7 +679,7 @@ export default function cameraSessionCameraRotationTest() {
         }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 ends here");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();

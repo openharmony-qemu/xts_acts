@@ -29,7 +29,7 @@ const SLEEP_TIME_S = 100;
 
 export default function ImageAnimationControllerERRORTest() {
   describe('AnimationController1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AnimationController1Test beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

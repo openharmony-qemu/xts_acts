@@ -32,7 +32,7 @@ let emitKey = "emitUserAgent";
 export default function navigationuxtest() {
   describe('navigationuxtest',  () =>{
     const SUITE = 'navigationuxtest'
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

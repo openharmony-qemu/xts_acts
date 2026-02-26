@@ -25,7 +25,7 @@ import { MessageManager, Message } from '../../../../ets/MainAbility/common/Mess
 
 export default function waterFlow_WaterFlowFrictionTest() {
   describe('waterFlow_WaterFlowFrictionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("waterFlow_WaterFlowFrictionTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");

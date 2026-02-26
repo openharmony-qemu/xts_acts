@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsRegionTest() {
   describe('DrawingTsRegionTest', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -59,7 +59,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsPointContainedNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionIsPointContainedNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         region.setRect(100, 100, 400, 400);
         let flag: boolean = region.isPointContained(200, 200);
@@ -94,7 +94,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsPointContainedMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionIsPointContainedMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         region.setRect(100, 100, 400, 400);
         let flag: boolean = false;
@@ -127,7 +127,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsRegionContainedNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionIsRegionContainedNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let other = new drawing.Region();
         region.setRect(100, 100, 400, 400);
@@ -193,7 +193,7 @@ export default function drawingTsRegionTest() {
     it('testRegionQuickRejectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionQuickRejectNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let other = new drawing.Region();
         region.setRect(100, 100, 400, 400);
@@ -253,7 +253,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetPathNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionSetPathNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let path = new drawing.Path();
         region.setRect(100, 100, 400, 400);
@@ -280,7 +280,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetPathMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionSetPathMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let path = new drawing.Path();
         region.setRect(100, 100, 400, 400);
@@ -311,7 +311,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetRectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionSetRectNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let result1: boolean = region.setRect(100, 100, 400, 400);
         console.info(msg + " setRect -----result1:  " + result1);
@@ -351,7 +351,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetRectMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionSetRectMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         for (let index = 0; index < 20; index++) {
           region.setRect((Math.random() * Number.MAX_VALUE).toInt(), (Math.random() * Number.MAX_VALUE).toInt(),
@@ -375,7 +375,7 @@ export default function drawingTsRegionTest() {
      */
     it('testRegionOpNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionOpNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let region = new drawing.Region();
         region.setRect(200, 200, 400, 400);
@@ -480,7 +480,7 @@ export default function drawingTsRegionTest() {
         drawing.RegionOp.XOR
       ];
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         for (let index = 0; index < 20; index++) {
           let region = new drawing.Region();
           region.setRect(200, 200, 400, 400);
@@ -556,7 +556,7 @@ export default function drawingTsRegionTest() {
         let region = new drawing.Region(100, 100, 200, 200);
         console.info(msg + `drawing Region success`);
         expect(region != null || region != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing Region error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -564,7 +564,7 @@ export default function drawingTsRegionTest() {
         let region2 = new drawing.Region(-100, -100, 300, 351);
         console.info(msg + `drawing Region2 success`);
         expect(region2 != null || region2 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -572,7 +572,7 @@ export default function drawingTsRegionTest() {
         let region3 = new drawing.Region(150, 150, 150, 150);
         console.info(msg + `drawing region3 success`);
         expect(region3 != null || region3 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region3 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -580,7 +580,7 @@ export default function drawingTsRegionTest() {
         let region4 = new drawing.Region(0, 150, 150, 150);
         console.info(msg + `drawing region4 success`);
         expect(region4 != null || region4 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region4 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -588,7 +588,7 @@ export default function drawingTsRegionTest() {
         let region5 = new drawing.Region(100, 100, 100, 300);
         console.info(msg + `drawing region5 success`);
         expect(region5 != null || region5 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region5 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -596,7 +596,7 @@ export default function drawingTsRegionTest() {
         let region6 = new drawing.Region(100, 100, 800, 600);
         console.info(msg + `drawing region6 success`);
         expect(region6 != null || region6 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region6 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -604,7 +604,7 @@ export default function drawingTsRegionTest() {
         let region7 = new drawing.Region(500, 900, 180, 240);
         console.info(msg + `drawing region7 success`);
         expect(region7 != null || region7 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region7 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -614,7 +614,7 @@ export default function drawingTsRegionTest() {
             (Number.MAX_VALUE + 1).toInt());
         console.info(msg + `drawing region8 success`);
         expect(region8 != null || region8 != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `drawing region8 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -667,7 +667,7 @@ export default function drawingTsRegionTest() {
             (Math.random() * 100).toInt(), (Math.random() * 200).toInt())
           console.info(msg + `drawing region success step: ` + i);
           expect(region != null || region != undefined).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `drawing region error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
@@ -746,7 +746,7 @@ export default function drawingTsRegionTest() {
       let region = new drawing.Region();
       try {
         region.setEmpty();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -766,7 +766,7 @@ export default function drawingTsRegionTest() {
       for (let i = 0; i < 20; i++) {
         try {
           region.setEmpty();
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
         }

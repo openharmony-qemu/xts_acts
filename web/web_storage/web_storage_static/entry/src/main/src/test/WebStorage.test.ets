@@ -17,7 +17,7 @@ export default function webStorageTest() {
 
     describe("webStorageTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({
                 abilityName: "EntryAbility",
@@ -68,7 +68,7 @@ export default function webStorageTest() {
                     expect(origins![0].usage > 0).assertTrue();
                     expect(origins![0].quota != 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -98,7 +98,7 @@ export default function webStorageTest() {
                         expect(origins![0].usage > 0).assertTrue();
                         expect(origins![0].quota != 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -126,7 +126,7 @@ export default function webStorageTest() {
                     hilog.info(domain, tag, '%{public}s', 'usage: ' + usage);
                     expect(usage! > 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -148,7 +148,7 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'usage: ' + usage);
                         expect(usage! > 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_002 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -176,7 +176,7 @@ export default function webStorageTest() {
                     hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 quota: ' + quota);
                     expect(quota! != 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -198,7 +198,7 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 quota: ' + quota);
                         expect(quota! != 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -222,7 +222,7 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_001usage: ' + usage);
                         expect(usage! == 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -258,7 +258,7 @@ export default function webStorageTest() {
                     }
                     expect(origins![0].usage == 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }

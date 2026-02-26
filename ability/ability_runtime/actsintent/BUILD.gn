@@ -17,7 +17,8 @@ group("actsintent") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsintenttest:actsintenttest"
+      "actsintenttest:actsintenttest",
+      "actsintentstatictest:actsintentstatictest"
     ]
   }
 }

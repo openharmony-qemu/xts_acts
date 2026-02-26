@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexDirectionJsunit() {
   describe('flexDirectionJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexDirectionJsunit beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

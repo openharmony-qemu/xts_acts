@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -138,14 +138,14 @@ async function generatePriKeyByCommonSpec(asyKeySpec: cryptoFramework.AsyKeyGene
 }
 
 async function generateByCommonSpec(asyKeySpec: cryptoFramework.AsyKeySpec, state: string): Promise<boolean> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<boolean>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    generateSpecCommonAsyKeyPair(asyKeyPairSpec, state)
+    generateSpecCommonAsyKeyPair(asyKeyPairSpec!, state)
       .then(() => {
         console.log(
           "[Callback] generatorByCommonSpec asyKeyPair "
@@ -162,23 +162,23 @@ async function generateByCommonSpec(asyKeySpec: cryptoFramework.AsyKeySpec, stat
 }
 
 async function generateByKeyPairSpec(asyKeySpec: cryptoFramework.AsyKeySpec, state: string): Promise<void> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    generateSpecCommonAsyKeyPair(asyKeyPairSpec, state)
+    generateSpecCommonAsyKeyPair(asyKeyPairSpec!, state)
       .then(() => {
         console.log(
           "[Callback] generateByKeyPairSpec asyKeyPair "
         );
-        return generatePriKeyByCommonSpec(asyKeyPairSpec, state);
+        return generatePriKeyByCommonSpec(asyKeyPairSpec!, state);
       })
       .then((priKey) => {
         console.log("[Callback] generateByKeyPairSpec priKey " + priKey);
-        return generatePubKeyByCommonSpec(asyKeyPairSpec, state);
+        return generatePubKeyByCommonSpec(asyKeyPairSpec!, state);
       })
       .then((pubKey) => {
         console.log("[Callback] generateByKeyPairSpec pubKey " + pubKey);
@@ -194,14 +194,14 @@ async function generateByKeyPairSpec(asyKeySpec: cryptoFramework.AsyKeySpec, sta
 }
 
 async function generateByPriKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec, state: string): Promise<boolean> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<boolean>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    asyKeyPairSpec.generatePriKey((err: BusinessError<void>|null, tmp: cryptoFramework.PriKey|undefined) => {
+    asyKeyPairSpec!.generatePriKey((err: BusinessError<void>|null, tmp: cryptoFramework.PriKey|undefined) => {
       if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] generateByPriKeySpec failed. error is " + err
@@ -232,14 +232,14 @@ async function generateByPriKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec, stat
 }
 
 async function rsaPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Promise<void> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
+    asyKeyPairSpec!.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
       if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] rsaPubGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
@@ -260,14 +260,14 @@ async function rsaPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
 }
 
 async function eccPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Promise<void> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
+    asyKeyPairSpec!.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
       if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] eccPubGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
@@ -324,14 +324,14 @@ async function eccPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
 }
 
 async function dsaPriGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Promise<void> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
+    asyKeyPairSpec!.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
       if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error("[Callback] dsaPriGetAsyKeySpec failed. error is " + err);
         reject(err as Error);
@@ -360,14 +360,14 @@ async function dsaPriGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
 }
 
 async function clearMemGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Promise<void> {
-  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec;
+  let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec | undefined;
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
-    asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
+    asyKeyPairSpec!.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
       if (err || tmp === undefined) { // success: error is null, failed: data is undefined
         console.error(
           "[Callback] clearMemGetAsyKeySpec failed. error is " + err

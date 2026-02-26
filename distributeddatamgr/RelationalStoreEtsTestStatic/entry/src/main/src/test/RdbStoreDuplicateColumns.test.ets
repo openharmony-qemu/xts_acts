@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,9 +27,9 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name text," + "age long, " + "data1 real," + "data2 blob)";
@@ -102,13 +102,13 @@ export default function RdbStoreDuplicateColumnsTest() {
       await Utils.msSleep(10000)
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       try {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        hilog.info(domain, tag, '%{public}s', 'contextDir' + context.databaseDir);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+        hilog.info(domain, tag, '%{public}s', 'contextDir' + context!.databaseDir);
 
         expect(rdbStore != undefined).assertTrue();
         if (rdbStore != undefined) {
-          await rdbStore.execute(CREATE_TABLE_TEST)
-          await rdbStore.execute(CREATE_TABLE_TEST1);
+          await rdbStore!.execute(CREATE_TABLE_TEST)
+          await rdbStore!.execute(CREATE_TABLE_TEST1);
           let u8 = new Uint8Array([1, 2, 3])
           const valueBucket: relationalStore.ValuesBucket = {
             'name': 'zhangsan',
@@ -156,8 +156,8 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.info(domain, tag, '%{public}s', 'afterAll');
       try {
         hilog.info(domain, tag, '%{public}s', 'afterAll successful');
-        rdbStore.close();
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        rdbStore!.close();
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'afterAll failed');
         expect().assertFail();
@@ -174,14 +174,14 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('queryCurrentRowData_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_001 start *************");
-      let resultSet : relationalStore.ResultSet;
+      let resultSet : relationalStore.ResultSet | undefined;
       try {
         if (rdbStore != undefined) {
-          resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-          if (resultSet.goToFirstRow()) {
+          resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+          if (resultSet!.goToFirstRow()) {
             const assets2 = [asset1, asset2];
             let u8 = new Uint8Array([1, 2, 3])
-            let rowData = resultSet.getCurrentRowData();
+            let rowData = resultSet!.getCurrentRowData();
             hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_001 failed：:${rowData.length}` );
             for (let i = 0; i < 10; ++i) {
               hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_001 failed：${i}:${rowData[i]}` );
@@ -201,12 +201,13 @@ export default function RdbStoreDuplicateColumnsTest() {
             expect(checkAssetsEqual(rowData[9] as relationalStore.Assets, assets2)).assertTrue();
           }
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_001 end *************");
     })
@@ -223,10 +224,10 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_001 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3])
         const assets2 = [asset1, asset2];
-        let rowsData = await resultSet.getRowsData(1, 0);
+        let rowsData = await resultSet!.getRowsData(1, 0);
         expect(rowsData[0][0] == 1).assertTrue();
         expect(rowsData[0][1] == "zhangsan").assertTrue();
         expect(rowsData[0][2] == 18).assertTrue();
@@ -240,12 +241,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(rowsData[0][7] == 22).assertTrue();
         expect(checkAssetEqual(rowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsData[0][9] as relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',`************* queryGetRowsData_001 end *************`);
     })
@@ -260,10 +262,10 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('queryGetColumnNames_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_001 start *************");
-      let resultSet : relationalStore.ResultSet;
+      let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        let columnNames = resultSet.getColumnNames();
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        let columnNames = resultSet!.getColumnNames();
         console.log(`columnNames is ${columnNames}`)
         expect(columnNames[0] == "id").assertTrue();
         expect(columnNames[1] == "name").assertTrue();
@@ -275,12 +277,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(columnNames[7] == "age").assertTrue();
         expect(columnNames[8] == "data3").assertTrue();
         expect(columnNames[9] == "data4").assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_001 end *************");
     })
@@ -296,17 +299,18 @@ export default function RdbStoreDuplicateColumnsTest() {
     it('queryCurrentRowData_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_003 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
-      resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+      resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
       resultSet!.close();
       try {
-        const rowData = resultSet.getCurrentRowData();
+        const rowData = resultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_003 end *************");
     })
@@ -323,15 +327,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_004 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test2");
-        resultSet.getCurrentRowData();
+        resultSet = await rdbStore!.querySql("SELECT * FROM test2");
+        resultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_004 end *************");
     })
@@ -349,15 +354,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_005 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql(CREATE_TABLE_TEST);
-        resultSet.getCurrentRowData();
+        resultSet = await rdbStore!.querySql(CREATE_TABLE_TEST);
+        resultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_005 end *************");
     })
@@ -374,15 +380,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_006 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("se");
-        resultSet.getCurrentRowData();
+        resultSet = await rdbStore!.querySql("se");
+        resultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_006 end *************");
     })
@@ -399,15 +406,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_007 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 2");
-        resultSet.getCurrentRowData();
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 2");
+        resultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryCurrentRowData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryCurrentRowData_007 end *************");
     })
@@ -424,16 +432,17 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_003 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        resultSet.close();
-        await resultSet.getRowsData(1);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        resultSet!.close();
+        await resultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_003 end *************");
     })
@@ -450,15 +459,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_004 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test2");
-        await resultSet.getRowsData(1);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test2");
+        await resultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_004 end *************");
     })
@@ -475,15 +485,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_005 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql(CREATE_TABLE_TEST);
-        await resultSet.getRowsData(1);
+        resultSet = await rdbStore!.querySql(CREATE_TABLE_TEST);
+        await resultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.error(`queryGetRowsData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_005 end *************");
     })
@@ -500,15 +511,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_006 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("se");
-        await resultSet.getRowsData(1);
+        resultSet = await rdbStore!.querySql("se");
+        await resultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_006 end *************");
     })
@@ -525,15 +537,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_007 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 3");
-        await resultSet.getRowsData(1,1);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 3");
+        await resultSet!.getRowsData(1,1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         console.error(`queryGetRowsData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_007 end *************");
     })
@@ -551,12 +564,12 @@ export default function RdbStoreDuplicateColumnsTest() {
       let resultSet : relationalStore.ResultSet | undefined;
       try {
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 query 111 IS `);
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 query 222 IS `);
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 111 IS `);
-        let rowsDataAll = await resultSet.getRowsData(4);
+        let rowsDataAll = await resultSet!.getRowsData(4);
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 222 IS:${rowsDataAll} `);
         expect(rowsDataAll[0][0] == 1).assertTrue();
         expect(rowsDataAll[0][1] == "zhangsan").assertTrue();
@@ -584,12 +597,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(rowsDataAll[1][7] == 24).assertTrue();
         expect(checkAssetEqual(rowsDataAll[1][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsDataAll[1][9] as  relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_008 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_008 end *************");
     })
@@ -606,15 +620,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_009 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 1");
-        await resultSet.getRowsData(-1);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 1");
+        await resultSet!.getRowsData(-1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_009 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_009 end *************");
     })
@@ -631,15 +646,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_011 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 1");
-        await resultSet.getRowsData(-1, -1);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 1");
+        await resultSet!.getRowsData(-1, -1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_011 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_011 end *************");
     })
@@ -656,15 +672,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_012 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 1");
-        await resultSet.getRowsData(-1, 0);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 1");
+        await resultSet!.getRowsData(-1, 0);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_012 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_012 end *************");
     })
@@ -681,10 +698,10 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_013 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
-        let rowsData = await resultSet.getRowsData(1,1);
+        let rowsData = await resultSet!.getRowsData(1,1);
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_013 success ${rowsData}`);
         expect(rowsData.length == 1).assertTrue();
         expect(rowsData[0][0] == 2).assertTrue();
@@ -700,12 +717,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(rowsData[0][7] == 24).assertTrue();
         expect(checkAssetEqual(rowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(rowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_013 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_013 end *************");
     })
@@ -722,15 +740,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_014 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test where id = 1");
-        await resultSet.getRowsData(0);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test where id = 1");
+        await resultSet!.getRowsData(0);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetRowsData_014 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetRowsData_014 end *************");
     })
@@ -747,16 +766,17 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_002 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        resultSet.close();
-        resultSet.getColumnNames();
+        resultSet = await rdbStore!.querySql("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        resultSet!.close();
+        resultSet!.getColumnNames();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_002 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_002 end *************");
     })
@@ -773,15 +793,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_003 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test2");
-        resultSet.getColumnNames();
+        resultSet = await rdbStore!.querySql("SELECT * FROM test2");
+        resultSet!.getColumnNames();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_003 end *************");
     })
@@ -798,15 +819,16 @@ export default function RdbStoreDuplicateColumnsTest() {
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_005 start *************");
       let resultSet : relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("se");
-        resultSet.getColumnNames();
+        resultSet = await rdbStore!.querySql("se");
+        resultSet!.getColumnNames();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`queryGetColumnNames_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* queryGetColumnNames_005 end *************");
     })
@@ -821,13 +843,13 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_001 start *************");
-      let liteResultSet : relationalStore.LiteResultSet;
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
-        liteResultSet.goToNextRow();
-        let liteRowData = liteResultSet.getCurrentRowData();
+        liteResultSet!.goToNextRow();
+        let liteRowData = liteResultSet!.getCurrentRowData();
         expect(liteRowData[0] == 1).assertTrue();
         expect(liteRowData[1] == "zhangsan").assertTrue();
         expect(liteRowData[2] == 18).assertTrue();
@@ -841,11 +863,12 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(liteRowData[7] == 22).assertTrue();
         expect(checkAssetEqual(liteRowData[8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowData[9] as  relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_001 end *************");
     })
 
@@ -859,17 +882,18 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_003 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        liteResultSet.close();
-        liteResultSet.getCurrentRowData();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        liteResultSet!.close();
+        liteResultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_003 end *************");
     })
 
@@ -883,16 +907,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_004 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test2");
-        liteResultSet.getCurrentRowData();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test2");
+        liteResultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_004 end *************");
     })
 
@@ -906,16 +931,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_005 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount(CREATE_TABLE_TEST);
-        liteResultSet.getCurrentRowData();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount(CREATE_TABLE_TEST);
+        liteResultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_005 end *************");
     })
 
@@ -929,17 +955,18 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_006 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("se");
-        liteResultSet.getCurrentRowData();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("se");
+        liteResultSet!.getCurrentRowData();
         expect().assertFail();
 
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_006 end *************");
     })
 
@@ -953,16 +980,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryCurrentRowData_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_007 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test where id = 2");
-        liteResultSet.getCurrentRowData();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where id = 2");
+        liteResultSet!.getCurrentRowData();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryCurrentRowData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryCurrentRowData_007 end *************");
     })
 
@@ -976,13 +1004,13 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_001 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
         liteResultSet = await
-        rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
-        let liteRowsData = await liteResultSet.getRowsData(1, 0);
+        let liteRowsData = await liteResultSet!.getRowsData(1, 0);
         expect(liteRowsData[0][0] == 1).assertTrue();
         expect(liteRowsData[0][1] == "zhangsan").assertTrue();
         expect(liteRowsData[0][2] == 18).assertTrue();
@@ -996,12 +1024,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(liteRowsData[0][7] == 22).assertTrue();
         expect(checkAssetEqual(liteRowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_001 failed message:${e.message} code:${e.code}`);
-        liteResultSet.close();
+        liteResultSet!.close();
         expect().assertFail();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_001 end *************");
     })
 
@@ -1015,17 +1044,18 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_003 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        liteResultSet.close();
-        await liteResultSet.getRowsData(1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        liteResultSet!.close();
+        await liteResultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_003 end *************");
     })
 
@@ -1039,16 +1069,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_004 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test2");
-        await liteResultSet.getRowsData(1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test2");
+        await liteResultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_004 end *************");
     })
 
@@ -1062,16 +1093,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_005 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount(CREATE_TABLE_TEST);
-        await liteResultSet.getRowsData(1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount(CREATE_TABLE_TEST);
+        await liteResultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_005 end *************");
     })
 
@@ -1085,16 +1117,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_006 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("se");
-        await liteResultSet.getRowsData(1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("se");
+        await liteResultSet!.getRowsData(1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_006 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_006 end *************");
     })
 
@@ -1109,16 +1142,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_007 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test where id = 3");
-        await liteResultSet.getRowsData(1,1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where id = 3");
+        await liteResultSet!.getRowsData(1,1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_007 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800012).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_006 end *************");
     })
 
@@ -1132,13 +1166,13 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_008 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
         liteResultSet =
-          await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+          await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
-        let liteRowsDataAll = await liteResultSet.getRowsData(4);
+        let liteRowsDataAll = await liteResultSet!.getRowsData(4);
         expect(liteRowsDataAll.length == 2).assertTrue();
         expect(liteRowsDataAll[0][0] == 1).assertTrue();
         expect(liteRowsDataAll[0][1] == "zhangsan").assertTrue();
@@ -1166,12 +1200,13 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(liteRowsDataAll[1][7] == 24).assertTrue();
         expect(checkAssetEqual(liteRowsDataAll[1][8] as relationalStore.Asset, asset1)).assertTrue();
         expect(checkAssetsEqual(liteRowsDataAll[1][9] as  relationalStore.Assets, assets2)).assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_008 failed message:${e.message} code:${e.code}`);
-        liteResultSet.close();
+        liteResultSet!.close();
         expect().assertFail();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_008 end *************");
     })
 
@@ -1185,16 +1220,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_009 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
-        await liteResultSet.getRowsData(-1);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
+        await liteResultSet!.getRowsData(-1);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_009 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_009 end *************");
     })
 
@@ -1208,18 +1244,19 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_011 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
         if (liteResultSet) {
-          await liteResultSet.getRowsData(-1, -1);
+          await liteResultSet!.getRowsData(-1, -1);
           expect().assertFail();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_011 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_011 end *************");
     })
 
@@ -1233,18 +1270,19 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_012 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test where id = 1");
         if (liteResultSet) {
-          await liteResultSet.getRowsData(-1, 0);
+          await liteResultSet!.getRowsData(-1, 0);
           expect().assertFail();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_012 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_012 end *************");
     })
 
@@ -1258,14 +1296,14 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetRowsData_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_013 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
         liteResultSet =
-          await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+          await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
         let u8 = new Uint8Array([1, 2, 3]);
         const assets2 = [asset1, asset2];
         if (liteResultSet) {
-          let rowsData = await liteResultSet.getRowsData(1,1);
+          let rowsData = await liteResultSet!.getRowsData(1,1);
           expect(rowsData.length == 1).assertTrue();
           expect(rowsData[0][0] == 2).assertTrue();
           expect(rowsData[0][1] == "lisi").assertTrue();
@@ -1281,12 +1319,13 @@ export default function RdbStoreDuplicateColumnsTest() {
           expect(checkAssetEqual(rowsData[0][8] as relationalStore.Asset, asset1)).assertTrue();
           expect(checkAssetsEqual(rowsData[0][9] as  relationalStore.Assets, assets2)).assertTrue();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetRowsData_013 failed message:${e.message} code:${e.code}`);
-        liteResultSet.close();
+        liteResultSet!.close();
         expect().assertFail();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetRowsData_013 end *************");
     })
 
@@ -1300,10 +1339,10 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetColumnNames_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_001 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        let columnNames = liteResultSet.getColumnNames();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        let columnNames = liteResultSet!.getColumnNames();
         console.log(`columnNames is ${columnNames}`)
         expect(columnNames[0] == "id").assertTrue();
         expect(columnNames[1] == "name").assertTrue();
@@ -1315,11 +1354,12 @@ export default function RdbStoreDuplicateColumnsTest() {
         expect(columnNames[7] == "age").assertTrue();
         expect(columnNames[8] == "data3").assertTrue();
         expect(columnNames[9] == "data4").assertTrue();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_001 failed message:${e.message} code:${e.code}`);
         expect().assertFail();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_001 end *************");
     })
 
@@ -1333,18 +1373,19 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetColumnNames_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_002 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
-        liteResultSet.close();
-        liteResultSet.getColumnNames();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test INNER JOIN test1 ON test.id = test1.id");
+        liteResultSet!.close();
+        liteResultSet!.getColumnNames();
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_002 success`);
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_002 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800014).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_002 end *************");
     })
 
@@ -1358,16 +1399,17 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetColumnNames_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_003 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("SELECT * FROM test2");
-        liteResultSet.getColumnNames();
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("SELECT * FROM test2");
+        liteResultSet!.getColumnNames();
         expect().assertFail();
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_003 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800021).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_003 end *************");
     })
 
@@ -1382,18 +1424,19 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetColumnNames_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_004 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount(CREATE_TABLE_TEST);
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount(CREATE_TABLE_TEST);
         if (liteResultSet) {
-          liteResultSet.getColumnNames();
+          liteResultSet!.getColumnNames();
           expect().assertFail();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_004 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800019).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_004 end *************");
     })
 
@@ -1407,18 +1450,19 @@ export default function RdbStoreDuplicateColumnsTest() {
      */
     it('lite_queryGetColumnNames_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_005 start *************");
-      let liteResultSet : relationalStore.LiteResultSet
+      let liteResultSet : relationalStore.LiteResultSet | undefined;
       try {
-        liteResultSet = await rdbStore.querySqlWithoutRowCount("se");
+        liteResultSet = await rdbStore!.querySqlWithoutRowCount("se");
         if (liteResultSet) {
-          liteResultSet.getColumnNames();
+          liteResultSet!.getColumnNames();
           expect().assertFail();
         }
-      } catch(e:BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s',`lite_queryGetColumnNames_005 failed message:${e.message} code:${e.code}`);
         expect(e.code === 14800001).assertTrue();
       }
-      liteResultSet.close();
+      liteResultSet!.close();
       hilog.error(domain, tag, '%{public}s',"************* lite_queryGetColumnNames_005 end *************");
     })
   })

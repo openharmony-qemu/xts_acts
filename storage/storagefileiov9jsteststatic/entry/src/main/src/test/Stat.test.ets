@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ export default function fileIOStat() {
         expect(stat2 !== null).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -73,7 +73,8 @@ export default function fileIOStat() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_002 fpath: ' + fpath);
         let stat = fs.statSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_002 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -97,10 +98,31 @@ export default function fileIOStat() {
         fs.closeSync(file.fd);
         let stat = fs.statSync(file.fd);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_stat_sync_static_004
+     * @tc.number SUB_DF_fileIO_stat_sync_static_0400
+     * @tc.desc   Test statSync() interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_004 start');
+      try {
+        fs.statSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_static_004 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -127,7 +149,7 @@ export default function fileIOStat() {
         expect(await Utils.isBigInt(stat2.ino)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ino_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -156,7 +178,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.mode)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mode_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -185,7 +207,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.uid)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_uid_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -213,7 +235,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.gid)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_gid_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -242,7 +264,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.size)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_size_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -271,7 +293,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.atime)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_atime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -300,7 +322,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.mtime)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mtime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -329,7 +351,7 @@ export default function fileIOStat() {
         expect(await Utils.isIntNum(stat2.ctime)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ctime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -357,7 +379,7 @@ export default function fileIOStat() {
         expect(stat2.isBlockDevice() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_block_device_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -385,7 +407,7 @@ export default function fileIOStat() {
         expect(stat2.isCharacterDevice() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_character_device_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -413,7 +435,7 @@ export default function fileIOStat() {
         expect(stat2.isDirectory() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_directory_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -441,7 +463,7 @@ export default function fileIOStat() {
         expect(stat2.isDirectory() === true).assertTrue();
         fs.closeSync(file);
         fs.rmdirSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_directory_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -468,7 +490,7 @@ export default function fileIOStat() {
         expect(stat2.isFIFO() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_fifo_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -495,7 +517,7 @@ export default function fileIOStat() {
         expect(stat2.isFile() === true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_file_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -522,7 +544,7 @@ export default function fileIOStat() {
         expect(stat2.isFile() === false).assertTrue();
         fs.closeSync(file);
         fs.rmdirSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_directory_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -549,7 +571,7 @@ export default function fileIOStat() {
         expect(stat2.isSocket() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_socket_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -576,7 +598,7 @@ export default function fileIOStat() {
         expect(stat2.isSymbolicLink() === false).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_is_symbolic_link_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -611,7 +633,7 @@ export default function fileIOStat() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -639,7 +661,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -668,7 +690,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -688,7 +710,8 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_static_003');
         await fs.stat(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -714,7 +737,7 @@ export default function fileIOStat() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -733,7 +756,8 @@ export default function fileIOStat() {
       try {
         await fs.stat(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_005 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -758,7 +782,7 @@ export default function fileIOStat() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -781,7 +805,8 @@ export default function fileIOStat() {
         fs.closeSync(file.fd);
         await fs.stat(file.fd);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_007 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
         fs.unlinkSync(fpath);
@@ -812,7 +837,7 @@ export default function fileIOStat() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -840,7 +865,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ino_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -869,7 +894,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ino_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -897,7 +922,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mode_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -926,7 +951,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mode_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -954,7 +979,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_uid_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -983,7 +1008,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_uid_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1011,7 +1036,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_gid_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1040,7 +1065,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_gid_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1068,7 +1093,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_size_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1097,7 +1122,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_size_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1125,7 +1150,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1154,7 +1179,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atime_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1182,7 +1207,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1211,7 +1236,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtime_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1239,7 +1264,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctime_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1268,7 +1293,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctime_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1296,7 +1321,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_block_device_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1333,7 +1358,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_block_device_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1361,7 +1386,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_character_device_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1398,7 +1423,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_character_device_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1426,7 +1451,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_directory_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1454,7 +1479,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_directory_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1491,7 +1516,7 @@ export default function fileIOStat() {
           fs.rmdirSync(dpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_character_device_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1519,7 +1544,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_fifo_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1556,7 +1581,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_fifo_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1584,7 +1609,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1621,7 +1646,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1649,7 +1674,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_file_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1677,7 +1702,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_socket_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1714,7 +1739,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_socket_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1742,7 +1767,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1782,7 +1807,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1813,7 +1838,7 @@ export default function fileIOStat() {
         expect(stat2.size == FILE_CONTENT.length * 2).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_append_file_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1845,7 +1870,7 @@ export default function fileIOStat() {
         fs.closeSync(file2);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_append_file_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1875,7 +1900,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1902,7 +1927,7 @@ export default function fileIOStat() {
         expect(typeof stat2.atimeNs == 'bigint').assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_atimeNs_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1930,7 +1955,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atimeNs_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1967,7 +1992,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_atimeNs_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1994,7 +2019,7 @@ export default function fileIOStat() {
         expect(typeof stat2.mtimeNs == 'bigint').assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_mtimeNs_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -2022,7 +2047,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtimeNs_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -2059,7 +2084,7 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_mtimeNs_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -2086,7 +2111,7 @@ export default function fileIOStat() {
         expect(typeof stat2.ctimeNs == 'bigint').assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_sync_ctimeNs_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -2114,7 +2139,7 @@ export default function fileIOStat() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctimeNs_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -2151,9 +2176,55 @@ export default function fileIOStat() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_ctimeNs_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_stat_async_static_009
+     * @tc.number SUB_DF_fileIO_stat_async_static_0900
+     * @tc.desc   Test stat() promise interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_009 start');
+      try {
+        await fs.stat("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_009 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_stat_async_static_010
+     * @tc.number SUB_DF_fileIO_stat_async_static_1000
+     * @tc.desc   Test stat() callback interface with empty file path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_stat_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 start');
+      try {
+        fs.stat("", (err: BusinessError | null, statres: fs.Stat | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_010 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
 

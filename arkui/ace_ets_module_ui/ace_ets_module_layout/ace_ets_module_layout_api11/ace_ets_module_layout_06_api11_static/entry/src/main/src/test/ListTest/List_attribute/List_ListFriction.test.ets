@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function list_ListFrictionTest() {
 
   describe('list_ListFrictionTest',  ()=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("list_ListFrictionTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

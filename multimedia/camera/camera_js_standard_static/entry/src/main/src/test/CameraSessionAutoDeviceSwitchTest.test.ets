@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,14 +26,14 @@ import Utils from './Util.test';
 
 const TAG = "CameraSessionAutoDeviceSwitchTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.PhotoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.PhotoSession | undefined;
 let mCameraNum: number;
 let mPhotoSurface: string;
 let receiver: image.ImageReceiver | undefined;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
 let surfaceId: string = '';
 
 export default function cameraSessionAutoDeviceSwitchTest() {
@@ -99,7 +99,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     console.info(TAG + 'Enter mgetCameraManagerInstance');
     let appContext: Context = Hypium.get("Context") as Context;
     mCameraManager = cameraObj.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
@@ -109,7 +109,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info(TAG + 'Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -121,7 +121,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -130,12 +130,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
-    if (isEmpty04(mCameraInput)) {
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    if (isEmpty04(mCameraInput!)) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
-    await mCameraInput.open();
+    await mCameraInput!.open();
     console.info(idx + 'th CameraInput is: ' + mCameraInput);
     console.info('Exit createInput');
     return true;
@@ -143,23 +143,23 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
     if (!isEmpty05(cameraOutputCap)) {
       if (!isEmpty06(cameraOutputCap.previewProfiles)) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
           try {
-            mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
-          } catch (error:BusinessError) {
+            mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          } catch (error) {
             console.info('  createPreviewOutput failed');
             console.info('  createPreviewOutput FAILED : ' + error);
           }
-          if (!isEmpty07(mPreviewOutput)) {
+          if (!isEmpty07(mPreviewOutput!)) {
             console.info('  createPreviewOutput');
             break;
           }
         }
-        if (isEmpty07(mPreviewOutput)) {
+        if (isEmpty07(mPreviewOutput!)) {
           console.info(TAG + "createPreviewOutput FAILED");
         }
         console.info(TAG + "  createPreviewOutput: " + mPreviewOutput);
@@ -187,7 +187,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
   describe('cameraSessionAutoDeviceSwitchTest', () => {
     console.info(TAG + '----------cameraSessionAutoDeviceSwitchTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('Enter createOutput');
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -232,8 +232,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
           createOutput(i);
           try {
-            mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+            mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+          } catch (error) {
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
@@ -245,28 +245,28 @@ export default function cameraSessionAutoDeviceSwitchTest() {
             console.log("  mCameraSession create success")
           }
 
-          mCameraSession.beginConfig();
-          if (isEmpty04(mCameraInput)) {
+          mCameraSession!.beginConfig();
+          if (isEmpty04(mCameraInput!)) {
             console.info(TAG + "cameraInput is null.");
             expect().assertFail();
             done();
           }
-          mCameraSession.addInput(mCameraInput);
-          if (isEmpty07(mPreviewOutput)) {
+          mCameraSession!.addInput(mCameraInput!);
+          if (isEmpty07(mPreviewOutput!)) {
             console.info(TAG + "Start to addOutput mPreviewOutput");
             expect().assertFail();
             done();
           }
-          mCameraSession.addOutput(mPreviewOutput);
-          await mCameraSession.commitConfig();
-          let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
+          mCameraSession!.addOutput(mPreviewOutput!);
+          await mCameraSession!.commitConfig();
+          let isSupported: boolean = mCameraSession!.isAutoDeviceSwitchSupported();
           if (isSupported != isFoldable) {
             expect().assertFail();
           }
-          await mCameraSession.start();
-          await mCameraSession.stop();
-          await mCameraInput.close();
-          await mCameraSession.release();
+          await mCameraSession!.start();
+          await mCameraSession!.stop();
+          await mCameraInput!.close();
+          await mCameraSession!.release();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100 end for camera[" + i + "]");
         }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100 ends here");
@@ -296,38 +296,38 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           await createInput(i);
           createOutput(i);
           try {
-            mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+            mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+          } catch (error) {
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
           }
-          mCameraSession.beginConfig();
-          if (isEmpty04(mCameraInput)) {
+          mCameraSession!.beginConfig();
+          if (isEmpty04(mCameraInput!)) {
             console.info(TAG + "cameraInput is null.");
             expect().assertFail();
             done();
           }
-          mCameraSession.addInput(mCameraInput);
-          if (isEmpty07(mPreviewOutput)) {
+          mCameraSession!.addInput(mCameraInput!);
+          if (isEmpty07(mPreviewOutput!)) {
             console.info(TAG + "Start to addOutput mPreviewOutput");
             expect().assertFail();
             done();
           }
-          mCameraSession.addOutput(mPreviewOutput);
-          await mCameraSession.commitConfig();
-          let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
+          mCameraSession!.addOutput(mPreviewOutput!);
+          await mCameraSession!.commitConfig();
+          let isSupported: boolean = mCameraSession!.isAutoDeviceSwitchSupported();
           if (isSupported) {
             try {
-              mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+              mCameraSession!.enableAutoDeviceSwitch(true);
+            } catch (error) {
               expect().assertFail();
             }
           }
-          await mCameraSession.start();
-          await mCameraSession.stop();
-          await mCameraInput.close();
-          await mCameraSession.release();
+          await mCameraSession!.start();
+          await mCameraSession!.stop();
+          await mCameraInput!.close();
+          await mCameraSession!.release();
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100 end for camera[" + i + "]");
         }
@@ -359,34 +359,34 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           await createInput(i);
           createOutput(i);
           try {
-            mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+            mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+          } catch (error) {
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
           }
-          mCameraSession.beginConfig();
-          if (isEmpty04(mCameraInput)) {
+          mCameraSession!.beginConfig();
+          if (isEmpty04(mCameraInput!)) {
             console.info(TAG + "cameraInput is null.");
             expect().assertFail();
             done();
           }
-          mCameraSession.addInput(mCameraInput);
-          if (isEmpty07(mPreviewOutput)) {
+          mCameraSession!.addInput(mCameraInput!);
+          if (isEmpty07(mPreviewOutput!)) {
             console.info(TAG + "Start to addOutput mPreviewOutput");
             expect().assertFail();
             done();
           }
-          mCameraSession.addOutput(mPreviewOutput);
-          await mCameraSession.commitConfig();
-          let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
+          mCameraSession!.addOutput(mPreviewOutput!);
+          await mCameraSession!.commitConfig();
+          let isSupported: boolean = mCameraSession!.isAutoDeviceSwitchSupported();
           if (isSupported) {
             try {
-              mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+              mCameraSession!.enableAutoDeviceSwitch(true);
+            } catch (error) {
               expect().assertFail();
             }
-            mCameraSession.onAutoDeviceSwitchStatusChange((error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
+            mCameraSession!.onAutoDeviceSwitchStatusChange((error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               if (error !== undefined && error!.code !== 0) {
                 expect().assertFail();
               }
@@ -396,10 +396,10 @@ export default function cameraSessionAutoDeviceSwitchTest() {
               done();
             })
           }
-          await mCameraSession.start();
-          await mCameraSession.stop();
-          await mCameraInput.close();
-          await mCameraSession.release();
+          await mCameraSession!.start();
+          await mCameraSession!.stop();
+          await mCameraInput!.close();
+          await mCameraSession!.release();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100 end for camera[" +
             i + "]");
         }
@@ -430,43 +430,43 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           await createInput(i);
           createOutput(i);
           try {
-            mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+            mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+          } catch (error) {
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
           }
-          mCameraSession.beginConfig();
-          if (isEmpty04(mCameraInput)) {
+          mCameraSession!.beginConfig();
+          if (isEmpty04(mCameraInput!)) {
             console.info(TAG + "cameraInput is null.");
             expect().assertFail();
             done();
           }
-          mCameraSession.addInput(mCameraInput);
-          if (isEmpty07(mPreviewOutput)) {
+          mCameraSession!.addInput(mCameraInput!);
+          if (isEmpty07(mPreviewOutput!)) {
             console.info(TAG + "Start to addOutput mPreviewOutput");
             expect().assertFail();
             done();
           }
-          mCameraSession.addOutput(mPreviewOutput);
-          await mCameraSession.commitConfig();
-          let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
+          mCameraSession!.addOutput(mPreviewOutput!);
+          await mCameraSession!.commitConfig();
+          let isSupported: boolean = mCameraSession!.isAutoDeviceSwitchSupported();
           if (isSupported) {
             try {
-              mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+              mCameraSession!.enableAutoDeviceSwitch(true);
+            } catch (error) {
               expect().assertFail();
             }
             let callback = (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               expect().assertFail();
             }
-            mCameraSession.onAutoDeviceSwitchStatusChange(callback);
-            mCameraSession.offAutoDeviceSwitchStatusChange(callback);
+            mCameraSession!.onAutoDeviceSwitchStatusChange(callback);
+            mCameraSession!.offAutoDeviceSwitchStatusChange(callback);
           }
-          await mCameraSession.start();
-          await mCameraSession.stop();
-          await mCameraInput.close();
-          await mCameraSession.release();
+          await mCameraSession!.start();
+          await mCameraSession!.stop();
+          await mCameraInput!.close();
+          await mCameraSession!.release();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100 end for camera[" +
             i + "]");
         }

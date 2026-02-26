@@ -994,5 +994,64 @@ describe('cloud_sync_test', () => {
      }
      done();
    });
+
+   /**
+    * @tc.name   test_cloudSync_State_038
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3800
+    * @tc.desc   function of API, on_progress
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+   it('test_cloudSync_State_038', Level.LEVEL3, async (done: Function) => {    
+      try {
+      let fileCache = new cloudSync.CloudFileCache();
+      let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info("download state：" + pg.state);
+      };
+      fileCache.on('progress', callback);
+      try {
+        fileCache.off(null, callback);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('test_cloudSync_State_038 correctly threw error for null parameter: ' + err.message);
+        expect(true).assertTrue();
+      }
+      } catch (err) {
+        console.log('test_cloudSync_State_038 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+ 	 
+    /**
+    * @tc.name   test_cloudSync_State_039
+    * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3900
+    * @tc.desc   function of API, CloudFileCache.off with undefined as first parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('test_cloudSync_State_039', Level.LEVEL3, async (done: Function) => {
+      
+      try {
+      let fileCache = new cloudSync.CloudFileCache();
+      let callback = (pg: cloudSync.DownloadProgress) => {
+        console.info("download state：" + pg.state);
+      };
+      fileCache.on('progress', callback);
+      try {
+        fileCache.off(undefined, callback);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.log('test_cloudSync_State_039 correctly threw error for undefined parameter: ' + err.message);
+        expect(true).assertTrue();
+      }
+      } catch (err) {
+        console.log('test_cloudSync_State_039 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }

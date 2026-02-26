@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsPageMode() {
   describe('tabsPageMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tabsPageMode beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");

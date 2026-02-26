@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ export default function formAgentTest() {
           expect().assertFail();
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(DOMAIN, TAG, `formAgent requestPublishForm catch error, code: ${code}, message: ${message})`);
@@ -94,7 +94,7 @@ export default function formAgentTest() {
           expect(code).assertEqual(ERROR_CODE202);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(DOMAIN, TAG, `formAgent requestPublishForm catch error, code: ${code}, message: ${message})`);

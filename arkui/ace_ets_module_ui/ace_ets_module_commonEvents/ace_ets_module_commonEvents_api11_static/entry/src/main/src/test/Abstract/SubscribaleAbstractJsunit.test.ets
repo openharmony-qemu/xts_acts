@@ -18,7 +18,7 @@ import {UtilsTest} from '../Util.test'
 export default function SubscribaleAbstractJsunit() {
 
   describe('SubscribaleAbstract', () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       

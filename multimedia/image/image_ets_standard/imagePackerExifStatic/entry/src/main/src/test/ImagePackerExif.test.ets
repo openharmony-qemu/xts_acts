@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ import { initialize } from './AbilityContextHelper.test';
 
 let filesDir: string | undefined | null;
 let cacheDir: string | undefined | null;
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 
 class picType {
   public name: string = ""
@@ -118,7 +118,8 @@ export default function imagePackerExifTest() {
         let data = await newImageSource.getImageProperty(key);
         hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} imagePropertyNew: ${data}`);
         result = false
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         if (error.code != 62980123) {
           result = false
           hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} errorCode: ${error.code} errorMessage: ${error.message}`);
@@ -209,7 +210,7 @@ export default function imagePackerExifTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
         imageSourceApi = image.createImageSource(rawFileDescriptor)
       } else if (type === "incremental") {

@@ -24,7 +24,7 @@ export default function enableDropDisallowedBadgeTest() {
   let PAGE_TAG = 'enableDropDisallowedBadge';
 
   describe('enableDropDisallowedBadgeTest', (): void  => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api20.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

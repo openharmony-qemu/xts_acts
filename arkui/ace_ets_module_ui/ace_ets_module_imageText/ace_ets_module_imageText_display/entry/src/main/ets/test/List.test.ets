@@ -43,6 +43,7 @@ import SymbolGlyphApi4 from './SymbolGlyphTest/SymbolGlyphApi4.test';
 import SymbolGlyphApi5 from './SymbolGlyphTest/SymbolGlyphApi5.test';
 import SymbolGlyphFontScaleTest from './SymbolGlyphTest/SymbolGlyphFontScaleTest.test';
 import SymbolGlyphNodeTest from './SymbolGlyphTest/SymbolGlyphNode.test';
+import SymbolEffectNullUndefinedTest from './SymbolGlyphTest/SymbolEffectNullUndefinedTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -76,4 +77,5 @@ export default function testsuite() {
   SymbolGlyphApi5()
   SymbolGlyphFontScaleTest()
   SymbolGlyphNodeTest()
+  SymbolEffectNullUndefinedTest()
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,49 +47,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA512', pkcs1topkcs8.priKeyPkcs1Str512);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA768', pkcs1topkcs8.priKeyPkcs1Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA1024', pkcs1topkcs8.priKeyPkcs1Str1024);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA2048', pkcs1topkcs8.priKeyPkcs1Str2048);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA3072', pkcs1topkcs8.priKeyPkcs1Str3072);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA4096', pkcs1topkcs8.priKeyPkcs1Str4096);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs1ToPkcs8ByPromise('RSA8192', pkcs1topkcs8.priKeyPkcs1Str8192);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -109,49 +109,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA512', pkcs1topkcs8.priKeyPkcs1Str512);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA768', pkcs1topkcs8.priKeyPkcs1Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA1024', pkcs1topkcs8.priKeyPkcs1Str1024);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA2048', pkcs1topkcs8.priKeyPkcs1Str2048);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA3072', pkcs1topkcs8.priKeyPkcs1Str3072);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA4096', pkcs1topkcs8.priKeyPkcs1Str4096);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs1ToPkcs8BySync('RSA8192', pkcs1topkcs8.priKeyPkcs1Str8192);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -171,49 +171,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA512', pkcs1topkcs8.priKeyPkcs8Str512);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA768', pkcs1topkcs8.priKeyPkcs8Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA1024', pkcs1topkcs8.priKeyPkcs8Str1024);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA2048', pkcs1topkcs8.priKeyPkcs8Str2048);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA3072', pkcs1topkcs8.priKeyPkcs8Str3072);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA4096', pkcs1topkcs8.priKeyPkcs8Str4096);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = await pkcs1topkcs8.doPrivatePkcs8ToPkcs1ByPromise('RSA8192', pkcs1topkcs8.priKeyPkcs8Str8192);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -233,49 +233,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA512', pkcs1topkcs8.priKeyPkcs8Str512);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA768', pkcs1topkcs8.priKeyPkcs8Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA1024', pkcs1topkcs8.priKeyPkcs8Str1024);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA2048', pkcs1topkcs8.priKeyPkcs8Str2048);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA3072', pkcs1topkcs8.priKeyPkcs8Str3072);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA4096', pkcs1topkcs8.priKeyPkcs8Str4096);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         priString  = pkcs1topkcs8.doPrivatePkcs8ToPkcs1BySync('RSA8192', pkcs1topkcs8.priKeyPkcs8Str8192);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -295,49 +295,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA512', pkcs1topkcs8.pubKeyPkcs1Str512);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA768', pkcs1topkcs8.pubKeyPkcs1Str768);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA1024', pkcs1topkcs8.pubKeyPkcs1Str1024);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA2048', pkcs1topkcs8.pubKeyPkcs1Str2048);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA3072', pkcs1topkcs8.pubKeyPkcs1Str3072);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA4096', pkcs1topkcs8.pubKeyPkcs1Str4096);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicPkcs1ToX509ByPromise('RSA8192', pkcs1topkcs8.pubKeyPkcs1Str8192);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -357,49 +357,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA512', pkcs1topkcs8.pubKeyPkcs1Str512);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA768', pkcs1topkcs8.pubKeyPkcs1Str768);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA1024', pkcs1topkcs8.pubKeyPkcs1Str1024);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA2048', pkcs1topkcs8.pubKeyPkcs1Str2048);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA3072', pkcs1topkcs8.pubKeyPkcs1Str3072);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA4096', pkcs1topkcs8.pubKeyPkcs1Str4096);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicPkcs1ToX509BySync('RSA8192', pkcs1topkcs8.pubKeyPkcs1Str8192);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -419,49 +419,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA512', pkcs1topkcs8.pubKeyX509Str512);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA768', pkcs1topkcs8.pubKeyX509Str768);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA1024', pkcs1topkcs8.pubKeyX509Str1024);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA2048', pkcs1topkcs8.pubKeyX509Str2048);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA3072', pkcs1topkcs8.pubKeyX509Str3072);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA4096', pkcs1topkcs8.pubKeyX509Str4096);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = await pkcs1topkcs8.doPublicX509ToPkcs1ByPromise('RSA8192', pkcs1topkcs8.pubKeyX509Str8192);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -481,49 +481,49 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA512', pkcs1topkcs8.pubKeyX509Str512);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA768', pkcs1topkcs8.pubKeyX509Str768);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA1024', pkcs1topkcs8.pubKeyX509Str1024);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA1024 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA2048', pkcs1topkcs8.pubKeyX509Str2048);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA2048 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA3072', pkcs1topkcs8.pubKeyX509Str3072);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA3072 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA4096', pkcs1topkcs8.pubKeyX509Str4096);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA4096 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         pubString  = pkcs1topkcs8.doPublicX509ToPkcs1BySync('RSA8192', pkcs1topkcs8.pubKeyX509Str8192);
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA8192 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -548,7 +548,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -558,7 +558,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -568,7 +568,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -578,7 +578,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -588,7 +588,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -598,7 +598,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -608,7 +608,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -633,7 +633,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -643,7 +643,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -653,7 +653,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -663,7 +663,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -673,7 +673,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -683,7 +683,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -693,7 +693,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -718,7 +718,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -728,7 +728,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -738,7 +738,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -748,7 +748,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -758,7 +758,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -768,7 +768,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -778,7 +778,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -803,7 +803,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -813,7 +813,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -823,7 +823,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -833,7 +833,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -843,7 +843,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -853,7 +853,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -863,7 +863,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyX509Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -888,7 +888,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -898,7 +898,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -908,7 +908,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -918,7 +918,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -928,7 +928,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -938,7 +938,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -948,7 +948,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -973,7 +973,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -983,7 +983,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -993,7 +993,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1003,7 +1003,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1013,7 +1013,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1023,7 +1023,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1033,7 +1033,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs8(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs8Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1058,7 +1058,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1068,7 +1068,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1078,7 +1078,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1088,7 +1088,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1098,7 +1098,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1108,7 +1108,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1118,7 +1118,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1143,7 +1143,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str512);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str512);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1153,7 +1153,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1163,7 +1163,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str1024);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1173,7 +1173,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str2048);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1183,7 +1183,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str3072);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str3072);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1193,7 +1193,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str4096);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str4096);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1203,7 +1203,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         expect(pubstring).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str8192);
         pristring = pkcs1topkcs8.doPriGetEncodedPemPkcs1(keyPair);
         expect(pristring).assertEqual(pkcs1topkcs8.priKeyPkcs1Str8192);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA512 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1224,9 +1224,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(null, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1245,9 +1245,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyError, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1266,9 +1266,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(null, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1287,9 +1287,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyError, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1308,9 +1308,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyError, pkcs1topkcs8.priKeyPkcs1Str1024);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1329,9 +1329,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyPkcs1Str1024, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1349,7 +1349,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let algName: string = "RSA1024";
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1373,7 +1373,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let priString = keyPair.priKey.getEncodedPem('PKCS8');
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1393,7 +1393,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let algName: string = "RSA768";
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str1024);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1413,7 +1413,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let algName: string = "RSA2048";
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str2048);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1433,7 +1433,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let algName: string = "RSA2048";
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await rsaGenerator.convertPemKey(pkcs1topkcs8.pubKeyPkcs1Str2048, pkcs1topkcs8.priKeyPkcs1Str2048_B);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1454,9 +1454,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(null, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1475,9 +1475,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyError, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1496,9 +1496,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(null, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1517,9 +1517,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyError, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1538,9 +1538,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyError, pkcs1topkcs8.priKeyPkcs1Str1024);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1559,9 +1559,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyPkcs1Str1024, pkcs1topkcs8.priKeyError);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1580,7 +1580,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str768);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1604,7 +1604,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let priString = keyPair.priKey.getEncodedPem('PKCS8');
         expect(pubString).assertEqual(pkcs1topkcs8.pubKeyPkcs1Str768);
         expect(priString).assertEqual(pkcs1topkcs8.priKeyPkcs8Str768);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1625,7 +1625,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str1024);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1646,7 +1646,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyPkcs1Str768, pkcs1topkcs8.priKeyPkcs1Str2048);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1667,7 +1667,7 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         rsaGenerator.convertPemKeySync(pkcs1topkcs8.pubKeyPkcs1Str2048, pkcs1topkcs8.priKeyPkcs1Str2048_B);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`RSA768 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1689,9 +1689,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(pkcs1topkcs8.pubKeyX509Str1024, null);
         keyPair.pubKey.getEncodedPem("PKCS8");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1711,9 +1711,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(pkcs1topkcs8.pubKeyX509Str2048, null);
         keyPair.pubKey.getEncodedPem("PKCS8");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1733,9 +1733,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.pubKey.getEncodedPem("PKCS8");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1755,9 +1755,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.generateKeyPair();
         keyPair.priKey.getEncodedPem("X509");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1777,9 +1777,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(null, pkcs1topkcs8.priKeyPkcs1Str4096);
         keyPair.priKey.getEncodedPem("X509");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1799,9 +1799,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(null, pkcs1topkcs8.priKeyPkcs1Str8192);
         keyPair.priKey.getEncodedPem("X509");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1821,9 +1821,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(null, pkcs1topkcs8.priKeyPkcs8Str768);
         keyPair.priKey.getEncodedPem("X509");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1843,9 +1843,9 @@ export default function SecurityCryptoFwPkcs1ToPkcs8TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(null, pkcs1topkcs8.priKeyPkcs8Str1024);
         keyPair.priKey.getEncodedPem("X509");
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });

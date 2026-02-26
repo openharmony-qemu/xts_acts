@@ -67,13 +67,15 @@ export default function nfcIsoDepTagTest() {
     beforeAll(() => {
       try {
         nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
       }
 
       try{
         mifareClassicTag = tag.getMifareClassic(mifareclassicTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -107,7 +109,8 @@ export default function nfcIsoDepTagTest() {
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try {
           let ResponseFlags: Array<int> = nfcIsoDepTag.getHistoricalBytes();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0100 getHistoricalBytes error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -130,7 +133,8 @@ export default function nfcIsoDepTagTest() {
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try{
           let HiLayerResponse: Array<int> = nfcIsoDepTag.getHiLayerResponse();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0200 getHiLayerResponse error is ' + error.code + " - " + error);
           expect().assertFail();
         }
@@ -155,7 +159,8 @@ export default function nfcIsoDepTagTest() {
           await nfcIsoDepTag.isExtendedApduSupported().then((data) => {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0300 isExtendedApduSupported ');
           });
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0300 isExtendedApduSupported error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
@@ -197,7 +202,8 @@ export default function nfcIsoDepTagTest() {
         }
         try {
           nfcIsoDepTag.isExtendedApduSupported(AsyncCallback);
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0400 isExtendedApduSupported error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);

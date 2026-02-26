@@ -30,7 +30,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function NavigationSymbolIcon() {
   describe('NavigationSymbolIcon', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -82,14 +82,14 @@ export default function NavigationSymbolIcon() {
 
       let objArray2 =
         obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')
-      let obj2: jsonx.JsonElement;
+      let obj2: jsonx.JsonElement | undefined;
       for (let i = 0; i < objArray2.length; i++) {
         if (objArray2[i].getString("$type") == "NavigationMenu") {
           obj2 = objArray2[i]
           break
         }
       }
-      expect(obj2.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getString('$type'))
+      expect(obj2!.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getString('$type'))
         .assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 syb1');
       expect(obj1.getArray('$children')[0]

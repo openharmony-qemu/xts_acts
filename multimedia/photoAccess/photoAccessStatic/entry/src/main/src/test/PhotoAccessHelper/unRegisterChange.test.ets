@@ -133,14 +133,14 @@ export default function unRegisterChangeTest() {
             listenCount1++;
             hilog.info(domain, tag, `${testNum} callback1: ${JSON.stringify(changeData)}`);
           };
-          let callback2: (changeData: photoAccessHelper.ChangeData) => void;
+          let callback2: ((changeData: photoAccessHelper.ChangeData) => void) | undefined;
           callback2 = (changeData: photoAccessHelper.ChangeData) => {
             listenCount2++;
             hilog.info(domain, tag, `${testNum} callback2: ${JSON.stringify(changeData)}`);
-            (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri, callback2);
+            (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri, callback2!);
           };
           (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, callback1);
-          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, callback2);
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, callback2!);
 
           await sleep(550);
           (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri, callback1);

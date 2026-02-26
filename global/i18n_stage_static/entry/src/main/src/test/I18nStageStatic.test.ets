@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -134,7 +134,8 @@ export default function i18nStageTest() {
       try {
         let value = i18n.I18NUtil.getTimePeriodName(12, "");
         console.log('SUB_GLOBAL_I18N_SR000IFGMS_static_0600:' + value);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_I18N_SR000IFGMS_static_0600 code&message:' + e.code + e.message);
         expect(e.code == 890001).assertTrue();
       }
@@ -152,7 +153,8 @@ export default function i18nStageTest() {
       try {
         let value = i18n.I18NUtil.getTimePeriodName(12, "abcd");
         console.log('SUB_GLOBAL_I18N_SR000IFGMS_static_0700:' + value);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_I18N_SR000IFGMS_static_0700 code&message:' + e.code + e.message);
         expect(e.code == 890001).assertTrue();
       }
@@ -170,7 +172,8 @@ export default function i18nStageTest() {
       try {
         let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
         console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0010:' + holidayManager);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0010 code&message:' + e.code + e.message);
         expect(e.code == null).assertTrue();
       }
@@ -188,7 +191,8 @@ export default function i18nStageTest() {
       try {
         let holidayManager = new i18n.HolidayManager("A.xml");
         console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0020:' + holidayManager);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_i18n_SR000IFGNH_static_0020 code&message:' + e.code + e.message);
         expect(e.code == 890001).assertTrue();
       }
@@ -671,7 +675,8 @@ export default function i18nStageTest() {
     it('testGetThreeLetterLanguage_static_0040', Level.LEVEL3, async (): Promise<void> => {
       try {
         let language: string = i18n.I18NUtil.getThreeLetterLanguage('bbb')
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('testGetThreeLetterLanguage_0030' + e.code + e.message);
         expect(e.code).assertEqual('890001');
       }
@@ -688,7 +693,8 @@ export default function i18nStageTest() {
     it('testGetThreeLetterRegion_static_0040', Level.LEVEL3, async (): Promise<void> => {
       try {
         let language: string = i18n.I18NUtil.getThreeLetterRegion('aa')
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('testGetThreeLetterRegion_static_0040' + e.code + e.message);
         expect(e.code).assertEqual('890001');
       }
@@ -776,7 +782,8 @@ export default function i18nStageTest() {
     it('SUB_GLOBAL_I18N_getTimePeriodName_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
         i18n.I18NUtil.getTimePeriodName(2, 'invalid');
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_I18N_getTimePeriodName_static_0200 code&message:' + e.code + e.message);
         expect(e.code == 890001).assertTrue();
       }
@@ -827,7 +834,8 @@ export default function i18nStageTest() {
       try {
         let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
         holidayManager.getHolidayInfoItemArray(-1);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('SUB_GLOBAL_I18N_getHolidayInfoItemArray_static_0100 code&message:' + e.code + e.message);
         expect(e.code).assertEqual(890001)
       }

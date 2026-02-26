@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextClockDateTimeOptionsTest() {
   describe('TextClockDateTimeOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextClockDateTimeOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });

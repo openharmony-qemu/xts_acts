@@ -62,7 +62,7 @@ export default function linkJsunit() {
 
   describe('linkTest_static_', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("linkTest_static_ beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

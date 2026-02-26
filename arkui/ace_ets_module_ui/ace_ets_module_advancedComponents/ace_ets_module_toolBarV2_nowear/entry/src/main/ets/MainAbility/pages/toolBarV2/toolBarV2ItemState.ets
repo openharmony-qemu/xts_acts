@@ -29,7 +29,15 @@ import { DividerModifier } from '@ohos.arkui.modifier';
 struct ToolBarItemState {
   @Local toolBarList: ToolBarV2Item[] = [];
   @Local toolBarModifier: ToolBarV2Modifier =
-    new ToolBarV2Modifier().height(LengthMetrics.vp(52)).backgroundColor(ColorMetrics.resourceColor(Color.Transparent));
+    new ToolBarV2Modifier().height(LengthMetrics.vp(52))
+      .backgroundColor(ColorMetrics.resourceColor(Color.Transparent))
+      .padding(LengthMetrics.vp(5))
+      .stateEffect(false);
+  @Local toolBarModifierUndefined: ToolBarV2Modifier =
+    new ToolBarV2Modifier().height(LengthMetrics.vp(52))
+      .backgroundColor(ColorMetrics.resourceColor(Color.Red))
+      .padding(LengthMetrics.vp(-5))
+      .stateEffect(true);
   @Local dividerModifier: DividerModifier = new DividerModifier().height(0);
   @Local activatedIndex: number = 0;
 
@@ -76,6 +84,14 @@ struct ToolBarItemState {
             activatedIndex: this.activatedIndex,
             toolBarList: this.toolBarList,
           })
+
+          ToolBarV2({
+            toolBarModifier: this.toolBarModifierUndefined,
+            dividerModifier: this.dividerModifier,
+            activatedIndex: this.activatedIndex,
+            toolBarList: this.toolBarList,
+          })
+
         }
       }
       .align(Alignment.Bottom)

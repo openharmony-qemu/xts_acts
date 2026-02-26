@@ -25,6 +25,7 @@ import { rpc } from '@kit.IPCKit';
 import bundleManager from '@ohos.bundle.bundleManager';
 import CompletionHandler from '@ohos.app.ability.CompletionHandler';
 import hilog from '@ohos.hilog';
+import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 
 let context = getContext(this) as common.UIAbilityContext;;
 const DOMAIN = 0x0000;
@@ -1456,6 +1457,73 @@ export default function openLinkTest() {
     });
 
     /**
+     * @tc.name   testSetMissionLabelEmptyStringCallback0100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4250
+     * @tc.desc   Test setMissionLabel with empty string parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetMissionLabelEmptyStringCallback0100', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4250`;
+      console.log(`${tag}, it begin`);
+      let label: string = "";
+      try {
+        context.setMissionLabel(label, (err: BusinessError, data) => {
+          if (err?.code) {
+            console.error(`${tag}, SetMissionLabel failed, code is ${err.code}, message is ${err.message}`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+          console.info(`${tag}, SetMissionLabel succeed`);
+          try{
+            expect(data).assertEqual(undefined);
+          }catch(e){}
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} SetMissionLabel failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMissionLabelEmptyStringPromise0200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4260
+     * @tc.desc   Test setMissionLabel with empty string parameter (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetMissionLabelEmptyStringPromise0200', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4260`;
+      console.log(`${tag}, it begin`);
+      let label: string = "";
+      try {
+        context.setMissionLabel(label).then((data) => {
+          console.info(`#${tag}# SetMissionLabel successful ` + data);
+          expect(data).assertEqual(undefined);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`#${tag}# SetMissionLabel err: ${error}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} SetMissionLabel failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4300
      * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4300
      * @tc.desc   Call the interface startAbility through context, return errorcode 401
@@ -1586,6 +1654,43 @@ export default function openLinkTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4700
+     * @tc.desc   Test disconnectServiceExtensionAbility with undefined parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_4700', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4700`;
+      console.log(`${tag}, it begin`);
+      let connect_num: number|undefined = undefined;
+      try {
+        context.disconnectServiceExtensionAbility(connect_num, (err: BusinessError) => {
+          if (err?.code) {
+            console.error(`${tag}, DisConnectServiceExtensionAbility failed, code is ${err.code}, message is ${err.message}`);
+            try{
+              expect(err?.code).assertEqual(16000050);
+            }catch(e){}
+            done();
+          }else{
+            console.info(`${tag}, DisConnectServiceExtensionAbility succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          }
+        });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} DisConnectServiceExtensionAbility failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4900
      * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4900
      * @tc.desc   Call the interface startAbility through context, return errorcode 401
@@ -1684,6 +1789,44 @@ export default function openLinkTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5400
+     * @tc.desc   Test startAbility with valid want and null options (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_UIAbilityContext_5400', Level.LEVEL0, (done: Function) => {
+      let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5400`;
+      console.log(`${tag}, it begin`);
+      let want: Want = {
+        bundleName: 'com.example.test',
+        abilityName: 'MainAbility'
+      };
+      let options: StartOptions|null = null;
+      try {
+        context.startAbility(want, options)
+          .then((data) => {
+            console.info(`${tag}, startAbility succeed`);
+            try{
+              expect().assertFail();
+            }catch(e){}
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${tag}, startAbility failed, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          });
+      } catch (err) {
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        console.error(`${tag} startAbility failed, code is ${code}, message is ${message}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
   })
 }

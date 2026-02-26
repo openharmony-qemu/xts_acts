@@ -2353,7 +2353,7 @@ export default function abilityTest() {
      */
     it('SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010 start------");
-      let pasteData: pasteboard.PasteData
+      let pasteData: pasteboard.PasteData | undefined;
       let realSize: image.Size = { height: 3, width: 5 };
       let opt: image.InitializationOptions = {
         size: realSize,
@@ -2365,7 +2365,7 @@ export default function abilityTest() {
       await image.createPixelMap(color, opt).then((pixelMap) => {
         pasteData = pasteboard.createData(pasteboard.MIMETYPE_PIXELMAP, pixelMap);
       })
-      let pixelMapRecord = pasteData.getPrimaryPixelMap()
+      let pixelMapRecord = pasteData!.getPrimaryPixelMap()
       expect(pixelMapRecord != null).assertTrue();
       expect(pixelMapRecord.getPixelBytesNumber()).assertEqual(60);
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_GetPrimaryPixelMap_Static_0010 end------");
@@ -3661,7 +3661,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_OVERWRITE_Static_0010 start------");
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clearDataSync();
-      let resProgressInfo:pasteboard.ProgressInfo;
+      let resProgressInfo:pasteboard.ProgressInfo | undefined;
       let dstUri: string = fileUri.getUriFromPath(dstDir);
       hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
       const progressInfo:pasteboard.ProgressInfo = {
@@ -3681,7 +3681,7 @@ export default function abilityTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
 
       hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
       hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
@@ -3703,7 +3703,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_SKIP_Static_0010 start------");
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clearDataSync();
-      let resProgressInfo:pasteboard.ProgressInfo;
+      let resProgressInfo:pasteboard.ProgressInfo | undefined;
       let dstUri: string = fileUri.getUriFromPath(dstDir);
       hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
       const progressInfo:pasteboard.ProgressInfo = {
@@ -3723,7 +3723,7 @@ export default function abilityTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
 
       hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
       hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
@@ -3745,7 +3745,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DEFAULT_Static_0010 start------");
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clearDataSync();
-      let resProgressInfo:pasteboard.ProgressInfo;
+      let resProgressInfo:pasteboard.ProgressInfo | undefined;
       let dstUri: string = fileUri.getUriFromPath(dstDir);
       hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
       const progressInfo:pasteboard.ProgressInfo = {
@@ -3765,7 +3765,7 @@ export default function abilityTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
 
       hilog.info(domain, tag, "obj.progressIndicator_DEFAULT:" + getDataParams.progressIndicator);
       hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
@@ -3815,7 +3815,7 @@ export default function abilityTest() {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProGress_Static_0020 start------");
       let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
       systemPasteboard.clearDataSync();
-      let resProgressInfo:pasteboard.ProgressInfo;
+      let resProgressInfo:pasteboard.ProgressInfo | undefined;
       let dstUri: string = fileUri.getUriFromPath(dstDir);
       hilog.info(domain, tag, 'dstUri:' + dstUri + 'length:' + dstUri.length);
       const progressInfo:pasteboard.ProgressInfo = {
@@ -3835,7 +3835,7 @@ export default function abilityTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
 
       hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
       hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);
@@ -3952,7 +3952,7 @@ export default function abilityTest() {
      */
     it('SUB_PasteBoard_ETS_ProgressListener_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressListener_Static_0010 start------");
-      let resProgressInfo:pasteboard.ProgressInfo;
+      let resProgressInfo:pasteboard.ProgressInfo | undefined;
       const progressInfo:pasteboard.ProgressInfo = {
         progress: 10,
       }
@@ -3970,7 +3970,7 @@ export default function abilityTest() {
       expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
       expect(obj.destUri).assertEqual(getDataParams.destUri);
       expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
-      expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+      expect(resProgressInfo!.progress).assertEqual(progressInfo.progress);
 
       hilog.info(domain, tag, "obj.progressIndicator:" + getDataParams.progressIndicator);
       hilog.info(domain, tag, "obj.destUri:" + getDataParams.destUri);

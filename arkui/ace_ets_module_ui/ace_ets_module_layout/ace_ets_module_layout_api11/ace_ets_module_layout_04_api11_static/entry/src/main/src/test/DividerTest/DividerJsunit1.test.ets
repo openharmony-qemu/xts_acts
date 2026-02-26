@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function DividerJsunit() {
   describe('DividerJsunit',  () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DividerJsunit beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

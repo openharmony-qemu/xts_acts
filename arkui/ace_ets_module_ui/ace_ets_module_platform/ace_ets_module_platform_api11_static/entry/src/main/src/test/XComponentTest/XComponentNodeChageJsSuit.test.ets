@@ -40,7 +40,7 @@ import { PlaybackSpeed } from '@ohos.arkui.component';
 
 export default function XComponentNodeChageJsSuit() {
   describe('XComponentNodeChageJsSuit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
     });

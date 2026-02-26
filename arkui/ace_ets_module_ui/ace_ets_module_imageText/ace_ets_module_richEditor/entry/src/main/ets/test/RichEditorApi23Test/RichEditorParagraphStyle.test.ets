@@ -16,6 +16,7 @@ import { describe, beforeEach, it, expect, Level } from "@ohos/hypium"
 import { Driver, ON} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import { inputMethod } from '@kit.IMEKit';
 
 
 export default function RichEditorParagraphStyleTest() {
@@ -57,6 +58,8 @@ export default function RichEditorParagraphStyleTest() {
       let richEditor1 = await driver.findComponent(ON.id('RichEditorParagraphStyle_1'));
       await richEditor1.inputText('1');
       await CommonFunc.sleep(1000);
+      await inputMethod.getController().stopInputSession();
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('RichEditorParagraphStyle_get_textDirection'));
       await button.click();
       await CommonFunc.sleep(1000);
@@ -81,6 +84,8 @@ export default function RichEditorParagraphStyleTest() {
       let richEditor1 = await driver.findComponent(ON.id('RichEditorTextStyleResult_1'));
       await richEditor1.inputText('1');
       await CommonFunc.sleep(500);
+      await inputMethod.getController().stopInputSession();
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextStyleResult_strokeWidth')).assertEqual("10");
       AppStorage.delete('RichEditorTextStyleResult_strokeWidth');
       console.info('[RichEditorParagraphStyleTest_0020] END');
@@ -101,6 +106,8 @@ export default function RichEditorParagraphStyleTest() {
       await CommonFunc.sleep(500);
       let richEditor1 = await driver.findComponent(ON.id('RichEditorTextStyleResult_1'));
       await richEditor1.inputText('1');
+      await CommonFunc.sleep(500);
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextStyleResult_strokeColor')).assertEqual('"#FFFF0000"');
       AppStorage.delete('RichEditorTextStyleResult_strokeColor');

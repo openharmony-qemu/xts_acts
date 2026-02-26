@@ -42,7 +42,7 @@ import { startAbility, UtilsTest } from '../Util.test.ets';
 export default function stackFromEndList() {
 
   describe('stackFromEndList', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stackFromEndList beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       

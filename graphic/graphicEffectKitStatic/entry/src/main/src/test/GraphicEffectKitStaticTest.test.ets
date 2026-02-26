@@ -32,7 +32,7 @@ export default function GraphicEffectKitStaticTest() {
 
   describe("graphicEffectKitStaticTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    let pixelMap: image.PixelMap;
+    let pixelMap: image.PixelMap | undefined;
     beforeAll(() => {
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -70,7 +70,7 @@ export default function GraphicEffectKitStaticTest() {
         expect().assertFail();
       };
       try {
-        let headFilter: effectKit.Filter = effectKit.createEffect(pixelMap);
+        let headFilter: effectKit.Filter = effectKit.createEffect(pixelMap!);
         console.info('www data succeed')
         if (headFilter == undefined) {
           hilog.info(domain, tag, '%{public}s', 'effectKit createFilter failed.');
@@ -82,6 +82,9 @@ export default function GraphicEffectKitStaticTest() {
           const effectPixelMap = await blurFilter.getEffectPixelMap();
           hilog.info(domain, tag, '%{public}s', 'effectKit test END');
           expect(effectPixelMap != undefined).assertTrue();
+          console.info('www data effectPixelMap ', effectPixelMap.isEditable, effectPixelMap.isStrideAlignment);
+          expect(effectPixelMap.isEditable).assertTrue();
+          expect(effectPixelMap.isStrideAlignment).assertTrue();
           done();
         } catch(err){
           expect().assertFail();
@@ -106,7 +109,7 @@ export default function GraphicEffectKitStaticTest() {
       async (done: () => void): Promise<void> => {
         try {
           let radius = 30;
-          let headFilter = effectKit.createEffect(pixelMap);
+          let headFilter = effectKit.createEffect(pixelMap!);
           if (headFilter != null) {
             headFilter.blur(radius, effectKit.TileMode.CLAMP);
             headFilter.blur(radius, effectKit.TileMode.REPEAT);
@@ -158,7 +161,7 @@ export default function GraphicEffectKitStaticTest() {
           let bright1 = 0.0;
           let bright2 = 0.5;
           let bright3 = 1.0;
-          let headFilter = effectKit.createEffect(pixelMap);
+          let headFilter = effectKit.createEffect(pixelMap!);
           if (headFilter != null) {
             headFilter.brightness(bright1);
             headFilter.brightness(bright2);
@@ -186,7 +189,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let headFilter = effectKit.createEffect(pixelMap);
+        let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
           let grayscale1 = headFilter.grayscale();
           expect(grayscale1 != undefined).assertTrue();
@@ -207,7 +210,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let headFilter = effectKit.createEffect(pixelMap);
+        let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
           let invert1 = headFilter.invert();
           expect(invert1 != undefined).assertTrue();
@@ -234,7 +237,7 @@ export default function GraphicEffectKitStaticTest() {
           0.2126,0.7152,0.0722,0,0,
           0,0,0,1,0
         ];
-        let headFilter = effectKit.createEffect(pixelMap);
+        let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
           let setColorMatrix1 = headFilter.setColorMatrix(colorMatrix);
           expect(setColorMatrix1 != undefined).assertTrue();
@@ -255,12 +258,16 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker: effectKit.ColorPicker) => {
+        await effectKit.createColorPicker(pixelMap!).then(async (colorPicker: effectKit.ColorPicker) => {
           console.info("www data color picker=" + colorPicker);
           await colorPicker.getMainColor().then((color: effectKit.Color) => {
             console.info('www data Succeeded in getting main color.');
             console.info(`www data color[ARGB]=${color?.alpha},${color?.red},${color?.green},${color.blue}`);
             expect(color != undefined).assertTrue();
+            expect(color?.alpha).assertEqual(0);
+            expect(color?.red).assertEqual(0);
+            expect(color?.green).assertEqual(0);
+            expect(color?.blue).assertEqual(0);
             done();
           }).catch(err => {
             console.info('www data error getting main color.');
@@ -284,12 +291,15 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let color = colorPicker.getMainColorSync();
             console.info('www data Succeeded in getMainColorSync.', color);
-            console.info('www data Succeeded in getMainColorSync.', color.red);
+            console.info('www data Succeeded in getMainColorSync.', color.red, color.green, color.blue, color.alpha);
             expect(color.red).assertLargerOrEqual(0);
+            expect(color.green).assertLargerOrEqual(0);
+            expect(color.blue).assertLargerOrEqual(0);
+            expect(color.alpha).assertLargerOrEqual(0);
             done();
           } catch (err) {
             console.error('www data Failed to getMainColorSync.');
@@ -313,7 +323,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let color = colorPicker.getLargestProportionColor();
             console.info('www data Succeeded in getLargestProportionColor.',color);
@@ -341,7 +351,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let colors1 = colorPicker.getTopProportionColors(2);
             console.info('www data Succeeded in getTopProportionColors1.', colors1);
@@ -370,7 +380,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let color = colorPicker.getHighestSaturationColor();
             console.info('www data Succeeded in getHighestSaturationColor.',color);
@@ -398,7 +408,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let color = colorPicker.getAverageColor();
             console.info('www data Succeeded in getAverageColor.',color);
@@ -425,7 +435,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let bJudge = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF as long);
             console.info('www data effectKitTest_static_1400 Succeeded in isBlackOrWhiteOrGrayColor.', bJudge);
@@ -454,7 +464,7 @@ export default function GraphicEffectKitStaticTest() {
     it("effectKitTest_static_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
 
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
             let color = colorPicker.getMainColorSync();
             console.info('www data Succeeded in getMainColorSync.' + JSON.stringify(color));
@@ -483,7 +493,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
+        effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           console.info("www data effectKitTest_static_1600 color picker=" + colorPicker);
           expect(colorPicker != undefined).assertTrue();
           done();
@@ -504,7 +514,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+        effectKit.createColorPicker(pixelMap!, (error, colorPicker) => {
           if (error) {
             console.error('www data Failed to create color picker.' + JSON.stringify(error));
             expect().assertFail();
@@ -526,7 +536,7 @@ export default function GraphicEffectKitStaticTest() {
      */
     it("effectKitTest_static_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+        effectKit.createColorPicker(pixelMap!, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
             console.error('www data Failed to create color picker.' + JSON.stringify(error));
             expect().assertFail();
@@ -575,6 +585,9 @@ export default function GraphicEffectKitStaticTest() {
           hilog.info(domain, tag, '%{public}s', 'effectKit createFilter successfully.');
           const effectPixelMap1 = await blurFilter.getEffectPixelMap(false);
           console.info('www data succeed 33333')
+          console.info('www data effectPixelMap1 ', effectPixelMap1.isEditable, effectPixelMap1.isStrideAlignment);
+          expect(effectPixelMap1.isEditable).assertTrue();
+          expect(effectPixelMap1.isStrideAlignment).assertTrue();
           if (effectPixelMap1 != undefined) {
             console.info('www data succeed 6666')
             hilog.info(domain, tag, '%{public}s', 'effectKit getEffectPixelMap successfully.');
@@ -584,6 +597,9 @@ export default function GraphicEffectKitStaticTest() {
           }
           const effectPixelMap2 = await blurFilter.getEffectPixelMap(true);
           console.info('www data succeed 33333')
+          console.info('www data effectPixelMap2 ', effectPixelMap2.isEditable, effectPixelMap2.isStrideAlignment);
+          expect(effectPixelMap2.isEditable).assertTrue();
+          expect(effectPixelMap2.isStrideAlignment).assertTrue();
           if (effectPixelMap2 != undefined) {
             console.info('www data succeed 6666')
             hilog.info(domain, tag, '%{public}s', 'effectKit getEffectPixelMap successfully.');
@@ -683,6 +699,88 @@ export default function GraphicEffectKitStaticTest() {
         let color = colorPicker.getLargestProportionColor();
         console.info('www data get largest proportion color = ' + JSON.stringify(color));
         expect(color.red).assertLargerOrEqual(0);
+        expect(color.blue).assertLargerOrEqual(0);
+        expect(color.green).assertLargerOrEqual(0);
+        expect(color.alpha).assertLargerOrEqual(0);
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitTest_static_2300
+     * @tc.number effectKitTest_static_2300
+     * @tc.desc   effect for test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("effectKitTest_static_2300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let headFilter = effectKit.createEffect(pixelMap!);
+        console.info('www data effectKitTest_static_2300 success ', JSON.stringify(headFilter));
+        if (headFilter != null) {
+          let setColorMatrix1 = headFilter.setColorMatrix([]);
+          console.info('www data effectKitTest_static_2300 success setColorMatrix ', JSON.stringify(setColorMatrix1));
+          expect(setColorMatrix1 != undefined).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   effectKitTest_static_2400
+     * @tc.number effectKitTest_static_2400
+     * @tc.desc   effect for test getHighestSaturationColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("effectKitTest_static_2400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data effectKitTest_static_2400';
+        let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
+        const opts: image.DecodingOptions = {
+          editable: true,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+        };
+        console.info(msgStr + "promise create pixmap.start");
+        let pixelMap = (await imageSource.createPixelMap()) as image.PixelMap;
+        let colorPicker = (await effectKit.createColorPicker(pixelMap)) as effectKit.ColorPicker;
+        let color = colorPicker.getHighestSaturationColor();
+        console.info(msgStr + ' success ', JSON.stringify(color));
+        expect(color.red).assertEqual(248);
+        expect(color.green).assertEqual(200);
+        expect(color.blue).assertEqual(8);
+        expect(color.alpha).assertEqual(255);
+        done();
+      })
+
+    /**
+     * @tc.name   effectKitTest_static_2500
+     * @tc.number effectKitTest_static_2500
+     * @tc.desc   effect for test getHighestSaturationColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("effectKitTest_static_2500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data effectKitTest_static_2500';
+        let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
+        const opts: image.DecodingOptions = {
+          editable: true,
+          desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+        };
+        console.info(msgStr + "promise create pixmap.start");
+        let pixelMap = (await imageSource.createPixelMap()) as image.PixelMap;
+        let colorPicker = (await effectKit.createColorPicker(pixelMap)) as effectKit.ColorPicker;
+        let color = colorPicker.getAverageColor();
+        console.info(msgStr + ' success ', JSON.stringify(color));
+        expect(color.red).assertEqual(248);
+        expect(color.green).assertEqual(200);
+        expect(color.blue).assertEqual(8);
+        expect(color.alpha).assertEqual(255);
         done();
       })
 

@@ -130,9 +130,11 @@ export default function ActsNotificationEmitterPublishTest() {
       let eventId03: emitter.InnerEvent = {
         eventId: 3
       };
+      let count:number = 0
       let callback03 = (): void => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' eventId03 on success');
-        expect(true).assertTrue();
+        count++
+        expect(count).assertEqual(1)
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       }
@@ -176,9 +178,11 @@ export default function ActsNotificationEmitterPublishTest() {
       let eventId04: emitter.InnerEvent = {
         eventId: 4
       };
+      let count:number = 0;
       let callback04 = (): void => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback04 success');
-        expect(true).assertTrue();
+        count++
+        expect(count).assertEqual(1)
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       }

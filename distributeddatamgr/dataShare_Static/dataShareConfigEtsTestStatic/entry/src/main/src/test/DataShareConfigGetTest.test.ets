@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import dataShare from '@ohos.data.dataShare';
 import { BusinessError } from '@ohos.base';
 
-let g_handle: dataShare.DataProxyHandle;
+let g_handle: dataShare.DataProxyHandle | undefined;
 let g_config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG
 }
@@ -50,7 +50,8 @@ export default function dataShareConfigGetTest() {
         }
         proxyData.push(g_proxyDataAllowTest1);
         await g_handle!.publish(proxyData, g_config);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] beforeEach publish failed, code=" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -68,7 +69,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] delete failed.code=" + err.code + ",message=" + err.message);
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] afterEach delete failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -104,7 +106,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest001 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -137,7 +140,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest002 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -165,7 +169,8 @@ export default function dataShareConfigGetTest() {
             expect().assertFail();
           });
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest003 failed,code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }
@@ -191,7 +196,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest004 failed,code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(401);
       }
@@ -220,7 +226,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest005 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -251,7 +258,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest006 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -282,7 +290,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest009 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -313,7 +322,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest010 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -345,7 +355,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest011 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -375,7 +386,8 @@ export default function dataShareConfigGetTest() {
           console.error(TAG + "[DataShareProvider] get failed,err =" + JSON.stringify(err));
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest014 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
@@ -399,7 +411,8 @@ export default function dataShareConfigGetTest() {
         await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
           expect().assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest015 failed,code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
       }

@@ -98,7 +98,7 @@ async function getOsAccountInfo(): Promise<account_osAccount.OsAccountInfo> {
     return await accountMgr.getCurrentOsAccount();
   } catch (err) {
     console.error(TAG, 'getCurrentOsAccount failed', err.code, err.message);
-    expect(false).toBeTruthy(); // 这应该抛出异常，因为 expect(false) 永远不会为真
+    expect(false).assertFalse(); // 这应该抛出异常，因为 expect(false) 永远不会为真
     throw new Error("Assertion failed"); // 抛出一个错误来匹配返回类型
   }
 }

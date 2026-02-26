@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignStart_AddVisibility() {
   describe('AlignStart_AddVisibility', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignStart_AddVisibility beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -107,7 +107,7 @@ it('testFlexAlignStartTextVisibilityNone_static', Level.LEVEL0, async () : Promi
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityNone] failed');
         expect().assertFail();
       }
@@ -157,7 +157,7 @@ it('testFlexAlignStartTextVisibilityHidden_static', Level.LEVEL0, async () : Pro
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -207,7 +207,7 @@ it('testFlexAlignStartTextVisibilityVisible_static', Level.LEVEL0, async () : Pr
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityVisible] failed');
         expect().assertFail();
       }

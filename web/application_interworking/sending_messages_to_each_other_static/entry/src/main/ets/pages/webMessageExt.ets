@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -199,7 +199,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.NOT_SUPPORT :` + webView.WebMessageType.NOT_SUPPORT)
                 Utils.emitEvent(webView.WebMessageType.NOT_SUPPORT, 30000)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -210,7 +210,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.STRING :` + webView.WebMessageType.STRING)
                 Utils.emitEvent(webView.WebMessageType.STRING, 30001)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -221,7 +221,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.NUMBER :` + webView.WebMessageType.NUMBER)
                 Utils.emitEvent(webView.WebMessageType.NUMBER, 30002)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -232,7 +232,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.BOOLEAN :` + webView.WebMessageType.BOOLEAN)
                 Utils.emitEvent(webView.WebMessageType.BOOLEAN, 30003)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -243,7 +243,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.ARRAY_BUFFER :` + webView.WebMessageType.ARRAY_BUFFER)
                 Utils.emitEvent(webView.WebMessageType.ARRAY_BUFFER, 30004)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -254,7 +254,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.ARRAY :` + webView.WebMessageType.ARRAY)
                 Utils.emitEvent(webView.WebMessageType.ARRAY, 30005)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -265,7 +265,7 @@ struct webMessageExt {
               try {
                 console.info(`webView.WebMessageType.ERROR :` + webView.WebMessageType.ERROR)
                 Utils.emitEvent(webView.WebMessageType.ERROR, 30006)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -410,7 +410,8 @@ struct webMessageExt {
                   }
                 })
                 }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100027)
               }
@@ -435,7 +436,8 @@ struct webMessageExt {
                   }
                 })
               }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100028)
               }
@@ -460,7 +462,8 @@ struct webMessageExt {
                   }
                 })
                 }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100029)
               }
@@ -485,7 +488,8 @@ struct webMessageExt {
                   }
                 })
                 }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100030)
               }
@@ -511,7 +515,8 @@ struct webMessageExt {
                   }
                 })
               }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100031)
               }
@@ -537,7 +542,8 @@ struct webMessageExt {
                   }
                 })
                 }, 1000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
                 Utils.emitEvent(error.code, 100032)
               }
@@ -620,7 +626,7 @@ struct webMessageExt {
                   console.info(`The postErrorToApp() return value is: ${value}`)
                   Utils.emitEvent(value, this.listening_port as Long)
                 }
-              } catch (resError:BusinessError) {
+              } catch (resError) {
                 console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
               }
             });

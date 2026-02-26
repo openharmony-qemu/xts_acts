@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function search_center() {
   describe('search_center', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search_center beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

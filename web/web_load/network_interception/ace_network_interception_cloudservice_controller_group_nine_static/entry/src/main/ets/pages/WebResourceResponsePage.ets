@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -112,7 +112,7 @@ struct webResourceResponsePage {
                 let result: boolean = false;
                 console.log('testGetResponseDataExReturnString:' + result)
                 Utils.emitEvent(true, 36010);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -126,7 +126,7 @@ struct webResourceResponsePage {
                 this.controller.loadUrl('www.example.com');
                 console.log('testGetResponseIsReadyReturnTrue getResponseIsReady:' +
                 this.responseWeb.getResponseIsReady())
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

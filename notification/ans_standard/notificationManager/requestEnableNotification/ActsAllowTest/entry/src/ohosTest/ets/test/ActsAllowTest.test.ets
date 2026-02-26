@@ -142,7 +142,7 @@ export default function ActsAllowTest() {
           }).catch((err: BusinessError) => {
             exit(`openNotificationSettings err: JSON.stringify(err)`);
             if (err.code == 801) {
-              expect(true).assertTrue();
+              expect(err.code).assertEqual(801)
               done();
             }
             else {

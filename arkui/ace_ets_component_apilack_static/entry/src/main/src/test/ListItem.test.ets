@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function list_itemOnSelectJsunit() {
   describe('list_itemOnSelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
