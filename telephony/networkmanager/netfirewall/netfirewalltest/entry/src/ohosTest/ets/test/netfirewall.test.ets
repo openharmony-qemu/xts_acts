@@ -158,7 +158,6 @@ export default function netfirewallTest() {
       }
     })
 
-
     /**
      * @tc.name   testNetFirewallAddNetFirewallRule_0200
      * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0200
@@ -180,7 +179,13 @@ export default function netfirewallTest() {
           isEnabled: true,
           appUid: 20001,
           protocol: 6,
-          userId: 100
+          userId: 100,
+          domains: [
+            {
+              isWildcard: true,
+              domain: "www.baidu.com"
+            }
+          ]
         };
         await netFirewall.addNetFirewallRule(ipRule_01).then((result: number) => {
           console.info(`${caseName} rule Id: `, result);
@@ -192,6 +197,51 @@ export default function netfirewallTest() {
           console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
         });
 
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallAddNetFirewallRule_0300
+     * @tc.number SUB_Network_NetFirewall_AddNetFirewallRule_0300
+     * @tc.desc   Add a NetFirewallRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallAddNetFirewallRule_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallAddNetFirewallRule_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        let ipRule_01: netFirewall.NetFirewallRule = {
+          name: "rule10",
+          description: "rule10 description",
+          direction: ruleDirection_RULE_IN,
+          action: ruleAction_RULE_DENY,
+          type: netFirewall.NetFirewallRuleType.RULE_DNS,
+          isEnabled: true,
+          appUid: 20001,
+          protocol: 6,
+          userId: 100,
+          localIps: [],
+          remoteIps: [],
+          remotePorts: [],
+          localPorts: [],
+          domains: [],
+        };
+        await netFirewall.addNetFirewallRule(ipRule_01).then(async (result: number) => {
+          console.info(`${caseName} rule Id: `, result);
+          ExpectTrue(true);
+          done();
+        }, (reason: BusinessError) => {
+          ExpectFail();
+          done();
+          console.error(`${caseName} add firewall rule failed: `, JSON.stringify(reason));
+        });
       }catch (err){
         console.log("test end");
         console.log(`${caseName} catch err is `,JSON.stringify(err));
