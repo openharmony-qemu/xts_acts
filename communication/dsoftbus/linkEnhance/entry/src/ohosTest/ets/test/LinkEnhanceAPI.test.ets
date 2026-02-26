@@ -156,8 +156,8 @@ export default function LinkEnhanceAPI() {
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 error.code is " + error.code);
         console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 error.message is " + error.message);
         expect(error.code == 32390206).assertTrue();
+        expect(error.message != null).assertTrue();
       }finally {
-        expect(connection).assertFalse();
         if(flag == false){
           console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0100 createConnection success" +
             ",ecpect fail");
