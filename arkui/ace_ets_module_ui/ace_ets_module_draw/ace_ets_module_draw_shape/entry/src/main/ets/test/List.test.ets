@@ -48,6 +48,11 @@ import ShapeResourceTest from './Shape/ShapeResourceTest';
 import shapeNullUndefinedTest from './Shape/ShapeNullUndefined.test';
 import shapeNullUndefined2Test from './Shape/ShapeNullUndefined2.test';
 
+import lineStartPointNullUndefinedTest from './Line/lineStartPointNullUndefinedTest.test';
+import pathCommandsNullUndefinedTest from './Path/pathCommandsNullUndefinedTest.test';
+import polygonPointsNullUndefinedTest from './Polygon/polygonPointsNullUndefinedTest.test';
+import polylinePointsNullUndefinedTest from './Polyline/polylinePointsNullUndefinedTest.test';
+
 export default function testsuite() {
 
   ellipseJsunit();
@@ -85,5 +90,10 @@ export default function testsuite() {
 
   shapeNullUndefinedTest();
   shapeNullUndefined2Test();
+
+  lineStartPointNullUndefinedTest();
+  pathCommandsNullUndefinedTest();
+  polygonPointsNullUndefinedTest();
+  polylinePointsNullUndefinedTest();
 
 }

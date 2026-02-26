@@ -86,7 +86,8 @@ import canvasOnAttachNullUndefinedTest from './CanvasNullUndefined/canvasOnAttac
 import canvasOnDetachNullUndefinedTest from './CanvasNullUndefined/canvasOnDetachNullUndefinedTest.test';
 import canvasPatternSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasPatternSetTransformNullUndefinedTest.test';
 import offCanvasToDataURLNullUndefinedTest from './CanvasNullUndefined/offCanvasToDataURLNullUndefinedTest.test';
-
+import canvasOnReadyNullUndefinedTest from './CanvasNullUndefined/canvasOnReadyNullUndefinedTest.test';
+import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMatrixRotateNullUndefinedTest.test';
 
 export default function testsuite() {
 
@@ -164,5 +165,7 @@ export default function testsuite() {
   canvasOnDetachNullUndefinedTest();
   canvasPatternSetTransformNullUndefinedTest();
   offCanvasToDataURLNullUndefinedTest();
+  canvasOnReadyNullUndefinedTest();
+  canvasMatrixRotateNullUndefinedTest();
 
 }

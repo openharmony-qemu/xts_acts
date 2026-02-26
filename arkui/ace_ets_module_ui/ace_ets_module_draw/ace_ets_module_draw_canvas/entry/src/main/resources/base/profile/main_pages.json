@@ -76,6 +76,8 @@
         "MainAbility/pages/CanvasNullUndefined/canvasOnAttachNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasOnDetachNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasPatternSetTransformNullUndefined",
-        "MainAbility/pages/CanvasNullUndefined/offCanvasToDataURLNullUndefined"
+        "MainAbility/pages/CanvasNullUndefined/offCanvasToDataURLNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasOnReadyNullUndefined",
+        "MainAbility/pages/CanvasNullUndefined/canvasMatrixRotateNullUndefined"
     ]
 }
