@@ -21,7 +21,7 @@ import {
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData'
-import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { photoAccessHelper, sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -2089,7 +2089,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0029
-     * @tc.desc      close-13900020
+     * @tc.desc      close-参数null-13900020
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2121,7 +2121,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0030
-     * @tc.desc      close-13900020
+     * @tc.desc      close-参数undefined-13900020
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2153,7 +2153,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0031
-     * @tc.desc      close-13900020
+     * @tc.desc      close-参数null-13900020
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2191,7 +2191,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLOSE_0032
-     * @tc.desc      close-13900020
+     * @tc.desc      close-参数undefined-13900020
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2253,6 +2253,7 @@ export default function requestImageTest() {
             expect(isEmpty(pixelMap)).assertFalse();
           } else {
             console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+            expect().assertFail();
           }
         });
         done();
@@ -2292,6 +2293,7 @@ export default function requestImageTest() {
             expect(isEmpty(pixelMap)).assertFalse();
           } else {
             console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+            expect().assertFail();
           }
         });
         done();
@@ -2327,9 +2329,10 @@ export default function requestImageTest() {
         photoAsset.getThumbnail(null,(err, pixelMap) => {
           if (err === undefined) {
             console.info('getThumbnail successful ' + pixelMap);
-            expect(isEmpty(pixelMap)).assertFalse();
+            expect().assertFail();
           } else {
             console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+            expect().assertFail();
           }
         });
         done();
@@ -2368,6 +2371,7 @@ export default function requestImageTest() {
             expect(isEmpty(pixelMap)).assertFalse();
           } else {
             console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+            expect().assertFail();
           }
         });
         done();
@@ -2406,6 +2410,7 @@ export default function requestImageTest() {
           expect(isEmpty(pixelMap)).assertFalse();
         }).catch((err: BusinessError) => {
           console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          expect().assertFail();
         });
         done();
       }
@@ -2419,7 +2424,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0038
-     * @tc.desc      getThumbnail-13900020
+     * @tc.desc      getThumbnail-size为null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2444,12 +2449,13 @@ export default function requestImageTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
+          expect().assertFail();
           done();
         });
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error}`);
-        expect(Number(error.code)).assertEqual(13900020);
+        expect().assertFail();
         done();
       }
     });
@@ -2457,7 +2463,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_THUMBNAIL_0039
-     * @tc.desc      getThumbnail-success
+     * @tc.desc      getThumbnail-size为undefined
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2495,7 +2501,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_CLONE_0040
-     * @tc.desc      clone-success
+     * @tc.desc      clone-正常值success
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2726,7 +2732,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_FIRST_OBJECT_0047
-     * @tc.desc      getFirstObject-success
+     * @tc.desc      getFirstObject-401
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2757,7 +2763,7 @@ export default function requestImageTest() {
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_0048
-     * @tc.desc      getLastObject-success
+     * @tc.desc      getLastObject-正常值success
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2776,6 +2782,905 @@ export default function requestImageTest() {
           await phAccessHelper.getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
         expect(isEmpty(photoAsset)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0049
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0049
+     * @tc.desc      getAlbums-枚举值IMAGE-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0049', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0049';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.IMAGE, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0050
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0050
+     * @tc.desc      getAlbums-枚举值VIDEO-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0050', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0050';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.VIDEO, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0051
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0051
+     * @tc.desc      getAlbums-枚举值FAVORITE-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0051', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0051';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.FAVORITE, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0052
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0052
+     * @tc.desc      getAlbums-fetchColumns为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0052', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0052';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: null as ESObject,
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.IMAGE, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0053
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0053
+     * @tc.desc      getAlbums-fetchColumns为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0053', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0053';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.IMAGE, undefined);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0054
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0054
+     * @tc.desc      getAlbums-fetchColumns为''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0054', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0054';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: '' as ESObject,
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.FAVORITE, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0055
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0055
+     * @tc.desc      getAlbums-fetchColumns非空
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0055', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0055';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: ['uri'],
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(sendablePhotoAccessHelper.AlbumType.SYSTEM, sendablePhotoAccessHelper.AlbumSubtype.FAVORITE, fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0056
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0056
+     * @tc.desc      getAlbums-fetchColumns为空数组
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0056', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0056';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0057
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0057
+     * @tc.desc      getAlbums-fetchColumns为空
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0057', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0057';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: '' as ESObject,
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0058
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0058
+     * @tc.desc      getAlbums-fetchColumns为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0058', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0058';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: null as ESObject,
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0059
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0059
+     * @tc.desc      getAlbums-fetchColumns为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0059', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_ALBUMS_0059';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: undefined as ESObject,
+        predicates: predicates
+      };
+      try {
+        const albums = await phAccessHelper.getAlbums(fetchOption);
+        expect(isEmpty(albums)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0060
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0060
+     * @tc.desc      createAsset-subtype枚举值DEFAULT
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0060', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0060';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+          subtype: sendablePhotoAccessHelper.PhotoSubtype.DEFAULT,
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect(isEmpty(uri)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0061
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0061
+     * @tc.desc      createAsset-subtype枚举值SCREENSHOT
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0061', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0061';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+          subtype: sendablePhotoAccessHelper.PhotoSubtype.SCREENSHOT,
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect(isEmpty(uri)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0062
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0062
+     * @tc.desc      createAsset-subtype枚举值MOVING_PHOTO
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0062', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0062';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+          subtype: sendablePhotoAccessHelper.PhotoSubtype.MOVING_PHOTO,
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect(isEmpty(uri)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0063
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0063
+     * @tc.desc      createAsset-subtype枚举值BURST
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0063', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0063';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+          subtype: sendablePhotoAccessHelper.PhotoSubtype.BURST,
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect(isEmpty(uri)).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0064
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0064
+     * @tc.desc      createAsset-extension为''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0064', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0064';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = '';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(14000001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0065
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0065
+     * @tc.desc      createAsset-extension为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0065', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0065';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = null as ESObject;
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0066
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0066
+     * @tc.desc      createAsset-extension为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0066', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0066';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = undefined as ESObject;
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0067
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0067
+     * @tc.desc      createAsset-extension最小长度
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0067', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0067';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'j';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(14000011);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0068
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0068
+     * @tc.desc      createAsset-extension最大长度
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0068', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0068';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'sjdandjansdlkasndalksdnjsakndajksndkjsnakjnjksndjnjksandknqwuewrrwettgsdfdscxsasssdasaadasdwqewqeqwfgfdfvxsaddqwqweqweqwcvbnbnmhjklytqwerttyuuiiophjkdfdgsdfsadzxxczxvcxxvtdvxcasdqwewrzxxcrqweqwdasssdzzxcgtughterertedfasafehuqwrbuwbzmxcnhbqwhbjansdnasbfhhj';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(14000001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0069
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0069
+     * @tc.desc      createAsset-extension最大长度+1
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0069', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_CREATE_ASSET_0069';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'sjdandjansdlkasndalksdnjsakndajksndkajsnakjnjksndjnjksandknqwuewrrwettgsdfdscxsasssdasaadasdwqewqeqwfgfdfvxsaddqwqweqweqwcvbnbnmhjklytqwerttyuuiiophjkdfdgsdfsadzxxczxvcxxvtdvxcasdqwewrzxxcrqweqwdasssdzzxcgtughterertedfasafehuqwrbuwbzmxcnhbqwhbjansdnasbfhhj';
+        let options: photoAccessHelper.CreateOptions = {
+          title: 'testPhoto',
+        }
+        let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(14000001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0070
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0070
+     * @tc.desc      getBurstAssets-fetchColumns为空数组
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0070', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0070';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+        await phAccessHelper.getAssets(fetchOption);
+      let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+        let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOption);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0071
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0071
+     * @tc.desc      getBurstAssets-fetchColumns非空数组
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0071', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0071';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: ['uri'],
+        predicates: predicates
+      };
+      let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+        await phAccessHelper.getAssets(fetchOption);
+      let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+        let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOption);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0072
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0072
+     * @tc.desc      getBurstAssets-fetchColumns为''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0072', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0072';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: '' as ESObject,
+        predicates: predicates
+      };
+      let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+        await phAccessHelper.getAssets(fetchOption);
+      let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+        let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOption);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0073
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0073
+     * @tc.desc      getBurstAssets-burstKey为''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0073', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0073';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets('', fetchOption);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0074
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0074
+     * @tc.desc      getBurstAssets-burstKey为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0074', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0074';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let burstKey: string = null as ESObject;
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(burstKey, fetchOption);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0075
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0075
+     * @tc.desc      getBurstAssets-burstKey为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0075', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0075';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let burstKey: string = undefined as ESObject;
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(burstKey, fetchOption);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0076
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0076
+     * @tc.desc      getBurstAssets-fetchOption为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0076', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0076';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+        await phAccessHelper.getAssets(fetchOption);
+      let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+        let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
+        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOptions);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0077
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0077
+     * @tc.desc      getBurstAssets-fetchOption为undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0077', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_0077';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+        await phAccessHelper.getAssets(fetchOption);
+      let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let burstKey: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+        let photoAccessBurstKey: photoAccessHelper.MemberType = photoAsset.get(burstKey).toString();
+        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> = await phAccessHelper.getBurstAssets(photoAccessBurstKey, fetchOptions);
+        expect(fetchResult).assertUndefined();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_ASSETS_0078
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_ASSETS_0078
+     * @tc.desc      getAssets-fetchColumns为''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_ASSETS_0078', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_ASSETS_0078';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: '' as ESObject,
+        predicates: predicates
+      };
+      try {
+        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOption);
+        expect(isEmpty(fetchResult)).assertFalse();
         done();
       }
       catch (error) {
