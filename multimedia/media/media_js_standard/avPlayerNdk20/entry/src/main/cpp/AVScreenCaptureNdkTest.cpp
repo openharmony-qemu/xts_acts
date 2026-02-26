@@ -1573,6 +1573,25 @@ static napi_value OH_AVSCREEN_CAPTURE_ErrCode0100(napi_env env, napi_callback_in
 }
 
 
+static napi_value OH_AVSCREEN_CAPTURE_ErrCode0200(napi_env env, napi_callback_info info)
+{
+    int32_t res = 1;
+    int32_t memory = 1;
+    int32_t io = 4;
+    int32_t timeout = 5;
+    int32_t unknown = 6;
+    int32_t died = 7;
+    if (OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_NO_MEMORY == memory &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_IO == io &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_TIMEOUT == timeout &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_UNKNOWN == unknown &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_SERVICE_DIED == died) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 napi_property_descriptor desc[] = {
     {"OH_AVScreenCapture_Init0100", nullptr, OH_AVScreenCapture_Init0100, nullptr, nullptr, nullptr, napi_default,
      nullptr},
@@ -1745,6 +1764,8 @@ napi_property_descriptor desc[] = {
     {"OH_AVScreenCaptureContentChangedEvent0100", nullptr, OH_AVScreenCaptureContentChangedEvent0100, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"OH_AVSCREEN_CAPTURE_ErrCode0100", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVSCREEN_CAPTURE_ErrCode0200", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0200, nullptr, nullptr,
      nullptr, napi_default, nullptr},
 
 };

@@ -106,3 +106,4 @@ export const OH_AVScreenCaptureBufferType0101: () => number;
 export const OH_AVScreenCaptureFilterableAudioContent0100: () => number;
 export const OH_AVScreenCaptureContentChangedEvent0100: () => number;
 export const OH_AVSCREEN_CAPTURE_ErrCode0100: () => number;
+export const OH_AVSCREEN_CAPTURE_ErrCode0200: () => number;
