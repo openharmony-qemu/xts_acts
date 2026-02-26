@@ -1573,13 +1573,13 @@ export default function relationalStoreTest() {
           persist: true,
           enableSemanticIndex: true
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         console.info(tag + "version:" + res.version);
         expect(res.version).assertEqual(0);
         console.info(tag + "rebuilt:" + res.rebuilt);
         expect(res.rebuilt).assertEqual(0);
-        await relationalStore!.deleteRdbStore(context, "RdbTest111.db");
+        await relationalStore.deleteRdbStore(context!, "RdbTest111.db");
         console.info(tag + "deleteRdbStore success");
       } catch (err) {
         console.log(tag + " err" + err.code + err.message);
@@ -1616,12 +1616,12 @@ export default function relationalStoreTest() {
           tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER,
           enableSemanticIndex: false
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         console.info(tag + "version:" + res.version);
         expect().assertFail();
         
-        await relationalStore!.deleteRdbStore(context, "RdbTest111.db");
+        await relationalStore.deleteRdbStore(context!, "RdbTest111.db");
         console.info(tag + "deleteRdbStore success");
       } catch (err) {
         console.log(tag + " err" + err.code + err.message);
@@ -1652,13 +1652,13 @@ export default function relationalStoreTest() {
           },
           tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         console.info(tag + "version:" + res.version);
         expect(res.version).assertEqual(0);
         console.info(tag + "rebuilt:" + res.rebuilt);
         expect(res.rebuilt).assertEqual(0);
-        await relationalStore!.deleteRdbStore(context, "RdbTest111.db");
+        await relationalStore.deleteRdbStore(context!, "RdbTest111.db");
         console.info(tag + "deleteRdbStore success");
       } catch (err) {
         console.log(tag + " err" + err.code + err.message);
@@ -1682,16 +1682,16 @@ export default function relationalStoreTest() {
           name: "RdbTest111.db",
           securityLevel: relationalStore.SecurityLevel.S2,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
-        relationalStore!.deleteRdbStore(context, "", (e) => {
+        relationalStore.deleteRdbStore(context!, "", (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
           }else{
             console.info(tag + 'Delete RdbStore successfully.');
             let count = 0;
-            relationalStore!.deleteRdbStore(context, "RdbTest111.db", () => {
+            relationalStore.deleteRdbStore(context!, "RdbTest111.db", () => {
               count += 1;
               expect(count).assertEqual(1);
               console.info(tag + "deleteRdbStore success");
@@ -1739,10 +1739,10 @@ export default function relationalStoreTest() {
           persist: true,
           enableSemanticIndex: true
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        relationalStore!.deleteRdbStore(context, config1, (e) => {
+        relationalStore.deleteRdbStore(context!, config1, (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1791,10 +1791,10 @@ export default function relationalStoreTest() {
           persist: false,
           enableSemanticIndex: false
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        relationalStore!.deleteRdbStore(context, config1, (e) => {
+        relationalStore.deleteRdbStore(context!, config1, (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1835,10 +1835,10 @@ export default function relationalStoreTest() {
           },
           tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        relationalStore!.deleteRdbStore(context, config1, (e) => {
+        relationalStore.deleteRdbStore(context!, config1, (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1871,10 +1871,10 @@ export default function relationalStoreTest() {
           name: "",
           securityLevel: relationalStore.SecurityLevel.S4,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        relationalStore!.deleteRdbStore(context, config1, (e) => {
+        relationalStore.deleteRdbStore(context!, config1, (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1908,10 +1908,10 @@ export default function relationalStoreTest() {
           name: "",
           securityLevel: relationalStore.SecurityLevel.S4,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        relationalStore!.deleteRdbStore(context, config1, (e) => {
+        relationalStore.deleteRdbStore(context!, config1, (e) => {
           if (e) {
             console.error(tag + `Delete RdbStore failed, code is ${e.code},message is ${e.message}`);
             expect().assertFail();
@@ -1945,12 +1945,12 @@ export default function relationalStoreTest() {
           name: "RdbTest111.db",
           securityLevel: relationalStore.SecurityLevel.S2,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        await relationalStore!.deleteRdbStore(context, "");
+        await relationalStore.deleteRdbStore(context!, "");
         console.info(tag + 'Delete RdbStore successfully.');
-        await relationalStore!.deleteRdbStore(context, "RdbTest111.db");
+        await relationalStore.deleteRdbStore(context!, "RdbTest111.db");
         count += 1;
         expect(count).assertEqual(1);
         console.info(tag + "deleteRdbStore success");
@@ -1994,10 +1994,10 @@ export default function relationalStoreTest() {
           persist: true,
           enableSemanticIndex: true
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        await relationalStore!.deleteRdbStore(context, config1);
+        await relationalStore.deleteRdbStore(context!, config1);
         count += 1;
         console.info(tag + 'Delete RdbStore successfully.');
         expect(count).assertEqual(1);
@@ -2036,10 +2036,10 @@ export default function relationalStoreTest() {
           tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER,
           enableSemanticIndex: false
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        await relationalStore!.deleteRdbStore(context, config1);
+        await relationalStore.deleteRdbStore(context!, config1);
         count += 1;
         console.info(tag + 'Delete RdbStore successfully.');
         expect().assertFail();
@@ -2073,10 +2073,10 @@ export default function relationalStoreTest() {
           },
           tokenizer: relationalStore.Tokenizer.CUSTOM_TOKENIZER,
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
         let count = 0;
-        await relationalStore!.deleteRdbStore(context, config1);
+        await relationalStore.deleteRdbStore(context!, config1);
         count += 1;
         console.info(tag + 'Delete RdbStore successfully.');
         expect(count).assertEqual(1);
@@ -2117,10 +2117,10 @@ export default function relationalStoreTest() {
           persist: false,
           enableSemanticIndex: false
         };
-        let res = await relationalStore!.getRdbStore(context, config1)
+        let res = await relationalStore.getRdbStore(context!, config1)
         console.info(tag + "getRdbStore success");
 
-        await relationalStore!.deleteRdbStore(context, config1);
+        await relationalStore.deleteRdbStore(context!, config1);
         console.info(tag + 'Delete RdbStore successfully.');
         expect().assertFail();
       } catch (err) {
