@@ -18,7 +18,6 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include "neural_network_runtime/neural_network_runtime.h"
-
 #include "const.h"
 
 namespace OHOS {

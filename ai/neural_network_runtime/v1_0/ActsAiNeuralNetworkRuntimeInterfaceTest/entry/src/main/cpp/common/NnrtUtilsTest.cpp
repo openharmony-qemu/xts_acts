@@ -538,6 +538,7 @@ bool IsNPU()
         LOGE("[NNRtTest] devicesCount <= 0  devicesCount=%d\n", devicesCount);
         return false;
     }
+
     return true;
 }
 

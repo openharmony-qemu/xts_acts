@@ -106,7 +106,7 @@ int SUBAINNRtFuncNorthAbsBuild02()
     if (IsSupportNPU() == false) {
         return OH_NN_SUCCESS;
     }
-
+    
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 

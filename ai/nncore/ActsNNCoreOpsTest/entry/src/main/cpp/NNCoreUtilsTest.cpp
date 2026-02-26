@@ -16,7 +16,6 @@
 
 #include "OhosCommonTest.h"
 #include "nncore_utils.h"
-#include <dlfcn.h>
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
@@ -244,7 +243,6 @@ bool IsSupportNPU()
     }
     return true;
 }
-
 } // namespace Test
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS
