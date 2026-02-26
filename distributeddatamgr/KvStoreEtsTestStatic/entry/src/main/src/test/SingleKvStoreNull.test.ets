@@ -65,7 +65,7 @@ export default function SingleKvStoreNull(){
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, TAG, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, TAG, '%{public}s', '================ beforeAll context end==========');
       }
@@ -86,7 +86,7 @@ export default function SingleKvStoreNull(){
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         done();
       }
@@ -139,7 +139,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'put 1, catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -165,7 +165,7 @@ export default function SingleKvStoreNull(){
           expect(err).assertEqual(null);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'put 1, catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -191,7 +191,7 @@ export default function SingleKvStoreNull(){
           expect(err).assertEqual(null);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e , put' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -214,7 +214,7 @@ export default function SingleKvStoreNull(){
         await kvStore!.put('', TEST_VALUE);
         expect(null).assertFail();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(401);
         done();
@@ -236,7 +236,7 @@ export default function SingleKvStoreNull(){
       try {
         await kvStore!.put(TEST_KEY, "");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -259,7 +259,7 @@ export default function SingleKvStoreNull(){
       try {
         await kvStore!.put(TEST_KEY, value);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -283,7 +283,7 @@ export default function SingleKvStoreNull(){
           expect(err).assertEqual(null);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'put 1, catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -305,7 +305,7 @@ export default function SingleKvStoreNull(){
         await kvStore!.putBatch([]);
         console.info(TAG + ' putBatch ');
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -329,7 +329,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -351,7 +351,7 @@ export default function SingleKvStoreNull(){
         await kvStore!.delete('');
         expect(null).assertFail();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(401);
         done();
@@ -375,7 +375,7 @@ export default function SingleKvStoreNull(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(401);
         done();
@@ -403,7 +403,7 @@ export default function SingleKvStoreNull(){
           expect(err.code).assertEqual(401);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(401);
         done();
@@ -428,7 +428,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -450,7 +450,7 @@ export default function SingleKvStoreNull(){
         await kvStore!.removeDeviceData('');
         expect(null).assertFail();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(401);
         done();
@@ -474,7 +474,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e deleteBackup' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -499,7 +499,7 @@ export default function SingleKvStoreNull(){
           expect(data!.length).assertEqual(2);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e deleteBackup' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -527,7 +527,7 @@ export default function SingleKvStoreNull(){
           expect(err.code).assertEqual(401);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -556,7 +556,7 @@ export default function SingleKvStoreNull(){
           done();
         })
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -580,7 +580,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e closeKVStore' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -604,7 +604,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e closeKVStore' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -628,7 +628,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e deleteKVStore' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -653,7 +653,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(401);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e deleteKVStore' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -677,7 +677,7 @@ export default function SingleKvStoreNull(){
           expect(err!.code).assertEqual(15100004);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + 'catch e deleteKVStore' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -739,7 +739,7 @@ export default function SingleKvStoreNull(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -781,7 +781,7 @@ export default function SingleKvStoreNull(){
         expect(schema.mode).assertEqual(1);
         expect(schema.skip).assertEqual(0);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -811,7 +811,7 @@ export default function SingleKvStoreNull(){
         expect(schema.root != undefined).assertTrue();
 
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -842,7 +842,7 @@ export default function SingleKvStoreNull(){
         console.info(TAG + 'schema.indexes3 =' + schema.indexes);
         expect(schema.indexes.length).assertEqual(0);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -897,7 +897,7 @@ export default function SingleKvStoreNull(){
         expect(first33.type).assertEqual(factory.ValueType.LONG);
 
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -931,7 +931,7 @@ export default function SingleKvStoreNull(){
         expect(res).assertEqual(false);
 
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -954,7 +954,7 @@ export default function SingleKvStoreNull(){
         console.info(TAG + 'english.defaultValue =' + english.defaultValue);
         expect(english.defaultValue).assertEqual("");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -983,7 +983,7 @@ export default function SingleKvStoreNull(){
           console.info(TAG + 'test  put success');
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1015,7 +1015,7 @@ export default function SingleKvStoreNull(){
           console.info(TAG + 'test  put 2 success');
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1048,7 +1048,7 @@ export default function SingleKvStoreNull(){
           console.info(TAG + 'test  delete  success');
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
