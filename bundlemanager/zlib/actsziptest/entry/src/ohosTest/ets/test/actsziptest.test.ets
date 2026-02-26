@@ -17418,6 +17418,7 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
+                expect(errCode.message).assertEqual("The parameter check failed")
             }
             console.info("==================actsZipTest126 end==================");
             done();
@@ -17441,6 +17442,7 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
+                expect(errCode.message).assertEqual("The parameter check failed")
             }
             console.info("==================actsZipTest127 end==================");
             done();
@@ -17476,7 +17478,7 @@ export default function ActsZipTest() {
                 })
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
-                expect(errData).assertFail();
+                expect().assertFail();
             }
             console.info("==================actsZipTest128 end==================");
             done();
@@ -17510,7 +17512,7 @@ export default function ActsZipTest() {
                 })
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
-                expect(errData).assertFail();
+                expect().assertFail();
             }
             console.info("==================actsZipTest129 end==================");
             done();
@@ -17544,7 +17546,7 @@ export default function ActsZipTest() {
                 })
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
-                expect(errData).assertFail();
+                expect().assertFail();
             }
             console.info("==================actsZipTest130 end==================");
             done();
@@ -17568,6 +17570,7 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
+                expect(errCode.message).assertEqual("The parameter check failed")
             }
             try {
                 await zip.deflatePrime(undefined, 5, 2).then(() => {
@@ -17576,6 +17579,7 @@ export default function ActsZipTest() {
             } catch (errData) {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
+                expect(errCode.message).assertEqual("The parameter check failed")
             }
             console.info("==================actsZipTest131 end==================");
             done();
