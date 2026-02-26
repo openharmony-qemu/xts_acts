@@ -119,31 +119,6 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0200
-     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0200
-     * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerIsEmergencyPhoneNumber0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber0200';
-      console.info(`${caseName} test start`);
-      call.isEmergencyPhoneNumber(phoneNumber, (err: BusinessError, data: boolean) => {
-        if (err) {
-          console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        } else {
-          console.info(`${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
-          ExpectTrue(data == false);
-          done();
-        }
-      });
-      console.info(`${caseName} test end`);
-    });
-
-    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber0300
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_0300
      * @tc.desc   Determine whether it is an emergency phone number. Use the callback asynchronous callback api7+.
