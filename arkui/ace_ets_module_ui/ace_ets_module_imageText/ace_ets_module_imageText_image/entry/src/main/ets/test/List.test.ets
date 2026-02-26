@@ -73,6 +73,12 @@ import ImageColorFilterUndefinedAndNullTest from './ImageUndefinedAndNullTest/Im
 import ImageDraggableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDraggableUndefinedAndNull.test';
 import ImageEnableAnalyzerUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageEnableAnalyzerUndefinedAndNull.test';
 import ImageResizableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageResizableUndefinedAndNull.test';
+import ImageAnimatorDurationUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorDurationUndefinedAndNull.test';
+import ImageAnimatorFillModeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorFillModeUndefinedAndNull.test';
+import ImageAnimatorIterationsUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorIterationsUndefinedAndNull.test';
+import ImageAnimatorPreDecodeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorPreDecodeUndefinedAndNull.test';
+import ImageAnimatorStateUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorStateUndefinedAndNull.test';
+import ImageAnimatorImagesUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorImagesUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -136,4 +142,10 @@ export default function testsuite() {
   ImageDraggableUndefinedAndNullTest();
   ImageEnableAnalyzerUndefinedAndNullTest();
   ImageResizableUndefinedAndNullTest();
+  ImageAnimatorDurationUndefinedAndNullTest();
+  ImageAnimatorFillModeUndefinedAndNullTest();
+  ImageAnimatorIterationsUndefinedAndNullTest();
+  ImageAnimatorPreDecodeUndefinedAndNullTest();
+  ImageAnimatorStateUndefinedAndNullTest();
+  ImageAnimatorImagesUndefinedAndNullTest();
 }

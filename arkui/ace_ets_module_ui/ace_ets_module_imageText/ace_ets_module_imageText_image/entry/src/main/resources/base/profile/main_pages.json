@@ -86,6 +86,12 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageColorFilterUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageDraggableUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageEnableAnalyzerUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageResizableUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageResizableUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorDurationUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorFillModeUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorIterationsUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorPreDecodeUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorStateUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorImagesUndefinedAndNull"
     ]
 }
