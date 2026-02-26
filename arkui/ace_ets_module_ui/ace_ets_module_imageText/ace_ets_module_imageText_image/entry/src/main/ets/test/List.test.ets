@@ -72,6 +72,7 @@ import ImageSourceSizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/Ima
 import ImageColorFilterUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageColorFilterUndefinedAndNull.test';
 import ImageDraggableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDraggableUndefinedAndNull.test';
 import ImageEnableAnalyzerUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageEnableAnalyzerUndefinedAndNull.test';
+import ImageResizableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageResizableUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -134,4 +135,5 @@ export default function testsuite() {
   ImageColorFilterUndefinedAndNullTest();
   ImageDraggableUndefinedAndNullTest();
   ImageEnableAnalyzerUndefinedAndNullTest();
+  ImageResizableUndefinedAndNullTest();
 }

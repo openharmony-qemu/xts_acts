@@ -85,6 +85,7 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageSourceSizeUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageColorFilterUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageDraggableUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageEnableAnalyzerUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageEnableAnalyzerUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageResizableUndefinedAndNull"
     ]
 }
