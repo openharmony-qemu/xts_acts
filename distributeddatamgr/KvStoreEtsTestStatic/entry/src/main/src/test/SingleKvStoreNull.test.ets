@@ -65,18 +65,21 @@ export default function SingleKvStoreNull(){
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+
+        const config: factory.KVManagerConfig = {
+          bundleName: TEST_BUNDLE_NAME,
+          context: context
+        };
+        console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+        kvManager = factory.createKVManager(config);
+        console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
+        done();
       } catch (e) {
         hilog.info(domain, TAG, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, TAG, '%{public}s', '================ beforeAll context end==========');
+        done();
       }
-      const config: factory.KVManagerConfig = {
-        bundleName: TEST_BUNDLE_NAME,
-        context: context
-      };
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
-      kvManager = factory.createKVManager(config);
-      console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
-      done();
+
     });
 
     beforeEach(async (done: () => void): Promise<void> => {
