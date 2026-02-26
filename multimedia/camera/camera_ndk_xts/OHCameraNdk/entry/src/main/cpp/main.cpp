@@ -1440,7 +1440,7 @@ static napi_value OHPhotoOutputIsMovingPhotoSupported(napi_env env, napi_callbac
     napi_create_int32(env, code, &jsValue);
     napi_set_named_property(env, movingPhoto, "errorCode", jsValue);
 
-    return result;
+    return movingPhoto;
 }
 static napi_value OHPhotoOutputIsMirrorSupported(napi_env env, napi_callback_info info)
 {
