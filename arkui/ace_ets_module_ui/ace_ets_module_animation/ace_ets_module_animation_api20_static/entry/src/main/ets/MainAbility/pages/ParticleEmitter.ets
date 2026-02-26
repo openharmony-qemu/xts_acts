@@ -141,10 +141,6 @@ struct ParticleEmitter {
           await CommonFunc.sleep(2000)
         })
         if (filterTree) {
-          let myjson: string =
-            'XHQ' + JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles'))
-          console.log('XHQ' +
-          JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')));
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('x')));
           AppStorage.setOrCreate<string>('xValue',
@@ -169,8 +165,6 @@ struct ParticleEmitter {
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('endAngle')));
           AppStorage.setOrCreate<string>('endAngle',
             JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getString('endAngle')));
-          console.log('XHQ2' +
-          JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getElement('emitter')));
         }
       })
       Button('Update').onClick((e: ClickEvent) => {
