@@ -429,21 +429,6 @@ export default function EsBigIntTest(){
       console.info(`${caseName}, test end`);
     });
 
-    // /**
-    //  * @tc.number ES_BUILTINS_BIGINT_0011
-    //  * @tc.name ESBigIntTest0011
-    //  * @tc.desc Test ES Builtins-Api in BigInt
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('ESBigIntTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const caseName = 'ESBigIntTest0011';
-    //   console.info(`${caseName}, test start`);
-    //   expect(typeof BigInt.asIntN).assertEqual('function');
-    //   console.info(`${caseName}, test end`);
-    // });
-
     /**
      * @tc.number ES_BUILTINS_BIGINT_0012
      * @tc.name ESBigIntTest0012
@@ -567,22 +552,6 @@ export default function EsBigIntTest(){
     expect(BigInt.asUintN(201, bi1)).assertEqual(bi2);
     console.info(`${caseName}, test end`);
 });
-
-
-    // /**
-    //  * @tc.number ES_BUILTINS_BIGINT_0015
-    //  * @tc.name ESBigIntTest0015
-    //  * @tc.desc Test ES Builtins-Api in BigInt
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('ESBigIntTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const caseName = 'ESBigIntTest0015';
-    //   console.info(`${caseName}, test start`);
-    //   expect(typeof BigInt.asUintN).assertEqual('function');
-    //   console.info(`${caseName}, test end`);
-    // });
 
     /**
      * @tc.number ES_BUILTINS_BIGINT_0016

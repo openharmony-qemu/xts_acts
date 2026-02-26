@@ -1622,14 +1622,11 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        // it('testIntlListFormat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
-        //     let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'conjunction' });
-        //     let value = listform.format(vehicles);
-        //     console.log('ListFormatTest016 :' + value);
-        //     expect(value).assertEqual('Motorcycle, Bus, Car');
-        //     expect(listform.resolvedOptions().style).assertEqual('narrow');
-        //     expect(listform.resolvedOptions().type).assertEqual('conjunction');
-        // })
+        it('testIntlListFormat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
+            let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'conjunction' });
+            let value = listform.format(vehicles);
+            expect(value).assertEqual('Motorcycle, Bus, Car');
+        })
 
         /**
          * @tc.number    SUB_ARK_ETS_INTL_LISTFORMAT_017
@@ -1639,14 +1636,11 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        // it('testIntlListFormat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
-        //     let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'disjunction' });
-        //     let value = listform.format(vehicles);
-        //     console.log('ListFormatTest017 :' + value);
-        //     expect(value).assertEqual('Motorcycle, Bus, or Car');
-        //     expect(listform.resolvedOptions().style).assertEqual('narrow');
-        //     expect(listform.resolvedOptions().type).assertEqual('disjunction');
-        // })
+        it('testIntlListFormat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
+            let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'disjunction' });
+            let value = listform.format(vehicles);
+            expect(value).assertEqual('Motorcycle, Bus, or Car');
+        })
 
         /**
          * @tc.number    SUB_ARK_ETS_INTL_LISTFORMAT_018
@@ -1656,14 +1650,11 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        // it('testIntlListFormat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
-        //     let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'unit' });
-        //     let value = listform.format(vehicles);
-        //     console.log('ListFormatTest018 :' + value);
-        //     expect(value).assertEqual('Motorcycle Bus Car');
-        //     expect(listform.resolvedOptions().style).assertEqual('narrow');
-        //     expect(listform.resolvedOptions().type).assertEqual('unit');
-        // })
+        it('testIntlListFormat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
+            let listform = new Intl.ListFormat("en", {style: 'narrow', type: 'unit' });
+            let value = listform.format(vehicles);
+            expect(value).assertEqual('Motorcycle Bus Car');
+        })
         console.log('*************end IntlTest*************');
     })
 }
