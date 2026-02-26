@@ -110,10 +110,9 @@ struct onSurfaceCreated1 {
         })
       if (this.flag) {
         XComponent({
-          id: 'xcomponent_onSurface',
           type: XComponentType.TEXTURE,
           controller: this.xComponentController
-        } as XComponentParameters)
+        } as XComponentOptions)
           .width(this.xcWidth)
           .height(this.xcHeight)
       }
