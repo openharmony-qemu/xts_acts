@@ -280,6 +280,33 @@ export default function OhAVMetadataExtractorNDKTest() {
     });
 
     /**
+     * @tc.name   testohAvMetadataExtractorFetchAlbumCover0300
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHALBUMCOVER_0300
+     * @tc.desc   Get album cover from invalid fd params and this is error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testohAvMetadataExtractorFetchAlbumCover0300', Level.LEVEL0,async (done: Function) => {
+      console.info(`testohAvMetadataExtractorFetchAlbumCover0300 test start`);
+      let fileDescribe: number = -1;
+      try {
+        let avFileDescriptor: media.AVFileDescriptor = getfile("H264_AAC.mp4");
+        fileDescribe = avFileDescriptor.fd;
+        let fac: number = await avmetadataextractor.ohAvMetadataExtractorFetchAlbumCoverError(fileDescribe);
+        expect(fac).assertEqual(AV_ERR_OK);
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `testohAvMetadataExtractorFetchAlbumCover0300:${fac}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testohAvMetadataExtractorFetchAlbumCover0300:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testohAvMetadataExtractorFetchAlbumCover0300 test end`);
+      closefile(fileDescribe);
+      done();
+    });
+
+    /**
      * @tc.name   testohAvMetadataExtractorRelease0100
      * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTORRELEASE_0100
      * @tc.desc   Release the metadata extractor object.
