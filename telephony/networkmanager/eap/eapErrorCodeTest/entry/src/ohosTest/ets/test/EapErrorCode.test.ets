@@ -400,7 +400,6 @@ export default function EapErrorCodeTest() {
       }
     })
 
-
     /**
      * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0300
      * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0300
@@ -490,6 +489,31 @@ export default function EapErrorCodeTest() {
             done();
           }
         })
+
+    /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0600
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0600
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapReplyCustomEapDataErrorCode0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0600";
+      console.info(`${caseName}---start`);
+      try {
+        eap.replyCustomEapData(1, null);
+        console.info(`${caseName } unregCustomEapHandler success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200099);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testCommunicationEapStartEthEapErrorCode0100
@@ -591,6 +615,30 @@ export default function EapErrorCodeTest() {
       }
     })
 
+    /**
+     * @tc.name   testCommunicationEapLogOffEthEapErrorCode0300
+     * @tc.number SUB_Communication_Eap_LogOffEthEap_ErrorCode_0300
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapLogOffEthEapErrorCode0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapLogOffEthEapErrorCode0300";
+      console.info(`${caseName}---start`);
+      try {
+        eap.logOffEthEap(null);
+        console.info(`${caseName } logOffEthEap success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200002);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
 
   })
 }
