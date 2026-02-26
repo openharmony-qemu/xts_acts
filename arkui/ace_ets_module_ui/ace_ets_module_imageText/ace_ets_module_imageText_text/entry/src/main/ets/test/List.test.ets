@@ -131,6 +131,8 @@ import TextHeightAdaptivePolicyNullTest from './TextTest/TextHeightAdaptivePolic
 import TextWordBreakNullTest from './TextTest/TextWordBreakNull.test';
 import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.test';
 import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
+import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
+import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 
 
 export default function testsuite() {
@@ -253,4 +255,6 @@ export default function testsuite() {
   TextWordBreakNullTest();
   TextLineBreakStrategyNullTest();
   TextSelectionPropertiesTest();
+  TextSpecialOptionsNullTest();
+  TextLayoutOptionsNullTest();
 }
