@@ -57,39 +57,26 @@ export default function scrollByError() {
       done();
     })
 
-
-    /**
-     * @tc.name   testScrollByDeltaYUndefined
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_001
-     * @tc.desc   WebviewController scrollBy deltaY undefined test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testScrollByDeltaYUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDeltaYUndefined", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDeltaYUndefined", "401", 179564, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
-    })
-
-
     /**
      * @tc.name   testScrollByDeltaXNull
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_001
      * @tc.desc   WebviewController scrollBy duration undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testScrollByDeltaXNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollByDeltaXNull", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollByDeltaXNull", "401", 179561, done);
-      sendEventByKey('scrollByErrorButton', 10, '');
+      Utils.emitEvent("testScrollByDeltaXNull", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = 0;
+      Utils.registerEvent("testScrollByDeltaXNull", "401", 179561, ()=> {isReturn = 1});
+      await Utils.waitAndClickComponent(driver, "scrollByErrorButton","testScrollByDeltaXNull");
+      await Utils.waitForExist(()=>isReturn, "testScrollByDeltaXNull", 1, 1000);
+      done();
     })
 
     /**
      * @tc.name   testScrollByDeltaXUndefined
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_002
      * @tc.desc   WebviewController scrollBy deltaX undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,9 +88,10 @@ export default function scrollByError() {
       sendEventByKey('scrollByErrorButton', 10, '');
     })
 
+
     /**
      * @tc.name   testScrollByDeltaYNull
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_003
      * @tc.desc   WebviewController scrollBy deltaY null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,6 +100,21 @@ export default function scrollByError() {
     it('testScrollByDeltaYNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testScrollByDeltaYNull", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testScrollByDeltaYNull", "401", 179563, done);
+      sendEventByKey('scrollByErrorButton', 10, '');
+    })
+
+
+    /**
+     * @tc.name   testScrollByDeltaYUndefined
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_004
+     * @tc.desc   WebviewController scrollBy deltaY undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testScrollByDeltaYUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testScrollByDeltaYUndefined", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testScrollByDeltaYUndefined", "401", 179564, done);
       sendEventByKey('scrollByErrorButton', 10, '');
     })
 
