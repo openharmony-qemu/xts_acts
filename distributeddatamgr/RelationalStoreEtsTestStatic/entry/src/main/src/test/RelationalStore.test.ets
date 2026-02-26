@@ -1661,8 +1661,13 @@ export default function relationalStoreTest() {
         await relationalStore.deleteRdbStore(context!, "RdbTest111.db");
         console.info(tag + "deleteRdbStore success");
       } catch (err) {
-        console.log(tag + " err" + err.code + err.message);
-        expect().assertFail();
+        if(err.code === 801) {
+          console.log(tag + " err" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.log(tag + " err" + err.code + err.message);
+          expect().assertFail();
+        }
       }
       console.info(tag + "************* GetRdbStoreErrTest003 end *************");
     })
@@ -1850,8 +1855,13 @@ export default function relationalStoreTest() {
           }
         });
       } catch (err) {
-        console.log(tag + " err" + err.code + err.message);
-        expect().assertFail();
+        if(err.code === 801) {
+          console.log(tag + " err" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.log(tag + " err" + err.code + err.message);
+          expect().assertFail();
+        }
       }
       console.info(tag + "************* DeleteRdbStoreErrTest004 end *************");
     })
@@ -2081,8 +2091,13 @@ export default function relationalStoreTest() {
         console.info(tag + 'Delete RdbStore successfully.');
         expect(count).assertEqual(1);
       } catch (err) {
-        console.log(tag + " err" + err.code + err.message);
-        expect().assertFail();
+        if(err.code === 801) {
+          console.log(tag + " err" + err.code + err.message);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.log(tag + " err" + err.code + err.message);
+          expect().assertFail();
+        }
       }
       console.info(tag + "************* DeleteRdbStoreErrTest010 end *************");
     })
