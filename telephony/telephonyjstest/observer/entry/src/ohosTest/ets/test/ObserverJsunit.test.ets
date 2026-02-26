@@ -346,7 +346,7 @@ export default function ObserverJsunit() {
         }, callback);
         done();
       } catch (error) {
-        expect(error.code == 401).assertEqual(true);
+        expect(error.code === 401).assertEqual(true);
         done();
       }
       observer.off('callStateChange');
