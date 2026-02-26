@@ -123,7 +123,7 @@ async function getPhotoSession(testName: string, previewOutput: camera.PreviewOu
   await mPhotoSession.commitConfig();
   console.info(TAG, testName + ' commitConfig passed.');
   await mPhotoSession.start();
- 	console.info(TAG, testName + ' start passed.');
+  console.info(TAG, testName + ' start passed.');
 }
 
 async function releasePhotoSession() {
