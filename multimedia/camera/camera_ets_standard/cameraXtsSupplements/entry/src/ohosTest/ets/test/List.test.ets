@@ -43,7 +43,6 @@ import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test'
 import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
 import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
 
-
 export default function testsuite() {
   CameraSessionFlashSuppTest();
   cameraSetFocusModeTest();

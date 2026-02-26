@@ -101,7 +101,6 @@ function getCameraInput() {
   return false;
 }
 
-
 async function getVideoSurfaceId() {
   console.info(TAG, 'getVideoSurfaceId begin.');
   let fileName: string = resourceName();
