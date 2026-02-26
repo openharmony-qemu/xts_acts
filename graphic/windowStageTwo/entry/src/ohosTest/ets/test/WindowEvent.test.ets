@@ -581,6 +581,51 @@ export default function windowEventTest() {
         }
       }
     });
+    /**
+     * @tc.name   testSetSeparationTouchEnabledwithDialogwindow
+     * @tc.number SUB_WMS_SET_SEPARATION_TOUCH_ENABLED_0400
+     * @tc.desc   验证系统窗setSeparationTouchEnabled接口和isSeparationTouchEnabled接口可以配合使用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetSeparationTouchEnabledwithDialogwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetSeparationTouchEnabledwithDialogwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let config: window.Configuration = {
+        name: "testSetSeparationTouchEnabledwithDialogwindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let windowClass = await window.createWindow(config);
+      await windowClass.setUIContent('testability/pages/Index2');
+      await windowClass.showWindow();
+      await sleep(500);
+      try {
+        await windowClass.setSeparationTouchEnabled(false);
+        let res1 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res1: ' + JSON.stringify(res1));
+        expect(res1).assertEqual(false);
+        await windowClass.setSeparationTouchEnabled(true);
+        let res2 = windowClass.isSeparationTouchEnabled();
+        console.info(caseName + ' windowClass.isSeparationTouchEnabled() res2 ' + JSON.stringify(res2));
+        expect(res2).assertEqual(true);
+        await windowClass.destroyWindow()
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await windowClass.destroyWindow()
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
 
   })
 }
