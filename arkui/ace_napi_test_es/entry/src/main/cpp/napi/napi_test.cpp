@@ -1653,7 +1653,7 @@ static napi_value hasNamedProperty(napi_env env, napi_callback_info info)
 
     napi_valuetype value_type1;
     NAPI_CALL(env, napi_typeof(env, args[1], &value_type1));
-    if (valuetype1 != napi_string && valuetype1 != napi_symbol) {
+    if (value_type1 != napi_string && value_type1 != napi_symbol) {
         NAPI_ASSERT(env, false, "Wrong type of arguments. Expects a string or symbol as second.");
     }
 
