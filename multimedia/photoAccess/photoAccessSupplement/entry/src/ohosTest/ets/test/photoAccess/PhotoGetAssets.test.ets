@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import {
-  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, isEmpty
+  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, createMovingPhoto, isEmpty
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData';
@@ -79,20 +79,11 @@ export default function PhotoGetAssetsTestSupp() {
           fetchColumns: [''],
           predicates: predicates
         };
-        PhAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
-          if (fetchResult !== undefined) {
-            console.info(TAG, 'fetchResult success');
-            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-            if (photoAsset !== undefined) {
-              console.info(TAG, 'photoAsset.displayName : ' + photoAsset.displayName);
-              done();
-            }
-          } else {
-            console.error(TAG, `fetchResult fail with error: ${err.code}, ${err.message}`);
-            done();
-          }
-          expect().assertFail();
+        PhAccessHelper.getAssets(fetchOptions, async () => {
+          console.info(TAG, 'fetchResult success');
         });
+        expect().assertFail();
+        done();
       } catch (error) {
         console.error(TAG, `${testName} - 测试失败：error=${error}, code=${error?.code}`);
         expect(Number(error.code)).assertEqual(13900020);
@@ -112,20 +103,11 @@ export default function PhotoGetAssetsTestSupp() {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let PhAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       try {
-        PhAccessHelper.getAssets(null, async (err, fetchResult) => {
-          if (fetchResult !== undefined) {
-            console.info(TAG, 'fetchResult success');
-            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-            if (photoAsset !== undefined) {
-              console.info(TAG, 'photoAsset.displayName : ' + photoAsset.displayName);
-              done();
-            }
-          } else {
-            console.error(TAG, `fetchResult fail with error: ${err.code}, ${err.message}`);
-            expect().assertFail();
-            done();
-          }
+        PhAccessHelper.getAssets(null, async () => {
+          console.info(TAG, 'fetchResult success');
         });
+        expect().assertFail();
+        done();
       } catch (error) {
         console.error(TAG, `${testName} - 测试失败：error=${error}, code=${error?.code}`);
         expect(Number(error.code)).assertEqual(14000011);
@@ -145,20 +127,11 @@ export default function PhotoGetAssetsTestSupp() {
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let PhAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       try {
-        PhAccessHelper.getAssets(undefined, async (err, fetchResult) => {
-          if (fetchResult !== undefined) {
-            console.info(TAG, 'fetchResult success');
-            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-            if (photoAsset !== undefined) {
-              console.info(TAG, 'photoAsset.displayName : ' + photoAsset.displayName);
-              done();
-            }
-          } else {
-            console.error(TAG, `fetchResult fail with error: ${err.code}, ${err.message}`);
-            expect().assertFail();
-            done();
-          }
+        PhAccessHelper.getAssets(undefined, async () => {
+          console.info(TAG, 'fetchResult success');
         });
+        expect().assertFail();
+        done();
       } catch (error) {
         console.error(TAG, `${testName} - 测试失败：error=${error}, code=${error?.code}`);
         expect(Number(error.code)).assertEqual(14000011);
@@ -406,13 +379,6 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
         PhAccessHelper.getBurstAssets(burstKey, fetchOptions);
-        if (fetchResult !== undefined) {
-          console.info(TAG, 'fetchResult success');
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          if (photoAsset !== undefined) {
-            console.info(TAG, 'photoAsset.displayName :' + photoAsset.displayName);
-          }
-        }
         expect().assertFail();
         done();
       } catch (error) {
@@ -433,25 +399,18 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_BURST_ASSETS_PROMISE_002';
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: ['uri', 'title'],
+        fetchColumns: ['uri'],
         predicates: predicates
       };
       let burstKey: string = "e719d696-09fa-44f8-8e9e-ec3f215aa62a";
       try {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
         PhAccessHelper.getBurstAssets(burstKey, fetchOptions);
-        if (fetchResult !== undefined) {
-          console.info(TAG, 'fetchResult success');
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          if (photoAsset !== undefined) {
-            console.info(TAG, 'photoAsset.displayName :' + photoAsset.displayName);
-          }
-        }
-        expect().assertFail();
+        expect(isEmpty(fetchResult)).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, `${testName} - getBurstAssets failed, error: ${error.code}, ${error.message}`);
-        expect(Number(error.code)).assertEqual(14000011);
+        expect().assertFail();
         done();
       }
     });
@@ -469,13 +428,6 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
         PhAccessHelper.getBurstAssets(burstKey, null);
-        if (fetchResult !== undefined) {
-          console.info(TAG, 'fetchResult success');
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          if (photoAsset !== undefined) {
-            console.info(TAG, 'photoAsset.displayName :' + photoAsset.displayName);
-          }
-        }
         expect().assertFail();
         done();
       } catch (error) {
@@ -987,22 +939,10 @@ export default function PhotoGetAssetsTestSupp() {
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1023,29 +963,17 @@ export default function PhotoGetAssetsTestSupp() {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
-          fetchColumns: ['title'],
+          fetchColumns: ['uri'],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect().assertFail();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
-        expect(Number(error.code)).assertEqual(13900020);
+        expect().assertFail();
         done();
       }
     });
@@ -1067,19 +995,7 @@ export default function PhotoGetAssetsTestSupp() {
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          fetchOptions, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1100,23 +1016,8 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_004';
       try {
-        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          null, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1137,23 +1038,8 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_005';
       try {
-        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          undefined, async (err, fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1175,28 +1061,15 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_006';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1215,28 +1088,15 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_007';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1255,28 +1115,15 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_008';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1295,28 +1142,15 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_009';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1335,28 +1169,15 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0010';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
         };
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
-            expect(err == undefined).assertTrue();
-            done();
+          fetchOptions, async (fetchResult) => {
+            expect(isEmpty(fetchResult)).assertFalse();
           });
+        done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect().assertFail();
@@ -1375,22 +1196,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0011';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.FAVORITE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          null, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1412,22 +1219,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0012';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.FAVORITE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          undefined, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1449,22 +1242,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0013';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.VIDEO,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          null, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1486,22 +1265,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0014';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.VIDEO,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          undefined, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1523,22 +1288,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0015';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.IMAGE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          null, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1560,22 +1311,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0016';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.IMAGE,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          undefined, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1597,22 +1334,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0017';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          null, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1634,22 +1357,8 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_CALLBACK_OPTIONS_0018';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
         PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
-          fetchOptions, async (err, fetchResult) => {
-            if (err) {
-              console.error(`getAlbumsCallback failed with err: ${err.code}, ${err.message}`);
-              done();
-              return;
-            }
-            if (fetchResult === undefined) {
-              console.error('getAlbumsCallback fetchResult is undefined');
-              done();
-              return;
-            }
-            console.info(TAG, testName, 'getAlbumsCallback successfully ');
-            fetchResult.close();
+          undefined, async (fetchResult) => {
             expect().assertFail();
             done();
           });
@@ -1671,23 +1380,13 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROMISE_001';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: [""],
           predicates: predicates
         };
-        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions).then(async (fetchResult) => {
-          if (fetchResult === undefined) {
-            console.error('getAlbumsCallback fetchResult is undefined');
-            done();
-            return;
-          }
-          console.info(TAG, testName, 'getAlbumsCallback successfully ');
-          fetchResult.close();
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOptions);
           expect().assertFail();
           done();
-        });
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect(Number(error.code)).assertEqual(13900020);
@@ -1706,20 +1405,9 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROMISE_002';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = null as ESObject;
-        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions).then(async (fetchResult) => {
-          if (fetchResult === undefined) {
-            console.error('getAlbumsCallback fetchResult is undefined');
-            done();
-            return;
-          }
-          console.info(TAG, testName, 'getAlbumsCallback successfully ');
-          fetchResult.close();
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, null);
           expect().assertFail();
           done();
-        });
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect(Number(error.code)).assertEqual(14000011);
@@ -1738,20 +1426,9 @@ export default function PhotoGetAssetsTestSupp() {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_GET_ALBUMS_PROMISE_003';
       try {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo('album_name', 'newAlbumName');
-        let fetchOptions: photoAccessHelper.FetchOptions = undefined as ESObject;
-        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
-          fetchOptions).then(async (fetchResult) => {
-          if (fetchResult === undefined) {
-            console.error('getAlbumsCallback fetchResult is undefined');
-            done();
-            return;
-          }
-          console.info(TAG, testName, 'getAlbumsCallback successfully ');
-          fetchResult.close();
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, undefined);
           expect().assertFail();
           done();
-        });
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect(Number(error.code)).assertEqual(14000011);
@@ -1768,14 +1445,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
         let onCallback = (changeData: photoAccessHelper.ChangeData) => {
           console.info('onCallback success, changeData: ' + JSON.stringify(changeData));
         }
@@ -1798,14 +1468,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_002';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
         let onCallback = (changeData: photoAccessHelper.ChangeData) => {
           console.info('onCallback success, changeData: ' + JSON.stringify(changeData));
         }
@@ -1828,25 +1491,20 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
+      // let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      // let fetchOptions: photoAccessHelper.FetchOptions = {
+      //   fetchColumns: [],
+      //   predicates: predicates
+      // };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
-        PhAccessHelper.createDeleteRequest([null], (err) => {
-          if (err === undefined) {
-            console.info('createDeleteRequest successfully');
-          } else {
-            console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-          }
+        // let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+        //   await PhAccessHelper.getAssets(fetchOptions);
+        // let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        // if (asset === undefined) {
+        //   console.error('asset not exist');
+        //   return;
+        // }
+        PhAccessHelper.createDeleteRequest([null], () => {
         });
         expect().assertFail()
         done();
@@ -1866,25 +1524,8 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_002';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
-        PhAccessHelper.createDeleteRequest([undefined], (err) => {
-          if (err === undefined) {
-            console.info('createDeleteRequest successfully');
-          } else {
-            console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-          }
+        PhAccessHelper.createDeleteRequest([undefined], () => {
         });
         expect().assertFail()
         done();
@@ -1904,25 +1545,8 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_003';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
-        PhAccessHelper.createDeleteRequest([], (err) => {
-          if (err === undefined) {
-            console.info('createDeleteRequest successfully');
-          } else {
-            console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-          }
+        PhAccessHelper.createDeleteRequest([], () => {
         });
         expect().assertFail()
         done();
@@ -1942,20 +1566,8 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_CALLBACK_004';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        PhAccessHelper.createDeleteRequest(['sss'], (err) => {
-          if (err === undefined) {
-            console.info('createDeleteRequest successfully');
-          } else {
-            console.error(`createDeleteRequest failed with error: ${err.code}, ${err.message}`);
-          }
+        PhAccessHelper.createDeleteRequest(['sss'], () => {
         });
         expect().assertFail()
         done();
@@ -1975,19 +1587,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
         await PhAccessHelper.createDeleteRequest([null]);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
@@ -2008,19 +1608,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_002';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
         await PhAccessHelper.createDeleteRequest([undefined]);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
@@ -2041,19 +1629,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_003';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
         await PhAccessHelper.createDeleteRequest([]);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
@@ -2074,19 +1650,7 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_DELETE_REQUEST_PROMISE_004';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await PhAccessHelper.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        if (asset === undefined) {
-          console.error('asset not exist');
-          return;
-        }
         await PhAccessHelper.createDeleteRequest(["sss"]);
         console.info('createDeleteRequest successfully');
         expect().assertFail()
@@ -2334,9 +1898,9 @@ export default function PhotoGetAssetsTestSupp() {
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       };
       try {
-        let a = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
-        console.info(TAG, testName, 'successfully', a);
-        expect(photoCreationConfig != undefined).assertTrue();
+        let res = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
+        console.info(TAG, testName, 'successfully', res);
+        expect(isEmpty(res)).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed createAssetWithShortTermPermission', JSON.stringify(error), error.code);
@@ -2363,9 +1927,9 @@ export default function PhotoGetAssetsTestSupp() {
         subtype: photoAccessHelper.PhotoSubtype.BURST,
       };
       try {
-        let a = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
-        console.info(TAG, testName, 'successfully', a);
-        expect(photoCreationConfig != undefined).assertTrue();
+        let res = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
+        console.info(TAG, testName, 'successfully', res);
+        expect(isEmpty(res)).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed createAssetWithShortTermPermission', JSON.stringify(error), error.code);
@@ -2518,7 +2082,7 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let srcFileUris: Array<string> = [];
         let desFileUris: Array<string> = await PhAccessHelper.requestPhotoUrisReadPermission(srcFileUris);
-        console.info(TAG, testName,'requestPhotoUrisReadPermission success, data is ',JSON.stringify(desFileUris));
+        console.info(TAG, testName, 'requestPhotoUrisReadPermission success, data is ', JSON.stringify(desFileUris));
         expect(isEmpty(desFileUris)).assertFalse();
         done();
       } catch (error) {
@@ -2612,16 +2176,9 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it("SUB_DELETE_ASSETS_TEST_004", Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_DELETE_ASSETS_TEST_004";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
-        let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
         let a = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, null);
-        console.info(TAG,testName,'deleteAssets successfully',a);
+        console.info(TAG, testName, 'deleteAssets successfully', a);
         expect().assertFail();
         done();
       } catch (error) {
@@ -2640,16 +2197,9 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it("SUB_DELETE_ASSETS_TEST_005", Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_DELETE_ASSETS_TEST_005";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
-        let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
         let a = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, undefined);
-        console.info(TAG,testName,'deleteAssets successfully',a);
+        console.info(TAG, testName, 'deleteAssets successfully', a);
         expect().assertFail();
         done();
       } catch (error) {
@@ -2668,21 +2218,498 @@ export default function PhotoGetAssetsTestSupp() {
      */
     it("SUB_DELETE_ASSETS_TEST_006", Level.LEVEL0, async (done: Function) => {
       const testName = "SUB_DELETE_ASSETS_TEST_006";
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
-        let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
-        let a = await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, AppStorage.get('emptyString'));
-        console.info(TAG,testName,'deleteAssets successfully',a);
+        let a =
+          await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, AppStorage.get('emptyString'));
+        console.info(TAG, testName, 'deleteAssets successfully', a);
         expect().assertFail();
         done();
       } catch (error) {
         console.error(TAG, testName, 'Failed deleteAssets', JSON.stringify(error), error.code);
         expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_001
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_001
+     * @tc.desc     getAlbum-第一个参数为null-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_001";
+      try {
+        PhAccessHelper.getAlbums(null, photoAccessHelper.AlbumSubtype.CAMERA, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_002
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_002
+     * @tc.desc     getAlbum-第一个参数为undefined-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_002", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_002";
+      try {
+        PhAccessHelper.getAlbums(undefined, photoAccessHelper.AlbumSubtype.CAMERA, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_003
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_003
+     * @tc.desc     getAlbum-第一个参数为undefined-第二个参数为USER_GENERIC-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_003", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_003";
+      try {
+        PhAccessHelper.getAlbums(undefined, photoAccessHelper.AlbumSubtype.USER_GENERIC, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_004
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_004
+     * @tc.desc     getAlbum-第一个参数为undefined-第二个参数为FAVORITE-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_004", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_004";
+      try {
+        PhAccessHelper.getAlbums(undefined, photoAccessHelper.AlbumSubtype.FAVORITE, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_005
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_005
+     * @tc.desc     getAlbum-第一个参数为null-第二个参数为IMAGE-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_005", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_005";
+      try {
+        PhAccessHelper.getAlbums(null, photoAccessHelper.AlbumSubtype.IMAGE, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_006
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_006
+     * @tc.desc     getAlbum-第一个参数为null-第二个参数为VIDEO-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_006", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_006";
+      try {
+        PhAccessHelper.getAlbums(null, photoAccessHelper.AlbumSubtype.VIDEO, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_007
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_007
+     * @tc.desc     getAlbum-第二个参数为null-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_007", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_007";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, null, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_008
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_008
+     * @tc.desc     getAlbum-第二个参数为undefined-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_008", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_008";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, undefined, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_009
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_009
+     * @tc.desc     getAlbum-SYSTEM-第二个参数为undefined-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_009", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_009";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, undefined, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_0010
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_0010
+     * @tc.desc     getAlbum-SOURCE-第二个参数为undefined-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_0010";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SOURCE, undefined, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_0011
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_0011
+     * @tc.desc     getAlbum-SMART-第二个参数为null-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_0011", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_0011";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SMART, null, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_CALLBACK_TEST_0012
+     * @tc.name     SUB_GET_ALBUM_CALLBACK_TEST_0012
+     * @tc.desc     getAlbum-SOURCE-第二个参数为null-13900020
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_CALLBACK_TEST_0012", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_CALLBACK_TEST_0012";
+      try {
+        PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SOURCE, null, async (fetchResult) => {
+          console.info(TAG, testName, 'getAlbum successfully');
+          expect().assertFail();
+        });
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumsCallback Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_001
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_001
+     * @tc.desc     createPhotoAsset-第二个参数为null
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_001";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, null, title);
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_002
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_002
+     * @tc.desc     createPhotoAsset-第二个参数为undefined
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_002", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_002";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, undefined, title);
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_003
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_003
+     * @tc.desc     createPhotoAsset-第二个参数为空字符串
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_003", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_003";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, AppStorage.get('emptyString'), title);
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_004
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_004
+     * @tc.desc     createPhotoAsset-第三个参数为空字符串
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_004", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_004";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, AppStorage.get('emptyString'));
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_005
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_005
+     * @tc.desc     createPhotoAsset-第三个参数为null
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_005", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_005";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, null);
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_CREATE_PHOTO_ASSERT_TEST_006
+     * @tc.name     SUB_CREATE_PHOTO_ASSERT_TEST_006
+     * @tc.desc     createPhotoAsset-第三个参数为undefined
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_CREATE_PHOTO_ASSERT_TEST_006", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_CREATE_PHOTO_ASSERT_TEST_006";
+      try {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let title: string = 'testPhoto';
+        let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, undefined);
+        console.info(TAG, testName, 'createPhotoAsset uri' + uri);
+        console.info(TAG, testName, 'createPhotoAsset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createPhotoAsset failed, error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_ID_BY_LPATH_TEST_001
+     * @tc.name     SUB_GET_ALBUM_ID_BY_LPATH_TEST_001
+     * @tc.desc     getAlbumIdByLpath-null-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_ID_BY_LPATH_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_ID_BY_LPATH_TEST_001";
+      try {
+        let albumId: number = await PhAccessHelper.getAlbumIdByLpath(null);
+        console.info(TAG, testName, 'requestFile:: albumId: ', albumId);
+        console.info(TAG, testName, 'getAlbumIdByLpath completed.');
+        console.info(TAG, testName, `albumId : ${albumId}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumIdByLpath Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_ID_BY_LPATH_TEST_002
+     * @tc.name     SUB_GET_ALBUM_ID_BY_LPATH_TEST_002
+     * @tc.desc     getAlbumIdByLpath-undefined-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_ID_BY_LPATH_TEST_002", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_ID_BY_LPATH_TEST_002";
+      try {
+        let albumId: number = await PhAccessHelper.getAlbumIdByLpath(undefined);
+        console.info(TAG, testName, 'requestFile:: albumId: ', albumId);
+        console.info(TAG, testName, 'getAlbumIdByLpath completed.');
+        console.info(TAG, testName, `albumId : ${albumId}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumIdByLpath Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_GET_ALBUM_ID_BY_LPATH_TEST_003
+     * @tc.name     SUB_GET_ALBUM_ID_BY_LPATH_TEST_003
+     * @tc.desc     getAlbumIdByLpath-empty-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_GET_ALBUM_ID_BY_LPATH_TEST_003", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_GET_ALBUM_ID_BY_LPATH_TEST_003";
+      try {
+        let albumId: number = await PhAccessHelper.getAlbumIdByLpath('');
+        console.info(TAG, testName, 'requestFile:: albumId: ', albumId);
+        console.info(TAG, testName, 'getAlbumIdByLpath completed.');
+        console.info(TAG, testName, `albumId : ${albumId}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' getAlbumIdByLpath Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
         done();
       }
     });
