@@ -252,7 +252,7 @@ export default function photoPickerCallback(abilityContexts: Context) {
               done();
             }
             console.info(`PhotoViewPicker_save_callback_001 result: ${JSON.stringify(data)}`);
-            expect(data).assertTrue();
+            expect(data.length === 0).assertTrue();
             done();
           });
           done();

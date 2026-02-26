@@ -285,7 +285,7 @@ export default function photoPickerPromise(abilityContext: Context) {
     try {
       new picker.PhotoViewPicker().save(undefined).then((result) => {
         console.info(`PhotoViewPicker_save_001 result: ${JSON.stringify(result)}`);
-        expect(result).assertTrue();
+        expect(result.length === 0).assertTrue();
         done();
       }).catch((err: Error) => {
         console.info(`PhotoViewPicker_save_001 err: ${JSON.stringify(err)}`);
