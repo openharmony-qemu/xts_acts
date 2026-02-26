@@ -62,7 +62,6 @@ import scrollFrictionRes from './Scroll/scrollFrictionRes.test';
 import scrollOffsetRes from './Scroll/scrollOffsetRes.test';
 import scrollContentOffset from './Scroll/scrollContentOffset.test';
 import currentScroll from './scrollCallback/currentScroll.test';
-import scrollContentOffset from './scrollDefault/scrollContentOffset.test';
 import scrollerNullUndefined from './scrollDefault/scrollerNullUndefined.test';
 import scrollDefaultTest1 from './scrollDefault/scrollDefault1.test';
 
