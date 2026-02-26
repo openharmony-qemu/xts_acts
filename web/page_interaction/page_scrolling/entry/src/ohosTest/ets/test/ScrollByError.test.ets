@@ -60,7 +60,7 @@ export default function scrollByError() {
 
     /**
      * @tc.name   testScrollByDeltaYUndefined
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_001
      * @tc.desc   WebviewController scrollBy deltaY undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,8 +74,8 @@ export default function scrollByError() {
 
 
     /**
-     * @tc.name   testScrollByDurationUndefined
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_006
+     * @tc.name   testScrollByDeltaXNull
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_002
      * @tc.desc   WebviewController scrollBy duration undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function scrollByError() {
 
     /**
      * @tc.name   testScrollByDeltaXUndefined
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_003
      * @tc.desc   WebviewController scrollBy deltaX undefined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function scrollByError() {
 
     /**
      * @tc.name   testScrollByDeltaYNull
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBY_ERROR_004
      * @tc.desc   WebviewController scrollBy deltaY null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
