@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,7 +82,7 @@ export default function fileIOCopy() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -112,7 +112,7 @@ export default function fileIOCopy() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -142,7 +142,8 @@ export default function fileIOCopy() {
       try {
         await fs.copy(srcDirUriLocal, dstDirUriLocal, options);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_003 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -166,7 +167,8 @@ export default function fileIOCopy() {
       try {
         await fs.copy(srcDirUriLocal, dstDirUriLocal);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -190,7 +192,8 @@ export default function fileIOCopy() {
       try {
         await fs.copy(srcDirUriLocal, dstDirUriLocal, undefined);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_006 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -230,7 +233,7 @@ export default function fileIOCopy() {
           fs.unlinkSync(destpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -260,7 +263,7 @@ export default function fileIOCopy() {
           fs.unlinkSync(destpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -294,7 +297,7 @@ export default function fileIOCopy() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -333,7 +336,7 @@ export default function fileIOCopy() {
           expect(result1.length == result2.length).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_011 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -366,7 +369,7 @@ export default function fileIOCopy() {
           expect(result1.length == result2.length).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_012 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -404,7 +407,7 @@ export default function fileIOCopy() {
         let result2 = fs.listFileSync(dmpath);
         expect(result1.length == result2.length).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_013 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -436,7 +439,7 @@ export default function fileIOCopy() {
         let result2 = fs.listFileSync(dmpath);
         expect(result1.length == result2.length).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_014 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -464,9 +467,213 @@ export default function fileIOCopy() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_018 end error' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_019
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_1900
+     * @tc.desc   Test copy() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let destpath = await Utils.nextFileName('fileIO_copy_async_static_019');
+      let dstDirUri = fileUri.getUriFromPath(destpath);
+
+      try {
+        await fs.copy('', dstDirUri);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_019 end error' + JSON.stringify(e));
+        expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_020
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2000
+     * @tc.desc   Test copy() interfaces with second parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_copy_async_static_020');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let srcDirUri = fileUri.getUriFromPath(fpath);
+
+      try {
+        await fs.copy(srcDirUri, '');
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_020 end error' + JSON.stringify(e));
+        expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
+        fs.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_022
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2200
+     * @tc.desc   Test copy() interfaces with third parameter as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_copy_async_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_copy_async_static_022');
+      let destpath = fpath + 'dest';
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(destpath, CONTENT)).assertTrue();
+      let srcDirUri = fileUri.getUriFromPath(fpath);
+      let dstDirUri = fileUri.getUriFromPath(destpath);
+
+      try {
+        await fs.copy(srcDirUri, dstDirUri, undefined);
+        let stat1 = fs.statSync(fpath);
+        let stat2 = fs.statSync(destpath);
+        expect(stat1.size == stat2.size).assertTrue();
+        fs.unlinkSync(fpath);
+        fs.unlinkSync(destpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_022 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_023
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2300
+     * @tc.desc   Test copy() callback interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let destpath = await Utils.nextFileName('fileIO_copy_async_static_023');
+      let dstDirUri = fileUri.getUriFromPath(destpath);
+
+      try {
+        fs.copy('', dstDirUri, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_023 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_023 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_024
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2400
+     * @tc.desc   Test copy() callback interfaces with second parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_copy_async_static_024');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let srcDirUri = fileUri.getUriFromPath(fpath);
+
+      try {
+        fs.copy(srcDirUri, '', (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_024 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            fs.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_024 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_025
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2500
+     * @tc.desc   Test copy() interfaces with options and callback, first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let destpath = await Utils.nextFileName('fileIO_copy_async_static_025');
+      let dstDirUri = fileUri.getUriFromPath(destpath);
+
+      let progressListener = (progress: fs.Progress) => {
+        hilog.info(domain, tag, '%{public}s', `progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options: fs.CopyOptions = {
+        "progressListener" : progressListener
+      }
+
+      try {
+        fs.copy('', dstDirUri, options, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_025 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_025 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_copy_async_static_026
+     * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_2600
+     * @tc.desc   Test copy() interfaces with options and callback, second parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_copy_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_copy_async_static_026');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let srcDirUri = fileUri.getUriFromPath(fpath);
+
+      let progressListener = (progress: fs.Progress) => {
+        hilog.info(domain, tag, '%{public}s', `progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options: fs.CopyOptions = {
+        "progressListener" : progressListener
+      }
+
+      try {
+        fs.copy(srcDirUri, '', options, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_026 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 401 && err?.message == 'The input parameter is invalid').assertTrue();
+            fs.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_026 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
   });

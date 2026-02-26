@@ -33,7 +33,7 @@ const SLEEP_TIME_S = 100;
 export default function DataPickerCanLoopModifierTest() {
   describe('DataPickerCanLoopModifierTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DataPickerCanLoopModifierTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.datePicker.static", "EntryAbility")
       await UtilsTest.msSleep(SLEEP_TIME_L)

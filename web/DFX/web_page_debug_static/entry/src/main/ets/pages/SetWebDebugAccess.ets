@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,8888)
                   Utils.emitEvent(true, 2025060901)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowed ErrorCode: ${error.code},  `);
                   Utils.emitEvent(false, 2025060901)
                 }
@@ -88,7 +89,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,99999999)
                   Utils.emitEvent(true, 2025060902)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowedTwo ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060902)
                 }
@@ -98,7 +100,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,65535)
                   Utils.emitEvent(true, 2025060903)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortAllowedThree ErrorCode: ${error.code},  `);
                   Utils.emitEvent(false, 2025060903)
                 }
@@ -108,7 +111,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,0)
                   Utils.emitEvent(true, 2025060904)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedOne ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060904)
                 }
@@ -118,7 +122,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,1024)
                   Utils.emitEvent(true, 2025060905)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedTwo ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060905)
                 }
@@ -128,7 +133,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,888)
                   Utils.emitEvent(true, 2025060906)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNotAllowedThree ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060906)
                 }
@@ -138,7 +144,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true,-8888)
                   Utils.emitEvent(true, 2025060907)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortNegativeNumber ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060907)
                 }
@@ -148,7 +155,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(true)
                   Utils.emitEvent(true, 2025060908)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessEnableDebugPortEmpty ErrorCode: ${error.code},  `);
                   Utils.emitEvent(false, 2025060908)
                 }
@@ -159,7 +167,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(false,8888)
                   Utils.emitEvent(true, 2025060912)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessNotEnableDebugPortAllowed ErrorCode: ${error.code},  `);
                   Utils.emitEvent(false, 2025060912)
                 }
@@ -169,7 +178,8 @@ struct SetWebDebugAccess {
                 try {
                   webView.WebviewController.setWebDebuggingAccess(false,1024)
                   Utils.emitEvent(true, 2025060913)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`emitSetWebDebugAccessNotEnableDebugPortNotAllowed ErrorCode: ${error.code},  `);
                   Utils.emitEvent(String(error.code), 2025060913)
                 }

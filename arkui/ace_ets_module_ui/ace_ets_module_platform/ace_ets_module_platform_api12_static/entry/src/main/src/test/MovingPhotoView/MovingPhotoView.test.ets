@@ -39,7 +39,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function MovingPhotoView() {
   describe('MovingPhotoView',  () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       
       await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")

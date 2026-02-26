@@ -43,7 +43,7 @@ keycodeMap.set(FunctionKey.TAB, KeyCode.KEYCODE_TAB);
 
 export default function globalShortcutKeyTest2() {
   describe('globalShortcutKeyTest2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
     });

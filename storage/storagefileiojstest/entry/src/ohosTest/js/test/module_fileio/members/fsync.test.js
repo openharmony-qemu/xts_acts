@@ -129,4 +129,128 @@ describe('fileio_fsync', function () {
       done();
     }
   })
+
+  /**
+ 	    * @tc.name   fileio_test_fsync_sync_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_ERROR_001
+ 	    * @tc.desc   Test fsyncSync() interface with null fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_sync_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.fsyncSync(null);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fsync_sync_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fsync_sync_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_ERROR_002
+ 	    * @tc.desc   Test fsyncSync() interface with undefined fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_sync_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.fsyncSync(undefined);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fsync_sync_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fsync_promise_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_PROMISE_ERROR_001
+ 	    * @tc.desc   Test fsync() interface with null fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_promise_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.fsync(null);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fsync_promise_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fsync_promise_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_PROMISE_ERROR_002
+ 	    * @tc.desc   Test fsync() interface with undefined fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_promise_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.fsync(undefined);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_fsync_promise_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fsync_callback_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_CALLBACK_ERROR_001
+ 	    * @tc.desc   Test fsync() interface with null fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_callback_error_001', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.fsync(null, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_fsync_callback_error_001: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_fsync_callback_error_001 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_fsync_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_fsync_callback_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FSYNC_CALLBACK_ERROR_002
+ 	    * @tc.desc   Test fsync() interface with undefined fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_fsync_callback_error_002', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.fsync(undefined, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_fsync_callback_error_002: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_fsync_callback_error_002 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_fsync_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
 })}

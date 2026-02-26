@@ -62,7 +62,7 @@ export default function Navigation_L0_4() {
 
       let list: RectValue = CommonFunc.getComponentRectOnScreen('Navigation_L0_4_list');
       await CommonFunc.sleep(1000);
-      await driver.swipe( Math.round(list.left + (list.right - list.left) / 2) ,Math.round(list.top + (list.bottom - list.top) / 4 * 3) ,Math.round(list.left + (list.right - list.left) / 2) ,Math.round(list.top + (list.bottom -  list.top) / 4));
+      await driver.swipe( Math.round(list.left + (list.right - list.left) / 2) ,Math.round(list.top + (list.bottom - list.top) / 4) ,Math.round(list.left + (list.right - list.left) / 2) ,Math.round(list.top + (list.bottom -  list.top) / 4 * 3));
       await CommonFunc.sleep(1000);
 
       let text1 = getInspectorByKey('Navigation_L0_4_text1');

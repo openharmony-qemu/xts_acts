@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textArea_top() {
   describe('textArea_top', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textArea_top beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

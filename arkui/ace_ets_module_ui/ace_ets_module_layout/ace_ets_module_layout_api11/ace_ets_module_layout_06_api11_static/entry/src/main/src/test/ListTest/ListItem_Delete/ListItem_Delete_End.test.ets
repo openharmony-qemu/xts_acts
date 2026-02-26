@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_End() {
   describe('ListItem_Delete_End', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_End beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

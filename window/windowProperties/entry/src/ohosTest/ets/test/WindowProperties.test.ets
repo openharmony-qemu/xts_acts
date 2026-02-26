@@ -101,6 +101,8 @@ export default function windowPropertiesTest() {
         let isAutoWindow: string = '';
         let isPCStatus: string = '';
         let isFreeWindowMode = false;
+        let deviceType:string = deviceInfo.deviceType;
+        console.info(`deviceType: ${deviceType}`);
         beforeAll(async () => {
             context = AppStorage.get('context') as common.UIAbilityContext;
             console.log('windowTest context: ' + JSON.stringify(context))
@@ -226,7 +228,7 @@ export default function windowPropertiesTest() {
                 console.info(caseName + " Succeeded in setting watermark image.");
                 await window.setWatermarkImageForAppWindows(undefined);
                 console.info(caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
-                expect(true).assertTrue();
+                
                 done();
               }).catch((err: BusinessError) => {
                 console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
@@ -291,9 +293,9 @@ export default function windowPropertiesTest() {
           let errMessageText = await errMessage.getText();
           await sleep(200);
           if (errCodeText == '801') {
-            expect(true).assertTrue()
+            done();
           } else if (errMessageText == 'success') {
-            expect(true).assertTrue()
+            done();
           } else {
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
             expect().assertFail()
@@ -348,9 +350,9 @@ export default function windowPropertiesTest() {
             let errMessageText = await errMessage.getText();
             await sleep(200);
             if (errCodeText == '801') {
-              expect(true).assertTrue()
+              done();
             } else if (errMessageText == 'success') {
-              expect(true).assertTrue()
+              done();
             } else {
               console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
               expect().assertFail()
@@ -408,7 +410,7 @@ export default function windowPropertiesTest() {
               await window.setWatermarkImageForAppWindows(undefined);
               await subWindowClass?.showWindow();
               await subWindowClass?.destroyWindow()
-              expect(true).assertTrue();
+              
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
@@ -3549,7 +3551,7 @@ export default function windowPropertiesTest() {
                 console.info(`${caseName} Succeeded in enabling the full-screen mode.`);
                 const windowStatus = windowClass.getWindowStatus();
                 console.info(`${caseName} windowStatus is: ${windowStatus}`);
-                if (isPCStatus != '' || isAutoWindow == 'true') {
+                if (isFreeWindowMode === true) {
                   expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                   await windowClass.recover();
                   done();
@@ -3961,7 +3963,7 @@ export default function windowPropertiesTest() {
         promise.then(async () => {
           console.info(`${caseName} Succeeded in moving the window`);
           await windowClass.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -4086,7 +4088,7 @@ export default function windowPropertiesTest() {
           let windowClass = windowStage.getMainWindowSync();
           const mainWindowstatus = windowClass.getWindowStatus();
           console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowstatus}`);
-          if (isPCStatus != '') {
+          if (deviceType === '2in1') {
             windowClass.minimize().then(async () => {
               console.info(`${caseName} Succeeded in minimizing the window.`);
               await sleep(2000);
@@ -4141,7 +4143,7 @@ export default function windowPropertiesTest() {
          */
         it('testRestoreByMinimizeBtn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestRestoreByMinimizeBtn';
-            if(isPCStatus != ''){
+            if(deviceType === '2in1'){
                 try {
                 let windowClass = windowStage.getMainWindowSync();
                 const mainWindowstatus = windowClass.getWindowStatus();
@@ -4311,7 +4313,7 @@ export default function windowPropertiesTest() {
         let promise = mainWindow.startMoving(100, 50)
         promise.then(() => {
           console.info(`${caseName} :Succeeded startMoving ` );
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
@@ -4349,7 +4351,7 @@ export default function windowPropertiesTest() {
         let promise = mainWindow.stopMoving()
         promise.then(() => {
           console.info(`${caseName} :Succeeded stopMoving ` );
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to stopMoving. Cause code: ${err.code}, message: ${err.message}`);
@@ -4433,7 +4435,7 @@ export default function windowPropertiesTest() {
       console.log(msgStr + "begin");
       try {
         windowStage.setDefaultDensityEnabled(true);
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
@@ -4460,7 +4462,7 @@ export default function windowPropertiesTest() {
       console.log(msgStr + "begin");
       try {
         windowStage.setDefaultDensityEnabled(false);
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
@@ -4495,10 +4497,10 @@ export default function windowPropertiesTest() {
         let reason: ohosWindow.RectChangeReason;
         windowClass.on('windowRectChange', (data: ohosWindow.RectChangeOptions) => {
           console.log(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
-          expect(true).assertTrue();
+          
           done();
         });
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error.code)+'error.message: '+ error.message);
@@ -4530,7 +4532,7 @@ export default function windowPropertiesTest() {
         let grayScale = 0;
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 0.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4565,7 +4567,7 @@ export default function windowPropertiesTest() {
       try {
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 0.5.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4600,7 +4602,7 @@ export default function windowPropertiesTest() {
       try {
         windowClass.setWindowGrayScale(grayScale).then(() => {
           console.info(msgStr + 'Succeeded in setting the grayScale 1.');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4712,7 +4714,7 @@ export default function windowPropertiesTest() {
             subWindowClass.setWindowGrayScale(grayScale).then(async () => {
               console.info(msgStr + 'Succeeded in setting the grayScale 1.');
               await subWindowClass.destroyWindow();
-              expect(true).assertTrue();
+              
               done();
             }).catch(async (err: BusinessError) => {
               console.error(msgStr + `Failed to set the grayScale. Cause code: ${err.code}, message: ${err.message}`);
@@ -4776,7 +4778,7 @@ export default function windowPropertiesTest() {
               expect(err.message!=null).assertTrue();
               done();
             } else if(err.code == 1300002){
-              expect(true).assertTrue();
+              
               expect(err.message!=null).assertTrue();
               done();
             }else {
@@ -4905,7 +4907,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -4968,7 +4970,7 @@ export default function windowPropertiesTest() {
             console.info(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
             let drawableRect  = windowProperties.drawableRect;
             console.info(`${msgStr} drawableRect: ${JSON.stringify(drawableRect)}`);
-            if (isPCStatus != '' || isAutoWindow == 'true') {
+            if (isFreeWindowMode === true) {
               expect(drawableRect.left).assertEqual(0);
               expect(Math.abs(drawableRect.top - decorHeight)).assertLessOrEqual(1);
               expect(Math.abs(drawableRect.width - windowRect.width)).assertLessOrEqual(1);
@@ -4989,7 +4991,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -5106,7 +5108,7 @@ export default function windowPropertiesTest() {
         console.info(msgStr + ' begin ');
         try {
           let windowClass = windowStage.getMainWindowSync();
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode === true) {
             let promise = windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
             promise.then(async () => {
               console.info('Succeeded in maximizing the window.');
@@ -5150,7 +5152,7 @@ export default function windowPropertiesTest() {
         console.info(msgStr + ' begin ');
         try {
           let windowClass = windowStage.getMainWindowSync();
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode=== true) {
             let promise = windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
             promise.then(async () => {
               console.info('Succeeded in maximizing the window.');
@@ -5194,7 +5196,7 @@ export default function windowPropertiesTest() {
         console.info(msgStr + ' begin ');
         try {
           let windowClass = windowStage.getMainWindowSync();
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode === true) {
             let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
             promise.then(async () => {
               console.info('Succeeded in maximizing the window.');
@@ -5238,7 +5240,7 @@ export default function windowPropertiesTest() {
         console.info(msgStr + ' begin ');
         try {
           let windowClass = windowStage.getMainWindowSync();
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode ===true) {
             let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
             promise.then(async () => {
               console.info('Succeeded in maximizing the window.');
@@ -5282,7 +5284,7 @@ export default function windowPropertiesTest() {
         console.info(msgStr + ' begin ');
         try {
           let windowClass = windowStage.getMainWindowSync();
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode === true) {
             done();
           } else {
             windowClass.setImmersiveModeEnabledState(true);
@@ -6329,7 +6331,7 @@ export default function windowPropertiesTest() {
             }
             if (error.code == 1300002) {
               expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -6512,7 +6514,7 @@ export default function windowPropertiesTest() {
           expect(windowProperties.type).assertEqual(1);
           let windowRect = windowProperties.windowRect;
           console.info(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode === true) {
             expect(windowProperties.isFullScreen).assertEqual(false);
             // expect(windowRect.left).assertLarger(0);
             // expect(windowRect.top).assertLarger(0);
@@ -6671,7 +6673,7 @@ export default function windowPropertiesTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            if (isFreeWindowMode == true) {
+            if (isFreeWindowMode === true) {
               await mainWindow.recover();
             }
             await subWindowClass?.destroyWindow();
@@ -6685,7 +6687,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isFreeWindowMode == true) {
+          if (isFreeWindowMode === true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6707,7 +6709,7 @@ export default function windowPropertiesTest() {
         let subWindowClass: window.Window | undefined;
         let mainWindow = windowStage.getMainWindowSync();
         try {
-          if (isFreeWindowMode == false) {
+          if (isFreeWindowMode === false) {
             console.info(`${caseName}: this device is not pc or autowindow is false.`)
           } else {
             await mainWindow.maximize();
@@ -6734,7 +6736,7 @@ export default function windowPropertiesTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-              if (isFreeWindowMode == true) {
+              if (isFreeWindowMode === true) {
                 await mainWindow.recover();
               }
               await subWindowClass?.destroyWindow();
@@ -6759,7 +6761,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isFreeWindowMode == true) {
+          if (isFreeWindowMode === true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6910,7 +6912,7 @@ export default function windowPropertiesTest() {
         let subWindowClass: window.Window | undefined;
         let mainWindow = windowStage.getMainWindowSync();
         try {
-          if (isFreeWindowMode == true) {
+          if (isFreeWindowMode === true) {
             await mainWindow.maximize();
             await sleep(200);
           } else {
@@ -6945,7 +6947,7 @@ export default function windowPropertiesTest() {
             }
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            if (isFreeWindowMode == true) {
+            if (isFreeWindowMode === true) {
               await mainWindow.recover();
             }
             await subWindowClass?.destroyWindow();
@@ -6959,7 +6961,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isFreeWindowMode == true) {
+          if (isFreeWindowMode === true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6980,7 +6982,7 @@ export default function windowPropertiesTest() {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float';
         let windowStageStart = await startAbility3(caseName, context);
         try {
-          if (isFreeWindowMode == true) {
+          if (isFreeWindowMode === true) {
             await sleep(200);
             let subWindow = windowStageStart.getMainWindowSync();
             await subWindow.maximize();
@@ -7027,7 +7029,7 @@ export default function windowPropertiesTest() {
         try {
           window.getGlobalWindowMode().then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
-            if (isPCStatus != '' || isAutoWindow == 'true') {
+            if (isFreeWindowMode === true) {
               expect(data).assertEqual(4);
             } else {
               expect(data).assertEqual(1);
@@ -7080,7 +7082,7 @@ export default function windowPropertiesTest() {
             await sleep(200);
             window.getGlobalWindowMode(0).then(async (data: number) => {
               console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
-              if (isFreeWindowMode == true) {
+              if (isFreeWindowMode === true) {
                 expect(data).assertEqual(12);
               }
               await pipController?.stopPiP();
@@ -7984,6 +7986,49 @@ export default function windowPropertiesTest() {
           }else {
             expect().assertFail();
           }
+          done();
+        }
+      })
+
+      /**
+       * @tc.name   testsetColorSpaceCallbackwithDefault
+       * @tc.number SUB_BASIC_WMS_FUNCTION_SET_COLORSPACE_CAllBACK_0100
+       * @tc.desc   testsetColorSpaceCallbackwithDefault
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testsetColorSpaceCallbackwithDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testsetColorSpaceCallbackwithDefault';
+        let windowClass = windowStage.getMainWindowSync();
+        try {
+          windowClass.setColorSpace(window.ColorSpace.DEFAULT, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName+` Failed to set window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+           expect(false).assertTrue();
+           done();
+          }else{
+            console.info(caseName+' Succeeded in setting window colorspace. Cause ' );
+            windowClass.getColorSpace((err: BusinessError, data) => {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(caseName+` Failed to get window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }else{
+              console.info(caseName+' Succeeded in getting window colorspace. Cause:' + JSON.stringify(data));
+              expect(data).assertEqual(window.ColorSpace.DEFAULT);
+              done();
+            }
+            
+          });
+          }
+          
+        });
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail(); 
           done();
         }
       })

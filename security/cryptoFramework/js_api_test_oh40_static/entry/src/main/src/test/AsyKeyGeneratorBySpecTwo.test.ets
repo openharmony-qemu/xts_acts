@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -303,12 +303,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
         try {
           cryptoFramework.createAsyKeyGeneratorBySpec(genEccCommonSpecErr());
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "Security_CryptoFramework_GeneratorBySpec_Func_1500 catch err " +
               err
           );
-          expect(err.code).assertEqual(401);
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

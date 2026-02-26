@@ -42,12 +42,20 @@ describe('AccessibleRegisterState', function () {
      */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200');
-      let callbackdata = (data) => {
-      }
-      accessibility.on('touchGuideStateChange', callbackdata);
-      accessibility.off('touchGuideStateChange', callbackdata);
-      expect(true).assertTrue();
-      done();
+        let callbackdata = (data) => {
+        }
+        let result = false;
+        try {
+            accessibility.on('touchGuideStateChange', callbackdata);
+            accessibility.off('touchGuideStateChange', callbackdata);
+            result = true;
+        } catch (error) {
+            hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200 failed. code: ${error.code}, msg: ${error.message}`);
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
+        done();
     })
 })
 }

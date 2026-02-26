@@ -32,7 +32,12 @@ export default function ActsCommonEventSystemAPITest() {
 describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_CES_SYSTEM_API_TEST START')
-
+    
+    afterEach(async () => {
+      console.info(`${TAG} afterEach START`) 
+      await sleep(500)
+      console.info(`${TAG} afterEach END`)
+      })
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Publish_5000
      * @tc.number Sub_Notification_Ans_Publish_Publish_5000
@@ -384,7 +389,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         notificationManager.cancel(null, (err) => {
           if (err) {
             console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-            expect(true).assertTrue()
+            expect(err.code).assertEqual(0);
             done()
           } else {
             console.info(`${TAG} cancel id success`)
@@ -527,7 +532,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
         notificationManager.setBadgeNumber(null, (err) => {
           console.log(`setBadgeNumber failed, error code: ${err.code}, message: ${err.message}`)
           if (err.code == 801) {
-            expect(true).assertTrue()
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue()
@@ -537,7 +542,7 @@ describe('SUB_NOTIFICATION_CES_SYSTEM_API_TEST', () => {
       } catch (err) {
         console.log(`setBadgeNumber failed, catch error code: ${err.code}, message: ${err.message}`)
         if (err.code == 801) {
-          expect(true).assertTrue()
+          expect(err.code).assertEqual(801)
           done()
         } else {
           expect(err.code).assertEqual(401)
@@ -786,7 +791,6 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
     }
     await notificationManager.publish(notificationRequest).then(() => {
       console.info(`${TAG} publish Promise success`)
-      expect(true).assertTrue()
     }).catch(async (err: BusinessError) => {
       console.info(`${TAG} publish Promise err: ${err.code}, errMes: ${err.message}`)
       if (index == 10) {
@@ -811,7 +815,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_7900_283', Level.LEVEL2, async (done: () => void) => {
       notificationManager.openNotificationSettings(CustomGlobal.context).then(async () => {
-        expect(true).assertTrue();
+      console.info(TAG + "openNotificationSettings success " );
         await sleep(2000)
         await notificationManager.openNotificationSettings(CustomGlobal.context).then(() => {
           expect(false).assertTrue();
@@ -819,7 +823,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
         }).catch((err: BusinessError) => {
           console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
             done();
           } else {
             expect(err.code).assertEqual(1600018)
@@ -829,7 +833,7 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
       }).catch((err: BusinessError) => {
         console.error(TAG + "openNotificationSettings: " + JSON.stringify(err));
         if (err.code == 801) {
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
           done();
         } else {
           expect(err.code).assertEqual(1600001)
@@ -837,7 +841,6 @@ it('Sub_Notification_Ces_Publish_CommonEvent_7900_282', Level.LEVEL2, async (don
         }
       });
     })
-
 
     /**
      * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_7900_287

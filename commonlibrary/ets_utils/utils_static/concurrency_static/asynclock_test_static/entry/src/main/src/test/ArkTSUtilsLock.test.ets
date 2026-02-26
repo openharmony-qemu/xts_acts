@@ -68,7 +68,7 @@ class Obj {
 
 export default function arkTSUtilsLockTest() {
   describe('arkTSUtilsLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await sleep(20);
     })
     /**

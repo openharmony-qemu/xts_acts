@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,8 @@ export default function abilityTest() {
         bundle.getBundleNameByUidSync(uid)
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("getBundleNameByUidSyncUnPermissionApi14 1 catch " + JSON.stringify(err));
         expect(err.code).assertEqual(201);
         done();
@@ -64,7 +65,8 @@ export default function abilityTest() {
           console.info("getBundleNameByUidUnPermissionApi14 promise error " + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("getBundleNameByUidUnPermissionApi14 1 catch " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -77,7 +79,8 @@ export default function abilityTest() {
           expect(err?.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("getBundleNameByUidUnPermissionApi14 callback2 catch " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -103,7 +106,8 @@ export default function abilityTest() {
           expect(err.code).assertEqual(201);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("getAppCloneIdentityUnPermissionApi14 1 catch " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -123,7 +127,8 @@ export default function abilityTest() {
         let datas = bundle.getSignatureInfo(0);
         expect().assertFail();
         done();
-      }catch(err: BusinessError){
+      }catch(err){
+        err = err as BusinessError;
         hilog.error(domain, tag, `Sub_Bms_Framework_getSignatureInfo_static_04 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(201);
         done();

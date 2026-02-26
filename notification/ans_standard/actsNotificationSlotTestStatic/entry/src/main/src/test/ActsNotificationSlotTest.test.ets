@@ -48,7 +48,7 @@ export default function ActsNotificationSlotTest() {
     let TAG = 'SUB_NOTIFICATION_ANS_SLOT_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST START')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -59,7 +59,7 @@ export default function ActsNotificationSlotTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} afterEach START`)
       await notificationManager.removeAllSlots()
       await Utils.msSleep(500)

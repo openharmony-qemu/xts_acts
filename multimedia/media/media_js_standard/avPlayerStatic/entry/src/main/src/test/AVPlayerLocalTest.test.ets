@@ -41,14 +41,14 @@ const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
 const PAGE_PATH = "testability/pages/Surface"
-let fileDescriptor: media.AVFileDescriptor;
-let fileDescriptor_mkv: media.AVFileDescriptor;
-let fileDescriptor2: media.AVFileDescriptor;
-let fileDescriptor3: media.AVFileDescriptor;
+let fileDescriptor: media.AVFileDescriptor | undefined;
+let fileDescriptor_mkv: media.AVFileDescriptor | undefined;
+let fileDescriptor2: media.AVFileDescriptor | undefined;
+let fileDescriptor3: media.AVFileDescriptor | undefined;
 let avPlayer: media.AVPlayer | undefined;
 let fdPath = '';
 let fdNumber = 0;
-let subtitleFdSrc: media.AVFileDescriptor;
+let subtitleFdSrc: media.AVFileDescriptor | undefined;
 let mediaTestBase = new MediaTestBase()
 
 
@@ -1332,11 +1332,11 @@ export default function AVPlayerLocalTest() {
       if (fileDescriptor) {
 
       }
-      await mediaTestBase.closeFdNumber(fileDescriptor.fd);
-      await mediaTestBase.closeFdNumber(fileDescriptor_mkv.fd);
-      await mediaTestBase.closeFdNumber(fileDescriptor2.fd);
-      await mediaTestBase.closeFdNumber(fileDescriptor3.fd);
-      await mediaTestBase.closeFdNumber(subtitleFdSrc.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor!.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor_mkv!.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor2!.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor3!.fd);
+      await mediaTestBase.closeFdNumber(subtitleFdSrc!.fd);
       await mediaTestBase.clearRouter()
     });
     /**
@@ -1352,7 +1352,7 @@ export default function AVPlayerLocalTest() {
         new Array<string>('server_ip_address', 'average_download_rate', 'download_rate', 'is_downloading', 'buffer_duration');
       let descriptionValue = new Array<string>('', '0', '0', '0', '0');
       if (fileDescriptor) {
-        testCheckPlaybackInfo(fileDescriptor, avPlayer, descriptionKey, descriptionValue, done);
+        testCheckPlaybackInfo(fileDescriptor!, avPlayer, descriptionKey, descriptionValue, done);
       }
     });
     /**
@@ -1365,7 +1365,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_VIDEOSCALETYPE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
-        testVideoScaleType(fileDescriptor, avPlayer, done);
+        testVideoScaleType(fileDescriptor!, avPlayer, done);
       }
     });
     /**
@@ -1378,7 +1378,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_OFF_CALLBACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
-        testOffCallback(fileDescriptor, avPlayer, done);
+        testOffCallback(fileDescriptor!, avPlayer, done);
       }
     });
     /**
@@ -1391,7 +1391,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor && subtitleFdSrc) {
-        testSubtitle(fileDescriptor, subtitleFdSrc, avPlayer, done);
+        testSubtitle(fileDescriptor!, subtitleFdSrc!, avPlayer, done);
       }
     });
     /**
@@ -1404,7 +1404,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SUBTILE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor && subtitleFdSrc) {
-        testSubtitle(fileDescriptor, `fd://${subtitleFdSrc.fd}`, avPlayer, done);
+        testSubtitle(fileDescriptor!, `fd://${subtitleFdSrc!.fd}`, avPlayer, done);
       }
     });
     /**
@@ -1418,7 +1418,7 @@ export default function AVPlayerLocalTest() {
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { mutedMediaType: media.MediaType.MEDIA_TYPE_AUD }
-        testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
+        testSetPlaybackStrategy(fileDescriptor!, avPlayer, done, playbackStrategy);
       }
     });
     /**
@@ -1432,7 +1432,7 @@ export default function AVPlayerLocalTest() {
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { showFirstFrameOnPrepare: true }
-        testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
+        testSetPlaybackStrategy(fileDescriptor!, avPlayer, done, playbackStrategy);
       }
     });
     /**
@@ -1445,7 +1445,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_MUTE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
-        testSetMediaMuted(fileDescriptor, avPlayer, done);
+        testSetMediaMuted(fileDescriptor!, avPlayer, done);
       }
     });
     /**
@@ -1458,7 +1458,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_PLAYBACK_STRATEGY_DASH_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
-        testSetPlaybackStrategyDASH(fileDescriptor, avPlayer, done);
+        testSetPlaybackStrategyDASH(fileDescriptor!, avPlayer, done);
       }
     });
     /**
@@ -1471,7 +1471,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_PLAYBACK_POSITION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       if (fileDescriptor) {
-        testGetPlaybackPosition(fileDescriptor, avPlayer, done);
+        testGetPlaybackPosition(fileDescriptor!, avPlayer, done);
       }
     });
 
@@ -1486,7 +1486,7 @@ export default function AVPlayerLocalTest() {
      it('SUB_MULTIMEDIA_PLAYER_SETPLAYBACKRANGE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testSetPlaybackRange(fileDescriptor, avPlayer, done);
+          testSetPlaybackRange(fileDescriptor!, avPlayer, done);
         }
       });
  
@@ -1501,7 +1501,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SUBTITLEUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffSubtitleUpdate(fileDescriptor, avPlayer, done);
+          testOnOffSubtitleUpdate(fileDescriptor!, avPlayer, done);
         }
       })
  
@@ -1516,7 +1516,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_TRACKINFOUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffTrackInfoUpdate(fileDescriptor, avPlayer, done);
+          testOnOffTrackInfoUpdate(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1558,7 +1558,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOffSeiMessageReceived(fileDescriptor, avPlayer, done);
+          testOffSeiMessageReceived(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1573,7 +1573,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffAudioOutputDeviceChangeWithInfo(fileDescriptor, avPlayer, done);
+          testOnOffAudioOutputDeviceChangeWithInfo(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1629,7 +1629,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_MEDIAKEYSYSTEMINFOUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffmediaKeySystemInfoUpdate(fileDescriptor, avPlayer, done);
+          testOnOffmediaKeySystemInfoUpdate(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1644,7 +1644,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOINTERRUPT_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffAudioInterrupt(fileDescriptor, avPlayer, done);
+          testOnOffAudioInterrupt(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1659,7 +1659,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_BITRATEDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffBitrateDone(fileDescriptor, avPlayer, done);
+          testOnOffBitrateDone(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -1674,7 +1674,7 @@ export default function AVPlayerLocalTest() {
        it('SUB_MULTIMEDIA_PLAYER_DATASRC_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testAvPlayerDataSrc(fileDescriptor, avPlayer, done);
+          testAvPlayerDataSrc(fileDescriptor!, avPlayer, done);
         }
       })
   })

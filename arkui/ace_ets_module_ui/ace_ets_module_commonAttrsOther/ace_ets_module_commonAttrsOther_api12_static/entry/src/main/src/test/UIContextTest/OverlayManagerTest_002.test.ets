@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function OverlayManagerTest_002() {
   describe('OverlayManagerTest_002', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
       

@@ -42,7 +42,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function rowJsunit() {
   describe('rowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("rowTest beforeAll start");
            
       await UtilsTest.msSleep(4000)

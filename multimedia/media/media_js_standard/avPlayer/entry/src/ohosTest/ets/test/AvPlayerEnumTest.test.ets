@@ -148,6 +148,7 @@ export default function AvPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT).assertEqual("original_height");
       expect(media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS).assertEqual("ref_track_ids");
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE).assertEqual("track_ref_type");
+      expect(media.MediaDescriptionKey.MD_KEY_MIME_TYPE).assertEqual("mime_type");
       done();
     });
     /**
@@ -283,6 +284,26 @@ export default function AvPlayerEnumTest() {
       done();
     });
 
+        /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1400
+     * @tc.desc   AVPlayer Enumeration test - VideoScaleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1400', Level.LEVEL0, async (done: Function) => {
+      expect(media.PlaybackMetricsKey.PREPARE_DURATION).assertEqual('prepare_duration');
+      expect(media.PlaybackMetricsKey.RESOURCE_CONNECTION_DURATION).assertEqual('resource_connection_duration');
+      expect(media.PlaybackMetricsKey.FIRST_FRAME_DECAPSULATION_DURATION).assertEqual('first_frame_decapsulation_duration');
+      expect(media.PlaybackMetricsKey.TOTAL_PLAYING_TIME).assertEqual('total_playback_time');
+      expect(media.PlaybackMetricsKey.DOWNLOAD_REQUESTS_COUNT).assertEqual('loading_requests_count');
+      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_TIME).assertEqual('total_loading_time');
+      expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual('total_loading_bytes');
+      expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual('stalling_count');
+      expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual('total_stalling_time');
+      done();
+    });
   })
 }
 

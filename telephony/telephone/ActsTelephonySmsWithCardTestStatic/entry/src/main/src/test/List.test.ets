@@ -14,6 +14,7 @@
  */
 
 import smsTextPublic from "./smsTextPublic.test";
+import smsTextNoCardPublic from './SmsTextPublic1.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 
@@ -23,6 +24,7 @@ export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
     if(sim.hasSimCardSync(0)){
       smsTextPublic();
+      smsTextNoCardPublic();
     } else {
       EmptyTest()
     }

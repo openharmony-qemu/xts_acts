@@ -11,7 +11,7 @@ import common from '@ohos.app.ability.common';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 const TAG = "[STAGE_RELATIONAL_STORE_JSKITS_TEST]";
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
     "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL)";
@@ -21,7 +21,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
     securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let delegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function RdbStoreSetLocaleTest() {
@@ -37,9 +37,9 @@ export default function RdbStoreSetLocaleTest() {
         })
         beforeEach(async () => {
             console.info(TAG + 'beforeEach');
-            rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+            rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
             expect(rdbStore != undefined).assertTrue();
-            await rdbStore.executeSql(CREATE_TABLE_TEST);
+            await rdbStore!.executeSql(CREATE_TABLE_TEST);
             const valueBucket: relationalStore.ValuesBucket = {
                 'name': '张三',
                 'age': 18 as long,
@@ -55,14 +55,14 @@ export default function RdbStoreSetLocaleTest() {
                 'age': 18 as long,
                 'salary': 25000 as long,
             };
-            await rdbStore.insert('test', valueBucket);
-            await rdbStore.insert('test', valueBucket1);
-            await rdbStore.insert('test', valueBucket2);
+            await rdbStore!.insert('test', valueBucket);
+            await rdbStore!.insert('test', valueBucket1);
+            await rdbStore!.insert('test', valueBucket2);
 
         })
         afterEach(async () => {
             console.info(TAG + 'afterEach');
-            await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         })
         afterAll(async () => {
             console.info(TAG + 'afterAll');
@@ -79,8 +79,8 @@ export default function RdbStoreSetLocaleTest() {
         it("testRdbStoreSetLocale_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testRdbStoreSetLocale_0001 start *************");
             try {
-                await rdbStore.setLocale("zh");
-                let resultSet = await rdbStore.querySql("select * from test order by name collate LOCALES")
+                await rdbStore!.setLocale("zh");
+                let resultSet = await rdbStore!.querySql("select * from test order by name collate LOCALES")
                 resultSet.goToNextRow()
 
                 expect('李四').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
@@ -89,7 +89,7 @@ export default function RdbStoreSetLocaleTest() {
                 resultSet.goToNextRow()
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -108,10 +108,11 @@ export default function RdbStoreSetLocaleTest() {
         it("testRdbStoreSetLocale_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testRdbStoreSetLocale_0002 start *************");
             try {
-                await rdbStore.close();
-                await rdbStore.setLocale("zh");
+                await rdbStore!.close();
+                await rdbStore!.setLocale("zh");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800014);
                 done();
@@ -130,9 +131,10 @@ export default function RdbStoreSetLocaleTest() {
         it("testRdbStoreSetLocale_0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testRdbStoreSetLocale_0003 start *************");
             try {
-                await rdbStore.setLocale("111");
+                await rdbStore!.setLocale("111");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();
@@ -152,10 +154,10 @@ export default function RdbStoreSetLocaleTest() {
             console.log(TAG + "************* testRdbStoreSetLocale_0004 start *************");
             try {
                 for (let i = 0; i < 10; i++) {
-                    await rdbStore.querySql("select * from test")
+                    await rdbStore!.querySql("select * from test")
                 }
-                await rdbStore.setLocale("zh");
-                let resultSet = await rdbStore.querySql("select * from test order by name collate LOCALES")
+                await rdbStore!.setLocale("zh");
+                let resultSet = await rdbStore!.querySql("select * from test order by name collate LOCALES")
                 resultSet.goToNextRow()
 
                 expect('李四').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
@@ -164,7 +166,7 @@ export default function RdbStoreSetLocaleTest() {
                 resultSet.goToNextRow()
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -183,8 +185,8 @@ export default function RdbStoreSetLocaleTest() {
         it("testRdbStoreSetLocale_0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testRdbStoreSetLocale_0005 start *************");
             try {
-                await rdbStore.setLocale("zh");
-                const rdbTrans = await rdbStore.createTransaction();
+                await rdbStore!.setLocale("zh");
+                const rdbTrans = await rdbStore!.createTransaction();
                 let resultSet = await rdbTrans.querySql("select * from test order by name collate LOCALES")
                 console.log(`rowCount ${resultSet.rowCount}`)
                 resultSet.goToNextRow()
@@ -195,7 +197,7 @@ export default function RdbStoreSetLocaleTest() {
                 expect('张三').assertEqual(resultSet.getString(resultSet.getColumnIndex("name")));
                 await rdbTrans.commit();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect().assertFail();
                 done();
@@ -214,9 +216,10 @@ export default function RdbStoreSetLocaleTest() {
         it("testRdbStoreSetLocale_0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testRdbStoreSetLocale_0006 start *************");
             try {
-                await rdbStore.setLocale("");
+                await rdbStore!.setLocale("");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.error(`message is ${e.message}  code  ${e.code}`);
                 expect(e.code).assertEqual(14800001);
                 done();

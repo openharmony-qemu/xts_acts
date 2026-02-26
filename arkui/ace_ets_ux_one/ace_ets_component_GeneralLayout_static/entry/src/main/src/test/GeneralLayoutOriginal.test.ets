@@ -34,7 +34,7 @@ export default function GeneralLayoutOriginalTest() {
     let original_rect_bottom: number;
     let original_rect_right: number;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GeneralLayoutOffsetTest beforeEach start");
       
       await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")

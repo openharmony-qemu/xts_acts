@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function userauthTest_Nopermission_API12() {
   describe('userauthTest_Nopermission_API12', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -69,9 +69,9 @@ export default function userauthTest_Nopermission_API12() {
       let authType:userAuth.UserAuthType = userAuth.UserAuthType.PIN
       try {
         userAuth.getEnrolledState(authType);
-      } catch (e:BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, format, "SUB_Security_IAM_Func_API12_static_0110 fail " + 'authType:' + authType + 'e.code:' + e.code);
-        expect(e.code).assertEqual(201);
+        expect((e as BusinessError).code).assertEqual(201);
       }
       done();
     })
@@ -89,9 +89,9 @@ export default function userauthTest_Nopermission_API12() {
       let authType:userAuth.UserAuthType = userAuth.UserAuthType.PIN
       try {
         await userAuth.getAuthLockState(authType);
-      } catch (error:BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, format, "SUB_Security_IAM_UserAuth_FUNC_Static_0140 fail code is " + 'error.code:' + error.code);
-        expect(error.code).assertEqual(201);
+        expect((error as BusinessError).code).assertEqual(201);
       }
       done();
     })

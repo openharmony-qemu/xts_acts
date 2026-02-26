@@ -34,7 +34,7 @@ function sleep(time: number) {
 
 export default function scrollbarJsunit() {
   describe('scrollbarTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function VideoEnableShortCutKey() {
   describe('VideoEnableShortCutKeyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.video.api15.static", "EntryAbility")
       

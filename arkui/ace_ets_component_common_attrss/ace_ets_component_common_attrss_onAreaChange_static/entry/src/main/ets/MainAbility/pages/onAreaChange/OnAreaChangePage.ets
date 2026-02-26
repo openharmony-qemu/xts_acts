@@ -82,7 +82,7 @@ struct OnAreaChangePage {
       this.compareButtonKey = routerParamOptions.view.compareButtonKey
       this.compareOldTextKey = routerParamOptions.view.compareOldTextKey
       this.compareNewTextKey = routerParamOptions.view.compareNewTextKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
     let stateChangeEvent3: events_emitter.InnerEvent = {

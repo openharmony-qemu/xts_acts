@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function NavigationEnableDragBar() {
   describe('NavigationEnableDragBar', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavigationEnableDragBar beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

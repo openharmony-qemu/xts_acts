@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function Array_09Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -71,7 +71,7 @@ export default function Array_09Test() {
       try {
         let emptyArr: FixedArray<short> = [];
         expect(toLocaleString(emptyArr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -91,7 +91,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -111,7 +111,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -131,7 +131,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -151,7 +151,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -171,7 +171,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -191,7 +191,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -211,7 +211,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -231,7 +231,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -251,7 +251,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [1000 as short];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -271,7 +271,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -291,7 +291,7 @@ export default function Array_09Test() {
         let arr: FixedArray<short> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -310,7 +310,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<long> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -330,7 +330,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -350,7 +350,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -370,7 +370,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -390,7 +390,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -410,7 +410,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -430,7 +430,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -450,7 +450,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -470,7 +470,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -490,7 +490,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [1000 as long];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -510,7 +510,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -530,7 +530,7 @@ export default function Array_09Test() {
         let arr: FixedArray<long> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -550,7 +550,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -570,7 +570,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -590,7 +590,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -610,7 +610,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -630,7 +630,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -650,7 +650,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -670,7 +670,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -690,7 +690,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -710,7 +710,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [1000 as int];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -730,7 +730,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -750,7 +750,7 @@ export default function Array_09Test() {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -769,7 +769,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<float> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -789,7 +789,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -809,7 +809,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -829,7 +829,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -849,7 +849,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -869,7 +869,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -889,7 +889,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -909,7 +909,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -929,7 +929,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -949,7 +949,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [1.401298464324817E-45 as float];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -969,7 +969,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -989,7 +989,7 @@ export default function Array_09Test() {
         let arr: FixedArray<float> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1008,7 +1008,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<double> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1028,7 +1028,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1048,7 +1048,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1068,7 +1068,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1088,7 +1088,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1108,7 +1108,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1128,7 +1128,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1148,7 +1148,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1168,7 +1168,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1188,7 +1188,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [4.9406564584124654E-324 as double];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1208,7 +1208,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1228,7 +1228,7 @@ export default function Array_09Test() {
         let arr: FixedArray<double> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1247,7 +1247,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<char> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1267,7 +1267,7 @@ export default function Array_09Test() {
         let arr: FixedArray<char> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1287,7 +1287,7 @@ export default function Array_09Test() {
         let arr: FixedArray<char> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1307,7 +1307,7 @@ export default function Array_09Test() {
         let arr: FixedArray<char> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1327,7 +1327,7 @@ export default function Array_09Test() {
         let arr: FixedArray<char> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1347,7 +1347,7 @@ export default function Array_09Test() {
         let arr: FixedArray<char> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1366,7 +1366,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<byte> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1385,7 +1385,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         expect(toLocaleString(arr)).assertEqual("1,2,3,4");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1405,7 +1405,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1425,7 +1425,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1445,7 +1445,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1465,7 +1465,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1485,7 +1485,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1505,7 +1505,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1525,7 +1525,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1545,7 +1545,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1565,7 +1565,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [1, 2, 3, 4];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1585,7 +1585,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1605,7 +1605,7 @@ export default function Array_09Test() {
         let arr: FixedArray<byte> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1624,7 +1624,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<boolean> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1643,7 +1643,7 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         expect(toLocaleString(arr)).assertEqual("false,false,true,false,true");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1663,7 +1663,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1683,7 +1683,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1703,7 +1703,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1723,7 +1723,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, 'en-US');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1743,7 +1743,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1763,7 +1763,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, '', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1783,7 +1783,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1803,7 +1803,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, '', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1823,7 +1823,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [false, false, true, false, true];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1843,7 +1843,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [];
         toLocaleString(arr, 'en-US', '');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1863,7 +1863,7 @@ export default function Array_09Test() {
         let arr: FixedArray<boolean> = [];
         toLocaleString(arr, 'en-US', 'currency');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
       }
@@ -1885,7 +1885,7 @@ export default function Array_09Test() {
         let expected: FixedArray<char> = [];
         expect(String(arr)).assertEqual(String(expected));
         expect(arr.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1906,7 +1906,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<char> = [];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1928,7 +1928,7 @@ export default function Array_09Test() {
         let expected: FixedArray<char> = [];
         expect(String(arr)).assertEqual(String(expected));
         expect(arr.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1949,7 +1949,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1970,7 +1970,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1992,7 +1992,7 @@ export default function Array_09Test() {
         let expected: FixedArray<boolean> = [];
         expect(String(arr)).assertEqual(String(expected));
         expect(arr.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2013,7 +2013,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l < r);
         let expected: FixedArray<boolean> = [true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2034,7 +2034,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, 4, (l, r) => l < r);
         let expected: FixedArray<boolean> = [true, false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2055,7 +2055,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, 3, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, false, false, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2076,7 +2076,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2097,7 +2097,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2118,7 +2118,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2139,7 +2139,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2160,7 +2160,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<boolean> = [];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2181,7 +2181,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2202,7 +2202,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2223,7 +2223,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2244,7 +2244,7 @@ export default function Array_09Test() {
         sort_subarray(arr, (l, r) => l < r);
         let expected: FixedArray<boolean> = [false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2265,7 +2265,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, (l, r) => l < r);
         let expected: FixedArray<boolean> = [true, false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2286,7 +2286,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, (l, r) => l > r);
         let expected: FixedArray<boolean> = [false, true, true, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2308,7 +2308,7 @@ export default function Array_09Test() {
         let expected: FixedArray<boolean> = [];
         expect(String(arr)).assertEqual(String(expected));
         expect(arr.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2329,7 +2329,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, (l, r) => l < r);
         let expected: FixedArray<boolean> = [true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2350,7 +2350,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, 5, (l, r) => l < r);
         let expected: FixedArray<boolean> = [true, false, false, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2371,7 +2371,7 @@ export default function Array_09Test() {
         sort_subarray(arr, 1, 5, (l, r) => l > r);
         let expected: FixedArray<boolean> = [false, true, true, false, false];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }

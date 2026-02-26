@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function datapanelJsunit() {
   describe('dataPanelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dataPanelTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

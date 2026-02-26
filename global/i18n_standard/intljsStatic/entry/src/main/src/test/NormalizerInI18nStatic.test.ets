@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -201,7 +201,8 @@ export default function NormalizerInI18nTest() {
       let str = '\u0032\u2075';
       try{
         let normal = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('i18n_normalizer_test_static_0900 ' + error.code);
         console.log('i18n_normalizer_test_static_0900 ' + error.message);
         expect(error.code == 401).assertTrue();
@@ -222,7 +223,8 @@ export default function NormalizerInI18nTest() {
       let normal = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
       try {
         let value = normal.normalize('1234');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('i18n_normalizer_test_static_1000 ' + error.code);
         console.log('i18n_normalizer_test_static_1000 ' + error.message);
         expect(error.code == 401).assertTrue();

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,7 +65,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
         }
       });
       userAuthInstance.start();
-    } catch (e: BusinessError) {
+    } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -76,7 +76,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
 
 export default function signNormalNotAccessBiometricExecute() {
   describe('signNormalNotAccessBiometricExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -114,7 +114,7 @@ export default function signNormalNotAccessBiometricExecute() {
         userAuthInstance.offResult({ onResult: (result:userAuth.UserAuthResult) => {} });
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0042 success");
         expect(userAuthInstance).not().assertNull();
-      } catch (e:BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0042 fail " + e.code);
         expect(null).assertFail();
       }
@@ -139,7 +139,7 @@ export default function signNormalNotAccessBiometricExecute() {
         } });
         userAuthInstance.start();
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0050 success");
-      } catch (e:BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0050 fail " + e.code);
         expect(null).assertFail();
       }
@@ -161,7 +161,8 @@ export default function signNormalNotAccessBiometricExecute() {
         userAuthInstance.cancel();
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0090 success");
         expect(null).assertFail();
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0090 fail " + e.code);
         expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.GENERAL_ERROR);
       }

@@ -25,7 +25,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function BindPopupTest() {
   describe('BindPopupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BindPopupTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

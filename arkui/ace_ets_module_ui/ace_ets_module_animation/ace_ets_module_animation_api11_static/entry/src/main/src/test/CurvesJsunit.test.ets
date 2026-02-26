@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function curvesJsunit() {
   describe('curvesJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("curvesJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

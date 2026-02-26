@@ -21,6 +21,7 @@ export const ohAvMetadataExtractorSetFdPathSource: (a : number) => number;
 export const ohAvMetadataExtractorFetchMetadata: (a : number) => number;
 export const ohAvMetadataExtractorFetchMetadataAll: (a : number) => media.AVMetadata;
 export const ohAvMetadataExtractorFetchAlbumCover: (a : number) => number;
+export const ohAvMetadataExtractorFetchAlbumCoverError: (a : number) => number;
 export const ohAvMetadataExtractorRelease: () => number;
 export const ohAvMetadataExtractorReleaseTwo: () => number;
 export const OhAvMetadataExtractorPixelMapParamsCreate: () => number;

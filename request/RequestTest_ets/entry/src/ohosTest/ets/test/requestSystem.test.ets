@@ -34,7 +34,7 @@ export default function requestSystemJSUnit() {
         let filePath = pathDir + `/test.txt`;
         console.info(`====>beforeAll: filePath data: ${filePath}`);
         let fd = fileio.openSync(filePath, 0o100 | 0o2, 0o666);
-        let content = ''.padEnd(1 * 1024 *1024, 'h');
+        let content = ''.padEnd(10, 'h');
         fileio.writeSync(fd, content);
         fileio.closeSync(fd);
         console.info('====>beforeAll: text.txt file generate');

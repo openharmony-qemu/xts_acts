@@ -1863,4 +1863,39 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_PIXE_FORMAT_0010, TestSize.Level2)
         ASSERT_EQ(0, vEncSample->onStreamChangedKey);
     }
 }
+
+/**
+ * @tc.name   VIDEO_ENCODE_ANOTHER_0010
+ * @tc.number VIDEO_ENCODE_ANOTHER_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_ANOTHER_0010, TestSize.Level2)
+{
+    if (cap_hevc != nullptr) {
+        auto vEncSample = make_unique<VEncNdkSample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        vEncSample->DEFAULT_FRAME_RATE = 30;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        auto vEncSample2 = make_unique<VEncAPI11Sample>();
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->CreateVideoEncoder(g_codecNameHEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Flush());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Stop());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Start());
+        ASSERT_EQ(AV_ERR_OK, vEncSample2->Reset());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+    }
+}
 } // namespace

@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 export default function scrollAniFalse() {
   describe('scrollAniFalse', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollAniFalse beforeEach start");
 
       

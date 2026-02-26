@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ interface DataParam {
 
 export default function circleNewJsunit() {
   describe('circleNewTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -134,7 +134,7 @@ it('ACE_global_console_debug_static_0100', Level.LEVEL0, async () => {
       try {
         console.debug("ACE_global_console_debug test ok");
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -156,7 +156,7 @@ it('ACE_global_console_error_static_0200', Level.LEVEL0, async () => {
       try {
         console.error("ACE_global_console_warn test ok");
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -240,7 +240,7 @@ it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`showAlertBeforeBackPage_0100 failed, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -262,7 +262,7 @@ it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async () => { //еЉВе
         //   message: undefined
         // });
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect((error as BusinessError)?.code == 401).assertTrue();
       }
@@ -282,7 +282,7 @@ it('ACE_hideAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
       try {
         routerInstance.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error: Error) {
+      } catch (error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -319,7 +319,7 @@ it('testGlobal_attribute_static_0100', Level.LEVEL0, async () => {
               expect(value).assertEqual('ohosProject');
             }
           });
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

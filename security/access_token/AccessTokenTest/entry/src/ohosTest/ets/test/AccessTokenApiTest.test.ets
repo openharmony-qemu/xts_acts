@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import { UiDriver, BY, Driver, ON } from "@ohos.UiTest";
 import Utils from './Utils';
 
 let tokenID = 0;
+const ERR_PARAM_ERROR = 401;
 
 export default function AccessTokenApiTest() {
   describe('AccessTokenApiTest', () => {
@@ -65,7 +66,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.info('Test_requestGlobalSwitch_001 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -90,7 +91,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.info('Test_requestGlobalSwitch_002 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -124,7 +125,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.error('Test_requestGlobalSwitch_003 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -158,7 +159,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.info('Test_requestGlobalSwitch_004 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
     })
@@ -194,7 +195,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.info('Test_requestGlobalSwitch_005 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
       try {
@@ -239,7 +240,7 @@ export default function AccessTokenApiTest() {
         });
       } catch (error) {
         console.info('Test_requestGlobalSwitch_006 error.code: ' + error.code);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
         done();
       }
       try {
@@ -253,6 +254,66 @@ export default function AccessTokenApiTest() {
         console.info("Test_requestGlobalSwitch_006 click over");
       } catch (err) {
         console.info("Test_requestGlobalSwitch_006 click err:" + JSON.stringify(err));
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestGlobalSwitch_007
+     * @tc.number Test_requestGlobalSwitch_0700
+     * @tc.desc   requestGlobalSwitch Permissions context is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestGlobalSwitch_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_requestGlobalSwitch_007 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | null = null;
+      let type = abilityAccessCtrl.SwitchType.CAMERA;
+      try {
+        atManager.requestGlobalSwitch(testContext, type).then((data) => {
+          console.info('Test_requestGlobalSwitch_007 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_requestGlobalSwitch_007 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_requestGlobalSwitch_007 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_requestGlobalSwitch_008
+     * @tc.number Test_requestGlobalSwitch_0800
+     * @tc.desc   requestGlobalSwitch Permissions context is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_requestGlobalSwitch_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_requestGlobalSwitch_008 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let testContext: common.UIAbilityContext | undefined = undefined;
+      let type = abilityAccessCtrl.SwitchType.CAMERA;
+      try {
+        atManager.requestGlobalSwitch(testContext, type).then((data) => {
+          console.info('Test_requestGlobalSwitch_008 data:' + data);
+          expect(false).assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_requestGlobalSwitch_008 err.code:' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        });
+      } catch (error) {
+        console.error('Test_requestGlobalSwitch_008 error.code: ' + error.code);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
       }
     })
 

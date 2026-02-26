@@ -240,41 +240,54 @@ napi_value captureDeleteCameraDevices(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    Camera_ErrorCode result;
-    uint32_t cameraSize = 0;
-    Camera_Type type = CAMERA_TYPE_DEFAULT;
-    Camera_Device *cameras = nullptr;
-    Camera_DeviceQueryInfo queryInfo = {.cameraType = &type,
-                                        .cameraTypeSize = cameraSize,
-                                        .cameraPosition = CAMERA_POSITION_FRONT,
-                                        .connectionType = CAMERA_CONNECTION_BUILT_IN};
-    result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo, &cameraSize, &cameras);
-    OH_LOG_INFO(LOG_APP, "OH_CameraManager_GetCameraDevices, cameraManager=%{public}p, cameras=%{public}p",
-                cameraManager, cameras);
-    switch (index) {
-    case CASE_INDEX_1:
-        OH_LOG_INFO(LOG_APP, "Normal case, cameraManager=%{public}p, cameras=%{public}p", cameraManager, cameras);
-        if (cameraManager == nullptr || cameras == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "cameraManager or cameras is null!");
-            break;
+    int32_t result = 0;
+    uint32_t size = 0;
+    int32_t ret1;
+    ret1 = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+    LOGI("OH_CameraManager_GetSupportedCameras %{public}s %{public}d", cameras[0].cameraId, size);
+    if (cameras != nullptr && size > 0 && ret1 == CAMERA_OK) {
+        bool foundMatch = true;
+        if (foundMatch) {
+            uint32_t cameraSize = 0;
+            Camera_Type type = cameras[0].cameraType;
+            Camera_DeviceQueryInfo queryInfo = {.cameraType = &type,
+                                                .cameraTypeSize = cameraSize,
+                                                .cameraPosition = cameras[0].cameraPosition,
+                                                .connectionType = cameras[0].connectionType};
+            uint32_t returnedSize = 0;
+            Camera_Device *queriedCameras = nullptr;
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo, &returnedSize, &queriedCameras);
+            if (result == 0 && queriedCameras != nullptr) {
+                OH_LOG_INFO(LOG_APP, "成功查询到 %{public}d 个符合条件的摄像头", returnedSize);
+                switch (index) {
+                case CASE_INDEX_1:
+                    result = OH_CameraManager_DeleteCameraDevices(cameraManager, queriedCameras);
+                    break;
+                case CASE_INDEX_2:
+                    result = OH_CameraManager_DeleteCameraDevices(nullptr, queriedCameras);
+                    break;
+                case CASE_INDEX_3:
+                    result = OH_CameraManager_DeleteCameraDevices(cameraManager, nullptr);
+                    break;
+                case CASE_INDEX_4:
+                    result = OH_CameraManager_DeleteCameraDevices(NULL, queriedCameras);
+                    break;
+                case CASE_INDEX_5:
+                    result = OH_CameraManager_DeleteCameraDevices(cameraManager, NULL);
+                    break;
+                default:
+                    break;
+                }
+            } else {
+                OH_LOG_ERROR(LOG_APP, "查询摄像头设备失败");
+            }
+        } else {
+            OH_LOG_INFO(LOG_APP, "没有找到符合条件的摄像头");
         }
-        result = OH_CameraManager_DeleteCameraDevices(cameraManager, cameras);
-        break;
-    case CASE_INDEX_2:
-        result = OH_CameraManager_DeleteCameraDevices(nullptr, cameras);
-        break;
-    case CASE_INDEX_3:
-        result = OH_CameraManager_DeleteCameraDevices(cameraManager, nullptr);
-        break;
-    case CASE_INDEX_4:
-        result = OH_CameraManager_DeleteCameraDevices(NULL, cameras);
-        break;
-    case CASE_INDEX_5:
-        result = OH_CameraManager_DeleteCameraDevices(cameraManager, NULL);
-        break;
-    default:
-        break;
+    } else {
+        OH_LOG_ERROR(LOG_APP, "摄像头列表为空或未初始化");
     }
+
     ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
@@ -986,6 +999,28 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSize(napi_env env, napi_callbac
     return ret;
 }
 
+bool found(Camera_DeviceQueryInfo info)
+{
+    uint32_t size = 0;
+    int32_t ret1;
+    ret1 = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+    LOGI("OH_CameraManager_GetSupportedCameras %{public}s %{public}d", cameras[0].cameraId, size);
+    if (cameras != nullptr && size > 0 && ret1 == CAMERA_OK) {
+        for (uint32_t i = 0; i < size; i++) {
+            LOGI("cameras  %{public}d", cameras[i]);
+            LOGI("cameraType  %{public}d", cameras[i].cameraType);
+            LOGI("cameraPosition  %{public}d", cameras[i].cameraPosition);
+            LOGI("connectionType  %{public}d", cameras[i].connectionType);
+            if (cameras[i].cameraType == *(info.cameraType) && cameras[i].cameraPosition == info.cameraPosition &&
+                cameras[i].connectionType == info.connectionType) {
+                LOGI("查询的符合相机的数量为  %{public}d", size);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -993,10 +1028,10 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     CreatePhotoSession();
     int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    Camera_ErrorCode result;
     uint32_t cameraSize = 0;
     Camera_Device *cameras = nullptr;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t result = 0;
     Camera_Type type0 = CAMERA_TYPE_DEFAULT;
     Camera_Type type1 = CAMERA_TYPE_WIDE_ANGLE;
     Camera_Type type2 = CAMERA_TYPE_ULTRA_WIDE;
@@ -1024,19 +1059,30 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
                                          .connectionType = CAMERA_CONNECTION_BUILT_IN};
     switch (index) {
     case CASE_INDEX_1:
-        result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+        if (found(queryInfo0)) {
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+        }
         break;
     case CASE_INDEX_2:
-        result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo1, &cameraSize, &cameras);
+        if (found(queryInfo1)) {
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo1, &cameraSize, &cameras);
+        }
         break;
     case CASE_INDEX_3:
-        result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo2, &cameraSize, &cameras);
+        if (found(queryInfo2)) {
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo2, &cameraSize, &cameras);
+        }
         break;
     case CASE_INDEX_4:
-        result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo3, &cameraSize, &cameras);
+        if (found(queryInfo3)) {
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo3, &cameraSize, &cameras);
+        }
         break;
     case CASE_INDEX_5:
-        result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo4, &cameraSize, &cameras);
+        if (found(queryInfo4)) {
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo4, &cameraSize, &cameras);
+        }
+        break;
     default:
         break;
     }

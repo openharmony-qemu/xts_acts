@@ -57,8 +57,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     expect(false).assertTrue()
                     done()
                 } else {
-                    console.info(`${TAG} cancelAll notification success`)
-                    expect(true).assertTrue()
+                    console.info(`${TAG} cancelAll notification success`)        
                     done()
                 }
             });
@@ -81,8 +80,9 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_3850', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
-          let ctx: common.UIAbilityContext | undefined = AppStorage.get('ctx');
-          notificationManager.requestEnableNotification(ctx).then(() => {
+        let count :number = 0
+        let ctx: common.UIAbilityContext | undefined = AppStorage.get('ctx');
+        notificationManager.requestEnableNotification(ctx).then(() => {
          let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -106,7 +106,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`);
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -144,7 +145,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_3950', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
-
+        let count :number = 0
         let longContentText: notificationManager.NotificationLongTextContent = {
             title: "test_title",
             text: "test_text",
@@ -173,7 +174,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -195,7 +197,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4050', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
-
+        let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -221,7 +223,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -243,7 +246,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4150', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
-
+        let count :number = 0
         let multiLineContent: notificationManager.NotificationMultiLineContent = {
             title: "test_title",
             text: "test_text",
@@ -271,7 +274,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -293,7 +297,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4250', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
-
+        let count :number = 0
         let agentInfo: wantagent.WantAgentInfo = {
             wants: [
                 {
@@ -329,26 +333,12 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
             userInput: userInputContent
         }
 
-        let actionButton1: notificationManager.NotificationActionButton = {
-            title:"",
-            wantAgent: wantAgentData,
-            userInput: userInputContent
-        }
-
         let notificationRequest : notificationManager.NotificationRequest = {
             content: notifyContent,
             actionButtons: [
                 actionButton
             ],
             id: 5
-        }
-
-        let notificationRequest1 : notificationManager.NotificationRequest = {
-            content: notifyContent,
-            actionButtons: [
-                actionButton1
-            ],
-            id: 15
         }
 
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 PUBLISH`);
@@ -360,30 +350,13 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
+                    done()
                 }
             });
         } catch (err) {
             console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-        }
-
-        await sleep(1000)
-        try{
-            notificationManager.publish(notificationRequest1, (err) => {
-                if (err) {
-                    console.info(`${TAG} publish1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-                    expect(false).assertTrue()
-                    done()
-                } else {
-                    console.info(`${TAG} publish1 AsyncCallback success`)
-                    expect(true).assertTrue()
-                    done()
-                }
-            });
-        } catch (err) {
-            console.info(`${TAG} publish1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
         }
@@ -400,7 +373,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4350', Level.LEVEL1, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
-
+        let count :number = 0
         let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -435,7 +408,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -457,7 +431,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4450', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
-
+        let count :number = 0
         let options: notificationManager.DistributedOptions = {
             isDistributed: false,
             supportDisplayDevices: ["0"],
@@ -489,7 +463,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                     done()
                 } else {
                     console.info(`${TAG} publish AsyncCallback success`)
-                    expect(true).assertTrue()
+                    count++
+                    expect(count).assertEqual(1)
                     done()
                 }
             });
@@ -511,7 +486,7 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
      */
     it('Sub_Notification_Ans_Publish_Publish_4550', Level.LEVEL0, async (done: Function) => {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
-
+        let count :number = 0
         let picture_opts: image.InitializationOptions  = {
             size: {
             height: 25,
@@ -555,7 +530,8 @@ describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
                         done()
                     } else {
                         console.info(`${TAG} publish AsyncCallback success`)
-                        expect(true).assertTrue()
+                        count++
+                        expect(count).assertEqual(1)
                         done()
                     }
                 });

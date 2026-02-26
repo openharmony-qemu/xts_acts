@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,16 +30,16 @@ const TAG = "CameraPreconfigTest: ";
 let mVideoRecorder: media.AVRecorder | undefined;
 let mVideoSurface: string | undefined;
 let fdNumber: int;
-let fdPath: string;
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.PhotoSession;
-let mVideoSession: cameraObj.VideoSession
+let fdPath: string = '';
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.PhotoSession | undefined;
+let mVideoSession: cameraObj.VideoSession | undefined;
 let mPhotoSurface: string;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mVideoOutput: cameraObj.VideoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mVideoOutput: cameraObj.VideoOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
@@ -88,7 +88,7 @@ export default function cameraPreconfigTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -102,13 +102,13 @@ export default function cameraPreconfigTest() {
 
   let createCameraSessionInstance = (sceneMode: cameraObj.SceneMode) => {
     if (sceneMode == cameraObj.SceneMode.NORMAL_PHOTO) {
-      mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
+      mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
       if (mCameraSession == undefined) {
         console.info(TAG + "create PhotoSession FAILED");
         return false;
       }
     } else if (sceneMode == cameraObj.SceneMode.NORMAL_VIDEO) {
-      mVideoSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO) as cameraObj.VideoSession;
+      mVideoSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO) as cameraObj.VideoSession;
       if (mVideoSession == undefined) {
         console.info(TAG + "create VideoSession FAILED");
         return false;
@@ -137,8 +137,8 @@ export default function cameraPreconfigTest() {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
-    mCameraInput.open();
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput!.open();
     await Utils.msSleep(100);
     console.info(idx + 'th CameraInput is: ' + mCameraInput);
     console.info('Exit createInput');
@@ -158,13 +158,13 @@ export default function cameraPreconfigTest() {
     console.info('Enter createOutput');
 
     if (sceneMode == cameraObj.SceneMode.NORMAL_VIDEO) {
-      mVideoOutput = mCameraManager.createVideoOutput(surfaceId);
+      mVideoOutput = mCameraManager!.createVideoOutput(surfaceId);
       if (mVideoOutput ==undefined) {
         console.info(TAG + "createVideoOutput FAILED");
       }
       console.info(TAG + "createVideoOutput: " + mVideoOutput);
     } else {
-      mPreviewOutput = mCameraManager.createPreviewOutput(surfaceId);
+      mPreviewOutput = mCameraManager!.createPreviewOutput(surfaceId);
       if (mPreviewOutput == undefined) {
         console.info(TAG + "createPreviewOutput FAILED");
       }
@@ -215,12 +215,12 @@ export default function cameraPreconfigTest() {
 
       if (mCameraInput != undefined) {
         console.info(TAG + "Start to addInput");
-        mCameraSession!.addInput(mCameraInput);
+        mCameraSession!.addInput(mCameraInput!);
       }
 
       if (mPreviewOutput != undefined) {
         console.info(TAG + "Start to addOutput mPreviewOutput");
-        mCameraSession!.addOutput(mPreviewOutput);
+        mCameraSession!.addOutput(mPreviewOutput!);
       }
 
       await Utils.msSleep(30);
@@ -250,12 +250,12 @@ export default function cameraPreconfigTest() {
 
       if (mCameraInput != undefined) {
         console.info(TAG + "Start to addInput");
-        mVideoSession!.addInput(mCameraInput);
+        mVideoSession!.addInput(mCameraInput!);
       }
 
       if (mVideoOutput != undefined) {
         console.info(TAG + "Start to addOutput mVideoOutput");
-        mVideoSession!.addOutput(mVideoOutput);
+        mVideoSession!.addOutput(mVideoOutput!);
       }
 
       await Utils.msSleep(30);
@@ -286,12 +286,12 @@ export default function cameraPreconfigTest() {
       await Utils.msSleep(100);
       if (mCameraInput != undefined) {
         console.info(TAG + "Start to removeInput input");
-        mCameraSession!.removeInput(mCameraInput);
+        mCameraSession!.removeInput(mCameraInput!);
       }
 
       if (mPreviewOutput != undefined) {
         console.info(TAG + "Start to removeOutput mPreviewOutput");
-        mCameraSession!.removeOutput(mPreviewOutput);
+        mCameraSession!.removeOutput(mPreviewOutput!);
       }
       await mCameraSession!.stop();
 
@@ -303,12 +303,12 @@ export default function cameraPreconfigTest() {
       await Utils.msSleep(100);
       if (mCameraInput != undefined) {
         console.info(TAG + "Start to removeInput input");
-        mVideoSession!.removeInput(mCameraInput);
+        mVideoSession!.removeInput(mCameraInput!);
       }
 
       if (mVideoOutput != undefined) {
         console.info(TAG + "Start to removeOutput mVideoOutput");
-        mVideoSession!.removeOutput(mVideoOutput);
+        mVideoSession!.removeOutput(mVideoOutput!);
       }
       await mVideoSession!.stop();
 
@@ -378,7 +378,7 @@ export default function cameraPreconfigTest() {
   describe('CameraPreconfigTest', () => {
     console.info(TAG + '----------CameraPreconfigTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
@@ -386,21 +386,21 @@ export default function cameraPreconfigTest() {
       console.info('beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
       await Utils.msSleep(100);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       try {
         await releaseCameraSessionInstance();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(TAG + "afterAll err: " + error.code);
       }
       await Utils.msSleep(1000);
@@ -449,7 +449,7 @@ export default function cameraPreconfigTest() {
 
       let result = createCameraSessionInstance(cameraObj.SceneMode.NORMAL_PHOTO);
       expect(result).assertTrue();
-      let selectedPreconfigType: cameraObj.PreconfigType;
+      let selectedPreconfigType: cameraObj.PreconfigType | undefined;
       let isSelected: boolean = false;
       let types: Array<cameraObj.PreconfigType> = [cameraObj.PreconfigType.PRECONFIG_720P,
         cameraObj.PreconfigType.PRECONFIG_1080P,
@@ -463,12 +463,12 @@ export default function cameraPreconfigTest() {
           break;
         }
       }
-      if (isSelected == false || !mCameraSession!.canPreconfig(selectedPreconfigType)) {
+      if (isSelected == false || !mCameraSession!.canPreconfig(selectedPreconfigType!)) {
         console.info(TAG + "CameraSession.canPreconfig return fail, skip preconfig interface check");
         done();
       }
 
-      result = await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, selectedPreconfigType);
+      result = await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, selectedPreconfigType!);
       expect(result).assertTrue();
       await stopCameraSession(cameraObj.SceneMode.NORMAL_PHOTO);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_STATIC_0100 PASSED");
@@ -494,7 +494,7 @@ export default function cameraPreconfigTest() {
 
       let result = createCameraSessionInstance(cameraObj.SceneMode.NORMAL_VIDEO);
       expect(result).assertTrue();
-      let selectedPreconfigType: cameraObj.PreconfigType;
+      let selectedPreconfigType: cameraObj.PreconfigType | undefined;
       let isSelected: boolean = false;
       let types: Array<cameraObj.PreconfigType> = [cameraObj.PreconfigType.PRECONFIG_720P,
         cameraObj.PreconfigType.PRECONFIG_1080P,
@@ -508,12 +508,12 @@ export default function cameraPreconfigTest() {
           break;
         }
       }
-      if (isSelected == false || !mVideoSession!.canPreconfig(selectedPreconfigType)) {
+      if (isSelected == false || !mVideoSession!.canPreconfig(selectedPreconfigType!)) {
         console.info(TAG + "CameraSession.canPreconfig return fail, skip preconfig interface check");
         done();
       }
 
-      result = await startCameraSession(0, cameraObj.SceneMode.NORMAL_VIDEO, selectedPreconfigType);
+      result = await startCameraSession(0, cameraObj.SceneMode.NORMAL_VIDEO, selectedPreconfigType!);
       expect(result).assertTrue();
       await stopCameraSession(cameraObj.SceneMode.NORMAL_VIDEO);
 

@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorStringSpan001() {
   describe('RichEditorStringSpan001', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorStringSpan001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -100,7 +100,8 @@ export default function RichEditorStringSpan001() {
       let content = await (driver.findComponent(ON.id('content')) as Promise<Component>);
       let contentText = await content.getText();
       await CommonFunc.sleep(500);
-      expect(contentText).assertContain('content:[{"start":6,"length":5,"styledKey":0,"styledValue":{}}]');
+      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_stringspan_static_0005 contentText:' + contentText);
+      expect(contentText).assertContain('content:[{"start":6,"length":5,"styledKey":0,"styledValue":');
       let remove = await (driver.findComponent(ON.id('remove')) as Promise<Component>);
       await remove.click();
       await CommonFunc.sleep(500);

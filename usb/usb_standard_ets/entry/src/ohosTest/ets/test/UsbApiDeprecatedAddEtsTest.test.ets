@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,193 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 const TAG = "[UsbApiDeprecatedAddEtsTest]";
 
-/* usb core functions test */
+let USBDeviceFeature:usb.USBDevice;
+let USBDeviceFeature1:usb.USBDevice;
+let USBDeviceFeature2:usb.USBDevice;
+let USBDeviceFeature3:usb.USBDevice;
+let USBDeviceFeature4:usb.USBDevice;
+let USBConfigFeature:usb.USBConfig;
+let USBConfigFeature1:usb.USBConfig;
+let USBConfigFeature2:usb.USBConfig;
+let USBConfigFeature3:usb.USBConfig;
+let USBInterfaceFeature:usb.USBInterface;
+let USBInterfaceFeature1:usb.USBInterface;
+let USBInterfaceFeature2:usb.USBInterface;
+let USBEndpointFeature:usb.USBEndpoint;
+let USBEndpointFeature1:usb.USBEndpoint;
+
+USBDeviceFeature = {
+  busNum: 2,
+  devAddress: 3,
+  serial: '',
+  name: '',
+  manufacturerName: '',
+  productName: '',
+  version: '',
+  vendorId: 0,
+  productId: 0,
+  clazz: 0,
+  subClass: 0,
+  protocol: 0,
+  configs: [],
+}
+
+USBConfigFeature = {
+  id: 2,
+  attributes: 3,
+  maxPower: 0,
+  name: '',
+  isRemoteWakeup: true,
+  isSelfPowered: true,
+  interfaces: [],
+}
+
+USBInterfaceFeature = {
+  id: 2,
+  protocol: 3,
+  clazz: 0,
+  subClass: 0,
+  alternateSetting: 0,
+  name: '',
+  endpoints: [],
+}
+
+USBEndpointFeature = {
+  address: 2,
+  attributes: 3,
+  interval: 0,
+  maxPacketSize: 0,
+  direction: usb.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE,
+  number: 0,
+  type: 0,
+  interfaceId: 0,
+}
+
+USBEndpointFeature1 = {
+  address: 2,
+  attributes: 3,
+  interval: 0,
+  maxPacketSize: 0,
+  direction: usb.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE,
+  number: 0,
+  type: 0,
+  interfaceId: 0,
+}
+
+USBInterfaceFeature1 = {
+  id: 2,
+  protocol: 3,
+  clazz: 0,
+  subClass: 0,
+  alternateSetting: 0,
+  name: '',
+  endpoints: [USBEndpointFeature],
+}
+
+USBInterfaceFeature2 = {
+  id: 2,
+  protocol: 3,
+  clazz: 0,
+  subClass: 0,
+  alternateSetting: 0,
+  name: '',
+  endpoints: [USBEndpointFeature1],
+}
+
+USBConfigFeature1 = {
+  id: 2,
+  attributes: 3,
+  maxPower: 0,
+  name: '',
+  isRemoteWakeup: false,
+  isSelfPowered: false,
+  interfaces: [USBInterfaceFeature],
+}
+
+USBConfigFeature2 = {
+  id: 2,
+  attributes: 3,
+  maxPower: 0,
+  name: '',
+  isRemoteWakeup: false,
+  isSelfPowered: false,
+  interfaces: [USBInterfaceFeature1],
+}
+
+USBConfigFeature3 = {
+  id: 2,
+  attributes: 3,
+  maxPower: 0,
+  name: '',
+  isRemoteWakeup: false,
+  isSelfPowered: false,
+  interfaces: [USBInterfaceFeature2],
+}
+
+USBDeviceFeature1 = {
+  busNum: 2,
+  devAddress: 3,
+  serial: '',
+  name: '',
+  manufacturerName: '',
+  productName: '',
+  version: '',
+  vendorId: 0,
+  productId: 0,
+  clazz: 0,
+  subClass: 0,
+  protocol: 0,
+  configs: [USBConfigFeature],
+}
+
+USBDeviceFeature2 = {
+  busNum: 2,
+  devAddress: 3,
+  serial: '',
+  name: '',
+  manufacturerName: '',
+  productName: '',
+  version: '',
+  vendorId: 0,
+  productId: 0,
+  clazz: 0,
+  subClass: 0,
+  protocol: 0,
+  configs: [USBConfigFeature1],
+}
+
+USBDeviceFeature3 = {
+  busNum: 2,
+  devAddress: 3,
+  serial: '',
+  name: '',
+  manufacturerName: '',
+  productName: '',
+  version: '',
+  vendorId: 0,
+  productId: 0,
+  clazz: 0,
+  subClass: 0,
+  protocol: 0,
+  configs: [USBConfigFeature2],
+}
+
+USBDeviceFeature4 = {
+  busNum: 2,
+  devAddress: 3,
+  serial: '',
+  name: '',
+  manufacturerName: '',
+  productName: '',
+  version: '',
+  vendorId: 0,
+  productId: 0,
+  clazz: 0,
+  subClass: 0,
+  protocol: 0,
+  configs: [USBConfigFeature3],
+}
+
 export default function UsbApiDeprecatedAddEtsTest() {
   describe('UsbApiDeprecatedAddEtsTest', () => {
     
@@ -571,6 +757,402 @@ export default function UsbApiDeprecatedAddEtsTest() {
         done();
       } catch (err) {
         console.info(TAG, 'usb testBulkTransferUndefined fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testConnectDeviceInputPara
+     * @tc.number SUB_USB_HostManager_UsbFunc_2700
+     * @tc.desc   connectDevice input parameter USBDeviceFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectDeviceInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testConnectDeviceInputPara begin');
+      try {
+        console.info(TAG, 'usb testConnectDeviceInputPara USBDeviceFeature: ' + JSON.stringify(USBDeviceFeature));
+        let ret = usb.connectDevice(USBDeviceFeature);
+        console.info(TAG, 'usb testConnectDeviceInputPara ret: ' + JSON.stringify(ret));
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testConnectDeviceInputPara fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(14400001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testConnectDeviceInputPara001
+     * @tc.number SUB_USB_HostManager_UsbFunc_2800
+     * @tc.desc   connectDevice input parameter USBDeviceFeature1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectDeviceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testConnectDeviceInputPara001 begin');
+      try {
+        console.info(TAG, 'usb testConnectDeviceInputPara001 USBDeviceFeature1: ' + JSON.stringify(USBDeviceFeature1));
+        let ret = usb.connectDevice(USBDeviceFeature1);
+        console.info(TAG, 'usb testConnectDeviceInputPara001 ret: ' + JSON.stringify(ret));
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testConnectDeviceInputPara001 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(14400001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testConnectDeviceInputPara002
+     * @tc.number SUB_USB_HostManager_UsbFunc_2900
+     * @tc.desc   connectDevice input parameter USBDeviceFeature2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectDeviceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testConnectDeviceInputPara002 begin');
+      try {
+        console.info(TAG, 'usb testConnectDeviceInputPara002 USBDeviceFeature2: ' + JSON.stringify(USBDeviceFeature2));
+        let ret = usb.connectDevice(USBDeviceFeature2);
+        console.info(TAG, 'usb testConnectDeviceInputPara002 ret: ' + JSON.stringify(ret));
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testConnectDeviceInputPara002 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(14400001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testConnectDeviceInputPara003
+     * @tc.number SUB_USB_HostManager_UsbFunc_3000
+     * @tc.desc   connectDevice input parameter USBDeviceFeature3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectDeviceInputPara003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testConnectDeviceInputPara003 begin');
+      try {
+        console.info(TAG, 'usb testConnectDeviceInputPara003 USBDeviceFeature3: ' + JSON.stringify(USBDeviceFeature3));
+        let ret = usb.connectDevice(USBDeviceFeature3);
+        console.info(TAG, 'usb testConnectDeviceInputPara003 ret: ' + JSON.stringify(ret));
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testConnectDeviceInputPara003 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(14400001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testConnectDeviceInputPara004
+     * @tc.number SUB_USB_HostManager_UsbFunc_3100
+     * @tc.desc   connectDevice input parameter USBDeviceFeature4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectDeviceInputPara004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testConnectDeviceInputPara004 begin');
+      try {
+        console.info(TAG, 'usb testConnectDeviceInputPara004 USBDeviceFeature4: ' + JSON.stringify(USBDeviceFeature4));
+        let ret = usb.connectDevice(USBDeviceFeature4);
+        console.info(TAG, 'usb testConnectDeviceInputPara004 ret: ' + JSON.stringify(ret));
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testConnectDeviceInputPara004 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(14400001);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testClaimInterfaceInputPara
+     * @tc.number SUB_USB_HostManager_UsbFunc_3200
+     * @tc.desc   claimInterface input parameter USBInterfaceFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testClaimInterfaceInputPara begin');
+      try {
+        console.info(TAG, 'usb testClaimInterfaceInputPara USBInterfaceFeature: ' + JSON.stringify(USBInterfaceFeature));
+        let ret = usb.claimInterface(null,USBInterfaceFeature);
+        console.info(TAG, 'usb testClaimInterfaceInputPara ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testClaimInterfaceInputPara fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testClaimInterfaceInputPara001
+     * @tc.number SUB_USB_HostManager_UsbFunc_3300
+     * @tc.desc   claimInterface input parameter USBInterfaceFeature1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testClaimInterfaceInputPara001 begin');
+      try {
+        console.info(TAG, 'usb testClaimInterfaceInputPara001 USBInterfaceFeature1: ' + JSON.stringify(USBInterfaceFeature1));
+        let ret = usb.claimInterface(null,USBInterfaceFeature1);
+        console.info(TAG, 'usb testClaimInterfaceInputPara001 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testClaimInterfaceInputPara001 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testClaimInterfaceInputPara002
+     * @tc.number SUB_USB_HostManager_UsbFunc_3400
+     * @tc.desc   claimInterface input parameter USBInterfaceFeature2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClaimInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testClaimInterfaceInputPara002 begin');
+      try {
+        console.info(TAG, 'usb testClaimInterfaceInputPara002 USBInterfaceFeature2: ' + JSON.stringify(USBInterfaceFeature2));
+        let ret = usb.claimInterface(null,USBInterfaceFeature2);
+        console.info(TAG, 'usb testClaimInterfaceInputPara002 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testClaimInterfaceInputPara002 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testReleaseInterfaceInputPara
+     * @tc.number SUB_USB_HostManager_UsbFunc_3500
+     * @tc.desc   releaseInterface input parameter USBInterfaceFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReleaseInterfaceInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testReleaseInterfaceInputPara begin');
+      try {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara USBInterfaceFeature: ' + JSON.stringify(USBInterfaceFeature));
+        let ret = usb.releaseInterface(null,USBInterfaceFeature);
+        console.info(TAG, 'usb testReleaseInterfaceInputPara ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testReleaseInterfaceInputPara001
+     * @tc.number SUB_USB_HostManager_UsbFunc_3600
+     * @tc.desc   releaseInterface input parameter USBInterfaceFeature1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReleaseInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testReleaseInterfaceInputPara001 begin');
+      try {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara001 USBInterfaceFeature1: ' + JSON.stringify(USBInterfaceFeature1));
+        let ret = usb.releaseInterface(null,USBInterfaceFeature1);
+        console.info(TAG, 'usb testReleaseInterfaceInputPara001 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara001 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testReleaseInterfaceInputPara002
+     * @tc.number SUB_USB_HostManager_UsbFunc_3700
+     * @tc.desc   releaseInterface input parameter USBInterfaceFeature2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReleaseInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testReleaseInterfaceInputPara002 begin');
+      try {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara002 USBInterfaceFeature2: ' + JSON.stringify(USBInterfaceFeature2));
+        let ret = usb.releaseInterface(null,USBInterfaceFeature2);
+        console.info(TAG, 'usb testReleaseInterfaceInputPara002 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testReleaseInterfaceInputPara002 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetConfigurationInputPara
+     * @tc.number SUB_USB_HostManager_UsbFunc_3800
+     * @tc.desc   setConfiguration input parameter USBConfigFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetConfigurationInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetConfigurationInputPara begin');
+      try {
+        console.info(TAG, 'usb testSetConfigurationInputPara USBConfigFeature: ' + JSON.stringify(USBConfigFeature));
+        let ret = usb.setConfiguration(null,USBConfigFeature);
+        console.info(TAG, 'usb testSetConfigurationInputPara ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetConfigurationInputPara fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetConfigurationInputPara001
+     * @tc.number SUB_USB_HostManager_UsbFunc_3900
+     * @tc.desc   setConfiguration input parameter USBConfigFeature1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetConfigurationInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetConfigurationInputPara001 begin');
+      try {
+        console.info(TAG, 'usb testSetConfigurationInputPara001 USBConfigFeature1: ' + JSON.stringify(USBConfigFeature1));
+        let ret = usb.setConfiguration(null,USBConfigFeature1);
+        console.info(TAG, 'usb testSetConfigurationInputPara001 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetConfigurationInputPara001 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetConfigurationInputPara002
+     * @tc.number SUB_USB_HostManager_UsbFunc_4000
+     * @tc.desc   setConfiguration input parameter USBConfigFeature2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetConfigurationInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetConfigurationInputPara002 begin');
+      try {
+        console.info(TAG, 'usb testSetConfigurationInputPara002 USBConfigFeature2: ' + JSON.stringify(USBConfigFeature2));
+        let ret = usb.setConfiguration(null,USBConfigFeature2);
+        console.info(TAG, 'usb testSetConfigurationInputPara002 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetConfigurationInputPara002 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetConfigurationInputPara003
+     * @tc.number SUB_USB_HostManager_UsbFunc_4100
+     * @tc.desc   setConfiguration input parameter USBConfigFeature3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetConfigurationInputPara003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetConfigurationInputPara003 begin');
+      try {
+        console.info(TAG, 'usb testSetConfigurationInputPara003 USBConfigFeature3: ' + JSON.stringify(USBConfigFeature3));
+        let ret = usb.setConfiguration(null,USBConfigFeature3);
+        console.info(TAG, 'usb testSetConfigurationInputPara003 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetConfigurationInputPara003 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetInterfaceInputPara
+     * @tc.number SUB_USB_HostManager_UsbFunc_4200
+     * @tc.desc   setInterface input parameter USBInterfaceFeature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetInterfaceInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetInterfaceInputPara begin');
+      try {
+        console.info(TAG, 'usb testSetInterfaceInputPara USBInterfaceFeature: ' + JSON.stringify(USBInterfaceFeature));
+        let ret = usb.setInterface(null,USBInterfaceFeature);
+        console.info(TAG, 'usb testSetInterfaceInputPara ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetInterfaceInputPara fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetInterfaceInputPara001
+     * @tc.number SUB_USB_HostManager_UsbFunc_4300
+     * @tc.desc   setInterface input parameter USBInterfaceFeature1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetInterfaceInputPara001 begin');
+      try {
+        console.info(TAG, 'usb testSetInterfaceInputPara001 USBInterfaceFeature1: ' + JSON.stringify(USBInterfaceFeature1));
+        let ret = usb.setInterface(null,USBInterfaceFeature1);
+        console.info(TAG, 'usb testSetInterfaceInputPara001 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetInterfaceInputPara001 fail:' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetInterfaceInputPara002
+     * @tc.number SUB_USB_HostManager_UsbFunc_4400
+     * @tc.desc   setInterface input parameter USBInterfaceFeature2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'usb testSetInterfaceInputPara002 begin');
+      try {
+        console.info(TAG, 'usb testSetInterfaceInputPara002 USBInterfaceFeature2: ' + JSON.stringify(USBInterfaceFeature2));
+        let ret = usb.setInterface(null,USBInterfaceFeature2);
+        console.info(TAG, 'usb testSetInterfaceInputPara002 ret: ' + ret);
+        done();
+      } catch (err) {
+        console.info(TAG, 'usb testSetInterfaceInputPara002 fail:' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
         done();
       }

@@ -153,7 +153,7 @@ export default function taskPoolTaskShareTest() {
         const task = new taskpool.Task(awaitFinally, i);
         const taskPromise = taskpool.execute(task)
           .then((result: object) => {
-            expect(result).toBe((i + 1) * 2);
+            expect(result).assertEqual((i + 1) * 2);
           })
           .catch((err: Error) => {
             console.error(`Task ${i} failed: ${err.message}`);

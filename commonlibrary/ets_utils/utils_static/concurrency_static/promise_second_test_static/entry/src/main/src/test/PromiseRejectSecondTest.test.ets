@@ -138,7 +138,7 @@ export default function PromiseRejectSecondTest() {
         let errorMessage: string = '';
         let taskPromises: Promise<string>[] = [];
         arr.push(1);
-        let createNestedThenable: (level: number) => Thenable2;
+        let createNestedThenable: ((level: number) => Thenable2) | undefined;
 
         createNestedThenable = ((level: number): Thenable2 => {
           if (level === 1) {
@@ -153,7 +153,7 @@ export default function PromiseRejectSecondTest() {
 
           return {
             then: (resolve: (value: string) => void , reject: (reason: Error) => void) => {
-              const nextThenable = createNestedThenable(level - 1);
+              const nextThenable = createNestedThenable!(level - 1);
               new Promise<string>((innerResolve, innerReject) => {
                 if (level % 2 === 0) {
                   innerReject(new Error(`Rejected at level ${level}`));
@@ -165,7 +165,7 @@ export default function PromiseRejectSecondTest() {
           };
         });
 
-        const tenLevelThenable = createNestedThenable(10);
+        const tenLevelThenable = createNestedThenable!(10);
         const myPromise: Promise<string> = Promise.reject(new Error('Rejected from thenable'));
         let result: string = '';
         arr.push(2);

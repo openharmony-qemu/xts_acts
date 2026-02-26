@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,13 +28,13 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraSessionZoomRatioTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.PhotoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> | undefined;
+let mCameraSession: cameraObj.PhotoSession | undefined;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
 let defaultSize: int = 2;
 let indexZero: int = 0;
 let indexOne: int = 1;
@@ -91,7 +91,7 @@ export default function cameraSessionZoomRatioTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         console.info(TAG + "Entering getCameraSupportDevicesArray callback");
@@ -113,7 +113,7 @@ export default function cameraSessionZoomRatioTest() {
       return false;
     }
 
-    mCameraNum = mCameraDevicesArray.length;
+    mCameraNum = mCameraDevicesArray!.length;
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
     console.info('Exit getCameraSupportDevicesArray');
@@ -125,7 +125,7 @@ export default function cameraSessionZoomRatioTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -135,7 +135,7 @@ export default function cameraSessionZoomRatioTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -143,7 +143,7 @@ export default function cameraSessionZoomRatioTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -154,14 +154,14 @@ export default function cameraSessionZoomRatioTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray![idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -176,7 +176,7 @@ export default function cameraSessionZoomRatioTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined && mCameraInput != null) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -187,13 +187,13 @@ export default function cameraSessionZoomRatioTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray![idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -210,7 +210,7 @@ export default function cameraSessionZoomRatioTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -233,11 +233,11 @@ export default function cameraSessionZoomRatioTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined && mPreviewOutput != null) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined && mPhotoOutput != null) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     console.info('Exit releaseOutput');
 
@@ -254,23 +254,23 @@ export default function cameraSessionZoomRatioTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
     console.info(TAG + "commitConfig end");
-    await mCameraSession.start();
+    await mCameraSession!.start();
     console.info(TAG + "start end");
 
     await Utils.msSleep(1000);
@@ -282,27 +282,27 @@ export default function cameraSessionZoomRatioTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    await mCameraSession.stop();
+    await mCameraSession!.stop();
     console.info(TAG + "stop end");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     console.info(TAG + "beginConfig end");
 
     await Utils.msSleep(100);
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     await releaseInput();
     await releaseOutput();
@@ -314,7 +314,7 @@ export default function cameraSessionZoomRatioTest() {
 
   describe('cameraSessionZoomRatioTest', () => {
     console.info(TAG + '----------cameraSessionZoomRatioTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         Utils.msSleep(100);
         console.info('beforeAll case');
@@ -328,7 +328,7 @@ export default function cameraSessionZoomRatioTest() {
       
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       Utils.msSleep(5000);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -338,12 +338,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info('  cameraSessionZoomRatioTest beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('  cameraSessionZoomRatioTest afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('  cameraSessionZoomRatioTest afterAll case');
@@ -371,19 +371,19 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100 start for camera[" + i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           if (supportedZoomRatioRange.length > 0) {
 
-            if (mCameraSession.isAutoDeviceSwitchSupported()){
-              mCameraSession.setZoomRatio(supportedZoomRatioRange[0]);
+            if (mCameraSession!.isAutoDeviceSwitchSupported()){
+              mCameraSession!.setZoomRatio(supportedZoomRatioRange[0]);
               await Utils.msSleep(1000);
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100 finish");
               console.info(TAG +
                 "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100 PASSED with ZoomRatio is: " +
               supportedZoomRatioRange[0]);
 
-              let zoomRatio: number = mCameraSession.getZoomRatio();
+              let zoomRatio: number = mCameraSession!.getZoomRatio();
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0100 finish");
               if (zoomRatio == supportedZoomRatioRange[0]) {
                 console.info(TAG +
@@ -429,17 +429,17 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200 start for camera[" + i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.setZoomRatio((supportedZoomRatioRange[indexOne] + 1));
+            mCameraSession!.setZoomRatio((supportedZoomRatioRange[indexOne] + 1));
             await Utils.msSleep(1000);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200 PASSED with ZoomRatio is: " +
               (supportedZoomRatioRange[indexOne] + 1));
 
-            let zoomRatio: number= mCameraSession.getZoomRatio();
+            let zoomRatio: number= mCameraSession!.getZoomRatio();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0200 finish");
             if (zoomRatio != (supportedZoomRatioRange[indexOne] + 1)) {
               console.info(TAG +
@@ -485,17 +485,17 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300 start for camera[" + i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.setZoomRatio((supportedZoomRatioRange[indexOne] + 0.1) as number);
+            mCameraSession!.setZoomRatio((supportedZoomRatioRange[indexOne] + 0.1) as number);
             await Utils.msSleep(1000);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300 PASSED with ZoomRatio is: " +
               (supportedZoomRatioRange[indexOne] + 0.1));
 
-            let zoomRatio: number= mCameraSession.getZoomRatio();
+            let zoomRatio: number= mCameraSession!.getZoomRatio();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0300 finish");
             if (zoomRatio != (supportedZoomRatioRange[indexOne] + 0.1)) {
               console.info(TAG +
@@ -541,17 +541,17 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400 start for camera[" + i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.setZoomRatio((supportedZoomRatioRange[indexZero] - 1));
+            mCameraSession!.setZoomRatio((supportedZoomRatioRange[indexZero] - 1));
             await Utils.msSleep(1000);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400 PASSED with ZoomRatio is: " +
               (supportedZoomRatioRange[indexZero] - 1));
 
-            let zoomRatio: number= mCameraSession.getZoomRatio();
+            let zoomRatio: number= mCameraSession!.getZoomRatio();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0400 finish");
             if (zoomRatio != (supportedZoomRatioRange[indexZero] - 1)) {
               console.info(TAG +
@@ -597,17 +597,17 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500 start for camera[" + i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.setZoomRatio((supportedZoomRatioRange[indexZero] - 0.1) as number);
+            mCameraSession!.setZoomRatio((supportedZoomRatioRange[indexZero] - 0.1) as number);
             await Utils.msSleep(1000);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500 PASSED with ZoomRatio is: " +
               (supportedZoomRatioRange[indexZero] - 0.1));
 
-            let zoomRatio: number= mCameraSession.getZoomRatio();
+            let zoomRatio: number= mCameraSession!.getZoomRatio();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_ZOOM_RATIO_PROMISE_STATIC_0500 finish");
             if (zoomRatio != (supportedZoomRatioRange[indexZero] - 0.1)) {
               console.info(TAG +
@@ -652,11 +652,11 @@ export default function cameraSessionZoomRatioTest() {
             i + "]");
 
           await startCameraSession(i);
-          let supportedZoomRatioRange: Array<number> = mCameraSession.getZoomRatioRange();
+          let supportedZoomRatioRange: Array<number> = mCameraSession!.getZoomRatioRange();
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200 supportedZoomRatioRange.length: " + supportedZoomRatioRange.length);
           let callbackFlag: boolean = false;
           if (supportedZoomRatioRange.length == defaultSize) {
-            mCameraSession.onSmoothZoomInfoAvailable(
+            mCameraSession!.onSmoothZoomInfoAvailable(
               (err: BusinessError | null, smoothZoomInfo: cameraObj.SmoothZoomInfo | undefined): void => {
                 if (!err || err.code == 0) {
                   console.info(TAG +
@@ -669,17 +669,17 @@ export default function cameraSessionZoomRatioTest() {
                   expect().assertFail();
                 }
               })
-            if (mCameraSession.isAutoDeviceSwitchSupported()) {
-              mCameraSession.setZoomRatio((supportedZoomRatioRange[indexZero] + 0.1) as number);
+            if (mCameraSession!.isAutoDeviceSwitchSupported()) {
+              mCameraSession!.setZoomRatio((supportedZoomRatioRange[indexZero] + 0.1) as number);
               await Utils.msSleep(1000);
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200 setZoomRatio: " +
                 (supportedZoomRatioRange[indexZero] + 0.1));
 
-              mCameraSession.setSmoothZoom((supportedZoomRatioRange[indexOne] - 0.1) as number, cameraObj.SmoothZoomMode.NORMAL);
+              mCameraSession!.setSmoothZoom((supportedZoomRatioRange[indexOne] - 0.1) as number, cameraObj.SmoothZoomMode.NORMAL);
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200 targetZoomRatio: " +
                 (supportedZoomRatioRange[indexOne] - 0.1));
               await Utils.msSleep(2000);
-              let zoomRatio: number= mCameraSession.getZoomRatio();
+              let zoomRatio: number= mCameraSession!.getZoomRatio();
               if ((zoomRatio - (supportedZoomRatioRange[indexOne] - 0.1)) < 0.01) {
                 console.info(TAG +
                   "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_SMOOTH_ZOOM_PROMISE_STATIC_0200 PASSED with ZoomRatio is: " +
@@ -731,10 +731,10 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_SUPPORTED_COLOR_SPACES_STATIC_0100 start for camera[" + i + "]");
           await startCameraSession(i);
           try {
-            let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession.getSupportedColorSpaces();
+            let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession!.getSupportedColorSpaces();
             console.info(TAG + "Entering get Supported Color Spaces type: " + colorSpaces);
             console.info(TAG + "Entering get Supported Color Spaces array length: " + colorSpaces.length);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
             expect().assertFail();
           }
@@ -767,18 +767,18 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0100 start for camera[" + i + "]");
           
           await startCameraSession(i);
-          if (mCameraSession.isAutoDeviceSwitchSupported()) {
+          if (mCameraSession!.isAutoDeviceSwitchSupported()) {
             try {
-              let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession.getSupportedColorSpaces();
+              let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession!.getSupportedColorSpaces();
               console.info(TAG + "Entering get Supported Color Spaces type: " + colorSpaces);
               console.info(TAG + "Entering get Supported Color Spaces array length: " + colorSpaces.length);
               if (colorSpaces.length > 0) {
-                mCameraSession.setColorSpace(colorSpaces[0]);
+                mCameraSession!.setColorSpace(colorSpaces[0]);
                 console.info(TAG + "Entering set Color Space type: " + colorSpaces[0]);
               } else {
                 console.info(TAG + "No supported color spaces available for camera[" + i + "]");
               }
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
               expect().assertFail();
             }
@@ -812,21 +812,21 @@ export default function cameraSessionZoomRatioTest() {
             "Entering SUB_MULTIMEDIA_CAMERA_COLOR_MANAGEMENT_COLOR_SPACE_STATIC_0200 start for camera[" + i + "]");
           
           await startCameraSession(i);
-          if (mCameraSession.isAutoDeviceSwitchSupported()) {
+          if (mCameraSession!.isAutoDeviceSwitchSupported()) {
             try {
-              let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession.getSupportedColorSpaces();
+              let colorSpaces: Array<colorSpaceManager.ColorSpace> = mCameraSession!.getSupportedColorSpaces();
               console.info(TAG + "Entering get Supported Color Spaces type: " + colorSpaces);
               console.info(TAG + "Entering get Supported Color Spaces array length: " + colorSpaces.length);
               if (colorSpaces.length > 0) {
-                mCameraSession.setColorSpace(colorSpaces[0]);
+                mCameraSession!.setColorSpace(colorSpaces[0]);
                 console.info(TAG + "Entering set Color Space type: " + colorSpaces[0]);
-                let activeColorSpace: colorSpaceManager.ColorSpace = mCameraSession.getActiveColorSpace();
+                let activeColorSpace: colorSpaceManager.ColorSpace = mCameraSession!.getActiveColorSpace();
                 console.info(TAG + "Entering get Active Color Space type: " + activeColorSpace);
                 expect(activeColorSpace == colorSpaces[0]).assertTrue();
               } else {
                 console.info(TAG + "No supported color spaces available for camera[" + i + "]");
               }
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error("The getSupportedColorSpaces call failed. error code: "+error.code);
               expect().assertFail();
             }
@@ -860,9 +860,9 @@ export default function cameraSessionZoomRatioTest() {
           await startCameraSession(i);
           let isSupported = false;
           try {
-            isSupported = mCameraSession.isAutoDeviceSwitchSupported();
+            isSupported = mCameraSession!.isAutoDeviceSwitchSupported();
             console.info(TAG + "Entering Auto Device Switch Supported Bool: " + isSupported);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error("The isAutoDeviceSwitchSupported call failed. error code: "+error.code);
             expect().assertFail();
           }
@@ -897,15 +897,15 @@ export default function cameraSessionZoomRatioTest() {
           let isEnable = true;
           let isSupported = false;
           try {
-            isSupported = mCameraSession.isAutoDeviceSwitchSupported();
+            isSupported = mCameraSession!.isAutoDeviceSwitchSupported();
             console.info(TAG + "Entering Auto Device Switch Supported Bool: " + isSupported);
             if (!isSupported) {
               console.info(TAG + "Auto Device Switch is not supported for camera[" + i + "]");
               await stopCameraSession();
               continue;
             }
-            mCameraSession.enableAutoDeviceSwitch(isEnable);
-          } catch (error: BusinessError) {
+            mCameraSession!.enableAutoDeviceSwitch(isEnable);
+          } catch (error) {
             console.error("The enableAutoDeviceSwitch call failed. error code: "+error.code);
             expect().assertFail();
           }

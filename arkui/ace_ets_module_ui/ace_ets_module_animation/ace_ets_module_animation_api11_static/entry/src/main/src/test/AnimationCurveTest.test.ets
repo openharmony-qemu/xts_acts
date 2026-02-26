@@ -55,7 +55,7 @@ const interpolate4 = (fraction: number) => {
 export default function animationCurveTest() {
   describe('animationCurveTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

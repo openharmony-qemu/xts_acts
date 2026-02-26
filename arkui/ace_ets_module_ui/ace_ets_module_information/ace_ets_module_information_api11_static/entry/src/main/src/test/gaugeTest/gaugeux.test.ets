@@ -38,7 +38,7 @@ let emitKey = "emitUserAgent";
 
 export default function GaugeUxTest() {
   describe('GaugeUxTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GaugeUxTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

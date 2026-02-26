@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function tabsOpacityJsunit() {
   describe('tabsOpacityJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       // await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")

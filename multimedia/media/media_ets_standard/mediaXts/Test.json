@@ -20,12 +20,14 @@
         "uinput -T -m 300 2700 280 200",
         "power-shell setmode 602",
         "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test/files",
-        "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test"
+        "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.media.xts/haps/entry_test",
+        "uitest dumpLayout"
       ]
     },
     {
       "test-file-name": [
-        "ActsMediaXtsTest.hap"
+        "ActsMediaXtsTest.hap",
+        "ActsMediaXtsMainTest.hap"
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true

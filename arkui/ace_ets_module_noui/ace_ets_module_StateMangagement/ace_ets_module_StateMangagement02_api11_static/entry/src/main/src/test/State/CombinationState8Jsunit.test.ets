@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function CombinationState8Jsunit() {
   describe('CombinationState8Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CombinationState8Jsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

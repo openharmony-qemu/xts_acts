@@ -26,7 +26,7 @@ import { UtilsTest } from './Util.test';
 export default function foregroundEffect() {
 
   describe('foregroundEffect', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("foregroundEffect beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")

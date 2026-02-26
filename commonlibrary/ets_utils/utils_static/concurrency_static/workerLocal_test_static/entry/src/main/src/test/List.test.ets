@@ -14,7 +14,9 @@
  */
 
 import workerLocalTest from "./WorkerLocal.test";
+import workerLocalCoverTest from "./WorkerLocalCover.test";
 
 export default function testsuite() {
-  workerLocalTest()
+  workerLocalTest();
+  workerLocalCoverTest();
 }

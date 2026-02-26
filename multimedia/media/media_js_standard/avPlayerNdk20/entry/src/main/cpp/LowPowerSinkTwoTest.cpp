@@ -1146,7 +1146,167 @@ static napi_value OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0101(
     return retValue;
 }
 
+void OnEos(OH_LowPowerVideoSink *sink, void *userData){};
+static napi_value OH_LowPowerVideoSinkCallback_SetEosListener0101(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_LowPowerVideoSinkCallback *callBack = OH_LowPowerVideoSinkCallback_Create();
+    OH_AVErrCode errcode = OH_LowPowerVideoSinkCallback_SetEosListener(callBack, OnEos, userData);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSinkCallback_Destroy(callBack);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 
+void OnRenderStarted(OH_LowPowerVideoSink *sink, void *userData){};
+static napi_value OH_LowPowerVideoSinkCallback_SetRenderStartListener0101(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_LowPowerVideoSinkCallback *callBack = OH_LowPowerVideoSinkCallback_Create();
+    void *userData;
+    OH_AVErrCode errcode = OH_LowPowerVideoSinkCallback_SetRenderStartListener(callBack, OnRenderStarted, userData);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSinkCallback_Destroy(callBack);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+void OnError(OH_LowPowerVideoSink *sink, OH_AVErrCode errCode, const char *errorMsg, void *userData){};
+static napi_value OH_LowPowerVideoSinkCallback_SetErrorListener0101(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_LowPowerVideoSinkCallback *callBack = OH_LowPowerVideoSinkCallback_Create();
+    OH_AVErrCode errcode = OH_LowPowerVideoSinkCallback_SetErrorListener(callBack, OnError, userData);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSinkCallback_Destroy(callBack);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_GetParameter0100(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(mime);
+    OH_AVFormat *format = OH_AVFormat_Create();
+    OH_AVErrCode errCode = OH_LowPowerAudioSink_GetParameter(AudioSink, format);
+    int32_t res = 1;
+    if (errCode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVFormat_Destroy(format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_GetParameter0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_AVFormat *format = OH_AVFormat_Create();
+    OH_AVErrCode errCode = OH_LowPowerAudioSink_GetParameter(nullptr, format);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    OH_AVFormat_Destroy(format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_GetParameter0300(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    const char *mime = OH_AVCODEC_MIMETYPE_VIDEO_VC1;
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(mime);
+    OH_AVFormat *format = OH_AVFormat_Create();
+    OH_AVErrCode errCode = OH_LowPowerAudioSink_GetParameter(AudioSink, format);
+    int32_t res = 1;
+    if (errCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        res = 0;
+    }
+    OH_AVFormat_Destroy(format);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+static napi_value OH_AVSamplesBuffer_GetRemainedCapacity0100(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    OH_AVSamplesBuffer *samplesBuffer = nullptr;
+    int32_t ret = OH_AVSamplesBuffer_GetRemainedCapacity(samplesBuffer);
+    int32_t res = 1;
+    if (ret == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_SetLoudnessGain0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    const double loudnessGain = 24.0;
+    const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(mime);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_SetLoudnessGain(AudioSink, loudnessGain);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Start0101", nullptr, OH_LowPowerAudioSink_Start0101, nullptr, nullptr, nullptr, napi_default,
      nullptr},
@@ -1212,6 +1372,22 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, napi_default, nullptr},
     {"OH_SetFirstFrameDecodedListener0101", nullptr, OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0101,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_SetEosListener0101", nullptr, OH_LowPowerVideoSinkCallback_SetEosListener0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_SetRenderStartListener0101", nullptr, OH_LowPowerVideoSinkCallback_SetRenderStartListener0101, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_SetErrorListener0101", nullptr, OH_LowPowerVideoSinkCallback_SetErrorListener0101, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_GetParameter0100", nullptr, OH_LowPowerAudioSink_GetParameter0100, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_GetParameter0200", nullptr, OH_LowPowerAudioSink_GetParameter0200, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_GetParameter0300", nullptr, OH_LowPowerAudioSink_GetParameter0300, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"OH_AVSamplesBuffer_GetRemainedCapacity0100", nullptr, OH_AVSamplesBuffer_GetRemainedCapacity0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_SetLoudnessGain0200", nullptr, OH_LowPowerAudioSink_SetLoudnessGain0200, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
 
 };
 

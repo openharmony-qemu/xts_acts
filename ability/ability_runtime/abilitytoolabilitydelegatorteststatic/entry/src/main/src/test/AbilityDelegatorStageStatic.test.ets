@@ -38,10 +38,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test addAbilityMonitorSync
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100';
         hilog.info(domain, tag, `${itName} start`);
@@ -82,10 +82,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test removeAbilityMonitor(callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200';
         hilog.info(domain, tag, `${itName} start`);
@@ -153,10 +153,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test removeAbilityMonitor(promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300';
         hilog.info(domain, tag, `${itName} start`);
@@ -225,10 +225,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test removeAbilityMonitorSync
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400';
         hilog.info(domain, tag, `${itName} start`);
@@ -281,10 +281,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test waitAbilityMonitor(callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500';
         hilog.info(domain, tag, `${itName} start`);
@@ -343,10 +343,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test waitAbilityMonitor(callback) with timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600';
         hilog.info(domain, tag, `${itName} start`);
@@ -404,10 +404,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test waitAbilityMonitor(promise) with timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700';
         hilog.info(domain, tag, `${itName} start`);
@@ -469,10 +469,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test waitAbilityMonitor(promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701';
         hilog.info(domain, tag, `${itName} start`);
@@ -533,10 +533,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test getCurrentTopAbility(callback) and getAbilityState
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800';
         hilog.info(domain, tag, `${itName} start`);
@@ -579,10 +579,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test doAbilityForeground(callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900';
         hilog.info(domain, tag, `${itName} start`);
@@ -640,10 +640,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test doAbilityForeground(promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000';
         hilog.info(domain, tag, `${itName} start`);
@@ -702,10 +702,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   testing doAbilityBackground by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500';
         hilog.info(domain, tag, `${itName} start`);
@@ -759,10 +759,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   testing doAbilityBackground by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600';
         hilog.info(domain, tag, `${itName} start`);
@@ -815,10 +815,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   for testing command -b -s -w are valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400';
         hilog.info(domain, tag, `${itName} start`);
@@ -854,10 +854,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500';
         hilog.info(domain, tag, `${itName} start`);
@@ -902,10 +902,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600';
         hilog.info(domain, tag, `${itName} start`);
@@ -951,10 +951,10 @@ export default function AbilityDelegatorStageStaticTest() {
      * @tc.desc   test print(callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300';
         hilog.info(domain, tag, `${itName} start`);
@@ -980,6 +980,84 @@ export default function AbilityDelegatorStageStaticTest() {
               expect().assertFail();
               done();
               hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg).then(() => {
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+
+            }
+          })
+        } catch (err) {
+          if(err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg, (err: BusinessError<void> | null) => {
+            hilog.info(domain, tag, `${itName} print error code: ${err?.code} msg: ${err?.message}`);
+            if (err?.code) {
+              hilog.info(domain, tag, `${itName} print fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          });
+        } catch (err) {
+          if (err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
           }
         }
       })

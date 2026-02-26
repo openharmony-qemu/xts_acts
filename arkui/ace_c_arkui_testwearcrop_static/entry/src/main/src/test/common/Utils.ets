@@ -112,7 +112,7 @@ export default class Utils {
 //
   static clickLocation(X: int, Y: int) {
     let driver =  Driver.create();
-    await driver.click(X, Y);
+    waitForCompletion(async ()=>{await driver.click(X, Y);})
   }
 
   // static async triggerKey(id: number) {

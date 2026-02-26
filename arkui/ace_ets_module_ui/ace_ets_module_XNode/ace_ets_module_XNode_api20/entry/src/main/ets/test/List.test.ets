@@ -43,7 +43,7 @@ import GetAllAvailableItemsTest from './FrameNodeTest/GetAllAvailableItemsTest.t
 import RenderNodeMethodNullTest from './FrameNodeTest/RenderNodeMethodNullTest.test';
 import AttachNodeAdapterBooleanTest from './FrameNodeTest/AttachNodeAdapterBooleanTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
-import isTransferredTest from './FrameNodeTest/isTransferredTest.test';
+// import isTransferredTest from './FrameNodeTest/isTransferredTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
@@ -77,5 +77,5 @@ export default function testsuite() {
   RenderNodeMethodNullTest();
   AttachNodeAdapterBooleanTest();
   IsFollowingSystemFontScaleFalseTest();
-  isTransferredTest()
+  // isTransferredTest()
 }

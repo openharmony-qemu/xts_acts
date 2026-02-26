@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,14 +26,14 @@ import Utils from './Util.test';
 
 const TAG = "CameraSecureSessionTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.SecureSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.SecureSession | undefined;
 let isCameraSessionCreated: boolean = false;
 let mPhotoSurface: string;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let secureSeqId: bigint;
 let surfaceId: string = '';
@@ -122,7 +122,7 @@ export default function cameraSecureSessionTest() {
     console.info('Enter getCameraManagerInstance');
     let appContext: Context = Hypium.get("Context") as Context;
     mCameraManager = cameraObj.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
@@ -135,7 +135,7 @@ export default function cameraSecureSessionTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -158,14 +158,14 @@ export default function cameraSecureSessionTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
-    if (isEmpty04(mCameraInput)) {
+    if (isEmpty04(mCameraInput!)) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    secureSeqId = await mCameraInput.open(true);
+    secureSeqId = await mCameraInput!.open(true);
 
     await Utils.msSleep(100);
 
@@ -178,20 +178,20 @@ export default function cameraSecureSessionTest() {
 
   let createOutput = async (idx: int): Promise<boolean> => {
     console.info('Enter createOutput');
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
       cameraObj.SceneMode.SECURE_PHOTO);
     if (!isEmpty05(cameraOutputCap)) {
       if (!isEmpty06(cameraOutputCap.previewProfiles)) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
           mPreviewOutput =
-            mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
-          if (!isEmpty07(mPreviewOutput)) {
+            mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          if (!isEmpty07(mPreviewOutput!)) {
             break;
           }
         }
 
-        if (isEmpty07(mPreviewOutput)) {
+        if (isEmpty07(mPreviewOutput!)) {
           console.info(TAG + "createPreviewOutput FAILED");
         }
 
@@ -208,18 +208,18 @@ export default function cameraSecureSessionTest() {
     console.info('Enter createSecureSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.SecureSession>(cameraObj.SceneMode.SECURE_PHOTO);
-    } catch (error:BusinessError) {
+      mCameraSession = mCameraManager!.createSession<cameraObj.SecureSession>(cameraObj.SceneMode.SECURE_PHOTO);
+    } catch (error) {
       console.info('createSecureSessionInstance FAILED');
     }
     isCameraSessionCreated = true;
 
-    if (isEmpty03(mCameraSession)) {
+    if (isEmpty03(mCameraSession!)) {
       console.info(TAG + "createSecureSessionInstance FAILED");
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     console.info('Exit createSecureSessionInstance');
     return true;
   }
@@ -227,7 +227,7 @@ export default function cameraSecureSessionTest() {
   let releaseCameraSessionInstance = async () => {
     if (isCameraSessionCreated) {
       console.info(TAG + "Enter releaseCameraSessionInstance");
-      await mCameraSession.release();
+      await mCameraSession!.release();
       isCameraSessionCreated = false;
     }
   }
@@ -235,8 +235,8 @@ export default function cameraSecureSessionTest() {
   let releaseInput = async (): Promise<boolean> => {
     console.info('Enter releaseInput');
 
-    if (!isEmpty04(mCameraInput)) {
-      await mCameraInput.close();
+    if (!isEmpty04(mCameraInput!)) {
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -248,8 +248,8 @@ export default function cameraSecureSessionTest() {
   let releaseOutput = async (): Promise<boolean> => {
     console.info('Enter releaseOutput');
 
-    if (!isEmpty07(mPreviewOutput)) {
-      await mPreviewOutput.release();
+    if (!isEmpty07(mPreviewOutput!)) {
+      await mPreviewOutput!.release();
     }
 
     console.info('Exit releaseOutput');
@@ -268,19 +268,19 @@ export default function cameraSecureSessionTest() {
 
     await Utils.msSleep(1);
 
-    if (!isEmpty04(mCameraInput)) {
+    if (!isEmpty04(mCameraInput!)) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
-    if (!isEmpty07(mPreviewOutput)) {
+    if (!isEmpty07(mPreviewOutput!)) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     console.info(TAG + "Entering startCameraSession start session begin");
 
@@ -301,7 +301,7 @@ export default function cameraSecureSessionTest() {
   let startSecureCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter startSecureCameraSession" + cameraObj.SceneMode.SECURE_PHOTO);
     for (let cameraIndex = 0; cameraIndex < mCameraNum; cameraIndex++) {
-      let cameraMode = mCameraManager.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
+      let cameraMode = mCameraManager!.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
       console.info(TAG + "cameraModeTmp = " + JSON.stringify(cameraMode));
       if (cameraMode != null && cameraMode.length > 0) {
         for (let modeIndex = 0; modeIndex < cameraMode.length; modeIndex++) {
@@ -323,7 +323,7 @@ export default function cameraSecureSessionTest() {
   describe('cameraSecureSessionTest', () => {
     console.info(TAG + '----------CameraSecureSessionTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       getCameraManagerInstance();
@@ -344,7 +344,7 @@ export default function cameraSecureSessionTest() {
       Utils.msSleep(500);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(500);
       console.info('afterAll case');
@@ -367,20 +367,20 @@ export default function cameraSecureSessionTest() {
         done();
       } else {
         for (let cameraIndex = 0; cameraIndex < mCameraNum; cameraIndex++) {
-          let cameraMode = mCameraManager.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
+          let cameraMode = mCameraManager!.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
           for (let modeIndex = 0; modeIndex < cameraMode.length; modeIndex++) {
             let cameraModeTmp = cameraMode[modeIndex];
             if (cameraModeTmp == cameraObj.SceneMode.SECURE_PHOTO) {
               createSecureSessionInstance();
               createOutput(cameraIndex);
-              mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[cameraIndex]);
-              if (isEmpty04(mCameraInput)) {
+              mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[cameraIndex]);
+              if (isEmpty04(mCameraInput!)) {
                 console.info(TAG + "createCameraInput FAILED");
                 expect().assertFail();
                 done();
               }
               await Utils.msSleep(5000);
-              secureSeqId = await mCameraInput.open(true);
+              secureSeqId = await mCameraInput!.open(true);
               console.info('th CameraInput is: ' + mCameraInput + 'secureSeqId = ' + secureSeqId);
               if (secureSeqId == 0n) {
                 expect().assertFail();
@@ -415,7 +415,7 @@ export default function cameraSecureSessionTest() {
       } else {
         console.info("SUB_MULTIMEDIA_CAMERA_SESSION_ADD_SECURE_CAMERA_STATIC_0100 start ");
         for (let cameraIndex = 0; cameraIndex < mCameraNum; cameraIndex++) {
-          let cameraMode = mCameraManager.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
+          let cameraMode = mCameraManager!.getSupportedSceneModes(mCameraDevicesArray[cameraIndex]);
           if (cameraMode != null && cameraMode.length > 0) {
             for (let modeIndex = 0; modeIndex < cameraMode.length; modeIndex++) {
               let cameraModeTmp = cameraMode[modeIndex];
@@ -456,25 +456,25 @@ export default function cameraSecureSessionTest() {
         await createInput(1);
         await createOutput(1);
 
-        if (!isEmpty04(mCameraInput)) {
+        if (!isEmpty04(mCameraInput!)) {
           console.info(TAG + "Start to addInput");
-          mCameraSession.addInput(mCameraInput);
+          mCameraSession!.addInput(mCameraInput!);
         }
 
-        if (!isEmpty07(mPreviewOutput)) {
+        if (!isEmpty07(mPreviewOutput!)) {
           console.info(TAG + "Start to addOutput mPreviewOutput");
-          mCameraSession.addOutput(mPreviewOutput);
+          mCameraSession!.addOutput(mPreviewOutput!);
         }
 
         console.info(TAG + "Start to addSecureOutput");
         try {
-          mCameraSession.addSecureOutput(mPreviewOutput);
+          mCameraSession!.addSecureOutput(mPreviewOutput!);
           console.info(TAG + "Success to addSecureOutput mPreviewOutput");
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Failed to addSecureOutput mPreviewOutput, error code: " + err.code);
           expect().assertFail()
         }
-        await mCameraSession.commitConfig();
+        await mCameraSession!.commitConfig();
         console.info("--------------Exit SUB_MULTIMEDIA_CAMERA_SECURE_SESSION_ADD_SECURE_OUTPUT_STATIC_0100--------------");
         await Utils.msSleep(1000);
         await releaseCameraSessionInstance()

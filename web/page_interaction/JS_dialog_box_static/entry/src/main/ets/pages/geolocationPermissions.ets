@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,7 +94,7 @@ struct geolocationPermissions {
                     Utils.emitEvent(origins_str, 30060);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -115,7 +115,7 @@ struct geolocationPermissions {
                     Utils.emitEvent(origins_str, 30061);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -136,7 +136,7 @@ struct geolocationPermissions {
                     Utils.emitEvent(origins_str, 100011);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -156,7 +156,7 @@ struct geolocationPermissions {
                     Utils.emitEvent(origins_str, 100012);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -189,7 +189,7 @@ struct geolocationPermissions {
                   console.log('getAccessibleGeolocation error: ' + JSON.stringify(error));
                   Utils.emitEvent(error, 100008);
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100008);
@@ -208,7 +208,7 @@ struct geolocationPermissions {
                   console.log('getAccessibleGeolocationPromise error: ' + JSON.stringify(error));
                   Utils.emitEvent(error, 100009);
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100009);

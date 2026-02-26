@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function selectJsunit() {
   describe('selectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

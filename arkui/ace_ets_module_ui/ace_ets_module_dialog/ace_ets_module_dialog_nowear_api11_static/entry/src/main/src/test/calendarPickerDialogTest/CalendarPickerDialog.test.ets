@@ -34,7 +34,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function CalendarPickerDialog() {
   describe('CalendarPickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CalendarPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

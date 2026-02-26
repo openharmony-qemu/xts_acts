@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -2372,7 +2372,13 @@ export default function saveComponentTest() {
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave');
       let obj : ESObject = JSON.parse(strJsonNew);
-      expect(obj.$attrs.layoutDirection).assertEqual(SecurityComponentLayoutDirection.VERTICAL);
+      expect(obj.$attrs.maxFontSize).assertEqual('20.00fp');
+      expect(obj.$attrs.minFontSize).assertEqual('10.00fp');
+      expect(obj.$attrs.maxFontScale).assertEqual('1.000000');
+      expect(obj.$attrs.minFontScale).assertEqual('1.000000');
+      expect(obj.$attrs.enabled).assertEqual(true);
+      expect(obj.$attrs.heightAdaptivePolicy).assertEqual('TextHeightAdaptivePolicy.MAX_LINES_FIRST');
+      expect(obj.$attrs.maxLines).assertEqual('6');
       await Utils.sleep(1000);
       try {
         let clickCallback = (clickData:events_emitter.EventData) => {
@@ -2485,6 +2491,8 @@ export default function saveComponentTest() {
       let strJsonNew = getInspectorByKey('keySave');
       let obj : ESObject = JSON.parse(strJsonNew);
       expect(obj.$attrs.layoutDirection).assertEqual(SecurityComponentLayoutDirection.VERTICAL);
+      expect(obj.$attrs.alignRules).assertEqual(undefined);
+      expect(obj.$attrs.chainMode).assertEqual(undefined);
       await Utils.sleep(1000);
       try {
         let clickCallback = (clickData:events_emitter.EventData) => {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectionMenuOptions beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api15.static", "EntryAbility")
@@ -93,7 +93,7 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(2000);
         try{
           await driver.assertComponentExist(ON.text('自定义菜单'));
-        }catch(e:Error){}
+        }catch(e){}
       }catch(e){
         expect().assertFail();
       }
@@ -129,7 +129,7 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(2000);
         try{
           await driver.assertComponentExist(ON.text('自定义菜单'));
-        }catch(e:Error){}
+        }catch(e){}
         console.info("[SelectionMenuOptions0006] end");
         done();
       }catch(e){
@@ -167,7 +167,7 @@ export default function SelectionMenuOptions() {
         try{
           await driver.assertComponentExist(ON.text('自定义菜单'));
         }catch(e){}
-      }catch(e:Error){
+      }catch(e){
         expect().assertFail();
       }
       console.info("[SelectionMenuOptions0009] end");

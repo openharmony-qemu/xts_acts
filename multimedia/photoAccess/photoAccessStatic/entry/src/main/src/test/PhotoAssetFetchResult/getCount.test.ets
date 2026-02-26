@@ -22,12 +22,12 @@ import hilog from '@ohos.hilog'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testContext: Context = new Context();
-let helper: photoAccessHelper.PhotoAccessHelper | null;
+let helper: photoAccessHelper.PhotoAccessHelper | null = null;
 
 export default function assetGetCountTest() {
   describe('assetGetCountTest', (): void => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('beforeAll case');
       testContext = Hypium.get("context") as Context;
       helper = photoAccessHelper.getPhotoAccessHelper(testContext);

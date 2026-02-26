@@ -47,7 +47,7 @@ export default function TapGestureBasicClickTest() {
   describe('TapGestureBasicClickTest', () => {
 
 
-    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!

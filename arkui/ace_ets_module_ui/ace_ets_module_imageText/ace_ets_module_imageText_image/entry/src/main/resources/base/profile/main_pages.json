@@ -70,6 +70,12 @@
         "MainAbility/pages/ImageGetUIContext/getUIContextApi06",
         "MainAbility/pages/ImageGetUIContext/getUIContextApi07",
         "MainAbility/pages/BlendMode/blendMode",
-        "MainAbility/pages/ImageAntialiased/ImageAntialiased"
+        "MainAbility/pages/ImageAntialiased/ImageAntialiased",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageCopyOptionUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageDynamicRangeModeUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageObjectRepeatUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageOrientationUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImagePrivacySensitiveUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull"
     ]
 }

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_ListDirection() {
 
   describe('List_ListDirection', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_ListDirection beforeAll start111")
             
       await UtilsTest.msSleep(4000)

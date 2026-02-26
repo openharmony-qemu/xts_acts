@@ -278,7 +278,224 @@
          done();
        }
      });
- 
+
+   /**
+       * @tc.name   isDefaultApplicationCallBackNull
+       * @tc.number Sub_Bms_isDefaultApplication_1030
+       * @tc.desc   test errCode 401 when call isDefaultApplication with null parameter
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+    it('isDefaultApplicationCallBackNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationCallBackNull start");
+      try {
+        defaultAppManager.isDefaultApplication(null, (err: BusinessError, data) => {
+          if (err) {
+            console.info(TAG + 'isDefaultApplicationCallBackNull failed ' + JSON.stringify(data));
+            expect().assertFail();
+            done();
+          } else {
+            console.info(TAG + 'isDefaultApplicationCallBackNull  successfully: ' + JSON.stringify(data));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationCallBackNull  catch failed: ' + message);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else if (err.code === 401){
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   isDefaultApplicationCallBackEmpty
+     * @tc.number Sub_Bms_isDefaultApplication_1031
+     * @tc.desc   test errCode when call isDefaultApplication with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isDefaultApplicationCallBackEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationCallBackEmpty start");
+      try {
+        defaultAppManager.isDefaultApplication("", (err: BusinessError, data) => {
+          if (err) {
+            console.info(TAG + 'isDefaultApplicationCallBackEmpty failed: ' + err.message);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(TAG + 'isDefaultApplicationCallBackEmpty successfully: ' + JSON.stringify(data));
+            expect(false).assertFalse();
+            done();
+          }
+        });
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationCallBackEmpty catch failed: ' + message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   isDefaultApplicationPromiseNull
+     * @tc.number Sub_Bms_isDefaultApplication_1032
+     * @tc.desc   test errCode 401 when call isDefaultApplication with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isDefaultApplicationPromiseNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationPromiseNull start");
+      try {
+        await defaultAppManager.isDefaultApplication(null)
+          .then((data) => {
+            console.info(TAG + 'isDefaultApplicationPromiseNull successfully: ' + JSON.stringify(data));
+            expect().assertFail();
+            done();
+          }).catch((error: BusinessError) => {
+          console.info(TAG + 'isDefaultApplicationPromiseNull catch failed: ' + error);
+            expect().assertFail();
+            done();
+        });
+
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationPromiseNull  catch failed: ' + message);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else if (err.code === 401){
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   isDefaultApplicationPromiseEmpty
+     * @tc.number Sub_Bms_isDefaultApplication_1033
+     * @tc.desc   test errCode when call isDefaultApplication with empty string parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isDefaultApplicationPromiseEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationPromiseEmpty start");
+      try {
+        await defaultAppManager.isDefaultApplication("")
+          .then((data) => {
+            console.info(TAG + 'isDefaultApplicationPromiseEmpty successfully: ' + JSON.stringify(data));
+            expect(false).assertFalse();
+            done();
+          }).catch((error: BusinessError) => {
+          console.info(TAG + 'isDefaultApplicationPromiseEmpty catch failed: ' + error);
+            expect().assertFail();
+            done();
+        });
+
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationPromiseEmpty  catch failed: ' + message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   isDefaultApplicationSyncNull
+     * @tc.number Sub_Bms_isDefaultApplication_1034
+     * @tc.desc   test errCode 401 when call isDefaultApplicationSync with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isDefaultApplicationSyncNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationSyncNull start");
+      try {
+        let data = defaultAppManager.isDefaultApplicationSync(null);
+        console.info(TAG + 'isDefaultApplicationSyncNull successfully: ' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationSyncNull catch failed: ' + message);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else if (err.code === 401){
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   isDefaultApplicationSyncUndefined
+     * @tc.number Sub_Bms_isDefaultApplication_1035
+     * @tc.desc   test errCode 401 when call isDefaultApplicationSync with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isDefaultApplicationSyncUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + "isDefaultApplicationSyncUndefined start");
+      try {
+        let data = defaultAppManager.isDefaultApplicationSync(undefined);
+        console.info(TAG + 'isDefaultApplicationSyncUndefined successfully: ' + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        console.info(TAG + 'isDefaultApplicationSyncUndefined catch failed: ' + message);
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else if (err.code === 401){
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+     /**
+       * @tc.name   isDefaultApplicationSyncEmpty
+       * @tc.number Sub_Bms_isDefaultApplication_1036
+       * @tc.desc   test errCode when call isDefaultApplicationSync with empty string parameter
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('isDefaultApplicationSyncEmpty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+        console.info(TAG + "isDefaultApplicationSyncEmpty start");
+        try {
+          let data = defaultAppManager.isDefaultApplicationSync("");
+          console.info(TAG + 'isDefaultApplicationSyncEmpty successfully: ' + JSON.stringify(data));
+          expect(false).assertFalse();
+          done();
+        } catch (err) {
+          let message = (err as BusinessError).message;
+          console.info(TAG + 'isDefaultApplicationSyncEmpty catch failed: ' + message);
+          expect().assertFail();
+          done();
+        }
+      });
+      
+
+
+
+
      /**
       * @tc.name   getLaunchWant17700072
       * @tc.number Sub_Bms_getLaunchWant_17700072

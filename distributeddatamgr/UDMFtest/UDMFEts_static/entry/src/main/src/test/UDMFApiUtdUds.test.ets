@@ -431,11 +431,11 @@ export default function UDMFApiUtdUds() {
             try {
                 let typeObj = UTD.getTypeDescriptor("");
                 console.log('typeObj start' + typeObj);
-                expect(typeObj == null).assertFail();
+                expect(typeObj == null).assertTrue();
             } catch (err) {
                 const error = err as BusinessError;
                 console.log("error message:" + error.message + ";error code:" + error.code);
-                expect(error.code == 401).assertTrue();
+                expect().assertFail();
             }
             console.log("SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_9200 end");
         });
@@ -536,7 +536,7 @@ export default function UDMFApiUtdUds() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000 start');
             let options: unifiedDataChannel.Options = {
                 intention: unifiedDataChannel.Intention.DATA_HUB
@@ -602,7 +602,7 @@ export default function UDMFApiUtdUds() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100 start');
             let options: unifiedDataChannel.Options = {
                 intention: unifiedDataChannel.Intention.DATA_HUB
@@ -663,7 +663,7 @@ export default function UDMFApiUtdUds() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500 start');
             let options: unifiedDataChannel.Options = {
                 intention: unifiedDataChannel.Intention.DATA_HUB
@@ -726,7 +726,7 @@ export default function UDMFApiUtdUds() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700 start');
             let options: unifiedDataChannel.Options = {
                 intention: unifiedDataChannel.Intention.DATA_HUB
@@ -791,7 +791,7 @@ export default function UDMFApiUtdUds() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void) => {
+        it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900 start');
             let options: unifiedDataChannel.Options = {
                 intention: unifiedDataChannel.Intention.DATA_HUB

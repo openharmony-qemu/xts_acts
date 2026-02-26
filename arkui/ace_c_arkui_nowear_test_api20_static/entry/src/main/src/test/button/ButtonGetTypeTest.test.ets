@@ -25,7 +25,7 @@ export default function buttonGetTypeTest() {
 
     let PAGE_TAG = 'ButtonGetTypeTest';
 
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api20.static", "EntryAbility")
     });
 

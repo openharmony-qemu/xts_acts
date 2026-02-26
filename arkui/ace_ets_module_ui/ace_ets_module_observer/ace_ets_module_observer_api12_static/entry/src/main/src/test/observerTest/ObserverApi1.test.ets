@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ObserverApi1() {
   describe('ObserverApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ObserverApi1 beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");

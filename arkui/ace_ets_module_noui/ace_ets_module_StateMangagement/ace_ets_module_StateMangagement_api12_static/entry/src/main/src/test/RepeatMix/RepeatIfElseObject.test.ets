@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatIfElseObject() {
   describe('RepeatIfElseObject', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatIfElseObject beforeEach start");
 
 

@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart8Test() {
   describe('DrawingTsCanvasPart8Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       const color: ArrayBuffer = new ArrayBuffer(40000); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -59,7 +59,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesNormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
       const msg = 'testCanvasDrawVerticesNormal1Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -111,7 +111,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, (): void => {
       const msg = 'testCanvasDrawVerticesNormal2Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -179,7 +179,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesNormal3Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, (): void => {
       const msg = 'testCanvasDrawVerticesNormal3Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -239,7 +239,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesNormal4Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (): void => {
       const msg = 'testCanvasDrawVerticesNormal4Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -317,7 +317,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesMultipleCallsStatic';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -395,7 +395,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesAbnormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal1Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -460,7 +460,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesAbnormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal2Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };
@@ -529,7 +529,7 @@ export default function drawingTsCanvasPart8Test() {
      */
     it('testCanvasDrawVerticesAbnormal3Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal3Static';
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       let pointsArray = new Array<common2D.Point>();
       const point1: common2D.Point = { x: 100.0, y: 100.0 };
       const point2: common2D.Point = { x: 200.0, y: 100.0 };

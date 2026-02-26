@@ -37,7 +37,7 @@ const waitUiReadyMs: Int = 500;
 export default function BindMenuTest() {
 
   describe('BindMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

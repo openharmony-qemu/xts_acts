@@ -32,7 +32,7 @@ interface Action {
 }
 export default function navigationJsunittt() {
   describe('navigationJsunittt',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

@@ -23,7 +23,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function sidebarTypeTest() {
   describe('sidebarTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("sidebarTypeTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");

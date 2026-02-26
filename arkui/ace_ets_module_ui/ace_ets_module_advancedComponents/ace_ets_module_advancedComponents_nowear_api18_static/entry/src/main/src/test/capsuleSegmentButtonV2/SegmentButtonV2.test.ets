@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function SegmentButtonV2Test() {
   describe('SegmentButtonV2Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SegmentButtonV2Test beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
 

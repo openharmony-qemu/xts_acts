@@ -75,7 +75,7 @@ export default function MessageTest2() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB;
+          let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
           handler.sendMessage(message);
           expect(message.getWhat()).assertEqual(0);
@@ -538,7 +538,7 @@ export default function MessageTest2() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB;
+          let callback: CB = () => {};
           let message: concurrency.Message = new concurrency.Message(callback, handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
@@ -2096,13 +2096,13 @@ export default function MessageTest2() {
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageTest002';
         let worker = new EAWorker();
-        let handler: concurrency.MessageHandler;
+        let handler: concurrency.MessageHandler | undefined;
         let flag: boolean = false;
         let time: number = 0
         let handlerValue: boolean = false;
         let func: () => Promise<number> = () => {
           return new Promise<number>((resolve) => {
-            handlerValue = handler.post(() => {
+            handlerValue = handler!.post(() => {
               const end = Date.now() + 1000;
               while (Date.now() < end) {
               }
@@ -2477,7 +2477,7 @@ export default function MessageTest2() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             flag = true;
           }, worker);
           let msg = new concurrency.Message(handler)
@@ -2556,7 +2556,7 @@ export default function MessageTest2() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             flag = true;
           }, worker);
           let msg = new concurrency.Message(handler)

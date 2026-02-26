@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function calendarPickerDialogHoverMode() {
   describe('calendarPickerDialogHoverMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("timePickerDialogHoverMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.nowear.api14.static", "EntryAbility")
     });

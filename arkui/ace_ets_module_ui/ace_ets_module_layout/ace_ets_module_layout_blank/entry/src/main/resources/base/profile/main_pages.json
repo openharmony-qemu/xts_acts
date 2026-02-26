@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/Blank/Blank",
         "MainAbility/pages/Blank/blankParentWidth",
-        "MainAbility/pages/Blank/blank3"
+        "MainAbility/pages/Blank/blank3",
+        "MainAbility/pages/Blank/BlankColorNullUndefined"
     ]
 }

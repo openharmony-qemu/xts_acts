@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function search_maxLength2() {
   describe('search_maxLength2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search_maxLength2 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -69,7 +69,7 @@ export default function search_maxLength2() {
           await CommonFunc.sleep(2000);
           // console.info("push search_maxLength2 page result: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search_maxLength2 page error: " + err);
         expect().assertFail();
       }

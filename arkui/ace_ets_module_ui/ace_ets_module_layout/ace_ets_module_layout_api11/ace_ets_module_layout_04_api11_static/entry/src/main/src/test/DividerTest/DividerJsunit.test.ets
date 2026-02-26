@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function dividerJsunit() {
   describe('dividerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("dividerTest beforeAll start");
    
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")

@@ -92,7 +92,7 @@ struct GestureSetDirection {
             }
             console.info("setDirectionPanGesture onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("setDirectionPanGesture onClick emit action state err: " +
             JSON.stringify((err as Error)?.message))
           }
@@ -136,7 +136,7 @@ struct GestureSetDirection {
             }
             console.info("onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -180,7 +180,7 @@ struct GestureSetDirection {
             }
             console.info("onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

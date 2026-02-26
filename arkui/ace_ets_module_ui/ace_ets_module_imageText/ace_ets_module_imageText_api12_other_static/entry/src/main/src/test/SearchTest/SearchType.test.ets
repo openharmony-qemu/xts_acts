@@ -42,7 +42,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SearchTypeTest() {
   describe('SearchTypeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

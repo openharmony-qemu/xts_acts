@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexAlign_SpaceBetween_fixedChildParentItemAlignEnd() {
   describe('FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,8 @@ export default function audioLoopBack() {
             expect().assertFail();
           }
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_0100 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201)
@@ -83,7 +84,8 @@ export default function audioLoopBack() {
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(0);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201)
@@ -110,7 +112,8 @@ export default function audioLoopBack() {
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(0.5);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201)
@@ -137,7 +140,8 @@ export default function audioLoopBack() {
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(1);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201)
@@ -163,7 +167,8 @@ export default function audioLoopBack() {
           let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(-0.1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201);
@@ -190,7 +195,8 @@ export default function audioLoopBack() {
           let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(1.1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500 ERROR: ${err}`);
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201);
@@ -222,7 +228,8 @@ export default function audioLoopBack() {
           } else {
             expect(false).assertTrue();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETSTATUS_0100 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -275,7 +282,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -342,7 +350,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREVERBPRESET_STATIC_0100 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREVERBPRESET_STATIC_0100 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -409,7 +418,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETEQUALIZERPRESET_STATIC_0100 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETEQUALIZERPRESET_STATIC_0100 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -478,7 +488,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0100 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0100 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -547,7 +558,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0200 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0200 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -616,7 +628,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0300 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0300 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -685,7 +698,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -756,7 +770,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -827,7 +842,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -898,7 +914,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0012 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0012 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -969,7 +986,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0013 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0013 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1058,7 +1076,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0014 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0014 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1127,7 +1146,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0100 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0100 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1196,7 +1216,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0200 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0200 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1265,7 +1286,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0300 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0300 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1336,7 +1358,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1407,7 +1430,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0011 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0011 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
@@ -1490,7 +1514,8 @@ export default function audioLoopBack() {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0012 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0012 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }

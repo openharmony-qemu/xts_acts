@@ -23,7 +23,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function textTimer() {
   describe('textTimerJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
         console.info("textTimerJsunit beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

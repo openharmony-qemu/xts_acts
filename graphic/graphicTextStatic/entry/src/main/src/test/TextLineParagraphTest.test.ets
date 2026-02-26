@@ -74,9 +74,9 @@ export default function TextLineParagraphTest() {
     let globalTextStyle: text.TextStyle;
     let globalParagraphStyle: text.ParagraphStyle;
     let globalStructStyle: text.StrutStyle;
-    let globalCanvas: drawing.Canvas;
+    let globalCanvas: drawing.Canvas | undefined;
     let checkFontStyle: text.FontStyle;
-    let globalParagraphBuilder: text.ParagraphBuilder;
+    let globalParagraphBuilder: text.ParagraphBuilder | undefined;
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
@@ -178,8 +178,8 @@ export default function TextLineParagraphTest() {
 
         globalParagraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
         expect(globalParagraphBuilder !== undefined).assertTrue()
-        globalParagraphBuilder.pushStyle(globalTextStyle);
-        globalParagraphBuilder.addText('The quick brown fox jumps over the lazy dog.');
+        globalParagraphBuilder?.pushStyle(globalTextStyle);
+        globalParagraphBuilder?.addText('The quick brown fox jumps over the lazy dog.');
         
         const opts: image.InitializationOptions = {
           size: { width: 480, height: 360 },
@@ -210,7 +210,7 @@ export default function TextLineParagraphTest() {
     it('testCreateLineParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          let lineTypeset: text.LineTypeset = globalParagraphBuilder.buildLineTypeset();
+          let lineTypeset: text.LineTypeset = globalParagraphBuilder!.buildLineTypeset();
           hilog.info(domain, tag, 'TEXT_LOG lineTypeset getLineBreak:%{public}d', lineTypeset.getLineBreak(20,100));
           let textLine: text.TextLine = lineTypeset.createLine(1,40);
           let point: common2D.Point = {
@@ -244,7 +244,7 @@ export default function TextLineParagraphTest() {
           let textRange: text.Range = textLine.getTextRange();
           expect(textRange.start).assertEqual(textLineExpectData.textRange.start);
           expect(textRange.end).assertEqual(textLineExpectData.textRange.end);
-          textLine.paint(globalCanvas,0,0);
+          textLine.paint(globalCanvas!,0,0);
           textLine.createTruncatedLine(4, text.EllipsisMode.START, "...");
           let bounds: text.TypographicBounds = textLine.getTypographicBounds();
           expect(Math.round(bounds.ascent * 100) / 100).assertEqual(textLineExpectData.typographicBounds.ascent);

@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart4Test() {
   describe('DrawingTsCanvasPart4Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -61,7 +61,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasSaveLayerNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testCanvasSaveLayerNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const rect: common2D.Rect = {
         left: 0,
         right: 100,
@@ -114,7 +114,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasSaveLayerUndefinedStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSaveLayerUndefinedStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const brush = new drawing.Brush();
       const rect: common2D.Rect = {
         left: 0, right: 100, top: 0, bottom: 100
@@ -150,7 +150,7 @@ export default function drawingTsCanvasPart4Test() {
     it('testCanvasClearNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClearNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let color: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
         canvas.clear(color);
         let color2: common2D.Color = { alpha: 100, red: 100, green: 100, blue: 100 };
@@ -177,7 +177,7 @@ export default function drawingTsCanvasPart4Test() {
     it('testCanvasClearMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClearMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         for (let i = 0; i < 20; i += 1) {
           let color: common2D.Color = {
             alpha: (Math.random() * 256).toInt(), red: (Math.random() * 256).toInt(),
@@ -202,7 +202,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasClearAbNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClearAbNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
 
         try {
@@ -320,7 +320,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasGetWidthAndHeightNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasGetWidthAndHeightNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let width = canvas.getWidth();
         let height = canvas.getHeight();
@@ -345,7 +345,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasGetWidthAndHeightMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasGetWidthAndHeightMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let width = canvas.getWidth();
@@ -372,7 +372,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawOvalNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawOvalNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const maxVal = Number.MAX_VALUE;
 
       try {
@@ -416,7 +416,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawOvalMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawOvalMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           canvas.drawOval({
@@ -441,7 +441,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawArcNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawArcNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const maxVal = Number.MAX_VALUE;
       try {
         canvas.drawArc({
@@ -484,7 +484,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawArcMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawArcMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           canvas.drawArc({
@@ -509,7 +509,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawPointsNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawPointsNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         canvas.drawPoints([{
           x: 100, y: 200
@@ -558,7 +558,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawPointsMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawPointsMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       let itemList: drawing.PointMode[]= [drawing.PointMode.POINTS, drawing.PointMode.LINES, drawing.PointMode.POLYGON];
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -588,7 +588,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawPointsToNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawPointsToNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         canvas.drawPoints([{
           x: 100, y: 200
@@ -614,7 +614,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasDrawPointsAbNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawPointsAbNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         canvas.drawPoints([]);
         console.info(msg + `test error`);
@@ -636,7 +636,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasConcatMatrixNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasConcatMatrixNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let matrix = new drawing.Matrix();
         canvas.concatMatrix(matrix);
@@ -661,7 +661,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasConcatMatrixMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasConcatMatrixMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           let matrix = new drawing.Matrix();
@@ -684,7 +684,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasSetMatrixNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasSetMatrixNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let matrix = new drawing.Matrix();
         canvas.setMatrix(matrix);
@@ -709,7 +709,7 @@ export default function drawingTsCanvasPart4Test() {
      */
     it('testCanvasSetMatrixMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSetMatrixMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i += 1) {
           const matrix = new drawing.Matrix()

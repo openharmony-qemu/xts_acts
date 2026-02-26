@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2026 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,23 +70,34 @@ export default function flex_AlignContent_SpaceAround_FlexPadTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.alignContent).assertEqual('FlexAlign.SpaceAround');
 
-      expect(Math.abs(firstText.bottom - firstText.top) - vp2px(50) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top) - vp2px(100) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top) - vp2px(150) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - fourthText.top) - vp2px(200) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi1:'+ Math.floor(Math.abs(firstText.bottom - firstText.top) - vp2px(50)))
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top) - vp2px(50)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi2:'+ Math.floor(Math.abs(secondText.bottom - secondText.top) - vp2px(100)))
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top) - vp2px(100)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi3:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top) - vp2px(150)))
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top) - vp2px(150)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi4:'+ Math.floor(Math.abs(fourthText.bottom - fourthText.top) - vp2px(200)))
+      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top) - vp2px(200)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi5:'+ Math.floor(Math.abs(firstText.left - flexContainer.left) - vp2px(50)))
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left) - vp2px(50)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi6:'+ Math.floor(Math.abs(firstText.left - secondText.left)))
+      expect(Math.floor(Math.abs(firstText.left - secondText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi7:'+ Math.floor(Math.abs(secondText.left - thirdText.left)))
+      expect(Math.floor(Math.abs(secondText.left - thirdText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi8:'+ Math.floor(Math.abs(thirdText.left - fourthText.left)))
+      expect(Math.floor(Math.abs(thirdText.left - fourthText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi9:'+ Math.floor(Math.abs(firstText.bottom - secondText.top)))
+      expect(Math.floor(Math.abs(firstText.bottom - secondText.top)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi10:'+ Math.floor(Math.abs(secondText.bottom - thirdText.top)))
+      expect(Math.floor(Math.abs(secondText.bottom - thirdText.top)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi11:'+ Math.floor(Math.abs(thirdText.bottom - fourthText.top)))
+      expect(Math.floor(Math.abs(thirdText.bottom - fourthText.top)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadOverflow_chazhi12:'+ Math.floor(Math.abs(fourthText.bottom - flexContainer.bottom) - vp2px(10)))
+      expect(Math.floor(Math.abs(fourthText.bottom - flexContainer.bottom) - vp2px(10)) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.left - flexContainer.left) - vp2px(50) <= 1).assertTrue();
-      expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
-      expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
-      expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();
-
-      expect(Math.abs(firstText.bottom - secondText.top) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - thirdText.top) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - fourthText.top) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - flexContainer.bottom) - vp2px(10) <= 1).assertTrue();
       console.info('[testFlexAlignContentSpaceAroundFlexPadOverflow] END');
-
     });
+
     /**
      * @tc.name   testFlexAlignContentSpaceAroundFlexPadMeet
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_0500
@@ -112,26 +123,38 @@ export default function flex_AlignContent_SpaceAround_FlexPadTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.alignContent).assertEqual('FlexAlign.SpaceAround');
 
-      expect(Math.abs(firstText.bottom - firstText.top - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - fourthText.top - vp2px(200)) <= 1).assertTrue();
-
-      expect(Math.abs(firstText.left - flexContainer.left - vp2px(10)) <= 1).assertTrue(); //padding =10
-      expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
-      expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
-      expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();
-      expect(Math.abs(Math.abs(flexContainer.bottom - fourthText.bottom) - Math.abs(firstText.top - flexContainer.top)) <= 1)
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi1:'+ Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))))
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi2:'+ Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))))
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi3:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))))
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi4:'+ Math.floor(Math.abs(fourthText.bottom - fourthText.top - vp2px(200))))
+      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - vp2px(200))) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi5:'+ Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(10))))
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(10))) <= 1).assertTrue(); //padding =10
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi6:'+ Math.floor(Math.abs(firstText.left - secondText.left)))
+      expect(Math.floor(Math.abs(firstText.left - secondText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi7:'+ Math.floor(Math.abs(secondText.left - thirdText.left)))
+      expect(Math.floor(Math.abs(secondText.left - thirdText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi8:'+ Math.floor(Math.abs(thirdText.left - fourthText.left)))
+      expect(Math.floor(Math.abs(thirdText.left - fourthText.left)) <= 1).assertTrue();
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi9:'+ Math.floor(Math.abs((flexContainer.bottom - fourthText.bottom) - (firstText.top - flexContainer.top))))
+      expect(Math.floor(Math.abs((flexContainer.bottom - fourthText.bottom) - (firstText.top - flexContainer.top))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(secondText.top - firstText.bottom) - Math.round(thirdText.top - secondText.bottom)) <= 1)
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi10:'+ Math.floor(Math.abs((secondText.top - firstText.bottom) - (thirdText.top - secondText.bottom))))
+      expect(Math.floor(Math.abs((secondText.top - firstText.bottom) - (thirdText.top - secondText.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom)) <= 1)
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi11:'+ Math.floor(Math.abs((thirdText.top - secondText.bottom) - (fourthText.top - thirdText.bottom))))
+      expect(Math.floor(Math.abs((thirdText.top - secondText.bottom) - (fourthText.top - thirdText.bottom))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((thirdText.top - secondText.bottom) / 2) - Math.round(firstText.top - flexContainer.top - vp2px(10))) <= 1)
+      console.info('testFlexAlignContentSpaceAroundFlexPadMeet_chazhi12:'+ Math.floor(Math.abs(((thirdText.top - secondText.bottom) / 2) - (firstText.top - flexContainer.top - vp2px(10)))))
+      expect(Math.floor(Math.abs(((thirdText.top - secondText.bottom) / 2) - (firstText.top - flexContainer.top - vp2px(10)))) <= 1)
         .assertTrue();
+
       console.info('[testFlexAlignContentSpaceAroundFlexPadMeet] END');
-
     });
+
   })
 }

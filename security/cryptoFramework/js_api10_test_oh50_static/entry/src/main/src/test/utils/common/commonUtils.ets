@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -153,7 +153,7 @@ async function createData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     rawData.data[0] = 0 as number;
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -165,7 +165,7 @@ async function createFullData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

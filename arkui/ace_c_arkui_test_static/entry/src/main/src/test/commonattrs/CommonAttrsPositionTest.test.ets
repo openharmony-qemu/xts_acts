@@ -24,7 +24,7 @@ export default function commonAttrsPositionTest() {
 
   describe('CommonAttrsPositionTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 const VALID_WEARABLE_BUNDLE: notificationExtensionSubscription.BundleOption = {
   bundle: 'com.example.helloworld', uid: 20010043
@@ -40,7 +40,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
 
   describe("ActsNotificationThirdPartyWatchPermissionTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.startAbility({
@@ -70,7 +70,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          await notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
+          await notificationExtensionSubscription.openSubscriptionSettings(context!).then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
@@ -80,7 +80,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -112,7 +112,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -145,7 +145,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               expect(err.code).assertEqual(201);
               done();
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -183,7 +183,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -214,7 +214,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -253,7 +253,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -293,7 +293,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -330,7 +330,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -371,7 +371,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             }
 
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -420,7 +420,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
               done();
             }
             });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();

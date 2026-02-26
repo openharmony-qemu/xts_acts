@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-export const quitErrorMsg = "Cannot stop worker before start";
+export const quitErrorMsg = "EAWorker:: Cannot stop worker before start";
 
 export default class Utils{
   static async msSleep(count:int) : Promise<int> {

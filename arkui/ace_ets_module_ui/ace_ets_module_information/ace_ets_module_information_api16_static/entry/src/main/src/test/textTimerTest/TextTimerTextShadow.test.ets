@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextTimerTextShadowTest() {
   describe('TextTimerTextShadowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextTimerTextShadowTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });
