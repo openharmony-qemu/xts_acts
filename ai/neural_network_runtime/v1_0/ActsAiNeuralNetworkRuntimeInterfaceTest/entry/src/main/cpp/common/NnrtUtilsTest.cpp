@@ -18,6 +18,7 @@
 #include <hilog/log.h>
 #include <stdexcept>
 #include "const.h"
+#include <dlfcn.h>
 
 // 日志宏定义
 #undef LOG_DOMAIN
