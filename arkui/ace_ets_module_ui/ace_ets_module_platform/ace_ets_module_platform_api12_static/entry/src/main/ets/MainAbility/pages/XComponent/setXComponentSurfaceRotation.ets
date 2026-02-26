@@ -60,6 +60,7 @@ struct SetXComponentSurfaceRotation1 {
         type: XComponentType.TEXTURE,
         controller: this.xComponentController
       } as XComponentOptions)
+        .id('xcomponent')
         .onLoad((): void => {
           this.SurfaceRotation = { lock: false }
           this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)
