@@ -54,11 +54,6 @@ export default function addComponentContentWithOrderNullTest() {
       done();
     })
 
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("addComponentContentWithOrderNullTest after each called");
-    });
-
     /**
      * @tc.name   addComponentContentWithOrder_ComponentContentNull_001
      * @tc.number SUB_ARKUI_OVERLAYMANAGER_ADDCOMPONENTCONTENTWITHORDER_PARAM_001
@@ -74,6 +69,7 @@ export default function addComponentContentWithOrderNullTest() {
       let button = await driver.findComponent(ON.id('test_componentContent_null'));
       await button.click();
       await CommonFunc.sleep(5000);
+      await button.click();
       let errorCodeText = await driver.findComponent(ON.id('error_code_text'));
       let errorCodeValue = await errorCodeText.getText();
       console.info('addComponentContentWithOrder_ComponentContentNull_001 errorCode: ' + errorCodeValue);
