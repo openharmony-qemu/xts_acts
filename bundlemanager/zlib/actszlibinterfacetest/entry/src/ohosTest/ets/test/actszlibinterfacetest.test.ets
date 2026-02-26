@@ -153,6 +153,7 @@ export default function ActsZlibInterfaceTest() {
             }).catch((errData: BusinessError) => {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(900001);
+                expect(errData.message).assertEqual("The Input source file is invalid.");
                 done();
             })
         } catch(errData) {
