@@ -504,16 +504,33 @@ export default function NetworkManagerVpnTest() {
         let vpnConfig: vpnExtension.VpnConfig = {
           vpnId: '123456',
           addresses: [],
-          routes: [],
-          dnsAddresses: [],
-          searchDomains: [""],
+          routes: [{
+            interface: "eth0",
+            destination: {
+              address: {
+                address:'',
+                family:1,
+                port:8080
+              },
+              prefixLength:1
+            },
+            gateway: {
+              address:'',
+              family:1,
+              port:8080
+            },
+            hasGateway: true,
+            isDefaultRoute: true,
+          }],
+          dnsAddresses: [""],
+          searchDomains: ["114.114.114.114"],
           mtu: 1400,
           isIPv4Accepted: false,
           isIPv6Accepted: true,
           isInternal: false,
           isBlocking: true,
-          trustedApplications: [""],
-          blockedApplications: []
+          trustedApplications: ["com.example.vpn_xts"],
+          blockedApplications: [""]
         }
         vpnInstance.create(vpnConfig).then(() => {
           console.log(`${caseName} create success`);
@@ -572,6 +589,34 @@ export default function NetworkManagerVpnTest() {
       try {
         let vpnInstance = vpnExtension.createVpnConnection(context2);
         vpnInstance.protect(null).then(() => {
+          console.log(`${caseName} protect success`);
+          expect().assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} protect fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      }
+      catch (error) {
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_protect_Promise_0300
+     * @tc.number SUB_NetworkManager_VPN_protect_Promise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_protect_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_protect_Promise_0300';
+      try {
+        let vpnInstance = vpnExtension.createVpnConnection(context2);
+        vpnInstance.protect(undefined).then(() => {
           console.log(`${caseName} protect success`);
           expect().assertTrue();
           done();
@@ -661,6 +706,28 @@ export default function NetworkManagerVpnTest() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_VPN_stopVpnExtensionAbility_Promise_0300
+     * @tc.number SUB_NetworkManager_VPN_stopVpnExtensionAbility_Promise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_stopVpnExtensionAbility_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_stopVpnExtensionAbility_Promise_0300';
+      try {
+        vpnExtension.stopVpnExtensionAbility(undefined);
+        console.log(`${caseName} stopVpnExtensionAbility success`);
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} stopVpnExtensionAbility fail ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_NetworkManager_VPN_generateVpnId_Promise_0100
      * @tc.number SUB_NetworkManager_VPN_generateVpnId_Promise_0100
      * @tc.desc   Function test
@@ -716,6 +783,60 @@ export default function NetworkManagerVpnTest() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_VPN_destroy_Promise_0300
+     * @tc.number SUB_NetworkManager_VPN_destroy_Promise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_destroy_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0300';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        vpnConnection.destroy(null).then(() => {
+          console.log(`${caseName} destroy success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NetworkManager_VPN_destroy_Promise_0400
+     * @tc.number SUB_NetworkManager_VPN_destroy_Promise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_NetworkManager_VPN_destroy_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'SUB_NetworkManager_VPN_destroy_Promise_0400';
+      try {
+        let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
+        vpnConnection.destroy(undefined).then(() => {
+          console.log(`${caseName} destroy success`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerVPNContext0100
      * @tc.number SUB_NetworkManager_VPN_context_0100
      * @tc.desc   Function test
@@ -736,6 +857,7 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
+    
     /**
      * @tc.name   testNetworkManagerVPNProtectProcessNetPromise0100
      * @tc.number SUB_NetworkManager_VPN_ProtectProcessNet_Promise_0100
