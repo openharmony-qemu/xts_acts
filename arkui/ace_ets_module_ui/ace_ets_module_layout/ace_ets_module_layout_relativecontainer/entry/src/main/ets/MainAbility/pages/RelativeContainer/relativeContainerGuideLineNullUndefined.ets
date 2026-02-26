@@ -38,7 +38,7 @@ struct relativeContainerGuideLineNullUndefined {
             .backgroundColor('#a3cf62')
         }
         .id('relativeContaineGuideLineUndefined')
-        .width(80)r
+        .width(80)
         .height(80)
         .barrier(undefined)
         .guideLine(undefined)
