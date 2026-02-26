@@ -138,7 +138,7 @@ public:
     Camera_ErrorCode PreviewOutputStart(int useCaseCode);                                      // 开始预览输出
     Camera_ErrorCode PreviewOutputStop(int useCaseCode);                                       // 停止预览输出
     Camera_ErrorCode PreviewOutputRelease(int useCaseCode);                                    // 停止预览输出
-    Camera_ErrorCode IsMovintgPhotoSupported(int useCaseCode);  // 检查是否支持moving拍照
+    Camera_ErrorCode IsMovingPhotoSupported(int useCaseCode);  // 检查是否支持moving拍照
     Camera_ErrorCode IsMirrorSupported(int useCaseCode);  // 检查是否支持镜像拍照
     Camera_ErrorCode EnableMirror(int useCaseCode);  // 是否启用镜像拍照
     Camera_ErrorCode PhotoOutputCapture(int useCaseCode); // 拍摄照片
