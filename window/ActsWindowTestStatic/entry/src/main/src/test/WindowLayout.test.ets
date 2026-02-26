@@ -2407,7 +2407,7 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300002);
+                    expect(err!.code).assertEqual(1300002);
                     done();
                 });
             } catch (exception) {
@@ -3224,7 +3224,7 @@ export default function WindowLayoutTest() {
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
                 }).catch((err:Error):PromoseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
                 })
@@ -3309,7 +3309,7 @@ export default function WindowLayoutTest() {
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
                 }).catch((err:Error):PromoseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
                 })
@@ -3351,7 +3351,7 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 }).catch((err:Error):PromoseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done();
                 })
@@ -3393,7 +3393,7 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 }).catch((err:Error):PromoseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300010);
                     done();
                 })
