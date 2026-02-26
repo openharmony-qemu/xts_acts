@@ -29,7 +29,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 let rdbStore:relationalStore.RdbStore | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 const TAG = "[RelationalResultSetReturnValueIsNullTest]";
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 Long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
