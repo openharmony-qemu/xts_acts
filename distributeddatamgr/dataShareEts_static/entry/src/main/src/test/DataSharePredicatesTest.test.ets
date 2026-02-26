@@ -51,8 +51,6 @@ export default function dataSharePredicatesTest() {
       hilog.info(domain, tag, 'beforeAll')
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.datashareetstest");
       await Utils.msSleep(5000);
-      context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
-      await Utils.msSleep(1000);
     })
 
     /**
@@ -354,6 +352,8 @@ export default function dataSharePredicatesTest() {
     it("testCreateDataProxyHandle0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       console.info(tag + "SUB_DataShare001_CreateDataProxyHandle-start");
       try {
+        context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
+        await Utils.msSleep(1000);
         dsProxyHelper = await dataShare.createDataShareHelper(context, uri, { isProxy: true });
         console.log(tag + "[DataShareClientTest] <<Consumer>> dsProxyHelper " + JSON.stringify(dsProxyHelper));
         expect(dsProxyHelper).assertInstanceOf("Object");
@@ -375,6 +375,8 @@ export default function dataSharePredicatesTest() {
     it("testOffDataChange0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       console.info(tag + "testOffDataChange0001");
       try {
+        context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
+        await Utils.msSleep(1000);
         dsProxyHelper = await dataShare.createDataShareHelper(context, uri, { isProxy: true });
         dsProxyHelper!.offDataChange("");
         console.info("TestDataShare going off");
