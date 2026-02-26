@@ -2411,7 +2411,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(1300002);
@@ -2448,19 +2448,19 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300010);
+                    expect(err!.code).assertEqual(1300010);
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300010);
+                    expect(exception!.code).assertEqual(1300010);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2492,19 +2492,19 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300002);
+                    expect(err!.code).assertEqual(1300002);
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                    expect(exception!.code).assertEqual(1300002);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2536,19 +2536,19 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300010);
+                    expect(err!.code).assertEqual(1300010);
                     done();
                 });
             } catch (exception) {
-                exception == exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300010);
+                    expect(exception!.code).assertEqual(1300010);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2590,7 +2590,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
@@ -2637,7 +2637,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
@@ -2674,19 +2674,19 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300002);
+                    expect(err!.code).assertEqual(1300002);
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
-                if(exception.code !== 801){
+                exception === exception as BusinessError;
+                if(exception!.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                    expect(exception!.code).assertEqual(1300002);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2715,19 +2715,19 @@ export default function WindowLayoutTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300010);
+                    expect(err!.code).assertEqual(1300010);
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300010);
+                    expect(exception!.code).assertEqual(1300010);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2763,15 +2763,15 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                    expect(exception!.code).assertEqual(1300002);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2807,15 +2807,15 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception == exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300010);
+                    expect(exception!.code).assertEqual(1300010);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2857,7 +2857,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
@@ -2904,7 +2904,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
@@ -2946,15 +2946,15 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                    expect(exception!.code).assertEqual(1300002);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -2987,15 +2987,15 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300010);
+                    expect(exception!.code).assertEqual(1300010);
                     done();
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -3034,7 +3034,7 @@ export default function WindowLayoutTest() {
                     done();
                 });
             } catch (exception) {
-                exception ==exception as BusinessError;
+                exception === exception as BusinessError;
                 if(exception.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
@@ -3043,6 +3043,50 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(true).assertFalse();;
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_MOVEWINDOWTOGLOBALDISPLAY_JS_API_0400
+         * @tc.name        testMoveWindowToGlobalDisplay_param_Promise_static_0100
+         * @tc.desc        Move window window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMoveWindowToGlobalDisplay_param_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>{
+            let caseName :string = 'testMoveWindowToGlobalDisplay_param_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testMoveWindowToGlobalDisplay_param_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300);
+            try {
+                const maxInt:int = 2147483647
+                (win as window.Window).moveWindowToGlobalDisplay(maxInt, maxInt).then(() => {
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
+                    expect(true).assertFalse();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300016);
+                    done();
+                });
+            } catch (exception) {
+                exception === exception as BusinessError;
+                if(exception.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
+                    expect(exception!.code).assertEqual(1300016);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                    expect(exception!.code).assertEqual(801);
                 }
             }
         })
@@ -3128,12 +3172,220 @@ export default function WindowLayoutTest() {
                         done();
                     });
                 } catch (exception) {
-                    exception == exception as BusinessError;
+                    exception === exception as BusinessError;
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
                     done()
                 }
             })
+
+            /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0300
+         * @tc.name        testResize_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResize_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResize_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResize_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300)
+            try {
+                (win as window.Window).resize(500, 1000).then(()=>{
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    await Utils.msSleep(300)
+                    let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    expect(properties.windowRect.width).assertEqual(500);
+                    expect(properties.windowRect.height).assertEqual(1000);
+                    done();
+                }).catch((err:Error):PromoseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (exception) {
+                exception === exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZE_JS_API_0400
+         * @tc.name        testResize_Callback_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResize_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResize_Callback_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResize_Callback_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300)
+            try {
+                (win as window.Window).resize(500, 1000, (err: BusinessError<void>|null):void => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                        return;
+                    }
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    await Utils.msSleep(300)
+                    let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    expect(properties.windowRect.width).assertEqual(500);
+                    expect(properties.windowRect.height).assertEqual(1000);
+                    done();
+                });
+            } catch (exception) {
+                exception === exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0100
+         * @tc.name        testResizeAsync_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResizeAsync_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.setUIContent('pages/Index');
+            await win.showWindow();
+            await Utils.msSleep(300)
+            try {
+                (win as window.Window).resizeAsync(500, 1000).then(()=>{
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    await Utils.msSleep(300)
+                    let properties: window.WindowProperties = (win as window.Window).getWindowProperties();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'windowproperties:'+JSON.stringfiy(properties));
+                    expect(properties.windowRect.width).assertEqual(500);
+                    expect(properties.windowRect.height).assertEqual(1000);
+                    done();
+                }).catch((err:Error):PromoseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (exception) {
+                exception === exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0200
+         * @tc.name        testResizeAsync_WindowStateAbmormal_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_WindowStateAbmormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_WindowStateAbmormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testResizeAsync_WindowStateAbmormal_Promise_static_0100');
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await win.destroyWindow()
+            try {
+                (win as window.Window).resizeAsync(500, 1000).then(()=>{
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err:Error):PromoseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(err!.code).assertEqual(1300002);
+                    done();
+                })
+            } catch (exception) {
+                exception === exception as BusinessError;
+                if(exception!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(exception!.code).assertEqual(1300002);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                    expect(exception!.code).assertEqual(801);
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0200
+         * @tc.name        testResizeAsync_WindowTypeAbmormal_Promise_static_0100
+         * @tc.desc        Change the current window size
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testResizeAsync_WindowTypeAbmormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = 'testResizeAsync_WindowTypeAbmormal_Promise_static_0100';
+            let msgStr :string ='jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.getMainWindow();
+            hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
+            expect(!!win).assertTrue();
+            await win.maximize()
+            try {
+                (win as window.Window).resizeAsync(500, 1000).then(()=>{
+                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err:Error):PromoseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(err!.code).assertEqual(1300010);
+                    done();
+                })
+            } catch (exception) {
+                exception === exception as BusinessError;
+                if(exception!.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
+                    expect(exception!.code).assertEqual(1300010);
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                    expect(exception!.code).assertEqual(801);
+                }
+            }
+        })
 
 
     })
