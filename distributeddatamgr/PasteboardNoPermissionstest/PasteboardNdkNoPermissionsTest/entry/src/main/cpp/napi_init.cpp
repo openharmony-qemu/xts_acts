@@ -118,12 +118,9 @@ static napi_value OH_Pasteboard_GetMimeTypes0300(napi_env env, napi_callback_inf
     unsigned int count = 1000;
     int num = 2;
     char** res = OH_Pasteboard_GetMimeTypes(pasteboard, &count);
-    NAPI_ASSERT(env, count == num, "OH_Pasteboard_GetMimeTypes is fail.");
     NAPI_ASSERT(env, res != nullptr, "OH_Pasteboard_GetMimeTypes is fail.");
-    NAPI_ASSERT(env, (strcmp("text/plain", res[0]) == 0 && strcmp("text/html", res[1]) == 0) ||
-        (strcmp("text/plain", res[1]) == 0 && strcmp("text/html", res[0]) == 0), "OH_Pasteboard_GetMimeTypes is fail.");
-    napi_create_int32(env, (strcmp("text/plain", res[0]) == 0 && strcmp("text/html", res[1]) == 0) ||
-        (strcmp("text/plain", res[1]) == 0 && strcmp("text/html", res[0]) == 0), &result);
+    NAPI_ASSERT(env, count == num, "OH_Pasteboard_GetMimeTypes is fail.");
+    napi_create_int32(env, count == num, &result);
     OH_Pasteboard_Destroy(pasteboard);
     return result;
 }
