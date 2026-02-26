@@ -10,9 +10,10 @@ const sleep = (time: number): Promise<void> => {
 export default function TextDecoderTest() {
   describe('TextDecoderTest', () => {
     let textDecoder: util.TextDecoder;
+	textDecoder = new util.TextDecoder(); 
     beforeAll(async () => {
       await sleep(30);
-      textDecoder = new util.TextDecoder(); // Presets an action, which is performed only once before all test cases of the test suite start.
+      // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
     beforeEach(() => {

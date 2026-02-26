@@ -8,10 +8,10 @@ function sleep(ms: number) {
 export default function Base64HelperTest() {
   describe('Base64HelperTest', () => {
       let base64Helper: util.Base64Helper;
+	  base64Helper = new util.Base64Helper();
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       await sleep(30);
-      base64Helper = new util.Base64Helper();
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
