@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
@@ -20,10 +20,10 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
-import { Driver, ON} from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import deviceInfo from '@ohos.deviceInfo';
 
-let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let want: Want = {
@@ -159,26 +159,26 @@ async function terminateAbility7(caseName: string) {
 
 export default function windowImmersiveTest() {
   describe('windowImmersive_test', () => {
-    let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
-    let context : common.UIAbilityContext;
-    let windowStage:ohosWindow.WindowStage;
-    let isPCStatus:string = '';
-    let isAutoWindow:string = '';
+    let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
+    let context: common.UIAbilityContext;
+    let windowStage: ohosWindow.WindowStage;
+    let isPCStatus: string = '';
+    let isAutoWindow: string = '';
     let avoidArea1: window.AvoidArea;
     let isSupportRotate = false;
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
+    let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
-      isPCStatus = settings.getValueSync(context,'isStatusBarExist','',settings.domainName.USER_PROPERTY)
+      isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: ${JSON.stringify(isPCStatus)}`);
-      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.USER_PROPERTY);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
@@ -200,16 +200,16 @@ export default function windowImmersiveTest() {
       await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
       await sleep(300);
       let Orientation2 = display.getDefaultDisplaySync().orientation;
-      if(Orientation1 != Orientation2){
+      if (Orientation1 != Orientation2) {
         isSupportRotate = true;
-      }else{
+      } else {
         isSupportRotate = false;
       }
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
       // 拉起键盘赋权限
-      if (isFreeWindowMode==false) {
+      if (isFreeWindowMode == false) {
         let windowStageStart = await startAbility4('beforeAll', context);
         let mainWindow = windowStageStart.getMainWindowSync();
         await mainWindow.setUIContent('testability/pages/Index4');
@@ -242,7 +242,7 @@ export default function windowImmersiveTest() {
           await text3.click();
           console.info('beforeAll 完成 click success');
 
-        }else if(text2){
+        } else if (text2) {
           await text2.click();
           console.info('beforeAll 下一步 click success');
           await sleep(1000);
@@ -250,7 +250,7 @@ export default function windowImmersiveTest() {
           console.info('beforeAll text3: ' + JSON.stringify(text3));
           await text3.click();
           console.info('beforeAll 完成 click success');
-        }else{
+        } else {
           await driver.pressBack();
           console.info('beforeAll pressBack success');
         }
@@ -263,7 +263,7 @@ export default function windowImmersiveTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
-    afterEach(async ()=>{
+    afterEach(async () => {
       try {
         await sleep(1000)
         let mainWindowClass = windowStage.getMainWindowSync()
@@ -277,7 +277,7 @@ export default function windowImmersiveTest() {
           lastID = lastWindow.getWindowProperties().id
         }
       } catch (error) {
-        console.log('afterEach fail cause'+error)
+        console.log('afterEach fail cause' + error)
       }
     })
     afterAll(async () => {
@@ -300,7 +300,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_SHOW_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_SHOW_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if(isSupportRotate == true && isFreeWindowMode == false){
+      if (isSupportRotate == true && isFreeWindowMode == false) {
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -310,12 +310,12 @@ export default function windowImmersiveTest() {
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
            ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-            if(data.type == 0){
+            if (data.type == 0) {
               windowClass.off('avoidAreaChange');
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
               await sleep(1000);
               done();
-            }else{
+            } else {
               await sleep(1000);
             }
           });
@@ -329,7 +329,7 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      }else{
+      } else {
         done();
       }
 
@@ -346,7 +346,7 @@ export default function windowImmersiveTest() {
     it('test_LANSCAPE_HIDE_STATUS_BAR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_LANSCAPE_HIDE_STATUS_BAR_0100';
       let windowClass = windowStage.getMainWindowSync();
-      if(isSupportRotate == true && isFreeWindowMode == false){
+      if (isSupportRotate == true && isFreeWindowMode == false) {
         try {
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(1000);
@@ -355,13 +355,13 @@ export default function windowImmersiveTest() {
           await sleep(3000);
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type: ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-            if(data.type == 0){
+            if (data.type == 0) {
               windowClass.off('avoidAreaChange');
               await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
               await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
               await sleep(1000);
               done();
-            }else{
+            } else {
               await sleep(1000);
             }
           });
@@ -376,7 +376,7 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      }else{
+      } else {
         done();
       }
 
@@ -475,29 +475,29 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLandScape';
-      if(isSupportRotate){
+      if (isSupportRotate) {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
-          console.info(caseName+ 'displayWidth: ' + JSON.stringify(displayWidth));
+          console.info(caseName + 'displayWidth: ' + JSON.stringify(displayWidth));
           let displayHeight = display.getDefaultDisplaySync().height;
-          console.info(caseName+ 'displayHeight: ' + JSON.stringify(displayHeight));
+          console.info(caseName + 'displayHeight: ' + JSON.stringify(displayHeight));
           windowClass.on('avoidAreaChange', async (data) => {
-            console.info(caseName+ ':Succeeded in enabling the listener for system avoid area changes. type:' +
-            JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
-            if(data.type == 0){
+            console.info(caseName + ':Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            if (data.type == 0) {
               expect(data.area.visible).assertTrue();
               expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
               expect(data.area.bottomRect !== null).assertTrue();
               expect(data.area.leftRect !== null).assertTrue();
-            }else if(data.type == 4){
+            } else if (data.type == 4) {
               expect(data.area.visible).assertTrue();
               expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
-              expect(data.area.bottomRect.top+data.area.bottomRect.height).assertEqual(displayWidth);
+              expect(data.area.bottomRect.top + data.area.bottomRect.height).assertEqual(displayWidth);
               expect(data.area.leftRect !== null).assertTrue();
-            }else{
+            } else {
               await sleep(500);
             }
 
@@ -514,7 +514,7 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      }else{
+      } else {
         done();
       }
 
@@ -529,31 +529,31 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInPORTRAIT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInPORTRAIT';
-      if(isSupportRotate){
+      if (isSupportRotate) {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
-          console.info(caseName+ 'displayWidth: ' + JSON.stringify(displayWidth));
+          console.info(caseName + 'displayWidth: ' + JSON.stringify(displayWidth));
           let displayHeight = display.getDefaultDisplaySync().height;
-          console.info(caseName+ 'displayHeight: ' + JSON.stringify(displayHeight));
+          console.info(caseName + 'displayHeight: ' + JSON.stringify(displayHeight));
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
           await sleep(300);
           windowClass.on('avoidAreaChange', async (data) => {
-            console.info(caseName+ ':Succeeded in enabling the listener for system avoid area changes. type:' +
-            JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
-            if(data.type == 0){
+            console.info(caseName + ':Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            if (data.type == 0) {
               expect(data.area.visible).assertTrue();
               expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
               expect(data.area.bottomRect !== null).assertTrue();
               expect(data.area.leftRect !== null).assertTrue();
-            }else if(data.type == 4){
+            } else if (data.type == 4) {
               expect(data.area.visible).assertTrue();
-              expect(data.area.topRect!== null).assertTrue();
+              expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
-              expect(data.area.bottomRect.top+data.area.bottomRect.height).assertEqual(displayHeight);
+              expect(data.area.bottomRect.top + data.area.bottomRect.height).assertEqual(displayHeight);
               expect(data.area.leftRect !== null).assertTrue();
-            }else{
+            } else {
               await sleep(500);
             }
 
@@ -570,7 +570,7 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      }else{
+      } else {
         done();
       }
 
@@ -585,30 +585,30 @@ export default function windowImmersiveTest() {
      */
     it('testOnavoidAreaChangeInLANDSCAPE_INVERTED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testOnavoidAreaChangeInLANDSCAPE_INVERTED';
-      if(isSupportRotate){
+      if (isSupportRotate) {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let displayWidth = display.getDefaultDisplaySync().width;
-          console.info(caseName+ 'displayWidth: ' + JSON.stringify(displayWidth));
+          console.info(caseName + 'displayWidth: ' + JSON.stringify(displayWidth));
           let displayHeight = display.getDefaultDisplaySync().height;
-          console.info(caseName+ 'displayHeight: ' + JSON.stringify(displayHeight));
+          console.info(caseName + 'displayHeight: ' + JSON.stringify(displayHeight));
           await sleep(300);
           windowClass.on('avoidAreaChange', async (data) => {
-            console.info(caseName+ ':Succeeded in enabling the listener for system avoid area changes. type:' +
-            JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
-            if(data.type == 0){
+            console.info(caseName + ':Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            if (data.type == 0) {
               expect(data.area.visible).assertTrue();
               expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
               expect(data.area.bottomRect !== null).assertTrue();
               expect(data.area.leftRect !== null).assertTrue();
-            }else if(data.type == 4){
+            } else if (data.type == 4) {
               expect(data.area.visible).assertTrue();
               expect(data.area.topRect !== null).assertTrue();
               expect(data.area.rightRect !== null).assertTrue();
-              expect(data.area.bottomRect.top+data.area.bottomRect.height).assertEqual(displayWidth);
+              expect(data.area.bottomRect.top + data.area.bottomRect.height).assertEqual(displayWidth);
               expect(data.area.leftRect !== null).assertTrue();
-            }else{
+            } else {
               await sleep(500);
             }
             windowClass.off('avoidAreaChange');
@@ -624,7 +624,7 @@ export default function windowImmersiveTest() {
           expect().assertFail();
           done();
         }
-      }else{
+      } else {
         done();
       }
 
@@ -647,17 +647,17 @@ export default function windowImmersiveTest() {
         windowClass.setImmersiveModeEnabledState(enabled);
         let isEnabled = windowClass.getImmersiveModeEnabledState();
         console.log(msgStr + 'success to setImmersiveModeEnabledState enabled:' + isEnabled);
-        if(isFreeWindowMode == false){
+        if (isFreeWindowMode == false) {
           expect(isEnabled).assertEqual(true);
           done();
-        }else{
+        } else {
           expect(isEnabled).assertEqual(false);
           done();
         }
 
       } catch (error) {
         console.log(msgStr + 'Failed to setImmersiveModeEnabledState enable' + JSON.stringify(error.code) +
-        error.message);
+          error.message);
         expect(false).assertTrue();
         done();
       }
@@ -684,7 +684,7 @@ export default function windowImmersiveTest() {
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to setImmersiveModeEnabledState disEnable' + JSON.stringify(error.code) +
-        error.message);
+          error.message);
         expect(false).assertTrue();
         done();
       }
@@ -985,7 +985,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true || deviceType == 'wearable'){
+          if (isFreeWindowMode == true || deviceType == 'wearable') {
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -994,7 +994,7 @@ export default function windowImmersiveTest() {
             expect(avoidArea.bottomRect.height).assertEqual(0);
             expect(avoidArea.leftRect.width).assertEqual(0);
             expect(avoidArea.leftRect.height).assertEqual(0);
-          }else{
+          } else {
             expect(avoidArea.topRect.width).assertLarger(0);
             expect(avoidArea.topRect.height).assertLarger(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -1034,7 +1034,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true){
+          if (isFreeWindowMode == true) {
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -1076,7 +1076,7 @@ export default function windowImmersiveTest() {
           expect(avoidArea.rightRect !== null).assertTrue();
           expect(avoidArea.bottomRect !== null).assertTrue();
           expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true){
+          if (isFreeWindowMode == true) {
             expect(avoidArea.topRect.width).assertEqual(0);
             expect(avoidArea.topRect.height).assertEqual(0);
             expect(avoidArea.rightRect.width).assertEqual(0);
@@ -1178,7 +1178,7 @@ export default function windowImmersiveTest() {
     it('testOnSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOnSystemAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false){
+        if ((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false) {
           let windowClass = windowStage.getMainWindowSync();
           windowClass.on('systemAvoidAreaChange', (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for system avoid area changes. Data: ${JSON.stringify(data)}`);
@@ -1194,7 +1194,7 @@ export default function windowImmersiveTest() {
           console.info(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await windowClass.setWindowLayoutFullScreen(false);
         }
-        else{
+        else {
           console.info(`${caseName} not support, isPCStatus: ${isPCStatus}`);
           done();
         }
@@ -1215,7 +1215,7 @@ export default function windowImmersiveTest() {
     it('testOnRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnRepeatSystemAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false){
+        if ((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false) {
           let windowClass = windowStage.getMainWindowSync();
           const callback1 = () => {
             console.info(`${caseName} callback1 Succeeded in enabling the listener for system avoid area changes.`);
@@ -1224,7 +1224,7 @@ export default function windowImmersiveTest() {
           };
           const callback2 = () => {
             console.info(`${caseName} callback2 Succeeded in enabling the listener for system avoid area changes.`);
-           
+
             windowClass.off('systemAvoidAreaChange', callback2);
             done();
           };
@@ -1240,7 +1240,7 @@ export default function windowImmersiveTest() {
           console.info(`${caseName} Succeeded in setting the status bar to be invisible.`);
           await windowClass.setWindowLayoutFullScreen(false);
         }
-        else{
+        else {
           console.info(`${caseName} not support, isPCStatus: ${isPCStatus}`);
           done();
         }
@@ -1302,7 +1302,7 @@ export default function windowImmersiveTest() {
     it('testOnAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnAvoidAreaChange';
       try {
-        if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false){
+        if ((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false) {
           let windowClass = windowStage.getMainWindowSync();
           windowClass.on('avoidAreaChange', (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. Data: ${JSON.stringify(data)}`);
@@ -1320,7 +1320,7 @@ export default function windowImmersiveTest() {
           await windowClass.setWindowLayoutFullScreen(false);
           console.info(`${caseName} Succeeded in setting the setWindowLayoutFullScreen false.`);
         }
-        else{
+        else {
           console.info(`${caseName} not support, isPCStatus: ${isPCStatus}`);
           done();
         }
@@ -1341,7 +1341,7 @@ export default function windowImmersiveTest() {
     it('testGetAvoidAreaTypeSystemInFreeWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetAvoidAreaTypeSystemInFreeWindowMode';
       try {
-        if(isFreeWindowMode == true){
+        if (isFreeWindowMode == true) {
           let windowClass = windowStage.getMainWindowSync();
           await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
           await windowClass.setSpecificSystemBarEnabled('status', true);
@@ -1359,14 +1359,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea.leftRect.height).assertEqual(0);
             await windowClass.recover();
             done();
-          
 
-        }).catch((err: BusinessError) => {
-          console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
-        });
-        }else{
+
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } else {
           done();
         }
       } catch (exception) {
@@ -1465,7 +1465,7 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be invisible.`);
         await sleep(1000);
-        await windowClass.setWindowSystemBarEnable(['status','navigation']);
+        await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
         done();
@@ -1483,7 +1483,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetWindowSystemBarEnableInVisiblePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testSetWindowSystemBarEnableInVisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableInVisiblePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1719,10 +1719,10 @@ export default function windowImmersiveTest() {
           navigationBarColor: '#00ff00',
           statusBarContentColor: '#ffffff',
           navigationBarContentColor: '#00ffff',
-          isStatusBarLightIcon:false,
-          isNavigationBarLightIcon:true,
-          enableStatusBarAnimation:true,
-          enableNavigationBarAnimation:true
+          isStatusBarLightIcon: false,
+          isNavigationBarLightIcon: true,
+          enableStatusBarAnimation: true,
+          enableNavigationBarAnimation: true
         };
         windowClass.setWindowSystemBarProperties(SystemBarProperties, (err: BusinessError) => {
           const errCode: number = err.code;
@@ -1795,7 +1795,7 @@ export default function windowImmersiveTest() {
       let caseName = 'TestSetImmersive';
       let windowClass = windowStage.getMainWindowSync();
       try {
-        if(isFreeWindowMode == false){
+        if (isFreeWindowMode == false) {
           windowClass.setImmersiveModeEnabledState(false);
           let immersiveModeStateTrue: boolean = windowClass.getImmersiveModeEnabledState();
           console.info(`${caseName} Succeeded in setting the immersiveMode enabled false. Data: ${immersiveModeStateTrue}`);
@@ -1806,7 +1806,7 @@ export default function windowImmersiveTest() {
           console.info(`${caseName} Succeeded in setting the immersiveMode enabled true. Data: ${immersiveModeStateFalse}`);
           expect(immersiveModeStateFalse).assertTrue();
           done();
-        }else{
+        } else {
           await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
           let immersiveModeStateTrue2: boolean = await windowClass.getImmersiveModeEnabledState();
           console.info(`${caseName} Succeeded in setting the maximize EXIT_IMMERSIVE enabled false. Data: ${immersiveModeStateTrue2}`);
@@ -1842,7 +1842,7 @@ export default function windowImmersiveTest() {
           windowClass.setImmersiveModeEnabledState(true);
           let beforeImmersiveModeState: boolean = windowClass.getImmersiveModeEnabledState();
           console.info(`${caseName} Succeeded in setting the immersiveMode enabled true. Data: ${beforeImmersiveModeState}`);
-          if(isFreeWindowMode == false){
+          if (isFreeWindowMode == false) {
             expect(beforeImmersiveModeState).assertTrue();
             await sleep(1000);
             windowClass.setImmersiveModeEnabledState(false);
@@ -1850,7 +1850,7 @@ export default function windowImmersiveTest() {
             console.info(`${caseName} Succeeded in setting the immersiveMode enabled false. Data: ${afterImmersiveModeState}`);
             expect(afterImmersiveModeState).assertFalse();
             done();
-          }else{
+          } else {
             expect(beforeImmersiveModeState).assertFalse();
             done();
           }
@@ -1886,19 +1886,19 @@ export default function windowImmersiveTest() {
           windowClass.setImmersiveModeEnabledState(false);
           let afterImmersiveModeState: boolean = windowClass.getImmersiveModeEnabledState();
           console.info(`${caseName} Succeeded in setting the immersiveMode enabled false. Data: ${afterImmersiveModeState}`);
-          if(isFreeWindowMode == false){
+          if (isFreeWindowMode == false) {
             expect(afterImmersiveModeState).assertFalse();
             done();
-          }else{
+          } else {
             expect(beforeImmersiveModeState).assertTrue();
             windowClass.recover();
             done();
           }
 
         }).catch((err: BusinessError) => {
-          if(err.code == 801){
+          if (err.code == 801) {
             console.info(`${caseName} The current device type does not support to maximize`);
-           
+
             done();
           } else {
             console.error(`${caseName} Failed to set the window layout to maximize mode. Cause code: ${err.code}, message: ${err.message}`);
@@ -2135,7 +2135,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetFullScreenTruePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testSetFullScreenTruePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetFullScreenTruePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2164,7 +2164,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetSpecificSystemBarStatus',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testSetSpecificSystemBarStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetSpecificSystemBarStatus';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2205,27 +2205,27 @@ export default function windowImmersiveTest() {
           statusBarColor: '#ff00ff',
           isStatusBarLightIcon: true,
           statusBarContentColor: '#00ff00',
-          enableStatusBarAnimation:true
+          enableStatusBarAnimation: true
         };
         let promise = windowClass.setWindowSystemBarProperties(SystemBarProperties);
-        promise.then(()=>{
+        promise.then(() => {
           console.info(`${caseName} Succeeded in Succeeded in setting the system bar properties..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the system bar properties. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        let promise1 = windowClass.setSpecificSystemBarEnabled('status',true);
-        promise1.then(()=>{
+        let promise1 = windowClass.setSpecificSystemBarEnabled('status', true);
+        promise1.then(() => {
           console.info(`${caseName} Succeeded in setSpecificSystemBarEnabled status..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the SpecificSystemBarEnabled status. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        await  sleep(1000);
+        await sleep(1000);
         let systemBarProperty = windowClass.getWindowSystemBarProperties();
         console.info(`${caseName} Success in obtaining system bar properties. Property:   ${JSON.stringify(systemBarProperty)}`);
         expect(systemBarProperty.statusBarColor).assertEqual('#FFFF00FF');
@@ -2255,24 +2255,24 @@ export default function windowImmersiveTest() {
           isStatusBarLightIcon: true
         };
         let promise = windowClass.setWindowSystemBarProperties(SystemBarProperties);
-        promise.then(()=>{
+        promise.then(() => {
           console.info(`${caseName} Succeeded in Succeeded in setting the system bar properties..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the system bar properties. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        let promise1 = windowClass.setSpecificSystemBarEnabled('status',true);
-        promise1.then(()=>{
+        let promise1 = windowClass.setSpecificSystemBarEnabled('status', true);
+        promise1.then(() => {
           console.info(`${caseName} Succeeded in setSpecificSystemBarEnabled status..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the SpecificSystemBarEnabled status. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        await  sleep(1000);
+        await sleep(1000);
         let systemBarProperty = windowClass.getWindowSystemBarProperties();
         console.info(`${caseName} Success in obtaining system bar properties. Property:   ${JSON.stringify(systemBarProperty)}`);
         expect(systemBarProperty.isStatusBarLightIcon).assertEqual(true);
@@ -2300,22 +2300,22 @@ export default function windowImmersiveTest() {
           navigationBarColor: '#ff00ff',
           isNavigationBarLightIcon: true,
           navigationBarContentColor: '#00ff00',
-          enableNavigationBarAnimation:true
+          enableNavigationBarAnimation: true
         };
         let promise = windowClass.setWindowSystemBarProperties(SystemBarProperties);
-        promise.then(()=>{
+        promise.then(() => {
           console.info(`${caseName} Succeeded in Succeeded in setting the system bar properties..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the system bar properties. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        let promise1 = windowClass.setSpecificSystemBarEnabled('status',true);
-        promise1.then(()=>{
+        let promise1 = windowClass.setSpecificSystemBarEnabled('status', true);
+        promise1.then(() => {
           console.info(`${caseName} Succeeded in setSpecificSystemBarEnabled status..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the SpecificSystemBarEnabled status. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
@@ -2350,24 +2350,24 @@ export default function windowImmersiveTest() {
           isNavigationBarLightIcon: true
         };
         let promise = windowClass.setWindowSystemBarProperties(SystemBarProperties);
-        promise.then(()=>{
+        promise.then(() => {
           console.info(`${caseName} Succeeded in Succeeded in setting the system bar properties..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the system bar properties. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        let promise1 = windowClass.setSpecificSystemBarEnabled('status',true);
-        promise1.then(()=>{
+        let promise1 = windowClass.setSpecificSystemBarEnabled('status', true);
+        promise1.then(() => {
           console.info(`${caseName} Succeeded in setSpecificSystemBarEnabled status..`);
-         
-        }).catch((err:BusinessError)=>{
+
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the SpecificSystemBarEnabled status. Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         })
-        await  sleep(1000);
+        await sleep(1000);
         let systemBarProperty = windowClass.getWindowSystemBarProperties();
         console.info(`${caseName} Success in obtaining system bar properties. Property:   ${JSON.stringify(systemBarProperty)}`);
         expect(systemBarProperty.isNavigationBarLightIcon).assertEqual(true);
@@ -2390,13 +2390,13 @@ export default function windowImmersiveTest() {
     it('testOnOff_WindowSizeChange_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = 'testOnOff_WindowSizeChange_Callback';
       console.log(msgStr + ' begin');
-      let height:Number;
+      let height: Number;
       let names: Array<'status' | 'navigation'> = ['status'];
-      const systemAvoidAreaChangeCallback = (data:window.AvoidArea) => {
-        console.log(msgStr +' :' + JSON.stringify(data));
+      const systemAvoidAreaChangeCallback = (data: window.AvoidArea) => {
+        console.log(msgStr + ' :' + JSON.stringify(data));
         height = data.bottomRect.height;
       };
-      if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0)  && isFreeWindowMode === false){
+      if ((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && isFreeWindowMode === false) {
         windowStage.getMainWindow((err, data) => {
           if (err.code != 0) {
             console.log(msgStr + ' getTopWindow callback fail ' + JSON.stringify(err.code));
@@ -2406,7 +2406,7 @@ export default function windowImmersiveTest() {
             expect(data != null).assertTrue();
             let promise = data.setWindowSystemBarEnable(names);
             promise.then(() => {
-              console.info(msgStr+ 'Succeeded in setting the system bar to be invisible.');
+              console.info(msgStr + 'Succeeded in setting the system bar to be invisible.');
               data.on('systemAvoidAreaChange', systemAvoidAreaChangeCallback);
               data.setLayoutFullScreen(false, (err) => {
                 console.log(msgStr + ' setLayoutFullScreen(false) err info is ' + JSON.stringify(err));
@@ -2418,7 +2418,7 @@ export default function windowImmersiveTest() {
                       expect().assertFail();
                       done();
                     } else {
-                      setTimeout((async  ()=> {
+                      setTimeout((async () => {
                         expect(height == 0).assertTrue();
                         data.off('systemAvoidAreaChange');
                         data.setFullScreen(false, (err) => {
@@ -2438,7 +2438,7 @@ export default function windowImmersiveTest() {
                 })
               })
             }).catch((err: BusinessError) => {
-              console.error(msgStr+`Failed to set the system bar to be invisible. Cause code: ${err.code}, message: ${err.message}`);
+              console.error(msgStr + `Failed to set the system bar to be invisible. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
               done();
             });
@@ -2446,7 +2446,7 @@ export default function windowImmersiveTest() {
           }
         })
       }
-      else{
+      else {
         console.info(`${msgStr} not support, isPCStatus: ${isPCStatus}`);
         done();
       }
@@ -2528,7 +2528,7 @@ export default function windowImmersiveTest() {
               expect(err.code).assertEqual(801);
               done();
             })
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await dialogWindowClass?.destroyWindow();
             await sleep(1000);
@@ -2577,7 +2577,7 @@ export default function windowImmersiveTest() {
               console.info(`${message} succeed setSystemAvoidAreaEnabled`);
               await dialogWindowClass?.destroyWindow();
               await sleep(1000);
-             
+
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
@@ -2586,7 +2586,7 @@ export default function windowImmersiveTest() {
               expect(err.code).assertEqual(801);
               done();
             })
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await dialogWindowClass?.destroyWindow();
             await sleep(1000);
@@ -2639,10 +2639,10 @@ export default function windowImmersiveTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-              expect(err.code == 801 || err.code ==1300002).assertTrue();
+              expect(err.code == 801 || err.code == 1300002).assertTrue();
               done();
             })
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             expect().assertFail();
             done();
@@ -2667,7 +2667,7 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('test_setSystemAvoidAreaEnabled_ErrorCode_1300004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_setSystemAvoidAreaEnabled_ErrorCode_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_setSystemAvoidAreaEnabled_ErrorCode_1300004!'
       try {
         let promise = windowStage.createSubWindow(message)
@@ -2690,10 +2690,10 @@ export default function windowImmersiveTest() {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
               await subWindowClass?.destroyWindow();
               await sleep(1000);
-              expect(err.code == 801 || err.code ==1300004).assertTrue();
+              expect(err.code == 801 || err.code == 1300004).assertTrue();
               done();
             })
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await subWindowClass?.destroyWindow();
             await sleep(1000);
@@ -2744,7 +2744,7 @@ export default function windowImmersiveTest() {
               expect(dialogWindowClass.isSystemAvoidAreaEnabled()).assertEqual(true);
               await dialogWindowClass?.destroyWindow();
               await sleep(1000);
-             
+
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
@@ -2753,7 +2753,7 @@ export default function windowImmersiveTest() {
               expect(err.code).assertEqual(801);
               done();
             })
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await dialogWindowClass?.destroyWindow();
             await sleep(1000);
@@ -2801,7 +2801,7 @@ export default function windowImmersiveTest() {
             await dialogWindowClass?.destroyWindow();
             await sleep(1000);
             done();
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await dialogWindowClass?.destroyWindow();
             await sleep(1000);
@@ -2846,12 +2846,12 @@ export default function windowImmersiveTest() {
             await sleep(1000);
             expect().assertFail();
             done();
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
             await dialogWindowClass?.destroyWindow();
             console.info(`${message} after destroyWindow`);
             await sleep(1000);
-            expect(err.code == 801 || err.code ==1300004).assertTrue();
+            expect(err.code == 801 || err.code == 1300004).assertTrue();
             done();
           }
         }).catch((err: BusinessError) => {
@@ -2896,9 +2896,9 @@ export default function windowImmersiveTest() {
             console.info(`${message} succeed assert isSystemAvoidAreaEnabled`);
             expect().assertFail();
             done();
-          }catch (err) {
+          } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-            expect(err.code == 801 || err.code ==1300002).assertTrue();
+            expect(err.code == 801 || err.code == 1300002).assertTrue();
             done();
           }
         }).catch((err: BusinessError) => {
@@ -3002,7 +3002,7 @@ export default function windowImmersiveTest() {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: context,
-        decorEnabled:true
+        decorEnabled: true
       };
       let subWindowClass: window.Window | undefined;
       console.info(`${caseName} Succeeded in creating the float window.`);
@@ -3203,7 +3203,7 @@ export default function windowImmersiveTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-           
+
             done();
           } else {
             expect().assertFail();
@@ -3254,7 +3254,7 @@ export default function windowImmersiveTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-           
+
             done();
           } else {
             expect().assertFail();
@@ -3301,7 +3301,7 @@ export default function windowImmersiveTest() {
           expect(res2).assertEqual(true);
           await windowClass.destroyWindow();
           done();
-        }else{
+        } else {
           windowClass.setImmersiveModeEnabledState(true);
           let res = windowClass.isImmersiveLayout();
           console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
@@ -3337,14 +3337,14 @@ export default function windowImmersiveTest() {
      */
     it('testIsImmersiveLayoutwithWindowLayoutFullScreen2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen2';
-      let options : window.SubWindowOptions = {
+      let options: window.SubWindowOptions = {
         title: 'testIsImmersiveLayoutwithWindowLayoutFullScreen2',
         decorEnabled: true,
       };
       let promise = windowStage.createSubWindowWithOptions('testIsImmersiveLayoutwithWindowLayoutFullScreen2', options);
       promise.then(async (data) => {
         let windowClass = data;
-        console.info(caseName+ ' Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+        console.info(caseName + ' Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
         await windowClass.setUIContent('testability/pages/First/index2');
         await windowClass.showWindow();
         await sleep(1000);
@@ -3361,7 +3361,7 @@ export default function windowImmersiveTest() {
             expect(res2).assertEqual(false);
             await windowClass.destroyWindow();
             done();
-          }else{
+          } else {
             await windowClass.setWindowLayoutFullScreen(true);
             let res = windowClass.isImmersiveLayout();
             console.log(`${caseName} isImmersiveLayout 1: ${res}.`);
@@ -3486,7 +3486,7 @@ export default function windowImmersiveTest() {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
         windowType: window.WindowType.TYPE_DIALOG,
         ctx: context,
-        decorEnabled:true
+        decorEnabled: true
       };
       let subWindowClass: window.Window | undefined;
       console.info(`${caseName} Succeeded in creating the float window.`);
@@ -3651,7 +3651,7 @@ export default function windowImmersiveTest() {
       }
     });
 
-    
+
     /**
      * @tc.number     SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
      * @tc.name       testWindowAvoidareaChangeCutout_0100
@@ -3682,8 +3682,8 @@ export default function windowImmersiveTest() {
             windowClass.on('avoidAreaChange', async (data) => {
               console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
             ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-              if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
-                expect(data.area!= null).assertTrue();
+              if (data.type == window.AvoidAreaType.TYPE_CUTOUT) {
+                expect(data.area != null).assertTrue();
                 windowClass.off('avoidAreaChange');
                 await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                 await sleep(1000);
@@ -3985,14 +3985,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea1.rightRect.width).assertEqual(0);
             expect(avoidArea1.rightRect.height).assertEqual(0);
 
-            if(deviceType != 'wearable'){
+            if (deviceType != 'wearable') {
               expect(avoidArea1.topRect.width).assertLarger(0);
               expect(avoidArea1.topRect.height).assertLarger(0);
-            }else{
+            } else {
               expect(avoidArea1.topRect.width).assertEqual(0);
               expect(avoidArea1.topRect.height).assertEqual(0);
             }
-            
+
 
             expect(avoidArea1.bottomRect.width).assertEqual(0);
             expect(avoidArea1.bottomRect.height).assertEqual(0);
@@ -4067,14 +4067,14 @@ export default function windowImmersiveTest() {
             expect(avoidArea7.topRect.width).assertEqual(0);
             expect(avoidArea7.topRect.height).assertEqual(0);
 
-            if(deviceType != 'wearable' && deviceType != 'tv'){
+            if (deviceType != 'wearable' && deviceType != 'tv') {
               expect(avoidArea7.bottomRect.width).assertLarger(0);
               expect(avoidArea7.bottomRect.height).assertLarger(0);
-            }else{
+            } else {
               expect(avoidArea7.bottomRect.width).assertEqual(0);
               expect(avoidArea7.bottomRect.height).assertEqual(0);
             }
-            
+
             await terminateAbility3(caseName);
             done()
           } catch (error) {
@@ -4565,49 +4565,55 @@ export default function windowImmersiveTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetAvoidAreaTypeSystemGesture_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testGetAvoidAreaTypeSystemGesture_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetAvoidAreaTypeSystemGesture_callback';
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.getAvoidArea(window.AvoidAreaType.TYPE_SYSTEM_GESTURE, (err: BusinessError, data) => {
-        const errCode: number = err.code;
-        if (errCode) {
-          console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
-        }else{
-          console.info(`${caseName} Succeeded in obtaining the area. Data: ${JSON.stringify(data)}`);
-          let avoidArea = data;
-          expect(avoidArea.visible).assertTrue();
-          expect(avoidArea.topRect !== null).assertTrue();
-          expect(avoidArea.rightRect !== null).assertTrue();
-          expect(avoidArea.bottomRect !== null).assertTrue();
-          expect(avoidArea.leftRect !== null).assertTrue();
-          if(isFreeWindowMode == true){
-            expect(avoidArea.topRect.width).assertEqual(0);
-            expect(avoidArea.topRect.height).assertEqual(0);
-            expect(avoidArea.rightRect.width).assertEqual(0);
-            expect(avoidArea.rightRect.height).assertEqual(0);
-            expect(avoidArea.bottomRect.width).assertEqual(0);
-            expect(avoidArea.bottomRect.height).assertEqual(0);
-            expect(avoidArea.leftRect.width).assertEqual(0);
-            expect(avoidArea.leftRect.height).assertEqual(0);
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${ caseName } Failed to obtain the area.Cause code: ${ err.code }, message: ${ err.message }`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`${ caseName } Succeeded in obtaining the area.Data: ${ JSON.stringify(data) }`);
+            let avoidArea = data;
+            expect(avoidArea.visible).assertTrue();
+            expect(avoidArea.topRect !== null).assertTrue();
+            expect(avoidArea.rightRect !== null).assertTrue();
+            expect(avoidArea.bottomRect !== null).assertTrue();
+            expect(avoidArea.leftRect !== null).assertTrue();
+            if (isFreeWindowMode == true) {
+              expect(avoidArea.topRect.width).assertEqual(0);
+              expect(avoidArea.topRect.height).assertEqual(0);
+              expect(avoidArea.rightRect.width).assertEqual(0);
+              expect(avoidArea.rightRect.height).assertEqual(0);
+              expect(avoidArea.bottomRect.width).assertEqual(0);
+              expect(avoidArea.bottomRect.height).assertEqual(0);
+              expect(avoidArea.leftRect.width).assertEqual(0);
+              expect(avoidArea.leftRect.height).assertEqual(0);
+            }
+            console.error(`${ caseName } getWindowAvoidAreaIgnoringVisibility success`);
+            try {
+              let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM_GESTURE);
+              console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+              expect(avoidArea.topRect.width).assertEqual(avoidArea1.topRect.width);
+              expect(avoidArea.topRect.height).assertEqual(avoidArea1.topRect.height);
+              expect(avoidArea.rightRect.width).assertEqual(avoidArea1.rightRect.width);
+              expect(avoidArea.rightRect.height).assertEqual(avoidArea1.rightRect.height);
+              expect(avoidArea.bottomRect.width).assertEqual(avoidArea1.bottomRect.width);
+              expect(avoidArea.bottomRect.height).assertEqual(avoidArea1.bottomRect.height);
+              expect(avoidArea.leftRect.width).assertEqual(avoidArea1.leftRect.width);
+              expect(avoidArea.leftRect.height).assertEqual(avoidArea1.leftRect.height);
+              done();
+            } catch (err) {
+              console.error(`${ caseName } getWindowAvoidAreaIgnoringVisibility Error.Cause code: ${ err.code }, message: ${ err.message }`);
+              expect(err.code).assertEqual(801)
+              done();
+            }
+
           }
-
-
-          let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM_GESTURE);
-            console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
-            expect(avoidArea.topRect.width).assertEqual(avoidArea1.topRect.width);
-            expect(avoidArea.topRect.height).assertEqual(avoidArea1.topRect.height);
-            expect(avoidArea.rightRect.width).assertEqual(avoidArea1.rightRect.width);
-            expect(avoidArea.rightRect.height).assertEqual(avoidArea1.rightRect.height);
-            expect(avoidArea.bottomRect.width).assertEqual(avoidArea1.bottomRect.width);
-            expect(avoidArea.bottomRect.height).assertEqual(avoidArea1.bottomRect.height);
-            expect(avoidArea.leftRect.width).assertEqual(avoidArea1.leftRect.width);
-            expect(avoidArea.leftRect.height).assertEqual(avoidArea1.leftRect.height);
-          done();
-        }
-      });
+        });
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
@@ -4627,12 +4633,12 @@ export default function windowImmersiveTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.getAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR, (err: BusinessError, data) => {
-        const errCode: number = err.code;
+          const errCode: number = err.code;
           if (errCode) {
             console.error(`${caseName} Failed to obtain the area. Cause code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(1003);
             done();
-          }else{
+          } else {
             let avoidArea = data;
             console.info(`${caseName} Succeeded in obtaining the area. Data: ${JSON.stringify(data)}`);
             console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
