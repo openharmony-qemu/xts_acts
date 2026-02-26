@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import {
-  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, createMovingPhoto, isEmpty
+  photoKeys, fetchOption, getPermission, driveFn, sleep, LOG_TAG, isEmpty
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData';
