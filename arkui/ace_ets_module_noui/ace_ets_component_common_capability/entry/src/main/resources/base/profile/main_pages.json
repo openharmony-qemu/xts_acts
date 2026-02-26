@@ -14,6 +14,9 @@
     "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityStateDescriptionNullUndefined",
     "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityActionOptionsNullUndefined",
     "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityDefaultFocusFalse",
-    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityGroupNullUndefined"
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityGroupNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/accessibility/AccessibilityFocusDrawLevelNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerNullUndefined",
+    "MainAbility/pages/nullandundefinedcoverage/ComponentObserver/ComponentObserverTest"
   ]
 }
