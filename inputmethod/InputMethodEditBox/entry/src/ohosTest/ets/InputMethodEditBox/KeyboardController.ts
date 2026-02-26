@@ -62,7 +62,7 @@ export class KeyboardController {
       this.softKeyboardPanel.setUiContent('testability/pages/Second', async (err, data) => {        
         console.info(TAG + '====>Succeed in creating panel.' + JSON.stringify(panel));
       });
-      try{
+      try {
         let commonEventSubscribeInfo = {
           events: ['InputMethodEditBoxTest']
         };
@@ -317,14 +317,14 @@ export class KeyboardController {
       }
     }
 
-    let unSubscriberCallback = (err) => {
+    let unSubscriberCallback = (err): void => {
       console.info(TAG + '====>unSubscriberCallback start');
       if (err) {
         console.error(TAG + '====>unSubscriberCallback failed: ' + JSON.stringify(err));
       } else {
         console.info(TAG + '====>unSubscriberCallback finsh');
       }
-    }  
+    };
   }
 
   private publishCallback(err): void {
@@ -909,7 +909,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       let keyboardRect: inputMethodEngine.PanelRect = {
           landscapeRect: { left: 100, top: 100, width: this.display_info.width, height: this.display_info.height * 0.4},
           portraitRect: { left: 100, top: 100, width: this.display_info.height * 0.4, height: this.display_info.width}
@@ -931,7 +931,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.adjustPanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, null);
       console.info(TAG + '====>Sub_InputMethod_IME_PaneladjustPanelRect_0200  success' );
     } catch (err) {
@@ -949,7 +949,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.adjustPanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, undefined);
       console.info(TAG + '====>Sub_InputMethod_IME_PaneladjustPanelRect_0300  success' );
     } catch (err) {
@@ -967,7 +967,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.updateRegion(null);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelupdateRegion_0100  success' );
     } catch (err) {
@@ -985,7 +985,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.updateRegion(undefined);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelupdateRegion_0200  success' );
     } catch (err) {
@@ -1003,7 +1003,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.setImmersiveEffect(null);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetImmersiveEffec_0100  success' );
     } catch (err) {
@@ -1021,7 +1021,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       this.softKeyboardPanel.setImmersiveEffect(undefined);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetImmersiveEffec_0200  success' );
     } catch (err) {
@@ -1039,7 +1039,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.getSystemPanelCurrentInsets(null);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelgetSystemPanelCurrentInsetsPromise_0100  success' );
     } catch (err) {
@@ -1057,7 +1057,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.getSystemPanelCurrentInsets(undefined);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelgetSystemPanelCurrentInsetsPromise_0200  success' );
     } catch (err) {
@@ -1075,7 +1075,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.setSystemPanelButtonColor(null, '#FFFFFFFF');
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0100  success' );
     } catch (err) {
@@ -1093,7 +1093,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.setSystemPanelButtonColor('#FFFFFFFF', null);
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0200  success' );
     } catch (err) {
@@ -1111,7 +1111,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.setSystemPanelButtonColor('', '#FFFFFFFF');
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0300  success' );
     } catch (err) {
@@ -1129,7 +1129,7 @@ export class KeyboardController {
     let commonEventPublishData = {
       data: 'FAILED'
     };
-    try{
+    try {
       await this.softKeyboardPanel.setSystemPanelButtonColor('#FFFFFFFF', '');
       console.info(TAG + '====>Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0400  success' );
     } catch (err) {
