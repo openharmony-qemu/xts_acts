@@ -77,6 +77,11 @@ export default function actsBmsJsUnPermissionTest() {
             }).catch(err => {
                 expect(err).assertEqual(INVALID_CODE);
             });
+            await bundle.getBundleInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG).then(data => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err).assertEqual(INVALID_CODE);
+            });
             bundle.getBundleInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG, { userId: userId }, (err, data) => {
                 expect(err).assertEqual(INVALID_CODE);
                 expect(data).assertEqual(undefined);
@@ -214,6 +219,34 @@ export default function actsBmsJsUnPermissionTest() {
                     console.info(item + ":" + JSON.stringify(a));
                 };
                 checkAbilityInfo(res);
+                done();
+            });
+        });
+
+
+        /**
+         * @tc.name   getAbilityInfoUnPermissionOtherBundlename
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2590
+         * @tc.desc   test getAbilityInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+           it('getAbilityInfoUnPermissionOtherBundlename', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            await bundle.getAbilityInfo(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER).then(res => {
+                console.info('actwsBundleManagerx getAbilityInfo promise success res:' + JSON.stringify(res));
+                expect().assertFail();
+            }).catch(err => {
+                expect(err).assertEqual(1);
+            });
+            bundle.getAbilityInfo(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER, (err, res) => {
+                if (err) {
+                    expect(err).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('actwsBundleManagexr getAbilityInfo callback success res:' + JSON.stringify(res));
+                expect().assertFail();
                 done();
             });
         });
