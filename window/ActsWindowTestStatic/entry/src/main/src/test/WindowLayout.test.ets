@@ -3082,7 +3082,7 @@ export default function WindowLayoutTest() {
             await win.showWindow();
             await Utils.msSleep(300);
             try {
-                const maxInt:int = 2147483647
+                const maxInt:int = 2147483647;
                 (win as window.Window).moveWindowToGlobalDisplay(maxInt, maxInt).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(true).assertFalse();
@@ -3223,7 +3223,7 @@ export default function WindowLayoutTest() {
                     expect(properties.windowRect.width).assertEqual(500);
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
-                }).catch((err:Error):PromoseLike<void>|undefined => {
+                }).catch((err:Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -3308,7 +3308,7 @@ export default function WindowLayoutTest() {
                     expect(properties.windowRect.width).assertEqual(500);
                     expect(properties.windowRect.height).assertEqual(1000);
                     done();
-                }).catch((err:Error):PromoseLike<void>|undefined => {
+                }).catch((err:Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -3350,7 +3350,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err:Error):PromoseLike<void>|undefined => {
+                }).catch((err:Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done();
@@ -3392,7 +3392,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err:Error):PromoseLike<void>|undefined => {
+                }).catch((err:Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300010);
                     done();
