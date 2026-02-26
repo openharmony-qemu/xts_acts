@@ -355,6 +355,11 @@ int SubAiNnRtFuncNorthCompilationSetPriority0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100 start");
 
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
+
     OH_NN_ReturnCode ret = OH_NNCompilation_SetPriority(nullptr, OH_NN_PRIORITY_MEDIUM);
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
@@ -502,6 +507,11 @@ int SubAiNnRtFuncNorthCompilationBuild0300()
 int SubAiNnRtFuncNorthCompilationDestroy0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Compilation_Destroy_0100 start");
+
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
 
     OH_NNCompilation* compilation = nullptr;
     OH_NNCompilation_Destroy(&compilation);

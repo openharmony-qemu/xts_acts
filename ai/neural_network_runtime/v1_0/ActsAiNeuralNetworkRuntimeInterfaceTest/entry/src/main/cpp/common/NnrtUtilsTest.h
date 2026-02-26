@@ -89,6 +89,7 @@ void CopyFile(const std::string& srcPath, const std::string& dstPath);
 std::string ConcatPath(const std::string& str1, const std::string& str2);
 void DeleteFolder(const std::string& path);
 bool CreateFolder(const std::string& path);
+bool IsNPU();
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime

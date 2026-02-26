@@ -37,6 +37,10 @@ namespace NeuralNetworkRuntime {
 int SubAiNnRtFuncNorthDeviceDeviceId0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0100 start");
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
     uint32_t count = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(nullptr, &count);
     if (ret != OH_NN_INVALID_PARAMETER) {
@@ -55,6 +59,10 @@ int SubAiNnRtFuncNorthDeviceDeviceId0100()
 int SubAiNnRtFuncNorthDeviceDeviceId0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0200 start");
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
     const size_t allDeviceIds = 0;
     const size_t* pAllDeviceIds = &allDeviceIds;
     uint32_t count = 0;
@@ -75,6 +83,10 @@ int SubAiNnRtFuncNorthDeviceDeviceId0200()
 int SubAiNnRtFuncNorthDeviceDeviceId0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0300 start");
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
     const size_t* allDeviceIds = nullptr;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&allDeviceIds, nullptr);
     if (ret != OH_NN_INVALID_PARAMETER) {
@@ -93,6 +105,10 @@ int SubAiNnRtFuncNorthDeviceDeviceId0300()
 int SubAiNnRtFuncNorthDeviceDeviceId0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0400 start");
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
 
     const size_t* allDeviceIds = nullptr;
     uint32_t count = 0;
@@ -118,6 +134,10 @@ int SubAiNnRtFuncNorthDeviceDeviceId0400()
 int SubAiNnRtFuncNorthDeviceDeviceName0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0100 start");
+    if (!Test::IsNPU()) {
+        printf("device is not NPU, skip this test");
+        return 0;
+    }
     const size_t deviceID = 100000;
     const char* name = nullptr;
     OH_NN_ReturnCode ret = OH_NNDevice_GetName(deviceID, &name);
