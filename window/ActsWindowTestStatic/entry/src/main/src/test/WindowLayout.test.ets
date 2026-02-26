@@ -2419,7 +2419,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(exception.code).assertEqual(801);
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2461,6 +2462,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2505,6 +2507,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2549,6 +2552,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2598,7 +2602,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(true).assertFalse();;
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2645,7 +2650,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(true).assertFalse();;
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2687,6 +2693,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2728,6 +2735,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2772,6 +2780,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2816,6 +2825,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2865,7 +2875,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(true).assertFalse();;
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2912,7 +2923,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(true).assertFalse();;
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2955,6 +2967,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -2996,6 +3009,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -3042,7 +3056,8 @@ export default function WindowLayoutTest() {
                 }else{
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
-                    expect(true).assertFalse();;
+                    expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -3087,6 +3102,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -3299,9 +3315,16 @@ export default function WindowLayoutTest() {
                 })
             } catch (exception) {
                 exception === exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done();
+                if(exception.code !== 801){
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
+                    expect(false).assertTrue();
+                    done();
+                }else{
+                    hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                    hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
+                    expect(exception!.code).assertEqual(801);
+                    done();
+                }
             }
         })
 
@@ -3342,6 +3365,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
@@ -3383,6 +3407,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
                     hilog.info(0x0000, '[ANI]',msgStr + JSON.stringify(exception))
                     expect(exception!.code).assertEqual(801);
+                    done();
                 }
             }
         })
