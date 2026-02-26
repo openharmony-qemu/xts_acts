@@ -1038,7 +1038,8 @@ static napi_value OhAVMetadataExtractorFetchFramesByTimes(napi_env env, napi_cal
         timeUs, typeSize, static_cast<OH_AVMedia_SeekMode>(option), userData->outputParams,
         OHAVMetadataExtractorOnFrameFetchedImpl, userData);
     LOG("OhAVMetadataExtractorFetchFrames avErrCode %{public}d", avErrCode);
-    napi_create_int32(env, avErrCode, &result);
+    int32_t res = avErrCode == AV_ERR_OK ? AV_ERR_OK : avErrCode;
+    napi_create_int32(env, res, &result);
     free(timeUs);
     delete userData;
     userData = nullptr;
@@ -1252,6 +1253,78 @@ static napi_value OhAVMetadataExtractorFetchFramesByTimesErr2(napi_env env, napi
     return result;
 }
 
+static void OHAVMetadataExtractorOnFrameFetchedImplErr3(OH_AVMetadataExtractor* extractor,
+    const OH_AVMetadataExtractor_FrameInfo* frameInfo, OH_AVErrCode code, void* userData)
+{
+    LOG("OHAVMetadataExtractorOnFrameFetchedImpl code %{public}d", code);
+    if (code == AV_ERR_UNSUPPORTED_FORMAT) {
+        return;
+    }
+    OHAVMetadataExtractorUserData* data = reinterpret_cast<OHAVMetadataExtractorUserData*>(userData);
+    if (data == nullptr) {
+        LOG("OHAVMetadataExtractorOnFrameFetchedImpl userData is nullptr");
+        return;
+    }
+    if (frameInfo->result == 0) {
+        return;
+    }
+    bool checkResult = CheckPixelMap(frameInfo->image, data->thumbnailWidth, data->thumbnailHeight);
+    data->testResult = checkResult;
+    return;
+}
+
+static napi_value OhAVMetadataExtractorFetchFramesByTimesErr3(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 8;
+    napi_value argv[8];
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    int64_t offset = 0;
+    int32_t fileDescribe = -1;
+    int64_t fileSize = 0;
+    napi_get_value_int32(env, argv[PARAM_0], &fileDescribe);
+    napi_get_value_int64(env, argv[PARAM_1], &offset);
+    napi_get_value_int64(env, argv[PARAM_2], &fileSize);
+    int32_t width;
+    int32_t height;
+    napi_get_value_int32(env, argv[PARAM_3], &width);
+    napi_get_value_int32(env, argv[PARAM_4], &height);
+    int32_t option;
+    napi_get_value_int32(env, argv[PARAM_5], &option);
+    uint32_t typeSize = 0;
+    napi_get_array_length(env, argv[PARAM_6], &typeSize);
+    int64_t *timeUs = static_cast<int64_t *>(malloc((typeSize + 1) * sizeof(int64_t)));
+    if (timeUs == nullptr) {
+        LOGE("OhAVMetadataExtractorFetchFrames malloc timeUs failed");
+        return result;
+    }
+    int64_t num = 0;
+    for (size_t i = 0; i < typeSize; i++) {
+        napi_value item1;
+        napi_get_element(env, argv[PARAM_6], i, &item1);
+        napi_get_value_int64(env, item1, &num);
+        timeUs[i] = num;
+    }
+    OHAVMetadataExtractorUserData *userData = new OHAVMetadataExtractorUserData();
+    userData->mainExtractor = OH_AVMetadataExtractor_Create();
+    OH_AVMetadataExtractor_SetFDSource(userData->mainExtractor, fileDescribe, offset, fileSize);
+    userData->outputParams = OH_AVMetadataExtractor_OutputParam_Create();
+    OH_AVMetadataExtractor_OutputParam_SetSize(userData->outputParams, width, height);
+    OH_AVErrCode avErrCode = OH_AVMetadataExtractor_FetchFramesByTimes(userData->mainExtractor,
+        timeUs, typeSize, static_cast<OH_AVMedia_SeekMode>(option), userData->outputParams,
+        OHAVMetadataExtractorOnFrameFetchedImplErr3, userData);
+    int32_t res = 1;
+    if (avErrCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    LOG("OhAVMetadataExtractorFetchFrames avErrCode %{public}d", avErrCode);
+    napi_create_int32(env, res, &result);
+    free(timeUs);
+    delete userData;
+    userData = nullptr;
+    return result;
+}
+
 static napi_value OHAVMetadataExtractorUserDataGetTestResult(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1390,6 +1463,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OhAVMetadataExtractorFetchFramesByTimesErr1", nullptr, OhAVMetadataExtractorFetchFramesByTimesErr1, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"OhAVMetadataExtractorFetchFramesByTimesErr2", nullptr, OhAVMetadataExtractorFetchFramesByTimesErr2, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVMetadataExtractorFetchFramesByTimesErr3", nullptr, OhAVMetadataExtractorFetchFramesByTimesErr3, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"OHAVMetadataExtractorUserDataGetTestResult", nullptr, OHAVMetadataExtractorUserDataGetTestResult, nullptr,
             nullptr, nullptr, napi_default, nullptr},

@@ -1604,6 +1604,64 @@ export default function OhAVMetadataExtractorNDKTest() {
       done();
     });
 
+/**
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTOR_FETCHFRAMES_0009
+     * @tc.name   OhAVMetadataExtractorFetchFramesByTimes0009
+     * @tc.desc   OH_AVMetadataExtractor_FetchFramesByTimes, set timeUs as negative number
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAVMetadataExtractorFetchFramesByTimes0009', Level.LEVEL0, async (done: Function) => {
+      let tag = "OhAVMetadataExtractorFetchFramesByTimes0009"
+      console.info(`${tag} test start`);
+      let fileDescribe: number = -1;
+      try {
+        let avFileDescriptor: media.AVFileDescriptor = getfile("MP4_ROTATE_90.mp4");
+        fileDescribe = avFileDescriptor.fd;
+        let result = avmetadataextractor.OhAVMetadataExtractorFetchFramesByTimesErr3(fileDescribe,0,0,720,480,0,[-1]);
+        expect(result !== AV_ERR_OK).assertTrue();
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${error}`);
+        expect().assertFail();
+      }
+      closefile(fileDescribe);
+      console.info(`${tag} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_METADATAEXTRACTOR_FETCHFRAMES_00010
+     * @tc.name   OhAVMetadataExtractorFetchFramesByTimes00010
+     * @tc.desc   OH_AVMetadataExtractor_FetchFramesByTimes, set timeUs size large than 4096
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('OhAVMetadataExtractorFetchFramesByTimes00010', Level.LEVEL0, async (done: Function) => {
+      let tag = "OhAVMetadataExtractorFetchFramesByTimes00010"
+      console.info(`${tag} test start`);
+      let fileDescribe: number = -1;
+      try {
+        let avFileDescriptor: media.AVFileDescriptor = getfile("MP4_ROTATE_90.mp4");
+        fileDescribe = avFileDescriptor.fd;
+        let timesUs: number[] = [];
+        for (let i = 0; i < 4097; i++) {
+          timesUs.push(1000000 + i*10000);
+        }
+        let result = avmetadataextractor.OhAVMetadataExtractorFetchFramesByTimesErr3(fileDescribe,0,0,720,480,0,timesUs);
+        expect(result).assertEqual(AV_ERR_OK);
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tag}:${error}`);
+        expect().assertFail();
+      }
+      closefile(fileDescribe);
+      console.info(`${tag} test end`);
+      done();
+    });
+
     /**
      * @tc.number SUB_MULTIMEIDA_AVMETADATAEXTRACTOR_FETCHSTATE_0001
      * @tc.name   OhAVMetadataExtractorFetchState0001
