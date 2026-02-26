@@ -3127,7 +3127,7 @@ export default function WindowLayoutTest() {
                         done();
                     });
                 } catch (exception) {
-                    exception == exception as BusinessError;
+                    exception === exception as BusinessError;
                     hilog.error(0x0000, '[ANI]', msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                     expect(true).assertFalse();
                     done();
@@ -3347,7 +3347,7 @@ export default function WindowLayoutTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0200
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RESIZEASYNC_JS_API_0300
          * @tc.name        testResizeAsync_WindowTypeAbmormal_Promise_static_0100
          * @tc.desc        Change the current window size
          * @tc.size        MediumTest
