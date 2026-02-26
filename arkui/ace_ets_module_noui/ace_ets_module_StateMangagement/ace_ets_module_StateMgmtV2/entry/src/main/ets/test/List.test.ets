@@ -30,6 +30,7 @@ import Monitor0260Test from './MonitorTest/Monitor0260Test.test';
 import Monitor0280Test from './MonitorTest/Monitor0280Test.test';
 import Monitor0290Test from './MonitorTest/Monitor0290Test.test';
 import Monitor0300Test from './MonitorTest/Monitor0300Test.test';
+import monitorValueTest from './MonitorTest/MonitorValueTest.test';
 import Monitor_NullTest from './MonitorTest/Monitor_Null.test';
 import ExtendTrackTest from './ObservedV2Test/ExtendTrackTest.test';
 import NestTrackTest from './ObservedV2Test/NestTrackTest.test';
@@ -91,6 +92,7 @@ export default function testsuite() {
     Monitor0290Test();
     Monitor0300Test();
     Monitor_NullTest();
+    monitorValueTest();
     ExtendTrackTest();
     NestTrackTest();
     ObjectArrayTest();
