@@ -23,7 +23,7 @@ export default function ImageMatrixUndefinedAndNullTest() {
     beforeEach(async (done: Function) => {
       console.info('ImageMatrixUndefinedAndNullTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ImageUndefinedAndNullTest/ImageMatrixUndefinedAndNull',
+        url: 'MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull',
       }
       try {
         router.clear();
