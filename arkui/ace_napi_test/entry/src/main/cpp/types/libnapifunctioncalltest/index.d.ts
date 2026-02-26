@@ -22,7 +22,7 @@ export const callArkTS: (func: (a: number, b: number) => number) => number;
 export const getAddFunc: () => (a: number, b: number) => number;
 
 // 创建和调用返回类型
-interface CreateAndCallResult {
+export interface CreateAndCallResult {
   func: (x: number) => number;
   result: number;
 }

@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from "@ohos/hypium"
 import napitest from 'libnapifunctioncalltest.so'
-import abcDefaultFunc from './Abc.test';
+import abcDefaultFunc from './abc.test';
 
 export default function napiFunctionCallTest() {
   describe('napiFunctionCallTest', () => {
@@ -65,7 +65,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0002 START');
-      const sum = napitest.getAddFunc();
+      const sum: Function = napitest.getAddFunc();
       let total: number = 5;
       expect(sum(2,3)).assertEqual(total);
       console.info('testFunctionCall0002 END');
@@ -82,7 +82,7 @@ export default function napiFunctionCallTest() {
     it('testFunctionCall0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0003 START');
       const addFunObj = napitest.napiCreateFunction();
-      const addFunc = addFunObj as Function;
+      const addFunc: Function = addFunObj as Function;
       const res:number = addFunc(3, 4);
       expect(res).assertEqual(7);
       console.info('testFunctionCall0003 END');
@@ -98,7 +98,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0004 START');
-      const multiplyRes = napitest.nativeMultiply(2,3);
+      const multiplyRes: number = napitest.nativeMultiply(2,3);
       let total: number = 6;
       expect(multiplyRes).assertEqual(total);
       console.info('testFunctionCall0004 END');
@@ -135,10 +135,8 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0006 START');
-      const resultObj = napitest.createAndCallInOneFunc();
-
+      const resultObj:napitest.CreateAndCallResult = napitest.createAndCallInOneFunc();
       const dynamicFunc = resultObj.func as (x: number) => number;
-
       const inputVal = 8.5;
       const funcRes = dynamicFunc(inputVal);
       expect(funcRes === inputVal * 2).assertTrue();
@@ -160,7 +158,7 @@ export default function napiFunctionCallTest() {
         return x + 1;
       };
 
-      const finalResult = napitest.callChain(addOneFunc);
+      const finalResult: number = napitest.callChain(addOneFunc);
       const expectedResult = 8;
       expect(finalResult).assertEqual(expectedResult);
       console.info('testFunctionCall0007 START');
@@ -176,7 +174,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0008 START');
-      const finalResult = napitest.runScriptPath(abcDefaultFunc);
+      const finalResult: boolean = napitest.runScriptPath(abcDefaultFunc);
 
       expect(finalResult).assertTrue();
       console.info('testFunctionCall0008 END');
@@ -192,7 +190,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0009 START');
-      const finalResult = napitest.callGetter();
+      const finalResult: boolean = napitest.callGetter();
       expect(finalResult).assertTrue();
       console.info('testFunctionCall0009 END');
     });
@@ -207,7 +205,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0010 START');
-      const finalResult = napitest.callSetter();
+      const finalResult: boolean = napitest.callSetter();
       console.info('testFunctionCall0010 value is: ' + finalResult);
       expect(finalResult).assertTrue();
       console.info('testFunctionCall0010 END');
