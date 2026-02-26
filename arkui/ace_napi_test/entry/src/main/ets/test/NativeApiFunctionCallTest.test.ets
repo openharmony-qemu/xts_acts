@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from "@ohos/hypium"
 import napitest from 'libnapifunctioncalltest.so'
-import abcDefaultFunc from './abc.test';
+import abcDefaultFunc from './Abc.test';
 
 export default function napiFunctionCallTest() {
   describe('napiFunctionCallTest', () => {
@@ -81,7 +81,7 @@ export default function napiFunctionCallTest() {
      */
     it('testFunctionCall0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testFunctionCall0003 START');
-      const addFunObj = napitest.napiCreateFunction();
+      const addFunObj: object = napitest.napiCreateFunction();
       const addFunc: Function = addFunObj as Function;
       const res:number = addFunc(3, 4);
       expect(res).assertEqual(7);
@@ -222,7 +222,7 @@ export default function napiFunctionCallTest() {
     it('testFunctionCall0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('testFunctionCall0011 START');
-        const promise = napitest.createPromiseResolve();
+        const promise: Promise<string> = napitest.createPromiseResolve();
 
         promise
           .then((resolveResult: string) => {
