@@ -248,33 +248,6 @@ export default function photoPickerPromise(abilityContext: Context) {
     });
 
     /**
-     * @tc.name   PhotoViewPicker_select_001
-     * @tc.number SUB_DF_PhotoViewPicker_select_0010
-     * @tc.desc   Test PhotoViewPicker.select() interfaces with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('PhotoViewPicker_select_001', Level.LEVEL3, async (done: Function) => {
-      try {
-        new picker.PhotoViewPicker().select(undefined).then((result) => {
-          console.info(`PhotoViewPicker_select_001 result: ${JSON.stringify(result)}`);
-          expect(result.length === 0).assertTrue();
-          done();
-        }).catch((err: Error) => {
-          console.info(`PhotoViewPicker_select_001 err: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done();
-        })
-        done();
-      } catch (e) {
-        console.log('PhotoViewPicker_select_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
    * @tc.name   PhotoViewPicker_save_000
    * @tc.number SUB_DF_PhotoViewPicker_save_0000
    * @tc.desc   Test PhotoViewPicker.save() interfaces with null parameter

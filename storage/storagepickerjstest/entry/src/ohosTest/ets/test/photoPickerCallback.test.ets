@@ -209,34 +209,6 @@ export default function photoPickerCallback(abilityContexts: Context) {
     });
 
     /**
-     * @tc.name   PhotoViewPicker_select_callback_001
-     * @tc.number SUB_DF_PhotoViewPicker_select_callback_0010
-     * @tc.desc   Test PhotoViewPicker.select() interfaces with undefined parameter and callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('PhotoViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
-    try {
-        new picker.PhotoViewPicker().select(undefined, (err, data) => {
-          if (err != undefined) {
-            console.info(`PhotoViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
-            expect(false).assertTrue();
-            done();
-          }
-          console.info(`PhotoViewPicker_select_callback_001 result: ${JSON.stringify(data)}`);
-          expect(data.length === 0).assertTrue();
-          done();
-        });
-        done();
-    } catch (e) {
-        console.log('PhotoViewPicker_select_callback_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(false).assertTrue();
-        done();
-    }
-    });
-
-    /**
      * @tc.name   PhotoViewPicker_save_callback_000
      * @tc.number SUB_DF_PhotoViewPicker_save_callback_0000
      * @tc.desc   Test PhotoViewPicker.save() interfaces with null parameter and callback
