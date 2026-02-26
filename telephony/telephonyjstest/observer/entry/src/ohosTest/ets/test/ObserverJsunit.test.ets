@@ -300,6 +300,60 @@ export default function ObserverJsunit() {
     })
 
     /**
+     * @tc.name   Telephony_observer_observer_on_callStateChange_0300
+     * @tc.number Telephony_observer_observer_on_callStateChange_0300
+     * @tc.desc   call the on method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_observer_on_callStateChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      console.log("************* Telephony_observer_observer_on_callStateChange_0300 Test start *************");
+      try {
+        let callback = (value:observer.CallStateInfo) => {
+          console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+          expect(typeof value.state === undefined).assertFalse();
+        }
+        observer.on(null, {
+          slotId: 0
+        }, callback);
+        done();
+      } catch (error) {
+        expect(error.code == 401).assertEqual(true);
+        done();
+      }
+      observer.off('callStateChange');
+      console.log("************* Telephony_observer_observer_on_callStateChange_0300 Test end *************");
+    })
+
+    /**
+     * @tc.name   Telephony_observer_observer_on_callStateChange_0400
+     * @tc.number Telephony_observer_observer_on_callStateChange_0400
+     * @tc.desc   call the on method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_observer_on_callStateChange_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      console.log("************* Telephony_observer_observer_on_callStateChange_0400 Test start *************");
+      try {
+        let callback = (value:observer.CallStateInfo) => {
+          console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+          expect(typeof value.state === undefined).assertFalse();
+        }
+        observer.on(undefined, {
+          slotId: 0
+        }, callback);
+        done();
+      } catch (error) {
+        expect(error.code == 401).assertEqual(true);
+        done();
+      }
+      observer.off('callStateChange');
+      console.log("************* Telephony_observer_observer_on_callStateChange_0400 Test end *************");
+    })
+
+    /**
      * @tc.name   Telephony_observer_observer_off_callStateChange_0100
      * @tc.number Telephony_observer_observer_off_callStateChange_0100
      * @tc.desc   call the off method of callStateChange
@@ -325,6 +379,57 @@ export default function ObserverJsunit() {
       console.log("************* Telephony_observer_observer_off_callStateChange_0100 Test end *************");
     })
 
+    /**
+     * @tc.name   Telephony_observer_observer_off_callStateChange_0200
+     * @tc.number Telephony_observer_observer_off_callStateChange_0200
+     * @tc.desc   call the off method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_observer_off_callStateChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      console.log("************* Telephony_observer_observer_off_callStateChange_0200 Test start *************");
+      try {
+        let callback = (value:observer.CallStateInfo) => {
+          console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+        }
+        observer.on(null, callback);
+        // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+        observer.off('callStateChange', callback);
+        observer.off('callStateChange');
+        done();
+      } catch (error) {
+        expect(error.code == 401).assertEqual(true);
+        done();
+      }
+      console.log("************* Telephony_observer_observer_off_callStateChange_0200 Test end *************");
+    })
+
+    /**
+     * @tc.name   Telephony_observer_observer_off_callStateChange_0300
+     * @tc.number Telephony_observer_observer_off_callStateChange_0300
+     * @tc.desc   call the off method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_observer_off_callStateChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      console.log("************* Telephony_observer_observer_off_callStateChange_0300 Test start *************");
+      try {
+        let callback = (value:observer.CallStateInfo) => {
+          console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
+        }
+        observer.on(undefined, callback);
+        // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
+        observer.off('callStateChange', callback);
+        observer.off('callStateChange');
+        done();
+      } catch (error) {
+        expect(error.code == 401).assertEqual(true);
+        done();
+      }
+      console.log("************* Telephony_observer_observer_off_callStateChange_0300 Test end *************");
+    })
 
     /**
      * @tc.name   Telephony_observer_observer_on_simStateChange_0200
