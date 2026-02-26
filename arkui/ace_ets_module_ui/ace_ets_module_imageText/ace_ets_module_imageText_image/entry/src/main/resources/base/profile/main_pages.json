@@ -83,6 +83,7 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageRenderModeUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageInterpolationUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageSourceSizeUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageColorFilterUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageColorFilterUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageDraggableUndefinedAndNull"
     ]
 }
