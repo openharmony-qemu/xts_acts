@@ -583,7 +583,7 @@ export default function windowEventTest() {
     });
     /**
     * @tc.name testClearWindowMask_1300002
-    * @tc.number testGetLastWindow_0100
+    * @tc.number testClearWindowMask_0100
     * @tc.desc testClearWindowMask_1300002
     * @tc.type FUNCTION
     * @tc.size MEDIUMTEST
@@ -614,7 +614,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_1300004
-     * @tc.number testGetLastWindow_0200
+     * @tc.number testClearWindowMask_0200
      * @tc.desc   testClearWindowMask_1300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -644,7 +644,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_subWindow
-     * @tc.number testGetLastWindow_0300
+     * @tc.number testClearWindowMask_0300
      * @tc.desc   testClearWindowMask_subWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -679,8 +679,9 @@ export default function windowEventTest() {
             expect(cornerRadius2).assertEqual(cornerRadius1);
             await subWindow.destroyWindow();
             done();
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow();
             if (err.code === 801) {
               expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
               done();
@@ -689,8 +690,9 @@ export default function windowEventTest() {
               done();
             }
           });
-        }).catch((err: BusinessError) => {
+        }).catch(async (err: BusinessError) => {
           console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
           if (err.code === 801) {
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
             done();
@@ -701,6 +703,7 @@ export default function windowEventTest() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
         if (err.code === 801) {
           done();
         } else {
@@ -713,7 +716,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_subWindow_resizeWindow
-     * @tc.number testGetLastWindow_0400
+     * @tc.number testClearWindowMask_0400
      * @tc.desc   testClearWindowMask_subWindow_resizeWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -753,8 +756,9 @@ export default function windowEventTest() {
             expect(height).assertEqual(minHeight);
             await subWindow.destroyWindow();
             done();
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow();
             if (err.code === 801) {
               expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
               done();
@@ -763,8 +767,9 @@ export default function windowEventTest() {
               done();
             }
           });
-        }).catch((err: BusinessError) => {
+        }).catch(async (err: BusinessError) => {
           console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
           if (err.code === 801) {
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
             done();
@@ -775,6 +780,7 @@ export default function windowEventTest() {
         });
       } catch (err) {
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
         if (err.code === 801) {
           done();
         } else {
@@ -787,7 +793,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_subWindow_not_setWindowMask
-     * @tc.number testGetLastWindow_0500
+     * @tc.number testClearWindowMask_0500
      * @tc.desc   testClearWindowMask_subWindow_not_setWindowMask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -806,8 +812,9 @@ export default function windowEventTest() {
           console.info(caseName + ' Succeeded in clearing the window mask.');
           await subWindow.destroyWindow();
           done();
-        }).catch((err: BusinessError) => {
+        }).catch(async (err: BusinessError) => {
           console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
           if (err.code === 801) {
             expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
             done();
@@ -830,7 +837,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_floatWindow
-     * @tc.number testGetLastWindow_0600
+     * @tc.number testClearWindowMask_0600
      * @tc.desc   testClearWindowMask_floatWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -873,8 +880,9 @@ export default function windowEventTest() {
               expect(cornerRadius2).assertEqual(cornerRadius1);
               await subWindow!.destroyWindow();
               done();
-            }).catch((err: BusinessError) => {
+            }).catch(async (err: BusinessError) => {
               console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindow!.destroyWindow();
               if (err.code === 801) {
                 expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
                 done();
@@ -883,8 +891,9 @@ export default function windowEventTest() {
                 done();
               }
             });
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow!.destroyWindow();
             if (err.code === 801) {
               expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
               done();
@@ -895,6 +904,7 @@ export default function windowEventTest() {
           });
         } catch (err) {
           console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow!.destroyWindow();
           if (err.code === 801) {
             done();
           } else {
@@ -916,7 +926,7 @@ export default function windowEventTest() {
     })
     /**
      * @tc.name   testClearWindowMask_floatWindow_resizeWindow
-     * @tc.number testGetLastWindow_0700
+     * @tc.number testClearWindowMask_0700
      * @tc.desc   testClearWindowMask_floatWindow_resizeWindow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -926,7 +936,7 @@ export default function windowEventTest() {
       let caseName = "testClearWindowMask_floatWindow_resizeWindow";
       let subWindow: window.Window | null = null;
       let config: window.Configuration = {
-        name: "testClearWindowMask_floatWindow",
+        name: "testClearWindowMask_floatWindow_resizeWindow",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context
       };
@@ -966,8 +976,9 @@ export default function windowEventTest() {
               expect(height).assertEqual(minHeight);
               await subWindow!.destroyWindow();
               done();
-            }).catch((err: BusinessError) => {
+            }).catch(async (err: BusinessError) => {
               console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindow!.destroyWindow();
               if (err.code === 801) {
                 expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
                 done();
@@ -976,8 +987,9 @@ export default function windowEventTest() {
                 done();
               }
             });
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow!.destroyWindow();
             if (err.code === 801) {
               expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
               done();
@@ -988,6 +1000,7 @@ export default function windowEventTest() {
           });
         } catch (err) {
           console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow!.destroyWindow();
           if (err.code === 801) {
             done();
           } else {
