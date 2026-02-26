@@ -25,15 +25,15 @@ import napiRefTest from './NapiRef.test';
 import napiFunctionCallTest from './NativeApiFunctionCallTest.test';
 
 export default function testsuite() {
-  //napiRefTest();
-  //napiStringTest();
-  //napiBufferTest();
-  //napiSendableTest();
-  //napiApiTest();
-  //napiTaskApiTest();
-  //napiSendableTaskTest();
-  //napiWorkerTest();
-  //napiWorkerGCTest();
-  //napiCheckExTest();
+  napiRefTest();
+  napiStringTest();
+  napiBufferTest();
+  napiSendableTest();
+  napiApiTest();
+  napiTaskApiTest();
+  napiSendableTaskTest();
+  napiWorkerTest();
+  napiWorkerGCTest();
+  napiCheckExTest();
   napiFunctionCallTest();
 }
