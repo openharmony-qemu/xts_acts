@@ -1626,8 +1626,9 @@ static napi_value setAndDeleteProperty(napi_env env, napi_callback_info info)
 
     napi_valuetype valuetype1;
     NAPI_CALL(env, napi_typeof(env, args[1], &valuetype1));
-    NAPI_ASSERT(env, valuetype1 == napi_string || valuetype1 == napi_symbol,
-            "Wrong type of arguments. Expects a string or symbol as second.");
+    if (valuetype1 != napi_string && valuetype1 != napi_symbol) {
+        NAPI_ASSERT(env, false, "Wrong type of arguments. Expects a string or symbol as second.");
+    }
 
     const char testStr[] = "cKey";
     napi_value cKey;
@@ -1763,9 +1764,10 @@ static napi_value hasNamedProperty(napi_env env, napi_callback_info info)
 
     napi_valuetype value_type1;
     NAPI_CALL(env, napi_typeof(env, args[1], &value_type1));
+    if (value_type1 != napi_string && value_type1 != napi_symbol) {
+        NAPI_ASSERT(env, false, "Wrong type of arguments. Expects a string or symbol as second.");
+    }
 
-    NAPI_ASSERT(env, value_type1 == napi_string || value_type1 == napi_symbol,
-            "Wrong type of arguments. Expects a string as second.");
 
     NAPI_CALL(env,
             napi_get_value_string_utf8(env, args[1], key, 255, &key_length));
