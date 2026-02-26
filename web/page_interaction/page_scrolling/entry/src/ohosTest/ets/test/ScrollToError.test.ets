@@ -66,9 +66,12 @@ export default function scrollToError() {
      * @tc.level  LEVEL2
      */
     it('testScrollToXNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testScrollToXNull", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testScrollToXNull", '401', 179551, done);
-      sendEventByKey('scrollToErrorButton', 10, '');
+      Utils.emitEvent("testScrollToXNull", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = 0;
+      Utils.registerEvent("testScrollToXNull", "401", 179551, ()=> {isReturn = 1});
+      await Utils.waitAndClickComponent(driver, "scrollToErrorButton","testScrollToXNull");
+      await Utils.waitForExist(()=>isReturn, "testScrollToXNull", 1, 1000);
+      done();
     })
 
     /**
