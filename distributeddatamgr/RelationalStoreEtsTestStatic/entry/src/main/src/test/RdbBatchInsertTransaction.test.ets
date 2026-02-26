@@ -1104,7 +1104,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1112,12 +1112,12 @@ export default function RdbBatchInsertTransactionTest() {
           "salary": 100.5,
           "blobType": u8,
         };
-        let rowId = await transaction.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let rowId = await transaction!.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.log(TAG + "insert success ");
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0100 failed");
       }
@@ -1137,7 +1137,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1150,7 +1150,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0200 failed");
       }
@@ -1170,7 +1170,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1178,12 +1178,12 @@ export default function RdbBatchInsertTransactionTest() {
           "salary": 100.5,
           "blobType": u8,
         };
-        let rowId = await transaction.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let rowId = await transaction!.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.log(TAG + "insert success ");
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0300 failed");
       }
@@ -1203,7 +1203,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1216,7 +1216,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0400 failed");
       }
@@ -1236,7 +1236,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1244,12 +1244,12 @@ export default function RdbBatchInsertTransactionTest() {
           "salary": 100.5,
           "blobType": u8,
         };
-        let rowId = await transaction.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let rowId = await transaction!.insert('', valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.log(TAG + "insert success ");
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0500 failed");
       }
@@ -1269,7 +1269,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1282,7 +1282,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0600 failed");
       }
@@ -1302,7 +1302,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1315,7 +1315,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testCreateTransactionErr0700 failed");
       }
@@ -1335,7 +1335,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1343,12 +1343,12 @@ export default function RdbBatchInsertTransactionTest() {
           "salary": 100.5,
           "blobType": u8,
         };
-        let rowId = await transaction.batchInsert('', [valueBucket]);
+        let rowId = await transaction!.batchInsert('', [valueBucket]);
         console.log(TAG + "batchInsert success ");
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testBatchInsertErr0100 failed");
       }
@@ -1368,7 +1368,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1381,7 +1381,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800000)
         console.log(TAG + "testBatchInsertErr0200 failed");
       }
@@ -1401,7 +1401,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1414,7 +1414,7 @@ export default function RdbBatchInsertTransactionTest() {
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800021)
         console.log(TAG + "testBatchInsertWithConflictResolutionSyncErr0100 failed");
       }
@@ -1434,7 +1434,7 @@ export default function RdbBatchInsertTransactionTest() {
       let options: relationalStore.TransactionOptions = {
         transactionType: relationalStore.TransactionType.DEFERRED
       }
-      let transaction = await rdbStore.createTransaction(options);
+      let transaction = await rdbStore!.createTransaction(options);
       try {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1442,12 +1442,12 @@ export default function RdbBatchInsertTransactionTest() {
           "salary": 100.5,
           "blobType": u8,
         };
-        let rowId = await transaction.batchInsertWithConflictResolution('', [valueBucket], relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let rowId = await transaction!.batchInsertWithConflictResolution('', [valueBucket], relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.log(TAG + "batchInsert success ");
         expect().assertFail();
       } catch (err) {
         console.log(TAG + err + " code: " + err.code);
-        await transaction.rollback()
+        await transaction!.rollback()
         expect(err.code).assertEqual(14800021)
         console.log(TAG + "testBatchInsertWithConflictResolutionSyncErr0200 failed");
       }
@@ -1463,7 +1463,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
     it('testUpdateErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
         console.log(TAG + "************* testUpdateErrTest001 start *************");
-        let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+        let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
         try {
         const valueBucket1: relationalStore.ValuesBucket = {
           "id": "abc",
@@ -1497,7 +1497,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
     it('testUpdateErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       console.log(TAG + "************* testUpdateErrTest002 start *************");
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       try {
       const valueBucket1: relationalStore.ValuesBucket = {
         "id": "abc",
@@ -1531,7 +1531,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
     it('testUpdateErrTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       console.log(TAG + "************* testUpdateErrTest003 start *************");
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       try {
       const valueBucket1: relationalStore.ValuesBucket = {
         "id": "abc",
@@ -1565,7 +1565,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
     it('testUpdateErrTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       console.log(TAG + "************* testUpdateErrTest004 start *************");
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       try {
       const valueBucket1: relationalStore.ValuesBucket = {
         "id": "abc",
@@ -1599,7 +1599,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
     it('testUpdateSyncErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       console.log(TAG + "************* testUpdateSyncErrTest001 start *************");
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       try {
       const valueBucket1: relationalStore.ValuesBucket = {
         "id": "abc",
@@ -1632,7 +1632,7 @@ export default function RdbBatchInsertTransactionTest() {
    */
   it('testUpdateSyncErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
     console.log(TAG + "************* testUpdateSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     try {
     const valueBucket1: relationalStore.ValuesBucket = {
       "id": "abc",
@@ -1665,7 +1665,7 @@ export default function RdbBatchInsertTransactionTest() {
    */
   it('testUpdateSyncErrTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
     console.log(TAG + "************* testUpdateSyncErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     try {
     const valueBucket1: relationalStore.ValuesBucket = {
       "id": "abc",
@@ -1698,7 +1698,7 @@ export default function RdbBatchInsertTransactionTest() {
    */
   it('testUpdateSyncErrTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
     console.log(TAG + "************* testUpdateSyncErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     try {
     const valueBucket1: relationalStore.ValuesBucket = {
       "id": "abc",
@@ -1731,7 +1731,7 @@ export default function RdbBatchInsertTransactionTest() {
    */
   it('testDeleteSyncErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
     console.log(TAG + "************* testDeleteSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     try {
     let predicates = new relationalStore.RdbPredicates("test");
     predicates.equalTo("name", "Jim");
@@ -1757,7 +1757,7 @@ export default function RdbBatchInsertTransactionTest() {
    */
   it('testDeleteSyncErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
     console.log(TAG + "************* testDeleteSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     try {
     let predicates = new relationalStore.RdbPredicates("test");
     predicates.equalTo("name", "Jim");
@@ -1783,7 +1783,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testExecuteErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testExecuteErrTest001 end createTransaction');
     try {
       let result =  await transaction.execute(CREATE_TABLE_TEST);
@@ -1806,7 +1806,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testExecuteErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testExecuteErrTest002 end createTransaction');
     try {
       let result =  await transaction.execute("");
@@ -1830,7 +1830,7 @@ export default function RdbBatchInsertTransactionTest() {
   it("testExecuteErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteErrTest003 start *************");
     try {
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       console.info(TAG + 'testExecuteErrTest003 end createTransaction');
       await transaction.rollback();
       let result =  await transaction.execute("");
@@ -1852,7 +1852,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testExecuteSyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testExecuteSyncErrTest001 end createTransaction');
     try {
       let result = transaction.executeSync(CREATE_TABLE_TEST);
@@ -1875,7 +1875,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testExecuteSyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testExecuteSyncErrTest002 end createTransaction');
     try {
       let result = transaction.executeSync("");
@@ -1899,7 +1899,7 @@ export default function RdbBatchInsertTransactionTest() {
   it("testExecuteSyncErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testExecuteSyncErrTest003 start *************");
     try {
-      let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+      let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
       console.info(TAG + 'testExecuteSyncErrTest003 end createTransaction');
       await transaction.rollback();
       let result = transaction.executeSync("");
@@ -1921,7 +1921,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest001 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -1954,7 +1954,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest002 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -1985,7 +1985,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest003 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2016,7 +2016,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest004 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2043,7 +2043,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest005 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest005 end createTransaction');
     await transaction.commit()
     try {
@@ -2073,7 +2073,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningErrTest006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningErrTest006 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningErrTest006 end createTransaction');
     try {
       const valueBucket1: relationalStore.ValuesBucket = {
@@ -2106,7 +2106,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest001 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2139,7 +2139,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest002 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2170,7 +2170,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest003 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2201,7 +2201,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest004 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2228,7 +2228,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest005 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest005 end createTransaction');
     await transaction.commit()
     try {
@@ -2258,7 +2258,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testBatchInsertWithReturningSyncErrTest006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testBatchInsertWithReturningSyncErrTest006 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testBatchInsertWithReturningSyncErrTest006 end createTransaction');
     try {
       const valueBucket1: relationalStore.ValuesBucket = {
@@ -2291,7 +2291,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest001 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2325,7 +2325,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest002 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2356,7 +2356,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest003 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2387,7 +2387,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest004 end createTransaction');
     await transaction.commit()
     try {
@@ -2418,7 +2418,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningErrTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningErrTest005 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest005 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2455,7 +2455,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningSyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest001 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2489,7 +2489,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningSyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest002 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2520,7 +2520,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningSyncErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningSyncErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest003 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2551,7 +2551,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningSyncErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningSyncErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest004 end createTransaction');
     await transaction.commit()
     try {
@@ -2582,7 +2582,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testUpdateWithReturningSyncErrTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testUpdateWithReturningSyncErrTest005 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest005 end createTransaction');
     try {
       const valueBucket: relationalStore.ValuesBucket = {
@@ -2619,7 +2619,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2649,7 +2649,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2676,7 +2676,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2703,7 +2703,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testDeleteWithReturningErrTest004 end createTransaction');
     await transaction.commit()
     try {
@@ -2730,7 +2730,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningSyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2760,7 +2760,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningSyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2787,7 +2787,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningSyncErrTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningSyncErrTest003 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testUpdateWithReturningSyncErrTest001 end createTransaction');
     try {
       const config: relationalStore.ReturningConfig = {
@@ -2814,7 +2814,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testDeleteWithReturningSyncErrTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testDeleteWithReturningSyncErrTest004 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testDeleteWithReturningSyncErrTest004 end createTransaction');
     await transaction.commit()
     try {
@@ -2841,7 +2841,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQueryErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQueryErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQueryErrTest001 end createTransaction');
     try {
       let predicates = new relationalStore.RdbPredicates("test");
@@ -2884,7 +2884,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQueryErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQueryErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQueryErrTest002 end createTransaction');
     await transaction.commit()
     try {
@@ -2909,7 +2909,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySyncErrTest001 end createTransaction');
     try {
       let predicates = new relationalStore.RdbPredicates("test");
@@ -2952,7 +2952,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySyncErrTest002 end createTransaction');
     await transaction.commit()
     try {
@@ -2977,7 +2977,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySqlErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySqlErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySqlErrTest001 end createTransaction');
     try {
       let resultSet = await transaction.querySql("SELECT * FROM test", []);
@@ -3019,7 +3019,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySqlErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySqlErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySqlErrTest002 end createTransaction');
     await transaction.commit()
     try {
@@ -3043,7 +3043,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySqlSyncErrTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySqlSyncErrTest001 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySqlSyncErrTest001 end createTransaction');
     try {
       let resultSet = transaction.querySqlSync("SELECT * FROM test", []);
@@ -3085,7 +3085,7 @@ export default function RdbBatchInsertTransactionTest() {
      */
   it("testQuerySqlSyncErrTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (): Promise<void> => {
     console.info(TAG + "************* testQuerySqlSyncErrTest002 start *************");
-    let transaction: relationalStore.Transaction = await rdbStore.createTransaction();
+    let transaction: relationalStore.Transaction = await rdbStore!.createTransaction();
     console.info(TAG + 'testQuerySqlSyncErrTest002 end createTransaction');
     await transaction.commit()
     try {
