@@ -20,7 +20,10 @@ import { AtomicServiceOptions,
   common, contextConstant,
   OpenLinkOptions,
   StartOptions, startupManager,
-  UIAbility, dialogRequest  } from '@kit.AbilityKit';
+  UIAbility, dialogRequest,
+  CompletionHandlerForAbilityStartCallback,
+  AbilityStartFailureCode
+} from '@kit.AbilityKit';
 import { BusinessError ,systemParameterEnhance} from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { image } from '@kit.ImageKit';
@@ -189,13 +192,25 @@ export default function UIAbilityContext() {
       let wantParam: Record<string, Object> = {
         'time': '2023-10-23 20:45'
       };
+      let completionHandler: CompletionHandlerForAbilityStartCallback = {
+        onRequestSuccess: (name: string) => {
+          console.info(`testTag onRequestSuccess name` + name);
+          expect().assertFail();
+        },
+        onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => {
+          console.info(`testTag onRequestFailure name: ` + name + `, failureCode:` + failureCode + `, failureMessage:` +
+            failureMessage);
+          expect().assertFail();
+        }
+      };
       let abilityStartCallback: common.AbilityStartCallback = {
         onError: (code: number, name: string, message: string) => {
           console.log(`code:` + code + `name:` + name + `message:` + message);
         },
         onResult: (abilityResult: common.AbilityResult) => {
           console.log(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
-        }
+        },
+        completionHandler: completionHandler
       };
       try {
         globalThis.context.startAbilityByType(undefined, wantParam, abilityStartCallback).then(() => {
