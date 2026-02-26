@@ -469,7 +469,7 @@ export default function documentPickerCallback(abilityContext: Context) {
             done();
           }
           console.info(`DocumentViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         });
         done();
@@ -523,7 +523,7 @@ export default function documentPickerCallback(abilityContext: Context) {
             done();
           }
           console.info(`DocumentViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         });
         done();

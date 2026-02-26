@@ -219,7 +219,7 @@ export default function audioPickerCallback(abilityContext: Context) {
             done();
           }
           console.info(`AudioViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         });
         done();
@@ -273,7 +273,7 @@ export default function audioPickerCallback(abilityContext: Context) {
             done();
           }
           console.info(`AudioViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         });
         done();

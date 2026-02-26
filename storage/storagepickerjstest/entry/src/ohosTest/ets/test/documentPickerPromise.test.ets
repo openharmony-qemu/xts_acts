@@ -482,7 +482,7 @@ export default function documentPickerPromise(abilityContext: Context) {
       try {
         new picker.DocumentViewPicker().select(undefined).then((result) => {
           console.info(`DocumentViewPicker_select_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         }).catch((err: Error) => {
           console.info(`DocumentViewPicker_select_001 err: ${JSON.stringify(err)}`);
@@ -657,7 +657,7 @@ export default function documentPickerPromise(abilityContext: Context) {
       try {
         new picker.DocumentViewPicker().save(undefined).then((result) => {
         console.info(`DocumentViewPicker_save_001 result: ${JSON.stringify(result)}`);
-        expect(result).assertTrue();
+        expect(result.length === 0).assertTrue();
         done();
       }).catch((err: Error) => {
         console.info(`DocumentViewPicker_save_001 err: ${JSON.stringify(err)}`);

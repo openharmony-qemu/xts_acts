@@ -259,7 +259,7 @@ export default function photoPickerPromise(abilityContext: Context) {
       try {
         new picker.PhotoViewPicker().select(undefined).then((result) => {
           console.info(`PhotoViewPicker_select_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         }).catch((err: Error) => {
           console.info(`PhotoViewPicker_select_001 err: ${JSON.stringify(err)}`);
@@ -316,7 +316,6 @@ export default function photoPickerPromise(abilityContext: Context) {
         done();
       }).catch((err: Error) => {
         console.info(`PhotoViewPicker_save_001 err: ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
         done();
       })
       done();

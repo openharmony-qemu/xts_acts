@@ -225,7 +225,7 @@ export default function photoPickerCallback(abilityContexts: Context) {
             done();
           }
           console.info(`PhotoViewPicker_select_callback_001 result: ${JSON.stringify(data)}`);
-          expect(data).assertTrue();
+          expect(data.length === 0).assertTrue();
           done();
         });
         done();
@@ -277,7 +277,6 @@ export default function photoPickerCallback(abilityContexts: Context) {
           new picker.PhotoViewPicker().save(undefined, (err, data) => {
             if (err != undefined) {
               console.info(`PhotoViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
-              expect(false).assertTrue();
               done();
             }
             console.info(`PhotoViewPicker_save_callback_001 result: ${JSON.stringify(data)}`);

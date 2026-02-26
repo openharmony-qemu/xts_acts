@@ -140,7 +140,7 @@ export default function audioPickerPromise(abilityContext: Context) {
       try {
         new picker.AudioViewPicker().select(undefined).then((result) => {
           console.info(`AudioViewPicker_select_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         }).catch((err: Error) => {
           console.info(`AudioViewPicker_select_001 err: ${JSON.stringify(err)}`);
@@ -192,7 +192,7 @@ export default function audioPickerPromise(abilityContext: Context) {
       try {
         new picker.AudioViewPicker().save(undefined).then((result) => {
           console.info(`AudioViewPicker_save_001 result: ${JSON.stringify(result)}`);
-          expect(result).assertTrue();
+          expect(result.length === 0).assertTrue();
           done();
         }).catch((err: Error) => {
           console.info(`AudioViewPicker_save_001 err: ${JSON.stringify(err)}`);
