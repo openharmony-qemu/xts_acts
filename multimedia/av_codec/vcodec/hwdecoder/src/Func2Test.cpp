@@ -98,7 +98,8 @@ static bool capConfigCheck(OH_AVCapability *capability, int32_t profile, int32_t
         }
     }
     if (isSupport != isGetContain) {
-        cout << "isSupport != isGetContain isSupport:" << (int32_t)isSupport << "   isGetContain:" << (int32_t)isGetContain << endl;
+        cout << "isSupport != isGetContain isSupport:" << (int32_t)isSupport <<
+            "   isGetContain:" << (int32_t)isGetContain << endl;
         return false;
     }
     return true;
