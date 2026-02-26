@@ -66,6 +66,15 @@ add_library(nativeAccessibilityCustom SHARED
     accessibilityCustom/AccessibilityDialogSubWindow.cpp
     NativeAccessibilityCustomTest.cpp)
 
+add_library(nativeGrid SHARED
+    NativeGridTest.cpp
+    grid/PluginManagerTest.cpp
+    grid/GridTest.cpp
+    component/button_component.cpp
+    component/grid_component.cpp
+    component/text_component.cpp
+    component/component.cpp )
+
 find_library(
     # Sets the name of the path variable.
     hilog-lib
@@ -125,6 +134,8 @@ target_link_libraries(nativegamecrontroller PUBLIC
 target_link_libraries(nativeKeyEvent PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 target_link_libraries(nativeSourceType PUBLIC
+    ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
+target_link_libraries(nativeGrid PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 
 target_link_libraries(nativeDragEvent PUBLIC libace_napi.z.so)
