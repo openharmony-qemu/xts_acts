@@ -40,7 +40,7 @@ import {
   XComponentParameters,
   XComponentType,
   XComponentOptions
-} from '@ohos.arkui.component';
+} from '@kit.ArkUI';
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 
 let para: Record<string,string> = {
