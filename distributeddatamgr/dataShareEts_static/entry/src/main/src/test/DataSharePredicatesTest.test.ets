@@ -25,8 +25,6 @@ import Utils from './Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let context: common.UIAbilityContext;
 
 const CREATE_TABLE_ALL_DATA_TYPE_SQL = "CREATE TABLE IF NOT EXISTS test "
   + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -41,6 +39,8 @@ let vb: ValuesBucket = {
   "isStudent": bool
 }
 
+let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let context: common.UIAbilityContext;
 let g_handle: dataShare.DataProxyHandle | undefined = undefined;
 let dsProxyHelper: dataShare.DataShareHelper;
 let uri = "datashareproxy://com.acts.ohos.data.datasharetest/test";
@@ -52,6 +52,7 @@ export default function dataSharePredicatesTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.datashareetstest");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
+      await Utils.msSleep(1000);
     })
 
     /**
