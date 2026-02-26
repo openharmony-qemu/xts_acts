@@ -737,7 +737,7 @@ export default function CameraManagerCreateVideoOutputTest() {
       try {
         await getVideoSurfaceId();
         console.info(TAG, 'start')
-        await mCameraManager.createVideoOutput(null, indexSurfaceId);
+        await mCameraManager.createVideoOutput(null, mVideoSurfaceId);
         console.info(TAG, "success createVideoOutput")
         done();
       } catch (error) {
@@ -759,7 +759,7 @@ export default function CameraManagerCreateVideoOutputTest() {
       try {
         await getVideoSurfaceId();
         console.info(TAG, 'start')
-        await mCameraManager.createVideoOutput(undefined, indexSurfaceId);
+        await mCameraManager.createVideoOutput(undefined, mVideoSurfaceId);
         console.info(TAG, "success createVideoOutput")
         done();
       } catch (error) {
@@ -781,7 +781,7 @@ export default function CameraManagerCreateVideoOutputTest() {
       try {
         await getVideoSurfaceId();
         console.info(TAG, 'start')
-        await mCameraManager.createVideoOutput(AppStorage.get('emptyString'), indexSurfaceId);
+        await mCameraManager.createVideoOutput(AppStorage.get('emptyString'), mVideoSurfaceId);
         console.info(TAG, "success createVideoOutput")
         done();
       } catch (error) {
