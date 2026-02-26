@@ -425,7 +425,7 @@ export default function ObserverJsunit() {
         observer.off('callStateChange');
         done();
       } catch (error) {
-        expect(error.code == 401).assertEqual(true);
+        expect(error.code === 401).assertEqual(true);
         done();
       }
       console.log("************* Telephony_observer_observer_off_callStateChange_0300 Test end *************");
