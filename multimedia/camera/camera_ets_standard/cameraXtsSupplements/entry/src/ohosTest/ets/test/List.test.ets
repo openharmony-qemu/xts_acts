@@ -42,6 +42,9 @@ import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManage
 import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
 import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
+import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
+import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
+import CameraTest from './camera/CameraTest.test';
 
 
 export default function testsuite() {
@@ -88,4 +91,7 @@ export default function testsuite() {
   CameraInputOnerrorTest();
   createCameraInput();
   CameraSessionBandSuppTest();
+  CameraPhotoSessionTest();
+  CameraCaptureSessionTest();
+  CameraTest()
 }
