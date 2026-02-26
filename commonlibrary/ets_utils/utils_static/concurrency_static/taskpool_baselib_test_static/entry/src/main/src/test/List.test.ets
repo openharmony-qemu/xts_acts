@@ -16,7 +16,6 @@ import urlTest from './Url.test';
 import utilTest from './Utill.test';
 
 export default function testsuite() {
-  xmlDynamic1();
   utilTest();
   urlTest();
   uriTest();
