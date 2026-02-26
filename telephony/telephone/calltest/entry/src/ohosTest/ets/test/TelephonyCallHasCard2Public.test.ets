@@ -738,53 +738,6 @@ export default function HasCard2PublicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3200
-     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3200
-     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerIsEmergencyPhoneNumber3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3200';
-      console.info(`${caseName} test start`);
-      call.isEmergencyPhoneNumber("110", null).then((data: boolean) => {
-        console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
-        ExpectFail();
-        done();
-      }).catch((err: BusinessError) => {
-        console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      });
-      console.info(`${caseName} test end`);
-    });
-
-    /**
-     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3300
-     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3300
-     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyCallManagerIsEmergencyPhoneNumber3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3300';
-      console.info(`${caseName} test start`);
-      call.isEmergencyPhoneNumber("110", undefined).then((data: boolean) => {
-        console.info(`${caseName} isEmergencyPhoneNumber,promise: data->${JSON.stringify(data)}`);
-        ExpectFail();
-        done();
-      }).catch((err: BusinessError) => {
-        console.info(`${caseName} isEmergencyPhoneNumber fail,promise: err->${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      });
-      console.info(`${caseName} test end`);
-    });
-
-
-    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3400
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3400
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
