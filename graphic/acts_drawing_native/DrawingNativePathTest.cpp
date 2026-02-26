@@ -189,8 +189,9 @@ HWTEST_F(DrawingNativePathTest, testPathDestroyNormal, Function | SmallTest | Le
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathTest, testPathDestroyNull, Function | SmallTest | Level3) {
+    OH_Drawing_Path *path = nullptr;
     OH_Drawing_PathDestroy(nullptr);
-    EXPECT_TRUE(true);
+    EXPECT_EQ(path, nullptr);
 }
 
 /**
