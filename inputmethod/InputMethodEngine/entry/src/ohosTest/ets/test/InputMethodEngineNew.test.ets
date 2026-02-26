@@ -4827,5 +4827,2987 @@ export default function inputMethodEngineNew() {
       })
     });
 
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelCallback_0100
+     * @tc.number Sub_InputMethod_IME_createPanelCallback_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelCallback_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelCallback_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 68
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelCallback_0200
+     * @tc.number Sub_InputMethod_IME_createPanelCallback_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelCallback_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelCallback_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 69
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelCallback_0300
+     * @tc.number Sub_InputMethod_IME_createPanelCallback_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelCallback_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelCallback_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 70
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelCallback_0400
+     * @tc.number Sub_InputMethod_IME_createPanelCallback_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelCallback_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelCallback_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelCallback_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 71
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelPromise_0100
+     * @tc.number Sub_InputMethod_IME_createPanelPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelPromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelPromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 72
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelPromise_0200
+     * @tc.number Sub_InputMethod_IME_createPanelPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelPromise_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelPromise_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 73
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelPromise_0300
+     * @tc.number Sub_InputMethod_IME_createPanelPromise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelPromise_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelPromise_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 74
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_createPanelPromise_0400
+     * @tc.number Sub_InputMethod_IME_createPanelPromise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_createPanelPromise_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_createPanelPromise_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_createPanelPromise_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 75
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_destroyPanelCallback_0100
+     * @tc.number Sub_InputMethod_IME_destroyPanelCallback_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_destroyPanelCallback_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_destroyPanelCallback_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 76
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_destroyPanelCallback_0200
+     * @tc.number Sub_InputMethod_IME_destroyPanelCallback_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_destroyPanelCallback_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_destroyPanelCallback_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_destroyPanelCallback_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 77
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_destroyPanelPromise_0100
+     * @tc.number Sub_InputMethod_IME_destroyPanelPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_destroyPanelPromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_destroyPanelPromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 78
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_destroyPanelPromise_0200
+     * @tc.number Sub_InputMethod_IME_destroyPanelPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_destroyPanelPromise_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_destroyPanelPromise_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_destroyPanelPromise_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 79
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 81
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200
+     * @tc.number Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 82
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300
+     * @tc.number Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 83
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 84
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementCallback_0300
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementCallback_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementCallback_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementCallback_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 85
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementCallback_0400
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementCallback_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementCallback_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementCallback_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 86
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementCallback_0500
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementCallback_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementCallback_0500', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementCallback_0500"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 87
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementPromise_0300
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementPromise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementPromise_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementPromise_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 88
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementPromise_0400
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementPromise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementPromise_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementPromise_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 89
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementPromise_0500
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementPromise_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementPromise_0500', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementPromise_0500"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 90
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementSync_0300
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementSync_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementSync_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementSync_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 91
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementSync_0400
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementSync_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementSync_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementSync_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 92
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientselectByMovementSync_0500
+     * @tc.number Sub_InputMethod_IME_InputClientselectByMovementSync_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientselectByMovementSync_0500', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientselectByMovementSync_0500"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 93
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 94
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200
+     * @tc.number Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 95
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 96
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 97
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 98
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 99
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 100
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 101
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 102
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400
+     * @tc.number Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 103
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendMessagePromise_0100
+     * @tc.number Sub_InputMethod_IME_InputClientsendMessagePromise_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendMessagePromise_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendMessagePromise_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 104
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendMessagePromise_0200
+     * @tc.number Sub_InputMethod_IME_InputClientsendMessagePromise_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendMessagePromise_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendMessagePromise_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 105
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendMessagePromise_0300
+     * @tc.number Sub_InputMethod_IME_InputClientsendMessagePromise_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendMessagePromise_0300', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendMessagePromise_0300"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 106
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendMessagePromise_0400
+     * @tc.number Sub_InputMethod_IME_InputClientsendMessagePromise_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendMessagePromise_0400', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendMessagePromise_0400"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 107
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientsendMessagePromise_0500
+     * @tc.number Sub_InputMethod_IME_InputClientsendMessagePromise_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientsendMessagePromise_0500', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientsendMessagePromise_0500"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 108
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientrecvMessage_0100
+     * @tc.number Sub_InputMethod_IME_InputClientrecvMessage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientrecvMessage_0100', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientrecvMessage_0100"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0100 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 109
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_InputClientrecvMessage_0200
+     * @tc.number Sub_InputMethod_IME_InputClientrecvMessage_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_InputClientrecvMessage_0200', Level.LEVEL3, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: ESObject) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 subscriberCallback data:"
+          + JSON.stringify(data));
+        commoneventmanager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 publishCallback failed:" + JSON.stringify(err));
+        } 
+      }
+
+      let commonEventSubscribeInfo: commoneventmanager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IME_InputClientrecvMessage_0200"]
+      }
+      let subscriber: ESObject;
+      commoneventmanager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try {
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 subscriber data:" + JSON.stringify(data));
+          commoneventmanager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IME_InputClientrecvMessage_0200 subscriber finish");
+        } catch (err) {
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+          code: 110
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commoneventmanager.publish('inputMethodEngineNewTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
   })
 }
