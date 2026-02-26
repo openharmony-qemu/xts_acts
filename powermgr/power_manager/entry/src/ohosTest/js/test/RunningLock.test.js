@@ -1614,7 +1614,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0570
+     * @tc.name   testRunningLockTest_5700
      * @tc.number testRunningLockTest_5700
      * @tc.desc   test isRunningLockTypeSupported when runningLock type is BACKGROUND_USER_IDLE
      * @tc.type   FUNCTION
@@ -1642,7 +1642,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0580
+     * @tc.name   testRunningLockTest_5800
      * @tc.number testRunningLockTest_5800
      * @tc.desc   test isRunningLockTypeSupported when runningLock type is BACKGROUND_USER_IDLE
      * @tc.type   FUNCTION
@@ -1671,7 +1671,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0590
+     * @tc.name   testRunningLockTest_5900
      * @tc.number testRunningLockTest_5900
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1699,7 +1699,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0600
+     * @tc.name   testRunningLockTest_6000
      * @tc.number testRunningLockTest_6000
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1722,7 +1722,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0610
+     * @tc.name   testRunningLockTest_6100
      * @tc.number testRunningLockTest_6100
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1745,7 +1745,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0620
+     * @tc.name   testRunningLockTest_6200
      * @tc.number testRunningLockTest_6200
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1768,7 +1768,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0630
+     * @tc.name   testRunningLockTest_6300
      * @tc.number testRunningLockTest_6300
      * @tc.desc   createRunningLock(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1791,7 +1791,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0640
+     * @tc.name   testRunningLockTest_6400
      * @tc.number testRunningLockTest_6400
      * @tc.desc   createRunningLock(name: string, type: RunningLockType)
      * @tc.type   FUNCTION
@@ -1819,7 +1819,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0650
+     * @tc.name   testRunningLockTest_6500
      * @tc.number testRunningLockTest_6500
      * @tc.desc   createRunningLock(name: string, type: RunningLockType)
      * @tc.type   FUNCTION
@@ -1842,7 +1842,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0660
+     * @tc.name   testRunningLockTest_6600
      * @tc.number testRunningLockTest_6600
      * @tc.desc   createRunningLock(name: string, type: RunningLockType)
      * @tc.type   FUNCTION
@@ -1871,7 +1871,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0670
+     * @tc.name   testRunningLockTest_6700
      * @tc.number testRunningLockTest_6700
      * @tc.desc   createRunningLock(name: string, type: RunningLockType)
      * @tc.type   FUNCTION
@@ -1901,7 +1901,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0680
+     * @tc.name   testRunningLockTest_6800
      * @tc.number testRunningLockTest_6800
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1924,7 +1924,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0690
+     * @tc.name   testRunningLockTest_6900
      * @tc.number testRunningLockTest_6900
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1947,7 +1947,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0700
+     * @tc.name   testRunningLockTest_7000
      * @tc.number testRunningLockTest_7000
      * @tc.desc   create(name: string, type: RunningLockType): Promise<RunningLock>
      * @tc.type   FUNCTION
@@ -1970,7 +1970,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0710
+     * @tc.name   testRunningLockTest_7100
      * @tc.number testRunningLockTest_7100
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
      * @tc.type   FUNCTION
@@ -1993,7 +1993,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0720
+     * @tc.name   testRunningLockTest_7200
      * @tc.number testRunningLockTest_7200
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
      * @tc.type   FUNCTION
@@ -2022,7 +2022,7 @@ export default function RunningLockTest() {
     })
 
     /**
-     * @tc.name   SUB_PowerSystem_RunningLock_JSTest_0730
+     * @tc.name   testRunningLockTest_7300
      * @tc.number testRunningLockTest_7300
      * @tc.desc   create(name: string, type: RunningLockType, callback: AsyncCallback<RunningLock>): void
      * @tc.type   FUNCTION
