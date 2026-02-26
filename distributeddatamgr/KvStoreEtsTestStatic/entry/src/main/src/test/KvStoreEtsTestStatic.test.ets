@@ -833,7 +833,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start getKvstore");
-        let store = await kvManager.getKVStore<distributedKVStore.SingleKVStore>("", singleOptions);
+        let store = await kvManager!.getKVStore("", singleOptions);
         hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 getKvstore end");
         expect().assertFail();
       } catch (e) {
@@ -965,7 +965,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest001 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest001 start deleteKVStore");
-        kvManager.getAllKVStoreId('', (err: BusinessError | null) => {
+        kvManager!.getAllKVStoreId('', (err: BusinessError | null) => {
           if (err != undefined) {
             console.error(tag + `Failed to get AllKVStoreId.code is ${err.code},message is ${err.message}`);   
             expect(err.code).assertEqual(401);
@@ -995,7 +995,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest002 start ");
       try {
         hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest002 start");
-        await kvManager.getAllKVStoreId('');
+        await kvManager!.getAllKVStoreId('');
         console.info(tag + 'Succeeded in getting AllKVStoreId');
         expect().assertFail();
       } catch (err) {
