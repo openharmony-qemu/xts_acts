@@ -457,7 +457,7 @@ export default function TextParagraphTest() {
           paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("The quick brown fox jumps over the lazy dog.");
           let paragraph = paragraphBuilder.build();
-          expect(paragraph !== undefined).assertTrue()
+          expect(paragraph !== undefined).assertTrue();
           paragraph.layoutSync(100);
           let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
           console.info('www data lxt ' + JSON.stringify(lineMetrics))
