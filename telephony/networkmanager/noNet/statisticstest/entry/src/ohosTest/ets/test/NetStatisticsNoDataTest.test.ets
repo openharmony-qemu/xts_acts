@@ -619,12 +619,12 @@ export default function   netStatisticsNoDataTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
-          ExpectTrue(error.code == 401);
+          ExpectTrue(error.code === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
+        ExpectTrue(err.code === 401);
         console.info(`${caseName} test end`);
         done();
       }
@@ -648,12 +648,12 @@ export default function   netStatisticsNoDataTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
-          ExpectTrue(error.code == 401);
+          ExpectTrue(error.code === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 401);
+        ExpectTrue(err.code === 401);
         console.info(`${caseName} test end`);
         done();
       }
