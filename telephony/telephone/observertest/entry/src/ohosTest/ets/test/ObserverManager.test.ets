@@ -29,6 +29,13 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   }
 }
 
+function sleep (time:number):Promise<string>{
+    return new Promise<string>((resolve)=>{
+        setTimeout(()=>{
+            resolve('ok')},time)
+    });
+}
+
 async function runTestCaseWithJudgeHasSimCard(testCaseName: string, done: Function, runTest: Function) {
   try {
     console.info(`${testCaseName} test start`);
@@ -446,6 +453,35 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOn0600
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOn_0600
+     * @tc.desc   Subscribe to cellular data link connection status.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataConnectionStateChangeOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOn0600';
+      console.info(`${caseName} test start `);
+      try {
+        data.disableCellularData();
+        observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectStateInfo) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data.state != null);
+          ExpectTrue(data.network != null);
+        });
+        data.enableCellularData();
+        await sleep(500);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
 
     /**
      * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOn0500
@@ -567,6 +603,39 @@ export default function observerManagerTest() {
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOnId0800
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0800
+     * @tc.desc   Subscribe to the cellular data link connection status of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyObserverCellularDataConnectionStateChangeOnId0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOnId0800';
+      console.info(`${caseName} test start `);
+      try {
+
+        // Turn on cellular data
+        await data.disableCellularData();
+        observer.on('cellularDataConnectionStateChange', {
+          slotId: 0
+        }, (data: Value) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data.state != null);
+          ExpectTrue(data.network != null);
+        });
+        data.enableCellularData();
+        await sleep(500);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end `);
@@ -728,6 +797,32 @@ export default function observerManagerTest() {
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
+        done();
+      }
+      await data.enableCellularData();
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOn0400
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOn_0400
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOn0400';
+      console.info(`${caseName} test start `);
+      try {
+        await observer.on('cellularDataFlowChange', (data: observer.DataFlowType) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data != null);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
         done();
       }
       await data.enableCellularData();
