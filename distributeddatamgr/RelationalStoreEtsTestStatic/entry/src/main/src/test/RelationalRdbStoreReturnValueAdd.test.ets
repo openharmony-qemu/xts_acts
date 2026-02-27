@@ -29,7 +29,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 let rdbStore:relationalStore.RdbStore | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext | undefined;
+let context:common.UIAbilityContext| undefined;
 const TAG = "[RelationalResultSetReturnValueIsNullTest]";
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 Long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
@@ -75,8 +75,8 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       await Utils.msSleep(10000)
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       try {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        hilog.info(domain, tag, '%{public}s', 'contextDir' + context.databaseDir);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+        hilog.info(domain, tag, '%{public}s', 'contextDir' + context!.databaseDir);
         expect(rdbStore != undefined).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'beforeEach failed');
@@ -85,7 +85,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
     })
     beforeEach(async (): Promise<void> => {
       if (rdbStore != undefined) {
-        await rdbStore.execute(CREATE_TABLE_TEST);
+        await rdbStore!.execute(CREATE_TABLE_TEST);
         let u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: relationalStore.ValuesBucket = {
           "data1": "zhangsan",
@@ -104,15 +104,15 @@ export default function RelationalRdbStoreReturnValueAddTest() {
     })
     afterEach(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterEach');
-      await rdbStore.execute(DROP_TABLE_TEST);
+      await rdbStore!.execute(DROP_TABLE_TEST);
     })
     afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll');
-      // await rdbStore.execute(DROP_TABLE_TEST);
+      // await rdbStore!.execute(DROP_TABLE_TEST);
       try {
         hilog.info(domain, tag, '%{public}s', 'afterAll successful');
-        rdbStore.close();
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        rdbStore!.close();
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'afterAll failed');
         expect().assertFail();
@@ -135,7 +135,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        rdbStore.insert("", valueBucket1, (err, rowId) => {
+        rdbStore!.insert("", valueBucket1, (err, rowId) => {
           console.info(domain, tag, `Insert is successful, rowId = ${rowId}`);
         });
       }catch(err) {
@@ -162,7 +162,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = await rdbStore.insert("", valueBucket1);
+        let rowId = await rdbStore!.insert("", valueBucket1);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -188,7 +188,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = await rdbStore.insert("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let rowId = await rdbStore!.insert("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -214,7 +214,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = rdbStore.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let rowId = rdbStore!.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -237,7 +237,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0005 start *************');
       let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket1, valueBucket2);
       try{
-        let insertNum = await rdbStore.batchInsert("", valueBuckets);
+        let insertNum = await rdbStore!.batchInsert("", valueBuckets);
         console.info(domain, tag, TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
         expect(insertNum).assertEqual(-1);
       }catch(err) {
@@ -259,7 +259,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0006 start *************');
       let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket1, valueBucket2);
       try{
-        let insertNum = rdbStore.batchInsertSync("", valueBuckets);
+        let insertNum = rdbStore!.batchInsertSync("", valueBuckets);
         console.info(domain, tag, TAG +`batchInsert is successful, the number of values that were inserted = ${insertNum}`);
         expect(insertNum).assertEqual(-1);
       }catch(err) {
@@ -281,7 +281,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0007 start *************');
       let valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1, valueBucket2];
       try{
-        let insertNum = await rdbStore.batchInsertWithConflictResolution("", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let insertNum = await rdbStore!.batchInsertWithConflictResolution("", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, `batchInsert is successful, insertNum = ${insertNum}`);
         expect().assertFail();
       }catch(err) {
@@ -303,7 +303,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0008 start *************');
       let valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1, valueBucket2];
       try{
-        let insertNum = rdbStore.batchInsertWithConflictResolutionSync("", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let insertNum = rdbStore!.batchInsertWithConflictResolutionSync("", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, `batchInsert is successful, the number of values that were inserted = ${insertNum}`);
         expect().assertFail();
       }catch(err) {
@@ -329,7 +329,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = rdbStore.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let rowId = rdbStore!.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -355,7 +355,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = rdbStore.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let rowId = rdbStore!.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -381,7 +381,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
         "data3": 10.5
       };
       try{
-        let rowId = rdbStore.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let rowId = rdbStore!.insertSync("", valueBucket1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, TAG +`Insert is successful, rowId = ${rowId}`);
         expect().assertFail();
       }catch(err) {
@@ -403,7 +403,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0012 start *************');
       let valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1, valueBucket2];
       try{
-        let insertNum = await rdbStore.batchInsertWithConflictResolution("test", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let insertNum = await rdbStore!.batchInsertWithConflictResolution("test", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, `batchInsert is successful, insertNum = ${insertNum}`);
         expect(insertNum).assertEqual(2);
       }catch(err) {
@@ -425,7 +425,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0013 start *************');
       let valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1, valueBucket2];
       try{
-        let insertNum = rdbStore.batchInsertWithConflictResolutionSync("test", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        let insertNum = rdbStore!.batchInsertWithConflictResolutionSync("test", valueBuckets, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         console.info(domain, tag, `batchInsert is successful, the number of values that were inserted = ${insertNum}`);
         expect(insertNum).assertEqual(2);
       }catch(err) {
@@ -446,7 +446,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
     it('RelationalRdbStoreReturnValueAddTest_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0014 start *************');
       try{
-        rdbStore.querySql("", (err, resultSet) => {
+        rdbStore!.querySql("", (err, resultSet) => {
           if (!resultSet) {
             console.error('Query succeeded but resultSet is null');
             return;
@@ -475,7 +475,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = await rdbStore.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let rows = await rdbStore!.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -498,7 +498,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = await rdbStore.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let rows = await rdbStore!.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -521,7 +521,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = await rdbStore.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let rows = await rdbStore!.update(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -544,7 +544,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = rdbStore.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let rows = rdbStore!.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -567,7 +567,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = rdbStore.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
+        let rows = rdbStore!.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -590,7 +590,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = rdbStore.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let rows = rdbStore!.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -613,7 +613,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = rdbStore.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let rows = rdbStore!.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -636,7 +636,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        let rows = rdbStore.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let rows = rdbStore!.updateSync(valueBucket1, predicates, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, TAG + `Updated row count: ${rows}`);
         expect(rows == 1).assertTrue();
       }catch(err) {
@@ -660,9 +660,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "zhangsan";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(2);
       }catch(err) {
@@ -686,9 +686,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: [] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "zhangsan";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -712,10 +712,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: [] };
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -739,9 +739,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -765,9 +765,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -791,9 +791,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -817,9 +817,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -843,9 +843,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -869,9 +869,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -895,10 +895,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: [] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertFail();
       }catch(err) {
@@ -922,10 +922,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -949,10 +949,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -976,10 +976,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1003,10 +1003,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1030,10 +1030,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1057,10 +1057,10 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config1, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1084,9 +1084,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = await rdbStore.deleteWithReturning(predicates, config1);
+        let results = await rdbStore!.deleteWithReturning(predicates, config1);
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1110,9 +1110,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: [] };
-        let results = rdbStore.deleteWithReturningSync(predicates, config1, );
+        let results = rdbStore!.deleteWithReturningSync(predicates, config1, );
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertFail();
       }catch(err) {
@@ -1136,9 +1136,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: [""] };
-        let results = rdbStore.deleteWithReturningSync(predicates, config1, );
+        let results = rdbStore!.deleteWithReturningSync(predicates, config1, );
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertFail();
       }catch(err) {
@@ -1162,9 +1162,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: ['data1'] };
-        let results = rdbStore.deleteWithReturningSync(predicates, config1);
+        let results = rdbStore!.deleteWithReturningSync(predicates, config1);
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1188,9 +1188,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: [] };
-        let results = await rdbStore.deleteWithReturning(predicates, config1, );
+        let results = await rdbStore!.deleteWithReturning(predicates, config1, );
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertFail();
       }catch(err) {
@@ -1214,9 +1214,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         const config1: relationalStore.ReturningConfig = { columns: [""] };
-        let results = await rdbStore.deleteWithReturning(predicates, config1, );
+        let results = await rdbStore!.deleteWithReturning(predicates, config1, );
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertFail();
       }catch(err) {
@@ -1240,7 +1240,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        resultSet = await rdbStore.query(predicates, []);
+        resultSet = await rdbStore!.query(predicates, []);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(9);
       }catch(err) {
@@ -1264,7 +1264,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       try{
-        resultSet = rdbStore.querySync(predicates, []);
+        resultSet = rdbStore!.querySync(predicates, []);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(9);
       }catch(err) {
@@ -1286,7 +1286,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0047 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = await rdbStore.querySql("", ["zhangsan"]);
+        resultSet = await rdbStore!.querySql("", ["zhangsan"]);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(0);
         resultSet.close();
@@ -1309,7 +1309,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0048 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = await rdbStore.querySql("SELECT * FROM test WHERE data1 = ?", []);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test WHERE data1 = ?", []);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(9);
         resultSet.close();
@@ -1332,7 +1332,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0049 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = rdbStore.querySqlSync("", ["zhangsan"]);
+        resultSet = rdbStore!.querySqlSync("", ["zhangsan"]);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(0);
         resultSet.close();
@@ -1355,7 +1355,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag  + '************* RelationalRdbStoreReturnValueAddTest_0050 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = rdbStore.querySqlSync("SELECT * FROM test WHERE data1 = ?", []);
+        resultSet = rdbStore!.querySqlSync("SELECT * FROM test WHERE data1 = ?", []);
         console.info(domain, tag, `ResultSet column names: ${resultSet.columnNames}, column count: ${resultSet.columnCount}`);
         expect(resultSet.columnCount).assertEqual(9);
         resultSet.close();
@@ -1379,7 +1379,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1402,7 +1402,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [];
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1425,7 +1425,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = await rdbStore.batchInsertWithReturning("", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = await rdbStore!.batchInsertWithReturning("", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1448,7 +1448,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: [''] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1471,7 +1471,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: [] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1480,7 +1480,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       }
       console.info(domain, tag + '************* RelationalRdbStoreReturnValueAddTest_0055 end *************');
     })
-    
+
     /**
      * @tc.name   RelationalRdbStoreReturnValueAddTest_0056
      * @tc.number SUB_DistributedData_RelationalRdbStoreReturnValueAddTest_0056
@@ -1494,7 +1494,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = rdbStore.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let results = rdbStore!.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1517,7 +1517,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [];
       try{
-        let results = rdbStore.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
+        let results = rdbStore!.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1540,7 +1540,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = rdbStore.batchInsertWithReturningSync("", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        let results = rdbStore!.batchInsertWithReturningSync("", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1563,7 +1563,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: [''] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = rdbStore.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        let results = rdbStore!.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1586,7 +1586,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: [] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = rdbStore.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        let results = rdbStore!.batchInsertWithReturningSync("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect().assertFail();
       }catch(err) {
@@ -1609,7 +1609,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       const valueBuckets: relationalStore.ValuesBucket[] = [valueBucket1];
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config, relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         console.info(domain, tag, `batchInsertWithReturningExample is successful, changed is ${results.changed}  resultSet ：${results.resultSet}`);
         expect(results.changed).assertEqual(1);
       }catch(err) {
@@ -1632,7 +1632,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket1, valueBucket2);
       const config: relationalStore.ReturningConfig = { columns: ['data1', 'data2'] };
       try{
-        let results = await rdbStore.batchInsertWithReturning("test", valueBuckets, config);
+        let results = await rdbStore!.batchInsertWithReturning("test", valueBuckets, config);
         console.info(domain, tag, TAG + `batchInsertWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed == 2).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1657,7 +1657,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket1, valueBucket2);
       const config: relationalStore.ReturningConfig = { columns: ['data1', 'data2'] };
       try{
-        let results = rdbStore.batchInsertWithReturningSync("test", valueBuckets, config);
+        let results = rdbStore!.batchInsertWithReturningSync("test", valueBuckets, config);
         console.info(domain, tag, TAG + `batchInsertWithReturningSync is successful, changed is ${results.changed}`);
         expect(results.changed == 2).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1684,9 +1684,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = await rdbStore.updateWithReturning(valueBucket1, predicates, config);
+        let results = await rdbStore!.updateWithReturning(valueBucket1, predicates, config);
         console.info(domain, tag, TAG + `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed == 1).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1713,9 +1713,9 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo('data1', 'zhangsan');
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
         valueBucket1['data1'] = "rouse";
-        let results = rdbStore.updateWithReturningSync(valueBucket1, predicates, config);
+        let results = rdbStore!.updateWithReturningSync(valueBucket1, predicates, config);
         console.info(domain, tag, TAG + `updateWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed == 1).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1741,8 +1741,8 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
-        let results = await rdbStore.deleteWithReturning(predicates, config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
+        let results = await rdbStore!.deleteWithReturning(predicates, config);
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed == 2).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1768,8 +1768,8 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       const config: relationalStore.ReturningConfig = { columns: ['data1'] };
       try{
-        rdbStore.batchInsertWithReturningSync("test", [valueBucket1], config);
-        let results = rdbStore.deleteWithReturningSync(predicates, config);
+        rdbStore!.batchInsertWithReturningSync("test", [valueBucket1], config);
+        let results = rdbStore!.deleteWithReturningSync(predicates, config);
         console.info(domain, tag, TAG + `deleteWithReturningExample is successful, changed is ${results.changed}`);
         expect(results.changed == 2).assertTrue();
         console.info(domain, tag, TAG + `${results.resultSet}`);
@@ -1795,7 +1795,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo("data1", "zhangsan");
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = await rdbStore.query(predicates, ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"]);
+        resultSet = await rdbStore!.query(predicates, ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"]);
         console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
         expect(resultSet.columnNames.length > 0).assertTrue();
         console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
@@ -1835,7 +1835,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       predicates.equalTo("data1", "zhangsan");
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = rdbStore.querySync(predicates, ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"]);
+        resultSet = rdbStore!.querySync(predicates, ["data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8"]);
         console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
         expect(resultSet.columnNames.length > 0).assertTrue();
         console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
@@ -1873,7 +1873,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0070 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = await rdbStore.querySql("SELECT * FROM test");
+        resultSet = await rdbStore!.querySql("SELECT * FROM test");
         console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
         expect(resultSet.columnNames.length > 0).assertTrue();
         console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
@@ -1912,7 +1912,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
       if (rdbStore != undefined) {
-        rdbStore.query(predicates, (err, resultSet) => {
+        rdbStore!.query(predicates, (err, resultSet) => {
           if (!resultSet) {
             console.error('Query succeeded but resultSet is null');
             return;
@@ -1959,7 +1959,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0072 start *************');
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo("data1", "zhangsan");
-      rdbStore.querySql("SELECT * FROM test", (err, resultSet) => {
+      rdbStore!.querySql("SELECT * FROM test", (err, resultSet) => {
         if (!resultSet) {
           console.error('Query succeeded but resultSet is null');
           return;
@@ -2004,7 +2004,7 @@ export default function RelationalRdbStoreReturnValueAddTest() {
       console.info(domain, tag + TAG + '************* RelationalRdbStoreReturnValueAddTest_0073 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try{
-        resultSet = rdbStore.querySqlSync("SELECT * FROM test");
+        resultSet = rdbStore!.querySqlSync("SELECT * FROM test");
         console.info(domain, tag + TAG +`ResultSet column names: ${resultSet.columnNames}`);
         expect(resultSet.columnNames.length > 0).assertTrue();
         console.info(domain, tag + TAG +`ResultSet column count: ${resultSet.columnCount}`);
@@ -2039,40 +2039,39 @@ export default function RelationalRdbStoreReturnValueAddTest() {
      * @tc.level  Level 2
      */
     it('RelationalRdbStoreReturnValueAddTest_0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
-        console.log(domain, tag + TAG + "************* RelationalRdbStoreReturnValueAddTest_0074 start *************");
-        let status1 = 0;
-        let storeObserver1 = (devices: Array<relationalStore.ChangeInfo>) => {
-          console.info(domain, tag + TAG +"type:" + devices[0].type);
-          expect(devices[0].type == 0).assertTrue();
-          console.info(domain, tag + TAG +"table:" + devices[0].table);
-          expect(devices[0].table).assertEqual("test");
-          console.info(domain, tag + TAG +"inserted:" + JSON.stringify(devices[0].inserted));
-          expect((devices[0].inserted).length == 1).assertTrue();
-          console.info(domain, tag + TAG +"updated:" + JSON.stringify(devices[0].updated));
-          expect((devices[0].updated).length == 0).assertTrue();
-          console.info(domain, tag + TAG + "deleted:" + JSON.stringify(devices[0].deleted));
-          expect((devices[0].deleted).length == 0).assertTrue();
-          status1 = 1;
+      console.log(domain, tag + TAG + "************* RelationalRdbStoreReturnValueAddTest_0074 start *************");
+      let status1 = 0;
+      let storeObserver1 = (devices: Array<relationalStore.ChangeInfo>) => {
+        console.info(domain, tag + TAG +"type:" + devices[0].type);
+        expect(devices[0].type == 0).assertTrue();
+        console.info(domain, tag + TAG +"table:" + devices[0].table);
+        expect(devices[0].table).assertEqual("test");
+        console.info(domain, tag + TAG +"inserted:" + JSON.stringify(devices[0].inserted));
+        expect((devices[0].inserted).length == 1).assertTrue();
+        console.info(domain, tag + TAG +"updated:" + JSON.stringify(devices[0].updated));
+        expect((devices[0].updated).length == 0).assertTrue();
+        console.info(domain, tag + TAG + "deleted:" + JSON.stringify(devices[0].deleted));
+        expect((devices[0].deleted).length == 0).assertTrue();
+        status1 = 1;
+      };
+      let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      expect(rdbStore2 != undefined).assertTrue();
+      try {
+        rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+        const valueBucket: relationalStore.ValuesBucket = {
+          'data1': 'zhangsan',
+          'data2': 18 as long,
+          'data3': 25000 as long,
         };
-        let rdbStore2: relationalStore.RdbStore | undefined = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        expect(rdbStore2 != undefined).assertTrue();
-        try {
-          rdbStore?.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-          const valueBucket: relationalStore.ValuesBucket = {
-            'data1': 'zhangsan',
-            'data2': 18 as long,
-            'data3': 25000 as long,
-          };
-          rdbStore?.insertSync("test", valueBucket);
-          await Utils.msSleep(5000)
-          rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
-        } catch (err) {
-          console.error(domain, tag, TAG + `failed, code is ${err.code}, message is ${err.message}`);
-          expect(null).assertFail();
-        }
-        console.log(domain, tag + TAG + "************* RelationalRdbStoreReturnValueAddTest_0074 end *************");
-      })
-
+        rdbStore?.insertSync("test", valueBucket);
+        await Utils.msSleep(5000)
+        rdbStore?.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_LOCAL_DETAILS, storeObserver1);
+      } catch (err) {
+        console.error(domain, tag, TAG + `failed, code is ${err.code}, message is ${err.message}`);
+        expect(null).assertFail();
+      }
+      console.log(domain, tag + TAG + "************* RelationalRdbStoreReturnValueAddTest_0074 end *************");
+    })
   })
 }
 
