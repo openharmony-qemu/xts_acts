@@ -69,6 +69,38 @@ class MySequence implements rpc.Parcelable {
   unmarshalling(messageSequence: rpc.MessageSequence) {
     image.createPixelMap(new ArrayBuffer(96), { size: { height: 4, width: 6 } }).then((pixelParcel: image.PixelMap) => {
       pixelParcel.unmarshalling(messageSequence).then(async (pixelMap: image.PixelMap) => {
+        console.info('www data unmarshalling ', pixelMap.isEditable, pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertFalse();
+        this.pixel_map = pixelMap;
+        pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+          console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+        })
+      })
+    });
+    return true;
+  }
+}
+
+class MySequence2 implements rpc.Parcelable {
+  pixel_map: image.PixelMap;
+
+  constructor(conPixelMap: image.PixelMap) {
+    this.pixel_map = conPixelMap;
+  }
+
+  marshalling(messageSequence: rpc.MessageSequence) {
+    this.pixel_map.marshalling(messageSequence);
+    console.info('marshalling');
+    return true;
+  }
+
+  unmarshalling(messageSequence: rpc.MessageSequence) {
+    image.createPixelMap(new ArrayBuffer(96), { size: { height: 4, width: 6 } }).then((pixelParcel: image.PixelMap) => {
+      pixelParcel.unmarshalling(messageSequence).then(async (pixelMap: image.PixelMap) => {
+        console.info('www data unmarshalling 22 ', pixelMap.isEditable, pixelMap.isStrideAlignment);
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertTrue();
         this.pixel_map = pixelMap;
         pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
@@ -106,7 +138,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -129,7 +160,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts)
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -152,7 +182,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -175,7 +204,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -198,7 +226,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -221,7 +248,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -244,7 +270,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -267,7 +292,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -290,7 +314,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -313,7 +336,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(color, opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -336,7 +358,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -359,7 +380,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -382,7 +402,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -405,7 +424,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           image.createPixelMapSync(opts);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -426,7 +444,6 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.readPixelsToBuffer(readBuffer).then(() => {
             console.info('www data 1500 Succeeded in reading image pixel data.');
-            expect(true).assertTrue();
           }).catch((error) => {
             console.error('www data 1500 Failed to read image pixel data.')
             expect().assertFail();
@@ -455,7 +472,6 @@ export default function graphicImagePixelMap() {
         };
         try {
           pixelMap!.readPixelsSync(area);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -475,7 +491,6 @@ export default function graphicImagePixelMap() {
         const readBuffer: ArrayBuffer = new ArrayBuffer(96);
         try {
           pixelMap!.readPixelsToBufferSync(readBuffer);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -499,7 +514,6 @@ export default function graphicImagePixelMap() {
         }
         try {
           pixelMap!.writeBufferToPixelsSync(color);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -519,7 +533,7 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.getImageInfo().then((imageInfo: image.ImageInfo)=>{
             console.info('www data 1900 succeed ' + 1111111)
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.info('www data 1900 error ' + 22222)
             expect().assertFail();
@@ -542,7 +556,6 @@ export default function graphicImagePixelMap() {
       async (done: () => void): Promise<void> => {
         try {
           pixelMap!.getImageInfoSync();
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -582,7 +595,8 @@ export default function graphicImagePixelMap() {
       async (done: () => void): Promise<void> => {
         try {
           let rowCount: number = pixelMap!.getBytesNumberPerRow();
-          expect(true).assertTrue();
+          console.info('www data graphicImagePixelMap_static_2200 succeed ', rowCount);
+          expect(rowCount).assertEqual(24);
         } catch (err) {
           expect().assertFail();
         }
@@ -601,7 +615,8 @@ export default function graphicImagePixelMap() {
       async (done: () => void): Promise<void> => {
         try {
           let pixelBytesNumber: number = pixelMap!.getPixelBytesNumber();
-          expect(true).assertTrue();
+          console.info('www data graphicImagePixelMap_static_2300 success ', pixelBytesNumber);
+          expect(pixelBytesNumber).assertEqual(96);
         } catch (err) {
           expect().assertFail();
         }
@@ -622,7 +637,7 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.opacity(rate).then(() => {
             console.info('www data 2400 Succeeded in setting opacity.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 2400 Failed to set opacity.');
             expect().assertFail();
@@ -648,7 +663,6 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.opacity(rate, (err: BusinessError<void> | null) => {
             console.info('www data graphicImagePixelMap_static_2500 succeed')
-            expect(true).assertTrue();
           })
         } catch (err) {
           expect().assertFail();
@@ -669,7 +683,6 @@ export default function graphicImagePixelMap() {
         let rate: float = 5;
         try {
           pixelMap!.opacitySync(rate);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -686,12 +699,15 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap_static_2700 ';
         try {
           await pixelMap!.createAlphaPixelmap().then((alphaPixelMap: image.PixelMap) => {
-            console.info('www data 2700 Succeeded in creating alpha pixelmap.');
-            expect(true).assertTrue();
+            console.info(msgStr + 'Succeeded in creating alpha pixelmap.', alphaPixelMap.isEditable,
+              alphaPixelMap.isStrideAlignment);
+            expect(alphaPixelMap.isEditable).assertFalse();
+            expect(alphaPixelMap.isStrideAlignment).assertFalse();
           }).catch((error) => {
-            console.error('www data 2700 Failed to create alpha pixelmap.');
+            console.error(msgStr + 'Failed to create alpha pixelmap.');
             expect().assertFail();
           });
         } catch (err) {
@@ -710,10 +726,14 @@ export default function graphicImagePixelMap() {
      */
     it('graphicImagePixelMap_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap_static_2800 ';
         // callback
         try {
-          pixelMap!.createAlphaPixelmap( (err: BusinessError | null) => {
-            console.info('www data graphicImagePixelMap_static_2800 succeed');
+          pixelMap!.createAlphaPixelmap( (err: BusinessError | null, alphaPixelMap: image.PixelMap | undefined) => {
+            console.info(msgStr + 'Succeeded in creating alpha pixelmap.', alphaPixelMap?.isEditable,
+              alphaPixelMap?.isStrideAlignment);
+            expect(alphaPixelMap?.isEditable).assertFalse();
+            expect(alphaPixelMap?.isStrideAlignment).assertFalse();
           })
         } catch (err) {
           expect().assertFail();
@@ -732,8 +752,10 @@ export default function graphicImagePixelMap() {
     it('graphicImagePixelMap_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          pixelMap!.createAlphaPixelmapSync();
-          expect(true).assertTrue();
+          let pixelMap1 = pixelMap!.createAlphaPixelmapSync();
+          console.info('www data graphicImagePixelMap_static_2900 ', pixelMap1.isEditable, pixelMap1.isStrideAlignment);
+          expect(pixelMap1.isEditable).assertFalse();
+          expect(pixelMap1.isStrideAlignment).assertFalse();
         } catch (err) {
           expect().assertFail();
         }
@@ -755,7 +777,7 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.scale(scaleX, scaleY).then(() => {
             console.info('www data 3100 Succeeded in scaling pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3100 Failed to scale pixelmap.');
             expect().assertFail();
@@ -782,7 +804,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.scale(scaleX, scaleY, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3100 succeed')
-            expect(true).assertTrue();
+            
           })
         } catch (err) {
           expect().assertFail();
@@ -804,7 +826,6 @@ export default function graphicImagePixelMap() {
         let scaleY: float = 1;
         try {
           pixelMap!.scaleSync(scaleX, scaleY);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -826,21 +847,21 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.scale(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(() => {
             console.info('www data 3300 Succeeded in scaling pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3300 Failed to scale pixelmap.');
             expect().assertFail();
           });
           await pixelMap!.scale(scaleX, scaleY, image.AntiAliasingLevel.NONE).then(() => {
             console.info('www data 3300 Succeeded in scaling pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3300 Failed to scale pixelmap.');
             expect().assertFail();
           });;
           await pixelMap!.scale(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM).then(() => {
             console.info('www data 3300 Succeeded in scaling pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3300 Failed to scale pixelmap.');
             expect().assertFail();
@@ -865,7 +886,6 @@ export default function graphicImagePixelMap() {
         let scaleY: float = 1;
         try {
           pixelMap!.scaleSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -886,7 +906,7 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.rotate(angle).then(() => {
             console.info('www data 3600 Succeeded in rotating pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3600 Failed to rotate pixelmap.');
             expect().assertFail();
@@ -912,7 +932,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.rotate(angle, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3600 succeed')
-            expect(true).assertTrue();
+            
           })
         } catch (err) {
           expect().assertFail();
@@ -933,7 +953,6 @@ export default function graphicImagePixelMap() {
         let angle: float = 90;
         try {
           pixelMap!.rotateSync(angle);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -956,7 +975,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.flip(horizontal, vertical, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3800 succeed')
-            expect(true).assertTrue();
+            
           })
         } catch (err) {
           expect().assertFail();
@@ -979,7 +998,7 @@ export default function graphicImagePixelMap() {
         try {
           await pixelMap!.flip(horizontal, vertical).then(() => {
             console.info('www data 3900 Succeeded in flipping pixelmap.');
-            expect(true).assertTrue();
+            
           }).catch((err) => {
             console.error('www data 3900 Failed to flip pixelmap.');
             expect().assertFail();
@@ -1004,7 +1023,6 @@ export default function graphicImagePixelMap() {
         let vertical: boolean = true;
         try {
           pixelMap!.flipSync(horizontal, vertical);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -1026,7 +1044,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.crop(region, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_4100 succeed')
-            expect(true).assertTrue();
+            
           })
         } catch (err) {
           expect().assertFail();
@@ -1107,7 +1125,6 @@ export default function graphicImagePixelMap() {
           let pixel = image.createPixelMapSync(color, opts);
           console.info('www data pixel ' + JSON.stringify(pixel));
           console.info('www data pixel ' + pixel);
-          expect(true).assertTrue();
         } catch (err) {
           expect().assertFail();
         }
@@ -1130,14 +1147,14 @@ export default function graphicImagePixelMap() {
         }
         try {
           pixelMap?.setMemoryNameSync("PixelMapName Test");
-          expect(true).assertTrue();
         } catch (err) {
           err = err as BusinessError;
           if (err.code == 62980286) {
             console.info('www data graphicImagePixelMap_static_4500 error code ' + JSON.stringify(err))
-            expect(true).assertTrue();
+            
           } else {
             console.info('www data graphicImagePixelMap_static_4500 error ')
+            expect().assertFail();
           }
         }
         done();
@@ -1186,7 +1203,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap1.release().then(() => {
             console.info('Succeeded in releasing graphicImagePixelMap_static_4700 object.');
-            expect(true).assertTrue();
+            
           }).catch((error) => {
             console.error('Failed to release graphicImagePixelMap_static_4700 object.');
             expect().assertFail();
@@ -1217,7 +1234,7 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap2.release((err: BusinessError<void> | null) => {
             console.info('Succeeded in releasing graphicImagePixelMap_static_4800 object.');
-            expect(true).assertTrue();
+            
           })
         } catch (err) {
           err = err as BusinessError;
@@ -1267,7 +1284,7 @@ export default function graphicImagePixelMap() {
           pixelMap?.readPixelsToBuffer(readBuffer, (err: BusinessError<void> | null) => {
             if(!err){
               console.info('www data graphicImagePixelMap_static_6300 succeed')
-              expect(true).assertTrue();
+              
             } else {
               expect().assertFail();
             }
@@ -1301,7 +1318,7 @@ export default function graphicImagePixelMap() {
               expect().assertFail();
             } else {
               console.info('Succeeded in reading pixelMap from the specified area.');
-              expect(true).assertTrue();
+              
             }
           })
         }
@@ -1327,7 +1344,7 @@ export default function graphicImagePixelMap() {
         if (pixelMap != undefined) {
           await pixelMap!.readPixels(area).then(() => {
             console.info('Succeeded in reading the image data in the area.');
-            expect(true).assertTrue();
+            
           }).catch((error) => {
             console.error('Failed to read the image data in the area. ');
             expect().assertFail();
@@ -1354,7 +1371,7 @@ export default function graphicImagePixelMap() {
         if (pixelMap != undefined) {
           await pixelMap!.writeBufferToPixels(color).then(() => {
             console.info("Succeeded in writing data from a buffer to a PixelMap.");
-            expect(true).assertTrue();
+            
           }).catch((error) => {
             console.error('Failed to write data from a buffer to a PixelMap.');
             expect().assertFail();
@@ -1385,7 +1402,7 @@ export default function graphicImagePixelMap() {
               expect().assertFail();
             } else {
               console.info('Succeeded in reading pixelMap from the specified area.');
-              expect(true).assertTrue();
+              
             }
           })
         }
@@ -1409,7 +1426,8 @@ export default function graphicImagePixelMap() {
         }
         try {
           let getDensity: number = pixelMap!.getDensity();
-          expect(true).assertTrue();
+          console.info('www data graphicImagePixelMap_static_6800 success', getDensity);
+          expect(getDensity).assertEqual(0);
         } catch (err) {
           console.info('www data graphicImagePixelMap_static_6800 error');
           expect().assertFail();
@@ -1433,7 +1451,7 @@ export default function graphicImagePixelMap() {
             console.info("www data after toSdr ,imageInfo isHdr:" + imageInfo.isHdr);
             expect().assertFail();
           }).catch((err) => {
-            expect(true).assertTrue();
+            console.info("www data after toSdr error " + err);
           });
         }
         done();
@@ -1985,6 +2003,50 @@ export default function graphicImagePixelMap() {
           expect().assertFail();
         }
         done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap_static_8900
+     * @tc.number graphicImagePixelMap_static_8900
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap_static_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = 0x80;
+        }
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        console.error("www data 11111111");
+        if (pixelMap != undefined) {
+          try {
+            // 序列化。
+            let parcelable: MySequence2 = new MySequence2(pixelMap);
+            let data: rpc.MessageSequence = rpc.MessageSequence.create();
+            data.writeParcelable(parcelable);
+            // 反序列化 rpc获取到data。
+            let ret: MySequence2 = new MySequence2(pixelMap);
+            data.readParcelable(ret);
+            // 获取到pixelmap。
+            let unmarshPixelmap = ret.pixel_map;
+            done();
+          } catch (error) {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+        }
       })
 
   })
