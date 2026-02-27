@@ -16,6 +16,7 @@ import atomicsAPISecondTest from './AtomicsAPISecondTest.test';
 import AtomicsAPIThirdlyTest from './AtomicsAPIThirdlyTest.test';
 import AtomicsFunctionTest from './AtomicsFunctionTest.test';
 import AtomicsMultithreadTest from './AtomicsMultithreadTest.test';
+import atomics2Test from './Atomic2Test.test';
 
 export default function testsuite() {
   atomicsTest()
@@ -36,4 +37,5 @@ export default function testsuite() {
   atomicsSubTest()
   atomicsXorTest()
   atomicsWaitTest()
+  atomics2Test()
 }
