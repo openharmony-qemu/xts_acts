@@ -136,10 +136,11 @@ struct ParticleEmitter {
       }.width('100%').height('50%').align(Alignment.Center)
 
       Button('GetInspector').id('getInspectorId').onClick((e: ClickEvent) => {
+        console.log('XHQ GetInspector start')
         let filterTree = inspector.getInspectorByKey('particle');
-        waitForCompletion(async ()=>{
-          await CommonFunc.sleep(2000)
-        })
+        console.log('XHQ GetInspector start filterTree')
+        await CommonFunc.sleep(2000)
+        console.log('XHQ GetInspector start filterTree2')
         if (filterTree) {
           console.log('XHQ' +
           JSON.stringify(JSON.parseJsonElement(filterTree)?.getElement('$attrs')?.getArray('particles')[0]?.getElement('emitter')?.getElement('annulusRegion')?.getElement('center')?.getString('x')));
