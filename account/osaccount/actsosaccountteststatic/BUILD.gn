@@ -21,7 +21,7 @@ ohos_js_app_static_suite("ActsOsAccountEnterpriseStaticTest") {
   part_name = "os_account"
   subsystem_name = "account"
   deps = [ 
-    "//acts/account/osaccount/osaccountassistapps/actsosaccountassistappone:ActsOsAccountAssistAppOneEnterpriseTest",
-    "//acts/account/osaccount/osaccountassistapps/actsosaccountassistapptwo:ActsOsAccountAssistAppTwoEnterpriseTest"
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistappone:ActsOsAccountAssistAppOneEnterpriseTest",
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistapptwo:ActsOsAccountAssistAppTwoEnterpriseTest"
   ]
 }

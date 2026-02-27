@@ -566,6 +566,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
       try {
         let data = await appAccountManager.checkAccountLabels(undefined, fakeOwner, labels);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -626,6 +627,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
       try {
         let data = await appAccountManager.checkAccountLabels(name, null, labels);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -684,6 +686,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
       try {
         let data = await appAccountManager.checkAccountLabels(name, fakeOwner, undefined);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -742,6 +745,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
       try {
         let data = await appAccountManager.selectAccountsByOptions(null);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -800,6 +804,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
       try {
         let data = await appAccountManager.selectAccountsByOptions(undefined);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1328,6 +1333,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start queryAuthenticatorInfo");
         let data = await appAccountManager.queryAuthenticatorInfo(ownerName);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1387,6 +1393,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start queryAuthenticatorInfo");
         let data = await appAccountManager.queryAuthenticatorInfo(ownerName);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1396,11 +1403,6 @@ export default function AppAccountAuthenticatorStage2Stage() {
         done();
       }
     });
-
-
-
-    ///////
-
 
     /**
      * @tc.name   AuthenticateErrCodeCheck_2700
@@ -1799,6 +1801,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start checkAccountLabels");
         let ret = await appAccountManager.checkAccountLabels(name, fakeOwner, ['20-30']);
         console.info(tag + "data: " + JSON.stringify(ret));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1855,6 +1858,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start checkAccountLabels");
         let ret = await appAccountManager.checkAccountLabels(name, fakeOwner, ['20-30']);
         console.info(tag + "data: " + JSON.stringify(ret));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1908,6 +1912,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start checkAccountLabels");
         let ret = await appAccountManager.checkAccountLabels(name, owner_stage, ['20-30']);
         console.info(tag + "data: " + JSON.stringify(ret));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1973,6 +1978,7 @@ export default function AppAccountAuthenticatorStage2Stage() {
         console.info(tag + "start selectAccountsByOptions");
         let ret = await appAccountManager.selectAccountsByOptions(select_options);
         console.info(tag + "data: " + JSON.stringify(ret));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {

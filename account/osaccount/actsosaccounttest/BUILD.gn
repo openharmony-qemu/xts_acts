@@ -22,7 +22,7 @@ ohos_js_app_suite("ActsOsAccountEnterpriseTest") {
   hap_name = "ActsOsAccountEnterpriseTest"
   certificate_profile = "signature/openharmony_sx.p7b"
   deps = [ 
-    "//acts/account/osaccount/osaccountassistapps/actsosaccountassistappone:ActsOsAccountAssistAppOneEnterpriseTest",
-    "//acts/account/osaccount/osaccountassistapps/actsosaccountassistapptwo:ActsOsAccountAssistAppTwoEnterpriseTest"
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistappone:ActsOsAccountAssistAppOneEnterpriseTest",
+    "//test/xts/acts/account/osaccount/osaccountassistapps/actsosaccountassistapptwo:ActsOsAccountAssistAppTwoEnterpriseTest"
   ]
 }

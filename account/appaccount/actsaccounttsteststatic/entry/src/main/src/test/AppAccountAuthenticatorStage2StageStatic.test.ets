@@ -430,6 +430,32 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
       });
 
     /**
+    * @tc.number     AppAccountAuthenticatorStage2Stage_0901
+    * @tc.name       AppAccountAuthenticatorStage2Stage_0901
+    * @tc.desc       test checkAccountLabels callback with options
+    * @tc.type       FUNCTION
+    * @tc.size       MEDIUMTEST
+    * @tc.level      LEVEL3
+    */
+    it('AppAccountAuthenticatorStage2Stage_0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0901 start====");
+        hilog.info(0x0000, tag, "====>start checkAccountLabels");
+        accountManager.checkAccountLabels(name, owner_stage, ['20-30'],
+          (err: BusinessError<void> | null, data: boolean | undefined): void => {
+            hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0901 err: " + JSON.stringify(err));
+            hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0901 data: " + data);
+            try {
+              expect(err).assertEqual(null);
+              expect(data).assertFalse();
+            } catch (err) {
+              hilog.info(0x0000, tag, "====>Assert Fail: " + JSON.stringify(err));
+            }
+            done();
+          });
+      });
+
+    /**
     * @tc.number     AppAccountAuthenticatorStage2Stage_1000
     * @tc.name       AppAccountAuthenticatorStage2Stage_1000
     * @tc.desc       test checkAccountLabels promise with options
@@ -449,6 +475,31 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         } catch (err) {
           err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1000 err: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+    * @tc.number     AppAccountAuthenticatorStage2Stage_1001
+    * @tc.name       AppAccountAuthenticatorStage2Stage_1001
+    * @tc.desc       test checkAccountLabels promise with options
+    * @tc.type       FUNCTION
+    * @tc.size       MEDIUMTEST
+    * @tc.level      LEVEL3
+    */
+    it('AppAccountAuthenticatorStage2Stage_1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1001 start====");
+        try {
+          hilog.info(0x0000, tag, "====>start checkAccountLabels");
+          let ret: boolean = await accountManager.checkAccountLabels(name, owner_stage, ['level4'])
+          hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1001 ret: " + JSON.stringify(ret));
+          expect(ret).assertTrue();
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1001 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
         }

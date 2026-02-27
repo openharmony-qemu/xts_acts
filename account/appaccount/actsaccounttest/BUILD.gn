@@ -21,10 +21,9 @@ ohos_js_app_suite("ActsAccountTest") {
   subsystem_name = "account"
   part_name = "os_account"
   deps = [ 
-    "//acts/account/appaccount/sceneProject/actsaccountsceneappaccess:ActsAccountSceneAppAccess",
-    "//acts/account/appaccount/sceneProject/actsaccountsceneonoff:ActsAccountSceneOnOff",
-    "//acts/account/appaccount/sceneProject/actsaccountoauthtoken:ActsAccountOauthtoken",
-    "//acts/account/appaccount/sceneProject/actsaccountauthenticator:ActsAccountAuthenticator",
-    "//acts/account/appaccount/actsaccountoperatetest:ActsAccountOperateTest"
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountsceneappaccess:ActsAccountSceneAppAccess",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountsceneonoff:ActsAccountSceneOnOff",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountoauthtoken:ActsAccountOauthtoken",
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountauthenticator:ActsAccountAuthenticator"
   ]
 }

@@ -21,6 +21,6 @@ ohos_js_app_static_suite("ActsAccountTsStaticTest") {
   part_name = "os_account"
   subsystem_name = "account"
   deps = [ 
-    "//acts/account/appaccount/sceneProject/actsaccountauthenticatorstatic:ActsAccountAuthenticatorStatic"
+    "//test/xts/acts/account/appaccount/sceneProject/actsaccountauthenticatorstatic:ActsAccountAuthenticatorStatic"
   ]
 }
