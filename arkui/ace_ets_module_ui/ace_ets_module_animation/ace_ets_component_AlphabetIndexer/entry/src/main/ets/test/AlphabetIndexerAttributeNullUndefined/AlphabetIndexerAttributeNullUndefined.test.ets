@@ -126,7 +126,6 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0300] 2 popupFont: ' + JSON.stringify(obj2.$attrs.popupFont));
 
       expect(JSON.stringify(obj2.$attrs.popupFont)).assertEqual(JSON.stringify(obj1.$attrs.popupFont));
-      expect(JSON.stringify(obj2.$attrs.popupFont)).assertEqual(JSON.stringify(obj2.$attrs.popupFont));
       console.log(`${testName} end`);
       done();
     });
@@ -188,7 +187,6 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0500] 2 selectedFont: ' + JSON.stringify(obj2.$attrs.selectedFont));
 
       expect(JSON.stringify(obj2.$attrs.selectedFont)).assertEqual(JSON.stringify(obj1.$attrs.selectedFont));
-      expect(JSON.stringify(obj2.$attrs.selectedFont)).assertEqual(JSON.stringify(obj2.$attrs.selectedFont));
       console.log(`${testName} end`);
       done();
     });
@@ -250,7 +248,6 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0700] 2 font: ' + JSON.stringify(obj2.$attrs.font));
 
       expect(JSON.stringify(obj2.$attrs.font)).assertEqual(JSON.stringify(obj1.$attrs.font));
-      expect(JSON.stringify(obj2.$attrs.font)).assertEqual(JSON.stringify(obj2.$attrs.font));
       console.log(`${testName} end`);
       done();
     });
