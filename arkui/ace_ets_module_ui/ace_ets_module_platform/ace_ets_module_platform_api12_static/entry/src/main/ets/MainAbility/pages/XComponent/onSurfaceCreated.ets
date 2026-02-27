@@ -90,6 +90,7 @@ struct onSurfaceCreated1 {
       Text(this.createText).id('onSurfaceCreated_text')
         .onClick((e: ClickEvent) => {
           this.createText = AppStorage.get<string>('onSurfaceCreated')!
+          console.log(`onSurfaceCreated:Succeed`)
         })
       Text(this.changeText).id('onSurfaceChanged_text')
         .onClick((e: ClickEvent) => {
