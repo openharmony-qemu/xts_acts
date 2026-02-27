@@ -104,7 +104,7 @@ export default function SingleKvStoreNullEtsTestStatic() {
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       }
       console.info('test logbeforeAll config:' + JSON.stringify(config));
       kvManager = factory.createKVManager(config)
