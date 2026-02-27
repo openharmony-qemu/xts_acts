@@ -671,6 +671,146 @@ export default function ImageGetComponentSupp() {
         done();
       }
     })
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_001
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_001
+     * @tc.desc       Image.getBufferData23 cover rowStride
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_001';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              let bufferData = img.getBufferData();
+              let resultStr = JSON.stringify(bufferData?.rowStride);
+              console.info(TAG, testName, 'img.getBufferData succeeded.',resultStr);
+              expect(resultStr).assertEqual('[2560]');
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect().assertFail();
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          done();
+        }
+      } catch (error) {
+        console.info(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_002
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_002
+     * @tc.desc       Image.getBufferData23 cover pixelStride
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_002';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              let bufferData = img.getBufferData();
+              let resultStr = JSON.stringify(bufferData?.pixelStride);
+              console.info(TAG, testName, 'img.getBufferData succeeded.',resultStr);
+              expect(resultStr).assertEqual('[4]');
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect().assertFail();
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          done();
+        }
+      } catch (error) {
+        console.info(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.number     IMAGE_GET_BUFFER_DATA_TEST_003
+     * @tc.name       IMAGE_GET_BUFFER_DATA_TEST_003
+     * @tc.desc       Image.getBufferData23 cover byteBuffer
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('IMAGE_GET_BUFFER_DATA_TEST_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_GET_BUFFER_DATA_TEST_003';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        } else {
+          let size: image.Size = {
+            height: 8192,
+            width: 8
+          }
+          let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+          mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+          console.info(TAG,testName,"get receiver SurfaceId success",mReceiverSurfaceId);
+          receiver.on('imageArrival', async () => {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            try {
+              let bufferData = img.getBufferData();
+              console.info(TAG, testName, 'img.getBufferData succeeded.',bufferData?.byteBuffer);
+              expect(bufferData?.byteBuffer.byteLength).assertEqual(1228800);
+            } catch (error) {
+              console.error(TAG ,testName, 'getMetadata',error.message, error.code);
+              expect().assertFail();
+            }
+            done();
+          });
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          mPhotoSession.start();
+          await sleep(2000);
+          done();
+        }
+      } catch (error) {
+        console.info(TAG ,testName, error.message, error.code);
+        await releasePhotoSession();
+        done();
+      }
+    })
 
   })
 }
