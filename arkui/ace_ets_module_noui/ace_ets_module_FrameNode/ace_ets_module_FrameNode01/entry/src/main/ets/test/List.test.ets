@@ -156,11 +156,11 @@ export default function testsuite() {
   AdoptChildTwoTest();
   AdoptChildThreeTest();
   AdoptChildTest();
-  CreateNodeNullUndefinedTest();
   
   frameNodeApi();
 
   GraphicsFourBoundaryTest();
   FrameNodeConvertPositionTest();
   FrameNodeConvertPositionErrorCodeTest();
+  CreateNodeNullUndefinedTest();
 }
