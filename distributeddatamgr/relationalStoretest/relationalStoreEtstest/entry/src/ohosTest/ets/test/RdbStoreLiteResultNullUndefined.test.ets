@@ -659,8 +659,8 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
       console.error("************* LiteResultSet_Null_Undefind_Test_0016 start *************");
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
+      resultSet = await rdbStore.queryWithoutRowCount(predicates, ["data1"]);
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates, ["data1"]);
         let data1 = resultSet.isColumnNull(null);
         expect().assertFail();
       } catch(err) {
@@ -669,7 +669,6 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         resultSet?.close();
       }
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates, ["data1"]);
         let data1 = resultSet.isColumnNull(undefined);
         expect().assertFail();
       } catch(err) {
