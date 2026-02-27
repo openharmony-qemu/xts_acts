@@ -4291,5 +4291,37 @@ export default function window_test() {
 
         })
 
+        /**
+     * @tc.name   testGetTopWindow_0100
+     * @tc.number testGetTopWindow_0100
+     * @tc.desc   testGetTopWindow_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it('testGetTopWindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+          let msgStr = 'testGetTopWindow_0100';
+          console.log(msgStr + ' begin');
+          console.log(msgStr + 'begin.');
+          try {
+            await window.getTopWindow(null);
+            console.info(msgStr + 'Succeeded');
+          } catch (exception) {
+            console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+            expect().assertFail();
+            done();
+          }
+    
+          try {
+            await window.getTopWindow(undefined);
+            console.info(msgStr + 'Succeeded2.');
+            done();
+          } catch (exception) {
+            console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+            expect().assertFail();
+            done()
+          }
+        })
+
     })
 }
