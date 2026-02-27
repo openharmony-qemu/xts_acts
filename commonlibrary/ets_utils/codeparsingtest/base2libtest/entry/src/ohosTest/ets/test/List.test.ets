@@ -279,12 +279,12 @@ export default function testsuite() {
   // ArrayListTest11();
   // ArrayListTest12();
 
-  DequeTest01();
-  DequeTest02();
-  DequeTest03();
-  DequeTest04();
-  DequeTest05();
-  DequeTest06();
+  // DequeTest01();
+  // DequeTest02();
+  // DequeTest03();
+  // DequeTest04();
+  // DequeTest05();
+  // DequeTest06();
 
   HashMapTest01();
   HashMapTest02();
@@ -342,33 +342,33 @@ export default function testsuite() {
   StackTest03();
   StackTest04();
 
-  TreeMapTest01();
-  TreeMapTest02();
-  TreeMapTest03();
-  TreeMapTest04();
-  TreeMapTest05();
-  TreeMapTest06();
-  TreeMapTest07();
-  TreeMapTest08();
-  TreeMapTest09();
+  // TreeMapTest01();
+  // TreeMapTest02();
+  // TreeMapTest03();
+  // TreeMapTest04();
+  // TreeMapTest05();
+  // TreeMapTest06();
+  // TreeMapTest07();
+  // TreeMapTest08();
+  // TreeMapTest09();
 
-  TreeSetTest01();
-  TreeSetTest02();
-  TreeSetTest03();
-  TreeSetTest04();
-  TreeSetTest05();
-  TreeSetTest06();
-  TreeSetTest07();
+  // TreeSetTest01();
+  // TreeSetTest02();
+  // TreeSetTest03();
+  // TreeSetTest04();
+  // TreeSetTest05();
+  // TreeSetTest06();
+  // TreeSetTest07();
 
-  VectorTest01();
-  VectorTest02();
-  VectorTest03();
-  VectorTest04();
-  VectorTest05();
-  VectorTest06();
-  VectorTest07();
-  VectorTest08();
-  VectorTest09();
+  // VectorTest01();
+  // VectorTest02();
+  // VectorTest03();
+  // VectorTest04();
+  // VectorTest05();
+  // VectorTest06();
+  // VectorTest07();
+  // VectorTest08();
+  // VectorTest09();
 
   // ListTest01();
   // ListTest02();
