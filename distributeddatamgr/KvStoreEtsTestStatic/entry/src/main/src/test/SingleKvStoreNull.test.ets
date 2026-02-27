@@ -30,8 +30,8 @@ let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegato
 
 const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
 const TEST_STORE_ID = 'SingleKvStoreNull';
-let kvManager: factory.KVManager|null ;
-let kvStore : factory.SingleKVStore|null;
+let kvManager: factory.KVManager|null = null;
+let kvStore : factory.SingleKVStore|null = null;
 let entries: factory.Entry[] = [];
 
 function sleep(count: int): Promise<int> {
@@ -68,9 +68,9 @@ export default function SingleKvStoreNull(){
 
         const config: factory.KVManagerConfig = {
           bundleName: TEST_BUNDLE_NAME,
-          context: context
+          context: context!
         };
-        console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+        console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
         kvManager = factory.createKVManager(config);
         console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
         done();
