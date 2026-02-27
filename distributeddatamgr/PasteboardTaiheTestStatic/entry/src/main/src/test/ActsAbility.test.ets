@@ -4781,8 +4781,7 @@ export default function abilityTest() {
           let isRemote = systemPasteboard.hasRemoteData();
           expect(isRemote == false).assertTrue();
         } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag, "test isRemoteData err:" + err)
+          hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
           expect().assertFail();
         }
       })

@@ -397,7 +397,7 @@ export default function pasteboardParametersTest() {
     /**
      * @tc.name   SUB_Pasteboard_Local_Parameters_Static_0160
      * @tc.number PasteboardParametersTest_0160
-     * @tc)desc   Test hasType with missing or empty mimeType parameter
+     * @tc.desc   Test hasType with missing or empty mimeType parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
