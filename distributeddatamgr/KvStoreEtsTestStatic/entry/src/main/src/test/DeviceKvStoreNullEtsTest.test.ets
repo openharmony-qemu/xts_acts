@@ -107,7 +107,7 @@ export default function DeviceKvStoreNullEtsTestStatic() {
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       }
       console.info('test logbeforeAll config:' + JSON.stringify(config));
       kvManager = factory.createKVManager(config)
@@ -862,9 +862,10 @@ export default function DeviceKvStoreNullEtsTestStatic() {
       async (done: () => void): Promise<void> => {
         console.info(TAG +'SUB_DDM_DKV_DeviceKVStore_createKVManager_0100');
         try {
+          context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
           const config1 : factory.KVManagerConfig = {
             bundleName: "",
-            context: context
+            context: context!
           };
           kvManager = factory.createKVManager(config1);
           console.info(TAG +'SUB_DDM_DKV_DeviceKVStore_createKVManager_0100 createKVManager success');
@@ -889,9 +890,10 @@ export default function DeviceKvStoreNullEtsTestStatic() {
       async (done: () => void): Promise<void> => {
         console.info(TAG +'SUB_DDM_DKV_DeviceKVStore_createKVManager_0200');
         try {
+          context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
           const config: factory.KVManagerConfig = {
             bundleName: TEST_BUNDLE_NAME,
-            context: context
+            context: context!
           }
           kvManager = factory.createKVManager(config);
           console.info(TAG +'SUB_DDM_DKV_DeviceKVStore_createKVManager_0200 createKVManager success');
