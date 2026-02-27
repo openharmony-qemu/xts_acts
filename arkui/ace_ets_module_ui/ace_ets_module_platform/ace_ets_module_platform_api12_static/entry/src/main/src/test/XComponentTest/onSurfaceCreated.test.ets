@@ -80,7 +80,7 @@ it('onSurfaceCreatedTest_static_0010', Level.LEVEL2, async (done: () => void): P
       await CommonFunc.sleep(500);
       let button = await (driver.findComponent(ON.id('onSurfaceCreated_text')) as Promise<Component>);
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(6000);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onSurfaceCreated_text');
       console.info("[onSurfaceCreatedTest_static_0010] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onSurfaceCreated succ');
