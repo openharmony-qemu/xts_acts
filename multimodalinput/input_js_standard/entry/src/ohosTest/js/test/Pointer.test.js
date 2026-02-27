@@ -874,13 +874,15 @@ export default function Pointer_test() {
      */
     it('Pointer_setCustomCursorTest_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_setCustomCursorSyncTest_Test_001 enter`);
+      let ifSetCustomCursorSyncSuccess = 0;
       const color = new ArrayBuffer(96);
       let opts = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } };
       image.createPixelMap(color, opts).then((pixelMap) => {
         console.log('Succeeded in creating pixelmap.');
         try {
           pointer.setCustomCursorSync(0, pixelMap, 25, 25);
-          expect(true).assertTrue();
+          ifSetCustomCursorSyncSuccess++;
+          expect(ifSetCustomCursorSyncSuccess).assertEqual(1);
         } catch (error) {
           expect(false).assertTrue();
         }
@@ -899,6 +901,7 @@ export default function Pointer_test() {
      */
     it('Pointer_setCustomCursorTest_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_setCustomCursorTest_Test_002 enter`);
+      let ifSetCustomCursorSuccess = 0;
       const color = new ArrayBuffer(96);
       let opts = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
       image.createPixelMap(color, opts).then((pixelMap) => {
@@ -906,7 +909,8 @@ export default function Pointer_test() {
         try {
           pointer.setCustomCursor(0, pixelMap, 0, 0).then(() => {
             console.log(`setCustomCursor success`);
-            expect(true).assertTrue();
+            ifSetCustomCursorSuccess++;
+            expect(ifSetCustomCursorSuccess).assertEqual(1);
           });
         } catch (error) {
           expect(false).assertTrue();
