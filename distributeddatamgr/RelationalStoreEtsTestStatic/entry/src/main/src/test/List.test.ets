@@ -70,6 +70,8 @@ import RdbPredicatesTest from "./RdbPredicatesTest.test";
 import ResultSetTest from "./ResultSetTest.test";
 import RdbStoreTest from "./RdbStoreTest.test";
 import TransactionTest from "./TransactionTest.test";
+import RelationalResultSetReturnValueAddTest from "./RelationalResultSetReturnValueAdd.test"
+import RelationalRdbStoreReturnValueAddTest from "./RelationalRdbStoreReturnValueAdd.test"
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -142,4 +144,7 @@ export default function testsuite() {
   ResultSetTest();
   RdbStoreTest();
   TransactionTest();
+
+  RelationalResultSetReturnValueAddTest();
+  RelationalRdbStoreReturnValueAddTest();
 }
