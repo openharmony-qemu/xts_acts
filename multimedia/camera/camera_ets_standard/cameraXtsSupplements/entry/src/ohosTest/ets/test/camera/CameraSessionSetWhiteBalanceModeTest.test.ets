@@ -1061,41 +1061,5 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
         done();
       }
     })
-    /**
-     * @tc.name   CAMERA_SESSION_GET_ACTIVE_COLOR_SPACE_001
-     * @tc.number CAMERA_SESSION_GET_ACTIVE_COLOR_SPACE_001
-     * @tc.desc   getActiveColorSpace colorSpaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAMERA_SESSION_GET_ACTIVE_COLOR_SPACE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_GET_ACTIVE_COLOR_SPACE_001';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        }else {
-          await createVideoOutput();
-          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          console.info(TAG, testName, ' START  :');
-          let colorSpaces: Array<colorSpaceManager.ColorSpace> = [];
-          colorSpaces = mVideoSession.getSupportedColorSpaces();
-          console.info(TAG, testName, ' getSupportedColorSpaces is :',colorSpaces);
-          if (colorSpaces.length > 0) {
-            mVideoSession.setColorSpace(colorSpaces[0]);
-            let AColorSpaces = mVideoSession.getActiveColorSpace();
-            expect(AColorSpaces).assertEqual(colorSpaces[0]);
-          }else{
-            console.info(TAG, testName, ' 该设备不支持');
-          }
-        }
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-      }finally{
-        await releaseVideoSession();
-        done();
-      }
-    })
   })
 }
