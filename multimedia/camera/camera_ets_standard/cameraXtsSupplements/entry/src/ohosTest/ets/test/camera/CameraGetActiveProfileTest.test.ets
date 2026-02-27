@@ -979,8 +979,10 @@ export default function CameraGetActiveProfileTest() {
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_0);
           console.info(TAG, testName, "videoRotation:", videoRotation);
-          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
-          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
+          expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
+            videoRotation === camera.ImageRotation.ROTATION_90 ||
+            videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
+            .assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1008,8 +1010,10 @@ export default function CameraGetActiveProfileTest() {
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_90);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
-          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
+          expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
+            videoRotation === camera.ImageRotation.ROTATION_90 ||
+            videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
+            .assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1037,8 +1041,10 @@ export default function CameraGetActiveProfileTest() {
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_180);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
-          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
+          expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
+            videoRotation === camera.ImageRotation.ROTATION_90 ||
+            videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
+            .assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1066,8 +1072,10 @@ export default function CameraGetActiveProfileTest() {
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_270);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
-          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
+          expect(videoRotation === camera.ImageRotation.ROTATION_0 ||
+            videoRotation === camera.ImageRotation.ROTATION_90 ||
+            videoRotation === camera.ImageRotation.ROTATION_180 || videoRotation === camera.ImageRotation.ROTATION_270)
+            .assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
