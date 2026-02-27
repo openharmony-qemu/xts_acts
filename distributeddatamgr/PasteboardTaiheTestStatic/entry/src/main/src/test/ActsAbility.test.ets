@@ -4764,5 +4764,30 @@ export default function abilityTest() {
       }
       hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_clearDataSync_Static_0010----------");
     })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_HasRemoteData_Static_0010
+     * @tc.number SUB_PasteBoard_ETS_HasRemoteData_Static_0010
+     * @tc.desc   Test pasteBoard hasRemoteData success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_HasRemoteData_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasRemoteData_Static_0010 start------");
+      let systemPasteboard = pasteboard.getSystemPasteboard()
+      await systemPasteboard.clearData().then(async () => {
+        try {
+          let isRemote = systemPasteboard.hasRemoteData();
+          expect(isRemote == false).assertTrue();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "test isRemoteData err:" + err)
+          expect().assertFail();
+        }
+      })
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasRemoteData_Static_0010 end------");
+      done();
+    })
   })
 }
