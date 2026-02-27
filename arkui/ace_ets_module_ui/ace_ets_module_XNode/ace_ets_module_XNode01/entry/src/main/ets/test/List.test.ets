@@ -104,6 +104,7 @@ import ComponentContentIsDisposedTest from './NodeReturnTest/ComponentContentIsD
 import FrameNodeIsDisposedTest from './NodeReturnTest/FrameNodeIsDisposedTest.test';
 import RenderNodeIsDisposedTest from './NodeReturnTest/RenderNodeIsDisposedTest.test';
 import NodeAdapterIsDisposedTest from './NodeReturnTest/NodeAdapterIsDisposedTest.test';
+import graphicsApiNullUndefinedTest from './GraphicsTest/graphicsApiNullUndefinedTest.test';
 
 export default function testsuite() {
   arkuiNodeTest();
@@ -197,4 +198,5 @@ export default function testsuite() {
   FrameNodeIsDisposedTest();
   RenderNodeIsDisposedTest();
   NodeAdapterIsDisposedTest();
+  graphicsApiNullUndefinedTest();
 }
