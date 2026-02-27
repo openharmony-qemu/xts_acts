@@ -21,8 +21,8 @@ import { inputDevice, pointer } from '@kit.InputKit';
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; 
+let tag: string = 'testTag'; 
 
 export default function InputConsumerComplementTest() {
 
@@ -78,12 +78,10 @@ export default function InputConsumerComplementTest() {
           let hotkeyCallback = (hotkeyOptions: inputConsumer.HotkeyOptions) => {
             console.info(`${caseName} hotkeyOptions: ${JSON.stringify(hotkeyOptions)}`);
           }
-          let ifInputConsumerOnSuccess = 0;
           try {
             inputConsumer.onHotkeyChange(hotkeyOptions, hotkeyCallback);
             console.info(`${caseName} success`);
-            ifInputConsumerOnSuccess++;
-            expect(ifInputConsumerOnSuccess).assertEqual(1);
+            expect().assertFail();
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
           } catch (error: BusinessError) {
@@ -130,7 +128,7 @@ export default function InputConsumerComplementTest() {
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} Subscribe failed, error: ${error.code}`);
-            expect(error.code).assertEqual(401);
+            expect().assertFail();
             done();
           }
         } catch (error: BusinessError) {
@@ -162,13 +160,11 @@ export default function InputConsumerComplementTest() {
             finalKey: 2042,
             isRepeat: true
           };
-          let ifInputConsumerOffSuccess = 0;
           try {
             inputConsumer.onHotkeyChange(hotkeyOption, hotkeyCallback);
             inputConsumer.offHotkeyChange(hotkeyOption, hotkeyCallback);
             console.info(`${caseName} unsubscribe success`);
-            ifInputConsumerOffSuccess++;
-            expect(ifInputConsumerOffSuccess).assertEqual(1);
+            expect().assertFail();
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} unsubscribe failed, error: ${error}`);
@@ -214,7 +210,7 @@ export default function InputConsumerComplementTest() {
             done();
           } catch (error: BusinessError) {
             console.info(`${caseName} unsubscribe failed, error: ${error}`);
-            expect(error.code).assertEqual(401);
+            expect().assertFail();
             done();
           }
         } catch (error: BusinessError) {

@@ -26,16 +26,16 @@ export default function MultimodalTouchEventComplementTest() {
   describe("MultimodalTouchEventComplementTest", (): void => {
 
     /**
-     * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0100
-     * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0100
+     * @tc.name   SUB_MMI_Input_Api_TouchEvent_Touch_0150
+     * @tc.number SUB_MMI_Input_Api_TouchEvent_Touch_0150
      * @tc.desc   Test TouchEvent Touch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MMI_Input_Api_TouchEvent_Touch_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("SUB_MMI_Input_Api_TouchEvent_Touch_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_TouchEvent_Touch_0100";
+        let caseName = "SUB_MMI_Input_Api_TouchEvent_Touch_0150";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           let testTouch: Touch = {

@@ -21,8 +21,8 @@ import { inputDevice, pointer } from '@kit.InputKit';
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; 
+let tag: string = 'testTag'; 
 
 export default function InputDeviceComplementTest() {
 
@@ -50,7 +50,6 @@ export default function InputDeviceComplementTest() {
         } catch (error) {
           console.error(`Listen device event failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
         }
-        // 取消指定的监听。
         try {
           inputDevice.offChange(callback);
           ifInputDeviceOffSuccess++;
@@ -223,10 +222,41 @@ export default function InputDeviceComplementTest() {
             console.info(`${caseName} Device List: ${JSON.stringify(data)}`);
             inputDevice.getDeviceInfo(data[0]).then((deviceData: inputDevice.InputDeviceData) => {
               console.log(`Device info: ${JSON.stringify(deviceData)}`);
-              if (deviceData) {
-                expect(deviceData.id).assertInstanceOf('Int');
-                done();
-              }
+                if (deviceData) {
+                    expect(deviceData.isLocal).assertInstanceOf('Boolean');
+                    expect(deviceData.isVirtual).assertInstanceOf('Boolean');
+                    expect(deviceData.id).assertInstanceOf('Int');
+                    expect(deviceData.name).assertInstanceOf('String');
+                    expect(deviceData.sources).assertInstanceOf('Array');
+                    expect(deviceData.axisRanges).assertInstanceOf('Array');
+                    expect(deviceData.bus).assertInstanceOf('Int');
+                    expect(deviceData.product).assertInstanceOf('Int');
+                    expect(deviceData.vendor).assertInstanceOf('Int');
+                    expect(deviceData.version).assertInstanceOf('Int');
+                    expect(deviceData.phys).assertInstanceOf('String');
+                    expect(deviceData.uniq).assertInstanceOf('String');
+                    expect(deviceData).assertInstanceOf('Object');
+                    for (let j = 0; j < deviceData.axisRanges.length; j++) {
+                      expect(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
+                        || deviceData.axisRanges[j].source == 'touchpad' ||
+                        deviceData.axisRanges[j].source == 'touchscreen'
+                        || deviceData.axisRanges[j].source == 'joystick' ||
+                        deviceData.axisRanges[j].source == 'trackball').assertTrue();
+                      expect(deviceData.axisRanges[j].axis == 'touchmajor' ||
+                        deviceData.axisRanges[j].axis == 'touchminor'
+                        || deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x'
+                        || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
+                        || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
+                        || deviceData.axisRanges[j].axis == 'null').assertTrue();
+                      expect(deviceData.axisRanges[j].max).assertInstanceOf('Int');
+                      expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
+                      expect(deviceData.axisRanges[j].min).assertInstanceOf('Int');
+                      expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Int');
+                      expect(deviceData.axisRanges[j].flat).assertInstanceOf('Int');
+                      expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Int');
+                    }
+                    done();
+                }
             });
           })
         } catch (error: BusinessError) {
@@ -255,6 +285,8 @@ export default function InputDeviceComplementTest() {
             if (data.length > 0) {
               let deviceData: inputDevice.InputDeviceData = inputDevice.getDeviceInfoSync(data[0]);
               console.log(`Device info: ${JSON.stringify(deviceData)}`);
+              expect(deviceData.isLocal).assertInstanceOf('Boolean');
+              expect(deviceData.isVirtual).assertInstanceOf('Boolean');
               expect(deviceData.id).assertInstanceOf('Int');
               expect(deviceData.name).assertInstanceOf('String');
               expect(deviceData.sources).assertInstanceOf('Array');
@@ -461,21 +493,14 @@ export default function InputDeviceComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_IptDev_supportKeys_0550";
         hilog.info(domain, tag, `${caseName} enter`);
-        let flagExecuteCallSupportKeys = 0;
         try {
           let keys: Array<KeyCode> =
             [KeyCode.KEYCODE_VOLUME_DOWN, KeyCode.KEYCODE_VOLUME_MUTE, KeyCode.KEYCODE_DEL, KeyCode.KEYCODE_DPAD_CENTER,
               KeyCode.KEYCODE_4, KeyCode.KEYCODE_5];
           await inputDevice.supportKeys(1, keys).then((supportResult: Array<Boolean>) => {
             console.log(`Query result: ${JSON.stringify(supportResult)}`);
-            flagExecuteCallSupportKeys++;
-            if (flagExecuteCallSupportKeys != 0) {
-              expect().assertFail();
-              done();
-            } else {
-              expect().assertFail();
-              done();
-            }
+            expect().assertFail();
+            done();
           });
         } catch (error: BusinessError) {
           console.info(`${caseName} Failed to get device info, error: ${error.code}`);
@@ -616,20 +641,13 @@ export default function InputDeviceComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_IptDev_supportKeysSync_0250";
         hilog.info(domain, tag, `${caseName} enter`);
-        let flagExecuteCallSupportKeysSync = 0;
         try {
           let keys: Array<KeyCode> =
             [KeyCode.KEYCODE_VOLUME_DOWN, KeyCode.KEYCODE_VOLUME_MUTE, KeyCode.KEYCODE_DEL, KeyCode.KEYCODE_DPAD_CENTER,
               KeyCode.KEYCODE_4, KeyCode.KEYCODE_5];
           let supportResult: Array<Boolean> = inputDevice.supportKeysSync(1, keys);
-          flagExecuteCallSupportKeysSync++;
-          if (flagExecuteCallSupportKeysSync != 0) {
-            expect().assertFail();
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         } catch (error: BusinessError) {
           console.info(`${caseName} Failed to get device info, error: ${error}`);
           expect(error.code).assertEqual(401);
@@ -965,7 +983,11 @@ export default function InputDeviceComplementTest() {
           })
         } catch (error) {
           console.info(`${caseName} failed to get capslock state, error: ${error.code}`);
-          expect(error.code == 3900002 || error.code == 3900003).assertTrue();
+          if (error.code == 3900002) {
+            expect(error.code).assertEqual(3900002);
+          } else {
+            expect(error.code).assertEqual(3900003);
+          }
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);

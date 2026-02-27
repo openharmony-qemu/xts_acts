@@ -21,8 +21,8 @@ import { inputDevice, pointer } from '@kit.InputKit';
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; 
+let tag: string = 'testTag'; 
 
 export default function PointerComplementTest() {
 
@@ -698,13 +698,13 @@ export default function PointerComplementTest() {
         let ifSetCustomCursorSuccess = 0;
         let width: int = 64;
         let height: int = 64;
-        const buffer = new ArrayBuffer(width * height * 4); // RGBA_8888
+        const buffer = new ArrayBuffer(width * height * 4);
         const pixelView = new Uint8Array(buffer);
         for (let i = 0; i < pixelView.length; i += 4) {
-          pixelView[i] = 0xFF; // Set the RGBA channel values
+          pixelView[i] = 0xFF;
           pixelView[i+1] = 0x00;
           pixelView[i+2] = 0x00;
-          pixelView[i+3] = 0xFF; // opaque
+          pixelView[i+3] = 0xFF;
         }
         const opts: image.InitializationOptions = {
           editable: true,
@@ -715,7 +715,6 @@ export default function PointerComplementTest() {
         let fnCallBack = () => {
           console.log("setCustomCursor success");
         };
-        // 此次根据实际获取窗口id
         let windowId: int = 100;
         try {
           pointer.setCustomCursor(windowId, img, 25, 25).then(fnCallBack);
@@ -745,13 +744,13 @@ export default function PointerComplementTest() {
         let ifSetCustomCursorSuccess = 0;
         let width: int = 64;
         let height: int = 64;
-        const buffer = new ArrayBuffer(width * height * 4); // RGBA_8888
+        const buffer = new ArrayBuffer(width * height * 4);
         const pixelView = new Uint8Array(buffer);
         for (let i = 0; i < pixelView.length; i += 4) {
-          pixelView[i] = 0xFF; // Set the RGBA channel values
+          pixelView[i] = 0xFF;
           pixelView[i+1] = 0x00;
           pixelView[i+2] = 0x00;
-          pixelView[i+3] = 0xFF; // opaque
+          pixelView[i+3] = 0xFF;
         }
         const opts: image.InitializationOptions = {
           editable: true,
@@ -762,7 +761,6 @@ export default function PointerComplementTest() {
         let fnCallBack = () => {
           console.log(`${caseName} setCustomCursor success`);
         };
-        // 此次根据实际获取窗口id
         let windowId: int = 100;
         try {
           pointer.setCustomCursor(windowId, img, -25, 25).then(fnCallBack);
@@ -793,13 +791,13 @@ export default function PointerComplementTest() {
         let ifSetCustomCursorSyncSuccess = 0;
         let width: int = 64;
         let height: int = 64;
-        const buffer = new ArrayBuffer(width * height * 4); // RGBA_8888
+        const buffer = new ArrayBuffer(width * height * 4);
         const pixelView = new Uint8Array(buffer);
         for (let i = 0; i < pixelView.length; i += 4) {
-          pixelView[i] = 0xFF; // Set the RGBA channel values
+          pixelView[i] = 0xFF;
           pixelView[i+1] = 0x00;
           pixelView[i+2] = 0x00;
-          pixelView[i+3] = 0xFF; // opaque
+          pixelView[i+3] = 0xFF;
         }
         const opts: image.InitializationOptions = {
           editable: true,
@@ -810,7 +808,6 @@ export default function PointerComplementTest() {
         let fnCallBack = () => {
           console.log("setCustomCursor success");
         };
-        // 此次根据实际获取窗口id
         let windowId: int = 100;
         try {
           pointer.setCustomCursorSync(windowId, img, 25, 25);
@@ -840,13 +837,13 @@ export default function PointerComplementTest() {
         let ifSetCustomCursorSuccess = 0;
         let width: int = 64;
         let height: int = 64;
-        const buffer = new ArrayBuffer(width * height * 4); // RGBA_8888
+        const buffer = new ArrayBuffer(width * height * 4);
         const pixelView = new Uint8Array(buffer);
         for (let i = 0; i < pixelView.length; i += 4) {
-          pixelView[i] = 0xFF; // Set the RGBA channel values
+          pixelView[i] = 0xFF;
           pixelView[i+1] = 0x00;
           pixelView[i+2] = 0x00;
-          pixelView[i+3] = 0xFF; // opaque
+          pixelView[i+3] = 0xFF;
         }
         const opts: image.InitializationOptions = {
           editable: true,
@@ -856,7 +853,6 @@ export default function PointerComplementTest() {
         let pixelMap = image.createPixelMapSync(buffer, opts);
         let customCursor: pointer.CustomCursor = { pixelMap: pixelMap, focusX: 25, focusY: 25 };
         let customConfig: pointer.CursorConfig = { followSystem: false };
-        // 此次根据实际获取窗口id
         let windowId: int = 1000000;
         try {
           await pointer.setCustomCursor(windowId, customCursor, customConfig).then(() => {

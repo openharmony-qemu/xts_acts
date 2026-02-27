@@ -97,7 +97,7 @@ export default function MultimodalNoPermissionTest() {
         } catch (error) {
           error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code == 201).assertTrue();
+          expect(error.code).assertEqual(201);
           done();
         }
       });

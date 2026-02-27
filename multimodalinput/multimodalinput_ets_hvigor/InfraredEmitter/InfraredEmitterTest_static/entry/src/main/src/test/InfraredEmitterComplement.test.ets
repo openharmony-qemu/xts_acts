@@ -21,8 +21,8 @@ import { inputDevice, pointer } from '@kit.InputKit';
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; 
+let tag: string = 'testTag'; 
 
 export default function InfraredEmitterComplementTest() {
 
@@ -71,20 +71,13 @@ export default function InfraredEmitterComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0450";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifTransmitInfraredSuccess = 0;
         try {
           let infraredFrequency: long = 38000;
           let pattern: Array<long> = [100, 200, -300, 400, 500, 600, 700, 800, 900, 1000];
           infraredEmitter.transmitInfrared(infraredFrequency, pattern);
           console.info(`${caseName} transmitInfrared success.`);
-          ifTransmitInfraredSuccess++;
-          if (ifTransmitInfraredSuccess == 1) {
-            expect().assertFail();
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         } catch (error: BusinessError) {
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
@@ -105,20 +98,13 @@ export default function InfraredEmitterComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0550";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifTransmitInfraredSuccess = 0;
         try {
           let infraredFrequency: long = -38000;
           let pattern: Array<long> = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
           infraredEmitter.transmitInfrared(infraredFrequency, pattern);
           console.info(`${caseName} transmitInfrared success.`);
-          ifTransmitInfraredSuccess++;
-          if (ifTransmitInfraredSuccess == 1) {
-            expect().assertFail();
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         } catch (error: BusinessError) {
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
