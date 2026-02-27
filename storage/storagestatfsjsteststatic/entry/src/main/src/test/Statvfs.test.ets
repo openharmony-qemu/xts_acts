@@ -213,6 +213,7 @@ export default function statvfs_test() {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_001 start');
       try {
         statvfs.getFreeSize("/dev", (err: BusinessError | null, num: long | undefined) => {
+        waitForCompletion(async () => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_001 has error ' + err?.message + ' code: ' + err?.code);
             expect(false).assertTrue();
@@ -222,6 +223,7 @@ export default function statvfs_test() {
               expect(await Utils.isIntNum(Number(num)) as boolean).assertTrue();
           }
           done();
+        })
         });
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_001 has failed for' + e.message + ' code: ' + e.code);
@@ -329,6 +331,7 @@ export default function statvfs_test() {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_001 start');
       try {
         statvfs.getTotalSize("/dev", (err: BusinessError | null, num: long | undefined) => {
+          waitForCompletion(async () => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_001 has error ' + err?.message + ' code: ' + err?.code);
             expect(false).assertTrue();
@@ -338,6 +341,7 @@ export default function statvfs_test() {
             expect(await Utils.isIntNum(Number(num)) as boolean).assertTrue();
           }
           done();
+          })
         });
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_001 has failed for' + e.message + ' code: ' + e.code);

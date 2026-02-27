@@ -484,7 +484,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
         console.info('playPauseLoopWithCallBack play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         playPauseCount++;
-        await mediaTestBase.msleepAsync(playTime);
+        waitForCompletion(async () => {await mediaTestBase.msleepAsync(playTime);})
         if (playPauseCount == 1001) {
           // step 4: playing -> stop -> release
           avPlayer?.stop().then(() => {
@@ -519,12 +519,14 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -554,6 +556,7 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -594,14 +597,17 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
       default:
         break;
     }
+  })
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -635,8 +641,8 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
         avPlayer!!.surfaceId = surfaceID;
         console.info('playToCompletedLoop play state is INITIALIZED')
         // step 1: initialized -> prepared -> play
-        await preparePromise(avPlayer!);
-        await sleep(2000);
+        waitForCompletion(async () => {await preparePromise(avPlayer!);})
+        waitForCompletion(async () => {await sleep(2000);})
         avPlayer?.play()
         break;
       case PLAYING:
@@ -680,12 +686,14 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -785,12 +793,14 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -848,12 +858,14 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -920,12 +932,14 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 
@@ -942,6 +956,7 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop2 in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
+    waitForCompletion(async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -987,14 +1002,17 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
       default:
         break;
     }
+    })
   });
   avPlayer?.onError((err: BusinessError) => {
+    waitForCompletion(async () => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
       avPlayer = null;
       done();
     });
+    })
   });
 }
 
@@ -2311,10 +2329,10 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
         console.info('setAVPlayerPlay play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         if (avPlayer && avPlayer.duration > 3000) {
-          await mediaTestBase.msleepAsync(3000);
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(3000);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         } else {
-          await mediaTestBase.msleepAsync(500);
+          waitForCompletion(async () => {await mediaTestBase.msleepAsync(500);})
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         }
         break;
@@ -2339,12 +2357,14 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    console.error(`case error called, errMessage is ${err.message}`);
-    expect().assertFail();
-    await avPlayer!!.release().then(() => {
-      avPlayer = null;
-      done();
-    });
+    waitForCompletion(async () => {
+      console.error(`case error called, errMessage is ${err.message}`);
+      expect().assertFail();
+      await avPlayer!!.release().then(() => {
+        avPlayer = null;
+        done();
+      });
+    })
   });
 }
 

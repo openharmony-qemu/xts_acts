@@ -439,6 +439,7 @@ export default function fileIOAccess() {
 
       try {
         fs.access(fpath, (err: BusinessError | null, ret: boolean | undefined) => {
+          waitForCompletion(async () => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 ret：' + ret);
           expect(ret === true).assertTrue();
           let file = fs.openSync(fpath);
@@ -448,6 +449,7 @@ export default function fileIOAccess() {
           expect(readlen == FILE_CONTENT.length).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
+          })
         });
         done();
       } catch (e) {

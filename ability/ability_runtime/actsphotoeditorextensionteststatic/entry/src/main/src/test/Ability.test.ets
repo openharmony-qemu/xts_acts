@@ -58,35 +58,37 @@ export default function abilityTest() {
                     hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 globalscribe success`)
                     commonEventManager.subscribe(globalscribe!, (err:BusinessError | null,
                         CommonEventData:commonEventManager.CommonEventData|undefined) => {
-                        hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 subscribe success`)
-                        if (err) {
-                            hilog.info(DOMAIN_NUMBER, TAG, `subscribe failed! Err.Info ===> + ${err?.code}`)
-                            expect(false).assertTrue()
-                            done()
-                        } else {
-                            if (CommonEventData == undefined) {
-                                hilog.info(DOMAIN_NUMBER, TAG,`subscribe failed! Err.Info ===> ${CommonEventData}`)
-                                expect(false).assertTrue()
-                                done()
-                            } else {
-                                hilog.info(DOMAIN_NUMBER, TAG,`subscribe successed! CommonEventData.Info ===>` +
-                                    JSON.stringify(CommonEventData))
-                                let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-                                await abilityDelegator.executeShellCommand('aa dump -e').then(
-                                    (data:ShellCmdResult|undefined): void => {
-                                    hilog.info(DOMAIN_NUMBER, TAG,`executeShellCommand  ===> ` + JSON.stringify(data))
-                                    let output = JSON.stringify(data);
-                                    try {
-                                        hilog.info(DOMAIN_NUMBER, TAG,`executeShellCommand success`)
-                                        expect(output).assertContain("MuseEditorExtensionAbility");
-                                    } catch (error) {
-                                        hilog.info(DOMAIN_NUMBER, TAG, ` catch fail`)
-                                        expect().assertFalse();
-                                        done();
+                            waitForCompletion(async () => {
+                                hilog.info(DOMAIN_NUMBER, TAG, `ACTS_PhotoEditorExtension_static_0100 subscribe success`)
+                                if (err) {
+                                    hilog.info(DOMAIN_NUMBER, TAG, `subscribe failed! Err.Info ===> + ${err?.code}`)
+                                    expect(false).assertTrue()
+                                    done()
+                                } else {
+                                    if (CommonEventData == undefined) {
+                                        hilog.info(DOMAIN_NUMBER, TAG,`subscribe failed! Err.Info ===> ${CommonEventData}`)
+                                        expect(false).assertTrue()
+                                        done()
+                                    } else {
+                                        hilog.info(DOMAIN_NUMBER, TAG,`subscribe successed! CommonEventData.Info ===>` +
+                                            JSON.stringify(CommonEventData))
+                                        let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+                                        await abilityDelegator.executeShellCommand('aa dump -e').then(
+                                            (data:ShellCmdResult|undefined): void => {
+                                            hilog.info(DOMAIN_NUMBER, TAG,`executeShellCommand  ===> ` + JSON.stringify(data))
+                                            let output = JSON.stringify(data);
+                                            try {
+                                                hilog.info(DOMAIN_NUMBER, TAG,`executeShellCommand success`)
+                                                expect(output).assertContain("MuseEditorExtensionAbility");
+                                            } catch (error) {
+                                                hilog.info(DOMAIN_NUMBER, TAG, ` catch fail`)
+                                                expect().assertFalse();
+                                                done();
+                                            }
+                                        });
                                     }
-                                });
-                            }
-                        }
+                                }
+                            })
                     })
 
                 }else{

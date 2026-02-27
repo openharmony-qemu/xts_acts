@@ -79,6 +79,7 @@ export default function storageStatistics_test() {
         try {
           storageStatistics.getCurrentBundleStats((error: BusinessError | null,
             bundleStat: storageStatistics.BundleStats | undefined) => {
+            waitForCompletion(async () => {
             expect(bundleStat != null).assertTrue();
             let bundleStatTemp = bundleStat as storageStatistics.BundleStats;
             expect(await Utils.isIntNum(bundleStatTemp.appSize) && !await Utils.isNegativeNum(bundleStatTemp.appSize))
@@ -89,6 +90,7 @@ export default function storageStatistics_test() {
             expect(await Utils.isIntNum(bundleStatTemp.dataSize) && !await Utils.isNegativeNum(bundleStatTemp.dataSize))
               .assertTrue();
             done();
+            })
           });
  
           hilog.info(domain, tag, 'Test PASSED');
@@ -240,6 +242,7 @@ export default function storageStatistics_test() {
         hilog.info(domain, tag, '%{public}s', 'storageStatistics_test_get_free_size_async_static_001 start');
         try {
           storageStatistics.getFreeSize((err: BusinessError | null, num: long | undefined) => {
+          waitForCompletion(async () => {
             if (err?.code !== undefined) {
               hilog.info(domain, tag, '%{public}s',
                 'storageStatistics_test_get_free_size_async_static_001 has error ' + err?.message + ' code: ' + err?.code);
@@ -251,6 +254,7 @@ export default function storageStatistics_test() {
               expect(await Utils.isIntNum(numtrans)).assertTrue();
             }
             done();
+          })
           });
         } catch (e) {
           hilog.info(domain, tag, '%{public}s',
@@ -296,6 +300,7 @@ export default function storageStatistics_test() {
         hilog.info(domain, tag, '%{public}s', 'storageStatistics_test_get_total_size_async_static_001 start');
         try {
           storageStatistics.getTotalSize((err: BusinessError | null, num: long | undefined) => {
+          waitForCompletion(async () => {
             if (err?.code !== undefined) {
               hilog.info(domain, tag, '%{public}s',
                 'storageStatistics_test_get_total_size_async_static_001 has error ' + err?.message + ' code: ' + err?.code);
@@ -307,6 +312,7 @@ export default function storageStatistics_test() {
               expect(await Utils.isIntNum(numtrans) as boolean).assertTrue();
             }
             done();
+          })
           });
         } catch (e) {
           hilog.info(domain, tag, '%{public}s',

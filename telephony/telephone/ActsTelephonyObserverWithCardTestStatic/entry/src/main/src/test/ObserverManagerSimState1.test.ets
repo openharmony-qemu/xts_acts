@@ -154,10 +154,12 @@ export default function observerManagerSimStateTest1() {
         runTestCaseWithJudgeHasSimCard(caseName, done, async () => {
           try {
             observer.on('iccAccountInfoChange', () => {
+              waitForCompletion(async () => {
               let accInfo: sim.IccAccountInfo = await sim.getSimAccountInfo(0);
               console.info(`${caseName} data ${JSON.stringify(accInfo)}`);
               ExpectTrue(accInfo.isActive);
               done();
+              })
             });
             // await sim.activateSim(0);
             done();

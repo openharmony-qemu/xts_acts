@@ -69,14 +69,13 @@ async function testHMACDigestPromise(HMACAlgoName: string, keyAlgoName: string):
         console.log(
           "key getEncoded hex: " + uInt8ArrayToShowStr(encodedKey.data)
         );
-        await globalHMAC.init(key);
+        waitForCompletion(async () => {await globalHMAC.init(key);})
       })
       .then(() => {
-        await globalHMAC.update(inBlob);
+        waitForCompletion(async () => {await globalHMAC.update(inBlob);})
       })
       .then<cryptoFramework.DataBlob>(() => {
-        let promiseMacdoFinal: cryptoFramework.DataBlob = await globalHMAC.doFinal();
-        return promiseMacdoFinal;
+        return waitForCompletion(async () => {return await globalHMAC.doFinal();})
       })
       .then((macOutput: cryptoFramework.DataBlob) => {
         console.log("HMAC result:" + macOutput.data);

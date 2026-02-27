@@ -250,10 +250,12 @@ let s4: securityLabel.DataLevel = "s4";
         let prepareFile = await Utils.prepareFile(fpath, FILE_CONTENT);
         expect(prepareFile).assertTrue();
         securityLabel.setSecurityLabel(fpath, s1, (err: BusinessError<void> | null) => {
+        waitForCompletion(async () => {
           let level = await securityLabel.getSecurityLabel(fpath);
           expect(level == s1).assertTrue();
           fs.unlinkSync(fpath);
           done();
+        })
         });
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_001 has failed for ' + JSON.stringify(e));

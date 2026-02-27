@@ -1712,11 +1712,13 @@ export default function SingleKvStoreCallbackTest() {
                 console.info('SingleKvStorestartTransactionCallbackTest001 deleteBatch success');
                 expect(err == undefined).assertTrue();
                 kvStore!.commit((err: Error | null, data: string[] | undefined) => {
-                  console.info('SingleKvStorestartTransactionCallbackTest001 commit success');
-                  expect(err == undefined).assertTrue();
-                  await sleep(500);
-                  expect(count == 1).assertTrue();
-                  done();
+                  waitForCompletion(async () => {
+                    console.info('SingleKvStorestartTransactionCallbackTest001 commit success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 1).assertTrue();
+                    done();
+                  })
                 });
               });
             });
@@ -1760,11 +1762,13 @@ export default function SingleKvStoreCallbackTest() {
                 console.info('SingleKvStorestartTransactionCallbackTest002 deleteBatch success');
                 expect(err == undefined).assertTrue();
                 kvStore!.rollback((err: Error | null, data: string[] | undefined) => {
-                  console.info('SingleKvStorestartTransactionCallbackTest002 rollback success');
-                  expect(err == undefined).assertTrue();
-                  await sleep(500);
-                  expect(count == 0).assertTrue();
-                  done();
+                  waitForCompletion(async () => {
+                    console.info('SingleKvStorestartTransactionCallbackTest002 rollback success');
+                    expect(err == undefined).assertTrue();
+                    await sleep(500);
+                    expect(count == 0).assertTrue();
+                    done();
+                  })
                 });
               });
             });

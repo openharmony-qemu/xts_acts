@@ -1953,14 +1953,16 @@ export default function EAWorkerTest() {
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
             worker.run((input: () => Promise<number>) => {
-              try {
-                const value = await input();
-                const additionalValue = await Promise.resolve(10);
-                resolve((): Promise<number> => Promise.resolve(value + additionalValue))
-              } catch (err) {
-                err = err as Error;
-                reject(err);
-              }
+              waitForCompletion(async () => {
+                try {
+                  const value = await input();
+                  const additionalValue = await Promise.resolve(10);
+                  resolve((): Promise<number> => Promise.resolve(value + additionalValue))
+                } catch (err) {
+                  err = err as Error;
+                  reject(err);
+                }
+              })
             }, inputFunction);
           });
           const resultFunc = await workerPromise;
