@@ -47,7 +47,7 @@ export default function MultimodalNoPermissionTest() {
           error = error as BusinessError;
           console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
-          expect(error.code == 201).assertTrue();
+          expect(error.code).assertEqual(201);
           done();
         }
       });
