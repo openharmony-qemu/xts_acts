@@ -316,6 +316,412 @@ export default function applicationBundleJsunit() {
         });
 
         /**
+         * @tc.name   testGetApplicationInfoEmptyBundleNameWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3530
+         * @tc.desc   Test getApplicationInfo with empty string bundleName and userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoEmptyBundleNameWithUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo("", FLAG_DEFAULT, userId, (err, data) => {
+	         if (err) {
+                    console.info('testGetApplicationInfoEmptyBundleNameWithUserIdCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoEmptyBundleNameWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullBundleNameWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3540
+         * @tc.desc   Test getApplicationInfo with null bundleName and userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullBundleNameWithUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+           Bundle.getApplicationInfo(null, FLAG_DEFAULT, userId, (err, data) => {	        
+	         if (err) {
+                     console.info('testGetApplicationInfoNullBundleNameWithUserIdCallback err:' + JSON.stringify(err));
+                     expect(err.code).assertEqual(1);
+                     done();
+                    return;
+                }
+                console.info('testGetApplicationInfoNullBundleNameWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+               
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedBundleNameWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3550
+         * @tc.desc   Test getApplicationInfo with undefined bundleName and userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedBundleNameWithUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+             Bundle.getApplicationInfo(undefined, FLAG_DEFAULT, userId, (err, data) => {
+	         if (err) {
+                     console.info('testGetApplicationInfoUndefinedBundleNameWithUserIdCallback err:' + JSON.stringify(err));
+                     expect(err.code).assertEqual(1);
+                     done();
+                     return;
+                 }
+                console.info('testGetApplicationInfoUndefinedBundleNameWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullFlagsWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3560
+         * @tc.desc   Test getApplicationInfo with null bundleFlags and userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullFlagsWithUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+             Bundle.getApplicationInfo(BUNDLE_NAME, null, userId, (err, data) => {
+	       
+	         if (err) {
+                       console.info('testGetApplicationInfoNullFlagsWithUserIdCallback err:' + JSON.stringify(err));
+                       expect(err.code).assertEqual(1);
+                       done();
+                       return;
+                 }
+                console.info('testGetApplicationInfoNullFlagsWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedFlagsWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3570
+         * @tc.desc   Test getApplicationInfo with undefined bundleFlags and userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedFlagsWithUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+             Bundle.getApplicationInfo(BUNDLE_NAME, undefined, userId, (err, data) => { 
+	        if (err) {
+                     console.info('testGetApplicationInfoNullFlagsWithUserIdCallback err:' + JSON.stringify(err));
+                     expect(err.code).assertEqual(1);
+                     done();
+                     return;
+                 }
+                console.info('testGetApplicationInfoNullFlagsWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoWithNullUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3580
+         * @tc.desc   Test getApplicationInfo with null userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoWithNullUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo(BUNDLE_NAME, FLAG_DEFAULT, null, (err, data) => {
+	         if (err) {
+                      console.info('testGetApplicationInfoWithNullUserIdCallback err:' + JSON.stringify(err));
+                      expect(err.code).assertEqual(1);
+                      done();
+                     return;
+                 }
+                console.info('testGetApplicationInfoWithNullUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()     
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoWithUndefinedUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3590
+         * @tc.desc   Test getApplicationInfo with undefined userId. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoWithUndefinedUserIdCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+              Bundle.getApplicationInfo(BUNDLE_NAME, FLAG_DEFAULT, undefined, (err, data) => {
+	         if (err) {
+                     console.info('testGetApplicationInfoWithUndefinedUserIdCallback err:' + JSON.stringify(err));
+                     expect(err.code).assertEqual(1);
+                     done();
+                     return;
+                 }
+                console.info('testGetApplicationInfoWithUndefinedUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()    
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoEmptyBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3600
+         * @tc.desc   Test getApplicationInfo with empty string bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoEmptyBundleNameCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo("", FLAG_DEFAULT, (err, data) => {
+                if (err) {
+                    console.info('testGetApplicationInfoEmptyBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoEmptyBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3610
+         * @tc.desc   Test getApplicationInfo with null bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullBundleNameCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo(null, FLAG_DEFAULT, (err, data) => {
+                if (err) {
+                    console.info('testGetApplicationInfoNullBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoNullBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3620
+         * @tc.desc   Test getApplicationInfo with undefined bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedBundleNameCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo(undefined, FLAG_DEFAULT, (err, data) => {
+                if (err) {
+                    console.info('testGetApplicationInfoUndefinedBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoUndefinedBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullFlagsCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3630
+         * @tc.desc   Test getApplicationInfo with null bundleFlags. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullFlagsCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo(BUNDLE_NAME, null, (err, data) => {
+                if (err) {
+                    console.info('testGetApplicationInfoNullFlagsCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoNullFlagsCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedFlagsCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3640
+         * @tc.desc   Test getApplicationInfo with undefined bundleFlags. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedFlagsCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            Bundle.getApplicationInfo(BUNDLE_NAME, undefined, (err, data) => {
+                if (err) {
+                    console.info('testGetApplicationInfoUndefinedFlagsCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetApplicationInfoUndefinedFlagsCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoEmptyBundleNameWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3650
+         * @tc.desc   Test getApplicationInfo with empty string bundleName and userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoEmptyBundleNameWithUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo("", FLAG_DEFAULT, userId).then((data) => {
+                console.info('testGetApplicationInfoEmptyBundleNameWithUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoEmptyBundleNameWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullBundleNameWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3660
+         * @tc.desc   Test getApplicationInfo with null bundleName and userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullBundleNameWithUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(null, FLAG_DEFAULT, userId).then((data) => {
+                console.info('testGetApplicationInfoNullBundleNameWithUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoNullBundleNameWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedBundleNameWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3670
+         * @tc.desc   Test getApplicationInfo with undefined bundleName and userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedBundleNameWithUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(undefined, FLAG_DEFAULT, userId).then((data) => {
+                console.info('testGetApplicationInfoUndefinedBundleNameWithUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoUndefinedBundleNameWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoNullFlagsWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3680
+         * @tc.desc   Test getApplicationInfo with null bundleFlags and userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoNullFlagsWithUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(BUNDLE_NAME, null, userId).then((data) => {
+                console.info('testGetApplicationInfoNullFlagsWithUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoNullFlagsWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoUndefinedFlagsWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3690
+         * @tc.desc   Test getApplicationInfo with undefined bundleFlags and userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoUndefinedFlagsWithUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(BUNDLE_NAME, undefined, userId).then((data) => {
+                console.info('testGetApplicationInfoUndefinedFlagsWithUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoUndefinedFlagsWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoWithNullUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3700
+         * @tc.desc   Test getApplicationInfo with null userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoWithNullUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(BUNDLE_NAME, FLAG_DEFAULT, null).then((data) => {
+                console.info('testGetApplicationInfoWithNullUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoWithNullUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetApplicationInfoWithUndefinedUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_3710
+         * @tc.desc   Test getApplicationInfo with undefined userId. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetApplicationInfoWithUndefinedUserIdPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            await Bundle.getApplicationInfo(BUNDLE_NAME, FLAG_DEFAULT, undefined).then((data) => {
+                console.info('testGetApplicationInfoWithUndefinedUserIdPromise success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            }).catch((err) => {
+                console.info('testGetApplicationInfoWithUndefinedUserIdPromise err:' + JSON.stringify(err));
+                expect(err.code).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
          * @tc.name   getApplicationInfoNoMetaData
          * @tc.number Sub_Bms_Framework_Query_AppInfo_8400
          * @tc.desc   Check the return value of the interface
