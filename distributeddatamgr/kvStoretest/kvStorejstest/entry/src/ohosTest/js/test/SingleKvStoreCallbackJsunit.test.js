@@ -14,8 +14,8 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import factory from '@ohos.data.distributedData'
-import common from "@ohos.app.ability.common";
 import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 const KEY_TEST_INT_ELEMENT = 'key_test_int_2';
 const KEY_TEST_FLOAT_ELEMENT = 'key_test_float_2';
