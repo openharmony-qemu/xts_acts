@@ -240,6 +240,14 @@ export default function latticeTest() {
         expect(e.code).assertEqual(401);
       }
       try {
+        drawing.Lattice.createImageLattice([], [], - 1, - 1, null, null, null);
+        console.info(msg + ' createImageLattice([], []) succeeded');
+      } catch( e ) {
+        e = e as BusinessError;
+        console.info(msg + ` createImageLattice([], []) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, {
           left : 2000, top : 2000, right : 2000, bottom : 2000
         }, null, null);
