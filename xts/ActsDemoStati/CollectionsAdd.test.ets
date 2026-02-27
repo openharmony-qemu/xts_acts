@@ -2420,6 +2420,327 @@ export default function collectionsAddTest1() {
       expect(writable.uncork()).assertEqual(false);
 
     });
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWait001
+     * @tc.number ActsLocksTestConditionVariableWait001
+     * @tc.desc   check wait use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWait001';
+      console.info(`${CASE} START`);
+      try {
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        conditionVariable.wait();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWait002
+     * @tc.number ActsLocksTestConditionVariableWait002
+     * @tc.desc   check create wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWait002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWait002';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        await taskpool.execute(threadWaitNotAwait, conditionVariable).then((data) => {
+          result = data as boolean;
+        });
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWait003
+     * @tc.number ActsLocksTestConditionVariableWait003
+     * @tc.desc   check wait use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWait003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWait003';
+      console.info(`${CASE} START`);
+      try {
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = ArkTSUtils.locks.ConditionVariable.request("Test");
+        conditionVariable.wait();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWait004
+     * @tc.number ActsLocksTestConditionVariableWait004
+     * @tc.desc   check create wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWait004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWait004';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const conditionVariable = ArkTSUtils.locks.ConditionVariable.request('Test');
+        await taskpool.execute(threadWaitNotAwait, conditionVariable).then((data) => {
+          result = data as boolean;
+        });
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor001
+     * @tc.number ActsLocksTestConditionVariableWaitFor001
+     * @tc.desc   check waitFor use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWaitFor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor001';
+      console.info(`${CASE} START`);
+      try {
+        const waitTime: number = 500;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        conditionVariable.waitFor(waitTime);
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor002
+     * @tc.number ActsLocksTestConditionVariableWaitFor002
+     * @tc.desc   check create waitFor greater than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWaitFor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor002';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const sleepTime: number = 5000;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        const threadWorker = new worker.ThreadWorker('../workers/workerWaitFor.ets');
+        threadWorker.postMessageWithSharedSendable(conditionVariable);
+        threadWorker.onmessage = (e: MessageEvents): void => {
+          result = e.data;
+        }
+        await sleep(sleepTime);
+        expect(result).assertTrue();
+        threadWorker.terminate();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor003
+     * @tc.number ActsLocksTestConditionVariableWaitFor003
+     * @tc.desc   check create waitFor equal to 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ActsLocksTestConditionVariableWaitFor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor003';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const waitTime: number = 0;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        await taskpool.execute(threadWaitFor, conditionVariable, waitTime).then((data) => {
+          result = data as boolean;
+        });
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor004
+     * @tc.number ActsLocksTestConditionVariableWaitFor004
+     * @tc.desc   check create waitFor less than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ActsLocksTestConditionVariableWaitFor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor004';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const waitTime: number = -1;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        await taskpool.execute(threadWaitFor, conditionVariable, waitTime).then((data) => {
+          result = data as boolean;
+        });
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor005
+     * @tc.number ActsLocksTestConditionVariableWaitFor005
+     * @tc.desc   check create waitFor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWaitFor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor005';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const sleepTime: number = 5000;
+        const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        const waitBeginTime = Date.now();
+        let threadExecutionTime: number = 0;
+        const threadWorker = new worker.ThreadWorker('../workers/workerWaitFor.ets');
+        threadWorker.postMessageWithSharedSendable(conditionVariable);
+        threadWorker.onmessage = (e: MessageEvents): void => {
+          result = e.data;
+          const waitEndTime = Date.now();
+          threadExecutionTime = waitEndTime - waitBeginTime;
+        }
+        await sleep(sleepTime);
+        expect(result && threadExecutionTime >= 3000).assertTrue();
+        threadWorker.terminate();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor006
+     * @tc.number ActsLocksTestConditionVariableWaitFor006
+     * @tc.desc   check waitFor use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWaitFor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor006';
+      console.info(`${CASE} START`);
+      try {
+        const waitTime: number = 500;
+        const conditionVariable = ArkTSUtils.locks.ConditionVariable.request('Test');
+        conditionVariable.waitFor(waitTime);
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor007
+     * @tc.number ActsLocksTestConditionVariableWaitFor007
+     * @tc.desc   check create waitFor greater than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActsLocksTestConditionVariableWaitFor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor007';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const sleepTime: number = 5000;
+        const conditionVariable = ArkTSUtils.locks.ConditionVariable.request('Test');
+        const threadWorker = new worker.ThreadWorker('../workers/workerWaitFor.ets');
+        threadWorker.postMessageWithSharedSendable(conditionVariable);
+        threadWorker.onmessage = (e: MessageEvents): void => {
+          result = e.data;
+        }
+        await sleep(sleepTime);
+        expect(result).assertTrue();
+        threadWorker.terminate();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
+
+    /**
+     * @tc.name   ActsLocksTestConditionVariableWaitFor008
+     * @tc.number ActsLocksTestConditionVariableWaitFor008
+     * @tc.desc   check create waitFor equal to 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ActsLocksTestConditionVariableWaitFor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor008';
+      console.info(`${CASE} START`);
+      try {
+        let result = false;
+        const waitTime: number = 0;
+        const conditionVariable = ArkTSUtils.locks.ConditionVariable.request('Test');
+        await taskpool.execute(threadWaitFor, conditionVariable, waitTime).then((data) => {
+          result = data as boolean;
+        });
+        expect(result).assertTrue();
+      } catch (err) {
+        console.error(`${CASE} error:` + err);
+        expect().assertFail();
+      }
+      console.info(`${CASE} END`);
+      done();
+    });
 
   })
 }
