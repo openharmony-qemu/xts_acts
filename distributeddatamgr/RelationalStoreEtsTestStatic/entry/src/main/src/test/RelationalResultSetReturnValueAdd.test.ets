@@ -40,7 +40,7 @@ const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PR
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
 const STORE_CONFIG: relationalStore.StoreConfig = {
-  name: "rdbQueryResultSet.db",
+  name: "rdbQueryresultSet!.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
@@ -65,11 +65,11 @@ export default function RelationalResultSetReturnValueAddTest() {
       await Utils.msSleep(10000)
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       try {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        hilog.info(domain, tag, '%{public}s', 'contextDir' + context.databaseDir);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+        hilog.info(domain, tag, '%{public}s', 'contextDir' + context!.databaseDir);
         expect(rdbStore != undefined).assertTrue();
         if (rdbStore != undefined) {
-          await rdbStore.execute(CREATE_TABLE_TEST);
+          await rdbStore!.execute(CREATE_TABLE_TEST);
           let u8 = new Uint8Array([1, 2, 3]);
           const valueBucket: relationalStore.ValuesBucket = {
             "data1": "hello world",
@@ -99,8 +99,8 @@ export default function RelationalResultSetReturnValueAddTest() {
       hilog.info(domain, tag, '%{public}s', 'afterAll');
       try {
         hilog.info(domain, tag, '%{public}s', 'afterAll successful');
-        rdbStore.close();
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        rdbStore!.close();
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', 'afterAll failed');
         expect().assertFail();
@@ -120,15 +120,15 @@ export default function RelationalResultSetReturnValueAddTest() {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
-        let name = resultSet.getColumnNames();
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        let name = resultSet!.getColumnNames();
         expect(name.length >0).assertTrue();
       } catch(err) {
         hilog.error(domain, tag, '%{public}s',`RelationalResultSetReturnValueAddTest_0001 failed message:${err.message} code:${err.code}`);
         expect().assertFalse();
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.error(domain, tag, '%{public}s',"************* RelationalResultSetReturnValueAddTest_0001 end *************");
     })
@@ -146,15 +146,15 @@ export default function RelationalResultSetReturnValueAddTest() {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
-        let index = resultSet.getColumnIndex("");
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        let index = resultSet!.getColumnIndex("");
         expect().assertFail();
       } catch(err) {
         hilog.error(domain, tag, '%{public}s',`RelationalResultSetReturnValueAddTest_0002 failed message:${err.message} code:${err.code}`);
         expect(err.code).assertEqual(14800001);
       }
       if (resultSet != undefined) {
-        resultSet.close();
+        resultSet!.close();
       }
       hilog.info(domain, tag, '%{public}s',"************* RelationalResultSetReturnValueAddTest_0002 end *************");
     })
@@ -172,30 +172,30 @@ export default function RelationalResultSetReturnValueAddTest() {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
-          resultSet.goToNextRow();
-          let type = await resultSet.getColumnType(resultSet.getColumnIndex("id"))
-          expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data1"));
-          expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data2"));
-          expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data3"));
-          expect(type).assertEqual(relationalStore.ColumnType.REAL);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data4"));
-          expect(type).assertEqual(relationalStore.ColumnType.BLOB);
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        resultSet!.goToNextRow();
+        let type = await resultSet!.getColumnType(resultSet!.getColumnIndex("id"))
+        expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data1"));
+        expect(type).assertEqual(relationalStore.ColumnType.TEXT);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data2"));
+        expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data3"));
+        expect(type).assertEqual(relationalStore.ColumnType.REAL);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data4"));
+        expect(type).assertEqual(relationalStore.ColumnType.BLOB);
 
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data5"));
-          expect(type).assertEqual(relationalStore.ColumnType.ASSET);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data6"));
-          expect(type).assertEqual(relationalStore.ColumnType.ASSETS);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data7"));
-          expect(type).assertEqual(relationalStore.ColumnType.FLOAT_VECTOR);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data8"));
-          expect(type).assertEqual(relationalStore.ColumnType.UNLIMITED_INT);
-          if (resultSet) {
-            resultSet?.close();
-          }
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data5"));
+        expect(type).assertEqual(relationalStore.ColumnType.ASSET);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data6"));
+        expect(type).assertEqual(relationalStore.ColumnType.ASSETS);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data7"));
+        expect(type).assertEqual(relationalStore.ColumnType.FLOAT_VECTOR);
+        type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data8"));
+        expect(type).assertEqual(relationalStore.ColumnType.UNLIMITED_INT);
+        if (resultSet) {
+          resultSet?.close();
+        }
       } catch(err) {
         console.error(domain, tag, '%{public}s',`RelationalResultSetReturnValueAddTest_0003 failed:${err.message} code:${err.code}`);
         expect().assertFail();
@@ -216,29 +216,29 @@ export default function RelationalResultSetReturnValueAddTest() {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
-        resultSet.goToNextRow();
-        let type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("id"))
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        resultSet!.goToNextRow();
+        let type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("id"))
         expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data1"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data1"));
         expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data2"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data2"));
         expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data3"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data3"));
         expect(type).assertEqual(relationalStore.ColumnType.REAL);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data4"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data4"));
         expect(type).assertEqual(relationalStore.ColumnType.BLOB);
 
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data5"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data5"));
         expect(type).assertEqual(relationalStore.ColumnType.ASSET);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data6"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data6"));
         expect(type).assertEqual(relationalStore.ColumnType.ASSETS);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data7"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data7"));
         expect(type).assertEqual(relationalStore.ColumnType.FLOAT_VECTOR);
-        type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data8"));
+        type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data8"));
         expect(type).assertEqual(relationalStore.ColumnType.UNLIMITED_INT);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
       } catch(err) {
         console.error(domain, tag, '%{public}s',`RelationalResultSetReturnValueAddTest_0004 failed:${err.message} code:${err.code}`);
@@ -259,8 +259,8 @@ export default function RelationalResultSetReturnValueAddTest() {
       let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
-        resultSet.goToNextRow();
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        resultSet!.goToNextRow();
         let data = resultSet?.isColumnNull(resultSet!.getColumnIndex("data6"));
         console.info(domain, tag, `RelationalResultSetReturnValueAddTest_0005 failed message:${data}`);
         expect(data).assertEqual(false);
@@ -283,15 +283,15 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       hilog.error(domain, tag, '%{public}s',"************* RelationalResultSetReturnValueAddTest_0006 start *************");
       let resultSet : relationalStore.LiteResultSet | undefined;
-      await rdbStore.execute(CREATE_TABLE_TEST1);
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
       let predicates = new relationalStore.RdbPredicates('test1');
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": null,
       };
       await rdbStore!.insert('test1', valueBucket1);
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
-        resultSet.goToNextRow();
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
+        resultSet!.goToNextRow();
         let data = resultSet?.isColumnNull(resultSet!.getColumnIndex("name"));
         console.info(domain, tag, `RelationalResultSetReturnValueAddTest_0006 failed message:${data}`);
         expect(data).assertEqual(true);
@@ -314,9 +314,9 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(domain, tag, TAG + '************* RelationalResultSetReturnValueAddTest_0007 start *************');
       let predicates = new relationalStore.RdbPredicates('test');
-      let resultSet = await rdbStore.query(predicates);
+      let resultSet = await rdbStore!.query(predicates);
       try{
-        let data = resultSet.goToNextRow()
+        let data = resultSet!.goToNextRow()
         expect(data).assertEqual(true);
       }catch (err){
         console.error(domain, tag, `RelationalResultSetReturnValueAddTest_0007 failed message:${err.message} code:${err.code}`);
@@ -338,10 +338,10 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(domain, tag, TAG + '************* RelationalResultSetReturnValueAddTest_0008 start *************');
       let predicates = new relationalStore.RdbPredicates('test');
-      let resultSet = await rdbStore.query(predicates);
-      resultSet.goToNextRow()
+      let resultSet = await rdbStore!.query(predicates);
+      resultSet!.goToNextRow()
       try{
-        let data = resultSet.goToNextRow()
+        let data = resultSet!.goToNextRow()
         expect(data).assertEqual(false);
         resultSet?.close();
       }catch (err){
@@ -363,8 +363,8 @@ export default function RelationalResultSetReturnValueAddTest() {
       console.log(TAG + '************* RelationalResultSetReturnValueAddTest_0009 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
       try {
-        resultSet = await rdbStore.querySql("SELECT * FROM test");
-        let asRowsData = await resultSet.getRowsData(5);
+        resultSet = await rdbStore!.querySql("SELECT * FROM test");
+        let asRowsData = await resultSet!.getRowsData(5);
         expect(asRowsData.length > 0).assertTrue();
       } catch(err) {
         console.error(domain, tag, `RelationalResultSetReturnValueAddTest_0009 failed message:${err.message} code:${err.code}`);
@@ -385,10 +385,10 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
       console.log(TAG + '************* RelationalResultSetReturnValueAddTest_0010 start *************');
       let resultSet: relationalStore.LiteResultSet | undefined;
-      resultSet = await rdbStore.querySqlWithoutRowCount('select * from test');
+      resultSet = await rdbStore!.querySqlWithoutRowCount('select * from test');
       try {
         let rows: Array<relationalStore.ValuesBucket>;
-        rows = await resultSet.getRows(1);
+        rows = await resultSet!.getRows(1);
         console.info(domain, tag, TAG + "rows.length is:" + rows.length);
         expect(rows.length > 0).assertTrue();
       } catch(err) {
@@ -402,7 +402,7 @@ export default function RelationalResultSetReturnValueAddTest() {
     /**
      * @tc.name   RelationalResultSetReturnValueAddTest_0011
      * @tc.number SUB_DistributedData_RelationalResultSetReturnValueAddTest_0011
-     * @tc.desc   goToNextRow normal test return value 
+     * @tc.desc   goToNextRow normal test return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -410,10 +410,10 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
       console.log(TAG + '************* RelationalResultSetReturnValueAddTest_0011 start *************');
       let resultSet: relationalStore.LiteResultSet | undefined;
-      resultSet = await rdbStore.querySqlWithoutRowCount('select * from test');
+      resultSet = await rdbStore!.querySqlWithoutRowCount('select * from test');
       try {
-        resultSet.goToNextRow();
-        const doc = resultSet.getAsset(resultSet.getColumnIndex("data5"));
+        resultSet!.goToNextRow();
+        const doc = resultSet!.getAsset(resultSet!.getColumnIndex("data5"));
         console.info(domain, tag, TAG + "doc.name:" + doc.name);
         expect(doc.name).assertEqual("name1");
         console.info(domain, tag, TAG + "doc.uri:" + doc.uri);
@@ -439,7 +439,7 @@ export default function RelationalResultSetReturnValueAddTest() {
     /**
      * @tc.name   RelationalResultSetReturnValueAddTest_0012
      * @tc.number SUB_DistributedData_RelationalResultSetReturnValueAddTest_0012
-     * @tc.desc   getRows normal test return value 
+     * @tc.desc   getRows normal test return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -447,10 +447,10 @@ export default function RelationalResultSetReturnValueAddTest() {
     it('RelationalResultSetReturnValueAddTest_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async ()  => {
       console.log(TAG + '************* RelationalResultSetReturnValueAddTest_0012 start *************');
       let resultSet: relationalStore.ResultSet | undefined;
-      resultSet = await rdbStore.querySql("SELECT * FROM test");
+      resultSet = await rdbStore!.querySql("SELECT * FROM test");
       try {
         let rows: Array<relationalStore.ValuesBucket>;
-        rows = await resultSet.getRows(1);
+        rows = await resultSet!.getRows(1);
         console.info(domain, tag, TAG + "rows.length is:" + rows.length);
         expect(rows.length > 0).assertTrue();
       } catch(err) {
@@ -460,7 +460,6 @@ export default function RelationalResultSetReturnValueAddTest() {
       resultSet?.close();
       console.info(domain, tag, TAG + '************* RelationalResultSetReturnValueAddTest_0012 end *************');
     })
-    
+
   })
 }
-
