@@ -59,11 +59,11 @@ struct MarqueePropertiesNullUndefinedTest {
             // Empty string
             Marquee({
               start: true,
-              src: "fontColor ''"
+              src: 'fontColor '
             })
               .width('25%')
               .height('5%')
-              .id("Marquee_fontColor_empty")
+              .id('Marquee_fontColor_empty')
               .fontColor('' as ResourceColor)
           }
           .width('100%')
@@ -107,11 +107,11 @@ struct MarqueePropertiesNullUndefinedTest {
             // Empty string
             Marquee({
               start: true,
-              src: "fontSize ''"
+              src: 'fontSize '
             })
               .width('25%')
               .height('5%')
-              .id("Marquee_fontSize_empty")
+              .id('Marquee_fontSize_empty')
               .fontSize('' as Length)
           }
           .width('100%')
@@ -155,11 +155,11 @@ struct MarqueePropertiesNullUndefinedTest {
             // Empty string
             Marquee({
               start: true,
-              src: "fontWeight ''"
+              src: 'fontWeight '
             })
               .width('25%')
               .height('5%')
-              .id("Marquee_fontWeight_empty")
+              .id('Marquee_fontWeight_empty')
               .fontWeight('')
           }
           .width('100%')
@@ -203,11 +203,11 @@ struct MarqueePropertiesNullUndefinedTest {
             // Empty string
             Marquee({
               start: true,
-              src: "fontFamily ''"
+              src: 'fontFamily '
             })
               .width('25%')
               .height('5%')
-              .id("Marquee_fontFamily_empty")
+              .id('Marquee_fontFamily_empty')
               .fontFamily('')
           }
           .width('100%')

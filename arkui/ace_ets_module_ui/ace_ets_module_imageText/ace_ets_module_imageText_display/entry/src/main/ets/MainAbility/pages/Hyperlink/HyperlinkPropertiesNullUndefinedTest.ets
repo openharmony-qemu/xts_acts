@@ -48,10 +48,10 @@ struct HyperlinkPropertiesNullUndefinedTest {
               .color(undefined)
 
             // Empty string
-            Hyperlink('https://example.com/', "color ''")
+            Hyperlink('https://example.com/', 'color ')
               .width('25%')
               .height('5%')
-              .id("Hyperlink_color_empty")
+              .id('Hyperlink_color_empty')
               .color('')
           }
           .width('100%')

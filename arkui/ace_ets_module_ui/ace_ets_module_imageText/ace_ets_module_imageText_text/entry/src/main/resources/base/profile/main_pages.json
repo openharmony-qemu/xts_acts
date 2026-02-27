@@ -24,6 +24,7 @@
         "MainAbility/pages/ImageSpan/OnCompleteTest",
         "MainAbility/pages/ImageSpan/ImageSpanSupportSvg2",
         "MainAbility/pages/ImageSpan/ImageSpanTest9",
+        "MainAbility/pages/ImageSpan/ImageSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Span/Span3Jsunit",
         "MainAbility/pages/Span/SpanApi1",
@@ -37,6 +38,7 @@
         "MainAbility/pages/SymbolSpan/SymbolSpanApi1",
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
         "MainAbility/pages/SymbolSpan/SymbolSpanModifier",
+        "MainAbility/pages/SymbolSpan/SymbolSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Text/EnablePreviewMenu",
         "MainAbility/pages/Text/FontSettingOptions",
