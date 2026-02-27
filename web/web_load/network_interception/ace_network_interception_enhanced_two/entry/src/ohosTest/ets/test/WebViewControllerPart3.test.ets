@@ -135,7 +135,7 @@ export default function webViewControllerPart3Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testSetNetworkAvailableUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testSetNetworkAvailableUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitSetNetworkAvailableUndefined', EVENT_ID_SET_EIMIT_KEY)
       Utils.registerBaseEvent('testSetNetworkAvailableUndefined', '401', 26022704, done,
         (backData: events_emitter.EventData, expected: Object) => {
