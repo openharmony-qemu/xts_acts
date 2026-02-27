@@ -30,6 +30,15 @@ import SafeAreaPaddingNullUndefinedTest from './CommonAttrs/SafeAreaPaddingNullU
 import ChainWeightNullUndefinedTest from './CommonAttrs/ChainWeightNullUndefined.test';
 import GridContainerNullUndefinedTest from './CommonAttrs/GridContainerNullUndefined.test';
 import FlexLayoutNullUndefinedTest from './CommonAttrs/FlexLayoutNullUndefined.test';
+import SizeNullUndefinedTest from './CommonAttrs/SizeNullUndefined.test';
+import AspectRatioNullUndefinedTest from './CommonAttrs/AspectRatioNullUndefined.test';
+import DisplayPriorityNullUndefinedTest from './CommonAttrs/DisplayPriorityNullUndefined.test';
+import AlignNullUndefinedTest from './CommonAttrs/AlignNullUndefined.test';
+import DirectionNullUndefinedTest from './CommonAttrs/DirectionNullUndefined.test';
+import OffsetNullUndefinedTest from './CommonAttrs/OffsetNullUndefined.test';
+import ChainModeNullUndefinedTest from './CommonAttrs/ChainModeNullUndefined.test';
+import UseSizeTypeNullUndefinedTest from './CommonAttrs/UseSizeTypeNullUndefined.test';
+import MarkAnchorNullUndefinedTest from './CommonAttrs/MarkAnchorNullUndefined.test';
 
 export default function testsuite() {
   Calc01();
@@ -49,4 +58,13 @@ export default function testsuite() {
   ChainWeightNullUndefinedTest();
   GridContainerNullUndefinedTest();
   FlexLayoutNullUndefinedTest();
+  SizeNullUndefinedTest();
+  AspectRatioNullUndefinedTest();
+  DisplayPriorityNullUndefinedTest();
+  AlignNullUndefinedTest();
+  DirectionNullUndefinedTest();
+  OffsetNullUndefinedTest();
+  ChainModeNullUndefinedTest();
+  UseSizeTypeNullUndefinedTest();
+  MarkAnchorNullUndefinedTest();
 }
