@@ -191,5 +191,161 @@ export default function ComponentObserverNullUndefinedTest() {
       expect(callbackCalled).assertFalse();
       console.info('[componentObserver_off_draw_001] 测试结束');
     });
+
+    /**
+     * @tc.name   componentObserver_on_layout_type_null_001
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_LAYOUT_TYPE_NULL_001
+     * @tc.desc   测试ComponentObserver.on layout方法第1个参数传入null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_layout_type_null_001', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_layout_type_null_001] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(null, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_layout_type_null_001] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_layout_type_null_001] 测试结束');
+    });
+
+    /**
+     * @tc.name   componentObserver_on_layout_type_undefined_002
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_LAYOUT_TYPE_UNDEFINED_002
+     * @tc.desc   测试ComponentObserver.on layout方法第1个参数传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_layout_type_undefined_002', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_layout_type_undefined_002] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(undefined, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_layout_type_undefined_002] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_layout_type_undefined_002] 测试结束');
+    });
+
+    /**
+     * @tc.name   componentObserver_on_draw_type_null_003
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_DRAW_TYPE_NULL_003
+     * @tc.desc   测试ComponentObserver.on draw方法第1个参数传入null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_draw_type_null_003', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_draw_type_null_003] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(null, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_draw_type_null_003] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_draw_type_null_003] 测试结束');
+    });
+
+    /**
+     * @tc.name   componentObserver_on_draw_type_undefined_004
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_DRAW_TYPE_UNDEFINED_004
+     * @tc.desc   测试ComponentObserver.on draw方法第1个参数传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_draw_type_undefined_004', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_draw_type_undefined_004] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(undefined, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_draw_type_undefined_004] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_draw_type_undefined_004] 测试结束');
+    });
+
+    /**
+     * @tc.name   componentObserver_on_drawChildren_type_null_005
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_DRAWCHILDREN_TYPE_NULL_005
+     * @tc.desc   测试ComponentObserver.on drawChildren方法第1个参数传入null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_drawChildren_type_null_005', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_drawChildren_type_null_005] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(null, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_drawChildren_type_null_005] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_drawChildren_type_null_005] 测试结束');
+    });
+
+    /**
+     * @tc.name   componentObserver_on_drawChildren_type_undefined_006
+     * @tc.number SUB_ARKUI_COMPONENTOBSERVER_ON_DRAWCHILDREN_TYPE_UNDEFINED_006
+     * @tc.desc   测试ComponentObserver.on drawChildren方法第1个参数传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('componentObserver_on_drawChildren_type_undefined_006', Level.LEVEL2, async () => {
+      console.info('[componentObserver_on_drawChildren_type_undefined_006] 测试开始');
+
+      let callbackInvoked = false;
+      let testCallback: () => void = () => {
+        callbackInvoked = true;
+      };
+
+      try {
+        listener.on(undefined, testCallback);
+      } catch (err) {
+        console.info('[componentObserver_on_drawChildren_type_undefined_006] error: ' + err);
+      }
+
+      expect(callbackInvoked).assertFalse();
+      console.info('[componentObserver_on_drawChildren_type_undefined_006] 测试结束');
+    });
   });
 }
