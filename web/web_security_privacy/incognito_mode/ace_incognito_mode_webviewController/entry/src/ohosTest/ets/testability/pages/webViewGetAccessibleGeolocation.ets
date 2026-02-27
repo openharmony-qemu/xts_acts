@@ -19,7 +19,9 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { Driver, ON } from '@kit.TestKit';
 import {waitForAssert, waitForExist} from '../../test/WaitTest';
+const driver = Driver.create();
 
 @Entry
 @Component
