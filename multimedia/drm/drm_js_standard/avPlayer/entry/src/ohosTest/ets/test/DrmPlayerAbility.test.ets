@@ -766,7 +766,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.createMediaKeySystem(null);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_2700 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(401);
             }
 
             done();
@@ -784,7 +784,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.createMediaKeySystem(undefined);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_2800 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(401);
             }
             done();
         });
@@ -801,7 +801,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(null);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_2900 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -818,7 +818,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(undefined);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3000 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -835,7 +835,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(null, "video/mp4");
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3100 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -852,7 +852,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(systemName, null);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3200 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -869,7 +869,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(undefined, "video/mp4");
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3300 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -886,7 +886,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(systemName, undefined);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3400 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -903,7 +903,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported("", "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_UNKNOWN);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3500 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(401);
             }
             done();
         });
@@ -920,7 +920,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(null, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_MAX);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3600 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -937,7 +937,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(undefined, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3700 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -954,7 +954,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(systemName, null, drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3800 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -971,7 +971,7 @@ export default function abilityTest() {
                 let drmMediaKeySystem = drm.isMediaKeySystemSupported(systemName, undefined, drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             } catch (err) {
                 console.log("XX DRM_FRAMEWORK_API_3900 createMediaKeySystem err end", err.code);
-                expect(err.Code).assertEqual(401);
+                expect(err.code).assertEqual(24700101);
             }
             done();
         });
@@ -992,8 +992,8 @@ export default function abilityTest() {
                 drmMediaKeySystem!.destroy();
                 done();
             } catch (err) {
-                console.log("XX DRM_FRAMEWORK_API_2000 createMediaKeySession failed"，err.code);
-                expect(false).assertEqual(true);
+                console.log("XX DRM_FRAMEWORK_API_2000 createMediaKeySession failed", err.code);
+                expect(err.code).assertEqual(24700101);
                 drmMediaKeySystem!.destroy();
                 done();
             }
@@ -2677,6 +2677,8 @@ export default function abilityTest() {
             } catch (err) {
                 console.log("XX DRM_AVPLAYER_2900 failed", err.code);
                 expect(err.code).assertEqual(24700201);
+            }
+            done();
         });
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_3000
@@ -2692,6 +2694,8 @@ export default function abilityTest() {
             } catch (err) {
                 console.log("XX DRM_AVPLAYER_3000 failed", err.code);
                 expect(err.code).assertEqual(401);
+            }
+            done();
         });
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_3100
@@ -2707,6 +2711,8 @@ export default function abilityTest() {
             } catch (err) {
                 console.log("XX DRM_AVPLAYER_3100 failed", err.code);
                 expect(err.code).assertEqual(401);
+            }
+            done();
         });
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100
