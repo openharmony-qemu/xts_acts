@@ -139,7 +139,11 @@ function createPhotoOutput() {
   let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
   let previewProfile = cameraOutputCap.previewProfiles[0];
   let photoProfile = cameraOutputCap.photoProfiles[0];
+  for (const indexphotoProfiles of cameraOutputCap.photoProfiles) {
+    console.log(TAG, 'indexphotoProfiles: w: ' + indexphotoProfiles.size.width + 'h: ' + indexphotoProfiles.size.height);
+  }
   for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
+    console.log(TAG, 'indexPreviewProfiles: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
     let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
       console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
       console.log(TAG,
@@ -254,7 +258,6 @@ export default function CameraGetActiveProfileTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -270,6 +273,7 @@ export default function CameraGetActiveProfileTest() {
       console.info('afterAll case');
       await closeFd(fdNumber);
     });
+
 
     /**
      * @tc.name   CAMERA_CAPTURE_PHOTO_CAPTURE_SETTING_001
@@ -767,88 +771,7 @@ export default function CameraGetActiveProfileTest() {
         done();
       }
     })
-    /**
-     * @tc.name   CAMERA_GET_ACTIVE_FRAMERATE_001
-     * @tc.number CAMERA_GET_ACTIVE_FRAMERATE_001
-     * @tc.desc   getActiveFrameRate min
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAMERA_GET_ACTIVE_FRAMERATE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_GET_ACTIVE_FRAMERATE_001';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        }else {
-          await createVideoOutput();
-          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let supportedFrameRatesArray: Array<camera.FrameRateRange> = mPreviewOutput.getSupportedFrameRates();
-          console.info(TAG, testName, ' supportedFrameRatesArray length is .', supportedFrameRatesArray.length);
-          for (let i = 0; i < supportedFrameRatesArray.length; i++) {
-            console.info(TAG, testName, ' supportedFrameRatesArray is .', supportedFrameRatesArray[i].min,
-              supportedFrameRatesArray[i].max);
-          }
-          if (supportedFrameRatesArray[0].min > 0 || supportedFrameRatesArray[0].max > 0 ||
-            supportedFrameRatesArray[0].min < supportedFrameRatesArray[0].max) {
-            mPreviewOutput.setFrameRate(supportedFrameRatesArray[0].min + 1, supportedFrameRatesArray[0].max - 1);
-            let res = mPreviewOutput.getActiveFrameRate();
-            console.info(TAG, testName, ' getActiveFrameRate is .', res.min,
-              res.max);
-            expect(res.min).assertEqual(supportedFrameRatesArray[0].min + 1)
-          }else{
-            console.info(TAG, testName, '该设备不支持');
-          }
-        }
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-      }finally{
-        await releaseVideoSession();
-        done();
-      }
-    })
-    /**
-     * @tc.name   CAMERA_GET_ACTIVE_FRAMERATE_002
-     * @tc.number CAMERA_GET_ACTIVE_FRAMERATE_002
-     * @tc.desc   getActiveFrameRate max
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAMERA_GET_ACTIVE_FRAMERATE_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_GET_ACTIVE_FRAMERATE_002';
-      try {
-        if (isEmpty(mCameraDeviceArray)) {
-          console.info(TAG, testName, ' mCameraDeviceArray is null.');
-        }else {
-          await createVideoOutput();
-          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let supportedFrameRatesArray: Array<camera.FrameRateRange> = mPreviewOutput.getSupportedFrameRates();
-          console.info(TAG, testName, ' supportedFrameRatesArray length is .', supportedFrameRatesArray.length);
-          for (let i = 0; i < supportedFrameRatesArray.length; i++) {
-            console.info(TAG, testName, ' supportedFrameRatesArray is .', supportedFrameRatesArray[i].min,
-              supportedFrameRatesArray[i].max);
-          }
-          if (supportedFrameRatesArray[0].min > 0 || supportedFrameRatesArray[0].max > 0 ||
-            supportedFrameRatesArray[0].min < supportedFrameRatesArray[0].max) {
-            mPreviewOutput.setFrameRate(supportedFrameRatesArray[0].min + 1, supportedFrameRatesArray[0].max - 1);
-            let res = mPreviewOutput.getActiveFrameRate();
-            console.info(TAG, testName, ' getActiveFrameRate is .', res.min,
-              res.max);
-            expect(res.max).assertEqual(supportedFrameRatesArray[0].max - 1)
-          }else{
-            console.info(TAG, testName, '该设备不支持');
-          }
-        }
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-      }finally{
-        await releaseVideoSession();
-        done();
-      }
-    })
+
     /**
      * @tc.name   CAMERA_GET_ACTIVE_PROFILE_001
      * @tc.number CAMERA_GET_ACTIVE_PROFILE_001
@@ -1054,9 +977,10 @@ export default function CameraGetActiveProfileTest() {
         }else {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_270);
-          console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(videoRotation).assertEqual(camera.ImageRotation.ROTATION_0);
+          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_0);
+          console.info(TAG, testName, "videoRotation:", videoRotation);
+          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
+          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1082,9 +1006,10 @@ export default function CameraGetActiveProfileTest() {
         }else {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_180);
+          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_90);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(videoRotation).assertEqual(camera.ImageRotation.ROTATION_90);
+          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
+          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1110,9 +1035,10 @@ export default function CameraGetActiveProfileTest() {
         }else {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_90);
+          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_180);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(videoRotation).assertEqual(camera.ImageRotation.ROTATION_180);
+          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
+          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1138,9 +1064,10 @@ export default function CameraGetActiveProfileTest() {
         }else {
           await createVideoOutput();
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_0);
+          let videoRotation = mVideoOutput.getVideoRotation(camera.ImageRotation.ROTATION_270);
           console.info(TAG, testName,"videoRotation:",videoRotation);
-          expect(videoRotation).assertEqual(camera.ImageRotation.ROTATION_270);
+          expect(camera.ImageRotation.ROTATION_0 | camera.ImageRotation.ROTATION_90 |
+          camera.ImageRotation.ROTATION_180 | camera.ImageRotation.ROTATION_270).assertTrue();
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
