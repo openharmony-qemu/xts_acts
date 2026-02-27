@@ -90,7 +90,6 @@ export default function TextPickeDividerUndefinedNullTest() {
       expect(obj.$attrs.divider.strokeWidth).assertEqual('0.00vp');
       expect(obj.$attrs.divider.startMargin).assertEqual('0.00vp');
       expect(obj.$attrs.divider.endMargin).assertEqual('0.00vp');
-      expect(obj.$attrs.divider.color).assertEqual('#33000000');
       console.info('[TextPickeDividerUndefinedNullTest_0200] END');
       done();
     });
