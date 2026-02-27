@@ -260,7 +260,7 @@ export default function RdbStoreCallbackNullTest(){
 		  relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
 			if (err) {
 			  console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
-			  expect(null).assertFail();
+			  expect(801).assertEqual(err.code);
 			  done();
 			} else {
 			  console.info(TAG + `${caseName} success`);
@@ -793,7 +793,7 @@ export default function RdbStoreCallbackNullTest(){
 		  const isCustomSupported = relationalStore.isTokenizerSupported(relationalStore.Tokenizer.CUSTOM_TOKENIZER);
 		  if (!isCustomSupported) {
 			console.info(TAG + `${caseName} custom tokenizer not supported`);
-			return;
+			done();
 		  }
 		  const storeConfig: relationalStore.StoreConfig = {
 			name: 'Token_CUSTOM_DEFAULT.db',
