@@ -16,11 +16,10 @@
 
 import TestParallelize from './ParallelizationTest/Paralle.test';
 import TestBuilderNode from './ParallelizationTest/BuilderNode.test';
-import TestSetUIStates from './ParallelizationTest/TestSetUIStates.test';
+import SetUIStates from './ParallelizationTest/SetUIStates.test';
 
 export default function testsuite() {
   TestParallelize();
   TestBuilderNode();
-  TestSetUIStates();
-
+  SetUIStates();
 }
