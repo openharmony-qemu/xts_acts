@@ -759,7 +759,7 @@ describe('relationalStoreTest', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testRdbStoreDeleteRdbStoreTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('testRdbStoreDeleteRdbStoreTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* testRdbStoreDeleteRdbStoreTest1300 start *************");
         try {
             const delConfig = {
