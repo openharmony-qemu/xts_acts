@@ -1,6 +1,7 @@
 {
-  "src": [
-    "testability/pages/WebViewErrorCode"
-  ]
+   "src": [
+     "testability/pages/WebViewErrorCode",
+     "testability/pages/WebviewControllerSetActiveWebEngineVersion"
+   ]
 }
 
