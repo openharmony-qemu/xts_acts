@@ -14,6 +14,7 @@
  */
 
 import AppStorageReturnValue from './AppStorage/AppStorageReturnValue.test';
+import appStorageKeysTest from './AppStorage/AppStorageKeysTest.test';
 import appStorageJsunit from './AppStorage/AppStorageJsunit.test';
 import Storage11Jsunit from './AppStorage/Storage11Jsunit.test.ets';
 import Storage35Jsunit from './AppStorage/Storage35Jsunit.test.ets';
@@ -50,10 +51,12 @@ import LocalStorageProp0320TestJsunit from './localStorage/LocalStorageProp0320T
 import LocalStorageAbsTestJsunit from './localStorage/LocalStorageAbsTestJsunit.test';
 
 import PersistentStoragePersistPropJsunit from './persistentStorage/PersistentStoragePersistPropJsunit.test.ets';
+import environmentNullUndefinedTest from './Environment/EnvironmentNullUndefinedTest.test';
 
 
 export default function testsuite() {
     AppStorageReturnValue();
+    appStorageKeysTest();
     appStorageJsunit();
     Storage11Jsunit();
     Storage35Jsunit();
@@ -87,5 +90,6 @@ export default function testsuite() {
     LocalStorageAbsTestJsunit();
     PersistentStoragePersistPropJsunit();
     stateManagementNullUndefinedTest();
+    environmentNullUndefinedTest();
 
 }
