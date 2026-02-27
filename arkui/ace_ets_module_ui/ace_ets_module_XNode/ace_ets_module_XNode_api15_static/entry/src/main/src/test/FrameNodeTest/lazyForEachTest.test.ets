@@ -52,7 +52,7 @@ export default function lazyForEachTest() {
         if (!("lazyForEachTest" == pages.name)) {
           console.info("get lazyForEachTest pages.name:" + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          console.info("push lazyForEachTest page result:" + JSON.stringify(result));
+          console.info('push lazyForEachTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push lazyForEachTest page error:" + err);
