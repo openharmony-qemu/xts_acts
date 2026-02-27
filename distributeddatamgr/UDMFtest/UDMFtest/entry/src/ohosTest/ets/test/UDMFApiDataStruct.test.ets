@@ -2798,7 +2798,7 @@ export default function UDMFApiDataStructTest() {
                 expect(record["uniformDataType"]).assertEqual(pixelMap.uniformDataType);
                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                 expect(imageInfo.size.width).assertEqual(opt.size.width);
-                expect(opt.pixelFormat).assertEqual(opt.pixelFormat);
+                expect(opt.pixelFormat).assertEqual(opt.srcPixelFormat);
                 expect(imageInfo.pixelFormat).assertEqual(3);
                 expect(imageInfo.alphaType).assertEqual(2);
                 expect(imageInfo.density).assertEqual(0);

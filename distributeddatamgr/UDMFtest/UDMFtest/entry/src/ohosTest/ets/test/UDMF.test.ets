@@ -4770,8 +4770,10 @@ export default function UDMFApiTest() {
       let summary: unifiedDataChannel.Summary = new unifiedDataChannel.Summary;
       let result_1 = Array.isArray(summary.summary);
       let result_2 = Array.isArray(summary.overview);
+      let result_3 = summary.totalSize;
       expect(result_1).assertEqual(true);
       expect(result_2).assertEqual(false);
+      expect(result_3).assertEqual(0);
       console.info('SummaryOverviewTest01 end');
     })
 
