@@ -17,6 +17,7 @@ import webTwoJsunit from './WebTwoJsunit.test';
 import webControllerZoom from './WebControllerZoom.test';
 import webAttributeTest from './WebAttributeTest.test';
 import webViewControllerZoom from './WebViewControllerZoom.test';
+import webViewControllerZoomNull from './WebViewControllerZoomNull.test';
 import webViewZoomRatio from './WebViewZoomRatio.test';
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test';
 import WebViewEnumAndSetWebController from './WebViewEnumAndSetWebController.test';
@@ -32,6 +33,7 @@ export default function testsuite() {
   webControllerZoom();
   webAttributeTest();
   webViewControllerZoom();
+  webViewControllerZoomNull();
   webViewZoomRatio();
   WebViewEnumAndFontLibrary();
   WebViewEnumAndSetWebController();

@@ -41,4 +41,15 @@ export default class EntryAbility1 extends UIAbility {
     // Ability has back to background
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
+
+  onPrepareToTerminate(): boolean {
+    return false;
+  }
+
+  async onPrepareToTerminateAsync(): Promise<boolean> {
+    await new Promise<boolean>((res, rej) => {
+      setTimeout(res, 2000);
+    });
+    return true; 
+  }
 }

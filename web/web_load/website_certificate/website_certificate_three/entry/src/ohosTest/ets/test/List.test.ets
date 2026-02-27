@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import webJsunit from './WebJsunit.test';
+import onceStringError from './OnceStringError.test';
 
 export default function testsuite() {
   webJsunit();
+  onceStringError();
 }

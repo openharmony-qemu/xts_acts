@@ -76,6 +76,22 @@
         "MainAbility/pages/ImageUndefinedAndNull/ImageObjectRepeatUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImageOrientationUndefinedAndNull",
         "MainAbility/pages/ImageUndefinedAndNull/ImagePrivacySensitiveUndefinedAndNull",
-        "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull"
+        "MainAbility/pages/ImageUndefinedAndNull/ImageSyncLoadUndefinedAndNull",
+        "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColorMetrics",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageMatrixUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageAutoResizeUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageRenderModeUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageInterpolationUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageSourceSizeUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageColorFilterUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageDraggableUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageEnableAnalyzerUndefinedAndNull",
+        "MainAbility/pages/ImageUndefinedAndNull/ImageResizableUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorDurationUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorFillModeUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorIterationsUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorPreDecodeUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorStateUndefinedAndNull",
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorImagesUndefinedAndNull"
     ]
 }

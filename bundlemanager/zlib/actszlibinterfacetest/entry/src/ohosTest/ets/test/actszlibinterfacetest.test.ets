@@ -136,6 +136,34 @@ export default function ActsZlibInterfaceTest() {
      })
 
     /**
+     * @tc.name   ActsZlibInterfaceTest02_1
+     * @tc.number ACTS_ZlibInterfaceTest_02_1
+     * @tc.desc   test getOriginalSize empty string 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ActsZlibInterfaceTest02_1', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_02_1 start==================");
+        try {
+            zlib.getOriginalSize("").then((data: number) => {
+                console.info(`getOriginalSize success. getOriginalSize: ${data}`);
+                expect().assertFail();
+                done();
+            }).catch((errData: BusinessError) => {
+                console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(900001);
+                expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+                done();
+            })
+        } catch(errData) {
+            console.error(`ActsZlibInterfaceTest02_1 is errCode:${errData.code}  message:${errData.message}`);
+            expect().assertFail();
+            done();
+        }
+    })
+
+    /**
      * @tc.name   ActsZlibInterfaceTest03
      * @tc.number ACTS_ZlibInterfaceTest_03
      * @tc.desc   test getOriginalSize 900001

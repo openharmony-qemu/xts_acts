@@ -220,6 +220,132 @@ export default function photoPickerPromise(abilityContext: Context) {
       let testNum = "test_Photopicker_Save_Promise_002";
       await saveWithoutSelect(testNum, done);
     });
+
+    /**
+     * @tc.name   PhotoViewPicker_select_000
+     * @tc.number SUB_DF_PhotoViewPicker_select_0000
+     * @tc.desc   Test PhotoViewPicker.select() interfaces with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('PhotoViewPicker_select_000', Level.LEVEL3, async (done: Function) => {
+        try {
+          new picker.PhotoViewPicker().select(null).then((result) => {
+            console.info(`PhotoViewPicker_select_000 result: ${JSON.stringify(result)}`);
+            expect(result).assertTrue();
+            done();
+          }).catch((err: Error) => {
+            console.info(`PhotoViewPicker_select_000 err: ${JSON.stringify(err)}`);
+            done();
+          })
+          done();
+        } catch (e) {
+          console.log('PhotoViewPicker_select_000 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+        }
+    });
+
+    /**
+   * @tc.name   PhotoViewPicker_save_000
+   * @tc.number SUB_DF_PhotoViewPicker_save_0000
+   * @tc.desc   Test PhotoViewPicker.save() interfaces with null parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_save_000', Level.LEVEL3, async (done: Function) => {
+    try {
+      new picker.PhotoViewPicker().save(null).then((result) => {
+        console.info(`PhotoViewPicker_save_000 result: ${JSON.stringify(result)}`);
+        expect(result).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`PhotoViewPicker_save_000 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+    } catch (e) {
+      console.log('PhotoViewPicker_save_000 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   PhotoViewPicker_save_001
+   * @tc.number SUB_DF_PhotoViewPicker_save_0010
+   * @tc.desc   Test PhotoViewPicker.save() interfaces with undefined parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_save_001', Level.LEVEL3, async (done: Function) => {
+    try {
+      new picker.PhotoViewPicker().save(undefined).then((result) => {
+        console.info(`PhotoViewPicker_save_001 result: ${JSON.stringify(result)}`);
+        expect(result.length === 0).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        console.info(`PhotoViewPicker_save_001 err: ${JSON.stringify(err)}`);
+        done();
+      })
+      done();
+    } catch (e) {
+      console.log('PhotoViewPicker_save_001 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   PhotoViewPicker_save_002
+   * @tc.number SUB_DF_PhotoViewPicker_save_0020
+   * @tc.desc   Test PhotoViewPicker.save() interfaces with empty newFileNames array
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_save_002', Level.LEVEL3, async (done: Function) => {
+    let testNum = "test_Photopicker_Save_Promise_001";
+    let option = new picker.PhotoSaveOptions();
+    option.newFileNames = [];
+    let saveDir = "Videos";
+    await saveWithOption(testNum, done, option, saveDir);
+  });
+
+  /**
+   * @tc.name   PhotoViewPicker_save_003
+   * @tc.number SUB_DF_PhotoViewPicker_save_0030
+   * @tc.desc   Test PhotoViewPicker.save() interfaces with non-empty newFileNames array
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_save_003', Level.LEVEL3, async (done: Function) => {
+    let testNum = "test_Photopicker_Save_Promise_001";
+    let option = new picker.PhotoSaveOptions();
+    option.newFileNames = ['test.jpg'];
+    let saveDir = "Pictures";
+    await saveWithOption(testNum, done, option, saveDir);
+  });
+
+  /**
+   * @tc.name   PhotoViewPicker_save_004
+   * @tc.number SUB_DF_PhotoViewPicker_save_0040
+   * @tc.desc   Test PhotoViewPicker.save() interfaces with empty newFileNames string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('PhotoViewPicker_save_004', Level.LEVEL3, async (done: Function) => {
+    let testNum = "test_Photopicker_Save_Promise_001";
+    let option = new picker.PhotoSaveOptions();
+    option.newFileNames = [''];
+    let saveDir = "Pictures";
+    await saveWithOption(testNum, done, option, saveDir);
+  });
   });
 }
 

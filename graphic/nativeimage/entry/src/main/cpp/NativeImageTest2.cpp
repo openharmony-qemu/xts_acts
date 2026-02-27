@@ -911,14 +911,12 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
 napi_value OHNativeImageIsReleasedNull(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    OH_NativeImage* image = nullptr;
     bool isReleased = false;
-    int32_t ret = OH_NativeImage_IsReleased(image, &isReleased);
+    int32_t ret = OH_NativeImage_IsReleased(nullptr, &isReleased);
     if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    OH_NativeImage_Destroy(&image);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1044,13 +1042,11 @@ napi_value OHNativeImageIsReleasedNormal1(napi_env env, napi_callback_info info)
 napi_value OHNativeImageReleasedNull(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    OH_NativeImage* image = nullptr;
-    int32_t ret = OH_NativeImage_Release(image);
+    int32_t ret = OH_NativeImage_Release(nullptr);
     if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    OH_NativeImage_Destroy(&image);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

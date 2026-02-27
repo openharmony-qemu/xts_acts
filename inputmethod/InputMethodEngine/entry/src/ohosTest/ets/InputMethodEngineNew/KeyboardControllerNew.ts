@@ -333,6 +333,174 @@ export class KeyboardControllerNew {
           console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0200 event:' + data.event);
           that.Sub_InputMethod_IME_InputClientselectByMovementSync_0200();
           break;
+        case 68:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelCallback_0100();
+          break;
+        case 69:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelCallback_0200();
+          break;
+        case 70:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelCallback_0300();
+          break;
+        case 71:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelCallback_0400();
+          break;
+        case 72:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelPromise_0100();
+          break;
+        case 73:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelPromise_0200();
+          break;
+        case 74:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelPromise_0300();
+          break;
+        case 75:
+          console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_createPanelPromise_0400();
+          break;
+        case 76:
+          console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_destroyPanelCallback_0100();
+          break;
+        case 77:
+          console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_destroyPanelCallback_0200();
+          break;
+        case 78:
+          console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_destroyPanelPromise_0100();
+          break;
+        case 79:
+          console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_destroyPanelPromise_0200();
+          break;
+        case 81:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100();
+          break;
+        case 82:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200();
+          break;
+        case 83:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300();
+          break;
+        case 84:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100();
+          break;
+        case 85:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementCallback_0300();
+          break;
+        case 86:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementCallback_0400();
+          break;
+        case 87:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementCallback_0500();
+          break;
+        case 88:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementPromise_0300();
+          break;
+        case 89:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementPromise_0400();
+          break;
+        case 90:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementPromise_0500();
+          break;
+        case 91:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementSync_0300();
+          break;
+        case 92:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementSync_0400();
+          break;
+        case 93:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientselectByMovementSync_0500();
+          break;
+        case 94:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100();
+          break;
+        case 95:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200();
+          break;
+        case 96:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100();
+          break;
+        case 97:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200();
+          break;
+        case 98:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300();
+          break;
+        case 99:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400();
+          break;
+        case 100:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100();
+          break;
+        case 101:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200();
+          break;
+        case 102:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300();
+          break;
+        case 103:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400();
+          break;
+        case 104:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendMessagePromise_0100();
+          break;
+        case 105:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendMessagePromise_0200();
+          break;
+        case 106:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendMessagePromise_0300();
+          break;
+        case 107:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendMessagePromise_0400();
+          break;
+        case 108:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientsendMessagePromise_0500();
+          break;
+        case 109:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0100 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientrecvMessage_0100();
+          break;
+        case 110:
+          console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_InputClientrecvMessage_0200();
+          break;
       }
     }
 
@@ -368,6 +536,806 @@ export class KeyboardControllerNew {
     }).catch((err) => {
       prompt.showToast({ message: 'getTextIndexAtCursor failed', duration: 200, bottom: 500 });
     });
+  }
+
+  async Sub_InputMethod_IME_InputClientsendMessagePromise_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let msgId: string = 'testMesgId';
+      this.InputClient.sendMessage(msgId, null);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendMessagePromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendMessagePromise_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let msgId: string = 'testMesgId';
+      this.InputClient.sendMessage(msgId, undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendMessagePromise_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendMessagePromise_0300(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let msgId: string = '';
+      let msgParam: ArrayBuffer = new ArrayBuffer(128);
+      this.InputClient.sendMessage(msgId, msgParam);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300  success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendMessagePromise_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendMessagePromise_0400(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let msgParam: ArrayBuffer = new ArrayBuffer(128);
+      this.InputClient.sendMessage(null, msgParam);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0400 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendMessagePromise_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendMessagePromise_0500(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let msgParam: ArrayBuffer = new ArrayBuffer(128);
+      this.InputClient.sendMessage(undefined, msgParam);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendMessagePromise_0500 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendMessagePromise_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientrecvMessage_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.recvMessage(null);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientrecvMessage_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientrecvMessage_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.recvMessage(undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientrecvMessage_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientrecvMessage_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let range: inputmethodengine.Range = { start: 0, end: 1 };
+      this.InputClient.setPreviewTextSync(null, range);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 setPreviewTextSync success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let range: inputmethodengine.Range = { start: 0, end: 1 };
+      this.InputClient.setPreviewTextSync(undefined, range);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 setPreviewTextSync success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.setPreviewTextSync('', null);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 setPreviewTextSync success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.setPreviewTextSync('', undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 setPreviewTextSync success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextSync_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let range: inputmethodengine.Range = { start: 0, end: 1 };
+      await this.InputClient.setPreviewText(null, range);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let range: inputmethodengine.Range = { start: 0, end: 1 };
+      await this.InputClient.setPreviewText(undefined, range);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await this.InputClient.setPreviewText('', null);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await this.InputClient.setPreviewText('', undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsetPreviewTextPromise_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await this.InputClient.sendPrivateCommand(null);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await this.InputClient.sendPrivateCommand(undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendPrivateCommandPromise_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_createPanelCallback_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let panelInfo1 = {
+      type: inputmethodengine.PanelType.STATUS_BAR,
+      flag: inputmethodengine.PanelFlag.FLG_FIXED
+    };
+    try {
+      inputMethodAbility.createPanel(null, panelInfo1, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0100  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0100', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0100 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_createPanelCallback_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let panelInfo1 = {
+      type: inputmethodengine.PanelType.STATUS_BAR,
+      flag: inputmethodengine.PanelFlag.FLAG_CANDIDATE
+    };
+    try {
+      inputMethodAbility.createPanel(undefined, panelInfo1, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0200  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0200', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0200 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0200', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_createPanelCallback_0300(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility.createPanel(this.mContext, null, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0300  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0300', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0300 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_createPanelCallback_0400(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility.createPanel(this.mContext, undefined, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0400  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0400', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelCallback_0400 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_createPanelCallback_0400', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_createPanelPromise_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let panelInfo1 = {
+      type: inputmethodengine.PanelType.STATUS_BAR,
+      flag: inputmethodengine.PanelFlag.FLG_FIXED
+    };
+    try {
+      await inputMethodAbility.createPanel(null, panelInfo1);
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_createPanelPromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_createPanelPromise_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let panelInfo1 = {
+      type: inputmethodengine.PanelType.STATUS_BAR,
+      flag: inputmethodengine.PanelFlag.FLAG_CANDIDATE
+    };
+    try {
+      await inputMethodAbility.createPanel(undefined, panelInfo1);
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_createPanelPromise_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_createPanelPromise_0300(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await inputMethodAbility.createPanel(this.mContext, null);
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0300  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_createPanelPromise_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_createPanelPromise_0400(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await inputMethodAbility.createPanel(this.mContext, undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0400  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_createPanelPromise_0400 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_createPanelPromise_0400', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_destroyPanelCallback_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility.destroyPanel(null, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0100  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelCallback_0100', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0100 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelCallback_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_destroyPanelCallback_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      inputMethodAbility.destroyPanel(undefined, async (err, panel) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0200  success');
+        commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelCallback_0200', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelCallback_0200 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelCallback_0200', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_destroyPanelPromise_0100(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await inputMethodAbility.destroyPanel(null);
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0100  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelPromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_destroyPanelPromise_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await inputMethodAbility.destroyPanel(undefined);
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0200  success');
+    } catch (err) {
+      if (err.code === 401) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      }
+      console.info(TAG + '====>Sub_InputMethod_IME_destroyPanelPromise_0200 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_destroyPanelPromise_0200', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.sendExtendAction(inputmethodengine.ExtendAction.SELECT_ALL, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 sendExtendAction success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.sendExtendAction(inputmethodengine.ExtendAction.CUT, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 sendExtendAction success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0200', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      this.InputClient.sendExtendAction(inputmethodengine.ExtendAction.PASTE, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 sendExtendAction success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionCallback_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      await this.InputClient.sendExtendAction(inputmethodengine.ExtendAction.CUT);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 sendExtendAction success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientsendExtendActionPromise_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementCallback_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_UP };
+    try {
+      this.InputClient.selectByMovement(movement, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 selectByMovement success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0300', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0300 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementCallback_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_LEFT };
+    try {
+      this.InputClient.selectByMovement(movement, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 selectByMovement success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0400', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0400 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0400', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementCallback_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_RIGHT };
+    try {
+      this.InputClient.selectByMovement(movement, (err, value) => {
+        console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 selectByMovement success');
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+        commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0500', commonEventPublishData, this.publishCallback);
+      });
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementCallback_0500 catch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementCallback_0500', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementPromise_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_UP };
+    try {
+      await this.InputClient.selectByMovement(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementPromise_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementPromise_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_LEFT };
+    try {
+      await this.InputClient.selectByMovement(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0400 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementPromise_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementPromise_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_RIGHT };
+    try {
+      await this.InputClient.selectByMovement(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementPromise_0500 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementPromise_0500', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementSync_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementSync_0300 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_UP };
+    try {
+      this.InputClient.selectByMovementSync(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0300 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementSync_0300', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementSync_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementSync_0400 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_LEFT };
+    try {
+      this.InputClient.selectByMovementSync(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0400 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InpuSub_InputMethod_IME_InputClientselectByMovementSync_0400tClientselectByMovementPromise_0400 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementSync_0400', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_InputClientselectByMovementSync_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IME_InputClientselectByMovementSync_0500 data');
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    let movement = { direction: inputmethodengine.Direction.CURSOR_RIGHT };
+    try {
+      this.InputClient.selectByMovementSync(movement);
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 selectByMovement success');
+      commonEventPublishData = {
+        data: 'SUCCESS'
+      };
+    } catch (err) {
+      console.info(TAG + '====>Sub_InputMethod_IME_InputClientselectByMovementSync_0500 catch err: ' + JSON.stringify(err));
+    }
+    commoneventmanager.publish('Sub_InputMethod_IME_InputClientselectByMovementSync_0500', commonEventPublishData, this.publishCallback);
   }
 
   async Sub_InputMethod_IME_TextInputClientsendKeyFunctionCallback_0100(): Promise<void> {

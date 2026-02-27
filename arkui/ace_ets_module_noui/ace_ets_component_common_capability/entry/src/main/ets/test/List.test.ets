@@ -27,6 +27,11 @@ import accessibilityActionOptionsNullUndefinedTest from './nullandundefinedcover
 import accessibilityDefaultFocusFalseTest from './nullandundefinedcoverage/accessibility/AccessibilityDefaultFocusFalse.test';
 import accessibilityGroupNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityGroupNullUndefined.test';
 import uiContextNullUndefinedTest from './nullandundefinedcoverage/UIContext/UIContextNullUndefinedTest.test';
+import accessibilityFocusDrawLevelNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityFocusDrawLevelNullUndefined.test';
+import componentObserverNullUndefinedTest from './nullandundefinedcoverage/ComponentObserver/ComponentObserverNullUndefinedTest.test';
+import pluginComponentManagerNullUndefinedTest from './nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerNullUndefined.test';
+import uiInspectorNullUndefinedTest from './nullandundefinedcoverage/UIInspector/UIInspectorNullUndefined.test';
+import inspectorCreateComponentObserverNullUndefinedTest from './nullandundefinedcoverage/inspector/InspectorCreateComponentObserverNullUndefined.test';
 
 
 
@@ -45,4 +50,9 @@ export default function testsuite() {
   accessibilityDefaultFocusFalseTest();
   accessibilityGroupNullUndefinedTest();
   uiContextNullUndefinedTest();
+  accessibilityFocusDrawLevelNullUndefinedTest();
+  componentObserverNullUndefinedTest();
+  pluginComponentManagerNullUndefinedTest();
+  uiInspectorNullUndefinedTest();
+  inspectorCreateComponentObserverNullUndefinedTest();
 }

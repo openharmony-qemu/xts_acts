@@ -7990,6 +7990,49 @@ export default function windowPropertiesTest() {
         }
       })
 
+      /**
+       * @tc.name   testsetColorSpaceCallbackwithDefault
+       * @tc.number SUB_BASIC_WMS_FUNCTION_SET_COLORSPACE_CAllBACK_0100
+       * @tc.desc   testsetColorSpaceCallbackwithDefault
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testsetColorSpaceCallbackwithDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testsetColorSpaceCallbackwithDefault';
+        let windowClass = windowStage.getMainWindowSync();
+        try {
+          windowClass.setColorSpace(window.ColorSpace.DEFAULT, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName+` Failed to set window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+           expect(false).assertTrue();
+           done();
+          }else{
+            console.info(caseName+' Succeeded in setting window colorspace. Cause ' );
+            windowClass.getColorSpace((err: BusinessError, data) => {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(caseName+` Failed to get window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }else{
+              console.info(caseName+' Succeeded in getting window colorspace. Cause:' + JSON.stringify(data));
+              expect(data).assertEqual(window.ColorSpace.DEFAULT);
+              done();
+            }
+            
+          });
+          }
+          
+        });
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail(); 
+          done();
+        }
+      })
+
 
 
     })

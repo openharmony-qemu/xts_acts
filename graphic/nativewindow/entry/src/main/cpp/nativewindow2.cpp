@@ -64,6 +64,20 @@
 #define CONSTANT_50002000 50002000
 #define CONSTANT_50102000 50102000
 
+std::vector<OH_NativeBuffer_ColorSpace> nativeBuffeColorSpace = {
+    OH_COLORSPACE_NONE,                 OH_COLORSPACE_BT601_EBU_FULL,        OH_COLORSPACE_BT601_SMPTE_C_FULL,
+    OH_COLORSPACE_BT709_FULL,           OH_COLORSPACE_BT2020_HLG_FULL,       OH_COLORSPACE_BT2020_PQ_FULL,
+    OH_COLORSPACE_BT601_EBU_LIMIT,      OH_COLORSPACE_BT601_SMPTE_C_LIMIT,   OH_COLORSPACE_BT709_LIMIT,
+    OH_COLORSPACE_BT2020_HLG_LIMIT,     OH_COLORSPACE_BT2020_PQ_LIMIT,       OH_COLORSPACE_SRGB_FULL,
+    OH_COLORSPACE_P3_FULL,              OH_COLORSPACE_P3_HLG_FULL,           OH_COLORSPACE_P3_PQ_FULL,
+    OH_COLORSPACE_ADOBERGB_FULL,        OH_COLORSPACE_SRGB_LIMIT,            OH_COLORSPACE_P3_LIMIT,
+    OH_COLORSPACE_P3_HLG_LIMIT,         OH_COLORSPACE_P3_PQ_LIMIT,           OH_COLORSPACE_ADOBERGB_LIMIT,
+    OH_COLORSPACE_LINEAR_SRGB,          OH_COLORSPACE_LINEAR_BT709,          OH_COLORSPACE_LINEAR_P3,
+    OH_COLORSPACE_LINEAR_BT2020,        OH_COLORSPACE_DISPLAY_SRGB,          OH_COLORSPACE_DISPLAY_P3_SRGB,
+    OH_COLORSPACE_DISPLAY_P3_HLG,       OH_COLORSPACE_DISPLAY_P3_PQ,         OH_COLORSPACE_DISPLAY_BT2020_SRGB,
+    OH_COLORSPACE_DISPLAY_BT2020_HLG,   OH_COLORSPACE_DISPLAY_BT2020_PQ
+};
+
 OH_NativeBuffer_Format bufferFormatType[] = {
     NATIVEBUFFER_PIXEL_FMT_CLUT8,        NATIVEBUFFER_PIXEL_FMT_CLUT1,        NATIVEBUFFER_PIXEL_FMT_CLUT4,
     NATIVEBUFFER_PIXEL_FMT_RGB_565,      NATIVEBUFFER_PIXEL_FMT_RGBA_5658,    NATIVEBUFFER_PIXEL_FMT_RGBX_4444,
@@ -126,13 +140,13 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetFormatNormal(napi_env env,
 //     OHNativeWindow* nativeWindow;
     for (int i = 0; i < sizeof(bufferFormatType)/sizeof(bufferFormatType[0]); ++i) {
         int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, bufferFormatType[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1, &result);
             return result;
         }
         int32_t getFormat;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_FORMAT, &getFormat);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_2, &result);
             return result;
         }
@@ -163,13 +177,13 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal(napi_env en
 
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, (i + 1) * CONSTANT_1000 + CONSTANT_1, &result);
             return result;
         }
         int32_t format;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_FORMAT, &format);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, (i + 1) * CONSTANT_1000 + CONSTANT_2, &result);
             return result;
         }
@@ -257,30 +271,30 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetUsageAbnormal(napi_env env
 
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, (i + 1) * CONSTANT_1000 + CONSTANT_1, &result);
             return result;
         }
         uint64_t  usage;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_USAGE, &usage);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, (i + 1) * CONSTANT_1000 + CONSTANT_2, &result);
             return result;
         }
     }
 
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE, "");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -307,12 +321,12 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetStrideNormal(napi_env env,
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t stride;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_STRIDE, &stride);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -343,28 +357,28 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetStrideAbnormal(napi_env en
     long long arr[] = {-CONSTANT_999999999999999999, static_cast<long long>(CONSTANT_999999999999999999), 1LL << 63};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_STRIDE, &stride);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -393,12 +407,12 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetSwapIntervalNormal(napi_en
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t interval;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SWAP_INTERVAL, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_SWAP_INTERVAL, &interval);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -426,28 +440,28 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetSwapIntervalAbnormal(napi_
     long long arr[] = {-CONSTANT_99999999999999999, static_cast<long long>(CONSTANT_99999999999999999), 1LL << 63};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_STRIDE, &stride);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_STRIDE);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -520,28 +534,28 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetColorGamutAbnormal(napi_en
     long long arr[] = {-CONSTANT_99999999999999999, static_cast<long long>(CONSTANT_99999999999999999), 1LL << 63};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_COLOR_GAMUT, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_COLOR_GAMUT, &gamut);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_COLOR_GAMUT, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_COLOR_GAMUT, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_COLOR_GAMUT);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -614,28 +628,28 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetTransformAbnormal(napi_env
     long long arr[] = {-CONSTANT_99999999999999999, static_cast<long long>(CONSTANT_99999999999999999), 1LL << 63};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_TRANSFORM, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_TRANSFORM, &gamut);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_TRANSFORM, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_TRANSFORM, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_TRANSFORM);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -663,7 +677,7 @@ napi_value testNativeWindowNativeWindowHandleOptSetUiTimeStampNormal(napi_env en
                       18446744073709551615};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
@@ -690,23 +704,23 @@ napi_value testNativeWindowNativeWindowHandleOptSetUiTimeStampAbnormal(napi_env 
     int64_t arr[] = {-CONSTANT_1, -CONSTANT_1000, -CONSTANT_1000000, -922337203685477580};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_UI_TIMESTAMP);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
@@ -731,7 +745,7 @@ napi_value testNativeWindowNativeWindowHandleOptGetBufferQueueSize(napi_env env,
     int32_t size;
 
     int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_BUFFERQUEUE_SIZE, &size);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -763,7 +777,7 @@ napi_value testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessNormal
     float arr[] = {0.0f, 0.00001f, 0.5f, 0.123456f, 0.99999f, 1.0f};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_HDR_WHITE_POINT_BRIGHTNESS, brightness);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, i + CONSTANT_1, &result);
             return result;
         }
@@ -792,18 +806,18 @@ napi_value testNativeWindowNativeWindowHandleOptSetHdrWhitePointBrightnessAbnorm
     float arr[] = {-0.1f, 1.1f, -CONSTANT_100, 0, CONSTANT_100};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_HDR_WHITE_POINT_BRIGHTNESS, brightness);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, i +CONSTANT_1, &result);
             return result;
         }
     }
     int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_HDR_WHITE_POINT_BRIGHTNESS, "test123@@#");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_HDR_WHITE_POINT_BRIGHTNESS);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -831,7 +845,7 @@ napi_value testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessNormal
     float arr[] = {0.0f, 0.00001f, 0.5f, 0.123456f, 0.99999f, 1.0f};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SDR_WHITE_POINT_BRIGHTNESS, brightness);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, i + CONSTANT_1, &result);
             return result;
         }
@@ -860,18 +874,18 @@ napi_value testNativeWindowNativeWindowHandleOptSetSdrWhitePointBrightnessAbnorm
     float arr[] = {-0.1f, 1.1f, -CONSTANT_100, 0, CONSTANT_100};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SDR_WHITE_POINT_BRIGHTNESS, brightness);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, i + CONSTANT_1, &result);
             return result;
         }
     }
     int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SDR_WHITE_POINT_BRIGHTNESS, "test123@@#");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SDR_WHITE_POINT_BRIGHTNESS);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -948,13 +962,13 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal(napi_en
                       static_cast<unsigned int>(999999999999999999)};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_SOURCE_TYPE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         int32_t sourceType;
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_SOURCE_TYPE, &sourceType);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -993,12 +1007,12 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal(nap
 
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_APP_FRAMEWORK_TYPE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_APP_FRAMEWORK_TYPE, &frameworkType);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -1033,12 +1047,12 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal(n
                          "abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde"};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_APP_FRAMEWORK_TYPE, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_APP_FRAMEWORK_TYPE, &frameworkType);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -1097,7 +1111,7 @@ napi_value testNativeWindowNativeWindowSetScalingModeV2ScalingMode(napi_env env,
                              OH_SCALING_MODE_SCALE_FIT_V2};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowSetScalingModeV2(nativeWindow, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, i + CONSTANT_1, &result);
             return result;
         }
@@ -1122,7 +1136,7 @@ napi_value testNativeWindowGetColorSpaceFirst(napi_env env, napi_callback_info i
     OHNativeWindowBuffer *windowBuffer = nullptr;
     int fenceFd;
     int32_t flag = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &windowBuffer, &fenceFd);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
@@ -1141,47 +1155,46 @@ napi_value testNativeWindowGetColorSpaceFirst(napi_env env, napi_callback_info i
 napi_value testNativeWindowSetColorSpaceNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    int32_t flag;
-    for (int i = 0; i < sizeof(OH_NativeBuffer_ColorSpace); ++i) {
-        OH_NativeBuffer_ColorSpace colorspace1 = static_cast<OH_NativeBuffer_ColorSpace>(i);
+    for (int i = 0; i < nativeBuffeColorSpace.size(); ++i) {
+        OH_NativeBuffer_ColorSpace colorSpace1 = nativeBuffeColorSpace[i];
         InitNativeWindow *initNative = new InitNativeWindow();
         OHNativeWindow *nativeWindow = nullptr;
         nativeWindow = initNative->returnNativeWindow();
-        if (nativeWindow == nullptr) {
-            napi_create_int32(env, CONSTANT_998899, &result);
-            return result;
+        NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
+        int32_t flag = OH_NativeWindow_SetColorSpace(nativeWindow, colorSpace1);
+        NAPI_ASSERT(env, flag == NATIVE_ERROR_OK, "flag != NATIVE_ERROR_OK");
+        OH_NativeBuffer_ColorSpace colorSpace2;
+        flag = OH_NativeWindow_GetColorSpace(nativeWindow, &colorSpace2);
+        NAPI_ASSERT(env, flag == NATIVE_ERROR_OK, "flag != NATIVE_ERROR_OK");
+        if (colorSpace2 != colorSpace1) {
+            if (i == NUMBER_4) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_HLG,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_HLG");
+            } else if (i == NUMBER_5) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_PQ,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_BT2020_PQ");
+            } else if (i == NUMBER_11) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_SRGB,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_SRGB");
+            } else if (i == NUMBER_12) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_SRGB,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_SRGB");
+            } else if (i == NUMBER_13) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_HLG,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_HLG");
+            } else if (i == NUMBER_14) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_PQ,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_DISPLAY_P3_PQ");
+            } else if (i == NUMBER_21) {
+                NAPI_ASSERT(env, colorSpace2 == OH_NativeBuffer_ColorSpace::OH_COLORSPACE_LINEAR_BT709,
+                    "colorSpace2 != OH_NativeBuffer_ColorSpace::OH_COLORSPACE_LINEAR_BT709");
+            } else {
+                napi_create_int32(env, FAIL, &result);
+                return result;
+            }
         }
-        OH_NativeImage *iamge = initNative->returnNativeImage();
-        OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
-        int fenceFd;
-        int32_t res = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
-        Region::Rect rect{
-            .x = 0x100,
-            .y = 0x100,
-            .w = 0x100,
-            .h = 0x100,
-        };
-        Region region{.rects = &rect};
-        res = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
-        flag = OH_NativeWindow_SetColorSpace(nativeWindow, colorspace1);
-        if (flag != NATIVE_ERROR_OK) {
-            napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_1, &result);
-            return result;
-        }
-        OH_NativeBuffer_ColorSpace colorSpace;
-        flag = OH_NativeWindow_GetColorSpace(nativeWindow, &colorSpace);
-        if (flag != NATIVE_ERROR_OK) {
-            napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result);
-            return result;
-        }
-        if (colorSpace != colorspace1) {
-            napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_3, &result);
-            return result;
-        }
-    
-    delete initNative;
+        delete initNative;
     }
-
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -2020,7 +2033,7 @@ napi_value testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampNormal
     uint64_t arr[] = {CONSTANT_1, CONSTANT_1000, CONSTANT_1000000000, 1ULL << 63, CONSTANT_999999999999999999};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
@@ -2047,23 +2060,23 @@ napi_value testNativeWindowNativeWindowHandleOptSetDesiredPresentTimeStampAbNorm
     int64_t arr[] = {CONSTANT_0, -CONSTANT_1, -CONSTANT_1000, -CONSTANT_1000000, CONSTANT_NEG_9223372036854775807};
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP, arr[i]);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP, "sdasda213!");
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP, NULL);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_100000 + CONSTANT_1, &result);
         return result;
     }
