@@ -79,11 +79,6 @@ struct onSurfaceCreated1 {
   @State destroyText: string = "Init";
   @State flag: boolean = true
 
-  onPageShow() {
-    AppStorage.setOrCreate('onSurfaceCreated', 'Init');
-    AppStorage.setOrCreate('onSurfaceChanged', 'Init');
-    AppStorage.setOrCreate('onSurfaceDestroyed', 'Init');
-  }
 
   build() {
     Column() {
