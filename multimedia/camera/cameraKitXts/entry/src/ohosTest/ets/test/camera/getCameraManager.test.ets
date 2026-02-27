@@ -40,9 +40,13 @@ export default function getCameraManagerTest() {
       console.info(TAG, 'afterAll case.');
     });
 
+    // ══════════════════════════════════════════════════
+    // getCameraManager(context: Context): CameraManager
+    // ══════════════════════════════════════════════════
+
     /**
      * @tc.name   getCameraManager_001
-     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.number getCameraManager_001
      * @tc.desc   No abnormal scenarios
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -50,15 +54,22 @@ export default function getCameraManagerTest() {
      */
     it('getCameraManager_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_001';
-      console.info(TAG, testName);
-      let cameraManager = camera.getCameraManager(testContext);
-      expect(isEmpty(cameraManager)).assertFalse();
-      done();
+      try {
+        let cameraManager = camera.getCameraManager(testContext);
+        console.info(testName + ' cameraManager: ' + isEmpty(cameraManager));
+        expect(isEmpty(cameraManager)).assertFalse();
+        console.info(testName + 'get cameraMnanager success');
+        done();
+      } catch (error) {
+        console.error(testName + 'get cameraMnanager fail, error is ' + error + 'error code is ' + error.code);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
      * @tc.name   getCameraManager_002
-     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.number getCameraManager_002
      * @tc.desc   context-null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,14 +77,14 @@ export default function getCameraManagerTest() {
      */
     it('getCameraManager_002', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_002';
-      console.info(TAG, testName);
       try {
         let cameraManager = camera.getCameraManager(null);
-        console.info(TAG, testName + ' cameraManager: ' + isEmpty(cameraManager));
+        console.info(testName + ' cameraManager: ' + isEmpty(cameraManager));
         expect(isEmpty(cameraManager)).assertFalse();
+        console.info(testName + 'get cameraMnanager success');
         done();
       } catch (error) {
-        console.error(TAG, testName + ' cameraManager is null. err: ' + error.code + ', msg: ' + error.message);
+        console.error(testName + 'get cameraMnanager fail, error is ' + error + 'error code is ' + error.code);
         expect().assertFail();
         done();
       }
@@ -81,7 +92,7 @@ export default function getCameraManagerTest() {
 
     /**
      * @tc.name   getCameraManager_003
-     * @tc.number CAMERA_CAMERA_GET_CAMERA_MANAGER_001
+     * @tc.number getCameraManager_003
      * @tc.desc   context-undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,17 +100,18 @@ export default function getCameraManagerTest() {
      */
     it('getCameraManager_003', Level.LEVEL0, (done: Function) => {
       const testName = 'getCameraManager_003';
-      console.info(TAG, testName);
       try {
         let cameraManager = camera.getCameraManager(undefined);
-        console.info(TAG, testName + ' cameraManager: ' + isEmpty(cameraManager));
+        console.info(testName + ' cameraManager: ' + isEmpty(cameraManager));
         expect(isEmpty(cameraManager)).assertFalse();
+        console.info(testName + 'get cameraMnanager success');
         done();
       } catch (error) {
-        console.error(TAG, testName + ' cameraManager is null. err: ' + error.code + ', msg: ' + error.message);
+        console.error(testName + 'get cameraMnanager fail, error is ' + error + 'error code is ' + error.code);
         expect().assertFail();
         done();
       }
     })
+
   })
 }

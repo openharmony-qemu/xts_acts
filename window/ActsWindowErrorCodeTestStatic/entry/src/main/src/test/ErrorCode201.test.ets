@@ -262,14 +262,12 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
                     if (err!.code === 801) {
                         done();
                     } else if(err!.code === 201){
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();

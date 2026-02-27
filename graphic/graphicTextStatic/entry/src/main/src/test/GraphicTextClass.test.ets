@@ -71,12 +71,10 @@ export default function GraphicTextClass() {
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
-        expect(true).assertTrue();
         let paragraph: text.Paragraph = buildParagraph();
         try {
           paragraph.paint(canvas, 10, 10);
           console.info(msg + 'canvasConstructor successed');
-          expect(true).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -97,13 +95,11 @@ export default function GraphicTextClass() {
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
-        expect(true).assertTrue();
         let paragraph: text.Paragraph = buildParagraph();
         let path = new drawing.Path();
         try {
           paragraph.paintOnPath(canvas, path, 0, 0);
           console.info(msg + 'canvasConstructor successed');
-          expect(true).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);

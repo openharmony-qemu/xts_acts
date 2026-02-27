@@ -11,6 +11,21 @@
         "MainAbility/pages/CommonAttrs/border",
         "MainAbility/pages/CommonAttrs/BorderRadiusRenderStrategy",
         "MainAbility/pages/CommonAttrs/FlexFourBoundary",
-        "MainAbility/pages/CommonCustom/LayoutFourReturn"
+        "MainAbility/pages/CommonCustom/LayoutFourReturn",
+        "MainAbility/pages/CommonAttrs/ConstraintSizeNullUndefined",
+        "MainAbility/pages/CommonAttrs/LayoutWeightNullUndefined",
+        "MainAbility/pages/CommonAttrs/SafeAreaPaddingNullUndefined",
+        "MainAbility/pages/CommonAttrs/ChainWeightNullUndefined",
+        "MainAbility/pages/CommonAttrs/GridContainerNullUndefined",
+        "MainAbility/pages/CommonAttrs/FlexLayoutNullUndefined",
+        "MainAbility/pages/CommonAttrs/SizeNullUndefined",
+        "MainAbility/pages/CommonAttrs/AspectRatioNullUndefined",
+        "MainAbility/pages/CommonAttrs/DisplayPriorityNullUndefined",
+        "MainAbility/pages/CommonAttrs/AlignNullUndefined",
+        "MainAbility/pages/CommonAttrs/DirectionNullUndefined",
+        "MainAbility/pages/CommonAttrs/OffsetNullUndefined",
+        "MainAbility/pages/CommonAttrs/ChainModeNullUndefined",
+        "MainAbility/pages/CommonAttrs/UseSizeTypeNullUndefined",
+        "MainAbility/pages/CommonAttrs/MarkAnchorNullUndefined"
     ]
 }

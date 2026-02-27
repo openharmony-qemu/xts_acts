@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -821,6 +821,189 @@ export default function KvStoreEtsTestStatic() {
       }
     })
 
+    /**
+     * @tc.name   GetKvStoreErrTest001
+     * @tc.number SUB_DistributedData_KvStore_SDK_GetKvStoreErrTest_STATIC_0100
+     * @tc.desc   getKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetKvStoreErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 start getKvstore");
+        let store = await kvManager!.getKVStore("", singleOptions);
+        hilog.info(domain, tag, '%{public}s', "============GetKvStoreErrTest001 getKvstore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
 
+    /**
+     * @tc.name   CloseKvStoreErrTest001
+     * @tc.number SUB_DistributedData_KvStore_SDK_CloseKvStoreErrTest_STATIC_0100
+     * @tc.desc   closeKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CloseKvStoreErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest001 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest001 start closeKVStore");
+        await kvManager!.closeKVStore('', '123');
+        hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest001 closeKVStore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   CloseKvStoreErrTest002
+     * @tc.number SUB_DistributedData_KvStore_SDK_CloseKvStoreErrTest_STATIC_0200
+     * @tc.desc   closeKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CloseKvStoreErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest002 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest002 start closeKVStore");
+        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, '');
+        hilog.info(domain, tag, '%{public}s', "============CloseKvStoreErrTest002 closeKVStore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   DeleteKvStoreErrTest001
+     * @tc.number SUB_DistributedData_KvStore_SDK_DeleteKvStoreErrTest_STATIC_0100
+     * @tc.desc   deleteKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DeleteKvStoreErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest001 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest001 start deleteKVStore");
+        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, '');
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest001 deleteKVStore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   DeleteKvStoreErrTest002
+     * @tc.number SUB_DistributedData_KvStore_SDK_DeleteKvStoreErrTest_STATIC_0200
+     * @tc.desc   deleteKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DeleteKvStoreErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest002 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest002 start deleteKVStore");
+        await kvManager!.deleteKVStore("", '123');
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest002 deleteKVStore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   DeleteKvStoreErrTest003
+     * @tc.number SUB_DistributedData_KvStore_SDK_DeleteKvStoreErrTest_STATIC_0300
+     * @tc.desc   deleteKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DeleteKvStoreErrTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest003 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest003 start deleteKVStore");
+        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, 'abc');
+        hilog.info(domain, tag, '%{public}s', "============DeleteKvStoreErrTest003 deleteKVStore end");
+        expect().assertFail();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect(e.code).assertEqual(15100004);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   GetAllKVStoreIdErrTest001
+     * @tc.number SUB_DistributedData_KvStore_SDK_GetAllKVStoreIdErrTest_STATIC_0100
+     * @tc.desc   deleteKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetAllKVStoreIdErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest001 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest001 start deleteKVStore");
+        kvManager!.getAllKVStoreId('', (err: BusinessError | null) => {
+          if (err != undefined) {
+            console.error(tag + `Failed to get AllKVStoreId.code is ${err.code},message is ${err.message}`);   
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.info(tag + 'Succeeded in getting AllKVStoreId');
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', "============fail on exception: " + e.code + e.message);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+
+    /**
+     * @tc.name   GetAllKVStoreIdErrTest002
+     * @tc.number SUB_DistributedData_KvStore_SDK_GetAllKVStoreIdErrTest_STATIC_0200
+     * @tc.desc   deleteKVStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetAllKVStoreIdErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest002 start ");
+      try {
+        hilog.info(domain, tag, '%{public}s', "============GetAllKVStoreIdErrTest002 start");
+        await kvManager!.getAllKVStoreId('');
+        console.info(tag + 'Succeeded in getting AllKVStoreId');
+        expect().assertFail();
+      } catch (err) {
+        console.error(tag + `Failed to get AllKVStoreId.code is ${err.code},message is ${err.message}`);   
+        expect(err.code).assertEqual(401);
+      }
+      hilog.info(domain, tag, '%{public}s', "============done  ");
+    })
+    
   })
 }

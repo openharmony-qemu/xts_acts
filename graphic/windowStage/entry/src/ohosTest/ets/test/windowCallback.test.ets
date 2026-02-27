@@ -767,6 +767,8 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
           navigationBarColor: tempColor,
           isNavigationBarLightIcon: false,
           navigationBarContentColor: tempColor,
+          enableNavigationBarAnimation: false,
+          enableStatusBarAnimation:false
         };
         (tempWnd as ohosWindow.Window).setSystemBarProperties(systemBarProperties, (err, data) => {
           console.log(msgStr + 'tempWnd.setSystemBarProperties data' + JSON.stringify(data));

@@ -1762,5 +1762,105 @@ export default function AccessTokenTest() {
         }
       })
 
+    /**
+     * @tc.name   Test_on_001
+     * @tc.number Test_on_001
+     * @tc.desc   Test on selfPermissionStateChange with valid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_on_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_on_001 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let permissionList: Array<Permissions> = ["ohos.permission.DISTRIBUTED_DATASYNC"];
+      try {
+        atManager.on('selfPermissionStateChange', permissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+          console.info("Test_on_001 callback data: " + JSON.stringify(data));
+        });
+        atManager.off('selfPermissionStateChange', permissionList);
+        done();
+      } catch (error) {
+        console.error("Test_on_001 error code " + error.code + " error message " + error.message);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_on_002
+     * @tc.number Test_on_002
+     * @tc.desc   Test on selfPermissionStateChange, permissionList is null, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Test_on_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("Test_on_002 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let testPermissionList: Array<Permissions> | null = null;
+        atManager.on('selfPermissionStateChange', testPermissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+          console.info("Test_on_002 callback data: " + JSON.stringify(data));
+        });
+        expect(false).assertFail();
+        done();
+      } catch (error) {
+        console.error("Test_on_002 error code " + error.code + " error message " + error.message);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_on_003
+     * @tc.number Test_on_003
+     * @tc.desc   Test on selfPermissionStateChange, permissionList is undefined, expect parameter type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Test_on_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("Test_on_003 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let testPermissionList: Array<Permissions> | undefined = undefined;
+        atManager.on('selfPermissionStateChange', testPermissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+          console.info("Test_on_003 callback data: " + JSON.stringify(data));
+        });
+        expect(false).assertFail();
+        done();
+      } catch (error) {
+        console.error("Test_on_003 error code " + error.code + " error message " + error.message);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Test_on_004
+     * @tc.number Test_on_004
+     * @tc.desc   Test on selfPermissionStateChange, permissionList is empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Test_on_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("Test_on_004 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let testPermissionList: Array<Permissions> = [];
+        atManager.on('selfPermissionStateChange', testPermissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+          console.info("Test_on_004 callback data: " + JSON.stringify(data));
+        });
+        atManager.off('selfPermissionStateChange', testPermissionList);
+        done();
+      } catch (error) {
+        console.error("Test_on_004 error code " + error.code + " error message " + error.message);
+        expect(error.code).assertEqual(ERR_PARAM_ERROR);
+        done();
+      }
+    })
+    
   })
 }

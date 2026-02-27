@@ -44,10 +44,10 @@ export default function deviceStatusTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
-            expect(error.code).assertEqual(32500003);
+            expect(e.code).assertEqual(32500003);
           }
           done();
         }
@@ -78,7 +78,7 @@ export default function deviceStatusTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} fail`);
@@ -110,7 +110,7 @@ export default function deviceStatusTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} fail`);
@@ -134,16 +134,16 @@ export default function deviceStatusTest() {
         let caseName = "SUB_MSDP_Api_deviceStatus_static_0400";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          deviceStatus.offSteadyStandingDetect();
+          deviceStatus.offSteadyStandingDetect((data: deviceStatus.SteadyStandingStatus) => {});
           hilog.info(domain, tag, `${caseName} offSteadyStandingDetect success`);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
-            expect(error.code).assertEqual(32500003);
+            expect(e.code).assertEqual(32500003);
           }
           done();
         }

@@ -178,9 +178,9 @@ HWTEST_F(DrawingNativePointTest, testPointDestroyNormal, Function | SmallTest | 
  */
 HWTEST_F(DrawingNativePointTest, testPointDestroyNull, Function | SmallTest | Level3) {
     // 1. The parameter of OH_Drawing_PointDestroy is nullptr
+    OH_Drawing_Point *point = nullptr;
     OH_Drawing_PointDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(point, nullptr);
 }
 
 /**

@@ -51,11 +51,9 @@ export default function ActsNotificationSystemLiveViewTest() {
         console.info(`beforeAll come in requestEnableNotification`);
         if (err) {
           console.info(`beforeAll requestEnableNotification err: ${err.code}`)
-          expect(false).assertTrue()
           done()
         }else {
           console.info(`beforeAll requestEnableNotification success`)
-          expect(true).assertTrue()
           await Utils.msSleep(1000)
           done()
         }

@@ -139,7 +139,6 @@ export default function WindowZindexTest() {
                     if (errCode) {
                         hilog.error(domain, tag,msgStr+` Failed to raise the window to app top. Cause code: ${err!.code}, message: ${err!.message}`);
                         if(errCode == 1300009){
-                            expect(true).assertTrue();
                             done();
                         }else if(errCode == 801){
                             done();
@@ -220,7 +219,6 @@ export default function WindowZindexTest() {
                     if (errCode) {
                         hilog.error(domain, tag,msgStr+` Failed to raise the window to app top. Cause code: ${err!.code}, message: ${err!.message}`);
                         if(errCode == 1300002){
-                            expect(true).assertTrue();
                             done();
                         }else if(errCode == 801){
                             done();
@@ -551,7 +549,6 @@ export default function WindowZindexTest() {
             try {
                 windowClass.setWindowTopmost(true).then(async () => {
                     hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
-                    expect(true).assertTrue();
                     await windowClass.setWindowTopmost(false)
                     await subWindowClass.destroyWindow();
                     done();

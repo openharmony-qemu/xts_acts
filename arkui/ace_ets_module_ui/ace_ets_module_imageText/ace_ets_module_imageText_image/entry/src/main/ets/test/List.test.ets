@@ -63,6 +63,22 @@ import ImagePrivacySensitiveUndefinedAndNullTest from './ImageUndefinedAndNullTe
 import ImageCopyOptionUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageCopyOptionUndefinedAndNull.test';
 import ImageDynamicRangeModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDynamicRangeModeUndefinedAndNull.test';
 import ImageSyncLoadUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageSyncLoadUndefinedAndNull.test';
+import ImageSvgFillColorMetricsTest from './ImageSvgFillColorTest/ImageSvgFillColorMetrics.test';
+import ImageMatrixUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageMatrixUndefinedAndNull.test';
+import ImageAutoResizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageAutoResizeUndefinedAndNull.test';
+import ImageRenderModeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageRenderModeUndefinedAndNull.test';
+import ImageInterpolationUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageInterpolationUndefinedAndNull.test';
+import ImageSourceSizeUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageSourceSizeUndefinedAndNull.test';
+import ImageColorFilterUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageColorFilterUndefinedAndNull.test';
+import ImageDraggableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageDraggableUndefinedAndNull.test';
+import ImageEnableAnalyzerUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageEnableAnalyzerUndefinedAndNull.test';
+import ImageResizableUndefinedAndNullTest from './ImageUndefinedAndNullTest/ImageResizableUndefinedAndNull.test';
+import ImageAnimatorDurationUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorDurationUndefinedAndNull.test';
+import ImageAnimatorFillModeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorFillModeUndefinedAndNull.test';
+import ImageAnimatorIterationsUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorIterationsUndefinedAndNull.test';
+import ImageAnimatorPreDecodeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorPreDecodeUndefinedAndNull.test';
+import ImageAnimatorStateUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorStateUndefinedAndNull.test';
+import ImageAnimatorImagesUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorImagesUndefinedAndNull.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -116,4 +132,20 @@ export default function testsuite() {
   ImageCopyOptionUndefinedAndNullTest();
   ImageDynamicRangeModeUndefinedAndNullTest();
   ImageSyncLoadUndefinedAndNullTest();
+  ImageSvgFillColorMetricsTest();
+  ImageMatrixUndefinedAndNullTest();
+  ImageAutoResizeUndefinedAndNullTest();
+  ImageRenderModeUndefinedAndNullTest();
+  ImageInterpolationUndefinedAndNullTest();
+  ImageSourceSizeUndefinedAndNullTest();
+  ImageColorFilterUndefinedAndNullTest();
+  ImageDraggableUndefinedAndNullTest();
+  ImageEnableAnalyzerUndefinedAndNullTest();
+  ImageResizableUndefinedAndNullTest();
+  ImageAnimatorDurationUndefinedAndNullTest();
+  ImageAnimatorFillModeUndefinedAndNullTest();
+  ImageAnimatorIterationsUndefinedAndNullTest();
+  ImageAnimatorPreDecodeUndefinedAndNullTest();
+  ImageAnimatorStateUndefinedAndNullTest();
+  ImageAnimatorImagesUndefinedAndNullTest();
 }

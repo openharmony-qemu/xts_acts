@@ -57,9 +57,13 @@ export default function canvasSetTransformNullUndefinedTest() {
 
       let strJson1 = getInspectorByKey('canvasSetTransformNull');
       let strJson2 = getInspectorByKey('canvasSetTransformUndefined');
+      let strJson3 = getInspectorByKey('canvasSetTransformNewNull');
+      let strJson4 = getInspectorByKey('canvasSetTransformNewUndefined');
       
       expect(JSON.parse(strJson1).$type).assertEqual('Canvas');
       expect(JSON.parse(strJson2).$type).assertEqual('Canvas');
+      expect(JSON.parse(strJson3).$type).assertEqual('Canvas');
+      expect(JSON.parse(strJson4).$type).assertEqual('Canvas');
       
       console.info('[canvasSetTransformNullUndefinedTest_0100] END');
       done();

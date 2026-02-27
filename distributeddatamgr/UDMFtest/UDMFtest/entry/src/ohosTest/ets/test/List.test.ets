@@ -23,6 +23,7 @@ import UDMFApiDataStructTest from './UDMFApiDataStruct.test'
 import UDMFSupportClipboardApiTest from './UDMFSupportClipboardApi.test'
 import EmptyTest from './Empty.test';
 import UDMFEntryTest from './UDMFEntry.test';
+import UDMFAddAPITest from './UDMFAdd.test';
 
 export default function testsuite() {
   if (canIUse("SystemCapability.DistributedDataManager.UDMF.Core")){
@@ -36,6 +37,7 @@ export default function testsuite() {
     UDMFApiDataStructTest()
     UDMFSupportClipboardApiTest()
     UDMFEntryTest()
+    UDMFAddAPITest()
   } else {
     EmptyTest()
   } 
