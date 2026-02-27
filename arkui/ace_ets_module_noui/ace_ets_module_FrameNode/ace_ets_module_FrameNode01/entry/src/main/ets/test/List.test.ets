@@ -80,6 +80,7 @@ import AdoptChildOneTest from './FrameNodeMethod/AdoptChildOneTest.test';
 import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
 import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
 import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
+import CreateNodeNullUndefinedTest from './FrameNodeMethod/CreateNodeNullUndefinedTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
@@ -155,6 +156,7 @@ export default function testsuite() {
   AdoptChildTwoTest();
   AdoptChildThreeTest();
   AdoptChildTest();
+  CreateNodeNullUndefinedTest();
   
   frameNodeApi();
 

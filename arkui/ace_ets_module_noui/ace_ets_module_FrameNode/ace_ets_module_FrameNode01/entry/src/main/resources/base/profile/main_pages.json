@@ -67,6 +67,7 @@
         "MainAbility/pages/FrameNode/frameNodeApi",	
         "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary",
         "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPosition",
-        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPositionErrorCode"
+        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPositionErrorCode",
+        "MainAbility/pages/FrameNodeMethod/CreateNodeNullUndefinedTest"
     ]
 }
