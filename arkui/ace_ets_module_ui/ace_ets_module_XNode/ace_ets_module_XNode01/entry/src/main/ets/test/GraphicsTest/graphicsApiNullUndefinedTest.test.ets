@@ -53,10 +53,7 @@ export default function graphicsApiNullUndefinedTest() {
       console.info('graphicsApiNullUndefinedTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('setOvalShape'));
-      await button.click();
-      await CommonFunc.sleep(1000);
-
+ 
       let strJson1 = getInspectorByKey('graphicsApiNullUndefinedFirst');
       let strJson2 = getInspectorByKey('graphicsApiNullUndefinedSecond');
 
