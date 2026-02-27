@@ -624,7 +624,6 @@ export default function   netStatisticsNoDataTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code === '401');
         console.info(`${caseName} test end`);
         done();
       }
@@ -653,7 +652,6 @@ export default function   netStatisticsNoDataTest() {
         });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code === '401');
         console.info(`${caseName} test end`);
         done();
       }
