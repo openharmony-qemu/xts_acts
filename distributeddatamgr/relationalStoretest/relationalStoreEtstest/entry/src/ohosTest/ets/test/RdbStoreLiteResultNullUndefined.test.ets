@@ -107,7 +107,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0001 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -116,7 +116,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0001 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -125,7 +125,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0001 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0001 end *************");
@@ -150,7 +150,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0002 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -159,7 +159,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0002 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0002 end *************");
@@ -184,7 +184,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0003 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -193,7 +193,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0003 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0003 end *************");
@@ -218,7 +218,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0004 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -227,7 +227,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0004 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0004 end *************");
@@ -252,7 +252,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0005 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -261,7 +261,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0005 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0005 end *************");
@@ -286,7 +286,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0006 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -295,7 +295,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0006 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0006 end *************");
@@ -320,7 +320,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0007 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -329,7 +329,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0007 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0007 end *************");
@@ -354,7 +354,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0008 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -363,7 +363,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0008 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0008 end *************");
@@ -388,7 +388,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0009 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -397,7 +397,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0009 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0009 end *************");
@@ -422,7 +422,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0010 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -431,7 +431,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0010 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0010 end *************");
@@ -456,7 +456,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0011 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -465,7 +465,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0011 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0011 end *************");
@@ -490,7 +490,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0012 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -499,7 +499,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0012 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0011 end *************");
@@ -526,7 +526,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0013 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -535,7 +535,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0013 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -544,7 +544,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0013 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -553,7 +553,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0013 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0011 end *************");
@@ -578,7 +578,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0014 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -587,7 +587,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0014 failed:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0014 end *************");
@@ -613,7 +613,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(TAG + `LiteResultSet_Null_Undefind_Test_0015 failed1:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -622,7 +622,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(TAG + `LiteResultSet_Null_Undefind_Test_0015 failed1:${err.message} code:${err.code}`);
-        expect(err.code === 14800001).assertTrue();
+        expect(err.code == 14800001).assertTrue();
         resultSet?.close();
       }
       try {
@@ -665,7 +665,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0016 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       try {
@@ -674,7 +674,7 @@ export default function RdbStoreLiteResultNullUndefinedTest() {
         expect().assertFail();
       } catch(err) {
         console.error(`LiteResultSet_Null_Undefind_Test_0016 failed:${err.message} code:${err.code}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code == 401).assertTrue();
         resultSet?.close();
       }
       console.error("************* LiteResultSet_Null_Undefind_Test_0016 end *************");
