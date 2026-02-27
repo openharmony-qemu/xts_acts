@@ -73,6 +73,11 @@ struct ScrollToVisibleTest {
        }).width('25%').id('setScrollToVisible4')
      }
      .height('10%')
+     Button('setScrollToVisible5').onClick(()=>{
+         this.TextInputController.scrollToVisible()
+         this.TextAreaController.scrollToVisible()
+         this.SearchController.scrollToVisible()
+      }).id('setScrollToVisible5').height('10%')
    }
     .height('100%')
   }
