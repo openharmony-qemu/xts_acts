@@ -133,6 +133,7 @@ import TextLineBreakStrategyNullTest from './TextTest/TextLineBreakStrategyNull.
 import TextSelectionPropertiesTest from './TextTest/TextSelectionProperties.test';
 import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
+import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 
 
 export default function testsuite() {
@@ -257,4 +258,5 @@ export default function testsuite() {
   TextSelectionPropertiesTest();
   TextSpecialOptionsNullTest();
   TextLayoutOptionsNullTest();
+  TextSpecialAttrsNullTest();
 }
