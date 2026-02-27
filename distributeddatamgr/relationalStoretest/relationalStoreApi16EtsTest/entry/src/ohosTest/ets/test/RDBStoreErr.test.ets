@@ -431,7 +431,7 @@ export default function RDBStoreErrTest() {
 
         /**
        * @tc.name   RdbInDevicesErrTest001
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbOnErrTest_0100
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbInDevicesErrTest_0100
        * @tc.desc   RdbInDevicesErrTest001
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -453,7 +453,7 @@ export default function RDBStoreErrTest() {
 
         /**
        * @tc.name   RdbInDevicesErrTest002
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbOnErrTest_0200
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbInDevicesErrTest_0200
        * @tc.desc   RdbInDevicesErrTest002
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -695,7 +695,7 @@ export default function RDBStoreErrTest() {
 
         /**
        * @tc.name   RdbEndWrapErrTest001
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbBeginWrapErrTest_0100
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbEndWrapErrTest_0100
        * @tc.desc   RdbEndWrapErrTest001
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1149,7 +1149,7 @@ export default function RDBStoreErrTest() {
 
         /**
        * @tc.name   RdbLikeErrTest001
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbIsNotNullErrTest_0100
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbLikeErrErrTest_0100
        * @tc.desc   RdbLikeErrTest001
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
