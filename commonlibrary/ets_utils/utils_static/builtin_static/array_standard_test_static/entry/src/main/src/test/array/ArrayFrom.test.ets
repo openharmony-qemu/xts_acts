@@ -365,14 +365,6 @@ export default function ArrayFromTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('testArrayFrom0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const str = 'test123test456';
-    //   let arr1: Array<string> = [];
-    //   const matches = str.match(new RegExp("test\\d+", "g")) || arr1;
-    //   const arr = Array.from(matches, (match) => match.replace('test', ''));
-    //   expect(arr).assertDeepEquals(['123', '456']);
-    // });
 
     /**
      * @tc.name   testArrayFrom0030
@@ -808,33 +800,29 @@ export default function ArrayFromTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo app
-    // it('testArrayFrom0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const falsyArr = [false, 0, '', null, undefined, NaN];
-    //   const arr = Array.from(falsyArr, (val, idx) => {
-    //     if (val === false) {
-    //       return 'false';
-    //     }
-    //     if (val === 0) {
-    //       return 'zero';
-    //     }
-    //     if (val === '') {
-    //       return 'empty';
-    //     }
-    //     if (val === null) {
-    //       return 'null';
-    //     }
-    //     if (val === undefined) {
-    //       return 'undefined';
-    //     }
-    //     if (isNaN(val)) {
-    //       return 'nan';
-    //     }
-    //     return 'unknown';
-    //   });
-    //   expect(arr).assertDeepEquals(['false', 'zero', 'empty', 'null', 'undefined', 'nan']);
-    // });
-
+    it('testArrayFrom0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const falsyArr = [false, 0, '', null, undefined, NaN];
+      const arr = Array.from(falsyArr, (val, idx) => {
+        if (val === false) {
+          return 'false';
+        }
+        if (val === 0) {
+          return 'zero';
+        }
+        if (val === '') {
+          return 'empty';
+        }
+        if (val === null) {
+          return 'null';
+        }
+        if (val === undefined) {
+          return 'undefined';
+        }
+        return 'unknown';
+      });
+      expect(arr).assertDeepEquals(['false', 'zero', 'empty', 'null', 'undefined', 'unknown']);
+    });
+  
     /**
      * @tc.name   testArrayFrom0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_From_0081

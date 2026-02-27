@@ -515,23 +515,22 @@ export default function ArrayFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
-    // it('ArrayFilterTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const obj = { self: null, value: 10 } as BaseI029;
-    //   obj.self = obj;
-    //   let val1: BaseI029 = { value: 15 };
-    //   const arr: (BaseI029 | number)[] = [obj, 5, val1];
-    //
-    //   const result = arr.filter(item => {
-    //     if (typeof item === 'object') {
-    //       return item.value > 5;
-    //     }
-    //     return false;
-    //   });
-    //
-    //   expect(result.length).assertEqual(2);
-    //   expect((result[0] as BaseI029).self).assertEqual(result[0]);
-    // });
+    it('ArrayFilterTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const obj = { self: null, value: 10 } as BaseI029;
+      obj.self = obj;
+      let val1: BaseI029 = { value: 15 } ;
+      const arr: (BaseI029 | number)[] = [obj, 5, val1];
+
+      const result = arr.filter(item => {
+        if (typeof item === 'object') {
+          return (item as BaseI029).value > 5;
+        }
+        return false;
+      });
+
+      expect(result.length).assertEqual(2);
+      expect((result[0] as BaseI029).self).assertEqual(result[0]);
+    });
 
     /**
      * @tc.name   ArrayFilterTest031
@@ -1733,7 +1732,7 @@ export default function ArrayFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
+    // todo 
     // it('ArrayFilterTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
     //   const func1 = () => Promise.resolve(true);
     //   const func2 = () => Promise.resolve(false);
@@ -1742,14 +1741,18 @@ export default function ArrayFilterTest() {
     //
     //   const arr = [func1, func2, func3, func4];
     //
-    //   const promiseResults = await Promise.allSettled(arr.map((fn): Promise<boolean> => fn()));
+    //   // const promiseResults = await Promise.allSettled(arr.map((fn): Promise<boolean> => fn()));
     //   const promiseResults = await Promise.allSettled(arr.map((fn): Promise<boolean> => fn.unsafeCall() as Promise<boolean>));
+    //   console.log("=-=-=:"+promiseResults)
     //
-    //   const result = arr.filter((_, index) => {
-    //     const res = promiseResults[index];
-    //     return res.status === 'fulfilled' && res.value === true;
+    //   // const result = arr.filter((_:() => Promise<Boolean>, index:int,arr:Array<() => Promise<Boolean>>) => {
+    //   const result = arr.filter((_, index,arr) => {
+    //     const res:PromiseSettledResult<Promise<Boolean>> = promiseResults[index];
+    //     if (res.status === 'fulfilled') {
+    //       return await ((res as PromiseFulfilledResult<Promise<Boolean>>).value)
+    //     }
+    //     return false;
     //   });
-    //
     //   expect(result).assertDeepEquals([func1, func3]);
     // });
 

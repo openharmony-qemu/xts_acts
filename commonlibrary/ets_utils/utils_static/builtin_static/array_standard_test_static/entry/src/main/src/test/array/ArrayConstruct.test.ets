@@ -1819,22 +1819,6 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0143
-     * @tc.name testArrayConstructor0143
-     * @tc.desc Verify Array constructor with array and entries method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // todo
-    // it('testArrayConstructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const arr = new Array<string>('a', 'b', 'c');
-    //   const entries = Array.from(arr.entries());
-    //   expect(arr).assertDeepEquals(['a', 'b', 'c']);
-    //   expect(entries).assertDeepEquals([[0, 'a'], [1, 'b'], [2, 'c']]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0144
      * @tc.name testArrayConstructor0144
      * @tc.desc Verify Array constructor with array and keys method

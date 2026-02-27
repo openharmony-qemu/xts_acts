@@ -455,16 +455,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(10);
-    //   const view = new DataView(buffer);
-    //   const offset = 2;
-    //   const testVal = 0xABCDEF12345678n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(10);
+      const view = new DataView(buffer);
+      const offset = 2;
+      const testVal = 619249421226272n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test007
@@ -602,15 +601,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer, 0, 8);
-    //   const testVal = 0xDEADBEEFCAFEBABEn;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result.toString()).assertEqual("-2401053089206453570");
-    // });
+    it('DataView2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer, 0, 8);
+      const testVal = 16045690651952806798n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result.toString()).assertEqual("-2401053421756744818");
+    });
 
     /**
      * @tc.name   DataView2Test015
@@ -654,22 +652,21 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const offset = 4;
-    //   const testVal = 0x1234567890ABCn;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   const test: Offset12ViewTest = {
-    //     view,
-    //     offset,
-    //     testVal,
-    //     result
-    //   };
-    //   expect(test.result).assertEqual(test.testVal);
-    // });
+    it('DataView2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const offset = 4;
+      const testVal = 32011995326220n;
+      const view = new DataView(buffer);
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      const test: Offset12ViewTest = {
+        view,
+        offset,
+        testVal,
+        result
+      };
+      expect(test.result).assertEqual(test.testVal);
+    });
 
     /**
      * @tc.name   DataView2Test018
@@ -696,15 +693,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0xABCDEF123456n;
-    //   view.setBigInt64(0, testVal, true);
-    //   const result = view.getBigInt64(0, true);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 188320564927062n;
+      view.setBigInt64(0, testVal, true);
+      const result = view.getBigInt64(0, true);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test020
@@ -772,15 +768,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer, 0, 8);
-    //   const testVal = 0x1122334455667788n;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer, 0, 8);
+      const testVal = 1234605616436508552n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test024
@@ -865,16 +860,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const view = new DataView(buffer);
-    //   const offset = 4;
-    //   const testVal = 0x76543210FEDCBA98n;
-    //   view.setBigInt64(offset, testVal, true);
-    //   const result = view.getBigInt64(offset, true);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const view = new DataView(buffer);
+      const offset = 4;
+      const testVal = 8525297184040830840n;
+      view.setBigInt64(offset, testVal, true);
+      const result = view.getBigInt64(offset, true);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test029
@@ -884,16 +878,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal = 0x1A2B3C4D5E6F7A8Bn;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   const test: BigEndianConsistencyTest = { view, testVal, result };
-    //   expect(test.result).assertEqual(test.testVal);
-    // });
+    it('DataView2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal = 1925238427367248267n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      const test: BigEndianConsistencyTest = { view, testVal, result };
+      expect(test.result).assertEqual(test.testVal);
+    });
 
     /**
      * @tc.name   DataView2Test030
@@ -946,16 +939,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(9);
-    //   const view = new DataView(buffer);
-    //   const offset = 1;
-    //   const testVal = 0x876543210FEDCBA9n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-8690466096661279831");
-    // });
+    it('DataView2Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(9);
+      const view = new DataView(buffer);
+      const offset = 1;
+      const testVal = 9758927977058280041n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-8687816096651271575");
+    });
 
     /**
      * @tc.name   DataView2Test033
@@ -982,15 +974,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0xDEADBEEFCAFEBABEn;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result.toString()).assertEqual("-2401053089206453570");
-    // });
+    it('DataView2Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 16045690651952806798n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result.toString()).assertEqual("-2401053421756744818");
+    });
 
     /**
      * @tc.name   DataView2Test035
@@ -1151,15 +1142,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x9876543210FEDCBAn;
-    //   view.setBigInt64(0, testVal, true);
-    //   const result = view.getBigInt64(0, true);
-    //   expect(result.toString()).assertEqual("-7460683158682411846");
-    // });
+    it('DataView2Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 10986071105037146074n;
+      view.setBigInt64(0, testVal, true);
+      const result = view.getBigInt64(0, true);
+      expect(result.toString()).assertEqual("-7460672968672405542");
+    });
 
     /**
      * @tc.name   DataView2Test044
@@ -1169,16 +1159,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(14);
-    //   const view = new DataView(buffer);
-    //   const offset = 6;
-    //   const testVal = 0xABCDEF1234567890n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-6066930261531658096");
-    // });
+    it('DataView2Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(14);
+      const view = new DataView(buffer);
+      const offset = 6;
+      const testVal = 12379456072386805200n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-6067288001322746416");
+    });
 
     /**
      * @tc.name   DataView2Test045
@@ -1351,16 +1340,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(10);
-    //   const view = new DataView(buffer);
-    //   const offset = 2;
-    //   const testVal = 0x1234567890ABCDEFn;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(10);
+      const view = new DataView(buffer);
+      const offset = 2;
+      const testVal = 1311768467463790320n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test054
@@ -1430,16 +1418,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(11);
-    //   const view = new DataView(buffer);
-    //   const offset = 3;
-    //   const testVal = 0xFEDCBA9876543210n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-81985529216486896");
-    // });
+    it('DataView2Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(11);
+      const view = new DataView(buffer);
+      const offset = 3;
+      const testVal = 18364958772639230736n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-81785301070320880");
+    });
 
     /**
      * @tc.name   DataView2Test058
@@ -1564,16 +1551,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(16);
-    //   const view = new DataView(buffer, 0, 16);
-    //   const offset = 8;
-    //   const testVal = 0x1122334455667788n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(16);
+      const view = new DataView(buffer, 0, 16);
+      const offset = 8;
+      const testVal = 1234605616436508552n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test065
@@ -1658,15 +1644,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = -0xABCDEF123456n;
-    //   view.setBigInt64(0, testVal, true);
-    //   const result = view.getBigInt64(0, true);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = -188320564927062n;
+      view.setBigInt64(0, testVal, true);
+      const result = view.getBigInt64(0, true);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test070
@@ -1676,16 +1661,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(13);
-    //   const view = new DataView(buffer);
-    //   const offset = 5;
-    //   const testVal = 0xABCDEF1234567890n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-6066930261531658096");
-    // });
+    it('DataView2Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(13);
+      const view = new DataView(buffer);
+      const offset = 5;
+      const testVal = 12379456072386805200n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-6067288001322746416");
+    });
 
     /**
      * @tc.name   DataView2Test071
@@ -1695,25 +1679,24 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal1 = 0b1010n;
-    //   const testVal2 = 0b1100n;
-    //   const xorResult = 0b0110n;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal1);
-    //   const result1 = view.getBigInt64(0);
-    //   view.setBigInt64(0, testVal2);
-    //   const result2 = view.getBigInt64(0);
-    //   const test: BigEndianXorTest = {
-    //     view,
-    //     testVal1,
-    //     testVal2,
-    //     xorResult
-    //   };
-    //   expect(result1 ^ result2).assertEqual(test.xorResult);
-    // });
+    it('DataView2Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal1 = 10n;
+      const testVal2 = 12n;
+      const xorResult = 6n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal1);
+      const result1 = view.getBigInt64(0);
+      view.setBigInt64(0, testVal2);
+      const result2 = view.getBigInt64(0);
+      const test: BigEndianXorTest = {
+        view,
+        testVal1,
+        testVal2,
+        xorResult
+      };
+      expect(result1 ^ result2).assertEqual(test.xorResult);
+    });
 
     /**
      * @tc.name   DataView2Test072
@@ -1723,18 +1706,17 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal1 = 0b1111n;
-    //   const testVal2 = 0b1010n;
-    //   view.setBigInt64(0, testVal1);
-    //   const result1 = view.getBigInt64(0);
-    //   view.setBigInt64(0, testVal2);
-    //   const result2 = view.getBigInt64(0);
-    //   expect(result1 & result2).assertEqual(0b1010n);
-    // });
+    it('DataView2Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal1 = 15n;
+      const testVal2 = 10n;
+      view.setBigInt64(0, testVal1);
+      const result1 = view.getBigInt64(0);
+      view.setBigInt64(0, testVal2);
+      const result2 = view.getBigInt64(0);
+      expect(result1 & result2).assertEqual(10n);
+    });
 
     /**
      * @tc.name   DataView2Test073
@@ -1790,18 +1772,17 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal1 = 0b1000n;
-    //   const testVal2 = 0b0010n;
-    //   view.setBigInt64(0, testVal1, true);
-    //   const result1 = view.getBigInt64(0, true);
-    //   view.setBigInt64(0, testVal2, true);
-    //   const result2 = view.getBigInt64(0, true);
-    //   expect(result1 | result2).assertEqual(0b1010n);
-    // });
+    it('DataView2Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal1 = 8n;
+      const testVal2 = 2n;
+      view.setBigInt64(0, testVal1, true);
+      const result1 = view.getBigInt64(0, true);
+      view.setBigInt64(0, testVal2, true);
+      const result2 = view.getBigInt64(0, true);
+      expect(result1 | result2).assertEqual(10n);
+    });
 
     /**
      * @tc.name   DataView2Test076
@@ -1811,15 +1792,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0n;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result | 0b1111n).assertEqual(0b1111n);
-    // });
+    it('DataView2Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 0n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result | 15n).assertEqual(15n);
+    });
 
     /**
      * @tc.name   DataView2Test077
@@ -1853,15 +1833,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x1234n;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result << 16n).assertEqual(0x12340000n);
-    // });
+    it('DataView2Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 4660n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result << 16n).assertEqual(305397760n);
+    });
 
     /**
      * @tc.name   DataView2Test079
@@ -1871,16 +1850,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(9);
-    //   const view = new DataView(buffer);
-    //   const offset = 1;
-    //   const testVal = -0xABCDEF12345678n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(9);
+      const view = new DataView(buffer);
+      const offset = 1;
+      const testVal = -619249421226272n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test080
@@ -1907,22 +1885,21 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const offset1 = 0;
-    //   const offset2 = 0;
-    //   const val1 = 0x1111n;
-    //   const val2 = 0x2222n;
-    //   const view1 = new DataView(buffer, 0, 8);
-    //   const view2 = new DataView(buffer, 4, 8);
-    //   view1.setBigInt64(offset1, val1);
-    //   view2.setBigInt64(offset2, val2);
-    //   const result1 = view1.getBigInt64(offset1);
-    //   const result2 = view2.getBigInt64(offset2);
-    //   expect(result1.toString()).assertEqual("0");
-    //   expect(result2.toString()).assertEqual("8738");
-    // });
+    it('DataView2Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const offset1 = 0;
+      const offset2 = 0;
+      const val1 = 4369n;
+      const val2 = 8738n;
+      const view1 = new DataView(buffer, 0, 8);
+      const view2 = new DataView(buffer, 4, 8);
+      view1.setBigInt64(offset1, val1);
+      view2.setBigInt64(offset2, val2);
+      const result1 = view1.getBigInt64(offset1);
+      const result2 = view2.getBigInt64(offset2);
+      expect(result1.toString()).assertEqual("0");
+      expect(result2.toString()).assertEqual("8738");
+    });
 
     /**
      * @tc.name   DataView2Test082
@@ -1932,16 +1909,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const view = new DataView(buffer);
-    //   const offset = 4;
-    //   const testVal = 0x876543210FEDCBA9n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-8690466096661279831");
-    // });
+    it('DataView2Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const view = new DataView(buffer);
+      const offset = 4;
+      const testVal = 9758927977058280041n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-8687816096651271575");
+    });
 
     /**
      * @tc.name   DataView2Test083
@@ -1951,15 +1927,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x12345678n;
-    //   view.setBigInt64(0, testVal, true);
-    //   const result = view.getBigInt64(0, true);
-    //   expect(result >> 8n).assertEqual(0x123456n);
-    // });
+    it('DataView2Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 305419896n;
+      view.setBigInt64(0, testVal, true);
+      const result = view.getBigInt64(0, true);
+      expect(result >> 8n).assertEqual(1193046n);
+    });
 
     /**
      * @tc.name   DataView2Test084
@@ -2010,16 +1985,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(10);
-    //   const view = new DataView(buffer);
-    //   const offset = 2;
-    //   const testVal = 0xABCDEF1234567890n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-6066930261531658096");
-    // });
+    it('DataView2Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(10);
+      const view = new DataView(buffer);
+      const offset = 2;
+      const testVal = 12379456072386805200n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-6067288001322746416");
+    });
 
     /**
      * @tc.name   DataView2Test087
@@ -2029,22 +2003,21 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal = 0x12345678n;
-    //   const fullOne = 0xFFFFFFFFFFFFFFFFn;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   const test: BigEndianFullXorTest = {
-    //     view,
-    //     testVal,
-    //     fullOne,
-    //     xorResult: result ^ fullOne
-    //   };
-    //   expect(test.xorResult).assertEqual(fullOne - test.testVal);
-    // });
+    it('DataView2Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal = 305419896n;
+      const fullOne = 18446744073709551615n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      const test: BigEndianFullXorTest = {
+        view,
+        testVal,
+        fullOne,
+        xorResult: result ^ fullOne
+      };
+      expect(test.xorResult).assertEqual(fullOne - test.testVal);
+    });
 
     /**
      * @tc.name   DataView2Test088
@@ -2054,16 +2027,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x12345678n;
-    //   const fullOne = 0xFFFFFFFFn;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result & fullOne).assertEqual(testVal);
-    // });
+    it('DataView2Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 305419896n;
+      const fullOne = 4294967295n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result & fullOne).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test089
@@ -2106,18 +2078,17 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal1 = 0b1010n;
-    //   const testVal2 = 0b1100n;
-    //   view.setBigInt64(0, testVal1, true);
-    //   const result1 = view.getBigInt64(0, true);
-    //   view.setBigInt64(0, testVal2, true);
-    //   const result2 = view.getBigInt64(0, true);
-    //   expect(result1 ^ result2).assertEqual(0b0110n);
-    // });
+    it('DataView2Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal1 = 10n;
+      const testVal2 = 12n;
+      view.setBigInt64(0, testVal1, true);
+      const result1 = view.getBigInt64(0, true);
+      view.setBigInt64(0, testVal2, true);
+      const result2 = view.getBigInt64(0, true);
+      expect(result1 ^ result2).assertEqual(6n);
+    });
 
     /**
      * @tc.name   DataView2Test092
@@ -2202,16 +2173,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(13);
-    //   const view = new DataView(buffer);
-    //   const offset = 5;
-    //   const testVal = -0x1234567890ABCn;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(13);
+      const view = new DataView(buffer);
+      const offset = 5;
+      const testVal = -32011995326220n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test097
@@ -2221,25 +2191,24 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal1 = 0b1000n;
-    //   const testVal2 = 0b0010n;
-    //   const orResult = 0b1010n;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal1);
-    //   const result1 = view.getBigInt64(0);
-    //   view.setBigInt64(0, testVal2);
-    //   const result2 = view.getBigInt64(0);
-    //   const test: BigEndianOrTest = {
-    //     view,
-    //     testVal1,
-    //     testVal2,
-    //     orResult
-    //   };
-    //   expect(result1 | result2).assertEqual(test.orResult);
-    // });
+    it('DataView2Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal1 = 8n;
+      const testVal2 = 2n;
+      const orResult = 10n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal1);
+      const result1 = view.getBigInt64(0);
+      view.setBigInt64(0, testVal2);
+      const result2 = view.getBigInt64(0);
+      const test: BigEndianOrTest = {
+        view,
+        testVal1,
+        testVal2,
+        orResult
+      };
+      expect(result1 | result2).assertEqual(test.orResult);
+    });
 
     /**
      * @tc.name   DataView2Test098
@@ -2249,15 +2218,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x12345678n;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   expect(result >> 16n).assertEqual(0x1234n);
-    // });
+    it('DataView2Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 305419896n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      expect(result >> 16n).assertEqual(4660n);
+    });
 
     /**
      * @tc.name   DataView2Test099
@@ -2267,27 +2235,26 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer1 = new ArrayBuffer(8);
-    //   const buffer2 = new ArrayBuffer(8);
-    //   const val1 = 0xAAAAn;
-    //   const val2 = 0xBBBBn;
-    //   const view1 = new DataView(buffer1);
-    //   const view2 = new DataView(buffer2);
-    //   view1.setBigInt64(0, val1);
-    //   view2.setBigInt64(0, val2);
-    //   const result1 = view1.getBigInt64(0);
-    //   const result2 = view2.getBigInt64(0);
-    //   const test: MultiBufferTest = {
-    //     view1,
-    //     view2,
-    //     val1,
-    //     val2
-    //   };
-    //   expect(result1).assertEqual(test.val1);
-    //   expect(result2).assertEqual(test.val2);
-    // });
+    it('DataView2Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer1 = new ArrayBuffer(8);
+      const buffer2 = new ArrayBuffer(8);
+      const val1 = 43690n;
+      const val2 = 48059n;
+      const view1 = new DataView(buffer1);
+      const view2 = new DataView(buffer2);
+      view1.setBigInt64(0, val1);
+      view2.setBigInt64(0, val2);
+      const result1 = view1.getBigInt64(0);
+      const result2 = view2.getBigInt64(0);
+      const test: MultiBufferTest = {
+        view1,
+        view2,
+        val1,
+        val2
+      };
+      expect(result1).assertEqual(test.val1);
+      expect(result2).assertEqual(test.val2);
+    });
 
     /**
      * @tc.name   DataView2Test100
@@ -2314,15 +2281,14 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x12n;
-    //   view.setBigInt64(0, testVal, true);
-    //   const result = view.getBigInt64(0, true);
-    //   expect(result << 4n).assertEqual(0x120n);
-    // });
+    it('DataView2Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 18n;
+      view.setBigInt64(0, testVal, true);
+      const result = view.getBigInt64(0, true);
+      expect(result << 4n).assertEqual(288n);
+    });
 
     /**
      * @tc.name   DataView2Test102
@@ -2356,16 +2322,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(11);
-    //   const view = new DataView(buffer);
-    //   const offset = 3;
-    //   const testVal = 0x876543210FEDCBA9n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("-8690466096661279831");
-    // });
+    it('DataView2Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(11);
+      const view = new DataView(buffer);
+      const offset = 3;
+      const testVal = 9758927977058280041n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result.toString()).assertEqual("-8687816096651271575");
+    });
 
     /**
      * @tc.name   DataView2Test104
@@ -2526,16 +2491,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const view = new DataView(buffer);
-    //   const offset = 4;
-    //   const testVal = -0xABCDEF123456789n;
-    //   view.setBigInt64(offset, testVal);
-    //   const result = view.getBigInt64(offset);
-    //   expect(result).assertEqual(testVal);
-    // });
+    it('DataView2Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const view = new DataView(buffer);
+      const offset = 4;
+      const testVal = -3074457275519994985n;
+      view.setBigInt64(offset, testVal);
+      const result = view.getBigInt64(offset);
+      expect(result).assertEqual(testVal);
+    });
 
     /**
      * @tc.name   DataView2Test113
@@ -2610,25 +2574,24 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal1 = 0b1001n;
-    //   const testVal2 = 0b0110n;
-    //   const comboResult = (testVal1 << 2n) ^ testVal2;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal1, true);
-    //   const result1 = view.getBigInt64(0, true);
-    //   view.setBigInt64(0, testVal2, true);
-    //   const result2 = view.getBigInt64(0, true);
-    //   const test: LittleEndianBitComboTest = {
-    //     view,
-    //     testVal1,
-    //     testVal2,
-    //     comboResult
-    //   };
-    //   expect((result1 << 2n) ^ result2).assertEqual(test.comboResult);
-    // });
+    it('DataView2Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal1 = 9n;
+      const testVal2 = 6n;
+      const comboResult = (testVal1 << 2n) ^ testVal2;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal1, true);
+      const result1 = view.getBigInt64(0, true);
+      view.setBigInt64(0, testVal2, true);
+      const result2 = view.getBigInt64(0, true);
+      const test: LittleEndianBitComboTest = {
+        view,
+        testVal1,
+        testVal2,
+        comboResult
+      };
+      expect((result1 << 2n) ^ result2).assertEqual(test.comboResult);
+    });
 
     /**
      * @tc.name   DataView2Test117
@@ -2739,16 +2702,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(12);
-    //   const offset = 2;
-    //   const val1 = 0x1111n;
-    //   const view1 = new DataView(buffer, 0, 10);
-    //   view1.setBigInt64(offset, val1);
-    //   const result = view1.getBigInt64(offset);
-    //   expect(result.toString()).assertEqual("4369");
-    // });
+    it('DataView2Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(12);
+      const offset = 2;
+      const val1 = 4369n;
+      const view1 = new DataView(buffer, 0, 10);
+      view1.setBigInt64(offset, val1);
+      const result = view1.getBigInt64(offset);
+      expect(result.toString()).assertEqual("4369");
+    });
 
     /**
      * @tc.name   DataView2Test123
@@ -3083,25 +3045,24 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal1 = 0b1100n;
-    //   const testVal2 = 0b1010n;
-    //   const comboResult = (testVal1 & testVal2) << 2n;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal1);
-    //   const result1 = view.getBigInt64(0);
-    //   view.setBigInt64(0, testVal2);
-    //   const result2 = view.getBigInt64(0);
-    //   const test: BigEndianBitAndShiftTest = {
-    //     view,
-    //     testVal1,
-    //     testVal2,
-    //     comboResult
-    //   };
-    //   expect((result1 & result2) << 2n).assertEqual(test.comboResult);
-    // });
+    it('DataView2Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal1 = 12n;
+      const testVal2 = 10n;
+      const comboResult = (testVal1 & testVal2) << 2n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal1);
+      const result1 = view.getBigInt64(0);
+      view.setBigInt64(0, testVal2);
+      const result2 = view.getBigInt64(0);
+      const test: BigEndianBitAndShiftTest = {
+        view,
+        testVal1,
+        testVal2,
+        comboResult
+      };
+      expect((result1 & result2) << 2n).assertEqual(test.comboResult);
+    });
 
     /**
      * @tc.name   DataView2Test141
@@ -3175,25 +3136,24 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const testVal1 = 0b1000n;
-    //   const testVal2 = 0b0010n;
-    //   const comboResult = (testVal1 | testVal2) >> 1n;
-    //   const view = new DataView(buffer);
-    //   view.setBigInt64(0, testVal1, true);
-    //   const result1 = view.getBigInt64(0, true);
-    //   view.setBigInt64(0, testVal2, true);
-    //   const result2 = view.getBigInt64(0, true);
-    //   const test: LittleEndianBitOrShiftTest = {
-    //     view,
-    //     testVal1,
-    //     testVal2,
-    //     comboResult
-    //   };
-    //   expect((result1 | result2) >> 1n).assertEqual(test.comboResult);
-    // });
+    it('DataView2Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const testVal1 = 8n;
+      const testVal2 = 2n;
+      const comboResult = (testVal1 | testVal2) >> 1n;
+      const view = new DataView(buffer);
+      view.setBigInt64(0, testVal1, true);
+      const result1 = view.getBigInt64(0, true);
+      view.setBigInt64(0, testVal2, true);
+      const result2 = view.getBigInt64(0, true);
+      const test: LittleEndianBitOrShiftTest = {
+        view,
+        testVal1,
+        testVal2,
+        comboResult
+      };
+      expect((result1 | result2) >> 1n).assertEqual(test.comboResult);
+    });
 
     /**
      * @tc.name   DataView2Test145
@@ -3221,16 +3181,15 @@ export default function DataView2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView2Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const buffer = new ArrayBuffer(8);
-    //   const view = new DataView(buffer);
-    //   const testVal = 0x1234n;
-    //   view.setBigInt64(0, testVal);
-    //   const result = view.getBigInt64(0);
-    //   const hex = result.toString(16).padStart(16, '0');
-    //   expect(hex).assertEqual("0000000000001234");
-    // });
+    it('DataView2Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      const testVal = 4660n;
+      view.setBigInt64(0, testVal);
+      const result = view.getBigInt64(0);
+      const hex = result.toString(16).padStart(16, '0');
+      expect(hex).assertEqual("0000000000001234");
+    });
 
     /**
      * @tc.name   DataView2Test147
