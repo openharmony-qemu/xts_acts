@@ -284,6 +284,95 @@ export default function netfirewallTest() {
       }
     })
 
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0200
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0200
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0200';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: false,
+          inAction: netFirewall.FirewallRuleAction.RULE_ALLOW,
+          outAction: netFirewall.FirewallRuleAction.RULE_ALLOW
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          ExpectTrue(true);
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectFail();
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0300
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0300
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        await netFirewall.setNetFirewallPolicy(undefined, undefined).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallSetNetFirewallPolicy_0400
+     * @tc.number SUB_Network_NetFirewall_setNetFirewallPolicy_0400
+     * @tc.desc   Set NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallSetNetFirewallPolicy_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function) => {
+      const caseName: string = 'testNetFirewallSetNetFirewallPolicy_0400';
+      console.info(`${caseName}---Start`);
+      try{
+        await netFirewall.setNetFirewallPolicy(null, null).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+          done();
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          ExpectTrue(error.code == 401);
+          done();
+        });
+      }catch (err){
+        console.log("test end");
+        console.log(`${caseName} catch err is `,JSON.stringify(err));
+        ExpectTrue(err.code == 401);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testNetFirewallGetNetFirewallRules0100
@@ -323,7 +412,6 @@ export default function netfirewallTest() {
       }
     })
 
-
     /**
      * @tc.name   testNetFirewallGetNetFirewallRule_0100
      * @tc.number testNetFirewallGetNetFirewallRule_0100
@@ -353,9 +441,6 @@ export default function netfirewallTest() {
         done();
       }
     })
-
-
-
 
     /**
      * @tc.name   testNetFirewallGetNetFirewallPolicy_0100
@@ -388,6 +473,91 @@ export default function netfirewallTest() {
       }
     })
 
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallPolicy_0200
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallPolicy_0200
+     * @tc.desc   Get NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallGetNetFirewallPolicy_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallPolicy_0200';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: true,
+          inAction: ruleAction_RULE_ALLOW,
+          outAction: ruleAction_RULE_ALLOW
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          done();
+        });
+
+        await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
+          console.log(`${caseName} getNetFirewallPolicy success`)
+          console.log('firewall policy: ', JSON.stringify(result));
+          ExpectTrue(result.isOpen);
+          ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_ALLOW);
+          ExpectTrue(result.outAction == netFirewall.FirewallRuleAction.RULE_ALLOW);
+          done();
+        },(reason: BusinessError) => {
+          console.error('get firewall policy failed: ', JSON.stringify(reason));
+          ExpectFail();
+          done();
+        })
+      }catch (err){
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `,err)
+        ExpectFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testNetFirewallGetNetFirewallPolicy_0300
+     * @tc.number SUB_Network_NetFirewall_getNetFirewallPolicy_0300
+     * @tc.desc   Get NetFirewall Policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetFirewallGetNetFirewallPolicy_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      const caseName: string = 'testNetFirewallGetNetFirewallPolicy_0300';
+      console.info(`${caseName}---Start`);
+      try{
+        let policy: netFirewall.NetFirewallPolicy = {
+          isOpen: false,
+          inAction: ruleAction_RULE_DENY,
+          outAction: ruleAction_RULE_DENY
+        };
+        await netFirewall.setNetFirewallPolicy(userId, policy).then(() => {
+          console.info(`${caseName} set firewall policy success.`);
+        }).catch((error : BusinessError) => {
+          console.info(`${caseName} set firewall policy failed: ` + JSON.stringify(error));
+          done();
+        });
+
+        await netFirewall.getNetFirewallPolicy(userId).then((result: netFirewall.NetFirewallPolicy)=>{
+          console.log(`${caseName} getNetFirewallPolicy success`)
+          console.log('firewall policy: ', JSON.stringify(result));
+          ExpectTrue(result.isOpen == false);
+          ExpectTrue(result.inAction == netFirewall.FirewallRuleAction.RULE_DENY);
+          ExpectTrue(result.outAction == netFirewall.FirewallRuleAction.RULE_DENY);
+          done();
+        },(reason: BusinessError) => {
+          console.error('get firewall policy failed: ', JSON.stringify(reason));
+          ExpectFail();
+          done();
+        })
+      }catch (err){
+        console.log(`${caseName} getNetFirewallPolicy failed Error is `,err)
+        ExpectFail();
+        done();
+      }
+    })
 
     /**
      * @tc.name   testNetFirewallupdateNetFirewallRule_0100
