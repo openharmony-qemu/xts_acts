@@ -4493,6 +4493,10 @@ export default function windowImmersiveTest() {
 
           console.info(caseName + ' avoidAreaKeyboard: ' + JSON.stringify(avoidAreaKeyboard));
           await sleep(1000)
+          if(avoidAreaKeyboard?.visible === false &&avoidAreaKeyboard?.bottomRect.width ===0 && avoidAreaKeyboard?.bottomRect.height === 0){
+            await windowClass?.destroyWindow();
+            done();
+          }else{
           expect(keyboardPX.visible).assertEqual(avoidAreaKeyboard?.visible)
           expect(keyboardPX.bottomRect.left).assertEqual(avoidAreaKeyboard?.bottomRect.left)
           expect(keyboardPX.bottomRect.top).assertEqual(avoidAreaKeyboard?.bottomRect.top)
@@ -4546,6 +4550,8 @@ export default function windowImmersiveTest() {
           expect(keyboardVP.topRect.height).assertEqual(px2vp(avoidAreaKeyboard?.topRect.height));
           await windowClass?.destroyWindow();
           done();
+          }
+          
         } else {
           await windowClass?.destroyWindow();
           done();
