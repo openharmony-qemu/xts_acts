@@ -161,23 +161,19 @@ export default function InputDeviceComplementTest() {
                 } else {
                   console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
                   if (deviceData) {
-                    // if (deviceData.isLocal) {
-                    //     expect(deviceData.isLocal).assertInstanceOf('Boolean');
-                    // }
-                    // if (deviceData.isVirtual) {
-                    //     expect(deviceData.isVirtual).assertInstanceOf('Boolean');
-                    // }
-                    expect(deviceData.id).assertInstanceOf('Int');
-                    expect(deviceData.name).assertInstanceOf('String');
-                    expect(deviceData.sources).assertInstanceOf('Array');
-                    expect(deviceData.axisRanges).assertInstanceOf('Array');
-                    expect(deviceData.bus).assertInstanceOf('Int');
-                    expect(deviceData.product).assertInstanceOf('Int');
-                    expect(deviceData.vendor).assertInstanceOf('Int');
-                    expect(deviceData.version).assertInstanceOf('Int');
-                    expect(deviceData.phys).assertInstanceOf('String');
-                    expect(deviceData.uniq).assertInstanceOf('String');
-                    expect(deviceData).assertInstanceOf('Object');
+                    expect(deviceData!.isLocal).assertInstanceOf('Boolean');
+                    expect(deviceData!.isVirtual).assertInstanceOf('Boolean');
+                    expect(deviceData!.id).assertInstanceOf('Int');
+                    expect(deviceData!.name).assertInstanceOf('String');
+                    expect(deviceData!.sources).assertInstanceOf('Array');
+                    expect(deviceData!.axisRanges).assertInstanceOf('Array');
+                    expect(deviceData!.bus).assertInstanceOf('Int');
+                    expect(deviceData!.product).assertInstanceOf('Int');
+                    expect(deviceData!.vendor).assertInstanceOf('Int');
+                    expect(deviceData!.version).assertInstanceOf('Int');
+                    expect(deviceData!.phys).assertInstanceOf('String');
+                    expect(deviceData!.uniq).assertInstanceOf('String');
+                    expect(deviceData!).assertInstanceOf('Object');
                     for (let j = 0; j < deviceData.axisRanges.length; j++) {
                       expect(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
                         || deviceData.axisRanges[j].source == 'touchpad' ||

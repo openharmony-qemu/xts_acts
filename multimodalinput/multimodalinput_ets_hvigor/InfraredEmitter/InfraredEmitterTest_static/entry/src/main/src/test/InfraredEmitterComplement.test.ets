@@ -41,7 +41,6 @@ export default function InfraredEmitterComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0350";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifTransmitInfraredSuccess = 0;
         try {
           let infraredFrequency: long = 38000;
           let pattern: Array<long> = [];
@@ -50,14 +49,8 @@ export default function InfraredEmitterComplementTest() {
           }
           infraredEmitter.transmitInfrared(infraredFrequency, pattern);
           console.info(`${caseName} transmitInfrared success.`);
-          ifTransmitInfraredSuccess++;
-          if (ifTransmitInfraredSuccess == 1) {
-            expect().assertFail();
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
+          expect().assertFail();
+          done();
         } catch (error: BusinessError) {
           console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
           expect(error.code).assertEqual(401);
