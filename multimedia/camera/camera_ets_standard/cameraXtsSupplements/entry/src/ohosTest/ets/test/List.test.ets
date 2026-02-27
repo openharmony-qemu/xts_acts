@@ -85,10 +85,10 @@ export default function testsuite() {
   CameraManagerCreateMetadataOutputTest();
   CameraManagerCreatePhotoOutputTest();
   CameraManagerCreateVideoOutputTest();
-  CameraManagerGetSupportedOutputCapabilityTest();
   CameraInputOnerrorTest();
   createCameraInput();
   CameraSessionSetWhiteBalanceModeTest();
   CameraGetActiveProfileTest();
   CameraSessionBandSuppTest();
+  CameraManagerGetSupportedOutputCapabilityTest();
 }
