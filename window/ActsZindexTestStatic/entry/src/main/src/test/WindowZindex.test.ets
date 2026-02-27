@@ -1680,7 +1680,7 @@ export default function WindowZindexTest() {
 
       /**
          * @tc.number     testsetExclusivelyHighlightedFalse_1300002_static
-         * @tc.name       testsetExclusivelyHighlighted_False_1300002_static
+         * @tc.name       testsetExclusivelyHighlightedFalse_1300002_static
          * @tc.desc       testsetExclusivelyHighlighted_False_1300002
          * @tc.size       MediumTest
          * @tc.type       Function
