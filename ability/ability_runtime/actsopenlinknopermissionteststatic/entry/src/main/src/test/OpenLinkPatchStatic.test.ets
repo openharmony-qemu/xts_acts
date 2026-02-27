@@ -265,5 +265,42 @@ export default function openLinkPatchStaticTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   AbilityRuntime_OpenLink_Static_1700
+     * @tc.number AbilityRuntime_OpenLink_Static_1700
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through backgroud context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AbilityRuntime_OpenLink_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      tag = `AbilityRuntime_OpenLink_Static_1700`;
+      hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1700 begin');
+      context?.moveAbilityToBackground()
+        .catch((err: Error): void => {
+          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
+      await Utils.msSleep(1000);
+      try {
+        const link = 'example://www.example.com';
+        context?.openLink('').then(() => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open link successful`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open link err: ` + error.code + error.message);
+          expect().assertFail();
+          done();
+        })
+      } catch (err) {
+        hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1700 open fail : ` + err.code + err.message);
+        expect(`${err.code}`).assertEqual('401');
+        done();
+      }
+    });
   })
 }

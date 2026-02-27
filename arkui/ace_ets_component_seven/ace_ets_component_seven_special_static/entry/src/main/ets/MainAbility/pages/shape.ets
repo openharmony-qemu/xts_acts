@@ -38,7 +38,7 @@ class ShapeModifier1 implements AttributeModifier<ShapeAttribute>{
 
       .strokeMiterLimit(5)
 
-      .mesh([10], 1, 1)
+      .mesh([1,2,3,4,5,6,7,8],1,1)
 
       .strokeWidth("20px")
 

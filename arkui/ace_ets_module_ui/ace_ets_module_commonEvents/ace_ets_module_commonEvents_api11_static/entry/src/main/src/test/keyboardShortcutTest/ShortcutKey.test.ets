@@ -79,7 +79,7 @@ export default function ShortcutKeyTest() {
   const baseEvent2 = 73000
 
   describe('ShortcutKeyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       

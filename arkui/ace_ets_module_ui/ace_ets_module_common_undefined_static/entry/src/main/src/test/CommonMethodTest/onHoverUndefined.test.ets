@@ -43,7 +43,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function onHoverUndefined() {
   describe('onHoverUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onHoverUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

@@ -49,7 +49,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ListOffSet01Jsunit() {
 
   describe('ListOffSet01Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListOffSet01Jsunit beforeAll start");
             
       await UtilsTest.msSleep(4000)

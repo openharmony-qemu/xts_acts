@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function alertDialogLevelOrder() {
   describe('alertDialogLevelOrder', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function gestureJudgeUndefined() {
   describe('gestureJudgeUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gestureJudgeUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

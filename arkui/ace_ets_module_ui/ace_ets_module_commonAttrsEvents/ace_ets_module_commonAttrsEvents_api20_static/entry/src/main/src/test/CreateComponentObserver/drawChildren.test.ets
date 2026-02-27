@@ -33,7 +33,7 @@ const SLEEP_TIME_2500 = 2500;
 export default function DrawChildrenTest() {
   describe('DrawChildrenTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DrawChildrenTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api20.static", "EntryAbility")
     });

@@ -71,7 +71,7 @@ export default function onAppearTest() {
   }]
 
   describe('OnAppearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.acts.arkui.onappear.testwear.static", "EntryAbility")
     });

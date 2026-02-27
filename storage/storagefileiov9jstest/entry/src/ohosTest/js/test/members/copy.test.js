@@ -22,6 +22,7 @@ import fs from '@ohos.file.fs';
 import { TestType, Size, Level } from '@ohos/hypium';
 const CONTENT = 'hello!!!';
 
+let fpath2G;
 export function prepare2GFile(fpath) {
   try {
     let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE)
@@ -43,6 +44,11 @@ export function prepare2GFile(fpath) {
 
 export default function fileIOCopy() {
 describe('fileIO_fs_copy', function () {
+
+  beforeAll(async () => {
+    fpath2G = await nextFileName('test2G');
+    expect(prepare2GFile(fpath2G)).assertTrue();
+  })
 
   /**
    * @tc.name   fileIO_copy_async_001
@@ -519,14 +525,12 @@ describe('fileIO_fs_copy', function () {
    * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_015', Level.LEVEL3, async function (done) {
-   let fpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_015';
-   let destpath = fpath + 'dest';
-   expect(prepare2GFile(fpath)).assertTrue();
-   let srcDirUri = fileUri.getUriFromPath(fpath);
+   let destpath = fpath2G + 'dest';
+   let srcDirUri = fileUri.getUriFromPath(fpath2G);
    let dstDirUri = fileUri.getUriFromPath(destpath);
    let copySignal = new fs.TaskSignal;
    copySignal.onCancel();
-   let stat1 = fileIO.statSync(fpath);
+   let stat1 = fileIO.statSync(fpath2G);
    console.log('fileIO_copy_async_015 stat1: ' + stat1.size);
    let progressListener = (progress) => {
      console.info(`progressSize15: ${progress.processedSize}, totalSize15: ${progress.totalSize}`);
@@ -549,6 +553,7 @@ describe('fileIO_fs_copy', function () {
      console.log('fileIO_copy_async_015 stat2: ' + stat2.size);
      expect(stat2.size < stat1.size).assertTrue();
      expect(e.code == 13900049 && e.message == 'Operation canceled').assertTrue();
+     fs.unlinkSync(destpath);
      done();
    }
   }); 
@@ -562,14 +567,12 @@ describe('fileIO_fs_copy', function () {
    * @tc.level  LEVEL3
    */
   it('fileIO_copy_async_016', Level.LEVEL3, async function (done) {
-    let fpath = await featureAbility.getContext().getFilesDir() + '/fileIO_copy_async_016';
-    let destpath = fpath + 'dest';
-    expect(prepare2GFile(fpath)).assertTrue();
-    let srcDirUri = fileUri.getUriFromPath(fpath);
+    let destpath = fpath2G + 'dest';
+    let srcDirUri = fileUri.getUriFromPath(fpath2G);
     let dstDirUri = fileUri.getUriFromPath(destpath);
     let copySignal = new fs.TaskSignal;
     copySignal.onCancel();
-    let stat1 = fileIO.statSync(fpath);
+    let stat1 = fileIO.statSync(fpath2G);
     console.log('fileIO_copy_async_016 stat1: ' + stat1.size);
     let progressListener = (progress) => {
       console.info(`progressSize16: ${progress.processedSize}, totalSize16: ${progress.totalSize}`);
@@ -590,6 +593,7 @@ describe('fileIO_fs_copy', function () {
           console.log('fileIO_copy_async_016 stat2: ' + stat2.size);
           expect(err.code == 13900049 && err.message == 'Operation canceled').assertTrue();
           expect(stat2.size < stat1.size).assertTrue();
+          fs.unlinkSync(destpath);
         }
         done();
       });

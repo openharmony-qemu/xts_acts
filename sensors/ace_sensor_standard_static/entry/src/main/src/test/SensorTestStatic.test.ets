@@ -4657,5 +4657,50 @@ export default function SensorJsStaticTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_020
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_020
+     * @tc.desc   Test getSensorListByDeviceSync without deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_020-------------------------");
+      const TAG = 'GetSensorListByDeviceSync_JSTest_020'
+      try {
+        const result = sensor.getSensorListByDeviceSync();
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No local sensors found. Test case will return true.');
+          done();
+        } else {
+          const sensorInfo = result[0];
+          const onSensorCallback = (data: sensor.AccelerometerResponse) => {
+            console.info('Accelerometer data received: ' + JSON.stringify(data));
+          };
+          let sensorInfoParam = {
+            deviceId: -1,
+            sensorIndex: 0
+          } as sensor.SensorInfoParam;
+
+          const options = {
+            interval: 100000000,
+            sensorInfoParam: sensorInfoParam
+          } as sensor.Options;
+
+          sensor.onAccelerometerChange(onSensorCallback, options);
+          setTimeout(() => {
+            sensor.offAccelerometerChange(sensorInfoParam, onSensorCallback);
+            done();
+          }, 500);
+        }
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code == 201).assertTrue();
+        done();
+      }
+    })
   })
 }

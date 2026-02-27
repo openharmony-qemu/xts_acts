@@ -36,7 +36,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function maskBackgroundBlurStyleTest() {
   describe('maskBackgroundBlurStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("maskBackgroundBlurStyleTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility")
     });

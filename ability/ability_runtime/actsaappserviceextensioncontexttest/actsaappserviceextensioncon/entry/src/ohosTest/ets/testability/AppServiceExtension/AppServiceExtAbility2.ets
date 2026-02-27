@@ -338,6 +338,54 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityAppCloneNotSupported', 'AppServiceExtension_4200', error);
       }
+    } else if(want.parameters?.TestFlag === 'startAbilityNullWant') {
+      try {
+        this.context.startAbility(null).then(() => {
+          successReturn('startAbilityNullWant', 'AppServiceExtension_4300');
+        }).catch((error: BusinessError) => {
+          errorReturn('startAbilityNullWant', 'AppServiceExtension_4300', error);
+        });
+      } catch (error) {
+        errorReturn('startAbilityNullWant', 'AppServiceExtension_4300', error);
+      }
+    } else if(want.parameters?.TestFlag === 'startAbilityUndefinedWant') {
+      try {
+        this.context.startAbility(undefined).then(() => {
+          successReturn('startAbilityUndefinedWant', 'AppServiceExtension_4400');
+        }).catch((error: BusinessError) => {
+          errorReturn('startAbilityUndefinedWant', 'AppServiceExtension_4400', error);
+        });
+      } catch (error) {
+        errorReturn('startAbilityUndefinedWant', 'AppServiceExtension_4400', error);
+      }
+    } else if(want.parameters?.TestFlag === 'startAbilityNullOptions') {
+      let wantInfo: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'MyUIAbility2'
+      };
+      try {
+        this.context.startAbility(wantInfo, null).then(() => {
+          successReturn('startAbilityNullOptions', 'AppServiceExtension_5800');
+        }).catch((error: BusinessError) => {
+          errorReturn('startAbilityNullOptions', 'AppServiceExtension_5800', error);
+        });
+      } catch (error) {
+        errorReturn('startAbilityNullOptions', 'AppServiceExtension_5800', error);
+      }
+    } else if(want.parameters?.TestFlag === 'startAbilityUndefinedOptions') {
+      let wantInfo: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'MyUIAbility2'
+      };
+      try {
+        this.context.startAbility(wantInfo, undefined).then(() => {
+          successReturn('startAbilityUndefinedOptions', 'AppServiceExtension_5900');
+        }).catch((error: BusinessError) => {
+          errorReturn('startAbilityUndefinedOptions', 'AppServiceExtension_5900', error);
+        });
+      } catch (error) {
+        errorReturn('startAbilityUndefinedOptions', 'AppServiceExtension_5900', error);
+      }
     }
   }
 

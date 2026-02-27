@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_fixedParentMarPad() {
   describe('FlexWrapReverse_fixedParentMarPad', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexWrapReverse_fixedParentMarPad beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

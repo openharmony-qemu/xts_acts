@@ -2214,6 +2214,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(2000);
               pipController.updatePiPControlStatus(pipWindow.PiPControlType.CAMERA_SWITCH, pipWindow.PiPControlStatus.CLOSE);
               console.info(`${message} Succeeded updatePiPControlStatus CAMERA_SWITCH to CLOSE`);
+              await sleep(2000)
+              pipController.updatePiPControlStatus(pipWindow.PiPControlType.MUTE_SWITCH, pipWindow.PiPControlStatus.OPEN);
+              console.info(`${message} Succeeded updatePiPControlStatus MUTE_SWITCH to OPEN`);
+              await sleep(2000)
+              pipController.updatePiPControlStatus(pipWindow.PiPControlType.MUTE_SWITCH, pipWindow.PiPControlStatus.CLOSE);
+              console.info(`${message} Succeeded updatePiPControlStatus MUTE_SWITCH to CLOSE`);
+              await sleep(2000)
+              pipController.updatePiPControlStatus(pipWindow.PiPControlType.MICROPHONE_SWITCH, pipWindow.PiPControlStatus.OPEN);
+              console.info(`${message} Succeeded updatePiPControlStatus MICROPHONE_SWITCH to OPEN`);
 
               console.info(`${message} count is：${count}`);
               expect(0).assertEqual(count);
@@ -2467,6 +2476,19 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(1000);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, true);
               console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PLAY_PAUSE true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PREVIOUS, true)
+              console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PREVIOUS true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PREVIOUS, false)
+              console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PREVIOUS false`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_NEXT, true)
+              console.info(`${message} Succeeded setPiPControlEnabled VIDEO_NEXT true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_NEXT, false)
+              console.info(`${message} Succeeded setPiPControlEnabled VIDEO_NEXT false`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, true)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, false)
+              console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD false`);
+              expect(true).assertTrue();
 
               done();
             } catch (error) {
@@ -2540,6 +2562,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(1000);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.MICROPHONE_SWITCH, true);
               console.info(`${message} Succeeded setPiPControlEnabled MICROPHONE_SWITCH true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.HANG_UP_BUTTON, true)
+              console.info(`${message} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.HANG_UP_BUTTON, true)
+              console.info(`${message} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
+              console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
+              pipController.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
+              console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
+              expect(true).assertTrue();
 
               done();
             } catch (error) {
@@ -5722,7 +5753,139 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
 
-     /**
+    /**
+     * @tc.name   tesCreate_null_undefined2
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0200
+     * @tc.desc   tesCreate_null_undefined2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_null_undefined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_null_undefined2!';
+      let pipController:pipWindow.PiPController| undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let config:pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        controlGroups: []
+      };
+      if (isPipWindowEnabled) {
+        try {
+          await pipWindow.create(config);
+          expect(true).assertTrue();
+          done();
+        } catch (err) {
+          console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   tesCreate_navigation_null
+     * @tc.number SUB_WMS_CREATE_PARAMETER_0500
+     * @tc.desc   tesCreate_navigation_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreate_navigation_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesCreate_navigation_null!';
+      let pipController:pipWindow.PiPController| undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let config:pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: ''
+      };
+      if (isPipWindowEnabled) {
+        try {
+          await pipWindow.create(config);
+          expect(true).assertTrue();
+          done();
+        } catch (err) {
+          console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   tesupdateContentNode_null_undefined
+     * @tc.number SUB_WMS_SETAUTOSTARTENABLED_PARAMETER_0100
+     * @tc.desc   tesupdateContentNode_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesupdateContentNode_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'tesupdateContentNode_null_undefined!';
+      let pipController:pipWindow.PiPController| undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let config:pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: ''
+      };
+      if (isPipWindowEnabled) {
+        try {
+          pipController = await pipWindow.create(config);
+          pipController.setAutoStartEnabled(false);
+          expect(true).assertTrue();
+          done();
+        } catch (err) {
+          console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   TestUpdateContentNodeParameter
+     * @tc.number SUB_WMS_UPDATE_CONTENT_NODE_PARAMETER_0100
+     * @tc.desc   TestUpdateContentNodeParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('TestUpdateContentNodeParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const message = 'TestUpdateContentNodeParameter!';
+      let pipController:pipWindow.PiPController| undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let config:pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: ''
+      };
+      if (isPipWindowEnabled) {
+        try {
+          pipController = await pipWindow.create(config);
+          pipController.updateContentNode(undefined);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+  
+   /**
      * @tc.name   tesCreate_null_undefined
      * @tc.number SUB_WMS_CREATE_PARAMETER_0100
      * @tc.desc   tesCreate_null_undefined

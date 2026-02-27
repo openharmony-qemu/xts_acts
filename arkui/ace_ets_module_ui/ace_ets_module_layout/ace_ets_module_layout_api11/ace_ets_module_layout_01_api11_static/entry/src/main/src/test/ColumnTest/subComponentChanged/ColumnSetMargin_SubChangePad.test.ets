@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetMargin_SubChangePad() {
   describe('ColumnSetMargin_SubChangePad', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetMargin_SubChangePad beforeEach start");
       //
 

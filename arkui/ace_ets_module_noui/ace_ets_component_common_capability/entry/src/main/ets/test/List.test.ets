@@ -21,6 +21,17 @@ import LayoutChildrenTest from './assemblycallback/LayoutChildren.test';
 import drawChildrenTest from './CreateComponentObserver/drawChildren.test';
 import xComponentNodeOnCreateNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentNodeOnCreateNullUndefined.test';
 import xComponentNodeChangeRenderTypeNullUndefinedTest from './nullandundefinedcoverage/xcomponent/XComponentNodeChangeRenderTypeNullUndefined.test';
+import accessibilityTextNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityTextNullUndefined.test';
+import accessibilityStateDescriptionNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityStateDescriptionNullUndefined.test';
+import accessibilityActionOptionsNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityActionOptionsNullUndefined.test';
+import accessibilityDefaultFocusFalseTest from './nullandundefinedcoverage/accessibility/AccessibilityDefaultFocusFalse.test';
+import accessibilityGroupNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityGroupNullUndefined.test';
+import uiContextNullUndefinedTest from './nullandundefinedcoverage/UIContext/UIContextNullUndefinedTest.test';
+import accessibilityFocusDrawLevelNullUndefinedTest from './nullandundefinedcoverage/accessibility/AccessibilityFocusDrawLevelNullUndefined.test';
+import componentObserverNullUndefinedTest from './nullandundefinedcoverage/ComponentObserver/ComponentObserverNullUndefinedTest.test';
+import pluginComponentManagerNullUndefinedTest from './nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerNullUndefined.test';
+import uiInspectorNullUndefinedTest from './nullandundefinedcoverage/UIInspector/UIInspectorNullUndefined.test';
+import inspectorCreateComponentObserverNullUndefinedTest from './nullandundefinedcoverage/inspector/InspectorCreateComponentObserverNullUndefined.test';
 
 
 
@@ -33,4 +44,15 @@ export default function testsuite() {
   drawChildrenTest();
   xComponentNodeChangeRenderTypeNullUndefinedTest();
   xComponentNodeOnCreateNullUndefinedTest();
+  accessibilityTextNullUndefinedTest();
+  accessibilityStateDescriptionNullUndefinedTest();
+  accessibilityActionOptionsNullUndefinedTest();
+  accessibilityDefaultFocusFalseTest();
+  accessibilityGroupNullUndefinedTest();
+  uiContextNullUndefinedTest();
+  accessibilityFocusDrawLevelNullUndefinedTest();
+  componentObserverNullUndefinedTest();
+  pluginComponentManagerNullUndefinedTest();
+  uiInspectorNullUndefinedTest();
+  inspectorCreateComponentObserverNullUndefinedTest();
 }

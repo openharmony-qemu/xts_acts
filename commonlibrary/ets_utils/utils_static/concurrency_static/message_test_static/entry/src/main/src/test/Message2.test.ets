@@ -75,8 +75,8 @@ export default function MessageTest2() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB | undefined;
-          let message: concurrency.Message = new concurrency.Message(callback!, handler);
+          let callback: CB = () => {};
+          let message: concurrency.Message = new concurrency.Message(callback, handler);
           handler.sendMessage(message);
           expect(message.getWhat()).assertEqual(0);
           while (!flag) {
@@ -538,8 +538,8 @@ export default function MessageTest2() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB | undefined;
-          let message: concurrency.Message = new concurrency.Message(callback!, handler);
+          let callback: CB = () => {};
+          let message: concurrency.Message = new concurrency.Message(callback, handler);
           let handler1: concurrency.MessageHandler = message.getTarget();
           handler.sendMessage(message);
           expect(handler1).assertEqual(handler);
@@ -2477,7 +2477,7 @@ export default function MessageTest2() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             flag = true;
           }, worker);
           let msg = new concurrency.Message(handler)
@@ -2556,7 +2556,7 @@ export default function MessageTest2() {
         worker.start();
         try {
           handler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             flag = true;
           }, worker);
           let msg = new concurrency.Message(handler)

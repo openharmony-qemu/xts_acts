@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function editMeunOptionsTest() {
   describe('editMeunOptionsTest', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("editMeunOptionsTest beforeAll start");
 
 

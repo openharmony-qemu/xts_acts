@@ -43,7 +43,7 @@ export default function imageWebp() {
     let globalPacker: image.ImagePacker | undefined = undefined;
     let isSupportGifEncode: boolean | undefined;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       isSupportGifEncode = image.createImagePacker().supportedFormats.includes("image/gif");

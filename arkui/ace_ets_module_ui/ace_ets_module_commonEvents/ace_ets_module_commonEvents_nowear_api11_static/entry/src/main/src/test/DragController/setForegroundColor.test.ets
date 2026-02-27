@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function setForegroundColor() {
   describe('setForegroundColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.nowear.api11.static", "EntryAbility")

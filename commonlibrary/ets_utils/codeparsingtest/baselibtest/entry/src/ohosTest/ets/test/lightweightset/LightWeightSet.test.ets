@@ -1676,7 +1676,223 @@ export default function LightWeightSetTest() {
         expect().assertFail();
       }
     })
+    /**
+     * @tc.name   testLightWeightSetCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase001';
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      try {
+        lightWeightSet.addAll(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
 
+      try {
+        lightWeightSet.addAll(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase002';
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      try {
+        lightWeightSet.hasAll(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        lightWeightSet.hasAll(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase003';
+      let lightWeightSet =
+        new LightWeightSet<number | string | boolean | undefined | null | Object | LightWeightSet<number | string | boolean | undefined | null | Object>>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      let lightWeightSet2 = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      let result1 = lightWeightSet.hasAll(lightWeightSet2);
+      lightWeightSet.add(lightWeightSet2);
+      let result2 = lightWeightSet.hasAll(lightWeightSet2);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0400
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase004';
+      let lightWeightSet1 = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet1.add(null);
+      let result1 = lightWeightSet1.equal(null);
+      let lightWeightSet2 = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+
+      lightWeightSet2.add(undefined);
+      let result2 = lightWeightSet2.equal(undefined);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0500
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase005';
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      try {
+        lightWeightSet.increaseCapacityTo(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        lightWeightSet.increaseCapacityTo(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0600
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase006';
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      try {
+        let result1 = lightWeightSet.removeAt(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        let result2 = lightWeightSet.removeAt(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0700
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase007';
+      let num = 0;
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      lightWeightSet.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, null);
+
+      lightWeightSet.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
+
+    /**
+     * @tc.name   testLightWeightSetCase008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0800
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSetCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testLightWeightSetCase008';
+      let lightWeightSet = new LightWeightSet<number | string | boolean | undefined | null | Object>();
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("sparrow");
+      try {
+        let result1 = lightWeightSet.getValueAt(null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        let result2 = lightWeightSet.getValueAt(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.code} ${err}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
   })
 }
 

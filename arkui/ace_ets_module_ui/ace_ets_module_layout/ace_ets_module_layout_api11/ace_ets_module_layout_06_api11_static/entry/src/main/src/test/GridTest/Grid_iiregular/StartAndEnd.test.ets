@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StartAndEnd() {
   describe('StartAndEnd', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StartAndEnd beforeAll start");
             
       await UtilsTest.msSleep(4000)

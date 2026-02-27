@@ -27,6 +27,7 @@
     },
     {
       "test-file-name": [
+        "ActsImageXtsMainTest.hap",
         "ActsImageXtsTest.hap"
       ],
       "type": "AppInstallKit",

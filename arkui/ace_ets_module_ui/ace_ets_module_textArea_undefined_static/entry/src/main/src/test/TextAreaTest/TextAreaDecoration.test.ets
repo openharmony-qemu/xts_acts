@@ -24,7 +24,7 @@ import { Driver, ON, Component } from '@kit.TestKit';
 
 export default function TextAreaDecorationTest() {
   describe('TextAreaDecorationTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaDecorationTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.textArea.undefined.static", "EntryAbility")

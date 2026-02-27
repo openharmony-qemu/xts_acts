@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function allowOverride() {
   describe('allowOverride', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("allowOverride beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

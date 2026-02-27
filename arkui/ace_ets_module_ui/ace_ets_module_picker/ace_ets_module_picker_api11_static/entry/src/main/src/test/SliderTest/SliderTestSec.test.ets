@@ -63,7 +63,7 @@ async function forKey(key: string, text: string) {
 export default function SliderTestSec() {
   describe('SliderTestSec', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from '../../Util.test';
 
 export default function tabsOnContentWillChangeIndex10JsunitTest() {
   describe('tabsOnContentWillChangeIndex10JsunitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tabsOnContentWillChangeIndex10JsunitTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");

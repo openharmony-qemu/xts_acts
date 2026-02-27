@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function EntryOptionPage() {
   describe('EntryOptionPage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EntryOptionPage beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");

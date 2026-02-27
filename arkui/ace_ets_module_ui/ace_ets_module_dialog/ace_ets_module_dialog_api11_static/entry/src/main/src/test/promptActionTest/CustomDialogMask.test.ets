@@ -63,7 +63,7 @@ export default function CustomDialogMaskTest() {
   const waitUiReadyMs: Int = 500;
 
   describe('CustomDialogMaskTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomDialogMaskTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

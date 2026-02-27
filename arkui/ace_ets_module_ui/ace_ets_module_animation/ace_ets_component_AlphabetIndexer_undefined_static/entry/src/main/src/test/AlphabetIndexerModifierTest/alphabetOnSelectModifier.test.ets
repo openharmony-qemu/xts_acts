@@ -27,7 +27,7 @@ import {
 
 export default function AlphabetOnSelectModifierTest() {
   describe('AlphabetOnSelectModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetOnSelectModifierTest beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.alphabet.undefined.static", "EntryAbility");

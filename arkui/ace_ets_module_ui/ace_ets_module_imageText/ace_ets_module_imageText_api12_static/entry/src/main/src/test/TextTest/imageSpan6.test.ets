@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function imageSpanTest6() {
   describe('imageSpanTest6', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("imageSpanTest6 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

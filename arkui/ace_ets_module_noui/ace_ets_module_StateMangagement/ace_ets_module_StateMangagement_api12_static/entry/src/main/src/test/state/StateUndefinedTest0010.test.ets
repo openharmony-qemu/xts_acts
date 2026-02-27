@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function StateUndefinedTest0010() {
   describe('StateUndefinedTest0010', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateUndefinedTest0010 beforeEach start");
 
 

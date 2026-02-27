@@ -37,7 +37,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 
 export default function VideoJsunit01() {
   describe('VideoJsunit01', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
     });

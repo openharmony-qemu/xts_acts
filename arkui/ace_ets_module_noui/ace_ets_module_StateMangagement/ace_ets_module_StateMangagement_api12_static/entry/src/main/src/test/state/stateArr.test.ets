@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function stateArr() {
   describe('stateArr', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stateArr beforeEach start");
 
 

@@ -175,5 +175,113 @@ export default function audioPickerCallback(abilityContext: Context) {
       let testNum = "test_Audiopicker_Save_Callback_001";
       await saveWithoutSelect(testNum, done);
     });
+
+    /**
+    * @tc.name   AudioViewPicker_select_callback_000
+    * @tc.number SUB_DF_AudioViewPicker_select_callback_0000
+    * @tc.desc   Test AudioViewPicker.select() interfaces with null parameter and callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_select_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().select(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`AudioViewPicker_select_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`AudioViewPicker_select_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_select_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_select_callback_001
+    * @tc.number SUB_DF_AudioViewPicker_select_callback_0010
+    * @tc.desc   Test AudioViewPicker.select() interfaces with undefined parameter and callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().select(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`AudioViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`AudioViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_select_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_callback_000
+    * @tc.number SUB_DF_AudioViewPicker_save_callback_0000
+    * @tc.desc   Test AudioViewPicker.save() interfaces with null parameter and callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().save(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`AudioViewPicker_save_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`AudioViewPicker_save_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_save_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_callback_001
+    * @tc.number SUB_DF_AudioViewPicker_save_callback_0010
+    * @tc.desc   Test AudioViewPicker.save() interfaces with undefined parameter and callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().save(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`AudioViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`AudioViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_save_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   });
 }

@@ -86,9 +86,9 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapDestroyNormal, Function | SmallTest 
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeBitmapTest, testBitmapDestroyNull, Function | SmallTest | Level3) {
+    OH_Drawing_Bitmap *bitmap = nullptr;
     OH_Drawing_BitmapDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(bitmap, nullptr);
 }
 
 OH_Drawing_ColorFormat colorFormats[] = {

@@ -35,7 +35,7 @@ export default function stageFontTest() {
   describe('stageFontTest', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stageFontTest beforeEach start");
 
 

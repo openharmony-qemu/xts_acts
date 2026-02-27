@@ -34,7 +34,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
   let TEST_SUITE_NAME: string = 'SUB_NOTIFICATION_ANS_REDUCE_ALERTS_TEST ===>'
 
   describe('SUB_NOTIFICATION_ANS_REDUCE_ALERTS_TEST', () => {
-    beforeAll( () => {
+    beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
@@ -65,7 +65,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await notificationManager.cancelAll().then(() => {
         console.info(TEST_SUITE_NAME + `Succeeded in canceling all notification.`);
       }).catch((err: Error):void => {

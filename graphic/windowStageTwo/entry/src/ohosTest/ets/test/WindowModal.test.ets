@@ -1566,7 +1566,102 @@ export default function windowModalTest() {
         }
       }
     })
-
+    /**
+     * @tc.name   testcreateSubWindowWithOptions_WINDOW_MODALITY
+     * @tc.number testcreateSubWindowWithOptions_WINDOW_MODALITY_0100
+     * @tc.desc   testcreateSubWindowWithOptions_WINDOW_MODALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testcreateSubWindowWithOptions_WINDOW_MODALITY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testcreateSubWindowWithOptions_WINDOW_MODALITY';
+      let windowClass = windowStage.getMainWindowSync()
+      await sleep(300);
+      if(isFreeWindowMode){
+        try {
+          let options : window.SubWindowOptions = {
+          title: 'title',
+          decorEnabled: true,
+          isModal: true,
+          modalityType:window.ModalityType.WINDOW_MODALITY,
+          maximizeSupported:true,
+          outlineEnabled:true
+        };
+        let promise = windowClass.createSubWindowWithOptions('testcreateSubWindowWithOptions_WINDOW_MODALITY', options);
+        promise.then(async (data) => {
+          console.info(message+`Succeeded in creating the subwindow. Data: ${JSON.stringify(data)}`);
+          expect(data!==null).assertTrue();
+          await data.destroyWindow();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(message+`Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (exception) {
+        if (exception.code == 801) {
+          console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
+          done();
+        } else {
+          console.error(`${message} Failed to set window modal. Cause code: ${exception.code}, message: ${exception.message}`)
+          expect().assertFail();
+          done();
+        }
+      }
+      }else{
+        done();
+      }
+      
+    })
+    /**
+     * @tc.name   testcreateSubWindowWithOptions_APPLICATION_MODALITY
+     * @tc.number testcreateSubWindowWithOptions_APPLICATION_MODALITY_0200
+     * @tc.desc   testcreateSubWindowWithOptions_APPLICATION_MODALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testcreateSubWindowWithOptions_APPLICATION_MODALITY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testcreateSubWindowWithOptions_APPLICATION_MODALITY';
+      let windowClass = windowStage.getMainWindowSync()
+      await sleep(300);
+      if(isFreeWindowMode){
+        try {
+          let options : window.SubWindowOptions = {
+          title: 'title',
+          decorEnabled: true,
+          isModal: true,
+          modalityType:window.ModalityType.APPLICATION_MODALITY,
+          maximizeSupported:false,
+          outlineEnabled:false
+        };
+        let promise = windowClass.createSubWindowWithOptions('testcreateSubWindowWithOptions_APPLICATION_MODALITY', options);
+        promise.then(async (data) => {
+          console.info(message+`Succeeded in creating the subwindow. Data: ${JSON.stringify(data)}`);
+          expect(data!==null).assertTrue();
+          await data.destroyWindow();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(message+`Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (exception) {
+        if (exception.code == 801) {
+          console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
+          done();
+        } else {
+          console.error(`${message} Failed to set window modal. Cause code: ${exception.code}, message: ${exception.message}`)
+          expect().assertFail();
+          done();
+        }
+      }
+      }else{
+        done();
+      }
+      
+    })
     
    
 

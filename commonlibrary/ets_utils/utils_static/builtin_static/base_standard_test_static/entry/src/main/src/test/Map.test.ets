@@ -33,7 +33,7 @@ interface ObjectType {}
 
 export default function MapTest() {
   describe('mapTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemOffsetTest() {
   describe('Grid_RowCol_ItemOffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("grid_RowCol_ItemOffsetTest beforeAll start");
            
       await UtilsTest.msSleep(4000)

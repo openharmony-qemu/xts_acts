@@ -2444,7 +2444,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2497,7 +2497,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2550,7 +2550,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2590,7 +2590,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -2630,7 +2630,7 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if(deviceType === '2in1'){
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
           console.info(caseName+ ' minimize success');
@@ -3639,6 +3639,296 @@ export default function displayTest() {
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testGetDisplaySync_null_undefined
+     * @tc.number SUB_WMS_GET_DISPLAY_BY_ID_SYNC_PARAMETER_0100
+     * @tc.desc   testGetDisplaySync_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetDisplaySync_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testGetDisplaySync_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.getDisplayByIdSync(null);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.getDisplayByIdSync(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+    
+    /**
+     * @tc.name   testonChangeWithAttribute_null_undefined
+     * @tc.number SUB_WMS_ON_CHANGE_WITH_ATTRIBUTE_PARAMETER_0100
+     * @tc.desc   testonChangeWithAttribute_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testonChangeWithAttribute_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testonChangeWithAttribute_null_undefined ';
+      console.log(caseName + 'begin');
+      const callback = (res: number) => {
+        console.log(caseName + ' callback result: ' + res);
+      }
+      try {
+        display.onChangeWithAttribute(null, callback);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.onChangeWithAttribute(undefined, callback);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testonChangeWithAttribute_no_resiger
+     * @tc.number SUB_WMS_ON_CHANGE_WITH_ATTRIBUTE_PARAMETER_0200
+     * @tc.desc   testonChangeWithAttribute_no_resiger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testonChangeWithAttribute_no_resiger', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testonChangeWithAttribute_no_resiger ';
+      console.log(caseName + 'begin');
+      const callback = (res: number) => {
+        console.log(caseName + ' callback result: ' + res);
+      }
+      try {
+        display.onChangeWithAttribute(null, callback);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.onChangeWithAttribute(undefined, callback);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesCreateVirtualScreen_null_undefined
+     * @tc.number SUB_WMS_CREATE_VIRTUAL_SCREEN_PARAMETER_0100
+     * @tc.desc   tesCreateVirtualScreen_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreateVirtualScreen_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesCreateVirtualScreen_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.createVirtualScreen(null);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.createVirtualScreen(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesSetVirtualScreenSurface_null
+     * @tc.number SUB_WMS_SETVIRTUAL_SCREEN_SURFACE_PARAMETER_0100
+     * @tc.desc   tesSetVirtualScreenSurface_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesSetVirtualScreenSurface_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesSetVirtualScreenSurface_null ';
+      console.log(caseName + 'begin');
+      try {
+        display.setVirtualScreenSurface(null, null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesSetVirtualScreenSurface_undefined
+     * @tc.number SUB_WMS_SETVIRTUAL_SCREEN_SURFACE_PARAMETER_0200
+     * @tc.desc   tesSetVirtualScreenSurface_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesSetVirtualScreenSurface_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesSetVirtualScreenSurface_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.setVirtualScreenSurface(undefined, undefined);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertGlobalToRelativeCoordinate_null
+     * @tc.number SUB_WMS_CONVERT_GLOBAL_TO_RELATIVE_COORDINATE_PARAMETER_0100
+     * @tc.desc   tesConvertGlobalToRelativeCoordinate_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertGlobalToRelativeCoordinate_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertGlobalToRelativeCoordinate_null ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertGlobalToRelativeCoordinate(null, null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertGlobalToRelativeCoordinate_undefined
+     * @tc.number SUB_WMS_CONVERT_GLOBAL_TO_RELATIVE_COORDINATE_PARAMETER_0200
+     * @tc.desc   tesConvertGlobalToRelativeCoordinate_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertGlobalToRelativeCoordinate_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertGlobalToRelativeCoordinate_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertGlobalToRelativeCoordinate(undefined, undefined);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertRelativeToGlobalCoordinate_null_undefined
+     * @tc.number SUB_WMS_CONVERT_RELATIVE_TO_GLOBAL_COORDINATE_PARAMETER_0100
+     * @tc.desc   tesConvertRelativeToGlobalCoordinate_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertRelativeToGlobalCoordinate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertRelativeToGlobalCoordinate_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertRelativeToGlobalCoordinate(null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
+      }
+      try {
+        display.convertRelativeToGlobalCoordinate(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+    
+    /**
+     * @tc.name   tesGetBrightnessInfo_null_undefined
+     * @tc.number SUB_WMS_GET_BRIGHTNESSINFO_PARAMETER_0100
+     * @tc.desc   tesGetBrightnessInfo_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesGetBrightnessInfo_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesGetBrightnessInfo_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.getBrightnessInfo(null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
+      }
+      try {
+        display.getBrightnessInfo(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e)) ;
+        expect(e.code).assertEqual(1400004);
         done()
       }
     });

@@ -43,7 +43,7 @@ function sleep(time: number) {
 
 export default function alphabetIndexerJsunit() {
   describe('alphabetIndexerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

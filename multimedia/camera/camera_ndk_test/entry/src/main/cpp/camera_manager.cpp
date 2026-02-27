@@ -585,13 +585,19 @@ Camera_ErrorCode NDKCamera::CreateHeifPhotoOutput(char* photoSurfaceId, int idx)
 Camera_ErrorCode NDKCamera::CreateVideoOutput(char* videoId)
 {
     LOG("ndkXTS CreateVideoOutput start.");
+    float errorRange = 0.1;
     videoProfile_ = cameraOutputCapability_->videoProfiles[0];
     for (decltype(cameraOutputCapability_->videoProfilesSize) i = 0; i < cameraOutputCapability_->videoProfilesSize;
          i++) {
         if (cameraOutputCapability_->videoProfiles[i]->size.width == DEFAULT_VIDEO_PROFILE.size.width &&
             cameraOutputCapability_->videoProfiles[i]->size.height == DEFAULT_VIDEO_PROFILE.size.height) {
-            videoProfile_ = cameraOutputCapability_->videoProfiles[i];
-            break;
+            if ((float)(cameraOutputCapability_->videoProfiles[i]->size.width /
+                cameraOutputCapability_->videoProfiles[i]->size.height) -
+                (float)(cameraOutputCapability_->previewProfiles[0]->size.width /
+                cameraOutputCapability_->previewProfiles[0]->size.height) < errorRange) {
+                videoProfile_ = cameraOutputCapability_->videoProfiles[i];
+                break;
+            }
         }
     }
     LOG("ndkXTS CreateVideoOutput videoProfiles start.");

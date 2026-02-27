@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function columnJsunit() {
   describe('columnTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("columnTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")

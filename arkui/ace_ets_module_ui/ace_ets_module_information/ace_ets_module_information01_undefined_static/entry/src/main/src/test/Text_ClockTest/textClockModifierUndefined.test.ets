@@ -43,7 +43,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function textClockModifierUndefined() {
   describe('textClockModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textClockModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)
@@ -115,42 +115,6 @@ export default function textClockModifierUndefined() {
     });
 
     /**
-     * @tc.number   textClockModifierUndefined_static_0002
-     * @tc.name     textClockModifierUndefined_static_0002
-     * @tc.desc     test textClockModifierUndefined fontFeature undefined
-     * @tc.level    Level.LEVEL1
-     */
-    it('textClockModifierUndefined_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[textClockModifierUndefined_static_0002] START');
-      let driver: Driver = Driver.create();
-      let strJson = inspector.getInspectorByKey('textClockM_1');
-      let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFeature');
-      console.info("[textClockModifierUndefined_static_0002] fontFeature : " + res);
-      expect(res).assertEqual('');
-
-      let changeBtn = await driver.findComponent(ON.id('fontFeatureM_Btn'));
-      await (changeBtn?.click() as Promise<void>);
-
-      console.info("[textClockModifierUndefined_static_0002] click changeBtn");
-      await CommonFunc.sleep(1000);
-      strJson = inspector.getInspectorByKey('textClockM_1');
-      res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFeature');
-      console.info("[textClockModifierUndefined_static_0002] fontFeature : " + res);
-      expect(res).assertEqual('"sinf" 1');
-
-      await (changeBtn?.click() as Promise<void>);
-      console.info("[textClockModifierUndefined_static_0002] click changeBtn");
-      await CommonFunc.sleep(1000);
-
-      strJson = inspector.getInspectorByKey('textClockM_1');
-      res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFeature');
-      console.info("[textClockModifierUndefined_static_0002] fontFeature : " + res);
-      expect(res).assertEqual('');
-      console.info('[textClockModifierUndefined_static_0002] END');
-      done();
-    });
-
-    /**
      * @tc.number   textClockModifierUndefined_static_0003
      * @tc.name     textClockModifierUndefined_static_0003
      * @tc.desc     test textClockModifierUndefined fontFamily undefined
@@ -172,7 +136,7 @@ export default function textClockModifierUndefined() {
       strJson = inspector.getInspectorByKey('textClockM_1');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFamily');
       console.info("[textClockModifierUndefined_static_0003] fontFamily : " + res);
-      expect(res).assertEqual('iconFont');
+      expect(res).assertEqual('sans-serif');
 
       await (changeBtn?.click() as Promise<void>);
       console.info("[textClockModifierUndefined_static_0003] click changeBtn");

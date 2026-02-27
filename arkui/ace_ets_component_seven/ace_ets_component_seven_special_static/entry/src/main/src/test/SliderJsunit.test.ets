@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function sliderTest() {
     describe('sliderJsunit', () => {
-      beforeAll(() => {
+      beforeAll(async (): Promise<void> => {
         console.info("sliderJsunit beforeEach start");
         await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       });

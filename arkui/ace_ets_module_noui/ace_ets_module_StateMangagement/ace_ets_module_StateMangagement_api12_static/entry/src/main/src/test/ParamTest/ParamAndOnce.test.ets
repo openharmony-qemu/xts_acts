@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ParamAndOnceTest() {
   describe('ParamAndOnceTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParamAndOnceTest beforeEach start");
 
 

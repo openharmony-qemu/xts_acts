@@ -57,7 +57,7 @@ export default function SXsymbolStyleJsunit() {
       }
       console.info("SXsymbolStyleJsunit beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXsymbolStyleJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

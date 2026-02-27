@@ -24,6 +24,21 @@ import borderJsunit from './CommonAttrs/BorderJsunit.test';
 import BorderRadiusRenderStrategyTest from './CommonAttrs/BorderRadiusRenderStrategyTest.ets';
 import FlexFourBoundaryTest from './CommonAttrs/FlexFourBoundaryTest.ets';
 import LayoutFourReturnTest from './CommonCustom/LayoutFourReturnTest.ets';
+import ConstraintSizeNullUndefinedTest from './CommonAttrs/ConstraintSizeNullUndefined.test';
+import LayoutWeightNullUndefinedTest from './CommonAttrs/LayoutWeightNullUndefined.test';
+import SafeAreaPaddingNullUndefinedTest from './CommonAttrs/SafeAreaPaddingNullUndefined.test';
+import ChainWeightNullUndefinedTest from './CommonAttrs/ChainWeightNullUndefined.test';
+import GridContainerNullUndefinedTest from './CommonAttrs/GridContainerNullUndefined.test';
+import FlexLayoutNullUndefinedTest from './CommonAttrs/FlexLayoutNullUndefined.test';
+import SizeNullUndefinedTest from './CommonAttrs/SizeNullUndefined.test';
+import AspectRatioNullUndefinedTest from './CommonAttrs/AspectRatioNullUndefined.test';
+import DisplayPriorityNullUndefinedTest from './CommonAttrs/DisplayPriorityNullUndefined.test';
+import AlignNullUndefinedTest from './CommonAttrs/AlignNullUndefined.test';
+import DirectionNullUndefinedTest from './CommonAttrs/DirectionNullUndefined.test';
+import OffsetNullUndefinedTest from './CommonAttrs/OffsetNullUndefined.test';
+import ChainModeNullUndefinedTest from './CommonAttrs/ChainModeNullUndefined.test';
+import UseSizeTypeNullUndefinedTest from './CommonAttrs/UseSizeTypeNullUndefined.test';
+import MarkAnchorNullUndefinedTest from './CommonAttrs/MarkAnchorNullUndefined.test';
 
 export default function testsuite() {
   Calc01();
@@ -37,4 +52,19 @@ export default function testsuite() {
   BorderRadiusRenderStrategyTest();
   FlexFourBoundaryTest();
   LayoutFourReturnTest();
+  ConstraintSizeNullUndefinedTest();
+  LayoutWeightNullUndefinedTest();
+  SafeAreaPaddingNullUndefinedTest();
+  ChainWeightNullUndefinedTest();
+  GridContainerNullUndefinedTest();
+  FlexLayoutNullUndefinedTest();
+  SizeNullUndefinedTest();
+  AspectRatioNullUndefinedTest();
+  DisplayPriorityNullUndefinedTest();
+  AlignNullUndefinedTest();
+  DirectionNullUndefinedTest();
+  OffsetNullUndefinedTest();
+  ChainModeNullUndefinedTest();
+  UseSizeTypeNullUndefinedTest();
+  MarkAnchorNullUndefinedTest();
 }

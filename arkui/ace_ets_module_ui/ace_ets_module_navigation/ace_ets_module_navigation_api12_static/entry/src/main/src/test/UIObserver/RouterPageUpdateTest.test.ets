@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function RouterPageUpdateTest() {
   describe('RouterPageUpdateTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -86,7 +86,7 @@ it('RouterPageUpdateTest_static_0100', Level.LEVEL2, async (done: () => void): P
       await driver.pressBack();
       await CommonFunc.sleep(1000);
 
-      expect(AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);
+      expect(AppStorage.get<int>('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);
       AppStorage.delete('RouterPageUpdatePage_callBackFuncOnCount')
 
       console.info('RouterPageUpdateTest_static_0100 END');

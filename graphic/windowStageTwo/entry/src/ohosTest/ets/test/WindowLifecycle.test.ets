@@ -2065,7 +2065,7 @@ export default function WindowLifecycle() {
       try {
         windowStage.on('windowStageLifecycleEvent', cb1);
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           await windowClass.minimize();
           await sleep(1000);
           console.log(caseName + " callback: timer1 :" + timer);
@@ -2129,7 +2129,7 @@ export default function WindowLifecycle() {
         windowStage.on('windowStageLifecycleEvent', cb1);
         windowStage.on('windowStageLifecycleEvent', cb2);
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           await windowClass.minimize();
           await sleep(1000);
           console.log(caseName + " callback: timer1 :" + timer);
@@ -2199,7 +2199,7 @@ export default function WindowLifecycle() {
         await sleep(100);
         windowStage.off('windowStageLifecycleEvent');
         let windowClass = windowStage.getMainWindowSync();
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           await windowClass.minimize();
           await sleep(1000);
           console.log(caseName + " callback: timer1 :" + timer);
@@ -2579,7 +2579,7 @@ export default function WindowLifecycle() {
     it("testGetAllMainWindowInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetAllMainWindowInfo_0200";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2652,7 +2652,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0200";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2689,7 +2689,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0300";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2726,7 +2726,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0400";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2764,7 +2764,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0500";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2802,7 +2802,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0600";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2840,7 +2840,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0700";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2878,7 +2878,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0800";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2914,7 +2914,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_0900";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2949,7 +2949,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_1000";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -2984,7 +2984,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_1100";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -3019,7 +3019,7 @@ export default function WindowLifecycle() {
     it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testGetMainWindowSnapshot_1200";
       console.log(caseName + " begin");
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
@@ -3482,6 +3482,7 @@ export default function WindowLifecycle() {
         done()
       }
     });
+    
 
   })
 

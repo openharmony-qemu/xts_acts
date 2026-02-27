@@ -27,7 +27,7 @@ import { UtilsTest } from '../Util.test';
 export default function UIPickerOnChangeModifierTest() {
   describe('UIPickerOnChangeModifierTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIPickerOnChangeModifierTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
       await UtilsTest.msSleep(1000)

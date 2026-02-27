@@ -31,7 +31,7 @@ let TAG:string = 'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST ===>'
 export default function ActsCommonEventSupportTest() {
   describe('SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST', ():void => {
     hilog.info(domain,TAG, 'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST START')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

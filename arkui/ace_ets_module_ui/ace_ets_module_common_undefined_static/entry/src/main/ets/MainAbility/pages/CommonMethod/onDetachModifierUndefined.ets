@@ -57,7 +57,6 @@ struct DetachExample {
         .id('button_onDetachModifier2')
       Text('Count' + this.modifier3.count)
         .fontSize(26)
-        .fontWeight(FontWeight.Bold)
         .id('commonmethod_onDetachModifier')
       if (this.isShow3 === true) {
         Text('Text for onDetachModifier 3')

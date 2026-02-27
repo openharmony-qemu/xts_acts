@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TrackMapTest() {
   describe('TrackMapTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TrackMapTest beforeEach start");
 
 

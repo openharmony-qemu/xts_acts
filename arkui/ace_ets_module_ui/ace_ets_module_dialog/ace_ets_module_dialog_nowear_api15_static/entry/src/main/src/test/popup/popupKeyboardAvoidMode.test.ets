@@ -37,7 +37,7 @@ import deviceInfo from "@ohos.deviceInfo"
 export default function popupKeyboardAvoidMode() {
   describe("popupKeyboardAvoidMode", () => {
     let currentDeviceIsPC = false
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("popupKeyboardAvoidMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
       console.info("popupKeyboardAvoidMode beforeAll start")

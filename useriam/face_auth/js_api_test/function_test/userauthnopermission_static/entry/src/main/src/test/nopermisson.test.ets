@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function userAuthTestExecute() {
   describe('userAuthTestExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

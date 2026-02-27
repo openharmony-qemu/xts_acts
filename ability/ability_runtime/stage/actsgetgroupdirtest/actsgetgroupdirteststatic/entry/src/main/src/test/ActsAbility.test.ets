@@ -131,5 +131,26 @@ export default function abilityTest() {
                 done();
             })
         })
+
+        /**
+         * @tc.name   Context_getGroupDir_Static_007
+         * @tc.number Context_getGroupDir_Static_007
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Context_getGroupDir_Static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+            console.log("start Context_getGroupDir_Static_007 =====>");
+            await Utils.msSleep(1000);
+            abilityContext?.getGroupDir("").then(data => {
+                console.error("getGroupDir Context_getGroupDir_Static_007 ====> result data" + data);
+                expect(data).assertEqual("");
+            }).catch((error: Error): void => {
+                console.error("getGroupDir Context_getGroupDir_Static_007 ====> result err" + JSON.stringify(error));
+                expect().assertFail();
+            });
+            done();
+        })
     })
 }

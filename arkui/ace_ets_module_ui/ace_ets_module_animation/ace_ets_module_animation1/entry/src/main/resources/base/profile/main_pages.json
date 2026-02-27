@@ -47,6 +47,12 @@
         "MainAbility/pages/animator/DelayNullUndefined",
         "MainAbility/pages/animator/FillNullUndefined",
         "MainAbility/pages/animator/DirectionNullUndefined",
-        "MainAbility/pages/animator/IterationsNullUndefined"
+        "MainAbility/pages/animator/IterationsNullUndefined",
+        "MainAbility/pages/animator/AnimatorNullUndefined",
+        "MainAbility/pages/animator/CreateNullUndefined",
+        "MainAbility/pages/matrix4/Matrix4TransitUndefined",
+        "MainAbility/pages/global/GlobalPxNullUndefined",
+        "MainAbility/pages/global/AnimateToImmediatelyNullUndefined",
+        "MainAbility/pages/global/AnimateToNullUndefined"
     ]
 }

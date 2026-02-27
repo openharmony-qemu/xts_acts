@@ -40,7 +40,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function MaxwidthTest() {
   describe('MaxwidthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
     })
 

@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function APIParticleEmitter() {
   describe('APIParticleEmitter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIParticleEmitter beforeEach start");
 
       

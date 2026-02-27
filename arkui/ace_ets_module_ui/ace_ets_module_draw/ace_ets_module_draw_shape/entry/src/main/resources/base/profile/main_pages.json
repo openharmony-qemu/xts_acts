@@ -34,6 +34,13 @@
         "MainAbility/pages/Polygon/PolygonResource",
         "MainAbility/pages/Polyline/PolylineResource",
         "MainAbility/pages/Rect/RectResource",
-        "MainAbility/pages/Shape/ShapeResource"
+        "MainAbility/pages/Shape/ShapeResource",
+        "MainAbility/pages/Shape/ShapeNullUndefined",
+        "MainAbility/pages/Shape/ShapeNullUndefined2",
+
+        "MainAbility/pages/Line/lineStartPointNullUndefined",
+        "MainAbility/pages/Path/pathCommandsNullUndefined",
+        "MainAbility/pages/Polygon/polygonPointsNullUndefined",
+        "MainAbility/pages/Polyline/polylinePointsNullUndefined"
     ]
 }

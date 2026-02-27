@@ -15,7 +15,7 @@
 
 import worker from '@ohos.worker'
 import TreeSet from "@ohos.util.TreeSet";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 
 export default function WorkerTest() {
     describe('WorkerTest', function () {
@@ -2301,5 +2301,805 @@ export default function WorkerTest() {
             expect(res).assertEqual(3)
             done();
         })
+
+        // Test ThreadWorker.postMessage with empty array transfer parameter
+        /**
+         * @tc.name   worker_postMessage_empty_array_test_001
+         * @tc.number worker_postMessage_empty_array_test_001
+         * @tc.desc   Test ThreadWorker.postMessage with empty array transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_empty_array_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker_0002.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+                ss.on('message', (event) => {
+                    ss.terminate()
+                });
+                const buffer = new ArrayBuffer(8)
+                ss.postMessage("test message", { transfer: [] })
+
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(buffer.byteLength).assertEqual(8)
+                done()
+            })
+
+        // Test ThreadWorker.postMessage with non-empty array transfer parameter
+        /**
+         * @tc.name   worker_postMessage_non_empty_array_test_001
+         * @tc.number worker_postMessage_non_empty_array_test_001
+         * @tc.desc   Test ThreadWorker.postMessage with non-empty array transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_non_empty_array_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker_0002.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+                ss.on('message', (event) => {
+                    ss.terminate()
+                });
+                const buffer1 = new ArrayBuffer(8)
+                const buffer2 = new ArrayBuffer(16)
+                ss.postMessage("test message", { transfer: [buffer1, buffer2] })
+
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isTerminate).assertEqual(true)
+                done()
+            })
+        // Test ThreadWorker.postMessage with empty array transfer parameter
+        /**
+         * @tc.name   worker_postMessage_empty_array_test_002
+         * @tc.number worker_postMessage_empty_array_test_002
+         * @tc.desc   Test ThreadWorker.postMessage with empty array transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_empty_array_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker_0002.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+                ss.on('message', (event) => {
+                    ss.terminate()
+                });
+                const buffer = new ArrayBuffer(8)
+                ss.postMessage("test message", [])
+
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(buffer.byteLength).assertEqual(8)
+                done()
+            })
+
+        // Test ThreadWorker.postMessage with non-empty array transfer parameter
+        /**
+         * @tc.name   worker_postMessage_non_empty_array_test_002
+         * @tc.number worker_postMessage_non_empty_array_test_002
+         * @tc.desc   Test ThreadWorker.postMessage with non-empty array transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_non_empty_array_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker_0002.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+                ss.on('message', (event) => {
+                    ss.terminate()
+                });
+                const buffer1 = new ArrayBuffer(8)
+                const buffer2 = new ArrayBuffer(16)
+                ss.postMessage("test message", [buffer1, buffer2])
+
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isTerminate).assertEqual(true)
+                done()
+            })
+
+        // Test ThreadWorker.worker_postMessage_null_test_001 with null/undefined parameters
+        /**
+         * @tc.name   worker_postMessage_null_test_001
+         * @tc.number worker_postMessage_null_test_001
+         * @tc.desc   Test ThreadWorker.postMessage with null message parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_null_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                ss.onerror = function (e) {
+                    isError = true
+                }
+
+                try {
+                    ss.postMessage(null)
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+        // Test ThreadWorker.worker_postMessage_null_test_001 with null/undefined parameters
+        /**
+         * @tc.name   worker_postMessage_null_test_002
+         * @tc.number worker_postMessage_null_test_002
+         * @tc.desc   Test ThreadWorker.postMessage with null message parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_null_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                ss.onerror = function (e) {
+                    isError = true
+                }
+
+                try {
+                    ss.postMessage("test", null)
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.postMessage with undefined transfer parameter
+        /**
+         * @tc.name   worker_postMessage_undefined_test_001
+         * @tc.number worker_postMessage_undefined_test_001
+         * @tc.desc   Test ThreadWorker.postMessage with undefined transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_undefined_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                ss.onerror = function (e) {
+                    isError = true
+                }
+
+                try {
+                    ss.postMessage(undefined)
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                // Should not throw error for undefined transfer parameter
+                expect(isError).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.on with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_on_empty_string_test_001
+         * @tc.number worker_on_empty_string_test_001
+         * @tc.desc   Test ThreadWorker.on with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_on_empty_string_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let eventCalled = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                ss.on("", () => {
+                    eventCalled = true
+                    console.info("empty event listener called")
+                })
+
+                ss.dispatchEvent({ type: "", timeStamp: 0 })
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(eventCalled).assertTrue()
+                done()
+            })
+        // Test ThreadWorker.on with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_on_empty_string_test_002
+         * @tc.number worker_on_empty_string_test_002
+         * @tc.desc   Test ThreadWorker.on with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_on_empty_string_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.on(null, () => {
+                        console.info("empty event listener called")
+                    })
+
+                    ss.dispatchEvent({ type: null, timeStamp: 0 })
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+        // Test ThreadWorker.on with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_on_empty_string_test_003
+         * @tc.number worker_on_empty_string_test_003
+         * @tc.desc   Test ThreadWorker.on with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_on_empty_string_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.on(undefined, () => {
+                        console.info("empty event listener called")
+                    })
+
+                    ss.dispatchEvent({ type: undefined, timeStamp: 0 })
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.on with null listener parameter
+        /**
+         * @tc.name   worker_on_null_test_001
+         * @tc.number worker_on_null_test_001
+         * @tc.desc   Test ThreadWorker.on with null listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_on_null_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let isError = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.on("test", null)
+            } catch (error) {
+                isError = true
+                expect(error.code).assertEqual(401)
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(isError).assertTrue()
+            done()
+        })
+
+        // Test ThreadWorker.on with undefined listener parameter
+        /**
+         * @tc.name   worker_on_undefined_test_001
+         * @tc.number worker_on_undefined_test_001
+         * @tc.desc   Test ThreadWorker.on with undefined listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_on_undefined_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let isError = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.on("test", undefined)
+            } catch (error) {
+                isError = true
+                expect(error.code).assertEqual(401)
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(isError).assertTrue()
+            done()
+        })
+
+        // Test ThreadWorker.once with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_once_empty_string_test_001
+         * @tc.number worker_once_empty_string_test_001
+         * @tc.desc   Test ThreadWorker.once with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_once_empty_string_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                ss.once("", () => {
+                    console.info("empty event listener called")
+                })
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                done()
+            })
+
+        // Test ThreadWorker.once with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_once_empty_string_test_002
+         * @tc.number worker_once_empty_string_test_002
+         * @tc.desc   Test ThreadWorker.once with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_once_empty_string_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.once(null, () => {
+                        console.info("empty event listener called")
+                    })
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.once with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_once_empty_string_test_003
+         * @tc.number worker_once_empty_string_test_003
+         * @tc.desc   Test ThreadWorker.once with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_once_empty_string_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let isError = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.once(undefined, () => {
+                        console.info("empty event listener called")
+                    })
+                } catch (error) {
+                    isError = true
+                    expect(error.code).assertEqual(401)
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isError).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.once with null listener parameter
+        /**
+         * @tc.name   worker_once_null_test_001
+         * @tc.number worker_once_null_test_001
+         * @tc.desc   Test ThreadWorker.once with null listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_once_null_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let isError = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.once("test", null)
+            } catch (error) {
+                isError = true
+                expect(error.code).assertEqual(401)
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(isError).assertTrue()
+            done()
+        })
+
+        // Test ThreadWorker.once with undefined listener parameter
+        /**
+         * @tc.name   worker_once_undefined_test_001
+         * @tc.number worker_once_undefined_test_001
+         * @tc.desc   Test ThreadWorker.once with undefined listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_once_undefined_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let isError = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.once("test", undefined)
+            } catch (error) {
+                isError = true
+                expect(error.code).assertEqual(401)
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(isError).assertTrue()
+            done()
+        })
+
+        // Test ThreadWorker.off with empty string and null/undefined parameters
+        /**
+         * @tc.name   worker_off_empty_string_test_001
+         * @tc.number worker_off_empty_string_test_001
+         * @tc.desc   Test ThreadWorker.off with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_off_empty_string_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let errorThrown = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.off("")
+                } catch (error) {
+                    errorThrown = true
+                    console.info("off with empty string threw error as expected")
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(errorThrown).assertFalse()
+                done()
+            })
+        /**
+         * @tc.name   worker_off_empty_string_test_002
+         * @tc.number worker_off_empty_string_test_002
+         * @tc.desc   Test ThreadWorker.off with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_off_empty_string_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let errorThrown = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.off(null)
+                } catch (error) {
+                    errorThrown = true
+                    expect(error.code).assertEqual(401)
+                    console.info("off with empty string threw error as expected")
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(errorThrown).assertTrue()
+                done()
+            })
+        /**
+         * @tc.name   worker_off_empty_string_test_003
+         * @tc.number worker_off_empty_string_test_003
+         * @tc.desc   Test ThreadWorker.off with empty string type parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_off_empty_string_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker.js")
+                let isTerminate = false
+                let errorThrown = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+
+                try {
+                    ss.off(undefined)
+                } catch (error) {
+                    errorThrown = true
+                    expect(error.code).assertEqual(401)
+                    console.info("off with empty string threw error as expected")
+                }
+
+                ss.terminate()
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(errorThrown).assertTrue()
+                done()
+            })
+
+        // Test ThreadWorker.off with null listener parameter
+        /**
+         * @tc.name   worker_off_null_test_001
+         * @tc.number worker_off_null_test_001
+         * @tc.desc   Test ThreadWorker.off with null listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_off_null_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let errorThrown = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.off("test", null)
+            } catch (error) {
+                errorThrown = true
+                expect(error.code).assertEqual(401)
+                console.info("off with null listener threw error as expected")
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(errorThrown).assertTrue()
+            done()
+        })
+
+        // Test ThreadWorker.off with undefined listener parameter
+        /**
+         * @tc.name   worker_off_undefined_test_001
+         * @tc.number worker_off_undefined_test_001
+         * @tc.desc   Test ThreadWorker.off with undefined listener parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_off_undefined_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+            let ss = new worker.Worker("entry/ets/workers/worker.js")
+            let isTerminate = false
+            let errorThrown = false
+
+            ss.onexit = function () {
+                isTerminate = true
+            }
+
+            try {
+                ss.off("test", undefined)
+            } catch (error) {
+                errorThrown = true
+                expect(error.code).assertEqual(401)
+                console.info("off with undefined listener threw error as expected")
+            }
+
+            ss.terminate()
+            while (!isTerminate) {
+                await promiseCase()
+            }
+
+            expect(errorThrown).assertTrue()
+            done()
+        })
+        /**
+         * @tc.name   worker_postMessage_non_empty_test_001
+         * @tc.number worker_postMessage_non_empty_test_001
+         * @tc.desc   Test ThreadWorker.postMessage with non-empty array transfer parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('worker_postMessage_non_empty_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+            async function (done) {
+                let ss = new worker.Worker("entry/ets/workers/worker_0001.js")
+                let isTerminate = false
+
+                ss.onexit = function () {
+                    isTerminate = true
+                }
+                let results = []
+                ss.on('message', (event) => {
+                    results.push(event.data)
+                    console.log('test worker results: ' + results)
+                    if (results.length == 21) {
+                        ss.terminate()
+                    }
+                });
+                ss.postMessage("test message")
+
+                while (!isTerminate) {
+                    await promiseCase()
+                }
+
+                expect(isTerminate).assertEqual(true)
+                console.log('test worker post message: ' + results)
+                expect(results)
+                    .assertDeepEquals([null,undefined,401,401,1,1,2,2,"success",401,401,401,401,"success",401,401,401,401,401,401,401])
+                done()
+            })
     })
 }

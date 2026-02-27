@@ -699,7 +699,7 @@ export default function btConnectionNopUiJsunit() {
         expect(true).assertFalse();
       } catch (e) {
         hilog.error(Domain, TAG, `setLocalName promise error, error code is: ${e.code}, error message is: ${e.message}`);
-        if (e.code === 801) {
+        if (Number(e.code) === 801) {
           console.info('[bluetooth_js] RK板 is not support');
           expect(Number(e.code) == 801).assertTrue();
         } else {

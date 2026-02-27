@@ -44,7 +44,7 @@ export default function ActsDenyTest() {
   describe('ActsDenyTest', () => {
     const TAG = 'SUB_ACTS_DENY_TEST ===>';
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

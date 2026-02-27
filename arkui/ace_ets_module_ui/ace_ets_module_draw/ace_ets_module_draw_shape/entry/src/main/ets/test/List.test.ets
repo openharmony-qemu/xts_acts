@@ -45,6 +45,13 @@ import PolygonResourceTest from './Polygon/PolygonResourceTest';
 import PolylineResourceTest from './Polyline/PolylineResourceTest';
 import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
+import shapeNullUndefinedTest from './Shape/ShapeNullUndefined.test';
+import shapeNullUndefined2Test from './Shape/ShapeNullUndefined2.test';
+
+import lineStartPointNullUndefinedTest from './Line/lineStartPointNullUndefinedTest.test';
+import pathCommandsNullUndefinedTest from './Path/pathCommandsNullUndefinedTest.test';
+import polygonPointsNullUndefinedTest from './Polygon/polygonPointsNullUndefinedTest.test';
+import polylinePointsNullUndefinedTest from './Polyline/polylinePointsNullUndefinedTest.test';
 
 export default function testsuite() {
 
@@ -80,5 +87,13 @@ export default function testsuite() {
   PolylineResourceTest();
   RectResourceTest();
   ShapeResourceTest();
+
+  shapeNullUndefinedTest();
+  shapeNullUndefined2Test();
+
+  lineStartPointNullUndefinedTest();
+  pathCommandsNullUndefinedTest();
+  polygonPointsNullUndefinedTest();
+  polylinePointsNullUndefinedTest();
 
 }

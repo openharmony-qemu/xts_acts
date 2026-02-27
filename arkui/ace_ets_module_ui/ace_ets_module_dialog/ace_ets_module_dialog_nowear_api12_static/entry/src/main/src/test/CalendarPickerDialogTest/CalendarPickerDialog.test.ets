@@ -32,7 +32,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function CalendarPickerDialog() {
   describe('CalendarPickerDialog', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CalendarPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

@@ -62,7 +62,6 @@ import onAttachUndefinedTest from './CommonMethodTest/onAttachUndefined.test';
 import onDetachUndefinedTest from './CommonMethodTest/onDetachUndefined.test';
 import onBlurUndefinedTest from './CommonMethodTest/onBlurUndefined.test';
 import onDragStartUndefinedTest from './CommonMethodTest/onDragStartUndefined.test';
-import onGestureRecognizerJudgeBeginUndefinedTest from './CommonMethodTest/onGestureRecognizerJudgeBeginUndefined.test';
 import shouldBuiltInRecognizerParallelWithUndefinedTest from './CommonMethodTest/shouldBuiltInRecognizerParallelWithUndefined.test';
 import shouldBuiltInRecognizerParallelWithModifierUndefinedTest from './CommonMethodTest/shouldBuiltInRecognizerParallelWithModifierUndefined.test';
 import tabIndexUndefinedTest from './CommonMethodTest/tabIndexUndefined.test';
@@ -76,8 +75,6 @@ import onAttachModifierUndefinedTest from './CommonMethodTest/onAttachModifierUn
 import onDetachModifierUndefinedTest from './CommonMethodTest/onDetachModifierUndefined.test';
 import onBlurModifierUndefinedTest from './CommonMethodTest/onBlurModifierUndefined.test';
 import onDragStartModifierUndefinedTest from './CommonMethodTest/onDragStartModifierUndefined.test';
-import onGestureRecognizerJudgeBeginModifierUndefinedTest
-  from './CommonMethodTest/onGestureRecognizerJudgeBeginModifierUndefined.test';
 import onVisibleAreaApproximateChangeModifierUndefinedTest
   from './CommonMethodTest/onVisibleAreaApproximateChangeModifierUndefined.test';
 import onVisibleAreaChangeModifierUndefinedTest from './CommonMethodTest/onVisibleAreaChangeModifierUndefined.test';
@@ -136,7 +133,6 @@ export default function testsuite() {
   onDetachUndefinedTest();
   onBlurUndefinedTest();
   onDragStartUndefinedTest();
-  onGestureRecognizerJudgeBeginUndefinedTest();
   shouldBuiltInRecognizerParallelWithUndefinedTest();
   tabIndexUndefinedTest();
   visibilityUndefinedTest();
@@ -151,7 +147,6 @@ export default function testsuite() {
   onDetachModifierUndefinedTest();
   onBlurModifierUndefinedTest();
   onDragStartModifierUndefinedTest();
-  onGestureRecognizerJudgeBeginModifierUndefinedTest();
   onVisibleAreaApproximateChangeModifierUndefinedTest();
   shouldBuiltInRecognizerParallelWithModifierUndefinedTest();
   tabIndexModifierUndefinedTest();

@@ -26,7 +26,7 @@ const SLEEP_TIME = 1000;
 
 export default function popupTest() {
   describe('popupTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("popupTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility")
     });

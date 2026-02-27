@@ -210,7 +210,7 @@ async function ComparisonXSAssert() {
 
 export default function GridRowNoColumnsTest() {
   describe('GridRowNoColumnsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GridRowNoColumnsTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
