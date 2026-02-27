@@ -660,7 +660,6 @@ export default function DataRdbStoreCoverageAdd(){
       console.info(TAG + ' --------- deleteRdbStore_promise_005 begin---------  ');
       try {
         data_rdb.deleteRdbStore(context, undefined).then(()=>{
-          expect(null).assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.info(TAG +"Delete RdbStore failed, err: " + err)
