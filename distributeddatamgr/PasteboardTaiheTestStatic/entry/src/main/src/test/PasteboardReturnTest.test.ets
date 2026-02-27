@@ -230,7 +230,7 @@ export default function pasteboardReturnTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 12900001).assertTrue();
+        expect(err.code === 12900001).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
@@ -258,7 +258,7 @@ export default function pasteboardReturnTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 12900001).assertTrue();
+        expect(err.code === 12900001).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();

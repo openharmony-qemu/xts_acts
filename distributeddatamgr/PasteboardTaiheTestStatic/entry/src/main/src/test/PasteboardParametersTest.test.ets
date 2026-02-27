@@ -47,7 +47,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
@@ -74,7 +74,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
@@ -102,7 +102,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
@@ -133,7 +133,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       hilog.info(domain, tag, "----------SUB_Pasteboard_Local_Parameters_Static_0050----------end");
       done();
@@ -233,7 +233,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
@@ -261,7 +261,7 @@ export default function pasteboardParametersTest() {
         err = err as BusinessError;
         hilog.info(domain, tag, "SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
       }
       if (!catchFlag) {
         expect().assertFail();
