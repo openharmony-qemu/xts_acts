@@ -58,7 +58,7 @@ export default function TestSetUIStates() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        if (!("TestSetUIStates" == pages.name)) {
+        if (!("SetUIStates" == pages.name)) {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
