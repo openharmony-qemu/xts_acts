@@ -1679,7 +1679,7 @@ export default function WindowZindexTest() {
 
 
       /**
-         * @tc.number     SUB_BASIC_WMS_setExclusivelyHighlightedFalse_1300002_static_0300
+         * @tc.number     testsetExclusivelyHighlightedFalse_1300002_static
          * @tc.name       testsetExclusivelyHighlighted_False_1300002_static
          * @tc.desc       testsetExclusivelyHighlighted_False_1300002
          * @tc.size       MediumTest
