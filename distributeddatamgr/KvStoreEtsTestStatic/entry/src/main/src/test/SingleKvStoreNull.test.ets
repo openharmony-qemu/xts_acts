@@ -375,12 +375,12 @@ export default function SingleKvStoreNull(){
       try {
         kvStore!.deleteBatch([], (err: BusinessError | null) => {
           console.info(TAG + "deleteBatch err=" + err);
-          expect(null).assertFail();
+          expect(err!.code).assertEqual(401);
           done();
         });
       } catch (e) {
         console.error(TAG + 'catch e delete' + `, error code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(null).assertFail();
         done();
       }
     })
