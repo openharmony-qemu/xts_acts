@@ -1023,7 +1023,7 @@ export default function interfaceNullValueOverrideTest() {
      */
     it('getPluralStringValue_null_test_0400', Level.LEVEL3, async (done: Function) => {
       try {
-        res.getPluralStringValue($r('app.plural.plural_name').id, null).then((value: string) => {
+        res.getPluralStringValue($r('app.plural.plural_name'), null).then((value: string) => {
           try {
             console.log('getPluralStringValue_null_test_0400 value:' + value);
             expect(value).assertFail();
@@ -2539,7 +2539,7 @@ export default function interfaceNullValueOverrideTest() {
       } catch (e) {
         let error = e as BusinessError;
         console.log('getDrawableDescriptor_null_test_0300 err:' + error.code);
-        expect(Number(error.code)).assertFail();
+        expect(error.code).assertFail();
       }
     })
 
@@ -2579,7 +2579,7 @@ export default function interfaceNullValueOverrideTest() {
       } catch (e) {
         let error = e as BusinessError;
         console.log('getDrawableDescriptorByName_null_test_0200 err:' + error.code);
-        expect(Number(error.code)).assertFail();
+        expect(error.code).assertFail();
       }
     })
 
@@ -2700,7 +2700,7 @@ export default function interfaceNullValueOverrideTest() {
           })
         } catch (error) {
           let err = error as BusinessError;
-          console.log('getStringValue_null_test_0200 err:' + err.code);
+          console.log('getColor_null_test_0200 err:' + err.code);
           expect(Number(err.code)).assertEqual(401);
           done();
         }
@@ -2964,7 +2964,7 @@ export default function interfaceNullValueOverrideTest() {
         } catch (e) {
           let error = e as BusinessError;
           console.log('getMediaContentSync_null_test_0200 err:' + error.code);
-          expect(Number(error.code)).assertFail();
+          expect(error.code).assertFail();
         }
       })
 
@@ -2984,7 +2984,7 @@ export default function interfaceNullValueOverrideTest() {
         } catch (e) {
           let error = e as BusinessError;
           console.log('getMediaContentSync_null_test_0300 err:' + error.code);
-          expect(Number(error.code)).assertFail();
+          expect(error.code).assertFail();
         }
       })
 
@@ -3024,7 +3024,7 @@ export default function interfaceNullValueOverrideTest() {
         } catch (e) {
           let error = e as BusinessError;
           console.log('getMediaContentBase64Sync_null_test_0200 err:' + error.code);
-          expect(Number(error.code)).assertFail();
+          expect(error.code).assertFail();
         }
       })
 
@@ -3044,7 +3044,7 @@ export default function interfaceNullValueOverrideTest() {
         } catch (e) {
           let error = e as BusinessError;
           console.log('getMediaContentBase64Sync_null_test_0300 err:' + error.code);
-          expect(Number(error.code)).assertFail();
+          expect(error.code).assertFail();
         }
       })
 
@@ -3250,21 +3250,21 @@ export default function interfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : getStingArrayByNameSync_null_test_0100
-       * @tc.name     : getStingArrayByNameSync_null_test_0100
+       * @tc.number   : getStringArrayByNameSync_null_test_0100
+       * @tc.name     : getStringArrayByNameSync_null_test_0100
        * @tc.desc     : with NULL
        * @tc.size     : MEDIUM
        * @tc.type     : Function
        * @tc.level    : Level 3
        */
-      it('getStingArrayByNameSync_null_test_0100', Level.LEVEL3, () => {
+      it('getStringArrayByNameSync_null_test_0100', Level.LEVEL3, () => {
         try {
-          let value = res.getStingArrayByNameSync(null);
-          console.log('getStingArrayByNameSync_null_test_0100 value:' + value);
+          let value = res.getStringArrayByNameSync(null);
+          console.log('getStringArrayByNameSync_null_test_0100 value:' + value);
           expect(value).assertFail();
         } catch (e) {
           let error = e as BusinessError;
-          console.log('getStingArrayByNameSync_null_test_0100 err:' + error.code);
+          console.log('getStringArrayByNameSync_null_test_0100 err:' + error.code);
           expect(Number(error.code)).assertEqual(401);
         }
       })
@@ -3351,22 +3351,22 @@ export default function interfaceNullValueOverrideTest() {
       })
 
       /**
-       * @tc.number   : sendableReSourceToResource_null_test_0100
-       * @tc.name     : sendableReSourceToResource_null_test_0100
+       * @tc.number   : sendableResourceToResource_null_test_0100
+       * @tc.name     : sendableResourceToResource_null_test_0100
        * @tc.desc     : with NULL
        * @tc.size     : MEDIUM
        * @tc.type     : Function
        * @tc.level    : Level 3
        */
-      it('sendableReSourceToResource_null_test_0100', Level.LEVEL3, () => {
+      it('sendableResourceToResource_null_test_0100', Level.LEVEL3, () => {
         try {
           let resource: sendableResourceManager.SendableResource | null = null;
-          let value = sendableResourceManager.sendableReSourceToResource(resource!);
-          console.log('sendableReSourceToResource_null_test_0100 value:' + value);
+          let value = sendableResourceManager.sendableResourceToResource(resource!);
+          console.log('sendableResourceToResource_null_test_0100 value:' + value);
           expect(value).assertFail();
         } catch (e) {
           let error = e as BusinessError;
-          console.log('sendableReSourceToResource_null_test_0100 err:' + error.code);
+          console.log('sendableResourceToResource_null_test_0100 err:' + error.code);
           expect(Number(error.code)).assertEqual(401);
         }
       })
