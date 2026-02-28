@@ -631,8 +631,9 @@ export default function uitestComponentTest() {
         expect(button != null).assertTrue()
         if (button != null) {
           await button.doubleClick();
+          await driver.delayMs(2000);
           hilog.info(domain, tag, `testUiComponentDoubleClick_static longClick`);
-          let newButton = await driver.findComponent(ON.text('doubleClick'));
+          let newButton = await driver.findComponent(ON.text('doubleClick'));        
           hilog.info(domain, tag, `testUiComponentDoubleClick_static newButton, ${ JSON.stringify(newButton)} }`);
           expect(newButton != null).assertTrue();
           await driver.delayMs(1000);
