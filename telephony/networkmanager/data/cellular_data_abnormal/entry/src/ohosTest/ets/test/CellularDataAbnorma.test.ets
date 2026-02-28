@@ -511,7 +511,7 @@ export default function ActsCellularDataAbnormalTest() {
         console.info(`${caseName}---End`);
       } catch (error) {
         console.info(`${caseName} catch err is :` +JSON.stringify(error));
-        ExpectTrue(error.code == 8300003);
+        ExpectTrue(error.code === 8300003);
         done();
         console.info(`${caseName}---End`);
       }
