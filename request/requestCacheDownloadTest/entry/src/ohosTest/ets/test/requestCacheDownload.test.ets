@@ -105,7 +105,7 @@ export default function requestCacheDownloadUnitTest() {
         console.info("====>SUB_Request_cacheDownload_0100 download success url: " + url);
         cacheDownload.cancel(url);
         console.info("====>SUB_Request_cacheDownload_0100 cancel success url: " + url);
-        expect(true).assertTrue();
+        expect(downloadOptions !== undefined).assertTrue();
         done();
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_0100 catch err: " + JSON.stringify(err));
