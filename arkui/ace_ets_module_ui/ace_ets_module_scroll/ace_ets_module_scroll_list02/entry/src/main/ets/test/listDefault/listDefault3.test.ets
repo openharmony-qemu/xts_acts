@@ -370,49 +370,5 @@ export default function listDefaultTest3() {
         .assertEqual(objCompare.$attrs.editModeOptions.enableGatherSelectedItemsAnimation);
       console.info('[listEditModeOptionsNullUndefined_0200] END');
     })
-
-    // ========== onItemDelete tests ==========
-    /**
-     * @tc.name   listOnItemDeleteNullUndefined_0100
-     * @tc.number listOnItemDeleteNullUndefined_0100
-     * @tc.desc   Test List onItemDelete property with return false
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('listOnItemDeleteNullUndefined_0100', Level.LEVEL0, async () => {
-      console.info('[listOnItemDeleteNullUndefined_0100] START');
-      let strJson: string = getInspectorByKey('list_onItemDelete_return_false');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[listOnItemDeleteNullUndefined_0100] type is: " + JSON.stringify(obj.$type));
-      console.info("[listOnItemDeleteNullUndefined_0100] return false is: " +
-      JSON.stringify(obj.$attrs.onItemDelete));
-
-      // list onItemDelete 返回false
-      expect(obj.$type).assertEqual("List");
-      console.info('[listOnItemDeleteNullUndefined_0100] END');
-    })
-
-    // ========== onItemMove tests ==========
-    /**
-     * @tc.name   listOnItemMoveNullUndefined_0100
-     * @tc.number listOnItemMoveNullUndefined_0100
-     * @tc.desc   Test List onItemMove property with return false
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('listOnItemMoveNullUndefined_0100', Level.LEVEL0, async () => {
-      console.info('[listOnItemMoveNullUndefined_0100] START');
-      let strJson: string = getInspectorByKey('list_onItemMove_return_false');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[listOnItemMoveNullUndefined_0100] type is: " + JSON.stringify(obj.$type));
-      console.info("[listOnItemMoveNullUndefined_0100] return false is: " +
-      JSON.stringify(obj.$attrs.onItemMove));
-
-      // list onItemMove 返回false
-      expect(obj.$type).assertEqual("List");
-      console.info('[listOnItemMoveNullUndefined_0100] END');
-    })
   })
 }

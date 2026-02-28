@@ -428,13 +428,15 @@ struct ListNullUndefined3 {
             }, (item: number) => item.toString())
           }
           .id('list_onItemDelete_return_false')
+          .editMode(true)
+          .onItemDelete((index: number) => {
+            console.info('onItem return onItemDelete: succ')
+            console.info('onItem return onItemDelete index: ' + index)
+            return false
+          })
           .width('90%')
           .height('100%')
           .backgroundColor(0xF0F0F0)
-          .onItemDelete((index: number) => {
-            console.info('return11 onItemDelete index: ' + index)
-            return false
-          })
         }
         .width('100%')
         .height('10%')
@@ -458,13 +460,14 @@ struct ListNullUndefined3 {
             }, (item: number) => item.toString())
           }
           .id('list_onItemMove_return_false')
+          .onItemMove((from: number, to: number) => {
+            console.info('onItem return onItemMove: succ')
+            console.info('onItem return onItemMove: from: ' + from + ' to: ' + to)
+            return false
+          })
           .width('90%')
           .height('100%')
           .backgroundColor(0xF0F0F0)
-          .onItemMove((from: number, to: number) => {
-            console.info('return11 onItemMove: from: ' + from + ' to: ' + to)
-            return false
-          })
         }
         .width('100%')
         .height('10%')
