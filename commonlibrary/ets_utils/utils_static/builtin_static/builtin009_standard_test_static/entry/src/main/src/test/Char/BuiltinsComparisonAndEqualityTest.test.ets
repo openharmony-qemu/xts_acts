@@ -485,7 +485,11 @@ export default function builtinsComparisonAndEqualityTest() {
      */
     it('builtinsComparisonAndEqualityTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let charInstance = new Char(c'\u0041');
-      expect(charInstance.equals(65) === true).assertTrue();
+      // Char.equals() only accepts Char type parameters
+      expect(charInstance.equals(new Char(c'\u0041')) === true).assertTrue();
+      expect(charInstance.equals(new Char(c'\u0000')) === false).assertTrue();
+      // For non-Char parameters, equals() should return false
+      expect(charInstance.equals(65) === false).assertTrue();
       expect(charInstance.equals(0) === false).assertTrue();
       expect(charInstance.equals(NaN) === false).assertTrue();
       expect(charInstance.equals(Infinity) === false).assertTrue();
