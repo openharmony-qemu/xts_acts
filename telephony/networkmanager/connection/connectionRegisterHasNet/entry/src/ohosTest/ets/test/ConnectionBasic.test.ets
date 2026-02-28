@@ -683,10 +683,10 @@ export default function ConnectionBasicTest() {
        netConn.on('netConnectionPropertiesChange',(data:connection.NetConnectionPropertyInfo)=>{
          console.info(`${caseName}success to get data: ${JSON.stringify(data)}`);
          ExpectTrue(data.netHandle.netId != null)
-         ExpectTrue(data.ConnectionProperties.linkAddresses[0].address.address != null)
-         ExpectTrue(data.ConnectionProperties.linkAddresses[0].address.family != null)
-         ExpectTrue(data.ConnectionProperties.linkAddresses[0].address.port != null)
-         ExpectTrue(data.ConnectionProperties.linkAddresses[0].prefixLength != null)
+         ExpectTrue(data.connectionProperties.linkAddresses[0].address.address != null)
+         ExpectTrue(data.connectionProperties.linkAddresses[0].address.family != null)
+         ExpectTrue(data.connectionProperties.linkAddresses[0].address.port != null)
+         ExpectTrue(data.connectionProperties.linkAddresses[0].prefixLength != null)
          console.info(`${caseName}---End`);
          done();
        })
