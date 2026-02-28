@@ -162,23 +162,23 @@ export default function listDefaultTest2() {
 
     // ========== cachedCount tests ==========
     /**
-     * @tc.name   listCachedCountNullUndefined_0300
-     * @tc.number listCachedCountNullUndefined_0300
+     * @tc.name   listCachedCountNullUndefined_0100
+     * @tc.number listCachedCountNullUndefined_0100
      * @tc.desc   Test List cachedCount property with null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listCachedCountNullUndefined_0300', Level.LEVEL0, async () => {
-      console.info('[listCachedCountNullUndefined_0300] START');
+    it('listCachedCountNullUndefined_0100', Level.LEVEL0, async () => {
+      console.info('[listCachedCountNullUndefined_0100] START');
       let strJson: string = getInspectorByKey('list_cachedCount_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[listCachedCountNullUndefined_0300] null obj is: " +
+      console.info("[listCachedCountNullUndefined_0100] null obj is: " +
       JSON.stringify(obj.$attrs.cachedCount));
 
       // list cachedCount 设置null
       expect(obj.$attrs.cachedCount).assertEqual("1");
-      console.info('[listCachedCountNullUndefined_0300] END');
+      console.info('[listCachedCountNullUndefined_0100] END');
     })
 
     /**
