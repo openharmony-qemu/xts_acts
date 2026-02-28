@@ -47,6 +47,7 @@ import LayoutlableLayoutNullTest from './CommonCustom/LayoutlableLayoutNull.test
 import LayoutlableLayoutUndefinedTest from './CommonCustom/LayoutlableLayoutUndefined.test';
 import LayoutlableMeasureNullTest from './CommonCustom/LayoutlableMeasureNull.test';
 import LayoutlableMeasureUndefinedTest from './CommonCustom/LayoutlableMeasureUndefined.test';
+import LayoutGravityNullUndefinedTest from './CommonAttrs/LayoutGravityNullUndefined.test';
 
 export default function testsuite() {
   Calc01();
@@ -83,4 +84,5 @@ export default function testsuite() {
   LayoutlableLayoutUndefinedTest();
   LayoutlableMeasureNullTest();
   LayoutlableMeasureUndefinedTest();
+  LayoutGravityNullUndefinedTest();
 }

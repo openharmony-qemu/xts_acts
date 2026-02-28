@@ -17,6 +17,7 @@ import LazyForEachAboutToReuseNull from './LazyForEach/LazyForEachAboutToReuseNu
 import LazyForEachAboutToReuseUndefined from './LazyForEach/LazyForEachAboutToReuseUndefined.test';
 import LazyForEachInterface from './LazyForEach/LazyForEachInterface.test';
 import ReuseIdNullUndefinedTest from './Reusable/ReuseIdNullUndefined.test';
+import AboutToReuseNullUndefinedTest from './Reusable/AboutToReuseNullUndefined.test';
 
 export default function testsuite() {
     LazyForEachInterface();
@@ -24,4 +25,5 @@ export default function testsuite() {
     LazyForEachAboutToReuseNull();
     LazyForEachAboutToReuseUndefined();
     ReuseIdNullUndefinedTest();
+    AboutToReuseNullUndefinedTest();
 }
