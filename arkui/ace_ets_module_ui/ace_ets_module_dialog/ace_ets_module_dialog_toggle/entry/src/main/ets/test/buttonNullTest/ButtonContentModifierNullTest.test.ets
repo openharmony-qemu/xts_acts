@@ -56,7 +56,7 @@ export default function buttonContentModifierNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('button_contentModifier_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.contentModifier).assertNotNull();
+      expect(obj.$attrs.contentModifier).assertTrue();
       console.info('buttonContentModifier_Null_001 END');
       done();
     });
@@ -74,7 +74,7 @@ export default function buttonContentModifierNullTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('button_contentModifier_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      expect(obj.$attrs.contentModifier).assertNotNull();
+      expect(obj.$attrs.contentModifier).assertTrue();
       console.info('buttonContentModifier_Undefined_002 END');
       done();
     });
