@@ -1192,6 +1192,7 @@ export default function WindowZindexTest() {
         let caseName = 'testShiftAppWindowFocus_SubWindow_SourceWinNotFocus';
         let msgStr = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
+        let subWin: window.Window;
         try {
             subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
         } catch(err) {
