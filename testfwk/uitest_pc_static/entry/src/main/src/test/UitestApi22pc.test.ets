@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium/index"
-import {driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType,
+import { Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType,
   WindowChangeType } from '@kit.TestKit'
 import { Utils, startAbility, stopApplication } from './Util.test';
 import { BusinessError } from '@ohos.base';
@@ -24,7 +24,7 @@ const TestTag: string = 'uiTest_API22pc';
 
 export default function UiTest() {
   describe('uiTest_API22pc', () => {
-    let driver: driver | undefined;
+    let driver: Driver | undefined;
     beforeAll(async () => {
       driver = Driver.create();
       await driver!.delayMs(1000);
