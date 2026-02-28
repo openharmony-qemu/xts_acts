@@ -107,6 +107,14 @@ export default function lastExitReasonStaticTest() {
         expect(lastExitDetailInfo?.rss).assertEqual(0);
         expect(lastExitDetailInfo?.timestamp).assertEqual(0);
         expect(lastExitDetailInfo?.uid).assertEqual(-1);
+        let launchUTCTime = launchParam?.launchUTCTime;
+        if(launchUTCTime !== undefined && launchUTCTime !== null) {
+          expect(launchUTCTime > 0).assertTrue();
+        }
+        let launchUptime = launchParam?.launchUptime;
+        if(launchUptime !== undefined && launchUptime !== null) {
+          expect(launchUptime > 0).assertTrue();
+        }
         let processState = lastExitDetailInfo?.processState
         if(processState != undefined && processState != null) {
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 lastExitDetailInfo.processState: ' + processState);
