@@ -139,11 +139,7 @@ function createPhotoOutput() {
   let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
   let previewProfile = cameraOutputCap.previewProfiles[0];
   let photoProfile = cameraOutputCap.photoProfiles[0];
-  for (const indexphotoProfiles of cameraOutputCap.photoProfiles) {
-    console.log(TAG, 'indexphotoProfiles: w: ' + indexphotoProfiles.size.width + 'h: ' + indexphotoProfiles.size.height);
-  }
   for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    console.log(TAG, 'indexPreviewProfiles: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
     let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
       console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
       console.log(TAG,
