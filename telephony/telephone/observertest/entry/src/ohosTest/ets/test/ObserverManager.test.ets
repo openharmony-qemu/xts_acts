@@ -466,7 +466,7 @@ export default function observerManagerTest() {
       console.info(`${caseName} test start `);
       try {
         data.disableCellularData();
-        observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectStateInfo) => {
+        observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectionStateInfo) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(data.state != null);
           ExpectTrue(data.network != null);
@@ -476,7 +476,7 @@ export default function observerManagerTest() {
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectFail();
+        ExpectTrue(fales);
         done();
       }
       console.info(`${caseName} test end `);
@@ -625,7 +625,7 @@ export default function observerManagerTest() {
         await data.disableCellularData();
         observer.on('cellularDataConnectionStateChange', {
           slotId: 0
-        }, (data: Value) => {
+        }, (data: DataConnectionStateInfo) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(data.state != null);
           ExpectTrue(data.network != null);
