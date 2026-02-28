@@ -1260,6 +1260,12 @@ static void OHAVMetadataExtractorOnFrameFetchedImplErr3(OH_AVMetadataExtractor* 
     if (code == AV_ERR_UNSUPPORTED_FORMAT) {
         return;
     }
+    if (code == AV_ERR_OPERATE_NOT_PERMIT) {
+        return;
+    }
+    if (code == AV_ERR_TIMEOUT) {
+        return;
+    }
     OHAVMetadataExtractorUserData* data = reinterpret_cast<OHAVMetadataExtractorUserData*>(userData);
     if (data == nullptr) {
         LOG("OHAVMetadataExtractorOnFrameFetchedImpl userData is nullptr");
@@ -1314,7 +1320,7 @@ static napi_value OhAVMetadataExtractorFetchFramesByTimesErr3(napi_env env, napi
         timeUs, typeSize, static_cast<OH_AVMedia_SeekMode>(option), userData->outputParams,
         OHAVMetadataExtractorOnFrameFetchedImplErr3, userData);
     int32_t res = 1;
-    if (avErrCode == AV_ERR_INVALID_VAL) {
+    if (avErrCode == AV_ERR_INVALID_VAL || avErrCode == AV_ERR_IO_CLEARTEXT_NOT_PERMITTED) {
         res = 0;
     }
     LOG("OhAVMetadataExtractorFetchFrames avErrCode %{public}d", avErrCode);
