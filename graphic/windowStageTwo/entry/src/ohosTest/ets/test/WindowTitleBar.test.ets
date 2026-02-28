@@ -2630,7 +2630,11 @@ export default function windowTitleBarTest() {
         console.info(caseName+ ' Succeeded in setting the height');
         let height =  mainWindow.getWindowDecorHeight();
         console.info(caseName+ ' Succeeded in getting the height'+height);
-        expect(height).assertEqual(112);
+        if(isFreeWindowMode){
+          expect(height).assertEqual(112);
+        }else{
+          expect(height).assertEqual(0);
+        }
         done();
       } catch(e) {
         console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);

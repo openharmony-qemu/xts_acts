@@ -4288,7 +4288,7 @@ export default function window_test() {
                             promise.then(async (Properties) => {
                                 console.info(msgStr + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(Properties));
                                 expect(Properties.type).assertEqual(window.WindowType.TYPE_APP);
-                                let properties = windowClass.getWindowProperties();
+                                let properties = data.getWindowProperties();
                                 console.info(msgStr + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties));
                                 expect(properties.type).assertEqual(window.WindowType.TYPE_APP);
                                 await data.destroyWindow();
