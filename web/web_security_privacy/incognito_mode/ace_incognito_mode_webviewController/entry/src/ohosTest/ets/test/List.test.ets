@@ -15,12 +15,18 @@
 
 import webViewGetAccessibleGeolocation from './webViewGetAccessibleGeolocation.test'
 import GeolocationPermissionsAllowGeolocation from './GeolocationPermissionsAllowGeolocation.test'
+
 import GeolocationPermissionsDeleteGeolocation from './GeolocationPermissionsDeleteGeolocation.test'
 import GeolocationPermissionsDeleteAllGeolocation from './GeolocationPermissionsDeleteAllGeolocation.test'
+
+import GeolocationPermissionsGetAccessibleGeolocation from './GeolocationPermissionsGetAccessibleGeolocation.test'
+import GeolocationPermissionsGetAccessibleGeolocationCallback from './GeolocationPermissionsGetAccessibleGeolocationCallback.test'
 
 export default function testsuite() {
         webViewGetAccessibleGeolocation()
         GeolocationPermissionsAllowGeolocation()
         GeolocationPermissionsDeleteGeolocation()
         GeolocationPermissionsDeleteAllGeolocation()
+        GeolocationPermissionsGetAccessibleGeolocation()
+        GeolocationPermissionsGetAccessibleGeolocationCallback()
 }
