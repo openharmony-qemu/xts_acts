@@ -2922,8 +2922,8 @@ export default function CreatePixelMapSupp() {
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_124', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_124';
+    it('SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
