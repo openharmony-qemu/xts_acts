@@ -19,7 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 
 export default function ReuseIdNullUndefinedTest() {
   describe('ReuseIdNullUndefinedTest', () => {
-    beforeEach(async (done: Function) => {
+    beforeAll(async (done: Function) => {
       console.info("ReuseIdNullUndefined beforeAll start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Reusable/ReuseIdNullUndefined',
