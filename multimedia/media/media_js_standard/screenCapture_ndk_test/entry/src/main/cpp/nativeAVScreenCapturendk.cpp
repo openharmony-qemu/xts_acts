@@ -46,6 +46,8 @@ static int32_t g_recordTimeOne = 1000000;
 static uint64_t g_displaySelectedId = -1;
 static int32_t g_userSelectedType = -1;
 static uint64_t g_userSelectedDisplayId = -1;
+static uint64_t* g_userSelectedDisplayIds = nullptr;
+static size_t g_userSelectedCount = -1;
 
 OH_AVCodec *g_videoEnc;
 constexpr uint32_t DEFAULT_WIDTH = 720;
@@ -120,10 +122,15 @@ void OnUserSelected(OH_AVScreenCapture* capture, OH_AVScreenCapture_UserSelectio
     (void)capture;
     int* selectType = new int;
     uint64_t* displayId = new uint64_t;
+    uint64_t** displayIds = new uint64_t*;
+    size_t* count = new size_t;
     OH_AVScreenCapture_GetCaptureTypeSelected(selections, selectType);
     OH_AVScreenCapture_GetDisplayIdSelected(selections, displayId);
+    OH_AVScreenCapture_GetMultiDisplayIdsSelected(selections, displayIds, count);
     g_userSelectedType = *selectType;
     g_userSelectedDisplayId = *displayId;
+    g_userSelectedDisplayIds = *displayIds;
+    g_userSelectedCount = *count;
     OH_LOG_INFO(LOG_APP, "OnUserSelected g_userSelectedType=%{public}d, g_userSelectedDisplayId=%{public}lu",
         g_userSelectedType, g_userSelectedDisplayId);
     (void)userData;
@@ -1683,6 +1690,8 @@ void OnUserSelectedError(OH_AVScreenCapture* capture, OH_AVScreenCapture_UserSel
     (void)capture;
     int* selectType = new int;
     uint64_t* displayId = new uint64_t;
+    uint64_t** displayIds = new uint64_t*;
+    size_t* count = new size_t;
     OH_AVSCREEN_CAPTURE_ErrCode result0 = AV_SCREEN_CAPTURE_ERR_OK;
     OH_AVScreenCapture_UserSelectionInfo* selectionsnull = nullptr;
     result0 = OH_AVScreenCapture_GetCaptureTypeSelected(selectionsnull, selectType);
@@ -1696,8 +1705,15 @@ void OnUserSelectedError(OH_AVScreenCapture* capture, OH_AVScreenCapture_UserSel
     if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         napi_throw_error((screenCaptureEnv), nullptr, "error : expect GetDisplayIdSelected is not nullptr");
     }
+    result0 = OH_AVScreenCapture_GetMultiDisplayIdsSelected(selectionsnull, displayIds, count);
+    OH_LOG_INFO(LOG_APP, "GetDisplayIdSelected result0 = %{public}d", result0);
+    if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((screenCaptureEnv), nullptr, "error : expect GetDisplayIdSelected is not nullptr");
+    }
     g_userSelectedType = *selectType;
     g_userSelectedDisplayId = *displayId;
+    g_userSelectedDisplayIds = *displayIds;
+    g_userSelectedCount = *count;
     OH_LOG_INFO(LOG_APP, "OnUserSelected g_userSelectedType=%{public}d, g_userSelectedDisplayId=%{public}lu",
         g_userSelectedType, g_userSelectedDisplayId);
     (void)userData;
@@ -2446,6 +2462,36 @@ static napi_value normalAVScreenCaptureStrategy1(napi_env env, napi_callback_inf
     napi_create_int32(env, result, &res);
     return res;
 }
+
+static napi_value normalMultiDisplayCaptureCapabilityTest(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error : expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCaptureConfig config_;
+    SetConfig(config_);
+    vector<uint64_t> displayIds2 = {0, 1};
+    OH_MultiDisplayCapability capability = {};
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_GetMultiDisplayCaptureCapability(screenCaptureNormal,
+        &displayIds2[0], -1, &capability);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_GetMultiDisplayCaptureCapability result1 = %{public}d", result1);
+    if (result1 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect count is Error");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result3 = OH_AVScreenCapture_GetMultiDisplayCaptureCapability(nullptr,
+        &displayIds2[0], displayIds2.size(), &capability);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_GetMultiDisplayCaptureCapability result3 = %{public}d", result3);
+    if (result3 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect screenCaptureNormal is Error");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result4 = OH_AVScreenCapture_Init(screenCaptureNormal, config_);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_Init result4 = %{public}d", result4);
+    OH_AVScreenCapture_Release(screenCaptureNormal);
+    napi_value res;
+    napi_create_int32(env, result1, &res);
+    return res;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2559,6 +2605,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureStrategy1", nullptr, normalAVScreenCaptureStrategy1,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalMultiDisplayCaptureCapabilityTest", nullptr, normalMultiDisplayCaptureCapabilityTest, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
