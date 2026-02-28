@@ -832,14 +832,10 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0);
+        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_RIGHT, 0);
         await driver!.delayMs(waitUiReadyMs);
         let button = await driver!.findComponent(ON.text('doubleClick'));
-        expect(button != null).assertTrue();
-        if (button != null) {
-          let text = await button.getText();
-          expect(text == 'doubleClick').assertTrue();
-        }
+        expect(button == null).assertTrue();
       }
       await stopApplication('com.uitestScene.acts');
     })
@@ -865,14 +861,10 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_LEFT);
+        await driver!.mouseDoubleClick(center, MouseButton.MOUSE_BUTTON_MIDDLE);
         await driver!.delayMs(waitUiReadyMs)
         let button = await driver!.findComponent(ON.text('doubleClick'));
-        expect(button != null).assertTrue();
-        if (button != null) {
-          let text = await button.getText();
-          expect(text == 'doubleClick').assertTrue();
-        }
+        expect(button == null).assertTrue();
       }
       await stopApplication('com.uitestScene.acts');
     })
@@ -919,15 +911,11 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT, 0);
+        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_RIGHT, 0);
         await driver!.delayMs(waitUiReadyMs);
       }
       let newButton = await driver!.findComponent(ON.text('longClick'));
-      expect(newButton != null).assertTrue();
-      if (newButton != null) {
-        let text = await newButton.getText();
-        expect(text == 'longClick').assertTrue();
-      }
+      expect(newButton == null).assertTrue();
       await stopApplication('com.uitestScene.acts');
     })
 
@@ -946,15 +934,11 @@ export default function uitestDriverTest() {
       expect(Button != null).assertTrue();
       if (Button != null) {
         let center = await Button.getBoundsCenter();
-        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_LEFT);
+        await driver!.mouseLongClick(center, MouseButton.MOUSE_BUTTON_MIDDLE);
         await driver!.delayMs(waitUiReadyMs);
       }
       let newButton = await driver!.findComponent(ON.text('longClick'));
-      expect(newButton != null).assertTrue();
-      if (newButton != null) {
-        let text = await newButton.getText();
-        expect(text == 'longClick').assertTrue();
-      }
+      expect(newButton == null).assertTrue();
       await stopApplication('com.uitestScene.acts');
     })
 
@@ -1018,6 +1002,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplayDensity getDisplayRotation success, ${JSON.stringify(density)}`);
         expect(density.x != 0).assertTrue()
         expect(density.y != 0).assertTrue()
+        expect(density.displayId != null).assertTrue()
       }catch( error) {
         hilog.info(domain, tag, `testGetDisplayDensity_static error is, ${ JSON.stringify(error)} `);
         expect().assertFail();
@@ -1315,6 +1300,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testGetDisplaySize test, ${JSON.stringify(test)}`);
         expect(test.x != 0).assertTrue();
         expect(test.y != 0).assertTrue();
+        expect(test.displayId != null).assertTrue();
       } catch (error) {
         hilog.info(domain, tag, `testGetDisplaySize error, ${JSON.stringify(error)}`);
         expect().assertFail();
@@ -1431,7 +1417,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static mainPageCom, ${JSON.stringify(mainPageCom)}`);
         expect(mainPageCom == null).assertTrue();
         // 三指下划,应用返回前台
-        await driver!.touchPadMultiFingerSwipe(3, UiDirection.DOWN);
+        await driver!.touchPadMultiFingerSwipe(3, UiDirection.DOWN, {stay: false});
         await driver!.delayMs(1000);
         let mainPageCom1 = await driver!.findComponent(ON.text('MainPage'));
         hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static mainPageCom1, ${JSON.stringify(mainPageCom1)}`);
