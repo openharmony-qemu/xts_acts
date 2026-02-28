@@ -13,13 +13,14 @@
 * limitations under the License.
 */
 
-import decimalTest from './decimal/Decimal.test'
-import Decimal2Test from './decimal/Decimal2.test'
-import Decimal3Test from './decimal/Decimal3.test'
+import decimalTest from './decimal/Decimal.test';
+import Decimal2Test from './decimal/Decimal2.test';
+import Decimal3Test from './decimal/Decimal3.test';
+import Decimal4Test from './decimal/Decimal4.test';
 
 export default function testsuite() {
   Decimal2Test();
   decimalTest();
-
   Decimal3Test();
+  Decimal4Test();
 }
