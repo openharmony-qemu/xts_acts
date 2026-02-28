@@ -60,7 +60,7 @@ export default function buttonLabelStyleNullTest() {
       let strJson = getInspectorByKey('button_labelStyle_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info(JSON.stringify(obj)+ '========attrs========')
-      expect(obj.$attrs.labelStyle).assertTrue();
+      expect(obj.$attrs.labelStyle).assertContain("FontStyle.Normal");
 
       console.info('buttonLabelStyle_Null_001 END');
       done();
@@ -81,7 +81,7 @@ export default function buttonLabelStyleNullTest() {
       let strJson = getInspectorByKey('button_labelStyle_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info(JSON.stringify(obj)+ '========attrs========')
-      expect(obj.$attrs.labelStyle).assertTrue();
+      expect(obj.$attrs.labelStyle).assertContain("FontStyle.Normal");
 
       console.info('buttonLabelStyle_Undefined_002 END');
       done();
