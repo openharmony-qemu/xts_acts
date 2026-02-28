@@ -48,9 +48,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor copyOptions property with null parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorCopyOptionsNull_0100', Level.LEVEL0, async () => {
+    it('richEditorCopyOptionsNull_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorCopyOptionsNull_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -70,9 +70,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor copyOptions property with undefined parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorCopyOptionsUndefined_0100', Level.LEVEL0, async () => {
+    it('richEditorCopyOptionsUndefined_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorCopyOptionsUndefined_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -94,9 +94,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor customKeyboard property with null parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorCustomKeyboardNull_0100', Level.LEVEL0, async () => {
+    it('richEditorCustomKeyboardNull_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorCustomKeyboardNull_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -116,9 +116,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor customKeyboard property with undefined parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorCustomKeyboardUndefined_0100', Level.LEVEL0, async () => {
+    it('richEditorCustomKeyboardUndefined_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorCustomKeyboardUndefined_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -140,9 +140,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor enableDataDetector property with null parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorEnableDataDetectorNull_0100', Level.LEVEL0, async () => {
+    it('richEditorEnableDataDetectorNull_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorEnableDataDetectorNull_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -162,9 +162,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor enableDataDetector property with undefined parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorEnableDataDetectorUndefined_0100', Level.LEVEL0, async () => {
+    it('richEditorEnableDataDetectorUndefined_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorEnableDataDetectorUndefined_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -186,9 +186,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor enablePreviewText property with null parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorEnablePreviewTextNull_0100', Level.LEVEL0, async () => {
+    it('richEditorEnablePreviewTextNull_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorEnablePreviewTextNull_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -208,9 +208,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor enablePreviewText property with undefined parameter should restore default value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorEnablePreviewTextUndefined_0100', Level.LEVEL0, async () => {
+    it('richEditorEnablePreviewTextUndefined_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorEnablePreviewTextUndefined_0100 START');
 
       let strJsonDefault: string = getInspectorByKey('richEditor_specialOptions_default');
@@ -232,9 +232,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor bindSelectionMenu method with null content parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorBindSelectionMenuNull_0100', Level.LEVEL0, async () => {
+    it('richEditorBindSelectionMenuNull_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorBindSelectionMenuNull_0100 START');
 
       let strJson: string = getInspectorByKey('richEditor_bindSelectionMenu_null');
@@ -251,9 +251,9 @@ export default function RichEditorSpecialOptionsNullTest() {
      * @tc.desc   Test RichEditor bindSelectionMenu method with undefined content parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('richEditorBindSelectionMenuUndefined_0100', Level.LEVEL0, async () => {
+    it('richEditorBindSelectionMenuUndefined_0100', Level.LEVEL1, async () => {
       console.info('RichEditorSpecialOptionsNullTest', 'richEditorBindSelectionMenuUndefined_0100 START');
 
       let strJson: string = getInspectorByKey('richEditor_bindSelectionMenu_undefined');

@@ -97,13 +97,13 @@ struct RichEditorSpecialOptionsNull {
         // Test 9: bindSelectionMenu with null content parameter
         RichEditor(this.options)
           .id('richEditor_bindSelectionMenu_null')
-          .bindSelectionMenu(null, this.CustomMenuBuilder, ResponseType.LongPress)
+          .bindSelectionMenu(null, this.CustomMenuBuilder, null)
           .height('5%')
 
         // Test 10: bindSelectionMenu with undefined content parameter
         RichEditor(this.options)
           .id('richEditor_bindSelectionMenu_undefined')
-          .bindSelectionMenu(undefined, this.CustomMenuBuilder, ResponseType.LongPress)
+          .bindSelectionMenu(undefined, this.CustomMenuBuilder, undefined)
           .height('5%')
       }
 
