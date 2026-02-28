@@ -367,12 +367,7 @@ export default function uitestUiWindowTest() {
       } catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, `testWindowResizeA_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue();
-          expect(err.code).assertEqual(DeviceErrorCode);
-        } else {
-          expect(false).assertTrue()
-        }
+        expect(err.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(domain, tag, `testWindowResizeA_static end `);
       await stopApplication('com.uitestScene.acts')
