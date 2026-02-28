@@ -54,11 +54,9 @@ export default function buttonContentModifierNullTest() {
     it('buttonContentModifier_Null_001', Level.LEVEL1, async (done: Function) => {
       console.info('buttonContentModifier_Null_001 START');
       await Utils.sleep(1000);
-
       let strJson = getInspectorByKey('button_contentModifier_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.contentModifier).assertNotNull();
-
       console.info('buttonContentModifier_Null_001 END');
       done();
     });
@@ -74,11 +72,9 @@ export default function buttonContentModifierNullTest() {
     it('buttonContentModifier_Undefined_002', Level.LEVEL1, async (done: Function) => {
       console.info('buttonContentModifier_Undefined_002 START');
       await Utils.sleep(1000);
-
       let strJson = getInspectorByKey('button_contentModifier_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.contentModifier).assertNotNull();
-
       console.info('buttonContentModifier_Undefined_002 END');
       done();
     });
