@@ -305,7 +305,7 @@ export default function requestDownloadJSUnit() {
       try {
         let task = await request.agent.create(baseContext, config);
         await request.agent.remove(task.tid);
-        expect(true).assertEqual(true);
+        expect(task !== undefined).assertEqual(true);
         console.info("====>SUB_Misc_REQUEST_Remove_Download_Promise_0010 remove success: " + task);
       } catch (err) {
         console.info("====>SUB_Misc_REQUEST_Remove_Download_Promise_0010 catch error: " + JSON.stringify(err));
@@ -342,7 +342,7 @@ export default function requestDownloadJSUnit() {
               console.info("====>SUB_Misc_REQUEST_Start_Download_Callback_0010 download start err: " + JSON.stringify(err));
               expect().assertFail();
             }
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             console.info("====>SUB_Misc_REQUEST_Start_Download_Callback_0010 download start success: " + task);
           }catch(err){
             console.info("====>SUB_Misc_REQUEST_Start_Download_Callback_0010 catch err: " + JSON.stringify(err));
@@ -378,7 +378,7 @@ export default function requestDownloadJSUnit() {
       try {
         task = await request.agent.create(baseContext, config);
         await task.start();
-        expect(true).assertEqual(true);
+        expect(task !== undefined).assertEqual(true);
         await request.agent.remove(task.tid);
         console.info("====>SUB_Misc_REQUEST_Start_Download_Promise_0010 download start success: " + task);
       } catch (err) {
@@ -421,7 +421,7 @@ export default function requestDownloadJSUnit() {
                 console.info("====>SUB_Misc_REQUEST_Pause_Download_Callback_0010 download pause err: " + JSON.stringify(err));
                 expect().assertFail();
               }
-              expect(true).assertEqual(true);
+              expect(task !== undefined).assertEqual(true);
               console.info("====>SUB_Misc_REQUEST_Pause_Download_Callback_0010 download pause success: " + task);
             }catch(err){
               console.info("====>SUB_Misc_REQUEST_Pause_Download_Callback_0010 catch err: " + JSON.stringify(err));
@@ -458,7 +458,7 @@ export default function requestDownloadJSUnit() {
         try {
           console.info("====>SUB_Misc_REQUEST_Pause_Download_Promise_0010 download start: " + JSON.stringify(err));
           await task.pause();
-          expect(true).assertEqual(true);
+          expect(task !== undefined).assertEqual(true);
           await request.agent.remove(task.tid);
           console.info("====>SUB_Misc_REQUEST_Pause_Download_Promise_0010 download pause success: " + task);
           done();
@@ -502,7 +502,7 @@ export default function requestDownloadJSUnit() {
                   console.info("====>SUB_Misc_REQUEST_Resume_Download_Callback_0010 download resume err: " + JSON.stringify(err));
                   expect().assertFail();
                 }
-                expect(true).assertEqual(true);
+                expect(task !== undefined).assertEqual(true);
                 console.info("====>SUB_Misc_REQUEST_Resume_Download_Callback_0010 download resume success: " + task);
               }catch(err){
                 console.info("====>SUB_Misc_REQUEST_Resume_Download_Callback_0010 catch err: " + JSON.stringify(err));
@@ -542,7 +542,7 @@ export default function requestDownloadJSUnit() {
           console.info("====>SUB_Misc_REQUEST_Resume_Download_Promise_0010 pause: " + JSON.stringify(err));
           try {
             await task.resume();
-            expect(true).assertEqual(true);
+            expect(task !== undefined).assertEqual(true);
             await request.agent.remove(task.tid);
             console.info("====>SUB_Misc_REQUEST_Resume_Download_Promise_0010 download resume success: " + task);
             done();
@@ -585,7 +585,7 @@ export default function requestDownloadJSUnit() {
                 console.info("====>SUB_Misc_REQUEST_Stop_Download_Callback_0010 download stop err: " + JSON.stringify(err));
                 expect().assertFail();
               }
-              expect(true).assertEqual(true);
+              expect(task !== undefined).assertEqual(true);
               console.info("====>SUB_Misc_REQUEST_Stop_Download_Callback_0010 download stop success: " + task);
             }catch(err){
               console.info("====>SUB_Misc_REQUEST_Stop_Download_Callback_0010 catch err: " + JSON.stringify(err));
@@ -622,7 +622,7 @@ export default function requestDownloadJSUnit() {
         console.info("====>SUB_Misc_REQUEST_Stop_Download_Promise_0010 start: " + JSON.stringify(err));
         try {
           await task.stop();
-          expect(true).assertEqual(true);
+          expect(task !== undefined).assertEqual(true);
           console.info("====>SUB_Misc_REQUEST_Stop_Download_Promise_0010 download stop success: " + task);
           done();
         } catch (err) {
@@ -668,7 +668,7 @@ export default function requestDownloadJSUnit() {
             } catch (err) {
               console.info("====>SUB_Misc_REQUEST_On_Download_Progress_0040 task has complete: " + JSON.stringify(task.tid));
             }
-            expect(true).assertTrue();
+            expect(pro.state !== undefined).assertTrue();
             done();
           }
           try {
@@ -777,7 +777,7 @@ export default function requestDownloadJSUnit() {
             console.info("====>SUB_Misc_REQUEST_On_Download_Completed_0040 pro.processed: " + pro.processed);
             console.info("====>SUB_Misc_REQUEST_On_Download_Completed_0040 pro.sizes: " + pro.sizes);
             console.info("====>SUB_Misc_REQUEST_On_Download_Completed_0040 pro.extras: " + JSON.stringify(pro.extras));
-            expect(true).assertTrue();
+            expect(pro.state !== undefined && pro.processed !== undefined).assertTrue();
             done();
           }
           try {
@@ -887,7 +887,7 @@ export default function requestDownloadJSUnit() {
             console.info("====>SUB_Misc_REQUEST_On_Download_Failed_0040 pro.processed: " + pro.processed);
             console.info("====>SUB_Misc_REQUEST_On_Download_Failed_0040 pro.size: " + pro.sizes);
             console.info("====>SUB_Misc_REQUEST_On_Download_Failed_0040 pro.extras: " + JSON.stringify(pro.extras));
-            expect(true).assertTrue();
+            expect(pro.state !== undefined).assertTrue();
             done();
           }
           try {
@@ -1007,7 +1007,7 @@ export default function requestDownloadJSUnit() {
               console.info("====>SUB_Misc_REQUEST_Create_Download_Callback_0060 task1 remove");
               await request.agent.remove(task2.tid);
               console.info("====>SUB_Misc_REQUEST_Create_Download_Callback_0060 task2 remove");
-              expect(true).assertTrue()
+              expect(task1 !== undefined).assertTrue()
               done();
             } catch (err) {
               console.info("====>SUB_Misc_REQUEST_Create_Download_Callback_0060 create success: " + JSON.stringify(err));
@@ -1051,7 +1051,7 @@ export default function requestDownloadJSUnit() {
         console.info("====>SUB_Misc_REQUEST_Create_Download_Promise_0060 task1 remove");
         await request.agent.remove(task2.tid);
         console.info("====>SUB_Misc_REQUEST_Create_Download_Promise_0060 task2 remove");
-        expect(true).assertTrue()
+        expect(task1 !== undefined).assertTrue()
         done();
       } catch (err) {
         console.info("====>SUB_Misc_REQUEST_Create_Download_Promise_0060 create catch err: " + JSON.stringify(err));
