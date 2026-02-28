@@ -15,6 +15,8 @@
  */
 
 import popupTest from './PopupTest/popupTest.test';
+import PopupNodeTest from './PopupTest/PopupNodeTest.test';
 export default function testsuite() {
   popupTest();
+  PopupNodeTest();
 }
