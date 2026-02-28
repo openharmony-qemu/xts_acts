@@ -44,9 +44,38 @@ class MySequence1 implements rpc.Parcelable {
   unmarshalling(messageSequence: rpc.MessageSequence) {
     try {
       this.pixel_map = image.createPixelMapFromParcel(messageSequence);
+      console.info('www data createPixelMapFromParcel ', this.pixel_map.isEditable, this.pixel_map.isStrideAlignment);
+      expect(this.pixel_map.isEditable).assertTrue();
+      expect(this.pixel_map.isStrideAlignment).assertFalse();
     } catch(e) {
       let error = e as BusinessError;
       console.error(`createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
+      expect().assertFail();
+      return false;
+    }
+    return true;
+  }
+}
+
+class MySequence3 implements rpc.Parcelable {
+  pixel_map: image.PixelMap;
+  constructor(conPixelmap: image.PixelMap) {
+    this.pixel_map = conPixelmap;
+  }
+  marshalling(messageSequence: rpc.MessageSequence) {
+    this.pixel_map.marshalling(messageSequence);
+    return true;
+  }
+  unmarshalling(messageSequence: rpc.MessageSequence) {
+    try {
+      this.pixel_map = image.createPixelMapFromParcel(messageSequence);
+      console.info('www data createPixelMapFromParcel ', this.pixel_map.isEditable, this.pixel_map.isStrideAlignment);
+      expect(this.pixel_map.isEditable).assertFalse();
+      expect(this.pixel_map.isStrideAlignment).assertTrue();
+    } catch(e) {
+      let error = e as BusinessError;
+      console.error(`createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
+      expect().assertFail();
       return false;
     }
     return true;
@@ -1920,6 +1949,13 @@ export default function graphicImagePixelMap() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
           console.info('www data succeed in createPixelMapFromSurfaceSync');
+          expect(pixelMap !== null).assertTrue();
+
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+
+          console.info(`www data graphicImagePixelMap_static_8500 success`);
           expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -1943,6 +1979,13 @@ export default function graphicImagePixelMap() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync(surfaceId);
           console.info('www data succeed in createPixelMapFromSurfaceSync');
+          expect(pixelMap !== null).assertTrue();
+
+          // Verify basic properties
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+
+          console.info(`www data graphicImagePixelMap_static_8500 success`);
           expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
@@ -2047,6 +2090,50 @@ export default function graphicImagePixelMap() {
         } else {
           expect().assertFail();
         }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap_static_9000
+     * @tc.number graphicImagePixelMap_static_9000
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap_static_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let bufferArr: Uint8Array = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i++) {
+          bufferArr[i] = 0x80;
+        }
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        }
+        let pixelMap : image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+        if (pixelMap != undefined) {
+          // 序列化。
+          let parcelable: MySequence3 = new MySequence3(pixelMap);
+          try {
+            let data: rpc.MessageSequence = rpc.MessageSequence.create();
+            data.writeParcelable(parcelable);
+            // 反序列化 rpc获取到data。
+            let ret: MySequence3 = new MySequence3(pixelMap);
+            data.readParcelable(ret);
+            // 获取到pixelmap。
+            let unMarshPixelmap = ret.pixel_map;
+            console.info('www data succeed in unMarshPixelmap' + unMarshPixelmap)
+          } catch (err) {
+            console.error('www data error ' + err);
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
       })
 
   })
