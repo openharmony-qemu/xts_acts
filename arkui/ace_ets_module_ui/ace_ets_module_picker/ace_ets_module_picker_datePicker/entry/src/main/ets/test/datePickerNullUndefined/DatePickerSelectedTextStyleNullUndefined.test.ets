@@ -48,7 +48,7 @@ export default function DatePickerSelectedTextStyleNullUndefinedTest() {
         router.clear();
         let pages = router.getState();
         console.info("get DatePickerSelectedTextStyleNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("DatePickerLunarNullUndefined" == pages.name)) {
+        if (!("DatePickerSelectedTextStyleNullUndefined" == pages.name)) {
           console.info("get DatePickerSelectedTextStyleNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
