@@ -94,7 +94,7 @@ export default function TestSetUIStates() {
       await CommonFunc.sleep(500);
       button?.click()
       await CommonFunc.sleep(500);
-      let strJsonNew = inspector.getInspectorByKey('key_TestParallelize_001');
+      let strJsonNew = inspector.getInspectorByKey('text');
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('state var~');
       console.info('[' + tagName + '] END ===========================');
       done();
