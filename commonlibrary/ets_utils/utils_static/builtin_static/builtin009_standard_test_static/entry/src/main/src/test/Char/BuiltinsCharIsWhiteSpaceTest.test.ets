@@ -138,7 +138,7 @@ export default function builtinsCharIsWhiteSpaceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsCharIsWhiteSpaceTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const BMP_BORDER: number = 0x10000;
+      const BMP_BORDER: int = 0x10000;
       const borderString: string = String.fromCodePoint(BMP_BORDER);
       const highCh: char = borderString.charAt(0) as char;
       const lowCh: char = borderString.charAt(1) as char;
