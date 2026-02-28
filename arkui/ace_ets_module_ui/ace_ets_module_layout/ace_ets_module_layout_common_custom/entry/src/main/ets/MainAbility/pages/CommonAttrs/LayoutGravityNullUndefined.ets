@@ -21,21 +21,21 @@ struct LayoutGravityNullUndefinedTest {
   build() {
     Column() {
       Row() {
-        Button("TOP")
+        Button('TOP')
           .onClick(() => {
             this.layoutGravityValue = LocalizedAlignment.TOP;
           })
           .width('30%')
           .id('LayoutGravityNullUndefinedTest_btn_valid')
 
-        Button("null")
+        Button('null')
           .onClick(() => {
             this.layoutGravityValue = null;
           })
           .width('30%')
           .id('LayoutGravityNullUndefinedTest_btn_null')
 
-        Button("undefined")
+        Button('undefined')
           .onClick(() => {
             this.layoutGravityValue = undefined;
           })
