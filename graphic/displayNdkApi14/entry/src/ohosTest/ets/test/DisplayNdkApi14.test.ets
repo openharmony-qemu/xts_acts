@@ -775,13 +775,15 @@ export default function ActsDisplayNdkApi14Test() {
           };
           let promise = screenshot.capture();
           promise.then((PixelMap: image.PixelMap) => {
-            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
+            console.log(caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber()+'PixelMap.isEditable:'+PixelMap.isEditable+'PixelMap.isStrideAlignment:'+PixelMap.isStrideAlignment);
             PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
               let PixelMapWidth = imageInfo.size.width;
               let PixelMapHeight = imageInfo.size.height;
               console.log(caseName + ' PixelMapWidth:'+ PixelMapWidth + ' ,PixelMapHeight:'+ PixelMapHeight);
               expect(PixelMapWidth).assertLarger(0);
               expect(PixelMapHeight).assertLarger(0);
+              expect(PixelMap.isEditable).assertEqual(false);
+              expect(PixelMap.isStrideAlignment).assertEqual(false);
               PixelMap.release(); // PixelMap使用完后及时释放内存
               done();
             })

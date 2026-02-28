@@ -3103,7 +3103,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             promise3.then((data) => {
               pipWindowInfo = data;
               console.info(caseName + ' Success in get pip window info. Info windowId: ' + JSON.stringify(pipWindowInfo.windowId) + ' windowSize: ' + JSON.stringify(pipWindowInfo.size));
-
+              expect(pipWindowInfo.windowId).assertLargerOrEqual(0);
+              expect(pipWindowInfo.width).assertLargerOrEqual(0);
+              expect(pipWindowInfo.height).assertLargerOrEqual(0);
+              expect(pipWindowInfo.scale).assertLargerOrEqual(0);
               done();
             }).catch((err: BusinessError) => {
               console.error(`${caseName} Failed to get pip window info. Cause code: ${err.code}, message: ${err.message}`);

@@ -75,6 +75,14 @@ export default function windowCallbackTest() {
           unexpectedError(TRUE_FLAG, err, caseName, 'displayClass.getCutoutInfo', done);
         } else {
           console.info(msgStr + 'Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+          expect(data.boundingRects.left).assertLargerOrEqual(0);
+          expect(data.boundingRects.top).assertLargerOrEqual(0);
+          expect(data.boundingRects.width).assertLargerOrEqual(0);
+          expect(data.boundingRects.height).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.right).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.bottom).assertLargerOrEqual(0);
           done();
         }
       })
@@ -121,6 +129,14 @@ export default function windowCallbackTest() {
       expect(!!dpClass).assertTrue();
       dpClass.getCutoutInfo().then((data: display.CutoutInfo) => {
         console.info('Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+        expect(data.boundingRects.left).assertLargerOrEqual(0);
+          expect(data.boundingRects.top).assertLargerOrEqual(0);
+          expect(data.boundingRects.width).assertLargerOrEqual(0);
+          expect(data.boundingRects.height).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.right).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.bottom).assertLargerOrEqual(0);
         done();
       }).catch((err: BusinessError) => {
         console.log(caseName + ', err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err.message));
