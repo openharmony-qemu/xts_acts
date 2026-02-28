@@ -113,7 +113,7 @@ export default function IgnoreLayoutSafeAreaNullUndefinedTest() {
     /**
      * @tc.name   IgnoreLayoutSafeAreaNullUndefinedTest_0300
      * @tc.number IgnoreLayoutSafeAreaNullUndefinedTest_0300
-     * @tc.desc   test ignoreLayoutSafeArea with undefined parameter
+     * @tc.desc   test ignoreLayoutSafeArea with empty array parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
