@@ -22,6 +22,9 @@ import relationalStoreAsyncDownloadAssetTest from './relationalStoreAsyncDownloa
 import relationalStoreSetDistributedTablesTest from './relationalStoreSetDistributedTables.test'
 import cloudDataSetStrategyEtsTest from './CloudDataSetStrategyEts.test'
 import relationalStoreRagStatusTest from './RelationalStoreRagStatus.test'
+import RDBStoreErrTest from './RDBStoreErr.test';
+import RdbPredicatesErrTest from './RdbPredicatesErrTest.test';
+import relationalStoreEtsTest from './RelationalStoreEtsTest.test';
 export default function testsuite() {
   relationalStoreCloudSyncEtsTest()
   relationalStoreDistributedTest()
@@ -33,4 +36,7 @@ export default function testsuite() {
   relationalStoreSetDistributedTablesTest()
   cloudDataSetStrategyEtsTest()
   relationalStoreRagStatusTest()
+  RDBStoreErrTest();
+  RdbPredicatesErrTest();
+  relationalStoreEtsTest();
 }
