@@ -87,6 +87,11 @@ import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
 import FrameNodeConvertPositionTest from './FrameNodeMethod/FrameNodeConvertPositionTest';
 import FrameNodeConvertPositionErrorCodeTest from './FrameNodeMethod/FrameNodeConvertPositionErrorCodeTest';
+import ConvertPositionNullUndefinedTest from './FrameNodeMethod/ConvertPositionNullUndefinedTest.test';
+import ConvertPositionToFromWindowNullTest from './FrameNodeMethod/ConvertPositionToFromWindowNullTest.test';
+import RemoveAdoptedChildNullTest from './FrameNodeMethod/RemoveAdoptedChildNullTest.test';
+import SetCrossLanguageOptionsNullTest from './FrameNodeMethod/SetCrossLanguageOptionsNullTest.test';
+import GetInteractionEventBindingInfoNullTest from './FrameNodeMethod/GetInteractionEventBindingInfoNullTest.test';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -163,4 +168,9 @@ export default function testsuite() {
   FrameNodeConvertPositionTest();
   FrameNodeConvertPositionErrorCodeTest();
   CreateNodeNullUndefinedTest();
+  ConvertPositionNullUndefinedTest();
+  ConvertPositionToFromWindowNullTest();
+  RemoveAdoptedChildNullTest();
+  SetCrossLanguageOptionsNullTest();
+  GetInteractionEventBindingInfoNullTest();
 }
