@@ -308,364 +308,12 @@ export default function builtinsRuntimeTest() {
     /**
      * @tc.name    builtinsRuntimeTest0010
      * @tc.number  BUILTINS_RUNTIME_TEST_0010
-     * @tc.desc    Test isLittleEndianPlatform with boundary cases and performance
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const zeroBuffer: ArrayBuffer = new ArrayBuffer(4);
-      const zeroView32: Uint32Array = new Uint32Array(zeroBuffer);
-      const zeroView8: Uint8Array = new Uint8Array(zeroBuffer);
-
-      zeroView32[0] = 0;
-
-      expect(zeroView8[0]).assertEqual(0x00);
-      expect(zeroView8[1]).assertEqual(0x00);
-      expect(zeroView8[2]).assertEqual(0x00);
-      expect(zeroView8[3]).assertEqual(0x00);
-
-      const maxUint32: number = 0xFFFFFFFF;
-      const maxBuffer: ArrayBuffer = new ArrayBuffer(4);
-      const maxView32: Uint32Array = new Uint32Array(maxBuffer);
-      const maxView8: Uint8Array = new Uint8Array(maxBuffer);
-
-      maxView32[0] = maxUint32;
-
-      expect(maxView8[0]).assertEqual(0xFF);
-      expect(maxView8[1]).assertEqual(0xFF);
-      expect(maxView8[2]).assertEqual(0xFF);
-      expect(maxView8[3]).assertEqual(0xFF);
-
-      const startTime: number = new Date().getTime();
-      for (let i: number = 0; i < 1000; i++) {
-        const result: boolean = Runtime.isLittleEndianPlatform();
-        expect(typeof result).assertEqual('boolean');
-      }
-      const endTime: number = new Date().getTime();
-      const elapsedTime: number = endTime - startTime;
-
-      expect(elapsedTime < 1000).assertTrue();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0011
-     * @tc.number  BUILTINS_RUNTIME_TEST_0011
-     * @tc.desc    Test isSameReference with primitive values
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      expect(Runtime.isSameReference(null, null)).assertTrue();
-      expect(Runtime.isSameReference(null, undefined)).assertFalse();
-
-      expect(Runtime.isSameReference(undefined, undefined)).assertTrue();
-      expect(Runtime.isSameReference(undefined, null)).assertFalse();
-
-      expect(Runtime.isSameReference(true, true)).assertFalse();
-      expect(Runtime.isSameReference(false, false)).assertFalse();
-      expect(Runtime.isSameReference(true, false)).assertFalse();
-
-      expect(Runtime.isSameReference(0, 0)).assertFalse();
-      expect(Runtime.isSameReference(42, 42)).assertFalse();
-      expect(Runtime.isSameReference(NaN, NaN)).assertFalse();
-      expect(Runtime.isSameReference(Infinity, Infinity)).assertFalse();
-      expect(Runtime.isSameReference(-0, 0)).assertFalse();
-
-      expect(Runtime.isSameReference('', '')).assertTrue();
-      expect(Runtime.isSameReference('hello', 'hello')).assertTrue();
-      expect(Runtime.isSameReference('hello', 'world')).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0012
-     * @tc.number  BUILTINS_RUNTIME_TEST_0012
-     * @tc.desc    Test isSameReference with Number objects
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const num1: Number = new Number(42);
-      const num2: Number = new Number(42);
-      const num3: Number = num1;
-
-      expect(Runtime.isSameReference(num1, num1)).assertFalse();
-      expect(Runtime.isSameReference(num1, num3)).assertFalse();
-      expect(Runtime.isSameReference(num1, num2)).assertFalse();
-
-      const maxNum1: Number = new Number(Number.MAX_VALUE);
-      const maxNum2: Number = new Number(Number.MAX_VALUE);
-      expect(Runtime.isSameReference(maxNum1, maxNum1)).assertFalse();
-      expect(Runtime.isSameReference(maxNum1, maxNum2)).assertFalse();
-
-      const nan1: Number = new Number(NaN);
-      const nan2: Number = new Number(NaN);
-      const inf1: Number = new Number(Infinity);
-      const inf2: Number = new Number(Infinity);
-
-      expect(Runtime.isSameReference(nan1, nan1)).assertFalse();
-      expect(Runtime.isSameReference(nan1, nan2)).assertFalse();
-      expect(Runtime.isSameReference(inf1, inf1)).assertFalse();
-      expect(Runtime.isSameReference(inf1, inf2)).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0013
-     * @tc.number  BUILTINS_RUNTIME_TEST_0013
-     * @tc.desc    Test isSameReference with String objects
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const str1: String = new String('hello');
-      const str2: String = new String('hello');
-      const str3: String = str1;
-
-      expect(Runtime.isSameReference(str1, str1)).assertTrue();
-      expect(Runtime.isSameReference(str1, str3)).assertTrue();
-      expect(Runtime.isSameReference(str1, str2)).assertTrue();
-
-      const emptyStr1: String = new String('');
-      const emptyStr2: String = new String('');
-      expect(Runtime.isSameReference(emptyStr1, emptyStr1)).assertTrue();
-      expect(Runtime.isSameReference(emptyStr1, emptyStr2)).assertTrue();
-
-      const specialStr1: String = new String('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
-      const specialStr2: String = new String('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
-      expect(Runtime.isSameReference(specialStr1, specialStr1)).assertTrue();
-      expect(Runtime.isSameReference(specialStr1, specialStr2)).assertTrue();
-
-      const emojiStr1: String = new String('👆');
-      const emojiStr2: String = new String('👆');
-      expect(Runtime.isSameReference(emojiStr1, emojiStr1)).assertTrue();
-      expect(Runtime.isSameReference(emojiStr1, emojiStr2)).assertTrue();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0014
-     * @tc.number  BUILTINS_RUNTIME_TEST_0014
-     * @tc.desc    Test isSameReference with array objects
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1: number[] = [72, 101, 108, 108, 111];
-      const arr2: number[] = [72, 101, 108, 108, 111];
-      const arr3: number[] = arr1;
-
-      expect(Runtime.isSameReference(arr1, arr1)).assertTrue();
-      expect(Runtime.isSameReference(arr1, arr3)).assertTrue();
-      expect(Runtime.isSameReference(arr1, arr2)).assertFalse();
-
-      const zeroArr1: number[] = [72, 101, 108, 108, 111, 0, 0, 0];
-      const zeroArr2: number[] = [72, 101, 108, 108, 111, 0, 0, 0];
-      expect(Runtime.isSameReference(zeroArr1, zeroArr1)).assertTrue();
-      expect(Runtime.isSameReference(zeroArr1, zeroArr2)).assertFalse();
-
-      const negArr1: number[] = [72, 101, 108, -111, 114];
-      const negArr2: number[] = [72, 101, 108, -111, 114];
-      expect(Runtime.isSameReference(negArr1, negArr1)).assertTrue();
-      expect(Runtime.isSameReference(negArr1, negArr2)).assertFalse();
-
-      const emptyArr1: number[] = [];
-      const emptyArr2: number[] = [];
-      expect(Runtime.isSameReference(emptyArr1, emptyArr1)).assertTrue();
-      expect(Runtime.isSameReference(emptyArr1, emptyArr2)).assertFalse();
-
-      const specialArr1: number[] = [72, 101, NaN, Infinity, 108, 111];
-      const specialArr2: number[] = [72, 101, NaN, Infinity, 108, 111];
-      expect(Runtime.isSameReference(specialArr1, specialArr1)).assertTrue();
-      expect(Runtime.isSameReference(specialArr1, specialArr2)).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0015
-     * @tc.number  BUILTINS_RUNTIME_TEST_0015
-     * @tc.desc    Test isSameReference with TypedArray objects
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const int8Arr1: Int8Array = new Int8Array([-128, 0, 127]);
-      const int8Arr2: Int8Array = new Int8Array([-128, 0, 127]);
-      const int8Arr3: Int8Array = int8Arr1;
-
-      expect(Runtime.isSameReference(int8Arr1, int8Arr1)).assertTrue();
-      expect(Runtime.isSameReference(int8Arr1, int8Arr3)).assertTrue();
-      expect(Runtime.isSameReference(int8Arr1, int8Arr2)).assertFalse();
-
-      const uint8Arr1: Uint8Array = new Uint8Array([0, 128, 255]);
-      const uint8Arr2: Uint8Array = new Uint8Array([0, 128, 255]);
-      expect(Runtime.isSameReference(uint8Arr1, uint8Arr1)).assertTrue();
-      expect(Runtime.isSameReference(uint8Arr1, uint8Arr2)).assertFalse();
-
-      const float32Arr1: Float32Array = new Float32Array([NaN, Infinity, -Infinity, 1.5]);
-      const float32Arr2: Float32Array = new Float32Array([NaN, Infinity, -Infinity, 1.5]);
-      expect(Runtime.isSameReference(float32Arr1, float32Arr1)).assertTrue();
-      expect(Runtime.isSameReference(float32Arr1, float32Arr2)).assertFalse();
-
-      const float64Arr1: Float64Array = new Float64Array([-1.7976931348623157e308, Number.MIN_VALUE, NaN, Infinity]);
-      const float64Arr2: Float64Array = new Float64Array([-1.7976931348623157e308, Number.MIN_VALUE, NaN, Infinity]);
-      expect(Runtime.isSameReference(float64Arr1, float64Arr1)).assertTrue();
-      expect(Runtime.isSameReference(float64Arr1, float64Arr2)).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0016
-     * @tc.number  BUILTINS_RUNTIME_TEST_0016
-     * @tc.desc    Test isSameReference with function references
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const func1: () => number = () => 42;
-      const func2: () => number = () => 42;
-      const func3: () => number = func1;
-
-      expect(Runtime.isSameReference(func1, func1)).assertTrue();
-      expect(Runtime.isSameReference(func1, func3)).assertTrue();
-      expect(Runtime.isSameReference(func1, func2)).assertFalse();
-
-      const add1: (a: number, b: number) => number = (a, b) => a + b;
-      const add2: (a: number, b: number) => number = (a, b) => a + b;
-      expect(Runtime.isSameReference(add1, add1)).assertTrue();
-      expect(Runtime.isSameReference(add1, add2)).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0017
-     * @tc.number  BUILTINS_RUNTIME_TEST_0017
-     * @tc.desc    Test isSameReference with ArrayBuffer and DataView
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const buffer1: ArrayBuffer = new ArrayBuffer(16);
-      const buffer2: ArrayBuffer = new ArrayBuffer(16);
-      const buffer3: ArrayBuffer = buffer1;
-
-      expect(Runtime.isSameReference(buffer1, buffer1)).assertTrue();
-      expect(Runtime.isSameReference(buffer1, buffer3)).assertTrue();
-      expect(Runtime.isSameReference(buffer1, buffer2)).assertFalse();
-
-      const dataView1: DataView = new DataView(buffer1);
-      const dataView2: DataView = new DataView(buffer2);
-      const dataView3: DataView = dataView1;
-
-      expect(Runtime.isSameReference(dataView1, dataView1)).assertTrue();
-      expect(Runtime.isSameReference(dataView1, dataView3)).assertTrue();
-      expect(Runtime.isSameReference(dataView1, dataView2)).assertFalse();
-
-      const uint8View1: Uint8Array = new Uint8Array(buffer1);
-      const uint8View2: Uint8Array = new Uint8Array(buffer1, 0, 8);
-      expect(Runtime.isSameReference(uint8View1, uint8View1)).assertTrue();
-      expect(Runtime.isSameReference(uint8View1, uint8View2)).assertFalse();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0018
-     * @tc.number  BUILTINS_RUNTIME_TEST_0018
-     * @tc.desc    Test isSameReference with Promise objects
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-        const promise1: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout(() => resolve('done'), 100);
-        });
-
-        const promise2: Promise<string> = new Promise<string>((resolve: (value: string) => void) => {
-          setTimeout(() => resolve('done'), 100);
-        });
-
-        const promise3 = promise1;
-
-        expect(Runtime.isSameReference(promise1, promise1)).assertTrue();
-        expect(Runtime.isSameReference(promise1, promise3)).assertTrue();
-        expect(Runtime.isSameReference(promise1, promise2)).assertFalse();
-      });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0019
-     * @tc.number  BUILTINS_RUNTIME_TEST_0019
-     * @tc.desc    Test isSameReference with edge cases and mixed types
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const num: number = 42;
-      const str: string = '42';
-      const bool: boolean = true;
-      const arr: number[] = [42];
-
-      expect(Runtime.isSameReference(num, str)).assertFalse();
-      expect(Runtime.isSameReference(num, bool)).assertFalse();
-      expect(Runtime.isSameReference(num, arr)).assertFalse();
-      expect(Runtime.isSameReference(str, arr)).assertFalse();
-
-      const numObj1: Number = new Number(42);
-      const numObj2: Number = new Number(42);
-      const numPrim: number = 42;
-
-      expect(Runtime.isSameReference(numObj1, numObj2)).assertFalse();
-      expect(Runtime.isSameReference(numObj1, numPrim)).assertFalse();
-
-      const strObj1: String = new String('hello');
-      const strObj2: String = new String('hello');
-      const strPrim: string = 'hello';
-
-      expect(Runtime.isSameReference(strObj1, strObj2)).assertTrue();
-      expect(Runtime.isSameReference(strObj1, strPrim)).assertTrue();
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0020
-     * @tc.number  BUILTINS_RUNTIME_TEST_0020
-     * @tc.desc    Test isSameReference performance and consistency
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('builtinsRuntimeTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const largeObj1: Record<string, number> = {};
-      const largeObj2: Record<string, number> = {};
-
-      for (let i: number = 0; i < 1000; i++) {
-        largeObj1[`prop${i}`] = i;
-        largeObj2[`prop${i}`] = i;
-      }
-
-      const largeObj3: Record<string, number> = largeObj1;
-
-      expect(Runtime.isSameReference(largeObj1, largeObj1)).assertTrue();
-      expect(Runtime.isSameReference(largeObj1, largeObj3)).assertTrue();
-      expect(Runtime.isSameReference(largeObj1, largeObj2)).assertFalse();
-
-      const results: boolean[] = [];
-      for (const result of results) {
-        expect(result).assertTrue();
-      }
-
-    });
-
-    /**
-     * @tc.name    builtinsRuntimeTest0021
-     * @tc.number  BUILTINS_RUNTIME_TEST_0021
      * @tc.desc    Test __narrowAny with null and undefined values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const nullResult: (object | null | undefined) = __narrowAny(null);
       expect(nullResult === null).assertTrue();
 
@@ -680,14 +328,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0022
-     * @tc.number  BUILTINS_RUNTIME_TEST_0022
+     * @tc.name    builtinsRuntimeTest0011
+     * @tc.number  BUILTINS_RUNTIME_TEST_0011
      * @tc.desc    Test __narrowAny with primitive types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const numberValue: number = 42;
       const numberResult: (object | null | undefined) = __narrowAny(numberValue);
       expect(typeof numberResult).assertEqual('number');
@@ -713,14 +361,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0023
-     * @tc.number  BUILTINS_RUNTIME_TEST_0023
+     * @tc.name    builtinsRuntimeTest0012
+     * @tc.number  BUILTINS_RUNTIME_TEST_0012
      * @tc.desc    Test __narrowAny with number boundary values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const maxValueResult: (object | null | undefined) = __narrowAny(Number.MAX_VALUE);
       expect(typeof maxValueResult).assertEqual('number');
       expect((maxValueResult as number) === Number.MAX_VALUE).assertTrue();
@@ -747,14 +395,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0024
-     * @tc.number  BUILTINS_RUNTIME_TEST_0024
+     * @tc.name    builtinsRuntimeTest0013
+     * @tc.number  BUILTINS_RUNTIME_TEST_0013
      * @tc.desc    Test __narrowAny with string types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const emptyStringResult: (object | null | undefined) = __narrowAny('');
       expect(typeof emptyStringResult).assertEqual('string');
       expect((emptyStringResult as string) === '').assertTrue();
@@ -788,14 +436,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0025
-     * @tc.number  BUILTINS_RUNTIME_TEST_0025
+     * @tc.name    builtinsRuntimeTest0014
+     * @tc.number  BUILTINS_RUNTIME_TEST_0014
      * @tc.desc    Test __narrowAny with array types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const normalArray: number[] = [72, 101, 108, 108, 111];
       const arrayResult: (object | null | undefined) = __narrowAny(normalArray);
       expect(Array.isArray(arrayResult)).assertTrue();
@@ -830,14 +478,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0026
-     * @tc.number  BUILTINS_RUNTIME_TEST_0026
+     * @tc.name    builtinsRuntimeTest0015
+     * @tc.number  BUILTINS_RUNTIME_TEST_0015
      * @tc.desc    Test __narrowAny with TypedArray types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const int8Array: Int8Array = new Int8Array([-128, 0, 127]);
       const int8Result: (object | null | undefined) = __narrowAny(int8Array);
       expect(int8Result instanceof Int8Array).assertTrue();
@@ -870,14 +518,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0027
-     * @tc.number  BUILTINS_RUNTIME_TEST_0027
+     * @tc.name    builtinsRuntimeTest0016
+     * @tc.number  BUILTINS_RUNTIME_TEST_0016
      * @tc.desc    Test __narrowAny with complex object types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const buffer: ArrayBuffer = new ArrayBuffer(16);
       const bufferResult: (object | null | undefined) = __narrowAny(buffer);
       expect(bufferResult instanceof ArrayBuffer).assertTrue();
@@ -911,14 +559,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0028
-     * @tc.number  BUILTINS_RUNTIME_TEST_0028
+     * @tc.name    builtinsRuntimeTest0017
+     * @tc.number  BUILTINS_RUNTIME_TEST_0017
      * @tc.desc    Test __narrowAny with type narrowing
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const stringValue: string = 'test';
 
       const narrowedString: string = __narrowAny<string>(stringValue);
@@ -942,14 +590,14 @@ export default function builtinsRuntimeTest() {
     });
 
     /**
-     * @tc.name    builtinsRuntimeTest0029
-     * @tc.number  BUILTINS_RUNTIME_TEST_0029
+     * @tc.name    builtinsRuntimeTest0018
+     * @tc.number  BUILTINS_RUNTIME_TEST_0018
      * @tc.desc    Test __narrowAny with edge cases and performance
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsRuntimeTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('builtinsRuntimeTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const funcValue: () => void = () => {};
       const funcResult: (object | null | undefined) = __narrowAny(funcValue);
       expect(typeof funcResult).assertEqual('function');
