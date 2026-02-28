@@ -395,13 +395,13 @@ export default function graphicImagePixelMap5() {
 
     /**
      * @tc.name   graphicImagePixelMap5_static_2800
-     * @tc.number graphicImagePixelMap5_static_2900
+     * @tc.number graphicImagePixelMap5_static_2800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -638,13 +638,13 @@ export default function graphicImagePixelMap5() {
 
     /**
      * @tc.name   graphicImagePixelMap5_static_3500
-     * @tc.number graphicImagePixelMap5_static_3600
+     * @tc.number graphicImagePixelMap5_static_3500
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {

@@ -1842,16 +1842,16 @@ export default function graphicImagePixelMap3() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap3_static_5700
-     * @tc.number graphicImagePixelMap3_static_5700
+     * @tc.name   graphicImagePixelMap3_static_5800
+     * @tc.number graphicImagePixelMap3_static_5800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap3_static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap3_static_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msgStr = 'www data graphicImagePixelMap3_static_5700 ';
+        let msgStr = 'www data graphicImagePixelMap3_static_5800 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
           editable: false,
@@ -1875,37 +1875,6 @@ export default function graphicImagePixelMap3() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap3_static_5800
-     * @tc.number graphicImagePixelMap3_static_5800
-     * @tc.desc   image API ArkTS1.2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('graphicImagePixelMap3_static_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let msgStr = 'www data graphicImagePixelMap3_static_5800 ';
-        let opts: image.InitializationOptions = {
-          editable: false,
-          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
-          pixelFormat: image.PixelMapFormat.RGBA_8888,
-          alphaType: image.AlphaType.UNKNOWN,
-          scaleMode: image.ScaleMode.CENTER_CROP,
-          size: { height: 4, width: 6 }
-        }
-        try {
-          let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
-          console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect(pixelMap.isEditable).assertFalse();
-          expect(pixelMap.isStrideAlignment).assertFalse();
-        } catch(err){
-          console.info(msgStr + 'failed ', err);
-          expect().assertFail();
-        }
-        done();
-      })
-
-    /**
      * @tc.name   graphicImagePixelMap3_static_5900
      * @tc.number graphicImagePixelMap3_static_5900
      * @tc.desc   image API ArkTS1.2
@@ -1918,8 +1887,8 @@ export default function graphicImagePixelMap3() {
         let msgStr = 'www data graphicImagePixelMap3_static_5900 ';
         let opts: image.InitializationOptions = {
           editable: false,
-          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
-          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
           alphaType: image.AlphaType.UNKNOWN,
           scaleMode: image.ScaleMode.CENTER_CROP,
           size: { height: 4, width: 6 }
@@ -1947,6 +1916,37 @@ export default function graphicImagePixelMap3() {
     it('graphicImagePixelMap3_static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data graphicImagePixelMap3_static_6000 ';
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          alphaType: image.AlphaType.UNKNOWN,
+          scaleMode: image.ScaleMode.CENTER_CROP,
+          size: { height: 4, width: 6 }
+        }
+        try {
+          let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
+          console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+        } catch(err){
+          console.info(msgStr + 'failed ', err);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMap3_static_6100
+     * @tc.number graphicImagePixelMap3_static_6100
+     * @tc.desc   image API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMap3_static_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data graphicImagePixelMap3_static_6100 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
           editable: true,
@@ -1969,16 +1969,16 @@ export default function graphicImagePixelMap3() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap3_static_6100
-     * @tc.number graphicImagePixelMap3_static_6100
+     * @tc.name   graphicImagePixelMap3_static_6200
+     * @tc.number graphicImagePixelMap3_static_6200
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap3_static_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap3_static_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msgStr = 'www data graphicImagePixelMap3_static_6100 ';
+        let msgStr = 'www data graphicImagePixelMap3_static_6200 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
           editable: true,
