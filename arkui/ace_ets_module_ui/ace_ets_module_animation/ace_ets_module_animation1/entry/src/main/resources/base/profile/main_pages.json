@@ -51,6 +51,7 @@
         "MainAbility/pages/animator/AnimatorNullUndefined",
         "MainAbility/pages/animator/CreateNullUndefined",
         "MainAbility/pages/matrix4/Matrix4TransitUndefined",
+        "MainAbility/pages/matrix4/Matrix4TransitNull",
         "MainAbility/pages/global/GlobalPxNullUndefined",
         "MainAbility/pages/global/AnimateToImmediatelyNullUndefined",
         "MainAbility/pages/global/AnimateToNullUndefined"
