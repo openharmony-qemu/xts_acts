@@ -102,7 +102,7 @@ struct WebViewControllerPart3 {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
-          await Utils.waitForExist(()=>this.isReceive, this.str, 1);
+          await Utils.waitForExist(()=>this.isReceive, this.str, 1, 1000);
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
@@ -112,7 +112,7 @@ struct WebViewControllerPart3 {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('indexCopy.html'))
                 this.controller.setNetworkAvailable(false);
-                await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
+                await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -135,7 +135,7 @@ struct WebViewControllerPart3 {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('indexCopy.html'))
                 this.controller.setNetworkAvailable(true);
-                await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
+                await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -150,6 +150,24 @@ struct WebViewControllerPart3 {
                   Utils.emitEvent(result, 142320)
                 }
               })
+              break;
+            }
+            case 'emitSetNetworkAvailableNull': {
+              try {
+                this.controller.setNetworkAvailable(null)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 26022703);
+              }
+              break;
+            }
+            case 'emitSetNetworkAvailableUndefined': {
+              try {
+                this.controller.setNetworkAvailable(undefined)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 26022704);
+              }
               break;
             }
 
