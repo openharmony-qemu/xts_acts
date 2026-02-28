@@ -41,6 +41,8 @@
         "MainAbility/pages/Line/lineStartPointNullUndefined",
         "MainAbility/pages/Path/pathCommandsNullUndefined",
         "MainAbility/pages/Polygon/polygonPointsNullUndefined",
-        "MainAbility/pages/Polyline/polylinePointsNullUndefined"
+        "MainAbility/pages/Polyline/polylinePointsNullUndefined",
+        "MainAbility/pages/Circle/CircleNullUndefined",
+        "MainAbility/pages/Circle/CircleNullUndefined2"
     ]
 }
