@@ -69,6 +69,11 @@ import ListScrollEdgeCallback from './List/ListScrollEdgeCallback.test';
 import listFrictionRes from './List/listFrictionRes.test';
 import listItemNullUndefinedTest from './ListItem/listItemNullUndefined.test'
 import listItemGroupNullUndefinedTest from './ListItemGroup/listItemGroupNullUndefined.test'
+import listEventNullUndefined from './listDefault/listEventNullUndefined.test';
+import listScrollerNullUndefined from './listDefault/listScrollerNullUndefined.test';
+import listDefaultTest1 from './listDefault/listDefault1.test';
+import listDefaultTest2 from './listDefault/listDefault2.test';
+import listDefaultTest3 from './listDefault/listDefault3.test';
 
 export default function testsuite() {
   listJsunit()
@@ -128,4 +133,9 @@ export default function testsuite() {
   listFrictionRes()
   listItemNullUndefinedTest()
   listItemGroupNullUndefinedTest()
+  listEventNullUndefined()
+  listScrollerNullUndefined()
+  listDefaultTest1()
+  listDefaultTest2()
+  listDefaultTest3()
 }
