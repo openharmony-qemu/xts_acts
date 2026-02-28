@@ -804,7 +804,7 @@ export default function windowLayoutTest() {
           await sleep(500);
           expect(reason1).assertEqual(window.RectChangeReason.UNDEFINED);
           expect(reason2).assertEqual(window.RectChangeReason.UNDEFINED);
-         
+
           windowClass.off('windowRectChange');
           windowClass.off('rectChangeInGlobalDisplay');
           done();
@@ -3747,7 +3747,102 @@ export default function windowLayoutTest() {
       }
 
     })
+    /**
+    * @tc.name testONWindowRectChangeReason_0200
+    * @tc.number testONWindowRectChangeReason_0200
+    * @tc.desc testONWindowRectChangeReason_0200
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL1
+    */
+    it('testONWindowRectChangeReason_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let windowClass: window.Window;
+        let caseName = 'testONWindowRectChangeReason_0200!'
+        let config: window.Configuration = {
+          name: 'testONWindowRectChangeReason_0200',
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        try {
+          window.createWindow(config).then(async (data) => {
+            windowClass = data;
+            console.info(caseName + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+            await windowClass.setUIContent('testability/pages/Index1')
+            console.info(caseName + 'Succeeded in loadContent. Data:' + JSON.stringify(data));
+            await windowClass.resize(800, 1000);
+            await windowClass.moveWindowTo(300, 300);
+            windowClass.setWindowBackgroundColor('#00ff33');
+            await windowClass.showWindow();
+            await sleep(1000);
+            let cbData1: window.RectChangeOptions | undefined;
+            let cbData2: window.RectChangeOptions | undefined;
+            const callback1 = async (cb1: window.RectChangeOptions) => {
+              console.log(caseName + ' cb1: ' + JSON.stringify(cb1));
+              cbData1 = cb1;
+              if (cb1.reason === window.RectChangeReason.DRAG) {
+                await windowClass?.destroyWindow();
+                done();
+              } else if (cb1.reason === window.RectChangeReason.DRAG_START) {
+                await windowClass?.destroyWindow();
+                done();
+              } else {
+                expect(cb1.reason).assertEqual(window.RectChangeReason.DRAG_END)
+                await windowClass?.destroyWindow();
+                done();
+              }
+            };
+            const callback2 = async (cb2: window.RectChangeOptions) => {
+              console.log(caseName + ' cb2: ' + JSON.stringify(cb2));
+              cbData2 = cb2;
+              if (cb2.reason === window.RectChangeReason.DRAG) {
+                await windowClass?.destroyWindow();
+                done();
+              } else if (cb2.reason === window.RectChangeReason.DRAG_START) {
+                await windowClass?.destroyWindow();
+                done();
+              } else {
+                expect(cb2.reason).assertEqual(window.RectChangeReason.DRAG_END)
+                await windowClass?.destroyWindow();
+                done();
+              }
 
+            };
+            windowClass.on('rectChangeInGlobalDisplay', callback1);
+            windowClass.on('windowRectChange', callback2);
+            try {
+              windowClass.enableDrag(true).then(async () => {
+                console.info(caseName + 'Succeed in setting window draggable')
+                let windowRect = windowClass.getWindowProperties().windowRect;
+                console.log(caseName + `windowRect:${JSON.stringify(windowRect)}`)
+                let pointWidth = windowRect.left;
+                let pointHeight = windowRect.top + windowRect.height / 2;
+                console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
+                await sleep(1000);
+              }).catch(async (err: BusinessError) => {
+                console.error(caseName + `Failed to set window draggable. Cause code: ${err.code}, message: ${err.message}`);
+                await windowClass?.destroyWindow();
+                expect(err.code).assertEqual(801);
+                done();
+              })
+            } catch (exception) {
+              console.error(caseName + `Failed to set window draggable. Cause code: ${exception.code}, message: ${exception.message}`);
+              expect().assertFail();
+              done();
+            }
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
+            await windowClass?.destroyWindow();
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
     /**
      * @tc.name   testMoveWindowToGlobalDisplay
      * @tc.number SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0100
