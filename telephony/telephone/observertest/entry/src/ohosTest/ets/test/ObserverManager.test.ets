@@ -476,7 +476,7 @@ export default function observerManagerTest() {
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(fales);
+        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end `);
@@ -625,7 +625,7 @@ export default function observerManagerTest() {
         await data.disableCellularData();
         observer.on('cellularDataConnectionStateChange', {
           slotId: 0
-        }, (data: DataConnectionStateInfo) => {
+        }, (data: observer.DataConnectionStateInfo) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(data.state != null);
           ExpectTrue(data.network != null);
