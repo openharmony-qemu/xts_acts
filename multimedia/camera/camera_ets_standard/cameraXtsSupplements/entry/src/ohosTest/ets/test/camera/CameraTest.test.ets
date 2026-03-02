@@ -1072,7 +1072,7 @@ export default function CameraTest() {
           }
         } catch (error) {
           console.error(TAG, testName, 'setColorSpace, failed', JSON.stringify(error), error.code, error);
-          expect(error.code).assertEqual('7400101');
+          expect(Number(error.code)).assertEqual(7400101);
         } finally {
           await releasePhotoSession();
         }
