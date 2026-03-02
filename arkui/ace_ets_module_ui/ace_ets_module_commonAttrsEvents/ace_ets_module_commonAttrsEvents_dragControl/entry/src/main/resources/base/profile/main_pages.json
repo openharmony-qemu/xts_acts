@@ -32,6 +32,7 @@
         "MainAbility/pages/DragSorting/onMoveV20NullAndUndefined",
         "MainAbility/pages/DragPreview/DragPreviewNullAndUndefined",
         "MainAbility/pages/DragEvent/DragEventNullAndUndefined",
-        "MainAbility/pages/DragPreviewOptions/DragPreviewOptionsNullAndUndefined"
+        "MainAbility/pages/DragPreviewOptions/DragPreviewOptionsNullAndUndefined",
+        "MainAbility/pages/AllowDrop/AllowDropNullAndUndefined"
     ]
 }

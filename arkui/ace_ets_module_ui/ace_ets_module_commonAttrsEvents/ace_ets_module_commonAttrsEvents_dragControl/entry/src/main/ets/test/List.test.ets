@@ -41,6 +41,7 @@ import dragPreviewNullAndUndefinedTest from './DragPreview/dragPreviewNullAndUnd
 import dragEventNullAndUndefinedTest from './DragEvent/dragEventNullAndUndefinedTest.test';
 import onMoveNullAndUndefinedTest from './OnMove/onMoveNullAndUndefinedTest.test';
 import onMoveV20NullAndUndefinedTest from './OnMoveV20/onMoveV20NullAndUndefinedTest.test';
+import allowDropNullAndUndefinedTest from './AllowDrop/allowDropNullAndUndefinedTest.test';
 
 export default function testsuite() {
     dragAdaptationTest();
@@ -70,4 +71,5 @@ export default function testsuite() {
     dragEventNullAndUndefinedTest();
     onMoveNullAndUndefinedTest();
     onMoveV20NullAndUndefinedTest();
+    allowDropNullAndUndefinedTest();
 }
