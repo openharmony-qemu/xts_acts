@@ -60,7 +60,7 @@ struct SetPathAllowingUniversalAccess {
           console.info('key==>' + this.str);
           this.isReceive = -1;
           switch (this.str) {
-            case "testSetPathAllowingUniversalAccess001": {
+            case "testPathAllowingUniversalAccess001": {
               try {
                 this.controller.setPathAllowingUniversalAccess(null);
                 this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html");
@@ -71,7 +71,7 @@ struct SetPathAllowingUniversalAccess {
               }
               break;
             }
-            case "testSetPathAllowingUniversalAccess002": {
+            case "testPathAllowingUniversalAccess002": {
               try {
                 this.controller.setPathAllowingUniversalAccess(undefined);
                 this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html");
