@@ -30,6 +30,7 @@ import WaterFlowContentSize from './WaterFlow/WaterFlowContentSize.test';
 import WaterFlowFillPolicyModifier from './WaterFlow/WaterFlowFillPolicyModifier.test';
 import waterFlowDefaultTest1 from './waterFlowDefault/waterFlowDefault1.test';
 import waterFlowDefaultTest2 from './waterFlowDefault/waterFlowDefault2.test';
+import waterFlowEventNullUndefined from './waterFlowDefault/waterFlowEventNullUndefined.test';
 
 export default function testsuite() {
   WaterflowDemo()
@@ -49,4 +50,5 @@ export default function testsuite() {
   WaterFlowFillPolicyModifier();
   waterFlowDefaultTest1();
   waterFlowDefaultTest2();
+  waterFlowEventNullUndefined();
 }

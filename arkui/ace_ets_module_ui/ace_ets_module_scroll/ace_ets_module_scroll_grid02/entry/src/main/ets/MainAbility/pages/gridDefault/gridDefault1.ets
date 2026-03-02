@@ -595,7 +595,7 @@ struct GridNullUndefined1 {
           }, (item: string) => item)
         }
         .columnsTemplate('1fr 1fr')
-        .width('30%')
+        .width('23%')
         .height('80%')
         .id('grid_cachedCount_default')
         .backgroundColor(0xF0F0F0)
@@ -614,7 +614,7 @@ struct GridNullUndefined1 {
           }, (item: string) => item)
         }
         .columnsTemplate('1fr 1fr')
-        .width('30%')
+        .width('23%')
         .height('80%')
         .id('grid_cachedCount_null')
         .backgroundColor(0xF0F0F0)
@@ -634,11 +634,31 @@ struct GridNullUndefined1 {
           }, (item: string) => item)
         }
         .columnsTemplate('1fr 1fr')
-        .width('30%')
+        .width('23%')
         .height('80%')
         .id('grid_cachedCount_undefined')
         .backgroundColor(0xF0F0F0)
         .cachedCount(undefined)
+
+        // Test cachedCount show with false
+        Grid() {
+          ForEach(this.numbers, (item: string) => {
+            GridItem() {
+              Text('' + item)
+                .width('100%')
+                .height('30%')
+                .fontSize(14)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(0xF9CF93)
+            }
+          }, (item: string) => item)
+        }
+        .columnsTemplate('1fr 1fr')
+        .width('23%')
+        .height('80%')
+        .id('grid_cachedCount_show_false')
+        .backgroundColor(0xF0F0F0)
+        .cachedCount(2, false)
       }
       .width('100%')
       .height('10%')
