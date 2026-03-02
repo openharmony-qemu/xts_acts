@@ -1136,49 +1136,49 @@ export default function WindowZindexTest() {
         console.log(msgStr + 'begin');
         try {
             subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinFocus')
+            await Utils.msSleep(500)
+            expect(!!subWin).assertTrue();
+            await (subWin as window.Window).resize(500, 500);
+            await (subWin as window.Window).setUIContent("pages/index2");
+            await (subWin as window.Window).showWindow();
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            let mainWin = windowStage!.getMainWindowSync();
+            let mainWinId = mainWin.getWindowProperties().id;
+            let subWinId = (subWin as window.Window).getWindowProperties().id;
+            try {
+            window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
+                console.info(msgStr + 'Succeeded in shifting app window focus');
+                done();
+            }).catch((err: Error) => {
+                if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+                } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+                }
+                done();
+            });
+            await Utils.msSleep(500)
+            } catch (err) {
+            if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+            } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+            }
+            done()
+            }
+            await (subWin as window.Window).destroyWindow();
         } catch(err){
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
-          };
-        await Utils.msSleep(500)
-        expect(!!subWin).assertTrue();
-        await (subWin as window.Window).resize(500, 500);
-        await (subWin as window.Window).setUIContent("pages/index2");
-        await (subWin as window.Window).showWindow();
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        let mainWin = windowStage!.getMainWindowSync();
-        let mainWinId = mainWin.getWindowProperties().id;
-        let subWinId = (subWin as window.Window).getWindowProperties().id;
-        try {
-          window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
-            console.info(msgStr + 'Succeeded in shifting app window focus');
-            done();
-          }).catch((err: Error) => {
-            if (err.code != 801) {
-              console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            } else {
-              console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-              console.log(msgStr + JSON.stringify(err))
-              expect(err.code).assertEqual(801);
-            }
-            done();
-          });
-          await Utils.msSleep(500)
-        } catch (err) {
-          if (err.code != 801) {
-            console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-          } else {
-            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
-          done()
-        }
-        await (subWin as window.Window).destroyWindow();
+        };
       })
       /**
        * @tc.name   testShiftAppWindowFocus_SubWindow_SourceWinNotFocus
@@ -1193,51 +1193,52 @@ export default function WindowZindexTest() {
         let msgStr = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
         try {
-            subWin = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
+            let subWin: window.Window = await windowStage!.createSubWindow('testShiftAppWindowFocus_SubWindow_SourceWinNotFocus')
+            await Utils.msSleep(500);
+            expect(!!subWin).assertTrue();
+            await (subWin as window.Window).resize(500, 500);
+            await (subWin as window.Window).setUIContent("pages/index2");
+            await (subWin as window.Window).showWindow();
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            await Utils.msSleep(500)
+            let mainWin = windowStage!.getMainWindowSync();
+            let mainWinId = mainWin.getWindowProperties().id;
+            let subWinId = (subWin as window.Window).getWindowProperties().id;
+            try {
+              window.shiftAppWindowFocus(mainWinId, subWinId).then(() => {
+                console.info(msgStr + 'Succeeded in shifting app window focus');
+                expect().assertFail();
+                done();
+              }).catch((err: Error) => {
+                if (err.code != 801) {
+                  console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
+                  expect(err.code).assertEqual(1300002);
+                } else {
+                  console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                  console.log(msgStr + JSON.stringify(err))
+                  expect(err.code).assertEqual(801);
+                }
+                done();
+              });
+              await Utils.msSleep(500)
+            } catch (err) {
+              if (err.code != 801) {
+                console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              } else {
+                console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                console.log(msgStr + JSON.stringify(err))
+                expect(err.code).assertEqual(801);
+              }
+              done();
+            }
+            await (subWin as window.Window).destroyWindow();
         } catch(err) {
             console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
         };
-        await Utils.msSleep(500);
-        expect(!!subWin).assertTrue();
-        await (subWin as window.Window).resize(500, 500);
-        await (subWin as window.Window).setUIContent("pages/index2");
-        await (subWin as window.Window).showWindow();
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        await Utils.msSleep(500)
-        let mainWin = windowStage!.getMainWindowSync();
-        let mainWinId = mainWin.getWindowProperties().id;
-        let subWinId = (subWin as window.Window).getWindowProperties().id;
-        try {
-          window.shiftAppWindowFocus(mainWinId, subWinId).then(() => {
-            console.info(msgStr + 'Succeeded in shifting app window focus');
-            expect().assertFail();
-            done();
-          }).catch((err: Error) => {
-            if (err.code != 801) {
-              console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(1300002);
-            } else {
-              console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-              console.log(msgStr + JSON.stringify(err))
-              expect(err.code).assertEqual(801);
-            }
-            done();
-          });
-          await Utils.msSleep(500)
-        } catch (err) {
-          if (err.code != 801) {
-            console.error(msgStr + `Failed to shift app window focus. out catch Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-          } else {
-            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
-            console.log(msgStr + JSON.stringify(err))
-            expect(err.code).assertEqual(801);
-          }
-          done();
-        }
-        await (subWin as window.Window).destroyWindow();
+        
       })
 
 
