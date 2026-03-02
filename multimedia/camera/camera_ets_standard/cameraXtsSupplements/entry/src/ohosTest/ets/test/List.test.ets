@@ -46,7 +46,6 @@ import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
 
-
 export default function testsuite() {
   CameraSessionFlashSuppTest();
   cameraSetFocusModeTest();
