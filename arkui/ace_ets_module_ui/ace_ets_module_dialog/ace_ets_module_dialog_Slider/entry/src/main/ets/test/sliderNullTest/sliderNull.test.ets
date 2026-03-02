@@ -48,7 +48,7 @@ export default function slidenullundeifned(){
 
     /**
      * @tc.name   slidenull_001
-     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.number SUB_ARKUI_API_SLIDE_NULL_001
      * @tc.desc   Test Stack alignContent with null parameter in constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function slidenullundeifned(){
 
     /**
      * @tc.name   slideundefined_001
-     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.number SUB_ARKUI_API_SLIDE_UNDEFINED_001
      * @tc.desc   Test Stack alignContent with null parameter in constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

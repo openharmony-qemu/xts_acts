@@ -50,7 +50,7 @@ export default function radiounllundefined(){
 
     /**
      * @tc.name   radionull_001
-     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.number SUB_ARKUI_API_RADIO_NULL_001
      * @tc.desc   Test Stack alignContent with null parameter in constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function radiounllundefined(){
 
     /**
      * @tc.name   radioundefined_001
-     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.number SUB_ARKUI_API_RADIO_UNDEFINED_001
      * @tc.desc   Test Stack alignContent with null parameter in constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
