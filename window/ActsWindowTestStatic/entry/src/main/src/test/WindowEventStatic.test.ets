@@ -85,6 +85,7 @@ export default function WindowEventStatic() {
             } catch (e) {
                 e = e as BusinessError;
                 hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+				expect(false).assertTrue();
             }
         });
 
@@ -132,6 +133,7 @@ export default function WindowEventStatic() {
             } catch (e) {
                 e = e as BusinessError;
                 hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+				expect(false).assertTrue();
             }
         });
 
