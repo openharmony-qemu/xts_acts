@@ -87,7 +87,7 @@ export default function setPathAllowingUniversalAccessTest() {
 
     /**
      * @tc.name   testPathAllowingUniversalAccess001
-     * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0100
+     * @tc.number SUB_WEB_PATHALLOWINGUNIVERSALACCESS_0100
      * @tc.desc   test setPathAllowingUniversalAccess with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function setPathAllowingUniversalAccessTest() {
 
     /**
      * @tc.name   testPathAllowingUniversalAccess002
-     * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0200
+     * @tc.number SUB_WEB_PATHALLOWINGUNIVERSALACCESS_0200
      * @tc.desc   test setPathAllowingUniversalAccess with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function setPathAllowingUniversalAccessTest() {
 
     /**
      * @tc.name   testPathAllowingUniversalAccess003
-     * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0300
+     * @tc.number SUB_WEB_PATHALLOWINGUNIVERSALACCESS_0300
      * @tc.desc   test setPathAllowingUniversalAccess with empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
