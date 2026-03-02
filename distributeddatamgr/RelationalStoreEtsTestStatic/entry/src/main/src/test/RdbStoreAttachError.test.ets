@@ -67,7 +67,7 @@ let cryptoParam1: relationalStore.CryptoParam = {
 const STORE_CONFIG4: relationalStore.StoreConfig = {
     name: "rdbstore4.db",
     encrypt: false,
-    securityLevel: data_relationalStore.SecurityLevel.S2,
+    securityLevel: relationalStore.SecurityLevel.S2,
     rootDir: "",
     autoCleanDirtyData: true,
     allowRebuild: true,
@@ -96,7 +96,7 @@ const STORE_CONFIG5: relationalStore.StoreConfig = {
     allowRebuild: false,
     vector: false,
     isReadOnly: false,
-    pluginLibs: "",
+    pluginLibs: undefined,
     cryptoParam: cryptoParam2,
     tokenizer: relationalStore.Tokenizer.ICU_TOKENIZER,
     persist: false,
@@ -279,6 +279,7 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0002 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
                 await store.attach(dataBaseDir, "", 0);
                 expect(true).assertFail();
@@ -300,6 +301,7 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0003 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
                 await store.attach(dataBaseDir, "attachName", undefined);
                 expect(true).assertFail();
@@ -321,6 +323,7 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0004 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
                 let num = await store.attach(dataBaseDir, "attachName", 3);
                 expect(num > 0).assertTrue();
@@ -388,8 +391,8 @@ export default function rdbStoreAttachErrorTest() {
             console.log(tag + "************* testRdbStoreAttachErr0008 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
             try {
-                await store!.attach(context!, STORE_CONFIG, '', 3);
-                expect(num).assertTrue();
+                let num = await store!.attach(context!, STORE_CONFIG, '', 3);
+                expect(num>0).assertTrue();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0008 err:' + JSON.stringify(err));
                 expect(err.code).assertEqual(401);
@@ -410,7 +413,7 @@ export default function rdbStoreAttachErrorTest() {
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);  
             try {
                 let num = await store!.attach(context!, STORE_CONFIG, 'attachDB', undefined);
-                expect(num).assertTrue();
+                expect(num>0).assertTrue();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0009 err:' + JSON.stringify(err));
                 expect(err.code).assertEqual(401);
