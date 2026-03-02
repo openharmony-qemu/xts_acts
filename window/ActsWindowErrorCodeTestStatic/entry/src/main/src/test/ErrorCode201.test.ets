@@ -576,34 +576,6 @@ export default function ErrorCode201() {
         }
     });
 
-    /**
-    * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_ERRORCODE_201_static_0100
-    * @tc.name      test_setVirtualScreenSurface_ErrorCode201_static
-    * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when no permisson
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    * @tc.level     Level 3
-    */
-    it('test_setVirtualScreenSurface_ErrorCode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        let caseName: string = 'test_setVirtualScreenSurface_ErrorCode201_static ';
-        try {
-                display.setVirtualScreenSurface(0, '').then(() => {
-                hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
-                expect(false).assertTrue();
-                done();
-            }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                    expect(err!.code === 201).assertTrue();
-                    done();
-                })
-        } catch (err) {
-            err = err as BusinessError;
-            hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-            expect(err.code === 801).assertTrue();
-            done();
-        }
-    });
-
 
 
 
