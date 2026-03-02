@@ -313,7 +313,7 @@ export default function HasCard1PublicTest() {
             console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
             ExpectTrue(err.code == 8300001);
           } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} fail, data->${JSON.stringify(data)}`);
             ExpectFail();
           }
           console.info(`${caseName} test end `);
@@ -591,14 +591,14 @@ export default function HasCard1PublicTest() {
             console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
             ExpectFail();
           } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} fail, data->${JSON.stringify(data)}`);
             ExpectFail();
           }
           console.info(`${caseName} test end `);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -622,14 +622,14 @@ export default function HasCard1PublicTest() {
             console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
             ExpectFail();
           } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} fail, data->${JSON.stringify(data)}`);
             ExpectFail();
           }
           console.info(`${caseName} test end `);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -653,14 +653,14 @@ export default function HasCard1PublicTest() {
             console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
             ExpectFail();
           } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} fail, data->${JSON.stringify(data)}`);
             ExpectFail();
           }
           console.info(`${caseName} test end `);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -680,7 +680,7 @@ export default function HasCard1PublicTest() {
       console.info(`${caseName} test start `);
       try {
         call.formatPhoneNumberToE164(undefined, "CN").then((data: string) => {
-          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end `);
           done();
@@ -691,7 +691,7 @@ export default function HasCard1PublicTest() {
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -711,12 +711,12 @@ export default function HasCard1PublicTest() {
       console.info(`${caseName} test start `);
       try {
         call.formatPhoneNumberToE164(rightPhone, "").then((data: string) => {
-          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end `);
           done();
         }).catch((err: BusinessError) => {
-          console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} success, err->${JSON.stringify(err)}`);
           ExpectTrue(err.code == 8300001);
           console.info(`${caseName} test end `);
           done();
@@ -742,7 +742,7 @@ export default function HasCard1PublicTest() {
       console.info(`${caseName} test start `);
       try {
         call.formatPhoneNumberToE164(rightPhone, null).then((data: string) => {
-          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end `);
           done();
@@ -753,7 +753,7 @@ export default function HasCard1PublicTest() {
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -773,7 +773,7 @@ export default function HasCard1PublicTest() {
       console.info(`${caseName} test start `);
       try {
         call.formatPhoneNumberToE164(rightPhone, undefined).then((data: string) => {
-          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} fail, promise: data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end `);
           done();
@@ -784,7 +784,7 @@ export default function HasCard1PublicTest() {
           done();
         });
       } catch (err) {
-        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end `);
         done();
@@ -806,10 +806,10 @@ export default function HasCard1PublicTest() {
       try {
         call.formatPhoneNumberToE164(rightPhone, "", (err: BusinessError, data: string) => {
           if (err) {
-            console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} success, err->${JSON.stringify(err)}`);
             ExpectTrue(err.code == 8300001);
           } else {
-            console.info(`${caseName} success, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} fail, data->${JSON.stringify(data)}`);
             ExpectFail();
           }
           console.info(`${caseName} test end `);
