@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { BuilderNode, NodeContent } from "@kit.ArkUI";
+import { BuilderNode, NodeContent } from '@kit.ArkUI';
 
 interface ParamsInterface {
   text: string;

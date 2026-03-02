@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { NodeController, BuilderNode, FrameNode, UIContext, InputEventType } from "@kit.ArkUI";
+import { NodeController, BuilderNode, FrameNode, UIContext, InputEventType } from '@kit.ArkUI';
 
 class Params {
-  text: string = 'hello';
+  public text: string = 'hello';
   constructor(text: string) {
     this.text = text;
   }

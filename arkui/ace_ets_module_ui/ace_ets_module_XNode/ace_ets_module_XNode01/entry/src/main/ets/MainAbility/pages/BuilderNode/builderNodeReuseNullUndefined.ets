@@ -32,7 +32,7 @@ class MyDataSource {
 }
 
 class Params {
-  item: string = '';
+  public item: string = '';
 
   constructor(item: string) {
     this.item = item;
