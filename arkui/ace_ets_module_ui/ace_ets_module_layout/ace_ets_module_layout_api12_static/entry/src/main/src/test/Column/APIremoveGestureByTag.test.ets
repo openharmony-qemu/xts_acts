@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function APIremoveGestureByTag() {
   describe('APIremoveGestureByTag', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIremoveGestureByTag beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

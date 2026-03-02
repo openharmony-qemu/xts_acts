@@ -45,7 +45,7 @@ let bundle: string = 'com.example.systemAPI.static'
 export default function ActsNotificationSystemAPITest() {
   describe('SUB_NOTIFICATION_ANS_SYSTEM_API_TEST', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

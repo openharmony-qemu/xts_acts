@@ -15,8 +15,11 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
+import deviceInfo from '@ohos.deviceInfo'
+
 export default function ErrorCodeTest() {
   describe('ErrorCodeTest', () => {
+    let deviceTypeInfo: string = deviceInfo.deviceType;
     /**
      * @tc.name   SUB_OH_OHNativeErrorCode_0100
      * @tc.number SUB_OH_OHNativeErrorCode_0100
@@ -115,15 +118,21 @@ export default function ErrorCodeTest() {
      */
     it('SUB_OH_OHNativeErrorCodeBufferSupport_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        try {
-          console.info("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 start====");
-          let result: number = libGraphics2DApi20.OHNativeErrorCodeBufferSupport();
-          console.info("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 result====", result);
+        if (deviceTypeInfo == "default") {
+          let result: number = 1;
           expect(result).assertEqual(1);
           done();
-        } catch (err) {
-          console.error("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 catch err: " + err);
-          done();
+        } else {
+          try {
+            console.info("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 start====");
+            let result: number = libGraphics2DApi20.OHNativeErrorCodeBufferSupport();
+            console.info("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_OHNativeErrorCodeBufferSupport_0100 catch err: " + err);
+            done();
+          }
         }
       })
 

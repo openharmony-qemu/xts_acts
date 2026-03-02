@@ -22,7 +22,7 @@ let tag: string = 'StringTestTag'; //日志标识字符串,作为tag标识当前
 export default function StringTest() {
 
   describe("stringTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

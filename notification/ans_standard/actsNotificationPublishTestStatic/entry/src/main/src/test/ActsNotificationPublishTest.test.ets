@@ -65,7 +65,7 @@ export default function ActsNotificationPublishTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST START')
     let testAbilityContext:common.UIAbilityContext | undefined;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -82,7 +82,7 @@ export default function ActsNotificationPublishTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       count = 0;
       notificationManager.cancelAll((err: BusinessError | null) => {
@@ -99,7 +99,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} beforeEach END`)
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 

@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function imageJsunit() {
   describe('imageTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

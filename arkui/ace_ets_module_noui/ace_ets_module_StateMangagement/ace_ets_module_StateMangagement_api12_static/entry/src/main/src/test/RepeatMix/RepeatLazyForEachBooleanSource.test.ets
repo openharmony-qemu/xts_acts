@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatLazyForEachBooleanSource() {
   describe('RepeatLazyForEachBooleanSource', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatLazyForEachBooleanSourcect beforeEach start");
 
 

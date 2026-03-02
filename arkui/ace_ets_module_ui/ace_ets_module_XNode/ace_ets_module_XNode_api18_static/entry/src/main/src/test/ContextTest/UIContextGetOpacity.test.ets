@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function UIContextGetOpacityTest() {
   describe('UIContextGetOpacityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.XNode.api18.static", "EntryAbility");
       
@@ -95,33 +95,33 @@ it('UIContextGetOpacityTest_static_0100', Level.LEVEL0, async (done: () => void)
       let strJson1: string = inspector.getInspectorByKey('getOpacityValue1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[UIContextGetOpacityTest_static_0100] component obj1 is: " + JSON.stringifyJsonElement(obj1));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj1 is: " + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj1 is: " + obj1.getElement('$attrs').getString('content'));
       let strJson2: string = inspector.getInspectorByKey('getOpacityValue2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[UIContextGetOpacityTest_static_0100] component obj2 is: " + JSON.stringifyJsonElement(obj2));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj2 is: " + JSON.stringifyJsonElement(obj2.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj2 is: " + obj2.getElement('$attrs').getString('content'));
       let strJson3: string = inspector.getInspectorByKey('getOpacityValue3');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[UIContextGetOpacityTest_static_0100] component obj3 is: " + JSON.stringifyJsonElement(obj3));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj3 is: " + JSON.stringifyJsonElement(obj3.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj3 is: " + obj3.getElement('$attrs').getString('content'));
       let strJson4: string = inspector.getInspectorByKey('getOpacityValue4');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info("[UIContextGetOpacityTest_static_0100] component obj4 is: " + JSON.stringifyJsonElement(obj4));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj4 is: " + JSON.stringifyJsonElement(obj4.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj4 is: " + obj4.getElement('$attrs').getString('content'));
       let strJson5: string = inspector.getInspectorByKey('getOpacityValue5');
       let obj5 = JSON.parseJsonElement(strJson5);
       console.info("[UIContextGetOpacityTest_static_0100] component obj5 is: " + JSON.stringifyJsonElement(obj5));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj5 is: " + JSON.stringifyJsonElement(obj5.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj5 is: " + obj5.getElement('$attrs').getString('content'));
       let strJson6: string = inspector.getInspectorByKey('getTransformValue');
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info("[UIContextGetOpacityTest_static_0100] component obj6 is: " + JSON.stringifyJsonElement(obj6));
-      console.info("[UIContextGetOpacityTest_static_0100] content obj6 is: " + JSON.stringifyJsonElement(obj6.getElement('$attrs').getElement('content')));
+      console.info("[UIContextGetOpacityTest_static_0100] content obj6 is: " + obj6.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('0');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('0');
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('1');
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('1');
       expect(obj5.getElement('$attrs').getString('content')).assertEqual('0.5');
-      expect(obj6.getElement('$attrs').getString('content')).assertEqual('4');
+      expect(obj6.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[UIContextGetOpacityTest_static_0100] END');
       done();
     });

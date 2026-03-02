@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TextAreaTypeTest() {
   describe('TextAreaTypeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaTypeTest beforeEach start");
 
 

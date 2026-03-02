@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexAlignSelf_AutoJsunit() {
   describe('flexItemAlignAutoTest7', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignAutoTest7 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

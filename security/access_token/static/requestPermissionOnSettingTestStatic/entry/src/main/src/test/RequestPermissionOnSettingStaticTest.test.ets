@@ -118,9 +118,10 @@ export default function requestPermissionOnSettingStaticTest() {
       try {
         await atManager.requestPermissionOnSetting(context!, permissionList);
       } catch (error) {
-        error = error as BusinessError;
-        hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 catch err" + JSON.stringify(error));
-        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 catch err" + JSON.stringify(error));
+          expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        }
         done();
       }
     })

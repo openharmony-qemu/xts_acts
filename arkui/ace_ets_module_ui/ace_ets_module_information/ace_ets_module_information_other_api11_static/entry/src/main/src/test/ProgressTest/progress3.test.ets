@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function progressScaleCountJsunit() {
   describe('progressScaleCountTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressScaleCountTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
     });

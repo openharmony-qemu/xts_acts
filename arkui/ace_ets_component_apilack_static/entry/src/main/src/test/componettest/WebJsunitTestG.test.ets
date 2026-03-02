@@ -50,7 +50,7 @@ let emitKey = "emitUserAgent";
 
 export default function webJsunit1() {
   describe('ActsAceWebDevTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

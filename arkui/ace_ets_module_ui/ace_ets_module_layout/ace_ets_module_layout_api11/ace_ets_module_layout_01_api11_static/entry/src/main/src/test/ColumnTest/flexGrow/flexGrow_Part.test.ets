@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexGrow_Part() {
   describe('flexGrow_Part', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexGrow_Part beforeEach start");
 
 

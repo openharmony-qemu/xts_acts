@@ -40,7 +40,7 @@ export default function sliderSelectedColorTest() {
   describe('SliderColorTest', () => {
 
     let PAGE_TAG = 'SliderColorTest';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log('SliderColorTest start')
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
       console.log('SliderColorTest end')

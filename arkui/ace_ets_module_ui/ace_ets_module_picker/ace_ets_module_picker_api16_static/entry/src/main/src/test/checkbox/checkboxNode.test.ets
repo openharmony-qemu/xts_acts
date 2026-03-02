@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function CheckboxNodeTest() {
   describe('CheckboxNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CheckboxNodeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")

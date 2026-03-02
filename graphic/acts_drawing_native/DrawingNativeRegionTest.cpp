@@ -107,9 +107,9 @@ HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNormal, Function | SmallTest 
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionDestroyNull, Function | SmallTest | Level1) {
     // 1. OH_Drawing_RegionDestroy takes nullptr as input
+    OH_Drawing_Region *region = nullptr;
     OH_Drawing_RegionDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(region, nullptr);
 }
 
 /**

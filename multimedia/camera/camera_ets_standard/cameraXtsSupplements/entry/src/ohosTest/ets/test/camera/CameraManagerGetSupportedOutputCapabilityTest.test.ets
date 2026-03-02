@@ -124,13 +124,19 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   console.info(TAG, 'getCreatePhotoSession.success',);
 }
 
+async function releasePhotoSession() {
+  console.info(TAG, 'releasePhotoSession.');
+  await mPreviewOutput?.release();
+  await mPhotoOutput?.release();
+  await mPhotoSession?.release();
+}
+
 export default function CameraManagerGetSupportedOutputCapabilityTest() {
   describe('CameraManagerGetSupportedOutputCapabilityTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      AppStorage.setOrCreate('emptyString', '')
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
@@ -148,8 +154,6 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
     afterAll(async () => {
       console.info('afterAll case');
       await closeFd(fdNumber);
-      AppStorage.delete('string1')
-      AppStorage.delete('emptyString')
     });
 
     /**
@@ -176,8 +180,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**
@@ -204,8 +210,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**
@@ -232,8 +240,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**
@@ -260,8 +270,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**
@@ -288,8 +300,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**
@@ -316,8 +330,10 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
       }
-      done();
     })
 
     /**

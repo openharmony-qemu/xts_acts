@@ -40,7 +40,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function column_WidthHeight_ChangeParent() {
 
   describe('Column_WidthHeight_ChangeParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Column_WidthHeight_ChangeParentTest beforeEach start");
 
 

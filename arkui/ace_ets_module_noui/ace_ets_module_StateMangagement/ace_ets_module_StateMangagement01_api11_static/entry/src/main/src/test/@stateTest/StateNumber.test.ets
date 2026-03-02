@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StateNumber() {
   describe('StateNumber', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateNumber beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

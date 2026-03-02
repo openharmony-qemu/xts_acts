@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function LayoutInspectorTest() {
   describe('LayoutInspectorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GridRowNoColumnsTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

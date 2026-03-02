@@ -146,7 +146,7 @@ export default function cameraNoPermissionErrorCodeTest() {
   describe('CameraNoPermissionErrorCodeTest', () => {
     console.info(TAG + '----------CameraNoPermissionErrorCodeTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
@@ -163,7 +163,7 @@ export default function cameraNoPermissionErrorCodeTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('afterAll case');
     })

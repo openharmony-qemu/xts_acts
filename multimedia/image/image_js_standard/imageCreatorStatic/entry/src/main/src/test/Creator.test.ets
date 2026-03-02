@@ -44,7 +44,7 @@ export default function ImageCreator() {
 
     let globalCreator: image.ImageCreator | undefined = undefined;
     let globalImg: image.Image | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })

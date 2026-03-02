@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchCopyOption() {
   describe('SearchCopyOption', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchCopyOption beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.search.undefined.static", "EntryAbility")

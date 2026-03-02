@@ -52,7 +52,7 @@ interface ComponentAttrs {
 
 export default function APITextBackgroundStyleJsunit() {
   describe('APITextBackgroundStyleJsunit', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APITextBackgroundStyleJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

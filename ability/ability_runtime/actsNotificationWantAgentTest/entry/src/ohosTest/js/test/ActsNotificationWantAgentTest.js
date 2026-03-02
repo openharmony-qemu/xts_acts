@@ -81,7 +81,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -108,7 +108,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -135,7 +135,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -162,7 +162,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -189,7 +189,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -216,7 +216,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -243,7 +243,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -270,7 +270,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -297,7 +297,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -324,7 +324,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -346,7 +346,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -371,7 +371,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -396,7 +396,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -421,7 +421,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -446,7 +446,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -471,7 +471,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -496,7 +496,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -521,7 +521,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -546,7 +546,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -571,7 +571,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -608,7 +608,6 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} cancel AsyncCallback success`)
-              expect(true).assertTrue()
               done()
             }
           })
@@ -629,18 +628,20 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
       WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-      wantAgent.getWantAgent(WantAgentInfo).then((data) => {
+      let flag = false;
+      wantAgent.getWantAgent(WantAgentInfo).then(async (data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        wantAgent.cancel(WantAgent).then(() => {
+        await wantAgent.cancel(WantAgent).then(() => {
           console.info(`${TAG} cancel Promise success`)
-          expect(true).assertTrue()
+          flag = true;
           done()
         }).catch((err) => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
           expect(false).assertTrue()
-          done()
         })
+        expect(flag).assertTrue()
+        done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
         expect(false).assertTrue()
@@ -698,20 +699,20 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
       WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
+      wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
         wantAgent.getBundleName(WantAgent)
-        .then((data) => {
-          console.info(`${TAG} getBundleName Promise success: ${JSON.stringify(data)}`)
-          expect(data).assertEqual('com.example.actsnotificationwantagent')
-          done()
-        })
-        .catch((err) => {
-          console.info(`${TAG} getBundleName Promise err: ${err.code}`)
-          expect(false).assertTrue()
-          done()
-        })
+          .then((data) => {
+            console.info(`${TAG} getBundleName Promise success: ${JSON.stringify(data)}`)
+            expect(data).assertEqual('com.example.actsnotificationwantagent')
+            done()
+          })
+          .catch((err) => {
+            console.info(`${TAG} getBundleName Promise err: ${err.code}`)
+            expect(false).assertTrue()
+            done()
+          })
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
         expect(false).assertTrue()
@@ -748,7 +749,7 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} getUid AsyncCallback success: ${JSON.stringify(data)}`)
-              expect(true).assertTrue()
+              expect(data).assertLarger(0)
               done()
             }
           })
@@ -775,7 +776,7 @@ export default function ActsNotificationWantAgentTest() {
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
         wantAgent.getUid(WantAgent).then((data) => {
           console.info(`${TAG} getUid Promise success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertLarger(0)
           done()
         }).catch((err) => {
           console.info(`${TAG} getUid Promise err: ${err.code}`)
@@ -883,7 +884,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          
+
           let triggerInfo = {
             code: 0,
             want: {
@@ -917,10 +918,10 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} trigger AsyncCallback success: ${JSON.stringify(data)}`)
-              expect(typeof(data.info)).assertEqual('object')
+              expect(typeof (data.info)).assertEqual('object')
               expect(data.finalCode).assertEqual(0)
               expect(data.finalData).assertEqual('')
-              expect(typeof(data.extraInfo)).assertEqual('object')
+              expect(typeof (data.extraInfo)).assertEqual('object')
               expect(data.want.deviceId).assertEqual('deviceId')
               expect(data.want.bundleName).assertEqual('com.example.actsnotificationwantagent')
               expect(data.want.abilityName).assertEqual('com.example.actsnotificationwantagent.MainAbility')
@@ -1645,14 +1646,14 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent success`)
-          wantAgent.cancel(WantAgent, (err) => {
+          wantAgent.cancel(WantAgent, (err, data) => {
             try {
               if (err.code) {
                 console.info(`${TAG} cancel error: ${err.code}`)
                 expect().assertFail()
               } else {
                 console.info(`${TAG} cancel success`)
-                expect(true).assertTrue()
+                expect(data).assertEqual(undefined)
               }
               done()
             } catch (error) {
@@ -1676,13 +1677,18 @@ export default function ActsNotificationWantAgentTest() {
     it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100', Level.LEVEL0, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100 START`)
       try {
+        let flag = false;
         WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
         WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
         const agent = await wantAgent.getWantAgent(WantAgentInfo)
         console.info(`${TAG} getWantAgent success`)
-        await wantAgent.cancel(agent)
-        console.info(`${TAG} cancel success`)
-        expect(true).assertTrue()
+        await wantAgent.cancel(agent).then(()=>{
+          console.info(`${TAG} cancel success`)
+          flag = true;
+        }).catch(()=>{
+          console.info(`${TAG} cancel fail`)
+        })
+        expect(flag).assertTrue()
         done()
       } catch (err) {
         console.info(`${TAG} error: ${err.code}`)

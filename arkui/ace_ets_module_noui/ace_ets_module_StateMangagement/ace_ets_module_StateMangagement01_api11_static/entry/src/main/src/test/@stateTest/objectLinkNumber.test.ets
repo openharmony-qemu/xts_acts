@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function objectLinkNumber() {
   describe('objectLinkNumber', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("objectLinkNumber beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

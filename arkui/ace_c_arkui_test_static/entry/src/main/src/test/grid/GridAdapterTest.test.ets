@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 export default function gridAdapterTest() {
 
   describe('GridAdapterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
     afterEach(async () => {

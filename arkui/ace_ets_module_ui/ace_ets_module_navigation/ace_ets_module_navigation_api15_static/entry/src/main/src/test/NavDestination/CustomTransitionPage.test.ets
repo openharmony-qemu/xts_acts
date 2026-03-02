@@ -32,7 +32,7 @@ let tag = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function CustomTransitionPage() {
   describe('CustomTransitionPage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomTransitionPage beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
       await UtilsTest.msSleep(8000);

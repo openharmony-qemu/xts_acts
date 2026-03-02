@@ -21,6 +21,7 @@ import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
 import { StartOptions } from '@kit.AbilityKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -132,6 +133,8 @@ export default function windowLayoutTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -210,11 +213,11 @@ export default function windowLayoutTest() {
         done()
       } else if (textDragged == 'startMoving 801') {
         await windowClass.setUIContent("testability/pages/Index");
-        expect(true).assertTrue();
+        
         done()
       } else if (textDragged == 'startMoving 1300004') {
         await windowClass.setUIContent("testability/pages/Index");
-        expect(true).assertTrue();
+        
         done()
       } else {
         await windowClass.setUIContent("testability/pages/Index");
@@ -260,13 +263,12 @@ export default function windowLayoutTest() {
           expect(windowPointDragged.left).assertEqual(windowPoint.left + 100)
           expect(windowPointDragged.top).assertEqual(windowPoint.top + 100)
         } else if (textDragged == 'startMoving 801') {
-          expect(true).assertTrue();
+          console.info(`${message}textDragged ${JSON.stringify(textDragged)}`)
         } else {
           console.error(`${message} Error`);
           expect(true).assertFalse()
         }
         await windowClass.destroyWindow()
-        // await sleep(10000)
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
@@ -319,7 +321,7 @@ export default function windowLayoutTest() {
             expect(windowPointDragged.left).assertEqual(windowPoint.left + 100)
             expect(windowPointDragged.top).assertEqual(windowPoint.top + 100)
           } else if (textDragged == 'startMoving 801') {
-            expect(true).assertTrue();
+            console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
           } else {
             console.error(`${message} Error`);
             expect(true).assertFalse()
@@ -361,7 +363,7 @@ export default function windowLayoutTest() {
       let windowClass = windowStage.getMainWindowSync()
       let enabled = true;
       let driver = await Driver.create();
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           windowClass.setResizeByDragEnabled(enabled, async (err) => {
             if (err.code == 801) {
@@ -578,7 +580,7 @@ export default function windowLayoutTest() {
         promise.then(async () => {
           console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done()
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
@@ -620,7 +622,7 @@ export default function windowLayoutTest() {
         promise.then(async () => {
           console.info(msgStr + 'Succeeded  setFollowParentMultiScreenPolicy.');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done()
         }).catch(async (err: BusinessError) => {
           console.error(msgStr + `Failed to setFollowParentMultiScreenPolicy . Cause code: ${err.code}, message: ${err.message}`);
@@ -683,11 +685,12 @@ export default function windowLayoutTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
           if (err.code == 1300002 || err.code == 801) {
-            expect(true).assertTrue();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
+          
         });
       } catch (err) {
         console.log(`${message} Failed to test MoveConfiguration.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
@@ -719,7 +722,7 @@ export default function windowLayoutTest() {
         let reason: window.RectChangeReason;
         windowClass.off('windowRectChange');
         console.log(msgStr + 'Succeeded window rect changes');
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         if (error.code === 801) {
@@ -788,14 +791,14 @@ export default function windowLayoutTest() {
         let reason: window.RectChangeReason;
         windowClass.on('windowRectChange', (data: window.RectChangeOptions) => {
           console.log(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
-          expect(true).assertTrue();
+          
           done();
         });
         await windowClass.resize(1000, 1000).then(async () => {
           console.info(msgStr + 'Succeeded in changing the window size.');
           await sleep(500);
           windowClass.off('windowRectChange');
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to change the window size. Cause code: ${err.code}, message: ${err.message}`);
@@ -842,13 +845,13 @@ export default function windowLayoutTest() {
         windowClass.on('windowRectChange', (data: window.RectChangeOptions) => {
           console.log(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
           windowClass.off('windowRectChange');
-          expect(true).assertTrue();
+          
           done();
         });
         await windowClass.moveWindowTo(500, 500).then(async () => {
           console.info(msgStr + 'Succeeded in moving the window.');
           await sleep(1000);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1078,7 +1081,7 @@ export default function windowLayoutTest() {
         });
         windowClass.off('windowRectChange');
         console.log(msgStr + 'Succeeded to off the windowRectChange');
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         if (error.code === 801) {
@@ -1133,7 +1136,7 @@ export default function windowLayoutTest() {
         console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持 setWindowMask');
-          expect(true).assertTrue();
+          
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -1178,7 +1181,7 @@ export default function windowLayoutTest() {
             console.log(msgStr + '此设备不支持');
             done();
           } else if (err.code == 401) {
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.log(msgStr + 'Failed to setWindowMask');
@@ -1517,7 +1520,7 @@ export default function windowLayoutTest() {
           console.info(msgStr + 'Succeeded in moving the window.');
           let rect = subWindow.getWindowProperties().windowRect;
           console.info(msgStr + `Get window rect: ` + JSON.stringify(rect));
-          expect(true).assertTrue();
+          
           await subWindow.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -1973,7 +1976,7 @@ export default function windowLayoutTest() {
           expect(windowPointDragged.left).assertEqual(windowPoint.left + 50)
           expect(windowPointDragged.top).assertEqual(windowPoint.top + 50)
         } else if (textDragged == 'startMoving 801') {
-          expect(true).assertTrue();
+          console.info(`${caseName} textDragged  = ${JSON.stringify(textDragged)}`)
         } else {
           console.error(`${caseName} Error.`);
           expect(true).assertFalse()
@@ -2193,7 +2196,7 @@ export default function windowLayoutTest() {
                 done();
               } else if (error.code == 1300004) {
 
-                expect(true).assertTrue();
+                
                 done();
               } else if (error.code == 801) {
                 done();
@@ -2207,7 +2210,7 @@ export default function windowLayoutTest() {
             console.error(caseName + 'Failed to create the subwindow 1. Cause: ' + JSON.stringify(error));
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
-              expect(true).assertTrue();
+              
               done();
             } else {
               expect().assertFail();
@@ -4093,7 +4096,7 @@ export default function windowLayoutTest() {
     it('testSetContentAspectRatio_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0200';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowStageStart = await startAbility(caseName, context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();
@@ -4156,7 +4159,7 @@ export default function windowLayoutTest() {
     it('testSetContentAspectRatio_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0300';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowStageStart = await startAbility(caseName + '_1', context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();

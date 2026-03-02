@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaOnCutJsunit() {
   describe('textAreaOnCutJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaOnCutJsunit beforeEach start");
 
 

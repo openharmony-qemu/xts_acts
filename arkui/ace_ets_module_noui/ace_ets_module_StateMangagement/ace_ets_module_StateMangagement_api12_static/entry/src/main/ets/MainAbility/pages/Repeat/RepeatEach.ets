@@ -105,7 +105,7 @@ struct RepeatParent {
           .height('3%')
           .fontSize(9)
           .onClick(():void => {
-            this.simpleList.splice(1, 1);
+            //this.simpleList.splice(1, 1);  暂不可用
             this.simpleList = this.simpleList.filter((num , index:int ) => index !== 1);
             this.simpleList.push('我');
           })
@@ -116,7 +116,7 @@ struct RepeatParent {
           .height('3%')
           .fontSize(9)
           .onClick(():void => {
-            this.simpleList.splice(1, 1);
+            //this.simpleList.splice(1, 1);  暂不可用
             this.simpleList = this.simpleList.filter((num , index:int ) => index !== 1);
             this.simpleList.push('你', '他');
           })

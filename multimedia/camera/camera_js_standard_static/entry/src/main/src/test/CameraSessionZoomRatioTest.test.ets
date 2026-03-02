@@ -314,7 +314,7 @@ export default function cameraSessionZoomRatioTest() {
 
   describe('cameraSessionZoomRatioTest', () => {
     console.info(TAG + '----------cameraSessionZoomRatioTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         Utils.msSleep(100);
         console.info('beforeAll case');
@@ -328,7 +328,7 @@ export default function cameraSessionZoomRatioTest() {
       
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       Utils.msSleep(5000);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -338,12 +338,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info('  cameraSessionZoomRatioTest beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('  cameraSessionZoomRatioTest afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('  cameraSessionZoomRatioTest afterAll case');

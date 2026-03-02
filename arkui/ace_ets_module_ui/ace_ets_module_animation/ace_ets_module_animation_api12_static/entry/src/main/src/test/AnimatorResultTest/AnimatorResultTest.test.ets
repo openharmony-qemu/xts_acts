@@ -35,7 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function AnimatorResultTest() {
   describe('AnimatorResultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AnimatorResultTest beforeEach start");
 
       

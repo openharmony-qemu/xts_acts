@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function LocalStorageLink0310TestJsunit() {
   describe('LocalStorageLink0310TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LocalStorageLink0310TestJsunit beforeEach start");
 
 

@@ -50,10 +50,12 @@ export default function ImageSourceCreatePixelMapListSupp() {
       console.info('beforeAll case');
     });
     beforeEach(async () => {
+      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
+      await sleep(500)
     });
     afterAll(() => {
       console.info('afterAll case');
@@ -286,7 +288,28 @@ export default function ImageSourceCreatePixelMapListSupp() {
         done();
       })
     })
-
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
+     * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004
+     * @tc.desc   createPixelMapList callback: AsyncCallback<Array<PixelMap>>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_004';
+      const imageSourceApi = await getImageSource('test_exif_v4.heic');
+      imageSourceApi.createPixelMapList((err: BusinessError, pixelMapList: Array<image.PixelMap>) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMapList object, error code is ${err},${err.code}`);
+          expect(err.code == 62980118 ).assertTrue();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMapList object.');
+          expect(pixelMapList.length > 0).assertFalse();
+        }
+        done();
+      })
+    })
     /**
      * @tc.name   SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
      * @tc.number SUB_MEDIA_IMAGE_SOURCE_CREATE_CALLBACK_PIXELMAP_005
@@ -985,7 +1008,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',JSON.stringify(pixelmap));
           expect(pixelmap!=undefined).assertTrue();
@@ -997,7 +1020,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
 
@@ -1016,7 +1039,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1028,7 +1051,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1046,7 +1069,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap =await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1058,7 +1081,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1076,7 +1099,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1088,7 +1111,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1106,19 +1129,19 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
-          expect(pixelmap!=undefined).assertTrue();
+          expect().assertFail();
         } else {
-          console.error(TAG,testName,`Failed to create pixelMap object `);
+          console.error(TAG,testName,`Failed to createPixelMapUsingAllocator pixelMap object `);
           expect().assertFail();
         }
       }catch (err) {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
-        expect().assertFail();
+        expect(Number(err.code)).assertEqual(7700301);
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1136,7 +1159,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap =await  imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1148,7 +1171,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1166,7 +1189,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap =await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1178,7 +1201,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1196,7 +1219,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1208,7 +1231,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1226,7 +1249,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1238,7 +1261,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1256,7 +1279,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1268,39 +1291,39 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
-     * @tc.desc       createPixelMapUsingAllocator options desiredDynamicRange: image.desiredDynamicRange.HDR
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011';
-      let decodeOpts: image.DecodingOptions = {
-        desiredDynamicRange: image.DecodingDynamicRange.HDR,
-      };
-      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-      try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
-        if (pixelmap != undefined) {
-          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
-          expect(pixelmap!=undefined).assertTrue();
-        } else {
-          console.error(TAG,testName,`Failed to create pixelMap object `);
+      /**
+       * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
+       * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
+       * @tc.desc       createPixelMapUsingAllocator options desiredDynamicRange: image.desiredDynamicRange.HDR
+       * @tc.size       MEDIUM
+       * @tc.type       Function
+       * @tc.level      Level 1
+       */
+      it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011', Level.LEVEL1, async (done: Function) => {
+        const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011';
+        let decodeOpts: image.DecodingOptions = {
+          desiredDynamicRange: image.DecodingDynamicRange.HDR,
+        };
+        const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+        try {
+          let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+          if (pixelmap != undefined) {
+            console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+            expect(pixelmap!=undefined).assertTrue();
+          } else {
+            console.error(TAG,testName,`Failed to create pixelMap object `);
+            expect().assertFail();
+          }
+        }catch (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
           expect().assertFail();
         }
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
-        expect().assertFail();
-      }
-      imageSourceApi.release();
-      done();
-    })
+        await imageSourceApi.release();
+        done();
+      })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012
@@ -1316,7 +1339,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1328,7 +1351,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
     /**
@@ -1346,7 +1369,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
           expect(pixelmap!=undefined).assertTrue();
@@ -1358,7 +1381,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
         expect().assertFail();
       }
-      imageSourceApi.release();
+      await imageSourceApi.release();
       done();
     })
 
@@ -1783,10 +1806,6 @@ export default function ImageSourceCreatePixelMapListSupp() {
       imageSourceApi.release();
       done();
     })
-
-
-
-
 
   });
 }

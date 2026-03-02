@@ -49,6 +49,15 @@ class EntryAbility3 extends UIAbility {
         })
       },1000)
     }
+    if(want?.action == 'killAllProcess-clearPageStackTrue'){
+      setTimeout(()=>{
+        this.context.getApplicationContext().killAllProcesses(true).then(():void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStackresult');
+        }).catch((err:Error):void=>{
+          hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStack err' + err?.code);
+        })
+      },1000)
+    }
     if(want?.action == 'clearUpApplicationData-callback'){
       setTimeout(()=>{
         this.context.getApplicationContext().clearUpApplicationData((err:BusinessError | null):void=>{

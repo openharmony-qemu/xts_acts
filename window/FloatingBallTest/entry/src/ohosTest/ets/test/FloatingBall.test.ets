@@ -102,6 +102,8 @@ export default function abilityTest() {
         }
       await getPermision();
       await sleep(300);
+      await sleep(300);
+      await sleep(300);
       await clickButtonDriver();
     })
     beforeEach(() => {

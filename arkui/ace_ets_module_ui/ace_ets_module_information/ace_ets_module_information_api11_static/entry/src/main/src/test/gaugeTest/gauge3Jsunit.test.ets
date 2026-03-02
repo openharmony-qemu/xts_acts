@@ -38,7 +38,7 @@ const waitUiReadyMs = 1000;
 
 export default function gauge3Jsunit() {
   describe('gauge3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gauge3Jsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

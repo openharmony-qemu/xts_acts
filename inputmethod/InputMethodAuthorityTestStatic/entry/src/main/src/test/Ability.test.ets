@@ -31,7 +31,7 @@ export default function inputMethodAuthorityJSUnit() {
 
     describe("inputMethodAuthorityJSUnit", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info('%{public}s', 'beforeAll start');
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({

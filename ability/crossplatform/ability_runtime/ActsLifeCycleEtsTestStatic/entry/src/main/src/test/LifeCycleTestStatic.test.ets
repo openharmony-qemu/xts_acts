@@ -122,6 +122,14 @@ class CustomAbilityLifecycleCallback extends AbilityLifecycleCallback {
   onAbilitySaveState?: OnAbilityFn = (ability: UIAbility) => {
     hilog.info(domain, tag,'CustomAbilityLifecycleCallback onAbilitySaveState');
   };
+
+  onAbilityContinue(ability: UIAbility) {
+    hilog.info(domain, tag,'CustomAbilityLifecycleCallback onAbilityContinue');
+  }
+
+  onAbilityWillContinue?: OnAbilityFn = (ability: UIAbility) => {
+    hilog.info(domain, tag,'CustomAbilityLifecycleCallback onAbilityWillContinue');
+  }
 }
 
 let domain: int = 0x0000;

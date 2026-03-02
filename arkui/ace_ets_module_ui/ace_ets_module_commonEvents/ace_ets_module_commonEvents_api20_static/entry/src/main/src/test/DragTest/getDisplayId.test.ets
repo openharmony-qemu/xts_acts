@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function getDisplayId() {
   describe('getDisplayIdTest', () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi20.static", "EntryAbility")

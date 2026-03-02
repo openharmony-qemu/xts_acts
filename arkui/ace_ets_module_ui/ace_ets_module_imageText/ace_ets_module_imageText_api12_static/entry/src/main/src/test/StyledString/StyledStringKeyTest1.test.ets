@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StyledStringKeyTest1() {
   describe('StyledStringKeyTest1', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StyledStringKeyTest1 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

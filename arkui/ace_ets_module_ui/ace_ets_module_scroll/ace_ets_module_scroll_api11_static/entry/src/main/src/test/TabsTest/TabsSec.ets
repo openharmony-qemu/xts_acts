@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsSec() {
   describe('ActsAceTabsTestSec', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

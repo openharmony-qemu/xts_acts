@@ -29,7 +29,7 @@ import { UtilsTest, startAbility } from './Util.test';
 
 export default function gridColJsunit() {
   describe('gridColTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

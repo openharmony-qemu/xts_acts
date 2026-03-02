@@ -25,7 +25,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 
 export default function APIgetUIFontConfigJsunit() {
   describe('APIgetUIFontConfigJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIgetUIFontConfigJsunit beforeEach start");
 
 

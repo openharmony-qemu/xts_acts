@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function styledStringChange() {
   describe('styledStringChange', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("styledStringChange beforeEach start");
 
 

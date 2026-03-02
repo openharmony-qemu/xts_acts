@@ -68,6 +68,14 @@
         "srcEntrance": "./ets/InputMethodEngineKey/InputKeyService.ts",
         "type": "inputMethod",
         "visible": true
+      },
+      {
+        "description": "NewEventDemo",
+        "icon": "$media:icon",
+        "name": "InputNewService",
+        "srcEntrance": "./ets/InputMethodEngineNew/InputNewService.ts",
+        "type": "inputMethod",
+        "visible": true
       }
     ],
     "requestPermissions": [

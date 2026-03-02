@@ -24,7 +24,7 @@ export default function commonAttrsBackgroundImageSizeTest() {
 
   describe('CommonAttrsBackgroundImageSizeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

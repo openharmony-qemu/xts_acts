@@ -32,7 +32,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function timepickerJsunit() {
   describe('ActsAceTimePickerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("timepickerJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

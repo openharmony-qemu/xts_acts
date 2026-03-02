@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function WrapBuilder0020Test() {
   describe('WrapBuilder0020Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WrapBuilder0020Test beforeEach start");
 
 
