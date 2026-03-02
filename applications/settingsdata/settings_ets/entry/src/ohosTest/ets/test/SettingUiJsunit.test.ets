@@ -979,7 +979,7 @@ export default function settingUiJsunit() {
       try {
         let uri = settings.getURI('', (value) => {
           console.info("[settings_get_uri_callback_empty] value is: " + value);
-          expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
+          expect(value).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
           done();
         });
         console.info("[settings_get_uri_callback_empty] uri is: " + uri);
@@ -1010,7 +1010,6 @@ export default function settingUiJsunit() {
           console.error("[settings_registerKeyObserver_callback_null] error = " + err);
           expect().assertFail();
           done();
-          return;
         }
       });
 

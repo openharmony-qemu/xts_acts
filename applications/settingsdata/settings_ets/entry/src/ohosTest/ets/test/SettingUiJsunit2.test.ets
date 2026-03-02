@@ -2076,7 +2076,7 @@ export default function settingUiJsunit() {
           expect().assertFail();
           done();
         } catch (err) {
-          console.error("[settings_set_value_sync_key_undefined] error = " + err);
+          console.error("[settings_set_value_sync_key_empty] error = " + err);
           expect(err.code).assertEqual(201);
           done();
           return;
