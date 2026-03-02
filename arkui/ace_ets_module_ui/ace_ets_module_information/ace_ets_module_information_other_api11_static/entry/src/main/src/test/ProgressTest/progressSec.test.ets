@@ -38,7 +38,7 @@ let emitKey = "emitUserAgent";
 
 export default function progressSecTest() {
   describe('ActsProgressSecTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsProgressSecTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
     });

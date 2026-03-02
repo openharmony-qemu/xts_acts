@@ -74,6 +74,7 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api18_static:ActsAceEtsModuleImageTextApi18StaticTest",
       "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
       "ace_ets_module_imageText_image_static:ActsAceEtsModuleImageTextImageStaticTest",
+      "ace_ets_module_imageText_undefined_static:ActsAceEtsModuleImageTextUndefinedStaticTest"
     ]
   }
 }

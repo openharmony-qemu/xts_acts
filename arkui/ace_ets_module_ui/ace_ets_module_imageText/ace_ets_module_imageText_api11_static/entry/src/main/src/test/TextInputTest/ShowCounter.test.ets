@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function showCounterTest() {
   describe('showCounterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showCounterTest beforeEach start");
 
 

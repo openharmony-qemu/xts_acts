@@ -58,13 +58,13 @@ export default function stateStylesTest() {
   }]
 
   describe('StateStylesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateStylesTest beforeEach start");
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.stateStyle.nowear.test.static", "EntryAbility")
       console.info("startAbility end");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       AppStorage.setOrCreate<boolean>('_isEnable', true)
       await Utils.sleep(2000);
     })

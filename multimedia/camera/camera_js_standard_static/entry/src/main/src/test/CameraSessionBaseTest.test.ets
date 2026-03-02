@@ -448,7 +448,7 @@ export default function cameraSessionTest() {
 
   describe('CameraSessionBaseTest', () => {
     console.info(TAG + '----------CameraSessionTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('  CameraSessionBaseTest beforeAll start');
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -460,18 +460,18 @@ export default function cameraSessionTest() {
       console.info('beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
       await Utils.msSleep(100);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);

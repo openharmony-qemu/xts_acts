@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function onSizeChange() {
   describe('onSizeChange', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSizeChange beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")

@@ -26,7 +26,7 @@ export default function checkboxGroupSelectAllTest() {
 
   describe('CheckboxGroupSelectAllTest', () => {
 
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
     });
 

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RadioContentModifier() {
   describe('RadioContentModifier', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RadioContentModifier beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

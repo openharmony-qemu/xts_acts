@@ -41,7 +41,7 @@ function sleep(time: int) {
 export default function qrcodeJsunit() {
 
   describe('QrcodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QrcodeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

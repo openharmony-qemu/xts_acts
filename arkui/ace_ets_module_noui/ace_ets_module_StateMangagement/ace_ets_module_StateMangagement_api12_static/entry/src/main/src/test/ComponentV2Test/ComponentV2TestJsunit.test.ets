@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ComponentV2TestJsunit() {
   describe('ComponentV2TestJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ComponentV2TestJsunit beforeEach start");
 
 

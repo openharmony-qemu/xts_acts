@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function direction2Jsunit() {
   describe('direction2Jsunit', () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("direction2Jsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

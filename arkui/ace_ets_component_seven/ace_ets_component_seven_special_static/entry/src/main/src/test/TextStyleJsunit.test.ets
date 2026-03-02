@@ -23,7 +23,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function textStyleJsunit() {
   describe('textStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textStyleTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

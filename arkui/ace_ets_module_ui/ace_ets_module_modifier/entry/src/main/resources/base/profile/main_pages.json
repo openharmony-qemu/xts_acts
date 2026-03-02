@@ -80,6 +80,10 @@
         "MainAbility/pages/Draw/DrawModifierTwoTest",
         "MainAbility/pages/Draw/DrawForegroundTest",
         "MainAbility/pages/Draw/DrawOverlayTest",
-        "MainAbility/pages/useEffect/useEffectIndex"
+        "MainAbility/pages/useEffect/useEffectIndex",
+        "MainAbility/pages/button/ButtonDrawModifierNullUndefined",
+        "MainAbility/pages/button/ButtonAttributeModifierNullUndefined",
+        "MainAbility/pages/button/AttributeModifierNullUndefined",
+        "MainAbility/pages/button/AttributeUpdaterNullUndefined"
     ]
 }

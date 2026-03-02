@@ -198,7 +198,12 @@ import RichEditorCompressLeadingPunctuationTest from './RichEditorApi23Test/Rich
 import RichEditorParagraphStyleTest from './RichEditorApi23Test/RichEditorParagraphStyle.test';
 import RichEditorSingleLineTest from './RichEditorApi23Test/RichEditorSingleLine.test';
 import RichEditorTextStyleTest from './RichEditorApi23Test/RichEditorTextStyle.test';
-
+import RichEditorDataDetectorDateTimeTest from './RichEditor/RichEditorDataDetectorDateTime.test';
+import RichEditorSpecialOptionsNullTest from './RichEditor/RichEditorSpecialOptionsNull.test';
+import RichEditorDataDetectorOptionsNullTest from './RichEditor/RichEditorDataDetectorOptionsNull.test';
+import RichEditorInputOptionsNullTest from './RichEditor/RichEditorInputOptionsNull.test';
+import RichEditorLengthOptionsNullTest from './RichEditor/RichEditorLengthOptionsNull.test';
+import RichEditorOtherOptionsNullTest from './RichEditor/RichEditorOtherOptionsNull.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -387,4 +392,10 @@ export default function testsuite() {
   RichEditorParagraphStyleTest()
   RichEditorSingleLineTest()
   RichEditorTextStyleTest()
+  RichEditorDataDetectorDateTimeTest()
+  RichEditorSpecialOptionsNullTest()
+  RichEditorDataDetectorOptionsNullTest()
+  RichEditorInputOptionsNullTest()
+  RichEditorLengthOptionsNullTest()
+  RichEditorOtherOptionsNullTest()
 }

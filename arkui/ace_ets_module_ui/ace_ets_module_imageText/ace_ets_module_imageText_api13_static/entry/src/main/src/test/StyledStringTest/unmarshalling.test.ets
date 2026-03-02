@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function UnmarshallingErrorCodeTest() {
   describe('UnmarshallingErrorCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UnmarshallingErrorCodeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")

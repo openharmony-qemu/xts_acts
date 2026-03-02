@@ -1299,7 +1299,30 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end`);
     });
 
-
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn1000
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_1000
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverIccAccountInfoChangeOn1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn1000';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on(undefined, () => {
+          console.info(`${caseName} data`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
 
     /**
      * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0400
@@ -1341,6 +1364,28 @@ export default function observerManagerTest() {
       console.info(`${caseName} test start`);
       try {
         observer.off(null);
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        let e = error as BusinessError;
+        ExpectTrue(e.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0600
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0600
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverIccAccountInfoChangeOff0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0600';
+      console.info(`${caseName} test start`);
+      try {
+        observer.off(undefined);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         let e = error as BusinessError;

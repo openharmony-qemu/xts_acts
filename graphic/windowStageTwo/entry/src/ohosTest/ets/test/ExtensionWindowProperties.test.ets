@@ -135,7 +135,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -199,7 +199,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -263,7 +263,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -328,7 +328,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -422,7 +422,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -484,7 +484,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -547,7 +547,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -609,7 +609,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -671,7 +671,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();
@@ -733,7 +733,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
           if (error.code == 1300002) {
             console.log(caseName + 'device not support')
-            expect(true).assertTrue();
+           
             done();
           } else {
             expect().assertFail();

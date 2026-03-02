@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function nodeWaterFlow() {
   describe('nodeWaterFlow', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("nodeWaterFlow beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.FrameNodeNoWear.api12.static", "EntryAbility")
     });

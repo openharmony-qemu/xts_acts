@@ -182,7 +182,7 @@ export default function webViewControllerJsunit() {
       Utils.registerEvent("testClearAllCookiesCallback","",140,done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponent',10,'');
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**

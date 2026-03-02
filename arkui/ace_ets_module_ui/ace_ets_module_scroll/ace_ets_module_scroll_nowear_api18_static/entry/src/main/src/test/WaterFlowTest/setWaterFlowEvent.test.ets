@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function setWaterFlowEvent() {
   describe('setWaterFlowEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setWaterFlowEvent beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api18.static", "EntryAbility");
     });

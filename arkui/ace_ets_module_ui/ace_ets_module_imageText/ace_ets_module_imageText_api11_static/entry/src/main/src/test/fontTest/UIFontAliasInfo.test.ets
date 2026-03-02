@@ -24,7 +24,7 @@ import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRota
 
 export default function UIFontAliasInfo() {
   describe('UIFontAliasInfo', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIFontAliasInfo beforeEach start");
 
 

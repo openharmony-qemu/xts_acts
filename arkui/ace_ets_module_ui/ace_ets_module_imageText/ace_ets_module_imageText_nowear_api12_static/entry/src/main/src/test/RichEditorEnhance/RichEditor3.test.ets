@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditor3() {
   describe('RichEditor3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditor3 beforeEach start");
 
       ;

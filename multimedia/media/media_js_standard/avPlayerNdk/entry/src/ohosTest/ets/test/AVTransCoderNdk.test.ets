@@ -737,6 +737,21 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvTransCoderSetStateCb
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_STATE_CB_0002
+     * @tc.desc   Test OH_AVTranscoder_SetStateCallback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderSetStateCb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret: number = avTransCoderNdk.AvTransCoderSetStateCb();
+      console.log('case testOhAvTransCoderSetStateCb ret ' + ret);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvTransCoderSetErrorCbError
      * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_ERROR_CB_0001
      * @tc.desc   Test OH_AVTranscoder_SetErrorCallback with invalid parameters.
@@ -752,6 +767,21 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvTransCoderSetErrorCb
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_ERROR_CB_0002
+     * @tc.desc   Test OH_AVTranscoder_SetErrorCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderSetErrorCb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret: number = avTransCoderNdk.AvTransCoderSetErrorCb();
+      console.log('case testOhAvTransCoderSetErrorCb ret ' + ret);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvTransCoderSetProgressUpdateCbError
      * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_PROGRESS_UPDATE_CB_0001
      * @tc.desc   Test OH_AVTranscoder_SetProgressUpdateCallback with invalid parameters.
@@ -763,6 +793,21 @@ export default function AVTransCoderNdkTest() {
       let ret: number = avTransCoderNdk.AvTransCoderSetProgressUpdateCbError();
       console.log('case testOhAvTransCoderSetProgressUpdateCbError ret ' + ret);
       expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderSetProgressUpdateCb
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_PROGRESS_UPDATE_CB_0002
+     * @tc.desc   Test OH_AVTranscoder_SetProgressUpdateCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderSetProgressUpdateCb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret: number = avTransCoderNdk.AvTransCoderSetProgressUpdateCb();
+      console.log('case testOhAvTransCoderSetProgressUpdateCb ret ' + ret);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
 
@@ -1856,6 +1901,26 @@ export default function AVTransCoderNdkTest() {
       await closeRawFd(VIDEO_AVC_AUDIO_AAC);
       await closeFileFd(dstFd.fd);
       expect(ret).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderEnableBFrame0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_ENABLE_B_FRAME_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_EnableBFrame with error enableBFrame.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderEnableBFrame0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
+      let dstFd = await getFileFd('testOhAvTransCoderEnableBFrame0001_output_video.mp4');
+      let enableBFrame = true;
+      let ret: number = avTransCoderNdk.AvTransCodeConfigEnableBFrameError(avFd.fd, avFd.offset, avFd.length, dstFd.fd, enableBFrame);
+      console.log('case testOhAvTransCoderEnableBFrame0002 ret ' + ret);
+      await closeRawFd(VIDEO_AVC_AUDIO_AAC);
+      await closeFileFd(dstFd.fd);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
       done();
     });
 

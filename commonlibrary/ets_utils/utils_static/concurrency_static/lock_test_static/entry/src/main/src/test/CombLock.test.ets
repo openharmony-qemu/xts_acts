@@ -35,7 +35,7 @@ export let currentWorker = EAWorker.current()
 
 export default function CombLockTest() {
   describe('CombLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**

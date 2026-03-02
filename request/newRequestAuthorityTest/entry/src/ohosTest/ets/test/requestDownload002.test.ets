@@ -209,7 +209,7 @@ export default function requestDownloadTwoUnitTest() {
             task.off('progress');
             flag1 = false;
             console.info("====>SUB_Misc_REQUEST_Off_Download_Progress_0020 on_progressCallback1 flag1: " + flag1);
-            expect(true).assertTrue();
+            expect(flag1).assertEqual(false);
           }
           try {
             if(err){
@@ -401,7 +401,7 @@ export default function requestDownloadTwoUnitTest() {
             task.off('completed');
             flag1 = false;
             console.info("====>SUB_Misc_REQUEST_Off_Download_Completed_0020 on_progressCallback1 flag1: " + flag1);
-            expect(true).assertTrue();
+            expect(flag1).assertEqual(false);
           }
           try {
             if(err){
@@ -595,7 +595,7 @@ export default function requestDownloadTwoUnitTest() {
             task.off('failed');
             flag1 = false;
             console.info("====>SUB_Misc_REQUEST_Off_Download_Failed_0020 on_progressCallback1 flag1: " + flag1);
-            expect(true).assertTrue();
+            expect(flag1).assertEqual(false);
           }
           try {
             if(err){
@@ -1035,7 +1035,11 @@ export default function requestDownloadTwoUnitTest() {
           expect(taskInfo.uid).assertEqual(undefined);
           expect(taskInfo.bundle).assertEqual(undefined);
           expect(taskInfo.title).assertEqual(config.title);
+          expect(taskInfo.url).assertEqual(config.url);
+          expect(taskInfo.data).assertEqual("");
 
+          console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.saveas: ' + taskInfo.saveas);
+          console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.tid: ' + typeof taskInfo.tid);
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.mimeType: ' + taskInfo.mimeType);
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.progress: ' + taskInfo.progress);
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.ctime: ' + taskInfo.ctime);
@@ -1043,6 +1047,9 @@ export default function requestDownloadTwoUnitTest() {
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.faults: ' + taskInfo.faults);
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.reason: ' + taskInfo.reason);
           console.info('====>SUB_Misc_REQUEST_Show_Promise_0010 taskInfo.retry: ' + taskInfo.retry);
+
+          expect(typeof(taskInfo.saveas) === 'string').assertTrue();
+          expect(typeof(taskInfo.tid) === 'string').assertTrue();
           expect(taskInfo.mimeType).assertEqual('');
           expect(typeof(taskInfo.progress) === 'object').assertTrue();
           expect(typeof(taskInfo.ctime) === 'number').assertTrue();
@@ -1813,6 +1820,8 @@ export default function requestDownloadTwoUnitTest() {
             expect(taskInfo.url).assertEqual(config.url);
             expect(taskInfo.data).assertEqual("");
             expect(taskInfo.title).assertEqual(config.title);
+            expect(typeof taskInfo.saveas).assertEqual('string');
+            expect(typeof taskInfo.tid).assertEqual('string');
             done();
           }catch(err){
             console.info('====>SUB_Misc_REQUEST_Touch_Callback_0010 touch throw_err:' + JSON.stringify(err));
@@ -1869,7 +1878,11 @@ export default function requestDownloadTwoUnitTest() {
         console.info('====>SUB_Misc_REQUEST_Touch_Promise_0010 onCompletedCallback start');
         try{
           let taskInfo = await request.agent.touch(id, token);
+          expect(taskInfo.url).assertEqual(config.url);
+          expect(taskInfo.data).assertEqual("");
           expect(taskInfo.title).assertEqual(config.title);
+          expect(typeof taskInfo.saveas).assertEqual('string');
+          expect(typeof taskInfo.tid).assertEqual('string');
           done();
         }catch(err){
           console.info('====>SUB_Misc_REQUEST_Touch_Promise_0010 touch throw_err:' + JSON.stringify(err));
@@ -2070,7 +2083,7 @@ export default function requestDownloadTwoUnitTest() {
             } catch (err) {
               console.info('====>SUB_REQUEST_On_Download_Progress_0500 task not remove: ' + JSON.stringify(task.tid));
             }
-            expect(true).assertTrue();
+            expect(task !== undefined).assertTrue();
             console.info('====>SUB_REQUEST_On_Download_Progress_0500 background onProgress success');
             done();
           }
@@ -2266,7 +2279,7 @@ export default function requestDownloadTwoUnitTest() {
             } catch (err) {
               console.info('====>SUB_REQUEST_On_Download_Completed_0500 task not remove: ' + JSON.stringify(task.tid));
             }
-            expect(true).assertTrue();
+            expect(task !== undefined).assertTrue();
             console.info('====>SUB_REQUEST_On_Download_Completed_0500 background onCompleted success');
             done();
           }
@@ -2456,7 +2469,7 @@ export default function requestDownloadTwoUnitTest() {
               console.info('====>SUB_REQUEST_On_Download_Resume_0100 task not remove: ' + JSON.stringify(task.tid));
             }
             console.info('====>SUB_REQUEST_On_Download_Resume_0100 on_resumeCallback');
-            expect(true).assertTrue();
+            expect(task !== undefined).assertTrue();
             done();
           }
 

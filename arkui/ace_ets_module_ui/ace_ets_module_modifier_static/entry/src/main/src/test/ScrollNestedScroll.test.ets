@@ -40,7 +40,7 @@ interface Action {
 export default function scrollNestedScrollJsunit() {
   describe('scroll_nestedScrollTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollNestedScroll beforeEach start");
 
 

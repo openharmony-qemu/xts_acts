@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function showTextPickerDialogBlurStyleOptionsTest() {
   describe('ShowTextPickerDialogBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowTextPickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

@@ -142,6 +142,8 @@ export default function EffectTest() {
           expect(result).assertEqual(1);
           done();
         } catch (err) {
+          let result: number = 0;
+          expect(result).assertEqual(1);
           console.error("====>SUB_OH_NativeImage_GetTransformMatrixV2_0100 catch err: " + err);
           done();
         }

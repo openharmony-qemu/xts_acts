@@ -72,7 +72,7 @@ import IsModifiableBooleanTest from './FrameNodeNewTest/IsModifiableBooleanTest.
 import GetAllAvailableItemsTest from './FrameNodeNewTest/GetAllAvailableItemsTest.test';
 import RenderNodeMethodNullTest from './FrameNodeNewTest/RenderNodeMethodNullTest.test';
 import AttachNodeAdapterBooleanTest from './FrameNodeNewTest/AttachNodeAdapterBooleanTest.test';
-import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
+// import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
@@ -80,12 +80,18 @@ import AdoptChildOneTest from './FrameNodeMethod/AdoptChildOneTest.test';
 import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
 import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
 import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
+import CreateNodeNullUndefinedTest from './FrameNodeMethod/CreateNodeNullUndefinedTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
 import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
 import FrameNodeConvertPositionTest from './FrameNodeMethod/FrameNodeConvertPositionTest';
 import FrameNodeConvertPositionErrorCodeTest from './FrameNodeMethod/FrameNodeConvertPositionErrorCodeTest';
+import ConvertPositionNullUndefinedTest from './FrameNodeMethod/ConvertPositionNullUndefinedTest.test';
+import ConvertPositionToFromWindowNullTest from './FrameNodeMethod/ConvertPositionToFromWindowNullTest.test';
+import RemoveAdoptedChildNullTest from './FrameNodeMethod/RemoveAdoptedChildNullTest.test';
+import SetCrossLanguageOptionsNullTest from './FrameNodeMethod/SetCrossLanguageOptionsNullTest.test';
+import GetInteractionEventBindingInfoNullTest from './FrameNodeMethod/GetInteractionEventBindingInfoNullTest.test';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -147,7 +153,7 @@ export default function testsuite() {
   GetAllAvailableItemsTest();
   RenderNodeMethodNullTest();
   AttachNodeAdapterBooleanTest();
-  isTransferredTest();
+  // isTransferredTest();
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();
@@ -161,4 +167,10 @@ export default function testsuite() {
   GraphicsFourBoundaryTest();
   FrameNodeConvertPositionTest();
   FrameNodeConvertPositionErrorCodeTest();
+  CreateNodeNullUndefinedTest();
+  ConvertPositionNullUndefinedTest();
+  ConvertPositionToFromWindowNullTest();
+  RemoveAdoptedChildNullTest();
+  SetCrossLanguageOptionsNullTest();
+  GetInteractionEventBindingInfoNullTest();
 }

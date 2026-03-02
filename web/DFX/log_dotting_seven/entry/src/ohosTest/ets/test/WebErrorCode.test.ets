@@ -127,7 +127,7 @@ export default function webErrorCode() {
      */
     it('testLoadUrlWithHeadersError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testLoadUrlWithHeadersError002", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testLoadUrlWithHeadersError002", '17100002', 123130, done);
+      Utils.registerEvent("testLoadUrlWithHeadersError002", '17100002URL error. The webpage corresponding to the URL is invalid.', 123130, done);
       Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
     /**

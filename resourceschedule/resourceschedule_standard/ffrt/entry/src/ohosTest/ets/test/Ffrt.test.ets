@@ -1545,5 +1545,19 @@ export default function ffrtTest() {
       let flag = entry.ffrtQueueQosCheck();
       expect(flag).assertEqual(0);
     })
+
+    /**
+     * @tc.name   conditionVariableTest005
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10900
+     * @tc.desc   Test ffrt condition variable api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('conditionVariableTest005', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.conditionVariableTest005();
+      expect(flag).assertEqual(0);
+    })
   })
 }

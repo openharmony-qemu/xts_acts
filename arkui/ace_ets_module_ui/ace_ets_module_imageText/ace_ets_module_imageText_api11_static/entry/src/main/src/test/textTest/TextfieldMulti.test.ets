@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextfieldMultiTest() {
   describe('TextfieldMultiTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextfieldMultiTest beforeEach start");
 
 

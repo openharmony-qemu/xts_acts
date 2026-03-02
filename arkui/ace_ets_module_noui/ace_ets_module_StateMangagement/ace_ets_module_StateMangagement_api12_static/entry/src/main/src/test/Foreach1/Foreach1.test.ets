@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Foreach1() {
   describe('Foreach1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Foreach1 beforeEach start");
 
 

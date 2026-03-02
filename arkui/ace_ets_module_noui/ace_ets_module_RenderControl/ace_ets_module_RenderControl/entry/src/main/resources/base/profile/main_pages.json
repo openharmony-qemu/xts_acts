@@ -70,7 +70,10 @@
 
     "MainAbility/pages/Repeat/repeatReusableFalse",
     "MainAbility/pages/Repeat/repeatReusableTrue",
-    "MainAbility/pages/LazyForEach/RELOAD"
+    "MainAbility/pages/LazyForEach/RELOAD",
+
+    "MainAbility/pages/Repeat/repeatVirtualScrollNullUndefined",
+    "MainAbility/pages/LazyForEach/lazyForEachOnDatasetChangeNullUndefined"
 
     
   ]

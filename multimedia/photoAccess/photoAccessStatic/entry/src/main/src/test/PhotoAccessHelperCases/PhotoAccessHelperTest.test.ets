@@ -86,7 +86,10 @@ export default function PhotoAccessHelperTest() {
       fetchOptions.fetchColumns = [columns[keyNumCallback]];
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+          let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+          waitForCompletion(async () => {
+            photoAsset = await fetchResult!.getFirstObject();
+          })
           keyNumCallback++
           if (keyNumCallback == columns.length - 1) {
             keyNumCallback = 0
@@ -145,11 +148,14 @@ export default function PhotoAccessHelperTest() {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
           console.info('fetchResult success');
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+          let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+          waitForCompletion(async () => {
+            photoAsset = await fetchResult!.getFirstObject();
+          })
           if (photoAsset != undefined) {
-            console.info('photoAsset.displayName : ' + photoAsset.displayName);
-            console.info('photoAsset.uri : ' + photoAsset.uri);
-            console.info('photoAsset.photoType : ' + photoAsset.photoType);
+            console.info('photoAsset.displayName : ' + photoAsset!.displayName);
+            console.info('photoAsset.uri : ' + photoAsset!.uri);
+            console.info('photoAsset.photoType : ' + photoAsset!.photoType);
           }
           console.info('fetchOptions.fetchColumns : ' + fetchOptions.fetchColumns);
           console.info('getAssets end');
@@ -384,10 +390,13 @@ export default function PhotoAccessHelperTest() {
         if (fetchResult != undefined) {
           console.info('fetchResult success1');
           try {
-            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+            let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+            waitForCompletion(async () => {
+              photoAsset = await fetchResult!.getFirstObject();
+            })
             console.info('fetchResult success2');
             if (photoAsset != undefined) {
-              getPhotoAssetAttrs(photoAsset)
+              getPhotoAssetAttrs(photoAsset as photoAccessHelper.PhotoAsset)
             }
           } catch (err) {
             console.error('getFirstObject fail, err is: ' + err.message);
@@ -432,8 +441,11 @@ export default function PhotoAccessHelperTest() {
       fetchOptions.fetchColumns = [columns[keyNum1]];
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-          let photoAssetKey: photoAccessHelper.MemberType = photoAsset.get(columns[keyNum1].toString());
+          let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+          waitForCompletion(async () => {
+            photoAsset = await fetchResult!.getFirstObject();
+          })
+          let photoAssetKey: photoAccessHelper.MemberType = photoAsset!.get(columns[keyNum1].toString());
           expect(photoAssetKey).not().assertUndefined()
           console.log(`photoAssetKey ${columns[keyNum1]} is : ${photoAssetKey}`)
           keyNum1++
@@ -490,10 +502,13 @@ export default function PhotoAccessHelperTest() {
       fetchOptions: photoAccessHelper.FetchOptions, done: () => void) => {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+          let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+          waitForCompletion(async () => {
+            photoAsset = await fetchResult!.getFirstObject();
+          })
           let titleStr: string = photoAccessHelper.PhotoKeys.TITLE.toString();
-          photoAsset.set(titleStr, 'newTitle');
-          let result = photoAsset.get(titleStr);
+          photoAsset!.set(titleStr, 'newTitle');
+          let result = photoAsset!.get(titleStr);
           expect(result).assertEqual('newTitle');
           console.log(`photoAsset.title is: ${result}`)
           releaseHelperCallback!(phAccessHelper, done)
@@ -533,22 +548,25 @@ export default function PhotoAccessHelperTest() {
       (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
         if (fetchResult != undefined) {
           console.log(`commitModify fetchResult != undefined  `)
-          let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+          let photoAsset: photoAccessHelper.PhotoAsset | undefined;
+          waitForCompletion(async () => {
+            photoAsset = await fetchResult!.getFirstObject();
+          })
           console.log(`commitModify getFirstObject success  `)
           for (let i = 0; i < columns.length; i++) {
             let keyStr1: string = columns[i].toString();
-            let initKeyValue: photoAccessHelper.MemberType = photoAsset.get(keyStr1);
+            let initKeyValue: photoAccessHelper.MemberType = photoAsset!.get(keyStr1);
             expect(initKeyValue).not().assertUndefined()
             console.log(`photoAsset.get init ${columns[i]} is: ${initKeyValue} `)
           }
-          photoAsset.commitModify((err: BusinessError | null) => {
+          photoAsset!.commitModify((err: BusinessError | null) => {
             if (err?.code == 0) {
               console.log(`commitModify error: ${err} ${err?.code}`);
               console.log(`photoAsset.commitModify `)
               for (let i = 0; i < columns.length; i++) {
                 let keyStr2: string = columns[i].toString();
                 console.log(`photoAsset.commitModify keyStr2 = ${keyStr2}`);
-                let newKeyValue: photoAccessHelper.MemberType = photoAsset.get(keyStr2);
+                let newKeyValue: photoAccessHelper.MemberType = photoAsset!.get(keyStr2);
                 console.log(`get success keyStr2 = ${keyStr2}`);
                 expect(newKeyValue).not().assertUndefined()
                 console.log(`photoAsset.get new ${columns[i]} is: ${newKeyValue} `)

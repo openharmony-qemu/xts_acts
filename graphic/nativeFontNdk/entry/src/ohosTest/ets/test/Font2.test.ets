@@ -18,6 +18,7 @@ import nativeFontNdk from 'libnativeFontNdk.so';
 
 export default function Font2Test() {
   describe('Font2Test', () => {
+    // 从FontNdk5Test.cpp第一个用例开始
     /**
      * @tc.name   testOHDrawingSetTextStyleAttributeInt004
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTextStyleAttributeInt004
@@ -326,14 +327,12 @@ export default function Font2Test() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-/*    it('testOHDrawingRegisterFontByIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testOHDrawingRegisterFontByIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeFontNdk.oHDrawingRegisterFontByIndex004();
       expect(result).assertEqual(0);
       done();
     });
-*/
-
 
     /**
     * @tc.name   testOHDrawingRegisterFontByIndex005
@@ -478,13 +477,12 @@ export default function Font2Test() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-/*    it('testOHDrawingRegisterFontBufferByIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testOHDrawingRegisterFontBufferByIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeFontNdk.oHDrawingRegisterFontBufferByIndex004();
       expect(result).assertEqual(0);
       done();
     });
-*/
 
     /**
     * @tc.name   testOHDrawingRegisterFontBufferByIndex005

@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetLayoutWeight_SubChange() {
   describe('ColumnSetLayoutWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetLayoutWeightTest beforeEach start");
 
 

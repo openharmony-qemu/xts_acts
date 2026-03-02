@@ -71,7 +71,11 @@ static napi_value OhAvImageGeneratorSetFdSource(napi_env env, napi_callback_info
     }
 
     OH_AVErrCode avErrCode = OH_AVImageGenerator_SetFDSource(mainGenerator, fileDescribe, PARAM_0, fileSize);
-    napi_create_int32(env, avErrCode, &result);
+    if (avErrCode == AV_ERR_OK) {
+        napi_create_int32(env, avErrCode, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
 
     OH_AVImageGenerator_Release(mainGenerator);
     mainGenerator = nullptr;
@@ -150,17 +154,60 @@ static napi_value OhAvImageGeneratorFetchFrameByTime(napi_env env, napi_callback
     return result;
 }
 
+static napi_value OhAvImageGeneratorFetchFrameByTimeError(napi_env env, napi_callback_info info)
+{
+    OH_AVImageGenerator *mainGenerator = OH_AVImageGenerator_Create();
+    napi_value result = nullptr;
+    size_t argc = PARAM_3;
+    napi_value argv[PARAM_3];
+    int64_t timeUs = 0;
+    int32_t options = AV_IMAGE_QUERY_CLOSEST_SYNC;
+    int32_t fileDescribe = -1;
+    int32_t fileSize = -1;
+    OH_AVErrCode avErrCode = AV_ERR_INVALID_VAL;
+
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    if (argc < PARAM_3) {
+        napi_create_int32(env, avErrCode, &result);
+        return result;
+    }
+    napi_get_value_int32(env, argv[PARAM_0], &fileDescribe);
+    napi_get_value_int64(env, argv[PARAM_1], &timeUs);
+    napi_get_value_int32(env, argv[PARAM_2], &options);
+    if (options < AV_IMAGE_QUERY_NEXT_SYNC || options > AV_IMAGE_QUERY_CLOSEST) {
+        napi_create_int32(env, avErrCode, &result);
+        return result;
+    }
+
+    avErrCode = OH_AVImageGenerator_SetFDSource(mainGenerator, fileDescribe, PARAM_0, fileSize);
+    OH_PixelmapNative* pixelMap = nullptr;
+    avErrCode = OH_AVImageGenerator_FetchFrameByTime(mainGenerator, timeUs,
+        static_cast<OH_AVImageGenerator_QueryOptions>(options), &pixelMap);
+    if (avErrCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, avErrCode, &result);
+    }
+    OH_AVImageGenerator_Release(mainGenerator);
+    OH_PixelmapNative_Release(pixelMap);
+    mainGenerator = nullptr;
+
+    return result;
+}
+
 //设置正确指针进行释放
 static napi_value OhAvImageGeneratorRelease(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-
     OH_AVImageGenerator *mainGenerator = nullptr;
-
     mainGenerator = OH_AVImageGenerator_Create();
     OH_AVErrCode avErrCode = OH_AVImageGenerator_Release(mainGenerator);
-    napi_create_int32(env, avErrCode, &result);
-
+    if (avErrCode == AV_ERR_OK) {
+        napi_create_int32(env, avErrCode, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    
     return result;
 }
 
@@ -186,6 +233,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OhAVImageGeneratorSetFdPathSourceTwo", nullptr, OhAVImageGeneratorSetFdPathSourceTwo,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAvImageGeneratorFetchFrameByTime", nullptr, OhAvImageGeneratorFetchFrameByTime,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAvImageGeneratorFetchFrameByTimeError", nullptr, OhAvImageGeneratorFetchFrameByTimeError,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAvImageGeneratorRelease", nullptr, OhAvImageGeneratorRelease,
             nullptr, nullptr, nullptr, napi_default, nullptr},

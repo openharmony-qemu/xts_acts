@@ -141,7 +141,7 @@ export default function requestDownloadJSUnit() {
               downloadTask.off('complete');
               try{
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0002 task completed.')
-                expect(true).assertTrue();
+                expect(downloadTask !== undefined).assertTrue();
               }catch(err){
                 console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0002 throw_error: " + err);
               }
@@ -181,7 +181,7 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('pause', async () => {
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0003 task pause.')
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0003 throw_error: " + err);
             }
@@ -226,7 +226,7 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('remove', () => {
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0004 remove remove')
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0004 throw_error: " + err);
             }
@@ -271,7 +271,7 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('fail', async (err) =>{
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0005 fail fail' + err)
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0005 throw_error: " + err);
             }
@@ -576,7 +576,7 @@ export default function requestDownloadJSUnit() {
         try{
           downloadTask.pause(async ()=>{
             try{
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_PAUSE_0001 Download task pause success.');
             }catch(err){
               console.info('====>SUB_REQUEST_DOWNLOAD_API_PAUSE_0001 pause_throw_err:' + JSON.stringify(err))
@@ -641,7 +641,7 @@ export default function requestDownloadJSUnit() {
         try{
           downloadTask.resume(async ()=>{
             try{
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_REMUSE_0001 Download task resume success.');
             }catch(err){
               console.info('====>SUB_REQUEST_DOWNLOAD_API_REMUSE_0001 pause_throw_err:' + JSON.stringify(err))
@@ -721,7 +721,18 @@ export default function requestDownloadJSUnit() {
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.targetURI);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.downloadTitle);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.downloadTotalBytes);
-                expect(true).assertTrue();
+                expect(downloadInfo.description !== undefined).assertTrue();
+                expect(downloadInfo.downloadedBytes !== undefined).assertTrue();
+                expect(downloadInfo.downloadId !== undefined).assertTrue();
+                expect(downloadInfo.failedReason !== undefined).assertTrue();
+                expect(downloadInfo.fileName !== undefined).assertTrue();
+                expect(downloadInfo.filePath !== undefined).assertTrue();
+                expect(downloadInfo.pausedReason !== undefined).assertTrue();
+                expect(downloadInfo.status !== undefined).assertTrue();
+                expect(downloadInfo.targetURI !== undefined).assertTrue();
+                expect(downloadInfo.downloadTitle !== undefined).assertTrue();
+                expect(downloadInfo.downloadTotalBytes !== undefined).assertTrue();
+                expect(downloadInfo !== undefined).assertTrue();
               }
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 throw_error: " + JSON.stringify(err));
@@ -772,7 +783,18 @@ export default function requestDownloadJSUnit() {
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.targetURI);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.downloadTitle);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.downloadTotalBytes);
-                expect(true).assertTrue();
+                expect(downloadInfo.description !== undefined).assertTrue();
+                expect(downloadInfo.downloadedBytes !== undefined).assertTrue();
+                expect(downloadInfo.downloadId !== undefined).assertTrue();
+                expect(downloadInfo.failedReason !== undefined).assertTrue();
+                expect(downloadInfo.fileName !== undefined).assertTrue();
+                expect(downloadInfo.filePath !== undefined).assertTrue();
+                expect(downloadInfo.pausedReason !== undefined).assertTrue();
+                expect(downloadInfo.status !== undefined).assertTrue();
+                expect(downloadInfo.targetURI !== undefined).assertTrue();
+                expect(downloadInfo.downloadTitle !== undefined).assertTrue();
+                expect(downloadInfo.downloadTotalBytes !== undefined).assertTrue();
+                expect(downloadInfo !== undefined).assertTrue();
               }
               await downloadTask.remove();
               fileio.unlinkSync(filePath);
@@ -1024,7 +1046,7 @@ export default function requestDownloadJSUnit() {
     it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400', Level.LEVEL3, async (done: Function) => {
       console.info("====>-------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400 is starting----------------------");
       try{
-        await request.download(undefined);
+        await request.download(null);
         console.info("====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400 download success");
         expect().assertFail();
       } catch (err){

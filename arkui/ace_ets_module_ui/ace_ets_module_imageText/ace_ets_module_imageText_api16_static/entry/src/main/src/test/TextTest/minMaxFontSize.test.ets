@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function minMaxFontSize() {
   describe('minMaxFontSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("minMaxFontSize beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

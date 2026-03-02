@@ -170,14 +170,14 @@ export default function MapConstructorTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('MapConstructorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr1 = [1, 2];
-    //   const arr2 = [1, 2];
-    //   const map = new Map<Array<int>, string>([[arr1, 'val1'], [arr2, 'val2']]);
-    //   expect(map.size).assertEqual(2);
-    //   expect(map.get(arr1)).assertEqual('val1');
-    //   expect(map.get(arr2)).assertEqual('val2');
-    // });
+    it('MapConstructorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const arr1 = [1, 2];
+      const arr2 = [1, 2];
+      const map = new Map<Array<int>, string>([[arr1, 'val1'], [arr2, 'val2']]);
+      expect(map.size).assertEqual(2);
+      expect(map.get(arr1)).assertEqual('val1');
+      expect(map.get(arr2)).assertEqual('val2');
+    });
 
     /**
      * @tc.number MAP_CONSTRUCTOR_TEST_023

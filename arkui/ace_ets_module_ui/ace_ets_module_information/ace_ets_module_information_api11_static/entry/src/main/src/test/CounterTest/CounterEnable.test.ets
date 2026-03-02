@@ -39,7 +39,7 @@ export default function CounterEnableTest() {
   const waitUiReadyMs: number = 500;
 
   describe('CounterEnableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CounterEnableTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

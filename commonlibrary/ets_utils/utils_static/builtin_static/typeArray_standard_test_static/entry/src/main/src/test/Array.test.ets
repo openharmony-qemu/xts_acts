@@ -30,7 +30,7 @@ import {
 class C{}
 export default function arrayTest() {
   describe("arrayTest", (): void => {
-    // afterEach(() => {
+    // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);
     // })
     /**

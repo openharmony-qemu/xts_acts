@@ -39,7 +39,7 @@ const uiContext = new UIContext();
 export default function SwiperGestureHandlerTest() {
 
   describe('SwiperGestureHandlerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       

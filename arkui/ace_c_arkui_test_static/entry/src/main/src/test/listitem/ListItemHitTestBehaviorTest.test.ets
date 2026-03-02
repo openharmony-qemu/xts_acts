@@ -26,7 +26,7 @@ export default function listItemHitTestBehaviorTest() {
 
   describe('ListItemHitTestBehaviorTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

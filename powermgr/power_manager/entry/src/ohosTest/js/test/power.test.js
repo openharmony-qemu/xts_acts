@@ -709,5 +709,68 @@ export default function PowerTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   RebootDevice_Parameter_Test_0100
+     * @tc.number SUB_PowerSystem_PowerTest_JSTest_0220
+     * @tc.desc   rebootDevice parameter "" test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RebootDevice_Parameter_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'RebootDevice_Parameter_Test_0100';
+      try {
+        power.rebootDevice("");
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+      } finally {
+        console.info(`${TAG}  finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   RebootDevice_Parameter_Test_0200
+     * @tc.number SUB_PowerSystem_PowerTest_JSTest_0230
+     * @tc.desc   rebootDevice parameter undefined test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RebootDevice_Parameter_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'RebootDevice_Parameter_Test_0200';
+      try {
+        power.rebootDevice(undefined);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error.message)}`);
+        expect(error.message).assertContain('Wrong argument');
+      } finally {
+        console.info(`${TAG}  finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   RebootDevice_Parameter_Test_0300
+     * @tc.number SUB_PowerSystem_PowerTest_JSTest_0240
+     * @tc.desc   rebootDevice parameter null test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RebootDevice_Parameter_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'RebootDevice_Parameter_Test_0300';
+      try {
+        power.rebootDevice(null);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error.message)}`);
+        expect(error.message).assertContain('Wrong argument');
+      } finally {
+        console.info(`${TAG}  finally`);
+        done();
+      }
+    })
   })
 }

@@ -1620,66 +1620,6 @@ export default function imagePicturePack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100
-     * @tc.desc   test picture packing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0100");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200
-     * @tc.desc   test picture packing
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0200");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
      * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKING_HEIF_STATIC_0300
      * @tc.desc   test picture packing
@@ -1764,68 +1704,6 @@ export default function imagePicturePack() {
           quality: 98
         };
         testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100
-     * @tc.desc   test picture packToFile
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0100");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let writeFd = getFdCacheDir("pack_depthMap_01.heic");
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.AUTO,
-          needsPackProperties: true
-        };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200
-     * @tc.desc   test picture packToFile
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_DEPTHMAP_PACKTOFILE_HEIF_STATIC_0200");
-      if (!isSupportHEIFDecode || !isSupportHEICEncode) {
-        if (!isSupportHEIFDecode) {
-          logger.log("device is not support heif decode");
-          expect(!isSupportHEIFDecode).assertTrue();
-        } else {
-          logger.log("device is not support heif encode");
-        }
-        done();
-      } else {
-        let writeFd = getFdCacheDir("pack_depthMap_02.heic");
-        let picture = createPictureWithDepthMapAuxPic("0801_sdr2.heic", "fd");
-        let packOpts: image.PackingOption = {
-          format: "image/heif",
-          quality: 98,
-          desiredDynamicRange: image.PackingDynamicRange.SDR,
-          needsPackProperties: false
-        };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
       }
     })
 

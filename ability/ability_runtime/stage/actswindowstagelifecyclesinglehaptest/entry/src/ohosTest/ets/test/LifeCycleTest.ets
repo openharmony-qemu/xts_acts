@@ -479,6 +479,8 @@ export default function lifecycleTest() {
         done();
         return;
       }
+      let ab2Destroyed: boolean = false;
+      let ab5Destroyed: boolean = false;
 
       let subscribeCallBack = (err: base.BusinessError, data: commonEvent.CommonEventData) => {
         console.info(TAG + ' subscribeCallBack. Data: ' + JSON.stringify(data));
@@ -504,29 +506,37 @@ export default function lifecycleTest() {
           }).catch((error: base.BusinessError) => {
             console.error(TAG + ' start2 failed. Cause: ' + JSON.stringify(error));
           })
-        } else if (data.event == MainAbility5onDestroy) {
-          commonEvent.unsubscribe(subscriber, (err) => {
-            console.info(TAG + ' unsubscribe. err: ' + JSON.stringify(err));
-            subscriber = undefined;
-          });
-          console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
-          console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
-          let listTemp = JSON.stringify(globalThis.list1);
-          expect(listTemp.indexOf("MainAbility5 onWindowStageCreate") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility5 onWindowStageActive") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility5 onWindowStageInactive") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility5 onWindowStageDestroy") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility2 onWindowStageActive") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
-          expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
-          globalThis.applicationContext1
-            .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
-              console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
-                ",data: " + JSON.stringify(data));
-            })
-          console.log("------------Singlehap_WindowStageLifeCycleTest_0500 END-------------");
-          done();
+        } else if (data.event == MainAbility5onDestroy || data.event == MainAbility2onDestroy) {
+          if(data.event == MainAbility2onDestroy){
+            ab2Destroyed = true;
+          }
+          if(data.event == MainAbility5onDestroy){
+            ab5Destroyed = true;
+          }
+          if(ab2Destroyed && ab5Destroyed) {
+            commonEvent.unsubscribe(subscriber, (err) => {
+              console.info(TAG + ' unsubscribe. err: ' + JSON.stringify(err));
+              subscriber = undefined;
+            });
+            console.log(TAG + " listKey1 : " + JSON.stringify(globalThis.list1));
+            console.log(TAG + " callbackid1 : " + JSON.stringify(globalThis.callbackid1));
+            let listTemp = JSON.stringify(globalThis.list1);
+            expect(listTemp.indexOf("MainAbility5 onWindowStageCreate") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility5 onWindowStageActive") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility5 onWindowStageInactive") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility5 onWindowStageDestroy") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility2 onWindowStageCreate") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility2 onWindowStageActive") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility2 onWindowStageInactive") !== -1).assertTrue();
+            expect(listTemp.indexOf("MainAbility2 onWindowStageDestroy") !== -1).assertTrue();
+            globalThis.applicationContext1
+              .unregisterAbilityLifecycleCallback(globalThis.callbackid1, (error: base.BusinessError, data: ESObject) => {
+                console.log(TAG + ": unregisterAbilityLifecycleCallback success, err: " + JSON.stringify(error) +
+                  ",data: " + JSON.stringify(data));
+              })
+            console.log("------------Singlehap_WindowStageLifeCycleTest_0500 END-------------");
+            done();
+          }
         }
       }
 

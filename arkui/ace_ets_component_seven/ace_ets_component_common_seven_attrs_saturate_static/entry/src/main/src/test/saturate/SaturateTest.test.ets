@@ -60,7 +60,7 @@ export default function SaturateTest() {
    * Create test suite.
    */
   describe('saturateTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000);

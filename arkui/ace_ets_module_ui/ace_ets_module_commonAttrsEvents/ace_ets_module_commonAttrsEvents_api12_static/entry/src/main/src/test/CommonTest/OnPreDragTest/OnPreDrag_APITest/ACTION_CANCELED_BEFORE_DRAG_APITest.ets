@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ACTION_CANCELED_BEFORE_DRAG_APITest() {
   describe('ACTION_CANCELED_BEFORE_DRAG_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
     });

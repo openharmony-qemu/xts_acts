@@ -508,7 +508,7 @@ export default function ProcessTest() {
             const tid = StdProcess.tid();
             const processManager = new StdProcess.ProcessManager();
             const isApp = processManager.getThreadPriority(tid);
-            expect(String(isApp)).assertEqual('-20');
+            expect(isApp).assertEqual(-20);
           }
         } catch (err) {
           err = err as Error;
@@ -679,6 +679,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const pres = processManager.getEnvironmentVar(pathName);
           expect(pres).assertEqual('');
+          const pres2 = processManager.getEnvironmentVar('');
+          expect(pres2).assertEqual('');
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -767,9 +769,11 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest025';
         console.info(`${TAG} test start`);
         try {
+          const initialuid = StdProcess.uid();
           for (let i = 0; i < 100; i++) {
             const uid = StdProcess.uid();
-            expect(typeof uid).assertEqual('int')
+            expect(typeof uid).assertEqual('int');
+            expect(uid).assertEqual(initialuid);
           }
         } catch (err) {
           err = err as Error;
@@ -872,9 +876,11 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest028';
         console.info(`${TAG} test start`);
         try {
+          const initialpid = StdProcess.pid();
           for (let i = 0; i < 100; i++) {
             const pid = StdProcess.pid();
-            expect(typeof pid).assertEqual('int')
+            expect(typeof pid).assertEqual('int');
+            expect(pid).assertEqual(initialpid);
           }
         } catch (err) {
           err = err as Error;
@@ -977,9 +983,11 @@ export default function ProcessTest() {
         const TAG: string = 'ProcessTest031';
         console.info(`${TAG} test start`);
         try {
+          const initialtid = StdProcess.tid();
           for (let i = 0; i < 100; i++) {
             const tid = StdProcess.tid();
-            expect(typeof tid).assertEqual('int')
+            expect(typeof tid).assertEqual('int');
+            expect(tid).assertEqual(initialtid);
           }
         } catch (err) {
           err = err as Error;

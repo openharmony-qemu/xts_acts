@@ -83,7 +83,7 @@ export default function defaultFlexTest() {
     }]
 
   describe('DefaultFlexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("defaultFlexTest beforeAll start");
       
       console.info("startAbility start");

@@ -301,16 +301,6 @@ export default class UiExtAbility extends ShareExtensionAbility {
     }).catch((error) => {
       console.log('====>[UIExtensionForResultAsCallerUIAbility] 2000 err: ' + error.code);
     });
-
-    await sleep(2000);
-    let commonEventData = {
-      parameters: {
-        str: 'kill'
-      }
-    };
-    commonEvent.publish('kill', commonEventData, (err) => {
-      console.debug('====>[UIExtensionForResultAsCallerUIAbility] 2000 publish2 err:' + JSON.stringify(err));
-    });
   }
 
   onCreate() {

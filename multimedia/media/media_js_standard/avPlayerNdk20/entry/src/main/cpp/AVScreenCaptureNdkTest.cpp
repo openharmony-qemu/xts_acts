@@ -55,6 +55,7 @@ static ArkUI_NodeHandle g_columnNode;
 constexpr OH_AVPixelFormat DEFAULT_PIXELFORMAT = AV_PIXEL_FORMAT_NV12;
 static OH_AVSCREEN_CAPTURE_ErrCode res1;
 static OH_AVSCREEN_CAPTURE_ErrCode res2;
+static OH_AVSCREEN_CAPTURE_ErrCode res3;
 } // namespace
 
 // 配置文件
@@ -295,7 +296,8 @@ static napi_value OH_AVScreenCapture_StopScreenRecording0101(napi_env env, napi_
 
 static napi_value OH_AVScreenCapture_AcquireAudioBuffer0100(napi_env env, napi_callback_info info)
 {
-    OH_AudioBuffer *audiobuffer;
+    OH_AudioBuffer audio = {};
+    OH_AudioBuffer *audiobuffer = &audio;
     OH_AudioCaptureSourceType type = OH_SOURCE_DEFAULT;
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_AcquireAudioBuffer(g_screenCapturee, &audiobuffer, type);
     int32_t res = 1;
@@ -309,7 +311,8 @@ static napi_value OH_AVScreenCapture_AcquireAudioBuffer0100(napi_env env, napi_c
 
 static napi_value OH_AVScreenCapture_AcquireAudioBuffer0101(napi_env env, napi_callback_info info)
 {
-    OH_AudioBuffer *audiobuffer;
+    OH_AudioBuffer audio = {};
+    OH_AudioBuffer *audiobuffer = &audio;
     OH_AudioCaptureSourceType type = OH_SOURCE_DEFAULT;
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_AcquireAudioBuffer(nullptr, &audiobuffer, type);
     int32_t res = 1;
@@ -871,6 +874,21 @@ static napi_value OH_AVScreenCapture_SetCaptureArea0100(napi_env env, napi_callb
     return retValue;
 }
 
+static napi_value OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100(napi_env env, napi_callback_info info)
+{
+    std::vector<uint64_t> displayIds = {0, 1};
+    OH_MultiDisplayCapability capability = {};
+    OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_GetMultiDisplayCaptureCapability(g_screenCapturee,
+        &displayIds[0], displayIds.size(), &capability);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AVScreenCapture_StrategyForPrivacyMaskMode0100(napi_env env, napi_callback_info info)
 {
     OH_AVScreenCapture_CaptureStrategy *CaptureStrategy = OH_AVScreenCapture_CreateCaptureStrategy();
@@ -927,6 +945,7 @@ void OnUserSelected(OH_AVScreenCapture *capture, OH_AVScreenCapture_UserSelectio
 {
     res1 = OH_AVScreenCapture_GetCaptureTypeSelected(selections, 0);
     res2 = OH_AVScreenCapture_GetDisplayIdSelected(selections, 0);
+    res3 = OH_AVScreenCapture_GetMultiDisplayIdsSelected(selections, 0, 0);
 };
 static napi_value OH_AVScreenCapture_GetCaptureTypeSelected0100(napi_env env, napi_callback_info info)
 {
@@ -977,6 +996,35 @@ static napi_value OH_AVScreenCapture_GetDisplayIdSelected0100(napi_env env, napi
 static napi_value OH_AVScreenCapture_GetDisplayIdSelected0101(napi_env env, napi_callback_info info)
 {
     OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_GetDisplayIdSelected(nullptr, 0);
+    int32_t res = 1;
+    if (errcode == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVScreenCapture_GetMultiDisplayIdsSelected0100(napi_env env, napi_callback_info info)
+{
+    void *userData;
+    OH_AVScreenCaptureConfig config;
+    SetConfig(config);
+    OH_AVScreenCapture_SetSelectionCallback(g_screenCapturee, OnUserSelected, userData);
+    OH_AVScreenCapture_Init(g_screenCapturee, config);
+    OH_AVScreenCapture_StartScreenCapture(g_screenCapturee);
+    int32_t res = 1;
+    if (res3 == AV_SCREEN_CAPTURE_ERR_OK) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVScreenCapture_GetMultiDisplayIdsSelected0101(napi_env env, napi_callback_info info)
+{
+    OH_AVSCREEN_CAPTURE_ErrCode errcode = OH_AVScreenCapture_GetMultiDisplayIdsSelected(nullptr, 0, 0);
     int32_t res = 1;
     if (errcode == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
         res = 0;
@@ -1572,6 +1620,26 @@ static napi_value OH_AVSCREEN_CAPTURE_ErrCode0100(napi_env env, napi_callback_in
     return retValue;
 }
 
+static napi_value OH_AVSCREEN_CAPTURE_ErrCode0200(napi_env env, napi_callback_info info)
+{
+    int32_t res = 1;
+    int32_t memory = 1;
+    int32_t io = 4;
+    int32_t timeout = 5;
+    int32_t unknown = 6;
+    int32_t died = 7;
+    if (OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_NO_MEMORY == memory &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_IO == io &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_TIMEOUT == timeout &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_UNKNOWN == unknown &&
+        OH_AVSCREEN_CAPTURE_ErrCode::AV_SCREEN_CAPTURE_ERR_SERVICE_DIED == died) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
 static napi_value OH_AudioCaptureSourceTypeEnum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1793,6 +1861,8 @@ napi_property_descriptor desc[] = {
      OH_AVScreenCapture_SetCaptureContentChangedCallback0101, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_SetCaptureArea0100", nullptr, OH_AVScreenCapture_SetCaptureArea0100, nullptr, nullptr, nullptr,
      napi_default, nullptr},
+    {"OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100", nullptr,
+     OH_AVScreenCapture_GetMultiDisplayCaptureCapability0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0100", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0100,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForPrivacyMaskMode0101", nullptr, OH_AVScreenCapture_StrategyForPrivacyMaskMode0101,
@@ -1809,6 +1879,10 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_GetDisplayIdSelected0101", nullptr, OH_AVScreenCapture_GetDisplayIdSelected0101, nullptr,
      nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetMultiDisplayIdsSelected0100", nullptr, OH_AVScreenCapture_GetMultiDisplayIdsSelected0100,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVScreenCapture_GetMultiDisplayIdsSelected0101", nullptr, OH_AVScreenCapture_GetMultiDisplayIdsSelected0101,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForBFramesEncoding0100", nullptr, OH_AVScreenCapture_StrategyForBFramesEncoding0100,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCapture_StrategyForPickerPopUp0100", nullptr, OH_AVScreenCapture_StrategyForPickerPopUp0100, nullptr,
@@ -1879,6 +1953,8 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, napi_default, nullptr},
     {"OH_AVScreenCaptureErrCode", nullptr, OH_AVScreenCaptureErrCode, nullptr,
      nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVSCREEN_CAPTURE_ErrCode0200", nullptr, OH_AVSCREEN_CAPTURE_ErrCode0200, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
 
 };
 

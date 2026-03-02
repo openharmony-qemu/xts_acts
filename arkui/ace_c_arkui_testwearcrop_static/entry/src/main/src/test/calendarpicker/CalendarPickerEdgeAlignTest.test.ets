@@ -26,7 +26,7 @@ const libUtil: LibUtil = new LibUtil();
 export default function calendarPickerEdgeAlignTest() {
 
   describe('CalendarPickerEdgeAlignTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
       console.info("[ui] beforeAll end");

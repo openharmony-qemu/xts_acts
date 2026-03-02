@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function clear1() {
   describe('clear1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("clear1 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

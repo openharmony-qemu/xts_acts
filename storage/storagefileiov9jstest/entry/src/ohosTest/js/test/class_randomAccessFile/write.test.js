@@ -192,8 +192,9 @@ describe('fileIO_randomAccessFile_write', function () {
         let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
 
         try {
-            randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
-            expect(true).assertTrue();
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
+            console.info('fileIO_randomaccessfile_write_sync_006 bytesWritten ' + bytesWritten);
+            expect(bytesWritten == 4095).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
         } catch(err) {
@@ -216,8 +217,9 @@ describe('fileIO_randomAccessFile_write', function () {
 
         try {
             let length = 4096;
-            randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
-            expect(true).assertTrue();
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
+            console.info('fileIO_randomaccessfile_write_sync_007 bytesWritten ' + bytesWritten);
+            expect(bytesWritten == 4096).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
         } catch(err) {
@@ -523,7 +525,6 @@ describe('fileIO_randomAccessFile_write', function () {
         try {
             let length = 4096;
             await randomaccessfile.write(new ArrayBuffer(length), { offset: 5, length: 4095 });
-            expect(true).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
             done();

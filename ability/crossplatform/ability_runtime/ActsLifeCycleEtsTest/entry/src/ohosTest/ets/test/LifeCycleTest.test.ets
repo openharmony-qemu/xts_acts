@@ -1462,7 +1462,7 @@ export default function lifecycleTest() {
         .catch((error: BusinessError) => {
           console.info(TAG + " start failed. Cause: " + JSON.stringify(error));
         });
-      await sleep(2000);
+      await sleep(2500);
       console.info(TAG + "list:" + globalThis.featureList1);
       let listTemp = JSON.stringify(globalThis.featureList1)
       expect(listTemp.indexOf("FeatureMainAbility onWindowStageCreate") !== -1).assertTrue();

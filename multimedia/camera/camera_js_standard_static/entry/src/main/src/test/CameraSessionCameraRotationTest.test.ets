@@ -508,7 +508,7 @@ export default function cameraSessionCameraRotationTest() {
 
   describe('cameraSessionCameraRotationTest', () => {
     console.info(TAG + '----------cameraSessionCameraRotationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
       await getVideoReceiveSurface();
@@ -526,7 +526,7 @@ export default function cameraSessionCameraRotationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await stopCameraSession();
       await releaseCameraSessionInstance();

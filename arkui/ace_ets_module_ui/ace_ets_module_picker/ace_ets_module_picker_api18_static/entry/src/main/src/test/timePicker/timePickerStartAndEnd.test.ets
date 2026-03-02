@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 export default function TimePickerStartAndEnd() {
   describe('TimePickerStartAndEnd', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerAddApi beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
 

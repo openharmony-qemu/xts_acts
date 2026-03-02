@@ -82,8 +82,10 @@ import RepeatLazyTest0150 from './Repeat/RepeatLazyTest0150.test';
 
 import repeatReusableFalse from './Repeat/repeatReusableFalse.test';
 import repeatReusableTrue from './Repeat/repeatReusableTrue.test';
-
 import RELOAD from './LazyForEach/RELOAD.test';
+
+import repeatVirtualScrollNullUndefinedTest from './Repeat/repeatVirtualScrollNullUndefinedTest.test';
+import lazyForEachOnDatasetChangeNullUndefinedTest from './LazyForEach/lazyForEachOnDatasetChangeNullUndefinedTest.test';
 
 export default function testsuite() {
     Foreach1();
@@ -156,4 +158,7 @@ export default function testsuite() {
     repeatReusableFalse();
 	repeatReusableTrue();
     RELOAD();
+
+    repeatVirtualScrollNullUndefinedTest();
+    lazyForEachOnDatasetChangeNullUndefinedTest();
 }

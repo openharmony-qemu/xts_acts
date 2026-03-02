@@ -35,13 +35,13 @@ let testAbilityContext: common.UIAbilityContext;
 export default function fractionStops() {
 
   describe('fractionStops', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("fractionStops beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("fractionStops beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/ImageEffect/fractionStops",

@@ -47,7 +47,7 @@ export default function SerialEnumTest() {
   describe("SerialEnumTest", (): void => {
     console.info(TAG, 'describe start');
     let openPortId: int = -1;
-    beforeAll(()=> {
+    beforeAll(async (): Promise<void> => {
       try {
         let portList: serialManager.SerialPort[] = serialManager.getPortList();
         if (portList && portList.length > 0) {

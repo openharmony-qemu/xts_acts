@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ButtonStyle() {
   describe('ButtonStyle', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ButtonStyle beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

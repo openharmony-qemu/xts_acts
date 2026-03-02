@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function DatePickerDialog() {
   describe('DatePickerDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

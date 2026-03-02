@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function scrollCodeJsunit() {
   describe('scrollCodeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

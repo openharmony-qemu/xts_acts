@@ -36,7 +36,7 @@ class Temp {
 
 export default function ArkListTest() {
   describe('arkListTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

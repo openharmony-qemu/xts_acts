@@ -36,7 +36,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function bindContextMenuTest() {
   describe('bindContextMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindContextMenuTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

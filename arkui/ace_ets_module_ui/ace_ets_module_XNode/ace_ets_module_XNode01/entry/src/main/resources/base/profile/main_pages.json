@@ -87,6 +87,7 @@
         "MainAbility/pages/NodeReturn/ComponentContentIsDisposedTest",
         "MainAbility/pages/NodeReturn/FrameNodeIsDisposedTest",
         "MainAbility/pages/NodeReturn/RenderNodeIsDisposedTest",
-        "MainAbility/pages/NodeReturn/NodeAdapterIsDisposedTest"
+        "MainAbility/pages/NodeReturn/NodeAdapterIsDisposedTest",
+        "MainAbility/pages/Graphics/graphicsApiNullUndefined"
     ]
 }

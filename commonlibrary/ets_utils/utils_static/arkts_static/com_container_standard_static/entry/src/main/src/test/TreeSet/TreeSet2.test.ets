@@ -35,7 +35,7 @@ class TestEntry {
 
 export default function TreeSetTest2() {
   describe("TreeSetTest2", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

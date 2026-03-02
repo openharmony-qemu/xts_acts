@@ -54,9 +54,9 @@ export default function SystemDateTimeJsunitStaticTest() {
      * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_systemDateTime_getTime_sync_Static_0010", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+    it("SUB_systemDateTime_getTime_sync_Static_0010", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0010 start----------------");
       let currentTime = systemDateTime.getTime(true);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_sync_Static_0010 currentTime: " + JSON.stringify(currentTime));
@@ -133,9 +133,9 @@ export default function SystemDateTimeJsunitStaticTest() {
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("SUB_systemDateTime_getUptime_sync_Static_0050", Level.LEVEL2, async (done: ()=> void): Promise<void> => {
+    it("SUB_systemDateTime_getUptime_sync_Static_0050", Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0050 start----------------");
       let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, true);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0050 currentTime: " + JSON.stringify(realActiveTime));

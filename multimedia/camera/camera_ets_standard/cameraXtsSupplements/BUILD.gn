@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("ActsCameraXtsSuppTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsCameraXtsSuppTest"
+  hap_name = "ActsCameraXtsSuppMainTest"
   subsystem_name = "multimedia"
   part_name = "camera_framework"
 }

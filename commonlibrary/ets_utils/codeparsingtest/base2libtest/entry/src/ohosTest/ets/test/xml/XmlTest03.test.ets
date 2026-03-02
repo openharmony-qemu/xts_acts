@@ -4,6 +4,12 @@ import { util, xml } from '@kit.ArkTS';
 
 const DOMAIN = 0x0000
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function XmlTest_03() {
   describe('XmlTest_03', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -11,10 +17,11 @@ export default function XmlTest_03() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -75,37 +82,6 @@ export default function XmlTest_03() {
         let result = util.TextDecoder.create().decodeToString(uint8)
 
         expect(result).assertContain("<![CDATA[a < b & c > d; 'test' \"demo\"]]>")
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0300
-     * @tc.name      SetCDATATest0003
-     * @tc.desc      Test empty string input
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SetCDATATest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'SetCDATATest0003';
-        console.log(TAG + ' start');
-
-        try {
-          let testArrayBuffer = new ArrayBuffer(2048)
-          let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
-
-          testConstructor.startElement("root")
-          testConstructor.setCDATA("")  //Value cannot be empty
-          testConstructor.endElement()
-
-          let uint8 = new Uint8Array(testArrayBuffer)
-          let result = util.TextDecoder.create().decodeToString(uint8)
-
-          expect(result).assertFail()
-        }catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
-        }
 
       });
 

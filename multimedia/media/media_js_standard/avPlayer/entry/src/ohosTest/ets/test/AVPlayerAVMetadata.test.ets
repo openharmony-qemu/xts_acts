@@ -110,6 +110,7 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS, 'string', composeKeys([BinaryKeys.get("ALL")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_MIME_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
 }
 
 export default function AVMetadata() {
@@ -1232,8 +1233,64 @@ export default function AVMetadata() {
       console.info('AVMetadataExtractor success');
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 初始化入参
+
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          if (frameInfo !== undefined) {
+            let result: number = frameInfo.result;
+            expect(result).assertEqual(0);
+          }
+          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
+          return;
+        }
+
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
       let timesUs: number[] = [];
-      for (let i = 0; i<10; i++) {
+      timesUs.push(1000000);
+      timesUs.push(-1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+    let avMetadataExtractor = await media.createAVMetadataExtractor();
+    console.info('AVMetadataExtractor success');
+    avMetadataExtractor.fdSrc = AVFileDescriptor2;
+    try {
+      // 初始化入参
+      let timesUs: number[] = [];
+      for (let i = 0; i < 4097; i++) {
         timesUs.push(1000000 + i*10000);
       }
       let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
@@ -1241,21 +1298,80 @@ export default function AVMetadata() {
         width : 300,
         height : 300
       };
-      // 批量获取缩略图
-      avMetadataExtractor.fetchFramesByTimes (timesUs, queryOption, param, async (frameInfo: media.FrameInfo, error: BusinessError) => {
-        if (error) {
-          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(error)}`);
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
+          return;
         }
-        if (frameInfo != undefined && frameInfo.image != undefined) {
+
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTimeUs: number = frameInfo.actualTimeUs;
+            expect(actualTimeUs).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          
           let pixelMap: image.PixelMap = frameInfo.image;
           expect(pixelMap).not().assertUndefined();
-        }
-        console.info(TAG, `fetchFramesByTimes success`);
-      });
-      avMetadataExtractor.cancelAllFetchFrames();
+          console.info(TAG, 'fetchFramesByTimes success');
+    }};
+
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimes (timesUs, queryOption, param, onFrameFetched);
+      } catch (e) {
+        expect(Number(e.code)).assertEqual(5400108);
+        console.error(TAG, 'fetchFrameByTime sync fail');
+      }
       await mediaTestBase.msleepAsync(SLEEP_TIME);
       avMetadataExtractor.release();
       done();
+    });
+
+     /**
+      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_0100
+      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_0100
+      * @tc.desc   Online http Video playback control test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+        let avMetadataExtractor = await media.createAVMetadataExtractor();
+        console.info('AVMetadataExtractor success');
+        avMetadataExtractor.fdSrc = AVFileDescriptor2;
+        let metadata = await avMetadataExtractor.fetchMetadata();
+        if (metadata != undefined && metadata.tracks != undefined) {
+          for (let i = 0; i < metadata.tracks.length; i++) {
+            const element = metadata.tracks[i];
+            if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_VID) {
+              const value = element[media.MediaDescriptionKey.MD_KEY_MIME_TYPE] as string;
+              expect(value).not().assertUndefined();
+            }
+            if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_AUD) {
+              const value = element[media.MediaDescriptionKey.MD_KEY_MIME_TYPE] as string;
+              expect(value).not().assertUndefined();
+            }
+            validateMediaDescriptionKey(element)
+          }
+        } else {
+          console.error('get avmetadata tracks failed');
+          expect().assertFail();
+        }
+        expect(media.MediaType.MEDIA_TYPE_UNSUPPORTED).assertEqual(-1);
+        expect(media.MediaType.MEDIA_TYPE_AUD).assertEqual(0);
+        expect(media.MediaType.MEDIA_TYPE_VID).assertEqual(1);
+        expect(media.MediaType.MEDIA_TYPE_SUBTITLE).assertEqual(2);
+        expect(media.MediaType.MEDIA_TYPE_ATTACHMENT).assertEqual(3);
+        expect(media.MediaType.MEDIA_TYPE_DATA).assertEqual(4);
+        expect(media.MediaType.MEDIA_TYPE_TIMED_METADATA).assertEqual(5);
+        expect(media.MediaType.MEDIA_TYPE_AUXILIARY).assertEqual(6);
+        await mediaTestBase.msleepAsync(SLEEP_TIME);
+        avMetadataExtractor.release();
+        done();
     });
 
     /**

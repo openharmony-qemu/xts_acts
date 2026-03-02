@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SymbolGlyphFontWeightTest() {
   describe('SymbolGlyphFontWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SymbolGlyphFontWeightTest beforeEach start");
 
 

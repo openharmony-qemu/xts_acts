@@ -28,7 +28,7 @@ target_link_libraries(ai_nnrt_interface_test PUBLIC
     libace_napi.z.so           # NAPI接口
     libhilog_ndk.z.so          # 日志系统
     libneural_network_core.so
-     libneural_network_runtime.so
+    libneural_network_runtime.so
 
 )
 
