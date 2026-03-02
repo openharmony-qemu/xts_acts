@@ -21,7 +21,6 @@ import fs from '@ohos.file.fs';
 
 const TAG = 'MetaDataSetBlobTest.xts'
 let fdNumber: number;
-
 async function getFd(fileName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let filePath = `file://${testContext.filesDir}/${fileName}`;
