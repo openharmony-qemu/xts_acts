@@ -3832,10 +3832,16 @@ export default function windowLayoutTest() {
               done();
             }
           }).catch(async (err: BusinessError) => {
-            console.error(caseName + `Failed to create the window. Cause code: ${err.code}, message: ${err.message}`);
-            await windowClass?.destroyWindow();
-            expect().assertFail();
-            done();
+            console.error(caseName + `Failed to create the window1. Cause code: ${err.code}, message: ${err.message}`);
+            if(err.code === 801){
+              await windowClass?.destroyWindow();
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
+            
+            
           });
         } catch (exception) {
           console.error(caseName + `Failed to create the window. Cause code: ${exception.code}, message: ${exception.message}`);

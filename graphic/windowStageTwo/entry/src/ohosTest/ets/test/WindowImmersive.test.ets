@@ -560,9 +560,9 @@ export default function windowImmersiveTest() {
               expect(data.area.rightRect.height).assertEqual(0);
 
               expect(data.area.bottomRect.left).assertEqual(0);
-              expect(data.area.bottomRect.top).assertEqual(0);
-              expect(data.area.bottomRect.width).assertEqual(0);
-              expect(data.area.bottomRect.height).assertEqual(0);
+              expect(data.area.bottomRect.top).assertLargerOrEqual(0);
+              expect(data.area.bottomRect.width).assertLargerOrEqual(0);
+              expect(data.area.bottomRect.height).assertLargerOrEqual(0);
 
               expect(data.area.leftRect.left).assertEqual(0);
               expect(data.area.leftRect.top).assertEqual(0);

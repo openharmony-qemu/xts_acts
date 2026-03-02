@@ -136,6 +136,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     }
 
     beforeAll(async () => {
+      console.log('beforeAll start..' );
       isPipWindowEnabled = await isPipWindowSupport(context1);
       console.log('beforeAll isPipEnabled:' + isPipWindowEnabled);
       let windowClass = windowStage.getMainWindowSync();

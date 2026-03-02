@@ -58,7 +58,10 @@ async function ClickButtonDriver(){
   console.info(`come in Driver create`);
   let buttonOne = await driver.findComponent(ON.text('允许'));
   console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  await buttonOne.click();
+  if(buttonOne){
+    await buttonOne.click();
+  }
+  
 }
 export default function ActsDisplayNdkApi14Test() {
 
