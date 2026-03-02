@@ -461,7 +461,7 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_ALLOW,
           type: ruleType_RULE_IP,
           isEnabled: true,
-          id: 1;
+          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -534,14 +534,26 @@ export default function netfirewallTest() {
           ExpectTrue(rule.description != null);
           ExpectTrue(rule.appUid != null);
           ExpectTrue(rule.protocol != null);
-          ExpectTrue(rule.localIps != undefined);
-          ExpectTrue(rule.localIps.length() != 0);
-          ExpectTrue(rule.remoteIps != undefined);
-          ExpectTrue(rule.remoteIps.length() != 0);
-          ExpectTrue(rule.localPorts != undefined);
-          ExpectTrue(rule.localPorts.length() != 0);
-          ExpectTrue(rule.remotePorts != undefined);
-          ExpectTrue(rule.remotePorts.length() != 0);
+          if (rule.localIps != undefined) {
+            ExpectTrue(rule.localIps.length() != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.remoteIps != undefined) {
+            ExpectTrue(rule.remoteIps.length() != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.localPorts != undefined) {
+            ExpectTrue(rule.localPorts.length() != 0);
+          } else {
+            ExpectFail();
+          }
+          if (rule.remotePorts != undefined) {
+            ExpectTrue(rule.remotePorts.length() != 0);
+          } else {
+            ExpectFail();
+          }
           if (rule.domains != undefine) {
             ExpectTrue(rule.domains.length() != 0);
           }
@@ -578,7 +590,7 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_DENY,
           type: ruleType_RULE_DOMAIN,
           isEnabled: false,
-          id: 1;
+          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -619,8 +631,11 @@ export default function netfirewallTest() {
           if (rule.remotePorts != undefined) {
             ExpectTrue(rule.remotePorts.length() == 0);
           }
-          ExpectTrue(rule.domains != undefined);
-          ExpectTrue(rule.domains.length() == 0);
+          if (rule.domains != undefined) {
+            ExpectTrue(rule.domains.length() == 0);
+          } else {
+            ExpectFail();
+          }
           done();
         }).catch((error : BusinessError) => {
           console.error(`${caseName} get firewall rules failed: ` + JSON.stringify(error));
@@ -654,7 +669,7 @@ export default function netfirewallTest() {
           action: ruleAction_RULE_DENY,
           type: ruleType_RULE_DNS,
           isEnabled: false,
-          id: 1;
+          id: 1,
           description: "rule10 description",
           appUid: 20001,
           protocol: 6,
@@ -680,9 +695,12 @@ export default function netfirewallTest() {
           console.info(`${caseName} result:`, JSON.stringify(rule));
           Current_Ruler_ID = rule.id;
           ExpectTrue(rule.type == netFirewall.NetFirewallRuleType.RULE_DNS);
-          ExpectTrue(rule.dns != undefined);
-          ExpectTrue(rule.dns.primaryDns != null);
-          ExpectTrue(rule.dns.standbyDns != null);
+          if (rule.dns != undefined) {
+            ExpectTrue(rule.dns.primaryDns != null);
+            ExpectTrue(rule.dns.standbyDns != null);
+          } else {
+            ExpectFail();
+          }
           done();
         }).catch((error : BusinessError) => {
           console.error(`${caseName} get firewall rules failed: ` + JSON.stringify(error));
