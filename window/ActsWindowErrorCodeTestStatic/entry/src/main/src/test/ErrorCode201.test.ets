@@ -577,7 +577,7 @@ export default function ErrorCode201() {
     });
 
     /**
-    * @tc.number    SUB_BASIC_WMS_SURFACE_ERRORCODE_201_static_0100
+    * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_ERRORCODE_201_static_0100
     * @tc.name      test_setVirtualScreenSurface_ErrorCode201_static
     * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when no permisson
     * @tc.size      MediumTest
