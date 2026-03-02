@@ -256,7 +256,7 @@ export default function smsTextPublic() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -307,7 +307,7 @@ export default function smsTextPublic() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1611,13 +1611,13 @@ export default function smsTextPublic() {
             expectFalse(true, caseName);
             done();
           } else {
-            console.info(`${caseName} success :${JSON.stringify(shortMessage)}`);
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
             expectFalse(true, caseName);
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1638,17 +1638,17 @@ export default function smsTextPublic() {
       try {
         sms.createMessage(pdu, null, (err: BusinessError, shortMessage: sms.ShortMessage) => {
           if (err) {
-            console.info(`${caseName} fail :${JSON.stringify(err)}`);
+            console.info(`${caseName} fail:${JSON.stringify(err)}`);
             expectFalse(true, caseName);
             done();
           } else {
-            console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
             expectFalse(true, caseName);
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1669,17 +1669,17 @@ export default function smsTextPublic() {
       try {
         sms.createMessage(pdu, undefined, (err: BusinessError, shortMessage: sms.ShortMessage) => {
           if (err) {
-            console.info(`${caseName} fail :${JSON.stringify(err)}`);
+            console.info(`${caseName} fail:${JSON.stringify(err)}`);
             expectFalse(true, caseName);
             done();
           } else {
-            console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
+            console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
             expectFalse(true, caseName);
             done();
           }
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1699,16 +1699,16 @@ export default function smsTextPublic() {
       console.info(`${caseName} test start`);
       try {
         sms.createMessage(pdu, null).then(shortMessage => {
-          console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
         }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
           expectFalse(true, caseName);
-          console.info(`${caseName} fail :${JSON.stringify(err)}`);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1728,16 +1728,16 @@ export default function smsTextPublic() {
       console.info(`${caseName} test start`);
       try {
         sms.createMessage(pdu, undefined).then(shortMessage => {
-          console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
         }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
           expectFalse(true, caseName);
-          console.info(`${caseName} fail :${JSON.stringify(err)}`);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1757,16 +1757,16 @@ export default function smsTextPublic() {
       console.info(`${caseName} test start`);
       try {
         sms.createMessage(undefined, specification).then(shortMessage => {
-          console.info(`${caseName} success:${JSON.stringify(shortMessage)}`);
+          console.info(`${caseName} fail:${JSON.stringify(shortMessage)}`);
           expectFalse(true, caseName);
           done();
         }).catch((err: BusinessError) => {
+          console.info(`${caseName} fail:${JSON.stringify(err)}`);
           expectFalse(true, caseName);
-          console.info(`${caseName} fail :${JSON.stringify(err)}`);
           done();
         });
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1896,10 +1896,10 @@ export default function smsTextPublic() {
           sms.sendShortMessage(undefined, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
-              expectTrue(err.code == 401, caseName);
+              expectFalse(true, caseName);
               done();
             } else {
-              console.info(`${caseName}: success`);
+              console.info(`${caseName}: fail`);
               expectFalse(true, caseName);
               done();
             }
@@ -1910,7 +1910,7 @@ export default function smsTextPublic() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
@@ -1933,12 +1933,12 @@ export default function smsTextPublic() {
         expectTrue(hasSim, caseName);
         if (hasSim) {
           sms.sendShortMessage(undefined).then(() => {
-            console.info(`${caseName} success`);
+            console.info(`${caseName} fail`);
             expectFalse(true, caseName);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
-            expectTrue(err.code == 401, caseName);
+            expectFalse(true, caseName);
             done();
           });
         } else {
@@ -1947,7 +1947,7 @@ export default function smsTextPublic() {
           done();
         }
       } catch (err) {
-        console.info(`${caseName} err:${err}`);
+        console.info(`${caseName} success, err:${err}`);
         expectTrue(err.code == 401, caseName);
         done();
       }
