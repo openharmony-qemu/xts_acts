@@ -23,8 +23,8 @@ import promptAction from '@ohos.promptAction';
 import { display } from '@kit.ArkUI';
 
 class Obj {
-  format: number = 0;
-  size: SizeObj = {width : 0, height : 0};
+  public format: number = 0;
+  public size: SizeObj = {width : 0, height : 0};
 }
 
 class SizeObj {
