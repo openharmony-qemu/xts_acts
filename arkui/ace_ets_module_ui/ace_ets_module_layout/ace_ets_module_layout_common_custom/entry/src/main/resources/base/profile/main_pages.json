@@ -35,7 +35,6 @@
         "MainAbility/pages/CommonCustom/LayoutlableLayoutUndefined",
         "MainAbility/pages/CommonCustom/LayoutlableMeasureNull",
         "MainAbility/pages/CommonCustom/LayoutlableMeasureUndefined",
-        "MainAbility/pages/CommonCustom/LayoutlableMeasureUndefined",
         "MainAbility/pages/CommonAttrs/LayoutGravityNullUndefined",
         "MainAbility/pages/CommonAttrs/IgnoreLayoutSafeAreaNullUndefined",
         "MainAbility/pages/CommonAttrs/ExpandSafeAreaNullUndefined"
