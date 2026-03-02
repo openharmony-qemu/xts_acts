@@ -57,7 +57,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeColumnNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeColumnNull')
       expect(AppStorage.get('createNodeColumnUndefined')).assertEqual(401);
@@ -77,7 +77,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0200 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeRowNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeRowNull')
       expect(AppStorage.get('createNodeRowUndefined')).assertEqual(401);
@@ -97,7 +97,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0300 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeStackNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeStackNull')
       expect(AppStorage.get('createNodeStackUndefined')).assertEqual(401);
@@ -117,7 +117,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0400 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeGridRowNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeGridRowNull')
       expect(AppStorage.get('createNodeGridRowUndefined')).assertEqual(401);
@@ -137,7 +137,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0500', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0200 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeGridColNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeGridColNull')
       expect(AppStorage.get('createNodeGridColUndefined')).assertEqual(401);
@@ -157,7 +157,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0600', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0600 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeFlexNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeFlexNull')
       expect(AppStorage.get('createNodeFlexUndefined')).assertEqual(401);
@@ -177,7 +177,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0700', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0700 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeRelativeContainerNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeRelativeContainerNull')
       expect(AppStorage.get('createNodeRelativeContainerUndefined')).assertEqual(401);
@@ -197,7 +197,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0800', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0800 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeDividerNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeDividerNull')
       expect(AppStorage.get('createNodeDividerUndefined')).assertEqual(401);
@@ -217,7 +217,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_0900', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_0900 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeBlankNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeBlankNull')
       expect(AppStorage.get('createNodeBlankUndefined')).assertEqual(401);
@@ -237,7 +237,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_1000', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_1000 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeXComponentNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeXComponentNull')
       expect(AppStorage.get('createNodeXComponentUndefined')).assertEqual(401);
@@ -257,7 +257,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_1100', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_1100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeXComponentThreeNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeXComponentThreeNull')
       expect(AppStorage.get('createNodeXComponentThreeUndefined')).assertEqual(401);
@@ -281,7 +281,7 @@ export default function CreateNodeNullUndefinedTest() {
     it('CreateNodeNullUndefinedTest_1200', Level.LEVEL2, async (done: Function) => {
       console.info('CreateNodeNullUndefinedTest_1200 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('createNodeParametersThreeNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
       AppStorage.delete('createNodeParametersThreeNull')
       expect(AppStorage.get('createNodeParametersThreeUndefined')).assertEqual(401);
@@ -291,6 +291,170 @@ export default function CreateNodeNullUndefinedTest() {
       expect(AppStorage.get('createNodeXComponentParametersUndefined')).assertEqual("success");
       AppStorage.delete('createNodeXComponentParametersUndefined')
       console.info('[CreateNodeNullUndefinedTest_1200] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1300
+     * @tc.name      CreateNodeNullUndefinedTest_1300
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1300', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1300 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeButtonNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeButtonNull')
+      expect(AppStorage.get('createNodeButtonUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeButtonUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1300] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1400
+     * @tc.name      CreateNodeNullUndefinedTest_1400
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1400', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1400 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeCheckboxNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeCheckboxNull')
+      expect(AppStorage.get('createNodeCheckboxUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeCheckboxUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1400] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1500
+     * @tc.name      CreateNodeNullUndefinedTest_1500
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1500', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1500 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeCheckboxGroupNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeCheckboxGroupNull')
+      expect(AppStorage.get('createNodeCheckboxGroupUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeCheckboxGroupUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1500] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1600
+     * @tc.name      CreateNodeNullUndefinedTest_1600
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1600', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1600 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeRadioNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeRadioNull')
+      expect(AppStorage.get('createNodeRadioUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeRadioUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1600] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1700
+     * @tc.name      CreateNodeNullUndefinedTest_1700
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1700', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1700 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeRatingNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeRatingNull')
+      expect(AppStorage.get('createNodeRatingUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeRatingUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1700] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1800
+     * @tc.name      CreateNodeNullUndefinedTest_1800
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1800', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1800 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeSelectNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeSelectNull')
+      expect(AppStorage.get('createNodeSelectUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeSelectUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1800] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_1900
+     * @tc.name      CreateNodeNullUndefinedTest_1900
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_1900', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_1900 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeSliderNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeSliderNull')
+      expect(AppStorage.get('createNodeSliderUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeSliderUndefined')
+      console.info('[CreateNodeNullUndefinedTest_1900] END');
+      done();
+    });
+
+    /**
+     * @tc.number    CreateNodeNullUndefinedTest_2000
+     * @tc.name      CreateNodeNullUndefinedTest_2000
+     * @tc.desc      createNode null undefined Test
+     * @tc.level     Level2
+     * @tc.type
+     * @tc.size
+     */
+    it('CreateNodeNullUndefinedTest_2000', Level.LEVEL2, async (done: Function) => {
+      console.info('CreateNodeNullUndefinedTest_2000 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('createNodeToggleNull')).assertEqual("TypeError: Cannot use 'in' operator in Non-Object");
+      AppStorage.delete('createNodeToggleNull')
+      expect(AppStorage.get('createNodeToggleUndefined')).assertEqual(401);
+      AppStorage.delete('createNodeToggleUndefined')
+      expect(AppStorage.get('createNodeToggleOptionsNull')).assertEqual('success');
+      AppStorage.delete('createNodeToggleOptionsNull')
+      expect(AppStorage.get('createNodeToggleOptionsUndefined')).assertEqual('success');
+      AppStorage.delete('createNodeToggleOptionsUndefined')
+      console.info('[CreateNodeNullUndefinedTest_2000] END');
       done();
     });
 

@@ -65,7 +65,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'Stack')
       console.info(`win6 Stack`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Stack ` + err.code);
       AppStorage.SetOrCreate('createNodeStackNull', err + '');
     }
 
@@ -73,7 +73,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'Stack')
       console.info(`win6 Stack`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Stack ` + err.code);
       AppStorage.SetOrCreate('createNodeStackUndefined', err.code);
     }
 
@@ -81,7 +81,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'GridRow')
       console.info(`win6 GridRow`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 GridRow ` + err.code);
       AppStorage.SetOrCreate('createNodeGridRowNull', err + '');
     }
 
@@ -89,7 +89,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'GridRow')
       console.info(`win6 GridRow`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 GridRow ` + err.code);
       AppStorage.SetOrCreate('createNodeGridRowUndefined', err.code);
     }
 
@@ -97,7 +97,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'GridCol')
       console.info(`win6 GridCol`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 GridCol ` + err.code);
       AppStorage.SetOrCreate('createNodeGridColNull', err + '');
     }
 
@@ -105,7 +105,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'GridCol')
       console.info(`win6 GridCol`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 GridCol ` + err.code);
       AppStorage.SetOrCreate('createNodeGridColUndefined', err.code);
     }
 
@@ -113,7 +113,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'Flex')
       console.info(`win6 Flex`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Flex ` + err.code);
       AppStorage.SetOrCreate('createNodeFlexNull', err + '');
     }
 
@@ -121,7 +121,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'Flex')
       console.info(`win6 Flex`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Flex ` + err.code);
       AppStorage.SetOrCreate('createNodeFlexUndefined', err.code);
     }
 
@@ -129,7 +129,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'RelativeContainer')
       console.info(`win6 RelativeContainer`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 RelativeContainer ` + err.code);
       AppStorage.SetOrCreate('createNodeRelativeContainerNull', err + '');
     }
 
@@ -137,7 +137,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'RelativeContainer')
       console.info(`win6 RelativeContainer`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 RelativeContainer ` + err.code);
       AppStorage.SetOrCreate('createNodeRelativeContainerUndefined', err.code);
     }
 
@@ -145,7 +145,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'Divider')
       console.info(`win6 Divider`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Divider ` + err.code);
       AppStorage.SetOrCreate('createNodeDividerNull', err + '');
     }
 
@@ -153,7 +153,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'Divider')
       console.info(`win6 Divider`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Divider ` + err.code);
       AppStorage.SetOrCreate('createNodeDividerUndefined', err.code);
     }
 
@@ -161,7 +161,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'Blank')
       console.info(`win6 Blank`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Blank ` + err.code);
       AppStorage.SetOrCreate('createNodeBlankNull', err + '');
     }
 
@@ -169,7 +169,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'Blank')
       console.info(`win6 Blank`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 Blank ` + err.code);
       AppStorage.SetOrCreate('createNodeBlankUndefined', err.code);
     }
 
@@ -177,7 +177,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'XComponent')
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeXComponentNull', err + '');
     }
 
@@ -185,7 +185,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'XComponent')
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeXComponentUndefined', err.code);
     }
 
@@ -198,7 +198,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'XComponent', options)
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeXComponentThreeNull', err + '');
     }
 
@@ -206,7 +206,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'XComponent', options)
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeXComponentThreeUndefined', err.code);
     }
 
@@ -215,7 +215,7 @@ class MyProgressNodeController extends NodeController {
       console.info(`win6 XComponent`);
       AppStorage.SetOrCreate('createNodeXComponentOptionsNull', 'success');
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
     }
 
     try {
@@ -223,7 +223,7 @@ class MyProgressNodeController extends NodeController {
       console.info(`win6 XComponent`);
       AppStorage.SetOrCreate('createNodeXComponentOptionsUndefined', 'success');
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
     }
 
     let parameters: NativeXComponentParameters = {
@@ -234,7 +234,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(null, 'XComponent', parameters);
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeParametersThreeNull', err + '');
     }
 
@@ -242,7 +242,7 @@ class MyProgressNodeController extends NodeController {
       typeNode.createNode(undefined, 'XComponent', parameters);
       console.info(`win6 XComponent`);
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
       AppStorage.SetOrCreate('createNodeParametersThreeUndefined', err.code);
     }
 
@@ -251,7 +251,7 @@ class MyProgressNodeController extends NodeController {
       console.info(`win6 XComponent`);
       AppStorage.SetOrCreate('createNodeXComponentParametersNull', 'success');
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
     }
 
     try {
@@ -259,7 +259,154 @@ class MyProgressNodeController extends NodeController {
       console.info(`win6 XComponent`);
       AppStorage.SetOrCreate('createNodeXComponentParametersUndefined', 'success');
     } catch (err) {
-      console.info(`win6 ` + err.code);
+      console.info(`win6 XComponent ` + err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Button')
+      console.info(`win6 Button`);
+    } catch (err) {
+      console.info(`win6 Button ` + err.code);
+      AppStorage.SetOrCreate('createNodeButtonNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Button')
+      console.info(`win6 Button`);
+    } catch (err) {
+      console.info(`win6 Button ` + err.code);
+      AppStorage.SetOrCreate('createNodeButtonUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Checkbox')
+      console.info(`win6 Checkbox`);
+    } catch (err) {
+      console.info(`win6 Checkbox ` + err.code);
+      AppStorage.SetOrCreate('createNodeCheckboxNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Checkbox')
+      console.info(`win6 Checkbox`);
+    } catch (err) {
+      console.info(`win6 Checkbox ` + err.code);
+      AppStorage.SetOrCreate('createNodeCheckboxUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'CheckboxGroup')
+      console.info(`win6 CheckboxGroup`);
+    } catch (err) {
+      console.info(`win6 CheckboxGroup ` + err.code);
+      AppStorage.SetOrCreate('createNodeCheckboxGroupNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'CheckboxGroup')
+      console.info(`win6 CheckboxGroup`);
+    } catch (err) {
+      console.info(`win6 CheckboxGroup ` + err.code);
+      AppStorage.SetOrCreate('createNodeCheckboxGroupUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Radio')
+      console.info(`win6 Radio`);
+    } catch (err) {
+      console.info(`win6 Radio ` + err.code);
+      AppStorage.SetOrCreate('createNodeRadioNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Radio')
+      console.info(`win6 Radio`);
+    } catch (err) {
+      console.info(`win6 Radio ` + err.code);
+      AppStorage.SetOrCreate('createNodeRadioUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Rating')
+      console.info(`win6 Rating`);
+    } catch (err) {
+      console.info(`win6 Rating ` + err.code);
+      AppStorage.SetOrCreate('createNodeRatingNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Rating')
+      console.info(`win6 Rating`);
+    } catch (err) {
+      console.info(`win6 Rating ` + err.code);
+      AppStorage.SetOrCreate('createNodeRatingUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Select')
+      console.info(`win6 Select`);
+    } catch (err) {
+      console.info(`win6 Select ` + err.code);
+      AppStorage.SetOrCreate('createNodeSelectNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Select')
+      console.info(`win6 Select`);
+    } catch (err) {
+      console.info(`win6 Select ` + err.code);
+      AppStorage.SetOrCreate('createNodeSelectUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(null, 'Slider')
+      console.info(`win6 Slider`);
+    } catch (err) {
+      console.info(`win6 Slider ` + err.code);
+      AppStorage.SetOrCreate('createNodeSliderNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Slider')
+      console.info(`win6 Slider`);
+    } catch (err) {
+      console.info(`win6 Slider ` + err.code);
+      AppStorage.SetOrCreate('createNodeSliderUndefined', err.code);
+    }
+
+    let toggleOptions:ToggleOptions = {type: ToggleType.Checkbox, isOn: false};
+
+    try {
+      typeNode.createNode(null, 'Toggle', toggleOptions)
+      console.info(`win6 Toggle`);
+    } catch (err) {
+      console.info(`win6 Toggle` + err.code);
+      AppStorage.SetOrCreate('createNodeToggleNull', err + '');
+    }
+
+    try {
+      typeNode.createNode(undefined, 'Toggle', toggleOptions)
+      console.info(`win6 Toggle`);
+    } catch (err) {
+      console.info(`win6 Toggle ` + err.code);
+      AppStorage.SetOrCreate('createNodeToggleUndefined', err.code);
+    }
+
+    try {
+      typeNode.createNode(uiContext, 'Toggle', null)
+      console.info(`win6 Toggle Options`);
+      AppStorage.SetOrCreate('createNodeToggleOptionsNull', 'success');
+    } catch (err) {
+      console.info(`win6 toggleOptions` + err);
+
+    }
+
+    try {
+      typeNode.createNode(uiContext, 'Toggle', toggleOptions)
+      console.info(`win6 Toggle Options`);
+      AppStorage.SetOrCreate('createNodeToggleOptionsUndefined', 'success');
+    } catch (err) {
+      console.info(`win6 toggleOptions ` + err);
     }
 
     this!.rootNode!.appendChild(node);
