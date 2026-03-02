@@ -428,8 +428,10 @@ export default function Sim2Public() {
     it("testTelephonySimGetSimAccountInfo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySimGetSimAccountInfo0100';
       console.info(`${caseName} test start `);
-      sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
+      sim.hasSimCard(0, async(err: BusinessError | null, data: boolean | undefined) => {
         if (data) {
+          let name:string ='ShowName';
+          await sim.setShowName(0,name);
           console.info(`${caseName} success has  card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
             if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length as int > 0 && data?.showName.length as int > 0 && data?.showNumber.length as int > 0 ) {
