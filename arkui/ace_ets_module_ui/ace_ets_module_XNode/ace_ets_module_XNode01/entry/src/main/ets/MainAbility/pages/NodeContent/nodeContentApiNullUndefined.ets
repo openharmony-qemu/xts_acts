@@ -17,7 +17,7 @@ import { NodeContent, typeNode } from '@kit.ArkUI';
 
 class NodeContentCtrl {
   public content: NodeContent;
-  public textNode: Array<typeNode.Text> [];
+  public textNode: typeNode.Text[] = [];
   public uiContext: UIContext;
   public width: number;
 
