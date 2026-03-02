@@ -82,7 +82,7 @@ struct SetPathAllowingUniversalAccess {
               }
               break;
             }
-            case "testSetPathAllowingUniversalAccess003": {
+            case "testPathAllowingUniversalAccess003": {
               try {
                 this.controller.setPathAllowingUniversalAccess([]);
                 this.controller.loadUrl("file://" + getContext().resourceDir + "/index.html");
