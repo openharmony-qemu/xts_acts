@@ -422,15 +422,15 @@ export default function DotIndicatorNullUndefined() {
     });
 
     /**
-    * @tc.name   DotIndicatorNullUndefined_0100
-    * @tc.number DotIndicatorNullUndefined_0100
+    * @tc.name   DotIndicatorNullUndefined_0130
+    * @tc.number DotIndicatorNullUndefined_0130
     * @tc.desc   test space
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL1
     */
-    it('DotIndicatorNullUndefined_0100', Level.LEVEL1, async (done: Function) => {
-        let testName: string = '[DotIndicatorNullUndefined_0100]';
+    it('DotIndicatorNullUndefined_0130', Level.LEVEL1, async (done: Function) => {
+        let testName: string = '[DotIndicatorNullUndefined_0130]';
         console.log(`${testName} start`);
         let driver: Driver = Driver.create();
 

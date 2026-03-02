@@ -15,7 +15,6 @@
 
 import { LengthMetrics } from '@kit.ArkUI';
 
-// MyDataSource.ets
 class MyDataSource implements IDataSource {
   private list: number[] = [];
 
