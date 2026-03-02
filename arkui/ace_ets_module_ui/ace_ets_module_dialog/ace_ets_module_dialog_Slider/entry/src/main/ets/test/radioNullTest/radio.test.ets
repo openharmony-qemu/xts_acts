@@ -48,14 +48,14 @@ export default function radiounllundefined(){
     });
 
 
-    /* *
-    * @tc.name    radionull_001
-    * @tc.number  SUB_ARKUI_RADIO_NULL_PARAM_001
-    * @tc.desc    To test radionull
-    * @tc.level   Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   radionull_001
+     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.desc   Test Stack alignContent with null parameter in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('radionull_001', Level.LEVEL0, async (done:Function) =>{
       let tagName = 'slidenullundeifned';
       let driver = await Driver.create()
@@ -68,14 +68,14 @@ export default function radiounllundefined(){
       done();
     })
 
-    /* *
-    * @tc.name    radioundefined_001
-    * @tc.number  SUB_ARKUI_RADIO_UNDEFINED_PARAM_001
-    * @tc.desc    To test radioundefined
-    * @tc.level   Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   radioundefined_001
+     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.desc   Test Stack alignContent with null parameter in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('radioundefined_001', Level.LEVEL0, async (done:Function) =>{
       let tagName = 'slidenullundeifned';
       let driver = await Driver.create()

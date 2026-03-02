@@ -46,14 +46,14 @@ export default function slidenullundeifned(){
       console.info("slidenullundeifned after each called");
     });
 
-    /* *
-    * @tc.name    bindSheetHoverMode_0100
-    * @tc.number  bindSheetHoverMode_0100
-    * @tc.desc    To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level   Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   slidenull_001
+     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.desc   Test Stack alignContent with null parameter in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('slidenull_001', Level.LEVEL0, async (done:Function) =>{
         let tagName = 'slidenullundeifned';
         let driver = await Driver.create()
@@ -77,14 +77,14 @@ export default function slidenullundeifned(){
         done();
     })
 
-    /* *
-    * @tc.name    slideundefined_001
-    * @tc.number  slideundefined_001
-    * @tc.desc    To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level   Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   slideundefined_001
+     * @tc.number SUB_ARKUI_API_StackAlignContent_NULL_001
+     * @tc.desc   Test Stack alignContent with null parameter in constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('slideundefined_001', Level.LEVEL0, async (done:Function) =>{
       let tagName = 'slidenullundeifned';
       let driver = await Driver.create()
