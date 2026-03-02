@@ -1688,7 +1688,7 @@ export default function settingUiJsunit() {
      */
     it('open_manager_settings_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
-        let value = await settings.openNetworkManagerSettings(globalThis.abilityContext);
+        let value = await settings.openNetworkManagerSettings(mContext);
         console.info("[open_manager_settings_120] result is:" + value);
         expect(value).assertTrue();
         done();
@@ -2290,6 +2290,123 @@ export default function settingUiJsunit() {
           console.error("[settings_get_value_context_null] error = " + err);
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
             .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_context_undefined
+     * @tc.number settings_get_value_callback_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(undefined, 'testkey', (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_context_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_context_null
+     * @tc.number settings_get_value_callback_context_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(null, 'testkey', (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_null
+     * @tc.number settings_get_value_callback_callback_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', null);
+          console.info("[settings_get_value_callback_callback_null] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_null] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_undefined
+     * @tc.number settings_get_value_callback_callback_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', undefined);
+          console.info("[settings_get_value_callback_callback_undefined] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_undefined] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_empty
+     * @tc.number settings_get_value_callback_callback_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', '');
+          console.info("[settings_get_value_callback_callback_empty] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_empty] error = " + err);
+          expect().assertFail();
           done();
           return;
         }
@@ -3183,18 +3300,20 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      if (!isDeviceSupportInputMethod()) {
-        done();
-        return;
-      }
       let code = 0;
       try {
         settings.openInputMethodSettings(mContext);
       } catch (err) {
         console.error("[openInputMethodSettings_valid_param] error = " + err);
-        code = err.code;
+        code = err?.code;
       }
-      expect(code).assertEqual(0);
+      console.info("[openInputMethodSettings_valid_param] code = " + code);
+      if (!isDeviceSupportInputMethod()) {
+        expect(code === undefined).assertTrue();
+        return;
+      } else {
+        expect(code).assertEqual(0);
+      }
       done();
     });
 
@@ -3401,10 +3520,6 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      if (!isDeviceSupportInputMethod()) {
-        done();
-        return;
-      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, 'bundleName', 'inputMethodId');
@@ -3412,7 +3527,11 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodDetail_valid_param] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(0);
+      if (!isDeviceSupportInputMethod()) {
+        expect(code === undefined).assertTrue();
+      } else {
+        expect(code).assertEqual(0);
+      }
       done();
     });
 
