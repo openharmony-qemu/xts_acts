@@ -1082,6 +1082,23 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100
+     * @tc.desc   OH_AVScreenCapture_StartScreenCaptureCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_ERROR_CALLBACK_0100', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest-------------before click:");
+      let result: number = myScreenCaptureNdk.OriginAVScreenCaptureCallBackTest();
+      console.info(Tag + "OriginAVScreenCaptureCallBackTest-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnTextScreenCapture();
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
      * @tc.desc   OH_AVScreenCapture_ExcludePickerWindows
