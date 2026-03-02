@@ -155,7 +155,7 @@ export default function EapErrorCodeTest() {
       console.info(`${caseName}---start`);
       try {
         eap.regCustomEapHandler(null, null, null, eapDataCallback);
-        console.info(`${caseName } regCustomEapHandler success`);
+        console.info(`${caseName } regCustomEapHandler fail`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
@@ -180,7 +180,7 @@ export default function EapErrorCodeTest() {
       console.info(`${caseName}---start`);
       try {
         eap.regCustomEapHandler(undefined, undefined, undefined, eapDataCallback);
-        console.info(`${caseName } regCustomEapHandler success`);
+        console.info(`${caseName } regCustomEapHandler fail`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
@@ -305,9 +305,8 @@ export default function EapErrorCodeTest() {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0500";
       console.info(`${caseName}---start`);
       try {
-        eap.regCustomEapHandler(null, null, null, eapDataCallback);
-        eap.unregCustomEapHandler(2, validEapCode, validEapType, eapDataCallback);
-        console.info(`${caseName } unregCustomEapHandler success`);
+        eap.unregCustomEapHandler(null, null, null, eapDataCallback);
+        console.info(`${caseName } unregCustomEapHandler fail`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
@@ -331,9 +330,8 @@ export default function EapErrorCodeTest() {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0600";
       console.info(`${caseName}---start`);
       try {
-        eap.regCustomEapHandler(undefined, undefined, undefined, eapDataCallback);
-        eap.unregCustomEapHandler(2, validEapCode, validEapType, eapDataCallback);
-        console.info(`${caseName } unregCustomEapHandler success`);
+        eap.unregCustomEapHandler(undefined, undefined, undefined, eapDataCallback);
+        console.info(`${caseName } unregCustomEapHandler fail`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
