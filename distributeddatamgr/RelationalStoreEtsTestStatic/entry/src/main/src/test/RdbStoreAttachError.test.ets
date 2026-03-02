@@ -259,7 +259,7 @@ export default function rdbStoreAttachErrorTest() {
             console.log(tag + "************* testRdbStoreAttachErr0001 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
             try {
-                await store.attach("", "attachName", 0);
+                await store!.attach("", "attachName", 0);
                 expect(true).assertFail();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0001 err:' + JSON.stringify(err));
@@ -279,9 +279,8 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0002 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
-            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
-                await store.attach(dataBaseDir, "", 0);
+                await store!.attach("pullpath", "", 0);
                 expect(true).assertFail();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0002 err:' + JSON.stringify(err));
@@ -301,13 +300,12 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0003 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
-            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
-                await store.attach(dataBaseDir, "attachName", undefined);
+                await store!.attach("pullpath", "attachName", undefined);
                 expect(true).assertFail();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0003 err:' + JSON.stringify(err));
-                expect(err.code).assertEqual(14800030);
+                expect(err.code).assertEqual(14800010);
             }
             console.log(tag + "************* testRdbStoreAttachErr0003 end *************");
         })
@@ -323,13 +321,12 @@ export default function rdbStoreAttachErrorTest() {
         it('testRdbStoreAttachErr0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             console.log(tag + "************* testRdbStoreAttachErr0004 start *************");
             let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
-            dataBaseDir = context!.databaseDir + "/rdb/";
             try {
-                let num = await store.attach(dataBaseDir, "attachName", 3);
+                let num = await store!.attach("pullpath", "attachName", 3);
                 expect(num > 0).assertTrue();
             } catch (err){
                 hilog.error(domain, tag, 'testRdbStoreAttachErr0004 err:' + JSON.stringify(err));
-                expect(err.code).assertEqual(14800030);
+                expect(err.code).assertEqual(14800010);
             }      
             console.log(tag + "************* testRdbStoreAttachErr0004 end *************");
         })
