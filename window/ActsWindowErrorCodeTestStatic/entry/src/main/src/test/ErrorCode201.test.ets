@@ -523,7 +523,7 @@ export default function ErrorCode201() {
     /**
         * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0110
         * @tc.name      test_DestroyVirtualScreenErrorcode201_static
-        * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when got invalid screendId like -1
+        * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
         * @tc.size      MediumTest
         * @tc.type      Function
         * @tc.level     Level 3
@@ -537,13 +537,13 @@ export default function ErrorCode201() {
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
-                    expect(err.code).assertTrue();
+                    expect(err!.code === 201).assertTrue();
                 done();
             })
         } catch (err) {
             err = err as BusinessError;
             hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-            expect(err.code == 801 || err.code == 201).assertTrue();
+            expect(err.code === 801).assertTrue();
             done();
         }
     });
@@ -551,7 +551,7 @@ export default function ErrorCode201() {
     /**
     * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0110
     * @tc.name      test_MakeUniqueErrorcode_201_static
-    * @tc.desc      test_MakeUniqueErrorcode_401 when got invalid screenId like -1
+    * @tc.desc      test_MakeUniqueErrorcode_401 when no permisson
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 3
@@ -565,13 +565,13 @@ export default function ErrorCode201() {
                 done();
             }).catch((err: Error) :PromiseLike<void>|undefined => {
                 hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
-                expect(false).assertTrue();
+                expect(err!.code === 201).assertTrue();
                 done();
             })
         } catch (err) {
             err = err as BusinessError;
             hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-            expect(err.code == 201 || err.code == 801).assertTrue()
+            expect(err.code === 801).assertTrue()
             done();
         }
     });
@@ -579,7 +579,7 @@ export default function ErrorCode201() {
     /**
         * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0110
         * @tc.name      test_setVirtualScreenSurface_ErrorCode201_static
-        * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when got a invalid screenId like -1
+        * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when no permisson
         * @tc.size      MediumTest
         * @tc.type      Function
         * @tc.level     Level 3
@@ -593,13 +593,13 @@ export default function ErrorCode201() {
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                    expect(false).assertTrue();
+                    expect(err!.code === 201).assertTrue();
                     done();
                 })
         } catch (err) {
             err = err as BusinessError;
             hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-            expect(err.code == 201 || err.code == 801).assertTrue();
+            expect(err.code === 801).assertTrue();
             done();
         }
     });

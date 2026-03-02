@@ -455,22 +455,22 @@ export default function DisplayTest() {
                 } else {
                     expect(data!.boundingRects.length).assertEqual(0);
                 }
-                expect(data!.boundingRects.left.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRectsleft.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
                 if (err && err.code) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(err));
@@ -506,22 +506,22 @@ export default function DisplayTest() {
                 } else {
                     expect(data!.boundingRects.length).assertEqual(0);
                 }
-                expect(data!.boundingRects.left.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.left).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.top).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.width).assertLargerOrEqual(0);
-                expect(data!.boundingRects.left.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.top.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.right.height).assertLargerOrEqual(0);
-                expect(data!.boundingRects.bottom.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRectsleft.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+                expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
             }).catch((error: Error) =>{
                 hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(error));
