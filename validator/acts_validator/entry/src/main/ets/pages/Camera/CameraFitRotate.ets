@@ -28,8 +28,8 @@ class Obj {
 }
 
 class SizeObj {
-  width: number = 0;
-  height: number = 0;
+  public width: number = 0;
+  public height: number = 0;
 }
 
 interface ResolutionItem {
@@ -53,13 +53,12 @@ struct cameraFitRotate {
   @State resolutionSelectVal: string = '';
   @State nextEnabled: boolean = true;
   @State selectFn: string = 'Camera 0';
-  @State last_rotation: number = 0;
   @State testItemName: string = '拍照预览';
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name);
     Logger.info(this.tag, `the resolution: ${this.resolution}`);
-    display.on("change", (data) => {
+    display.on('change', (data) => {
       this.setPreviewRotation();
     })
   }
@@ -84,30 +83,31 @@ struct cameraFitRotate {
   }
 
   onPageHide() {
-    CameraService.releaseCamera()
-    Logger.info(this.tag, `onPageHide releaseCamera end`)
+    CameraService.releaseCamera();
+    Logger.info(this.tag, `onPageHide releaseCamera end`);
   }
 
   async cameraInit(obj?: ESObject) {
     CameraService.initCamera(this.surfaceId, this.cameraDeviceIndex, undefined, undefined, obj).then(() => {
-      this.resolution = CameraService.resolution
-      this.resolutionSelectVal = String(this.resolution[this.clickFrequency].value)
-      this.last_rotation = -1
+      this.resolution = CameraService.resolution;
+      this.resolutionSelectVal = String(this.resolution[this.clickFrequency].value);
       this.setPreviewRotation();
     })
   }
 
   onPageShow() {
-    Logger.info(this.tag, `takePicture end, assetUri`)
+    Logger.info(this.tag, `takePicture end, assetUri`);
   }
 
   nextClickFn() {
     if (this.testItemName === '拍照预览') {
       this.testItemName = '录像预览';
-      await CameraService.startVideo();
+      await CameraService.startVideoPreview();
     } else {
       this.testItemName = '视频录制';
-      await CameraService.startVideoPreview();
+      await CameraService.startVideo();
+      this.nextEnabled = false;
+      this.Vue = true;
     }
     Logger.info(this.tag, `nextClickFn current testItemName: ${this.testItemName}`);
   }
@@ -116,7 +116,7 @@ struct cameraFitRotate {
     let newResolution : Obj[]= [];
     if (arr.length > 0) {
       let item = arr[arr.length - 1];
-      let indexOf = item.value.indexOf("x");
+      let indexOf = item.value.indexOf('x');
       if (indexOf !== -1) {
         let objW = Number(item.value.slice(0, indexOf));
         let objH = Number(item.value.slice(indexOf + 1));
@@ -184,11 +184,15 @@ struct cameraFitRotate {
                 });
               })
           }
-          Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround, direction: FlexDirection.Column }) {
+          Flex({
+            alignItems: ItemAlign.Center,
+            justifyContent: FlexAlign.SpaceAround,
+            direction: FlexDirection.Column
+          }) {
             Column() {
               XComponent({
                 id: 'componentId',
-                type: 'surface',
+                type: XComponentType.SURFACE,
                 controller: this.mXComponentController
               })
                 .onLoad(async () => {
@@ -202,7 +206,7 @@ struct cameraFitRotate {
             }.size({ width: '80%' })
             Column() {
               Row() {
-                Text('请顺时针或是逆时针旋转旋转90/180/270/360度，观察画面是否均正向展示')
+                Text('请顺时针或是逆时针旋转90/180/270/360度，观察画面是否均正向展示')
                   .textAlign(TextAlign.Center)
                   .fontSize(14)
                   .borderRadius(8)
