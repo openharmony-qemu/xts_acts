@@ -174,7 +174,7 @@ static napi_value OH_Pasteboard_GetData0100(napi_env env, napi_callback_info inf
     int status = -1;
     OH_UdmfData* getData = OH_Pasteboard_GetData(pasteboard, &status);
     NAPI_ASSERT(env, status == ERR_PERMISSION_ERROR, "OH_Pasteboard_GetData is fail.");
-    NAPI_ASSERT(env, getData != nullptr, "OH_Pasteboard_GetData is fail.");
+    NAPI_ASSERT(env, getData == nullptr, "OH_Pasteboard_GetData is fail.");
  
     napi_create_int32(env, res == ERR_OK, &result);
     OH_Pasteboard_Destroy(pasteboard);

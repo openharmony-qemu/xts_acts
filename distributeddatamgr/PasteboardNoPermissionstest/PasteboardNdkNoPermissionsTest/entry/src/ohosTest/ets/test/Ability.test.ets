@@ -113,7 +113,7 @@ export default function pasteboardTestNdkTest() {
       console.info( TAG + 'OH_Pasteboard_PermissionsGetData0100' );
       let data = testndk.OH_Pasteboard_GetData0100();
       console.info( TAG + 'OH_Pasteboard_PermissionsGetData0100 data= ' + data);
-      expect(data).assertEqual(0);
+      expect(data).assertEqual(1);
     })
   })
 }

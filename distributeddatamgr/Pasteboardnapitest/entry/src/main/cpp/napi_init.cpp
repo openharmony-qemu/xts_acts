@@ -891,7 +891,7 @@ static napi_value OH_Pasteboard_HasRemoteData0200(napi_env env, napi_callback_in
     bool res = OH_Pasteboard_HasRemoteData(pasteboard);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasRemoteData is fail.");
     napi_create_int32(env, res == false, &result);
-    OH_UdsPlainText_Destroy(htmlText);
+    OH_UdsHtml_Destroy (htmlText);
     OH_UdmfRecord_Destroy(record);
     OH_UdmfData_Destroy(setData);
     OH_Pasteboard_Destroy(pasteboard);
@@ -915,7 +915,7 @@ static napi_value OH_Pasteboard_HasRemoteData0300(napi_env env, napi_callback_in
     bool res = OH_Pasteboard_HasRemoteData(pasteboard);
     NAPI_ASSERT(env, res == false, "OH_Pasteboard_HasRemoteData is fail.");
     napi_create_int32(env, res == false, &result);
-    OH_UdsPlainText_Destroy(uFileUri);
+    OH_UdsFileUri_Destroy(uFileUri);
     OH_UdmfRecord_Destroy(record);
     OH_UdmfData_Destroy(setData);
     OH_Pasteboard_Destroy(pasteboard);
