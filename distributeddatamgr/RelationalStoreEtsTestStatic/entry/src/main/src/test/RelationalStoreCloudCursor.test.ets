@@ -211,7 +211,7 @@ export default function relationalStoreCloudCursor() {
             done();
           } catch (err) {
             console.log(TAG + `testRdbCleanDirtyData0004 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
-            expect(err.codo).assertEqual(14800000);
+            expect(err.code).assertEqual(14800000);
             done();
           }
           console.log(TAG + "************* testRdbCleanDirtyData0004 end *************");
