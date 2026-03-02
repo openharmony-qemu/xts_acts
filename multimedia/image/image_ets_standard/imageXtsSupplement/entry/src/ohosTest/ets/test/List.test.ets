@@ -224,6 +224,7 @@ import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
 import ImagePictureTest from './image/ImagePictureTest.test';
 
 import CrateImageSupp from './image/CreateImageTest.test';
+import SendableImagePixelMapTest from './image/SendableImageCreatePixelMap.test';
 
 
 export default function testsuite() {
@@ -433,6 +434,6 @@ export default function testsuite() {
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
   ImagePictureTest();
-
+  SendableImagePixelMapTest();
   CrateImageSupp();
 }
