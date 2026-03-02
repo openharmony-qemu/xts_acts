@@ -16,30 +16,27 @@
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
-import { destoryAbility, sleep, startPage } from '../../../uiutils/commonUtils';
 
 export default function RichEditorSpanMethodsNullTest() {
   describe('RichEditorSpanMethodsNullTest', () => {
     beforeEach(async (done: Function) => {
       console.info("RichEditorSpanMethodsNullTest beforeEach start");
-      await startPage('pages/RichEditor/RichEditorSpanMethodsNull')
-      await sleep(1000)
-      // let options: router.RouterOptions = {
-      //   url: 'MainAbility/pages/RichEditor/RichEditorSpanMethodsNull',
-      // }
-      // try {
-      //   router.clear();
-      //   let pages = router.getState();
-      //   console.info("get RichEditorSpanMethodsNullTest state pages: " + JSON.stringify(pages));
-      //   if (!("RichEditorSpanMethodsNull" == pages.name)) {
-      //     console.info("get RichEditorSpanMethodsNullTest state pages.name: " + JSON.stringify(pages.name));
-      //     let result = await router.replaceUrl(options);
-      //     await CommonFunc.sleep(2000);
-      //     console.info("push RichEditorSpanMethodsNullTest success: " + JSON.stringify(result));
-      //   }
-      // } catch (err) {
-      //   console.error("push RichEditorSpanMethodsNullTest page error: " + err);
-      // }
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/RichEditor/RichEditorSpanMethodsNull',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get RichEditorSpanMethodsNullTest state pages: " + JSON.stringify(pages));
+        if (!("RichEditorSpanMethodsNull" == pages.name)) {
+          console.info("get RichEditorSpanMethodsNullTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.replaceUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push RichEditorSpanMethodsNullTest success: " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push RichEditorSpanMethodsNullTest page error: " + err);
+      }
       done();
     })
 
