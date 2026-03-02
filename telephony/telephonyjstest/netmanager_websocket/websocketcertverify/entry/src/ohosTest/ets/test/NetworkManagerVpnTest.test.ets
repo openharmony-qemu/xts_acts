@@ -850,10 +850,11 @@ export default function NetworkManagerVpnTest() {
         let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context2);
         vpnConnection.destroy("").then(() => {
           console.log(`${caseName} destroy success`);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.log(`${caseName} destroy fail ${JSON.stringify(err)}`);
-          expect().assertFail();
+          expect(err.code == 401).assertTrue();
           done();
         })
       } catch (error) {
