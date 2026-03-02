@@ -58,18 +58,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         expect(error.code).assertEqual(401);
       }
       try {
-        certManager.installPrivateCertificate(null, keystorePwd, certAlias).then((cmResult) => {
-          let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
-          expect(null).assertFail();
-        }).catch((err: BusinessError) => {
-          console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
-          expect(null).assertFail();
-        })
-      } catch (error) {
-        console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
-      }
-      try {
         certManager.installPrivateCertificate(undefined, keystorePwd, certAlias).then((cmResult) => {
           let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
           expect(null).assertFail();
