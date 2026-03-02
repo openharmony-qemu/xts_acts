@@ -641,6 +641,43 @@ class CameraService {
       Logger.info(this.tag, `sessionFlowFn fail err: ${err}, message: ${err.message}, code: ${err.code}`)
     }
   }
+
+  // 视频录制预览
+  async startVideoPreview() {
+    try {
+      Logger.info(this.tag, `startVideoPreview begin`)
+      await this.captureSession.stop();
+      await this.captureSession.beginConfig();
+      this.fd = await this.getFileFd();
+      this.videoRecorder = await media.createVideoRecorder();
+      this.videoConfig.url = `fd://${this.fd}`;
+      this.videoConfig.profile.videoFrameWidth = this.cameraOutputCapability.videoProfiles[0].size.width;
+      this.videoConfig.profile.videoFrameHeight = this.cameraOutputCapability.videoProfiles[0].size.height;
+      await this.videoRecorder.prepare(this.videoConfig);
+      let videoId = await this.videoRecorder.getInputSurface();
+      Logger.info(this.tag, `videoConfig.profile: ` + JSON.stringify(this.videoConfig.profile));
+      Logger.info(this.tag, `videoProfileObj1: ` + JSON.stringify(this.cameraOutputCapability.videoProfiles[0]));
+      this.videoOutput = await this.cameraManager.createVideoOutput(this.cameraOutputCapability.videoProfiles[0], videoId);
+      Logger.info(this.tag, `createVideoOutput success: ${this.videoOutput}`);
+      await this.captureSession.addOutput(this.videoOutput);
+      Logger.info(this.tag, `startVideoPreview begin1`);
+      await this.captureSession.commitConfig()
+      Logger.info(this.tag, `startVideoPreview begin2`);
+      await this.captureSession.start();
+      Logger.info(this.tag, `startVideoPreview begin3`);
+      await this.videoOutput.start();
+      Logger.info(this.tag, `startVideoPreview begin4`);
+      await this.videoRecorder.start().then(() => {
+        setTimeout(async () => {
+          await this.stopVideo();
+          Logger.info(this.tag, `setTimeout stopVideo end`);
+        }, 3000)
+      })
+      Logger.info(this.tag, `videoOutput end`);
+    } catch (err) {
+      Logger.info(this.tag, `startVideoPreview fail err: ${err}, message: ${err.message}, code: ${err.code}`);
+    }
+  }
 }
 
 export default new CameraService()
