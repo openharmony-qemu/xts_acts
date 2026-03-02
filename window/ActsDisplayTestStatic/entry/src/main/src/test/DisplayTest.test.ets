@@ -2697,7 +2697,7 @@ export default function DisplayTest() {
     })
 
     /**
-    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
+    * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
     * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
     * @tc.desc        To test the sync function of obtaining the target display by id
     * @tc.size        MediumTest
@@ -2709,19 +2709,19 @@ export default function DisplayTest() {
         try {
             let dsp:display.Display = display.getDefaultDisplaySync();
             hilog.info(0x0000, '[ANI]','displayTest getDefaultDisplaySyncTest1: ' + JSON.stringify(dsp));
-            expect(dsp.id != null).assertTrue();
-            expect(dsp.refreshRate != null).assertTrue();
-            expect(dsp.width != null).assertTrue();
-            expect(dsp.height != null).assertTrue();
-            expect(dsp.rotation != null).assertTrue();
-            expect(dsp.densityDPI != null).assertTrue();
-            expect(dsp.name != null).assertTrue();
+            expect(dsp.id !== null).assertTrue();
+            expect(dsp.refreshRate !== null).assertTrue();
+            expect(dsp.width !== null).assertTrue();
+            expect(dsp.height !== null).assertTrue();
+            expect(dsp.rotation !== null).assertTrue();
+            expect(dsp.densityDPI !== null).assertTrue();
+            expect(dsp.name !== null).assertTrue();
             expect(dsp.alive).assertTrue();
-            expect(dsp.state != null).assertTrue();
-            expect(dsp.densityPixels != null).assertTrue();
-            expect(dsp.scaledDensity !=null).assertTrue();
-            expect(dsp.xDPI != null).assertTrue();
-            expect(dsp.yDPI != null).assertTrue();
+            expect(dsp.state !== null).assertTrue();
+            expect(dsp.densityPixels !== null).assertTrue();
+            expect(dsp.scaledDensity !== null).assertTrue();
+            expect(dsp.xDPI !== null).assertTrue();
+            expect(dsp.yDPI !== null).assertTrue();
             done();
         } catch (err) {
             hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));

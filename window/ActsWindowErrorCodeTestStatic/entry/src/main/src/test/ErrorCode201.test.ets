@@ -521,7 +521,7 @@ export default function ErrorCode201() {
     })
 
     /**
-        * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0110
+        * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_201_static_0100
         * @tc.name      test_DestroyVirtualScreenErrorcode201_static
         * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
         * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function ErrorCode201() {
     });
 
     /**
-    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0110
+    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_201_static_0100
     * @tc.name      test_MakeUniqueErrorcode_201_static
     * @tc.desc      test_MakeUniqueErrorcode_401 when no permisson
     * @tc.size      MediumTest
@@ -577,7 +577,7 @@ export default function ErrorCode201() {
     });
 
     /**
-        * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0110
+        * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_201_static_0100
         * @tc.name      test_setVirtualScreenSurface_ErrorCode201_static
         * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when no permisson
         * @tc.size      MediumTest
