@@ -1248,16 +1248,19 @@ export default function CallbackTest() {
            (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err) => {
             if(err){
               expect(err.code).assertEqual(14800000);
+              done(); 
             }else{
               expect().assertFail();
+              done(); 
             }
           })
         }
        } catch (err) {
         console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
-        expect(err.code).assertEqual(14800000);    
+        expect(err.code).assertEqual(14800000);  
+        done();   
        }  
-       done(); 
+      
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 end-----")
       
      })
@@ -1278,14 +1281,16 @@ export default function CallbackTest() {
         (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err) => {
           if(err){
             expect(err.code).assertEqual(14800000);
+            done(); 
           }else{
             expect().assertFail();
+            done(); 
           }
          })
        } catch (err) {
-        expect(err.code).assertEqual(14800000)  
+        expect(err.code).assertEqual(14800000) 
+        done();  
        }  
-       done(); 
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 end-----")
   
      })
