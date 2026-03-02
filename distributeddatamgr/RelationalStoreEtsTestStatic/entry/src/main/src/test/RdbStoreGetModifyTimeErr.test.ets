@@ -103,7 +103,7 @@ import {
           }
   
           try {
-            await rdbStore.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
+            await rdbStore!.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
             console.log(tag + 'setDistributedTables success');
           } catch (err: BusinessError) {
               console.log(tag + 'setDistributedTables fail' + `, error code is ${err.code}, message is ${err.message}`);
@@ -119,7 +119,7 @@ import {
             }
             vBucketArray1.push(valueBucket);
           }
-          await rdbStore.batchInsert('cloud_text', vBucketArray1);
+          await rdbStore!.batchInsert('cloud_text', vBucketArray1);
           let vBucketArray2: relationalStore.ValuesBucket[] = [];
           for (let i = 0 as long; i < 5 as long; i++) {
             let valueBucket: relationalStore.ValuesBucket = {
@@ -130,7 +130,7 @@ import {
             }
             vBucketArray2.push(valueBucket);
           }
-          await rdbStore.batchInsert('cloud_integer', vBucketArray2);
+          await rdbStore!.batchInsert('cloud_integer', vBucketArray2);
           console.log(tag + 'create rdb store success');
         } catch (err: BusinessError) {
           console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
