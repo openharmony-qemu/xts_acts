@@ -169,7 +169,7 @@ export default function rdbStorePredicatesParamErrTest() {
         console.info(tag + "************* testContains0001 end *************");
     })
     /**
-         * @tc.name   testBeginsWith0005
+         * @tc.name   testBeginsWith0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesParamErrTest_0040
          * @tc.desc   predicates beginsWith normal test with ""
          * @tc.type   FUNCTION
