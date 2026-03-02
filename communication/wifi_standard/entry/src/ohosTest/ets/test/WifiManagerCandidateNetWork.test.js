@@ -57,12 +57,13 @@ async function clickTest() {
       } catch (err) {
           console.info('err info: ' + err);
       }
+      await driver.back();
 }
 
 async function clickRequestPermission() {
+    let driver = Driver.create();
     try {
         console.info('[wifi_js] clickRequestPermission start');
-        let driver = Driver.create();
         await driver.delayMs(3000);
         let button = await driver.findComponent(ON.text("本次使用", MatchPattern.CONTAINS));
         await button.click();
@@ -71,12 +72,13 @@ async function clickRequestPermission() {
     } catch (err) {
         console.info('[wifi_js] clickRequestPermission failed');
     }
+    await driver.back();
 }
 
 async function scrollSearchLocation() {
+    let driver = Driver.create();
     try {
         console.info('[wifi_js] scrollSearchLocation start');
-        let driver = Driver.create();
         await driver.delayMs(2000);
         let scrollBar = await driver.findComponent(ON.type('Scroll'));
         let button = await scrollBar.scrollSearch(ON.type('Toggle'));
@@ -93,10 +95,10 @@ async function scrollSearchLocation() {
             console.info('[wifi_js] scrollSearch not find');
             return;
         }
-        
     } catch (err) {
         console.info('[wifi_js] scrollSearchLocation failed');
     }
+    await driver.back();
 }
 
 export default function actsWifiManagerCandidateNetWorkTest() {
