@@ -601,7 +601,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0001 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
@@ -631,7 +631,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST,
@@ -661,7 +661,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH,
@@ -691,7 +691,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.log(tag + '************* testRdbStoreCloudSync0002 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await rdbStore!.execute(CREATE_TABLE_TEST);
         try {
            rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL,
@@ -721,7 +721,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
           console.log(tag + '************* testRdbStoreCloudSync0005 start *************');
-          rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+          rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
           await rdbStore!.execute(CREATE_TABLE_TEST);
           try {
             await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL,
@@ -764,7 +764,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.log(tag + '************* testRdbStoreCloudSync0006 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await rdbStore!.execute(CREATE_TABLE_TEST);
         try {
           await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST,
@@ -793,7 +793,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0007 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
         await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
@@ -822,7 +822,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0008 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
         await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, ['test'], 
@@ -851,7 +851,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0009 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
         await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, ['test'], 
@@ -880,7 +880,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.log(tag + '************* testRdbStoreCloudSync0010 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await rdbStore!.execute(CREATE_TABLE_TEST);
         try {
           await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PUSH, ['test'], 
@@ -923,7 +923,7 @@ export default function relationalStoreCloudSyncEts() {
      */
       it('testRdbStoreCloudSync0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.log(tag + '************* testRdbStoreCloudSync0011 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await rdbStore!.execute(CREATE_TABLE_TEST);
         try {
            rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_PULL, ['test'], 
@@ -968,7 +968,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0012 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST, ['test'], 
@@ -1013,7 +1013,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.log(tag + '************* testRdbStoreCloudSync0013 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       try {
          rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, [], 
@@ -1043,7 +1043,7 @@ export default function relationalStoreCloudSyncEts() {
      */
     it('testRdbStoreCloudSync0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.log(tag + '************* testRdbStoreCloudSync0014 start *************');
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         await rdbStore!.execute(CREATE_TABLE_TEST);
         try {
            await rdbStore!.cloudSync(data_relationalStore.SyncMode.SYNC_MODE_TIME_FIRST, [], 
