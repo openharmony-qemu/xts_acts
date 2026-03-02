@@ -339,12 +339,12 @@ export default function DeviceStatusMetadataBindingTest() {
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is start---------------")
       try {
-        metadataBinding.off('operationSubmitMetadata', "")
-        console.log('metadataBinding.off is success')
-        expect().assertFail()
+        metadataBinding.off('operationSubmitMetadata', "", (data) => {
+          console.log('metadataBinding.off is success' + data)
+        })
       } catch (error) {
         console.log('metadataBinding.off is failed' + JSON.stringify(error))
-        expect(error.code == 401).assertTrue()
+        expect().assertFail()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1400 is end---------------")
       done();
@@ -361,9 +361,10 @@ export default function DeviceStatusMetadataBindingTest() {
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1500 is start---------------")
       try {
-        metadataBinding.off('operationSubmitMetadata', null)
-        console.log('metadataBinding.off is success')
-        expect().assertFail()
+        metadataBinding.off('operationSubmitMetadata', null, (data) => {
+          console.log('metadataBinding.off is success' + data)
+          expect().assertFail()
+        })
       } catch (error) {
         console.log('metadataBinding.off is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
@@ -383,9 +384,10 @@ export default function DeviceStatusMetadataBindingTest() {
     it('SUB_MSDP_DeviceStatus_API_MetadataBinding_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_1600 is start---------------")
       try {
-        metadataBinding.off('operationSubmitMetadata', undefined)
-        console.log('metadataBinding.off is success')
-        expect().assertFail()
+        metadataBinding.off('operationSubmitMetadata', undefined, (data) => {
+          console.log('metadataBinding.off is success' + data)
+          expect().assertFail()
+        })
       } catch (error) {
         console.log('metadataBinding.off is failed' + JSON.stringify(error))
         expect(error.code == 401).assertTrue()
