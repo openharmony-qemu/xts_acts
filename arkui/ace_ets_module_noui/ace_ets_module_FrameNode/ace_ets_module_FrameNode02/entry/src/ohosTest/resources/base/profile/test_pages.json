@@ -13,6 +13,7 @@
 		"MainAbility/pages/frameNode/IsOnMainTreeMethodPage",
         "MainAbility/pages/frameNode/isInRenderStateTest",
         "MainAbility/pages/nodeAdapter/NodeAdapter001",
-        "MainAbility/pages/frameNode/FrameNodeMethodNullUndefined"
+        "MainAbility/pages/frameNode/FrameNodeMethodNullUndefined",
+        "MainAbility/pages/frameNode/CustomPropertyNullUndefined"
     ]
 }

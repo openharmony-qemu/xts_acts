@@ -21,7 +21,7 @@ const TEST_TAG: string = 'FrameNode '
 // 继承NodeController实现自定义UI控制器
 class MyNodeController extends NodeController {
   public frameNode: FrameNode | null = null;
-  public childList: Array<FrameNode> = new Array<FrameNode>();
+  public childList: FrameNode[] = new Array<FrameNode>();
   private rootNode: FrameNode | null = null;
   private uiContext: UIContext | null = null;
   private childrenCount: number = 0;
@@ -226,7 +226,7 @@ class MyNodeController extends NodeController {
 struct FrameNodeMethodNullUndefinedTest {
   private myNodeController: MyNodeController = new MyNodeController();
   @State index: number = 0;
-  @State children_count: number = -1;
+  @State count: number = -1;
   @State content_1: string | undefined = '-';
   @State content_2: string | undefined = '-';
 
@@ -242,7 +242,7 @@ struct FrameNodeMethodNullUndefinedTest {
 
       Column() {
         Row({space: 2}) {
-          Text(this.children_count.toString()).key('FrameNodeMethodNullUndefinedTest_text_1')
+          Text(this.count.toString()).key('FrameNodeMethodNullUndefinedTest_text_1')
           Text(this.content_1).key('FrameNodeMethodNullUndefinedTest_text_2')
           Text(this.content_2).key('FrameNodeMethodNullUndefinedTest_text_3')
         }
@@ -318,7 +318,7 @@ struct FrameNodeMethodNullUndefinedTest {
         Row() {
           Button('getChildNumber')
             .onClick(() => {
-              this.children_count = this.myNodeController.getChildNumber();
+              this.count = this.myNodeController.getChildNumber();
             }).width('30%').key('FrameNodeMethodNullUndefinedTest_getChildNumber')
           Button('getId_1')
             .onClick(() => {
