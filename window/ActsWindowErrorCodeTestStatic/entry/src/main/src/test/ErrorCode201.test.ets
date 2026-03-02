@@ -520,6 +520,90 @@ export default function ErrorCode201() {
     
     })
 
+    /**
+        * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0110
+        * @tc.name      test_DestroyVirtualScreenErrorcode201_static
+        * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when got invalid screendId like -1
+        * @tc.size      MediumTest
+        * @tc.type      Function
+        * @tc.level     Level 3
+        */
+    it('test_DestroyVirtualScreenErrorcode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_DestroyVirtualScreenErrorcode201 ';
+        try {
+                display.destroyVirtualScreen(0).then(() => {
+                hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(err.code).assertTrue();
+                done();
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+            expect(err.code == 801 || err.code == 201).assertTrue();
+            done();
+        }
+    });
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0110
+    * @tc.name      test_MakeUniqueErrorcode_201_static
+    * @tc.desc      test_MakeUniqueErrorcode_401 when got invalid screenId like -1
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_MakeUniqueErrorcode_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_MakeUniqueErrorcode_201_static ';
+        try {
+                display.makeUnique(0).then(()=>{
+                hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error) :PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done();
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+            expect(err.code == 201 || err.code == 801).assertTrue()
+            done();
+        }
+    });
+
+    /**
+        * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0110
+        * @tc.name      test_setVirtualScreenSurface_ErrorCode201_static
+        * @tc.desc      test_setVirtualScreenSurface_ErrorCode201 when got a invalid screenId like -1
+        * @tc.size      MediumTest
+        * @tc.type      Function
+        * @tc.level     Level 3
+        */
+    it('test_setVirtualScreenSurface_ErrorCode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_setVirtualScreenSurface_ErrorCode201_static ';
+        try {
+                display.setVirtualScreenSurface(0, '').then(() => {
+                hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+            expect(err.code == 201 || err.code == 801).assertTrue();
+            done();
+        }
+    });
+
 
 
 
