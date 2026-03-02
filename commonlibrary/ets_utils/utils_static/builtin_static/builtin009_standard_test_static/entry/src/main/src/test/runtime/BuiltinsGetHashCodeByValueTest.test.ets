@@ -34,7 +34,7 @@ export default function builtinsGetHashCodeByValueTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -658,7 +658,7 @@ export default function builtinsGetHashCodeByValueTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsGetHashCodeByValueTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('builtinsGetHashCodeByValueTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (): Promise<void> => {
       const testObject: PromiseTestClass = new PromiseTestClass();
       let hashCode: long | number | undefined = undefined;
       let isValidObject = false;
