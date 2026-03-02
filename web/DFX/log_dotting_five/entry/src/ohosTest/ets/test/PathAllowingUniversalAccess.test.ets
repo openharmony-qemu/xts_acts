@@ -86,18 +86,17 @@ export default function setPathAllowingUniversalAccessTest() {
     })
 
     /**
-     * @tc
-.name   testSetPathAllowingUniversalAccess001
+     * @tc.name   testPathAllowingUniversalAccess001
      * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0100
      * @tc.desc   test setPathAllowingUniversalAccess with null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetPathAllowingUniversalAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPathAllowingUniversalAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let emitKey = 'testSetPathAllowingUniversalAccess001';
-        let tcName = 'testSetPathAllowingUniversalAccess001';
+        let emitKey = 'testPathAllowingUniversalAccess001';
+        let tcName = 'testPathAllowingUniversalAccess001';
         let isReturn = false;
         Utils.emitEvent(emitKey, 119060);
         Utils.registerEvent(tcName, '401', 119070, () => {
@@ -109,17 +108,17 @@ export default function setPathAllowingUniversalAccessTest() {
       });
 
     /**
-     * @tc.name   testSetPathAllowingUniversalAccess002
+     * @tc.name   testPathAllowingUniversalAccess002
      * @tc.number SUB_WEB_SETPATHALLOWINGUNIVERSALACCESS_0200
      * @tc.desc   test setPathAllowingUniversalAccess with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetPathAllowingUniversalAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPathAllowingUniversalAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let emitKey = 'testSetPathAllowingUniversalAccess002';
-        let tcName = 'testSetPathAllowingUniversalAccess002';
+        let emitKey = 'testPathAllowingUniversalAccess002';
+        let tcName = 'testPathAllowingUniversalAccess002';
         let isReturn = false;
         Utils.emitEvent(emitKey, 119060);
         Utils.registerEvent(tcName, '401', 119080, () => {
