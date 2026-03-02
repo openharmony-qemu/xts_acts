@@ -84,6 +84,7 @@
         "MainAbility/pages/button/ButtonDrawModifierNullUndefined",
         "MainAbility/pages/button/ButtonAttributeModifierNullUndefined",
         "MainAbility/pages/button/AttributeModifierNullUndefined",
-        "MainAbility/pages/button/AttributeUpdaterNullUndefined"
+        "MainAbility/pages/button/AttributeUpdaterNullUndefined",
+        "MainAbility/pages/button/CommonModifierNullUndefined"
     ]
 }
