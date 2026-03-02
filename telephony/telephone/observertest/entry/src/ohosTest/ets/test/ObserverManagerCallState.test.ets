@@ -261,7 +261,7 @@ export default function observerManagerCallStateTest() {
           done();
         }
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} success, catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
@@ -299,7 +299,7 @@ export default function observerManagerCallStateTest() {
           done();
         }
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} success, catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
@@ -580,14 +580,14 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 0
         }
         observer.on(null, callback, options);
-        done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} success, catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
@@ -609,12 +609,12 @@ export default function observerManagerCallStateTest() {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
           ExpectTrue(false);
+          done();
         }
         let options: observer.ObserverOptions = {
           slotId: 0
         }
         observer.on(undefined, callback, options);
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
@@ -645,7 +645,7 @@ export default function observerManagerCallStateTest() {
         observer.on('callStateChangeEx', callback, undefined);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} success,  catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
@@ -751,6 +751,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         //可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
@@ -778,13 +779,14 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
+          ExpectTrue(data !== null);
         }
         observer.on('callStateChangeEx', callback);
         //可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
         observer.off(undefined, callback);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} success,  catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
         done();
       }
@@ -1035,12 +1037,11 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
-          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(null);
       } catch (err) {
-        console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
+        console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
         ExpectTrue(err.code === 401);
         done();
       }
@@ -1062,12 +1063,11 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           ExpectTrue(value !== null);
-          observer.offCCallStateChange();
           done();
         }
         observer.onCCallStateChange(undefined);
       } catch (err) {
-        console.info(`${caseName} catchError: ${JSON.stringify(err)}}` + err);
+        console.info(`${caseName} success, catchError: ${JSON.stringify(err)}}` + err);
         ExpectTrue(err.code === 401);
         done();
       }
@@ -1089,7 +1089,6 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
-          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -1119,7 +1118,6 @@ export default function observerManagerCallStateTest() {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
           expect(false).assertTrue();
-          observer.offCCallStateChange();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -1127,7 +1125,7 @@ export default function observerManagerCallStateTest() {
         }
         observer.onCCallStateChange(callback, null);
       } catch (err) {
-        console.info(`${caseName} catchError ${JSON.stringify(err)}}`);
+        console.info(`${caseName} success, catchError ${JSON.stringify(err)}}`);
         ExpectTrue(err.code === 401);
         done();
       }
