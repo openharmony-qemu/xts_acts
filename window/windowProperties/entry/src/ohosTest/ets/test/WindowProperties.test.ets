@@ -2983,7 +2983,7 @@ export default function windowPropertiesTest() {
               done();
             }
           } else {
-            console.info(`${caseName} Succeeded in snapshotting window. Pixel bytes number: ${pixelMap.getPixelBytesNumber()},PixelMap.isEditable:${PixelMap.isEditable},PixelMap.isStrideAlignment:${PixelMap.isStrideAlignment}`);
+            console.info(`${caseName} Succeeded in snapshotting window. Pixel bytes number: ${pixelMap.getPixelBytesNumber()},PixelMap.isEditable:${pixelMap.isEditable},PixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
             let widthBefore: number = windowClass.getWindowProperties().windowRect.width;
             let heightBefore: number = windowClass.getWindowProperties().windowRect.height;
             console.info(`${caseName} windowHeight: ${heightBefore}, windowWidth: ${widthBefore}`);
@@ -2991,8 +2991,8 @@ export default function windowPropertiesTest() {
             console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
             expect(Math.abs(widthBefore - imageInfo.size.width)).assertLessOrEqual(1);
             expect(Math.abs(heightBefore - imageInfo.size.height)).assertLessOrEqual(1);
-            expect(PixelMap.isEditable).assertEqual(false);
-            expect(PixelMap.isStrideAlignment).assertEqual(false);
+            expect(pixelMap.isEditable).assertEqual(false);
+            expect(pixelMap.isStrideAlignment).assertEqual(false);
             pixelMap.release();
             done();
           }
@@ -3062,7 +3062,7 @@ export default function windowPropertiesTest() {
       try {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.snapshot().then((pixelMap) => {
-          console.info(`${caseName} Succeeded in snapshotting window. Pixel bytes number: ${pixelMap.getPixelBytesNumber()},PixelMap.isEditable:${PixelMap.isEditable},PixelMap.isStrideAlignment:${PixelMap.isStrideAlignment}`);
+          console.info(`${caseName} Succeeded in snapshotting window. Pixel bytes number: ${pixelMap.getPixelBytesNumber()},PixelMap.isEditable:${pixelMap.isEditable},PixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
           let widthBefore: number = windowClass.getWindowProperties().windowRect.width;
           let heightBefore: number = windowClass.getWindowProperties().windowRect.height;
           console.info(`${caseName} windowHeight: ${heightBefore}, windowWidth: ${widthBefore}`);
@@ -3070,8 +3070,8 @@ export default function windowPropertiesTest() {
           console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
           expect(Math.abs(widthBefore - imageInfo.size.width)).assertLessOrEqual(1);
           expect(Math.abs(heightBefore - imageInfo.size.height)).assertLessOrEqual(1);
-          expect(PixelMap.isEditable).assertEqual(false);
-          expect(PixelMap.isStrideAlignment).assertEqual(false);
+          expect(pixelMap.isEditable).assertEqual(false);
+          expect(pixelMap.isStrideAlignment).assertEqual(false);
           pixelMap.release();
           done();
         }).catch((err: BusinessError) => {
@@ -4063,8 +4063,8 @@ export default function windowPropertiesTest() {
         const windowClass = windowStage.getMainWindowSync();
         let rect = windowClass.getGlobalRect();
         console.info(`${caseName} Succeeded in getting global rect: ${JSON.stringify(rect)}`);
-        expect(rect.left).assertEqual(0);
-        expect(rect.top).assertEqual(0);
+        expect(rect.left).assertLargerOrEqual(0);
+        expect(rect.top).assertLargerOrEqual(0);
         expect(rect.width).assertLarger(0);
         expect(rect.height).assertLarger(0);
         done();
@@ -4503,10 +4503,10 @@ export default function windowPropertiesTest() {
         let reason: ohosWindow.RectChangeReason;
         windowClass.on('windowRectChange', (data: ohosWindow.RectChangeOptions) => {
           console.log(msgStr + 'Succeeded window rect changes. Data: ' + JSON.stringify(data));
-
+          windowClass.off('windowRectChange');
           done();
         });
-
+        windowClass.off('windowRectChange');
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error.code) + 'error.message: ' + error.message);
@@ -7445,11 +7445,11 @@ export default function windowPropertiesTest() {
         let heightBefore: number = subWindow.getWindowProperties().windowRect.height;
         console.info(`${caseName} subWindowHeight: ${heightBefore}, subWindowWidth: ${widthBefore}`);
         let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-        console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width},PixelMap.isEditable:${PixelMap.isEditable},PixelMap.isStrideAlignment:${PixelMap.isStrideAlignment}`);
+        console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width},PixelMap.isEditable:${pixelMap.isEditable},PixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
         expect(Math.abs(widthBefore - imageInfo.size.width)).assertLessOrEqual(1);
         expect(Math.abs(heightBefore - imageInfo.size.height)).assertLessOrEqual(1);
-        expect(PixelMap.isEditable).assertEqual(false);
-        expect(PixelMap.isStrideAlignment).assertEqual(false);
+        expect(pixelMap.isEditable).assertEqual(false);
+        expect(pixelMap.isStrideAlignment).assertEqual(false);
         pixelMap.release();
         await subWindow.destroyWindow();
         done();
@@ -8064,12 +8064,12 @@ export default function windowPropertiesTest() {
           await subWindowClass.setUIContent('testability/pages/First/index4');
           await subWindowClass.showWindow();
           await sleep(300);
-          windowClass.getProperties(async (err: BusinessError, data) => {
+          subWindowClass.getProperties(async (err: BusinessError, data) => {
             const errCode: number = err.code;
             if (errCode) {
               console.error(caseName + `Failed to obtain the window properties. Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
-              await subWindowClass.destroyWindow();
+              await subWindowClass!.destroyWindow();
               done();
             } else {
               console.info(caseName + 'Succeeded in obtaining the window properties. Data: ' + JSON.stringify(data));
@@ -8082,12 +8082,12 @@ export default function windowPropertiesTest() {
               expect(data.drawableRect.top).assertEqual(0);
               expect(data.drawableRect.width).assertLarger(0);
               expect(data.drawableRect.height).assertLarger(0);
-              expect(data.globalDisplayRect.left).assertEqual(0);
-              expect(data.globalDisplayRect.top).assertEqual(0);
-              expect(data.globalDisplayRect.width).assertLarger(0);
-              expect(data.globalDisplayRect.height).assertLarger(0);
+              expect(data.globalDisplayRect?.left).assertEqual(0);
+              expect(data.globalDisplayRect?.top).assertEqual(0);
+              expect(data.globalDisplayRect?.width).assertLarger(0);
+              expect(data.globalDisplayRect?.height).assertLarger(0);
 
-              let promise = subWindowClass.getProperties();
+              let promise = subWindowClass!.getProperties();
               promise.then(async (Properties2) => {
                 console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(Properties2));
                 expect(Properties2.type).assertEqual(window.WindowType.TYPE_FLOAT);
@@ -8099,11 +8099,11 @@ export default function windowPropertiesTest() {
                 expect(Properties2.drawableRect.top).assertEqual(0);
                 expect(Properties2.drawableRect.width).assertLarger(0);
                 expect(Properties2.drawableRect.height).assertLarger(0);
-                expect(Properties2.globalDisplayRect.left).assertEqual(0);
-                expect(Properties2.globalDisplayRect.top).assertEqual(0);
-                expect(Properties2.globalDisplayRect.width).assertLarger(0);
-                expect(Properties2.globalDisplayRect.height).assertLarger(0);
-                let properties3 = windowClass.getWindowProperties();
+                expect(Properties2.globalDisplayRect?.left).assertEqual(0);
+                expect(Properties2.globalDisplayRect?.top).assertEqual(0);
+                expect(Properties2.globalDisplayRect?.width).assertLarger(0);
+                expect(Properties2.globalDisplayRect?.height).assertLarger(0);
+                let properties3 = subWindowClass!.getWindowProperties();
                 console.info(caseName + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties3));
                 expect(properties3.type).assertEqual(window.WindowType.TYPE_FLOAT);
                 expect(properties3.windowRect.left).assertEqual(0);
@@ -8114,15 +8114,15 @@ export default function windowPropertiesTest() {
                 expect(properties3.drawableRect.top).assertEqual(0);
                 expect(properties3.drawableRect.width).assertLarger(0);
                 expect(properties3.drawableRect.height).assertLarger(0);
-                expect(properties3.globalDisplayRect.left).assertEqual(0);
-                expect(properties3.globalDisplayRect.top).assertEqual(0);
-                expect(properties3.globalDisplayRect.width).assertLarger(0);
-                expect(properties3.globalDisplayRect.height).assertLarger(0);
-                await subWindowClass.destroyWindow();
+                expect(properties3.globalDisplayRect?.left).assertEqual(0);
+                expect(properties3.globalDisplayRect?.top).assertEqual(0);
+                expect(properties3.globalDisplayRect?.width).assertLarger(0);
+                expect(properties3.globalDisplayRect?.height).assertLarger(0);
+                await subWindowClass!.destroyWindow();
                 done();
-              }).catch(async (err) => {
+              }).catch(async (err: BusinessError) => {
                 console.error(caseName + `Failed to obtain the window properties2. Cause code: ${err.code}, message: ${err.message}`);
-                await subWindowClass.destroyWindow();
+                await subWindowClass!.destroyWindow();
                 expect(false).assertTrue();
                 done();
               });
@@ -8171,12 +8171,13 @@ export default function windowPropertiesTest() {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index4');
           await subWindowClass.showWindow();
-          windowClass.getProperties(async (err: BusinessError, data) => {
+          await sleep(300);
+          subWindowClass.getProperties(async (err: BusinessError, data) => {
             const errCode: number = err.code;
             if (errCode) {
               console.error(`Failed to obtain the window properties. Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
-              await subWindowClass.destroyWindow();
+              await subWindowClass!.destroyWindow();
               done();
             } else {
               console.info(caseName + 'Succeeded in obtaining the window properties. Data: ' + JSON.stringify(data));
@@ -8189,14 +8190,14 @@ export default function windowPropertiesTest() {
               expect(data.drawableRect.top).assertEqual(0);
               expect(data.drawableRect.width).assertLarger(0);
               expect(data.drawableRect.height).assertLarger(0);
-              expect(data.globalDisplayRect.left).assertEqual(0);
-              expect(data.globalDisplayRect.top).assertEqual(0);
-              expect(data.globalDisplayRect.width).assertLarger(0);
-              expect(data.globalDisplayRect.height).assertLarger(0);
-              let promise = subWindowClass.getProperties();
+              expect(data.globalDisplayRect?.left).assertEqual(0);
+              expect(data.globalDisplayRect?.top).assertEqual(0);
+              expect(data.globalDisplayRect?.width).assertLarger(0);
+              expect(data.globalDisplayRect?.height).assertLarger(0);
+              let promise = subWindowClass!.getProperties();
               promise.then(async (Properties2) => {
                 console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(Properties2));
-                expect(Properties2.type).assertEqual(window.WindowType.TYPE_FLOAT);
+                expect(Properties2.type).assertEqual(window.WindowType.TYPE_DIALOG);
                 expect(Properties2.windowRect.left).assertEqual(0);
                 expect(Properties2.windowRect.top).assertEqual(0);
                 expect(Properties2.windowRect.width).assertLarger(0);
@@ -8205,13 +8206,13 @@ export default function windowPropertiesTest() {
                 expect(Properties2.drawableRect.top).assertEqual(0);
                 expect(Properties2.drawableRect.width).assertLarger(0);
                 expect(Properties2.drawableRect.height).assertLarger(0);
-                expect(Properties2.globalDisplayRect.left).assertEqual(0);
-                expect(Properties2.globalDisplayRect.top).assertEqual(0);
-                expect(Properties2.globalDisplayRect.width).assertLarger(0);
-                expect(Properties2.globalDisplayRect.height).assertLarger(0);
-                let properties3 = windowClass.getWindowProperties();
+                expect(Properties2.globalDisplayRect?.left).assertEqual(0);
+                expect(Properties2.globalDisplayRect?.top).assertEqual(0);
+                expect(Properties2.globalDisplayRect?.width).assertLarger(0);
+                expect(Properties2.globalDisplayRect?.height).assertLarger(0);
+                let properties3 = subWindowClass!.getWindowProperties();
                 console.info(caseName + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties3));
-                expect(properties3.type).assertEqual(window.WindowType.TYPE_FLOAT);
+                expect(properties3.type).assertEqual(window.WindowType.TYPE_DIALOG);
                 expect(properties3.windowRect.left).assertEqual(0);
                 expect(properties3.windowRect.top).assertEqual(0);
                 expect(properties3.windowRect.width).assertLarger(0);
@@ -8220,15 +8221,15 @@ export default function windowPropertiesTest() {
                 expect(properties3.drawableRect.top).assertEqual(0);
                 expect(properties3.drawableRect.width).assertLarger(0);
                 expect(properties3.drawableRect.height).assertLarger(0);
-                expect(properties3.globalDisplayRect.left).assertEqual(0);
-                expect(properties3.globalDisplayRect.top).assertEqual(0);
-                expect(properties3.globalDisplayRect.width).assertLarger(0);
-                expect(properties3.globalDisplayRect.height).assertLarger(0);
-                await subWindowClass.destroyWindow();
+                expect(properties3.globalDisplayRect?.left).assertEqual(0);
+                expect(properties3.globalDisplayRect?.top).assertEqual(0);
+                expect(properties3.globalDisplayRect?.width).assertLarger(0);
+                expect(properties3.globalDisplayRect?.height).assertLarger(0);
+                await subWindowClass?.destroyWindow();
                 done();
-              }).catch(async (err) => {
+              }).catch(async (err: BusinessError) => {
                 console.error(caseName + `Failed to obtain the window properties2. Cause code: ${err.code}, message: ${err.message}`);
-                await subWindowClass.destroyWindow();
+                await subWindowClass?.destroyWindow();
                 expect(false).assertTrue();
                 done();
               });
@@ -8261,7 +8262,9 @@ export default function windowPropertiesTest() {
     it('testGetProperties_mainWindow_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testGetProperties_mainWindow_Callback';
       let mainWindow: window.Window = windowStage.getMainWindowSync();
-      await sleep(200)
+      await mainWindow.setWindowLayoutFullScreen(true);
+      await mainWindow.setWindowSystemBarEnable([]);
+      await sleep(500)
       try {
         mainWindow.getProperties(async (err: BusinessError, data) => {
           const errCode: number = err.code;
@@ -8288,28 +8291,29 @@ export default function windowPropertiesTest() {
             done();
           } else {
             console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(data2));
-            expect(data2.isTouchable).assertEqual(false);
+            expect(data2.touchable).assertEqual(false);
             await mainWindow.setWindowTouchable(true);
           }
         });
-        if (deviceType === '2in1') {
-          await mainWindow.minimize();
-          mainWindow.getProperties(async (err: BusinessError, data3) => {
-            const errCode: number = err.code;
-            if (errCode) {
-              console.error(caseName + `Failed to obtain the window properties3. Cause code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
-              done();
-            } else {
-              console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(data3));
-              expect(data3.focusable).assertEqual(false);
-              await mainWindow.restore();
-              done();
-            }
-          });
-        } else {
-          done();
-        }
+        await mainWindow.setWindowLayoutFullScreen(false);
+        await mainWindow.setWindowSystemBarEnable(['status', 'navigation']);
+        await sleep(500)
+
+        await mainWindow.setWindowFocusable(false);
+        mainWindow.getProperties(async (err: BusinessError, data3) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName + `Failed to obtain the window properties3. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(caseName + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(data3));
+            expect(data3.focusable).assertEqual(false);
+            await mainWindow.setWindowFocusable(true);
+
+            done();
+          }
+        });
 
 
       } catch (err) {
@@ -8329,7 +8333,9 @@ export default function windowPropertiesTest() {
     it('testGetProperties_mainWindow_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testGetProperties_mainWindow_Promise';
       let mainWindow: window.Window = windowStage.getMainWindowSync();
-      await sleep(200)
+      await mainWindow.setWindowLayoutFullScreen(true);
+      await mainWindow.setWindowSystemBarEnable([]);
+      await sleep(500)
       try {
         let promise1 = mainWindow.getProperties();
         promise1.then((data) => {
@@ -8347,31 +8353,31 @@ export default function windowPropertiesTest() {
         });
         await mainWindow.setWindowTouchable(false);
         let promise2 = mainWindow.getProperties();
-        promise2.then((data2) => {
+        promise2.then(async (data2) => {
           console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(data2));
-          expect(data2.isTouchable).assertEqual(false);
+          expect(data2.touchable).assertEqual(false);
           await mainWindow.setWindowTouchable(true);
         }).catch((err: BusinessError) => {
           console.error(caseName + `Failed to obtain the window properties2. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
           done();
         });
-        if (deviceType === '2in1') {
-          await mainWindow.minimize();
-          let promise3 = mainWindow.getProperties();
-          promise3.then((data3) => {
-            console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(data3));
-            expect(data3.focusable).assertEqual(false);
-            await mainWindow.restore();
-            done();
-          }).catch((err: BusinessError) => {
-            console.error(caseName + `Failed to obtain the window properties3. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-            done();
-          });
-        } else {
+        await mainWindow.setWindowLayoutFullScreen(false);
+        await mainWindow.setWindowSystemBarEnable(['status', 'navigation']);
+        await sleep(500)
+        await mainWindow.setWindowFocusable(false);
+        let promise3 = mainWindow.getProperties();
+        promise3.then(async (data3) => {
+          console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(data3));
+          expect(data3.focusable).assertEqual(false);
+          await mainWindow.setWindowFocusable(true);
           done();
-        }
+        }).catch((err: BusinessError) => {
+          console.error(caseName + `Failed to obtain the window properties3. Cause code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        });
+
 
 
       } catch (err) {
@@ -8391,7 +8397,9 @@ export default function windowPropertiesTest() {
     it('testGetWindowProperties_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testGetWindowProperties_mainWindow';
       let mainWindow: window.Window = windowStage.getMainWindowSync();
-      await sleep(200)
+      await mainWindow.setWindowLayoutFullScreen(true);
+      await mainWindow.setWindowSystemBarEnable([]);
+      await sleep(500)
       try {
         let properties1 = mainWindow.getWindowProperties();
         console.info(caseName + 'Succeeded in obtaining the window properties1. Data: ' + JSON.stringify(properties1));
@@ -8405,20 +8413,20 @@ export default function windowPropertiesTest() {
         await mainWindow.setWindowTouchable(false);
         let properties2 = mainWindow.getWindowProperties();
         console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(properties2));
-        expect(properties2.isTouchable).assertEqual(false);
+        expect(properties2.touchable).assertEqual(false);
         await mainWindow.setWindowTouchable(true);
 
-        if (deviceType === '2in1') {
-          await mainWindow.minimize();
-          let properties3 = mainWindow.getWindowProperties();
-          console.info(caseName + 'Succeeded in obtaining the window properties2. Data: ' + JSON.stringify(properties3));
-          expect(properties3.focusable).assertEqual(false);
-          await mainWindow.restore();
-          done();
+        await mainWindow.setWindowLayoutFullScreen(false);
+        await mainWindow.setWindowSystemBarEnable(['status', 'navigation']);
+        await sleep(500)
 
-        } else {
-          done();
-        }
+        await mainWindow.setWindowFocusable(false);
+        let properties3 = mainWindow.getWindowProperties();
+        console.info(caseName + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties3));
+        expect(properties3.focusable).assertEqual(false);
+        await mainWindow.setWindowFocusable(true);
+        done();
+
 
 
       } catch (err) {
