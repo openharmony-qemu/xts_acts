@@ -49,10 +49,10 @@ export default function radiounllundefined(){
 
 
     /* *
-    * @tc.number: radionull_001
-    * @tc.name  : radionull_001
-    * @tc.desc  : To test radionull
-    * @tc.level : Level 0
+    * @tc.name    radionull_001
+    * @tc.number  SUB_ARKUI_RADIO_NULL_PARAM_001
+    * @tc.desc    To test radionull
+    * @tc.level   Level 0
     * @tc.type
     * @tc.size
     */
@@ -69,10 +69,10 @@ export default function radiounllundefined(){
     })
 
     /* *
-    * @tc.number: radioundefined_001
-    * @tc.name  : radioundefined_001
-    * @tc.desc  : To test radioundefined
-    * @tc.level : Level 0
+    * @tc.name    radioundefined_001
+    * @tc.number  SUB_ARKUI_RADIO_UNDEFINED_PARAM_001
+    * @tc.desc    To test radioundefined
+    * @tc.level   Level 0
     * @tc.type
     * @tc.size
     */

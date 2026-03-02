@@ -366,7 +366,7 @@ export default function selectAttributeNullTest() {
 
     // pass
     /**
-     * @tc.name   selectSpace_Null_018
+     * @tc.name   selectSpace_Undefined_018
      * @tc.number SUB_ARKUI_SELECT_SELECTSPACE_PARAM_018
      * @tc.desc   Test Select selectSpace
      * @tc.type   

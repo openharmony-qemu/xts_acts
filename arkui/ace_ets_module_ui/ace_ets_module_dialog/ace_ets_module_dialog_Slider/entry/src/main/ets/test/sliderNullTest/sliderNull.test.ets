@@ -47,10 +47,10 @@ export default function slidenullundeifned(){
     });
 
     /* *
-    * @tc.number: bindSheetHoverMode_0100
-    * @tc.name  : bindSheetHoverMode_0100
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 0
+    * @tc.name    bindSheetHoverMode_0100
+    * @tc.number  bindSheetHoverMode_0100
+    * @tc.desc    To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+    * @tc.level   Level 0
     * @tc.type
     * @tc.size
     */
@@ -78,10 +78,10 @@ export default function slidenullundeifned(){
     })
 
     /* *
-    * @tc.number: slideundefined_001
-    * @tc.name  : slideundefined_001
-    * @tc.desc  : To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
-    * @tc.level : Level 0
+    * @tc.name    slideundefined_001
+    * @tc.number  slideundefined_001
+    * @tc.desc    To test enableHoverMode(true) and hoverModeArea(HoverModeAreaType.TOP_SCREEN)
+    * @tc.level   Level 0
     * @tc.type
     * @tc.size
     */

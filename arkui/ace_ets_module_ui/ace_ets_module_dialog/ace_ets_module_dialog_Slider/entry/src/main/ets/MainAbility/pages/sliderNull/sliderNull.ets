@@ -65,9 +65,8 @@ struct sliderUndefied {
             this.begin = mode
             console.info('value: ' + value + '---mode: ' + mode)
           })
-          .width("100")
-          .height("100")
-          // .id('slidernull')
+          .width('100')
+          .height('100')
           .key('slidernull')
         //undefined
         Slider({
