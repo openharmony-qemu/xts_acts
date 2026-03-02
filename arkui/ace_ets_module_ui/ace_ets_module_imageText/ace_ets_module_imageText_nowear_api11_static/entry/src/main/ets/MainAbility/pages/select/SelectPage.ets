@@ -34,36 +34,48 @@ struct SelectPage {
   @State optionBgColor: ResourceColor = Color.White
   @State optionFont: Font = { size: 16, weight: 400 } as Font
   @State optionFontColor: ResourceColor = Color.Green
-  @State indexValue: string = ''
+  @State indexValue: string = '0'
   stateChangCallBack:(eventData: events_emitter.EventData) => void =  (eventData: events_emitter.EventData) =>  {
     let eventD = eventData.data as Record<String,RecordData>
     if (eventData != null && eventD != null) {
-      if (eventD!['selected']) {
+      if (eventD!['selected'] != null) {
         this.selected = eventD!['selected'] as int
-      } else if (eventD!['selectValue']!= null) {
+      }
+      if (eventD!['selectValue']!= null) {
         this.selectValue =  eventD!['selectValue'] as string
-      } else if (eventD!['selectFont']!= null) {
+      } 
+      if (eventD!['selectFont']!= null) {
         this.selectFont = eventD!['selectFont'] as Font
 
-      } else if (eventD!['selectedOptionBgColor']!= null) {
+      } 
+      if (eventD!['selectedOptionBgColor']!= null) {
         this.selectedOptionBgColor = eventD!['selectedOptionBgColor'] as ResourceColor
-      } else if (eventD!['selectedOptionFont']!= null) {
+      } 
+      if (eventD!['selectedOptionFont']!= null) {
         this.selectedOptionFont = eventD!['selectedOptionFont'] as Font
-      } else if (eventD!['selectedOptionFontColor']!= null) {
+      }
+      if (eventD!['selectedOptionFontColor']!= null) {
         this.selectedOptionFontColor = eventD!['selectedOptionFontColor'] as ResourceColor
-      }else if (eventD!['optionBgColor']!= null) {
+      }
+      if (eventD!['optionBgColor']!= null) {
         this.optionBgColor = eventD!['optionBgColor'] as ResourceColor
-      }else if (eventD!['optionFont']!= null) {
+      }
+      if (eventD!['optionFont']!= null) {
         this.optionFont = eventD!['optionFont'] as Font
-      }else if (eventD!['optionFontColor']!= null) {
+      }
+      if (eventD!['optionFontColor']!= null) {
         this.optionFontColor = eventD!['optionFontColor'] as ResourceColor
-      }else if (eventD!['fontColor']!= null) {
+      } 
+      if (eventD!['fontColor']!= null) {
         this.fontColor = eventD!['fontColor'] as ResourceColor
-      }else if (eventD!['optionValue']!= null) {
+      }
+      if (eventD!['optionValue']!= null) {
         this.optionValue = eventD!['optionValue'] as string
-      }else if (eventD!['icon']!= null) {
+      }
+      if (eventD!['icon']!= null) {
         this.icon = eventD!['icon'] as string
-      }else if (eventD!['indexValue']!= null) {
+      }
+      if (eventD!['indexValue']!= null) {
         this.indexValue = eventD!['indexValue'] as string
       }
     }
