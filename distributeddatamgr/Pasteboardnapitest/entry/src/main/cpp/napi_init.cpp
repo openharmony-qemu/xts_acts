@@ -1001,7 +1001,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_HasRemoteData0200", nullptr, OH_Pasteboard_HasRemoteData0200, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_HasRemoteData0300", nullptr, OH_Pasteboard_HasRemoteData0300, nullptr,
-	     nullptr, nullptr, napi_default, nullptr} 
+         nullptr, nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
