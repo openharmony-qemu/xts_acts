@@ -630,5 +630,76 @@ export default function imagePackerPackingPictureTest() {
         done();
       }
     })
+
+
+    /**
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_019
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_019
+     * @tc.desc    imagePacker_packing cover Normal :image.PackingDynamicRange.AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_019';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
+      try {
+        let pictureObj: image.Picture=await createPictureObj(done,testName,path);
+        const imagePackerApi: image.ImagePacker = await image.createImagePacker();
+        console.info(TAG, testName, 'createImagePacker Successful.');
+        let opts: image.PackingOption = {
+          format: "image/jpeg",
+          quality: 98,
+          bufferSize: 10,
+          desiredDynamicRange: image.PackingDynamicRange.AUTO,
+          needsPackProperties: true
+        };
+        let buffer =  await imagePackerApi.packing(pictureObj, opts)
+        console.info(TAG, testName, 'Succeeded in packing the image.' + buffer);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'failed in packing the imageSucceeded in packing the image',json.stringify(error),error.code);
+        expect(Number(error.code)).assertEqual(7800301);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_020
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_020
+     * @tc.desc    imagePacker_packing cover Normal :needsPackProperties: false
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'IMAGE_PACKER_PACKING_PROMISE_ArrayBuffer_020';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const path = 'file://' + testContext.filesDir + "/" + "test_exif_v2.jpg";
+      try {
+        let pictureObj: image.Picture=await createPictureObj(done,testName,path);
+        const imagePackerApi: image.ImagePacker = await image.createImagePacker();
+        console.info(TAG, testName, 'createImagePacker Successful.');
+        let opts: image.PackingOption = {
+          format: "image/jpeg",
+          quality: 98,
+          bufferSize: 10,
+          desiredDynamicRange: image.PackingDynamicRange.AUTO,
+          needsPackProperties: false
+        };
+        let buffer =  await imagePackerApi.packing(pictureObj, opts)
+        console.info(TAG, testName, 'Succeeded in packing the image.' + buffer);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'failed in packing the imageSucceeded in packing the image',json.stringify(error),error.code);
+        expect(Number(error.code)).assertEqual(7800301);
+        done();
+      }
+    })
+
+
   })
 }
