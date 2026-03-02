@@ -384,113 +384,113 @@ export default function imageReadImageMetadataTestSupp() {
       await imageSourceApi.release();
       done();
     })
-    // /**
-    //  * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031
-    //  * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031
-    //  * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:cloudLabel:'2'
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031', Level.LEVEL1, async (done: Function) => {
-    //   const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031';
-    //   const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-    //   try {
-    //     let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-    //     makerNoteHuaweiMetadata.cloudLabel = '2';
-    //     const imageMetadata: image.ImageMetadata = {
-    //       exifMetadata: makerNoteHuaweiMetadata
-    //     };
-    //     await imageSourceApi.writeImageMetadata(imageMetadata);
-    //     await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
-    //       if (metaData != undefined && metaData.exifMetadata != undefined &&
-    //         metaData.makerNoteHuaweiMetadata != undefined) {
-    //         console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.cloudLabel);
-    //         // expect(Number(metaData.makerNoteHuaweiMetadata.cloudLabel)).assertEqual('2');
-    //       }
-    //     }).catch((error: BusinessError) => {
-    //       console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
-    //       // expect().assertFail();
-    //     })
-    //   }catch (err) {
-    //     console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-    //     // expect().assertFail();
-    //   }
-    //   await imageSourceApi.release();
-    //   done();
-    // })
-    // /**
-    //  * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032
-    //  * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032
-    //  * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:isWindSnapshot:true
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032', Level.LEVEL1, async (done: Function) => {
-    //   const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032';
-    //   const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-    //   try {
-    //     let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-    //     makerNoteHuaweiMetadata.isWindSnapshot = true;
-    //     const imageMetadata: image.ImageMetadata = {
-    //       exifMetadata: makerNoteHuaweiMetadata
-    //     };
-    //     await imageSourceApi.writeImageMetadata(imageMetadata);
-    //     await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
-    //       if (metaData != undefined && metaData.exifMetadata != undefined &&
-    //         metaData.makerNoteHuaweiMetadata != undefined) {
-    //         console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
-    //         // expect(Number(metaData.makerNoteHuaweiMetadata.isWindSnapshot)).assertTrue();
-    //       }
-    //     }).catch((error: BusinessError) => {
-    //       console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
-    //       // expect().assertFail();
-    //     })
-    //   }catch (err) {
-    //     console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-    //     // expect().assertFail();
-    //   }
-    //   await imageSourceApi.release();
-    //   done();
-    // })
-    //
-    // /**
-    //  * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033
-    //  * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033
-    //  * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:isWindSnapshot:false
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033', Level.LEVEL1, async (done: Function) => {
-    //   const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033';
-    //   const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-    //   try {
-    //     let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-    //     makerNoteHuaweiMetadata.isWindSnapshot = false;
-    //     const imageMetadata: image.ImageMetadata = {
-    //       exifMetadata: makerNoteHuaweiMetadata
-    //     };
-    //     await imageSourceApi.writeImageMetadata(imageMetadata);
-    //     await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
-    //       if (metaData != undefined && metaData.exifMetadata != undefined &&
-    //         metaData.makerNoteHuaweiMetadata != undefined) {
-    //         console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
-    //         // expect(Number(metaData.makerNoteHuaweiMetadata.isWindSnapshot)).assertFalse();
-    //       }
-    //     }).catch((error: BusinessError) => {
-    //       console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
-    //       // expect().assertFail();
-    //     })
-    //   }catch (err) {
-    //     console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-    //     // expect().assertFail();
-    //   }
-    //   await imageSourceApi.release();
-    //   done();
-    // })
-    //
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:cloudLabel:'2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_031';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.cloudLabel = '2';
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.cloudLabel);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:isWindSnapshot:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_032';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.isWindSnapshot = true;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:isWindSnapshot:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_033';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.isWindSnapshot = false;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_034
      * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_034
@@ -514,65 +514,65 @@ export default function imageReadImageMetadataTestSupp() {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
             metaData.makerNoteHuaweiMetadata != undefined) {
             console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneVersion);
-            expect(Number(metaData.makerNoteHuaweiMetadata.sceneVersion)).assertEqual(1);
+            expect().assertFail();
           }
         }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
-          // expect().assertFail();
+          expect().assertFail();
         })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        // expect().assertFail();
+        expect(Number(err.code)).assertEqual(7700202);
       }
       await imageSourceApi.release();
       done();
     })
-    // /**
-    //  * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035
-    //  * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035
-    //  * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneFoodConfidence
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035', Level.LEVEL1, async (done: Function) => {
-    //   const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035';
-    //   const imageSourceApi = await getImageSource('test_exif_v2.jpg');
-    //   try {
-    //     let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-    //     makerNoteHuaweiMetadata.sceneFoodConfidence =1;
-    //     const imageMetadata: image.ImageMetadata = {
-    //       exifMetadata: makerNoteHuaweiMetadata
-    //     };
-    //     await imageSourceApi.writeImageMetadata(imageMetadata);
-    //     console.info(TAG, testName, " writeImageMetadata success ");
-    //     await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
-    //       if (metaData != undefined && metaData.exifMetadata != undefined &&
-    //         metaData.makerNoteHuaweiMetadata != undefined) {
-    //         console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFoodConfidence);
-    //         expect(Number(metaData.makerNoteHuaweiMetadata.sceneFoodConfidence)).assertEqual(1);
-    //       }
-    //     }).catch((error: BusinessError) => {
-    //       console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
-    //       expect().assertFail();
-    //     })
-    //   }catch (err) {
-    //     console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-    //     expect().assertFail();
-    //   }
-    //   await imageSourceApi.release();
-    //   done();
-    // })
     /**
      * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035
      * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035
-     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneBeachConfidence
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneFoodConfidence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_035';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneFoodConfidence =1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFoodConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_036
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_036
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneBeachConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_036', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_036';
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
         let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
@@ -586,7 +586,637 @@ export default function imageReadImageMetadataTestSupp() {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
             metaData.makerNoteHuaweiMetadata != undefined) {
             console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBeachConfidence);
-            expect(Number(metaData.makerNoteHuaweiMetadata.sceneBeachConfidence)).assertEqual(1);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_037
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_037
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneBlueSkyConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_037', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_037';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneBlueSkyConfidence =1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBlueSkyConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_038
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_038
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneStageConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_038', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_038';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneStageConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneStageConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_039
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_039
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneGreenPlantConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_039', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_039';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneGreenPlantConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneGreenPlantConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_040
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_040
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneSnowConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_040', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_040';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneSnowConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSnowConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_041
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_041
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneSunsetConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_041', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_041';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneSunsetConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSunsetConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_042
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_042
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneFlowersConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_042', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_042';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneFlowersConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFlowersConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_043
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_043
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneNightConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_043', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_043';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneNightConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneNightConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_044
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_044
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:sceneTextConfidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_044', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_044';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.sceneTextConfidence = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneTextConfidence);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_045
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_045
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:faceCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_045', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_045';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.faceCount = 1;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceCount);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_046
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_046
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:faceConfidences
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_046', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_046';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.faceConfidences = [1];
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceConfidences);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_047
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_047
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:faceSmileScores
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_047', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_047';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.faceSmileScores = [1];
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceSmileScores);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_048
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_048
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:captureMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_048', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_048';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.burstNumber = 0;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.burstNumber);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_049
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_049
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:isFrontCamera
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_049', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_049';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.isFrontCamera = true;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isFrontCamera);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_050
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_050
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:rollAngle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_050', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_050';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.rollAngle = 0;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.rollAngle);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_051
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_051
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:pitchAngle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_051', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_051';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let makerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
+        makerNoteHuaweiMetadata.pitchAngle = 0;
+        const imageMetadata: image.ImageMetadata = {
+          exifMetadata: makerNoteHuaweiMetadata
+        };
+        await imageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, " writeImageMetadata success ");
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.pitchAngle);
+            expect().assertFail();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(Number(err.code)).assertEqual(7700202);
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:physicalAperture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.physicalAperture);
+            expect(Number(metaData.makerNoteHuaweiMetadata.physicalAperture)).assertEqual(6);
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053
+     * @tc.desc   readImageMetadata makerNoteHuaweiMetadata:focusMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.focusMode);
+            expect(Number(metaData.makerNoteHuaweiMetadata.focusMode)).assertEqual(7);
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054
+     * @tc.desc   readImageMetadata heifsMetadata:['heifsDelayTime']"]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.focusMode);
+            expect(Number(metaData.makerNoteHuaweiMetadata.focusMode)).assertEqual(7);
           }
         }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
