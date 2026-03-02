@@ -226,6 +226,7 @@ import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
 import ImagePictureTest from './image/ImagePictureTest.test';
 import CrateImageSupp from './image/CreateImageTest.test';
+import ImagCreatePixelMapTest from './image/ImagCreatePixelMapTest.test';
 
 
 export default function testsuite() {
@@ -439,4 +440,5 @@ export default function testsuite() {
   ImageGetComponentFirSupp();
   ImagePictureTest();
   CrateImageSupp();
+  ImagCreatePixelMapTest();
 }
