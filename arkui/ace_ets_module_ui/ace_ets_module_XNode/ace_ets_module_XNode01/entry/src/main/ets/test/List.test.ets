@@ -106,7 +106,7 @@ import RenderNodeIsDisposedTest from './NodeReturnTest/RenderNodeIsDisposedTest.
 import NodeAdapterIsDisposedTest from './NodeReturnTest/NodeAdapterIsDisposedTest.test';
 
 import graphicsApiNullUndefinedTest from './GraphicsTest/graphicsApiNullUndefinedTest.test';
-import renderNodeApiNullUndefinedest from './RenderNodeTest/renderNodeApiNullUndefinedest.test';
+import renderNodeApiNullUndefinedTest from './RenderNodeTest/renderNodeApiNullUndefinedTest.test';
 import nodeContentApiNullUndefinedTest from './NodeContent/nodeContentApiNullUndefinedTest.test';
 import builderNodeBuildNullUndefinedTest from './BuilderNodeTest/builderNodeBuildNullUndefinedTest.test';
 import builderNodeUpdateNullUndefinedTest from './BuilderNodeTest/builderNodeUpdateNullUndefinedTest.test';
@@ -208,7 +208,7 @@ export default function testsuite() {
   NodeAdapterIsDisposedTest();
 
   graphicsApiNullUndefinedTest();
-  renderNodeApiNullUndefinedest();
+  renderNodeApiNullUndefinedTest();
   nodeContentApiNullUndefinedTest();
   builderNodeBuildNullUndefinedTest();
   builderNodeUpdateNullUndefinedTest();
