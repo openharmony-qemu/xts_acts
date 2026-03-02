@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect ,TestType, Size, Level } from "@ohos/hypium"
-import { TAG as ConstantTAG } from '@ohos/hypium/src/main/Constant';
+import { TAG as ConstantTAG } from '@ohos/hypium/src/Constant';
 import validator from 'validator';
 import validator2 from 'validator/validator';
 

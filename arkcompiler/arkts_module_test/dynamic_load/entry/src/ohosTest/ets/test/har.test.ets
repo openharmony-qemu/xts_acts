@@ -139,7 +139,7 @@ export default function dynamicLoadHar() {
      */
     it("testConstantExpressionsOhpm04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testConstantExpressionsOhpm04";
-      import('@ohos/hypium/src/main/Constant').then((m: ESObject) => {
+      import('@ohos/hypium/src/Constant').then((m: ESObject) => {
         expect(m.TAG).assertEqual('[Hypium]');
       }).catch((error: BusinessError) => {
         console.error(`${caseName} catch error: ${error}`);
@@ -252,7 +252,7 @@ export default function dynamicLoadHar() {
      */
     it("testVariableExpressionsOhpm02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const caseName: string = "testVariableExpressionsOhpm02";
-      let libname = '@ohos/hypium/src/main/Constant';
+      let libname = '@ohos/hypium/src/Constant';
       import(libname).then((m: ESObject) => {
         expect(m.TAG).assertEqual('[Hypium]');
       }).catch((error: BusinessError) => {
