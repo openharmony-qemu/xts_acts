@@ -54,6 +54,9 @@
           ],
           "when": "inuse"
         }
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
       }
     ],
     "js": [

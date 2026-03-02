@@ -17,6 +17,7 @@ import cacheDownload from "@ohos.request.cacheDownload";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import fs from  '@ohos.file.fs';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestCacheDownloadStateSecretUnitTest() {
   describe('requestCacheDownloadStateSecret', () => {
@@ -24,6 +25,9 @@ export default function requestCacheDownloadStateSecretUnitTest() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       cacheDownload.setFileCacheSize(0);
       cacheDownload.setMemoryCacheSize(0);
       console.info('====>beforeEach clean cache file');
