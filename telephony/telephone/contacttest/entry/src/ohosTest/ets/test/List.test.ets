@@ -36,8 +36,8 @@ export default function testsuite() {
   if (deviceInfo.deviceType !== 'wearable' && canIUse("SystemCapability.Applications.Contacts")) {
     SelectContactsTest();
     AddContactViaUITest();
-    SaveToExistingContactViaUITest(); 
-  } 	 
+    SaveToExistingContactViaUITest();
+  } 
   QueryKeyTest();
   QueryByEmailTest();
   QueryByEmailPhoneNumTest();
